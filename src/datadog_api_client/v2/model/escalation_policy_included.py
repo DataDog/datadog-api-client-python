@@ -25,7 +25,7 @@ class EscalationPolicyIncluded(ModelComposed):
         :type relationships: TeamReferenceRelationships, optional
 
         :param type: Teams resource type.
-        :type type: TeamReferenceType, optional
+        :type type: TeamReferenceType
         """
         super().__init__(kwargs)
 

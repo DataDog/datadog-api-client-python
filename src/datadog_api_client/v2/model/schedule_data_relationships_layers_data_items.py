@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -36,23 +34,17 @@ class ScheduleDataRelationshipsLayersDataItems(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        id: Union[str, UnsetType] = unset,
-        type: Union[ScheduleDataRelationshipsLayersDataItemsType, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, id: str, type: ScheduleDataRelationshipsLayersDataItemsType, **kwargs):
         """
         Relates a layer to this schedule, identified by ``id`` and ``type`` (must be ``layers`` ).
 
         :param id: The unique identifier of the layer in this relationship.
-        :type id: str, optional
+        :type id: str
 
         :param type: Layers resource type.
-        :type type: ScheduleDataRelationshipsLayersDataItemsType, optional
+        :type type: ScheduleDataRelationshipsLayersDataItemsType
         """
-        if id is not unset:
-            kwargs["id"] = id
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.id = id
+        self_.type = type

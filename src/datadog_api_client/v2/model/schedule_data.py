@@ -42,10 +42,10 @@ class ScheduleData(ModelNormal):
 
     def __init__(
         self_,
+        type: ScheduleDataType,
         attributes: Union[ScheduleDataAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         relationships: Union[ScheduleDataRelationships, UnsetType] = unset,
-        type: Union[ScheduleDataType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -61,7 +61,7 @@ class ScheduleData(ModelNormal):
         :type relationships: ScheduleDataRelationships, optional
 
         :param type: Schedules resource type.
-        :type type: ScheduleDataType, optional
+        :type type: ScheduleDataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
@@ -69,6 +69,6 @@ class ScheduleData(ModelNormal):
             kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.type = type

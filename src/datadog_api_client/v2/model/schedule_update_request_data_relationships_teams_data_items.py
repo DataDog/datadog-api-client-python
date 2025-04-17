@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -36,23 +34,17 @@ class ScheduleUpdateRequestDataRelationshipsTeamsDataItems(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        id: Union[str, UnsetType] = unset,
-        type: Union[ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, id: str, type: ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType, **kwargs):
         """
         Links the schedule to a team within an update request, identified by ``id`` and ``type``.
 
         :param id: The unique team identifier.
-        :type id: str, optional
+        :type id: str
 
         :param type: Teams resource type.
-        :type type: ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType, optional
+        :type type: ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType
         """
-        if id is not unset:
-            kwargs["id"] = id
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.id = id
+        self_.type = type

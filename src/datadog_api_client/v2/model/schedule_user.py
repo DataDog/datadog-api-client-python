@@ -38,9 +38,9 @@ class ScheduleUser(ModelNormal):
 
     def __init__(
         self_,
+        type: ScheduleUserType,
         attributes: Union[ScheduleUserAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[ScheduleUserType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -53,12 +53,12 @@ class ScheduleUser(ModelNormal):
         :type id: str, optional
 
         :param type: Users resource type.
-        :type type: ScheduleUserType, optional
+        :type type: ScheduleUserType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
         if id is not unset:
             kwargs["id"] = id
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.type = type

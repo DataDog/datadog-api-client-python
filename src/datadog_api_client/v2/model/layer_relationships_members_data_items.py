@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -36,24 +34,18 @@ class LayerRelationshipsMembersDataItems(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        id: Union[str, UnsetType] = unset,
-        type: Union[LayerRelationshipsMembersDataItemsType, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, id: str, type: LayerRelationshipsMembersDataItemsType, **kwargs):
         """
         Represents a single member object in a layer's ``members`` array, referencing
         a unique Datadog user ID.
 
         :param id: The unique user ID of the layer member.
-        :type id: str, optional
+        :type id: str
 
         :param type: Members resource type.
-        :type type: LayerRelationshipsMembersDataItemsType, optional
+        :type type: LayerRelationshipsMembersDataItemsType
         """
-        if id is not unset:
-            kwargs["id"] = id
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.id = id
+        self_.type = type
