@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -32,13 +30,13 @@ class ScheduleMemberRelationshipsUser(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[ScheduleMemberRelationshipsUserData, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: ScheduleMemberRelationshipsUserData, **kwargs):
         """
         Wraps the user data reference for a schedule member.
 
         :param data: Points to the user data associated with this schedule member, including an ID and type.
-        :type data: ScheduleMemberRelationshipsUserData, optional
+        :type data: ScheduleMemberRelationshipsUserData
         """
-        if data is not unset:
-            kwargs["data"] = data
         super().__init__(kwargs)
+
+        self_.data = data

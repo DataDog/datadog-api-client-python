@@ -42,10 +42,10 @@ class Layer(ModelNormal):
 
     def __init__(
         self_,
+        type: LayerType,
         attributes: Union[LayerAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         relationships: Union[LayerRelationships, UnsetType] = unset,
-        type: Union[LayerType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -61,7 +61,7 @@ class Layer(ModelNormal):
         :type relationships: LayerRelationships, optional
 
         :param type: Layers resource type.
-        :type type: LayerType, optional
+        :type type: LayerType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
@@ -69,6 +69,6 @@ class Layer(ModelNormal):
             kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.type = type

@@ -42,10 +42,10 @@ class TeamReference(ModelNormal):
 
     def __init__(
         self_,
+        type: TeamReferenceType,
         attributes: Union[TeamReferenceAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         relationships: Union[TeamReferenceRelationships, UnsetType] = unset,
-        type: Union[TeamReferenceType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -61,7 +61,7 @@ class TeamReference(ModelNormal):
         :type relationships: TeamReferenceRelationships, optional
 
         :param type: Teams resource type.
-        :type type: TeamReferenceType, optional
+        :type type: TeamReferenceType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
@@ -69,6 +69,6 @@ class TeamReference(ModelNormal):
             kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.type = type

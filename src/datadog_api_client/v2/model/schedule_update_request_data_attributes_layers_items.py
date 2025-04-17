@@ -63,14 +63,14 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
 
     def __init__(
         self_,
-        effective_date: Union[datetime, UnsetType] = unset,
+        effective_date: datetime,
+        interval: ScheduleUpdateRequestDataAttributesLayersItemsInterval,
+        members: List[ScheduleUpdateRequestDataAttributesLayersItemsMembersItems],
+        name: str,
+        rotation_start: datetime,
         end_date: Union[datetime, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        interval: Union[ScheduleUpdateRequestDataAttributesLayersItemsInterval, UnsetType] = unset,
-        members: Union[List[ScheduleUpdateRequestDataAttributesLayersItemsMembersItems], UnsetType] = unset,
-        name: Union[str, UnsetType] = unset,
         restrictions: Union[List[ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems], UnsetType] = unset,
-        rotation_start: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -78,7 +78,7 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         and optional restrictions.
 
         :param effective_date: When this updated layer takes effect (ISO 8601 format).
-        :type effective_date: datetime, optional
+        :type effective_date: datetime
 
         :param end_date: When this updated layer should stop being active (ISO 8601 format).
         :type end_date: datetime, optional
@@ -87,34 +87,30 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         :type id: str, optional
 
         :param interval: Specifies how the rotation repeats: number of days, plus optional seconds, up to the given maximums.
-        :type interval: ScheduleUpdateRequestDataAttributesLayersItemsInterval, optional
+        :type interval: ScheduleUpdateRequestDataAttributesLayersItemsInterval
 
         :param members: The members assigned to this layer.
-        :type members: [ScheduleUpdateRequestDataAttributesLayersItemsMembersItems], optional
+        :type members: [ScheduleUpdateRequestDataAttributesLayersItemsMembersItems]
 
         :param name: The name for this layer (for example, "Secondary Coverage").
-        :type name: str, optional
+        :type name: str
 
         :param restrictions: Any time restrictions that define when this layer is active.
         :type restrictions: [ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems], optional
 
         :param rotation_start: The date/time at which the rotation begins (ISO 8601 format).
-        :type rotation_start: datetime, optional
+        :type rotation_start: datetime
         """
-        if effective_date is not unset:
-            kwargs["effective_date"] = effective_date
         if end_date is not unset:
             kwargs["end_date"] = end_date
         if id is not unset:
             kwargs["id"] = id
-        if interval is not unset:
-            kwargs["interval"] = interval
-        if members is not unset:
-            kwargs["members"] = members
-        if name is not unset:
-            kwargs["name"] = name
         if restrictions is not unset:
             kwargs["restrictions"] = restrictions
-        if rotation_start is not unset:
-            kwargs["rotation_start"] = rotation_start
         super().__init__(kwargs)
+
+        self_.effective_date = effective_date
+        self_.interval = interval
+        self_.members = members
+        self_.name = name
+        self_.rotation_start = rotation_start

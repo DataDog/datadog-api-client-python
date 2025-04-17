@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -36,23 +34,17 @@ class TeamReferenceRelationshipsOncallUsersDataItems(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        id: Union[str, UnsetType] = unset,
-        type: Union[TeamReferenceRelationshipsOncallUsersDataItemsType, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, id: str, type: TeamReferenceRelationshipsOncallUsersDataItemsType, **kwargs):
         """
         References a user who is on-call within this team, identified by ``id`` and ``type``.
 
         :param id: The unique identifier of the user.
-        :type id: str, optional
+        :type id: str
 
         :param type: Users resource type.
-        :type type: TeamReferenceRelationshipsOncallUsersDataItemsType, optional
+        :type type: TeamReferenceRelationshipsOncallUsersDataItemsType
         """
-        if id is not unset:
-            kwargs["id"] = id
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.id = id
+        self_.type = type
