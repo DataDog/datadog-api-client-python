@@ -46,7 +46,6 @@ import re
 import time
 import warnings
 from datetime import datetime
-from dateutil.tz import UTC
 
 import pytest
 from dateutil.relativedelta import relativedelta
@@ -162,7 +161,7 @@ def unique(request, freezed_time):
     return f"{prefix}-{int(freezed_time.timestamp())}"
 
 
-def relative_time(freezed_time, iso_func):
+def relative_time(freezed_time, is_iso, feature=None):
     time_re = re.compile(r"now( *([+-]) *(\d+)([smhdMy]))?")
 
     def func(arg):
@@ -185,8 +184,13 @@ def relative_time(freezed_time, iso_func):
                     ret += relativedelta(months=num)
                 elif unit == "y":
                     ret += relativedelta(years=num)
-            if iso_func:
-                return iso_func(ret)
+            if is_iso:
+                # On-Call feature is a special case, we need to return a string in the format 2025-04-17T12:00:00.0000Z
+                if feature and feature.name == "On-Call":
+                    return "{}Z".format(ret.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
+                # NOTE this is not a full ISO 8601 format, but it's enough for our needs
+                # return ret.strftime('%Y-%m-%dT%H:%M:%S') + ret.strftime('.%f')[:4] + 'Z'
+                return ret.replace(tzinfo=None)
 
             return int(ret.timestamp())
         return ""
@@ -200,22 +204,12 @@ def generate_uuid(freezed_time):
 
 
 @pytest.fixture
-def context(vcr, unique, freezed_time):
+def context(vcr, unique, freezed_time, feature):
     """
     Return a mapping with all defined fixtures, all objects created by `given` steps,
     and the undo operations to perform after a test scenario.
     """
     unique_hash = hashlib.sha256(unique.encode("utf-8")).hexdigest()[:16]
-
-    # On-Call cassettes use ISO 8601 with Z timezone indicator
-    is_on_call = any(["api/v2/on-call" in req.path for req in vcr.requests])
-    is_iso_with_timezone_indicator = is_on_call
-    if is_iso_with_timezone_indicator:
-        iso_func = lambda x: "{}Z".format(x.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3])
-    else:
-        # return datetime object and not string
-        # NOTE this is not a full ISO 8601 format, but it's enough for our needs
-        iso_func = lambda x: x.replace(tzinfo=None)
 
     ctx = {
         "undo_operations": [],
@@ -226,12 +220,17 @@ def context(vcr, unique, freezed_time):
         "unique_lower_alnum": PATTERN_ALPHANUM.sub("", unique).lower(),
         "unique_upper_alnum": PATTERN_ALPHANUM.sub("", unique).upper(),
         "unique_hash": unique_hash,
-        "timestamp": relative_time(freezed_time, None),
-        "timeISO": relative_time(freezed_time, iso_func),
+        "timestamp": relative_time(freezed_time, False, feature),
+        "timeISO": relative_time(freezed_time, True, feature),
         "uuid": generate_uuid(freezed_time),
     }
 
     yield ctx
+
+
+@pytest.fixture
+def feature(request):
+    return request.node.__scenario_report__.scenario.feature
 
 
 @pytest.fixture(scope="session")
@@ -332,7 +331,7 @@ def pytest_recording_configure(config, vcr):
         if is_text_json(r1.headers) and is_text_json(r2.headers):
             assert transformer(read_body(r1)) == transformer(read_body(r2))
         else:
-            return matchers.body(r1, r2)
+            matchers.body(r1, r2)
 
     vcr.matchers["body"] = body
 
