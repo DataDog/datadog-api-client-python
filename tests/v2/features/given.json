@@ -531,13 +531,25 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true,\n      \"product_tags\": [\"security:attack\", \"technique:T1059\"],\n      \"policy_id\": \"{{ policy.data.id }}\"\n     }\n  }\n}"
       }
     ],
     "step": "there is a valid \"agent_rule_rc\" in the system",
     "key": "agent_rule",
     "tag": "CSM Threats",
     "operationId": "CreateCSMThreatsAgentRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"policy\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My agent policy\",\n      \"hostTags\": [\"env:staging\"],\n      \"enabled\": true\n     }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"policy_rc\" in the system",
+    "key": "policy",
+    "tag": "CSM Threats",
+    "operationId": "CreateCSMThreatsAgentPolicy"
   },
   {
     "parameters": [

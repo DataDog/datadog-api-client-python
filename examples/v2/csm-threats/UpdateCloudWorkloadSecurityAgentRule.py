@@ -22,12 +22,11 @@ AGENT_RULE_DATA_ID = environ["AGENT_RULE_DATA_ID"]
 body = CloudWorkloadSecurityAgentRuleUpdateRequest(
     data=CloudWorkloadSecurityAgentRuleUpdateData(
         attributes=CloudWorkloadSecurityAgentRuleUpdateAttributes(
-            description="Test Agent rule",
-            enabled=True,
+            description="Updated Agent rule",
             expression='exec.file.name == "sh"',
         ),
-        type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
         id=AGENT_RULE_DATA_ID,
+        type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
     ),
 )
 
