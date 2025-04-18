@@ -604,24 +604,21 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's version history returns "Bad Request" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's version history returns "Not Found" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get a rule's version history returns "OK" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
@@ -737,8 +734,7 @@ Feature: Security Monitoring
 
   @skip-go @skip-java @skip-ruby @team:DataDog/k9-cloud-security-platform
   Scenario: Get rule version history returns "OK" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And there is a valid "security_rule" in the system
     And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
