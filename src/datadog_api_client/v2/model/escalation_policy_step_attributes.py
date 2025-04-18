@@ -45,7 +45,7 @@ class EscalationPolicyStepAttributes(ModelNormal):
         """
         Defines attributes for an escalation policy step, such as assignment strategy and escalation timeout.
 
-        :param assignment: Specifies how this escalation step will assign targets (example ``default`` or ``round-robin`` ).
+        :param assignment: Specifies how this escalation step will assign targets (example ``default`` ).
         :type assignment: EscalationPolicyStepAttributesAssignment, optional
 
         :param escalate_after_seconds: Specifies how many seconds to wait before escalating to the next step.

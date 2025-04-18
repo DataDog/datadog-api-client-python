@@ -32,8 +32,8 @@ class EscalationPolicyDataAttributes(ModelNormal):
 
     def __init__(
         self_,
-        name: str,
         description: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         resolve_page_on_policy_end: Union[bool, UnsetType] = unset,
         retries: Union[int, UnsetType] = unset,
         **kwargs,
@@ -45,7 +45,7 @@ class EscalationPolicyDataAttributes(ModelNormal):
         :type description: str, optional
 
         :param name: Specifies the name of the escalation policy.
-        :type name: str
+        :type name: str, optional
 
         :param resolve_page_on_policy_end: Indicates whether the page is automatically resolved when the policy ends.
         :type resolve_page_on_policy_end: bool, optional
@@ -55,10 +55,10 @@ class EscalationPolicyDataAttributes(ModelNormal):
         """
         if description is not unset:
             kwargs["description"] = description
+        if name is not unset:
+            kwargs["name"] = name
         if resolve_page_on_policy_end is not unset:
             kwargs["resolve_page_on_policy_end"] = resolve_page_on_policy_end
         if retries is not unset:
             kwargs["retries"] = retries
         super().__init__(kwargs)
-
-        self_.name = name
