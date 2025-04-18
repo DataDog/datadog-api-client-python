@@ -1,5 +1,5 @@
 """
-Create on call escalation policy returns "Created" response
+Create on-call escalation policy returns "Created" response
 """
 
 from os import environ
@@ -65,16 +65,6 @@ body = EscalationPolicyCreateRequest(
                             id=SCHEDULE_DATA_ID,
                             type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.SCHEDULES,
                         ),
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
-                            id=DD_TEAM_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.TEAMS,
-                        ),
-                    ],
-                ),
-                EscalationPolicyCreateRequestDataAttributesStepsItems(
-                    assignment=EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment.ROUND_ROBIN,
-                    escalate_after_seconds=3600,
-                    targets=[
                         EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
                             id=DD_TEAM_DATA_ID,
                             type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.TEAMS,

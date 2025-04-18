@@ -54,7 +54,7 @@ class EscalationPolicyCreateRequestDataAttributesStepsItems(ModelNormal):
         """
         Defines a single escalation step within an escalation policy creation request. Contains assignment strategy, escalation timeout, and a list of targets.
 
-        :param assignment: Specifies how this escalation step will assign targets (example ``default`` or ``round-robin`` ).
+        :param assignment: Specifies how this escalation step will assign targets (example ``default`` ).
         :type assignment: EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment, optional
 
         :param escalate_after_seconds: Defines how many seconds to wait before escalating to the next step.

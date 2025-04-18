@@ -250,7 +250,7 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Create on call escalation policy.
+        """Create on-call escalation policy.
 
         Create a new on-call escalation policy
 
@@ -294,7 +294,7 @@ class OnCallApi:
         self,
         policy_id: str,
     ) -> None:
-        """Delete on call escalation policy.
+        """Delete on-call escalation policy.
 
         Delete an on-call escalation policy
 
@@ -330,7 +330,7 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Get on call escalation policy.
+        """Get on-call escalation policy.
 
         Get an on-call escalation policy
 
@@ -379,7 +379,7 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Update on call escalation policy.
+        """Update on-call escalation policy.
 
         Update an on-call escalation policy
 

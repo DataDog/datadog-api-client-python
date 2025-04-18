@@ -14,18 +14,16 @@ from typing import ClassVar
 
 class EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment(ModelSimple):
     """
-    Specifies how this escalation step will assign targets (example `default` or `round-robin`).
+    Specifies how this escalation step will assign targets (example `default`).
 
-    :param value: Must be one of ["default", "round-robin"].
+    :param value: If omitted defaults to "default". Must be one of ["default"].
     :type value: str
     """
 
     allowed_values = {
         "default",
-        "round-robin",
     }
     DEFAULT: ClassVar["EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment"]
-    ROUND_ROBIN: ClassVar["EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment"]
 
     @cached_property
     def openapi_types(_):
@@ -36,7 +34,4 @@ class EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment(ModelSimpl
 
 EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment.DEFAULT = (
     EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment("default")
-)
-EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment.ROUND_ROBIN = (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment("round-robin")
 )

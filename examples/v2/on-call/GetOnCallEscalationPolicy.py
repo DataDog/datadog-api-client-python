@@ -1,5 +1,5 @@
 """
-Get on call escalation policy returns "OK" response
+Get on-call escalation policy returns "OK" response
 """
 
 from os import environ

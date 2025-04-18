@@ -42,10 +42,10 @@ class EscalationPolicyData(ModelNormal):
 
     def __init__(
         self_,
-        type: EscalationPolicyDataType,
         attributes: Union[EscalationPolicyDataAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         relationships: Union[EscalationPolicyDataRelationships, UnsetType] = unset,
+        type: Union[EscalationPolicyDataType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -61,7 +61,7 @@ class EscalationPolicyData(ModelNormal):
         :type relationships: EscalationPolicyDataRelationships, optional
 
         :param type: Indicates that the resource is of type ``policies``.
-        :type type: EscalationPolicyDataType
+        :type type: EscalationPolicyDataType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
@@ -69,6 +69,6 @@ class EscalationPolicyData(ModelNormal):
             kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_.type = type
