@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines
   response:
     body:
-      string: '{"data":{"id":"c2ee25ae-1140-11f0-9fe7-da7ad0900002","type":"pipelines","attributes":{"name":"Main
+      string: '{"data":{"id":"d9908500-1eaf-11f0-9498-da7ad0900002","type":"pipelines","attributes":{"name":"Main
         Observability Pipeline","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["filter-processor"],"type":"datadog_logs"}],"processors":[{"id":"filter-processor","include":"service:my-service","inputs":["datadog-agent-source"],"type":"filter"}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
 
         '
@@ -30,10 +30,10 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/c2ee25ae-1140-11f0-9fe7-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/d9908500-1eaf-11f0-9498-da7ad0900002
   response:
     body:
-      string: '{"data":{"id":"c2ee25ae-1140-11f0-9fe7-da7ad0900002","type":"pipelines","attributes":{"name":"Updated
+      string: '{"data":{"id":"d9908500-1eaf-11f0-9498-da7ad0900002","type":"pipelines","attributes":{"name":"Updated
         Pipeline Name","config":{"destinations":[{"id":"updated-datadog-logs-destination-id","inputs":["filter-processor"],"type":"datadog_logs"}],"processors":[{"id":"filter-processor","include":"service:my-service","inputs":["datadog-agent-source"],"type":"filter"}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
 
         '
@@ -49,7 +49,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/c2ee25ae-1140-11f0-9fe7-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/d9908500-1eaf-11f0-9498-da7ad0900002
   response:
     body:
       string: ''

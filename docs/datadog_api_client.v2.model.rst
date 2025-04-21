@@ -7893,6 +7893,20 @@ datadog\_api\_client.v2.model.list\_historical\_jobs\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_pipelines\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_pipelines_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_pipelines\_response\_meta module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_pipelines_response_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_powerpacks\_response module
 ---------------------------------------------------------------
 
@@ -15884,6 +15898,27 @@ datadog\_api\_client.v2.model.users\_type module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.users_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.validation\_error module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.validation_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.validation\_error\_meta module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.validation_error_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.validation\_error\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.validation_error_response
    :members:
    :show-inheritance:
 

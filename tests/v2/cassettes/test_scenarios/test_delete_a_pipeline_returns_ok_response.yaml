@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines
   response:
     body:
-      string: '{"data":{"id":"bf2c23da-1140-11f0-9a95-da7ad0900002","type":"pipelines","attributes":{"name":"Main
+      string: '{"data":{"id":"d29145aa-1eaf-11f0-9494-da7ad0900002","type":"pipelines","attributes":{"name":"Main
         Observability Pipeline","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["filter-processor"],"type":"datadog_logs"}],"processors":[{"id":"filter-processor","include":"service:my-service","inputs":["datadog-agent-source"],"type":"filter"}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
 
         '
@@ -27,7 +27,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/bf2c23da-1140-11f0-9a95-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/d29145aa-1eaf-11f0-9494-da7ad0900002
   response:
     body:
       string: ''
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/bf2c23da-1140-11f0-9a95-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/d29145aa-1eaf-11f0-9494-da7ad0900002
   response:
     body:
       string: '{"errors":[{"title":"Resource Not Found"}]}

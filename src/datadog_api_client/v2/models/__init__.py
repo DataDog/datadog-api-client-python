@@ -1463,6 +1463,8 @@ from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.list_historical_jobs_response import ListHistoricalJobsResponse
+from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
+from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
@@ -2960,6 +2962,9 @@ from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.users_relationship import UsersRelationship
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
+from datadog_api_client.v2.model.validation_error import ValidationError
+from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMeta
+from datadog_api_client.v2.model.validation_error_response import ValidationErrorResponse
 from datadog_api_client.v2.model.vulnerabilities_type import VulnerabilitiesType
 from datadog_api_client.v2.model.vulnerability import Vulnerability
 from datadog_api_client.v2.model.vulnerability_attributes import VulnerabilityAttributes
@@ -4134,6 +4139,8 @@ __all__ = [
     "ListFindingsPage",
     "ListFindingsResponse",
     "ListHistoricalJobsResponse",
+    "ListPipelinesResponse",
+    "ListPipelinesResponseMeta",
     "ListPowerpacksResponse",
     "ListRulesResponse",
     "ListRulesResponseDataItem",
@@ -5281,6 +5288,9 @@ __all__ = [
     "UsersRelationship",
     "UsersResponse",
     "UsersType",
+    "ValidationError",
+    "ValidationErrorMeta",
+    "ValidationErrorResponse",
     "VulnerabilitiesType",
     "Vulnerability",
     "VulnerabilityAttributes",
