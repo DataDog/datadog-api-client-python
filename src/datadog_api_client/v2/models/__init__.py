@@ -1821,6 +1821,20 @@ from datadog_api_client.v2.model.observability_pipeline_add_fields_processor imp
 from datadog_api_client.v2.model.observability_pipeline_add_fields_processor_type import (
     ObservabilityPipelineAddFieldsProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
+    ObservabilityPipelineAmazonS3Destination,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_storage_class import (
+    ObservabilityPipelineAmazonS3DestinationStorageClass,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_type import (
+    ObservabilityPipelineAmazonS3DestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import ObservabilityPipelineAmazonS3Source
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source_type import (
+    ObservabilityPipelineAmazonS3SourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
 from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
     ObservabilityPipelineConfigDestinationItem,
@@ -1852,12 +1866,49 @@ from datadog_api_client.v2.model.observability_pipeline_filter_processor import 
 from datadog_api_client.v2.model.observability_pipeline_filter_processor_type import (
     ObservabilityPipelineFilterProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
+    ObservabilityPipelineGenerateMetricsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor_type import (
+    ObservabilityPipelineGenerateMetricsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric import ObservabilityPipelineGeneratedMetric
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_field import (
+    ObservabilityPipelineGeneratedMetricIncrementByField,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_field_strategy import (
+    ObservabilityPipelineGeneratedMetricIncrementByFieldStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_one import (
+    ObservabilityPipelineGeneratedMetricIncrementByOne,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_one_strategy import (
+    ObservabilityPipelineGeneratedMetricIncrementByOneStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_metric_type import (
+    ObservabilityPipelineGeneratedMetricMetricType,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination import (
+    ObservabilityPipelineGoogleCloudStorageDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_acl import (
+    ObservabilityPipelineGoogleCloudStorageDestinationAcl,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_storage_class import (
+    ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_type import (
+    ObservabilityPipelineGoogleCloudStorageDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option import (
     ObservabilityPipelineKafkaSourceLibrdkafkaOption,
 )
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl import ObservabilityPipelineKafkaSourceSasl
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import ObservabilityPipelineKafkaSourceType
+from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
+from datadog_api_client.v2.model.observability_pipeline_metric_value import ObservabilityPipelineMetricValue
 from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
     ObservabilityPipelineParseJSONProcessor,
 )
@@ -1894,6 +1945,23 @@ from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_
 )
 from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_type import (
     ObservabilityPipelineRenameFieldsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination import (
+    ObservabilityPipelineSplunkHecDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
+    ObservabilityPipelineSplunkHecDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_type import (
+    ObservabilityPipelineSplunkHecDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import ObservabilityPipelineSplunkHecSource
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type import (
+    ObservabilityPipelineSplunkHecSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source import ObservabilityPipelineSplunkTcpSource
+from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source_type import (
+    ObservabilityPipelineSplunkTcpSourceType,
 )
 from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
 from datadog_api_client.v2.model.okta_account import OktaAccount
@@ -4402,6 +4470,12 @@ __all__ = [
     "ObservabilityPipeline",
     "ObservabilityPipelineAddFieldsProcessor",
     "ObservabilityPipelineAddFieldsProcessorType",
+    "ObservabilityPipelineAmazonS3Destination",
+    "ObservabilityPipelineAmazonS3DestinationStorageClass",
+    "ObservabilityPipelineAmazonS3DestinationType",
+    "ObservabilityPipelineAmazonS3Source",
+    "ObservabilityPipelineAmazonS3SourceType",
+    "ObservabilityPipelineAwsAuth",
     "ObservabilityPipelineConfig",
     "ObservabilityPipelineConfigDestinationItem",
     "ObservabilityPipelineConfigProcessorItem",
@@ -4417,10 +4491,25 @@ __all__ = [
     "ObservabilityPipelineFieldValue",
     "ObservabilityPipelineFilterProcessor",
     "ObservabilityPipelineFilterProcessorType",
+    "ObservabilityPipelineGcpAuth",
+    "ObservabilityPipelineGenerateMetricsProcessor",
+    "ObservabilityPipelineGenerateMetricsProcessorType",
+    "ObservabilityPipelineGeneratedMetric",
+    "ObservabilityPipelineGeneratedMetricIncrementByField",
+    "ObservabilityPipelineGeneratedMetricIncrementByFieldStrategy",
+    "ObservabilityPipelineGeneratedMetricIncrementByOne",
+    "ObservabilityPipelineGeneratedMetricIncrementByOneStrategy",
+    "ObservabilityPipelineGeneratedMetricMetricType",
+    "ObservabilityPipelineGoogleCloudStorageDestination",
+    "ObservabilityPipelineGoogleCloudStorageDestinationAcl",
+    "ObservabilityPipelineGoogleCloudStorageDestinationStorageClass",
+    "ObservabilityPipelineGoogleCloudStorageDestinationType",
     "ObservabilityPipelineKafkaSource",
     "ObservabilityPipelineKafkaSourceLibrdkafkaOption",
     "ObservabilityPipelineKafkaSourceSasl",
     "ObservabilityPipelineKafkaSourceType",
+    "ObservabilityPipelineMetadataEntry",
+    "ObservabilityPipelineMetricValue",
     "ObservabilityPipelineParseJSONProcessor",
     "ObservabilityPipelineParseJSONProcessorType",
     "ObservabilityPipelinePipelineKafkaSourceSaslMechanism",
@@ -4434,6 +4523,13 @@ __all__ = [
     "ObservabilityPipelineRenameFieldsProcessor",
     "ObservabilityPipelineRenameFieldsProcessorField",
     "ObservabilityPipelineRenameFieldsProcessorType",
+    "ObservabilityPipelineSplunkHecDestination",
+    "ObservabilityPipelineSplunkHecDestinationEncoding",
+    "ObservabilityPipelineSplunkHecDestinationType",
+    "ObservabilityPipelineSplunkHecSource",
+    "ObservabilityPipelineSplunkHecSourceType",
+    "ObservabilityPipelineSplunkTcpSource",
+    "ObservabilityPipelineSplunkTcpSourceType",
     "ObservabilityPipelineTls",
     "OktaAccount",
     "OktaAccountAttributes",

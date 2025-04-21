@@ -35,6 +35,14 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param type: The source type. The value should always be `kafka`.
         :type type: ObservabilityPipelineKafkaSourceType
+
+        :param auth: AWS authentication credentials used for accessing AWS services such as S3.
+            If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
+
+        :type auth: ObservabilityPipelineAwsAuth, optional
+
+        :param region: AWS region where the S3 bucket resides.
+        :type region: str
         """
         super().__init__(kwargs)
 
@@ -51,10 +59,22 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
             ObservabilityPipelineDatadogAgentSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source import (
+            ObservabilityPipelineSplunkTcpSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import (
+            ObservabilityPipelineSplunkHecSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import (
+            ObservabilityPipelineAmazonS3Source,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineSplunkTcpSource,
+                ObservabilityPipelineSplunkHecSource,
+                ObservabilityPipelineAmazonS3Source,
             ],
         }

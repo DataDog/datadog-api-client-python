@@ -50,6 +50,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
+
+        :param metrics: Configuration for generating individual metrics.
+        :type metrics: [ObservabilityPipelineGeneratedMetric]
         """
         super().__init__(kwargs)
 
@@ -80,6 +83,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
             ObservabilityPipelineRenameFieldsProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
+            ObservabilityPipelineGenerateMetricsProcessor,
+        )
 
         return {
             "oneOf": [
@@ -89,5 +95,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineGenerateMetricsProcessor,
             ],
         }

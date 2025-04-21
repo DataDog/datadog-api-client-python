@@ -23,6 +23,46 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param type: The destination type. The value should always be `datadog_logs`.
         :type type: ObservabilityPipelineDatadogLogsDestinationType
+
+        :param auth: AWS authentication credentials used for accessing AWS services such as S3.
+            If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
+
+        :type auth: ObservabilityPipelineAwsAuth, optional
+
+        :param bucket: S3 bucket name.
+        :type bucket: str
+
+        :param key_prefix: Optional prefix for object keys.
+        :type key_prefix: str, none_type, optional
+
+        :param region: AWS region of the S3 bucket.
+        :type region: str
+
+        :param storage_class: S3 storage class.
+        :type storage_class: ObservabilityPipelineAmazonS3DestinationStorageClass
+
+        :param tls: Configuration for enabling TLS encryption.
+        :type tls: ObservabilityPipelineTls, optional
+
+        :param acl: Access control list setting for objects written to the bucket.
+        :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl
+
+        :param metadata: Custom metadata key-value pairs added to each object.
+        :type metadata: [ObservabilityPipelineMetadataEntry]
+
+        :param auto_extract_timestamp: If `true`, Splunk tries to extract timestamps from incoming log events.
+            If `false`, Splunk assigns the time the event was received.
+
+        :type auto_extract_timestamp: bool, optional
+
+        :param encoding: Encoding format for log events.
+        :type encoding: ObservabilityPipelineSplunkHecDestinationEncoding, optional
+
+        :param index: Optional name of the Splunk index where logs are written.
+        :type index: str, optional
+
+        :param sourcetype: The Splunk sourcetype to assign to log events.
+        :type sourcetype: str, optional
         """
         super().__init__(kwargs)
 
@@ -38,9 +78,21 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
             ObservabilityPipelineDatadogLogsDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
+            ObservabilityPipelineAmazonS3Destination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination import (
+            ObservabilityPipelineGoogleCloudStorageDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination import (
+            ObservabilityPipelineSplunkHecDestination,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineAmazonS3Destination,
+                ObservabilityPipelineGoogleCloudStorageDestination,
+                ObservabilityPipelineSplunkHecDestination,
             ],
         }

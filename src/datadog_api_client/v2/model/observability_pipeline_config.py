@@ -24,6 +24,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
         ObservabilityPipelineDatadogLogsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
+        ObservabilityPipelineAmazonS3Destination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination import (
+        ObservabilityPipelineGoogleCloudStorageDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination import (
+        ObservabilityPipelineSplunkHecDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
     from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
         ObservabilityPipelineParseJSONProcessor,
@@ -38,10 +47,20 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
         ObservabilityPipelineRenameFieldsProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
+        ObservabilityPipelineGenerateMetricsProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
     )
+    from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source import (
+        ObservabilityPipelineSplunkTcpSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import (
+        ObservabilityPipelineSplunkHecSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import ObservabilityPipelineAmazonS3Source
 
 
 class ObservabilityPipelineConfig(ModelNormal):
@@ -72,7 +91,13 @@ class ObservabilityPipelineConfig(ModelNormal):
     def __init__(
         self_,
         destinations: List[
-            Union[ObservabilityPipelineConfigDestinationItem, ObservabilityPipelineDatadogLogsDestination]
+            Union[
+                ObservabilityPipelineConfigDestinationItem,
+                ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineAmazonS3Destination,
+                ObservabilityPipelineGoogleCloudStorageDestination,
+                ObservabilityPipelineSplunkHecDestination,
+            ]
         ],
         processors: List[
             Union[
@@ -83,6 +108,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineGenerateMetricsProcessor,
             ]
         ],
         sources: List[
@@ -90,6 +116,9 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineConfigSourceItem,
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineSplunkTcpSource,
+                ObservabilityPipelineSplunkHecSource,
+                ObservabilityPipelineAmazonS3Source,
             ]
         ],
         **kwargs,
