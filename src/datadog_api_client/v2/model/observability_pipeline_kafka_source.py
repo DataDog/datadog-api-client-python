@@ -86,7 +86,7 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
         :type sasl: ObservabilityPipelineKafkaSourceSasl, optional
 
-        :param tls: Configuration for enabling TLS encryption.
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
 
         :param topics: A list of Kafka topic names to subscribe to. The source ingests messages from each topic specified.

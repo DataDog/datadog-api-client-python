@@ -39,7 +39,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param limit: The maximum amount of data or number of events allowed before the quota is enforced. Can be specified in bytes or events.
         :type limit: ObservabilityPipelineQuotaProcessorLimit
 
-        :param name: Name for identifying the processor.
+        :param name: Name of the quota.
         :type name: str
 
         :param overrides: A list of alternate quota rules that apply to specific sets of events, identified by matching field values. Each override can define a custom limit.
@@ -50,6 +50,18 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
+
+        :param percentage: The percentage of logs to sample.
+        :type percentage: float, optional
+
+        :param rate: Number of events to sample (1 in N).
+        :type rate: int, optional
+
+        :param disable_library_rules: If set to `true`, disables the default Grok rules provided by Datadog.
+        :type disable_library_rules: bool, optional
+
+        :param rules: The list of Grok parsing rules. If multiple matching rules are provided, they are evaluated in order. The first successful match is applied.
+        :type rules: [ObservabilityPipelineParseGrokProcessorRule]
         """
         super().__init__(kwargs)
 
@@ -80,6 +92,12 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
             ObservabilityPipelineRenameFieldsProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_sample_processor import (
+            ObservabilityPipelineSampleProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
+            ObservabilityPipelineParseGrokProcessor,
+        )
 
         return {
             "oneOf": [
@@ -89,5 +107,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineSampleProcessor,
+                ObservabilityPipelineParseGrokProcessor,
             ],
         }

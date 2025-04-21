@@ -1847,10 +1847,20 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination
 from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
     ObservabilityPipelineDatadogLogsDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
 from datadog_api_client.v2.model.observability_pipeline_field_value import ObservabilityPipelineFieldValue
 from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
 from datadog_api_client.v2.model.observability_pipeline_filter_processor_type import (
     ObservabilityPipelineFilterProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_fluent_source import ObservabilityPipelineFluentSource
+from datadog_api_client.v2.model.observability_pipeline_fluent_source_type import ObservabilityPipelineFluentSourceType
+from datadog_api_client.v2.model.observability_pipeline_http_server_source import ObservabilityPipelineHttpServerSource
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_auth_strategy import (
+    ObservabilityPipelineHttpServerSourceAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
+    ObservabilityPipelineHttpServerSourceType,
 )
 from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option import (
@@ -1858,6 +1868,21 @@ from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_
 )
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl import ObservabilityPipelineKafkaSourceSasl
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import ObservabilityPipelineKafkaSourceType
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
+    ObservabilityPipelineParseGrokProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule import (
+    ObservabilityPipelineParseGrokProcessorRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_match_rule import (
+    ObservabilityPipelineParseGrokProcessorRuleMatchRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_support_rule import (
+    ObservabilityPipelineParseGrokProcessorRuleSupportRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_type import (
+    ObservabilityPipelineParseGrokProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
     ObservabilityPipelineParseJSONProcessor,
 )
@@ -1894,6 +1919,10 @@ from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_
 )
 from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_type import (
     ObservabilityPipelineRenameFieldsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sample_processor import ObservabilityPipelineSampleProcessor
+from datadog_api_client.v2.model.observability_pipeline_sample_processor_type import (
+    ObservabilityPipelineSampleProcessorType,
 )
 from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
 from datadog_api_client.v2.model.okta_account import OktaAccount
@@ -4414,13 +4443,24 @@ __all__ = [
     "ObservabilityPipelineDatadogAgentSourceType",
     "ObservabilityPipelineDatadogLogsDestination",
     "ObservabilityPipelineDatadogLogsDestinationType",
+    "ObservabilityPipelineDecoding",
     "ObservabilityPipelineFieldValue",
     "ObservabilityPipelineFilterProcessor",
     "ObservabilityPipelineFilterProcessorType",
+    "ObservabilityPipelineFluentSource",
+    "ObservabilityPipelineFluentSourceType",
+    "ObservabilityPipelineHttpServerSource",
+    "ObservabilityPipelineHttpServerSourceAuthStrategy",
+    "ObservabilityPipelineHttpServerSourceType",
     "ObservabilityPipelineKafkaSource",
     "ObservabilityPipelineKafkaSourceLibrdkafkaOption",
     "ObservabilityPipelineKafkaSourceSasl",
     "ObservabilityPipelineKafkaSourceType",
+    "ObservabilityPipelineParseGrokProcessor",
+    "ObservabilityPipelineParseGrokProcessorRule",
+    "ObservabilityPipelineParseGrokProcessorRuleMatchRule",
+    "ObservabilityPipelineParseGrokProcessorRuleSupportRule",
+    "ObservabilityPipelineParseGrokProcessorType",
     "ObservabilityPipelineParseJSONProcessor",
     "ObservabilityPipelineParseJSONProcessorType",
     "ObservabilityPipelinePipelineKafkaSourceSaslMechanism",
@@ -4434,6 +4474,8 @@ __all__ = [
     "ObservabilityPipelineRenameFieldsProcessor",
     "ObservabilityPipelineRenameFieldsProcessorField",
     "ObservabilityPipelineRenameFieldsProcessorType",
+    "ObservabilityPipelineSampleProcessor",
+    "ObservabilityPipelineSampleProcessorType",
     "ObservabilityPipelineTls",
     "OktaAccount",
     "OktaAccountAttributes",

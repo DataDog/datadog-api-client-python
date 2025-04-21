@@ -99,7 +99,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         :param limit: The maximum amount of data or number of events allowed before the quota is enforced. Can be specified in bytes or events.
         :type limit: ObservabilityPipelineQuotaProcessorLimit
 
-        :param name: Name for identifying the processor.
+        :param name: Name of the quota.
         :type name: str
 
         :param overrides: A list of alternate quota rules that apply to specific sets of events, identified by matching field values. Each override can define a custom limit.

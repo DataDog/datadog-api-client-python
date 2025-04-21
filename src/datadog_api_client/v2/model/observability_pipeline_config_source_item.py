@@ -27,7 +27,7 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
         :type sasl: ObservabilityPipelineKafkaSourceSasl, optional
 
-        :param tls: Configuration for enabling TLS encryption.
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
 
         :param topics: A list of Kafka topic names to subscribe to. The source ingests messages from each topic specified.
@@ -35,6 +35,12 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param type: The source type. The value should always be `kafka`.
         :type type: ObservabilityPipelineKafkaSourceType
+
+        :param auth_strategy: HTTP authentication method.
+        :type auth_strategy: ObservabilityPipelineHttpServerSourceAuthStrategy
+
+        :param decoding: The decoding format used to interpret incoming logs.
+        :type decoding: ObservabilityPipelineDecoding
         """
         super().__init__(kwargs)
 
@@ -51,10 +57,16 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
             ObservabilityPipelineDatadogAgentSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_fluent_source import ObservabilityPipelineFluentSource
+        from datadog_api_client.v2.model.observability_pipeline_http_server_source import (
+            ObservabilityPipelineHttpServerSource,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineFluentSource,
+                ObservabilityPipelineHttpServerSource,
             ],
         }

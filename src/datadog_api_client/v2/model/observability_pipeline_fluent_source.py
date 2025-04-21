@@ -15,23 +15,23 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
-    from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source_type import (
-        ObservabilityPipelineDatadogAgentSourceType,
+    from datadog_api_client.v2.model.observability_pipeline_fluent_source_type import (
+        ObservabilityPipelineFluentSourceType,
     )
 
 
-class ObservabilityPipelineDatadogAgentSource(ModelNormal):
+class ObservabilityPipelineFluentSource(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
-        from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source_type import (
-            ObservabilityPipelineDatadogAgentSourceType,
+        from datadog_api_client.v2.model.observability_pipeline_fluent_source_type import (
+            ObservabilityPipelineFluentSourceType,
         )
 
         return {
             "id": (str,),
             "tls": (ObservabilityPipelineTls,),
-            "type": (ObservabilityPipelineDatadogAgentSourceType,),
+            "type": (ObservabilityPipelineFluentSourceType,),
         }
 
     attribute_map = {
@@ -43,21 +43,21 @@ class ObservabilityPipelineDatadogAgentSource(ModelNormal):
     def __init__(
         self_,
         id: str,
-        type: ObservabilityPipelineDatadogAgentSourceType,
+        type: ObservabilityPipelineFluentSourceType,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The ``datadog_agent`` source collects logs from the Datadog Agent.
+        The ``fluent`` source ingests logs from a Fluentd-compatible service.
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
+        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
 
-        :param type: The source type. The value should always be ``datadog_agent``.
-        :type type: ObservabilityPipelineDatadogAgentSourceType
+        :param type: The source type. The value should always be ``fluent``.
+        :type type: ObservabilityPipelineFluentSourceType
         """
         if tls is not unset:
             kwargs["tls"] = tls
