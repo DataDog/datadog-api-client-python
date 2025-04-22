@@ -33,7 +33,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-python @team:DataDog/bugle
+  @team:DataDog/bugle
   Scenario: Create on-call schedule returns "Created" response
     Given new "CreateOnCallSchedule" request
     And there is a valid "user" in the system
@@ -159,7 +159,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-python @team:DataDog/bugle
+  @team:DataDog/bugle
   Scenario: Update on-call schedule returns "OK" response
     Given new "UpdateOnCallSchedule" request
     And there is a valid "schedule" in the system
