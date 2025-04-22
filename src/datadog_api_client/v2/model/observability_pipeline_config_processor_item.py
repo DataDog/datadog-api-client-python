@@ -50,6 +50,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
+
+        :param rules: A list of rules for identifying and acting on sensitive data patterns.
+        :type rules: [ObservabilityPipelineSensitiveDataScannerProcessorRule]
         """
         super().__init__(kwargs)
 
@@ -80,6 +83,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
             ObservabilityPipelineRenameFieldsProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
+            ObservabilityPipelineSensitiveDataScannerProcessor,
+        )
 
         return {
             "oneOf": [
@@ -89,5 +95,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineSensitiveDataScannerProcessor,
             ],
         }

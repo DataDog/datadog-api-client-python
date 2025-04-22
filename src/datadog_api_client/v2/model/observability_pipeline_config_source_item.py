@@ -35,6 +35,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param type: The source type. The value should always be `kafka`.
         :type type: ObservabilityPipelineKafkaSourceType
+
+        :param mode: Protocol used by the syslog source to receive messages.
+        :type mode: ObservabilityPipelineSyslogSourceMode
         """
         super().__init__(kwargs)
 
@@ -51,10 +54,20 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
             ObservabilityPipelineDatadogAgentSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_sumo_logic_source import (
+            ObservabilityPipelineSumoLogicSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_rsyslog_source import ObservabilityPipelineRsyslogSource
+        from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source import (
+            ObservabilityPipelineSyslogNgSource,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineSumoLogicSource,
+                ObservabilityPipelineRsyslogSource,
+                ObservabilityPipelineSyslogNgSource,
             ],
         }

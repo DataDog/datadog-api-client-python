@@ -24,6 +24,20 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
         ObservabilityPipelineDatadogLogsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination import (
+        ObservabilityPipelineSumoLogicDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
+        ObservabilityPipelineElasticsearchDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination import (
+        ObservabilityPipelineRsyslogDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_syslog_ng_destination import (
+        ObservabilityPipelineSyslogNgDestination,
+    )
+    from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
+    from datadog_api_client.v2.model.microsoft_sentinel_destination import MicrosoftSentinelDestination
     from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
     from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
         ObservabilityPipelineParseJSONProcessor,
@@ -38,10 +52,18 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
         ObservabilityPipelineRenameFieldsProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
+        ObservabilityPipelineSensitiveDataScannerProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
     )
+    from datadog_api_client.v2.model.observability_pipeline_sumo_logic_source import (
+        ObservabilityPipelineSumoLogicSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_rsyslog_source import ObservabilityPipelineRsyslogSource
+    from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source import ObservabilityPipelineSyslogNgSource
 
 
 class ObservabilityPipelineConfig(ModelNormal):
@@ -72,7 +94,16 @@ class ObservabilityPipelineConfig(ModelNormal):
     def __init__(
         self_,
         destinations: List[
-            Union[ObservabilityPipelineConfigDestinationItem, ObservabilityPipelineDatadogLogsDestination]
+            Union[
+                ObservabilityPipelineConfigDestinationItem,
+                ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineSumoLogicDestination,
+                ObservabilityPipelineElasticsearchDestination,
+                ObservabilityPipelineRsyslogDestination,
+                ObservabilityPipelineSyslogNgDestination,
+                AzureStorageDestination,
+                MicrosoftSentinelDestination,
+            ]
         ],
         processors: List[
             Union[
@@ -83,6 +114,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineSensitiveDataScannerProcessor,
             ]
         ],
         sources: List[
@@ -90,6 +122,9 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineConfigSourceItem,
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineSumoLogicSource,
+                ObservabilityPipelineRsyslogSource,
+                ObservabilityPipelineSyslogNgSource,
             ]
         ],
         **kwargs,
