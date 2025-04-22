@@ -29,6 +29,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "cloud_run_revision_filters": ([str],),
             "host_filters": ([str],),
             "is_cspm_enabled": (bool,),
+            "is_per_project_quota_enabled": (bool,),
             "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
             "metric_namespace_configs": ([GCPMetricNamespaceConfig],),
@@ -42,6 +43,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "cloud_run_revision_filters": "cloud_run_revision_filters",
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
+        "is_per_project_quota_enabled": "is_per_project_quota_enabled",
         "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
         "metric_namespace_configs": "metric_namespace_configs",
@@ -56,6 +58,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         cloud_run_revision_filters: Union[List[str], UnsetType] = unset,
         host_filters: Union[List[str], UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
+        is_per_project_quota_enabled: Union[bool, UnsetType] = unset,
         is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
         metric_namespace_configs: Union[List[GCPMetricNamespaceConfig], UnsetType] = unset,
@@ -84,6 +87,9 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
         :type is_cspm_enabled: bool, optional
 
+        :param is_per_project_quota_enabled: When enabled, Datadog applies the ``X-Goog-User-Project`` header, attributing Google Cloud billing and quota usage to the project being monitored rather than the default service account project.
+        :type is_per_project_quota_enabled: bool, optional
+
         :param is_resource_change_collection_enabled: When enabled, Datadog scans for all resource change data in your Google Cloud environment.
         :type is_resource_change_collection_enabled: bool, optional
 
@@ -108,6 +114,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["host_filters"] = host_filters
         if is_cspm_enabled is not unset:
             kwargs["is_cspm_enabled"] = is_cspm_enabled
+        if is_per_project_quota_enabled is not unset:
+            kwargs["is_per_project_quota_enabled"] = is_per_project_quota_enabled
         if is_resource_change_collection_enabled is not unset:
             kwargs["is_resource_change_collection_enabled"] = is_resource_change_collection_enabled
         if is_security_command_center_enabled is not unset:
