@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"layers":[{"effective_date":"2025-04-06T06:00:47.659Z","end_date":"2025-04-26T06:00:47.659Z","interval":{"days":1},"members":[{"user":{"id":"890f29d4-0b7a-11f0-aeb2-760fcae4f596"}}],"name":"Layer
-      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2025-04-11T06:00:47.659Z"}],"name":"Test-Delete_on_call_schedule_returns_No_Content_response-1744783247","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
+    body: '{"data":{"attributes":{"layers":[{"effective_date":"2025-04-14T02:49:38.725Z","end_date":"2025-05-04T02:49:38.725Z","interval":{"days":1},"members":[{"user":{"id":"890f29d4-0b7a-11f0-aeb2-760fcae4f596"}}],"name":"Layer
+      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2025-04-19T02:49:38.725Z"}],"name":"Test-Delete_on_call_schedule_returns_No_Content_response-1745462978","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
     headers:
       accept:
       - application/json
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/on-call/schedules
   response:
     body:
-      string: '{"data":{"id":"53e24137-eb55-4931-8dff-dc52116265e8","type":"schedules","attributes":{"name":"Test-Delete_on_call_schedule_returns_No_Content_response-1744783247","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"f93cec35-cdab-496e-ab50-940698e3f8aa","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
+      string: '{"data":{"id":"f35f8c7d-faeb-47b6-bd93-0f5f6690f480","type":"schedules","attributes":{"name":"Test-Delete_on_call_schedule_returns_No_Content_response-1745462978","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"08b5e153-5fe7-422c-93b1-4a0c03fffeb1","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -24,7 +24,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/on-call/schedules/53e24137-eb55-4931-8dff-dc52116265e8
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/f35f8c7d-faeb-47b6-bd93-0f5f6690f480
   response:
     body:
       string: ''
@@ -38,10 +38,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/on-call/schedules/53e24137-eb55-4931-8dff-dc52116265e8
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/f35f8c7d-faeb-47b6-bd93-0f5f6690f480
   response:
     body:
-      string: '{"errors":[{"title":"Generic Error","detail":"schedule[53e24137-eb55-4931-8dff-dc52116265e8]
+      string: '{"errors":[{"title":"Generic Error","detail":"schedule[f35f8c7d-faeb-47b6-bd93-0f5f6690f480]
         not found"}]}'
     headers:
       content-type:
