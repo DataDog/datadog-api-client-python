@@ -50,6 +50,36 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
+
+        :param mappings: A list of mapping rules to convert events to the OCSF format.
+        :type mappings: [ObservabilityPipelineOcsfMapperProcessorMapping]
+
+        :param variables: A list of environment variable mappings to apply to log fields.
+        :type variables: [ObservabilityPipelineAddEnvVarsProcessorVariable]
+
+        :param mode: The deduplication mode to apply to the fields.
+        :type mode: ObservabilityPipelineDedupeProcessorMode
+
+        :param file: Defines a static enrichment table loaded from a CSV file.
+        :type file: ObservabilityPipelineEnrichmentTableFile, optional
+
+        :param geoip: Uses a GeoIP database to enrich logs based on an IP field.
+        :type geoip: ObservabilityPipelineEnrichmentTableGeoIp, optional
+
+        :param target: Path where enrichment results should be stored in the log.
+        :type target: str
+
+        :param group_by: A list of fields used to group log events for merging.
+        :type group_by: [str]
+
+        :param merge_strategies: List of merge strategies defining how values from grouped events should be combined.
+        :type merge_strategies: [ObservabilityPipelineReduceProcessorMergeStrategy]
+
+        :param threshold: The number of events to allow before throttling is applied.
+        :type threshold: int
+
+        :param window: The time window in seconds over which the threshold applies.
+        :type window: float
         """
         super().__init__(kwargs)
 
@@ -80,6 +110,24 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
             ObservabilityPipelineRenameFieldsProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
+            ObservabilityPipelineOcsfMapperProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
+            ObservabilityPipelineAddEnvVarsProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import (
+            ObservabilityPipelineDedupeProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor import (
+            ObservabilityPipelineEnrichmentTableProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_reduce_processor import (
+            ObservabilityPipelineReduceProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
+            ObservabilityPipelineThrottleProcessor,
+        )
 
         return {
             "oneOf": [
@@ -89,5 +137,11 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineOcsfMapperProcessor,
+                ObservabilityPipelineAddEnvVarsProcessor,
+                ObservabilityPipelineDedupeProcessor,
+                ObservabilityPipelineEnrichmentTableProcessor,
+                ObservabilityPipelineReduceProcessor,
+                ObservabilityPipelineThrottleProcessor,
             ],
         }

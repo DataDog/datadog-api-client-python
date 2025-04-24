@@ -1815,12 +1815,28 @@ from datadog_api_client.v2.model.nullable_relationship_to_user_data import Nulla
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
+from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
+    ObservabilityPipelineAddEnvVarsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor_type import (
+    ObservabilityPipelineAddEnvVarsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor_variable import (
+    ObservabilityPipelineAddEnvVarsProcessorVariable,
+)
 from datadog_api_client.v2.model.observability_pipeline_add_fields_processor import (
     ObservabilityPipelineAddFieldsProcessor,
 )
 from datadog_api_client.v2.model.observability_pipeline_add_fields_processor_type import (
     ObservabilityPipelineAddFieldsProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
+    ObservabilityPipelineAmazonDataFirehoseSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source_type import (
+    ObservabilityPipelineAmazonDataFirehoseSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
 from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
     ObservabilityPipelineConfigDestinationItem,
@@ -1847,10 +1863,71 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination
 from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
     ObservabilityPipelineDatadogLogsDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode import (
+    ObservabilityPipelineDedupeProcessorMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_type import (
+    ObservabilityPipelineDedupeProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file import (
+    ObservabilityPipelineEnrichmentTableFile,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_encoding import (
+    ObservabilityPipelineEnrichmentTableFileEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_encoding_type import (
+    ObservabilityPipelineEnrichmentTableFileEncodingType,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_items import (
+    ObservabilityPipelineEnrichmentTableFileKeyItems,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_items_comparison import (
+    ObservabilityPipelineEnrichmentTableFileKeyItemsComparison,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_schema_items import (
+    ObservabilityPipelineEnrichmentTableFileSchemaItems,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_schema_items_type import (
+    ObservabilityPipelineEnrichmentTableFileSchemaItemsType,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_geo_ip import (
+    ObservabilityPipelineEnrichmentTableGeoIp,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor import (
+    ObservabilityPipelineEnrichmentTableProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor_type import (
+    ObservabilityPipelineEnrichmentTableProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_field_value import ObservabilityPipelineFieldValue
 from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
 from datadog_api_client.v2.model.observability_pipeline_filter_processor_type import (
     ObservabilityPipelineFilterProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
+from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
+    ObservabilityPipelineGoogleChronicleDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination_encoding import (
+    ObservabilityPipelineGoogleChronicleDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination_type import (
+    ObservabilityPipelineGoogleChronicleDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source import (
+    ObservabilityPipelineGooglePubSubSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source_type import (
+    ObservabilityPipelineGooglePubSubSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_source import ObservabilityPipelineHttpClientSource
+from datadog_api_client.v2.model.observability_pipeline_http_client_source_auth_strategy import (
+    ObservabilityPipelineHttpClientSourceAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_source_type import (
+    ObservabilityPipelineHttpClientSourceType,
 )
 from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option import (
@@ -1858,6 +1935,34 @@ from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_
 )
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl import ObservabilityPipelineKafkaSourceSasl
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import ObservabilityPipelineKafkaSourceType
+from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
+from datadog_api_client.v2.model.observability_pipeline_logstash_source_type import (
+    ObservabilityPipelineLogstashSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
+    ObservabilityPipelineNewRelicDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_new_relic_destination_region import (
+    ObservabilityPipelineNewRelicDestinationRegion,
+)
+from datadog_api_client.v2.model.observability_pipeline_new_relic_destination_type import (
+    ObservabilityPipelineNewRelicDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
+    ObservabilityPipelineOcsfMapperProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_mapping import (
+    ObservabilityPipelineOcsfMapperProcessorMapping,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_mapping_mapping import (
+    ObservabilityPipelineOcsfMapperProcessorMappingMapping,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_type import (
+    ObservabilityPipelineOcsfMapperProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_library import (
+    ObservabilityPipelineOcsfMappingLibrary,
+)
 from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
     ObservabilityPipelineParseJSONProcessor,
 )
@@ -1880,6 +1985,16 @@ from datadog_api_client.v2.model.observability_pipeline_quota_processor_override
 from datadog_api_client.v2.model.observability_pipeline_quota_processor_type import (
     ObservabilityPipelineQuotaProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor import ObservabilityPipelineReduceProcessor
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor_merge_strategy import (
+    ObservabilityPipelineReduceProcessorMergeStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor_merge_strategy_strategy import (
+    ObservabilityPipelineReduceProcessorMergeStrategyStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor_type import (
+    ObservabilityPipelineReduceProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_remove_fields_processor import (
     ObservabilityPipelineRemoveFieldsProcessor,
 )
@@ -1894,6 +2009,19 @@ from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_
 )
 from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_type import (
     ObservabilityPipelineRenameFieldsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination import (
+    ObservabilityPipelineSentinelOneDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination_region import (
+    ObservabilityPipelineSentinelOneDestinationRegion,
+)
+from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination_type import (
+    ObservabilityPipelineSentinelOneDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_throttle_processor import ObservabilityPipelineThrottleProcessor
+from datadog_api_client.v2.model.observability_pipeline_throttle_processor_type import (
+    ObservabilityPipelineThrottleProcessorType,
 )
 from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
 from datadog_api_client.v2.model.okta_account import OktaAccount
@@ -4400,8 +4528,14 @@ __all__ = [
     "NullableUserRelationship",
     "NullableUserRelationshipData",
     "ObservabilityPipeline",
+    "ObservabilityPipelineAddEnvVarsProcessor",
+    "ObservabilityPipelineAddEnvVarsProcessorType",
+    "ObservabilityPipelineAddEnvVarsProcessorVariable",
     "ObservabilityPipelineAddFieldsProcessor",
     "ObservabilityPipelineAddFieldsProcessorType",
+    "ObservabilityPipelineAmazonDataFirehoseSource",
+    "ObservabilityPipelineAmazonDataFirehoseSourceType",
+    "ObservabilityPipelineAwsAuth",
     "ObservabilityPipelineConfig",
     "ObservabilityPipelineConfigDestinationItem",
     "ObservabilityPipelineConfigProcessorItem",
@@ -4414,13 +4548,46 @@ __all__ = [
     "ObservabilityPipelineDatadogAgentSourceType",
     "ObservabilityPipelineDatadogLogsDestination",
     "ObservabilityPipelineDatadogLogsDestinationType",
+    "ObservabilityPipelineDecoding",
+    "ObservabilityPipelineDedupeProcessor",
+    "ObservabilityPipelineDedupeProcessorMode",
+    "ObservabilityPipelineDedupeProcessorType",
+    "ObservabilityPipelineEnrichmentTableFile",
+    "ObservabilityPipelineEnrichmentTableFileEncoding",
+    "ObservabilityPipelineEnrichmentTableFileEncodingType",
+    "ObservabilityPipelineEnrichmentTableFileKeyItems",
+    "ObservabilityPipelineEnrichmentTableFileKeyItemsComparison",
+    "ObservabilityPipelineEnrichmentTableFileSchemaItems",
+    "ObservabilityPipelineEnrichmentTableFileSchemaItemsType",
+    "ObservabilityPipelineEnrichmentTableGeoIp",
+    "ObservabilityPipelineEnrichmentTableProcessor",
+    "ObservabilityPipelineEnrichmentTableProcessorType",
     "ObservabilityPipelineFieldValue",
     "ObservabilityPipelineFilterProcessor",
     "ObservabilityPipelineFilterProcessorType",
+    "ObservabilityPipelineGcpAuth",
+    "ObservabilityPipelineGoogleChronicleDestination",
+    "ObservabilityPipelineGoogleChronicleDestinationEncoding",
+    "ObservabilityPipelineGoogleChronicleDestinationType",
+    "ObservabilityPipelineGooglePubSubSource",
+    "ObservabilityPipelineGooglePubSubSourceType",
+    "ObservabilityPipelineHttpClientSource",
+    "ObservabilityPipelineHttpClientSourceAuthStrategy",
+    "ObservabilityPipelineHttpClientSourceType",
     "ObservabilityPipelineKafkaSource",
     "ObservabilityPipelineKafkaSourceLibrdkafkaOption",
     "ObservabilityPipelineKafkaSourceSasl",
     "ObservabilityPipelineKafkaSourceType",
+    "ObservabilityPipelineLogstashSource",
+    "ObservabilityPipelineLogstashSourceType",
+    "ObservabilityPipelineNewRelicDestination",
+    "ObservabilityPipelineNewRelicDestinationRegion",
+    "ObservabilityPipelineNewRelicDestinationType",
+    "ObservabilityPipelineOcsfMapperProcessor",
+    "ObservabilityPipelineOcsfMapperProcessorMapping",
+    "ObservabilityPipelineOcsfMapperProcessorMappingMapping",
+    "ObservabilityPipelineOcsfMapperProcessorType",
+    "ObservabilityPipelineOcsfMappingLibrary",
     "ObservabilityPipelineParseJSONProcessor",
     "ObservabilityPipelineParseJSONProcessorType",
     "ObservabilityPipelinePipelineKafkaSourceSaslMechanism",
@@ -4429,11 +4596,20 @@ __all__ = [
     "ObservabilityPipelineQuotaProcessorLimitEnforceType",
     "ObservabilityPipelineQuotaProcessorOverride",
     "ObservabilityPipelineQuotaProcessorType",
+    "ObservabilityPipelineReduceProcessor",
+    "ObservabilityPipelineReduceProcessorMergeStrategy",
+    "ObservabilityPipelineReduceProcessorMergeStrategyStrategy",
+    "ObservabilityPipelineReduceProcessorType",
     "ObservabilityPipelineRemoveFieldsProcessor",
     "ObservabilityPipelineRemoveFieldsProcessorType",
     "ObservabilityPipelineRenameFieldsProcessor",
     "ObservabilityPipelineRenameFieldsProcessorField",
     "ObservabilityPipelineRenameFieldsProcessorType",
+    "ObservabilityPipelineSentinelOneDestination",
+    "ObservabilityPipelineSentinelOneDestinationRegion",
+    "ObservabilityPipelineSentinelOneDestinationType",
+    "ObservabilityPipelineThrottleProcessor",
+    "ObservabilityPipelineThrottleProcessorType",
     "ObservabilityPipelineTls",
     "OktaAccount",
     "OktaAccountAttributes",

@@ -35,6 +35,29 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param type: The source type. The value should always be `kafka`.
         :type type: ObservabilityPipelineKafkaSourceType
+
+        :param auth: AWS authentication credentials used for accessing AWS services such as S3.
+            If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
+
+        :type auth: ObservabilityPipelineAwsAuth, optional
+
+        :param decoding: The decoding format used to interpret incoming logs.
+        :type decoding: ObservabilityPipelineDecoding
+
+        :param project: The GCP project ID that owns the Pub/Sub subscription.
+        :type project: str
+
+        :param subscription: The Pub/Sub subscription name from which messages are consumed.
+        :type subscription: str
+
+        :param auth_strategy: Optional authentication strategy for HTTP requests.
+        :type auth_strategy: ObservabilityPipelineHttpClientSourceAuthStrategy, optional
+
+        :param scrape_interval_secs: The interval (in seconds) between HTTP scrape requests.
+        :type scrape_interval_secs: int, optional
+
+        :param scrape_timeout_secs: The timeout (in seconds) for each scrape request.
+        :type scrape_timeout_secs: int, optional
         """
         super().__init__(kwargs)
 
@@ -51,10 +74,26 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
             ObservabilityPipelineDatadogAgentSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
+            ObservabilityPipelineAmazonDataFirehoseSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source import (
+            ObservabilityPipelineGooglePubSubSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_http_client_source import (
+            ObservabilityPipelineHttpClientSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_logstash_source import (
+            ObservabilityPipelineLogstashSource,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineAmazonDataFirehoseSource,
+                ObservabilityPipelineGooglePubSubSource,
+                ObservabilityPipelineHttpClientSource,
+                ObservabilityPipelineLogstashSource,
             ],
         }

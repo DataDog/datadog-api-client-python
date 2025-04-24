@@ -24,6 +24,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
         ObservabilityPipelineDatadogLogsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
+        ObservabilityPipelineGoogleChronicleDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
+        ObservabilityPipelineNewRelicDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination import (
+        ObservabilityPipelineSentinelOneDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
     from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
         ObservabilityPipelineParseJSONProcessor,
@@ -38,10 +47,34 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
         ObservabilityPipelineRenameFieldsProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
+        ObservabilityPipelineOcsfMapperProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
+        ObservabilityPipelineAddEnvVarsProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
+    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor import (
+        ObservabilityPipelineEnrichmentTableProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_reduce_processor import ObservabilityPipelineReduceProcessor
+    from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
+        ObservabilityPipelineThrottleProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
     )
+    from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
+        ObservabilityPipelineAmazonDataFirehoseSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source import (
+        ObservabilityPipelineGooglePubSubSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_http_client_source import (
+        ObservabilityPipelineHttpClientSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
 
 
 class ObservabilityPipelineConfig(ModelNormal):
@@ -72,7 +105,13 @@ class ObservabilityPipelineConfig(ModelNormal):
     def __init__(
         self_,
         destinations: List[
-            Union[ObservabilityPipelineConfigDestinationItem, ObservabilityPipelineDatadogLogsDestination]
+            Union[
+                ObservabilityPipelineConfigDestinationItem,
+                ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineGoogleChronicleDestination,
+                ObservabilityPipelineNewRelicDestination,
+                ObservabilityPipelineSentinelOneDestination,
+            ]
         ],
         processors: List[
             Union[
@@ -83,6 +122,12 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineOcsfMapperProcessor,
+                ObservabilityPipelineAddEnvVarsProcessor,
+                ObservabilityPipelineDedupeProcessor,
+                ObservabilityPipelineEnrichmentTableProcessor,
+                ObservabilityPipelineReduceProcessor,
+                ObservabilityPipelineThrottleProcessor,
             ]
         ],
         sources: List[
@@ -90,6 +135,10 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineConfigSourceItem,
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineAmazonDataFirehoseSource,
+                ObservabilityPipelineGooglePubSubSource,
+                ObservabilityPipelineHttpClientSource,
+                ObservabilityPipelineLogstashSource,
             ]
         ],
         **kwargs,

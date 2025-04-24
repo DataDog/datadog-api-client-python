@@ -23,6 +23,22 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param type: The destination type. The value should always be `datadog_logs`.
         :type type: ObservabilityPipelineDatadogLogsDestinationType
+
+        :param auth: GCP credentials used to authenticate with Google Cloud Storage.
+
+        :type auth: ObservabilityPipelineGcpAuth
+
+        :param customer_id: The Google Chronicle customer ID.
+        :type customer_id: str
+
+        :param encoding: The encoding format for the logs sent to Chronicle.
+        :type encoding: ObservabilityPipelineGoogleChronicleDestinationEncoding, optional
+
+        :param log_type: The log type metadata associated with the Chronicle destination.
+        :type log_type: str, optional
+
+        :param region: The New Relic region.
+        :type region: ObservabilityPipelineNewRelicDestinationRegion
         """
         super().__init__(kwargs)
 
@@ -38,9 +54,21 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
             ObservabilityPipelineDatadogLogsDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
+            ObservabilityPipelineGoogleChronicleDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
+            ObservabilityPipelineNewRelicDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination import (
+            ObservabilityPipelineSentinelOneDestination,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineGoogleChronicleDestination,
+                ObservabilityPipelineNewRelicDestination,
+                ObservabilityPipelineSentinelOneDestination,
             ],
         }
