@@ -10,14 +10,14 @@ Feature: On-Call
     And an instance of "On-Call" API
 
   @generated @skip @team:DataDog/bugle
-  Scenario: Create on call escalation policy returns "Bad Request" response
+  Scenario: Create on-call escalation policy returns "Bad Request" response
     Given new "CreateOnCallEscalationPolicy" request
     And body with value {"data": {"attributes": {"description": "Escalation Policy 1 description", "name": "Escalation Policy 1", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}, {"id": "00000000-aba3-0000-0000-000000000000", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-abb1-0000-0000-000000000000", "type": "users"}]}]}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/bugle
-  Scenario: Create on call escalation policy returns "Created" response
+  Scenario: Create on-call escalation policy returns "Created" response
     Given new "CreateOnCallEscalationPolicy" request
     And there is a valid "schedule" in the system
     And there is a valid "dd_team" in the system
@@ -43,7 +43,7 @@ Feature: On-Call
     Then the response status is 201 Created
 
   @team:DataDog/bugle
-  Scenario: Delete on call escalation policy returns "No Content" response
+  Scenario: Delete on-call escalation policy returns "No Content" response
     Given new "DeleteOnCallEscalationPolicy" request
     And there is a valid "user" in the system
     And there is a valid "dd_team" in the system
@@ -54,7 +54,7 @@ Feature: On-Call
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/bugle
-  Scenario: Delete on call escalation policy returns "Not Found" response
+  Scenario: Delete on-call escalation policy returns "Not Found" response
     Given new "DeleteOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -76,21 +76,21 @@ Feature: On-Call
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/bugle
-  Scenario: Get on call escalation policy returns "Bad Request" response
+  Scenario: Get on-call escalation policy returns "Bad Request" response
     Given new "GetOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/bugle
-  Scenario: Get on call escalation policy returns "Not Found" response
+  Scenario: Get on-call escalation policy returns "Not Found" response
     Given new "GetOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:DataDog/bugle
-  Scenario: Get on call escalation policy returns "OK" response
+  Scenario: Get on-call escalation policy returns "OK" response
     Given new "GetOnCallEscalationPolicy" request
     And there is a valid "user" in the system
     And there is a valid "dd_team" in the system
@@ -116,7 +116,7 @@ Feature: On-Call
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/bugle
-  Scenario: Update on call escalation policy returns "Bad Request" response
+  Scenario: Update on-call escalation policy returns "Bad Request" response
     Given new "UpdateOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Escalation Policy 1 description", "name": "Escalation Policy 1", "resolve_page_on_policy_end": false, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "id": "00000000-aba1-0000-0000-000000000000", "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}]}]}, "id": "a3000000-0000-0000-0000-000000000000", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
@@ -124,7 +124,7 @@ Feature: On-Call
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/bugle
-  Scenario: Update on call escalation policy returns "Not Found" response
+  Scenario: Update on-call escalation policy returns "Not Found" response
     Given new "UpdateOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Escalation Policy 1 description", "name": "Escalation Policy 1", "resolve_page_on_policy_end": false, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "id": "00000000-aba1-0000-0000-000000000000", "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}]}]}, "id": "a3000000-0000-0000-0000-000000000000", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
@@ -132,7 +132,7 @@ Feature: On-Call
     Then the response status is 404 Not Found
 
   @team:DataDog/bugle
-  Scenario: Update on call escalation policy returns "OK" response
+  Scenario: Update on-call escalation policy returns "OK" response
     Given new "UpdateOnCallEscalationPolicy" request
     And there is a valid "user" in the system
     And there is a valid "dd_team" in the system
