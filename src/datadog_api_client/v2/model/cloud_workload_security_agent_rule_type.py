@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CloudWorkloadSecurityAgentRuleType(ModelSimple):
     """
-    The type of the resource. The value should always be `agent_rule`.
+    The type of the resource, must always be `agent_rule`
 
     :param value: If omitted defaults to "agent_rule". Must be one of ["agent_rule"].
     :type value: str
