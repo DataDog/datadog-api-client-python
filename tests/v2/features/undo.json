@@ -2098,6 +2098,12 @@
       "type": "safe"
     }
   },
+  "ListPipelines": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreatePipeline": {
     "tag": "Observability Pipelines",
     "undo": {
@@ -2109,6 +2115,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ValidatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
     }
   },
   "DeletePipeline": {

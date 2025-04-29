@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
 
 
-class ObservabilityPipelineCreateRequestData(ModelNormal):
+class ObservabilityPipelineSpecData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_data_attributes import (
@@ -34,7 +34,7 @@ class ObservabilityPipelineCreateRequestData(ModelNormal):
 
     def __init__(self_, attributes: ObservabilityPipelineDataAttributes, **kwargs):
         """
-        Contains the pipeline’s ID, type, and configuration attributes.
+        Contains the the pipeline configuration.
 
         :param attributes: Defines the pipeline’s name and its components (sources, processors, and destinations).
         :type attributes: ObservabilityPipelineDataAttributes

@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit import (
         ObservabilityPipelineQuotaProcessorLimit,
     )
+    from datadog_api_client.v2.model.observability_pipeline_quota_processor_overflow_action import (
+        ObservabilityPipelineQuotaProcessorOverflowAction,
+    )
     from datadog_api_client.v2.model.observability_pipeline_quota_processor_override import (
         ObservabilityPipelineQuotaProcessorOverride,
     )
@@ -30,6 +33,9 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit import (
             ObservabilityPipelineQuotaProcessorLimit,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_quota_processor_overflow_action import (
+            ObservabilityPipelineQuotaProcessorOverflowAction,
         )
         from datadog_api_client.v2.model.observability_pipeline_quota_processor_override import (
             ObservabilityPipelineQuotaProcessorOverride,
@@ -46,6 +52,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
             "inputs": ([str],),
             "limit": (ObservabilityPipelineQuotaProcessorLimit,),
             "name": (str,),
+            "overflow_action": (ObservabilityPipelineQuotaProcessorOverflowAction,),
             "overrides": ([ObservabilityPipelineQuotaProcessorOverride],),
             "partition_fields": ([str],),
             "type": (ObservabilityPipelineQuotaProcessorType,),
@@ -59,6 +66,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         "inputs": "inputs",
         "limit": "limit",
         "name": "name",
+        "overflow_action": "overflow_action",
         "overrides": "overrides",
         "partition_fields": "partition_fields",
         "type": "type",
@@ -74,6 +82,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         name: str,
         type: ObservabilityPipelineQuotaProcessorType,
         ignore_when_missing_partitions: Union[bool, UnsetType] = unset,
+        overflow_action: Union[ObservabilityPipelineQuotaProcessorOverflowAction, UnsetType] = unset,
         overrides: Union[List[ObservabilityPipelineQuotaProcessorOverride], UnsetType] = unset,
         partition_fields: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -99,8 +108,15 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         :param limit: The maximum amount of data or number of events allowed before the quota is enforced. Can be specified in bytes or events.
         :type limit: ObservabilityPipelineQuotaProcessorLimit
 
-        :param name: Name for identifying the processor.
+        :param name: Name of the quota.
         :type name: str
+
+        :param overflow_action: The action to take when the quota is exceeded. Options:
+
+            * ``drop`` : Drop the event.
+            * ``no_action`` : Let the event pass through.
+            * ``overflow_routing`` : Route to an overflow destination.
+        :type overflow_action: ObservabilityPipelineQuotaProcessorOverflowAction, optional
 
         :param overrides: A list of alternate quota rules that apply to specific sets of events, identified by matching field values. Each override can define a custom limit.
         :type overrides: [ObservabilityPipelineQuotaProcessorOverride], optional
@@ -113,6 +129,8 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         """
         if ignore_when_missing_partitions is not unset:
             kwargs["ignore_when_missing_partitions"] = ignore_when_missing_partitions
+        if overflow_action is not unset:
+            kwargs["overflow_action"] = overflow_action
         if overrides is not unset:
             kwargs["overrides"] = overrides
         if partition_fields is not unset:
