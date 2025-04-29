@@ -5,10 +5,6 @@ Create a new pipeline returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
-from datadog_api_client.v2.model.observability_pipeline_create_request import ObservabilityPipelineCreateRequest
-from datadog_api_client.v2.model.observability_pipeline_create_request_data import (
-    ObservabilityPipelineCreateRequestData,
-)
 from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
 from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
     ObservabilityPipelineDatadogAgentSource,
@@ -26,9 +22,11 @@ from datadog_api_client.v2.model.observability_pipeline_filter_processor import 
 from datadog_api_client.v2.model.observability_pipeline_filter_processor_type import (
     ObservabilityPipelineFilterProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
+from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
 
-body = ObservabilityPipelineCreateRequest(
-    data=ObservabilityPipelineCreateRequestData(
+body = ObservabilityPipelineSpec(
+    data=ObservabilityPipelineSpecData(
         attributes=ObservabilityPipelineDataAttributes(
             config=ObservabilityPipelineConfig(
                 destinations=[

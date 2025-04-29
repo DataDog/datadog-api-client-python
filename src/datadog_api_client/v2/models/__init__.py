@@ -305,6 +305,8 @@ from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
 from datadog_api_client.v2.model.aws_scan_options_update_attributes import AwsScanOptionsUpdateAttributes
 from datadog_api_client.v2.model.aws_scan_options_update_data import AwsScanOptionsUpdateData
 from datadog_api_client.v2.model.aws_scan_options_update_request import AwsScanOptionsUpdateRequest
+from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
+from datadog_api_client.v2.model.azure_storage_destination_type import AzureStorageDestinationType
 from datadog_api_client.v2.model.azure_uc_config import AzureUCConfig
 from datadog_api_client.v2.model.azure_uc_config_pair import AzureUCConfigPair
 from datadog_api_client.v2.model.azure_uc_config_pair_attributes import AzureUCConfigPairAttributes
@@ -1478,6 +1480,8 @@ from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.list_historical_jobs_response import ListHistoricalJobsResponse
+from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
+from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
@@ -1676,6 +1680,8 @@ from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 from datadog_api_client.v2.model.metrics_list_response_links import MetricsListResponseLinks
 from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
 from datadog_api_client.v2.model.metrics_timeseries_query import MetricsTimeseriesQuery
+from datadog_api_client.v2.model.microsoft_sentinel_destination import MicrosoftSentinelDestination
+from datadog_api_client.v2.model.microsoft_sentinel_destination_type import MicrosoftSentinelDestinationType
 from datadog_api_client.v2.model.microsoft_teams_channel_info_response_attributes import (
     MicrosoftTeamsChannelInfoResponseAttributes,
 )
@@ -1830,12 +1836,53 @@ from datadog_api_client.v2.model.nullable_relationship_to_user_data import Nulla
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
+from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
+    ObservabilityPipelineAddEnvVarsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor_type import (
+    ObservabilityPipelineAddEnvVarsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor_variable import (
+    ObservabilityPipelineAddEnvVarsProcessorVariable,
+)
 from datadog_api_client.v2.model.observability_pipeline_add_fields_processor import (
     ObservabilityPipelineAddFieldsProcessor,
 )
 from datadog_api_client.v2.model.observability_pipeline_add_fields_processor_type import (
     ObservabilityPipelineAddFieldsProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
+    ObservabilityPipelineAmazonDataFirehoseSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source_type import (
+    ObservabilityPipelineAmazonDataFirehoseSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination import (
+    ObservabilityPipelineAmazonOpenSearchDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination_auth import (
+    ObservabilityPipelineAmazonOpenSearchDestinationAuth,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination_auth_strategy import (
+    ObservabilityPipelineAmazonOpenSearchDestinationAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination_type import (
+    ObservabilityPipelineAmazonOpenSearchDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
+    ObservabilityPipelineAmazonS3Destination,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_storage_class import (
+    ObservabilityPipelineAmazonS3DestinationStorageClass,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_type import (
+    ObservabilityPipelineAmazonS3DestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import ObservabilityPipelineAmazonS3Source
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source_type import (
+    ObservabilityPipelineAmazonS3SourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
 from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
     ObservabilityPipelineConfigDestinationItem,
@@ -1844,10 +1891,6 @@ from datadog_api_client.v2.model.observability_pipeline_config_processor_item im
     ObservabilityPipelineConfigProcessorItem,
 )
 from datadog_api_client.v2.model.observability_pipeline_config_source_item import ObservabilityPipelineConfigSourceItem
-from datadog_api_client.v2.model.observability_pipeline_create_request import ObservabilityPipelineCreateRequest
-from datadog_api_client.v2.model.observability_pipeline_create_request_data import (
-    ObservabilityPipelineCreateRequestData,
-)
 from datadog_api_client.v2.model.observability_pipeline_data import ObservabilityPipelineData
 from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
 from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
@@ -1862,10 +1905,129 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination
 from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
     ObservabilityPipelineDatadogLogsDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode import (
+    ObservabilityPipelineDedupeProcessorMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_type import (
+    ObservabilityPipelineDedupeProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
+    ObservabilityPipelineElasticsearchDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_api_version import (
+    ObservabilityPipelineElasticsearchDestinationApiVersion,
+)
+from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_type import (
+    ObservabilityPipelineElasticsearchDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file import (
+    ObservabilityPipelineEnrichmentTableFile,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_encoding import (
+    ObservabilityPipelineEnrichmentTableFileEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_encoding_type import (
+    ObservabilityPipelineEnrichmentTableFileEncodingType,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_items import (
+    ObservabilityPipelineEnrichmentTableFileKeyItems,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_items_comparison import (
+    ObservabilityPipelineEnrichmentTableFileKeyItemsComparison,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_schema_items import (
+    ObservabilityPipelineEnrichmentTableFileSchemaItems,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_schema_items_type import (
+    ObservabilityPipelineEnrichmentTableFileSchemaItemsType,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_geo_ip import (
+    ObservabilityPipelineEnrichmentTableGeoIp,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor import (
+    ObservabilityPipelineEnrichmentTableProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor_type import (
+    ObservabilityPipelineEnrichmentTableProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_field_value import ObservabilityPipelineFieldValue
 from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
 from datadog_api_client.v2.model.observability_pipeline_filter_processor_type import (
     ObservabilityPipelineFilterProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_fluent_bit_source import ObservabilityPipelineFluentBitSource
+from datadog_api_client.v2.model.observability_pipeline_fluent_bit_source_type import (
+    ObservabilityPipelineFluentBitSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_fluentd_source import ObservabilityPipelineFluentdSource
+from datadog_api_client.v2.model.observability_pipeline_fluentd_source_type import (
+    ObservabilityPipelineFluentdSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
+    ObservabilityPipelineGenerateMetricsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor_type import (
+    ObservabilityPipelineGenerateMetricsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric import ObservabilityPipelineGeneratedMetric
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_field import (
+    ObservabilityPipelineGeneratedMetricIncrementByField,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_field_strategy import (
+    ObservabilityPipelineGeneratedMetricIncrementByFieldStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_one import (
+    ObservabilityPipelineGeneratedMetricIncrementByOne,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_one_strategy import (
+    ObservabilityPipelineGeneratedMetricIncrementByOneStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_generated_metric_metric_type import (
+    ObservabilityPipelineGeneratedMetricMetricType,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
+    ObservabilityPipelineGoogleChronicleDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination_encoding import (
+    ObservabilityPipelineGoogleChronicleDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination_type import (
+    ObservabilityPipelineGoogleChronicleDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination import (
+    ObservabilityPipelineGoogleCloudStorageDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_acl import (
+    ObservabilityPipelineGoogleCloudStorageDestinationAcl,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_storage_class import (
+    ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_type import (
+    ObservabilityPipelineGoogleCloudStorageDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source import (
+    ObservabilityPipelineGooglePubSubSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source_type import (
+    ObservabilityPipelineGooglePubSubSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_source import ObservabilityPipelineHttpClientSource
+from datadog_api_client.v2.model.observability_pipeline_http_client_source_auth_strategy import (
+    ObservabilityPipelineHttpClientSourceAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_source_type import (
+    ObservabilityPipelineHttpClientSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_server_source import ObservabilityPipelineHttpServerSource
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_auth_strategy import (
+    ObservabilityPipelineHttpServerSourceAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
+    ObservabilityPipelineHttpServerSourceType,
 )
 from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option import (
@@ -1873,6 +2035,57 @@ from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_
 )
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl import ObservabilityPipelineKafkaSourceSasl
 from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import ObservabilityPipelineKafkaSourceType
+from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
+from datadog_api_client.v2.model.observability_pipeline_logstash_source_type import (
+    ObservabilityPipelineLogstashSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
+from datadog_api_client.v2.model.observability_pipeline_metric_value import ObservabilityPipelineMetricValue
+from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
+    ObservabilityPipelineNewRelicDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_new_relic_destination_region import (
+    ObservabilityPipelineNewRelicDestinationRegion,
+)
+from datadog_api_client.v2.model.observability_pipeline_new_relic_destination_type import (
+    ObservabilityPipelineNewRelicDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
+    ObservabilityPipelineOcsfMapperProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_mapping import (
+    ObservabilityPipelineOcsfMapperProcessorMapping,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_mapping_mapping import (
+    ObservabilityPipelineOcsfMapperProcessorMappingMapping,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_type import (
+    ObservabilityPipelineOcsfMapperProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_library import (
+    ObservabilityPipelineOcsfMappingLibrary,
+)
+from datadog_api_client.v2.model.observability_pipeline_open_search_destination import (
+    ObservabilityPipelineOpenSearchDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_open_search_destination_type import (
+    ObservabilityPipelineOpenSearchDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
+    ObservabilityPipelineParseGrokProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule import (
+    ObservabilityPipelineParseGrokProcessorRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_match_rule import (
+    ObservabilityPipelineParseGrokProcessorRuleMatchRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_support_rule import (
+    ObservabilityPipelineParseGrokProcessorRuleSupportRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_type import (
+    ObservabilityPipelineParseGrokProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
     ObservabilityPipelineParseJSONProcessor,
 )
@@ -1889,11 +2102,24 @@ from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit im
 from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit_enforce_type import (
     ObservabilityPipelineQuotaProcessorLimitEnforceType,
 )
+from datadog_api_client.v2.model.observability_pipeline_quota_processor_overflow_action import (
+    ObservabilityPipelineQuotaProcessorOverflowAction,
+)
 from datadog_api_client.v2.model.observability_pipeline_quota_processor_override import (
     ObservabilityPipelineQuotaProcessorOverride,
 )
 from datadog_api_client.v2.model.observability_pipeline_quota_processor_type import (
     ObservabilityPipelineQuotaProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor import ObservabilityPipelineReduceProcessor
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor_merge_strategy import (
+    ObservabilityPipelineReduceProcessorMergeStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor_merge_strategy_strategy import (
+    ObservabilityPipelineReduceProcessorMergeStrategyStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_reduce_processor_type import (
+    ObservabilityPipelineReduceProcessorType,
 )
 from datadog_api_client.v2.model.observability_pipeline_remove_fields_processor import (
     ObservabilityPipelineRemoveFieldsProcessor,
@@ -1909,6 +2135,166 @@ from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_
 )
 from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_type import (
     ObservabilityPipelineRenameFieldsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination import (
+    ObservabilityPipelineRsyslogDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination_type import (
+    ObservabilityPipelineRsyslogDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_rsyslog_source import ObservabilityPipelineRsyslogSource
+from datadog_api_client.v2.model.observability_pipeline_rsyslog_source_type import (
+    ObservabilityPipelineRsyslogSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sample_processor import ObservabilityPipelineSampleProcessor
+from datadog_api_client.v2.model.observability_pipeline_sample_processor_type import (
+    ObservabilityPipelineSampleProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
+    ObservabilityPipelineSensitiveDataScannerProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action import (
+    ObservabilityPipelineSensitiveDataScannerProcessorAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_hash import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionHash,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_hash_action import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionHashAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_partial_redact import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedact,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_partial_redact_action import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_partial_redact_options import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_partial_redact_options_direction import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactOptionsDirection,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_redact import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionRedact,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_redact_action import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionRedactAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_action_redact_options import (
+    ObservabilityPipelineSensitiveDataScannerProcessorActionRedactOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_custom_pattern import (
+    ObservabilityPipelineSensitiveDataScannerProcessorCustomPattern,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_custom_pattern_options import (
+    ObservabilityPipelineSensitiveDataScannerProcessorCustomPatternOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_custom_pattern_type import (
+    ObservabilityPipelineSensitiveDataScannerProcessorCustomPatternType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_keyword_options import (
+    ObservabilityPipelineSensitiveDataScannerProcessorKeywordOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_library_pattern import (
+    ObservabilityPipelineSensitiveDataScannerProcessorLibraryPattern,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_library_pattern_options import (
+    ObservabilityPipelineSensitiveDataScannerProcessorLibraryPatternOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_library_pattern_type import (
+    ObservabilityPipelineSensitiveDataScannerProcessorLibraryPatternType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_pattern import (
+    ObservabilityPipelineSensitiveDataScannerProcessorPattern,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_rule import (
+    ObservabilityPipelineSensitiveDataScannerProcessorRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScope,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope_all import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScopeAll,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope_all_target import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScopeAllTarget,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope_exclude import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScopeExclude,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope_exclude_target import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScopeExcludeTarget,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope_include import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScopeInclude,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope_include_target import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScopeIncludeTarget,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_scope_options import (
+    ObservabilityPipelineSensitiveDataScannerProcessorScopeOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor_type import (
+    ObservabilityPipelineSensitiveDataScannerProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination import (
+    ObservabilityPipelineSentinelOneDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination_region import (
+    ObservabilityPipelineSentinelOneDestinationRegion,
+)
+from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination_type import (
+    ObservabilityPipelineSentinelOneDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
+from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination import (
+    ObservabilityPipelineSplunkHecDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
+    ObservabilityPipelineSplunkHecDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_type import (
+    ObservabilityPipelineSplunkHecDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import ObservabilityPipelineSplunkHecSource
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type import (
+    ObservabilityPipelineSplunkHecSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source import ObservabilityPipelineSplunkTcpSource
+from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source_type import (
+    ObservabilityPipelineSplunkTcpSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination import (
+    ObservabilityPipelineSumoLogicDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination_encoding import (
+    ObservabilityPipelineSumoLogicDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination_header_custom_fields_item import (
+    ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem,
+)
+from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination_type import (
+    ObservabilityPipelineSumoLogicDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_sumo_logic_source import ObservabilityPipelineSumoLogicSource
+from datadog_api_client.v2.model.observability_pipeline_sumo_logic_source_type import (
+    ObservabilityPipelineSumoLogicSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_syslog_ng_destination import (
+    ObservabilityPipelineSyslogNgDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_syslog_ng_destination_type import (
+    ObservabilityPipelineSyslogNgDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source import ObservabilityPipelineSyslogNgSource
+from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source_type import (
+    ObservabilityPipelineSyslogNgSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_syslog_source_mode import ObservabilityPipelineSyslogSourceMode
+from datadog_api_client.v2.model.observability_pipeline_throttle_processor import ObservabilityPipelineThrottleProcessor
+from datadog_api_client.v2.model.observability_pipeline_throttle_processor_type import (
+    ObservabilityPipelineThrottleProcessorType,
 )
 from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
 from datadog_api_client.v2.model.okta_account import OktaAccount
@@ -2977,6 +3363,9 @@ from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.users_relationship import UsersRelationship
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
+from datadog_api_client.v2.model.validation_error import ValidationError
+from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMeta
+from datadog_api_client.v2.model.validation_response import ValidationResponse
 from datadog_api_client.v2.model.vulnerabilities_type import VulnerabilitiesType
 from datadog_api_client.v2.model.vulnerability import Vulnerability
 from datadog_api_client.v2.model.vulnerability_attributes import VulnerabilityAttributes
@@ -3257,6 +3646,8 @@ __all__ = [
     "AwsScanOptionsUpdateAttributes",
     "AwsScanOptionsUpdateData",
     "AwsScanOptionsUpdateRequest",
+    "AzureStorageDestination",
+    "AzureStorageDestinationType",
     "AzureUCConfig",
     "AzureUCConfigPair",
     "AzureUCConfigPairAttributes",
@@ -4166,6 +4557,8 @@ __all__ = [
     "ListFindingsPage",
     "ListFindingsResponse",
     "ListHistoricalJobsResponse",
+    "ListPipelinesResponse",
+    "ListPipelinesResponseMeta",
     "ListPowerpacksResponse",
     "ListRulesResponse",
     "ListRulesResponseDataItem",
@@ -4350,6 +4743,8 @@ __all__ = [
     "MetricsListResponseLinks",
     "MetricsScalarQuery",
     "MetricsTimeseriesQuery",
+    "MicrosoftSentinelDestination",
+    "MicrosoftSentinelDestinationType",
     "MicrosoftTeamsChannelInfoResponseAttributes",
     "MicrosoftTeamsChannelInfoResponseData",
     "MicrosoftTeamsChannelInfoType",
@@ -4432,40 +4827,182 @@ __all__ = [
     "NullableUserRelationship",
     "NullableUserRelationshipData",
     "ObservabilityPipeline",
+    "ObservabilityPipelineAddEnvVarsProcessor",
+    "ObservabilityPipelineAddEnvVarsProcessorType",
+    "ObservabilityPipelineAddEnvVarsProcessorVariable",
     "ObservabilityPipelineAddFieldsProcessor",
     "ObservabilityPipelineAddFieldsProcessorType",
+    "ObservabilityPipelineAmazonDataFirehoseSource",
+    "ObservabilityPipelineAmazonDataFirehoseSourceType",
+    "ObservabilityPipelineAmazonOpenSearchDestination",
+    "ObservabilityPipelineAmazonOpenSearchDestinationAuth",
+    "ObservabilityPipelineAmazonOpenSearchDestinationAuthStrategy",
+    "ObservabilityPipelineAmazonOpenSearchDestinationType",
+    "ObservabilityPipelineAmazonS3Destination",
+    "ObservabilityPipelineAmazonS3DestinationStorageClass",
+    "ObservabilityPipelineAmazonS3DestinationType",
+    "ObservabilityPipelineAmazonS3Source",
+    "ObservabilityPipelineAmazonS3SourceType",
+    "ObservabilityPipelineAwsAuth",
     "ObservabilityPipelineConfig",
     "ObservabilityPipelineConfigDestinationItem",
     "ObservabilityPipelineConfigProcessorItem",
     "ObservabilityPipelineConfigSourceItem",
-    "ObservabilityPipelineCreateRequest",
-    "ObservabilityPipelineCreateRequestData",
     "ObservabilityPipelineData",
     "ObservabilityPipelineDataAttributes",
     "ObservabilityPipelineDatadogAgentSource",
     "ObservabilityPipelineDatadogAgentSourceType",
     "ObservabilityPipelineDatadogLogsDestination",
     "ObservabilityPipelineDatadogLogsDestinationType",
+    "ObservabilityPipelineDecoding",
+    "ObservabilityPipelineDedupeProcessor",
+    "ObservabilityPipelineDedupeProcessorMode",
+    "ObservabilityPipelineDedupeProcessorType",
+    "ObservabilityPipelineElasticsearchDestination",
+    "ObservabilityPipelineElasticsearchDestinationApiVersion",
+    "ObservabilityPipelineElasticsearchDestinationType",
+    "ObservabilityPipelineEnrichmentTableFile",
+    "ObservabilityPipelineEnrichmentTableFileEncoding",
+    "ObservabilityPipelineEnrichmentTableFileEncodingType",
+    "ObservabilityPipelineEnrichmentTableFileKeyItems",
+    "ObservabilityPipelineEnrichmentTableFileKeyItemsComparison",
+    "ObservabilityPipelineEnrichmentTableFileSchemaItems",
+    "ObservabilityPipelineEnrichmentTableFileSchemaItemsType",
+    "ObservabilityPipelineEnrichmentTableGeoIp",
+    "ObservabilityPipelineEnrichmentTableProcessor",
+    "ObservabilityPipelineEnrichmentTableProcessorType",
     "ObservabilityPipelineFieldValue",
     "ObservabilityPipelineFilterProcessor",
     "ObservabilityPipelineFilterProcessorType",
+    "ObservabilityPipelineFluentBitSource",
+    "ObservabilityPipelineFluentBitSourceType",
+    "ObservabilityPipelineFluentdSource",
+    "ObservabilityPipelineFluentdSourceType",
+    "ObservabilityPipelineGcpAuth",
+    "ObservabilityPipelineGenerateMetricsProcessor",
+    "ObservabilityPipelineGenerateMetricsProcessorType",
+    "ObservabilityPipelineGeneratedMetric",
+    "ObservabilityPipelineGeneratedMetricIncrementByField",
+    "ObservabilityPipelineGeneratedMetricIncrementByFieldStrategy",
+    "ObservabilityPipelineGeneratedMetricIncrementByOne",
+    "ObservabilityPipelineGeneratedMetricIncrementByOneStrategy",
+    "ObservabilityPipelineGeneratedMetricMetricType",
+    "ObservabilityPipelineGoogleChronicleDestination",
+    "ObservabilityPipelineGoogleChronicleDestinationEncoding",
+    "ObservabilityPipelineGoogleChronicleDestinationType",
+    "ObservabilityPipelineGoogleCloudStorageDestination",
+    "ObservabilityPipelineGoogleCloudStorageDestinationAcl",
+    "ObservabilityPipelineGoogleCloudStorageDestinationStorageClass",
+    "ObservabilityPipelineGoogleCloudStorageDestinationType",
+    "ObservabilityPipelineGooglePubSubSource",
+    "ObservabilityPipelineGooglePubSubSourceType",
+    "ObservabilityPipelineHttpClientSource",
+    "ObservabilityPipelineHttpClientSourceAuthStrategy",
+    "ObservabilityPipelineHttpClientSourceType",
+    "ObservabilityPipelineHttpServerSource",
+    "ObservabilityPipelineHttpServerSourceAuthStrategy",
+    "ObservabilityPipelineHttpServerSourceType",
     "ObservabilityPipelineKafkaSource",
     "ObservabilityPipelineKafkaSourceLibrdkafkaOption",
     "ObservabilityPipelineKafkaSourceSasl",
     "ObservabilityPipelineKafkaSourceType",
+    "ObservabilityPipelineLogstashSource",
+    "ObservabilityPipelineLogstashSourceType",
+    "ObservabilityPipelineMetadataEntry",
+    "ObservabilityPipelineMetricValue",
+    "ObservabilityPipelineNewRelicDestination",
+    "ObservabilityPipelineNewRelicDestinationRegion",
+    "ObservabilityPipelineNewRelicDestinationType",
+    "ObservabilityPipelineOcsfMapperProcessor",
+    "ObservabilityPipelineOcsfMapperProcessorMapping",
+    "ObservabilityPipelineOcsfMapperProcessorMappingMapping",
+    "ObservabilityPipelineOcsfMapperProcessorType",
+    "ObservabilityPipelineOcsfMappingLibrary",
+    "ObservabilityPipelineOpenSearchDestination",
+    "ObservabilityPipelineOpenSearchDestinationType",
+    "ObservabilityPipelineParseGrokProcessor",
+    "ObservabilityPipelineParseGrokProcessorRule",
+    "ObservabilityPipelineParseGrokProcessorRuleMatchRule",
+    "ObservabilityPipelineParseGrokProcessorRuleSupportRule",
+    "ObservabilityPipelineParseGrokProcessorType",
     "ObservabilityPipelineParseJSONProcessor",
     "ObservabilityPipelineParseJSONProcessorType",
     "ObservabilityPipelinePipelineKafkaSourceSaslMechanism",
     "ObservabilityPipelineQuotaProcessor",
     "ObservabilityPipelineQuotaProcessorLimit",
     "ObservabilityPipelineQuotaProcessorLimitEnforceType",
+    "ObservabilityPipelineQuotaProcessorOverflowAction",
     "ObservabilityPipelineQuotaProcessorOverride",
     "ObservabilityPipelineQuotaProcessorType",
+    "ObservabilityPipelineReduceProcessor",
+    "ObservabilityPipelineReduceProcessorMergeStrategy",
+    "ObservabilityPipelineReduceProcessorMergeStrategyStrategy",
+    "ObservabilityPipelineReduceProcessorType",
     "ObservabilityPipelineRemoveFieldsProcessor",
     "ObservabilityPipelineRemoveFieldsProcessorType",
     "ObservabilityPipelineRenameFieldsProcessor",
     "ObservabilityPipelineRenameFieldsProcessorField",
     "ObservabilityPipelineRenameFieldsProcessorType",
+    "ObservabilityPipelineRsyslogDestination",
+    "ObservabilityPipelineRsyslogDestinationType",
+    "ObservabilityPipelineRsyslogSource",
+    "ObservabilityPipelineRsyslogSourceType",
+    "ObservabilityPipelineSampleProcessor",
+    "ObservabilityPipelineSampleProcessorType",
+    "ObservabilityPipelineSensitiveDataScannerProcessor",
+    "ObservabilityPipelineSensitiveDataScannerProcessorAction",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionHash",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionHashAction",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedact",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactAction",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactOptions",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactOptionsDirection",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionRedact",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionRedactAction",
+    "ObservabilityPipelineSensitiveDataScannerProcessorActionRedactOptions",
+    "ObservabilityPipelineSensitiveDataScannerProcessorCustomPattern",
+    "ObservabilityPipelineSensitiveDataScannerProcessorCustomPatternOptions",
+    "ObservabilityPipelineSensitiveDataScannerProcessorCustomPatternType",
+    "ObservabilityPipelineSensitiveDataScannerProcessorKeywordOptions",
+    "ObservabilityPipelineSensitiveDataScannerProcessorLibraryPattern",
+    "ObservabilityPipelineSensitiveDataScannerProcessorLibraryPatternOptions",
+    "ObservabilityPipelineSensitiveDataScannerProcessorLibraryPatternType",
+    "ObservabilityPipelineSensitiveDataScannerProcessorPattern",
+    "ObservabilityPipelineSensitiveDataScannerProcessorRule",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScope",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScopeAll",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScopeAllTarget",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScopeExclude",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScopeExcludeTarget",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScopeInclude",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScopeIncludeTarget",
+    "ObservabilityPipelineSensitiveDataScannerProcessorScopeOptions",
+    "ObservabilityPipelineSensitiveDataScannerProcessorType",
+    "ObservabilityPipelineSentinelOneDestination",
+    "ObservabilityPipelineSentinelOneDestinationRegion",
+    "ObservabilityPipelineSentinelOneDestinationType",
+    "ObservabilityPipelineSpec",
+    "ObservabilityPipelineSpecData",
+    "ObservabilityPipelineSplunkHecDestination",
+    "ObservabilityPipelineSplunkHecDestinationEncoding",
+    "ObservabilityPipelineSplunkHecDestinationType",
+    "ObservabilityPipelineSplunkHecSource",
+    "ObservabilityPipelineSplunkHecSourceType",
+    "ObservabilityPipelineSplunkTcpSource",
+    "ObservabilityPipelineSplunkTcpSourceType",
+    "ObservabilityPipelineSumoLogicDestination",
+    "ObservabilityPipelineSumoLogicDestinationEncoding",
+    "ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem",
+    "ObservabilityPipelineSumoLogicDestinationType",
+    "ObservabilityPipelineSumoLogicSource",
+    "ObservabilityPipelineSumoLogicSourceType",
+    "ObservabilityPipelineSyslogNgDestination",
+    "ObservabilityPipelineSyslogNgDestinationType",
+    "ObservabilityPipelineSyslogNgSource",
+    "ObservabilityPipelineSyslogNgSourceType",
+    "ObservabilityPipelineSyslogSourceMode",
+    "ObservabilityPipelineThrottleProcessor",
+    "ObservabilityPipelineThrottleProcessorType",
     "ObservabilityPipelineTls",
     "OktaAccount",
     "OktaAccountAttributes",
@@ -5315,6 +5852,9 @@ __all__ = [
     "UsersRelationship",
     "UsersResponse",
     "UsersType",
+    "ValidationError",
+    "ValidationErrorMeta",
+    "ValidationResponse",
     "VulnerabilitiesType",
     "Vulnerability",
     "VulnerabilityAttributes",

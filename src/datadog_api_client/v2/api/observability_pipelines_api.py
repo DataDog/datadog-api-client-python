@@ -3,12 +3,18 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
+from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
-from datadog_api_client.v2.model.observability_pipeline_create_request import ObservabilityPipelineCreateRequest
+from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
+from datadog_api_client.v2.model.validation_response import ValidationResponse
 
 
 class ObservabilityPipelinesApi:
@@ -33,7 +39,7 @@ class ObservabilityPipelinesApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (ObservabilityPipelineCreateRequest,),
+                    "openapi_types": (ObservabilityPipelineSpec,),
                     "location": "body",
                 },
             },
@@ -87,6 +93,33 @@ class ObservabilityPipelinesApi:
             api_client=api_client,
         )
 
+        self._list_pipelines_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListPipelinesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines",
+                "operation_id": "list_pipelines",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._update_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (ObservabilityPipeline,),
@@ -113,15 +146,35 @@ class ObservabilityPipelinesApi:
             api_client=api_client,
         )
 
+        self._validate_pipeline_endpoint = _Endpoint(
+            settings={
+                "response_type": (ValidationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines/validate",
+                "operation_id": "validate_pipeline",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ObservabilityPipelineSpec,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_pipeline(
         self,
-        body: ObservabilityPipelineCreateRequest,
+        body: ObservabilityPipelineSpec,
     ) -> ObservabilityPipeline:
         """Create a new pipeline.
 
         Create a new pipeline.
 
-        :type body: ObservabilityPipelineCreateRequest
+        :type body: ObservabilityPipelineSpec
         :rtype: ObservabilityPipeline
         """
         kwargs: Dict[str, Any] = {}
@@ -163,6 +216,31 @@ class ObservabilityPipelinesApi:
 
         return self._get_pipeline_endpoint.call_with_http_info(**kwargs)
 
+    def list_pipelines(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> ListPipelinesResponse:
+        """List pipelines.
+
+        Retrieve a list of pipelines.
+
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: ListPipelinesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._list_pipelines_endpoint.call_with_http_info(**kwargs)
+
     def update_pipeline(
         self,
         pipeline_id: str,
@@ -183,3 +261,20 @@ class ObservabilityPipelinesApi:
         kwargs["body"] = body
 
         return self._update_pipeline_endpoint.call_with_http_info(**kwargs)
+
+    def validate_pipeline(
+        self,
+        body: ObservabilityPipelineSpec,
+    ) -> ValidationResponse:
+        """Validate an observability pipeline.
+
+        Validates a pipeline configuration without creating or updating any resources.
+        Returns a list of validation errors, if any.
+
+        :type body: ObservabilityPipelineSpec
+        :rtype: ValidationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._validate_pipeline_endpoint.call_with_http_info(**kwargs)

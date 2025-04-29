@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines?page%5Bsize%5D=0
+  response:
+    body:
+      string: '{"errors":[{"title":"page[size] must be a number between 1 and 50"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
