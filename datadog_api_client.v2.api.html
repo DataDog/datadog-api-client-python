@@ -1851,6 +1851,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_custom_framework" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_custom_framework()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_filter()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_monitoring_rule()</span></code></a>
@@ -1860,6 +1862,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_signal_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_signal_notification_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_vulnerability_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_vulnerability_notification_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_custom_framework" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_custom_framework()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_historical_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_historical_job()</span></code></a>
         </li>
@@ -1878,6 +1882,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.edit_security_monitoring_signal_incidents" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.edit_security_monitoring_signal_incidents()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.edit_security_monitoring_signal_state" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.edit_security_monitoring_signal_state()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_custom_framework" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_custom_framework()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_finding" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_finding()</span></code></a>
         </li>
@@ -1938,6 +1944,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.test_existing_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.test_existing_security_monitoring_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.test_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.test_security_monitoring_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_custom_framework" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.update_custom_framework()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.update_security_filter()</span></code></a>
         </li>
@@ -8606,6 +8614,17 @@ resource datadog_security_monitoring_rule.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_custom_framework">
+<span class="sig-name descname"><span class="pre">create_custom_framework</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_custom_framework_request.CreateCustomFrameworkRequest" title="datadog_api_client.v2.model.create_custom_framework_request.CreateCustomFrameworkRequest"><span class="pre">CreateCustomFrameworkRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse" title="datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse"><span class="pre">CreateCustomFrameworkResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_custom_framework" title="Link to this definition">¶</a></dt>
+<dd><p>Create a custom framework.</p>
+<p>Create a custom framework.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse" title="datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse">CreateCustomFrameworkResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter">
 <span class="sig-name descname"><span class="pre">create_security_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_filter_create_request.SecurityFilterCreateRequest" title="datadog_api_client.v2.model.security_filter_create_request.SecurityFilterCreateRequest"><span class="pre">SecurityFilterCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_filter_response.SecurityFilterResponse" title="datadog_api_client.v2.model.security_filter_response.SecurityFilterResponse"><span class="pre">SecurityFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter" title="Link to this definition">¶</a></dt>
 <dd><p>Create a security filter.</p>
@@ -8673,6 +8692,23 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse" title="datadog_api_client.v2.model.notification_rule_response.NotificationRuleResponse">NotificationRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_custom_framework">
+<span class="sig-name descname"><span class="pre">delete_custom_framework</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.delete_custom_framework_response.DeleteCustomFrameworkResponse" title="datadog_api_client.v2.model.delete_custom_framework_response.DeleteCustomFrameworkResponse"><span class="pre">DeleteCustomFrameworkResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_custom_framework" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a custom framework.</p>
+<p>Delete a custom framework.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>str</em>) – The framework handle</p></li>
+<li><p><strong>version</strong> (<em>str</em>) – The framework version</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.delete_custom_framework_response.DeleteCustomFrameworkResponse" title="datadog_api_client.v2.model.delete_custom_framework_response.DeleteCustomFrameworkResponse">DeleteCustomFrameworkResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -8808,6 +8844,23 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_signal_triage_update_response.SecurityMonitoringSignalTriageUpdateResponse" title="datadog_api_client.v2.model.security_monitoring_signal_triage_update_response.SecurityMonitoringSignalTriageUpdateResponse">SecurityMonitoringSignalTriageUpdateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_custom_framework">
+<span class="sig-name descname"><span class="pre">get_custom_framework</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_custom_framework_response.GetCustomFrameworkResponse" title="datadog_api_client.v2.model.get_custom_framework_response.GetCustomFrameworkResponse"><span class="pre">GetCustomFrameworkResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_custom_framework" title="Link to this definition">¶</a></dt>
+<dd><p>Get a custom framework.</p>
+<p>Get a custom framework.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>str</em>) – The framework handle</p></li>
+<li><p><strong>version</strong> (<em>str</em>) – The framework version</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_custom_framework_response.GetCustomFrameworkResponse" title="datadog_api_client.v2.model.get_custom_framework_response.GetCustomFrameworkResponse">GetCustomFrameworkResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9428,6 +9481,23 @@ security signals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_test_response.SecurityMonitoringRuleTestResponse" title="datadog_api_client.v2.model.security_monitoring_rule_test_response.SecurityMonitoringRuleTestResponse">SecurityMonitoringRuleTestResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_custom_framework">
+<span class="sig-name descname"><span class="pre">update_custom_framework</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_custom_framework_request.UpdateCustomFrameworkRequest" title="datadog_api_client.v2.model.update_custom_framework_request.UpdateCustomFrameworkRequest"><span class="pre">UpdateCustomFrameworkRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_custom_framework_response.UpdateCustomFrameworkResponse" title="datadog_api_client.v2.model.update_custom_framework_response.UpdateCustomFrameworkResponse"><span class="pre">UpdateCustomFrameworkResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_custom_framework" title="Link to this definition">¶</a></dt>
+<dd><p>Update a custom framework.</p>
+<p>Update a custom framework.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>str</em>) – The framework handle</p></li>
+<li><p><strong>version</strong> (<em>str</em>) – The framework version</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_custom_framework_response.UpdateCustomFrameworkResponse" title="datadog_api_client.v2.model.update_custom_framework_response.UpdateCustomFrameworkResponse">UpdateCustomFrameworkResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
