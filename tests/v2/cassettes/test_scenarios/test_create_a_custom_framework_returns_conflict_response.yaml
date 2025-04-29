@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"create-framework-new","icon_url":"test-url","name":"name","requirements":[{"controls":[{"name":"control","rules_id":["def-000-be9"]}],"name":"requirement"}],"version":"10"},"type":"custom_framework"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
+  response:
+    body:
+      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"handle":"create-framework-new","version":"10"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"handle":"create-framework-new","icon_url":"test-url","name":"name","requirements":[{"controls":[{"name":"control","rules_id":["def-000-be9"]}],"name":"requirement"}],"version":"10"},"type":"custom_framework"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
+  response:
+    body:
+      string: '{"errors":[{"status":"409","title":"Status Conflict","detail":"already_exists(Framework
+        ''create-framework-new'' already existed)"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/create-framework-new/10
+  response:
+    body:
+      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"created_at":1744297581542,"created_by":"frog@datadoghq.com","description":"","handle":"create-framework-new","icon_url":"test-url","modified_at":1745349916258,"name":"name","org_id":321813,"version":"10"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
