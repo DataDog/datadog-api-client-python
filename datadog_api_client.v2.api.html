@@ -1611,7 +1611,11 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.get_pipeline" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ObservabilityPipelinesApi.get_pipeline()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.list_pipelines" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ObservabilityPipelinesApi.list_pipelines()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.update_pipeline" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ObservabilityPipelinesApi.update_pipeline()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.validate_pipeline" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ObservabilityPipelinesApi.validate_pipeline()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -7276,7 +7280,7 @@ path is <code class="docutils literal notranslate"><span class="pre">created_by<
 <p>Observability Pipelines allows you to collect and process logs within your own infrastructure, and then route them to downstream integrations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.create_pipeline">
-<span class="sig-name descname"><span class="pre">create_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline_create_request.ObservabilityPipelineCreateRequest" title="datadog_api_client.v2.model.observability_pipeline_create_request.ObservabilityPipelineCreateRequest"><span class="pre">ObservabilityPipelineCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline" title="datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline"><span class="pre">ObservabilityPipeline</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.create_pipeline" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline_spec.ObservabilityPipelineSpec" title="datadog_api_client.v2.model.observability_pipeline_spec.ObservabilityPipelineSpec"><span class="pre">ObservabilityPipelineSpec</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline" title="datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline"><span class="pre">ObservabilityPipeline</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.create_pipeline" title="Link to this definition">¶</a></dt>
 <dd><p>Create a new pipeline.</p>
 <p>Create a new pipeline.</p>
 <dl class="field-list simple">
@@ -7314,6 +7318,23 @@ path is <code class="docutils literal notranslate"><span class="pre">created_by<
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.list_pipelines">
+<span class="sig-name descname"><span class="pre">list_pipelines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_pipelines_response.ListPipelinesResponse" title="datadog_api_client.v2.model.list_pipelines_response.ListPipelinesResponse"><span class="pre">ListPipelinesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.list_pipelines" title="Link to this definition">¶</a></dt>
+<dd><p>List pipelines.</p>
+<p>Retrieve a list of pipelines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Size for a given page. The maximum allowed value is 100.</p></li>
+<li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – Specific page number to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_pipelines_response.ListPipelinesResponse" title="datadog_api_client.v2.model.list_pipelines_response.ListPipelinesResponse">ListPipelinesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.update_pipeline">
 <span class="sig-name descname"><span class="pre">update_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline" title="datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline"><span class="pre">ObservabilityPipeline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline" title="datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline"><span class="pre">ObservabilityPipeline</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.update_pipeline" title="Link to this definition">¶</a></dt>
 <dd><p>Update a pipeline.</p>
@@ -7324,6 +7345,18 @@ path is <code class="docutils literal notranslate"><span class="pre">created_by<
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline" title="datadog_api_client.v2.model.observability_pipeline.ObservabilityPipeline">ObservabilityPipeline</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.validate_pipeline">
+<span class="sig-name descname"><span class="pre">validate_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.observability_pipeline_spec.ObservabilityPipelineSpec" title="datadog_api_client.v2.model.observability_pipeline_spec.ObservabilityPipelineSpec"><span class="pre">ObservabilityPipelineSpec</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.validation_response.ValidationResponse" title="datadog_api_client.v2.model.validation_response.ValidationResponse"><span class="pre">ValidationResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.observability_pipelines_api.ObservabilityPipelinesApi.validate_pipeline" title="Link to this definition">¶</a></dt>
+<dd><p>Validate an observability pipeline.</p>
+<p>Validates a pipeline configuration without creating or updating any resources.
+Returns a list of validation errors, if any.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.validation_response.ValidationResponse" title="datadog_api_client.v2.model.validation_response.ValidationResponse">ValidationResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
