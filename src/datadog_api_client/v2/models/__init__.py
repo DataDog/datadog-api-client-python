@@ -635,6 +635,8 @@ from datadog_api_client.v2.model.create_app_request_data import CreateAppRequest
 from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
 from datadog_api_client.v2.model.create_app_response import CreateAppResponse
 from datadog_api_client.v2.model.create_app_response_data import CreateAppResponseData
+from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
+from datadog_api_client.v2.model.create_custom_framework_response import CreateCustomFrameworkResponse
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
 from datadog_api_client.v2.model.create_data_deletion_request_body_attributes import (
     CreateDataDeletionRequestBodyAttributes,
@@ -801,6 +803,14 @@ from datadog_api_client.v2.model.custom_destination_update_request_definition im
     CustomDestinationUpdateRequestDefinition,
 )
 from datadog_api_client.v2.model.custom_destinations_response import CustomDestinationsResponse
+from datadog_api_client.v2.model.custom_framework_control import CustomFrameworkControl
+from datadog_api_client.v2.model.custom_framework_data import CustomFrameworkData
+from datadog_api_client.v2.model.custom_framework_data_attributes import CustomFrameworkDataAttributes
+from datadog_api_client.v2.model.custom_framework_data_handle_and_version import CustomFrameworkDataHandleAndVersion
+from datadog_api_client.v2.model.custom_framework_metadata import CustomFrameworkMetadata
+from datadog_api_client.v2.model.custom_framework_requirement import CustomFrameworkRequirement
+from datadog_api_client.v2.model.custom_framework_type import CustomFrameworkType
+from datadog_api_client.v2.model.custom_framework_without_requirements import CustomFrameworkWithoutRequirements
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
@@ -840,6 +850,7 @@ from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
 from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteAppsRequestDataItems
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
 from datadog_api_client.v2.model.delete_apps_response_data_items import DeleteAppsResponseDataItems
+from datadog_api_client.v2.model.delete_custom_framework_response import DeleteCustomFrameworkResponse
 from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deployment import Deployment
 from datadog_api_client.v2.model.deployment_attributes import DeploymentAttributes
@@ -1151,10 +1162,13 @@ from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
 from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
+from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.full_api_key import FullAPIKey
 from datadog_api_client.v2.model.full_api_key_attributes import FullAPIKeyAttributes
 from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
+from datadog_api_client.v2.model.full_custom_framework_data import FullCustomFrameworkData
+from datadog_api_client.v2.model.full_custom_framework_data_attributes import FullCustomFrameworkDataAttributes
 from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
 from datadog_api_client.v2.model.gcpsts_delegate_account import GCPSTSDelegateAccount
 from datadog_api_client.v2.model.gcpsts_delegate_account_attributes import GCPSTSDelegateAccountAttributes
@@ -1174,6 +1188,7 @@ from datadog_api_client.v2.model.get_action_connection_response import GetAction
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
 from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
 from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
+from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
 from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
 from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
 from datadog_api_client.v2.model.get_device_data import GetDeviceData
@@ -2891,6 +2906,8 @@ from datadog_api_client.v2.model.update_app_request_data_attributes import Updat
 from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_response_data import UpdateAppResponseData
 from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
+from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
+from datadog_api_client.v2.model.update_custom_framework_response import UpdateCustomFrameworkResponse
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
@@ -3506,6 +3523,8 @@ __all__ = [
     "CreateAppRequestDataAttributes",
     "CreateAppResponse",
     "CreateAppResponseData",
+    "CreateCustomFrameworkRequest",
+    "CreateCustomFrameworkResponse",
     "CreateDataDeletionRequestBody",
     "CreateDataDeletionRequestBodyAttributes",
     "CreateDataDeletionRequestBodyData",
@@ -3592,6 +3611,14 @@ __all__ = [
     "CustomDestinationUpdateRequestAttributes",
     "CustomDestinationUpdateRequestDefinition",
     "CustomDestinationsResponse",
+    "CustomFrameworkControl",
+    "CustomFrameworkData",
+    "CustomFrameworkDataAttributes",
+    "CustomFrameworkDataHandleAndVersion",
+    "CustomFrameworkMetadata",
+    "CustomFrameworkRequirement",
+    "CustomFrameworkType",
+    "CustomFrameworkWithoutRequirements",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
@@ -3631,6 +3658,7 @@ __all__ = [
     "DeleteAppsRequestDataItems",
     "DeleteAppsResponse",
     "DeleteAppsResponseDataItems",
+    "DeleteCustomFrameworkResponse",
     "DependencyLocation",
     "Deployment",
     "DeploymentAttributes",
@@ -3862,10 +3890,13 @@ __all__ = [
     "FindingType",
     "FindingVulnerabilityType",
     "FormulaLimit",
+    "FrameworkHandleAndVersionResponseData",
     "FullAPIKey",
     "FullAPIKeyAttributes",
     "FullApplicationKey",
     "FullApplicationKeyAttributes",
+    "FullCustomFrameworkData",
+    "FullCustomFrameworkDataAttributes",
     "GCPMetricNamespaceConfig",
     "GCPSTSDelegateAccount",
     "GCPSTSDelegateAccountAttributes",
@@ -3885,6 +3916,7 @@ __all__ = [
     "GetAppResponse",
     "GetAppResponseData",
     "GetAppResponseDataAttributes",
+    "GetCustomFrameworkResponse",
     "GetDataDeletionsResponseBody",
     "GetDeviceAttributes",
     "GetDeviceData",
@@ -5216,6 +5248,8 @@ __all__ = [
     "UpdateAppResponse",
     "UpdateAppResponseData",
     "UpdateAppResponseDataAttributes",
+    "UpdateCustomFrameworkRequest",
+    "UpdateCustomFrameworkResponse",
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",

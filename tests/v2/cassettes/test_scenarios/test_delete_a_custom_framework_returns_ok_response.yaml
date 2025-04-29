@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"create-framework-new","icon_url":"test-url","name":"name","requirements":[{"controls":[{"name":"control","rules_id":["def-000-be9"]}],"name":"requirement"}],"version":"10"},"type":"custom_framework"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
+  response:
+    body:
+      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"handle":"create-framework-new","version":"10"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/create-framework-new/10
+  response:
+    body:
+      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"description":"","handle":"create-framework-new","icon_url":"test-url","name":"name","version":"10"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/create-framework-new/10
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

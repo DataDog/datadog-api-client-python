@@ -3483,6 +3483,20 @@ datadog\_api\_client.v2.model.create\_app\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_custom\_framework\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_custom_framework_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_custom\_framework\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_custom_framework_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_data\_deletion\_request\_body module
 --------------------------------------------------------------------------
 
@@ -4099,6 +4113,55 @@ datadog\_api\_client.v2.model.custom\_destinations\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.custom\_framework\_control module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_control
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_framework\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_framework\_data\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_framework\_metadata module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_framework\_requirement module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_requirement
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_framework\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_framework\_without\_requirements module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_framework_without_requirements
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cvss module
 -----------------------------------------
 
@@ -4285,6 +4348,13 @@ datadog\_api\_client.v2.model.delete\_apps\_response\_data\_items module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.delete_apps_response_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.delete\_custom\_framework\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.delete_custom_framework_response
    :members:
    :show-inheritance:
 
@@ -5989,6 +6059,13 @@ datadog\_api\_client.v2.model.formula\_limit module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.framework\_handle\_and\_version\_response\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.framework_handle_and_version_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.full\_api\_key module
 ---------------------------------------------------
 
@@ -6014,6 +6091,20 @@ datadog\_api\_client.v2.model.full\_application\_key\_attributes module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.full_application_key_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.full\_custom\_framework\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.full_custom_framework_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.full\_custom\_framework\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.full_custom_framework_data_attributes
    :members:
    :show-inheritance:
 
@@ -6147,6 +6238,13 @@ datadog\_api\_client.v2.model.get\_app\_response\_data\_attributes module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.get_app_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_custom\_framework\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_custom_framework_response
    :members:
    :show-inheritance:
 
@@ -15429,6 +15527,20 @@ datadog\_api\_client.v2.model.update\_app\_response\_data\_attributes module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_app_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_custom\_framework\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_custom_framework_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_custom\_framework\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_custom_framework_response
    :members:
    :show-inheritance:
 

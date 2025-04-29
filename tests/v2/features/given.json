@@ -112,6 +112,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\":\"custom_framework\",\n    \"attributes\":{\n      \"name\":\"name\",\n      \"handle\":\"create-framework-new\",\n      \"version\":\"10\",\n      \"icon_url\":\"test-url\",\n      \"requirements\":[{\n        \"name\":\"requirement\",\n        \"controls\":[{\n          \"name\":\"control\",\n          \"rules_id\":\n            [\"def-000-be9\"]\n        }]\n      }]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"custom_framework\" in the system",
+    "key": "custom_framework",
+    "tag": "Security Monitoring",
+    "operationId": "CreateCustomFramework"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
       }
     ],
