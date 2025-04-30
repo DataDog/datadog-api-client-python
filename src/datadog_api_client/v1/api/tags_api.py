@@ -289,7 +289,7 @@ class TagsApi:
 
         :param host_name: This endpoint allows you to update/replace all in an integration source with those supplied in the request.
         :type host_name: str
-        :param body: Add tags to host
+        :param body: Add tags to host.
         :type body: HostTags
         :param source: The source of the tags (for example chef, puppet).
             `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_
