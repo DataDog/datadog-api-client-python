@@ -953,13 +953,19 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_cost_azure_uc_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.create_cost_azure_uc_configs()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_budget" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_budget()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_awscur_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_cost_awscur_config()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_azure_uc_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_cost_azure_uc_config()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_custom_costs_file" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_custom_costs_file()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_budget" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.get_budget()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_custom_costs_file" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.get_custom_costs_file()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_budgets" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.list_budgets()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_cost_awscur_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.list_cost_awscur_configs()</span></code></a>
         </li>
@@ -972,6 +978,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_cost_azure_uc_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.update_cost_azure_uc_configs()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.upload_custom_costs_file" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.upload_custom_costs_file()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.upsert_budget" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.upsert_budget()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -3690,6 +3698,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_budget">
+<span class="sig-name descname"><span class="pre">delete_budget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">budget_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_budget" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a budget.</p>
+<p>Delete a budget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>budget_id</strong> (<em>str</em>) – Budget id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_awscur_config">
 <span class="sig-name descname"><span class="pre">delete_cost_awscur_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cloud_account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_awscur_config" title="Link to this definition">¶</a></dt>
 <dd><p>Delete Cloud Cost Management AWS CUR config.</p>
@@ -3732,6 +3754,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_budget">
+<span class="sig-name descname"><span class="pre">get_budget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">budget_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries" title="datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries"><span class="pre">BudgetWithEntries</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_budget" title="Link to this definition">¶</a></dt>
+<dd><p>Get a budget.</p>
+<p>Get a budget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>budget_id</strong> (<em>str</em>) – Budget id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries" title="datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries">BudgetWithEntries</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_custom_costs_file">
 <span class="sig-name descname"><span class="pre">get_custom_costs_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.custom_costs_file_get_response.CustomCostsFileGetResponse" title="datadog_api_client.v2.model.custom_costs_file_get_response.CustomCostsFileGetResponse"><span class="pre">CustomCostsFileGetResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_custom_costs_file" title="Link to this definition">¶</a></dt>
 <dd><p>Get Custom Costs file.</p>
@@ -3742,6 +3778,17 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.custom_costs_file_get_response.CustomCostsFileGetResponse" title="datadog_api_client.v2.model.custom_costs_file_get_response.CustomCostsFileGetResponse">CustomCostsFileGetResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_budgets">
+<span class="sig-name descname"><span class="pre">list_budgets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.budget_array.BudgetArray" title="datadog_api_client.v2.model.budget_array.BudgetArray"><span class="pre">BudgetArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_budgets" title="Link to this definition">¶</a></dt>
+<dd><p>List budgets.</p>
+<p>List budgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.budget_array.BudgetArray" title="datadog_api_client.v2.model.budget_array.BudgetArray">BudgetArray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3814,6 +3861,17 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.custom_costs_file_upload_response.CustomCostsFileUploadResponse" title="datadog_api_client.v2.model.custom_costs_file_upload_response.CustomCostsFileUploadResponse">CustomCostsFileUploadResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.upsert_budget">
+<span class="sig-name descname"><span class="pre">upsert_budget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries" title="datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries"><span class="pre">BudgetWithEntries</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries" title="datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries"><span class="pre">BudgetWithEntries</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.upsert_budget" title="Link to this definition">¶</a></dt>
+<dd><p>Create or update a budget.</p>
+<p>Create a new budget or update an existing one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries" title="datadog_api_client.v2.model.budget_with_entries.BudgetWithEntries">BudgetWithEntries</a></p>
 </dd>
 </dl>
 </dd></dl>
