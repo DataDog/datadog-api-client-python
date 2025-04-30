@@ -1796,6 +1796,48 @@ datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.budget module
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_array module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_attributes module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_entry module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_with\_entries module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_with_entries
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_with\_entries\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_with_entries_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.bulk\_mute\_findings\_request module
 ------------------------------------------------------------------
 
@@ -16017,6 +16059,13 @@ datadog\_api\_client.v2.model.step\_display\_bounds module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.step_display_bounds
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_filter module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_filter
    :members:
    :show-inheritance:
 
