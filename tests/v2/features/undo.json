@@ -608,6 +608,37 @@
       "type": "idempotent"
     }
   },
+  "UpsertBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "operationId": "DeleteBudget",
+      "parameters": [
+        {
+          "name": "budget_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListBudgets": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCustomCostsFiles": {
     "tag": "Cloud Cost Management",
     "undo": {

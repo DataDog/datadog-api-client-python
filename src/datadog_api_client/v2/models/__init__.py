@@ -333,6 +333,12 @@ from datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes
     BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus,
 )
 from datadog_api_client.v2.model.billing_dimensions_mapping_response import BillingDimensionsMappingResponse
+from datadog_api_client.v2.model.budget import Budget
+from datadog_api_client.v2.model.budget_array import BudgetArray
+from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
+from datadog_api_client.v2.model.budget_entry import BudgetEntry
+from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
+from datadog_api_client.v2.model.budget_with_entries_data import BudgetWithEntriesData
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.bulk_mute_findings_request_attributes import BulkMuteFindingsRequestAttributes
 from datadog_api_client.v2.model.bulk_mute_findings_request_data import BulkMuteFindingsRequestData
@@ -3211,6 +3217,7 @@ from datadog_api_client.v2.model.state_variable_type import StateVariableType
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
+from datadog_api_client.v2.model.tag_filter import TagFilter
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -3668,6 +3675,12 @@ __all__ = [
     "BillingDimensionsMappingBodyItemAttributesEndpointsItems",
     "BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus",
     "BillingDimensionsMappingResponse",
+    "Budget",
+    "BudgetArray",
+    "BudgetAttributes",
+    "BudgetEntry",
+    "BudgetWithEntries",
+    "BudgetWithEntriesData",
     "BulkMuteFindingsRequest",
     "BulkMuteFindingsRequestAttributes",
     "BulkMuteFindingsRequestData",
@@ -5708,6 +5721,7 @@ __all__ = [
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
+    "TagFilter",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",

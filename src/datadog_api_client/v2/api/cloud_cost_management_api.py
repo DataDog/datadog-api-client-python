@@ -15,6 +15,8 @@ from datadog_api_client.v2.model.azure_uc_configs_response import AzureUCConfigs
 from datadog_api_client.v2.model.azure_uc_config_pairs_response import AzureUCConfigPairsResponse
 from datadog_api_client.v2.model.azure_uc_config_post_request import AzureUCConfigPostRequest
 from datadog_api_client.v2.model.azure_uc_config_patch_request import AzureUCConfigPatchRequest
+from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
+from datadog_api_client.v2.model.budget_array import BudgetArray
 from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCostsFileListResponse
 from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
 from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
@@ -68,6 +70,29 @@ class CloudCostManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_budget_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/budget/{budget_id}",
+                "operation_id": "delete_budget",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "budget_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "budget_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -140,6 +165,29 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_budget_endpoint = _Endpoint(
+            settings={
+                "response_type": (BudgetWithEntries,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/budget/{budget_id}",
+                "operation_id": "get_budget",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "budget_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "budget_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_custom_costs_file_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomCostsFileGetResponse,),
@@ -157,6 +205,22 @@ class CloudCostManagementApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_budgets_endpoint = _Endpoint(
+            settings={
+                "response_type": (BudgetArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/budgets",
+                "operation_id": "list_budgets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -284,6 +348,26 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._upsert_budget_endpoint = _Endpoint(
+            settings={
+                "response_type": (BudgetWithEntries,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/budget",
+                "operation_id": "upsert_budget",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (BudgetWithEntries,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_cost_awscur_config(
         self,
         body: AwsCURConfigPostRequest,
@@ -315,6 +399,23 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._create_cost_azure_uc_configs_endpoint.call_with_http_info(**kwargs)
+
+    def delete_budget(
+        self,
+        budget_id: str,
+    ) -> None:
+        """Delete a budget.
+
+        Delete a budget.
+
+        :param budget_id: Budget id.
+        :type budget_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["budget_id"] = budget_id
+
+        return self._delete_budget_endpoint.call_with_http_info(**kwargs)
 
     def delete_cost_awscur_config(
         self,
@@ -367,6 +468,23 @@ class CloudCostManagementApi:
 
         return self._delete_custom_costs_file_endpoint.call_with_http_info(**kwargs)
 
+    def get_budget(
+        self,
+        budget_id: str,
+    ) -> BudgetWithEntries:
+        """Get a budget.
+
+        Get a budget.
+
+        :param budget_id: Budget id.
+        :type budget_id: str
+        :rtype: BudgetWithEntries
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["budget_id"] = budget_id
+
+        return self._get_budget_endpoint.call_with_http_info(**kwargs)
+
     def get_custom_costs_file(
         self,
         file_id: str,
@@ -383,6 +501,18 @@ class CloudCostManagementApi:
         kwargs["file_id"] = file_id
 
         return self._get_custom_costs_file_endpoint.call_with_http_info(**kwargs)
+
+    def list_budgets(
+        self,
+    ) -> BudgetArray:
+        """List budgets.
+
+        List budgets.
+
+        :rtype: BudgetArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_budgets_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_awscur_configs(
         self,
@@ -477,3 +607,19 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._upload_custom_costs_file_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_budget(
+        self,
+        body: BudgetWithEntries,
+    ) -> BudgetWithEntries:
+        """Create or update a budget.
+
+        Create a new budget or update an existing one.
+
+        :type body: BudgetWithEntries
+        :rtype: BudgetWithEntries
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._upsert_budget_endpoint.call_with_http_info(**kwargs)

@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"end_month":202502,"entries":[{"amount":500,"month":202501,"tag_filters":[{"tag_key":"service","tag_value":"ec2"}]},{"amount":500,"month":202502,"tag_filters":[{"tag_key":"service","tag_value":"ec2"}]}],"metrics_query":"aws.cost.amortized{service:ec2}
+      by {service}","name":"my budget","start_month":202501},"type":"budget"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/cost/budget
+  response:
+    body:
+      string: '{"data":{"id":"041ec283-154d-4427-987b-113f806e73f0","type":"budget","attributes":{"created_at":1745839196458,"created_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","end_month":202502,"entries":[{"month":202501,"amount":500,"tag_filters":[{"tag_key":"service","tag_value":"ec2"}]},{"month":202502,"amount":500,"tag_filters":[{"tag_key":"service","tag_value":"ec2"}]}],"metrics_query":"aws.cost.amortized{service:ec2}
+        by {service}","name":"my budget","org_id":321813,"start_month":202501,"total_amount":1000,"updated_at":1745839196458,"updated_by":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cost/budget/041ec283-154d-4427-987b-113f806e73f0
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
