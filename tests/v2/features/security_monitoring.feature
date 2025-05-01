@@ -186,7 +186,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Create a custom framework returns "OK" response
     Given new "CreateCustomFramework" request
     And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
@@ -364,7 +364,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a custom framework returns "OK" response
     Given there is a valid "custom_framework" in the system
     And new "DeleteCustomFramework" request
@@ -1150,7 +1150,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Update a custom framework returns "OK" response
     Given there is a valid "custom_framework" in the system
     And new "UpdateCustomFramework" request
