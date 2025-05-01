@@ -182,14 +182,14 @@ Feature: Security Monitoring
   Scenario: Create a custom framework returns "Conflict" response
     Given there is a valid "custom_framework" in the system
     And new "CreateCustomFramework" request
-    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"{{ unique_by_test }}","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Create a custom framework returns "OK" response
     Given new "CreateCustomFramework" request
-    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"{{ unique_by_test }}","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -364,11 +364,11 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a custom framework returns "OK" response
     Given there is a valid "custom_framework" in the system
     And new "DeleteCustomFramework" request
-    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "handle" parameter with value "{{ unique_by_test }}"
     And request contains "version" parameter with value "10"
     When the request is sent
     Then the response status is 200 OK
@@ -543,7 +543,7 @@ Feature: Security Monitoring
   Scenario: Get a custom framework returns "OK" response
     Given there is a valid "custom_framework" in the system
     And new "GetCustomFramework" request
-    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "handle" parameter with value "{{ unique_by_test }}"
     And request contains "version" parameter with value "10"
     When the request is sent
     Then the response status is 200 OK
@@ -1141,22 +1141,22 @@ Feature: Security Monitoring
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Update a custom framework returns "Bad Request" response
     Given new "UpdateCustomFramework" request
-    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "handle" parameter with value "{{ unique_by_test }}"
     And request contains "version" parameter with value "10"
     And body with value {"data": {"attributes": {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rules_id": [""]}], "name": ""}], "version": ""}, "type": "custom_framework"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Update a custom framework returns "OK" response
     Given there is a valid "custom_framework" in the system
     And new "UpdateCustomFramework" request
-    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "handle" parameter with value "{{ unique_by_test }}"
     And request contains "version" parameter with value "10"
-    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"{{ unique_by_test }}","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
     When the request is sent
     Then the response status is 200 OK
 

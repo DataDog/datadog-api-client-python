@@ -7,7 +7,7 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/create-framework-new/10
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/UpdateacustomframeworkreturnsBadRequestresponse/10
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Bad Request","detail":"input_validation_error(Field

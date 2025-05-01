@@ -16,7 +16,7 @@ body = UpdateCustomFrameworkRequest(
         type=CustomFrameworkType.CUSTOM_FRAMEWORK,
         attributes=CustomFrameworkDataAttributes(
             name="name",
-            handle="create-framework-new",
+            handle="",
             version="10",
             icon_url="test-url",
             requirements=[
@@ -39,6 +39,6 @@ body = UpdateCustomFrameworkRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
-    response = api_instance.update_custom_framework(handle="create-framework-new", version="10", body=body)
+    response = api_instance.update_custom_framework(handle="", version="10", body=body)
 
     print(response)

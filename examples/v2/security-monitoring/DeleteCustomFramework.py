@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.delete_custom_framework(
-        handle="create-framework-new",
+        handle="",
         version="10",
     )
 

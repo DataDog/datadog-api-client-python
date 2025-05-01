@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"create-framework-new","icon_url":"test-url","name":"name","requirements":[{"controls":[{"name":"control","rules_id":["def-000-be9"]}],"name":"requirement"}],"version":"10"},"type":"custom_framework"}}'
+    body: '{"data":{"attributes":{"handle":"CreateacustomframeworkreturnsConflictresponse","icon_url":"test-url","name":"name","requirements":[{"controls":[{"name":"control","rules_id":["def-000-be9"]}],"name":"requirement"}],"version":"10"},"type":"custom_framework"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks
   response:
     body:
-      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"handle":"create-framework-new","version":"10"}}}'
+      string: '{"data":{"id":"CreateacustomframeworkreturnsConflictresponse-10","type":"custom_framework","attributes":{"handle":"CreateacustomframeworkreturnsConflictresponse","version":"10"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -18,7 +18,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"handle":"create-framework-new","icon_url":"test-url","name":"name","requirements":[{"controls":[{"name":"control","rules_id":["def-000-be9"]}],"name":"requirement"}],"version":"10"},"type":"custom_framework"}}'
+    body: '{"data":{"attributes":{"handle":"CreateacustomframeworkreturnsConflictresponse","icon_url":"test-url","name":"name","requirements":[{"controls":[{"name":"control","rules_id":["def-000-be9"]}],"name":"requirement"}],"version":"10"},"type":"custom_framework"}}'
     headers:
       accept:
       - application/json
@@ -29,7 +29,7 @@ interactions:
   response:
     body:
       string: '{"errors":[{"status":"409","title":"Status Conflict","detail":"already_exists(Framework
-        ''create-framework-new'' already existed)"}]}'
+        ''CreateacustomframeworkreturnsConflictresponse'' already existed)"}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -42,10 +42,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/create-framework-new/10
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/CreateacustomframeworkreturnsConflictresponse/10
   response:
     body:
-      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"created_at":1744297581542,"created_by":"frog@datadoghq.com","description":"","handle":"create-framework-new","icon_url":"test-url","modified_at":1745349916258,"name":"name","org_id":321813,"version":"10"}}}'
+      string: '{"data":{"id":"CreateacustomframeworkreturnsConflictresponse-10","type":"custom_framework","attributes":{"description":"","handle":"CreateacustomframeworkreturnsConflictresponse","icon_url":"test-url","name":"name","version":"10"}}}'
     headers:
       content-type:
       - application/vnd.api+json
