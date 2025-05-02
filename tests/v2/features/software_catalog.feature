@@ -78,3 +78,15 @@ Feature: Software Catalog
     Given new "ListCatalogEntity" request
     When the request with pagination is sent
     Then the response status is 200 OK
+
+  @team:DataDog/service-catalog
+  Scenario: Get a list of entity relations returns "OK" response
+    Given new "ListCatalogRelation" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/service-catalog @with-pagination
+  Scenario: Get a list of entity relations returns "OK" response with pagination
+    Given new "ListCatalogRelation" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
