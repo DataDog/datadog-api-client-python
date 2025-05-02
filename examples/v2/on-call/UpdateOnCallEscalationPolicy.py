@@ -5,6 +5,11 @@ Update on-call escalation policy returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
+from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (
+    EscalationPolicyStepAttributesAssignment,
+)
+from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
+from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
 from datadog_api_client.v2.model.escalation_policy_update_request_data import EscalationPolicyUpdateRequestData
 from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes import (
@@ -12,15 +17,6 @@ from datadog_api_client.v2.model.escalation_policy_update_request_data_attribute
 )
 from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items import (
     EscalationPolicyUpdateRequestDataAttributesStepsItems,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment import (
-    EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items import (
-    EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type import (
-    EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType,
 )
 from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships import (
     EscalationPolicyUpdateRequestDataRelationships,
@@ -55,13 +51,13 @@ body = EscalationPolicyUpdateRequest(
             retries=0,
             steps=[
                 EscalationPolicyUpdateRequestDataAttributesStepsItems(
-                    assignment=EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment.DEFAULT,
+                    assignment=EscalationPolicyStepAttributesAssignment.DEFAULT,
                     escalate_after_seconds=3600,
                     id=ESCALATION_POLICY_DATA_RELATIONSHIPS_STEPS_DATA_0_ID,
                     targets=[
-                        EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=USER_DATA_ID,
-                            type=EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType.USERS,
+                            type=EscalationPolicyStepTargetType.USERS,
                         ),
                     ],
                 ),

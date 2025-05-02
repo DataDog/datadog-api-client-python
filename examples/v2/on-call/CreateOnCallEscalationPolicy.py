@@ -13,15 +13,6 @@ from datadog_api_client.v2.model.escalation_policy_create_request_data_attribute
 from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items import (
     EscalationPolicyCreateRequestDataAttributesStepsItems,
 )
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType,
-)
 from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships import (
     EscalationPolicyCreateRequestDataRelationships,
 )
@@ -35,6 +26,11 @@ from datadog_api_client.v2.model.escalation_policy_create_request_data_relations
     EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.escalation_policy_create_request_data_type import EscalationPolicyCreateRequestDataType
+from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (
+    EscalationPolicyStepAttributesAssignment,
+)
+from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
+from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
@@ -54,30 +50,30 @@ body = EscalationPolicyCreateRequest(
             retries=2,
             steps=[
                 EscalationPolicyCreateRequestDataAttributesStepsItems(
-                    assignment=EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment.DEFAULT,
+                    assignment=EscalationPolicyStepAttributesAssignment.DEFAULT,
                     escalate_after_seconds=3600,
                     targets=[
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=USER_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.USERS,
+                            type=EscalationPolicyStepTargetType.USERS,
                         ),
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=SCHEDULE_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.SCHEDULES,
+                            type=EscalationPolicyStepTargetType.SCHEDULES,
                         ),
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=DD_TEAM_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.TEAMS,
+                            type=EscalationPolicyStepTargetType.TEAMS,
                         ),
                     ],
                 ),
                 EscalationPolicyCreateRequestDataAttributesStepsItems(
-                    assignment=EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment.ROUND_ROBIN,
+                    assignment=EscalationPolicyStepAttributesAssignment.ROUND_ROBIN,
                     escalate_after_seconds=3600,
                     targets=[
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=DD_TEAM_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.TEAMS,
+                            type=EscalationPolicyStepTargetType.TEAMS,
                         ),
                     ],
                 ),

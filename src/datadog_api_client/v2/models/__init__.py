@@ -1017,15 +1017,6 @@ from datadog_api_client.v2.model.escalation_policy_create_request_data_attribute
 from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items import (
     EscalationPolicyCreateRequestDataAttributesStepsItems,
 )
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType,
-)
 from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships import (
     EscalationPolicyCreateRequestDataRelationships,
 )
@@ -1068,6 +1059,8 @@ from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment im
     EscalationPolicyStepAttributesAssignment,
 )
 from datadog_api_client.v2.model.escalation_policy_step_relationships import EscalationPolicyStepRelationships
+from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
+from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 from datadog_api_client.v2.model.escalation_policy_step_type import EscalationPolicyStepType
 from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
 from datadog_api_client.v2.model.escalation_policy_update_request_data import EscalationPolicyUpdateRequestData
@@ -1076,15 +1069,6 @@ from datadog_api_client.v2.model.escalation_policy_update_request_data_attribute
 )
 from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items import (
     EscalationPolicyUpdateRequestDataAttributesStepsItems,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment import (
-    EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items import (
-    EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type import (
-    EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType,
 )
 from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships import (
     EscalationPolicyUpdateRequestDataRelationships,
@@ -2574,6 +2558,16 @@ from datadog_api_client.v2.model.role_update_response_data import RoleUpdateResp
 from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.roles_type import RolesType
+from datadog_api_client.v2.model.routing_rule import RoutingRule
+from datadog_api_client.v2.model.routing_rule_action import RoutingRuleAction
+from datadog_api_client.v2.model.routing_rule_attributes import RoutingRuleAttributes
+from datadog_api_client.v2.model.routing_rule_relationships import RoutingRuleRelationships
+from datadog_api_client.v2.model.routing_rule_relationships_policy import RoutingRuleRelationshipsPolicy
+from datadog_api_client.v2.model.routing_rule_relationships_policy_data import RoutingRuleRelationshipsPolicyData
+from datadog_api_client.v2.model.routing_rule_relationships_policy_data_type import (
+    RoutingRuleRelationshipsPolicyDataType,
+)
+from datadog_api_client.v2.model.routing_rule_type import RoutingRuleType
 from datadog_api_client.v2.model.rule_attributes import RuleAttributes
 from datadog_api_client.v2.model.rule_outcome_relationships import RuleOutcomeRelationships
 from datadog_api_client.v2.model.rule_severity import RuleSeverity
@@ -3142,6 +3136,7 @@ from datadog_api_client.v2.model.single_aggregated_connection_response_data_attr
 from datadog_api_client.v2.model.single_aggregated_connection_response_data_type import (
     SingleAggregatedConnectionResponseDataType,
 )
+from datadog_api_client.v2.model.slack_action import SlackAction
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
@@ -3261,6 +3256,25 @@ from datadog_api_client.v2.model.team_reference_type import TeamReferenceType
 from datadog_api_client.v2.model.team_relationships import TeamRelationships
 from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
 from datadog_api_client.v2.model.team_response import TeamResponse
+from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
+from datadog_api_client.v2.model.team_routing_rules_data import TeamRoutingRulesData
+from datadog_api_client.v2.model.team_routing_rules_data_relationships import TeamRoutingRulesDataRelationships
+from datadog_api_client.v2.model.team_routing_rules_data_relationships_rules import (
+    TeamRoutingRulesDataRelationshipsRules,
+)
+from datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items import (
+    TeamRoutingRulesDataRelationshipsRulesDataItems,
+)
+from datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items_type import (
+    TeamRoutingRulesDataRelationshipsRulesDataItemsType,
+)
+from datadog_api_client.v2.model.team_routing_rules_data_type import TeamRoutingRulesDataType
+from datadog_api_client.v2.model.team_routing_rules_included import TeamRoutingRulesIncluded
+from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
+from datadog_api_client.v2.model.team_routing_rules_request_data import TeamRoutingRulesRequestData
+from datadog_api_client.v2.model.team_routing_rules_request_data_attributes import TeamRoutingRulesRequestDataAttributes
+from datadog_api_client.v2.model.team_routing_rules_request_data_type import TeamRoutingRulesRequestDataType
+from datadog_api_client.v2.model.team_routing_rules_request_rule import TeamRoutingRulesRequestRule
 from datadog_api_client.v2.model.team_target import TeamTarget
 from datadog_api_client.v2.model.team_target_type import TeamTargetType
 from datadog_api_client.v2.model.team_type import TeamType
@@ -3268,11 +3282,14 @@ from datadog_api_client.v2.model.team_update import TeamUpdate
 from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
 from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
+from datadog_api_client.v2.model.teams_action import TeamsAction
 from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
+from datadog_api_client.v2.model.time_restriction import TimeRestriction
+from datadog_api_client.v2.model.time_restrictions import TimeRestrictions
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
@@ -3318,6 +3335,7 @@ from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCat
 from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item import (
     UpsertCatalogEntityResponseIncludedItem,
 )
+from datadog_api_client.v2.model.urgency import Urgency
 from datadog_api_client.v2.model.url_param import UrlParam
 from datadog_api_client.v2.model.url_param_update import UrlParamUpdate
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
@@ -3391,6 +3409,7 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
+from datadog_api_client.v2.model.weekday import Weekday
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
 from datadog_api_client.v2.model.workflow_data import WorkflowData
 from datadog_api_client.v2.model.workflow_data_attributes import WorkflowDataAttributes
@@ -4195,9 +4214,6 @@ __all__ = [
     "EscalationPolicyCreateRequestData",
     "EscalationPolicyCreateRequestDataAttributes",
     "EscalationPolicyCreateRequestDataAttributesStepsItems",
-    "EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment",
-    "EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems",
-    "EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType",
     "EscalationPolicyCreateRequestDataRelationships",
     "EscalationPolicyCreateRequestDataRelationshipsTeams",
     "EscalationPolicyCreateRequestDataRelationshipsTeamsDataItems",
@@ -4218,14 +4234,13 @@ __all__ = [
     "EscalationPolicyStepAttributes",
     "EscalationPolicyStepAttributesAssignment",
     "EscalationPolicyStepRelationships",
+    "EscalationPolicyStepTarget",
+    "EscalationPolicyStepTargetType",
     "EscalationPolicyStepType",
     "EscalationPolicyUpdateRequest",
     "EscalationPolicyUpdateRequestData",
     "EscalationPolicyUpdateRequestDataAttributes",
     "EscalationPolicyUpdateRequestDataAttributesStepsItems",
-    "EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment",
-    "EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems",
-    "EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType",
     "EscalationPolicyUpdateRequestDataRelationships",
     "EscalationPolicyUpdateRequestDataRelationshipsTeams",
     "EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItems",
@@ -5276,6 +5291,14 @@ __all__ = [
     "RolesResponse",
     "RolesSort",
     "RolesType",
+    "RoutingRule",
+    "RoutingRuleAction",
+    "RoutingRuleAttributes",
+    "RoutingRuleRelationships",
+    "RoutingRuleRelationshipsPolicy",
+    "RoutingRuleRelationshipsPolicyData",
+    "RoutingRuleRelationshipsPolicyDataType",
+    "RoutingRuleType",
     "RuleAttributes",
     "RuleOutcomeRelationships",
     "RuleSeverity",
@@ -5652,6 +5675,7 @@ __all__ = [
     "SingleAggregatedConnectionResponseData",
     "SingleAggregatedConnectionResponseDataAttributes",
     "SingleAggregatedConnectionResponseDataType",
+    "SlackAction",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",
@@ -5765,6 +5789,19 @@ __all__ = [
     "TeamRelationships",
     "TeamRelationshipsLinks",
     "TeamResponse",
+    "TeamRoutingRules",
+    "TeamRoutingRulesData",
+    "TeamRoutingRulesDataRelationships",
+    "TeamRoutingRulesDataRelationshipsRules",
+    "TeamRoutingRulesDataRelationshipsRulesDataItems",
+    "TeamRoutingRulesDataRelationshipsRulesDataItemsType",
+    "TeamRoutingRulesDataType",
+    "TeamRoutingRulesIncluded",
+    "TeamRoutingRulesRequest",
+    "TeamRoutingRulesRequestData",
+    "TeamRoutingRulesRequestDataAttributes",
+    "TeamRoutingRulesRequestDataType",
+    "TeamRoutingRulesRequestRule",
     "TeamTarget",
     "TeamTargetType",
     "TeamType",
@@ -5772,11 +5809,14 @@ __all__ = [
     "TeamUpdateAttributes",
     "TeamUpdateRelationships",
     "TeamUpdateRequest",
+    "TeamsAction",
     "TeamsField",
     "TeamsResponse",
     "TeamsResponseLinks",
     "TeamsResponseMeta",
     "TeamsResponseMetaPagination",
+    "TimeRestriction",
+    "TimeRestrictions",
     "TimeseriesFormulaQueryRequest",
     "TimeseriesFormulaQueryResponse",
     "TimeseriesFormulaRequest",
@@ -5820,6 +5860,7 @@ __all__ = [
     "UpsertCatalogEntityRequest",
     "UpsertCatalogEntityResponse",
     "UpsertCatalogEntityResponseIncludedItem",
+    "Urgency",
     "UrlParam",
     "UrlParamUpdate",
     "UsageApplicationSecurityMonitoringResponse",
@@ -5891,6 +5932,7 @@ __all__ = [
     "VulnerabilityStatus",
     "VulnerabilityTool",
     "VulnerabilityType",
+    "Weekday",
     "WidgetLiveSpan",
     "WorkflowData",
     "WorkflowDataAttributes",

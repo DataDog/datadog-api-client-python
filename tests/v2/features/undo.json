@@ -1915,6 +1915,18 @@
       "type": "idempotent"
     }
   },
+  "GetOnCallTeamRoutingRules": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SetOnCallTeamRoutingRules": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {

@@ -17,6 +17,8 @@ from datadog_api_client.v2.model.escalation_policy_update_request import Escalat
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
+from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
+from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
 
 
 class OnCallApi:
@@ -179,6 +181,65 @@ class OnCallApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._get_on_call_team_routing_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamRoutingRules,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/teams/{team_id}/routing-rules",
+                "operation_id": "get_on_call_team_routing_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._set_on_call_team_routing_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamRoutingRules,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/teams/{team_id}/routing-rules",
+                "operation_id": "set_on_call_team_routing_rules",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TeamRoutingRulesRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -371,6 +432,58 @@ class OnCallApi:
         kwargs["schedule_id"] = schedule_id
 
         return self._get_on_call_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def get_on_call_team_routing_rules(
+        self,
+        team_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> TeamRoutingRules:
+        """Get on-call team routing rules.
+
+        Get a team's on-call routing rules
+
+        :param team_id: The team ID
+        :type team_id: str
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``rules`` , ``rules.policy``.
+        :type include: str, optional
+        :rtype: TeamRoutingRules
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_on_call_team_routing_rules_endpoint.call_with_http_info(**kwargs)
+
+    def set_on_call_team_routing_rules(
+        self,
+        team_id: str,
+        body: TeamRoutingRulesRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> TeamRoutingRules:
+        """Set on-call team routing rules.
+
+        Set a team's on-call routing rules
+
+        :param team_id: The team ID
+        :type team_id: str
+        :type body: TeamRoutingRulesRequest
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``rules`` , ``rules.policy``.
+        :type include: str, optional
+        :rtype: TeamRoutingRules
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._set_on_call_team_routing_rules_endpoint.call_with_http_info(**kwargs)
 
     def update_on_call_escalation_policy(
         self,

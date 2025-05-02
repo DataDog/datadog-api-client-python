@@ -5394,27 +5394,6 @@ datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attribu
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes\_steps\_items\_assignment module
---------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes\_steps\_items\_targets\_items module
-------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_attributes\_steps\_items\_targets\_items\_type module
-------------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships module
 ---------------------------------------------------------------------------------------------
 
@@ -5555,6 +5534,20 @@ datadog\_api\_client.v2.model.escalation\_policy\_step\_relationships module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.escalation\_policy\_step\_target module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step\_target\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.escalation\_policy\_step\_type module
 -------------------------------------------------------------------
 
@@ -5587,27 +5580,6 @@ datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attribu
 --------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes\_steps\_items\_assignment module
---------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes\_steps\_items\_targets\_items module
-------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_attributes\_steps\_items\_targets\_items\_type module
-------------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type
    :members:
    :show-inheritance:
 
@@ -12625,6 +12597,62 @@ datadog\_api\_client.v2.model.roles\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.routing\_rule module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.routing\_rule\_action module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.routing\_rule\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.routing\_rule\_relationships module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.routing\_rule\_relationships\_policy module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule_relationships_policy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.routing\_rule\_relationships\_policy\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule_relationships_policy_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.routing\_rule\_relationships\_policy\_data\_type module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule_relationships_policy_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.routing\_rule\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.routing_rule_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rule\_attributes module
 -----------------------------------------------------
 
@@ -15509,6 +15537,13 @@ datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_data\_ty
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.slack\_action module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slack_action
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.slack\_integration\_metadata module
 -----------------------------------------------------------------
 
@@ -16342,6 +16377,97 @@ datadog\_api\_client.v2.model.team\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_routing\_rules module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_data\_relationships module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_data\_relationships\_rules module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_data_relationships_rules
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_data\_relationships\_rules\_data\_items module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_data\_relationships\_rules\_data\_items\_type module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_data\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_included module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_request\_data\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_request\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_routing\_rules\_request\_rule module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_routing_rules_request_rule
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_target module
 -------------------------------------------------
 
@@ -16391,6 +16517,13 @@ datadog\_api\_client.v2.model.team\_update\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.teams\_action module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_action
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.teams\_field module
 -------------------------------------------------
 
@@ -16423,6 +16556,20 @@ datadog\_api\_client.v2.model.teams\_response\_meta\_pagination module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.teams_response_meta_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.time\_restriction module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.time_restriction
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.time\_restrictions module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.time_restrictions
    :members:
    :show-inheritance:
 
@@ -16724,6 +16871,13 @@ datadog\_api\_client.v2.model.upsert\_catalog\_entity\_response\_included\_item 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.upsert_catalog_entity_response_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.urgency module
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.urgency
    :members:
    :show-inheritance:
 
@@ -17221,6 +17375,13 @@ datadog\_api\_client.v2.model.vulnerability\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.vulnerability_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.weekday module
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.weekday
    :members:
    :show-inheritance:
 
