@@ -18,9 +18,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.escalation_policy_included import EscalationPolicyIncluded
     from datadog_api_client.v2.model.team_reference import TeamReference
     from datadog_api_client.v2.model.escalation_policy_step import EscalationPolicyStep
-    from datadog_api_client.v2.model.user_target import UserTarget
-    from datadog_api_client.v2.model.schedule_target import ScheduleTarget
-    from datadog_api_client.v2.model.team_target import TeamTarget
+    from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyUser
+    from datadog_api_client.v2.model.schedule_data import ScheduleData
 
 
 class EscalationPolicy(ModelNormal):
@@ -44,14 +43,7 @@ class EscalationPolicy(ModelNormal):
         data: Union[EscalationPolicyData, UnsetType] = unset,
         included: Union[
             List[
-                Union[
-                    EscalationPolicyIncluded,
-                    TeamReference,
-                    EscalationPolicyStep,
-                    UserTarget,
-                    ScheduleTarget,
-                    TeamTarget,
-                ]
+                Union[EscalationPolicyIncluded, TeamReference, EscalationPolicyStep, EscalationPolicyUser, ScheduleData]
             ],
             UnsetType,
         ] = unset,
