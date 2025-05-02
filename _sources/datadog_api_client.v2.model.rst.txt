@@ -5646,6 +5646,27 @@ datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_type mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.escalation\_policy\_user module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_user\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_user\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_user_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.escalation\_target module
 -------------------------------------------------------
 
@@ -16780,6 +16801,13 @@ datadog\_api\_client.v2.model.user\_attributes module
 -----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_attributes\_status module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_attributes_status
    :members:
    :show-inheritance:
 
