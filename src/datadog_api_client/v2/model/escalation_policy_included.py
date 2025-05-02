@@ -40,16 +40,14 @@ class EscalationPolicyIncluded(ModelComposed):
         # loading
         from datadog_api_client.v2.model.team_reference import TeamReference
         from datadog_api_client.v2.model.escalation_policy_step import EscalationPolicyStep
-        from datadog_api_client.v2.model.user_target import UserTarget
-        from datadog_api_client.v2.model.schedule_target import ScheduleTarget
-        from datadog_api_client.v2.model.team_target import TeamTarget
+        from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyUser
+        from datadog_api_client.v2.model.schedule_data import ScheduleData
 
         return {
             "oneOf": [
                 TeamReference,
                 EscalationPolicyStep,
-                UserTarget,
-                ScheduleTarget,
-                TeamTarget,
+                EscalationPolicyUser,
+                ScheduleData,
             ],
         }

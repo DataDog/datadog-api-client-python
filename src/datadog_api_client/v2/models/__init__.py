@@ -1099,6 +1099,9 @@ from datadog_api_client.v2.model.escalation_policy_update_request_data_relations
     EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.escalation_policy_update_request_data_type import EscalationPolicyUpdateRequestDataType
+from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyUser
+from datadog_api_client.v2.model.escalation_policy_user_attributes import EscalationPolicyUserAttributes
+from datadog_api_client.v2.model.escalation_policy_user_type import EscalationPolicyUserType
 from datadog_api_client.v2.model.escalation_target import EscalationTarget
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
@@ -3328,6 +3331,7 @@ from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeries
 from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
 from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_attributes import UserAttributes
+from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
 from datadog_api_client.v2.model.user_create_data import UserCreateData
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
@@ -4227,6 +4231,9 @@ __all__ = [
     "EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItems",
     "EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItemsType",
     "EscalationPolicyUpdateRequestDataType",
+    "EscalationPolicyUser",
+    "EscalationPolicyUserAttributes",
+    "EscalationPolicyUserType",
     "EscalationTarget",
     "Event",
     "EventAttributes",
@@ -5824,6 +5831,7 @@ __all__ = [
     "UsageTimeSeriesType",
     "User",
     "UserAttributes",
+    "UserAttributesStatus",
     "UserCreateAttributes",
     "UserCreateData",
     "UserCreateRequest",

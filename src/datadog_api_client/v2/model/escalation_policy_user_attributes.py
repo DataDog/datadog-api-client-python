@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
 
 
-class ScheduleUserAttributes(ModelNormal):
+class EscalationPolicyUserAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
@@ -42,7 +42,7 @@ class ScheduleUserAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Provides basic user information for a schedule, including a name and email address.
+        Provides basic user information for an escalation policy, including a name and email address.
 
         :param email: The user's email address.
         :type email: str, optional
