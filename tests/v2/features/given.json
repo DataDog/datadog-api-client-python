@@ -497,6 +497,18 @@
     "operationId": "CreateOnCallSchedule"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"rules\": [\n        {\n          \"query\": \"\",\n          \"policy_id\": \"{{ escalation_policy.data.id }}\",\n          \"urgency\": \"low\",\n          \"time_restriction\": null,\n          \"actions\": []\n        }\n      ]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there are valid \"routing_rules\" in the system",
+    "key": "routing_rules",
+    "tag": "On-Call",
+    "operationId": "SetOnCallTeamRoutingRules"
+  },
+  {
     "source": "data[4]",
     "step": "there is a valid \"permission\" in the system",
     "key": "permission",

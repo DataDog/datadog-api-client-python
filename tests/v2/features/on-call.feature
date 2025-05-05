@@ -116,6 +116,25 @@ Feature: On-Call
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/bugle
+  Scenario: Get on-call team routing rules returns "OK" response
+    Given new "GetOnCallTeamRoutingRules" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip-python @team:DataDog/bugle
+  Scenario: Set on-call team routing rules returns "OK" response
+    Given new "SetOnCallTeamRoutingRules" request
+    And there is a valid "user" in the system
+    And there is a valid "dd_team" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "escalation_policy" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And body with value {"data": {"attributes": {"rules": [{"actions": [{"channel": "channel", "type": "send_slack_message", "workspace": "workspace"}], "query": "tags.service:test", "time_restriction": {"time_zone": "Europe/Paris", "restrictions": [{"end_day": "monday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}, {"end_day": "tuesday", "end_time": "17:00:00", "start_day": "tuesday", "start_time": "09:00:00"}]}, "urgency": "high"}, {"policy_id": "{{ escalation_policy.data.id }}", "query": "",  "urgency": "low"}]}, "id": "{{ dd_team.data.id }}", "type": "team_routing_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/bugle
   Scenario: Update on-call escalation policy returns "Bad Request" response
     Given new "UpdateOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"

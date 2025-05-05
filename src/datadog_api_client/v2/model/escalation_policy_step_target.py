@@ -14,21 +14,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type import (
-        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType,
-    )
+    from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 
 
-class EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(ModelNormal):
+class EscalationPolicyStepTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type import (
-            EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType,
-        )
+        from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 
         return {
             "id": (str,),
-            "type": (EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType,),
+            "type": (EscalationPolicyStepTargetType,),
         }
 
     attribute_map = {
@@ -39,7 +35,7 @@ class EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(ModelNor
     def __init__(
         self_,
         id: Union[str, UnsetType] = unset,
-        type: Union[EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType, UnsetType] = unset,
+        type: Union[EscalationPolicyStepTargetType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -49,7 +45,7 @@ class EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(ModelNor
         :type id: str, optional
 
         :param type: Specifies the type of escalation target (example ``users`` , ``schedules`` , or ``teams`` ).
-        :type type: EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType, optional
+        :type type: EscalationPolicyStepTargetType, optional
         """
         if id is not unset:
             kwargs["id"] = id
