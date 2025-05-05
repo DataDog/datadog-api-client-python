@@ -1426,6 +1426,8 @@
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.delete_on_call_schedule"><code class="docutils literal notranslate"><span class="pre">OnCallApi.delete_on_call_schedule()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.get_on_call_escalation_policy"><code class="docutils literal notranslate"><span class="pre">OnCallApi.get_on_call_escalation_policy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.get_on_call_schedule"><code class="docutils literal notranslate"><span class="pre">OnCallApi.get_on_call_schedule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.get_on_call_team_routing_rules"><code class="docutils literal notranslate"><span class="pre">OnCallApi.get_on_call_team_routing_rules()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.set_on_call_team_routing_rules"><code class="docutils literal notranslate"><span class="pre">OnCallApi.set_on_call_team_routing_rules()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.update_on_call_escalation_policy"><code class="docutils literal notranslate"><span class="pre">OnCallApi.update_on_call_escalation_policy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.update_on_call_schedule"><code class="docutils literal notranslate"><span class="pre">OnCallApi.update_on_call_schedule()</span></code></a></li>
 </ul>
@@ -4956,18 +4958,6 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items.EscalationPolicyCreateRequestDataAttributesStepsItems"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyCreateRequestDataAttributesStepsItems</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment">datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment.EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items">datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items.EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type">datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type.EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_create_request_data_relationships">datadog_api_client.v2.model.escalation_policy_create_request_data_relationships module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_create_request_data_relationships.EscalationPolicyCreateRequestDataRelationships"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyCreateRequestDataRelationships</span></code></a></li>
 </ul>
@@ -5048,6 +5038,14 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_step_relationships.EscalationPolicyStepRelationships"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyStepRelationships</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_step_target">datadog_api_client.v2.model.escalation_policy_step_target module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_step_target.EscalationPolicyStepTarget"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyStepTarget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_step_target_type">datadog_api_client.v2.model.escalation_policy_step_target_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_step_target_type.EscalationPolicyStepTargetType"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyStepTargetType</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_step_type">datadog_api_client.v2.model.escalation_policy_step_type module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_step_type.EscalationPolicyStepType"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyStepType</span></code></a></li>
 </ul>
@@ -5066,18 +5064,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items">datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items.EscalationPolicyUpdateRequestDataAttributesStepsItems"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyUpdateRequestDataAttributesStepsItems</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment">datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment.EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items">datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items.EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type">datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items_type.EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType"><code class="docutils literal notranslate"><span class="pre">EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItemsType</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.escalation_policy_update_request_data_relationships">datadog_api_client.v2.model.escalation_policy_update_request_data_relationships module</a><ul>
@@ -9106,6 +9092,38 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.roles_type.RolesType"><code class="docutils literal notranslate"><span class="pre">RolesType</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule">datadog_api_client.v2.model.routing_rule module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule.RoutingRule"><code class="docutils literal notranslate"><span class="pre">RoutingRule</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule_action">datadog_api_client.v2.model.routing_rule_action module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule_action.RoutingRuleAction"><code class="docutils literal notranslate"><span class="pre">RoutingRuleAction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule_attributes">datadog_api_client.v2.model.routing_rule_attributes module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule_attributes.RoutingRuleAttributes"><code class="docutils literal notranslate"><span class="pre">RoutingRuleAttributes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule_relationships">datadog_api_client.v2.model.routing_rule_relationships module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule_relationships.RoutingRuleRelationships"><code class="docutils literal notranslate"><span class="pre">RoutingRuleRelationships</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule_relationships_policy">datadog_api_client.v2.model.routing_rule_relationships_policy module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule_relationships_policy.RoutingRuleRelationshipsPolicy"><code class="docutils literal notranslate"><span class="pre">RoutingRuleRelationshipsPolicy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule_relationships_policy_data">datadog_api_client.v2.model.routing_rule_relationships_policy_data module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule_relationships_policy_data.RoutingRuleRelationshipsPolicyData"><code class="docutils literal notranslate"><span class="pre">RoutingRuleRelationshipsPolicyData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule_relationships_policy_data_type">datadog_api_client.v2.model.routing_rule_relationships_policy_data_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule_relationships_policy_data_type.RoutingRuleRelationshipsPolicyDataType"><code class="docutils literal notranslate"><span class="pre">RoutingRuleRelationshipsPolicyDataType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.routing_rule_type">datadog_api_client.v2.model.routing_rule_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.routing_rule_type.RoutingRuleType"><code class="docutils literal notranslate"><span class="pre">RoutingRuleType</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.rule_attributes">datadog_api_client.v2.model.rule_attributes module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rule_attributes.RuleAttributes"><code class="docutils literal notranslate"><span class="pre">RuleAttributes</span></code></a></li>
 </ul>
@@ -10754,6 +10772,10 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.single_aggregated_connection_response_data_type.SingleAggregatedConnectionResponseDataType"><code class="docutils literal notranslate"><span class="pre">SingleAggregatedConnectionResponseDataType</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.slack_action">datadog_api_client.v2.model.slack_action module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slack_action.SlackAction"><code class="docutils literal notranslate"><span class="pre">SlackAction</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.slack_integration_metadata">datadog_api_client.v2.model.slack_integration_metadata module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slack_integration_metadata.SlackIntegrationMetadata"><code class="docutils literal notranslate"><span class="pre">SlackIntegrationMetadata</span></code></a></li>
 </ul>
@@ -11230,6 +11252,58 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_response.TeamResponse"><code class="docutils literal notranslate"><span class="pre">TeamResponse</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules">datadog_api_client.v2.model.team_routing_rules module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules.TeamRoutingRules"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRules</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_data">datadog_api_client.v2.model.team_routing_rules_data module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_data.TeamRoutingRulesData"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_data_relationships">datadog_api_client.v2.model.team_routing_rules_data_relationships module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_data_relationships.TeamRoutingRulesDataRelationships"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesDataRelationships</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_data_relationships_rules">datadog_api_client.v2.model.team_routing_rules_data_relationships_rules module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_data_relationships_rules.TeamRoutingRulesDataRelationshipsRules"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesDataRelationshipsRules</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items">datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items.TeamRoutingRulesDataRelationshipsRulesDataItems"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesDataRelationshipsRulesDataItems</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items_type">datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_data_relationships_rules_data_items_type.TeamRoutingRulesDataRelationshipsRulesDataItemsType"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesDataRelationshipsRulesDataItemsType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_data_type">datadog_api_client.v2.model.team_routing_rules_data_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_data_type.TeamRoutingRulesDataType"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesDataType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_included">datadog_api_client.v2.model.team_routing_rules_included module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_included.TeamRoutingRulesIncluded"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesIncluded</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_request">datadog_api_client.v2.model.team_routing_rules_request module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_request.TeamRoutingRulesRequest"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesRequest</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_request_data">datadog_api_client.v2.model.team_routing_rules_request_data module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_request_data.TeamRoutingRulesRequestData"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesRequestData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_request_data_attributes">datadog_api_client.v2.model.team_routing_rules_request_data_attributes module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_request_data_attributes.TeamRoutingRulesRequestDataAttributes"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesRequestDataAttributes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_request_data_type">datadog_api_client.v2.model.team_routing_rules_request_data_type module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_request_data_type.TeamRoutingRulesRequestDataType"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesRequestDataType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_routing_rules_request_rule">datadog_api_client.v2.model.team_routing_rules_request_rule module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_routing_rules_request_rule.TeamRoutingRulesRequestRule"><code class="docutils literal notranslate"><span class="pre">TeamRoutingRulesRequestRule</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.team_target">datadog_api_client.v2.model.team_target module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_target.TeamTarget"><code class="docutils literal notranslate"><span class="pre">TeamTarget</span></code></a></li>
 </ul>
@@ -11258,6 +11332,10 @@
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_update_request.TeamUpdateRequest"><code class="docutils literal notranslate"><span class="pre">TeamUpdateRequest</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.teams_action">datadog_api_client.v2.model.teams_action module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.teams_action.TeamsAction"><code class="docutils literal notranslate"><span class="pre">TeamsAction</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.teams_field">datadog_api_client.v2.model.teams_field module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.teams_field.TeamsField"><code class="docutils literal notranslate"><span class="pre">TeamsField</span></code></a></li>
 </ul>
@@ -11276,6 +11354,14 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.teams_response_meta_pagination">datadog_api_client.v2.model.teams_response_meta_pagination module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.teams_response_meta_pagination.TeamsResponseMetaPagination"><code class="docutils literal notranslate"><span class="pre">TeamsResponseMetaPagination</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.time_restriction">datadog_api_client.v2.model.time_restriction module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.time_restriction.TimeRestriction"><code class="docutils literal notranslate"><span class="pre">TimeRestriction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.time_restrictions">datadog_api_client.v2.model.time_restrictions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.time_restrictions.TimeRestrictions"><code class="docutils literal notranslate"><span class="pre">TimeRestrictions</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.timeseries_formula_query_request">datadog_api_client.v2.model.timeseries_formula_query_request module</a><ul>
@@ -11448,6 +11534,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.upsert_catalog_entity_response_included_item">datadog_api_client.v2.model.upsert_catalog_entity_response_included_item module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.upsert_catalog_entity_response_included_item.UpsertCatalogEntityResponseIncludedItem"><code class="docutils literal notranslate"><span class="pre">UpsertCatalogEntityResponseIncludedItem</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.urgency">datadog_api_client.v2.model.urgency module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.urgency.Urgency"><code class="docutils literal notranslate"><span class="pre">Urgency</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.url_param">datadog_api_client.v2.model.url_param module</a><ul>
@@ -11732,6 +11822,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.vulnerability_type">datadog_api_client.v2.model.vulnerability_type module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.vulnerability_type.VulnerabilityType"><code class="docutils literal notranslate"><span class="pre">VulnerabilityType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.weekday">datadog_api_client.v2.model.weekday module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.weekday.Weekday"><code class="docutils literal notranslate"><span class="pre">Weekday</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.widget_live_span">datadog_api_client.v2.model.widget_live_span module</a><ul>
