@@ -48,7 +48,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl
 
         :param metadata: Custom metadata key-value pairs added to each object.
-        :type metadata: [ObservabilityPipelineMetadataEntry]
+        :type metadata: [ObservabilityPipelineMetadataEntry], optional
 
         :param auto_extract_timestamp: If `true`, Splunk tries to extract timestamps from incoming log events.
             If `false`, Splunk assigns the time the event was received.
