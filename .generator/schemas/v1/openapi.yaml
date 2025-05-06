@@ -27,12 +27,24 @@ components:
         type: string
   requestBodies: {}
   responses:
+    ForbiddenResponse:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIErrorResponse'
+      description: Forbidden
     TooManyRequestsResponse:
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/APIErrorResponse'
       description: Too many requests
+    UnauthorizedResponse:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/APIErrorResponse'
+      description: Unauthorized
   schemas:
     APIErrorResponse:
       description: Error response object.
@@ -24192,6 +24204,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/IPRanges'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security: []
@@ -24664,6 +24678,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             text/json:
@@ -24832,6 +24848,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -24906,6 +24924,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DashboardSummary'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -24958,6 +24978,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25013,6 +25035,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25045,6 +25069,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DashboardListListResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25088,6 +25114,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25128,6 +25156,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DashboardListDeleteResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25172,6 +25202,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DashboardList'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25229,6 +25261,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25287,6 +25321,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25333,6 +25369,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DeleteSharedDashboardResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25378,6 +25416,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SharedDashboard'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25450,6 +25490,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25506,6 +25548,8 @@ paths:
       responses:
         '204':
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25565,6 +25609,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SharedDashboardInvites'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25630,6 +25676,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25675,6 +25723,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/DashboardDeleteResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25718,6 +25768,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Dashboard'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25774,6 +25826,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25840,6 +25894,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             text/json:
@@ -25894,6 +25950,8 @@ paths:
                   $ref: '#/components/schemas/Downtime'
                 type: array
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25939,6 +25997,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -25988,6 +26048,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26033,6 +26095,8 @@ paths:
       responses:
         '204':
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26080,6 +26144,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Downtime'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26141,6 +26207,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26262,6 +26330,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26307,6 +26377,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -26336,6 +26408,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/EventResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26442,6 +26516,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26620,6 +26696,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Invalid Parameter Error
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -26670,6 +26748,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Invalid Parameter Error
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -28481,6 +28561,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -28769,6 +28851,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/LogsIndexListResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29274,6 +29358,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29312,6 +29398,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/MetricMetadata'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29487,6 +29575,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29689,6 +29779,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29740,6 +29832,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29834,6 +29928,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29924,6 +30020,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -29972,6 +30070,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Invalid JSON
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -30098,6 +30198,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -30218,6 +30320,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '404':
           content:
             application/json:
@@ -30273,6 +30379,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Invalid JSON
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31097,6 +31205,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31142,6 +31252,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31352,6 +31464,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             text/json:
@@ -31441,6 +31555,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31494,6 +31610,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31548,6 +31666,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31597,6 +31717,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31651,6 +31773,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SLOCorrectionListResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31698,6 +31822,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31887,6 +32013,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31937,6 +32065,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SLODeleteResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -31993,6 +32123,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SLOResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32049,6 +32181,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32100,6 +32234,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32190,6 +32326,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32234,6 +32372,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsBatchDetails'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '404':
           content:
             application/json:
@@ -32267,6 +32409,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsLocations'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -32299,12 +32445,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsPrivateLocationCreationResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '402':
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Quota reached for private locations
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '404':
           content:
             application/json:
@@ -32340,6 +32490,10 @@ paths:
       responses:
         '204':
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '404':
           content:
             application/json:
@@ -32379,6 +32533,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsPrivateLocation'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '404':
           content:
             application/json:
@@ -32425,6 +32583,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsPrivateLocation'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '404':
           content:
             application/json:
@@ -32496,6 +32658,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsListTestsResponse'
           description: OK - Returns the list of all Synthetic tests.
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32671,6 +32835,8 @@ paths:
           description: '- JSON format is wrong
 
             - Creation failed'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '402':
           content:
             application/json:
@@ -32718,6 +32884,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsAPITest'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32778,6 +32946,8 @@ paths:
           description: '- JSON format is wrong
 
             - Updating sub-type is forbidden'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32835,6 +33005,8 @@ paths:
           description: '- JSON format is wrong
 
             - Creation failed'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '402':
           content:
             application/json:
@@ -32882,6 +33054,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsBrowserTest'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -32942,6 +33116,8 @@ paths:
           description: '- JSON format is wrong
 
             - Updating sub-type is forbidden'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33016,6 +33192,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsGetBrowserTestLatestResultsResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33071,6 +33249,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsBrowserTestResultFull'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33128,6 +33308,8 @@ paths:
             an uptime widget)
 
             - Some IDs are not owned by the user'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33183,6 +33365,8 @@ paths:
           description: '- JSON format is wrong
 
             - Creation failed'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '402':
           content:
             application/json:
@@ -33230,6 +33414,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsMobileTest'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33290,6 +33476,8 @@ paths:
           description: '- JSON format is wrong
 
             - Updating sub-type is forbidden'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33345,6 +33533,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -33384,6 +33576,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: JSON format is wrong
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -33425,6 +33621,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: '- JSON format is wrong'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33464,6 +33662,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsTestDetails'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33524,6 +33724,8 @@ paths:
           description: '- JSON format is wrong
 
             - Updating sub-type is forbidden'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33596,6 +33798,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsGetAPITestLatestResultsResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33649,6 +33853,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsAPITestResultFull'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33708,6 +33914,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: JSON format is wrong.
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33748,6 +33956,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsListGlobalVariablesResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33791,6 +34001,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Invalid request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33838,6 +34050,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: JSON format is wrong
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33881,6 +34095,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/SyntheticsGlobalVariable'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33933,6 +34149,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Invalid request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -33973,6 +34191,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/TagToHosts'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -34229,6 +34449,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34292,6 +34514,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34356,6 +34580,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34418,6 +34644,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34484,6 +34712,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34550,6 +34780,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34616,6 +34848,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34682,6 +34916,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34746,6 +34982,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34810,6 +35048,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34902,6 +35142,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/HourlyUsageAttributionResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -34968,6 +35210,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35032,6 +35276,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35098,6 +35344,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35164,6 +35412,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35228,6 +35478,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35294,6 +35546,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35360,6 +35614,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35465,6 +35721,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/MonthlyUsageAttributionResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35531,6 +35789,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35595,6 +35855,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35661,6 +35923,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35727,6 +35991,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35792,6 +36058,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35863,6 +36131,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35929,6 +36199,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -35995,6 +36267,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -36073,6 +36347,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -36137,6 +36413,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -36201,6 +36479,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -36265,6 +36545,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -36329,6 +36611,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -36416,6 +36700,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Bad Request
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json;datetime-format=rfc3339:
@@ -36451,6 +36737,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/UserListResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -36667,6 +36955,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthenticationValidationResponse'
           description: OK
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '403':
           content:
             application/json:
@@ -36811,6 +37101,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/HTTPLogError'
           description: unexpected error
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
