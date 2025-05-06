@@ -320,14 +320,14 @@ Feature: Metrics
     And the response "data.type" is equal to "scalar_response"
     And the response "data.attributes.columns[0].name" is equal to "a"
 
-  @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @generated @skip @team:DataDog/metrics-intake
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @team:DataDog/metrics-intake
   Scenario: Submit metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
@@ -335,21 +335,21 @@ Feature: Metrics
     Then the response status is 202 Payload accepted
     And the response "errors" has length 0
 
-  @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @generated @skip @team:DataDog/metrics-intake
   Scenario: Submit metrics returns "Payload too large" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 413 Payload too large
 
-  @generated @skip @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @generated @skip @team:DataDog/metrics-intake
   Scenario: Submit metrics returns "Request timeout" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 408 Request timeout
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-intake @team:DataDog/metrics-query
+  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-intake
   Scenario: Submit metrics with compression returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}]}]}
