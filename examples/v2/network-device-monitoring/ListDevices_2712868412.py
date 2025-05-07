@@ -1,5 +1,5 @@
 """
-Get the list of devices returns "OK" response
+Get the list of devices returns "OK" response with pagination
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -8,10 +8,6 @@ from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDevic
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = NetworkDeviceMonitoringApi(api_client)
-    response = api_instance.list_devices(
-        page_size=1,
-        page_number=0,
-        filter_tag="device_namespace:default",
-    )
-
-    print(response)
+    items = api_instance.list_devices_with_pagination()
+    for item in items:
+        print(item)
