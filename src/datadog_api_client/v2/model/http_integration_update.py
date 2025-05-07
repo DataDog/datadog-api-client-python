@@ -20,10 +20,6 @@ if TYPE_CHECKING:
 
 
 class HTTPIntegrationUpdate(ModelNormal):
-    validations = {
-        "base_url": {},
-    }
-
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.http_credentials_update import HTTPCredentialsUpdate
