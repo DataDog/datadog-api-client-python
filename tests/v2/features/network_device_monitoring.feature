@@ -75,6 +75,12 @@ Feature: Network Device Monitoring
     And the response "data[0].attributes.interface_statuses.down" is equal to 13
     And the response "meta.page.total_filtered_count" is equal to 1
 
+  @generated @skip @team:DataDog/network-device-monitoring @with-pagination
+  Scenario: Get the list of devices returns "OK" response with pagination
+    Given new "ListDevices" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/network-device-monitoring
   Scenario: Get the list of interfaces of the device returns "OK" response
     Given new "GetInterfaces" request
