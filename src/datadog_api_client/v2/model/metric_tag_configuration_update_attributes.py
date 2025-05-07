@@ -62,7 +62,7 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
             * time: sum, space: avg
             * time: sum, space: sum
 
-            Can only be applied to non_distribution metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``.
+            Can only be applied to non_distribution metrics that have a ``metric_type`` of ``count`` , ``rate`` , or ``gauge``. **Deprecated**.
         :type aggregations: MetricCustomAggregations, optional
 
         :param exclude_tags_mode: When set to true, the configuration will exclude the configured tags and include any other submitted tags.

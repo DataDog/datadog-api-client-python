@@ -11,7 +11,6 @@ with ApiClient(configuration) as api_client:
     response = api_instance.estimate_metrics_output_series(
         metric_name="system.cpu.idle",
         filter_groups="app,host",
-        filter_num_aggregations=4,
     )
 
     print(response)

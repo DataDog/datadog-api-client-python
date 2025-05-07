@@ -1,7 +1,7 @@
 @endpoint(metrics) @endpoint(metrics-v2)
 Feature: Metrics
   The metrics endpoint allows you to:  - Post metrics data so it can be
-  graphed on Datadog’s dashboards - Query metrics from any time period
+  graphed on Datadog dashboards - Query metrics from any time period
   (timeseries and scalar) - Modify tag configurations for metrics - View
   tags and volumes for metrics  **Note**: A graph can only contain a set
   number of points and as the timeframe over which a metric is viewed
@@ -370,7 +370,6 @@ Feature: Metrics
     Given new "EstimateMetricsOutputSeries" request
     And request contains "metric_name" parameter with value "system.cpu.idle"
     And request contains "filter[groups]" parameter with value "app,host"
-    And request contains "filter[num_aggregations]" parameter with value 4
     When the request is sent
     Then the response status is 200 Success
 

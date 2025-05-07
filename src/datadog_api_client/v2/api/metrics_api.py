@@ -47,7 +47,7 @@ class MetricsApi:
     """
     The metrics endpoint allows you to:
 
-    * Post metrics data so it can be graphed on Datadog’s dashboards
+    * Post metrics data so it can be graphed on Datadog dashboards
     * Query metrics from any time period (timeseries and scalar)
     * Modify tag configurations for metrics
     * View tags and volumes for metrics
@@ -592,7 +592,7 @@ class MetricsApi:
     ) -> MetricEstimateResponse:
         """Tag Configuration Cardinality Estimator.
 
-        Returns the estimated cardinality for a metric with a given tag, percentile and number of aggregations configuration using Metrics without Limits&trade;.
+        Returns the estimated cardinality for a metric with a given tag and percentile configuration using Metrics without Limits&trade;.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
@@ -600,7 +600,7 @@ class MetricsApi:
         :type filter_groups: str, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with. If unspecified, it defaults to 0 hours.
         :type filter_hours_ago: int, optional
-        :param filter_num_aggregations: The number of aggregations that a ``count`` , ``rate`` , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
+        :param filter_num_aggregations: This argument has no effect as all time and space combinations are now available with no impact on customer bills.
         :type filter_num_aggregations: int, optional
         :param filter_pct: A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.
         :type filter_pct: bool, optional
