@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"auth_credentials":{"fingerprint":"a7:b5:54:f2:da:a2:d7:b0:ed:f4:79:47:93:64:12:b1","private_key":"-----BEGIN
+      PRIVATE KEY-----\nMIIEv\n-----END PRIVATE KEY-----\n"},"config_version":2,"home_region":"us-ashburn-1","logs_config":{"compartment_tag_filters":["datadog:true","env:prod"],"enabled":true,"enabled_services":["oacnativeproduction"]},"metrics_config":{"compartment_tag_filters":["datadog:true","env:prod"],"enabled":true,"excluded_services":["oci_compute"]},"resource_collection_enabled":true,"user_ocid":"ocid1.user.test"},"id":"ocid1.tenancy.dummy_value","type":"oci_tenancy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/oci/tenancies
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"invalid
+        private key"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

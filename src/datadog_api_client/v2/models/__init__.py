@@ -252,6 +252,7 @@ from datadog_api_client.v2.model.audit_logs_response_status import AuditLogsResp
 from datadog_api_client.v2.model.audit_logs_search_events_request import AuditLogsSearchEventsRequest
 from datadog_api_client.v2.model.audit_logs_sort import AuditLogsSort
 from datadog_api_client.v2.model.audit_logs_warning import AuditLogsWarning
+from datadog_api_client.v2.model.auth_credentials import AuthCredentials
 from datadog_api_client.v2.model.authn_mapping import AuthNMapping
 from datadog_api_client.v2.model.authn_mapping_attributes import AuthNMappingAttributes
 from datadog_api_client.v2.model.authn_mapping_create_attributes import AuthNMappingCreateAttributes
@@ -666,6 +667,10 @@ from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 from datadog_api_client.v2.model.create_rule_request_data import CreateRuleRequestData
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
 from datadog_api_client.v2.model.create_rule_response_data import CreateRuleResponseData
+from datadog_api_client.v2.model.create_tenancy_config import CreateTenancyConfig
+from datadog_api_client.v2.model.create_tenancy_config_data import CreateTenancyConfigData
+from datadog_api_client.v2.model.create_tenancy_config_data_attributes import CreateTenancyConfigDataAttributes
+from datadog_api_client.v2.model.create_tenancy_config_data_type import CreateTenancyConfigDataType
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
@@ -1828,6 +1833,8 @@ from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRe
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
+from datadog_api_client.v2.model.oci_logs_config import OCILogsConfig
+from datadog_api_client.v2.model.oci_metrics_config import OCIMetricsConfig
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
 from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
     ObservabilityPipelineAddEnvVarsProcessor,
@@ -3288,6 +3295,11 @@ from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
+from datadog_api_client.v2.model.tenancy_config import TenancyConfig
+from datadog_api_client.v2.model.tenancy_config_data import TenancyConfigData
+from datadog_api_client.v2.model.tenancy_config_data_attributes import TenancyConfigDataAttributes
+from datadog_api_client.v2.model.tenancy_config_data_type import TenancyConfigDataType
+from datadog_api_client.v2.model.tenancy_config_list import TenancyConfigList
 from datadog_api_client.v2.model.time_restriction import TimeRestriction
 from datadog_api_client.v2.model.time_restrictions import TimeRestrictions
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
@@ -3328,6 +3340,10 @@ from datadog_api_client.v2.model.update_rule_request import UpdateRuleRequest
 from datadog_api_client.v2.model.update_rule_request_data import UpdateRuleRequestData
 from datadog_api_client.v2.model.update_rule_response import UpdateRuleResponse
 from datadog_api_client.v2.model.update_rule_response_data import UpdateRuleResponseData
+from datadog_api_client.v2.model.update_tenancy_config import UpdateTenancyConfig
+from datadog_api_client.v2.model.update_tenancy_config_data import UpdateTenancyConfigData
+from datadog_api_client.v2.model.update_tenancy_config_data_attributes import UpdateTenancyConfigDataAttributes
+from datadog_api_client.v2.model.update_tenancy_config_data_type import UpdateTenancyConfigDataType
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
@@ -3623,6 +3639,7 @@ __all__ = [
     "AuditLogsSearchEventsRequest",
     "AuditLogsSort",
     "AuditLogsWarning",
+    "AuthCredentials",
     "AuthNMapping",
     "AuthNMappingAttributes",
     "AuthNMappingCreateAttributes",
@@ -3967,6 +3984,10 @@ __all__ = [
     "CreateRuleRequestData",
     "CreateRuleResponse",
     "CreateRuleResponseData",
+    "CreateTenancyConfig",
+    "CreateTenancyConfigData",
+    "CreateTenancyConfigDataAttributes",
+    "CreateTenancyConfigDataType",
     "CreateWorkflowRequest",
     "CreateWorkflowResponse",
     "Creator",
@@ -4861,6 +4882,8 @@ __all__ = [
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
     "NullableUserRelationshipData",
+    "OCILogsConfig",
+    "OCIMetricsConfig",
     "ObservabilityPipeline",
     "ObservabilityPipelineAddEnvVarsProcessor",
     "ObservabilityPipelineAddEnvVarsProcessorType",
@@ -5815,6 +5838,11 @@ __all__ = [
     "TeamsResponseLinks",
     "TeamsResponseMeta",
     "TeamsResponseMetaPagination",
+    "TenancyConfig",
+    "TenancyConfigData",
+    "TenancyConfigDataAttributes",
+    "TenancyConfigDataType",
+    "TenancyConfigList",
     "TimeRestriction",
     "TimeRestrictions",
     "TimeseriesFormulaQueryRequest",
@@ -5855,6 +5883,10 @@ __all__ = [
     "UpdateRuleRequestData",
     "UpdateRuleResponse",
     "UpdateRuleResponseData",
+    "UpdateTenancyConfig",
+    "UpdateTenancyConfigData",
+    "UpdateTenancyConfigDataAttributes",
+    "UpdateTenancyConfigDataType",
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
     "UpsertCatalogEntityRequest",
