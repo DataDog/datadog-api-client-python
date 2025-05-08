@@ -122,6 +122,21 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get the schedule of an on-call user returns "No Content" response
+    Given new "GetScheduleOnCallUser" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/bugle
+  Scenario: Get the schedule of an on-call user returns "OK" response
+    Given new "GetScheduleOnCallUser" request
+    And there is a valid "schedule" in the system
+    And request contains "schedule_id" parameter from "schedule.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip-python @team:DataDog/bugle
   Scenario: Set on-call team routing rules returns "OK" response
     Given new "SetOnCallTeamRoutingRules" request
