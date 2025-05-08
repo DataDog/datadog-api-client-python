@@ -18,10 +18,6 @@ if TYPE_CHECKING:
 
 
 class HTTPIntegration(ModelNormal):
-    validations = {
-        "base_url": {},
-    }
-
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.http_credentials import HTTPCredentials

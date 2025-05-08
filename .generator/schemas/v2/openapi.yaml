@@ -12646,7 +12646,6 @@ components:
           type: array
         repositoryURL:
           description: The repository path of the source code of the entity.
-          pattern: url
           type: string
       type: object
     EntityV3DatadogCodeLocations:
@@ -15623,7 +15622,6 @@ components:
         base_url:
           description: Base HTTP url for the integration
           example: http://datadoghq.com
-          pattern: url
           type: string
         credentials:
           $ref: '#/components/schemas/HTTPCredentials'
@@ -15648,7 +15646,6 @@ components:
         base_url:
           description: Base HTTP url for the integration
           example: http://datadoghq.com
-          pattern: url
           type: string
         credentials:
           $ref: '#/components/schemas/HTTPCredentialsUpdate'
