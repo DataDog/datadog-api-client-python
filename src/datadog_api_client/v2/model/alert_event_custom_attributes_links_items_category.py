@@ -12,20 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class EventCategory(ModelSimple):
+class AlertEventCustomAttributesLinksItemsCategory(ModelSimple):
     """
-    Event category to identify the type of event. For example, `change` or `alert`.
+    The category of the link.
 
-    :param value: Must be one of ["change", "alert"].
+    :param value: If omitted defaults to "runbook". Must be one of ["runbook"].
     :type value: str
     """
 
     allowed_values = {
-        "change",
-        "alert",
+        "runbook",
     }
-    CHANGE: ClassVar["EventCategory"]
-    ALERT: ClassVar["EventCategory"]
+    RUNBOOK: ClassVar["AlertEventCustomAttributesLinksItemsCategory"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +32,4 @@ class EventCategory(ModelSimple):
         }
 
 
-EventCategory.CHANGE = EventCategory("change")
-EventCategory.ALERT = EventCategory("alert")
+AlertEventCustomAttributesLinksItemsCategory.RUNBOOK = AlertEventCustomAttributesLinksItemsCategory("runbook")

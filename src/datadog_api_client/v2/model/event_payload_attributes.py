@@ -33,6 +33,18 @@ class EventPayloadAttributes(ModelComposed):
 
         :param prev_value: Free form object to track previous value of the changed resource.
         :type prev_value: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
+
+        :param custom: Custom attributes. Support up to 100 properties and a maximum nesting depth of 10 levels.
+        :type custom: AlertEventCustomAttributesCustom, optional
+
+        :param links: The links related to the event.
+        :type links: [AlertEventCustomAttributesLinksItems], optional
+
+        :param priority: The priority of the alert.
+        :type priority: AlertEventCustomAttributesPriority, optional
+
+        :param status: The status of the alert.
+        :type status: AlertEventCustomAttributesStatus, optional
         """
         super().__init__(kwargs)
 
@@ -46,9 +58,11 @@ class EventPayloadAttributes(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.change_event_custom_attributes import ChangeEventCustomAttributes
+        from datadog_api_client.v2.model.alert_event_custom_attributes import AlertEventCustomAttributes
 
         return {
             "oneOf": [
                 ChangeEventCustomAttributes,
+                AlertEventCustomAttributes,
             ],
         }
