@@ -50448,9 +50448,7 @@ paths:
         operator: OR
         permissions:
         - monitors_read
-      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is in Preview. [Request access](https://www.datadoghq.com/product-preview/monitor-notification-rules/).'
     post:
       description: Creates a monitor notification rule.
       operationId: CreateMonitorNotificationRule
@@ -50494,9 +50492,7 @@ paths:
         operator: OR
         permissions:
         - monitor_config_policy_write
-      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is in Preview. [Request access](https://www.datadoghq.com/product-preview/monitor-notification-rules/).'
   /api/v2/monitor/notification_rule/{rule_id}:
     delete:
       description: Deletes a monitor notification rule by `rule_id`.
@@ -50537,9 +50533,7 @@ paths:
         operator: OR
         permissions:
         - monitor_config_policy_write
-      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is in Preview. [Request access](https://www.datadoghq.com/product-preview/monitor-notification-rules/).'
     get:
       description: Returns a monitor notification rule by `rule_id`.
       operationId: GetMonitorNotificationRule
@@ -50593,9 +50587,7 @@ paths:
         operator: OR
         permissions:
         - monitors_read
-      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is in Preview. [Request access](https://www.datadoghq.com/product-preview/monitor-notification-rules/).'
     patch:
       description: Updates a monitor notification rule by `rule_id`.
       operationId: UpdateMonitorNotificationRule
@@ -50653,9 +50645,7 @@ paths:
         operator: OR
         permissions:
         - monitor_config_policy_write
-      x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).'
+      x-unstable: '**Note**: This endpoint is in Preview. [Request access](https://www.datadoghq.com/product-preview/monitor-notification-rules/).'
   /api/v2/monitor/policy:
     get:
       description: Get all monitor configuration policies.
