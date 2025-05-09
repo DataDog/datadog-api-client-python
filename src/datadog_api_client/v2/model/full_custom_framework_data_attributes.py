@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -21,7 +23,6 @@ class FullCustomFrameworkDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.custom_framework_requirement import CustomFrameworkRequirement
 
         return {
-            "description": (str,),
             "handle": (str,),
             "icon_url": (str,),
             "name": (str,),
@@ -30,7 +31,6 @@ class FullCustomFrameworkDataAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "description": "description",
         "handle": "handle",
         "icon_url": "icon_url",
         "name": "name",
@@ -40,25 +40,21 @@ class FullCustomFrameworkDataAttributes(ModelNormal):
 
     def __init__(
         self_,
-        description: str,
         handle: str,
-        icon_url: str,
         name: str,
         requirements: List[CustomFrameworkRequirement],
         version: str,
+        icon_url: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         Full Framework Data Attributes.
 
-        :param description: Framework Description
-        :type description: str
-
         :param handle: Framework Handle
         :type handle: str
 
         :param icon_url: Framework Icon URL
-        :type icon_url: str
+        :type icon_url: str, optional
 
         :param name: Framework Name
         :type name: str
@@ -69,11 +65,11 @@ class FullCustomFrameworkDataAttributes(ModelNormal):
         :param version: Framework Version
         :type version: str
         """
+        if icon_url is not unset:
+            kwargs["icon_url"] = icon_url
         super().__init__(kwargs)
 
-        self_.description = description
         self_.handle = handle
-        self_.icon_url = icon_url
         self_.name = name
         self_.requirements = requirements
         self_.version = version
