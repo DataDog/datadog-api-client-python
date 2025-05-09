@@ -50,15 +50,15 @@ class CloudWorkloadSecurityAgentRuleUpdateData(ModelNormal):
         **kwargs,
     ):
         """
-        Object for a single Agent rule.
+        Object for a single Agent rule
 
-        :param attributes: Update an existing Cloud Workload Security Agent rule.
+        :param attributes: Update an existing Cloud Workload Security Agent rule
         :type attributes: CloudWorkloadSecurityAgentRuleUpdateAttributes
 
-        :param id: The ID of the agent rule.
+        :param id: The ID of the Agent rule
         :type id: str, optional
 
-        :param type: The type of the resource. The value should always be ``agent_rule``.
+        :param type: The type of the resource, must always be ``agent_rule``
         :type type: CloudWorkloadSecurityAgentRuleType
         """
         if id is not unset:

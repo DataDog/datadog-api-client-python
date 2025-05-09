@@ -41,7 +41,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
         **kwargs,
     ):
         """
-        The action the rule can perform if triggered.
+        The action the rule can perform if triggered
 
         :param filter: SECL expression used to target the container to apply the action on
         :type filter: str, optional

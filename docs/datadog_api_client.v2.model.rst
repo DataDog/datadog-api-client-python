@@ -2748,6 +2748,90 @@ datadog\_api\_client.v2.model.cloud\_configuration\_rule\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policies\_list\_response module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policies_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_create\_attributes module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_create\_data module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_create\_request module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_response module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_update\_attributes module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_update\_data module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_update\_request module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policy\_updater\_attributes module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_policy_updater_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_rule\_action module
 -----------------------------------------------------------------------------------
 

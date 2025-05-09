@@ -34,9 +34,9 @@ class CloudWorkloadSecurityAgentRulesListResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[CloudWorkloadSecurityAgentRuleData], UnsetType] = unset, **kwargs):
         """
-        Response object that includes a list of Agent rule.
+        Response object that includes a list of Agent rule
 
-        :param data: A list of Agent rules objects.
+        :param data: A list of Agent rules objects
         :type data: [CloudWorkloadSecurityAgentRuleData], optional
         """
         if data is not unset:

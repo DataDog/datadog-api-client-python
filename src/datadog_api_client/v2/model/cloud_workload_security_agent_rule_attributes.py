@@ -52,6 +52,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             "expression": (str,),
             "filters": ([str],),
             "name": (str,),
+            "product_tags": ([str],),
             "update_author_uu_id": (str,),
             "update_date": (int,),
             "updated_at": (int,),
@@ -72,6 +73,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         "expression": "expression",
         "filters": "filters",
         "name": "name",
+        "product_tags": "product_tags",
         "update_author_uu_id": "updateAuthorUuId",
         "update_date": "updateDate",
         "updated_at": "updatedAt",
@@ -93,6 +95,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         expression: Union[str, UnsetType] = unset,
         filters: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        product_tags: Union[List[str], UnsetType] = unset,
         update_author_uu_id: Union[str, UnsetType] = unset,
         update_date: Union[int, UnsetType] = unset,
         updated_at: Union[int, UnsetType] = unset,
@@ -101,57 +104,60 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        A Cloud Workload Security Agent rule returned by the API.
+        A Cloud Workload Security Agent rule returned by the API
 
-        :param actions: The array of actions the rule can perform if triggered.
+        :param actions: The array of actions the rule can perform if triggered
         :type actions: [CloudWorkloadSecurityAgentRuleAction], none_type, optional
 
-        :param agent_constraint: The version of the agent.
+        :param agent_constraint: The version of the Agent
         :type agent_constraint: str, optional
 
-        :param category: The category of the Agent rule.
+        :param category: The category of the Agent rule
         :type category: str, optional
 
-        :param creation_author_uu_id: The ID of the user who created the rule.
+        :param creation_author_uu_id: The ID of the user who created the rule
         :type creation_author_uu_id: str, optional
 
-        :param creation_date: When the Agent rule was created, timestamp in milliseconds.
+        :param creation_date: When the Agent rule was created, timestamp in milliseconds
         :type creation_date: int, optional
 
-        :param creator: The attributes of the user who created the Agent rule.
+        :param creator: The attributes of the user who created the Agent rule
         :type creator: CloudWorkloadSecurityAgentRuleCreatorAttributes, optional
 
-        :param default_rule: Whether the rule is included by default.
+        :param default_rule: Whether the rule is included by default
         :type default_rule: bool, optional
 
-        :param description: The description of the Agent rule.
+        :param description: The description of the Agent rule
         :type description: str, optional
 
-        :param enabled: Whether the Agent rule is enabled.
+        :param enabled: Whether the Agent rule is enabled
         :type enabled: bool, optional
 
-        :param expression: The SECL expression of the Agent rule.
+        :param expression: The SECL expression of the Agent rule
         :type expression: str, optional
 
-        :param filters: The platforms the Agent rule is supported on.
+        :param filters: The platforms the Agent rule is supported on
         :type filters: [str], optional
 
-        :param name: The name of the Agent rule.
+        :param name: The name of the Agent rule
         :type name: str, optional
 
-        :param update_author_uu_id: The ID of the user who updated the rule.
+        :param product_tags: The list of product tags associated with the rule
+        :type product_tags: [str], optional
+
+        :param update_author_uu_id: The ID of the user who updated the rule
         :type update_author_uu_id: str, optional
 
-        :param update_date: Timestamp in milliseconds when the Agent rule was last updated.
+        :param update_date: Timestamp in milliseconds when the Agent rule was last updated
         :type update_date: int, optional
 
-        :param updated_at: When the Agent rule was last updated, timestamp in milliseconds.
+        :param updated_at: When the Agent rule was last updated, timestamp in milliseconds
         :type updated_at: int, optional
 
-        :param updater: The attributes of the user who last updated the Agent rule.
+        :param updater: The attributes of the user who last updated the Agent rule
         :type updater: CloudWorkloadSecurityAgentRuleUpdaterAttributes, optional
 
-        :param version: The version of the Agent rule.
+        :param version: The version of the Agent rule
         :type version: int, optional
         """
         if actions is not unset:
@@ -178,6 +184,8 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             kwargs["filters"] = filters
         if name is not unset:
             kwargs["name"] = name
+        if product_tags is not unset:
+            kwargs["product_tags"] = product_tags
         if update_author_uu_id is not unset:
             kwargs["update_author_uu_id"] = update_author_uu_id
         if update_date is not unset:
