@@ -21,9 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items import (
         ScheduleCreateRequestDataAttributesLayersItemsMembersItems,
     )
-    from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items import (
-        ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems,
-    )
+    from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
 
 class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
@@ -35,9 +33,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
         from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items import (
             ScheduleCreateRequestDataAttributesLayersItemsMembersItems,
         )
-        from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items import (
-            ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems,
-        )
+        from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
         return {
             "effective_date": (datetime,),
@@ -45,7 +41,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
             "interval": (ScheduleCreateRequestDataAttributesLayersItemsInterval,),
             "members": ([ScheduleCreateRequestDataAttributesLayersItemsMembersItems],),
             "name": (str,),
-            "restrictions": ([ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems],),
+            "restrictions": ([TimeRestriction],),
             "rotation_start": (datetime,),
         }
 
@@ -67,7 +63,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
         name: str,
         rotation_start: datetime,
         end_date: Union[datetime, UnsetType] = unset,
-        restrictions: Union[List[ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems], UnsetType] = unset,
+        restrictions: Union[List[TimeRestriction], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -89,7 +85,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
         :type name: str
 
         :param restrictions: Zero or more time-based restrictions (for example, only weekdays, during business hours).
-        :type restrictions: [ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems], optional
+        :type restrictions: [TimeRestriction], optional
 
         :param rotation_start: The date/time when the rotation for this layer starts (in ISO 8601).
         :type rotation_start: datetime

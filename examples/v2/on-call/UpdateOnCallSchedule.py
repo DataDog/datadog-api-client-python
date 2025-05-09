@@ -22,15 +22,6 @@ from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_
 from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user import (
     ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser,
 )
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_end_day import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_start_day import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
-)
 from datadog_api_client.v2.model.schedule_update_request_data_relationships import (
     ScheduleUpdateRequestDataRelationships,
 )
@@ -44,6 +35,8 @@ from datadog_api_client.v2.model.schedule_update_request_data_relationships_team
     ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.schedule_update_request_data_type import ScheduleUpdateRequestDataType
+from datadog_api_client.v2.model.time_restriction import TimeRestriction
+from datadog_api_client.v2.model.weekday import Weekday
 
 # there is a valid "schedule" in the system
 SCHEDULE_DATA_ID = environ["SCHEDULE_DATA_ID"]
@@ -76,10 +69,10 @@ body = ScheduleUpdateRequest(
                     ],
                     name="Layer 1",
                     restrictions=[
-                        ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems(
-                            end_day=ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay.FRIDAY,
+                        TimeRestriction(
+                            end_day=Weekday.FRIDAY,
                             end_time="17:00:00",
-                            start_day=ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay.MONDAY,
+                            start_day=Weekday.MONDAY,
                             start_time="09:00:00",
                         ),
                     ],
