@@ -1884,6 +1884,34 @@
       "type": "idempotent"
     }
   },
+  "CreateOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "AcknowledgeOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "EscalateOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "ResolveOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "CreateOnCallSchedule": {
     "tag": "On-Call",
     "undo": {
