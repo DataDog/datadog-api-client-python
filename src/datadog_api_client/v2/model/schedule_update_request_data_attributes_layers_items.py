@@ -21,9 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items import (
         ScheduleUpdateRequestDataAttributesLayersItemsMembersItems,
     )
-    from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
-        ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
-    )
+    from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
 
 class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
@@ -35,9 +33,7 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items import (
             ScheduleUpdateRequestDataAttributesLayersItemsMembersItems,
         )
-        from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
-            ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
-        )
+        from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
         return {
             "effective_date": (datetime,),
@@ -46,7 +42,7 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
             "interval": (ScheduleUpdateRequestDataAttributesLayersItemsInterval,),
             "members": ([ScheduleUpdateRequestDataAttributesLayersItemsMembersItems],),
             "name": (str,),
-            "restrictions": ([ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems],),
+            "restrictions": ([TimeRestriction],),
             "rotation_start": (datetime,),
         }
 
@@ -70,7 +66,7 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         rotation_start: datetime,
         end_date: Union[datetime, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        restrictions: Union[List[ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems], UnsetType] = unset,
+        restrictions: Union[List[TimeRestriction], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -96,7 +92,7 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         :type name: str
 
         :param restrictions: Any time restrictions that define when this layer is active.
-        :type restrictions: [ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems], optional
+        :type restrictions: [TimeRestriction], optional
 
         :param rotation_start: The date/time at which the rotation begins (ISO 8601 format).
         :type rotation_start: datetime

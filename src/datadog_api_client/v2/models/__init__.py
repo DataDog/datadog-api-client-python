@@ -1429,13 +1429,6 @@ from datadog_api_client.v2.model.job_definition_from_rule import JobDefinitionFr
 from datadog_api_client.v2.model.layer import Layer
 from datadog_api_client.v2.model.layer_attributes import LayerAttributes
 from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
-from datadog_api_client.v2.model.layer_attributes_restrictions_items import LayerAttributesRestrictionsItems
-from datadog_api_client.v2.model.layer_attributes_restrictions_items_end_day import (
-    LayerAttributesRestrictionsItemsEndDay,
-)
-from datadog_api_client.v2.model.layer_attributes_restrictions_items_start_day import (
-    LayerAttributesRestrictionsItemsStartDay,
-)
 from datadog_api_client.v2.model.layer_relationships import LayerRelationships
 from datadog_api_client.v2.model.layer_relationships_members import LayerRelationshipsMembers
 from datadog_api_client.v2.model.layer_relationships_members_data_items import LayerRelationshipsMembersDataItems
@@ -2667,15 +2660,6 @@ from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_
 from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items_user import (
     ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser,
 )
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_end_day import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_start_day import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
-)
 from datadog_api_client.v2.model.schedule_create_request_data_relationships import (
     ScheduleCreateRequestDataRelationships,
 )
@@ -2734,15 +2718,6 @@ from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_
 )
 from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user import (
     ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_end_day import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_start_day import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
 )
 from datadog_api_client.v2.model.schedule_update_request_data_relationships import (
     ScheduleUpdateRequestDataRelationships,
@@ -4556,9 +4531,6 @@ __all__ = [
     "Layer",
     "LayerAttributes",
     "LayerAttributesInterval",
-    "LayerAttributesRestrictionsItems",
-    "LayerAttributesRestrictionsItemsEndDay",
-    "LayerAttributesRestrictionsItemsStartDay",
     "LayerRelationships",
     "LayerRelationshipsMembers",
     "LayerRelationshipsMembersDataItems",
@@ -5390,9 +5362,6 @@ __all__ = [
     "ScheduleCreateRequestDataAttributesLayersItemsInterval",
     "ScheduleCreateRequestDataAttributesLayersItemsMembersItems",
     "ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser",
-    "ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems",
-    "ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay",
-    "ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay",
     "ScheduleCreateRequestDataRelationships",
     "ScheduleCreateRequestDataRelationshipsTeams",
     "ScheduleCreateRequestDataRelationshipsTeamsDataItems",
@@ -5426,9 +5395,6 @@ __all__ = [
     "ScheduleUpdateRequestDataAttributesLayersItemsInterval",
     "ScheduleUpdateRequestDataAttributesLayersItemsMembersItems",
     "ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser",
-    "ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems",
-    "ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay",
-    "ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay",
     "ScheduleUpdateRequestDataRelationships",
     "ScheduleUpdateRequestDataRelationshipsTeams",
     "ScheduleUpdateRequestDataRelationshipsTeamsDataItems",

@@ -22,15 +22,6 @@ from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_
 from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items_user import (
     ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser,
 )
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_end_day import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_start_day import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
-)
 from datadog_api_client.v2.model.schedule_create_request_data_relationships import (
     ScheduleCreateRequestDataRelationships,
 )
@@ -44,6 +35,8 @@ from datadog_api_client.v2.model.schedule_create_request_data_relationships_team
     ScheduleCreateRequestDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.schedule_create_request_data_type import ScheduleCreateRequestDataType
+from datadog_api_client.v2.model.time_restriction import TimeRestriction
+from datadog_api_client.v2.model.weekday import Weekday
 
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
@@ -70,10 +63,10 @@ body = ScheduleCreateRequest(
                     ],
                     name="Layer 1",
                     restrictions=[
-                        ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems(
-                            end_day=ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay.FRIDAY,
+                        TimeRestriction(
+                            end_day=Weekday.FRIDAY,
                             end_time="17:00:00",
-                            start_day=ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay.MONDAY,
+                            start_day=Weekday.MONDAY,
                             start_time="09:00:00",
                         ),
                     ],
