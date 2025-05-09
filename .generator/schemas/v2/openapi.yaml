@@ -51282,6 +51282,10 @@ paths:
       summary: Create on-call escalation policy
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_write
   /api/v2/on-call/escalation-policies/{policy_id}:
     delete:
       description: Delete an on-call escalation policy
@@ -51312,6 +51316,10 @@ paths:
       summary: Delete on-call escalation policy
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_write
     get:
       description: Get an on-call escalation policy
       operationId: GetOnCallEscalationPolicy
@@ -51353,6 +51361,10 @@ paths:
       summary: Get on-call escalation policy
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_read
     put:
       description: Update an on-call escalation policy
       operationId: UpdateOnCallEscalationPolicy
@@ -51400,6 +51412,10 @@ paths:
       summary: Update on-call escalation policy
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_write
   /api/v2/on-call/schedules:
     post:
       description: Create a new on-call schedule
@@ -51439,6 +51455,10 @@ paths:
       summary: Create on-call schedule
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_write
   /api/v2/on-call/schedules/{schedule_id}:
     delete:
       description: Delete an on-call schedule
@@ -51469,6 +51489,10 @@ paths:
       summary: Delete on-call schedule
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_write
     get:
       description: Get an on-call schedule
       operationId: GetOnCallSchedule
@@ -51508,6 +51532,10 @@ paths:
       summary: Get on-call schedule
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_read
     put:
       description: Update a new on-call schedule
       operationId: UpdateOnCallSchedule
@@ -51555,6 +51583,10 @@ paths:
       summary: Update on-call schedule
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_write
   /api/v2/on-call/teams/{team_id}/routing-rules:
     get:
       description: Get a team's on-call routing rules
@@ -51589,6 +51621,10 @@ paths:
       summary: Get on-call team routing rules
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_read
     put:
       description: Set a team's on-call routing rules
       operationId: SetOnCallTeamRoutingRules
@@ -51628,6 +51664,10 @@ paths:
       summary: Set on-call team routing rules
       tags:
       - On-Call
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_write
   /api/v2/org_configs:
     get:
       description: Returns all Org Configs (name, description, and value).
