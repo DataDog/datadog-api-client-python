@@ -498,6 +498,38 @@ from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import 
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
 from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
+from datadog_api_client.v2.model.cloud_workload_security_agent_policies_list_response import (
+    CloudWorkloadSecurityAgentPoliciesListResponse,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_attributes import (
+    CloudWorkloadSecurityAgentPolicyAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_create_attributes import (
+    CloudWorkloadSecurityAgentPolicyCreateAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_create_data import (
+    CloudWorkloadSecurityAgentPolicyCreateData,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_create_request import (
+    CloudWorkloadSecurityAgentPolicyCreateRequest,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_data import CloudWorkloadSecurityAgentPolicyData
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_response import (
+    CloudWorkloadSecurityAgentPolicyResponse,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_type import CloudWorkloadSecurityAgentPolicyType
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_update_attributes import (
+    CloudWorkloadSecurityAgentPolicyUpdateAttributes,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_update_data import (
+    CloudWorkloadSecurityAgentPolicyUpdateData,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_update_request import (
+    CloudWorkloadSecurityAgentPolicyUpdateRequest,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_policy_updater_attributes import (
+    CloudWorkloadSecurityAgentPolicyUpdaterAttributes,
+)
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import CloudWorkloadSecurityAgentRuleAction
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
@@ -3812,6 +3844,18 @@ __all__ = [
     "CloudConfigurationRuleOptions",
     "CloudConfigurationRulePayload",
     "CloudConfigurationRuleType",
+    "CloudWorkloadSecurityAgentPoliciesListResponse",
+    "CloudWorkloadSecurityAgentPolicyAttributes",
+    "CloudWorkloadSecurityAgentPolicyCreateAttributes",
+    "CloudWorkloadSecurityAgentPolicyCreateData",
+    "CloudWorkloadSecurityAgentPolicyCreateRequest",
+    "CloudWorkloadSecurityAgentPolicyData",
+    "CloudWorkloadSecurityAgentPolicyResponse",
+    "CloudWorkloadSecurityAgentPolicyType",
+    "CloudWorkloadSecurityAgentPolicyUpdateAttributes",
+    "CloudWorkloadSecurityAgentPolicyUpdateData",
+    "CloudWorkloadSecurityAgentPolicyUpdateRequest",
+    "CloudWorkloadSecurityAgentPolicyUpdaterAttributes",
     "CloudWorkloadSecurityAgentRuleAction",
     "CloudWorkloadSecurityAgentRuleAttributes",
     "CloudWorkloadSecurityAgentRuleCreateAttributes",

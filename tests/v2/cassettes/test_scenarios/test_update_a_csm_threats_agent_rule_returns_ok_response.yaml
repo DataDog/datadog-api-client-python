@@ -1,7 +1,27 @@
 interactions:
 - request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacsmthreatsagentrulereturnsokresponse1743517863"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"evg-ugc-rb3","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacsmthreatsagentrulereturnsokresponse1743517863","policyVersion":"1","priority":1000000001,"ruleCount":226,"updateDate":1743517864028,"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacsmthreatsagentrulereturnsokresponse1713895071"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacsmthreatsagentrulereturnsokresponse1743517863","policy_id":"evg-ugc-rb3","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,10 +31,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"0am-0rq-wvm","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1713895071711,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"pqr-gh6-gj4","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1743517864391,"creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testupdateacsmthreatsagentrulereturnsokresponse1713895071","updateDate":1713895071711,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"name":"testupdateacsmthreatsagentrulereturnsokresponse1743517863","updateDate":1743517864391,"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
       - application/json
@@ -22,21 +43,22 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"Test Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\""},"id":"0am-0rq-wvm","type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","policy_id":"evg-ugc-rb3","product_tags":[]},"id":"pqr-gh6-gj4","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/0am-0rq-wvm
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pqr-gh6-gj4?policy_id=evg-ugc-rb3
   response:
     body:
-      string: '{"data":{"id":"0am-0rq-wvm","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1713895071000,"creator":{"name":"","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"Test
+      string: '{"data":{"id":"pqr-gh6-gj4","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1743517864000,"creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testupdateacsmthreatsagentrulereturnsokresponse1713895071","updateDate":1713895072276,"updater":{"name":"","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"name":"testupdateacsmthreatsagentrulereturnsokresponse1743517863","updateDate":1743517865118,"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
       - application/json
@@ -49,7 +71,23 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/0am-0rq-wvm
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pqr-gh6-gj4
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/evg-ugc-rb3
   response:
     body:
       string: ''

@@ -5,7 +5,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/abc-123-xyz
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/non-existent-rule-id
   response:
     body:
       string: '{"errors":[{"title":"failed to delete rule"}]}

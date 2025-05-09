@@ -2135,10 +2135,47 @@
       "type": "idempotent"
     }
   },
+  "ListCSMThreatsAgentPolicies": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "operationId": "DeleteCSMThreatsAgentPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "DownloadCSMThreatsPolicy": {
     "tag": "CSM Threats",
     "undo": {
       "type": "safe"
+    }
+  },
+  "DeleteCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListPipelines": {

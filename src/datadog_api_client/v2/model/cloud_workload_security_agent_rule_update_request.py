@@ -34,9 +34,9 @@ class CloudWorkloadSecurityAgentRuleUpdateRequest(ModelNormal):
 
     def __init__(self_, data: CloudWorkloadSecurityAgentRuleUpdateData, **kwargs):
         """
-        Request object that includes the Agent rule with the attributes to update.
+        Request object that includes the Agent rule with the attributes to update
 
-        :param data: Object for a single Agent rule.
+        :param data: Object for a single Agent rule
         :type data: CloudWorkloadSecurityAgentRuleUpdateData
         """
         super().__init__(kwargs)

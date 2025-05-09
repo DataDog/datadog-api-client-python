@@ -5,10 +5,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/abc-123-xyz
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/non-existent-rule-id
   response:
     body:
-      string: '{"errors":["not_found(Agent rule not found: agentRuleId=abc-123-xyz)"]}
+      string: '{"errors":["Not found"]}
 
         '
     headers:
