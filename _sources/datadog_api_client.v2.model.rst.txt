@@ -7788,27 +7788,6 @@ datadog\_api\_client.v2.model.layer\_attributes\_interval module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.layer\_attributes\_restrictions\_items module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.layer_attributes_restrictions_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.layer\_attributes\_restrictions\_items\_end\_day module
--------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.layer_attributes_restrictions_items_end_day
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.layer\_attributes\_restrictions\_items\_start\_day module
----------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.layer_attributes_restrictions_items_start_day
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.layer\_relationships module
 ---------------------------------------------------------
 
@@ -13570,27 +13549,6 @@ datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layer
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_restrictions\_items module
---------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_restrictions\_items\_end\_day module
-------------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_end_day
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_restrictions\_items\_start\_day module
---------------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_start_day
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships module
 -----------------------------------------------------------------------------------
 
@@ -13819,27 +13777,6 @@ datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layer
 ---------------------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_restrictions\_items module
---------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_restrictions\_items\_end\_day module
-------------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_end_day
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_restrictions\_items\_start\_day module
---------------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_start_day
    :members:
    :show-inheritance:
 
