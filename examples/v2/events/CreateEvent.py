@@ -24,10 +24,12 @@ from datadog_api_client.v2.model.event_create_request import EventCreateRequest
 from datadog_api_client.v2.model.event_create_request_payload import EventCreateRequestPayload
 from datadog_api_client.v2.model.event_create_request_type import EventCreateRequestType
 from datadog_api_client.v2.model.event_payload import EventPayload
+from datadog_api_client.v2.model.event_payload_integration_id import EventPayloadIntegrationId
 
 body = EventCreateRequestPayload(
     data=EventCreateRequest(
         attributes=EventPayload(
+            aggregation_key="aggregation_key_123",
             attributes=ChangeEventCustomAttributes(
                 author=ChangeEventCustomAttributesAuthor(
                     name="datadog@datadog.com",
@@ -60,6 +62,7 @@ body = EventCreateRequestPayload(
                 ),
             ),
             category=EventCategory.CHANGE,
+            integration_id=EventPayloadIntegrationId.CUSTOM_EVENTS,
             message="payment_processed feature flag has been enabled",
             tags=[
                 "env:test",
