@@ -3,9 +3,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json;datetime-format=rfc3339
+      - application/json;datetime-format=rfc3339, application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/usage/lambda_traced_invocations?start_hr=2024-01-21T20%3A56%3A23.911Z&end_hr=2024-01-19T20%3A56%3A23.911Z
+    uri: https://api.datadoghq.com/api/v2/usage/lambda_traced_invocations?start_hr=2025-05-09T12%3A32%3A51.888Z&end_hr=2025-05-07T12%3A32%3A51.888Z
   response:
     body:
       string: '{"errors":["start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]"]}'
