@@ -694,6 +694,14 @@ from datadog_api_client.v2.model.create_notification_rule_parameters_data_attrib
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
+from datadog_api_client.v2.model.create_page_request import CreatePageRequest
+from datadog_api_client.v2.model.create_page_request_data import CreatePageRequestData
+from datadog_api_client.v2.model.create_page_request_data_attributes import CreatePageRequestDataAttributes
+from datadog_api_client.v2.model.create_page_request_data_attributes_target import CreatePageRequestDataAttributesTarget
+from datadog_api_client.v2.model.create_page_request_data_type import CreatePageRequestDataType
+from datadog_api_client.v2.model.create_page_response import CreatePageResponse
+from datadog_api_client.v2.model.create_page_response_data import CreatePageResponseData
+from datadog_api_client.v2.model.create_page_response_data_type import CreatePageResponseDataType
 from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 from datadog_api_client.v2.model.create_rule_request_data import CreateRuleRequestData
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
@@ -2375,6 +2383,7 @@ from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponse
 from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
+from datadog_api_client.v2.model.page_urgency import PageUrgency
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.parameter import Parameter
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
@@ -3982,6 +3991,14 @@ __all__ = [
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
+    "CreatePageRequest",
+    "CreatePageRequestData",
+    "CreatePageRequestDataAttributes",
+    "CreatePageRequestDataAttributesTarget",
+    "CreatePageRequestDataType",
+    "CreatePageResponse",
+    "CreatePageResponseData",
+    "CreatePageResponseDataType",
     "CreateRuleRequest",
     "CreateRuleRequestData",
     "CreateRuleResponse",
@@ -5113,6 +5130,7 @@ __all__ = [
     "OutputSchema",
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
+    "PageUrgency",
     "Pagination",
     "Parameter",
     "PartialAPIKey",
