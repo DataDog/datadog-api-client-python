@@ -3714,6 +3714,62 @@ datadog\_api\_client.v2.model.create\_open\_api\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_page\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_page\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_page\_request\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_page\_request\_data\_attributes\_target module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_request_data_attributes_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_page\_request\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_page\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_page\_response\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_page\_response\_data\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_page_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_rule\_request module
 ----------------------------------------------------------
 
@@ -11628,6 +11684,13 @@ datadog\_api\_client.v2.model.output\_schema\_parameters\_type module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.output_schema_parameters_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.page\_urgency module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.page_urgency
    :members:
    :show-inheritance:
 
