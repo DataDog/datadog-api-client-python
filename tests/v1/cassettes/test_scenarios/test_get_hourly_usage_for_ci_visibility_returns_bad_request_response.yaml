@@ -3,9 +3,9 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json;datetime-format=rfc3339
+      - application/json;datetime-format=rfc3339, application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/usage/ci-app?start_hr=2023-09-22T19%3A13%3A30.824Z&end_hr=2023-09-20T19%3A13%3A30.824Z
+    uri: https://api.datadoghq.com/api/v1/usage/ci-app?start_hr=2025-05-09T11%3A35%3A34.125Z&end_hr=2025-05-07T11%3A35%3A34.125Z
   response:
     body:
       string: '{"errors":["start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]"]}'

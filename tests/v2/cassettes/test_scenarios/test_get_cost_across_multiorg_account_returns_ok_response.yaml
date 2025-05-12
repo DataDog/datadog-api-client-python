@@ -3,7 +3,7 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json;datetime-format=rfc3339
+      - application/json;datetime-format=rfc3339, application/json
     method: GET
     uri: https://api.datadoghq.com/api/v2/usage/cost_by_org?start_month=2022-04-22T17%3A07%3A01.561Z
   response:

@@ -3,13 +3,18 @@ interactions:
     body: null
     headers:
       accept:
-      - application/json;datetime-format=rfc3339
+      - application/json;datetime-format=rfc3339, application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/usage/monthly-attribution?start_month=2022-05-20T08%3A46%3A27.028Z&fields=infra_host_usage
+    uri: https://api.datadoghq.com/api/v1/usage/monthly-attribution?start_month=2025-05-09T11%3A36%3A05.278Z&fields=infra_host_usage
   response:
     body:
-      string: '{"usage":[{"org_name":"DD Integration Tests (321813)","public_id":"fasjyydbcgwwc2uc","tag_config_source":"DD
-        Integration Tests (321813):::project","tags":null,"updated_at":"2022-05-22T09:05:00Z","month":"2022-05-01T00:00:00+00:00","values":{"infra_host_usage":19}}],"metadata":{"pagination":{"next_record_id":null},"aggregates":[{"field":"infra_host_usage","value":19.0,"agg_type":"sum"}]}}'
+      string: '{"usage":[{"month":"2025-05-01T00:00:00+00:00","org_name":"DD Integration
+        Tests (321813)","public_id":"fasjyydbcgwwc2uc","tag_config_source":"DD Integration
+        Tests (321813):::cf_instance_ip///project","tags":null,"values":{"infra_host_usage":10},"updated_at":"2025-05-12T10:00:00+00:00","region":"us"},{"month":"2025-05-01T00:00:00+00:00","org_name":"kevinzou
+        sandbox","public_id":"d218b038-1a46-11ed-b0f8-da7ad0900002","tag_config_source":"DD
+        Integration Tests (321813):::cf_instance_ip///project","tags":null,"values":{"infra_host_usage":1},"updated_at":"2025-05-12T10:00:00+00:00","region":"us"}],"metadata":{"pagination":{"next_record_id":null},"aggregates":[{"agg_type":"sum","field":"infra_host_usage","value":11.0}]}}
+
+        '
     headers:
       content-type:
       - application/json
