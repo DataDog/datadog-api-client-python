@@ -942,6 +942,13 @@ datadog\_api\_client.v2.model.audit\_logs\_warning module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.auth\_credentials module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.auth_credentials
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.authn\_mapping module
 ---------------------------------------------------
 
@@ -3795,6 +3802,34 @@ datadog\_api\_client.v2.model.create\_rule\_response\_data module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_request
    :members:
    :show-inheritance:
 
@@ -11281,6 +11316,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_tls module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.oci\_logs\_config module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.oci_logs_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.oci\_metrics\_config module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.oci_metrics_config
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.okta\_account module
 --------------------------------------------------
 
@@ -12076,6 +12125,13 @@ datadog\_api\_client.v2.model.readiness\_gate\_threshold\_type module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.readiness_gate_threshold_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.regions\_config module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.regions_config
    :members:
    :show-inheritance:
 
@@ -16643,6 +16699,41 @@ datadog\_api\_client.v2.model.teams\_response\_meta\_pagination module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.tenancy\_config module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_list module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_list
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.time\_restriction module
 ------------------------------------------------------
 
@@ -16920,6 +17011,34 @@ datadog\_api\_client.v2.model.update\_rule\_response\_data module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_request
    :members:
    :show-inheritance:
 
