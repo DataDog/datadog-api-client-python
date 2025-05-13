@@ -15593,6 +15593,69 @@ datadog\_api\_client.v2.model.service\_now\_ticket\_result module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.shift module
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_data module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_data\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_data\_relationships module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_data\_relationships\_user module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_data_relationships_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_data\_relationships\_user\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_data_relationships_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_data\_relationships\_user\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_data_relationships_user_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_data\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shift\_included module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shift_included
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_array module
 ------------------------------------------------------------------------------------
 
