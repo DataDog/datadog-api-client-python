@@ -10937,8 +10937,6 @@ components:
       - handle
       - version
       - name
-      - description
-      - icon_url
       type: object
     DORADeploymentRequest:
       description: Request to create a DORA deployment event.
@@ -15262,10 +15260,6 @@ components:
     FullCustomFrameworkDataAttributes:
       description: Full Framework Data Attributes.
       properties:
-        description:
-          description: Framework Description
-          example: this is a security framework
-          type: string
         handle:
           description: Framework Handle
           example: sec2
@@ -15291,8 +15285,6 @@ components:
       - handle
       - version
       - name
-      - description
-      - icon_url
       - requirements
       type: object
     GCPMetricNamespaceConfig:
