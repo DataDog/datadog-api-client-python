@@ -15,11 +15,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_interval import (
-        ScheduleCreateRequestDataAttributesLayersItemsInterval,
-    )
-    from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items import (
-        ScheduleCreateRequestDataAttributesLayersItemsMembersItems,
+    from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
+    from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
+        ScheduleRequestDataAttributesLayersItemsMembersItems,
     )
     from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
@@ -27,19 +25,17 @@ if TYPE_CHECKING:
 class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_interval import (
-            ScheduleCreateRequestDataAttributesLayersItemsInterval,
-        )
-        from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items import (
-            ScheduleCreateRequestDataAttributesLayersItemsMembersItems,
+        from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
+        from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
+            ScheduleRequestDataAttributesLayersItemsMembersItems,
         )
         from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
         return {
             "effective_date": (datetime,),
             "end_date": (datetime,),
-            "interval": (ScheduleCreateRequestDataAttributesLayersItemsInterval,),
-            "members": ([ScheduleCreateRequestDataAttributesLayersItemsMembersItems],),
+            "interval": (LayerAttributesInterval,),
+            "members": ([ScheduleRequestDataAttributesLayersItemsMembersItems],),
             "name": (str,),
             "restrictions": ([TimeRestriction],),
             "rotation_start": (datetime,),
@@ -58,8 +54,8 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
     def __init__(
         self_,
         effective_date: datetime,
-        interval: ScheduleCreateRequestDataAttributesLayersItemsInterval,
-        members: List[ScheduleCreateRequestDataAttributesLayersItemsMembersItems],
+        interval: LayerAttributesInterval,
+        members: List[ScheduleRequestDataAttributesLayersItemsMembersItems],
         name: str,
         rotation_start: datetime,
         end_date: Union[datetime, UnsetType] = unset,
@@ -75,11 +71,11 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
         :param end_date: The date/time after which this layer no longer applies (in ISO 8601).
         :type end_date: datetime, optional
 
-        :param interval: Defines how frequently the rotation repeats, using days and/or seconds (up to certain limits).
-        :type interval: ScheduleCreateRequestDataAttributesLayersItemsInterval
+        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds.
+        :type interval: LayerAttributesInterval
 
         :param members: A list of members who participate in this layer's rotation.
-        :type members: [ScheduleCreateRequestDataAttributesLayersItemsMembersItems]
+        :type members: [ScheduleRequestDataAttributesLayersItemsMembersItems]
 
         :param name: The name of this layer.
         :type name: str

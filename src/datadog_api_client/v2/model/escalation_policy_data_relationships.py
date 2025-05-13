@@ -17,9 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.escalation_policy_data_relationships_steps import (
         EscalationPolicyDataRelationshipsSteps,
     )
-    from datadog_api_client.v2.model.escalation_policy_data_relationships_teams import (
-        EscalationPolicyDataRelationshipsTeams,
-    )
+    from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
 
 class EscalationPolicyDataRelationships(ModelNormal):
@@ -28,13 +26,11 @@ class EscalationPolicyDataRelationships(ModelNormal):
         from datadog_api_client.v2.model.escalation_policy_data_relationships_steps import (
             EscalationPolicyDataRelationshipsSteps,
         )
-        from datadog_api_client.v2.model.escalation_policy_data_relationships_teams import (
-            EscalationPolicyDataRelationshipsTeams,
-        )
+        from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
         return {
             "steps": (EscalationPolicyDataRelationshipsSteps,),
-            "teams": (EscalationPolicyDataRelationshipsTeams,),
+            "teams": (DataRelationshipsTeams,),
         }
 
     attribute_map = {
@@ -45,7 +41,7 @@ class EscalationPolicyDataRelationships(ModelNormal):
     def __init__(
         self_,
         steps: EscalationPolicyDataRelationshipsSteps,
-        teams: Union[EscalationPolicyDataRelationshipsTeams, UnsetType] = unset,
+        teams: Union[DataRelationshipsTeams, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -54,8 +50,8 @@ class EscalationPolicyDataRelationships(ModelNormal):
         :param steps: Defines the relationship to a collection of steps within an escalation policy. Contains an array of step data references.
         :type steps: EscalationPolicyDataRelationshipsSteps
 
-        :param teams: Defines the relationship to a collection of teams within an escalation policy. Contains an array of team data references.
-        :type teams: EscalationPolicyDataRelationshipsTeams, optional
+        :param teams: Associates teams with this schedule in a data structure.
+        :type teams: DataRelationshipsTeams, optional
         """
         if teams is not unset:
             kwargs["teams"] = teams

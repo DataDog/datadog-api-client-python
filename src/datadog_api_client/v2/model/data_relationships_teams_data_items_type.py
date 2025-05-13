@@ -12,9 +12,9 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType(ModelSimple):
+class DataRelationshipsTeamsDataItemsType(ModelSimple):
     """
-    Indicates that the resource is of type `teams`.
+    Teams resource type.
 
     :param value: If omitted defaults to "teams". Must be one of ["teams"].
     :type value: str
@@ -23,7 +23,7 @@ class EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType(ModelSimp
     allowed_values = {
         "teams",
     }
-    TEAMS: ClassVar["EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType"]
+    TEAMS: ClassVar["DataRelationshipsTeamsDataItemsType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,6 +32,4 @@ class EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType(ModelSimp
         }
 
 
-EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType.TEAMS = (
-    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType("teams")
-)
+DataRelationshipsTeamsDataItemsType.TEAMS = DataRelationshipsTeamsDataItemsType("teams")

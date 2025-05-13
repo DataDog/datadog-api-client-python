@@ -887,6 +887,9 @@ from datadog_api_client.v2.model.dashboard_type import DashboardType
 from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
+from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
+from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
+from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
 from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.data_transform import DataTransform
 from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
@@ -1060,15 +1063,6 @@ from datadog_api_client.v2.model.escalation_policy_create_request_data_attribute
 from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships import (
     EscalationPolicyCreateRequestDataRelationships,
 )
-from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams import (
-    EscalationPolicyCreateRequestDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items import (
-    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items_type import (
-    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType,
-)
 from datadog_api_client.v2.model.escalation_policy_create_request_data_type import EscalationPolicyCreateRequestDataType
 from datadog_api_client.v2.model.escalation_policy_data import EscalationPolicyData
 from datadog_api_client.v2.model.escalation_policy_data_attributes import EscalationPolicyDataAttributes
@@ -1081,15 +1075,6 @@ from datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data
 )
 from datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data_items_type import (
     EscalationPolicyDataRelationshipsStepsDataItemsType,
-)
-from datadog_api_client.v2.model.escalation_policy_data_relationships_teams import (
-    EscalationPolicyDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items import (
-    EscalationPolicyDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items_type import (
-    EscalationPolicyDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.escalation_policy_data_type import EscalationPolicyDataType
 from datadog_api_client.v2.model.escalation_policy_included import EscalationPolicyIncluded
@@ -1112,15 +1097,6 @@ from datadog_api_client.v2.model.escalation_policy_update_request_data_attribute
 )
 from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships import (
     EscalationPolicyUpdateRequestDataRelationships,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams import (
-    EscalationPolicyUpdateRequestDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items import (
-    EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items_type import (
-    EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.escalation_policy_update_request_data_type import EscalationPolicyUpdateRequestDataType
 from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyUser
@@ -2692,26 +2668,8 @@ from datadog_api_client.v2.model.schedule_create_request_data_attributes import 
 from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items import (
     ScheduleCreateRequestDataAttributesLayersItems,
 )
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_interval import (
-    ScheduleCreateRequestDataAttributesLayersItemsInterval,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items import (
-    ScheduleCreateRequestDataAttributesLayersItemsMembersItems,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items_user import (
-    ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser,
-)
 from datadog_api_client.v2.model.schedule_create_request_data_relationships import (
     ScheduleCreateRequestDataRelationships,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams import (
-    ScheduleCreateRequestDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items import (
-    ScheduleCreateRequestDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items_type import (
-    ScheduleCreateRequestDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.schedule_create_request_data_type import ScheduleCreateRequestDataType
 from datadog_api_client.v2.model.schedule_data import ScheduleData
@@ -2725,13 +2683,6 @@ from datadog_api_client.v2.model.schedule_data_relationships_layers_data_items i
 from datadog_api_client.v2.model.schedule_data_relationships_layers_data_items_type import (
     ScheduleDataRelationshipsLayersDataItemsType,
 )
-from datadog_api_client.v2.model.schedule_data_relationships_teams import ScheduleDataRelationshipsTeams
-from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items import (
-    ScheduleDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items_type import (
-    ScheduleDataRelationshipsTeamsDataItemsType,
-)
 from datadog_api_client.v2.model.schedule_data_type import ScheduleDataType
 from datadog_api_client.v2.model.schedule_member import ScheduleMember
 from datadog_api_client.v2.model.schedule_member_relationships import ScheduleMemberRelationships
@@ -2741,6 +2692,12 @@ from datadog_api_client.v2.model.schedule_member_relationships_user_data_type im
     ScheduleMemberRelationshipsUserDataType,
 )
 from datadog_api_client.v2.model.schedule_member_type import ScheduleMemberType
+from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
+    ScheduleRequestDataAttributesLayersItemsMembersItems,
+)
+from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items_user import (
+    ScheduleRequestDataAttributesLayersItemsMembersItemsUser,
+)
 from datadog_api_client.v2.model.schedule_target import ScheduleTarget
 from datadog_api_client.v2.model.schedule_target_type import ScheduleTargetType
 from datadog_api_client.v2.model.schedule_trigger import ScheduleTrigger
@@ -2751,26 +2708,8 @@ from datadog_api_client.v2.model.schedule_update_request_data_attributes import 
 from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items import (
     ScheduleUpdateRequestDataAttributesLayersItems,
 )
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_interval import (
-    ScheduleUpdateRequestDataAttributesLayersItemsInterval,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items import (
-    ScheduleUpdateRequestDataAttributesLayersItemsMembersItems,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user import (
-    ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser,
-)
 from datadog_api_client.v2.model.schedule_update_request_data_relationships import (
     ScheduleUpdateRequestDataRelationships,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams import (
-    ScheduleUpdateRequestDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items import (
-    ScheduleUpdateRequestDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items_type import (
-    ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType,
 )
 from datadog_api_client.v2.model.schedule_update_request_data_type import ScheduleUpdateRequestDataType
 from datadog_api_client.v2.model.schedule_user import ScheduleUser
@@ -4119,6 +4058,9 @@ __all__ = [
     "DataDeletionResponseItem",
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
+    "DataRelationshipsTeams",
+    "DataRelationshipsTeamsDataItems",
+    "DataRelationshipsTeamsDataItemsType",
     "DataScalarColumn",
     "DataTransform",
     "DataTransformProperties",
@@ -4260,9 +4202,6 @@ __all__ = [
     "EscalationPolicyCreateRequestDataAttributes",
     "EscalationPolicyCreateRequestDataAttributesStepsItems",
     "EscalationPolicyCreateRequestDataRelationships",
-    "EscalationPolicyCreateRequestDataRelationshipsTeams",
-    "EscalationPolicyCreateRequestDataRelationshipsTeamsDataItems",
-    "EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType",
     "EscalationPolicyCreateRequestDataType",
     "EscalationPolicyData",
     "EscalationPolicyDataAttributes",
@@ -4270,9 +4209,6 @@ __all__ = [
     "EscalationPolicyDataRelationshipsSteps",
     "EscalationPolicyDataRelationshipsStepsDataItems",
     "EscalationPolicyDataRelationshipsStepsDataItemsType",
-    "EscalationPolicyDataRelationshipsTeams",
-    "EscalationPolicyDataRelationshipsTeamsDataItems",
-    "EscalationPolicyDataRelationshipsTeamsDataItemsType",
     "EscalationPolicyDataType",
     "EscalationPolicyIncluded",
     "EscalationPolicyStep",
@@ -4287,9 +4223,6 @@ __all__ = [
     "EscalationPolicyUpdateRequestDataAttributes",
     "EscalationPolicyUpdateRequestDataAttributesStepsItems",
     "EscalationPolicyUpdateRequestDataRelationships",
-    "EscalationPolicyUpdateRequestDataRelationshipsTeams",
-    "EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItems",
-    "EscalationPolicyUpdateRequestDataRelationshipsTeamsDataItemsType",
     "EscalationPolicyUpdateRequestDataType",
     "EscalationPolicyUser",
     "EscalationPolicyUserAttributes",
@@ -5430,13 +5363,7 @@ __all__ = [
     "ScheduleCreateRequestData",
     "ScheduleCreateRequestDataAttributes",
     "ScheduleCreateRequestDataAttributesLayersItems",
-    "ScheduleCreateRequestDataAttributesLayersItemsInterval",
-    "ScheduleCreateRequestDataAttributesLayersItemsMembersItems",
-    "ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser",
     "ScheduleCreateRequestDataRelationships",
-    "ScheduleCreateRequestDataRelationshipsTeams",
-    "ScheduleCreateRequestDataRelationshipsTeamsDataItems",
-    "ScheduleCreateRequestDataRelationshipsTeamsDataItemsType",
     "ScheduleCreateRequestDataType",
     "ScheduleData",
     "ScheduleDataAttributes",
@@ -5445,9 +5372,6 @@ __all__ = [
     "ScheduleDataRelationshipsLayers",
     "ScheduleDataRelationshipsLayersDataItems",
     "ScheduleDataRelationshipsLayersDataItemsType",
-    "ScheduleDataRelationshipsTeams",
-    "ScheduleDataRelationshipsTeamsDataItems",
-    "ScheduleDataRelationshipsTeamsDataItemsType",
     "ScheduleDataType",
     "ScheduleMember",
     "ScheduleMemberRelationships",
@@ -5455,6 +5379,8 @@ __all__ = [
     "ScheduleMemberRelationshipsUserData",
     "ScheduleMemberRelationshipsUserDataType",
     "ScheduleMemberType",
+    "ScheduleRequestDataAttributesLayersItemsMembersItems",
+    "ScheduleRequestDataAttributesLayersItemsMembersItemsUser",
     "ScheduleTarget",
     "ScheduleTargetType",
     "ScheduleTrigger",
@@ -5463,13 +5389,7 @@ __all__ = [
     "ScheduleUpdateRequestData",
     "ScheduleUpdateRequestDataAttributes",
     "ScheduleUpdateRequestDataAttributesLayersItems",
-    "ScheduleUpdateRequestDataAttributesLayersItemsInterval",
-    "ScheduleUpdateRequestDataAttributesLayersItemsMembersItems",
-    "ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser",
     "ScheduleUpdateRequestDataRelationships",
-    "ScheduleUpdateRequestDataRelationshipsTeams",
-    "ScheduleUpdateRequestDataRelationshipsTeamsDataItems",
-    "ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType",
     "ScheduleUpdateRequestDataType",
     "ScheduleUser",
     "ScheduleUserAttributes",
