@@ -1943,6 +1943,12 @@
       "type": "idempotent"
     }
   },
+  "GetScheduleOnCallUser": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetOnCallTeamRoutingRules": {
     "tag": "On-Call",
     "undo": {

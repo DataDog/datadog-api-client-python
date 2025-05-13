@@ -3140,6 +3140,15 @@ from datadog_api_client.v2.model.service_definitions_create_request import Servi
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
 from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
+from datadog_api_client.v2.model.shift import Shift
+from datadog_api_client.v2.model.shift_data import ShiftData
+from datadog_api_client.v2.model.shift_data_attributes import ShiftDataAttributes
+from datadog_api_client.v2.model.shift_data_relationships import ShiftDataRelationships
+from datadog_api_client.v2.model.shift_data_relationships_user import ShiftDataRelationshipsUser
+from datadog_api_client.v2.model.shift_data_relationships_user_data import ShiftDataRelationshipsUserData
+from datadog_api_client.v2.model.shift_data_relationships_user_data_type import ShiftDataRelationshipsUserDataType
+from datadog_api_client.v2.model.shift_data_type import ShiftDataType
+from datadog_api_client.v2.model.shift_included import ShiftIncluded
 from datadog_api_client.v2.model.single_aggregated_connection_response_array import (
     SingleAggregatedConnectionResponseArray,
 )
@@ -5699,6 +5708,15 @@ __all__ = [
     "ServiceDefinitionsListResponse",
     "ServiceNowTicket",
     "ServiceNowTicketResult",
+    "Shift",
+    "ShiftData",
+    "ShiftDataAttributes",
+    "ShiftDataRelationships",
+    "ShiftDataRelationshipsUser",
+    "ShiftDataRelationshipsUserData",
+    "ShiftDataRelationshipsUserDataType",
+    "ShiftDataType",
+    "ShiftIncluded",
     "SingleAggregatedConnectionResponseArray",
     "SingleAggregatedConnectionResponseData",
     "SingleAggregatedConnectionResponseDataAttributes",

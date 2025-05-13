@@ -17,6 +17,7 @@ from datadog_api_client.v2.model.escalation_policy_update_request import Escalat
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
+from datadog_api_client.v2.model.shift import Shift
 from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
 
@@ -203,6 +204,39 @@ class OnCallApi:
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_schedule_on_call_user_endpoint = _Endpoint(
+            settings={
+                "response_type": (Shift,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/on-call",
+                "operation_id": "get_schedule_on_call_user",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "filter_at_ts": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[at_ts]",
                     "location": "query",
                 },
             },
@@ -456,6 +490,36 @@ class OnCallApi:
             kwargs["include"] = include
 
         return self._get_on_call_team_routing_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_schedule_on_call_user(
+        self,
+        schedule_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+        filter_at_ts: Union[str, UnsetType] = unset,
+    ) -> Shift:
+        """Get the schedule of an on-call user.
+
+        Retrieves the user who is on-call for the specified schedule at a given time.
+
+        :param schedule_id: The ID of the schedule.
+        :type schedule_id: str
+        :param include: Specifies related resources to include in the response as a comma-separated list. Allowed value: ``user``.
+        :type include: str, optional
+        :param filter_at_ts: Retrieves the on-call user at the given timestamp (ISO-8601). Defaults to the current time if omitted."
+        :type filter_at_ts: str, optional
+        :rtype: Shift
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["schedule_id"] = schedule_id
+
+        if filter_at_ts is not unset:
+            kwargs["filter_at_ts"] = filter_at_ts
+
+        return self._get_schedule_on_call_user_endpoint.call_with_http_info(**kwargs)
 
     def set_on_call_team_routing_rules(
         self,
