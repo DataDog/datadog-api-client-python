@@ -26,7 +26,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cloud_security_management/custom_frameworks/create-framework-new/10
   response:
     body:
-      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"description":"","handle":"create-framework-new","icon_url":"test-url","name":"name","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}],"version":"10"}}}'
+      string: '{"data":{"id":"create-framework-new-10","type":"custom_framework","attributes":{"handle":"create-framework-new","icon_url":"test-url","name":"name","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}],"version":"10"}}}'
     headers:
       content-type:
       - application/vnd.api+json
