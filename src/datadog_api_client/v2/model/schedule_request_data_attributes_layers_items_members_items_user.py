@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser(ModelNormal):
+class ScheduleRequestDataAttributesLayersItemsMembersItemsUser(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
@@ -26,7 +26,7 @@ class ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser(ModelNormal
 
     def __init__(self_, id: Union[str, UnsetType] = unset, **kwargs):
         """
-        Identifies the user who is assigned to this member object. Only ``id`` is required.
+        Identifies the user participating in this layer as a single object with an ``id``.
 
         :param id: The user's ID.
         :type id: str, optional

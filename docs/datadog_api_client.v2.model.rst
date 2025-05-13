@@ -4470,6 +4470,27 @@ datadog\_api\_client.v2.model.data\_deletion\_response\_meta module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.data\_relationships\_teams module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_relationships_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_relationships\_teams\_data\_items module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_relationships_teams_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_relationships\_teams\_data\_items\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_relationships_teams_data_items_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.data\_scalar\_column module
 ---------------------------------------------------------
 
@@ -5541,27 +5562,6 @@ datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relatio
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships\_teams module
-----------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships\_teams\_data\_items module
------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_relationships\_teams\_data\_items\_type module
------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.escalation\_policy\_create\_request\_data\_type module
 ------------------------------------------------------------------------------------
 
@@ -5608,27 +5608,6 @@ datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_steps\_da
 ------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data_items_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_teams module
------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_teams
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_teams\_data\_items module
-------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_data\_relationships\_teams\_data\_items\_type module
-------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_data_relationships_teams_data_items_type
    :members:
    :show-inheritance:
 
@@ -5727,27 +5706,6 @@ datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relatio
 ---------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relationships\_teams module
-----------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relationships\_teams\_data\_items module
------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.escalation\_policy\_update\_request\_data\_relationships\_teams\_data\_items\_type module
------------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.escalation_policy_update_request_data_relationships_teams_data_items_type
    :members:
    :show-inheritance:
 
@@ -13675,52 +13633,10 @@ datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layer
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_interval module
----------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_interval
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_members\_items module
----------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_attributes\_layers\_items\_members\_items\_user module
----------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items_user
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships module
 -----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships\_teams module
-------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships_teams
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships\_teams\_data\_items module
--------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_create\_request\_data\_relationships\_teams\_data\_items\_type module
--------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items_type
    :members:
    :show-inheritance:
 
@@ -13780,27 +13696,6 @@ datadog\_api\_client.v2.model.schedule\_data\_relationships\_layers\_data\_items
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.schedule\_data\_relationships\_teams module
--------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_teams
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_data\_relationships\_teams\_data\_items module
---------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_teams_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_data\_relationships\_teams\_data\_items\_type module
---------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_data_relationships_teams_data_items_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.schedule\_data\_type module
 ---------------------------------------------------------
 
@@ -13847,6 +13742,20 @@ datadog\_api\_client.v2.model.schedule\_member\_type module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.schedule_member_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_request\_data\_attributes\_layers\_items\_members\_items module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_request\_data\_attributes\_layers\_items\_members\_items\_user module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items_user
    :members:
    :show-inheritance:
 
@@ -13906,52 +13815,10 @@ datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layer
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_interval module
----------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_interval
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_members\_items module
----------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_attributes\_layers\_items\_members\_items\_user module
----------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships module
 -----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships\_teams module
-------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships_teams
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships\_teams\_data\_items module
--------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.schedule\_update\_request\_data\_relationships\_teams\_data\_items\_type module
--------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items_type
    :members:
    :show-inheritance:
 

@@ -14,32 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items import (
-        ScheduleDataRelationshipsTeamsDataItems,
-    )
+    from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
 
 
-class ScheduleDataRelationshipsTeams(ModelNormal):
+class DataRelationshipsTeams(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items import (
-            ScheduleDataRelationshipsTeamsDataItems,
-        )
+        from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
 
         return {
-            "data": ([ScheduleDataRelationshipsTeamsDataItems],),
+            "data": ([DataRelationshipsTeamsDataItems],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[ScheduleDataRelationshipsTeamsDataItems], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[List[DataRelationshipsTeamsDataItems], UnsetType] = unset, **kwargs):
         """
         Associates teams with this schedule in a data structure.
 
         :param data: An array of team references for this schedule.
-        :type data: [ScheduleDataRelationshipsTeamsDataItems], optional
+        :type data: [DataRelationshipsTeamsDataItems], optional
         """
         if data is not unset:
             kwargs["data"] = data

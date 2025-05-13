@@ -12,21 +12,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items_type import (
-        ScheduleDataRelationshipsTeamsDataItemsType,
-    )
+    from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
 
 
-class ScheduleDataRelationshipsTeamsDataItems(ModelNormal):
+class DataRelationshipsTeamsDataItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.schedule_data_relationships_teams_data_items_type import (
-            ScheduleDataRelationshipsTeamsDataItemsType,
+        from datadog_api_client.v2.model.data_relationships_teams_data_items_type import (
+            DataRelationshipsTeamsDataItemsType,
         )
 
         return {
             "id": (str,),
-            "type": (ScheduleDataRelationshipsTeamsDataItemsType,),
+            "type": (DataRelationshipsTeamsDataItemsType,),
         }
 
     attribute_map = {
@@ -34,7 +32,7 @@ class ScheduleDataRelationshipsTeamsDataItems(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: ScheduleDataRelationshipsTeamsDataItemsType, **kwargs):
+    def __init__(self_, id: str, type: DataRelationshipsTeamsDataItemsType, **kwargs):
         """
         Relates a team to this schedule, identified by ``id`` and ``type`` (must be ``teams`` ).
 
@@ -42,7 +40,7 @@ class ScheduleDataRelationshipsTeamsDataItems(ModelNormal):
         :type id: str
 
         :param type: Teams resource type.
-        :type type: ScheduleDataRelationshipsTeamsDataItemsType
+        :type type: DataRelationshipsTeamsDataItemsType
         """
         super().__init__(kwargs)
 

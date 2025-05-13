@@ -15,18 +15,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.schedule_data_relationships_layers import ScheduleDataRelationshipsLayers
-    from datadog_api_client.v2.model.schedule_data_relationships_teams import ScheduleDataRelationshipsTeams
+    from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
 
 class ScheduleDataRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.schedule_data_relationships_layers import ScheduleDataRelationshipsLayers
-        from datadog_api_client.v2.model.schedule_data_relationships_teams import ScheduleDataRelationshipsTeams
+        from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
         return {
             "layers": (ScheduleDataRelationshipsLayers,),
-            "teams": (ScheduleDataRelationshipsTeams,),
+            "teams": (DataRelationshipsTeams,),
         }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class ScheduleDataRelationships(ModelNormal):
     def __init__(
         self_,
         layers: Union[ScheduleDataRelationshipsLayers, UnsetType] = unset,
-        teams: Union[ScheduleDataRelationshipsTeams, UnsetType] = unset,
+        teams: Union[DataRelationshipsTeams, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -47,7 +47,7 @@ class ScheduleDataRelationships(ModelNormal):
         :type layers: ScheduleDataRelationshipsLayers, optional
 
         :param teams: Associates teams with this schedule in a data structure.
-        :type teams: ScheduleDataRelationshipsTeams, optional
+        :type teams: DataRelationshipsTeams, optional
         """
         if layers is not unset:
             kwargs["layers"] = layers

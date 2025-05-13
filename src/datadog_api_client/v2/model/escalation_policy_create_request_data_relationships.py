@@ -14,32 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams import (
-        EscalationPolicyCreateRequestDataRelationshipsTeams,
-    )
+    from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
 
 class EscalationPolicyCreateRequestDataRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams import (
-            EscalationPolicyCreateRequestDataRelationshipsTeams,
-        )
+        from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
         return {
-            "teams": (EscalationPolicyCreateRequestDataRelationshipsTeams,),
+            "teams": (DataRelationshipsTeams,),
         }
 
     attribute_map = {
         "teams": "teams",
     }
 
-    def __init__(self_, teams: Union[EscalationPolicyCreateRequestDataRelationshipsTeams, UnsetType] = unset, **kwargs):
+    def __init__(self_, teams: Union[DataRelationshipsTeams, UnsetType] = unset, **kwargs):
         """
         Represents relationships in an escalation policy creation request, including references to teams.
 
-        :param teams: Defines the relationship to teams within an escalation policy creation request, referencing the teams to be associated with the policy.
-        :type teams: EscalationPolicyCreateRequestDataRelationshipsTeams, optional
+        :param teams: Associates teams with this schedule in a data structure.
+        :type teams: DataRelationshipsTeams, optional
         """
         if teams is not unset:
             kwargs["teams"] = teams
