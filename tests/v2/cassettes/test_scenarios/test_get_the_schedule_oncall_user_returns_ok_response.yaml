@@ -1,0 +1,51 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"layers":[{"effective_date":"2025-05-03T23:33:52.641Z","end_date":"2025-05-23T23:33:52.641Z","interval":{"days":1},"members":[{"user":{"id":"890f29d4-0b7a-11f0-aeb2-760fcae4f596"}}],"name":"Layer
+      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2025-05-08T23:33:52.641Z"}],"name":"Test-Get_the_schedule_on_call_user_returns_OK_response-1747179232","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules
+  response:
+    body:
+      string: '{"data":{"id":"37ca26fb-0143-4b2a-802c-8c01cd2179ab","type":"schedules","attributes":{"name":"Test-Get_the_schedule_on_call_user_returns_OK_response-1747179232","tags":["tag1","tag2"],"time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"bf12302a-842c-4d31-bfe8-198ac926c41c","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/37ca26fb-0143-4b2a-802c-8c01cd2179ab/on-call
+  response:
+    body:
+      string: '{"data":{"id":"890f29d4-0b7a-11f0-aeb2-760fcae4f596-2025-05-13T19:33:53-04:00-2025-05-14T19:33:52-04:00","type":"shifts","attributes":{"end":"2025-05-14T19:33:52-04:00","start":"2025-05-13T19:33:53.520152-04:00"},"relationships":{"user":{"data":{"id":"890f29d4-0b7a-11f0-aeb2-760fcae4f596","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/37ca26fb-0143-4b2a-802c-8c01cd2179ab
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

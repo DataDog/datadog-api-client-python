@@ -51849,7 +51849,7 @@ paths:
       - apiKeyAuth: []
         appKeyAuth: []
       - AuthZ: []
-      summary: Get the schedule of an on-call user
+      summary: Get the schedule on-call user
       tags:
       - On-Call
   /api/v2/on-call/teams/{team_id}/routing-rules:
