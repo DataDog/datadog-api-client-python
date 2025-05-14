@@ -47,8 +47,8 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param acl: Access control list setting for objects written to the bucket.
         :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl
 
-        :param metadata: Custom metadata key-value pairs added to each object.
-        :type metadata: [ObservabilityPipelineMetadataEntry]
+        :param metadata: Custom metadata to attach to each object uploaded to the GCS bucket.
+        :type metadata: [ObservabilityPipelineMetadataEntry], optional
 
         :param auto_extract_timestamp: If `true`, Splunk tries to extract timestamps from incoming log events.
             If `false`, Splunk assigns the time the event was received.
