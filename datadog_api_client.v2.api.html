@@ -6745,10 +6745,10 @@ Can only be used with application keys of users with the <code class="docutils l
 <span class="sig-name descname"><span class="pre">create_tag_configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_tag_configuration_create_request.MetricTagConfigurationCreateRequest" title="datadog_api_client.v2.model.metric_tag_configuration_create_request.MetricTagConfigurationCreateRequest"><span class="pre">MetricTagConfigurationCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_tag_configuration_response.MetricTagConfigurationResponse" title="datadog_api_client.v2.model.metric_tag_configuration_response.MetricTagConfigurationResponse"><span class="pre">MetricTagConfigurationResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.metrics_api.MetricsApi.create_tag_configuration" title="Link to this definition">¶</a></dt>
 <dd><p>Create a tag configuration.</p>
 <p>Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
-Optionally, include percentile aggregations on any distribution metric or configure custom aggregations
-on any count, rate, or gauge metric. By setting <code class="docutils literal notranslate"><span class="pre">exclude_tags_mode</span></code> to true the behavior is changed
-from an allow-list to a deny-list, and tags in the defined list will not be queryable.
-Can only be used with application keys of users with the <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Tags</span> <span class="pre">for</span> <span class="pre">Metrics</span></code> permission.</p>
+Optionally, include percentile aggregations on any distribution metric. By setting <code class="docutils literal notranslate"><span class="pre">exclude_tags_mode</span></code>
+to true, the behavior is changed from an allow-list to a deny-list, and tags in the defined list are
+not queryable. Can only be used with application keys of users with the <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Tags</span> <span class="pre">for</span> <span class="pre">Metrics</span></code>
+permission.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>metric_name</strong> (<em>str</em>) – The name of the metric.</p>
@@ -6798,7 +6798,7 @@ keys from users with the <code class="docutils literal notranslate"><span class=
 <li><p><strong>metric_name</strong> (<em>str</em>) – The name of the metric.</p></li>
 <li><p><strong>filter_groups</strong> (<em>str</em><em>, </em><em>optional</em>) – Filtered tag keys that the metric is configured to query with.</p></li>
 <li><p><strong>filter_hours_ago</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of hours of look back (from now) to estimate cardinality with. If unspecified, it defaults to 0 hours.</p></li>
-<li><p><strong>filter_num_aggregations</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of aggregations that a <code class="docutils literal notranslate"><span class="pre">count</span></code> , <code class="docutils literal notranslate"><span class="pre">rate</span></code> , or <code class="docutils literal notranslate"><span class="pre">gauge</span></code> metric is configured to use. Max number of aggregation combos is 9.</p></li>
+<li><p><strong>filter_num_aggregations</strong> (<em>int</em><em>, </em><em>optional</em>) – Deprecated. Number of aggregations has no impact on volume.</p></li>
 <li><p><strong>filter_pct</strong> (<em>bool</em><em>, </em><em>optional</em>) – A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.</p></li>
 <li><p><strong>filter_timespan_h</strong> (<em>int</em><em>, </em><em>optional</em>) – A window, in hours, from the look back to estimate cardinality with. The minimum and default is 1 hour.</p></li>
 </ul>
