@@ -5,6 +5,7 @@ Create a metric monitor with a custom schedule returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.monitors_api import MonitorsApi
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_options_custom_schedule import MonitorOptionsCustomSchedule
 from datadog_api_client.v1.model.monitor_options_custom_schedule_recurrence import (
@@ -45,6 +46,7 @@ body = Monitor(
         ),
     ),
     type=MonitorType.QUERY_ALERT,
+    draft_status=MonitorDraftStatus.PUBLISHED,
 )
 
 configuration = Configuration()
