@@ -25,7 +25,7 @@ class ObservabilityPipelineMetadataEntry(ModelNormal):
 
     def __init__(self_, name: str, value: str, **kwargs):
         """
-        A custom metadata entry to attach to each object uploaded to the GCS bucket.
+        A custom metadata entry.
 
         :param name: The metadata key.
         :type name: str

@@ -73,10 +73,10 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         bucket: str,
         id: str,
         inputs: List[str],
-        metadata: List[ObservabilityPipelineMetadataEntry],
         storage_class: ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
         type: ObservabilityPipelineGoogleCloudStorageDestinationType,
         key_prefix: Union[str, UnsetType] = unset,
+        metadata: Union[List[ObservabilityPipelineMetadataEntry], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -101,8 +101,8 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         :param key_prefix: Optional prefix for object keys within the GCS bucket.
         :type key_prefix: str, optional
 
-        :param metadata: Custom metadata key-value pairs added to each object.
-        :type metadata: [ObservabilityPipelineMetadataEntry]
+        :param metadata: Custom metadata to attach to each object uploaded to the GCS bucket.
+        :type metadata: [ObservabilityPipelineMetadataEntry], optional
 
         :param storage_class: Storage class used for objects stored in GCS.
         :type storage_class: ObservabilityPipelineGoogleCloudStorageDestinationStorageClass
@@ -112,6 +112,8 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         """
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
+        if metadata is not unset:
+            kwargs["metadata"] = metadata
         super().__init__(kwargs)
 
         self_.acl = acl
@@ -119,6 +121,5 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         self_.bucket = bucket
         self_.id = id
         self_.inputs = inputs
-        self_.metadata = metadata
         self_.storage_class = storage_class
         self_.type = type
