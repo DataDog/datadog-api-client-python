@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"cloud_provider":{"aws":{"aws_account_id":["tag1:v1"]}}},"id":"csm_resource_filter","type":"csm_resource_filter"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/cloud_security_management/resource_filters
+  response:
+    body:
+      string: '{"data":{"id":"csm_resource_filter","type":"csm_resource_filter","attributes":{"cloud_provider":{"aws":{"aws_account_id":["tag1:v1"]}},"uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+version: 1

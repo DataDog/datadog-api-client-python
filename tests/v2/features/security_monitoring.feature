@@ -872,6 +872,21 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: List resource filters returns "Bad Request" response
+    Given new "GetResourceEvaluationFilters" request
+    And request contains "account_id" parameter with value "123456789"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: List resource filters returns "OK" response
+    Given new "GetResourceEvaluationFilters" request
+    And request contains "cloud_provider" parameter with value "aws"
+    And request contains "account_id" parameter with value "123456789"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
@@ -1259,6 +1274,20 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}-Updated"
     And the response "id" has the same value as "security_rule.id"
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update resource filters returns "Bad Request" response
+    Given new "UpdateResourceEvaluationFilters" request
+    And body with value {"data": {"attributes": {"cloud_provider": {"invalid": {"aws_account_id": ["tag1:v1"]}}}, "id": "csm_resource_filter", "type": "csm_resource_filter"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update resource filters returns "OK" response
+    Given new "UpdateResourceEvaluationFilters" request
+    And body with value {"data": {"attributes": {"cloud_provider": {"aws": {"aws_account_id": ["tag1:v1"]}}}, "id": "csm_resource_filter", "type": "csm_resource_filter"}}
+    When the request is sent
+    Then the response status is 201 OK
 
   @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Validate a detection rule returns "Bad Request" response

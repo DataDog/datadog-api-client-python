@@ -548,6 +548,18 @@
       "type": "idempotent"
     }
   },
+  "GetResourceEvaluationFilters": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateResourceEvaluationFilters": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListContainerImages": {
     "tag": "Container Images",
     "undo": {
