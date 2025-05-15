@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1744967413"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1747309759"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"id":"ghk-tsf-neq","attributes":{"version":1,"name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1744967413","description":"My
-        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","creationDate":1744967413434,"updateAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","updateDate":1744967413434,"filters":["os
+      string: '{"data":{"id":"mdm-2ki-w2c","attributes":{"version":1,"name":"testdeleteacloudworkloadsecurityagentrulereturnsokresponse1747309759","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","creationDate":1747309759860,"updateAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","updateDate":1747309759860,"filters":["os
         == \"linux\""],"actions":[],"agentConstraint":"","creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"type":"agent_rule"}}
 
@@ -29,7 +29,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ghk-tsf-neq
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/mdm-2ki-w2c
   response:
     body:
       string: ''
@@ -43,10 +43,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/ghk-tsf-neq
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/mdm-2ki-w2c
   response:
     body:
-      string: '{"errors":["not_found(Agent rule not found: agentRuleId=ghk-tsf-neq)"]}
+      string: '{"errors":["not_found(Agent rule not found: agentRuleId=mdm-2ki-w2c)"]}
 
         '
     headers:

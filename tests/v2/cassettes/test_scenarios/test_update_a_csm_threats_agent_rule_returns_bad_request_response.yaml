@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1744708211"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1747309782"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"1i5-k3r-2dg","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1744708211","policyVersion":"1","priority":1000000001,"ruleCount":226,"updateDate":1744708211304,"updater":{"name":"CI
+      string: '{"data":{"id":"jf9-1l7-q9l","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1747309782","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747309782037,"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -20,8 +20,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1744708211","policy_id":"1i5-k3r-2dg","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}}],"description":"My
+      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1747309782","policy_id":"jf9-1l7-q9l","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -31,10 +31,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"qtl-8mk-8gy","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1744708211716,"creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"lcj-vq7-sqb","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false}],"category":"Process
+        Activity","creationDate":1747309782533,"creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1744708211","updateDate":1744708211716,"updater":{"name":"CI
+        == \"linux\""],"monitoring":["jf9-1l7-q9l"],"name":"testupdateacsmthreatsagentrulereturnsbadrequestresponse1747309782","product_tags":["security:attack","technique:T1059"],"updateDate":1747309782533,"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -44,14 +44,14 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","policy_id":"1i5-k3r-2dg","product_tags":[]},"id":"invalid-agent-rule-id","type":"agent_rule"}}'
+      == \"sh\"","policy_id":"jf9-1l7-q9l","product_tags":[]},"id":"invalid-agent-rule-id","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/qtl-8mk-8gy
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/lcj-vq7-sqb
   response:
     body:
       string: '{"errors":[{"title":"failed to update rule"}]}
@@ -69,7 +69,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/qtl-8mk-8gy
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/lcj-vq7-sqb
   response:
     body:
       string: ''
@@ -85,7 +85,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/1i5-k3r-2dg
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/jf9-1l7-q9l
   response:
     body:
       string: ''
