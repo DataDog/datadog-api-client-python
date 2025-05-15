@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringRuleMaxSignalDuration(ModelSimple):
     """
-    A signal will “close” regardless of the query being matched once the time exceeds the maximum duration.
+    A signal will "close" regardless of the query being matched once the time exceeds the maximum duration.
         This time is calculated from the first seen timestamp.
 
     :param value: Must be one of [0, 60, 300, 600, 900, 1800, 3600, 7200, 10800, 21600, 43200, 86400].

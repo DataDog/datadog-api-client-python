@@ -135,11 +135,11 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param impossible_travel_options: Options on impossible travel detection method.
         :type impossible_travel_options: SecurityMonitoringRuleImpossibleTravelOptions, optional
 
-        :param keep_alive: Once a signal is generated, the signal will remain “open” if a case is matched at least once within
+        :param keep_alive: Once a signal is generated, the signal will remain "open" if a case is matched at least once within
             this keep alive window. For third party detection method, this field is not used.
         :type keep_alive: SecurityMonitoringRuleKeepAlive, optional
 
-        :param max_signal_duration: A signal will “close” regardless of the query being matched once the time exceeds the maximum duration.
+        :param max_signal_duration: A signal will "close" regardless of the query being matched once the time exceeds the maximum duration.
             This time is calculated from the first seen timestamp.
         :type max_signal_duration: SecurityMonitoringRuleMaxSignalDuration, optional
 
