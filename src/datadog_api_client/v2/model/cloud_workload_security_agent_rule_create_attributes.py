@@ -17,20 +17,26 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "blocking": ([str],),
             "description": (str,),
+            "disabled": ([str],),
             "enabled": (bool,),
             "expression": (str,),
             "filters": ([str],),
+            "monitoring": ([str],),
             "name": (str,),
             "policy_id": (str,),
             "product_tags": ([str],),
         }
 
     attribute_map = {
+        "blocking": "blocking",
         "description": "description",
+        "disabled": "disabled",
         "enabled": "enabled",
         "expression": "expression",
         "filters": "filters",
+        "monitoring": "monitoring",
         "name": "name",
         "policy_id": "policy_id",
         "product_tags": "product_tags",
@@ -40,9 +46,12 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         self_,
         expression: str,
         name: str,
+        blocking: Union[List[str], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        disabled: Union[List[str], UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         filters: Union[List[str], UnsetType] = unset,
+        monitoring: Union[List[str], UnsetType] = unset,
         policy_id: Union[str, UnsetType] = unset,
         product_tags: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -50,8 +59,14 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         """
         Create a new Cloud Workload Security Agent rule.
 
+        :param blocking: The blocking policies that the rule belongs to
+        :type blocking: [str], optional
+
         :param description: The description of the Agent rule.
         :type description: str, optional
+
+        :param disabled: The disabled policies that the rule belongs to
+        :type disabled: [str], optional
 
         :param enabled: Whether the Agent rule is enabled
         :type enabled: bool, optional
@@ -62,6 +77,9 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         :param filters: The platforms the Agent rule is supported on
         :type filters: [str], optional
 
+        :param monitoring: The monitoring policies that the rule belongs to
+        :type monitoring: [str], optional
+
         :param name: The name of the Agent rule.
         :type name: str
 
@@ -71,12 +89,18 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         :param product_tags: The list of product tags associated with the rule
         :type product_tags: [str], optional
         """
+        if blocking is not unset:
+            kwargs["blocking"] = blocking
         if description is not unset:
             kwargs["description"] = description
+        if disabled is not unset:
+            kwargs["disabled"] = disabled
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if filters is not unset:
             kwargs["filters"] = filters
+        if monitoring is not unset:
+            kwargs["monitoring"] = monitoring
         if policy_id is not unset:
             kwargs["policy_id"] = policy_id
         if product_tags is not unset:

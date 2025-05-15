@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteacsmthreatsagentrulereturnsokresponse1743517852"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteacsmthreatsagentrulereturnsokresponse1747309757"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"kqm-fhb-eay","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testdeleteacsmthreatsagentrulereturnsokresponse1743517852","policyVersion":"1","priority":1000000001,"ruleCount":226,"updateDate":1743517852178,"updater":{"name":"CI
+      string: '{"data":{"id":"esf-fbh-ofa","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testdeleteacsmthreatsagentrulereturnsokresponse1747309757","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747309757037,"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -20,8 +20,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testdeleteacsmthreatsagentrulereturnsokresponse1743517852","policy_id":"kqm-fhb-eay","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}}],"description":"My
+      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testdeleteacsmthreatsagentrulereturnsokresponse1747309757","policy_id":"esf-fbh-ofa","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -31,10 +31,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"pjy-nkm-0wb","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1743517852458,"creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"pdb-88d-vs4","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false}],"category":"Process
+        Activity","creationDate":1747309757421,"creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"name":"testdeleteacsmthreatsagentrulereturnsokresponse1743517852","updateDate":1743517852458,"updater":{"name":"CI
+        == \"linux\""],"monitoring":["esf-fbh-ofa"],"name":"testdeleteacsmthreatsagentrulereturnsokresponse1747309757","product_tags":["security:attack","technique:T1059"],"updateDate":1747309757421,"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -48,7 +48,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pjy-nkm-0wb?policy_id=kqm-fhb-eay
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pdb-88d-vs4?policy_id=esf-fbh-ofa
   response:
     body:
       string: ''
@@ -64,7 +64,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pjy-nkm-0wb
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/pdb-88d-vs4
   response:
     body:
       string: '{"errors":[{"title":"failed to delete rule"}]}
@@ -82,7 +82,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/kqm-fhb-eay
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/esf-fbh-ofa
   response:
     body:
       string: ''

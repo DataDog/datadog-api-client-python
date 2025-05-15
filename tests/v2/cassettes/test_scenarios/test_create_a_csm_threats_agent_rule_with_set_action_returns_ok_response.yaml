@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateacsmthreatsagentrulewithsetactionreturnsokresponse1747309750"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"xyq-ard-uy3","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateacsmthreatsagentrulewithsetactionreturnsokresponse1747309750","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747309750488,"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}}],"description":"My
+      Agent rule with set action","enabled":true,"expression":"exec.file.name == \"sh\"","filters":[],"name":"testcreateacsmthreatsagentrulewithsetactionreturnsokresponse1747309750","policy_id":"xyq-ard-uy3","product_tags":[]},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"0xd-0i0-cnc","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false}],"category":"Process
+        Activity","creationDate":1747309750900,"creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"defaultRule":false,"description":"My
+        Agent rule with set action","enabled":true,"expression":"exec.file.name ==
+        \"sh\"","filters":["os == \"linux\""],"monitoring":["xyq-ard-uy3"],"name":"testcreateacsmthreatsagentrulewithsetactionreturnsokresponse1747309750","product_tags":[],"updateDate":1747309750900,"updater":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/0xd-0i0-cnc
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/xyq-ard-uy3
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

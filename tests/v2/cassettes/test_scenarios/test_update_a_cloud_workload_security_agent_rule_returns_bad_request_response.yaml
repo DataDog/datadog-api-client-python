@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1744967414"},"type":"agent_rule"}}'
+      == \"sh\"","name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1747309786"},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
   response:
     body:
-      string: '{"data":{"id":"03s-ro8-kgi","attributes":{"version":1,"name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1744967414","description":"My
-        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","creationDate":1744967414924,"updateAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","updateDate":1744967414924,"filters":["os
+      string: '{"data":{"id":"acg-2ix-y1d","attributes":{"version":1,"name":"testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1747309786","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","creationDate":1747309786339,"updateAuthorUuId":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","updateDate":1747309786339,"filters":["os
         == \"linux\""],"actions":[],"agentConstraint":"","creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"type":"agent_rule"}}
 
@@ -24,18 +24,18 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name"},"id":"03s-ro8-kgi","type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name"},"id":"acg-2ix-y1d","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/03s-ro8-kgi
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/acg-2ix-y1d
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''expression'' is invalid:
-        rule `testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1744967414`
+        rule `testupdateacloudworkloadsecurityagentrulereturnsbadrequestresponse1747309786`
         error: rule syntax error: bool expected: 1:1: exec.file.name\n^)"]}
 
         '
@@ -51,7 +51,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/03s-ro8-kgi
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/acg-2ix-y1d
   response:
     body:
       string: ''

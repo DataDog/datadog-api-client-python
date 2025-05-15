@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"4op-0bb-yom","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":225,"name":"my_agent_policy","policyVersion":"1","priority":1000000001,"ruleCount":226,"updateDate":1744708206895,"updater":{"name":"CI
+      string: '{"data":{"id":"oem-itj-6yc","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":225,"name":"my_agent_policy","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747309744898,"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/4op-0bb-yom
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/oem-itj-6yc
   response:
     body:
       string: ''

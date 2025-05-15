@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacsmthreatsagentrulereturnsnotfoundresponse1743517862"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateacsmthreatsagentrulereturnsnotfoundresponse1747309784"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"jnw-szj-ssb","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacsmthreatsagentrulereturnsnotfoundresponse1743517862","policyVersion":"1","priority":1000000001,"ruleCount":226,"updateDate":1743517862965,"updater":{"name":"CI
+      string: '{"data":{"id":"zt4-lsl-d6r","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateacsmthreatsagentrulereturnsnotfoundresponse1747309784","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747309784931,"updater":{"name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -21,7 +21,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","policy_id":"jnw-szj-ssb","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
+      == \"sh\"","policy_id":"zt4-lsl-d6r","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/jnw-szj-ssb
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/zt4-lsl-d6r
   response:
     body:
       string: ''
