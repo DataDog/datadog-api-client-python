@@ -1,0 +1,73 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1747319655"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"b9a-gus-q1b","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1747319655","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319655148,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1747319655"},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"wjj-lvq-owq","attributes":{"version":1,"name":"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1747319655","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","creationDate":1747319655964,"updateAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","updateDate":1747319655964,"filters":[],"actions":[],"agentConstraint":"","creator":{"name":"frog","handle":"frog@datadoghq.com"},"updater":{"name":"frog","handle":"frog@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/wjj-lvq-owq
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/b9a-gus-q1b
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

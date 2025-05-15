@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","name":"testdeleteaworkloadprotectionagentruleus1fedreturnsokresponse1747319662"},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"car-hil-x1c","attributes":{"version":1,"name":"testdeleteaworkloadprotectionagentruleus1fedreturnsokresponse1747319662","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","creationDate":1747319662646,"updateAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","updateDate":1747319662646,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","creator":{"name":"frog","handle":"frog@datadoghq.com"},"updater":{"name":"frog","handle":"frog@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/car-hil-x1c
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/car-hil-x1c
+  response:
+    body:
+      string: '{"errors":["not_found(Agent rule not found: agentRuleId=car-hil-x1c)"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

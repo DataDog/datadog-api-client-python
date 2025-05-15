@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
+      == \"sh\"","name":"testupdateaworkloadprotectionagentruleus1fedreturnsokresponse1747319691"},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"fbb-jub-hb7","attributes":{"version":1,"name":"testupdateaworkloadprotectionagentruleus1fedreturnsokresponse1747319691","description":"My
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","creationDate":1747319691636,"updateAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","updateDate":1747319691636,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","creator":{"name":"frog","handle":"frog@datadoghq.com"},"updater":{"name":"frog","handle":"frog@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"Updated Agent rule","expression":"exec.file.name
+      == \"sh\""},"id":"fbb-jub-hb7","type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/fbb-jub-hb7
+  response:
+    body:
+      string: '{"data":{"id":"fbb-jub-hb7","attributes":{"version":2,"name":"testupdateaworkloadprotectionagentruleus1fedreturnsokresponse1747319691","description":"Updated
+        Agent rule","expression":"exec.file.name == \"sh\"","category":"Process Activity","defaultRule":false,"enabled":true,"creationAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","creationDate":1747319691636,"updateAuthorUuId":"3ad549bf-eba0-11e9-a77a-0705486660d0","updateDate":1747319692038,"filters":["os
+        == \"linux\""],"actions":[],"agentConstraint":"","creator":{"name":"frog","handle":"frog@datadoghq.com"},"updater":{"name":"frog","handle":"frog@datadoghq.com"}},"type":"agent_rule"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/cloud_workload_security/agent_rules/fbb-jub-hb7
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

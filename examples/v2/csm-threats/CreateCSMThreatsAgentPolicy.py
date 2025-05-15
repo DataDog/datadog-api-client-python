@@ -1,5 +1,5 @@
 """
-Create a CSM Threats Agent policy returns "OK" response
+Create a Workload Protection policy returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
