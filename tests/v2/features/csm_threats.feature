@@ -11,7 +11,7 @@ Feature: CSM Threats
     And a valid "appKeyAuth" key in the system
     And an instance of "CSMThreats" API
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a CSM Threats Agent policy returns "Bad Request" response
     Given new "CreateCSMThreatsAgentPolicy" request
     And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "hostTagsLists": [], "name": "test"}, "type": "policy"}}
@@ -25,7 +25,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a CSM Threats Agent policy returns "OK" response
     Given new "CreateCSMThreatsAgentPolicy" request
     And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy"}, "type": "policy"}}
@@ -80,14 +80,14 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Delete a CSM Threats Agent policy returns "Not Found" response
     Given new "DeleteCSMThreatsAgentPolicy" request
     And request contains "policy_id" parameter with value "non-existent-policy-id"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Delete a CSM Threats Agent policy returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "DeleteCSMThreatsAgentPolicy" request
@@ -204,7 +204,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Update a CSM Threats Agent policy returns "Bad Request" response
     Given there is a valid "policy_rc" in the system
     And new "UpdateCSMThreatsAgentPolicy" request
@@ -222,7 +222,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Update a CSM Threats Agent policy returns "Not Found" response
     Given new "UpdateCSMThreatsAgentPolicy" request
     And request contains "policy_id" parameter with value "non-existent-policy-id"
@@ -230,7 +230,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Update a CSM Threats Agent policy returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "UpdateCSMThreatsAgentPolicy" request
