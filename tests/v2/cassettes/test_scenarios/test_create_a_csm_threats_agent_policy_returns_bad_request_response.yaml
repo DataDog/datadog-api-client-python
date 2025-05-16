@@ -10,9 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"errors":[{"title":"failed to create policy"}]}
-
-        '
+      string: '{"errors":["input_validation_error(Field ''tags'' is invalid: cannot
+        have both the new and the legacy field populated)"]}'
     headers:
       content-type:
       - application/json
