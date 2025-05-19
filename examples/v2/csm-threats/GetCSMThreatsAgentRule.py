@@ -1,5 +1,5 @@
 """
-Get a CSM Threats Agent rule returns "OK" response
+Get a Workload Protection agent rule returns "OK" response
 """
 
 from os import environ

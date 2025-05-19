@@ -1,5 +1,5 @@
 """
-Create a Cloud Workload Security Agent rule returns "OK" response
+Create a Workload Protection agent rule (US1-FED) returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
