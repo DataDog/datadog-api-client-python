@@ -35,6 +35,7 @@ class Monitor(ModelNormal):
         from datadog_api_client.v1.model.monitor_type import MonitorType
 
         return {
+            "classification": (str,),
             "created": (datetime,),
             "creator": (Creator,),
             "deleted": (datetime, none_type),
@@ -55,6 +56,7 @@ class Monitor(ModelNormal):
         }
 
     attribute_map = {
+        "classification": "classification",
         "created": "created",
         "creator": "creator",
         "deleted": "deleted",
@@ -74,6 +76,7 @@ class Monitor(ModelNormal):
         "type": "type",
     }
     read_only_vars = {
+        "classification",
         "created",
         "creator",
         "deleted",
@@ -88,6 +91,7 @@ class Monitor(ModelNormal):
         self_,
         query: str,
         type: MonitorType,
+        classification: Union[str, UnsetType] = unset,
         created: Union[datetime, UnsetType] = unset,
         creator: Union[Creator, UnsetType] = unset,
         deleted: Union[datetime, none_type, UnsetType] = unset,
@@ -107,6 +111,9 @@ class Monitor(ModelNormal):
     ):
         """
         Object describing a monitor.
+
+        :param classification: The classification of the monitor.
+        :type classification: str, optional
 
         :param created: Timestamp of the monitor creation.
         :type created: datetime, optional
@@ -159,6 +166,8 @@ class Monitor(ModelNormal):
         :param type: The type of the monitor. For more information about ``type`` , see the `monitor options <https://docs.datadoghq.com/monitors/guide/monitor_api_options/>`_ docs.
         :type type: MonitorType
         """
+        if classification is not unset:
+            kwargs["classification"] = classification
         if created is not unset:
             kwargs["created"] = created
         if creator is not unset:
