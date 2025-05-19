@@ -1,5 +1,5 @@
 """
-Get a Cloud Workload Security Agent rule returns "OK" response
+Get a Workload Protection agent rule (US1-FED) returns "OK" response
 """
 
 from os import environ

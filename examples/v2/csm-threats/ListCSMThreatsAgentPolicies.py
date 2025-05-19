@@ -1,5 +1,5 @@
 """
-Get all CSM Threats Agent policies returns "OK" response
+Get all Workload Protection policies returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

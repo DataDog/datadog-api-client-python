@@ -1,5 +1,5 @@
 """
-Update a CSM Threats Agent rule returns "OK" response
+Update a Workload Protection agent rule returns "OK" response
 """
 
 from os import environ
