@@ -40,6 +40,8 @@ class FindingAttributes(ModelNormal):
         from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 
         return {
+            "datadog_link": (str,),
+            "description": (str,),
             "evaluation": (FindingEvaluation,),
             "evaluation_changed_at": (int,),
             "mute": (FindingMute,),
@@ -53,6 +55,8 @@ class FindingAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "datadog_link": "datadog_link",
+        "description": "description",
         "evaluation": "evaluation",
         "evaluation_changed_at": "evaluation_changed_at",
         "mute": "mute",
@@ -67,6 +71,8 @@ class FindingAttributes(ModelNormal):
 
     def __init__(
         self_,
+        datadog_link: Union[str, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         evaluation: Union[FindingEvaluation, UnsetType] = unset,
         evaluation_changed_at: Union[int, UnsetType] = unset,
         mute: Union[FindingMute, UnsetType] = unset,
@@ -81,6 +87,12 @@ class FindingAttributes(ModelNormal):
     ):
         """
         The JSON:API attributes of the finding.
+
+        :param datadog_link: The Datadog relative link for this finding.
+        :type datadog_link: str, optional
+
+        :param description: The description and remediation steps for this finding.
+        :type description: str, optional
 
         :param evaluation: The evaluation of the finding.
         :type evaluation: FindingEvaluation, optional
@@ -112,6 +124,10 @@ class FindingAttributes(ModelNormal):
         :param vulnerability_type: The vulnerability type of the finding.
         :type vulnerability_type: FindingVulnerabilityType, optional
         """
+        if datadog_link is not unset:
+            kwargs["datadog_link"] = datadog_link
+        if description is not unset:
+            kwargs["description"] = description
         if evaluation is not unset:
             kwargs["evaluation"] = evaluation
         if evaluation_changed_at is not unset:
