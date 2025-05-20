@@ -1207,6 +1207,10 @@ from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
+from datadog_api_client.v2.model.get_resource_evaluation_filters_response import GetResourceEvaluationFiltersResponse
+from datadog_api_client.v2.model.get_resource_evaluation_filters_response_data import (
+    GetResourceEvaluationFiltersResponseData,
+)
 from datadog_api_client.v2.model.get_rule_version_history_data import GetRuleVersionHistoryData
 from datadog_api_client.v2.model.get_rule_version_history_data_type import GetRuleVersionHistoryDataType
 from datadog_api_client.v2.model.get_rule_version_history_response import GetRuleVersionHistoryResponse
@@ -2521,6 +2525,8 @@ from datadog_api_client.v2.model.relationship_to_user_team_user_data import Rela
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
 from datadog_api_client.v2.model.remediation import Remediation
 from datadog_api_client.v2.model.reorder_retention_filters_request import ReorderRetentionFiltersRequest
+from datadog_api_client.v2.model.resource_filter_attributes import ResourceFilterAttributes
+from datadog_api_client.v2.model.resource_filter_request_type import ResourceFilterRequestType
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
 from datadog_api_client.v2.model.restriction_policy_attributes import RestrictionPolicyAttributes
@@ -3288,6 +3294,18 @@ from datadog_api_client.v2.model.update_custom_framework_response import UpdateC
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
+from datadog_api_client.v2.model.update_resource_evaluation_filters_request import (
+    UpdateResourceEvaluationFiltersRequest,
+)
+from datadog_api_client.v2.model.update_resource_evaluation_filters_request_data import (
+    UpdateResourceEvaluationFiltersRequestData,
+)
+from datadog_api_client.v2.model.update_resource_evaluation_filters_response import (
+    UpdateResourceEvaluationFiltersResponse,
+)
+from datadog_api_client.v2.model.update_resource_evaluation_filters_response_data import (
+    UpdateResourceEvaluationFiltersResponseData,
+)
 from datadog_api_client.v2.model.update_rule_request import UpdateRuleRequest
 from datadog_api_client.v2.model.update_rule_request_data import UpdateRuleRequestData
 from datadog_api_client.v2.model.update_rule_response import UpdateRuleResponse
@@ -4328,6 +4346,8 @@ __all__ = [
     "GetFindingResponse",
     "GetInterfacesData",
     "GetInterfacesResponse",
+    "GetResourceEvaluationFiltersResponse",
+    "GetResourceEvaluationFiltersResponseData",
     "GetRuleVersionHistoryData",
     "GetRuleVersionHistoryDataType",
     "GetRuleVersionHistoryResponse",
@@ -5220,6 +5240,8 @@ __all__ = [
     "RelationshipToUsers",
     "Remediation",
     "ReorderRetentionFiltersRequest",
+    "ResourceFilterAttributes",
+    "ResourceFilterRequestType",
     "ResponseMetaAttributes",
     "RestrictionPolicy",
     "RestrictionPolicyAttributes",
@@ -5817,6 +5839,10 @@ __all__ = [
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
+    "UpdateResourceEvaluationFiltersRequest",
+    "UpdateResourceEvaluationFiltersRequestData",
+    "UpdateResourceEvaluationFiltersResponse",
+    "UpdateResourceEvaluationFiltersResponseData",
     "UpdateRuleRequest",
     "UpdateRuleRequestData",
     "UpdateRuleResponse",
