@@ -6444,6 +6444,20 @@ datadog\_api\_client.v2.model.get\_interfaces\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.get\_resource\_evaluation\_filters\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_resource_evaluation_filters_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_resource\_evaluation\_filters\_response\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_resource_evaluation_filters_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.get\_rule\_version\_history\_data module
 ----------------------------------------------------------------------
 
@@ -12352,6 +12366,20 @@ datadog\_api\_client.v2.model.reorder\_retention\_filters\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.resource\_filter\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resource_filter_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resource\_filter\_request\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resource_filter_request_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.response\_meta\_attributes module
 ---------------------------------------------------------------
 
@@ -16822,6 +16850,34 @@ datadog\_api\_client.v2.model.update\_open\_api\_response\_data module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_open_api_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_resource\_evaluation\_filters\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_resource_evaluation_filters_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_resource\_evaluation\_filters\_request\_data module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_resource_evaluation_filters_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_resource\_evaluation\_filters\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_resource_evaluation_filters_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_resource\_evaluation\_filters\_response\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_resource_evaluation_filters_response_data
    :members:
    :show-inheritance:
 
