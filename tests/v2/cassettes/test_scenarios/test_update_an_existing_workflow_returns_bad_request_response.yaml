@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/workflows
   response:
     body:
-      string: '{"data":{"id":"748a9d1b-a9a5-415b-9360-3d8374329957","type":"workflows","attributes":{"createdAt":"2025-02-04T04:58:34.263325Z","description":"","name":"Cassette
-        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-02-04T04:58:34.263325Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"851e4264-e264-4e5c-b3c4-e73f863065aa","type":"workflows","attributes":{"createdAt":"2025-05-20T19:25:37.827968Z","description":"","name":"Cassette
+        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"systemTags":null,"tags":[],"updatedAt":"2025-05-20T19:25:37.827968Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -27,11 +27,12 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/workflows/748a9d1b-a9a5-415b-9360-3d8374329957
+    uri: https://api.datadoghq.com/api/v2/workflows/851e4264-e264-4e5c-b3c4-e73f863065aa
   response:
     body:
       string: '{"errors":[{"detail":"workflow description exceeds size limit of [300]
-        characters"}]}'
+        characters"},{"detail":"spec is invalid"},{"detail":"no trigger found. At
+        least one trigger is required."}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -44,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/workflows/748a9d1b-a9a5-415b-9360-3d8374329957
+    uri: https://api.datadoghq.com/api/v2/workflows/851e4264-e264-4e5c-b3c4-e73f863065aa
   response:
     body:
       string: ''

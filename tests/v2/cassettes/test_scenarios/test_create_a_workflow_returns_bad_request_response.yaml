@@ -12,7 +12,8 @@ interactions:
   response:
     body:
       string: '{"errors":[{"detail":"workflow description exceeds size limit of [300]
-        characters"}]}'
+        characters"},{"detail":"spec is invalid"},{"detail":"no trigger found. At
+        least one trigger is required."}]}'
     headers:
       content-type:
       - application/vnd.api+json
