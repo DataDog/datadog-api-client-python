@@ -1935,6 +1935,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_historical_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_historical_job()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_resource_evaluation_filters" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_resource_evaluation_filters()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_rule_version_history" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_rule_version_history()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_sbom()</span></code></a>
@@ -1992,6 +1994,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.test_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.test_security_monitoring_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_custom_framework" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.update_custom_framework()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_resource_evaluation_filters" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.update_resource_evaluation_filters()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.update_security_filter()</span></code></a>
         </li>
@@ -9257,6 +9261,24 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_resource_evaluation_filters">
+<span class="sig-name descname"><span class="pre">get_resource_evaluation_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cloud_provider</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_resource_evaluation_filters_response.GetResourceEvaluationFiltersResponse" title="datadog_api_client.v2.model.get_resource_evaluation_filters_response.GetResourceEvaluationFiltersResponse"><span class="pre">GetResourceEvaluationFiltersResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_resource_evaluation_filters" title="Link to this definition">¶</a></dt>
+<dd><p>List resource filters.</p>
+<p>List resource filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cloud_provider</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter resource filters by cloud provider (e.g. aws, gcp, azure).</p></li>
+<li><p><strong>account_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter resource filters by cloud provider account ID. This parameter is only valid when provider is specified.</p></li>
+<li><p><strong>skip_cache</strong> (<em>bool</em><em>, </em><em>optional</em>) – Skip cache for resource filters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_resource_evaluation_filters_response.GetResourceEvaluationFiltersResponse" title="datadog_api_client.v2.model.get_resource_evaluation_filters_response.GetResourceEvaluationFiltersResponse">GetResourceEvaluationFiltersResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_rule_version_history">
 <span class="sig-name descname"><span class="pre">get_rule_version_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_rule_version_history_response.GetRuleVersionHistoryResponse" title="datadog_api_client.v2.model.get_rule_version_history_response.GetRuleVersionHistoryResponse"><span class="pre">GetRuleVersionHistoryResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_rule_version_history" title="Link to this definition">¶</a></dt>
 <dd><p>Get a rule’s version history.</p>
@@ -9859,6 +9881,17 @@ security signals.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_custom_framework_response.UpdateCustomFrameworkResponse" title="datadog_api_client.v2.model.update_custom_framework_response.UpdateCustomFrameworkResponse">UpdateCustomFrameworkResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_resource_evaluation_filters">
+<span class="sig-name descname"><span class="pre">update_resource_evaluation_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_resource_evaluation_filters_request.UpdateResourceEvaluationFiltersRequest" title="datadog_api_client.v2.model.update_resource_evaluation_filters_request.UpdateResourceEvaluationFiltersRequest"><span class="pre">UpdateResourceEvaluationFiltersRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_resource_evaluation_filters_response.UpdateResourceEvaluationFiltersResponse" title="datadog_api_client.v2.model.update_resource_evaluation_filters_response.UpdateResourceEvaluationFiltersResponse"><span class="pre">UpdateResourceEvaluationFiltersResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_resource_evaluation_filters" title="Link to this definition">¶</a></dt>
+<dd><p>Update resource filters.</p>
+<p>Update resource filters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_resource_evaluation_filters_response.UpdateResourceEvaluationFiltersResponse" title="datadog_api_client.v2.model.update_resource_evaluation_filters_response.UpdateResourceEvaluationFiltersResponse">UpdateResourceEvaluationFiltersResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
