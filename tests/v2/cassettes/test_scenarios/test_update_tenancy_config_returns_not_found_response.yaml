@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"home_region":"us-ashburn-1","logs_config":{"compartment_tag_filters":["datadog:true","env:prod"],"enabled":true,"enabled_services":["objectstorage"]},"metrics_config":{"compartment_tag_filters":["datadog:true","env:prod"],"enabled":true,"excluded_services":["oci_compute"]},"resource_collection_enabled":true,"user_ocid":"ocid1.user.test"},"id":"ocid1.tenancy.fake","type":"oci_tenancy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/integration/oci/tenancies/ocid1.tenancy.fake
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"tenancy not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
