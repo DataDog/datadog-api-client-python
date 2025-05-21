@@ -16,16 +16,28 @@ class SyntheticsAPITestStepSubtype(ModelSimple):
     """
     The subtype of the Synthetic multi-step API test step.
 
-    :param value: Must be one of ["http", "grpc"].
+    :param value: Must be one of ["http", "grpc", "ssl", "dns", "tcp", "udp", "icmp", "websocket"].
     :type value: str
     """
 
     allowed_values = {
         "http",
         "grpc",
+        "ssl",
+        "dns",
+        "tcp",
+        "udp",
+        "icmp",
+        "websocket",
     }
     HTTP: ClassVar["SyntheticsAPITestStepSubtype"]
     GRPC: ClassVar["SyntheticsAPITestStepSubtype"]
+    SSL: ClassVar["SyntheticsAPITestStepSubtype"]
+    DNS: ClassVar["SyntheticsAPITestStepSubtype"]
+    TCP: ClassVar["SyntheticsAPITestStepSubtype"]
+    UDP: ClassVar["SyntheticsAPITestStepSubtype"]
+    ICMP: ClassVar["SyntheticsAPITestStepSubtype"]
+    WEBSOCKET: ClassVar["SyntheticsAPITestStepSubtype"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +48,9 @@ class SyntheticsAPITestStepSubtype(ModelSimple):
 
 SyntheticsAPITestStepSubtype.HTTP = SyntheticsAPITestStepSubtype("http")
 SyntheticsAPITestStepSubtype.GRPC = SyntheticsAPITestStepSubtype("grpc")
+SyntheticsAPITestStepSubtype.SSL = SyntheticsAPITestStepSubtype("ssl")
+SyntheticsAPITestStepSubtype.DNS = SyntheticsAPITestStepSubtype("dns")
+SyntheticsAPITestStepSubtype.TCP = SyntheticsAPITestStepSubtype("tcp")
+SyntheticsAPITestStepSubtype.UDP = SyntheticsAPITestStepSubtype("udp")
+SyntheticsAPITestStepSubtype.ICMP = SyntheticsAPITestStepSubtype("icmp")
+SyntheticsAPITestStepSubtype.WEBSOCKET = SyntheticsAPITestStepSubtype("websocket")
