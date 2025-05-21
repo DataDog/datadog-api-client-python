@@ -29,6 +29,10 @@ if TYPE_CHECKING:
 
 class ChangeEventCustomAttributes(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.change_event_custom_attributes_author import ChangeEventCustomAttributesAuthor
         from datadog_api_client.v2.model.change_event_custom_attributes_changed_resource import (
@@ -114,7 +118,7 @@ class ChangeEventCustomAttributes(ModelNormal):
         """
         Object representing custom change event attributes.
 
-        :param author: Object representing the entity which made the change. Optional field but if provided should include ``type`` and ``name``.
+        :param author: Object representing the entity that made the change. Optional field but if provided should include type and name.
         :type author: ChangeEventCustomAttributesAuthor, optional
 
         :param change_metadata: Free form object with information related to the ``change`` event. Can be arbitrarily nested and contain any valid JSON.

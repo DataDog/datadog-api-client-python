@@ -13,24 +13,24 @@ from datadog_api_client.model_utils import (
 )
 
 
-class EventCreateResponseAttributesAttributesEvt(ModelNormal):
+class EventCreateResponsePayloadLinks(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "uid": (str,),
+            "self": (str,),
         }
 
     attribute_map = {
-        "uid": "uid",
+        "self": "self",
     }
 
-    def __init__(self_, uid: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, self: Union[str, UnsetType] = unset, **kwargs):
         """
-        JSON object of event system attributes.
+        Links attributes.
 
-        :param uid: A unique identifier for the event. You can use this ID to query or reference the event in the V2 endpoint.
-        :type uid: str, optional
+        :param self: The URL of the event. This link is only functional when using the default subdomain.
+        :type self: str, optional
         """
-        if uid is not unset:
-            kwargs["uid"] = uid
+        if self is not unset:
+            kwargs["self"] = self
         super().__init__(kwargs)

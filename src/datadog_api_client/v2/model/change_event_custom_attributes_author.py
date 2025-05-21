@@ -42,7 +42,7 @@ class ChangeEventCustomAttributesAuthor(ModelNormal):
 
     def __init__(self_, name: str, type: ChangeEventCustomAttributesAuthorType, **kwargs):
         """
-        Object representing the entity which made the change. Optional field but if provided should include ``type`` and ``name``.
+        Object representing the entity that made the change. Optional field but if provided should include type and name.
 
         :param name: Author's name. Limited to 128 characters.
         :type name: str
