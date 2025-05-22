@@ -74,7 +74,7 @@ class DORAIncidentRequestAttributes(ModelNormal):
         :param git: Git info for DORA Metrics events.
         :type git: DORAGitInfo, optional
 
-        :param id: Incident ID. Required to update a previously sent incident.
+        :param id: Incident ID. Must have at least 16 characters. Required to update a previously sent incident.
         :type id: str, optional
 
         :param name: Incident name.
