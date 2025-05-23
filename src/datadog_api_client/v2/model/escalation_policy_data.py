@@ -51,7 +51,7 @@ class EscalationPolicyData(ModelNormal):
         """
         Represents the data for a single escalation policy, including its attributes, ID, relationships, and resource type.
 
-        :param attributes: Defines the main attributes of an escalation policy, such as its description, name, and behavior on policy end.
+        :param attributes: Defines the main attributes of an escalation policy, such as its name and behavior on policy end.
         :type attributes: EscalationPolicyDataAttributes, optional
 
         :param id: Specifies the unique identifier of the escalation policy.

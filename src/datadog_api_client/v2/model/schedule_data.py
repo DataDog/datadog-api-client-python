@@ -51,7 +51,7 @@ class ScheduleData(ModelNormal):
         """
         Represents the primary data object for a schedule, linking attributes and relationships.
 
-        :param attributes: Provides core properties of a schedule object, such as its name, time zone, and tags.
+        :param attributes: Provides core properties of a schedule object such as its name and time zone.
         :type attributes: ScheduleDataAttributes, optional
 
         :param id: The schedule's unique identifier.

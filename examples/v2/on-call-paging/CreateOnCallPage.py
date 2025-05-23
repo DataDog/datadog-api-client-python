@@ -9,6 +9,7 @@ from datadog_api_client.v2.model.create_page_request_data import CreatePageReque
 from datadog_api_client.v2.model.create_page_request_data_attributes import CreatePageRequestDataAttributes
 from datadog_api_client.v2.model.create_page_request_data_attributes_target import CreatePageRequestDataAttributesTarget
 from datadog_api_client.v2.model.create_page_request_data_type import CreatePageRequestDataType
+from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
 from datadog_api_client.v2.model.page_urgency import PageUrgency
 
 body = CreatePageRequest(
@@ -20,7 +21,7 @@ body = CreatePageRequest(
             ],
             target=CreatePageRequestDataAttributesTarget(
                 identifier="my-team",
-                type="team_handle",
+                type=OnCallPageTargetType.TEAM_HANDLE,
             ),
             title="Page title",
             urgency=PageUrgency.LOW,

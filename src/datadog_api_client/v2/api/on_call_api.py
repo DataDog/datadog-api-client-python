@@ -345,9 +345,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Create on-call escalation policy.
+        """Create On-Call escalation policy.
 
-        Create a new on-call escalation policy
+        Create a new On-Call escalation policy
 
         :type body: EscalationPolicyCreateRequest
         :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``steps`` , ``steps.targets``.
@@ -368,9 +368,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> Schedule:
-        """Create on-call schedule.
+        """Create On-Call schedule.
 
-        Create a new on-call schedule
+        Create a new On-Call schedule
 
         :type body: ScheduleCreateRequest
         :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``layers`` , ``layers.members`` , ``layers.members.user``.
@@ -389,9 +389,9 @@ class OnCallApi:
         self,
         policy_id: str,
     ) -> None:
-        """Delete on-call escalation policy.
+        """Delete On-Call escalation policy.
 
-        Delete an on-call escalation policy
+        Delete an On-Call escalation policy
 
         :param policy_id: The ID of the escalation policy
         :type policy_id: str
@@ -406,9 +406,9 @@ class OnCallApi:
         self,
         schedule_id: str,
     ) -> None:
-        """Delete on-call schedule.
+        """Delete On-Call schedule.
 
-        Delete an on-call schedule
+        Delete an On-Call schedule
 
         :param schedule_id: The ID of the schedule
         :type schedule_id: str
@@ -425,9 +425,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Get on-call escalation policy.
+        """Get On-Call escalation policy.
 
-        Get an on-call escalation policy
+        Get an On-Call escalation policy
 
         :param policy_id: The ID of the escalation policy
         :type policy_id: str
@@ -449,9 +449,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> Schedule:
-        """Get on-call schedule.
+        """Get On-Call schedule.
 
-        Get an on-call schedule
+        Get an On-Call schedule
 
         :param schedule_id: The ID of the schedule
         :type schedule_id: str
@@ -473,9 +473,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> TeamRoutingRules:
-        """Get on-call team routing rules.
+        """Get On-Call team routing rules.
 
-        Get a team's on-call routing rules
+        Get a team's On-Call routing rules
 
         :param team_id: The team ID
         :type team_id: str
@@ -528,9 +528,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> TeamRoutingRules:
-        """Set on-call team routing rules.
+        """Set On-Call team routing rules.
 
-        Set a team's on-call routing rules
+        Set a team's On-Call routing rules
 
         :param team_id: The team ID
         :type team_id: str
@@ -556,9 +556,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Update on-call escalation policy.
+        """Update On-Call escalation policy.
 
-        Update an on-call escalation policy
+        Update an On-Call escalation policy
 
         :param policy_id: The ID of the escalation policy
         :type policy_id: str
@@ -584,9 +584,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> Schedule:
-        """Update on-call schedule.
+        """Update On-Call schedule.
 
-        Update a new on-call schedule
+        Update a new On-Call schedule
 
         :param schedule_id: The ID of the schedule
         :type schedule_id: str

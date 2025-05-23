@@ -17,14 +17,12 @@ class EscalationPolicyDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "description": (str,),
             "name": (str,),
             "resolve_page_on_policy_end": (bool,),
             "retries": (int,),
         }
 
     attribute_map = {
-        "description": "description",
         "name": "name",
         "resolve_page_on_policy_end": "resolve_page_on_policy_end",
         "retries": "retries",
@@ -33,16 +31,12 @@ class EscalationPolicyDataAttributes(ModelNormal):
     def __init__(
         self_,
         name: str,
-        description: Union[str, UnsetType] = unset,
         resolve_page_on_policy_end: Union[bool, UnsetType] = unset,
         retries: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Defines the main attributes of an escalation policy, such as its description, name, and behavior on policy end.
-
-        :param description: Provides a detailed text description of the escalation policy.
-        :type description: str, optional
+        Defines the main attributes of an escalation policy, such as its name and behavior on policy end.
 
         :param name: Specifies the name of the escalation policy.
         :type name: str
@@ -53,8 +47,6 @@ class EscalationPolicyDataAttributes(ModelNormal):
         :param retries: Specifies how many times the escalation sequence is retried if there is no response.
         :type retries: int, optional
         """
-        if description is not unset:
-            kwargs["description"] = description
         if resolve_page_on_policy_end is not unset:
             kwargs["resolve_page_on_policy_end"] = resolve_page_on_policy_end
         if retries is not unset:

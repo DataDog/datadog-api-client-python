@@ -1,5 +1,5 @@
 """
-Update on-call schedule returns "OK" response
+Update On-Call schedule returns "OK" response
 """
 
 from datetime import datetime
@@ -72,11 +72,6 @@ body = ScheduleUpdateRequest(
                 ),
             ],
             name="Example-On-Call",
-            tags=[
-                "tag1",
-                "tag2",
-                "tag3",
-            ],
             time_zone="America/New_York",
         ),
         relationships=ScheduleUpdateRequestDataRelationships(

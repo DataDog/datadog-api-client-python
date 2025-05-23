@@ -1103,6 +1103,7 @@ from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyU
 from datadog_api_client.v2.model.escalation_policy_user_attributes import EscalationPolicyUserAttributes
 from datadog_api_client.v2.model.escalation_policy_user_type import EscalationPolicyUserType
 from datadog_api_client.v2.model.escalation_target import EscalationTarget
+from datadog_api_client.v2.model.escalation_targets import EscalationTargets
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_category import EventCategory
@@ -2315,6 +2316,7 @@ from datadog_api_client.v2.model.okta_account_update_request import OktaAccountU
 from datadog_api_client.v2.model.okta_account_update_request_attributes import OktaAccountUpdateRequestAttributes
 from datadog_api_client.v2.model.okta_account_update_request_data import OktaAccountUpdateRequestData
 from datadog_api_client.v2.model.okta_accounts_response import OktaAccountsResponse
+from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
@@ -3225,14 +3227,6 @@ from datadog_api_client.v2.model.team_permission_setting_values import TeamPermi
 from datadog_api_client.v2.model.team_permission_settings_response import TeamPermissionSettingsResponse
 from datadog_api_client.v2.model.team_reference import TeamReference
 from datadog_api_client.v2.model.team_reference_attributes import TeamReferenceAttributes
-from datadog_api_client.v2.model.team_reference_relationships import TeamReferenceRelationships
-from datadog_api_client.v2.model.team_reference_relationships_oncall_users import TeamReferenceRelationshipsOncallUsers
-from datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items import (
-    TeamReferenceRelationshipsOncallUsersDataItems,
-)
-from datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items_type import (
-    TeamReferenceRelationshipsOncallUsersDataItemsType,
-)
 from datadog_api_client.v2.model.team_reference_type import TeamReferenceType
 from datadog_api_client.v2.model.team_relationships import TeamRelationships
 from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
@@ -4257,6 +4251,7 @@ __all__ = [
     "EscalationPolicyUserAttributes",
     "EscalationPolicyUserType",
     "EscalationTarget",
+    "EscalationTargets",
     "Event",
     "EventAttributes",
     "EventCategory",
@@ -5057,6 +5052,7 @@ __all__ = [
     "OktaAccountUpdateRequestAttributes",
     "OktaAccountUpdateRequestData",
     "OktaAccountsResponse",
+    "OnCallPageTargetType",
     "OnDemandConcurrencyCap",
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
@@ -5791,10 +5787,6 @@ __all__ = [
     "TeamPermissionSettingsResponse",
     "TeamReference",
     "TeamReferenceAttributes",
-    "TeamReferenceRelationships",
-    "TeamReferenceRelationshipsOncallUsers",
-    "TeamReferenceRelationshipsOncallUsersDataItems",
-    "TeamReferenceRelationshipsOncallUsersDataItemsType",
     "TeamReferenceType",
     "TeamRelationships",
     "TeamRelationshipsLinks",

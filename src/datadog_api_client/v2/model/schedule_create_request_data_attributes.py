@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -29,42 +27,30 @@ class ScheduleCreateRequestDataAttributes(ModelNormal):
         return {
             "layers": ([ScheduleCreateRequestDataAttributesLayersItems],),
             "name": (str,),
-            "tags": ([str],),
             "time_zone": (str,),
         }
 
     attribute_map = {
         "layers": "layers",
         "name": "name",
-        "tags": "tags",
         "time_zone": "time_zone",
     }
 
     def __init__(
-        self_,
-        layers: List[ScheduleCreateRequestDataAttributesLayersItems],
-        name: str,
-        time_zone: str,
-        tags: Union[List[str], UnsetType] = unset,
-        **kwargs,
+        self_, layers: List[ScheduleCreateRequestDataAttributesLayersItems], name: str, time_zone: str, **kwargs
     ):
         """
-        Describes the main attributes for creating a new schedule, including name, layers, time zone, and tags.
+        Describes the main attributes for creating a new schedule, including name, layers, and time zone.
 
-        :param layers: The layers of on-call coverage that define rotation intervals and restrictions.
+        :param layers: The layers of On-Call coverage that define rotation intervals and restrictions.
         :type layers: [ScheduleCreateRequestDataAttributesLayersItems]
 
         :param name: A human-readable name for the new schedule.
         :type name: str
 
-        :param tags: A list of tags for categorizing or filtering the schedule.
-        :type tags: [str], optional
-
         :param time_zone: The time zone in which the schedule is defined.
         :type time_zone: str
         """
-        if tags is not unset:
-            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.layers = layers

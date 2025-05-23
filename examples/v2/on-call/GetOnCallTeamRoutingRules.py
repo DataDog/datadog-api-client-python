@@ -1,5 +1,5 @@
 """
-Get on-call team routing rules returns "OK" response
+Get On-Call team routing rules returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
