@@ -27,10 +27,10 @@ Feature: Rum Metrics
   @team:DataDog/rum-backend
   Scenario: Create a rum-based metric returns "Created" response
     Given new "CreateRumMetric" request
-    And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "event_type": "session", "filter": {"query": "@service:web-ui"}, "group_by": [{"path": "@browser.name", "tag_name": "browser_name"}], "uniqueness": {"when": "match"}}, "id": "rum.sessions.webui.count", "type": "rum_metrics"}}
+    And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "event_type": "session", "filter": {"query": "@service:web-ui"}, "group_by": [{"path": "@browser.name", "tag_name": "browser_name"}], "uniqueness": {"when": "match"}}, "id": "{{ unique_lower_alnum }}", "type": "rum_metrics"}}
     When the request is sent
     Then the response status is 201 Created
-    And the response "data.id" is equal to "rum.sessions.webui.count"
+    And the response "data.id" is equal to "{{ unique_lower_alnum }}"
     And the response "data.type" is equal to "rum_metrics"
     And the response "data.attributes.event_type" is equal to "session"
     And the response "data.attributes.compute.aggregation_type" is equal to "distribution"

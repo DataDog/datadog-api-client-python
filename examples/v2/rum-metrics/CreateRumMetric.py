@@ -38,7 +38,7 @@ body = RumMetricCreateRequest(
                 when=RumMetricUniquenessWhen.WHEN_MATCH,
             ),
         ),
-        id="rum.sessions.webui.count",
+        id="examplerummetric",
         type=RumMetricType.RUM_METRICS,
     ),
 )
