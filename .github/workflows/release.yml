@@ -4,11 +4,16 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  GIT_AUTHOR_EMAIL: "packages@datadoghq.com"
+  GIT_AUTHOR_NAME: "ci.datadog-api-spec"
+
 on:
   pull_request:
     types: [closed]
     branches:
       - master
+      - v2
 
 jobs:
   create_release:
@@ -18,27 +23,70 @@ jobs:
     steps:
       - name: Get GitHub App token
         id: get_token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 #v1.11.1
         with:
           app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
           private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
-      - name: Create release
-        uses: actions/github-script@v6
-        env:
-          RELEASE_BRANCH: ${{ github.head_ref }}
+
+      - name: Checkout ${{ github.event.pull_request.base.ref }}
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          github-token: ${{ steps.get_token.outputs.token }}
-          script: |
-            const tagName = process.env.RELEASE_BRANCH.split("/")[1];
-            await github.rest.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: `refs/tags/${tagName}`,
-              sha: context.payload.pull_request.merge_commit_sha,
-            });
-            await github.rest.repos.createRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              generate_release_notes: true,
-              tag_name: tagName,
-            });
+          token: ${{ steps.get_token.outputs.token }}
+          ref: ${{ github.event.pull_request.base.ref }}
+          fetch-depth: 0
+
+      - name: Release packages
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GH_TOKEN: ${{ steps.get_token.outputs.token }}
+        shell: bash
+        run: |
+          CHANGED_PACKAGE_JSON_FILES=$(git diff --diff-filter=MACR --name-only $BASE_SHA...$HEAD_SHA \
+            | grep -E 'package\.json$' \
+            | xargs dirname \
+            | sort \
+            | uniq)
+
+          declare -A versions
+          for package in $CHANGED_PACKAGE_JSON_FILES; do
+            base_version=$(git show $BASE_SHA:$package/package.json | jq -r .version)
+            head_version=$(git show $HEAD_SHA:$package/package.json | jq -r .version)
+
+            if [ "$base_version" != "$head_version" ]; then
+              versions[$package]=$head_version
+            fi
+          done
+
+          for package in "${!versions[@]}"; do
+            echo "Releasing $package at version ${versions[$package]}"
+
+            # Build the tag name
+            if [[ "$package" == "." ]]; then
+              # If the package is the root, use the version as the tag name
+              tag_name="${versions[$package]}"
+            else
+              # If the package is not the root, use the package name and version as the tag name
+              tag_name="$package/${versions[$package]}"
+            fi
+
+            # Get the changelog entries since last release
+            # TODO: Implement this
+            # changelog_content=$(git diff $BASE_REF...$HEAD_REF -- $package/CHANGELOG.md | grep -A 1000 "^+##" | grep -v "^+++" | sed 's/^+//')
+
+            is_prerelease=$(echo $package | grep -q "beta" && echo true || echo false)
+            # Create the tag
+            gh api repos/{owner}/{repo}/git/refs \
+              -f ref="refs/tags/$tag_name" \
+              -f sha=$HEAD_SHA
+
+            # Create the release
+            gh api repos/{owner}/{repo}/releases --input - << EOF
+            {
+              "tag_name": "$tag_name",
+              "name": "$tag_name",
+              "body": "See $package/CHANGELOG.md for details",
+              "prerelease": $is_prerelease
+            }
+          EOF
+          done

@@ -15,11 +15,9 @@ jobs:
     name: Upload release
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-        # Include all history and tags, needed for building the right version
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          ref: ${{ github.event.release.tag_name }}
-          fetch-depth: 0
+          fetch-depth: 1
 
       - uses: actions/setup-python@v4
         name: Install Python
@@ -27,11 +25,20 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
-      - name: Install pypa/build
-        run: python -m pip install build --user
+      - name: Releasing tag ${{ github.event.release.tag_name }}
+        run: |
+          # Get tag name from event
+          tag_name="${{ github.event.release.tag_name }}"
 
-      - name: Build a binary wheel and a source tarball
-        run: python -m build --sdist --wheel --outdir dist/ .
+          if [[ ! "$tag_name" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            cd $(echo $tag_name | rev | cut -d'/' -f2- | rev)
+          fi
+
+          # Install pypa/build
+          python -m pip install build --user
+
+          # Build a binary wheel and a source tarball
+          python -m build --sdist --wheel --outdir dist/ .
 
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
