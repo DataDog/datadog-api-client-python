@@ -1,5 +1,5 @@
 """
-Create on-call escalation policy returns "Created" response
+Create On-Call escalation policy returns "Created" response
 """
 
 from os import environ
@@ -38,7 +38,6 @@ DD_TEAM_DATA_ID = environ["DD_TEAM_DATA_ID"]
 body = EscalationPolicyCreateRequest(
     data=EscalationPolicyCreateRequestData(
         attributes=EscalationPolicyCreateRequestDataAttributes(
-            description="Escalation Policy 1 description",
             name="Example-On-Call",
             resolve_page_on_policy_end=True,
             retries=2,
@@ -90,6 +89,6 @@ body = EscalationPolicyCreateRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
-    response = api_instance.create_on_call_escalation_policy(body=body)
+    response = api_instance.create_on_call_escalation_policy(include="steps.targets", body=body)
 
     print(response)
