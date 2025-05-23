@@ -10,6 +10,24 @@ Feature: Teams
     And an instance of "Teams" API
 
   @generated @skip @team:DataDog/core-app
+  Scenario: Add a member team returns "API error response." response
+    Given operation "AddMemberTeam" enabled
+    And new "AddMemberTeam" request
+    And request contains "super_team_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "member_teams"}}
+    When the request is sent
+    Then the response status is 409 API error response.
+
+  @generated @skip @team:DataDog/core-app
+  Scenario: Add a member team returns "Added" response
+    Given operation "AddMemberTeam" enabled
+    And new "AddMemberTeam" request
+    And request contains "super_team_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "member_teams"}}
+    When the request is sent
+    Then the response status is 204 Added
+
+  @generated @skip @team:DataDog/core-app
   Scenario: Add a user to a team returns "API error response." response
     Given new "CreateTeamMembership" request
     And request contains "team_id" parameter from "REPLACE.ME"
@@ -112,6 +130,30 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/core-app
+  Scenario: Get all member teams returns "API error response." response
+    Given operation "ListMemberTeams" enabled
+    And new "ListMemberTeams" request
+    And request contains "super_team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/core-app
+  Scenario: Get all member teams returns "OK" response
+    Given operation "ListMemberTeams" enabled
+    And new "ListMemberTeams" request
+    And request contains "super_team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/core-app @with-pagination
+  Scenario: Get all member teams returns "OK" response with pagination
+    Given operation "ListMemberTeams" enabled
+    And new "ListMemberTeams" request
+    And request contains "super_team_id" parameter from "REPLACE.ME"
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @team:DataDog/core-app
   Scenario: Get all teams returns "OK" response
     Given new "ListTeams" request
@@ -208,6 +250,24 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
     And the response "data" has length 0
+
+  @generated @skip @team:DataDog/core-app
+  Scenario: Remove a member team returns "API error response." response
+    Given operation "RemoveMemberTeam" enabled
+    And new "RemoveMemberTeam" request
+    And request contains "super_team_id" parameter from "REPLACE.ME"
+    And request contains "member_team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/core-app
+  Scenario: Remove a member team returns "No Content" response
+    Given operation "RemoveMemberTeam" enabled
+    And new "RemoveMemberTeam" request
+    And request contains "super_team_id" parameter from "REPLACE.ME"
+    And request contains "member_team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @team:DataDog/core-app
   Scenario: Remove a team link returns "API error response." response
