@@ -50,8 +50,8 @@ jobs:
 
           declare -A versions
           for package in $CHANGED_PACKAGE_JSON_FILES; do
-            base_version=$(git show $BASE_SHA:$package/package.json | jq -r .version)
-            head_version=$(git show $HEAD_SHA:$package/package.json | jq -r .version)
+            base_version=$(git show $BASE_SHA:$package/src/datadog_api_client/version.py | grep "__version__" | sed 's/.*"\(.*\)".*/\1/')
+            head_version=$(git show $HEAD_SHA:$package/src/datadog_api_client/version.py | grep "__version__" | sed 's/.*"\(.*\)".*/\1/')
 
             if [ "$base_version" != "$head_version" ]; then
               versions[$package]=$head_version
