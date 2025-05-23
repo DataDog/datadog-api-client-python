@@ -1489,6 +1489,8 @@ from datadog_api_client.v2.model.list_historical_jobs_response import ListHistor
 from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
 from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
+from datadog_api_client.v2.model.list_relation_catalog_response import ListRelationCatalogResponse
+from datadog_api_client.v2.model.list_relation_catalog_response_links import ListRelationCatalogResponseLinks
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
@@ -2470,6 +2472,15 @@ from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
+from datadog_api_client.v2.model.relation_attributes import RelationAttributes
+from datadog_api_client.v2.model.relation_entity import RelationEntity
+from datadog_api_client.v2.model.relation_include_type import RelationIncludeType
+from datadog_api_client.v2.model.relation_meta import RelationMeta
+from datadog_api_client.v2.model.relation_relationships import RelationRelationships
+from datadog_api_client.v2.model.relation_response import RelationResponse
+from datadog_api_client.v2.model.relation_response_meta import RelationResponseMeta
+from datadog_api_client.v2.model.relation_response_type import RelationResponseType
+from datadog_api_client.v2.model.relation_to_entity import RelationToEntity
 from datadog_api_client.v2.model.relation_type import RelationType
 from datadog_api_client.v2.model.relationship_item import RelationshipItem
 from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
@@ -4590,6 +4601,8 @@ __all__ = [
     "ListPipelinesResponse",
     "ListPipelinesResponseMeta",
     "ListPowerpacksResponse",
+    "ListRelationCatalogResponse",
+    "ListRelationCatalogResponseLinks",
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
@@ -5195,6 +5208,15 @@ __all__ = [
     "RUMWarning",
     "ReadinessGate",
     "ReadinessGateThresholdType",
+    "RelationAttributes",
+    "RelationEntity",
+    "RelationIncludeType",
+    "RelationMeta",
+    "RelationRelationships",
+    "RelationResponse",
+    "RelationResponseMeta",
+    "RelationResponseType",
+    "RelationToEntity",
     "RelationType",
     "RelationshipItem",
     "RelationshipToIncidentAttachment",

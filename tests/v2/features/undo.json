@@ -471,6 +471,12 @@
       "type": "idempotent"
     }
   },
+  "ListCatalogRelation": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateCIAppPipelineEvent": {
     "tag": "CI Visibility Pipelines",
     "undo": {
