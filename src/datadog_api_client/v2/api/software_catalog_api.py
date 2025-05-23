@@ -21,6 +21,9 @@ from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
 from datadog_api_client.v2.model.entity_v3 import EntityV3
+from datadog_api_client.v2.model.list_relation_catalog_response import ListRelationCatalogResponse
+from datadog_api_client.v2.model.relation_include_type import RelationIncludeType
+from datadog_api_client.v2.model.relation_response import RelationResponse
 
 
 class SoftwareCatalogApi:
@@ -113,6 +116,53 @@ class SoftwareCatalogApi:
                 },
                 "include": {
                     "openapi_types": (IncludeType,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_catalog_relation_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListRelationCatalogResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/relation",
+                "operation_id": "list_catalog_relation",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "filter_type": {
+                    "openapi_types": (RelationType,),
+                    "attribute": "filter[type]",
+                    "location": "query",
+                },
+                "filter_from_ref": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[from_ref]",
+                    "location": "query",
+                },
+                "filter_to_ref": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[to_ref]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (RelationIncludeType,),
                     "attribute": "include",
                     "location": "query",
                 },
@@ -308,6 +358,116 @@ class SoftwareCatalogApi:
 
         local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
         endpoint = self._list_catalog_entity_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_catalog_relation(
+        self,
+        *,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        filter_type: Union[RelationType, UnsetType] = unset,
+        filter_from_ref: Union[str, UnsetType] = unset,
+        filter_to_ref: Union[str, UnsetType] = unset,
+        include: Union[RelationIncludeType, UnsetType] = unset,
+    ) -> ListRelationCatalogResponse:
+        """Get a list of entity relations.
+
+        Get a list of entity relations from Software Catalog.
+
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of relations in the response.
+        :type page_limit: int, optional
+        :param filter_type: Filter relations by type.
+        :type filter_type: RelationType, optional
+        :param filter_from_ref: Filter relations by the reference of the first entity in the relation.
+        :type filter_from_ref: str, optional
+        :param filter_to_ref: Filter relations by the reference of the second entity in the relation.
+        :type filter_to_ref: str, optional
+        :param include: Include relationship data.
+        :type include: RelationIncludeType, optional
+        :rtype: ListRelationCatalogResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if filter_type is not unset:
+            kwargs["filter_type"] = filter_type
+
+        if filter_from_ref is not unset:
+            kwargs["filter_from_ref"] = filter_from_ref
+
+        if filter_to_ref is not unset:
+            kwargs["filter_to_ref"] = filter_to_ref
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_catalog_relation_endpoint.call_with_http_info(**kwargs)
+
+    def list_catalog_relation_with_pagination(
+        self,
+        *,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        filter_type: Union[RelationType, UnsetType] = unset,
+        filter_from_ref: Union[str, UnsetType] = unset,
+        filter_to_ref: Union[str, UnsetType] = unset,
+        include: Union[RelationIncludeType, UnsetType] = unset,
+    ) -> collections.abc.Iterable[RelationResponse]:
+        """Get a list of entity relations.
+
+        Provide a paginated version of :meth:`list_catalog_relation`, returning all items.
+
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of relations in the response.
+        :type page_limit: int, optional
+        :param filter_type: Filter relations by type.
+        :type filter_type: RelationType, optional
+        :param filter_from_ref: Filter relations by the reference of the first entity in the relation.
+        :type filter_from_ref: str, optional
+        :param filter_to_ref: Filter relations by the reference of the second entity in the relation.
+        :type filter_to_ref: str, optional
+        :param include: Include relationship data.
+        :type include: RelationIncludeType, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[RelationResponse]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if filter_type is not unset:
+            kwargs["filter_type"] = filter_type
+
+        if filter_from_ref is not unset:
+            kwargs["filter_from_ref"] = filter_from_ref
+
+        if filter_to_ref is not unset:
+            kwargs["filter_to_ref"] = filter_to_ref
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
+        endpoint = self._list_catalog_relation_endpoint
         set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
         pagination = {
             "limit_value": local_page_size,
