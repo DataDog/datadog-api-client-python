@@ -4078,6 +4078,13 @@ datadog\_api\_client.v1.model.synthetics\_assertion\_target module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_assertion\_target\_value module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_target_value
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_assertion\_timings\_scope module
 --------------------------------------------------------------------------
 
