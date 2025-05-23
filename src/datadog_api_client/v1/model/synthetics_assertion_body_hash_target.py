@@ -3,20 +3,17 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_assertion_body_hash_operator import SyntheticsAssertionBodyHashOperator
+    from datadog_api_client.v1.model.synthetics_assertion_target_value import SyntheticsAssertionTargetValue
     from datadog_api_client.v1.model.synthetics_assertion_body_hash_type import SyntheticsAssertionBodyHashType
 
 
@@ -26,22 +23,12 @@ class SyntheticsAssertionBodyHashTarget(ModelNormal):
         from datadog_api_client.v1.model.synthetics_assertion_body_hash_operator import (
             SyntheticsAssertionBodyHashOperator,
         )
+        from datadog_api_client.v1.model.synthetics_assertion_target_value import SyntheticsAssertionTargetValue
         from datadog_api_client.v1.model.synthetics_assertion_body_hash_type import SyntheticsAssertionBodyHashType
 
         return {
             "operator": (SyntheticsAssertionBodyHashOperator,),
-            "target": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                UUID,
-                none_type,
-            ),
+            "target": (SyntheticsAssertionTargetValue,),
             "type": (SyntheticsAssertionBodyHashType,),
         }
 
@@ -54,7 +41,7 @@ class SyntheticsAssertionBodyHashTarget(ModelNormal):
     def __init__(
         self_,
         operator: SyntheticsAssertionBodyHashOperator,
-        target: Any,
+        target: Union[SyntheticsAssertionTargetValue, float, str],
         type: SyntheticsAssertionBodyHashType,
         **kwargs,
     ):
@@ -64,8 +51,8 @@ class SyntheticsAssertionBodyHashTarget(ModelNormal):
         :param operator: Assertion operator to apply.
         :type operator: SyntheticsAssertionBodyHashOperator
 
-        :param target: Value used by the operator.
-        :type target: bool, date, datetime, dict, float, int, list, str, UUID, none_type
+        :param target: Value used by the operator in assertions. Can be either a number or string.
+        :type target: SyntheticsAssertionTargetValue
 
         :param type: Type of the assertion.
         :type type: SyntheticsAssertionBodyHashType

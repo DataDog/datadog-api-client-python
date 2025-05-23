@@ -22,8 +22,8 @@ class SyntheticsAssertion(ModelComposed):
         :param _property: The associated assertion property.
         :type _property: str, optional
 
-        :param target: Value used by the operator.
-        :type target: bool, date, datetime, dict, float, int, list, str, UUID, none_type
+        :param target: Value used by the operator in assertions. Can be either a number or string.
+        :type target: SyntheticsAssertionTargetValue
 
         :param timings_scope: Timings scope for response time assertions.
         :type timings_scope: SyntheticsAssertionTimingsScope, optional
