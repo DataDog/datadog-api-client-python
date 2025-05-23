@@ -75,7 +75,7 @@ class HistoricalJobQuery(ModelNormal):
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
 
-        :param data_source: Source of events, either logs or audit trail.
+        :param data_source: Source of events, either logs, audit trail, or Datadog events.
         :type data_source: SecurityMonitoringStandardDataSource, optional
 
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
