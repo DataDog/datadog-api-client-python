@@ -1829,6 +1829,59 @@
       "type": "idempotent"
     }
   },
+  "ListMonitorUserTemplates": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "operationId": "DeleteMonitorUserTemplate",
+      "parameters": [
+        {
+          "name": "template_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ValidateMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "DeleteMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ValidateExistingMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListMonitorDowntimes": {
     "tag": "Downtimes",
     "undo": {

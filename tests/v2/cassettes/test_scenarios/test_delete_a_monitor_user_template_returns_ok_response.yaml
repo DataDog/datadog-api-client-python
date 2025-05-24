@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json, */*
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '["H4sIAAAAAAAEA4ySMY+cMBCF+/wKy00S5bwaWGD3KNJFStoo3emEBjzLWgJM7AEJof3vGaO9Po0bv/fme2Pv2iKjrnfN20y61qOfHPtglkjBMI3zgEz6RSNzcO3CFJO4C4SiapbFWTGd0ZbFa3sz1CKYLKNXg5cLGrhAWVyrqgILkmEpdsHN7Pwkpl/8OSpUfA8U736wIjhiKSXmkJcGSpMXfyCry7zOilMGcL1evwHUkNIYe2F5050A9j5stbCxfpeLJ3WzYnDYDgn5bZfpN1wG/vDEJJ1wTKVj56W8lFzRDckh1mE5fO8Pka0U4gENku54SB6cnYozdap3K03qY6ikjN66m/vfGs+FN4LnZPXHmF2PFCP2aY7UixL6JP3p+rv6EYIP6rf0Vn5S8lCr6xL+34XCltDW/suAkZty/FrHZazjFoXvNBGf2k3W1IRutfvdR67TAQ/1Xcl2JeL5C44khQMF1o/Hiz5euTtXFnJoTdFmlSk6ezEtnCuD5xtZC1BUVIr60z8AAAD//wMAzmldOlQCAAA="]'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/c36d020b-4b16-4cd7-b036-a3fedd0046e5
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/c36d020b-4b16-4cd7-b036-a3fedd0046e5
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

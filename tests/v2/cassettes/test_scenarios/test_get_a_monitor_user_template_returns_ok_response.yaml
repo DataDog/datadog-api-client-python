@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json, */*
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '["H4sIAAAAAAAEA4yRT4udMBTF9/0UIZtp6eQRff55ZjG7Qrst3Q2DXM3VF1DjJFdBxO/exHkDXXYTMJ6b8zvn7lwDAVc7p21GrvhoJ0PWicWjE4TjPAAhf+ZA5EyzEPoobh1CUNXLYnQYuoLOs6rpBDYgRZJgJaAsQchS5tmtKAqpZXhDo2+dmcnYKQz9oifPgNHdob/bQQcBGRoiBMyG+Rlb1psVJ/YPxmmM0TOVaS5kLtLsj0xUnqqkvCTFNb9V36VUMvo9stQaOxNSnbY7H9F76KNNC+SDbIIxfv00/Z39cM469jtkZnZioYPVtDH++4Jui2Rr/3UAT3U+flN+GZXffMC7TEiXZgvt1K5d9X63nlQ85MFeWHLSPAo+X2IwoCN+PPMVnT/BZIj/qLtewRlohtj16/7J51sbNhRb7GAZArl6/UjwFrazghniRBgdlnPu7Qj3BP2nDnvrNhUIiYcfo9WmM/9XZKD82HJcrO5uor3michKXQrQTSmqFMsKslYWTcGP48tfAAAA//8DAHM465dUAgAA"]'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/monitor/template/311e9df8-c351-47d7-adb7-92e79a4c06b6
+  response:
+    body:
+      string: '["H4sIAAAAAAAEA4yRzarcMAyF930K481t6fXgZPIz8aK7Qrst3ZVLUGxPxpDEqa0EQsi7V07vQJfdWEgcSUefd24Agaud4zZbrvjoJ4c+iCXaINCO8wBo+SsHxOC6BW08xQ6HpIbZsThbzXq32on9o9fBUqMhTS7zUshS5MVPmakyV1l9yapreWs+S6mkpOGrDdH5iSv5yo2NOrgZz5x/x5fIgOEj2PjwgyHxc0m7QnDQDcnRr5367rAMmBKugeIbmV7BDUlC2mE5hVSdYEzeo/Z08UGF06sP7bK4ZPgKpiya7i5sB1JkmW0E1DUIWcuyuFVVJU0y/U6qpcWOmJ1+9+fwb65/sK8h+MB+EAfmJ0ZAV6cTy3fUvxcbNgaDDUjFM0tI1/7jABHbcvyk4jKquEU6+TJZvHQb8W+DXs3+8BFVeuTBvrDsxDjaGKFPt50AjuTRuLv7329A6J/4bO/Dpmgb8jea85dLQmHuN6GvZSaK2tQCTFeLJrd1A4WWVVfx4/jwBwAA//8DAFBL9D9UAgAA"]'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/311e9df8-c351-47d7-adb7-92e79a4c06b6
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

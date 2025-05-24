@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{}}}'
+    headers:
+      accept:
+      - application/json, */*
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '{"errors":["Required parameter ''monitor_definition'' is missing"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

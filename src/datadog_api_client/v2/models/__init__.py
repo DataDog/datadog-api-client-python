@@ -1829,6 +1829,25 @@ from datadog_api_client.v2.model.monitor_notification_rule_update_request_data i
 from datadog_api_client.v2.model.monitor_trigger import MonitorTrigger
 from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
 from datadog_api_client.v2.model.monitor_type import MonitorType
+from datadog_api_client.v2.model.monitor_user_template import MonitorUserTemplate
+from datadog_api_client.v2.model.monitor_user_template_create_data import MonitorUserTemplateCreateData
+from datadog_api_client.v2.model.monitor_user_template_create_request import MonitorUserTemplateCreateRequest
+from datadog_api_client.v2.model.monitor_user_template_create_response import MonitorUserTemplateCreateResponse
+from datadog_api_client.v2.model.monitor_user_template_list_response import MonitorUserTemplateListResponse
+from datadog_api_client.v2.model.monitor_user_template_monitor_definition import MonitorUserTemplateMonitorDefinition
+from datadog_api_client.v2.model.monitor_user_template_request_attributes import MonitorUserTemplateRequestAttributes
+from datadog_api_client.v2.model.monitor_user_template_resource_type import MonitorUserTemplateResourceType
+from datadog_api_client.v2.model.monitor_user_template_response import MonitorUserTemplateResponse
+from datadog_api_client.v2.model.monitor_user_template_response_attributes import MonitorUserTemplateResponseAttributes
+from datadog_api_client.v2.model.monitor_user_template_response_data import MonitorUserTemplateResponseData
+from datadog_api_client.v2.model.monitor_user_template_response_data_with_versions import (
+    MonitorUserTemplateResponseDataWithVersions,
+)
+from datadog_api_client.v2.model.monitor_user_template_template_variables_items import (
+    MonitorUserTemplateTemplateVariablesItems,
+)
+from datadog_api_client.v2.model.monitor_user_template_update_data import MonitorUserTemplateUpdateData
+from datadog_api_client.v2.model.monitor_user_template_update_request import MonitorUserTemplateUpdateRequest
 from datadog_api_client.v2.model.monthly_cost_attribution_attributes import MonthlyCostAttributionAttributes
 from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCostAttributionBody
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
@@ -3105,6 +3124,7 @@ from datadog_api_client.v2.model.shift_data_relationships_user_data import Shift
 from datadog_api_client.v2.model.shift_data_relationships_user_data_type import ShiftDataRelationshipsUserDataType
 from datadog_api_client.v2.model.shift_data_type import ShiftDataType
 from datadog_api_client.v2.model.shift_included import ShiftIncluded
+from datadog_api_client.v2.model.simple_monitor_user_template import SimpleMonitorUserTemplate
 from datadog_api_client.v2.model.single_aggregated_connection_response_array import (
     SingleAggregatedConnectionResponseArray,
 )
@@ -4855,6 +4875,21 @@ __all__ = [
     "MonitorTrigger",
     "MonitorTriggerWrapper",
     "MonitorType",
+    "MonitorUserTemplate",
+    "MonitorUserTemplateCreateData",
+    "MonitorUserTemplateCreateRequest",
+    "MonitorUserTemplateCreateResponse",
+    "MonitorUserTemplateListResponse",
+    "MonitorUserTemplateMonitorDefinition",
+    "MonitorUserTemplateRequestAttributes",
+    "MonitorUserTemplateResourceType",
+    "MonitorUserTemplateResponse",
+    "MonitorUserTemplateResponseAttributes",
+    "MonitorUserTemplateResponseData",
+    "MonitorUserTemplateResponseDataWithVersions",
+    "MonitorUserTemplateTemplateVariablesItems",
+    "MonitorUserTemplateUpdateData",
+    "MonitorUserTemplateUpdateRequest",
     "MonthlyCostAttributionAttributes",
     "MonthlyCostAttributionBody",
     "MonthlyCostAttributionMeta",
@@ -5681,6 +5716,7 @@ __all__ = [
     "ShiftDataRelationshipsUserDataType",
     "ShiftDataType",
     "ShiftIncluded",
+    "SimpleMonitorUserTemplate",
     "SingleAggregatedConnectionResponseArray",
     "SingleAggregatedConnectionResponseData",
     "SingleAggregatedConnectionResponseDataAttributes",

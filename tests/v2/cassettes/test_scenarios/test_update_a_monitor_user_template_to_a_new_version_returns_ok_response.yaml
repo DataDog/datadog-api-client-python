@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json, */*
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '["H4sIAAAAAAAEA4yQT2+cMBTE7/0Uli9J1Hhl/pjd5dBbpPZa5RZF6Bk/WEuAqW2Q0Irv3meyhx57QTKa+c2buXMDEXh953Gbkdd8dJONzosloBcRx3mAiPyVQ4ze6iViOMQ2DkkNs2Vhxpb1dsWJ/aN/cBqDnSWidVPyjRgC9MnZQgyEnWBMr5+2v7E3751nvymPuYlR/mrbFP1nQb+lsLV/HiDERo0vdVjGOmyBEk8TxpPe6LLGt6u531yIdfrInf1gmZSEeJQ7SAwG9JHv9Bd6avORbsHe+a0mRuSfr3xFH46LJYkeGzQreAt6SAN83Dn1gmWgDl/+kGyPMqF1NCVNtoIdkoOsw3L4PneSGQytt/PXJvxXfAoMWLx5DDc3GDK2HukiQ5VzmSshlcjLd5nVKq9zecqy66Uov0tZH9VGZ2xn/1d9oJ1vlsUmfgFGlVfdCdQgRZbhVcD5DEKepSovVVVJI9NSh7gqtMxNgaICpUVZXjqhC5WLS1eYDs86R634vn/7CwAA//8DALZ1RLtUAgAA"]'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"A description.","monitor_definition":{"message":"A
+      msg.","name":"A name test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748051539","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["integration:Azure"],"template_variables":[{"available_values":["value1","value2"],"defaults":["defaultValue"],"name":"regionName","tag_key":"datacenter"}],"title":"Postgres
+      DB test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748051539"},"id":"00000000-0000-1234-0000-000000000000","type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json, */*
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/monitor/template/63b02d3e-6a5b-448f-b352-8f3dfe7b2eb5
+  response:
+    body:
+      string: '["H4sIAAAAAAAEA9RU34vUMBB+968IeVFxs6S/drt9EFYU9EVExBc5QtJOu+H6yyStrEv/dyele+cdnpzggr60TTMz38x838yJFtJJmp2oO/ZAM9p0rXadYYMFwxw0fS0d0BWVzhmtBgfWGxdgc6N7p7sWffbkp/MajUcwdr4KVtRpV/vAHzrrKgOWvH5FMIpjQ4/QIKRYIIWHFGdI4Tq8auGbWIIJA24wrRXdNX7avmstsGAbpzwJkmiHqLkBiamLYdAFAkaySOKdKhkoyVkQwI7J7VYyvuVJnG42G17wsxd4h5CHCeMJC+NPPMiSMAv5Ogh2aRS/4Dzj3njJBXvw5X4T3rmnlkjiDpjcoauLW2ua8ds2yF4T20NOKj1Ci5246fCc/mMTmSvcRIqHRQRsIxPF4jgtmYqSkKVlVJSwVSGoBNM4Y4hRGi1V7SnE9FvZeF5s3iHxK6S0lEPt/B3NJb6vkPRR6tp7oGs9zH5XE/53sjrbQdWZY+YJ9Q5nKjGYRh3NGrhBequrA3ljTGfIR2SedC1Bxkede/hFfl8HMEciazAOf84nzFGO1bNaWieS5nlmhyazR4tVrVtwa3VEcGHysTgdUGKZf/CJvCTBzFgD1srKFzoXNU2r+8T9S+r9I/pVzouUy5SVRbFhcRkqlsa7ElWeBtFOxWUaBQ/TjxyKazhiY/wGyKF1YNB6UYWBCsl77yVyVxqLTD57PTwgETqLxUPPHyG9oxmNQJWRXhvZ/vtg5ii/1c2e+KQutDQur7s9aWy1ptM8OMu43xvF/4CL2zla6rmRykXp+Qsb4BcMT35TFbrUD85bFIdhEC17H80fv2+n6ckPAAAA//8DAHzhltxVBwAA"]'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/63b02d3e-6a5b-448f-b352-8f3dfe7b2eb5
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

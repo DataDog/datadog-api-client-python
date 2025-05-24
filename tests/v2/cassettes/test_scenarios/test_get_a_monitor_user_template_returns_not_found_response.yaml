@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/monitor/template/00000000-0000-1234-0000-000000000000
+  response:
+    body:
+      string: '["H4sIAAAAAAAEA6pWSi0qyi8qVrKKVvLNz8ssyS9SKEnNLchJLElVyMsvUUjLL81LUYqtBQAAAP//AwC5UfrkKQAAAA=="]'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
