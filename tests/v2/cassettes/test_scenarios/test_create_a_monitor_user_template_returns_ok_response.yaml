@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"A description.","monitor_definition":{"message":"A
+      msg.","name":"A name test-create_a_monitor_user_template_returns_ok_response-1748051531","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["integration:Azure"],"template_variables":[{"available_values":["value1","value2"],"defaults":["defaultValue"],"name":"regionName","tag_key":"datacenter"}],"title":"Postgres
+      DB test-create_a_monitor_user_template_returns_ok_response-1748051531"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json, */*
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '["H4sIAAAAAAAEA6ySTc/TMAzH73yKKicQT6ak69t6QBrijDggLghFbuuW6OnLSNJKY+p3x842iSMHLpXj2H/7/0tvooMAor6JcL2gqMW0zDYsTq4enQw4XUYIKF6E7eiy7NuuOWatLE4lyiw7oqwK3UtdVp1CrE4V5lQLITjbrAF9FH6ImA2chWbk7HeaB4N5xSup8gYtzgEd9XbYwzoGrnnG32BcUfwg3Q3syAokRalYEyNNjTFIuWyGiZ04HOwyf+bDTtmHMUMDLFmkK15uQu9h4PJzMvnhQEKP9nPCQUImgmwdEgUD5inCdMyTjnEYVjd7s7xS6C/L7JGQZJXKdX7k3X6t6NgpbMPbEXww+fSu9utU+6snlcOM4dBcaZRx7dbdfi4+1PxRe/Ih0UqRxON5olICI7ogdqblW2cvdzdk4a8zWyHGEZIluIMDLqvPv1cXaW7ofKSgXkQ0uDizrvGdj9Dl2anpJTagpNZ4klCWIFWp8qwqikJ1vNMdC/8YqUpzqXKZZl+VrvO01vpQlTqrqvdK1XcDNozM+Qv5GghT8unj/4E7LZ3tLf7TGvu+v/kDAAD//wMAknCBJPMCAAA="]'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/7fcdb34c-697e-443e-861f-178d0ee898e5
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

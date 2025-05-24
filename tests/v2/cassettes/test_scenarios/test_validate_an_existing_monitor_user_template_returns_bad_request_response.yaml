@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json, */*
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '{"data":{"type":"monitor-user-template","attributes":{"description":"It''s
+        a threshold","tags":["category:test"],"monitor_definition":{"message":"cats","name":"High
+        Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","type":"query alert"},"title":"api spec given template","modified":"2025-05-24T02:17:43.409724+00:00","created":"2025-05-24T02:17:43.409724+00:00","creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","version":0,"template_variables":[{"name":"scope","defaults":["cats"],"available_values":[]}]},"id":"6dbae147-405c-4b7e-978f-8d25fb547e12"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"type":"monitor-user-template"}}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template/6dbae147-405c-4b7e-978f-8d25fb547e12/validate
+  response:
+    body:
+      string: '{"errors":["Required parameter ''id'' is missing"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/6dbae147-405c-4b7e-978f-8d25fb547e12
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
