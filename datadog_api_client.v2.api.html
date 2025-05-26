@@ -1182,6 +1182,14 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_deployment" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DORAMetricsApi.create_dora_deployment()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_incident" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DORAMetricsApi.create_dora_incident()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.get_dora_deployment" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DORAMetricsApi.get_dora_deployment()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.get_dora_failure" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DORAMetricsApi.get_dora_failure()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.list_dora_deployments" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DORAMetricsApi.list_dora_deployments()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.list_dora_failures" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DORAMetricsApi.list_dora_failures()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -4840,7 +4848,8 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DORAMetricsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Send events for DORA Metrics to measure and improve software delivery. See the <a class="reference external" href="https://docs.datadoghq.com/dora_metrics/">DORA Metrics page</a> for more information.</p>
+<p>Search or send events for DORA Metrics to measure and improve your software delivery performance. See the <a class="reference external" href="https://docs.datadoghq.com/dora_metrics/">DORA Metrics page</a> for more information.</p>
+<p><strong>Note</strong> : DORA Metrics are not available in the US1-FED site.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_deployment">
 <span class="sig-name descname"><span class="pre">create_dora_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_deployment_request.DORADeploymentRequest" title="datadog_api_client.v2.model.dora_deployment_request.DORADeploymentRequest"><span class="pre">DORADeploymentRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_deployment_response.DORADeploymentResponse" title="datadog_api_client.v2.model.dora_deployment_response.DORADeploymentResponse"><span class="pre">DORADeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_deployment" title="Link to this definition">¶</a></dt>
@@ -4862,7 +4871,7 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_incident">
 <span class="sig-name descname"><span class="pre">create_dora_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_incident_request.DORAIncidentRequest" title="datadog_api_client.v2.model.dora_incident_request.DORAIncidentRequest"><span class="pre">DORAIncidentRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_incident_response.DORAIncidentResponse" title="datadog_api_client.v2.model.dora_incident_response.DORAIncidentResponse"><span class="pre">DORAIncidentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_incident" title="Link to this definition">¶</a></dt>
 <dd><p>Send an incident event for DORA Metrics.</p>
-<p>Use this API endpoint to provide data about incidents for DORA metrics.</p>
+<p>Use this API endpoint to provide failure data for DORA metrics.</p>
 <p>This is necessary for:</p>
 <ul class="simple">
 <li><p>Change Failure Rate</p></li>
@@ -4871,6 +4880,56 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_incident_response.DORAIncidentResponse" title="datadog_api_client.v2.model.dora_incident_response.DORAIncidentResponse">DORAIncidentResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.get_dora_deployment">
+<span class="sig-name descname"><span class="pre">get_dora_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse" title="datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse"><span class="pre">DORAFetchResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.get_dora_deployment" title="Link to this definition">¶</a></dt>
+<dd><p>Get a deployment event.</p>
+<p>Use this API endpoint to get a deployment event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deployment_id</strong> (<em>str</em>) – The ID of the deployment event.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse" title="datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse">DORAFetchResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.get_dora_failure">
+<span class="sig-name descname"><span class="pre">get_dora_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">failure_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse" title="datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse"><span class="pre">DORAFetchResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.get_dora_failure" title="Link to this definition">¶</a></dt>
+<dd><p>Get a failure event.</p>
+<p>Use this API endpoint to get a failure event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>failure_id</strong> (<em>str</em>) – The ID of the failure event.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse" title="datadog_api_client.v2.model.dora_fetch_response.DORAFetchResponse">DORAFetchResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.list_dora_deployments">
+<span class="sig-name descname"><span class="pre">list_dora_deployments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_list_deployments_request.DORAListDeploymentsRequest" title="datadog_api_client.v2.model.dora_list_deployments_request.DORAListDeploymentsRequest"><span class="pre">DORAListDeploymentsRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_list_response.DORAListResponse" title="datadog_api_client.v2.model.dora_list_response.DORAListResponse"><span class="pre">DORAListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.list_dora_deployments" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of deployment events.</p>
+<p>Use this API endpoint to get a list of deployment events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_list_response.DORAListResponse" title="datadog_api_client.v2.model.dora_list_response.DORAListResponse">DORAListResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.list_dora_failures">
+<span class="sig-name descname"><span class="pre">list_dora_failures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_list_failures_request.DORAListFailuresRequest" title="datadog_api_client.v2.model.dora_list_failures_request.DORAListFailuresRequest"><span class="pre">DORAListFailuresRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_list_response.DORAListResponse" title="datadog_api_client.v2.model.dora_list_response.DORAListResponse"><span class="pre">DORAListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.list_dora_failures" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of failure events.</p>
+<p>Use this API endpoint to get a list of failure events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_list_response.DORAListResponse" title="datadog_api_client.v2.model.dora_list_response.DORAListResponse">DORAListResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
