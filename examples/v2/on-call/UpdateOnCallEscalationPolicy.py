@@ -1,5 +1,5 @@
 """
-Update on-call escalation policy returns "OK" response
+Update On-Call escalation policy returns "OK" response
 """
 
 from os import environ
@@ -39,7 +39,6 @@ DD_TEAM_DATA_ID = environ["DD_TEAM_DATA_ID"]
 body = EscalationPolicyUpdateRequest(
     data=EscalationPolicyUpdateRequestData(
         attributes=EscalationPolicyUpdateRequestDataAttributes(
-            description="Example-On-Call",
             name="Example-On-Call-updated",
             resolve_page_on_policy_end=False,
             retries=0,

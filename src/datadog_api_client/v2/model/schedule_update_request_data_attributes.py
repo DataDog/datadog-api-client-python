@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -29,27 +27,20 @@ class ScheduleUpdateRequestDataAttributes(ModelNormal):
         return {
             "layers": ([ScheduleUpdateRequestDataAttributesLayersItems],),
             "name": (str,),
-            "tags": ([str],),
             "time_zone": (str,),
         }
 
     attribute_map = {
         "layers": "layers",
         "name": "name",
-        "tags": "tags",
         "time_zone": "time_zone",
     }
 
     def __init__(
-        self_,
-        layers: List[ScheduleUpdateRequestDataAttributesLayersItems],
-        name: str,
-        time_zone: str,
-        tags: Union[List[str], UnsetType] = unset,
-        **kwargs,
+        self_, layers: List[ScheduleUpdateRequestDataAttributesLayersItems], name: str, time_zone: str, **kwargs
     ):
         """
-        Defines the updatable attributes for a schedule, such as name, time zone, tags, and layers.
+        Defines the updatable attributes for a schedule, such as name, time zone, and layers.
 
         :param layers: The updated list of layers (rotations) for this schedule.
         :type layers: [ScheduleUpdateRequestDataAttributesLayersItems]
@@ -57,14 +48,9 @@ class ScheduleUpdateRequestDataAttributes(ModelNormal):
         :param name: A short name for the schedule.
         :type name: str
 
-        :param tags: A list of tags that you can associate with this schedule.
-        :type tags: [str], optional
-
         :param time_zone: The time zone used when interpreting rotation times.
         :type time_zone: str
         """
-        if tags is not unset:
-            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.layers = layers

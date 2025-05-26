@@ -1,5 +1,5 @@
 """
-Get on-call escalation policy returns "OK" response
+Get On-Call escalation policy returns "OK" response
 """
 
 from os import environ
@@ -14,6 +14,7 @@ with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
     response = api_instance.get_on_call_escalation_policy(
         policy_id=ESCALATION_POLICY_DATA_ID,
+        include="steps.targets",
     )
 
     print(response)
