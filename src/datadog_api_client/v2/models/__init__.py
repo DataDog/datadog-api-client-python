@@ -865,6 +865,8 @@ from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploym
 from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
 from datadog_api_client.v2.model.dora_deployment_response_data import DORADeploymentResponseData
 from datadog_api_client.v2.model.dora_deployment_type import DORADeploymentType
+from datadog_api_client.v2.model.dora_event import DORAEvent
+from datadog_api_client.v2.model.dora_fetch_response import DORAFetchResponse
 from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 from datadog_api_client.v2.model.dora_incident_request import DORAIncidentRequest
 from datadog_api_client.v2.model.dora_incident_request_attributes import DORAIncidentRequestAttributes
@@ -872,6 +874,15 @@ from datadog_api_client.v2.model.dora_incident_request_data import DORAIncidentR
 from datadog_api_client.v2.model.dora_incident_response import DORAIncidentResponse
 from datadog_api_client.v2.model.dora_incident_response_data import DORAIncidentResponseData
 from datadog_api_client.v2.model.dora_incident_type import DORAIncidentType
+from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
+from datadog_api_client.v2.model.dora_list_deployments_request_attributes import DORAListDeploymentsRequestAttributes
+from datadog_api_client.v2.model.dora_list_deployments_request_data import DORAListDeploymentsRequestData
+from datadog_api_client.v2.model.dora_list_deployments_request_data_type import DORAListDeploymentsRequestDataType
+from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailuresRequest
+from datadog_api_client.v2.model.dora_list_failures_request_attributes import DORAListFailuresRequestAttributes
+from datadog_api_client.v2.model.dora_list_failures_request_data import DORAListFailuresRequestData
+from datadog_api_client.v2.model.dora_list_failures_request_data_type import DORAListFailuresRequestDataType
+from datadog_api_client.v2.model.dora_list_response import DORAListResponse
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
@@ -4059,6 +4070,8 @@ __all__ = [
     "DORADeploymentResponse",
     "DORADeploymentResponseData",
     "DORADeploymentType",
+    "DORAEvent",
+    "DORAFetchResponse",
     "DORAGitInfo",
     "DORAIncidentRequest",
     "DORAIncidentRequestAttributes",
@@ -4066,6 +4079,15 @@ __all__ = [
     "DORAIncidentResponse",
     "DORAIncidentResponseData",
     "DORAIncidentType",
+    "DORAListDeploymentsRequest",
+    "DORAListDeploymentsRequestAttributes",
+    "DORAListDeploymentsRequestData",
+    "DORAListDeploymentsRequestDataType",
+    "DORAListFailuresRequest",
+    "DORAListFailuresRequestAttributes",
+    "DORAListFailuresRequestData",
+    "DORAListFailuresRequestDataType",
+    "DORAListResponse",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
     "DashboardListDeleteItemsRequest",
