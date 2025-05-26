@@ -5744,6 +5744,13 @@ datadog\_api\_client.v2.model.escalation\_target module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.escalation\_targets module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_targets
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.event module
 ------------------------------------------
 
@@ -11337,6 +11344,13 @@ datadog\_api\_client.v2.model.okta\_accounts\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.on\_call\_page\_target\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_page_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.on\_demand\_concurrency\_cap module
 -----------------------------------------------------------------
 
@@ -16437,34 +16451,6 @@ datadog\_api\_client.v2.model.team\_reference\_attributes module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.team_reference_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.team\_reference\_relationships module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users module
-----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users\_data\_items module
------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users\_data\_items\_type module
------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items_type
    :members:
    :show-inheritance:
 
