@@ -4750,6 +4750,20 @@ datadog\_api\_client.v2.model.dora\_deployment\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dora\_event module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_event
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_fetch\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_fetch_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dora\_git\_info module
 ----------------------------------------------------
 
@@ -4796,6 +4810,69 @@ datadog\_api\_client.v2.model.dora\_incident\_type module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.dora_incident_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_deployments\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_deployments_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_deployments\_request\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_deployments_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_deployments\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_deployments_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_deployments\_request\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_deployments_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_failures\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_failures_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_failures\_request\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_failures_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_failures\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_failures_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_failures\_request\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_failures_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_response
    :members:
    :show-inheritance:
 
@@ -5741,6 +5818,13 @@ datadog\_api\_client.v2.model.escalation\_target module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.escalation_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_targets module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_targets
    :members:
    :show-inheritance:
 
@@ -11337,6 +11421,13 @@ datadog\_api\_client.v2.model.okta\_accounts\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.on\_call\_page\_target\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_page_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.on\_demand\_concurrency\_cap module
 -----------------------------------------------------------------
 
@@ -14760,6 +14851,34 @@ datadog\_api\_client.v2.model.self\_service\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.send\_slack\_message\_action module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_slack_message_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.send\_slack\_message\_action\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_slack_message_action_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.send\_teams\_message\_action module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_teams_message_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.send\_teams\_message\_action\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_teams_message_action_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sensitive\_data\_scanner\_config\_request module
 ------------------------------------------------------------------------------
 
@@ -15656,13 +15775,6 @@ datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_data\_ty
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.slack\_action module
---------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.slack_action
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.slack\_integration\_metadata module
 -----------------------------------------------------------------
 
@@ -16440,34 +16552,6 @@ datadog\_api\_client.v2.model.team\_reference\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.team\_reference\_relationships module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users module
-----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users\_data\_items module
------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.team\_reference\_relationships\_oncall\_users\_data\_items\_type module
------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.team\_reference\_type module
 ----------------------------------------------------------
 
@@ -16633,13 +16717,6 @@ datadog\_api\_client.v2.model.team\_update\_request module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.team_update_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.teams\_action module
---------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.teams_action
    :members:
    :show-inheritance:
 

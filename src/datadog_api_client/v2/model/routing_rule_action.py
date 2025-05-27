@@ -18,8 +18,8 @@ class RoutingRuleAction(ModelComposed):
         :param channel: The channel ID.
         :type channel: str
 
-        :param type: Must be set to "send_slack_message".
-        :type type: str
+        :param type: Indicates that the action is a send Slack message action.
+        :type type: SendSlackMessageActionType
 
         :param workspace: The workspace ID.
         :type workspace: str
@@ -41,12 +41,12 @@ class RoutingRuleAction(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.slack_action import SlackAction
-        from datadog_api_client.v2.model.teams_action import TeamsAction
+        from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
+        from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
 
         return {
             "oneOf": [
-                SlackAction,
-                TeamsAction,
+                SendSlackMessageAction,
+                SendTeamsMessageAction,
             ],
         }

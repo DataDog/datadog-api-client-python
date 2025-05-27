@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class TeamReferenceRelationshipsOncallUsersDataItemsType(ModelSimple):
+class SendTeamsMessageActionType(ModelSimple):
     """
-    Users resource type.
+    Indicates that the action is a send Microsoft Teams message action.
 
-    :param value: If omitted defaults to "users". Must be one of ["users"].
+    :param value: If omitted defaults to "send_teams_message". Must be one of ["send_teams_message"].
     :type value: str
     """
 
     allowed_values = {
-        "users",
+        "send_teams_message",
     }
-    USERS: ClassVar["TeamReferenceRelationshipsOncallUsersDataItemsType"]
+    SEND_TEAMS_MESSAGE: ClassVar["SendTeamsMessageActionType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class TeamReferenceRelationshipsOncallUsersDataItemsType(ModelSimple):
         }
 
 
-TeamReferenceRelationshipsOncallUsersDataItemsType.USERS = TeamReferenceRelationshipsOncallUsersDataItemsType("users")
+SendTeamsMessageActionType.SEND_TEAMS_MESSAGE = SendTeamsMessageActionType("send_teams_message")

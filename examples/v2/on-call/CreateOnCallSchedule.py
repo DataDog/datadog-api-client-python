@@ -1,5 +1,5 @@
 """
-Create on-call schedule returns "Created" response
+Create On-Call schedule returns "Created" response
 """
 
 from datetime import datetime
@@ -66,10 +66,6 @@ body = ScheduleCreateRequest(
                 ),
             ],
             name="Example-On-Call",
-            tags=[
-                "tag1",
-                "tag2",
-            ],
             time_zone="America/New_York",
         ),
         relationships=ScheduleCreateRequestDataRelationships(

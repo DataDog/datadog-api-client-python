@@ -54,7 +54,7 @@ class ScheduleCreateRequestData(ModelNormal):
         """
         The core data wrapper for creating a schedule, encompassing attributes, relationships, and the resource type.
 
-        :param attributes: Describes the main attributes for creating a new schedule, including name, layers, time zone, and tags.
+        :param attributes: Describes the main attributes for creating a new schedule, including name, layers, and time zone.
         :type attributes: ScheduleCreateRequestDataAttributes
 
         :param relationships: Gathers relationship objects for the schedule creation request, including the teams to associate.

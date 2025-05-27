@@ -21,11 +21,11 @@ class EscalationPolicyIncluded(ModelComposed):
         :param id: The team's unique identifier.
         :type id: str, optional
 
-        :param relationships: Collects the key relationship fields for a team reference, specifically on-call users.
-        :type relationships: TeamReferenceRelationships, optional
-
         :param type: Teams resource type.
         :type type: TeamReferenceType
+
+        :param relationships: Represents the relationship of an escalation policy step to its targets.
+        :type relationships: EscalationPolicyStepRelationships, optional
         """
         super().__init__(kwargs)
 

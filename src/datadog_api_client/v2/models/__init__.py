@@ -865,6 +865,8 @@ from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploym
 from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
 from datadog_api_client.v2.model.dora_deployment_response_data import DORADeploymentResponseData
 from datadog_api_client.v2.model.dora_deployment_type import DORADeploymentType
+from datadog_api_client.v2.model.dora_event import DORAEvent
+from datadog_api_client.v2.model.dora_fetch_response import DORAFetchResponse
 from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 from datadog_api_client.v2.model.dora_incident_request import DORAIncidentRequest
 from datadog_api_client.v2.model.dora_incident_request_attributes import DORAIncidentRequestAttributes
@@ -872,6 +874,15 @@ from datadog_api_client.v2.model.dora_incident_request_data import DORAIncidentR
 from datadog_api_client.v2.model.dora_incident_response import DORAIncidentResponse
 from datadog_api_client.v2.model.dora_incident_response_data import DORAIncidentResponseData
 from datadog_api_client.v2.model.dora_incident_type import DORAIncidentType
+from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
+from datadog_api_client.v2.model.dora_list_deployments_request_attributes import DORAListDeploymentsRequestAttributes
+from datadog_api_client.v2.model.dora_list_deployments_request_data import DORAListDeploymentsRequestData
+from datadog_api_client.v2.model.dora_list_deployments_request_data_type import DORAListDeploymentsRequestDataType
+from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailuresRequest
+from datadog_api_client.v2.model.dora_list_failures_request_attributes import DORAListFailuresRequestAttributes
+from datadog_api_client.v2.model.dora_list_failures_request_data import DORAListFailuresRequestData
+from datadog_api_client.v2.model.dora_list_failures_request_data_type import DORAListFailuresRequestDataType
+from datadog_api_client.v2.model.dora_list_response import DORAListResponse
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
@@ -1103,6 +1114,7 @@ from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyU
 from datadog_api_client.v2.model.escalation_policy_user_attributes import EscalationPolicyUserAttributes
 from datadog_api_client.v2.model.escalation_policy_user_type import EscalationPolicyUserType
 from datadog_api_client.v2.model.escalation_target import EscalationTarget
+from datadog_api_client.v2.model.escalation_targets import EscalationTargets
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_category import EventCategory
@@ -2315,6 +2327,7 @@ from datadog_api_client.v2.model.okta_account_update_request import OktaAccountU
 from datadog_api_client.v2.model.okta_account_update_request_attributes import OktaAccountUpdateRequestAttributes
 from datadog_api_client.v2.model.okta_account_update_request_data import OktaAccountUpdateRequestData
 from datadog_api_client.v2.model.okta_accounts_response import OktaAccountsResponse
+from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
@@ -2931,6 +2944,10 @@ from datadog_api_client.v2.model.security_trigger import SecurityTrigger
 from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
 from datadog_api_client.v2.model.selectors import Selectors
 from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
+from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
+from datadog_api_client.v2.model.send_slack_message_action_type import SendSlackMessageActionType
+from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
+from datadog_api_client.v2.model.send_teams_message_action_type import SendTeamsMessageActionType
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
@@ -3117,7 +3134,6 @@ from datadog_api_client.v2.model.single_aggregated_connection_response_data_attr
 from datadog_api_client.v2.model.single_aggregated_connection_response_data_type import (
     SingleAggregatedConnectionResponseDataType,
 )
-from datadog_api_client.v2.model.slack_action import SlackAction
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
@@ -3225,14 +3241,6 @@ from datadog_api_client.v2.model.team_permission_setting_values import TeamPermi
 from datadog_api_client.v2.model.team_permission_settings_response import TeamPermissionSettingsResponse
 from datadog_api_client.v2.model.team_reference import TeamReference
 from datadog_api_client.v2.model.team_reference_attributes import TeamReferenceAttributes
-from datadog_api_client.v2.model.team_reference_relationships import TeamReferenceRelationships
-from datadog_api_client.v2.model.team_reference_relationships_oncall_users import TeamReferenceRelationshipsOncallUsers
-from datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items import (
-    TeamReferenceRelationshipsOncallUsersDataItems,
-)
-from datadog_api_client.v2.model.team_reference_relationships_oncall_users_data_items_type import (
-    TeamReferenceRelationshipsOncallUsersDataItemsType,
-)
 from datadog_api_client.v2.model.team_reference_type import TeamReferenceType
 from datadog_api_client.v2.model.team_relationships import TeamRelationships
 from datadog_api_client.v2.model.team_relationships_links import TeamRelationshipsLinks
@@ -3263,7 +3271,6 @@ from datadog_api_client.v2.model.team_update import TeamUpdate
 from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
 from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
-from datadog_api_client.v2.model.teams_action import TeamsAction
 from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
@@ -4065,6 +4072,8 @@ __all__ = [
     "DORADeploymentResponse",
     "DORADeploymentResponseData",
     "DORADeploymentType",
+    "DORAEvent",
+    "DORAFetchResponse",
     "DORAGitInfo",
     "DORAIncidentRequest",
     "DORAIncidentRequestAttributes",
@@ -4072,6 +4081,15 @@ __all__ = [
     "DORAIncidentResponse",
     "DORAIncidentResponseData",
     "DORAIncidentType",
+    "DORAListDeploymentsRequest",
+    "DORAListDeploymentsRequestAttributes",
+    "DORAListDeploymentsRequestData",
+    "DORAListDeploymentsRequestDataType",
+    "DORAListFailuresRequest",
+    "DORAListFailuresRequestAttributes",
+    "DORAListFailuresRequestData",
+    "DORAListFailuresRequestDataType",
+    "DORAListResponse",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
     "DashboardListDeleteItemsRequest",
@@ -4257,6 +4275,7 @@ __all__ = [
     "EscalationPolicyUserAttributes",
     "EscalationPolicyUserType",
     "EscalationTarget",
+    "EscalationTargets",
     "Event",
     "EventAttributes",
     "EventCategory",
@@ -5057,6 +5076,7 @@ __all__ = [
     "OktaAccountUpdateRequestAttributes",
     "OktaAccountUpdateRequestData",
     "OktaAccountsResponse",
+    "OnCallPageTargetType",
     "OnDemandConcurrencyCap",
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
@@ -5553,6 +5573,10 @@ __all__ = [
     "SecurityTriggerWrapper",
     "Selectors",
     "SelfServiceTriggerWrapper",
+    "SendSlackMessageAction",
+    "SendSlackMessageActionType",
+    "SendTeamsMessageAction",
+    "SendTeamsMessageActionType",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
     "SensitiveDataScannerConfigurationData",
@@ -5685,7 +5709,6 @@ __all__ = [
     "SingleAggregatedConnectionResponseData",
     "SingleAggregatedConnectionResponseDataAttributes",
     "SingleAggregatedConnectionResponseDataType",
-    "SlackAction",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",
@@ -5791,10 +5814,6 @@ __all__ = [
     "TeamPermissionSettingsResponse",
     "TeamReference",
     "TeamReferenceAttributes",
-    "TeamReferenceRelationships",
-    "TeamReferenceRelationshipsOncallUsers",
-    "TeamReferenceRelationshipsOncallUsersDataItems",
-    "TeamReferenceRelationshipsOncallUsersDataItemsType",
     "TeamReferenceType",
     "TeamRelationships",
     "TeamRelationshipsLinks",
@@ -5819,7 +5838,6 @@ __all__ = [
     "TeamUpdateAttributes",
     "TeamUpdateRelationships",
     "TeamUpdateRequest",
-    "TeamsAction",
     "TeamsField",
     "TeamsResponse",
     "TeamsResponseLinks",

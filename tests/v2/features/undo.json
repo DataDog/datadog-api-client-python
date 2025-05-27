@@ -827,6 +827,30 @@
       "type": "idempotent"
     }
   },
+  "ListDORADeployments": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDORADeployment": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListDORAFailures": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDORAFailure": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateDORAIncident": {
     "tag": "DORA Metrics",
     "undo": {

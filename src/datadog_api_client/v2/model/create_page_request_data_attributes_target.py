@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,12 +13,18 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
+
+
 class CreatePageRequestDataAttributesTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
+
         return {
             "identifier": (str,),
-            "type": (str,),
+            "type": (OnCallPageTargetType,),
         }
 
     attribute_map = {
@@ -26,15 +32,17 @@ class CreatePageRequestDataAttributesTarget(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, identifier: Union[str, UnsetType] = unset, type: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, identifier: Union[str, UnsetType] = unset, type: Union[OnCallPageTargetType, UnsetType] = unset, **kwargs
+    ):
         """
         Information about the target to notify (such as a team or user).
 
-        :param identifier: A unique ID for the target (for example, team handle or user UUID).
+        :param identifier: Identifier for the target (for example, team handle or user ID).
         :type identifier: str, optional
 
-        :param type: The kind of target, ``team_uuid`` | ``team_handle`` | ``user_uuid``.
-        :type type: str, optional
+        :param type: The kind of target, ``team_id`` | ``team_handle`` | ``user_id``.
+        :type type: OnCallPageTargetType, optional
         """
         if identifier is not unset:
             kwargs["identifier"] = identifier

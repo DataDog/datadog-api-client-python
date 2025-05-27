@@ -27,7 +27,6 @@ class EscalationPolicyUpdateRequestDataAttributes(ModelNormal):
         )
 
         return {
-            "description": (str,),
             "name": (str,),
             "resolve_page_on_policy_end": (bool,),
             "retries": (int,),
@@ -35,7 +34,6 @@ class EscalationPolicyUpdateRequestDataAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "description": "description",
         "name": "name",
         "resolve_page_on_policy_end": "resolve_page_on_policy_end",
         "retries": "retries",
@@ -46,16 +44,12 @@ class EscalationPolicyUpdateRequestDataAttributes(ModelNormal):
         self_,
         name: str,
         steps: List[EscalationPolicyUpdateRequestDataAttributesStepsItems],
-        description: Union[str, UnsetType] = unset,
         resolve_page_on_policy_end: Union[bool, UnsetType] = unset,
         retries: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
         Defines the attributes that can be updated for an escalation policy, such as description, name, resolution behavior, retries, and steps.
-
-        :param description: Provides a detailed text description of the escalation policy.
-        :type description: str, optional
 
         :param name: Specifies the name of the escalation policy.
         :type name: str
@@ -69,8 +63,6 @@ class EscalationPolicyUpdateRequestDataAttributes(ModelNormal):
         :param steps: A list of escalation steps, each defining assignment, escalation timeout, and targets.
         :type steps: [EscalationPolicyUpdateRequestDataAttributesStepsItems]
         """
-        if description is not unset:
-            kwargs["description"] = description
         if resolve_page_on_policy_end is not unset:
             kwargs["resolve_page_on_policy_end"] = resolve_page_on_policy_end
         if retries is not unset:

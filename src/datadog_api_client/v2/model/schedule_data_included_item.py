@@ -21,11 +21,11 @@ class ScheduleDataIncludedItem(ModelComposed):
         :param id: The team's unique identifier.
         :type id: str, optional
 
-        :param relationships: Collects the key relationship fields for a team reference, specifically on-call users.
-        :type relationships: TeamReferenceRelationships, optional
-
         :param type: Teams resource type.
         :type type: TeamReferenceType
+
+        :param relationships: Holds references to objects related to the Layer entity, such as its members.
+        :type relationships: LayerRelationships, optional
         """
         super().__init__(kwargs)
 

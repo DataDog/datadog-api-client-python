@@ -55,9 +55,9 @@ class ScheduleUpdateRequestData(ModelNormal):
         **kwargs,
     ):
         """
-        Contains all data needed to update an existing schedule, including its attributes (such as name, layers, or tags) and any relationships to teams.
+        Contains all data needed to update an existing schedule, including its attributes (such as name and time zone) and any relationships to teams.
 
-        :param attributes: Defines the updatable attributes for a schedule, such as name, time zone, tags, and layers.
+        :param attributes: Defines the updatable attributes for a schedule, such as name, time zone, and layers.
         :type attributes: ScheduleUpdateRequestDataAttributes
 
         :param id: The ID of the schedule to be updated.

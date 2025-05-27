@@ -1,5 +1,5 @@
 """
-Delete on-call escalation policy returns "No Content" response
+Delete On-Call escalation policy returns "No Content" response
 """
 
 from os import environ
