@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testgetaworkloadprotectionpolicyreturnsokresponse1747319673"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testgetaworkloadprotectionpolicyreturnsokresponse1748341515"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"6zj-1yv-myk","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testgetaworkloadprotectionpolicyreturnsokresponse1747319673","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319673849,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"xln-mmt-sy7","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testgetaworkloadprotectionpolicyreturnsokresponse1748341515","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341515373,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -24,11 +24,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/6zj-1yv-myk
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/xln-mmt-sy7
   response:
     body:
-      string: '{"data":{"id":"6zj-1yv-myk","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testgetaworkloadprotectionpolicyreturnsokresponse1747319673","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319673849,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"xln-mmt-sy7","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testgetaworkloadprotectionpolicyreturnsokresponse1748341515","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341515373,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -41,7 +41,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/6zj-1yv-myk
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/xln-mmt-sy7
   response:
     body:
       string: ''

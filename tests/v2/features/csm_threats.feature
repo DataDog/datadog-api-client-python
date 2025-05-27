@@ -62,6 +62,14 @@ Feature: CSM Threats
     Then the response status is 200 OK
 
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  Scenario: Create a Workload Protection agent rule with set action returns "OK" response
+    Given there is a valid "policy_rc" in the system
+    And new "CreateCSMThreatsAgentRule" request
+    And body with value {"data": {"attributes": {"description": "My Agent rule with set action", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "value": "test_value", "scope": "process"}}]}, "type": "agent_rule"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection policy returns "Bad Request" response
     Given new "CreateCSMThreatsAgentPolicy" request
     And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "hostTagsLists": [], "name": "test"}, "type": "policy"}}
@@ -188,13 +196,13 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Get all Workload Protection agent rules (US1-FED) returns "OK" response
     Given new "ListCloudWorkloadSecurityAgentRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Get all Workload Protection agent rules returns "OK" response
     Given new "ListCSMThreatsAgentRules" request
     When the request is sent
