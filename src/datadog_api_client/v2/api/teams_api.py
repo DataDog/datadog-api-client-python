@@ -21,6 +21,7 @@ from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
+from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
 from datadog_api_client.v2.model.team_links_response import TeamLinksResponse
 from datadog_api_client.v2.model.team_link_response import TeamLinkResponse
@@ -45,6 +46,32 @@ class TeamsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._add_member_team_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{super_team_id}/member_teams",
+                "operation_id": "add_member_team",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "super_team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "super_team_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AddMemberTeamRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_team_endpoint = _Endpoint(
             settings={
@@ -363,6 +390,45 @@ class TeamsApi:
             api_client=api_client,
         )
 
+        self._list_member_teams_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{super_team_id}/member_teams",
+                "operation_id": "list_member_teams",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "super_team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "super_team_id",
+                    "location": "path",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "fields_team": {
+                    "openapi_types": ([TeamsField],),
+                    "attribute": "fields[team]",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_teams_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsResponse,),
@@ -413,6 +479,35 @@ class TeamsApi:
             },
             headers_map={
                 "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._remove_member_team_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{super_team_id}/member_teams/{member_team_id}",
+                "operation_id": "remove_member_team",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "super_team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "super_team_id",
+                    "location": "path",
+                },
+                "member_team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "member_team_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
             },
             api_client=api_client,
         )
@@ -538,6 +633,28 @@ class TeamsApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def add_member_team(
+        self,
+        super_team_id: str,
+        body: AddMemberTeamRequest,
+    ) -> None:
+        """Add a member team.
+
+        Add a member team.
+        Adds the team given by the ``id`` in the body as a member team of the super team.
+
+        :param super_team_id: None
+        :type super_team_id: str
+        :type body: AddMemberTeamRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["super_team_id"] = super_team_id
+
+        kwargs["body"] = body
+
+        return self._add_member_team_endpoint.call_with_http_info(**kwargs)
 
     def create_team(
         self,
@@ -845,6 +962,90 @@ class TeamsApi:
 
         return self._get_user_memberships_endpoint.call_with_http_info(**kwargs)
 
+    def list_member_teams(
+        self,
+        super_team_id: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        fields_team: Union[List[TeamsField], UnsetType] = unset,
+    ) -> TeamsResponse:
+        """Get all member teams.
+
+        Get all member teams.
+
+        :param super_team_id: None
+        :type super_team_id: str
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param fields_team: List of fields that need to be fetched.
+        :type fields_team: [TeamsField], optional
+        :rtype: TeamsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["super_team_id"] = super_team_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if fields_team is not unset:
+            kwargs["fields_team"] = fields_team
+
+        return self._list_member_teams_endpoint.call_with_http_info(**kwargs)
+
+    def list_member_teams_with_pagination(
+        self,
+        super_team_id: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        fields_team: Union[List[TeamsField], UnsetType] = unset,
+    ) -> collections.abc.Iterable[Team]:
+        """Get all member teams.
+
+        Provide a paginated version of :meth:`list_member_teams`, returning all items.
+
+        :param super_team_id: None
+        :type super_team_id: str
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param fields_team: List of fields that need to be fetched.
+        :type fields_team: [TeamsField], optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[Team]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["super_team_id"] = super_team_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if fields_team is not unset:
+            kwargs["fields_team"] = fields_team
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._list_member_teams_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
     def list_teams(
         self,
         *,
@@ -967,6 +1168,28 @@ class TeamsApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def remove_member_team(
+        self,
+        super_team_id: str,
+        member_team_id: str,
+    ) -> None:
+        """Remove a member team.
+
+        Remove a super team's member team identified by ``member_team_id``.
+
+        :param super_team_id: None
+        :type super_team_id: str
+        :param member_team_id: None
+        :type member_team_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["super_team_id"] = super_team_id
+
+        kwargs["member_team_id"] = member_team_id
+
+        return self._remove_member_team_endpoint.call_with_http_info(**kwargs)
 
     def update_team(
         self,
