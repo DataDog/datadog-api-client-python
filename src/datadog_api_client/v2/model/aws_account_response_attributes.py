@@ -74,9 +74,9 @@ class AWSAccountResponseAttributes(ModelNormal):
 
     def __init__(
         self_,
-        aws_account_id: str,
         account_tags: Union[List[str], none_type, UnsetType] = unset,
         auth_config: Union[AWSAuthConfig, AWSAuthConfigKeys, AWSAuthConfigRole, UnsetType] = unset,
+        aws_account_id: Union[str, UnsetType] = unset,
         aws_partition: Union[AWSAccountPartition, UnsetType] = unset,
         aws_regions: Union[AWSRegions, AWSRegionsIncludeAll, AWSRegionsIncludeOnly, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
@@ -97,7 +97,7 @@ class AWSAccountResponseAttributes(ModelNormal):
         :type auth_config: AWSAuthConfig, optional
 
         :param aws_account_id: AWS Account ID.
-        :type aws_account_id: str
+        :type aws_account_id: str, optional
 
         :param aws_partition: AWS partition your AWS account is scoped to. Defaults to ``aws``.
             See `Partitions <https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/partitions.html>`_ in the AWS documentation for more information.
@@ -128,6 +128,8 @@ class AWSAccountResponseAttributes(ModelNormal):
             kwargs["account_tags"] = account_tags
         if auth_config is not unset:
             kwargs["auth_config"] = auth_config
+        if aws_account_id is not unset:
+            kwargs["aws_account_id"] = aws_account_id
         if aws_partition is not unset:
             kwargs["aws_partition"] = aws_partition
         if aws_regions is not unset:
@@ -145,5 +147,3 @@ class AWSAccountResponseAttributes(ModelNormal):
         if traces_config is not unset:
             kwargs["traces_config"] = traces_config
         super().__init__(kwargs)
-
-        self_.aws_account_id = aws_account_id
