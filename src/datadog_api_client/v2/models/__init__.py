@@ -2944,6 +2944,10 @@ from datadog_api_client.v2.model.security_trigger import SecurityTrigger
 from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
 from datadog_api_client.v2.model.selectors import Selectors
 from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
+from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
+from datadog_api_client.v2.model.send_slack_message_action_type import SendSlackMessageActionType
+from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
+from datadog_api_client.v2.model.send_teams_message_action_type import SendTeamsMessageActionType
 from datadog_api_client.v2.model.sensitive_data_scanner_config_request import SensitiveDataScannerConfigRequest
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration import SensitiveDataScannerConfiguration
 from datadog_api_client.v2.model.sensitive_data_scanner_configuration_data import SensitiveDataScannerConfigurationData
@@ -3130,7 +3134,6 @@ from datadog_api_client.v2.model.single_aggregated_connection_response_data_attr
 from datadog_api_client.v2.model.single_aggregated_connection_response_data_type import (
     SingleAggregatedConnectionResponseDataType,
 )
-from datadog_api_client.v2.model.slack_action import SlackAction
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
@@ -3268,7 +3271,6 @@ from datadog_api_client.v2.model.team_update import TeamUpdate
 from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttributes
 from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
-from datadog_api_client.v2.model.teams_action import TeamsAction
 from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
@@ -5571,6 +5573,10 @@ __all__ = [
     "SecurityTriggerWrapper",
     "Selectors",
     "SelfServiceTriggerWrapper",
+    "SendSlackMessageAction",
+    "SendSlackMessageActionType",
+    "SendTeamsMessageAction",
+    "SendTeamsMessageActionType",
     "SensitiveDataScannerConfigRequest",
     "SensitiveDataScannerConfiguration",
     "SensitiveDataScannerConfigurationData",
@@ -5703,7 +5709,6 @@ __all__ = [
     "SingleAggregatedConnectionResponseData",
     "SingleAggregatedConnectionResponseDataAttributes",
     "SingleAggregatedConnectionResponseDataType",
-    "SlackAction",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",
@@ -5833,7 +5838,6 @@ __all__ = [
     "TeamUpdateAttributes",
     "TeamUpdateRelationships",
     "TeamUpdateRequest",
-    "TeamsAction",
     "TeamsField",
     "TeamsResponse",
     "TeamsResponseLinks",

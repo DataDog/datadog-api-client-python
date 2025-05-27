@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -10,14 +11,20 @@ from datadog_api_client.model_utils import (
 )
 
 
-class TeamsAction(ModelNormal):
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.send_teams_message_action_type import SendTeamsMessageActionType
+
+
+class SendTeamsMessageAction(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.send_teams_message_action_type import SendTeamsMessageActionType
+
         return {
             "channel": (str,),
             "team": (str,),
             "tenant": (str,),
-            "type": (str,),
+            "type": (SendTeamsMessageActionType,),
         }
 
     attribute_map = {
@@ -27,7 +34,7 @@ class TeamsAction(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, channel: str, team: str, tenant: str, type: str, **kwargs):
+    def __init__(self_, channel: str, team: str, tenant: str, type: SendTeamsMessageActionType, **kwargs):
         """
         Sends a message to a Microsoft Teams channel.
 
@@ -40,8 +47,8 @@ class TeamsAction(ModelNormal):
         :param tenant: The tenant ID.
         :type tenant: str
 
-        :param type: Must be set to "send_teams_message".
-        :type type: str
+        :param type: Indicates that the action is a send Microsoft Teams message action.
+        :type type: SendTeamsMessageActionType
         """
         super().__init__(kwargs)
 

@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -30,13 +32,13 @@ class RoutingRuleRelationshipsPolicy(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: RoutingRuleRelationshipsPolicyData, **kwargs):
+    def __init__(self_, data: Union[RoutingRuleRelationshipsPolicyData, UnsetType] = unset, **kwargs):
         """
         Defines the relationship that links a routing rule to a policy.
 
         :param data: Represents the policy data reference, containing the policy's ID and resource type.
-        :type data: RoutingRuleRelationshipsPolicyData
+        :type data: RoutingRuleRelationshipsPolicyData, optional
         """
+        if data is not unset:
+            kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_.data = data
