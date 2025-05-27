@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/workflows
   response:
     body:
-      string: '{"data":{"id":"6ffa14c3-816b-4463-9386-cb8eb5b73438","type":"workflows","attributes":{"createdAt":"2025-02-04T04:58:33.952654Z","description":"","name":"Cassette
-        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-02-04T04:58:33.952654Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"dec8dfd0-2031-480a-90ce-4e9179b22793","type":"workflows","attributes":{"createdAt":"2025-05-26T17:23:44.222906Z","description":"","name":"Cassette
+        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-05-26T17:23:44.222906Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -24,11 +24,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/workflows/6ffa14c3-816b-4463-9386-cb8eb5b73438
+    uri: https://api.datadoghq.com/api/v2/workflows/dec8dfd0-2031-480a-90ce-4e9179b22793
   response:
     body:
-      string: '{"data":{"id":"6ffa14c3-816b-4463-9386-cb8eb5b73438","type":"workflows","attributes":{"createdAt":"2025-02-04T04:58:33.952654Z","description":"","name":"Cassette
-        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-02-04T04:58:33.952654Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"dec8dfd0-2031-480a-90ce-4e9179b22793","type":"workflows","attributes":{"createdAt":"2025-05-26T17:23:44.222906Z","description":"","name":"Cassette
+        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-05-26T17:23:44.222906Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -41,7 +41,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/workflows/6ffa14c3-816b-4463-9386-cb8eb5b73438
+    uri: https://api.datadoghq.com/api/v2/workflows/dec8dfd0-2031-480a-90ce-4e9179b22793
   response:
     body:
       string: ''
