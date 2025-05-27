@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/workflows
   response:
     body:
-      string: '{"data":{"id":"94300e37-bf51-498b-b56b-83d17ef45e6b","type":"workflows","attributes":{"createdAt":"2025-02-04T04:58:33.538848Z","description":"","name":"Cassette
-        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-02-04T04:58:33.538848Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"8b9af60d-3521-4ed0-85b2-8e2ab2131e58","type":"workflows","attributes":{"createdAt":"2025-05-26T17:23:43.642375Z","description":"","name":"Cassette
+        Workflow x-given","published":true,"spec":{"triggers":[{"startStepNames":["No_op"],"workflowTrigger":{}}],"steps":[{"name":"No_op","actionId":"com.datadoghq.core.noop"}]},"tags":[],"updatedAt":"2025-05-26T17:23:43.642375Z"},"relationships":{"creator":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"owner":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -24,7 +24,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/workflows/94300e37-bf51-498b-b56b-83d17ef45e6b
+    uri: https://api.datadoghq.com/api/v2/workflows/8b9af60d-3521-4ed0-85b2-8e2ab2131e58
   response:
     body:
       string: ''
@@ -38,7 +38,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/workflows/94300e37-bf51-498b-b56b-83d17ef45e6b
+    uri: https://api.datadoghq.com/api/v2/workflows/8b9af60d-3521-4ed0-85b2-8e2ab2131e58
   response:
     body:
       string: '{"errors":[{"detail":"workflow not found"}]}'
