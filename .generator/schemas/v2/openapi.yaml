@@ -33669,7 +33669,7 @@ components:
       - TIMESTAMP_DESCENDING
     SecurityMonitoringStandardDataSource:
       default: logs
-      description: Source of events, either logs or audit trail.
+      description: Source of events, either logs, audit trail, or Datadog events.
       enum:
       - logs
       - audit
@@ -33677,6 +33677,7 @@ components:
       - spans
       - security_runtime
       - network
+      - events
       example: logs
       type: string
       x-enum-varnames:
@@ -33686,6 +33687,7 @@ components:
       - SPANS
       - SECURITY_RUNTIME
       - NETWORK
+      - EVENTS
     SecurityMonitoringStandardRuleCreatePayload:
       description: Create a new rule.
       properties:
