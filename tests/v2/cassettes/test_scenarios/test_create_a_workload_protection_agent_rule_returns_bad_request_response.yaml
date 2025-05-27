@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1747319656"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1748341492"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"osv-oeh-is6","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1747319656","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319656764,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"wqi-kze-rt7","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1748341492","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341492528,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -19,7 +19,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name","filters":[],"name":"my_agent_rule","policy_id":"osv-oeh-is6","product_tags":[]},"type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name","filters":[],"name":"my_agent_rule","policy_id":"wqi-kze-rt7","product_tags":[]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/osv-oeh-is6
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/wqi-kze-rt7
   response:
     body:
       string: ''

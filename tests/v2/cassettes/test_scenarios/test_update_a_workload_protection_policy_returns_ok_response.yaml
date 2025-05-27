@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionpolicyreturnsokresponse1747319697"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionpolicyreturnsokresponse1748341524"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"qsc-b2c-cxf","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateaworkloadprotectionpolicyreturnsokresponse1747319697","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319697796,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"qn1-4by-5zr","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateaworkloadprotectionpolicyreturnsokresponse1748341524","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341524459,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -19,18 +19,18 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"Updated agent policy","enabled":true,"hostTagsLists":[["env:test"]],"name":"updated_agent_policy"},"id":"qsc-b2c-cxf","type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"Updated agent policy","enabled":true,"hostTagsLists":[["env:test"]],"name":"updated_agent_policy"},"id":"qn1-4by-5zr","type":"policy"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/qsc-b2c-cxf
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/qn1-4by-5zr
   response:
     body:
-      string: '{"data":{"id":"qsc-b2c-cxf","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"Updated
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":225,"name":"updated_agent_policy","policyVersion":"2","priority":1000000070,"ruleCount":226,"updateDate":1747319698400,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"qn1-4by-5zr","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"Updated
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":225,"name":"updated_agent_policy","policyVersion":"2","priority":1000000011,"ruleCount":226,"updateDate":1748341525121,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/qsc-b2c-cxf
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/qn1-4by-5zr
   response:
     body:
       string: ''

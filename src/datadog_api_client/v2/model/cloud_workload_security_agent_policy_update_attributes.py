@@ -3,20 +3,32 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import (
+        CloudWorkloadSecurityAgentRuleAction,
+    )
+
+
 class CloudWorkloadSecurityAgentPolicyUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import (
+            CloudWorkloadSecurityAgentRuleAction,
+        )
+
         return {
+            "actions": ([CloudWorkloadSecurityAgentRuleAction],),
             "description": (str,),
             "enabled": (bool,),
             "host_tags": ([str],),
@@ -25,6 +37,7 @@ class CloudWorkloadSecurityAgentPolicyUpdateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "actions": "actions",
         "description": "description",
         "enabled": "enabled",
         "host_tags": "hostTags",
@@ -34,6 +47,7 @@ class CloudWorkloadSecurityAgentPolicyUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
+        actions: Union[List[CloudWorkloadSecurityAgentRuleAction], none_type, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         host_tags: Union[List[str], UnsetType] = unset,
@@ -43,6 +57,9 @@ class CloudWorkloadSecurityAgentPolicyUpdateAttributes(ModelNormal):
     ):
         """
         Update an existing Cloud Workload Security Agent policy
+
+        :param actions: The array of actions the rule can perform if triggered
+        :type actions: [CloudWorkloadSecurityAgentRuleAction], none_type, optional
 
         :param description: The description of the policy
         :type description: str, optional
@@ -59,6 +76,8 @@ class CloudWorkloadSecurityAgentPolicyUpdateAttributes(ModelNormal):
         :param name: The name of the policy
         :type name: str, optional
         """
+        if actions is not unset:
+            kwargs["actions"] = actions
         if description is not unset:
             kwargs["description"] = description
         if enabled is not unset:
