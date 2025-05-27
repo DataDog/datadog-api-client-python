@@ -14851,6 +14851,34 @@ datadog\_api\_client.v2.model.self\_service\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.send\_slack\_message\_action module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_slack_message_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.send\_slack\_message\_action\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_slack_message_action_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.send\_teams\_message\_action module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_teams_message_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.send\_teams\_message\_action\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.send_teams_message_action_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sensitive\_data\_scanner\_config\_request module
 ------------------------------------------------------------------------------
 
@@ -15744,13 +15772,6 @@ datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_data\_ty
 -----------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.single_aggregated_connection_response_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.slack\_action module
---------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.slack_action
    :members:
    :show-inheritance:
 
@@ -16696,13 +16717,6 @@ datadog\_api\_client.v2.model.team\_update\_request module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.team_update_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.teams\_action module
---------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.teams_action
    :members:
    :show-inheritance:
 

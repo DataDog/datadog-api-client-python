@@ -5,7 +5,8 @@ Set On-Call team routing rules returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
-from datadog_api_client.v2.model.slack_action import SlackAction
+from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
+from datadog_api_client.v2.model.send_slack_message_action_type import SendSlackMessageActionType
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
 from datadog_api_client.v2.model.team_routing_rules_request_data import TeamRoutingRulesRequestData
 from datadog_api_client.v2.model.team_routing_rules_request_data_attributes import TeamRoutingRulesRequestDataAttributes
@@ -28,9 +29,9 @@ body = TeamRoutingRulesRequest(
             rules=[
                 TeamRoutingRulesRequestRule(
                     actions=[
-                        SlackAction(
+                        SendSlackMessageAction(
                             channel="channel",
-                            type="send_slack_message",
+                            type=SendSlackMessageActionType.SEND_SLACK_MESSAGE,
                             workspace="workspace",
                         ),
                     ],
@@ -52,7 +53,6 @@ body = TeamRoutingRulesRequest(
                             ),
                         ],
                     ),
-                    urgency=Urgency.HIGH,
                 ),
                 TeamRoutingRulesRequestRule(
                     policy_id=ESCALATION_POLICY_DATA_ID,
@@ -69,6 +69,6 @@ body = TeamRoutingRulesRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
-    response = api_instance.set_on_call_team_routing_rules(team_id=DD_TEAM_DATA_ID, body=body)
+    response = api_instance.set_on_call_team_routing_rules(team_id=DD_TEAM_DATA_ID, include="rules", body=body)
 
     print(response)
