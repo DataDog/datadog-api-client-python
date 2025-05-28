@@ -3714,6 +3714,7 @@ components:
       - id
       - type
       type: object
+      x-model-simple-name: AuthNMapping
     AuthNMappingAttributes:
       description: Attributes of AuthN Mapping.
       properties:
@@ -3742,6 +3743,7 @@ components:
           example: '0'
           type: string
       type: object
+      x-model-simple-name: AuthNAttributes
     AuthNMappingCreateAttributes:
       description: Key/Value pair of attributes used for create request.
       properties:
@@ -3756,6 +3758,7 @@ components:
           example: Development
           type: string
       type: object
+      x-model-simple-name: CreateAttributes
     AuthNMappingCreateData:
       description: Data for creating an AuthN Mapping.
       properties:
@@ -3768,11 +3771,13 @@ components:
       required:
       - type
       type: object
+      x-model-simple-name: CreateData
     AuthNMappingCreateRelationships:
       description: Relationship of AuthN Mapping create object to a Role or Team.
       oneOf:
       - $ref: '#/components/schemas/AuthNMappingRelationshipToRole'
       - $ref: '#/components/schemas/AuthNMappingRelationshipToTeam'
+      x-model-simple-name: CreateRelationships
     AuthNMappingCreateRequest:
       description: Request for creating an AuthN Mapping.
       properties:
@@ -3781,12 +3786,14 @@ components:
       required:
       - data
       type: object
+      x-model-simple-name: CreateRequest
     AuthNMappingIncluded:
       description: Included data in the AuthN Mapping response.
       oneOf:
       - $ref: '#/components/schemas/SAMLAssertionAttribute'
       - $ref: '#/components/schemas/Role'
       - $ref: '#/components/schemas/AuthNMappingTeam'
+      x-model-simple-name: Included
     AuthNMappingRelationshipToRole:
       description: Relationship of AuthN Mapping to a Role.
       properties:
@@ -3795,6 +3802,7 @@ components:
       required:
       - role
       type: object
+      x-model-simple-name: RoleRelationship
     AuthNMappingRelationshipToTeam:
       description: Relationship of AuthN Mapping to a Team.
       properties:
@@ -3803,6 +3811,7 @@ components:
       required:
       - team
       type: object
+      x-model-simple-name: TeamRelationship
     AuthNMappingRelationships:
       description: All relationships associated with AuthN Mapping.
       properties:
@@ -3813,6 +3822,7 @@ components:
         team:
           $ref: '#/components/schemas/RelationshipToTeam'
       type: object
+      x-model-simple-name: Relationships
     AuthNMappingResourceType:
       description: The type of resource being mapped to.
       enum:
@@ -3822,6 +3832,7 @@ components:
       x-enum-varnames:
       - ROLE
       - TEAM
+      x-model-simple-name: ResourceType
     AuthNMappingResponse:
       description: AuthN Mapping response from the API.
       properties:
@@ -3833,6 +3844,7 @@ components:
             $ref: '#/components/schemas/AuthNMappingIncluded'
           type: array
       type: object
+      x-model-simple-name: Response
     AuthNMappingTeam:
       description: Team.
       properties:
@@ -3845,6 +3857,7 @@ components:
         type:
           $ref: '#/components/schemas/TeamType'
       type: object
+      x-model-simple-name: Team
     AuthNMappingTeamAttributes:
       description: Team attributes.
       properties:
@@ -3887,6 +3900,7 @@ components:
           readOnly: true
           type: integer
       type: object
+      x-model-simple-name: TeamAttributes
     AuthNMappingUpdateAttributes:
       description: Key/Value pair of attributes used for update request.
       properties:
@@ -3901,6 +3915,7 @@ components:
           example: Development
           type: string
       type: object
+      x-model-simple-name: UpdateAttributes
     AuthNMappingUpdateData:
       description: Data for updating an AuthN Mapping.
       properties:
@@ -3918,11 +3933,13 @@ components:
       - id
       - type
       type: object
+      x-model-simple-name: UpdateData
     AuthNMappingUpdateRelationships:
       description: Relationship of AuthN Mapping update object to a Role or Team.
       oneOf:
       - $ref: '#/components/schemas/AuthNMappingRelationshipToRole'
       - $ref: '#/components/schemas/AuthNMappingRelationshipToTeam'
+      x-model-simple-name: UpdateRelationships
     AuthNMappingUpdateRequest:
       description: Request to update an AuthN Mapping.
       properties:
@@ -3931,6 +3948,7 @@ components:
       required:
       - data
       type: object
+      x-model-simple-name: UpdateRequest
     AuthNMappingsResponse:
       description: Array of AuthN Mappings response.
       properties:
@@ -3947,6 +3965,7 @@ components:
         meta:
           $ref: '#/components/schemas/ResponseMetaAttributes'
       type: object
+      x-model-simple-name: ListResponse
     AuthNMappingsSort:
       description: Sorting options for AuthN Mappings.
       enum:
@@ -3976,6 +3995,7 @@ components:
       - SAML_ASSERTION_ATTRIBUTE_KEY_DESCENDING
       - SAML_ASSERTION_ATTRIBUTE_VALUE_ASCENDING
       - SAML_ASSERTION_ATTRIBUTE_VALUE_DESCENDING
+      x-model-simple-name: Sort
     AuthNMappingsType:
       default: authn_mappings
       description: AuthN Mappings resource type.
@@ -3985,6 +4005,7 @@ components:
       type: string
       x-enum-varnames:
       - AUTHN_MAPPINGS
+      x-model-simple-name: Type
     AwsAccountId:
       description: The ID of the AWS account.
       example: '123456789012'
@@ -29411,6 +29432,7 @@ components:
       required:
       - data
       type: object
+      x-model-simple-name: SAMLAttributeRelationship
     RelationshipToSAMLAssertionAttributeData:
       description: Data of AuthN Mapping relationship to SAML Assertion Attribute.
       properties:
@@ -29424,6 +29446,7 @@ components:
       - id
       - type
       type: object
+      x-model-simple-name: SAMLAttributeData
     RelationshipToTeam:
       description: Relationship to team.
       properties:
@@ -31170,6 +31193,7 @@ components:
       - id
       - type
       type: object
+      x-model-simple-name: SAMLAttribute
     SAMLAssertionAttributeAttributes:
       description: Key/Value pair of attributes used in SAML assertion attributes.
       properties:
@@ -31184,6 +31208,7 @@ components:
           example: Development
           type: string
       type: object
+      x-model-simple-name: SAMLAttributeAttributes
     SAMLAssertionAttributesType:
       default: saml_assertion_attributes
       description: SAML assertion attributes resource type.
@@ -31193,6 +31218,7 @@ components:
       type: string
       x-enum-varnames:
       - SAML_ASSERTION_ATTRIBUTES
+      x-model-simple-name: SAMLType
     SBOM:
       description: A single SBOM
       properties:
