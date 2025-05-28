@@ -1,23 +1,4 @@
-# CHANGELOG
-
-## 2.35.0/2025-05-28
-
-### Fixed
-* add `include` parameter to On-Call team rules test [#2582](https://github.com/DataDog/datadog-api-client-python/pull/2582)
-* fix On-Call spec [#2572](https://github.com/DataDog/datadog-api-client-python/pull/2572)
-* Fix incorrect pattern for url [#2558](https://github.com/DataDog/datadog-api-client-python/pull/2558)
-* Make metadata optional for GCS destination [#2549](https://github.com/DataDog/datadog-api-client-python/pull/2549)
-* Remove isReadOnly default when creating dashboards [#2548](https://github.com/DataDog/datadog-api-client-python/pull/2548)
-* Make assertion target be int or string [#2545](https://github.com/DataDog/datadog-api-client-python/pull/2545)
-
-### Added
-* Add support for Datadog Events as a data source for rules [#2578](https://github.com/DataDog/datadog-api-client-python/pull/2578)
-* Add public APIs to search DORA events [#2575](https://github.com/DataDog/datadog-api-client-python/pull/2575)
-* Adding endpoints to manage Resource Evaluation Filters [#2567](https://github.com/DataDog/datadog-api-client-python/pull/2567)
-* Add Sev0 as a supported incident severity [#2561](https://github.com/DataDog/datadog-api-client-python/pull/2561)
-* Share timerestriction object [#2557](https://github.com/DataDog/datadog-api-client-python/pull/2557)
-* add On-Call Paging spec [#2551](https://github.com/DataDog/datadog-api-client-python/pull/2551)
-* Add pagination method for NDM ListDevices. [#2547](https://github.com/DataDog/datadog-api-client-python/pull/2547)
+# Changelog
 
 ## 2.34.0 / 2025-04-14
 
