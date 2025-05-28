@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"filter":{"tags":["app:test-update_a_monitor_notification_rule_returns_bad_request_response-1744280996"]},"name":"test
+    body: '{"data":{"attributes":{"filter":{"tags":["app:test-update_a_monitor_notification_rule_returns_bad_request_response-1743713884"]},"name":"test
       rule","recipients":["slack-monitor-app"]},"type":"monitor-notification-rule"}}'
     headers:
       accept:
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
   response:
     body:
-      string: '{"data":{"type":"monitor-notification-rule","attributes":{"filter":{"tags":["app:test-update_a_monitor_notification_rule_returns_bad_request_response-1744280996"]},"created_at":"2025-04-10T10:29:56.523436+00:00","recipients":["slack-monitor-app"],"name":"test
-        rule","modified_at":"1970-01-01T00:00:00+00:00"},"id":"f26ba0a6-1e84-4984-b061-4172a25a1332","relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":"frog","handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2025-04-07T20:19:46.118466+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active"}}]}
+      string: '{"data":{"type":"monitor-notification-rule","attributes":{"filter":{"tags":["app:test-update_a_monitor_notification_rule_returns_bad_request_response-1743713884"]},"recipients":["slack-monitor-app"],"creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","modified_at":"1970-01-01T00:00:00+00:00","name":"test
+        rule","created_at":"2025-04-03T20:58:05.080336+00:00"},"id":"30523422-5ed5-477d-b310-211ab89031dc"}}
 
         '
     headers:
@@ -22,15 +22,15 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"filter":{"tags":["test:test-update_a_monitor_notification_rule_returns_bad_request_response-1744280996","host:abc"]},"name":"updated
-      rule","recipients":["@slack-test-channel"]},"id":"f26ba0a6-1e84-4984-b061-4172a25a1332","type":"monitor-notification-rule"}}'
+    body: '{"data":{"attributes":{"filter":{"tags":["test:test-update_a_monitor_notification_rule_returns_bad_request_response-1743713884","host:abc"]},"name":"updated
+      rule","recipients":["@slack-test-channel"]},"id":"30523422-5ed5-477d-b310-211ab89031dc","type":"monitor-notification-rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/f26ba0a6-1e84-4984-b061-4172a25a1332
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/30523422-5ed5-477d-b310-211ab89031dc
   response:
     body:
       string: '{"errors":["Invalid recipients: Recipient handle should not start with
@@ -47,7 +47,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/f26ba0a6-1e84-4984-b061-4172a25a1332
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/30523422-5ed5-477d-b310-211ab89031dc
   response:
     body:
       string: ''
