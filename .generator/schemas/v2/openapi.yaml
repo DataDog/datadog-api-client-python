@@ -26782,6 +26782,7 @@ components:
       - opsgenie_api_key
       - region
       type: object
+      x-model-simple-name: CreateAttributes
     OpsgenieServiceCreateData:
       description: Opsgenie service data for a create request.
       properties:
@@ -26793,6 +26794,7 @@ components:
       - type
       - attributes
       type: object
+      x-model-simple-name: CreateData
     OpsgenieServiceCreateRequest:
       description: Create request for an Opsgenie service.
       properties:
@@ -26801,6 +26803,7 @@ components:
       required:
       - data
       type: object
+      x-model-simple-name: CreateRequest
     OpsgenieServiceRegionType:
       description: The region for the Opsgenie service.
       enum:
@@ -26813,6 +26816,7 @@ components:
       - US
       - EU
       - CUSTOM
+      x-model-simple-name: RegionType
     OpsgenieServiceResponse:
       description: Response of an Opsgenie service.
       properties:
@@ -26821,6 +26825,7 @@ components:
       required:
       - data
       type: object
+      x-model-simple-name: Response
     OpsgenieServiceResponseAttributes:
       description: The attributes from an Opsgenie service response.
       properties:
@@ -26837,6 +26842,7 @@ components:
         region:
           $ref: '#/components/schemas/OpsgenieServiceRegionType'
       type: object
+      x-model-simple-name: ResponseAttributes
     OpsgenieServiceResponseData:
       description: Opsgenie service data from a response.
       properties:
@@ -26855,6 +26861,7 @@ components:
       - type
       - attributes
       type: object
+      x-model-simple-name: ResponseData
     OpsgenieServiceType:
       default: opsgenie-service
       description: Opsgenie service resource type.
@@ -26864,6 +26871,7 @@ components:
       type: string
       x-enum-varnames:
       - OPSGENIE_SERVICE
+      x-model-simple-name: ServiceType
     OpsgenieServiceUpdateAttributes:
       description: The Opsgenie service attributes for an update request.
       properties:
@@ -26884,6 +26892,7 @@ components:
         region:
           $ref: '#/components/schemas/OpsgenieServiceRegionType'
       type: object
+      x-model-simple-name: UpdateAttributes
     OpsgenieServiceUpdateData:
       description: Opsgenie service for an update request.
       properties:
@@ -26902,6 +26911,7 @@ components:
       - type
       - attributes
       type: object
+      x-model-simple-name: UpdateData
     OpsgenieServiceUpdateRequest:
       description: Update request for an Opsgenie service.
       properties:
@@ -26910,6 +26920,7 @@ components:
       required:
       - data
       type: object
+      x-model-simple-name: UpdateRequest
     OpsgenieServicesResponse:
       description: Response with a list of Opsgenie services.
       properties:
@@ -26934,6 +26945,7 @@ components:
       required:
       - data
       type: object
+      x-model-simple-name: ServicesResponse
     OrderDirection:
       description: The sort direction for results.
       enum:
