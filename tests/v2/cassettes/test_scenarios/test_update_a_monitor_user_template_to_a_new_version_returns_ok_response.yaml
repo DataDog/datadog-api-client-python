@@ -1,0 +1,80 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '{"data":{"type":"monitor-user-template","attributes":{"template_variables":[{"name":"scope","available_values":[],"defaults":["cats"]}],"monitor_definition":{"message":"cats","name":"High
+        Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","type":"query alert"},"creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","created":"2025-05-29T02:36:23.954533+00:00","modified":"2025-05-29T02:36:23.954533+00:00","version":0,"title":"api
+        spec given template test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183","tags":["category:test"],"description":"It''s
+        a threshold"},"id":"fefd62df-924a-4438-a697-f7e6ccbad77e"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"A description.","monitor_definition":{"message":"A
+      msg.","name":"A name test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["integration:Azure"],"template_variables":[{"available_values":["value1","value2"],"defaults":["defaultValue"],"name":"regionName","tag_key":"datacenter"}],"title":"Postgres
+      DB test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183"},"id":"00000000-0000-1234-0000-000000000000","type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/monitor/template/fefd62df-924a-4438-a697-f7e6ccbad77e
+  response:
+    body:
+      string: '{"data":{"type":"monitor-user-template","attributes":{"title":"Postgres
+        DB test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183","creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","modified":"2025-05-29T02:36:24.215009+00:00","version":1,"description":"A
+        description.","versions":[{"title":"api spec given template test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183","version":0,"description":"It''s
+        a threshold","id":"fefd62df-924a-4438-a697-f7e6ccbad77e","created":"2025-05-29T02:36:23.954533+00:00","monitor_definition":{"name":"High
+        Error Rate on service","type":"query alert","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","message":"cats"},"template_variables":[{"defaults":["cats"],"available_values":[],"name":"scope"}],"tags":["category:test"]},{"title":"Postgres
+        DB test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183","version":1,"description":"A
+        description.","id":"5e4cd0de-4940-4060-8ffd-2ff13a0b3f5e","created":"2025-05-29T02:36:23.954533+00:00","monitor_definition":{"name":"A
+        name test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183","type":"query
+        alert","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100","message":"A
+        msg."},"template_variables":[{"defaults":["defaultValue"],"available_values":["value1","value2"],"name":"regionName","tag_key":"datacenter"}],"tags":["integration:Azure"]}],"created":"2025-05-29T02:36:23.954533+00:00","monitor_definition":{"message":"A
+        msg.","name":"A name test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","type":"query alert"},"template_variables":[{"defaults":["defaultValue"],"available_values":["value1","value2"],"name":"regionName","tag_key":"datacenter"}],"tags":["integration:Azure"]},"id":"fefd62df-924a-4438-a697-f7e6ccbad77e"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/fefd62df-924a-4438-a697-f7e6ccbad77e
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
