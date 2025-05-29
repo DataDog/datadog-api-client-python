@@ -74,7 +74,7 @@ jobs:
             # TODO: Implement this
             # changelog_content=$(git diff $BASE_REF...$HEAD_REF -- $package/CHANGELOG.md | grep -A 1000 "^+##" | grep -v "^+++" | sed 's/^+//')
 
-            is_prerelease=$(echo $package | grep -q "beta" && echo true || echo false)
+            is_prerelease=$(echo "${versions[$package]}" | grep -qvE '^[0-9]+\.[0-9]+\.[0-9]+$' && echo true || echo false)
             # Create the tag
             gh api repos/{owner}/{repo}/git/refs \
               -f ref="refs/tags/$tag_name" \
