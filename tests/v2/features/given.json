@@ -488,7 +488,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"layers\": [\n        {\n          \"effective_date\": \"{{ timeISO('now - 10d') }}\",\n          \"end_date\": \"{{ timeISO('now + 10d') }}\",\n          \"interval\": {\n            \"days\": 1\n          },\n          \"members\": [\n            {\n              \"user\": {\n                \"id\": \"890f29d4-0b7a-11f0-aeb2-760fcae4f596\"\n              }\n            }\n          ],\n          \"name\": \"Layer 1\",\n          \"restrictions\": [\n            {\n              \"end_day\": \"friday\",\n              \"end_time\": \"17:00:00\",\n              \"start_day\": \"monday\",\n              \"start_time\": \"09:00:00\"\n            }\n          ],\n          \"rotation_start\": \"{{ timeISO('now - 5d') }}\"\n        }\n      ],\n      \"name\": \"{{ unique }}\",\n      \"time_zone\": \"America/New_York\"\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"schedules\"\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"layers\": [\n        {\n          \"effective_date\": \"{{ timeISO('now - 10d') }}\",\n          \"end_date\": \"{{ timeISO('now + 10d') }}\",\n          \"interval\": {\n            \"days\": 1\n          },\n          \"members\": [\n            {\n              \"user\": {\n                \"id\": \"{{ user.data.id }}\"\n              }\n            }\n          ],\n          \"name\": \"Layer 1\",\n          \"restrictions\": [\n            {\n              \"end_day\": \"friday\",\n              \"end_time\": \"17:00:00\",\n              \"start_day\": \"monday\",\n              \"start_time\": \"09:00:00\"\n            }\n          ],\n          \"rotation_start\": \"{{ timeISO('now - 5d') }}\"\n        }\n      ],\n      \"name\": \"{{ unique }}\",\n      \"time_zone\": \"America/New_York\"\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"schedules\"\n  }\n}"
       }
     ],
     "step": "there is a valid \"schedule\" in the system",
@@ -499,8 +499,12 @@
   {
     "parameters": [
       {
+        "name": "team_id",
+        "source": "dd_team.data.id"
+      },
+      {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"rules\": [\n        {\n          \"query\": \"\",\n          \"policy_id\": \"{{ escalation_policy.data.id }}\",\n          \"urgency\": \"low\",\n          \"time_restriction\": null,\n          \"actions\": []\n        }\n      ]\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"team_routing_rules\",\n    \"id\": \"{{ dd_team.data.id }}\",\n    \"attributes\": {\n      \"rules\": [\n        {\n          \"query\": \"\",\n          \"policy_id\": \"{{ escalation_policy.data.id }}\",\n          \"urgency\": \"low\",\n          \"actions\": []\n        }\n      ]\n    }\n  }\n}"
       }
     ],
     "step": "there are valid \"routing_rules\" in the system",

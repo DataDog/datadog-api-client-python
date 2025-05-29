@@ -1,7 +1,29 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"layers":[{"effective_date":"2025-05-11T11:01:53.526Z","end_date":"2025-05-31T11:01:53.526Z","interval":{"days":1},"members":[{"user":{"id":"890f29d4-0b7a-11f0-aeb2-760fcae4f596"}}],"name":"Layer
-      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2025-05-16T11:01:53.526Z"}],"name":"Test-Delete_On_Call_schedule_returns_No_Content_response-1747825313","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
+    body: '{"data":{"attributes":{"email":"Test-Delete_On_Call_schedule_returns_No_Content_response-1748494428@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"e913c34d-3c48-11f0-b10e-2e2b611e1022","attributes":{"name":null,"handle":"test-delete_on_call_schedule_returns_no_content_response-1748494428@datadoghq.com","created_at":"2025-05-29T04:53:49.418406+00:00","modified_at":"2025-05-29T04:53:49.418406+00:00","email":"test-delete_on_call_schedule_returns_no_content_response-1748494428@datadoghq.com","icon":"https://secure.gravatar.com/avatar/97e38917640a0eb3c61f6e1219165929?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"layers":[{"effective_date":"2025-05-19T04:53:48.818Z","end_date":"2025-06-08T04:53:48.818Z","interval":{"days":1},"members":[{"user":{"id":"e913c34d-3c48-11f0-b10e-2e2b611e1022"}}],"name":"Layer
+      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2025-05-24T04:53:48.818Z"}],"name":"Test-Delete_On_Call_schedule_returns_No_Content_response-1748494428","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
     headers:
       accept:
       - application/json
@@ -11,7 +33,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/on-call/schedules
   response:
     body:
-      string: '{"data":{"id":"cb45fcec-a893-423f-94d1-a401bd31e09c","type":"schedules","attributes":{"name":"Test-Delete_On_Call_schedule_returns_No_Content_response-1747825313","time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"56bdebe0-3f79-4571-a92f-c8fb422c7a3e","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
+      string: '{"data":{"id":"4068aec3-24f3-41c6-8778-72f8754684c3","type":"schedules","attributes":{"name":"Test-Delete_On_Call_schedule_returns_No_Content_response-1748494428","time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"671b7e9e-1bcf-4e7a-817e-3b825b7dd3e6","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -24,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/on-call/schedules/cb45fcec-a893-423f-94d1-a401bd31e09c
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/4068aec3-24f3-41c6-8778-72f8754684c3
   response:
     body:
       string: ''
@@ -38,10 +60,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/on-call/schedules/cb45fcec-a893-423f-94d1-a401bd31e09c
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/4068aec3-24f3-41c6-8778-72f8754684c3
   response:
     body:
-      string: '{"errors":[{"title":"Generic Error","detail":"schedule[cb45fcec-a893-423f-94d1-a401bd31e09c]
+      string: '{"errors":[{"title":"Generic Error","detail":"schedule[4068aec3-24f3-41c6-8778-72f8754684c3]
         not found"}]}'
     headers:
       content-type:
@@ -49,4 +71,18 @@ interactions:
     status:
       code: 404
       message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/e913c34d-3c48-11f0-b10e-2e2b611e1022
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
 version: 1
