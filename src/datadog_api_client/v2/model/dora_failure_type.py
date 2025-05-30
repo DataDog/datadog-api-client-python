@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class DORAIncidentType(ModelSimple):
+class DORAFailureType(ModelSimple):
     """
-    JSON:API type for DORA incident events.
+    JSON:API type for DORA failure events.
 
-    :param value: If omitted defaults to "dora_incident". Must be one of ["dora_incident"].
+    :param value: If omitted defaults to "dora_failure". Must be one of ["dora_failure"].
     :type value: str
     """
 
     allowed_values = {
-        "dora_incident",
+        "dora_failure",
     }
-    DORA_INCIDENT: ClassVar["DORAIncidentType"]
+    DORA_FAILURE: ClassVar["DORAFailureType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class DORAIncidentType(ModelSimple):
         }
 
 
-DORAIncidentType.DORA_INCIDENT = DORAIncidentType("dora_incident")
+DORAFailureType.DORA_FAILURE = DORAFailureType("dora_failure")

@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.dora_incident_response_data import DORAIncidentResponseData
+    from datadog_api_client.v2.model.dora_failure_response_data import DORAFailureResponseData
 
 
-class DORAIncidentResponse(ModelNormal):
+class DORAFailureResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.dora_incident_response_data import DORAIncidentResponseData
+        from datadog_api_client.v2.model.dora_failure_response_data import DORAFailureResponseData
 
         return {
-            "data": (DORAIncidentResponseData,),
+            "data": (DORAFailureResponseData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: DORAIncidentResponseData, **kwargs):
+    def __init__(self_, data: DORAFailureResponseData, **kwargs):
         """
-        Response after receiving a DORA incident event.
+        Response after receiving a DORA failure event.
 
-        :param data: Response after receiving a DORA incident event.
-        :type data: DORAIncidentResponseData
+        :param data: Response after receiving a DORA failure event.
+        :type data: DORAFailureResponseData
         """
         super().__init__(kwargs)
 

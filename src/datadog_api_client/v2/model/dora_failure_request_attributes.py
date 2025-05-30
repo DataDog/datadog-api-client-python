@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 
 
-class DORAIncidentRequestAttributes(ModelNormal):
+class DORAFailureRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
@@ -63,30 +63,30 @@ class DORAIncidentRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes to create a DORA incident event.
+        Attributes to create a DORA failure event.
 
-        :param env: Environment name that was impacted by the incident.
+        :param env: Environment name that was impacted by the failure.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp when the incident finished. It must be in nanoseconds, milliseconds, or seconds, and it should not be older than 1 hour.
+        :param finished_at: Unix timestamp when the failure finished. It must be in nanoseconds, milliseconds, or seconds, and it should not be older than 1 hour.
         :type finished_at: int, optional
 
         :param git: Git info for DORA Metrics events.
         :type git: DORAGitInfo, optional
 
-        :param id: Incident ID. Must have at least 16 characters. Required to update a previously sent incident.
+        :param id: Failure ID. Must have at least 16 characters. Required to update a previously sent failure.
         :type id: str, optional
 
-        :param name: Incident name.
+        :param name: Failure name.
         :type name: str, optional
 
-        :param services: Service names impacted by the incident. If possible, use names registered in the Service Catalog. Required when the team field is not provided.
+        :param services: Service names impacted by the failure. If possible, use names registered in the Service Catalog. Required when the team field is not provided.
         :type services: [str], optional
 
-        :param severity: Incident severity.
+        :param severity: Failure severity.
         :type severity: str, optional
 
-        :param started_at: Unix timestamp when the incident started. It must be in nanoseconds, milliseconds, or seconds.
+        :param started_at: Unix timestamp when the failure started. It must be in nanoseconds, milliseconds, or seconds.
         :type started_at: int
 
         :param team: Name of the team owning the services impacted. If possible, use team handles registered in Datadog. Required when the services field is not provided.

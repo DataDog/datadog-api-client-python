@@ -14,17 +14,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.dora_incident_type import DORAIncidentType
+    from datadog_api_client.v2.model.dora_failure_type import DORAFailureType
 
 
-class DORAIncidentResponseData(ModelNormal):
+class DORAFailureResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.dora_incident_type import DORAIncidentType
+        from datadog_api_client.v2.model.dora_failure_type import DORAFailureType
 
         return {
             "id": (str,),
-            "type": (DORAIncidentType,),
+            "type": (DORAFailureType,),
         }
 
     attribute_map = {
@@ -32,15 +32,15 @@ class DORAIncidentResponseData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: Union[DORAIncidentType, UnsetType] = unset, **kwargs):
+    def __init__(self_, id: str, type: Union[DORAFailureType, UnsetType] = unset, **kwargs):
         """
-        Response after receiving a DORA incident event.
+        Response after receiving a DORA failure event.
 
-        :param id: The ID of the received DORA incident event.
+        :param id: The ID of the received DORA failure event.
         :type id: str
 
-        :param type: JSON:API type for DORA incident events.
-        :type type: DORAIncidentType, optional
+        :param type: JSON:API type for DORA failure events.
+        :type type: DORAFailureType, optional
         """
         if type is not unset:
             kwargs["type"] = type

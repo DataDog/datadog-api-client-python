@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.dora_incident_request_attributes import DORAIncidentRequestAttributes
+    from datadog_api_client.v2.model.dora_failure_request_attributes import DORAFailureRequestAttributes
 
 
-class DORAIncidentRequestData(ModelNormal):
+class DORAFailureRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.dora_incident_request_attributes import DORAIncidentRequestAttributes
+        from datadog_api_client.v2.model.dora_failure_request_attributes import DORAFailureRequestAttributes
 
         return {
-            "attributes": (DORAIncidentRequestAttributes,),
+            "attributes": (DORAFailureRequestAttributes,),
         }
 
     attribute_map = {
         "attributes": "attributes",
     }
 
-    def __init__(self_, attributes: DORAIncidentRequestAttributes, **kwargs):
+    def __init__(self_, attributes: DORAFailureRequestAttributes, **kwargs):
         """
         The JSON:API data.
 
-        :param attributes: Attributes to create a DORA incident event.
-        :type attributes: DORAIncidentRequestAttributes
+        :param attributes: Attributes to create a DORA failure event.
+        :type attributes: DORAFailureRequestAttributes
         """
         super().__init__(kwargs)
 
