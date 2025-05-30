@@ -323,6 +323,7 @@ from datadog_api_client.v1.model.metrics_query_response import MetricsQueryRespo
 from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
     MonitorFormulaAndFunctionCostAggregator,
 )
@@ -1376,6 +1377,7 @@ __all__ = [
     "MetricsQueryUnit",
     "Monitor",
     "MonitorDeviceID",
+    "MonitorDraftStatus",
     "MonitorFormulaAndFunctionCostAggregator",
     "MonitorFormulaAndFunctionCostDataSource",
     "MonitorFormulaAndFunctionCostQueryDefinition",

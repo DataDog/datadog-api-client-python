@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.creator import Creator
+    from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
     from datadog_api_client.v1.model.monitor_options import MonitorOptions
     from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
     from datadog_api_client.v1.model.monitor_state import MonitorState
@@ -27,6 +28,7 @@ class MonitorUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.creator import Creator
+        from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
         from datadog_api_client.v1.model.monitor_options import MonitorOptions
         from datadog_api_client.v1.model.monitor_overall_states import MonitorOverallStates
         from datadog_api_client.v1.model.monitor_state import MonitorState
@@ -36,6 +38,7 @@ class MonitorUpdateRequest(ModelNormal):
             "created": (datetime,),
             "creator": (Creator,),
             "deleted": (datetime, none_type),
+            "draft_status": (MonitorDraftStatus,),
             "id": (int,),
             "message": (str,),
             "modified": (datetime,),
@@ -55,6 +58,7 @@ class MonitorUpdateRequest(ModelNormal):
         "created": "created",
         "creator": "creator",
         "deleted": "deleted",
+        "draft_status": "draft_status",
         "id": "id",
         "message": "message",
         "modified": "modified",
@@ -85,6 +89,7 @@ class MonitorUpdateRequest(ModelNormal):
         created: Union[datetime, UnsetType] = unset,
         creator: Union[Creator, UnsetType] = unset,
         deleted: Union[datetime, none_type, UnsetType] = unset,
+        draft_status: Union[MonitorDraftStatus, UnsetType] = unset,
         id: Union[int, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
@@ -111,6 +116,11 @@ class MonitorUpdateRequest(ModelNormal):
 
         :param deleted: Whether or not the monitor is deleted. (Always ``null`` )
         :type deleted: datetime, none_type, optional
+
+        :param draft_status: Whether a monitor is in draft or published state. Draft monitors do not notify recipients. Draft monitors are currently in
+            preview and the field is only processed for enabled customers. This accepts the values ``draft``
+            and ``published``. Defaults to published.
+        :type draft_status: MonitorDraftStatus, optional
 
         :param id: ID of this monitor.
         :type id: int, optional
@@ -157,6 +167,8 @@ class MonitorUpdateRequest(ModelNormal):
             kwargs["creator"] = creator
         if deleted is not unset:
             kwargs["deleted"] = deleted
+        if draft_status is not unset:
+            kwargs["draft_status"] = draft_status
         if id is not unset:
             kwargs["id"] = id
         if message is not unset:
