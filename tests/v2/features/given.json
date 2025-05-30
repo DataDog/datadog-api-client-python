@@ -112,6 +112,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"kind\": \"my-job\",\n  \"displayName\": \"My Job\",\n  \"description\": \"A job entity in the catalog.\"\n}"
+      }
+    ],
+    "step": "there is a valid kind",
+    "key": "kind",
+    "tag": "Software Catalog",
+    "operationId": "UpsertCatalogKind"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\":\"custom_framework\",\n    \"attributes\":{\n      \"name\":\"name\",\n      \"handle\":\"create-framework-new\",\n      \"version\":\"10\",\n      \"icon_url\":\"test-url\",\n      \"requirements\":[{\n        \"name\":\"requirement\",\n        \"controls\":[{\n          \"name\":\"control\",\n          \"rules_id\":\n            [\"def-000-be9\"]\n        }]\n      }]\n    }\n  }\n}"
       }
     ],

@@ -21,6 +21,11 @@ from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
 from datadog_api_client.v2.model.entity_v3 import EntityV3
+from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
+from datadog_api_client.v2.model.kind_data import KindData
+from datadog_api_client.v2.model.upsert_catalog_kind_response import UpsertCatalogKindResponse
+from datadog_api_client.v2.model.upsert_catalog_kind_request import UpsertCatalogKindRequest
+from datadog_api_client.v2.model.kind_obj import KindObj
 from datadog_api_client.v2.model.list_relation_catalog_response import ListRelationCatalogResponse
 from datadog_api_client.v2.model.relation_include_type import RelationIncludeType
 from datadog_api_client.v2.model.relation_response import RelationResponse
@@ -50,6 +55,29 @@ class SoftwareCatalogApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "entity_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_catalog_kind_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/kind/{kind_id}",
+                "operation_id": "delete_catalog_kind",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "kind_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "kind_id",
                     "location": "path",
                 },
             },
@@ -126,6 +154,43 @@ class SoftwareCatalogApi:
             api_client=api_client,
         )
 
+        self._list_catalog_kind_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListKindCatalogResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/kind",
+                "operation_id": "list_catalog_kind",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "filter_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[id]",
+                    "location": "query",
+                },
+                "filter_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[name]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_catalog_relation_endpoint = _Endpoint(
             settings={
                 "response_type": (ListRelationCatalogResponse,),
@@ -193,6 +258,26 @@ class SoftwareCatalogApi:
             api_client=api_client,
         )
 
+        self._upsert_catalog_kind_endpoint = _Endpoint(
+            settings={
+                "response_type": (UpsertCatalogKindResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/kind",
+                "operation_id": "upsert_catalog_kind",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpsertCatalogKindRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def delete_catalog_entity(
         self,
         entity_id: str,
@@ -209,6 +294,23 @@ class SoftwareCatalogApi:
         kwargs["entity_id"] = entity_id
 
         return self._delete_catalog_entity_endpoint.call_with_http_info(**kwargs)
+
+    def delete_catalog_kind(
+        self,
+        kind_id: str,
+    ) -> None:
+        """Delete a single kind.
+
+        Delete a single kind in Software Catalog.
+
+        :param kind_id: Entity kind.
+        :type kind_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["kind_id"] = kind_id
+
+        return self._delete_catalog_kind_endpoint.call_with_http_info(**kwargs)
 
     def list_catalog_entity(
         self,
@@ -368,6 +470,92 @@ class SoftwareCatalogApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def list_catalog_kind(
+        self,
+        *,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        filter_id: Union[str, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
+    ) -> ListKindCatalogResponse:
+        """Get a list of entity kinds.
+
+        Get a list of entity kinds from Software Catalog.
+
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of kinds in the response.
+        :type page_limit: int, optional
+        :param filter_id: Filter entities by UUID.
+        :type filter_id: str, optional
+        :param filter_name: Filter entities by name.
+        :type filter_name: str, optional
+        :rtype: ListKindCatalogResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if filter_id is not unset:
+            kwargs["filter_id"] = filter_id
+
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
+
+        return self._list_catalog_kind_endpoint.call_with_http_info(**kwargs)
+
+    def list_catalog_kind_with_pagination(
+        self,
+        *,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        filter_id: Union[str, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[KindData]:
+        """Get a list of entity kinds.
+
+        Provide a paginated version of :meth:`list_catalog_kind`, returning all items.
+
+        :param page_offset: Specific offset to use as the beginning of the returned page.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of kinds in the response.
+        :type page_limit: int, optional
+        :param filter_id: Filter entities by UUID.
+        :type filter_id: str, optional
+        :param filter_name: Filter entities by name.
+        :type filter_name: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[KindData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if filter_id is not unset:
+            kwargs["filter_id"] = filter_id
+
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
+        endpoint = self._list_catalog_kind_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
     def list_catalog_relation(
         self,
         *,
@@ -494,3 +682,20 @@ class SoftwareCatalogApi:
         kwargs["body"] = body
 
         return self._upsert_catalog_entity_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_catalog_kind(
+        self,
+        body: Union[UpsertCatalogKindRequest, KindObj, str],
+    ) -> UpsertCatalogKindResponse:
+        """Create or update kinds.
+
+        Create or update kinds in Software Catalog.
+
+        :param body: Kind YAML or JSON.
+        :type body: UpsertCatalogKindRequest
+        :rtype: UpsertCatalogKindResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._upsert_catalog_kind_endpoint.call_with_http_info(**kwargs)
