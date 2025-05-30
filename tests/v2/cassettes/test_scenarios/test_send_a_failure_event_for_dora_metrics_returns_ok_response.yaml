@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/dora/incident
   response:
     body:
-      string: '{"data":{"id":"2775a2d3-6c28-4934-ae60-0ef9ce3720ee","type":"dora_incident"}}'
+      string: '{"data":{"id":"2775a2d3-6c28-4934-ae60-0ef9ce3720ee","type":"dora_failure"}}'
     headers:
       content-type:
       - application/vnd.api+json

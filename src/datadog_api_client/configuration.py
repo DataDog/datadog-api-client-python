@@ -257,8 +257,6 @@ class Configuration:
                 "v2.cancel_data_deletion_request": False,
                 "v2.create_data_deletion_request": False,
                 "v2.get_data_deletion_requests": False,
-                "v2.create_dora_deployment": False,
-                "v2.create_dora_incident": False,
                 "v2.create_incident": False,
                 "v2.create_incident_integration": False,
                 "v2.create_incident_todo": False,
