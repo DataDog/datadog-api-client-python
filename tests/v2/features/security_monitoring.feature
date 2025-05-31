@@ -135,7 +135,7 @@ Feature: Security Monitoring
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
     When the request is sent
     Then the response status is 200 OK
-    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
+    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Convert an existing rule from JSON to Terraform returns "Bad Request" response
@@ -158,7 +158,7 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
     Then the response status is 200 OK
-    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
+    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
 
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a cloud_configuration rule returns "OK" response
@@ -172,6 +172,28 @@ Feature: Security Monitoring
     And the response "options.complianceRuleOptions.resourceType" is equal to "gcp_compute_disk"
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "Bad Request" response
+    Given new "CreateCustomFramework" request
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "Conflict" response
+    Given there is a valid "custom_framework" in the system
+    And new "CreateCustomFramework" request
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a custom framework returns "OK" response
+    Given new "CreateCustomFramework" request
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":""}],"cases":[{"status":"info"}],"options":{},"message":"Test rule","tags":[],"isEnabled":true}
@@ -334,6 +356,23 @@ Feature: Security Monitoring
     And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
     And the response "data.attributes.data_exclusion_query" is equal to "account_id:12345"
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a custom framework returns "Bad Request" response
+    Given new "DeleteCustomFramework" request
+    And request contains "handle" parameter with value "handle-does-not-exist"
+    And request contains "version" parameter with value "version-does-not-exist"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a custom framework returns "OK" response
+    Given there is a valid "custom_framework" in the system
+    And new "DeleteCustomFramework" request
+    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "version" parameter with value "10"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
@@ -491,6 +530,23 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud"
     And the response "id" has the same value as "cloud_configuration_rule.id"
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a custom framework returns "Bad Request" response
+    Given new "GetCustomFramework" request
+    And request contains "handle" parameter with value "frame-does-not-exist"
+    And request contains "version" parameter with value "frame-does-not-exist"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a custom framework returns "OK" response
+    Given there is a valid "custom_framework" in the system
+    And new "GetCustomFramework" request
+    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "version" parameter with value "10"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Get a finding returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
@@ -816,6 +872,21 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: List resource filters returns "Bad Request" response
+    Given new "GetResourceEvaluationFilters" request
+    And request contains "account_id" parameter with value "123456789"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: List resource filters returns "OK" response
+    Given new "GetResourceEvaluationFilters" request
+    And request contains "cloud_provider" parameter with value "aws"
+    And request contains "account_id" parameter with value "123456789"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List rules returns "Bad Request" response
     Given new "ListSecurityMonitoringRules" request
@@ -1085,6 +1156,25 @@ Feature: Security Monitoring
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a custom framework returns "Bad Request" response
+    Given new "UpdateCustomFramework" request
+    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "version" parameter with value "10"
+    And body with value {"data": {"attributes": {"handle": "", "name": "", "requirements": [{"controls": [{"name": "", "rules_id": [""]}], "name": ""}], "version": ""}, "type": "custom_framework"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a custom framework returns "OK" response
+    Given there is a valid "custom_framework" in the system
+    And new "UpdateCustomFramework" request
+    And request contains "handle" parameter with value "create-framework-new"
+    And request contains "version" parameter with value "10"
+    And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response
     Given new "UpdateSecurityFilter" request
@@ -1184,6 +1274,20 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}-Updated"
     And the response "id" has the same value as "security_rule.id"
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update resource filters returns "Bad Request" response
+    Given new "UpdateResourceEvaluationFilters" request
+    And body with value {"data": {"attributes": {"cloud_provider": {"invalid": {"aws_account_id": ["tag1:v1"]}}}, "id": "csm_resource_filter", "type": "csm_resource_filter"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update resource filters returns "OK" response
+    Given new "UpdateResourceEvaluationFilters" request
+    And body with value {"data": {"attributes": {"cloud_provider": {"aws": {"aws_account_id": ["tag1:v1"]}}}, "id": "csm_resource_filter", "type": "csm_resource_filter"}}
+    When the request is sent
+    Then the response status is 201 OK
 
   @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Validate a detection rule returns "Bad Request" response

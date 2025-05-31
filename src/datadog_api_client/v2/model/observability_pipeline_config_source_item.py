@@ -27,7 +27,7 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
         :type sasl: ObservabilityPipelineKafkaSourceSasl, optional
 
-        :param tls: Configuration for enabling TLS encryption.
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
 
         :param topics: A list of Kafka topic names to subscribe to. The source ingests messages from each topic specified.
@@ -35,6 +35,35 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param type: The source type. The value should always be `kafka`.
         :type type: ObservabilityPipelineKafkaSourceType
+
+        :param auth: AWS authentication credentials used for accessing AWS services such as S3.
+            If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
+
+        :type auth: ObservabilityPipelineAwsAuth, optional
+
+        :param region: AWS region where the S3 bucket resides.
+        :type region: str
+
+        :param auth_strategy: HTTP authentication method.
+        :type auth_strategy: ObservabilityPipelineHttpServerSourceAuthStrategy
+
+        :param decoding: The decoding format used to interpret incoming logs.
+        :type decoding: ObservabilityPipelineDecoding
+
+        :param mode: Protocol used by the syslog source to receive messages.
+        :type mode: ObservabilityPipelineSyslogSourceMode
+
+        :param project: The GCP project ID that owns the Pub/Sub subscription.
+        :type project: str
+
+        :param subscription: The Pub/Sub subscription name from which messages are consumed.
+        :type subscription: str
+
+        :param scrape_interval_secs: The interval (in seconds) between HTTP scrape requests.
+        :type scrape_interval_secs: int, optional
+
+        :param scrape_timeout_secs: The timeout (in seconds) for each scrape request.
+        :type scrape_timeout_secs: int, optional
         """
         super().__init__(kwargs)
 
@@ -51,10 +80,58 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
             ObservabilityPipelineDatadogAgentSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source import (
+            ObservabilityPipelineSplunkTcpSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import (
+            ObservabilityPipelineSplunkHecSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import (
+            ObservabilityPipelineAmazonS3Source,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_fluentd_source import ObservabilityPipelineFluentdSource
+        from datadog_api_client.v2.model.observability_pipeline_fluent_bit_source import (
+            ObservabilityPipelineFluentBitSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_http_server_source import (
+            ObservabilityPipelineHttpServerSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_sumo_logic_source import (
+            ObservabilityPipelineSumoLogicSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_rsyslog_source import ObservabilityPipelineRsyslogSource
+        from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source import (
+            ObservabilityPipelineSyslogNgSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
+            ObservabilityPipelineAmazonDataFirehoseSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source import (
+            ObservabilityPipelineGooglePubSubSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_http_client_source import (
+            ObservabilityPipelineHttpClientSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_logstash_source import (
+            ObservabilityPipelineLogstashSource,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineKafkaSource,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineSplunkTcpSource,
+                ObservabilityPipelineSplunkHecSource,
+                ObservabilityPipelineAmazonS3Source,
+                ObservabilityPipelineFluentdSource,
+                ObservabilityPipelineFluentBitSource,
+                ObservabilityPipelineHttpServerSource,
+                ObservabilityPipelineSumoLogicSource,
+                ObservabilityPipelineRsyslogSource,
+                ObservabilityPipelineSyslogNgSource,
+                ObservabilityPipelineAmazonDataFirehoseSource,
+                ObservabilityPipelineGooglePubSubSource,
+                ObservabilityPipelineHttpClientSource,
+                ObservabilityPipelineLogstashSource,
             ],
         }

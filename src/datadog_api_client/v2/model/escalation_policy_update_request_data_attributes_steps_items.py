@@ -14,29 +14,25 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment import (
-        EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment,
+    from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (
+        EscalationPolicyStepAttributesAssignment,
     )
-    from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items import (
-        EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems,
-    )
+    from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
 
 
 class EscalationPolicyUpdateRequestDataAttributesStepsItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_assignment import (
-            EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment,
+        from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (
+            EscalationPolicyStepAttributesAssignment,
         )
-        from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items_targets_items import (
-            EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems,
-        )
+        from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
 
         return {
-            "assignment": (EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment,),
+            "assignment": (EscalationPolicyStepAttributesAssignment,),
             "escalate_after_seconds": (int,),
             "id": (str,),
-            "targets": ([EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems],),
+            "targets": ([EscalationPolicyStepTarget],),
         }
 
     attribute_map = {
@@ -48,8 +44,8 @@ class EscalationPolicyUpdateRequestDataAttributesStepsItems(ModelNormal):
 
     def __init__(
         self_,
-        targets: List[EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems],
-        assignment: Union[EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment, UnsetType] = unset,
+        targets: List[EscalationPolicyStepTarget],
+        assignment: Union[EscalationPolicyStepAttributesAssignment, UnsetType] = unset,
         escalate_after_seconds: Union[int, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -58,7 +54,7 @@ class EscalationPolicyUpdateRequestDataAttributesStepsItems(ModelNormal):
         Defines a single escalation step within an escalation policy update request. Contains assignment strategy, escalation timeout, an optional step ID, and a list of targets.
 
         :param assignment: Specifies how this escalation step will assign targets (example ``default`` or ``round-robin`` ).
-        :type assignment: EscalationPolicyUpdateRequestDataAttributesStepsItemsAssignment, optional
+        :type assignment: EscalationPolicyStepAttributesAssignment, optional
 
         :param escalate_after_seconds: Defines how many seconds to wait before escalating to the next step.
         :type escalate_after_seconds: int, optional
@@ -67,7 +63,7 @@ class EscalationPolicyUpdateRequestDataAttributesStepsItems(ModelNormal):
         :type id: str, optional
 
         :param targets: Specifies the collection of escalation targets for this step.
-        :type targets: [EscalationPolicyUpdateRequestDataAttributesStepsItemsTargetsItems]
+        :type targets: [EscalationPolicyStepTarget]
         """
         if assignment is not unset:
             kwargs["assignment"] = assignment

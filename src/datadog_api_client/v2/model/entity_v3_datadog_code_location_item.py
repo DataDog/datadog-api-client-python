@@ -14,10 +14,6 @@ from datadog_api_client.model_utils import (
 
 
 class EntityV3DatadogCodeLocationItem(ModelNormal):
-    validations = {
-        "repository_url": {},
-    }
-
     @cached_property
     def additional_properties_type(_):
         return None

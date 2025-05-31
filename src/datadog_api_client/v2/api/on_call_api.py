@@ -17,6 +17,9 @@ from datadog_api_client.v2.model.escalation_policy_update_request import Escalat
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
+from datadog_api_client.v2.model.shift import Shift
+from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
+from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
 
 
 class OnCallApi:
@@ -182,6 +185,98 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._get_on_call_team_routing_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamRoutingRules,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/teams/{team_id}/routing-rules",
+                "operation_id": "get_on_call_team_routing_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_schedule_on_call_user_endpoint = _Endpoint(
+            settings={
+                "response_type": (Shift,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/on-call",
+                "operation_id": "get_schedule_on_call_user",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "filter_at_ts": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[at_ts]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._set_on_call_team_routing_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamRoutingRules,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/teams/{team_id}/routing-rules",
+                "operation_id": "set_on_call_team_routing_rules",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TeamRoutingRulesRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_on_call_escalation_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (EscalationPolicy,),
@@ -250,9 +345,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Create on call escalation policy.
+        """Create On-Call escalation policy.
 
-        Create a new on-call escalation policy
+        Create a new On-Call escalation policy
 
         :type body: EscalationPolicyCreateRequest
         :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``steps`` , ``steps.targets``.
@@ -273,9 +368,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> Schedule:
-        """Create on-call schedule.
+        """Create On-Call schedule.
 
-        Create a new on-call schedule
+        Create a new On-Call schedule
 
         :type body: ScheduleCreateRequest
         :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``layers`` , ``layers.members`` , ``layers.members.user``.
@@ -294,9 +389,9 @@ class OnCallApi:
         self,
         policy_id: str,
     ) -> None:
-        """Delete on call escalation policy.
+        """Delete On-Call escalation policy.
 
-        Delete an on-call escalation policy
+        Delete an On-Call escalation policy
 
         :param policy_id: The ID of the escalation policy
         :type policy_id: str
@@ -311,9 +406,9 @@ class OnCallApi:
         self,
         schedule_id: str,
     ) -> None:
-        """Delete on-call schedule.
+        """Delete On-Call schedule.
 
-        Delete an on-call schedule
+        Delete an On-Call schedule
 
         :param schedule_id: The ID of the schedule
         :type schedule_id: str
@@ -330,9 +425,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Get on call escalation policy.
+        """Get On-Call escalation policy.
 
-        Get an on-call escalation policy
+        Get an On-Call escalation policy
 
         :param policy_id: The ID of the escalation policy
         :type policy_id: str
@@ -354,9 +449,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> Schedule:
-        """Get on-call schedule.
+        """Get On-Call schedule.
 
-        Get an on-call schedule
+        Get an On-Call schedule
 
         :param schedule_id: The ID of the schedule
         :type schedule_id: str
@@ -372,6 +467,88 @@ class OnCallApi:
 
         return self._get_on_call_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def get_on_call_team_routing_rules(
+        self,
+        team_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> TeamRoutingRules:
+        """Get On-Call team routing rules.
+
+        Get a team's On-Call routing rules
+
+        :param team_id: The team ID
+        :type team_id: str
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``rules`` , ``rules.policy``.
+        :type include: str, optional
+        :rtype: TeamRoutingRules
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_on_call_team_routing_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_schedule_on_call_user(
+        self,
+        schedule_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+        filter_at_ts: Union[str, UnsetType] = unset,
+    ) -> Shift:
+        """Get the schedule on-call user.
+
+        Retrieves the user who is on-call for the specified schedule at a given time.
+
+        :param schedule_id: The ID of the schedule.
+        :type schedule_id: str
+        :param include: Specifies related resources to include in the response as a comma-separated list. Allowed value: ``user``.
+        :type include: str, optional
+        :param filter_at_ts: Retrieves the on-call user at the given timestamp (ISO-8601). Defaults to the current time if omitted."
+        :type filter_at_ts: str, optional
+        :rtype: Shift
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["schedule_id"] = schedule_id
+
+        if filter_at_ts is not unset:
+            kwargs["filter_at_ts"] = filter_at_ts
+
+        return self._get_schedule_on_call_user_endpoint.call_with_http_info(**kwargs)
+
+    def set_on_call_team_routing_rules(
+        self,
+        team_id: str,
+        body: TeamRoutingRulesRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> TeamRoutingRules:
+        """Set On-Call team routing rules.
+
+        Set a team's On-Call routing rules
+
+        :param team_id: The team ID
+        :type team_id: str
+        :type body: TeamRoutingRulesRequest
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``rules`` , ``rules.policy``.
+        :type include: str, optional
+        :rtype: TeamRoutingRules
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._set_on_call_team_routing_rules_endpoint.call_with_http_info(**kwargs)
+
     def update_on_call_escalation_policy(
         self,
         policy_id: str,
@@ -379,9 +556,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> EscalationPolicy:
-        """Update on call escalation policy.
+        """Update On-Call escalation policy.
 
-        Update an on-call escalation policy
+        Update an On-Call escalation policy
 
         :param policy_id: The ID of the escalation policy
         :type policy_id: str
@@ -407,9 +584,9 @@ class OnCallApi:
         *,
         include: Union[str, UnsetType] = unset,
     ) -> Schedule:
-        """Update on-call schedule.
+        """Update On-Call schedule.
 
-        Update a new on-call schedule
+        Update a new On-Call schedule
 
         :param schedule_id: The ID of the schedule
         :type schedule_id: str

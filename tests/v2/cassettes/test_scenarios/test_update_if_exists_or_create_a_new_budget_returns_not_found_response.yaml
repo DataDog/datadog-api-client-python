@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"end_month":202502,"entries":[{"amount":500,"month":202501,"tag_filters":[{"tag_key":"service","tag_value":"ec2"}]},{"amount":500,"month":202502,"tag_filters":[{"tag_key":"service","tag_value":"ec2"}]}],"metrics_query":"aws.cost.amortized{service:ec2}
+      by {service}","name":"my budget","start_month":202501,"tags":["service"]},"id":"00000000-0a0a-0a0a-aaa0-00000000000a","type":"budget"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/cost/budget
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"failed to upsert budget:
+        budget not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

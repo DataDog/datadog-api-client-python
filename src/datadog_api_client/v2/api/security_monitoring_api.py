@@ -15,6 +15,19 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.create_custom_framework_response import CreateCustomFrameworkResponse
+from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
+from datadog_api_client.v2.model.delete_custom_framework_response import DeleteCustomFrameworkResponse
+from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
+from datadog_api_client.v2.model.update_custom_framework_response import UpdateCustomFrameworkResponse
+from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
+from datadog_api_client.v2.model.get_resource_evaluation_filters_response import GetResourceEvaluationFiltersResponse
+from datadog_api_client.v2.model.update_resource_evaluation_filters_response import (
+    UpdateResourceEvaluationFiltersResponse,
+)
+from datadog_api_client.v2.model.update_resource_evaluation_filters_request import (
+    UpdateResourceEvaluationFiltersRequest,
+)
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
@@ -187,6 +200,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_custom_framework_endpoint = _Endpoint(
+            settings={
+                "response_type": (CreateCustomFrameworkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/custom_frameworks",
+                "operation_id": "create_custom_framework",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateCustomFrameworkRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
@@ -284,6 +317,35 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_custom_framework_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeleteCustomFrameworkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/custom_frameworks/{handle}/{version}",
+                "operation_id": "delete_custom_framework",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "handle": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "version",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -503,6 +565,35 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_custom_framework_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetCustomFrameworkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/custom_frameworks/{handle}/{version}",
+                "operation_id": "get_custom_framework",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "handle": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "version",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_finding_endpoint = _Endpoint(
             settings={
                 "response_type": (GetFindingResponse,),
@@ -557,10 +648,42 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_resource_evaluation_filters_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetResourceEvaluationFiltersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/resource_filters",
+                "operation_id": "get_resource_evaluation_filters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "cloud_provider": {
+                    "openapi_types": (str,),
+                    "attribute": "cloud_provider",
+                    "location": "query",
+                },
+                "account_id": {
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "query",
+                },
+                "skip_cache": {
+                    "openapi_types": (bool,),
+                    "attribute": "skip_cache",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_rule_version_history_endpoint = _Endpoint(
             settings={
                 "response_type": (GetRuleVersionHistoryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}/version_history",
                 "operation_id": "get_rule_version_history",
                 "http_method": "GET",
@@ -1519,6 +1642,58 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._update_custom_framework_endpoint = _Endpoint(
+            settings={
+                "response_type": (UpdateCustomFrameworkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/custom_frameworks/{handle}/{version}",
+                "operation_id": "update_custom_framework",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "handle": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "handle",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "version",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateCustomFrameworkRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_resource_evaluation_filters_endpoint = _Endpoint(
+            settings={
+                "response_type": (UpdateResourceEvaluationFiltersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/resource_filters",
+                "operation_id": "update_resource_evaluation_filters",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateResourceEvaluationFiltersRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
@@ -1689,6 +1864,22 @@ class SecurityMonitoringApi:
 
         return self._convert_security_monitoring_rule_from_json_to_terraform_endpoint.call_with_http_info(**kwargs)
 
+    def create_custom_framework(
+        self,
+        body: CreateCustomFrameworkRequest,
+    ) -> CreateCustomFrameworkResponse:
+        """Create a custom framework.
+
+        Create a custom framework.
+
+        :type body: CreateCustomFrameworkRequest
+        :rtype: CreateCustomFrameworkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_custom_framework_endpoint.call_with_http_info(**kwargs)
+
     def create_security_filter(
         self,
         body: SecurityFilterCreateRequest,
@@ -1782,6 +1973,28 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_custom_framework(
+        self,
+        handle: str,
+        version: str,
+    ) -> DeleteCustomFrameworkResponse:
+        """Delete a custom framework.
+
+        Delete a custom framework.
+
+        :param handle: The framework handle
+        :type handle: str
+        :param version: The framework version
+        :type version: str
+        :rtype: DeleteCustomFrameworkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["handle"] = handle
+
+        kwargs["version"] = version
+
+        return self._delete_custom_framework_endpoint.call_with_http_info(**kwargs)
 
     def delete_historical_job(
         self,
@@ -1951,6 +2164,28 @@ class SecurityMonitoringApi:
 
         return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
 
+    def get_custom_framework(
+        self,
+        handle: str,
+        version: str,
+    ) -> GetCustomFrameworkResponse:
+        """Get a custom framework.
+
+        Get a custom framework.
+
+        :param handle: The framework handle
+        :type handle: str
+        :param version: The framework version
+        :type version: str
+        :rtype: GetCustomFrameworkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["handle"] = handle
+
+        kwargs["version"] = version
+
+        return self._get_custom_framework_endpoint.call_with_http_info(**kwargs)
+
     def get_finding(
         self,
         finding_id: str,
@@ -1991,6 +2226,37 @@ class SecurityMonitoringApi:
         kwargs["job_id"] = job_id
 
         return self._get_historical_job_endpoint.call_with_http_info(**kwargs)
+
+    def get_resource_evaluation_filters(
+        self,
+        *,
+        cloud_provider: Union[str, UnsetType] = unset,
+        account_id: Union[str, UnsetType] = unset,
+        skip_cache: Union[bool, UnsetType] = unset,
+    ) -> GetResourceEvaluationFiltersResponse:
+        """List resource filters.
+
+        List resource filters.
+
+        :param cloud_provider: Filter resource filters by cloud provider (e.g. aws, gcp, azure).
+        :type cloud_provider: str, optional
+        :param account_id: Filter resource filters by cloud provider account ID. This parameter is only valid when provider is specified.
+        :type account_id: str, optional
+        :param skip_cache: Skip cache for resource filters.
+        :type skip_cache: bool, optional
+        :rtype: GetResourceEvaluationFiltersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if cloud_provider is not unset:
+            kwargs["cloud_provider"] = cloud_provider
+
+        if account_id is not unset:
+            kwargs["account_id"] = account_id
+
+        if skip_cache is not unset:
+            kwargs["skip_cache"] = skip_cache
+
+        return self._get_resource_evaluation_filters_endpoint.call_with_http_info(**kwargs)
 
     def get_rule_version_history(
         self,
@@ -3229,6 +3495,48 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._test_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_custom_framework(
+        self,
+        handle: str,
+        version: str,
+        body: UpdateCustomFrameworkRequest,
+    ) -> UpdateCustomFrameworkResponse:
+        """Update a custom framework.
+
+        Update a custom framework.
+
+        :param handle: The framework handle
+        :type handle: str
+        :param version: The framework version
+        :type version: str
+        :type body: UpdateCustomFrameworkRequest
+        :rtype: UpdateCustomFrameworkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["handle"] = handle
+
+        kwargs["version"] = version
+
+        kwargs["body"] = body
+
+        return self._update_custom_framework_endpoint.call_with_http_info(**kwargs)
+
+    def update_resource_evaluation_filters(
+        self,
+        body: UpdateResourceEvaluationFiltersRequest,
+    ) -> UpdateResourceEvaluationFiltersResponse:
+        """Update resource filters.
+
+        Update resource filters.
+
+        :type body: UpdateResourceEvaluationFiltersRequest
+        :rtype: UpdateResourceEvaluationFiltersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_resource_evaluation_filters_endpoint.call_with_http_info(**kwargs)
 
     def update_security_filter(
         self,

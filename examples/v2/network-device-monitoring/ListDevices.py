@@ -9,8 +9,8 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = NetworkDeviceMonitoringApi(api_client)
     response = api_instance.list_devices(
-        page_number=0,
         page_size=1,
+        page_number=0,
         filter_tag="device_namespace:default",
     )
 

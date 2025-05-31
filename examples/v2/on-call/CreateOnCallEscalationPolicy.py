@@ -1,10 +1,13 @@
 """
-Create on call escalation policy returns "Created" response
+Create On-Call escalation policy returns "Created" response
 """
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
+from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
+from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
+from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_create_request_data import EscalationPolicyCreateRequestData
 from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes import (
@@ -13,28 +16,15 @@ from datadog_api_client.v2.model.escalation_policy_create_request_data_attribute
 from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items import (
     EscalationPolicyCreateRequestDataAttributesStepsItems,
 )
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_assignment import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes_steps_items_targets_items_type import (
-    EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType,
-)
 from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships import (
     EscalationPolicyCreateRequestDataRelationships,
 )
-from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams import (
-    EscalationPolicyCreateRequestDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items import (
-    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.escalation_policy_create_request_data_relationships_teams_data_items_type import (
-    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType,
-)
 from datadog_api_client.v2.model.escalation_policy_create_request_data_type import EscalationPolicyCreateRequestDataType
+from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (
+    EscalationPolicyStepAttributesAssignment,
+)
+from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
+from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
@@ -48,47 +38,46 @@ DD_TEAM_DATA_ID = environ["DD_TEAM_DATA_ID"]
 body = EscalationPolicyCreateRequest(
     data=EscalationPolicyCreateRequestData(
         attributes=EscalationPolicyCreateRequestDataAttributes(
-            description="Escalation Policy 1 description",
             name="Example-On-Call",
             resolve_page_on_policy_end=True,
             retries=2,
             steps=[
                 EscalationPolicyCreateRequestDataAttributesStepsItems(
-                    assignment=EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment.DEFAULT,
+                    assignment=EscalationPolicyStepAttributesAssignment.DEFAULT,
                     escalate_after_seconds=3600,
                     targets=[
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=USER_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.USERS,
+                            type=EscalationPolicyStepTargetType.USERS,
                         ),
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=SCHEDULE_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.SCHEDULES,
+                            type=EscalationPolicyStepTargetType.SCHEDULES,
                         ),
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=DD_TEAM_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.TEAMS,
+                            type=EscalationPolicyStepTargetType.TEAMS,
                         ),
                     ],
                 ),
                 EscalationPolicyCreateRequestDataAttributesStepsItems(
-                    assignment=EscalationPolicyCreateRequestDataAttributesStepsItemsAssignment.ROUND_ROBIN,
+                    assignment=EscalationPolicyStepAttributesAssignment.ROUND_ROBIN,
                     escalate_after_seconds=3600,
                     targets=[
-                        EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItems(
+                        EscalationPolicyStepTarget(
                             id=DD_TEAM_DATA_ID,
-                            type=EscalationPolicyCreateRequestDataAttributesStepsItemsTargetsItemsType.TEAMS,
+                            type=EscalationPolicyStepTargetType.TEAMS,
                         ),
                     ],
                 ),
             ],
         ),
         relationships=EscalationPolicyCreateRequestDataRelationships(
-            teams=EscalationPolicyCreateRequestDataRelationshipsTeams(
+            teams=DataRelationshipsTeams(
                 data=[
-                    EscalationPolicyCreateRequestDataRelationshipsTeamsDataItems(
+                    DataRelationshipsTeamsDataItems(
                         id=DD_TEAM_DATA_ID,
-                        type=EscalationPolicyCreateRequestDataRelationshipsTeamsDataItemsType.TEAMS,
+                        type=DataRelationshipsTeamsDataItemsType.TEAMS,
                     ),
                 ],
             ),
@@ -100,6 +89,6 @@ body = EscalationPolicyCreateRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
-    response = api_instance.create_on_call_escalation_policy(body=body)
+    response = api_instance.create_on_call_escalation_policy(include="steps.targets", body=body)
 
     print(response)

@@ -21,11 +21,11 @@ class EscalationPolicyIncluded(ModelComposed):
         :param id: The team's unique identifier.
         :type id: str, optional
 
-        :param relationships: Collects the key relationship fields for a team reference, specifically on-call users.
-        :type relationships: TeamReferenceRelationships, optional
-
         :param type: Teams resource type.
         :type type: TeamReferenceType
+
+        :param relationships: Represents the relationship of an escalation policy step to its targets.
+        :type relationships: EscalationPolicyStepRelationships, optional
         """
         super().__init__(kwargs)
 
@@ -40,16 +40,14 @@ class EscalationPolicyIncluded(ModelComposed):
         # loading
         from datadog_api_client.v2.model.team_reference import TeamReference
         from datadog_api_client.v2.model.escalation_policy_step import EscalationPolicyStep
-        from datadog_api_client.v2.model.user_target import UserTarget
-        from datadog_api_client.v2.model.schedule_target import ScheduleTarget
-        from datadog_api_client.v2.model.team_target import TeamTarget
+        from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyUser
+        from datadog_api_client.v2.model.schedule_data import ScheduleData
 
         return {
             "oneOf": [
                 TeamReference,
                 EscalationPolicyStep,
-                UserTarget,
-                ScheduleTarget,
-                TeamTarget,
+                EscalationPolicyUser,
+                ScheduleData,
             ],
         }

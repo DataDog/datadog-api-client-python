@@ -664,6 +664,7 @@ from datadog_api_client.v1.model.synthetics_assertion_javascript import Syntheti
 from datadog_api_client.v1.model.synthetics_assertion_javascript_type import SyntheticsAssertionJavascriptType
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
+from datadog_api_client.v1.model.synthetics_assertion_target_value import SyntheticsAssertionTargetValue
 from datadog_api_client.v1.model.synthetics_assertion_timings_scope import SyntheticsAssertionTimingsScope
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
 from datadog_api_client.v1.model.synthetics_assertion_x_path_operator import SyntheticsAssertionXPathOperator
@@ -1666,6 +1667,7 @@ __all__ = [
     "SyntheticsAssertionJavascriptType",
     "SyntheticsAssertionOperator",
     "SyntheticsAssertionTarget",
+    "SyntheticsAssertionTargetValue",
     "SyntheticsAssertionTimingsScope",
     "SyntheticsAssertionType",
     "SyntheticsAssertionXPathOperator",

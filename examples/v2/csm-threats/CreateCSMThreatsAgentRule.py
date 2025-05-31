@@ -1,7 +1,8 @@
 """
-Create a CSM Threats Agent rule returns "OK" response
+Create a Workload Protection agent rule returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_attributes import (
@@ -15,16 +16,19 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_reque
 )
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_type import CloudWorkloadSecurityAgentRuleType
 
+# there is a valid "policy_rc" in the system
+POLICY_DATA_ID = environ["POLICY_DATA_ID"]
+
 body = CloudWorkloadSecurityAgentRuleCreateRequest(
     data=CloudWorkloadSecurityAgentRuleCreateData(
         attributes=CloudWorkloadSecurityAgentRuleCreateAttributes(
             description="My Agent rule",
             enabled=True,
             expression='exec.file.name == "sh"',
-            filters=[
-                'os == "linux"',
-            ],
+            filters=[],
             name="examplecsmthreat",
+            policy_id=POLICY_DATA_ID,
+            product_tags=[],
         ),
         type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
     ),

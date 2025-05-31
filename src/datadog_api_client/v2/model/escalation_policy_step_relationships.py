@@ -14,33 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.escalation_target import EscalationTarget
-    from datadog_api_client.v2.model.team_target import TeamTarget
-    from datadog_api_client.v2.model.user_target import UserTarget
-    from datadog_api_client.v2.model.schedule_target import ScheduleTarget
+    from datadog_api_client.v2.model.escalation_targets import EscalationTargets
 
 
 class EscalationPolicyStepRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.escalation_target import EscalationTarget
+        from datadog_api_client.v2.model.escalation_targets import EscalationTargets
 
         return {
-            "targets": (EscalationTarget,),
+            "targets": (EscalationTargets,),
         }
 
     attribute_map = {
         "targets": "targets",
     }
 
-    def __init__(
-        self_, targets: Union[EscalationTarget, TeamTarget, UserTarget, ScheduleTarget, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, targets: Union[EscalationTargets, UnsetType] = unset, **kwargs):
         """
         Represents the relationship of an escalation policy step to its targets.
 
-        :param targets: Represents an escalation target, which can be a team, user, or schedule.
-        :type targets: EscalationTarget, optional
+        :param targets: A list of escalation targets for a step
+        :type targets: EscalationTargets, optional
         """
         if targets is not unset:
             kwargs["targets"] = targets

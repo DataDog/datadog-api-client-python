@@ -3,37 +3,28 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
     unset,
     UnsetType,
-    UUID,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.synthetics_assertion_target_value import SyntheticsAssertionTargetValue
 
 
 class SyntheticsAssertionXPathTargetTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.synthetics_assertion_target_value import SyntheticsAssertionTargetValue
+
         return {
             "operator": (str,),
-            "target_value": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                UUID,
-                none_type,
-            ),
+            "target_value": (SyntheticsAssertionTargetValue,),
             "x_path": (str,),
         }
 
@@ -46,7 +37,7 @@ class SyntheticsAssertionXPathTargetTarget(ModelNormal):
     def __init__(
         self_,
         operator: Union[str, UnsetType] = unset,
-        target_value: Union[Any, UnsetType] = unset,
+        target_value: Union[SyntheticsAssertionTargetValue, float, str, UnsetType] = unset,
         x_path: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -56,8 +47,8 @@ class SyntheticsAssertionXPathTargetTarget(ModelNormal):
         :param operator: The specific operator to use on the path.
         :type operator: str, optional
 
-        :param target_value: The path target value to compare to.
-        :type target_value: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
+        :param target_value: Value used by the operator in assertions. Can be either a number or string.
+        :type target_value: SyntheticsAssertionTargetValue, optional
 
         :param x_path: The X path to assert.
         :type x_path: str, optional

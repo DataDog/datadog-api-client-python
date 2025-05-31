@@ -1,5 +1,5 @@
 """
-Update on-call schedule returns "OK" response
+Update On-Call schedule returns "OK" response
 """
 
 from datetime import datetime
@@ -7,43 +7,28 @@ from dateutil.relativedelta import relativedelta
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
+from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
+from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
+from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
+from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
+from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
+    ScheduleRequestDataAttributesLayersItemsMembersItems,
+)
+from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items_user import (
+    ScheduleRequestDataAttributesLayersItemsMembersItemsUser,
+)
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
 from datadog_api_client.v2.model.schedule_update_request_data import ScheduleUpdateRequestData
 from datadog_api_client.v2.model.schedule_update_request_data_attributes import ScheduleUpdateRequestDataAttributes
 from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items import (
     ScheduleUpdateRequestDataAttributesLayersItems,
 )
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_interval import (
-    ScheduleUpdateRequestDataAttributesLayersItemsInterval,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items import (
-    ScheduleUpdateRequestDataAttributesLayersItemsMembersItems,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items_user import (
-    ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_end_day import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items_start_day import (
-    ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
-)
 from datadog_api_client.v2.model.schedule_update_request_data_relationships import (
     ScheduleUpdateRequestDataRelationships,
 )
-from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams import (
-    ScheduleUpdateRequestDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items import (
-    ScheduleUpdateRequestDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams_data_items_type import (
-    ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType,
-)
 from datadog_api_client.v2.model.schedule_update_request_data_type import ScheduleUpdateRequestDataType
+from datadog_api_client.v2.model.time_restriction import TimeRestriction
+from datadog_api_client.v2.model.weekday import Weekday
 
 # there is a valid "schedule" in the system
 SCHEDULE_DATA_ID = environ["SCHEDULE_DATA_ID"]
@@ -64,22 +49,22 @@ body = ScheduleUpdateRequest(
                     id=SCHEDULE_DATA_RELATIONSHIPS_LAYERS_DATA_0_ID,
                     effective_date=(datetime.now() + relativedelta(days=-10)),
                     end_date=(datetime.now() + relativedelta(days=10)),
-                    interval=ScheduleUpdateRequestDataAttributesLayersItemsInterval(
+                    interval=LayerAttributesInterval(
                         seconds=300,
                     ),
                     members=[
-                        ScheduleUpdateRequestDataAttributesLayersItemsMembersItems(
-                            user=ScheduleUpdateRequestDataAttributesLayersItemsMembersItemsUser(
+                        ScheduleRequestDataAttributesLayersItemsMembersItems(
+                            user=ScheduleRequestDataAttributesLayersItemsMembersItemsUser(
                                 id=USER_DATA_ID,
                             ),
                         ),
                     ],
                     name="Layer 1",
                     restrictions=[
-                        ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems(
-                            end_day=ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsEndDay.FRIDAY,
+                        TimeRestriction(
+                            end_day=Weekday.FRIDAY,
                             end_time="17:00:00",
-                            start_day=ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItemsStartDay.MONDAY,
+                            start_day=Weekday.MONDAY,
                             start_time="09:00:00",
                         ),
                     ],
@@ -87,19 +72,14 @@ body = ScheduleUpdateRequest(
                 ),
             ],
             name="Example-On-Call",
-            tags=[
-                "tag1",
-                "tag2",
-                "tag3",
-            ],
             time_zone="America/New_York",
         ),
         relationships=ScheduleUpdateRequestDataRelationships(
-            teams=ScheduleUpdateRequestDataRelationshipsTeams(
+            teams=DataRelationshipsTeams(
                 data=[
-                    ScheduleUpdateRequestDataRelationshipsTeamsDataItems(
+                    DataRelationshipsTeamsDataItems(
                         id=DD_TEAM_DATA_ID,
-                        type=ScheduleUpdateRequestDataRelationshipsTeamsDataItemsType.TEAMS,
+                        type=DataRelationshipsTeamsDataItemsType.TEAMS,
                     ),
                 ],
             ),

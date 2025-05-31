@@ -15,38 +15,30 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_interval import (
-        ScheduleUpdateRequestDataAttributesLayersItemsInterval,
+    from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
+    from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
+        ScheduleRequestDataAttributesLayersItemsMembersItems,
     )
-    from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items import (
-        ScheduleUpdateRequestDataAttributesLayersItemsMembersItems,
-    )
-    from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
-        ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
-    )
+    from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
 
 class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_interval import (
-            ScheduleUpdateRequestDataAttributesLayersItemsInterval,
+        from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
+        from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
+            ScheduleRequestDataAttributesLayersItemsMembersItems,
         )
-        from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_members_items import (
-            ScheduleUpdateRequestDataAttributesLayersItemsMembersItems,
-        )
-        from datadog_api_client.v2.model.schedule_update_request_data_attributes_layers_items_restrictions_items import (
-            ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems,
-        )
+        from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
         return {
             "effective_date": (datetime,),
             "end_date": (datetime,),
             "id": (str,),
-            "interval": (ScheduleUpdateRequestDataAttributesLayersItemsInterval,),
-            "members": ([ScheduleUpdateRequestDataAttributesLayersItemsMembersItems],),
+            "interval": (LayerAttributesInterval,),
+            "members": ([ScheduleRequestDataAttributesLayersItemsMembersItems],),
             "name": (str,),
-            "restrictions": ([ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems],),
+            "restrictions": ([TimeRestriction],),
             "rotation_start": (datetime,),
         }
 
@@ -64,13 +56,13 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
     def __init__(
         self_,
         effective_date: datetime,
-        interval: ScheduleUpdateRequestDataAttributesLayersItemsInterval,
-        members: List[ScheduleUpdateRequestDataAttributesLayersItemsMembersItems],
+        interval: LayerAttributesInterval,
+        members: List[ScheduleRequestDataAttributesLayersItemsMembersItems],
         name: str,
         rotation_start: datetime,
         end_date: Union[datetime, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        restrictions: Union[List[ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems], UnsetType] = unset,
+        restrictions: Union[List[TimeRestriction], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -86,17 +78,17 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         :param id: A unique identifier for the layer being updated.
         :type id: str, optional
 
-        :param interval: Specifies how the rotation repeats: number of days, plus optional seconds, up to the given maximums.
-        :type interval: ScheduleUpdateRequestDataAttributesLayersItemsInterval
+        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds.
+        :type interval: LayerAttributesInterval
 
         :param members: The members assigned to this layer.
-        :type members: [ScheduleUpdateRequestDataAttributesLayersItemsMembersItems]
+        :type members: [ScheduleRequestDataAttributesLayersItemsMembersItems]
 
         :param name: The name for this layer (for example, "Secondary Coverage").
         :type name: str
 
         :param restrictions: Any time restrictions that define when this layer is active.
-        :type restrictions: [ScheduleUpdateRequestDataAttributesLayersItemsRestrictionsItems], optional
+        :type restrictions: [TimeRestriction], optional
 
         :param rotation_start: The date/time at which the rotation begins (ISO 8601 format).
         :type rotation_start: datetime

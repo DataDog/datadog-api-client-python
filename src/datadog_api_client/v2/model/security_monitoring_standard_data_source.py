@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class SecurityMonitoringStandardDataSource(ModelSimple):
     """
-    Source of events, either logs or audit trail.
+    Source of events, either logs, audit trail, or Datadog events.
 
-    :param value: If omitted defaults to "logs". Must be one of ["logs", "audit", "app_sec_spans", "spans", "security_runtime", "network"].
+    :param value: If omitted defaults to "logs". Must be one of ["logs", "audit", "app_sec_spans", "spans", "security_runtime", "network", "events"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class SecurityMonitoringStandardDataSource(ModelSimple):
         "spans",
         "security_runtime",
         "network",
+        "events",
     }
     LOGS: ClassVar["SecurityMonitoringStandardDataSource"]
     AUDIT: ClassVar["SecurityMonitoringStandardDataSource"]
@@ -34,6 +35,7 @@ class SecurityMonitoringStandardDataSource(ModelSimple):
     SPANS: ClassVar["SecurityMonitoringStandardDataSource"]
     SECURITY_RUNTIME: ClassVar["SecurityMonitoringStandardDataSource"]
     NETWORK: ClassVar["SecurityMonitoringStandardDataSource"]
+    EVENTS: ClassVar["SecurityMonitoringStandardDataSource"]
 
     @cached_property
     def openapi_types(_):
@@ -48,3 +50,4 @@ SecurityMonitoringStandardDataSource.APP_SEC_SPANS = SecurityMonitoringStandardD
 SecurityMonitoringStandardDataSource.SPANS = SecurityMonitoringStandardDataSource("spans")
 SecurityMonitoringStandardDataSource.SECURITY_RUNTIME = SecurityMonitoringStandardDataSource("security_runtime")
 SecurityMonitoringStandardDataSource.NETWORK = SecurityMonitoringStandardDataSource("network")
+SecurityMonitoringStandardDataSource.EVENTS = SecurityMonitoringStandardDataSource("events")

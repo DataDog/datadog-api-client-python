@@ -32,7 +32,7 @@ class ScheduleUpdateRequest(ModelNormal):
         """
         A top-level wrapper for a schedule update request, referring to the ``data`` object with the new details.
 
-        :param data: Contains all data needed to update an existing schedule, including its attributes (such as name, layers, or tags) and any relationships to teams.
+        :param data: Contains all data needed to update an existing schedule, including its attributes (such as name and time zone) and any relationships to teams.
         :type data: ScheduleUpdateRequestData
         """
         super().__init__(kwargs)

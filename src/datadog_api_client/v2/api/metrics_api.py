@@ -526,10 +526,10 @@ class MetricsApi:
         """Create a tag configuration.
 
         Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
-        Optionally, include percentile aggregations on any distribution metric or configure custom aggregations
-        on any count, rate, or gauge metric. By setting ``exclude_tags_mode`` to true the behavior is changed
-        from an allow-list to a deny-list, and tags in the defined list will not be queryable.
-        Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
+        Optionally, include percentile aggregations on any distribution metric. By setting ``exclude_tags_mode``
+        to true, the behavior is changed from an allow-list to a deny-list, and tags in the defined list are
+        not queryable. Can only be used with application keys of users with the ``Manage Tags for Metrics``
+        permission.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
@@ -600,7 +600,7 @@ class MetricsApi:
         :type filter_groups: str, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with. If unspecified, it defaults to 0 hours.
         :type filter_hours_ago: int, optional
-        :param filter_num_aggregations: The number of aggregations that a ``count`` , ``rate`` , or ``gauge`` metric is configured to use. Max number of aggregation combos is 9.
+        :param filter_num_aggregations: Deprecated. Number of aggregations has no impact on volume.
         :type filter_num_aggregations: int, optional
         :param filter_pct: A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.
         :type filter_pct: bool, optional

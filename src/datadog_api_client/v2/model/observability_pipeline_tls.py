@@ -32,7 +32,7 @@ class ObservabilityPipelineTls(ModelNormal):
         self_, crt_file: str, ca_file: Union[str, UnsetType] = unset, key_file: Union[str, UnsetType] = unset, **kwargs
     ):
         """
-        Configuration for enabling TLS encryption.
+        Configuration for enabling TLS encryption between the pipeline component and external services.
 
         :param ca_file: Path to the Certificate Authority (CA) file used to validate the server’s TLS certificate.
         :type ca_file: str, optional

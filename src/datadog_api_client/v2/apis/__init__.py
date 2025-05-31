@@ -44,6 +44,7 @@ from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDevic
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.on_call_api import OnCallApi
+from datadog_api_client.v2.api.on_call_paging_api import OnCallPagingApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
@@ -116,6 +117,7 @@ __all__ = [
     "ObservabilityPipelinesApi",
     "OktaIntegrationApi",
     "OnCallApi",
+    "OnCallPagingApi",
     "OpsgenieIntegrationApi",
     "OrganizationsApi",
     "PowerpackApi",

@@ -16,21 +16,21 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
-    from datadog_api_client.v2.model.layer_attributes_restrictions_items import LayerAttributesRestrictionsItems
+    from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
 
 class LayerAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
-        from datadog_api_client.v2.model.layer_attributes_restrictions_items import LayerAttributesRestrictionsItems
+        from datadog_api_client.v2.model.time_restriction import TimeRestriction
 
         return {
             "effective_date": (datetime,),
             "end_date": (datetime,),
             "interval": (LayerAttributesInterval,),
             "name": (str,),
-            "restrictions": ([LayerAttributesRestrictionsItems],),
+            "restrictions": ([TimeRestriction],),
             "rotation_start": (datetime,),
         }
 
@@ -49,7 +49,7 @@ class LayerAttributes(ModelNormal):
         end_date: Union[datetime, UnsetType] = unset,
         interval: Union[LayerAttributesInterval, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
-        restrictions: Union[List[LayerAttributesRestrictionsItems], UnsetType] = unset,
+        restrictions: Union[List[TimeRestriction], UnsetType] = unset,
         rotation_start: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
@@ -69,7 +69,7 @@ class LayerAttributes(ModelNormal):
         :type name: str, optional
 
         :param restrictions: An optional list of time restrictions for when this layer is in effect.
-        :type restrictions: [LayerAttributesRestrictionsItems], optional
+        :type restrictions: [TimeRestriction], optional
 
         :param rotation_start: The date/time when the rotation starts (ISO 8601).
         :type rotation_start: datetime, optional

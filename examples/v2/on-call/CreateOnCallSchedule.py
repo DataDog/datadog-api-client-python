@@ -1,5 +1,5 @@
 """
-Create on-call schedule returns "Created" response
+Create On-Call schedule returns "Created" response
 """
 
 from datetime import datetime
@@ -7,43 +7,28 @@ from dateutil.relativedelta import relativedelta
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
+from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
+from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
+from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
+from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_create_request_data import ScheduleCreateRequestData
 from datadog_api_client.v2.model.schedule_create_request_data_attributes import ScheduleCreateRequestDataAttributes
 from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items import (
     ScheduleCreateRequestDataAttributesLayersItems,
 )
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_interval import (
-    ScheduleCreateRequestDataAttributesLayersItemsInterval,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items import (
-    ScheduleCreateRequestDataAttributesLayersItemsMembersItems,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_members_items_user import (
-    ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_end_day import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_attributes_layers_items_restrictions_items_start_day import (
-    ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay,
-)
 from datadog_api_client.v2.model.schedule_create_request_data_relationships import (
     ScheduleCreateRequestDataRelationships,
 )
-from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams import (
-    ScheduleCreateRequestDataRelationshipsTeams,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items import (
-    ScheduleCreateRequestDataRelationshipsTeamsDataItems,
-)
-from datadog_api_client.v2.model.schedule_create_request_data_relationships_teams_data_items_type import (
-    ScheduleCreateRequestDataRelationshipsTeamsDataItemsType,
-)
 from datadog_api_client.v2.model.schedule_create_request_data_type import ScheduleCreateRequestDataType
+from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
+    ScheduleRequestDataAttributesLayersItemsMembersItems,
+)
+from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items_user import (
+    ScheduleRequestDataAttributesLayersItemsMembersItemsUser,
+)
+from datadog_api_client.v2.model.time_restriction import TimeRestriction
+from datadog_api_client.v2.model.weekday import Weekday
 
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
@@ -58,22 +43,22 @@ body = ScheduleCreateRequest(
                 ScheduleCreateRequestDataAttributesLayersItems(
                     effective_date=(datetime.now() + relativedelta(days=-10)),
                     end_date=(datetime.now() + relativedelta(days=10)),
-                    interval=ScheduleCreateRequestDataAttributesLayersItemsInterval(
+                    interval=LayerAttributesInterval(
                         days=1,
                     ),
                     members=[
-                        ScheduleCreateRequestDataAttributesLayersItemsMembersItems(
-                            user=ScheduleCreateRequestDataAttributesLayersItemsMembersItemsUser(
+                        ScheduleRequestDataAttributesLayersItemsMembersItems(
+                            user=ScheduleRequestDataAttributesLayersItemsMembersItemsUser(
                                 id=USER_DATA_ID,
                             ),
                         ),
                     ],
                     name="Layer 1",
                     restrictions=[
-                        ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItems(
-                            end_day=ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsEndDay.FRIDAY,
+                        TimeRestriction(
+                            end_day=Weekday.FRIDAY,
                             end_time="17:00:00",
-                            start_day=ScheduleCreateRequestDataAttributesLayersItemsRestrictionsItemsStartDay.MONDAY,
+                            start_day=Weekday.MONDAY,
                             start_time="09:00:00",
                         ),
                     ],
@@ -81,18 +66,14 @@ body = ScheduleCreateRequest(
                 ),
             ],
             name="Example-On-Call",
-            tags=[
-                "tag1",
-                "tag2",
-            ],
             time_zone="America/New_York",
         ),
         relationships=ScheduleCreateRequestDataRelationships(
-            teams=ScheduleCreateRequestDataRelationshipsTeams(
+            teams=DataRelationshipsTeams(
                 data=[
-                    ScheduleCreateRequestDataRelationshipsTeamsDataItems(
+                    DataRelationshipsTeamsDataItems(
                         id=DD_TEAM_DATA_ID,
-                        type=ScheduleCreateRequestDataRelationshipsTeamsDataItemsType.TEAMS,
+                        type=DataRelationshipsTeamsDataItemsType.TEAMS,
                     ),
                 ],
             ),

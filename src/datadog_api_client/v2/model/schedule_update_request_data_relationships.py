@@ -14,32 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams import (
-        ScheduleUpdateRequestDataRelationshipsTeams,
-    )
+    from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
 
 class ScheduleUpdateRequestDataRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.schedule_update_request_data_relationships_teams import (
-            ScheduleUpdateRequestDataRelationshipsTeams,
-        )
+        from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 
         return {
-            "teams": (ScheduleUpdateRequestDataRelationshipsTeams,),
+            "teams": (DataRelationshipsTeams,),
         }
 
     attribute_map = {
         "teams": "teams",
     }
 
-    def __init__(self_, teams: Union[ScheduleUpdateRequestDataRelationshipsTeams, UnsetType] = unset, **kwargs):
+    def __init__(self_, teams: Union[DataRelationshipsTeams, UnsetType] = unset, **kwargs):
         """
         Houses relationships for the schedule update, typically referencing teams.
 
-        :param teams: Defines the teams that this schedule update is associated with.
-        :type teams: ScheduleUpdateRequestDataRelationshipsTeams, optional
+        :param teams: Associates teams with this schedule in a data structure.
+        :type teams: DataRelationshipsTeams, optional
         """
         if teams is not unset:
             kwargs["teams"] = teams

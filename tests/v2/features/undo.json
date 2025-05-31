@@ -471,6 +471,12 @@
       "type": "idempotent"
     }
   },
+  "ListCatalogRelation": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateCIAppPipelineEvent": {
     "tag": "CI Visibility Pipelines",
     "undo": {
@@ -511,6 +517,53 @@
     "tag": "CI Visibility Tests",
     "undo": {
       "type": "safe"
+    }
+  },
+  "CreateCustomFramework": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteCustomFramework",
+      "parameters": [
+        {
+          "name": "handle",
+          "source": "data.attributes.handle"
+        },
+        {
+          "name": "version",
+          "source": "data.attributes.version"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCustomFramework": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCustomFramework": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCustomFramework": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetResourceEvaluationFilters": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateResourceEvaluationFilters": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListContainerImages": {
@@ -571,6 +624,37 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "UpsertBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "operationId": "DeleteBudget",
+      "parameters": [
+        {
+          "name": "budget_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListBudgets": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListCustomCostsFiles": {
@@ -741,6 +825,30 @@
     "tag": "DORA Metrics",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListDORADeployments": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDORADeployment": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListDORAFailures": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDORAFailure": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "safe"
     }
   },
   "CreateDORAIncident": {
@@ -1818,6 +1926,34 @@
       "type": "idempotent"
     }
   },
+  "CreateOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "AcknowledgeOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "EscalateOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "ResolveOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "CreateOnCallSchedule": {
     "tag": "On-Call",
     "undo": {
@@ -1844,6 +1980,24 @@
     }
   },
   "UpdateOnCallSchedule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetScheduleOnCallUser": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOnCallTeamRoutingRules": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SetOnCallTeamRoutingRules": {
     "tag": "On-Call",
     "undo": {
       "type": "idempotent"
@@ -2057,8 +2211,51 @@
       "type": "idempotent"
     }
   },
+  "ListCSMThreatsAgentPolicies": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "operationId": "DeleteCSMThreatsAgentPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "DownloadCSMThreatsPolicy": {
     "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCSMThreatsAgentPolicy": {
+    "tag": "CSM Threats",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListPipelines": {
+    "tag": "Observability Pipelines",
     "undo": {
       "type": "safe"
     }
@@ -2074,6 +2271,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ValidatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
     }
   },
   "DeletePipeline": {

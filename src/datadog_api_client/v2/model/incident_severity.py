@@ -16,12 +16,13 @@ class IncidentSeverity(ModelSimple):
     """
     The incident severity.
 
-    :param value: Must be one of ["UNKNOWN", "SEV-1", "SEV-2", "SEV-3", "SEV-4", "SEV-5"].
+    :param value: Must be one of ["UNKNOWN", "SEV-0", "SEV-1", "SEV-2", "SEV-3", "SEV-4", "SEV-5"].
     :type value: str
     """
 
     allowed_values = {
         "UNKNOWN",
+        "SEV-0",
         "SEV-1",
         "SEV-2",
         "SEV-3",
@@ -29,6 +30,7 @@ class IncidentSeverity(ModelSimple):
         "SEV-5",
     }
     UNKNOWN: ClassVar["IncidentSeverity"]
+    SEV_0: ClassVar["IncidentSeverity"]
     SEV_1: ClassVar["IncidentSeverity"]
     SEV_2: ClassVar["IncidentSeverity"]
     SEV_3: ClassVar["IncidentSeverity"]
@@ -43,6 +45,7 @@ class IncidentSeverity(ModelSimple):
 
 
 IncidentSeverity.UNKNOWN = IncidentSeverity("UNKNOWN")
+IncidentSeverity.SEV_0 = IncidentSeverity("SEV-0")
 IncidentSeverity.SEV_1 = IncidentSeverity("SEV-1")
 IncidentSeverity.SEV_2 = IncidentSeverity("SEV-2")
 IncidentSeverity.SEV_3 = IncidentSeverity("SEV-3")

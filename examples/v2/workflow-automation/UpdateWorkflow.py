@@ -49,7 +49,6 @@ body = UpdateWorkflowRequest(
                         env=ConnectionEnvEnv.DEFAULT,
                     ),
                 ],
-                handle="my-handle",
                 input_schema=InputSchema(
                     parameters=[
                         InputSchemaParameters(

@@ -1,5 +1,5 @@
 """
-Update a Cloud Workload Security Agent rule returns "OK" response
+Update a Workload Protection agent rule (US1-FED) returns "OK" response
 """
 
 from os import environ
@@ -22,12 +22,11 @@ AGENT_RULE_DATA_ID = environ["AGENT_RULE_DATA_ID"]
 body = CloudWorkloadSecurityAgentRuleUpdateRequest(
     data=CloudWorkloadSecurityAgentRuleUpdateData(
         attributes=CloudWorkloadSecurityAgentRuleUpdateAttributes(
-            description="Test Agent rule",
-            enabled=True,
+            description="Updated Agent rule",
             expression='exec.file.name == "sh"',
         ),
-        type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
         id=AGENT_RULE_DATA_ID,
+        type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
     ),
 )
 

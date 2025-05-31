@@ -1,5 +1,5 @@
 """
-Get all Cloud Workload Security Agent rules returns "OK" response
+Get all Workload Protection agent rules (US1-FED) returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
