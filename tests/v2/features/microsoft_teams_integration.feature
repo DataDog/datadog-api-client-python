@@ -91,7 +91,7 @@ Feature: Microsoft Teams Integration
   @team:DataDog/chat-integrations
   Scenario: Create workflow webhook handle returns "CREATED" response
     Given new "CreateWorkflowsWebhookHandle" request
-    And body with value {"data": {"attributes": {"name": "{{unique}}", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+    And body with value {"data": {"attributes": {"name": "{{unique}}", "url": "https://example.logic.azure.com/workflows/123"}, "type": "workflows-webhook-handle"}}
     When the request is sent
     Then the response status is 201 CREATED
     And the response "data.attributes.name" is equal to "{{unique}}"

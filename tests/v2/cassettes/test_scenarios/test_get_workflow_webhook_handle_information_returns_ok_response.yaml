@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Get_workflow_webhook_handle_information_returns_OK_response-1738093013","url":"https://prod-100.westus.logic.azure.com:443/workflows/abcd1234"},"type":"workflows-webhook-handle"}}'
+    body: '{"data":{"attributes":{"name":"Test-Get_workflow_webhook_handle_information_returns_OK_response-1748457951","url":"https://prod-100.westus.logic.azure.com:443/workflows/abcd1234"},"type":"workflows-webhook-handle"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles
   response:
     body:
-      string: '{"data":{"id":"cf3d9006-205e-47b2-9e6a-bea534a2d38b","type":"workflows-webhook-handle","attributes":{"name":"Test-Get_workflow_webhook_handle_information_returns_OK_response-1738093013"}}}'
+      string: '{"data":{"id":"ac10e097-66cf-4ab3-8659-a6f6c413d51b","type":"workflows-webhook-handle","attributes":{"name":"Test-Get_workflow_webhook_handle_information_returns_OK_response-1748457951"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -23,10 +23,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/cf3d9006-205e-47b2-9e6a-bea534a2d38b
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/ac10e097-66cf-4ab3-8659-a6f6c413d51b
   response:
     body:
-      string: '{"data":{"id":"cf3d9006-205e-47b2-9e6a-bea534a2d38b","type":"workflows-webhook-handle","attributes":{"name":"Test-Get_workflow_webhook_handle_information_returns_OK_response-1738093013"}}}'
+      string: '{"data":{"id":"ac10e097-66cf-4ab3-8659-a6f6c413d51b","type":"workflows-webhook-handle","attributes":{"name":"Test-Get_workflow_webhook_handle_information_returns_OK_response-1748457951"}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -39,7 +39,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/cf3d9006-205e-47b2-9e6a-bea534a2d38b
+    uri: https://api.datadoghq.com/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/ac10e097-66cf-4ab3-8659-a6f6c413d51b
   response:
     body:
       string: ''
