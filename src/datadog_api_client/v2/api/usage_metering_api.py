@@ -628,7 +628,7 @@ class UsageMeteringApi:
             ``csm_container_enterprise`` , ``csm_host_enterprise`` , ``cspm`` , ``custom_events`` , ``cws`` , ``dbm`` , ``error_tracking`` ,
             ``fargate`` , ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
             ``lambda_traced_invocations`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``network_monitoring`` , ``observability_pipelines`` ,
-            ``online_archive`` , ``profiling`` , ``rum`` , ``rum_browser_sessions`` , ``rum_mobile_sessions`` , ``sds`` , ``snmp`` , ``software_delivery`` ,
+            ``online_archive`` , ``profiling`` , ``product_analytics`` , ``rum`` , ``rum_browser_sessions`` , ``rum_mobile_sessions`` , ``sds`` , ``snmp`` , ``software_delivery`` ,
             ``synthetics_api`` , ``synthetics_browser`` , ``synthetics_mobile`` , ``synthetics_parallel_testing`` , ``timeseries`` , ``vuln_management`` ,
             and ``workflow_executions``.
             The following product family has been **deprecated** : ``audit_logs``.
