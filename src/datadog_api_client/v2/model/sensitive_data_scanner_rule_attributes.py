@@ -42,6 +42,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
             "excluded_namespaces": ([str],),
             "included_keyword_configuration": (SensitiveDataScannerIncludedKeywordConfiguration,),
             "is_enabled": (bool,),
+            "labels": ([str],),
             "name": (str,),
             "namespaces": ([str],),
             "pattern": (str,),
@@ -55,6 +56,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         "excluded_namespaces": "excluded_namespaces",
         "included_keyword_configuration": "included_keyword_configuration",
         "is_enabled": "is_enabled",
+        "labels": "labels",
         "name": "name",
         "namespaces": "namespaces",
         "pattern": "pattern",
@@ -69,6 +71,7 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
         excluded_namespaces: Union[List[str], UnsetType] = unset,
         included_keyword_configuration: Union[SensitiveDataScannerIncludedKeywordConfiguration, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
+        labels: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         namespaces: Union[List[str], UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
@@ -94,6 +97,9 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
 
         :param is_enabled: Whether or not the rule is enabled.
         :type is_enabled: bool, optional
+
+        :param labels: List of labels.
+        :type labels: [str], optional
 
         :param name: Name of the rule.
         :type name: str, optional
@@ -122,6 +128,8 @@ class SensitiveDataScannerRuleAttributes(ModelNormal):
             kwargs["included_keyword_configuration"] = included_keyword_configuration
         if is_enabled is not unset:
             kwargs["is_enabled"] = is_enabled
+        if labels is not unset:
+            kwargs["labels"] = labels
         if name is not unset:
             kwargs["name"] = name
         if namespaces is not unset:
