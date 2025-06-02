@@ -13,7 +13,7 @@ Feature: Sensitive Data Scanner
   @generated @skip @team:DataDog/sensitive-data-scanner
   Scenario: Create Scanning Group returns "Bad Request" response
     Given new "CreateScanningGroup" request
-    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"], "samplings": [{"product": "logs", "rate": 100.0}]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -152,7 +152,7 @@ Feature: Sensitive Data Scanner
   Scenario: Update Scanning Group returns "Bad Request" response
     Given new "UpdateScanningGroup" request
     And request contains "group_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"], "samplings": [{"product": "logs", "rate": 100.0}]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -160,7 +160,7 @@ Feature: Sensitive Data Scanner
   Scenario: Update Scanning Group returns "Not Found" response
     Given new "UpdateScanningGroup" request
     And request contains "group_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"], "samplings": [{"product": "logs", "rate": 100.0}]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -189,7 +189,7 @@ Feature: Sensitive Data Scanner
   Scenario: Update Scanning Rule returns "Not Found" response
     Given new "UpdateScanningRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"excluded_namespaces": ["admin.name"], "included_keyword_configuration": {"character_count": 30, "keywords": ["credit card", "cc"]}, "namespaces": ["admin"], "tags": [], "text_replacement": {"type": "none"}}, "relationships": {"group": {"data": {"type": "sensitive_data_scanner_group"}}, "standard_pattern": {"data": {"type": "sensitive_data_scanner_standard_pattern"}}}, "type": "sensitive_data_scanner_rule"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"excluded_namespaces": ["admin.name"], "included_keyword_configuration": {"character_count": 30, "keywords": ["credit card", "cc"]}, "labels": [], "namespaces": ["admin"], "tags": [], "text_replacement": {"type": "none"}}, "relationships": {"group": {"data": {"type": "sensitive_data_scanner_group"}}, "standard_pattern": {"data": {"type": "sensitive_data_scanner_standard_pattern"}}}, "type": "sensitive_data_scanner_rule"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 404 Not Found
 
