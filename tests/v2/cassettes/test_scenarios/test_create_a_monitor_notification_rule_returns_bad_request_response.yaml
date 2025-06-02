@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"filter":{"tags":["test:test-create_a_monitor_notification_rule_returns_bad_request_response-1744280983","host:abc"]},"name":"test
+    body: '{"data":{"attributes":{"filter":{"tags":["test:test-create_a_monitor_notification_rule_returns_bad_request_response-1743713882","host:abc"]},"name":"test
       rule","recipients":["@slack-test-channel","@jira-test"]},"type":"monitor-notification-rule"}}'
     headers:
       accept:
