@@ -5611,6 +5611,13 @@ datadog\_api\_client.v2.model.error\_handler module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.escalation module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.escalation\_policy module
 -------------------------------------------------------
 
@@ -5828,6 +5835,34 @@ datadog\_api\_client.v2.model.escalation\_policy\_user\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.escalation\_relationships module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_relationships\_responders module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_relationships_responders
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_relationships\_responders\_data\_items module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_relationships_responders_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_relationships\_responders\_data\_items\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_relationships_responders_data_items_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.escalation\_target module
 -------------------------------------------------------
 
@@ -5839,6 +5874,13 @@ datadog\_api\_client.v2.model.escalation\_targets module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.escalation_targets
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_type module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_type
    :members:
    :show-inheritance:
 
@@ -16472,6 +16514,83 @@ datadog\_api\_client.v2.model.team\_links\_response module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.team_links_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_relationships module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_relationships\_escalations module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_relationships_escalations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_relationships\_escalations\_data\_items module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_relationships_escalations_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_relationships\_escalations\_data\_items\_type module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_relationships_escalations_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_relationships\_responders module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_relationships_responders
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_relationships\_responders\_data\_items module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_relationships_responders_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_relationships\_responders\_data\_items\_type module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_relationships_responders_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_data\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_on\_call\_responders\_included module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_on_call_responders_included
    :members:
    :show-inheritance:
 
