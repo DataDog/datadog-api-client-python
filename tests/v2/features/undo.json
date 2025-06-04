@@ -1991,6 +1991,12 @@
       "type": "safe"
     }
   },
+  "GetTeamOnCallUsers": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetOnCallTeamRoutingRules": {
     "tag": "On-Call",
     "undo": {

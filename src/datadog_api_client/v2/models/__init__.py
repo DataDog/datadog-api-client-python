@@ -1068,6 +1068,7 @@ from datadog_api_client.v2.model.entity_v3_system_datadog import EntityV3SystemD
 from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
 from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.error_handler import ErrorHandler
+from datadog_api_client.v2.model.escalation import Escalation
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_create_request_data import EscalationPolicyCreateRequestData
@@ -1119,8 +1120,17 @@ from datadog_api_client.v2.model.escalation_policy_update_request_data_type impo
 from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyUser
 from datadog_api_client.v2.model.escalation_policy_user_attributes import EscalationPolicyUserAttributes
 from datadog_api_client.v2.model.escalation_policy_user_type import EscalationPolicyUserType
+from datadog_api_client.v2.model.escalation_relationships import EscalationRelationships
+from datadog_api_client.v2.model.escalation_relationships_responders import EscalationRelationshipsResponders
+from datadog_api_client.v2.model.escalation_relationships_responders_data_items import (
+    EscalationRelationshipsRespondersDataItems,
+)
+from datadog_api_client.v2.model.escalation_relationships_responders_data_items_type import (
+    EscalationRelationshipsRespondersDataItemsType,
+)
 from datadog_api_client.v2.model.escalation_target import EscalationTarget
 from datadog_api_client.v2.model.escalation_targets import EscalationTargets
+from datadog_api_client.v2.model.escalation_type import EscalationType
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_category import EventCategory
@@ -3234,6 +3244,29 @@ from datadog_api_client.v2.model.team_link_create_request import TeamLinkCreateR
 from datadog_api_client.v2.model.team_link_response import TeamLinkResponse
 from datadog_api_client.v2.model.team_link_type import TeamLinkType
 from datadog_api_client.v2.model.team_links_response import TeamLinksResponse
+from datadog_api_client.v2.model.team_on_call_responders import TeamOnCallResponders
+from datadog_api_client.v2.model.team_on_call_responders_data import TeamOnCallRespondersData
+from datadog_api_client.v2.model.team_on_call_responders_data_relationships import TeamOnCallRespondersDataRelationships
+from datadog_api_client.v2.model.team_on_call_responders_data_relationships_escalations import (
+    TeamOnCallRespondersDataRelationshipsEscalations,
+)
+from datadog_api_client.v2.model.team_on_call_responders_data_relationships_escalations_data_items import (
+    TeamOnCallRespondersDataRelationshipsEscalationsDataItems,
+)
+from datadog_api_client.v2.model.team_on_call_responders_data_relationships_escalations_data_items_type import (
+    TeamOnCallRespondersDataRelationshipsEscalationsDataItemsType,
+)
+from datadog_api_client.v2.model.team_on_call_responders_data_relationships_responders import (
+    TeamOnCallRespondersDataRelationshipsResponders,
+)
+from datadog_api_client.v2.model.team_on_call_responders_data_relationships_responders_data_items import (
+    TeamOnCallRespondersDataRelationshipsRespondersDataItems,
+)
+from datadog_api_client.v2.model.team_on_call_responders_data_relationships_responders_data_items_type import (
+    TeamOnCallRespondersDataRelationshipsRespondersDataItemsType,
+)
+from datadog_api_client.v2.model.team_on_call_responders_data_type import TeamOnCallRespondersDataType
+from datadog_api_client.v2.model.team_on_call_responders_included import TeamOnCallRespondersIncluded
 from datadog_api_client.v2.model.team_permission_setting import TeamPermissionSetting
 from datadog_api_client.v2.model.team_permission_setting_attributes import TeamPermissionSettingAttributes
 from datadog_api_client.v2.model.team_permission_setting_response import TeamPermissionSettingResponse
@@ -4251,6 +4284,7 @@ __all__ = [
     "EntityV3SystemKind",
     "EntityV3SystemSpec",
     "ErrorHandler",
+    "Escalation",
     "EscalationPolicy",
     "EscalationPolicyCreateRequest",
     "EscalationPolicyCreateRequestData",
@@ -4282,8 +4316,13 @@ __all__ = [
     "EscalationPolicyUser",
     "EscalationPolicyUserAttributes",
     "EscalationPolicyUserType",
+    "EscalationRelationships",
+    "EscalationRelationshipsResponders",
+    "EscalationRelationshipsRespondersDataItems",
+    "EscalationRelationshipsRespondersDataItemsType",
     "EscalationTarget",
     "EscalationTargets",
+    "EscalationType",
     "Event",
     "EventAttributes",
     "EventCategory",
@@ -5809,6 +5848,17 @@ __all__ = [
     "TeamLinkResponse",
     "TeamLinkType",
     "TeamLinksResponse",
+    "TeamOnCallResponders",
+    "TeamOnCallRespondersData",
+    "TeamOnCallRespondersDataRelationships",
+    "TeamOnCallRespondersDataRelationshipsEscalations",
+    "TeamOnCallRespondersDataRelationshipsEscalationsDataItems",
+    "TeamOnCallRespondersDataRelationshipsEscalationsDataItemsType",
+    "TeamOnCallRespondersDataRelationshipsResponders",
+    "TeamOnCallRespondersDataRelationshipsRespondersDataItems",
+    "TeamOnCallRespondersDataRelationshipsRespondersDataItemsType",
+    "TeamOnCallRespondersDataType",
+    "TeamOnCallRespondersIncluded",
     "TeamPermissionSetting",
     "TeamPermissionSettingAttributes",
     "TeamPermissionSettingResponse",
