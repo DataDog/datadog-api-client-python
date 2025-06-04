@@ -112,7 +112,7 @@ class RestrictionPoliciesApi:
 
         Deletes the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``integration-account`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``integration-account`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application``.
         :type resource_id: str
         :rtype: None
         """
@@ -129,7 +129,7 @@ class RestrictionPoliciesApi:
 
         Retrieves the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``integration-account`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``integration-account`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application``.
         :type resource_id: str
         :rtype: RestrictionPolicyResponse
         """
@@ -170,6 +170,7 @@ class RestrictionPoliciesApi:
         * App Builder Apps: ``app-builder-app``
         * Connections: ``connection``
         * Connection Groups: ``connection-group``
+        * RUM Applications: ``rum-application``
 
         **Supported relations for resources**
 
@@ -212,9 +213,11 @@ class RestrictionPoliciesApi:
              - ``viewer`` , ``resolver`` , ``editor``
            * - Connection Groups
              - ``viewer`` , ``editor``
+           * - RUM Application
+             - ``viewer`` , ``editor``
 
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``integration-account`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``connection`` , ``dashboard`` , ``integration-account`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application``.
         :type resource_id: str
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
