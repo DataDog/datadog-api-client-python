@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1747319663"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1748341502"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"hea-hly-nmh","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1747319663","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319663455,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"ney-zeu-tex","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1748341502","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341502642,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -19,8 +19,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1747319663","policy_id":"hea-hly-nmh","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}}],"description":"My
+      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1748341502","policy_id":"ney-zeu-tex","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -30,10 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"e3n-gsi-qxc","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1747319663941,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"gys-bzk-zs4","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false}],"category":"Process
+        Activity","creationDate":1748341503254,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"monitoring":["hea-hly-nmh"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1747319663","product_tags":["security:attack","technique:T1059"],"updateDate":1747319663941,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["ney-zeu-tex"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1748341502","product_tags":["security:attack","technique:T1059"],"updateDate":1748341503254,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/e3n-gsi-qxc?policy_id=hea-hly-nmh
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/gys-bzk-zs4?policy_id=ney-zeu-tex
   response:
     body:
       string: ''
@@ -62,7 +62,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/e3n-gsi-qxc
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/gys-bzk-zs4
   response:
     body:
       string: '{"errors":[{"title":"failed to delete rule"}]}
@@ -80,7 +80,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/hea-hly-nmh
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/ney-zeu-tex
   response:
     body:
       string: ''

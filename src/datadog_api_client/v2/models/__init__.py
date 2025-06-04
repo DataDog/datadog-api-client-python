@@ -531,6 +531,12 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_policy_updater_at
     CloudWorkloadSecurityAgentPolicyUpdaterAttributes,
 )
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import CloudWorkloadSecurityAgentRuleAction
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_metadata import (
+    CloudWorkloadSecurityAgentRuleActionMetadata,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_set import (
+    CloudWorkloadSecurityAgentRuleActionSet,
+)
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_attributes import (
     CloudWorkloadSecurityAgentRuleAttributes,
 )
@@ -3850,6 +3856,8 @@ __all__ = [
     "CloudWorkloadSecurityAgentPolicyUpdateRequest",
     "CloudWorkloadSecurityAgentPolicyUpdaterAttributes",
     "CloudWorkloadSecurityAgentRuleAction",
+    "CloudWorkloadSecurityAgentRuleActionMetadata",
+    "CloudWorkloadSecurityAgentRuleActionSet",
     "CloudWorkloadSecurityAgentRuleAttributes",
     "CloudWorkloadSecurityAgentRuleCreateAttributes",
     "CloudWorkloadSecurityAgentRuleCreateData",
