@@ -19,9 +19,9 @@ Feature: On-Call
   @team:DataDog/bugle
   Scenario: Create On-Call escalation policy returns "Created" response
     Given new "CreateOnCallEscalationPolicy" request
+    And there is a valid "user" in the system
     And there is a valid "schedule" in the system
     And there is a valid "dd_team" in the system
-    And there is a valid "user" in the system
     And body with value {"data": {"attributes": {"name": "{{ unique }}", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "{{ user.data.id }}", "type": "users"}, {"id": "{{ schedule.data.id }}", "type": "schedules"}, {"id": "{{ dd_team.data.id }}", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}]}, "relationships": {"teams": {"data": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}}, "type": "policies"}}
     And request contains "include" parameter with value "steps.targets"
     When the request is sent
@@ -64,6 +64,7 @@ Feature: On-Call
   @team:DataDog/bugle
   Scenario: Delete On-Call schedule returns "No Content" response
     Given new "DeleteOnCallSchedule" request
+    And there is a valid "user" in the system
     And there is a valid "schedule" in the system
     And request contains "schedule_id" parameter from "schedule.data.id"
     When the request is sent
@@ -112,6 +113,7 @@ Feature: On-Call
   @team:DataDog/bugle
   Scenario: Get On-Call schedule returns "OK" response
     Given new "GetOnCallSchedule" request
+    And there is a valid "user" in the system
     And there is a valid "schedule" in the system
     And request contains "schedule_id" parameter from "schedule.data.id"
     When the request is sent
@@ -121,6 +123,33 @@ Feature: On-Call
   Scenario: Get On-Call team routing rules returns "OK" response
     Given new "GetOnCallTeamRoutingRules" request
     And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get team on-call users returns "Bad Request" response
+    Given new "GetTeamOnCallUsers" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get team on-call users returns "Not Found" response
+    Given new "GetTeamOnCallUsers" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/bugle
+  Scenario: Get team on-call users returns "OK" response
+    Given new "GetTeamOnCallUsers" request
+    And there is a valid "user" in the system
+    And there is a valid "dd_team" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "escalation_policy" in the system
+    And there are valid "routing_rules" in the system
+    And request contains "team_id" parameter from "routing_rules.data.id"
+    And request contains "include" parameter with value "responders,escalations.responders"
     When the request is sent
     Then the response status is 200 OK
 
@@ -141,6 +170,7 @@ Feature: On-Call
   @team:DataDog/bugle
   Scenario: Get the schedule on-call user returns "OK" response
     Given new "GetScheduleOnCallUser" request
+    And there is a valid "user" in the system
     And there is a valid "schedule" in the system
     And request contains "schedule_id" parameter from "schedule.data.id"
     When the request is sent
@@ -206,8 +236,8 @@ Feature: On-Call
   @team:DataDog/bugle
   Scenario: Update On-Call schedule returns "OK" response
     Given new "UpdateOnCallSchedule" request
-    And there is a valid "schedule" in the system
     And there is a valid "user" in the system
+    And there is a valid "schedule" in the system
     And there is a valid "dd_team" in the system
     And request contains "schedule_id" parameter from "schedule.data.id"
     And body with value {"data": { "id": "{{ schedule.data.id }}", "attributes": {"layers": [{"id": "{{ schedule.data.relationships.layers.data[0].id }}" , "effective_date": "{{ timeISO('now - 10d') }}", "end_date": "{{ timeISO('now + 10d') }}", "interval": {"seconds": 300}, "members": [{"user": {"id": "{{user.data.id}}"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "{{ timeISO('now - 5d') }}"}], "name": "{{ unique }}", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "{{dd_team.data.id}}", "type": "teams"}]}}, "type": "schedules"}}
