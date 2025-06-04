@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1747319696"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1748341522"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"kfz-e8v-7v0","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1747319696","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319696483,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"ihh-rif-yh3","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1748341522","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341522393,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -19,14 +19,14 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:test"],"hostTagsLists":[["env:test"]],"name":""},"id":"kfz-e8v-7v0","type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:test"],"hostTagsLists":[["env:test"]],"name":""},"id":"ihh-rif-yh3","type":"policy"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/kfz-e8v-7v0
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/ihh-rif-yh3
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''tags'' is invalid: cannot
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/kfz-e8v-7v0
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/ihh-rif-yh3
   response:
     body:
       string: ''
