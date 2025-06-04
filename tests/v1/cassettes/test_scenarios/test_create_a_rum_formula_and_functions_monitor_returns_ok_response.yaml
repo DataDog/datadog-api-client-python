@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_RUM_formula_and_functions_monitor_returns_OK_response-1643835850","options":{"thresholds":{"critical":0.8},"variables":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query2","search":{"query":""}},{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"status:error"}}]},"priority":3,"query":"formula(\"query2
-      / query1 * 100\").last(\"15m\") >= 0.8","tags":["test:testcreatearumformulaandfunctionsmonitorreturnsokresponse1643835850","env:ci"],"type":"rum
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Create_a_RUM_formula_and_functions_monitor_returns_OK_response-1747261633","options":{"thresholds":{"critical":0.8},"variables":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query2","search":{"query":""}},{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"status:error"}}]},"priority":3,"query":"formula(\"query2
+      / query1 * 100\").last(\"15m\") >= 0.8","tags":["test:testcreatearumformulaandfunctionsmonitorreturnsokresponse1747261633","env:ci"],"type":"rum
       alert"}'
     headers:
       accept:
@@ -12,9 +12,12 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
-      string: '{"restricted_roles":null,"tags":["test:testcreatearumformulaandfunctionsmonitorreturnsokresponse1643835850","env:ci"],"deleted":null,"query":"formula(\"query2
-        / query1 * 100\").last(\"15m\") >= 0.8","message":"some message Notify: @hipchat-channel","id":62683819,"multi":false,"name":"Test-Create_a_RUM_formula_and_functions_monitor_returns_OK_response-1643835850","created":"2022-02-02T21:04:10.947341+00:00","created_at":1643835850000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-02-02T21:04:10.947341+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
-        Data","type":"rum alert","options":{"notify_audit":false,"locked":false,"silenced":{},"include_tags":true,"thresholds":{"critical":0.8},"new_host_delay":300,"notify_no_data":false,"groupby_simple_monitor":false,"variables":[{"search":{"query":""},"data_source":"rum","compute":{"aggregation":"count"},"name":"query2","indexes":["*"],"group_by":[]},{"search":{"query":"status:error"},"data_source":"rum","compute":{"aggregation":"count"},"name":"query1","indexes":["*"],"group_by":[]}]}}'
+      string: '{"id":172140181,"org_id":2,"type":"rum alert","name":"Test-Create_a_RUM_formula_and_functions_monitor_returns_OK_response-1747261633","message":"some
+        message Notify: @hipchat-channel","tags":["test:testcreatearumformulaandfunctionsmonitorreturnsokresponse1747261633","env:ci"],"query":"formula(\"query2
+        / query1 * 100\").last(\"15m\") >= 0.8","options":{"thresholds":{"critical":0.8},"variables":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query2","search":{"query":""}},{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"status:error"}}],"notify_no_data":false,"notify_audit":false,"new_host_delay":300,"include_tags":true,"groupby_simple_monitor":false,"silenced":{},"avalanche_window":20},"multi":false,"created_at":1747261634000,"created":"2025-05-14T22:27:14.329045+00:00","modified":"2025-05-14T22:27:14.329045+00:00","deleted":null,"priority":3,"draft_status":"published","restricted_roles":null,"restriction_policy":null,"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"Carl Martensen","handle":"carl.martensen@datadoghq.com","email":"carl.martensen@datadoghq.com","id":638339},"run_as":null,"restricted":true}
+
+        '
     headers:
       content-type:
       - application/json
@@ -27,10 +30,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/62683819
+    uri: https://api.datadoghq.com/api/v1/monitor/172140181
   response:
     body:
-      string: '{"deleted_monitor_id":62683819}'
+      string: '{"deleted_monitor_id":172140181}
+
+        '
     headers:
       content-type:
       - application/json
