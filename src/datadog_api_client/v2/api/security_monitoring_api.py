@@ -1000,6 +1000,11 @@ class SecurityMonitoringApi:
                     "location": "query",
                     "collection_format": "multi",
                 },
+                "detailed_findings": {
+                    "openapi_types": (bool,),
+                    "attribute": "detailed_findings",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -2462,6 +2467,7 @@ class SecurityMonitoringApi:
         filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
         filter_status: Union[FindingStatus, UnsetType] = unset,
         filter_vulnerability_type: Union[List[FindingVulnerabilityType], UnsetType] = unset,
+        detailed_findings: Union[bool, UnsetType] = unset,
     ) -> ListFindingsResponse:
         """List findings.
 
@@ -2486,6 +2492,18 @@ class SecurityMonitoringApi:
         The operator must come after the equal sign. For example, to filter with the ``>=`` operator, add the operator after the equal sign: ``filter[evaluation_changed_at]=>=1678809373257``.
 
         Query parameters must be only among the documented ones and with values of correct types. Duplicated query parameters (e.g. ``filter[status]=low&filter[status]=info`` ) are not allowed.
+
+        **Additional extension fields**
+
+        Additional extension fields are available for some findings.
+
+        The data is available when you include the query parameter ``?detailed_findings=true`` in the request.
+
+        The following fields are available for findings:
+
+        * ``external_id`` : The resource external ID related to the finding.
+        * ``description`` : The description and remediation steps for the finding.
+        * ``datadog_link`` : The Datadog relative link for the finding.
 
         **Response**
 
@@ -2524,6 +2542,8 @@ class SecurityMonitoringApi:
         :type filter_status: FindingStatus, optional
         :param filter_vulnerability_type: Return findings that match the selected vulnerability types (repeatable).
         :type filter_vulnerability_type: [FindingVulnerabilityType], optional
+        :param detailed_findings: Return additional fields for some findings.
+        :type detailed_findings: bool, optional
         :rtype: ListFindingsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -2566,6 +2586,9 @@ class SecurityMonitoringApi:
         if filter_vulnerability_type is not unset:
             kwargs["filter_vulnerability_type"] = filter_vulnerability_type
 
+        if detailed_findings is not unset:
+            kwargs["detailed_findings"] = detailed_findings
+
         return self._list_findings_endpoint.call_with_http_info(**kwargs)
 
     def list_findings_with_pagination(
@@ -2584,6 +2607,7 @@ class SecurityMonitoringApi:
         filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
         filter_status: Union[FindingStatus, UnsetType] = unset,
         filter_vulnerability_type: Union[List[FindingVulnerabilityType], UnsetType] = unset,
+        detailed_findings: Union[bool, UnsetType] = unset,
     ) -> collections.abc.Iterable[Finding]:
         """List findings.
 
@@ -2615,6 +2639,8 @@ class SecurityMonitoringApi:
         :type filter_status: FindingStatus, optional
         :param filter_vulnerability_type: Return findings that match the selected vulnerability types (repeatable).
         :type filter_vulnerability_type: [FindingVulnerabilityType], optional
+        :param detailed_findings: Return additional fields for some findings.
+        :type detailed_findings: bool, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[Finding]
@@ -2658,6 +2684,9 @@ class SecurityMonitoringApi:
 
         if filter_vulnerability_type is not unset:
             kwargs["filter_vulnerability_type"] = filter_vulnerability_type
+
+        if detailed_findings is not unset:
+            kwargs["detailed_findings"] = detailed_findings
 
         local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
         endpoint = self._list_findings_endpoint
