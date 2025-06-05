@@ -18,6 +18,17 @@ if TYPE_CHECKING:
 
 
 class ChangeEventCustomAttributesImpactedResourcesItems(ModelNormal):
+    validations = {
+        "name": {
+            "max_length": 128,
+            "min_length": 1,
+        },
+    }
+
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resources_items_type import (

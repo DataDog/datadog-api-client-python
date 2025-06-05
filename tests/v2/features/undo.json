@@ -909,7 +909,7 @@
   "CreateEvent": {
     "tag": "Events",
     "undo": {
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "SearchEvents": {

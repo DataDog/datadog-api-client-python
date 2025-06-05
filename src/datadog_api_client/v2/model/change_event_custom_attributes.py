@@ -28,6 +28,16 @@ if TYPE_CHECKING:
 
 
 class ChangeEventCustomAttributes(ModelNormal):
+    validations = {
+        "impacted_resources": {
+            "max_items": 100,
+        },
+    }
+
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.change_event_custom_attributes_author import ChangeEventCustomAttributesAuthor
@@ -114,7 +124,7 @@ class ChangeEventCustomAttributes(ModelNormal):
         """
         Object representing custom change event attributes.
 
-        :param author: Object representing the entity which made the change. Optional field but if provided should include ``type`` and ``name``.
+        :param author: Object representing the entity that made the change. Optional field but if provided should include ``type`` and ``name``.
         :type author: ChangeEventCustomAttributesAuthor, optional
 
         :param change_metadata: Free form object with information related to the ``change`` event. Can be arbitrarily nested and contain any valid JSON.
@@ -124,7 +134,7 @@ class ChangeEventCustomAttributes(ModelNormal):
         :type changed_resource: ChangeEventCustomAttributesChangedResource
 
         :param impacted_resources: A list of resources impacted by this change. It is recommended to provide an impacted resource to display
-            the change event at the right location. Only resources of type ``service`` are supported.
+            the change event at the right location. Only resources of type ``service`` are supported. Maximum of 100 impacted resources allowed.
         :type impacted_resources: [ChangeEventCustomAttributesImpactedResourcesItems], optional
 
         :param new_value: Free form object to track new value of the changed resource.
