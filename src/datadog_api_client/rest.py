@@ -25,6 +25,9 @@ logger = logging.getLogger(__name__)
 
 RETRY_AFTER_STATUS_CODES = frozenset([429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511, 512])
 RETRY_ALLOWED_METHODS = frozenset(["GET", "PUT", "DELETE", "POST", "PATCH"])
+# apply sane default for calls to datadog API which has 60s timeout
+DEFAULT_TIMEOUT = 55
+DEFAULT_IDLE_CONN_MS = 55000
 
 
 class ClientRetry(urllib3.util.Retry):
@@ -140,7 +143,7 @@ class RESTClientObject:
         post_params = post_params or {}
         headers = headers or {}
 
-        timeout = None
+        timeout = urllib3.Timeout(total=DEFAULT_TIMEOUT)
         if request_timeout:
             if isinstance(request_timeout, (int, float)):
                 timeout = urllib3.Timeout(total=request_timeout)
@@ -240,7 +243,13 @@ class AsyncRESTClientObject:
         proxy = None
         if configuration.proxy:
             proxy = aiosonic.Proxy(configuration.proxy, configuration.proxy_headers)
-        self._client = aiosonic.HTTPClient(proxy=proxy, verify_ssl=configuration.verify_ssl)
+        pool_configs = {
+            ":default": aiosonic.PoolConfig(
+                max_conn_idle_ms=DEFAULT_IDLE_CONN_MS
+            )
+        }
+        connector = aiosonic.TCPConnector(pool_configs=pool_configs)
+        self._client = aiosonic.HTTPClient(connector=connector, proxy=proxy, verify_ssl=configuration.verify_ssl)
         self._configuration = configuration
 
     def close(self):
@@ -290,13 +299,13 @@ class AsyncRESTClientObject:
                                 (connection, read) timeouts.
         """
         assert not post_params, "not supported for now"
+        from aiosonic.timeout import Timeouts  # type: ignore
+        timeout = Timeouts(request_timeout=DEFAULT_TIMEOUT)
         if request_timeout is not None:
-            from aiosonic.timeout import Timeouts  # type: ignore
-
             if isinstance(request_timeout, (int, float)):
-                request_timeout = Timeouts(request_timeout=request_timeout)
+                timeout = Timeouts(request_timeout=request_timeout)
             else:
-                request_timeout = Timeouts(sock_connect=request_timeout[0], sock_read=request_timeout[1])
+                timeout = Timeouts(sock_connect=request_timeout[0], sock_read=request_timeout[1])
         request_body = None
         if (
             "Content-Type" not in headers
@@ -317,7 +326,7 @@ class AsyncRESTClientObject:
         counter = 0
         while True:
             response = await self._client.request(
-                url, method, headers, query_params, request_body, timeouts=request_timeout
+                url, method, headers, query_params, request_body, timeouts=timeout
             )
             retry = self._retry(method, response, counter)
             if not retry:
