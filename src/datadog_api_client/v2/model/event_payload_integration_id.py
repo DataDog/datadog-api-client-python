@@ -12,20 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class EventCategory(ModelSimple):
+class EventPayloadIntegrationId(ModelSimple):
     """
-    Event category to identify the type of event.
+    Integration IDs sourced from integration manifests. Currently, only `custom-events` is supported.
 
-    :param value: Must be one of ["change", "alert"].
+    :param value: If omitted defaults to "custom-events". Must be one of ["custom-events"].
     :type value: str
     """
 
     allowed_values = {
-        "change",
-        "alert",
+        "custom-events",
     }
-    CHANGE: ClassVar["EventCategory"]
-    ALERT: ClassVar["EventCategory"]
+    CUSTOM_EVENTS: ClassVar["EventPayloadIntegrationId"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +32,4 @@ class EventCategory(ModelSimple):
         }
 
 
-EventCategory.CHANGE = EventCategory("change")
-EventCategory.ALERT = EventCategory("alert")
+EventPayloadIntegrationId.CUSTOM_EVENTS = EventPayloadIntegrationId("custom-events")
