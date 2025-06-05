@@ -243,11 +243,7 @@ class AsyncRESTClientObject:
         proxy = None
         if configuration.proxy:
             proxy = aiosonic.Proxy(configuration.proxy, configuration.proxy_headers)
-        pool_configs = {
-            ":default": aiosonic.PoolConfig(
-                max_conn_idle_ms=DEFAULT_IDLE_CONN_MS
-            )
-        }
+        pool_configs = {":default": aiosonic.PoolConfig(max_conn_idle_ms=DEFAULT_IDLE_CONN_MS)}
         connector = aiosonic.TCPConnector(pool_configs=pool_configs)
         self._client = aiosonic.HTTPClient(connector=connector, proxy=proxy, verify_ssl=configuration.verify_ssl)
         self._configuration = configuration
@@ -300,6 +296,7 @@ class AsyncRESTClientObject:
         """
         assert not post_params, "not supported for now"
         from aiosonic.timeout import Timeouts  # type: ignore
+
         timeout = Timeouts(request_timeout=DEFAULT_TIMEOUT)
         if request_timeout is not None:
             if isinstance(request_timeout, (int, float)):
@@ -326,7 +323,7 @@ class AsyncRESTClientObject:
         counter = 0
         while True:
             response = await self._client.request(
-                url, method, headers, query_params, request_body, timeouts=timeout
+                url, method, headers, query_params, request_body, timeouts=request_timeout
             )
             retry = self._retry(method, response, counter)
             if not retry:
