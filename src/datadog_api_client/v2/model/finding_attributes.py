@@ -40,8 +40,11 @@ class FindingAttributes(ModelNormal):
         from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 
         return {
+            "datadog_link": (str,),
+            "description": (str,),
             "evaluation": (FindingEvaluation,),
             "evaluation_changed_at": (int,),
+            "external_id": (str,),
             "mute": (FindingMute,),
             "resource": (str,),
             "resource_discovery_date": (int,),
@@ -53,8 +56,11 @@ class FindingAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "datadog_link": "datadog_link",
+        "description": "description",
         "evaluation": "evaluation",
         "evaluation_changed_at": "evaluation_changed_at",
+        "external_id": "external_id",
         "mute": "mute",
         "resource": "resource",
         "resource_discovery_date": "resource_discovery_date",
@@ -67,8 +73,11 @@ class FindingAttributes(ModelNormal):
 
     def __init__(
         self_,
+        datadog_link: Union[str, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         evaluation: Union[FindingEvaluation, UnsetType] = unset,
         evaluation_changed_at: Union[int, UnsetType] = unset,
+        external_id: Union[str, UnsetType] = unset,
         mute: Union[FindingMute, UnsetType] = unset,
         resource: Union[str, UnsetType] = unset,
         resource_discovery_date: Union[int, UnsetType] = unset,
@@ -82,11 +91,20 @@ class FindingAttributes(ModelNormal):
         """
         The JSON:API attributes of the finding.
 
+        :param datadog_link: The Datadog relative link for this finding.
+        :type datadog_link: str, optional
+
+        :param description: The description and remediation steps for this finding.
+        :type description: str, optional
+
         :param evaluation: The evaluation of the finding.
         :type evaluation: FindingEvaluation, optional
 
         :param evaluation_changed_at: The date on which the evaluation for this finding changed (Unix ms).
         :type evaluation_changed_at: int, optional
+
+        :param external_id: The cloud-based ID for the resource related to the finding.
+        :type external_id: str, optional
 
         :param mute: Information about the mute status of this finding.
         :type mute: FindingMute, optional
@@ -112,10 +130,16 @@ class FindingAttributes(ModelNormal):
         :param vulnerability_type: The vulnerability type of the finding.
         :type vulnerability_type: FindingVulnerabilityType, optional
         """
+        if datadog_link is not unset:
+            kwargs["datadog_link"] = datadog_link
+        if description is not unset:
+            kwargs["description"] = description
         if evaluation is not unset:
             kwargs["evaluation"] = evaluation
         if evaluation_changed_at is not unset:
             kwargs["evaluation_changed_at"] = evaluation_changed_at
+        if external_id is not unset:
+            kwargs["external_id"] = external_id
         if mute is not unset:
             kwargs["mute"] = mute
         if resource is not unset:
