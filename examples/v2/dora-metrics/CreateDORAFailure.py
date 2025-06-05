@@ -1,5 +1,5 @@
 """
-Send an incident event for DORA Metrics returns "OK" response
+Send a failure event for DORA Metrics returns "OK - but delayed due to incident" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -33,6 +33,6 @@ body = DORAFailureRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DORAMetricsApi(api_client)
-    response = api_instance.create_dora_incident(body=body)
+    response = api_instance.create_dora_failure(body=body)
 
     print(response)

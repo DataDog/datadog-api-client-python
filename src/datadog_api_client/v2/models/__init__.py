@@ -872,14 +872,14 @@ from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentR
 from datadog_api_client.v2.model.dora_deployment_response_data import DORADeploymentResponseData
 from datadog_api_client.v2.model.dora_deployment_type import DORADeploymentType
 from datadog_api_client.v2.model.dora_event import DORAEvent
+from datadog_api_client.v2.model.dora_failure_request import DORAFailureRequest
+from datadog_api_client.v2.model.dora_failure_request_attributes import DORAFailureRequestAttributes
+from datadog_api_client.v2.model.dora_failure_request_data import DORAFailureRequestData
+from datadog_api_client.v2.model.dora_failure_response import DORAFailureResponse
+from datadog_api_client.v2.model.dora_failure_response_data import DORAFailureResponseData
+from datadog_api_client.v2.model.dora_failure_type import DORAFailureType
 from datadog_api_client.v2.model.dora_fetch_response import DORAFetchResponse
 from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
-from datadog_api_client.v2.model.dora_incident_request import DORAIncidentRequest
-from datadog_api_client.v2.model.dora_incident_request_attributes import DORAIncidentRequestAttributes
-from datadog_api_client.v2.model.dora_incident_request_data import DORAIncidentRequestData
-from datadog_api_client.v2.model.dora_incident_response import DORAIncidentResponse
-from datadog_api_client.v2.model.dora_incident_response_data import DORAIncidentResponseData
-from datadog_api_client.v2.model.dora_incident_type import DORAIncidentType
 from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
 from datadog_api_client.v2.model.dora_list_deployments_request_attributes import DORAListDeploymentsRequestAttributes
 from datadog_api_client.v2.model.dora_list_deployments_request_data import DORAListDeploymentsRequestData
@@ -4114,14 +4114,14 @@ __all__ = [
     "DORADeploymentResponseData",
     "DORADeploymentType",
     "DORAEvent",
+    "DORAFailureRequest",
+    "DORAFailureRequestAttributes",
+    "DORAFailureRequestData",
+    "DORAFailureResponse",
+    "DORAFailureResponseData",
+    "DORAFailureType",
     "DORAFetchResponse",
     "DORAGitInfo",
-    "DORAIncidentRequest",
-    "DORAIncidentRequestAttributes",
-    "DORAIncidentRequestData",
-    "DORAIncidentResponse",
-    "DORAIncidentResponseData",
-    "DORAIncidentType",
     "DORAListDeploymentsRequest",
     "DORAListDeploymentsRequestAttributes",
     "DORAListDeploymentsRequestData",
