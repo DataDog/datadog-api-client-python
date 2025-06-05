@@ -2041,6 +2041,13 @@ datadog\_api\_client.v1.model.monitor\_device\_id module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.monitor\_draft\_status module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_draft_status
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_cost\_aggregator module
 --------------------------------------------------------------------------------------
 
