@@ -839,6 +839,12 @@
       "type": "safe"
     }
   },
+  "CreateDORAFailure": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDORAFailures": {
     "tag": "DORA Metrics",
     "undo": {
