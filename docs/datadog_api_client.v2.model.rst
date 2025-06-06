@@ -8019,6 +8019,41 @@ datadog\_api\_client.v2.model.jsonapi\_error\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.kind\_attributes module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kind_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kind\_data module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kind_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kind\_metadata module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kind_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kind\_obj module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kind_obj
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.kind\_response\_meta module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.kind_response_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.layer module
 ------------------------------------------
 
@@ -8268,6 +8303,13 @@ datadog\_api\_client.v2.model.list\_historical\_jobs\_response module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_historical_jobs_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_kind\_catalog\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_kind_catalog_response
    :members:
    :show-inheritance:
 
@@ -17228,6 +17270,20 @@ datadog\_api\_client.v2.model.upsert\_catalog\_entity\_response\_included\_item 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.upsert_catalog_entity_response_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_catalog\_kind\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_catalog_kind_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_catalog\_kind\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_catalog_kind_response
    :members:
    :show-inheritance:
 

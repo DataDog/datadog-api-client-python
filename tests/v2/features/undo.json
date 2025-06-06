@@ -471,6 +471,31 @@
       "type": "idempotent"
     }
   },
+  "ListCatalogKind": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertCatalogKind": {
+    "tag": "Software Catalog",
+    "undo": {
+      "operationId": "DeleteCatalogKind",
+      "parameters": [
+        {
+          "name": "kind_id",
+          "source": "data[0].id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCatalogKind": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCatalogRelation": {
     "tag": "Software Catalog",
     "undo": {
