@@ -45280,9 +45280,10 @@ paths:
       tags:
       - Usage Metering
       x-permission:
-        operator: OR
+        operator: AND
         permissions:
         - usage_read
+        - billing_read
   /api/v2/csm/onboarding/agents:
     get:
       description: Get the list of all CSM Agents running on your hosts and containers.
@@ -61278,9 +61279,10 @@ paths:
       tags:
       - Usage Metering
       x-permission:
-        operator: OR
+        operator: AND
         permissions:
         - usage_read
+        - billing_read
   /api/v2/usage/estimated_cost:
     get:
       description: 'Get estimated cost across multi-org and single root-org accounts.
@@ -61382,9 +61384,10 @@ paths:
       tags:
       - Usage Metering
       x-permission:
-        operator: OR
+        operator: AND
         permissions:
         - usage_read
+        - billing_read
   /api/v2/usage/historical_cost:
     get:
       description: 'Get historical cost across multi-org and single root-org accounts.
@@ -61463,9 +61466,10 @@ paths:
       tags:
       - Usage Metering
       x-permission:
-        operator: OR
+        operator: AND
         permissions:
         - usage_read
+        - billing_read
   /api/v2/usage/hourly_usage:
     get:
       description: Get hourly usage by product family.
@@ -61797,9 +61801,10 @@ paths:
       tags:
       - Usage Metering
       x-permission:
-        operator: OR
+        operator: AND
         permissions:
         - usage_read
+        - billing_read
   /api/v2/user_invitations:
     post:
       description: Sends emails to one or more users inviting them to join the organization.
