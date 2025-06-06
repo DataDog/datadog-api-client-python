@@ -14,6 +14,8 @@ from datadog_api_client.v1.model.synthetics_api_wait_step_subtype import Synthet
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_type import SyntheticsAssertionType
+from datadog_api_client.v1.model.synthetics_basic_auth_web import SyntheticsBasicAuthWeb
+from datadog_api_client.v1.model.synthetics_basic_auth_web_type import SyntheticsBasicAuthWebType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
 from datadog_api_client.v1.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
@@ -23,6 +25,7 @@ from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type 
 from datadog_api_client.v1.model.synthetics_parsing_options import SyntheticsParsingOptions
 from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
+from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
 from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
 from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
@@ -108,6 +111,148 @@ body = SyntheticsAPITest(
                     compressed_json_descriptor="eJy1lU1z2yAQhv+Lzj74I3ETH506bQ7OZOSm1w4Wa4epBARQppqM/3v5koCJJdvtxCdW77vPssCO3zMKUgHOFu/ZXvBiS6hZho/f8qe7pftYgXphWJrlA8XwxywEvNba+6PhkC2yVcVVswYp0R6ykRYlZ1SCV21SDrxsssPIeS9FJKqGfK2rqnmmSBwhWa2XlKgtaQPiDcRGCUDVfwGD2sKUqKEtc1cSoOrsMlaMOec1sySYCCgUYRSVLv2zSva2u+FQkB0pVkIw8bFuIudOOn3pOaKYVT3Iy97Pd0AYhOx5QcMsnxvRHlnuLf8ETDd3CNtrv2nejkDpRnANCmGkkFn/hsYzpBKE7jVbufgnKnV9HRM9zRPDDKPttYT61n0TdWkAAjggk9AhuxIeaXd69CYTcsGw7cBTakLVbNpRzGEgyWjkSOpMbZXkhGL6oX30R49qt3GoHrap7i0XdD41WQ+2icCNm5p1hmFqnHNlcla0riKmDZ183crDxChjbnurtxHPRE784sVhWvDfGP+SsTKibU3o5NtWHuZFGZOxP6P5VXqIOvaOSec4eYohyd7NslHuJbd1bewds85xYrNxkr2d+5IhFWF3NvaO684xjE2S5ulY+tu64Pna0fCPJgzw6vF5/WucLcYjt5xoq19O3UDptOg/OamJQRaCcPPnMTQ2QDFn+uhPvUfnCrMc99upyQY4Ui9Dlc/YoG3R/v4Cs9YE+g==",
                     metadata=SyntheticsTestMetadata(),
                     call_type=SyntheticsTestCallType.UNARY,
+                ),
+            ),
+            SyntheticsAPITestStep(
+                name="SSL step",
+                subtype=SyntheticsAPITestStepSubtype.SSL,
+                allow_failure=False,
+                is_critical=True,
+                retry=SyntheticsTestOptionsRetry(
+                    count=0,
+                    interval=300.0,
+                ),
+                assertions=[
+                    SyntheticsAssertionTarget(
+                        operator=SyntheticsAssertionOperator.IS_IN_MORE_DAYS_THAN,
+                        type=SyntheticsAssertionType.CERTIFICATE,
+                        target=10,
+                    ),
+                ],
+                request=SyntheticsTestRequest(
+                    check_certificate_revocation=True,
+                    host="example.org",
+                    port=443,
+                ),
+            ),
+            SyntheticsAPITestStep(
+                name="DNS step",
+                subtype=SyntheticsAPITestStepSubtype.DNS,
+                allow_failure=False,
+                is_critical=True,
+                retry=SyntheticsTestOptionsRetry(
+                    count=0,
+                    interval=300.0,
+                ),
+                assertions=[
+                    SyntheticsAssertionTarget(
+                        operator=SyntheticsAssertionOperator.LESS_THAN,
+                        type=SyntheticsAssertionType.RESPONSE_TIME,
+                        target=1000,
+                    ),
+                ],
+                request=SyntheticsTestRequest(
+                    host="troisdizaines.com",
+                    dns_server="8.8.8.8",
+                    dns_server_port="53",
+                ),
+            ),
+            SyntheticsAPITestStep(
+                name="TCP step",
+                subtype=SyntheticsAPITestStepSubtype.TCP,
+                allow_failure=False,
+                is_critical=True,
+                retry=SyntheticsTestOptionsRetry(
+                    count=0,
+                    interval=300.0,
+                ),
+                assertions=[
+                    SyntheticsAssertionTarget(
+                        operator=SyntheticsAssertionOperator.LESS_THAN,
+                        type=SyntheticsAssertionType.RESPONSE_TIME,
+                        target=1000,
+                    ),
+                ],
+                request=SyntheticsTestRequest(
+                    host="34.95.79.70",
+                    port=80,
+                    should_track_hops=True,
+                    timeout=32.0,
+                ),
+            ),
+            SyntheticsAPITestStep(
+                name="ICMP step",
+                subtype=SyntheticsAPITestStepSubtype.ICMP,
+                allow_failure=False,
+                is_critical=True,
+                retry=SyntheticsTestOptionsRetry(
+                    count=0,
+                    interval=300.0,
+                ),
+                assertions=[
+                    SyntheticsAssertionTarget(
+                        operator=SyntheticsAssertionOperator.IS,
+                        target=0,
+                        type=SyntheticsAssertionType.PACKET_LOSS_PERCENTAGE,
+                    ),
+                ],
+                request=SyntheticsTestRequest(
+                    host="34.95.79.70",
+                    number_of_packets=4,
+                    should_track_hops=True,
+                    timeout=38.0,
+                ),
+            ),
+            SyntheticsAPITestStep(
+                name="Websocket step",
+                subtype=SyntheticsAPITestStepSubtype.WEBSOCKET,
+                allow_failure=False,
+                is_critical=True,
+                retry=SyntheticsTestOptionsRetry(
+                    count=0,
+                    interval=300.0,
+                ),
+                assertions=[
+                    SyntheticsAssertionTarget(
+                        operator=SyntheticsAssertionOperator.LESS_THAN,
+                        type=SyntheticsAssertionType.RESPONSE_TIME,
+                        target=1000,
+                    ),
+                ],
+                request=SyntheticsTestRequest(
+                    url="ws://34.95.79.70/web-socket",
+                    message="My message",
+                    is_message_base64_encoded=True,
+                    headers=SyntheticsTestHeaders(
+                        f="g",
+                    ),
+                    basic_auth=SyntheticsBasicAuthWeb(
+                        type=SyntheticsBasicAuthWebType.WEB,
+                        username="user",
+                        password="password",
+                    ),
+                ),
+            ),
+            SyntheticsAPITestStep(
+                name="UDP step",
+                subtype=SyntheticsAPITestStepSubtype.UDP,
+                allow_failure=False,
+                is_critical=True,
+                retry=SyntheticsTestOptionsRetry(
+                    count=0,
+                    interval=300.0,
+                ),
+                assertions=[
+                    SyntheticsAssertionTarget(
+                        operator=SyntheticsAssertionOperator.LESS_THAN,
+                        type=SyntheticsAssertionType.RESPONSE_TIME,
+                        target=1000,
+                    ),
+                ],
+                request=SyntheticsTestRequest(
+                    host="8.8.8.8",
+                    port=53,
+                    message="A image.google.com",
                 ),
             ),
         ],

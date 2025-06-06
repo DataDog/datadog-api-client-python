@@ -302,7 +302,26 @@ Feature: Synthetics
     And the response "config.steps[1].subtype" is equal to "wait"
     And the response "config.steps[1].value" is equal to 1
     And the response "config.steps[2].request.host" is equal to "grpcbin.test.k6.io"
-    And the response "config.steps[2].request.host" is equal to "grpcbin.test.k6.io"
+    And the response "config.steps[3].subtype" is equal to "ssl"
+    And the response "config.steps[3].request.host" is equal to "example.org"
+    And the response "config.steps[3].request.port" is equal to 443
+    And the response "config.steps[3].request.checkCertificateRevocation" is equal to true
+    And the response "config.steps[4].subtype" is equal to "dns"
+    And the response "config.steps[4].request.host" is equal to "troisdizaines.com"
+    And the response "config.steps[4].request.dnsServer" is equal to "8.8.8.8"
+    And the response "config.steps[4].request.dnsServerPort" is equal to "53"
+    And the response "config.steps[5].subtype" is equal to "tcp"
+    And the response "config.steps[5].request.host" is equal to "34.95.79.70"
+    And the response "config.steps[5].request.shouldTrackHops" is equal to true
+    And the response "config.steps[6].subtype" is equal to "icmp"
+    And the response "config.steps[6].request.host" is equal to "34.95.79.70"
+    And the response "config.steps[6].request.numberOfPackets" is equal to 4
+    And the response "config.steps[7].subtype" is equal to "websocket"
+    And the response "config.steps[7].request.url" is equal to "ws://34.95.79.70/web-socket"
+    And the response "config.steps[7].request.message" is equal to "My message"
+    And the response "config.steps[7].request.isMessageBase64Encoded" is equal to true
+    And the response "config.steps[8].subtype" is equal to "udp"
+    And the response "config.steps[8].request.host" is equal to "8.8.8.8"
 
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Delete a global variable returns "JSON format is wrong" response
