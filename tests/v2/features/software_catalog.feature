@@ -28,6 +28,20 @@ Feature: Software Catalog
     When the request is sent
     Then the response status is 500 Internal Server Error
 
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Create or update kinds returns "ACCEPTED" response
+    Given new "UpsertCatalogKind" request
+    And body with value {"kind": "my-job"}
+    When the request is sent
+    Then the response status is 202 ACCEPTED
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Create or update kinds returns "Bad Request" response
+    Given new "UpsertCatalogKind" request
+    And body with value {"kind": "my-job"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @team:DataDog/service-catalog
   Scenario: Create or update software catalog entity using schema v3 returns "ACCEPTED" response
     Given new "UpsertCatalogEntity" request
@@ -59,6 +73,27 @@ Feature: Software Catalog
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Delete a single kind returns "Bad Request" response
+    Given new "DeleteCatalogKind" request
+    And request contains "kind_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Delete a single kind returns "Not Found" response
+    Given new "DeleteCatalogKind" request
+    And request contains "kind_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Delete a single kind returns "OK" response
+    Given new "DeleteCatalogKind" request
+    And request contains "kind_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 OK
+
   @skip @team:DataDog/service-catalog
   Scenario: Delete an entity returns "Not Found" response
     Given new "DeleteCatalogEntity" request
@@ -76,6 +111,24 @@ Feature: Software Catalog
   @generated @skip @team:DataDog/service-catalog @with-pagination
   Scenario: Get a list of entities returns "OK" response with pagination
     Given new "ListCatalogEntity" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Get a list of entity kinds returns "Bad Request" response
+    Given new "ListCatalogKind" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Get a list of entity kinds returns "OK" response
+    Given new "ListCatalogKind" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/service-catalog @with-pagination
+  Scenario: Get a list of entity kinds returns "OK" response with pagination
+    Given new "ListCatalogKind" request
     When the request with pagination is sent
     Then the response status is 200 OK
 

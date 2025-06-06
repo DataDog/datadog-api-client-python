@@ -1474,6 +1474,11 @@ from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.job_create_response_data import JobCreateResponseData
 from datadog_api_client.v2.model.job_definition import JobDefinition
 from datadog_api_client.v2.model.job_definition_from_rule import JobDefinitionFromRule
+from datadog_api_client.v2.model.kind_attributes import KindAttributes
+from datadog_api_client.v2.model.kind_data import KindData
+from datadog_api_client.v2.model.kind_metadata import KindMetadata
+from datadog_api_client.v2.model.kind_obj import KindObj
+from datadog_api_client.v2.model.kind_response_meta import KindResponseMeta
 from datadog_api_client.v2.model.layer import Layer
 from datadog_api_client.v2.model.layer_attributes import LayerAttributes
 from datadog_api_client.v2.model.layer_attributes_interval import LayerAttributesInterval
@@ -1514,6 +1519,7 @@ from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.list_historical_jobs_response import ListHistoricalJobsResponse
+from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
 from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
@@ -3374,6 +3380,8 @@ from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCat
 from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item import (
     UpsertCatalogEntityResponseIncludedItem,
 )
+from datadog_api_client.v2.model.upsert_catalog_kind_request import UpsertCatalogKindRequest
+from datadog_api_client.v2.model.upsert_catalog_kind_response import UpsertCatalogKindResponse
 from datadog_api_client.v2.model.urgency import Urgency
 from datadog_api_client.v2.model.url_param import UrlParam
 from datadog_api_client.v2.model.url_param_update import UrlParamUpdate
@@ -4628,6 +4636,11 @@ __all__ = [
     "JobCreateResponseData",
     "JobDefinition",
     "JobDefinitionFromRule",
+    "KindAttributes",
+    "KindData",
+    "KindMetadata",
+    "KindObj",
+    "KindResponseMeta",
     "Layer",
     "LayerAttributes",
     "LayerAttributesInterval",
@@ -4664,6 +4677,7 @@ __all__ = [
     "ListFindingsPage",
     "ListFindingsResponse",
     "ListHistoricalJobsResponse",
+    "ListKindCatalogResponse",
     "ListPipelinesResponse",
     "ListPipelinesResponseMeta",
     "ListPowerpacksResponse",
@@ -5950,6 +5964,8 @@ __all__ = [
     "UpsertCatalogEntityRequest",
     "UpsertCatalogEntityResponse",
     "UpsertCatalogEntityResponseIncludedItem",
+    "UpsertCatalogKindRequest",
+    "UpsertCatalogKindResponse",
     "Urgency",
     "UrlParam",
     "UrlParamUpdate",
