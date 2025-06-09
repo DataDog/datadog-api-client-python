@@ -193,6 +193,7 @@ class HostsApi:
         Hosts live within the past 3 hours are included by default.
         Retention is 7 days.
         Results are paginated with a max of 1000 results at a time.
+        **Note:** If the host is an Amazon EC2 instance, ``id`` is replaced with ``aws_id`` in the response.
 
         :param filter: String to filter search results.
         :type filter: str, optional
