@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules
+  response:
+    body:
+      string: '{"data":[{"id":"35bb154a-c72c-4229-9fc0-04e07488af4f","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"e53202ff-ace0-48b9-94cc-02fd7cc4db19","type":"teams"}]}}},{"id":"671c7d3f-9587-42fa-8c7e-8755930bbdac","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallescalationpolicycreateandupdate-local-1747734855","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"74e02075-633b-44c4-abac-614efb1d8536","type":"teams"}]}}},{"id":"2dab1cc6-fd41-471a-9012-ddd61aaa1efd","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallescalationpolicycreateandupdate-local-1747735035","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"50238947-4947-4d29-acf4-a5a0af3c71dc","type":"teams"}]}}},{"id":"e0fe19e8-b263-4737-901d-949665a6a8b9","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallteamroutingrulescreateandupdate-local-1748264615","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"d093df59-ea15-49d7-a826-cf39241268a7","type":"teams"}]}}},{"id":"1ec1cf5a-34fe-4287-be5f-6624b26eea21","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallteamroutingrulescreateandupdate-local-1748264794","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"24081181-e2e6-4979-b1c4-3186f3bbb1c3","type":"teams"}]}}},{"id":"08429594-1286-407e-b915-9b08127abc8b","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallteamroutingrulescreateandupdate-local-1748264832","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"35554fbf-0d9d-46b2-958d-c770abba0ea7","type":"teams"}]}}},{"id":"dadf713e-540d-4387-8e0a-a172d453ebfa","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallteamroutingrulescreateandupdate-local-1748264900","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"14e0b9be-eb14-4031-9f20-c5fa79d5a61c","type":"teams"}]}}},{"id":"d6714916-109d-4422-99b7-a4b59f98c9c1","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallteamroutingrulescreateandupdate-local-1748264953","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"190b0a25-e77f-46b1-b0c6-31d3170becfa","type":"teams"}]}}},{"id":"3d2695af-1c25-4510-8829-44d961a18ded","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallteamroutingrulescreateandupdate-local-1748264975","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"a840a585-6d24-4c3a-8fd7-11c707411fa3","type":"teams"}]}}},{"id":"a5be0ef7-c2b5-464b-8b21-4399f0a96378","type":"schedules","attributes":{"name":"Escalation
+        Policy Test Schedule tf-testacconcallteamroutingrulescreateandupdate-local-1748265056","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"a70c7ad7-db1a-4f6d-8365-18459aa9ee2d","type":"teams"}]}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

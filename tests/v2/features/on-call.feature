@@ -43,6 +43,32 @@ Feature: On-Call
     When the request is sent
     Then the response status is 201 Created
 
+  @generated @skip @team:DataDog/bugle
+  Scenario: Create an override returns "Bad Request" response
+    Given new "CreateOnCallScheduleOverride" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"end": "", "start": ""}, "relationships": {"user": {"data": {"type": "users"}}}, "type": "overrides"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/bugle
+  Scenario: Create an override returns "Created" response
+    Given new "CreateOnCallScheduleOverride" request
+    And there is a valid "user" in the system
+    And there is a valid "schedule" in the system
+    And request contains "schedule_id" parameter from "schedule.data.id"
+    And body with value {"data": [{"attributes": {"start": "{{ timeISO('now') }}", "end": "{{ timeISO('now + 1h') }}"}, "relationships": {"user": {"data": {"id": "{{ user.data.id }}", "type": "users"}}}, "type": "overrides"}]}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Create an override returns "Not Found" response
+    Given new "CreateOnCallScheduleOverride" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"end": "", "start": ""}, "relationships": {"user": {"data": {"type": "users"}}}, "type": "overrides"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/bugle
   Scenario: Delete On-Call escalation policy returns "No Content" response
     Given new "DeleteOnCallEscalationPolicy" request
@@ -74,6 +100,33 @@ Feature: On-Call
   Scenario: Delete On-Call schedule returns "Not Found" response
     Given new "DeleteOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Delete an override returns "Bad Request" response
+    Given new "DeleteOnCallScheduleOverride" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "override_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/bugle
+  Scenario: Delete an override returns "No Content" response
+    Given new "DeleteOnCallScheduleOverride" request
+    And there is a valid "user" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "override" in the system
+    And request contains "schedule_id" parameter from "schedule.data.id"
+    And request contains "override_id" parameter from "override.data[0].id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Delete an override returns "Not Found" response
+    Given new "DeleteOnCallScheduleOverride" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "override_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -119,10 +172,81 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bugle
+  @team:DataDog/bugle
   Scenario: Get On-Call team routing rules returns "OK" response
     Given new "GetOnCallTeamRoutingRules" request
-    And request contains "team_id" parameter from "REPLACE.ME"
+    And there is a valid "user" in the system
+    And there is a valid "dd_team" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "escalation_policy" in the system
+    And there are valid "routing_rules" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get a list of all escalation policies returns "Bad Request" response
+    Given new "ListOnCallEscalationPolicies" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get a list of all escalation policies returns "Not Found" response
+    Given new "ListOnCallEscalationPolicies" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/bugle
+  Scenario: Get a list of all escalation policies returns "OK" response
+    Given new "ListOnCallEscalationPolicies" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get a list of all on-call schedules returns "Bad Request" response
+    Given new "ListOnCallSchedules" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get a list of all on-call schedules returns "Not Found" response
+    Given new "ListOnCallSchedules" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/bugle
+  Scenario: Get a list of all on-call schedules returns "OK" response
+    Given new "ListOnCallSchedules" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get a list of all overrides for a schedule returns "Bad Request" response
+    Given new "ListOnCallScheduleOverrides" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "filter[start]" parameter from "REPLACE.ME"
+    And request contains "filter[end]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/bugle
+  Scenario: Get a list of all overrides for a schedule returns "Not Found" response
+    Given new "ListOnCallScheduleOverrides" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "filter[start]" parameter from "REPLACE.ME"
+    And request contains "filter[end]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/bugle
+  Scenario: Get a list of all overrides for a schedule returns "OK" response
+    Given new "ListOnCallScheduleOverrides" request
+    And there is a valid "user" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "override" in the system
+    And request contains "schedule_id" parameter from "schedule.data.id"
+    And request contains "filter[start]" parameter with value "{{ timeISO('now - 1h') }}"
+    And request contains "filter[end]" parameter with value "{{ timeISO('now + 1h') }}"
     When the request is sent
     Then the response status is 200 OK
 
@@ -176,7 +300,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-python @team:DataDog/bugle
+  @team:DataDog/bugle
   Scenario: Set On-Call team routing rules returns "OK" response
     Given new "SetOnCallTeamRoutingRules" request
     And there is a valid "user" in the system

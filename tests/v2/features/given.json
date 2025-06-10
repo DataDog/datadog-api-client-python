@@ -511,6 +511,22 @@
   {
     "parameters": [
       {
+        "name": "schedule_id",
+        "source": "schedule.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": [\n    {\n      \"attributes\": {\n        \"start\": \"{{ timeISO('now') }}\",\n        \"end\": \"{{ timeISO('now + 1h') }}\"\n      },\n      \"relationships\": {\n        \"user\": {\n          \"data\": {\n            \"id\": \"{{ user.data.id }}\",\n            \"type\": \"users\"\n          }\n        }\n      },\n      \"type\": \"overrides\"\n    }\n  ]\n}"
+      }
+    ],
+    "step": "there is a valid \"override\" in the system",
+    "key": "override",
+    "tag": "On-Call",
+    "operationId": "CreateOnCallScheduleOverride"
+  },
+  {
+    "parameters": [
+      {
         "name": "team_id",
         "source": "dd_team.data.id"
       },

@@ -48,7 +48,7 @@ class TeamOnCallRespondersData(ModelNormal):
         **kwargs,
     ):
         """
-        Defines the main on-call responder object for a team, including relationships and metadata.
+        Defines the main on-call responder object for a team, including relationships.
 
         :param id: Unique identifier of the on-call responder configuration.
         :type id: str, optional

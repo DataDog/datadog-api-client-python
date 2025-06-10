@@ -1926,6 +1926,12 @@
       "type": "safe"
     }
   },
+  "ListOnCallEscalationPolicies": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateOnCallEscalationPolicy": {
     "tag": "On-Call",
     "undo": {
@@ -1985,6 +1991,12 @@
       "type": "unsafe"
     }
   },
+  "ListOnCallSchedules": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateOnCallSchedule": {
     "tag": "On-Call",
     "undo": {
@@ -2020,6 +2032,31 @@
     "tag": "On-Call",
     "undo": {
       "type": "safe"
+    }
+  },
+  "ListOnCallScheduleOverrides": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOnCallScheduleOverride": {
+    "tag": "On-Call",
+    "undo": {
+      "operationId": "DeleteOnCallScheduleOverride",
+      "parameters": [
+        {
+          "name": "override_id",
+          "source": "data[0].id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOnCallScheduleOverride": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "GetTeamOnCallUsers": {

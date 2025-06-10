@@ -11,13 +11,18 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.escalation_policies_response import EscalationPoliciesResponse
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
+from datadog_api_client.v2.model.schedules_response import SchedulesResponse
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
 from datadog_api_client.v2.model.shift import Shift
+from datadog_api_client.v2.model.overrides_response import OverridesResponse
+from datadog_api_client.v2.model.override_response import OverrideResponse
+from datadog_api_client.v2.model.override_request import OverrideRequest
 from datadog_api_client.v2.model.team_on_call_responders import TeamOnCallResponders
 from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
@@ -84,6 +89,32 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._create_on_call_schedule_override_endpoint = _Endpoint(
+            settings={
+                "response_type": (OverrideResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/overrides",
+                "operation_id": "create_on_call_schedule_override",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (OverrideRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_on_call_escalation_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -121,6 +152,35 @@ class OnCallApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "schedule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_on_call_schedule_override_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/overrides/{override_id}",
+                "operation_id": "delete_on_call_schedule_override",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "override_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "override_id",
                     "location": "path",
                 },
             },
@@ -275,6 +335,105 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._list_on_call_escalation_policies_endpoint = _Endpoint(
+            settings={
+                "response_type": (EscalationPoliciesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/escalation-policies",
+                "operation_id": "list_on_call_escalation_policies",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_on_call_schedule_overrides_endpoint = _Endpoint(
+            settings={
+                "response_type": (OverridesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/overrides",
+                "operation_id": "list_on_call_schedule_overrides",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_start": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[start]",
+                    "location": "query",
+                },
+                "filter_end": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[end]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_on_call_schedules_endpoint = _Endpoint(
+            settings={
+                "response_type": (SchedulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules",
+                "operation_id": "list_on_call_schedules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._set_on_call_team_routing_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamRoutingRules,),
@@ -414,6 +573,27 @@ class OnCallApi:
 
         return self._create_on_call_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def create_on_call_schedule_override(
+        self,
+        schedule_id: str,
+        body: OverrideRequest,
+    ) -> OverrideResponse:
+        """Create an override.
+
+        Create an override for a given schedule.
+
+        :param schedule_id: The ID of the on-call schedule.
+        :type schedule_id: str
+        :type body: OverrideRequest
+        :rtype: OverrideResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["schedule_id"] = schedule_id
+
+        kwargs["body"] = body
+
+        return self._create_on_call_schedule_override_endpoint.call_with_http_info(**kwargs)
+
     def delete_on_call_escalation_policy(
         self,
         policy_id: str,
@@ -447,6 +627,28 @@ class OnCallApi:
         kwargs["schedule_id"] = schedule_id
 
         return self._delete_on_call_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_on_call_schedule_override(
+        self,
+        schedule_id: str,
+        override_id: str,
+    ) -> None:
+        """Delete an override.
+
+        Delete an override for a given schedule.
+
+        :param schedule_id: The ID of the on-call schedule.
+        :type schedule_id: str
+        :param override_id: The ID of the override.
+        :type override_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["schedule_id"] = schedule_id
+
+        kwargs["override_id"] = override_id
+
+        return self._delete_on_call_schedule_override_endpoint.call_with_http_info(**kwargs)
 
     def get_on_call_escalation_policy(
         self,
@@ -573,6 +775,96 @@ class OnCallApi:
         kwargs["team_id"] = team_id
 
         return self._get_team_on_call_users_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_escalation_policies(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> EscalationPoliciesResponse:
+        """Get a list of all escalation policies.
+
+        Get a list of all escalation policies.
+
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: EscalationPoliciesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._list_on_call_escalation_policies_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_schedule_overrides(
+        self,
+        schedule_id: str,
+        filter_start: str,
+        filter_end: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> OverridesResponse:
+        """Get a list of all overrides for a schedule.
+
+        Get a list of all overrides for a given schedule.
+
+        :param schedule_id: The ID of the on-call schedule.
+        :type schedule_id: str
+        :param filter_start: The start time (in ISO-8601 format) of the time range to filter overrides by. Only overrides that overlap with this time range will be returned.
+        :type filter_start: str
+        :param filter_end: The end time (in ISO-8601 format) of the time range to filter overrides by. Only overrides that overlap with this time range will be returned.
+        :type filter_end: str
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: OverridesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["schedule_id"] = schedule_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        kwargs["filter_start"] = filter_start
+
+        kwargs["filter_end"] = filter_end
+
+        return self._list_on_call_schedule_overrides_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_schedules(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> SchedulesResponse:
+        """Get a list of all on-call schedules.
+
+        Get a list of all on-call schedules.
+
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: SchedulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._list_on_call_schedules_endpoint.call_with_http_info(**kwargs)
 
     def set_on_call_team_routing_rules(
         self,
