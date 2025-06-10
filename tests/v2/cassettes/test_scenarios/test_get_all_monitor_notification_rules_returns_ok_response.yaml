@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"filter":{"tags":["app:test-get_all_monitor_notification_rules_returns_ok_response-1743713884"]},"name":"test
+    body: '{"data":{"attributes":{"filter":{"tags":["app:test-get_all_monitor_notification_rules_returns_ok_response-1744280994"]},"name":"test
       rule","recipients":["slack-monitor-app"]},"type":"monitor-notification-rule"}}'
     headers:
       accept:
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
   response:
     body:
-      string: '{"data":{"type":"monitor-notification-rule","attributes":{"filter":{"tags":["app:test-get_all_monitor_notification_rules_returns_ok_response-1743713884"]},"recipients":["slack-monitor-app"],"creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","modified_at":"1970-01-01T00:00:00+00:00","name":"test
-        rule","created_at":"2025-04-03T20:58:04.604345+00:00"},"id":"6e5b7a93-37b5-44b8-9098-2d31b6dd84b6"}}
+      string: '{"data":{"type":"monitor-notification-rule","attributes":{"name":"test
+        rule","filter":{"tags":["app:test-get_all_monitor_notification_rules_returns_ok_response-1744280994"]},"recipients":["slack-monitor-app"],"modified_at":"1970-01-01T00:00:00+00:00","created_at":"2025-04-10T10:29:55.362004+00:00"},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}},"id":"b7122864-6517-45d3-8dc1-f226a08dd8f4"},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":"frog","handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2025-04-07T20:19:46.118466+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active"}}]}
 
         '
     headers:
@@ -30,8 +30,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
   response:
     body:
-      string: '{"data":[{"type":"monitor-notification-rule","id":"6e5b7a93-37b5-44b8-9098-2d31b6dd84b6","attributes":{"creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"test
-        rule","recipients":["slack-monitor-app"],"created_at":"2025-04-03T20:58:04.604345+00:00","filter":{"tags":["app:test-get_all_monitor_notification_rules_returns_ok_response-1743713884"]},"modified_at":"2025-04-03T20:58:04.616893+00:00"}}]}
+      string: '{"data":[{"type":"monitor-notification-rule","attributes":{"filter":{"tags":["app:test-get_all_monitor_notification_rules_returns_ok_response-1744280994"]},"name":"test
+        rule","recipients":["slack-monitor-app"],"modified_at":"2025-04-10T10:29:55.373154+00:00","created_at":"2025-04-10T10:29:55.362004+00:00"},"id":"b7122864-6517-45d3-8dc1-f226a08dd8f4"}]}
 
         '
     headers:
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/6e5b7a93-37b5-44b8-9098-2d31b6dd84b6
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/b7122864-6517-45d3-8dc1-f226a08dd8f4
   response:
     body:
       string: ''
