@@ -8,7 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/00000000-0000-1234-0000-000000000000
   response:
     body:
-      string: '{"errors":["Monitor notification rule not found"]}'
+      string: '{"errors":["Monitor Notification Rule not found"]}'
     headers:
       content-type:
       - application/json
