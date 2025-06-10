@@ -45,7 +45,7 @@ class TeamOnCallResponders(ModelNormal):
         """
         Root object representing a team's on-call responder configuration.
 
-        :param data: Defines the main on-call responder object for a team, including relationships and metadata.
+        :param data: Defines the main on-call responder object for a team, including relationships.
         :type data: TeamOnCallRespondersData, optional
 
         :param included: The ``TeamOnCallResponders`` ``included``.

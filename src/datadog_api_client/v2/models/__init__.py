@@ -1069,6 +1069,7 @@ from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
 from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.error_handler import ErrorHandler
 from datadog_api_client.v2.model.escalation import Escalation
+from datadog_api_client.v2.model.escalation_policies_response import EscalationPoliciesResponse
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_create_request_data import EscalationPolicyCreateRequestData
@@ -2350,6 +2351,9 @@ from datadog_api_client.v2.model.okta_account_update_request_attributes import O
 from datadog_api_client.v2.model.okta_account_update_request_data import OktaAccountUpdateRequestData
 from datadog_api_client.v2.model.okta_accounts_response import OktaAccountsResponse
 from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
+from datadog_api_client.v2.model.on_call_user_relationship import OnCallUserRelationship
+from datadog_api_client.v2.model.on_call_user_relationship_data import OnCallUserRelationshipData
+from datadog_api_client.v2.model.on_call_user_relationship_type import OnCallUserRelationshipType
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
@@ -2400,6 +2404,17 @@ from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponse
 from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
+from datadog_api_client.v2.model.override import Override
+from datadog_api_client.v2.model.override_attributes import OverrideAttributes
+from datadog_api_client.v2.model.override_create_data import OverrideCreateData
+from datadog_api_client.v2.model.override_create_data_attributes import OverrideCreateDataAttributes
+from datadog_api_client.v2.model.override_create_data_relationships import OverrideCreateDataRelationships
+from datadog_api_client.v2.model.override_create_data_type import OverrideCreateDataType
+from datadog_api_client.v2.model.override_relationships import OverrideRelationships
+from datadog_api_client.v2.model.override_request import OverrideRequest
+from datadog_api_client.v2.model.override_response import OverrideResponse
+from datadog_api_client.v2.model.override_type import OverrideType
+from datadog_api_client.v2.model.overrides_response import OverridesResponse
 from datadog_api_client.v2.model.page_urgency import PageUrgency
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.parameter import Parameter
@@ -2767,6 +2782,7 @@ from datadog_api_client.v2.model.schedule_update_request_data_type import Schedu
 from datadog_api_client.v2.model.schedule_user import ScheduleUser
 from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAttributes
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
+from datadog_api_client.v2.model.schedules_response import SchedulesResponse
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
@@ -4293,6 +4309,7 @@ __all__ = [
     "EntityV3SystemSpec",
     "ErrorHandler",
     "Escalation",
+    "EscalationPoliciesResponse",
     "EscalationPolicy",
     "EscalationPolicyCreateRequest",
     "EscalationPolicyCreateRequestData",
@@ -5138,6 +5155,9 @@ __all__ = [
     "OktaAccountUpdateRequestData",
     "OktaAccountsResponse",
     "OnCallPageTargetType",
+    "OnCallUserRelationship",
+    "OnCallUserRelationshipData",
+    "OnCallUserRelationshipType",
     "OnDemandConcurrencyCap",
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
@@ -5186,6 +5206,17 @@ __all__ = [
     "OutputSchema",
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
+    "Override",
+    "OverrideAttributes",
+    "OverrideCreateData",
+    "OverrideCreateDataAttributes",
+    "OverrideCreateDataRelationships",
+    "OverrideCreateDataType",
+    "OverrideRelationships",
+    "OverrideRequest",
+    "OverrideResponse",
+    "OverrideType",
+    "OverridesResponse",
     "PageUrgency",
     "Pagination",
     "Parameter",
@@ -5519,6 +5550,7 @@ __all__ = [
     "ScheduleUser",
     "ScheduleUserAttributes",
     "ScheduleUserType",
+    "SchedulesResponse",
     "ScorecardType",
     "SecurityFilter",
     "SecurityFilterAttributes",
