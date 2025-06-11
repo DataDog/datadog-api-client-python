@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -23,6 +24,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 
         return {
+            "custom_tags": ([str],),
             "env": (str,),
             "finished_at": (int,),
             "git": (DORAGitInfo,),
@@ -34,6 +36,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "custom_tags": "custom_tags",
         "env": "env",
         "finished_at": "finished_at",
         "git": "git",
@@ -49,6 +52,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         finished_at: int,
         service: str,
         started_at: int,
+        custom_tags: Union[List[str], none_type, UnsetType] = unset,
         env: Union[str, UnsetType] = unset,
         git: Union[DORAGitInfo, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
@@ -58,6 +62,9 @@ class DORADeploymentRequestAttributes(ModelNormal):
     ):
         """
         Attributes to create a DORA deployment event.
+
+        :param custom_tags: A list of user-defined tags. The tags must follow the ``key:value`` pattern. Up to 100 may be added per event.
+        :type custom_tags: [str], none_type, optional
 
         :param env: Environment name to where the service was deployed.
         :type env: str, optional
@@ -83,6 +90,8 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param version: Version to correlate with `APM Deployment Tracking <https://docs.datadoghq.com/tracing/services/deployment_tracking/>`_.
         :type version: str, optional
         """
+        if custom_tags is not unset:
+            kwargs["custom_tags"] = custom_tags
         if env is not unset:
             kwargs["env"] = env
         if git is not unset:

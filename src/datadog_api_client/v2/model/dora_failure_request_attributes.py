@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -23,6 +24,7 @@ class DORAFailureRequestAttributes(ModelNormal):
         from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 
         return {
+            "custom_tags": ([str],),
             "env": (str,),
             "finished_at": (int,),
             "git": (DORAGitInfo,),
@@ -36,6 +38,7 @@ class DORAFailureRequestAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "custom_tags": "custom_tags",
         "env": "env",
         "finished_at": "finished_at",
         "git": "git",
@@ -51,6 +54,7 @@ class DORAFailureRequestAttributes(ModelNormal):
     def __init__(
         self_,
         started_at: int,
+        custom_tags: Union[List[str], none_type, UnsetType] = unset,
         env: Union[str, UnsetType] = unset,
         finished_at: Union[int, UnsetType] = unset,
         git: Union[DORAGitInfo, UnsetType] = unset,
@@ -64,6 +68,9 @@ class DORAFailureRequestAttributes(ModelNormal):
     ):
         """
         Attributes to create a DORA failure event.
+
+        :param custom_tags: A list of user-defined tags. The tags must follow the ``key:value`` pattern. Up to 100 may be added per event.
+        :type custom_tags: [str], none_type, optional
 
         :param env: Environment name that was impacted by the failure.
         :type env: str, optional
@@ -95,6 +102,8 @@ class DORAFailureRequestAttributes(ModelNormal):
         :param version: Version to correlate with `APM Deployment Tracking <https://docs.datadoghq.com/tracing/services/deployment_tracking/>`_.
         :type version: str, optional
         """
+        if custom_tags is not unset:
+            kwargs["custom_tags"] = custom_tags
         if env is not unset:
             kwargs["env"] = env
         if finished_at is not unset:
