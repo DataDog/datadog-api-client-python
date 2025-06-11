@@ -41,10 +41,10 @@ class EventCreateResponse(ModelNormal):
         """
         Object containing an event response.
 
-        :param attributes: JSON object containing all events attributes and their associated values.
+        :param attributes: JSON object containing event attributes and their associated values.
         :type attributes: EventCreateResponseAttributes, optional
 
-        :param type: Event type
+        :param type: Entity type.
         :type type: str, optional
         """
         if attributes is not unset:
