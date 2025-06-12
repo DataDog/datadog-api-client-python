@@ -8,7 +8,96 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
   response:
     body:
-      string: '{"meta":{"count_limit":100,"version":1215,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true},"data":{"relationships":{"groups":{"data":[]}},"attributes":{},"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}
+      string: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","attributes":{},"type":"sensitive_data_scanner_configuration","relationships":{"groups":{"data":[{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"},{"id":"0QvFjxASTxK2VgAIXOgGnQ","type":"sensitive_data_scanner_group"},{"id":"5a142739-d4a5-4d9e-bc20-a4fd77bb8db0","type":"sensitive_data_scanner_group"}]}}},"meta":{"version":274572,"count_limit":100,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true,"has_multi_pass_enabled":true,"has_cascading_enabled":false,"is_configuration_superseded":false,"is_float_sampling_rate_enabled":false,"min_sampling_rate":10.0},"included":[{"id":"xdfyyx1FSzqEaNwOpqhsFw","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"],"samplings":[]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[{"id":"5991e227-d611-4b56-afef-4992b5104755","type":"sensitive_data_scanner_rule"},{"id":"e28f1169-ba43-46ea-aa9e-a0f97a2fc830","type":"sensitive_data_scanner_rule"},{"id":"55318894-77ad-4b18-bc2d-562e388effe8","type":"sensitive_data_scanner_rule"},{"id":"7511ac78-b433-42e0-b291-eac394e1ae06","type":"sensitive_data_scanner_rule"},{"id":"47edb1c1-c841-48b0-bb84-9909485e1737","type":"sensitive_data_scanner_rule"},{"id":"1b4415eb-6e91-441a-b1bf-2a3cb7b9724b","type":"sensitive_data_scanner_rule"},{"id":"442c7cc0-2843-46f3-aedf-a027bcf8a22b","type":"sensitive_data_scanner_rule"},{"id":"dd7b34e8-c1d6-4ab0-bf4f-bb38809a1f43","type":"sensitive_data_scanner_rule"},{"id":"145bbddb-c4ca-49d0-92dd-a7774ceb1eb4","type":"sensitive_data_scanner_rule"},{"id":"2b2a4801-4f97-49c0-b6a3-e06d2f808c13","type":"sensitive_data_scanner_rule"},{"id":"175b62d2-fc94-4919-aa35-3d501849885c","type":"sensitive_data_scanner_rule"},{"id":"d75637b3-ef47-46a7-8f8f-1ce99134d827","type":"sensitive_data_scanner_rule"},{"id":"6678e2b9-7b6d-4020-a6a1-e392d5d4e838","type":"sensitive_data_scanner_rule"},{"id":"6837bea8-0c0e-4ee7-bd6c-6371cbca52bb","type":"sensitive_data_scanner_rule"},{"id":"f4fec54d-63c3-4151-8cc0-d925743124ff","type":"sensitive_data_scanner_rule"},{"id":"4724117a-668a-4a97-84e8-9f7d7cac0ab2","type":"sensitive_data_scanner_rule"},{"id":"70fbcc56-415b-42a2-96b0-53958f6024ba","type":"sensitive_data_scanner_rule"}]}}},{"id":"5991e227-d611-4b56-afef-4992b5104755","attributes":{"name":"HTTP
+        Basic Authentication Header Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:network_and_device_info","sensitive_data:basic_auth"],"labels":["domain:network","compliance:pci","compliance:gdpr","compliance:hipaa"],"is_enabled":true,"description":"Matches
+        the Authorization header of an HTTP request that uses the Basic authentication
+        scheme. It specifically looks for the Authorization keyword, followed by the
+        Basic keyword and a base64-encoded string.\n\nExamples of matching formats:\n-
+        `Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==`\n- `Authorization: Basic
+        Yml0c0FJOmhlbHAgbWU=`\n","priority":4,"included_keyword_configuration":{"keywords":[],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"9d7756e343cefa22a5c098e1092590f806eb5446","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"e28f1169-ba43-46ea-aa9e-a0f97a2fc830","attributes":{"name":"HTTP
+        Cookie Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:network_and_device_info","sensitive_data:cookie"],"labels":["domain:network","compliance:pci","compliance:gdpr","compliance:hipaa"],"is_enabled":true,"description":"Matches
+        the Set-Cookie header of an HTTP response. It captures the cookie name-value
+        pairs and any optional attributes that are separated by semicolons.\n\nExamples
+        of matching formats:\n- `Set-Cookie: sessionid=123456; HttpOnly; Secure`\n-
+        `Set-Cookie: username=JohnDoe`\n","priority":4,"included_keyword_configuration":{"keywords":["cookie"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"34574e54c3e67a8a26d7070f331d83ae933d2730","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"55318894-77ad-4b18-bc2d-562e388effe8","attributes":{"name":"HTTP(S)
+        URL Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:url","sensitive_data:http_url"],"labels":["domain:network","compliance:pci","compliance:gdpr","compliance:hipaa"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a HTTP(S) URL.\n\nExamples of matching
+        formats:\n- `https://www.example.com/questions/3456/my-document?key1=value1&key2=value2`\n-
+        `http://example.com/%E5%BC%95%E3%81%8D%E5%89%B2%E3%82%8A.html`\n- `http://xn--fsqu00a.xn--3lr804guic/`\n","priority":4,"included_keyword_configuration":{"keywords":[],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"aLQt_DX_T8S1MaWS82eoNQ","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"7511ac78-b433-42e0-b291-eac394e1ae06","attributes":{"name":"Canadian
+        Social Insurance Number Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:canadian_sin"],"labels":["domain:pii","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        sequence of characters representing a Canadian Social Insurance Number (SIN),
+        which is composed of three digits separated by hyphens.\n\nExamples of matching
+        formats:\n- `123-456-789`\n- `456-789-123`\n","priority":4,"included_keyword_configuration":{"keywords":["canadian","canadian
+        insurance number","canadian social insurance","insurance number","number","sin","social","social
+        insurance"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"450239afc250a19799b6c03dc0e16fd6a4b2a1af","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"47edb1c1-c841-48b0-bb84-9909485e1737","attributes":{"name":"Chinese
+        Identity Card Number Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:chinese_id"],"labels":["domain:pii","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a Chinese Identity Card Number format,
+        which consists of a single non-zero digit, followed by exactly 5 additional
+        digits, followed by a sequence of 7 to 18 digits. Matches are validated via
+        a checksum.\n\nExamples of matching formats:\n- `Chinese identity card number:
+        320321197408094019`\n- `national id: 320321197408094019`\n","priority":4,"included_keyword_configuration":{"keywords":["national
+        id","resident identity","identity number","identification number","identity
+        card number","national identification number"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"4kEyzAP6fUEF83rWsEIZEx","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"1b4415eb-6e91-441a-b1bf-2a3cb7b9724b","attributes":{"name":"Chinese
+        Passport Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:chinese_passport"],"labels":["domain:pii","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a Chinese passport number in a 9-character
+        format with 1 or 2 letters that can be D,DE,S,SE,G or E, and 7 or 8 digits.\n\nExamples
+        of matching formats:\n- `E01234567`\n- `G01234567`\n","priority":4,"included_keyword_configuration":{"keywords":["passport","travel
+        document"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"8Wld3kT1UyCfVGmO3Ok69R","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"442c7cc0-2843-46f3-aedf-a027bcf8a22b","attributes":{"name":"Chinese
+        Phone Number Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:chinese_phone_number"],"labels":["domain:pii","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a Chinese phone number in a 11-character
+        format with the first digit being 1, the second digit being 3, 5, or 8, and
+        then exactly 9 additional digits.\n\nExamples of matching formats:\n- `18652313817`\n-
+        `+86 18552313817`\n","priority":4,"included_keyword_configuration":{"keywords":["mobile","phone","cell"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"V7sb5Px24c0n9yPwV72glH","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"dd7b34e8-c1d6-4ab0-bf4f-bb38809a1f43","attributes":{"name":"France
+        Social Security Number Scanner (INSEE/NIR)","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:france_nir"],"labels":["domain:pii","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a France social security number (INSEE/NIR)
+        in a 9-digit format with optional delimiters after the 3rd and 5th digit.
+        Matches are validated via a checksum.\n\nExamples of matching formats:\n-
+        `1-51-02-46102-043-25`\n- `151024610204325`\n","priority":4,"included_keyword_configuration":{"keywords":["social
+        security","insee","nir"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"QiVm1XhY7GjzrSNrJ5IICB","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"145bbddb-c4ca-49d0-92dd-a7774ceb1eb4","attributes":{"name":"IPv4
+        Address Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:ip_address","sensitive_data:ipv4_address"],"labels":["domain:network","compliance:gdpr","compliance:hipaa"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing an IPv4 Address.\n\nExamples of matching
+        formats:\n- `127.0.0.1`\n- `172.16.254.1`\n","priority":4,"included_keyword_configuration":{"keywords":[],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"aDA3jUjSSLOezHV2y-Rn_w","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"2b2a4801-4f97-49c0-b6a3-e06d2f808c13","attributes":{"name":"IPv6
+        Address Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:ip_address","sensitive_data:ipv6_address"],"labels":["domain:network","compliance:gdpr","compliance:hipaa"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing an IPv6 Address.\n\nExamples of matching
+        formats:\n- `2001:0db8:0000:0000:0000:ff00:0042:8329`\n- `0000:0000:0000:0000:0000:0000:0000:0001`\n","priority":4,"included_keyword_configuration":{"keywords":[],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"s3sEZP5fSTGSPLPS853VeQ","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"175b62d2-fc94-4919-aa35-3d501849885c","attributes":{"name":"Standard
+        Email Address Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data:email_address","sensitive_data_category:email_address"],"labels":["domain:pii","compliance:hipaa","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing standard email address using an official
+        top-level domain.\n\nExamples of matching formats:\n- `simple@example.com`\n-
+        `simple%40example.com`\n- `very.common@example.com`\n- `x@example.com`\n-
+        `long.email-address-with-hyphens@and.subdomains.example.com`\n- `user.name+tag+sorting@example.com`\n-
+        `name/surname@example.com`\n- `mailhost!username@example.org`\n- `user%example.com@example.org`\n-
+        `user-@example.org`\n","priority":4,"included_keyword_configuration":{"keywords":[],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"PuXiVTCkTHOtj0Yad1ppsw","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"d75637b3-ef47-46a7-8f8f-1ce99134d827","attributes":{"name":"Standard
+        MAC Address Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data:mac_address","sensitive_data_category:mac_address"],"labels":["domain:network","compliance:gdpr","compliance:hipaa"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a MAC address.\n\nExamples of matching
+        formats:\n- `FF:FF:FF:FF:FF:FF`\n- `FF-FF-FF-FF-FF-FF`\n","priority":4,"included_keyword_configuration":{"keywords":[],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"uRLVpXXTRxmCg4M93hfLiA","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"6678e2b9-7b6d-4020-a6a1-e392d5d4e838","attributes":{"name":"UK
+        National Health Service Number Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:uk_nhs"],"labels":["compliance:gdpr","domain:pii"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a UK national health service number
+        (NHS) in a 10-digit format with optional space delimiters. Matches are validated
+        via a checksum.\n\nExamples of matching formats:\n- `National Health Number:
+        907 784 4449`\n- `NHS: 1234567881`\n","priority":4,"included_keyword_configuration":{"keywords":["national
+        health number","nhs"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"rJ9DeXT0G7oESwbGWGMW82","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"6837bea8-0c0e-4ee7-bd6c-6371cbca52bb","attributes":{"name":"UK
+        National Insurance Number Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:uk_nin"],"labels":["domain:pii","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        sequence of characters representing a UK National Insurance Number (NIN),
+        which is composed of two uppercase letters, six digits, and an optional uppercase
+        letter.\n\nExamples of matching formats:\n- `AB123456C`\n- `XY654321A`\n-
+        `GH987654`\n","priority":4,"included_keyword_configuration":{"keywords":["insurance","national","ni","nin"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"de0899e0cbaaa812bb624cf04c912071012f616d","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"f4fec54d-63c3-4151-8cc0-d925743124ff","attributes":{"name":"US
+        Individual Taxpayer Identification Number Scanner (ITIN)","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:us_itin"],"labels":["domain:pii","compliance:hipaa","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a US ITIN number in a 9-digit format
+        with optional delimiters after the 3rd and 5th digit.\n\nExamples of matching
+        formats:\n- `927 70 5828`\n- `993-77 0690`\n","priority":4,"included_keyword_configuration":{"keywords":["i.t.i.n.","individual
+        taxpayer","itin"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"eC0YxRYEz27UOrfQ7sM3Bx","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"4724117a-668a-4a97-84e8-9f7d7cac0ab2","attributes":{"name":"US
+        Passport Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:passport_number"],"labels":["domain:pii","compliance:gdpr","compliance:hipaa"],"is_enabled":true,"description":"Matches
+        sequence of characters representing a US passport number, which is composed
+        9 alphanumeric characters.\n\nExamples of matching formats:\n- `E00007734`\n-
+        `C03004786`\n","priority":4,"included_keyword_configuration":{"keywords":["passport","passport_"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"d962f7ddb3f55041e39195a60ff79d4814a7c331","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"70fbcc56-415b-42a2-96b0-53958f6024ba","attributes":{"name":"US
+        Social Security Number Scanner","namespaces":[],"excluded_namespaces":[],"text_replacement":{"type":"none"},"tags":["sensitive_data_category:pii","sensitive_data:us_ssn"],"labels":["domain:pii","compliance:hipaa","compliance:gdpr"],"is_enabled":true,"description":"Matches
+        a sequence of characters representing a US Social Security number in a 9-digit
+        format.\n\nExamples of matching formats:\n- `555-12-3456`\n- `456789012`\n","priority":4,"included_keyword_configuration":{"keywords":["ssn","social
+        security"],"use_recommended_keywords":true,"character_count":30}},"type":"sensitive_data_scanner_rule","relationships":{"standard_pattern":{"data":{"id":"PIIXqwUljp4BaqIHDBBLNn","type":"sensitive_data_scanner_standard_pattern"}},"group":{"data":{"id":"xdfyyx1FSzqEaNwOpqhsFw","type":"sensitive_data_scanner_group"}}}},{"id":"0QvFjxASTxK2VgAIXOgGnQ","attributes":{"name":"my
+        group","is_enabled":true,"filter":{"query":"*"},"product_list":["logs"],"description":"","samplings":[]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[{"id":"M4PLjvGWR7CMz6XlCjAadA","type":"sensitive_data_scanner_rule"}]}}},{"id":"M4PLjvGWR7CMz6XlCjAadA","attributes":{"name":"tf-TestAccDatadogSensitiveDataScannerRule_DefaultTags-local-1721743568","namespaces":[],"excluded_namespaces":["username"],"pattern":"regex","text_replacement":{"type":"none"},"tags":["sensitive_data:true","default_key:default_value"],"labels":[],"is_enabled":true,"description":"a
+        description"},"type":"sensitive_data_scanner_rule","relationships":{"group":{"data":{"id":"0QvFjxASTxK2VgAIXOgGnQ","type":"sensitive_data_scanner_group"}}}},{"id":"5a142739-d4a5-4d9e-bc20-a4fd77bb8db0","attributes":{"name":"Thibault
+        Terraform test","is_enabled":false,"filter":{"query":"service:my-service"},"product_list":["apm"],"description":"A
+        relevant description","samplings":[]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}}]}
 
         '
     headers:
@@ -18,7 +107,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"filter":{"query":"*"},"is_enabled":false,"name":"my-test-group","product_list":["logs"]},"relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}},"type":"sensitive_data_scanner_group"},"meta":{}}'
+    body: '{"data":{"attributes":{"filter":{"query":"*"},"is_enabled":false,"name":"my-test-group","product_list":["logs"],"samplings":[{"product":"logs","rate":100}]},"relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}},"type":"sensitive_data_scanner_group"},"meta":{}}'
     headers:
       accept:
       - application/json
@@ -28,7 +117,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups
   response:
     body:
-      string: '{"meta":{"version":1216},"data":{"relationships":{"rules":{"data":[]},"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87"}}},"attributes":{"is_enabled":false,"filter":{"query":"*"},"product_list":["logs"],"name":"my-test-group"},"type":"sensitive_data_scanner_group","id":"ut9dJ0wfShO5ULFVTgFF8A"}}
+      string: '{"data":{"id":"6274c155-446e-4cae-aae3-dd700ee02952","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"],"samplings":[{"product":"logs","rate":100.0}]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},"meta":{"version":274573}}
 
         '
     headers:
@@ -38,17 +127,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"filter":{"query":"*"},"is_enabled":false,"name":"Test-Update_Scanning_Group_returns_OK_response-1670579583","product_list":["logs"]},"id":"ut9dJ0wfShO5ULFVTgFF8A","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}},"type":"sensitive_data_scanner_group"},"meta":{}}'
+    body: '{"data":{"attributes":{"filter":{"query":"*"},"is_enabled":false,"name":"Test-Update_Scanning_Group_returns_OK_response-1748625435","product_list":["logs"]},"id":"6274c155-446e-4cae-aae3-dd700ee02952","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}},"type":"sensitive_data_scanner_group"},"meta":{}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/ut9dJ0wfShO5ULFVTgFF8A
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/6274c155-446e-4cae-aae3-dd700ee02952
   response:
     body:
-      string: '{"meta":{"version":1217}}
+      string: '{"meta":{"version":274574}}
 
         '
     headers:
@@ -65,10 +154,10 @@ interactions:
       content-type:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/ut9dJ0wfShO5ULFVTgFF8A
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/6274c155-446e-4cae-aae3-dd700ee02952
   response:
     body:
-      string: '{"meta":{"version":1218}}
+      string: '{"meta":{"version":274575}}
 
         '
     headers:
