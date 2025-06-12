@@ -789,7 +789,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_group\",\n    \"attributes\": {\n      \"name\": \"my-test-group\",\n      \"is_enabled\": false,\n      \"product_list\": [\n          \"logs\"\n      ],\n      \"filter\": {\n          \"query\": \"*\"\n      }\n    },\n    \"relationships\": {\n      \"configuration\": {\n        \"data\": {\n          \"id\": \"{{ configuration.data.id }}\",\n          \"type\": \"{{ configuration.data.type }}\"\n        }\n      },\n      \"rules\": {\n          \"data\": []\n      }\n    }\n  },\n  \"meta\": {}\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_group\",\n    \"attributes\": {\n      \"name\": \"my-test-group\",\n      \"is_enabled\": false,\n      \"product_list\": [\n          \"logs\"\n      ],\n      \"filter\": {\n          \"query\": \"*\"\n      },\n      \"samplings\": [{\"product\": \"logs\", \"rate\": 100}]\n    },\n    \"relationships\": {\n      \"configuration\": {\n        \"data\": {\n          \"id\": \"{{ configuration.data.id }}\",\n          \"type\": \"{{ configuration.data.type }}\"\n        }\n      },\n      \"rules\": {\n          \"data\": []\n      }\n    }\n  },\n  \"meta\": {}\n}"
       }
     ],
     "step": "there is a valid \"scanning_group\" in the system",

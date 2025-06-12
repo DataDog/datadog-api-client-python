@@ -3050,6 +3050,7 @@ from datadog_api_client.v2.model.sensitive_data_scanner_rule_update_request impo
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_update_response import (
     SensitiveDataScannerRuleUpdateResponse,
 )
+from datadog_api_client.v2.model.sensitive_data_scanner_samplings import SensitiveDataScannerSamplings
 from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern import SensitiveDataScannerStandardPattern
 from datadog_api_client.v2.model.sensitive_data_scanner_standard_pattern_attributes import (
     SensitiveDataScannerStandardPatternAttributes,
@@ -5686,6 +5687,7 @@ __all__ = [
     "SensitiveDataScannerRuleUpdate",
     "SensitiveDataScannerRuleUpdateRequest",
     "SensitiveDataScannerRuleUpdateResponse",
+    "SensitiveDataScannerSamplings",
     "SensitiveDataScannerStandardPattern",
     "SensitiveDataScannerStandardPatternAttributes",
     "SensitiveDataScannerStandardPatternData",
