@@ -27,6 +27,12 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
 
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
+
         :param default_tags: Default Tags for default rules (included in tags)
         :type default_tags: [str], optional
 
