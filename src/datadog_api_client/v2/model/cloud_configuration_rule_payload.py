@@ -37,6 +37,8 @@ class CloudConfigurationRulePayload(ModelNormal):
         return {
             "cases": ([CloudConfigurationRuleCaseCreate],),
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
+            "custom_message": (str,),
+            "custom_name": (str,),
             "filters": ([SecurityMonitoringFilter],),
             "is_enabled": (bool,),
             "message": (str,),
@@ -49,6 +51,8 @@ class CloudConfigurationRulePayload(ModelNormal):
     attribute_map = {
         "cases": "cases",
         "compliance_signal_options": "complianceSignalOptions",
+        "custom_message": "customMessage",
+        "custom_name": "customName",
         "filters": "filters",
         "is_enabled": "isEnabled",
         "message": "message",
@@ -66,6 +70,8 @@ class CloudConfigurationRulePayload(ModelNormal):
         message: str,
         name: str,
         options: CloudConfigurationRuleOptions,
+        custom_message: Union[str, UnsetType] = unset,
+        custom_name: Union[str, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[CloudConfigurationRuleType, UnsetType] = unset,
@@ -79,6 +85,12 @@ class CloudConfigurationRulePayload(ModelNormal):
 
         :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
         :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param filters: Additional queries to filter matched events before they are processed.
         :type filters: [SecurityMonitoringFilter], optional
@@ -101,6 +113,10 @@ class CloudConfigurationRulePayload(ModelNormal):
         :param type: The rule type.
         :type type: CloudConfigurationRuleType, optional
         """
+        if custom_message is not unset:
+            kwargs["custom_message"] = custom_message
+        if custom_name is not unset:
+            kwargs["custom_name"] = custom_name
         if filters is not unset:
             kwargs["filters"] = filters
         if tags is not unset:

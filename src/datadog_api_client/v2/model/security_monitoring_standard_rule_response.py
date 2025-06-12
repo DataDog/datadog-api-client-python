@@ -51,6 +51,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "created_at": (int,),
             "creation_author_id": (int,),
+            "custom_message": (str,),
+            "custom_name": (str,),
             "default_tags": ([str],),
             "deprecation_date": (int,),
             "filters": ([SecurityMonitoringFilter],),
@@ -78,6 +80,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         "compliance_signal_options": "complianceSignalOptions",
         "created_at": "createdAt",
         "creation_author_id": "creationAuthorId",
+        "custom_message": "customMessage",
+        "custom_name": "customName",
         "default_tags": "defaultTags",
         "deprecation_date": "deprecationDate",
         "filters": "filters",
@@ -106,6 +110,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         creation_author_id: Union[int, UnsetType] = unset,
+        custom_message: Union[str, UnsetType] = unset,
+        custom_name: Union[str, UnsetType] = unset,
         default_tags: Union[List[str], UnsetType] = unset,
         deprecation_date: Union[int, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
@@ -142,6 +148,12 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param default_tags: Default Tags for default rules (included in tags)
         :type default_tags: [str], optional
@@ -211,6 +223,10 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["created_at"] = created_at
         if creation_author_id is not unset:
             kwargs["creation_author_id"] = creation_author_id
+        if custom_message is not unset:
+            kwargs["custom_message"] = custom_message
+        if custom_name is not unset:
+            kwargs["custom_name"] = custom_name
         if default_tags is not unset:
             kwargs["default_tags"] = default_tags
         if deprecation_date is not unset:

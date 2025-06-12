@@ -53,6 +53,8 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         return {
             "cases": ([SecurityMonitoringRuleCase],),
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
+            "custom_message": (str,),
+            "custom_name": (str,),
             "filters": ([SecurityMonitoringFilter],),
             "group_signals_by": ([str],),
             "has_extended_title": (bool,),
@@ -70,6 +72,8 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     attribute_map = {
         "cases": "cases",
         "compliance_signal_options": "complianceSignalOptions",
+        "custom_message": "customMessage",
+        "custom_name": "customName",
         "filters": "filters",
         "group_signals_by": "groupSignalsBy",
         "has_extended_title": "hasExtendedTitle",
@@ -88,6 +92,8 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         self_,
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
         compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
+        custom_message: Union[str, UnsetType] = unset,
+        custom_name: Union[str, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         group_signals_by: Union[List[str], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
@@ -117,6 +123,12 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
         :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
         :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions, optional
+
+        :param custom_message: Custom/Overridden Message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
@@ -158,6 +170,10 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             kwargs["cases"] = cases
         if compliance_signal_options is not unset:
             kwargs["compliance_signal_options"] = compliance_signal_options
+        if custom_message is not unset:
+            kwargs["custom_message"] = custom_message
+        if custom_name is not unset:
+            kwargs["custom_name"] = custom_name
         if filters is not unset:
             kwargs["filters"] = filters
         if group_signals_by is not unset:

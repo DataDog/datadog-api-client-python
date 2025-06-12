@@ -32,6 +32,8 @@ class SecurityMonitoringSignalRulePayload(ModelNormal):
 
         return {
             "cases": ([SecurityMonitoringRuleCaseCreate],),
+            "custom_message": (str,),
+            "custom_name": (str,),
             "filters": ([SecurityMonitoringFilter],),
             "has_extended_title": (bool,),
             "is_enabled": (bool,),
@@ -45,6 +47,8 @@ class SecurityMonitoringSignalRulePayload(ModelNormal):
 
     attribute_map = {
         "cases": "cases",
+        "custom_message": "customMessage",
+        "custom_name": "customName",
         "filters": "filters",
         "has_extended_title": "hasExtendedTitle",
         "is_enabled": "isEnabled",
@@ -64,6 +68,8 @@ class SecurityMonitoringSignalRulePayload(ModelNormal):
         name: str,
         options: SecurityMonitoringRuleOptions,
         queries: List[SecurityMonitoringSignalRuleQuery],
+        custom_message: Union[str, UnsetType] = unset,
+        custom_name: Union[str, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -75,6 +81,12 @@ class SecurityMonitoringSignalRulePayload(ModelNormal):
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
@@ -103,6 +115,10 @@ class SecurityMonitoringSignalRulePayload(ModelNormal):
         :param type: The rule type.
         :type type: SecurityMonitoringSignalRuleType, optional
         """
+        if custom_message is not unset:
+            kwargs["custom_message"] = custom_message
+        if custom_name is not unset:
+            kwargs["custom_name"] = custom_name
         if filters is not unset:
             kwargs["filters"] = filters
         if has_extended_title is not unset:

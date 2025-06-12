@@ -18,6 +18,12 @@ class SecurityMonitoringRuleConvertPayload(ModelComposed):
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
 
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
+
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
 

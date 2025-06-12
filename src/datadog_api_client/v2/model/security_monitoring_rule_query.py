@@ -18,6 +18,9 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
 
+        :param custom_query_extension: Query extension to append to the logs query.
+        :type custom_query_extension: str, optional
+
         :param data_source: Source of events, either logs, audit trail, or Datadog events.
         :type data_source: SecurityMonitoringStandardDataSource, optional
 

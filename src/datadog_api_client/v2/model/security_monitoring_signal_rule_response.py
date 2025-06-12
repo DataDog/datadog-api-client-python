@@ -38,6 +38,8 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
             "cases": ([SecurityMonitoringRuleCase],),
             "created_at": (int,),
             "creation_author_id": (int,),
+            "custom_message": (str,),
+            "custom_name": (str,),
             "deprecation_date": (int,),
             "filters": ([SecurityMonitoringFilter],),
             "has_extended_title": (bool,),
@@ -59,6 +61,8 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         "cases": "cases",
         "created_at": "createdAt",
         "creation_author_id": "creationAuthorId",
+        "custom_message": "customMessage",
+        "custom_name": "customName",
         "deprecation_date": "deprecationDate",
         "filters": "filters",
         "has_extended_title": "hasExtendedTitle",
@@ -81,6 +85,8 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         creation_author_id: Union[int, UnsetType] = unset,
+        custom_message: Union[str, UnsetType] = unset,
+        custom_name: Union[str, UnsetType] = unset,
         deprecation_date: Union[int, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
@@ -109,6 +115,12 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
 
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param deprecation_date: When the rule will be deprecated, timestamp in milliseconds.
         :type deprecation_date: int, optional
@@ -161,6 +173,10 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
             kwargs["created_at"] = created_at
         if creation_author_id is not unset:
             kwargs["creation_author_id"] = creation_author_id
+        if custom_message is not unset:
+            kwargs["custom_message"] = custom_message
+        if custom_name is not unset:
+            kwargs["custom_name"] = custom_name
         if deprecation_date is not unset:
             kwargs["deprecation_date"] = deprecation_date
         if filters is not unset:
