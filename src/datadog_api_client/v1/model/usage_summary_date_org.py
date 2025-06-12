@@ -136,6 +136,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "online_archive_events_count_sum": (int,),
             "opentelemetry_apm_host_top99p": (int,),
             "opentelemetry_host_top99p": (int,),
+            "product_analytics_sum": (int,),
             "profiling_aas_count_top99p": (int,),
             "profiling_host_top99p": (int,),
             "public_id": (str,),
@@ -308,6 +309,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "online_archive_events_count_sum": "online_archive_events_count_sum",
         "opentelemetry_apm_host_top99p": "opentelemetry_apm_host_top99p",
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
+        "product_analytics_sum": "product_analytics_sum",
         "profiling_aas_count_top99p": "profiling_aas_count_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "public_id": "public_id",
@@ -481,6 +483,7 @@ class UsageSummaryDateOrg(ModelNormal):
         online_archive_events_count_sum: Union[int, UnsetType] = unset,
         opentelemetry_apm_host_top99p: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p: Union[int, UnsetType] = unset,
+        product_analytics_sum: Union[int, UnsetType] = unset,
         profiling_aas_count_top99p: Union[int, UnsetType] = unset,
         profiling_host_top99p: Union[int, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
@@ -893,6 +896,9 @@ class UsageSummaryDateOrg(ModelNormal):
         :param opentelemetry_host_top99p: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
         :type opentelemetry_host_top99p: int, optional
 
+        :param product_analytics_sum: Shows the sum of all product analytics sessions over all hours in the current date for the given org.
+        :type product_analytics_sum: int, optional
+
         :param profiling_aas_count_top99p: Shows the 99th percentile of all profiled Azure app services over all hours in the current date for all organizations.
         :type profiling_aas_count_top99p: int, optional
 
@@ -1289,6 +1295,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["opentelemetry_apm_host_top99p"] = opentelemetry_apm_host_top99p
         if opentelemetry_host_top99p is not unset:
             kwargs["opentelemetry_host_top99p"] = opentelemetry_host_top99p
+        if product_analytics_sum is not unset:
+            kwargs["product_analytics_sum"] = product_analytics_sum
         if profiling_aas_count_top99p is not unset:
             kwargs["profiling_aas_count_top99p"] = profiling_aas_count_top99p
         if profiling_host_top99p is not unset:
