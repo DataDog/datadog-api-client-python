@@ -14,16 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 class JobDefinitionFromRule(ModelNormal):
-    validations = {
-        "case_index": {
-            "inclusive_maximum": 9,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
         return {
-            "case_index": (int,),
             "_from": (int,),
             "id": (str,),
             "index": (str,),
@@ -32,7 +25,6 @@ class JobDefinitionFromRule(ModelNormal):
         }
 
     attribute_map = {
-        "case_index": "caseIndex",
         "_from": "from",
         "id": "id",
         "index": "index",
@@ -41,20 +33,10 @@ class JobDefinitionFromRule(ModelNormal):
     }
 
     def __init__(
-        self_,
-        case_index: int,
-        _from: int,
-        id: str,
-        index: str,
-        to: int,
-        notifications: Union[List[str], UnsetType] = unset,
-        **kwargs,
+        self_, _from: int, id: str, index: str, to: int, notifications: Union[List[str], UnsetType] = unset, **kwargs
     ):
         """
         Definition of a historical job based on a security monitoring rule.
-
-        :param case_index: Index of the rule case applied by the job.
-        :type case_index: int
 
         :param _from: Starting time of data analyzed by the job.
         :type _from: int
@@ -75,7 +57,6 @@ class JobDefinitionFromRule(ModelNormal):
             kwargs["notifications"] = notifications
         super().__init__(kwargs)
 
-        self_.case_index = case_index
         self_._from = _from
         self_.id = id
         self_.index = index
