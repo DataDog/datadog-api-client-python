@@ -65,7 +65,7 @@ Feature: CSM Threats
   Scenario: Create a Workload Protection agent rule with set action returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
-    And body with value {"data": {"attributes": {"description": "My Agent rule with set action", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "value": "test_value", "scope": "process"}}]}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "My Agent rule with set action", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "value": "test_value", "scope": "process"}}, {"hash": {}}]}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
 
