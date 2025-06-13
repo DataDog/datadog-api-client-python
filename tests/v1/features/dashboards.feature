@@ -1220,7 +1220,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Item Not Found
 
-  @team:DataDog/reporting-and-sharing
+  @skip-terraform-config @team:DataDog/reporting-and-sharing
   Scenario: Update a shared dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
     And there is a valid "shared_dashboard" in the system
