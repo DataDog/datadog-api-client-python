@@ -1095,7 +1095,7 @@ Feature: Security Monitoring
   Scenario: Run a historical job returns "Not Found" response
     Given operation "RunHistoricalJob" enabled
     And new "RunHistoricalJob" request
-    And body with value {"data": { "type": "historicalDetectionsJobCreate", "attributes": {"fromRule": {"caseIndex": 0, "from": 1730201035064, "id": "non-existng", "index": "main", "notifications": [], "to": 1730204635115}}}}
+    And body with value {"data": { "type": "historicalDetectionsJobCreate", "attributes": {"fromRule": {"from": 1730201035064, "id": "non-existng", "index": "main", "notifications": [], "to": 1730204635115}}}}
     When the request is sent
     Then the response status is 404 Not Found
 
