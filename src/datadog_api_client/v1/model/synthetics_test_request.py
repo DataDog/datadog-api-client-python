@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -68,6 +68,7 @@ class SyntheticsTestRequest(ModelNormal):
             "dns_server_port": (str,),
             "files": ([SyntheticsTestRequestBodyFile],),
             "follow_redirects": (bool,),
+            "form": ({str: (str,)},),
             "headers": (SyntheticsTestHeaders,),
             "host": (str,),
             "http_version": (SyntheticsTestOptionsHTTPVersion,),
@@ -103,6 +104,7 @@ class SyntheticsTestRequest(ModelNormal):
         "dns_server_port": "dnsServerPort",
         "files": "files",
         "follow_redirects": "follow_redirects",
+        "form": "form",
         "headers": "headers",
         "host": "host",
         "http_version": "httpVersion",
@@ -148,6 +150,7 @@ class SyntheticsTestRequest(ModelNormal):
         dns_server_port: Union[str, UnsetType] = unset,
         files: Union[List[SyntheticsTestRequestBodyFile], UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
+        form: Union[Dict[str, str], UnsetType] = unset,
         headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
         host: Union[str, UnsetType] = unset,
         http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
@@ -207,11 +210,14 @@ class SyntheticsTestRequest(ModelNormal):
         :param dns_server_port: DNS server port to use for DNS tests.
         :type dns_server_port: str, optional
 
-        :param files: Files to be used as part of the request in the test.
+        :param files: Files to be used as part of the request in the test. Only valid if ``bodyType`` is ``multipart/form-data``.
         :type files: [SyntheticsTestRequestBodyFile], optional
 
         :param follow_redirects: Specifies whether or not the request follows redirects.
         :type follow_redirects: bool, optional
+
+        :param form: Form to be used as part of the request in the test. Only valid if ``bodyType`` is ``multipart/form-data``.
+        :type form: {str: (str,)}, optional
 
         :param headers: Headers to include when performing the test.
         :type headers: SyntheticsTestHeaders, optional
@@ -297,6 +303,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["files"] = files
         if follow_redirects is not unset:
             kwargs["follow_redirects"] = follow_redirects
+        if form is not unset:
+            kwargs["form"] = form
         if headers is not unset:
             kwargs["headers"] = headers
         if host is not unset:
