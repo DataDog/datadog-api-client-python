@@ -12,6 +12,10 @@ from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
 body = DORAFailureRequest(
     data=DORAFailureRequestData(
         attributes=DORAFailureRequestAttributes(
+            custom_tags=[
+                "language:java",
+                "department:engineering",
+            ],
             env="staging",
             finished_at=1693491984000000000,
             git=DORAGitInfo(
