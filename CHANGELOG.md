@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## 2.36.0/2025-06-16
+
+### Changed
+* Add billing read permission [#2611](https://github.com/DataDog/datadog-api-client-python/pull/2611)
+* Update DORA endpoints [#2591](https://github.com/DataDog/datadog-api-client-python/pull/2591)
+
+### Added
+* Add `form` field for `multipart/form-data` HTTP API tests [#2606](https://github.com/DataDog/datadog-api-client-python/pull/2606)
+* Add new endpoint to upsert/list/delete custom kinds [#2600](https://github.com/DataDog/datadog-api-client-python/pull/2600)
+* Add spec for team on-call endpoint [#2598](https://github.com/DataDog/datadog-api-client-python/pull/2598)
+* Add support for Datadog Events as a data source for rules [#2578](https://github.com/DataDog/datadog-api-client-python/pull/2578)
+* Add public APIs to search DORA events [#2575](https://github.com/DataDog/datadog-api-client-python/pull/2575)
+* Add support for all subtypes in multistep steps [#2573](https://github.com/DataDog/datadog-api-client-python/pull/2573)
+* Added new optional field definition to include more detail in findings for '/api/v2/posture_management/findings'  [#2569](https://github.com/DataDog/datadog-api-client-python/pull/2569)
+* Exposing set action on Terraform V2 [#2568](https://github.com/DataDog/datadog-api-client-python/pull/2568)
+* Adding endpoints to manage Resource Evaluation Filters [#2567](https://github.com/DataDog/datadog-api-client-python/pull/2567)
+* Add monitor draft status field [#2566](https://github.com/DataDog/datadog-api-client-python/pull/2566)
+
+### Fixed
+* add `include` parameter to On-Call team rules test [#2582](https://github.com/DataDog/datadog-api-client-python/pull/2582)
+* fix On-Call spec [#2572](https://github.com/DataDog/datadog-api-client-python/pull/2572)
+
 ## 2.35.0/2025-05-28
 
 ### Fixed
