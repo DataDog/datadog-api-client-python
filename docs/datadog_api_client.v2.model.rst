@@ -207,6 +207,13 @@ datadog\_api\_client.v2.model.active\_billing\_dimensions\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.add\_member\_team\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.add_member_team_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.advisory module
 ---------------------------------------------
 
@@ -8968,6 +8975,20 @@ datadog\_api\_client.v2.model.logs\_warning module
 --------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.logs_warning
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.member\_team module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.member_team
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.member\_team\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.member_team_type
    :members:
    :show-inheritance:
 
