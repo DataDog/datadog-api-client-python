@@ -91,6 +91,7 @@ from datadog_api_client.v2.model.active_billing_dimensions_attributes import Act
 from datadog_api_client.v2.model.active_billing_dimensions_body import ActiveBillingDimensionsBody
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
+from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
 from datadog_api_client.v2.model.annotation import Annotation
 from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
@@ -1620,6 +1621,8 @@ from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
 from datadog_api_client.v2.model.ms_teams_integration_metadata import MSTeamsIntegrationMetadata
 from datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item import MSTeamsIntegrationMetadataTeamsItem
+from datadog_api_client.v2.model.member_team import MemberTeam
+from datadog_api_client.v2.model.member_team_type import MemberTeamType
 from datadog_api_client.v2.model.metadata import Metadata
 from datadog_api_client.v2.model.metric import Metric
 from datadog_api_client.v2.model.metric_active_configuration_type import MetricActiveConfigurationType
@@ -3581,6 +3584,7 @@ __all__ = [
     "ActiveBillingDimensionsBody",
     "ActiveBillingDimensionsResponse",
     "ActiveBillingDimensionsType",
+    "AddMemberTeamRequest",
     "Advisory",
     "Annotation",
     "AnnotationDisplay",
@@ -4774,6 +4778,8 @@ __all__ = [
     "LogsWarning",
     "MSTeamsIntegrationMetadata",
     "MSTeamsIntegrationMetadataTeamsItem",
+    "MemberTeam",
+    "MemberTeamType",
     "Metadata",
     "Metric",
     "MetricActiveConfigurationType",
