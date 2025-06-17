@@ -15334,6 +15334,13 @@ datadog\_api\_client.v2.model.sensitive\_data\_scanner\_rule\_update\_response m
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sensitive\_data\_scanner\_samplings module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_samplings
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sensitive\_data\_scanner\_standard\_pattern module
 --------------------------------------------------------------------------------
 

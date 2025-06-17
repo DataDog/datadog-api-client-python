@@ -13,7 +13,7 @@ Feature: Sensitive Data Scanner
   @generated @skip @team:DataDog/sensitive-data-scanner
   Scenario: Create Scanning Group returns "Bad Request" response
     Given new "CreateScanningGroup" request
-    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"], "samplings": [{"product": "logs", "rate": 100.0}]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -152,7 +152,7 @@ Feature: Sensitive Data Scanner
   Scenario: Update Scanning Group returns "Bad Request" response
     Given new "UpdateScanningGroup" request
     And request contains "group_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"], "samplings": [{"product": "logs", "rate": 100.0}]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -160,7 +160,7 @@ Feature: Sensitive Data Scanner
   Scenario: Update Scanning Group returns "Not Found" response
     Given new "UpdateScanningGroup" request
     And request contains "group_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"], "samplings": [{"product": "logs", "rate": 100.0}]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 404 Not Found
 
