@@ -15,28 +15,42 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.event_create_response import EventCreateResponse
+    from datadog_api_client.v2.model.event_create_response_payload_links import EventCreateResponsePayloadLinks
 
 
 class EventCreateResponsePayload(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.event_create_response import EventCreateResponse
+        from datadog_api_client.v2.model.event_create_response_payload_links import EventCreateResponsePayloadLinks
 
         return {
             "data": (EventCreateResponse,),
+            "links": (EventCreateResponsePayloadLinks,),
         }
 
     attribute_map = {
         "data": "data",
+        "links": "links",
     }
 
-    def __init__(self_, data: Union[EventCreateResponse, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        data: Union[EventCreateResponse, UnsetType] = unset,
+        links: Union[EventCreateResponsePayloadLinks, UnsetType] = unset,
+        **kwargs,
+    ):
         """
-        Response containing information about created event.
+        Event creation response.
 
-        :param data: Object containing an event response.
+        :param data: Event object.
         :type data: EventCreateResponse, optional
+
+        :param links: Links to the event.
+        :type links: EventCreateResponsePayloadLinks, optional
         """
         if data is not unset:
             kwargs["data"] = data
+        if links is not unset:
+            kwargs["links"] = links
         super().__init__(kwargs)
