@@ -27,6 +27,7 @@ class SecurityMonitoringRuleCase(ModelNormal):
         return {
             "actions": ([SecurityMonitoringRuleCaseAction],),
             "condition": (str,),
+            "custom_status": (SecurityMonitoringRuleSeverity,),
             "name": (str,),
             "notifications": ([str],),
             "status": (SecurityMonitoringRuleSeverity,),
@@ -35,6 +36,7 @@ class SecurityMonitoringRuleCase(ModelNormal):
     attribute_map = {
         "actions": "actions",
         "condition": "condition",
+        "custom_status": "customStatus",
         "name": "name",
         "notifications": "notifications",
         "status": "status",
@@ -44,6 +46,7 @@ class SecurityMonitoringRuleCase(ModelNormal):
         self_,
         actions: Union[List[SecurityMonitoringRuleCaseAction], UnsetType] = unset,
         condition: Union[str, UnsetType] = unset,
+        custom_status: Union[SecurityMonitoringRuleSeverity, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         notifications: Union[List[str], UnsetType] = unset,
         status: Union[SecurityMonitoringRuleSeverity, UnsetType] = unset,
@@ -59,6 +62,9 @@ class SecurityMonitoringRuleCase(ModelNormal):
             based on the event counts in the previously defined queries.
         :type condition: str, optional
 
+        :param custom_status: Severity of the Security Signal.
+        :type custom_status: SecurityMonitoringRuleSeverity, optional
+
         :param name: Name of the case.
         :type name: str, optional
 
@@ -72,6 +78,8 @@ class SecurityMonitoringRuleCase(ModelNormal):
             kwargs["actions"] = actions
         if condition is not unset:
             kwargs["condition"] = condition
+        if custom_status is not unset:
+            kwargs["custom_status"] = custom_status
         if name is not unset:
             kwargs["name"] = name
         if notifications is not unset:
