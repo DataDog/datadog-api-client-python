@@ -6,6 +6,9 @@ from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import CloudWorkloadSecurityAgentRuleAction
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_hash import (
+    CloudWorkloadSecurityAgentRuleActionHash,
+)
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_set import (
     CloudWorkloadSecurityAgentRuleActionSet,
 )
@@ -40,6 +43,9 @@ body = CloudWorkloadSecurityAgentRuleCreateRequest(
                         value="test_value",
                         scope="process",
                     ),
+                ),
+                CloudWorkloadSecurityAgentRuleAction(
+                    hash=CloudWorkloadSecurityAgentRuleActionHash(),
                 ),
             ],
         ),
