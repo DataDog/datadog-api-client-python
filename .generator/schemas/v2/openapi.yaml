@@ -7540,12 +7540,18 @@ components:
           description: SECL expression used to target the container to apply the action
             on
           type: string
+        hash:
+          $ref: '#/components/schemas/CloudWorkloadSecurityAgentRuleActionHash'
         kill:
           $ref: '#/components/schemas/CloudWorkloadSecurityAgentRuleKill'
         metadata:
           $ref: '#/components/schemas/CloudWorkloadSecurityAgentRuleActionMetadata'
         set:
           $ref: '#/components/schemas/CloudWorkloadSecurityAgentRuleActionSet'
+      type: object
+    CloudWorkloadSecurityAgentRuleActionHash:
+      additionalProperties: {}
+      description: An empty object indicating the hash action
       type: object
     CloudWorkloadSecurityAgentRuleActionMetadata:
       description: The metadata action applied on the scope matching the rule

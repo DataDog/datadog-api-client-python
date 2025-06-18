@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1748341497"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"qyj-iza-vbu","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1748341497","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341497346,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"alt-4q4-baa","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818","policyVersion":"1","priority":1000000013,"ruleCount":226,"updateDate":1749827818428,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -19,8 +19,8 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}}],"description":"My
-      Agent rule with set action","enabled":true,"expression":"exec.file.name == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1748341497","policy_id":"qyj-iza-vbu","product_tags":[]},"type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}},{"hash":{}}],"description":"My
+      Agent rule with set action","enabled":true,"expression":"exec.file.name == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818","policy_id":"alt-4q4-baa","product_tags":[]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -30,10 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"zux-bp8-zov","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false}],"category":"Process
-        Activity","creationDate":1748341498175,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"ps3-64e-shx","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
+        Activity","creationDate":1749827819065,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule with set action","enabled":true,"expression":"exec.file.name ==
-        \"sh\"","filters":["os == \"linux\""],"monitoring":["qyj-iza-vbu"],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1748341497","product_tags":[],"updateDate":1748341498175,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        \"sh\"","filters":["os == \"linux\""],"monitoring":["alt-4q4-baa"],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818","product_tags":[],"updateDate":1749827819065,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/zux-bp8-zov
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/ps3-64e-shx
   response:
     body:
       string: ''
@@ -62,7 +62,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/qyj-iza-vbu
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/alt-4q4-baa
   response:
     body:
       string: ''

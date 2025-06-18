@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_hash import (
+        CloudWorkloadSecurityAgentRuleActionHash,
+    )
     from datadog_api_client.v2.model.cloud_workload_security_agent_rule_kill import CloudWorkloadSecurityAgentRuleKill
     from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_metadata import (
         CloudWorkloadSecurityAgentRuleActionMetadata,
@@ -26,6 +29,9 @@ if TYPE_CHECKING:
 class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_hash import (
+            CloudWorkloadSecurityAgentRuleActionHash,
+        )
         from datadog_api_client.v2.model.cloud_workload_security_agent_rule_kill import (
             CloudWorkloadSecurityAgentRuleKill,
         )
@@ -38,6 +44,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
 
         return {
             "filter": (str,),
+            "hash": (CloudWorkloadSecurityAgentRuleActionHash,),
             "kill": (CloudWorkloadSecurityAgentRuleKill,),
             "metadata": (CloudWorkloadSecurityAgentRuleActionMetadata,),
             "set": (CloudWorkloadSecurityAgentRuleActionSet,),
@@ -45,6 +52,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
 
     attribute_map = {
         "filter": "filter",
+        "hash": "hash",
         "kill": "kill",
         "metadata": "metadata",
         "set": "set",
@@ -53,6 +61,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
     def __init__(
         self_,
         filter: Union[str, UnsetType] = unset,
+        hash: Union[CloudWorkloadSecurityAgentRuleActionHash, UnsetType] = unset,
         kill: Union[CloudWorkloadSecurityAgentRuleKill, UnsetType] = unset,
         metadata: Union[CloudWorkloadSecurityAgentRuleActionMetadata, UnsetType] = unset,
         set: Union[CloudWorkloadSecurityAgentRuleActionSet, UnsetType] = unset,
@@ -63,6 +72,9 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
 
         :param filter: SECL expression used to target the container to apply the action on
         :type filter: str, optional
+
+        :param hash: An empty object indicating the hash action
+        :type hash: CloudWorkloadSecurityAgentRuleActionHash, optional
 
         :param kill: Kill system call applied on the container matching the rule
         :type kill: CloudWorkloadSecurityAgentRuleKill, optional
@@ -75,6 +87,8 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
         """
         if filter is not unset:
             kwargs["filter"] = filter
+        if hash is not unset:
+            kwargs["hash"] = hash
         if kill is not unset:
             kwargs["kill"] = kill
         if metadata is not unset:
