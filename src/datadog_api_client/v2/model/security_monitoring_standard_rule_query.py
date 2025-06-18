@@ -34,6 +34,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         return {
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
+            "custom_query_extension": (str,),
             "data_source": (SecurityMonitoringStandardDataSource,),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
@@ -46,6 +47,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
     attribute_map = {
         "aggregation": "aggregation",
+        "custom_query_extension": "customQueryExtension",
         "data_source": "dataSource",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
@@ -62,6 +64,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
     def __init__(
         self_,
         aggregation: Union[SecurityMonitoringRuleQueryAggregation, UnsetType] = unset,
+        custom_query_extension: Union[str, UnsetType] = unset,
         data_source: Union[SecurityMonitoringStandardDataSource, UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
@@ -77,6 +80,9 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
+
+        :param custom_query_extension: Query extension to append to the logs query.
+        :type custom_query_extension: str, optional
 
         :param data_source: Source of events, either logs, audit trail, or Datadog events.
         :type data_source: SecurityMonitoringStandardDataSource, optional
@@ -105,6 +111,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         """
         if aggregation is not unset:
             kwargs["aggregation"] = aggregation
+        if custom_query_extension is not unset:
+            kwargs["custom_query_extension"] = custom_query_extension
         if data_source is not unset:
             kwargs["data_source"] = data_source
         if distinct_fields is not unset:
