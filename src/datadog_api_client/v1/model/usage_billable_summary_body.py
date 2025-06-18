@@ -19,6 +19,8 @@ class UsageBillableSummaryBody(ModelNormal):
     def openapi_types(_):
         return {
             "account_billable_usage": (int,),
+            "account_committed_usage": (int,),
+            "account_on_demand_usage": (int,),
             "elapsed_usage_hours": (int,),
             "first_billable_usage_hour": (datetime,),
             "last_billable_usage_hour": (datetime,),
@@ -29,6 +31,8 @@ class UsageBillableSummaryBody(ModelNormal):
 
     attribute_map = {
         "account_billable_usage": "account_billable_usage",
+        "account_committed_usage": "account_committed_usage",
+        "account_on_demand_usage": "account_on_demand_usage",
         "elapsed_usage_hours": "elapsed_usage_hours",
         "first_billable_usage_hour": "first_billable_usage_hour",
         "last_billable_usage_hour": "last_billable_usage_hour",
@@ -40,6 +44,8 @@ class UsageBillableSummaryBody(ModelNormal):
     def __init__(
         self_,
         account_billable_usage: Union[int, UnsetType] = unset,
+        account_committed_usage: Union[int, UnsetType] = unset,
+        account_on_demand_usage: Union[int, UnsetType] = unset,
         elapsed_usage_hours: Union[int, UnsetType] = unset,
         first_billable_usage_hour: Union[datetime, UnsetType] = unset,
         last_billable_usage_hour: Union[datetime, UnsetType] = unset,
@@ -53,6 +59,12 @@ class UsageBillableSummaryBody(ModelNormal):
 
         :param account_billable_usage: The total account usage.
         :type account_billable_usage: int, optional
+
+        :param account_committed_usage: The total account committed usage.
+        :type account_committed_usage: int, optional
+
+        :param account_on_demand_usage: The total account on-demand usage.
+        :type account_on_demand_usage: int, optional
 
         :param elapsed_usage_hours: Elapsed usage hours for some billable product.
         :type elapsed_usage_hours: int, optional
@@ -74,6 +86,10 @@ class UsageBillableSummaryBody(ModelNormal):
         """
         if account_billable_usage is not unset:
             kwargs["account_billable_usage"] = account_billable_usage
+        if account_committed_usage is not unset:
+            kwargs["account_committed_usage"] = account_committed_usage
+        if account_on_demand_usage is not unset:
+            kwargs["account_on_demand_usage"] = account_on_demand_usage
         if elapsed_usage_hours is not unset:
             kwargs["elapsed_usage_hours"] = elapsed_usage_hours
         if first_billable_usage_hour is not unset:
