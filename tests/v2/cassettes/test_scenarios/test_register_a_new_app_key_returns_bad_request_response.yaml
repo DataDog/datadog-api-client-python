@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/actions/app_key_registrations/not_valid_app_key_id
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Invalid Parameter","detail":"invalid
+        parameter \"appKeyId\" in \"path\"; expected type \"uuid\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
