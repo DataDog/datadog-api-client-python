@@ -13,26 +13,38 @@ from datadog_api_client.model_utils import (
 class EventPayloadAttributes(ModelComposed):
     def __init__(self, **kwargs):
         """
-        JSON object for custom attributes. Schema are different per each event category.
+        JSON object for category-specific attributes. Schema is different per event category.
 
-        :param author: Object representing the entity which made the change. Optional field but if provided should include `type` and `name`.
+        :param author: The entity that made the change. Optional, if provided it must include `type` and `name`.
         :type author: ChangeEventCustomAttributesAuthor, optional
 
-        :param change_metadata: Free form object with information related to the `change` event. Can be arbitrarily nested and contain any valid JSON.
+        :param change_metadata: Free form JSON object with information related to the `change` event. Supports up to 100 properties per object and a maximum nesting depth of 10 levels.
         :type change_metadata: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param changed_resource: Object representing a uniquely identified resource.
+        :param changed_resource: A uniquely identified resource.
         :type changed_resource: ChangeEventCustomAttributesChangedResource
 
         :param impacted_resources: A list of resources impacted by this change. It is recommended to provide an impacted resource to display
-            the change event at the right location. Only resources of type `service` are supported.
+            the change event at the correct location. Only resources of type `service` are supported. Maximum of 100 impacted resources allowed.
         :type impacted_resources: [ChangeEventCustomAttributesImpactedResourcesItems], optional
 
-        :param new_value: Free form object to track new value of the changed resource.
+        :param new_value: Free form JSON object representing the new state of the changed resource.
         :type new_value: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param prev_value: Free form object to track previous value of the changed resource.
+        :param prev_value: Free form JSON object representing the previous state of the changed resource.
         :type prev_value: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
+
+        :param custom: Free form JSON object for arbitrary data. Supports up to 100 properties per object and a maximum nesting depth of 10 levels.
+        :type custom: AlertEventCustomAttributesCustom, optional
+
+        :param links: The links related to the event. Maximum of 20 links allowed.
+        :type links: [AlertEventCustomAttributesLinksItems], optional
+
+        :param priority: The priority of the alert.
+        :type priority: AlertEventCustomAttributesPriority, optional
+
+        :param status: The status of the alert.
+        :type status: AlertEventCustomAttributesStatus
         """
         super().__init__(kwargs)
 
@@ -46,9 +58,11 @@ class EventPayloadAttributes(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.change_event_custom_attributes import ChangeEventCustomAttributes
+        from datadog_api_client.v2.model.alert_event_custom_attributes import AlertEventCustomAttributes
 
         return {
             "oneOf": [
                 ChangeEventCustomAttributes,
+                AlertEventCustomAttributes,
             ],
         }

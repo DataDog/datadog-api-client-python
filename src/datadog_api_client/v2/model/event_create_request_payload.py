@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,13 +28,13 @@ class EventCreateRequestPayload(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[EventCreateRequest, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: EventCreateRequest, **kwargs):
         """
         Payload for creating an event.
 
-        :param data: Object representing an event creation request.
-        :type data: EventCreateRequest, optional
+        :param data: An event object.
+        :type data: EventCreateRequest
         """
-        if data is not unset:
-            kwargs["data"] = data
         super().__init__(kwargs)
+
+        self_.data = data

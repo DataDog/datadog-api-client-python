@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class ChangeEventCustomAttributesImpactedResourcesItemsType(ModelSimple):
+class EventPayloadIntegrationId(ModelSimple):
     """
-    The type of the impacted resource.
+    Integration ID sourced from integration manifests.
 
-    :param value: If omitted defaults to "service". Must be one of ["service"].
+    :param value: If omitted defaults to "custom-events". Must be one of ["custom-events"].
     :type value: str
     """
 
     allowed_values = {
-        "service",
+        "custom-events",
     }
-    SERVICE: ClassVar["ChangeEventCustomAttributesImpactedResourcesItemsType"]
+    CUSTOM_EVENTS: ClassVar["EventPayloadIntegrationId"]
 
     @cached_property
     def openapi_types(_):
@@ -32,6 +32,4 @@ class ChangeEventCustomAttributesImpactedResourcesItemsType(ModelSimple):
         }
 
 
-ChangeEventCustomAttributesImpactedResourcesItemsType.SERVICE = ChangeEventCustomAttributesImpactedResourcesItemsType(
-    "service"
-)
+EventPayloadIntegrationId.CUSTOM_EVENTS = EventPayloadIntegrationId("custom-events")

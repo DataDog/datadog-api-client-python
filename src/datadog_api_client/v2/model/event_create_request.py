@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -34,23 +32,17 @@ class EventCreateRequest(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        attributes: Union[EventPayload, UnsetType] = unset,
-        type: Union[EventCreateRequestType, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, attributes: EventPayload, type: EventCreateRequestType, **kwargs):
         """
-        Object representing an event creation request.
+        An event object.
 
         :param attributes: Event attributes.
-        :type attributes: EventPayload, optional
+        :type attributes: EventPayload
 
         :param type: Entity type.
-        :type type: EventCreateRequestType, optional
+        :type type: EventCreateRequestType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.attributes = attributes
+        self_.type = type

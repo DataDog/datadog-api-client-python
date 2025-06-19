@@ -36,7 +36,7 @@ class EventCreateResponseAttributesAttributes(ModelNormal):
 
     def __init__(self_, evt: Union[EventCreateResponseAttributesAttributesEvt, UnsetType] = unset, **kwargs):
         """
-        JSON object of attributes from your events.
+        JSON object for category-specific attributes.
 
         :param evt: JSON object of event system attributes.
         :type evt: EventCreateResponseAttributesAttributesEvt, optional
