@@ -33412,11 +33412,13 @@ components:
     SecurityMonitoringRuleTypeCreate:
       description: The rule type.
       enum:
+      - api_security
       - application_security
       - log_detection
       - workload_security
       type: string
       x-enum-varnames:
+      - API_SECURITY
       - APPLICATION_SECURITY
       - LOG_DETECTION
       - WORKLOAD_SECURITY
@@ -33428,6 +33430,7 @@ components:
       - workload_security
       - cloud_configuration
       - application_security
+      - api_security
       type: string
       x-enum-varnames:
       - LOG_DETECTION
@@ -33435,6 +33438,7 @@ components:
       - WORKLOAD_SECURITY
       - CLOUD_CONFIGURATION
       - APPLICATION_SECURITY
+      - API_SECURITY
     SecurityMonitoringRuleTypeTest:
       description: The rule type.
       enum:
