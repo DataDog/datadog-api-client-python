@@ -221,6 +221,48 @@ datadog\_api\_client.v2.model.advisory module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.alert\_event\_custom\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_custom_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_custom\_attributes\_custom module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_custom_attributes_custom
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_custom\_attributes\_links\_items module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_custom_attributes_links_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_custom\_attributes\_links\_items\_category module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_custom_attributes_links_items_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_custom\_attributes\_priority module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_custom_attributes_priority
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_custom\_attributes\_status module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_custom_attributes_status
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.annotation module
 -----------------------------------------------
 
@@ -5975,6 +6017,13 @@ datadog\_api\_client.v2.model.event\_create\_response\_payload module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.event\_create\_response\_payload\_links module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_create_response_payload_links
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.event\_payload module
 ---------------------------------------------------
 
@@ -5986,6 +6035,13 @@ datadog\_api\_client.v2.model.event\_payload\_attributes module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.event_payload_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_payload\_integration\_id module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_payload_integration_id
    :members:
    :show-inheritance:
 
