@@ -16,13 +16,13 @@ class SyntheticsBasicAuth(ModelComposed):
         Object to handle basic authentication when performing the test.
 
         :param password: Password to use for the basic authentication.
-        :type password: str
+        :type password: str, optional
 
         :param type: The type of basic authentication to use when performing the test.
         :type type: SyntheticsBasicAuthWebType, optional
 
         :param username: Username to use for the basic authentication.
-        :type username: str
+        :type username: str, optional
 
         :param access_key: Access key for the `SIGV4` authentication.
         :type access_key: str
