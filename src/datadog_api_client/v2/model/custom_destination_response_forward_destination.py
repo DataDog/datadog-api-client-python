@@ -39,6 +39,21 @@ class CustomDestinationResponseForwardDestination(ModelComposed):
             If this field is missing or is blank, it means that the index name will always be the same
             (that is, no rotation).
         :type index_rotation: str, optional
+
+        :param client_id: Client ID from the Datadog Azure integration.
+        :type client_id: str
+
+        :param data_collection_endpoint: Azure data collection endpoint.
+        :type data_collection_endpoint: str
+
+        :param data_collection_rule_id: Azure data collection rule ID.
+        :type data_collection_rule_id: str
+
+        :param stream_name: Azure stream name.
+        :type stream_name: str
+
+        :param tenant_id: Tenant ID from the Datadog Azure integration.
+        :type tenant_id: str
         """
         super().__init__(kwargs)
 
@@ -60,11 +75,15 @@ class CustomDestinationResponseForwardDestination(ModelComposed):
         from datadog_api_client.v2.model.custom_destination_response_forward_destination_elasticsearch import (
             CustomDestinationResponseForwardDestinationElasticsearch,
         )
+        from datadog_api_client.v2.model.custom_destination_response_forward_destination_microsoft_sentinel import (
+            CustomDestinationResponseForwardDestinationMicrosoftSentinel,
+        )
 
         return {
             "oneOf": [
                 CustomDestinationResponseForwardDestinationHttp,
                 CustomDestinationResponseForwardDestinationSplunk,
                 CustomDestinationResponseForwardDestinationElasticsearch,
+                CustomDestinationResponseForwardDestinationMicrosoftSentinel,
             ],
         }
