@@ -16,16 +16,20 @@ class ChangeEventCustomAttributesAuthorType(ModelSimple):
     """
     Author's type.
 
-    :param value: Must be one of ["user", "system"].
+    :param value: Must be one of ["user", "system", "api", "automation"].
     :type value: str
     """
 
     allowed_values = {
         "user",
         "system",
+        "api",
+        "automation",
     }
     USER: ClassVar["ChangeEventCustomAttributesAuthorType"]
     SYSTEM: ClassVar["ChangeEventCustomAttributesAuthorType"]
+    API: ClassVar["ChangeEventCustomAttributesAuthorType"]
+    AUTOMATION: ClassVar["ChangeEventCustomAttributesAuthorType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +40,5 @@ class ChangeEventCustomAttributesAuthorType(ModelSimple):
 
 ChangeEventCustomAttributesAuthorType.USER = ChangeEventCustomAttributesAuthorType("user")
 ChangeEventCustomAttributesAuthorType.SYSTEM = ChangeEventCustomAttributesAuthorType("system")
+ChangeEventCustomAttributesAuthorType.API = ChangeEventCustomAttributesAuthorType("api")
+ChangeEventCustomAttributesAuthorType.AUTOMATION = ChangeEventCustomAttributesAuthorType("automation")
