@@ -1,0 +1,66 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template test-get_a_monitor_user_template_returns_ok_response-1748486180"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '{"data":{"type":"monitor-user-template","attributes":{"tags":["category:test"],"created":"2025-05-29T02:36:20.380109+00:00","title":"api
+        spec given template test-get_a_monitor_user_template_returns_ok_response-1748486180","version":0,"description":"It''s
+        a threshold","template_variables":[{"defaults":["cats"],"available_values":[],"name":"scope"}],"monitor_definition":{"message":"cats","name":"High
+        Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","type":"query alert"},"modified":"2025-05-29T02:36:20.380109+00:00","creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0"},"id":"90eb2b79-fc96-43a5-af65-bf4408f47d9d"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/monitor/template/90eb2b79-fc96-43a5-af65-bf4408f47d9d
+  response:
+    body:
+      string: '{"data":{"type":"monitor-user-template","attributes":{"created":"2025-05-29T02:36:20.380109+00:00","creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","version":0,"tags":["category:test"],"title":"api
+        spec given template test-get_a_monitor_user_template_returns_ok_response-1748486180","modified":"2025-05-29T02:36:20.380109+00:00","monitor_definition":{"name":"High
+        Error Rate on service","type":"query alert","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","message":"cats"},"description":"It''s a threshold","template_variables":[{"defaults":["cats"],"name":"scope","available_values":[]}]},"id":"90eb2b79-fc96-43a5-af65-bf4408f47d9d"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/90eb2b79-fc96-43a5-af65-bf4408f47d9d
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
