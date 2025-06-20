@@ -943,6 +943,12 @@
       "type": "safe"
     }
   },
+  "GetEvent": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListIncidents": {
     "tag": "Incidents",
     "undo": {
