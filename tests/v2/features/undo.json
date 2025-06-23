@@ -1773,6 +1773,12 @@
       "type": "safe"
     }
   },
+  "GetTagKeyCardinalityDetails": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTagConfiguration": {
     "tag": "Metrics",
     "undo": {
