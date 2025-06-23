@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## 2.37.0/2025-06-23
+
+### Fixed
+* Fix basic auth requirements [#2638](https://github.com/DataDog/datadog-api-client-python/pull/2638)
+* Add support for the api_security detection rule type [#2633](https://github.com/DataDog/datadog-api-client-python/pull/2633)
+
+### Added
+* Microsoft Sentinel Public API support [#2636](https://github.com/DataDog/datadog-api-client-python/pull/2636)
+* Add custom fields to Rule update/validate API public documentation. [#2624](https://github.com/DataDog/datadog-api-client-python/pull/2624)
+* Add hash field to actions in CWS agent rules [#2621](https://github.com/DataDog/datadog-api-client-python/pull/2621)
+* Add `form` field for `multipart/form-data` HTTP API tests [#2606](https://github.com/DataDog/datadog-api-client-python/pull/2606)
+* SDCD-1142: adding `custom_tags` optional attribute to DORA API spec [#2605](https://github.com/DataDog/datadog-api-client-python/pull/2605)
+* Add sampling fields to SDS spec [#2601](https://github.com/DataDog/datadog-api-client-python/pull/2601)
+* Add new endpoint to upsert/list/delete custom kinds [#2600](https://github.com/DataDog/datadog-api-client-python/pull/2600)
+* Add spec for team on-call endpoint [#2598](https://github.com/DataDog/datadog-api-client-python/pull/2598)
+
+### Changed
+* Update events intake specs for v2 Events post endpoint [#2615](https://github.com/DataDog/datadog-api-client-python/pull/2615)
+* Add billing read permission [#2611](https://github.com/DataDog/datadog-api-client-python/pull/2611)
+* Update DORA endpoints [#2591](https://github.com/DataDog/datadog-api-client-python/pull/2591)
+
 ## 2.36.0/2025-06-16
 
 ### Changed
