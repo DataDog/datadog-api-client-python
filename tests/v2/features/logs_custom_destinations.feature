@@ -58,6 +58,29 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
 
   @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Create a Microsoft Sentinel custom destination returns "OK" response
+    Given new "CreateLogsCustomDestination" request
+    And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"type": "microsoft_sentinel", "tenant_id": "f3c9a8a1-4c2e-4d2e-b911-9f3c28c3c8b2", "client_id": "9a2f4d83-2b5e-429e-a35a-2b3c4182db71", "data_collection_endpoint": "https://my-dce-5kyl.eastus-1.ingest.monitor.azure.com", "data_collection_rule_id": "dcr-000a00a000a00000a000000aa000a0aa", "stream_name": "Custom-MyTable"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data" has field "id"
+    And the response "data.attributes.name" is equal to "Nginx logs"
+    And the response "data.attributes.query" is equal to "source:nginx"
+    And the response "data.attributes.forwarder_destination.type" is equal to "microsoft_sentinel"
+    And the response "data.attributes.forwarder_destination.tenant_id" is equal to "f3c9a8a1-4c2e-4d2e-b911-9f3c28c3c8b2"
+    And the response "data.attributes.forwarder_destination.client_id" is equal to "9a2f4d83-2b5e-429e-a35a-2b3c4182db71"
+    And the response "data.attributes.forwarder_destination.data_collection_endpoint" is equal to "https://my-dce-5kyl.eastus-1.ingest.monitor.azure.com"
+    And the response "data.attributes.forwarder_destination.data_collection_rule_id" is equal to "dcr-000a00a000a00000a000000aa000a0aa"
+    And the response "data.attributes.forwarder_destination.stream_name" is equal to "Custom-MyTable"
+    And the response "data.attributes.enabled" is false
+    And the response "data.attributes.forward_tags" is false
+    And the response "data.attributes.forward_tags_restriction_list" has length 2
+    And the response "data.attributes.forward_tags_restriction_list" array contains value "datacenter"
+    And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
+    And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
   Scenario: Create a Splunk custom destination returns "OK" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"access_token": "my-access-token", "endpoint": "https://example.com", "type": "splunk_hec"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}

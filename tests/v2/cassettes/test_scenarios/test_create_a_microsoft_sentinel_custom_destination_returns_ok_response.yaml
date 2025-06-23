@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"forward_tags":false,"forward_tags_restriction_list":["datacenter","host"],"forward_tags_restriction_list_type":"ALLOW_LIST","forwarder_destination":{"client_id":"9a2f4d83-2b5e-429e-a35a-2b3c4182db71","data_collection_endpoint":"https://my-dce-5kyl.eastus-1.ingest.monitor.azure.com","data_collection_rule_id":"dcr-000a00a000a00000a000000aa000a0aa","stream_name":"Custom-MyTable","tenant_id":"f3c9a8a1-4c2e-4d2e-b911-9f3c28c3c8b2","type":"microsoft_sentinel"},"name":"Nginx
+      logs","query":"source:nginx"},"type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations
+  response:
+    body:
+      string: '{"data":{"id":"171ee4b7-e07f-43ca-85a5-23f762c161a7","attributes":{"name":"Nginx
+        logs","query":"source:nginx","enabled":false,"forwarder_destination":{"tenant_id":"f3c9a8a1-4c2e-4d2e-b911-9f3c28c3c8b2","client_id":"9a2f4d83-2b5e-429e-a35a-2b3c4182db71","data_collection_endpoint":"https://my-dce-5kyl.eastus-1.ingest.monitor.azure.com","data_collection_rule_id":"dcr-000a00a000a00000a000000aa000a0aa","stream_name":"Custom-MyTable","type":"microsoft_sentinel"},"forward_tags_restriction_list_type":"ALLOW_LIST","forward_tags_restriction_list":["datacenter","host"],"forward_tags":false},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations/171ee4b7-e07f-43ca-85a5-23f762c161a7
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

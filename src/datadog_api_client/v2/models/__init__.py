@@ -799,6 +799,12 @@ from datadog_api_client.v2.model.custom_destination_forward_destination_http imp
 from datadog_api_client.v2.model.custom_destination_forward_destination_http_type import (
     CustomDestinationForwardDestinationHttpType,
 )
+from datadog_api_client.v2.model.custom_destination_forward_destination_microsoft_sentinel import (
+    CustomDestinationForwardDestinationMicrosoftSentinel,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_microsoft_sentinel_type import (
+    CustomDestinationForwardDestinationMicrosoftSentinelType,
+)
 from datadog_api_client.v2.model.custom_destination_forward_destination_splunk import (
     CustomDestinationForwardDestinationSplunk,
 )
@@ -838,6 +844,12 @@ from datadog_api_client.v2.model.custom_destination_response_forward_destination
 )
 from datadog_api_client.v2.model.custom_destination_response_forward_destination_http_type import (
     CustomDestinationResponseForwardDestinationHttpType,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_microsoft_sentinel import (
+    CustomDestinationResponseForwardDestinationMicrosoftSentinel,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_microsoft_sentinel_type import (
+    CustomDestinationResponseForwardDestinationMicrosoftSentinelType,
 )
 from datadog_api_client.v2.model.custom_destination_response_forward_destination_splunk import (
     CustomDestinationResponseForwardDestinationSplunk,
@@ -4104,6 +4116,8 @@ __all__ = [
     "CustomDestinationForwardDestinationElasticsearchType",
     "CustomDestinationForwardDestinationHttp",
     "CustomDestinationForwardDestinationHttpType",
+    "CustomDestinationForwardDestinationMicrosoftSentinel",
+    "CustomDestinationForwardDestinationMicrosoftSentinelType",
     "CustomDestinationForwardDestinationSplunk",
     "CustomDestinationForwardDestinationSplunkType",
     "CustomDestinationHttpDestinationAuth",
@@ -4120,6 +4134,8 @@ __all__ = [
     "CustomDestinationResponseForwardDestinationElasticsearchType",
     "CustomDestinationResponseForwardDestinationHttp",
     "CustomDestinationResponseForwardDestinationHttpType",
+    "CustomDestinationResponseForwardDestinationMicrosoftSentinel",
+    "CustomDestinationResponseForwardDestinationMicrosoftSentinelType",
     "CustomDestinationResponseForwardDestinationSplunk",
     "CustomDestinationResponseForwardDestinationSplunkType",
     "CustomDestinationResponseHttpDestinationAuth",
