@@ -14,18 +14,16 @@ from typing import ClassVar
 
 class EventCategory(ModelSimple):
     """
-    Event category identifying the type of event.
+    Event category to identify the type of event. Only the value `change` is supported. Support for other categories are coming. please reach out to datadog support if you're interested.
 
-    :param value: Must be one of ["change", "alert"].
+    :param value: If omitted defaults to "change". Must be one of ["change"].
     :type value: str
     """
 
     allowed_values = {
         "change",
-        "alert",
     }
     CHANGE: ClassVar["EventCategory"]
-    ALERT: ClassVar["EventCategory"]
 
     @cached_property
     def openapi_types(_):
@@ -35,4 +33,3 @@ class EventCategory(ModelSimple):
 
 
 EventCategory.CHANGE = EventCategory("change")
-EventCategory.ALERT = EventCategory("alert")

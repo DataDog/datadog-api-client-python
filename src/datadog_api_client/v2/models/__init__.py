@@ -93,14 +93,6 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
-from datadog_api_client.v2.model.alert_event_custom_attributes import AlertEventCustomAttributes
-from datadog_api_client.v2.model.alert_event_custom_attributes_custom import AlertEventCustomAttributesCustom
-from datadog_api_client.v2.model.alert_event_custom_attributes_links_items import AlertEventCustomAttributesLinksItems
-from datadog_api_client.v2.model.alert_event_custom_attributes_links_items_category import (
-    AlertEventCustomAttributesLinksItemsCategory,
-)
-from datadog_api_client.v2.model.alert_event_custom_attributes_priority import AlertEventCustomAttributesPriority
-from datadog_api_client.v2.model.alert_event_custom_attributes_status import AlertEventCustomAttributesStatus
 from datadog_api_client.v2.model.annotation import Annotation
 from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
 from datadog_api_client.v2.model.annotation_display_bounds import AnnotationDisplayBounds
@@ -1170,10 +1162,8 @@ from datadog_api_client.v2.model.event_create_response_attributes_attributes_evt
     EventCreateResponseAttributesAttributesEvt,
 )
 from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
-from datadog_api_client.v2.model.event_create_response_payload_links import EventCreateResponsePayloadLinks
 from datadog_api_client.v2.model.event_payload import EventPayload
 from datadog_api_client.v2.model.event_payload_attributes import EventPayloadAttributes
-from datadog_api_client.v2.model.event_payload_integration_id import EventPayloadIntegrationId
 from datadog_api_client.v2.model.event_priority import EventPriority
 from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_response_attributes import EventResponseAttributes
@@ -3612,12 +3602,6 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "AddMemberTeamRequest",
     "Advisory",
-    "AlertEventCustomAttributes",
-    "AlertEventCustomAttributesCustom",
-    "AlertEventCustomAttributesLinksItems",
-    "AlertEventCustomAttributesLinksItemsCategory",
-    "AlertEventCustomAttributesPriority",
-    "AlertEventCustomAttributesStatus",
     "Annotation",
     "AnnotationDisplay",
     "AnnotationDisplayBounds",
@@ -4383,10 +4367,8 @@ __all__ = [
     "EventCreateResponseAttributesAttributes",
     "EventCreateResponseAttributesAttributesEvt",
     "EventCreateResponsePayload",
-    "EventCreateResponsePayloadLinks",
     "EventPayload",
     "EventPayloadAttributes",
-    "EventPayloadIntegrationId",
     "EventPriority",
     "EventResponse",
     "EventResponseAttributes",
