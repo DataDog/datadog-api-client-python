@@ -278,7 +278,7 @@ class AppBuilderApi:
     ) -> CreateAppResponse:
         """Create App.
 
-        Create a new app, returning the app ID.
+        Create a new app, returning the app ID. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :type body: CreateAppRequest
         :rtype: CreateAppResponse
@@ -294,7 +294,7 @@ class AppBuilderApi:
     ) -> DeleteAppResponse:
         """Delete App.
 
-        Delete a single app.
+        Delete a single app. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param app_id: The ID of the app to delete.
         :type app_id: UUID
@@ -311,7 +311,7 @@ class AppBuilderApi:
     ) -> DeleteAppsResponse:
         """Delete Multiple Apps.
 
-        Delete multiple apps in a single request from a list of app IDs.
+        Delete multiple apps in a single request from a list of app IDs. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :type body: DeleteAppsRequest
         :rtype: DeleteAppsResponse
@@ -329,7 +329,7 @@ class AppBuilderApi:
     ) -> GetAppResponse:
         """Get App.
 
-        Get the full definition of an app.
+        Get the full definition of an app. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param app_id: The ID of the app to retrieve.
         :type app_id: UUID
@@ -362,7 +362,7 @@ class AppBuilderApi:
     ) -> ListAppsResponse:
         """List Apps.
 
-        List all apps, with optional filters and sorting. This endpoint is paginated. Only basic app information such as the app ID, name, and description is returned by this endpoint.
+        List all apps, with optional filters and sorting. This endpoint is paginated. Only basic app information such as the app ID, name, and description is returned by this endpoint. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param limit: The number of apps to return per page.
         :type limit: int, optional
@@ -430,7 +430,7 @@ class AppBuilderApi:
     ) -> PublishAppResponse:
         """Publish App.
 
-        Publish an app for use by other users. To ensure the app is accessible to the correct users, you also need to set a `Restriction Policy <https://docs.datadoghq.com/api/latest/restriction-policies/>`_ on the app if a policy does not yet exist.
+        Publish an app for use by other users. To ensure the app is accessible to the correct users, you also need to set a `Restriction Policy <https://docs.datadoghq.com/api/latest/restriction-policies/>`_ on the app if a policy does not yet exist. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param app_id: The ID of the app to publish.
         :type app_id: UUID
@@ -447,7 +447,7 @@ class AppBuilderApi:
     ) -> UnpublishAppResponse:
         """Unpublish App.
 
-        Unpublish an app, removing the live version of the app. Unpublishing creates a new instance of a ``deployment`` object on the app, with a nil ``app_version_id`` ( ``00000000-0000-0000-0000-000000000000`` ). The app can still be updated and published again in the future.
+        Unpublish an app, removing the live version of the app. Unpublishing creates a new instance of a ``deployment`` object on the app, with a nil ``app_version_id`` ( ``00000000-0000-0000-0000-000000000000`` ). The app can still be updated and published again in the future. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param app_id: The ID of the app to unpublish.
         :type app_id: UUID
@@ -465,7 +465,7 @@ class AppBuilderApi:
     ) -> UpdateAppResponse:
         """Update App.
 
-        Update an existing app. This creates a new version of the app.
+        Update an existing app. This creates a new version of the app. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param app_id: The ID of the app to update.
         :type app_id: UUID

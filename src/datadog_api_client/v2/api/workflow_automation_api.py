@@ -249,7 +249,7 @@ class WorkflowAutomationApi:
     ) -> WorklflowCancelInstanceResponse:
         """Cancel a workflow instance.
 
-        Cancels a specific execution of a given workflow. This API requires an application key scoped with the workflows_run permission.
+        Cancels a specific execution of a given workflow. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -270,7 +270,7 @@ class WorkflowAutomationApi:
     ) -> CreateWorkflowResponse:
         """Create a Workflow.
 
-        Create a new workflow, returning the workflow ID. This API requires an application key scoped with the ``workflows_write`` permission.
+        Create a new workflow, returning the workflow ID. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :type body: CreateWorkflowRequest
         :rtype: CreateWorkflowResponse
@@ -287,7 +287,7 @@ class WorkflowAutomationApi:
     ) -> WorkflowInstanceCreateResponse:
         """Execute a workflow.
 
-        Execute the given workflow. This API requires an application key scoped with the workflows_run permission.
+        Execute the given workflow. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -307,7 +307,7 @@ class WorkflowAutomationApi:
     ) -> None:
         """Delete an existing Workflow.
 
-        Delete a workflow by ID. This API requires an application key scoped with the ``workflows_write`` permission.
+        Delete a workflow by ID. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -324,7 +324,7 @@ class WorkflowAutomationApi:
     ) -> GetWorkflowResponse:
         """Get an existing Workflow.
 
-        Get a workflow by ID.  This API requires an application key scoped with the ``workflows_read`` permission.
+        Get a workflow by ID. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -342,7 +342,7 @@ class WorkflowAutomationApi:
     ) -> WorklflowGetInstanceResponse:
         """Get a workflow instance.
 
-        Get a specific execution of a given workflow. This API requires an application key scoped with the workflows_read permission.
+        Get a specific execution of a given workflow. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -366,7 +366,7 @@ class WorkflowAutomationApi:
     ) -> WorkflowListInstancesResponse:
         """List workflow instances.
 
-        List all instances of a given workflow. This API requires an application key scoped with the workflows_read permission.
+        List all instances of a given workflow. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
@@ -394,7 +394,7 @@ class WorkflowAutomationApi:
     ) -> UpdateWorkflowResponse:
         """Update an existing Workflow.
 
-        Update a workflow by ID. This API requires an application key scoped with the ``workflows_write`` permission.
+        Update a workflow by ID. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str

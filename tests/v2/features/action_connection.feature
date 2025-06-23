@@ -65,6 +65,74 @@ Feature: Action Connection
     Then the response status is 200 Successfully get Action Connection
 
   @team:DataDog/workflow-automation-dev
+  Scenario: Get an existing App Key Registration returns "Bad request" response
+    Given new "GetAppKeyRegistration" request
+    And request contains "app_key_id" parameter with value "not_valid_app_key_id"
+    When the request is sent
+    Then the response status is 400 Bad request
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Get an existing App Key Registration returns "Not found" response
+    Given new "GetAppKeyRegistration" request
+    And request contains "app_key_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Get an existing App Key Registration returns "OK" response
+    Given new "GetAppKeyRegistration" request
+    And request contains "app_key_id" parameter with value "b7feea52-994e-4714-a100-1bd9eff5aee1"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/workflow-automation-dev
+  Scenario: List App Key Registrations returns "Bad request" response
+    Given new "ListAppKeyRegistrations" request
+    When the request is sent
+    Then the response status is 400 Bad request
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: List App Key Registrations returns "OK" response
+    Given new "ListAppKeyRegistrations" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Register a new App Key returns "Bad request" response
+    Given new "RegisterAppKey" request
+    And request contains "app_key_id" parameter with value "not_valid_app_key_id"
+    When the request is sent
+    Then the response status is 400 Bad request
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Register a new App Key returns "Created" response
+    Given new "RegisterAppKey" request
+    And request contains "app_key_id" parameter with value "b7feea52-994e-4714-a100-1bd9eff5aee1"
+    When the request is sent
+    Then the response status is 201 Created
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Unregister an App Key returns "Bad request" response
+    Given new "UnregisterAppKey" request
+    And request contains "app_key_id" parameter with value "not_valid_app_key_id"
+    When the request is sent
+    Then the response status is 400 Bad request
+
+  @skip @team:DataDog/workflow-automation-dev
+  Scenario: Unregister an App Key returns "No Content" response
+    Given new "UnregisterAppKey" request
+    And request contains "app_key_id" parameter with value "57cc69ae-9214-4ecc-8df8-43ecc1d92d99"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Unregister an App Key returns "Not found" response
+    Given new "UnregisterAppKey" request
+    And request contains "app_key_id" parameter with value "57cc69ae-9214-4ecc-8df8-43ecc1d92d99"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @team:DataDog/workflow-automation-dev
   Scenario: Update an existing Action Connection returns "Bad Request" response
     Given new "UpdateActionConnection" request
     And request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
