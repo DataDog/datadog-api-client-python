@@ -452,20 +452,6 @@ datadog\_api\_client.v2.model.app\_deployment\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.app\_key\_registration\_data module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.app_key_registration_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.app\_key\_registration\_data\_type module
------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.app_key_registration_data_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.app\_meta module
 ----------------------------------------------
 
@@ -6619,13 +6605,6 @@ datadog\_api\_client.v2.model.get\_action\_connection\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.get\_app\_key\_registration\_response module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.get_app_key_registration_response
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.get\_app\_response module
 -------------------------------------------------------
 
@@ -8296,20 +8275,6 @@ datadog\_api\_client.v2.model.list\_apis\_response\_meta\_pagination module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_apis_response_meta_pagination
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.list\_app\_key\_registrations\_response module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_app_key_registrations_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.list\_app\_key\_registrations\_response\_meta module
-----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_app_key_registrations_response_meta
    :members:
    :show-inheritance:
 
@@ -12398,13 +12363,6 @@ datadog\_api\_client.v2.model.readiness\_gate\_threshold\_type module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.readiness_gate_threshold_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.register\_app\_key\_response module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.register_app_key_response
    :members:
    :show-inheritance:
 
