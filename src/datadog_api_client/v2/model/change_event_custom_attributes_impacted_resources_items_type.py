@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ChangeEventCustomAttributesImpactedResourcesItemsType(ModelSimple):
     """
-    The type of the impacted resource.
+    Resource's type.
 
     :param value: If omitted defaults to "service". Must be one of ["service"].
     :type value: str

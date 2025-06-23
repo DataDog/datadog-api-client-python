@@ -39,12 +39,12 @@ class EventCreateResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Event object.
+        Object containing an event response.
 
-        :param attributes: Event attributes.
+        :param attributes: JSON object containing all events attributes and their associated values.
         :type attributes: EventCreateResponseAttributes, optional
 
-        :param type: Entity type.
+        :param type: Event type
         :type type: str, optional
         """
         if attributes is not unset:

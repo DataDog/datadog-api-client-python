@@ -18,17 +18,6 @@ if TYPE_CHECKING:
 
 
 class ChangeEventCustomAttributesChangedResource(ModelNormal):
-    validations = {
-        "name": {
-            "max_length": 128,
-            "min_length": 1,
-        },
-    }
-
-    @cached_property
-    def additional_properties_type(_):
-        return None
-
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.change_event_custom_attributes_changed_resource_type import (
@@ -47,12 +36,12 @@ class ChangeEventCustomAttributesChangedResource(ModelNormal):
 
     def __init__(self_, name: str, type: ChangeEventCustomAttributesChangedResourceType, **kwargs):
         """
-        A uniquely identified resource.
+        Object representing a uniquely identified resource.
 
-        :param name: The name of the resource that was changed. Limited to 128 characters.
+        :param name: Resource's name.
         :type name: str
 
-        :param type: The type of the resource that was changed.
+        :param type: Resource's type.
         :type type: ChangeEventCustomAttributesChangedResourceType
         """
         super().__init__(kwargs)

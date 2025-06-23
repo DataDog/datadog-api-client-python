@@ -50,21 +50,19 @@ Feature: Events
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @team:DataDog/event-management
+  @generated @skip @team:DataDog/event-management
   Scenario: Post an event returns "Bad request" response
     Given new "CreateEvent" request
-    And body with value {"data": {"attributes": {"aggregation_key": "aggregation_key_123", "attributes": {"author": {"name": "example@datadog.com", "type": "user"}, "change_metadata": {"dd": {"team": "datadog_team", "user_email": "datadog@datadog.com", "user_id": "datadog_user_id", "user_name": "datadog_username"}, "resource_link": "datadog.com/feature/fallback_payments_test"}, "changed_resource": {"name": "fallback_payments_test", "type": "feature_flag"}, "impacted_resources": [{"name": "payments_api", "type": "service"}], "new_value": {"enabled": true, "percentage": "50%", "rule": {"datacenter": "devcycle.us1.prod"}}, "prev_value": {"enabled": true, "percentage": "10%", "rule": {"datacenter": "devcycle.us1.prod"}}}, "category": "invalid", "integration_id": "custom-events", "message": "payment_processed feature flag has been enabled", "tags": ["env:api_client_test"], "title": "payment_processed feature flag updated"}, "type": "event"}}
+    And body with value {"data": {"attributes": {"attributes": {"author": {"name": "datadog@datadog.com", "type": "user"}, "change_metadata": {"dd": {"team": "datadog_team", "user_email": "datadog@datadog.com", "user_id": "datadog_user_id", "user_name": "datadog_username"}, "resource_link": "datadog.com/feature/fallback_payments_test"}, "changed_resource": {"name": "fallback_payments_test", "type": "feature_flag"}, "impacted_resources": [{"name": "payments_api", "type": "service"}], "new_value": {"enabled": true, "percentage": "50%", "rule": {"datacenter": "devcycle.us1.prod"}}, "prev_value": {"enabled": true, "percentage": "10%", "rule": {"datacenter": "devcycle.us1.prod"}}}, "category": "change", "message": "payment_processed feature flag has been enabled", "tags": ["env:test"], "title": "payment_processed feature flag updated"}, "type": "event"}}
     When the request is sent
     Then the response status is 400 Bad request
 
-  @skip-validation @team:DataDog/event-management
+  @generated @skip @team:DataDog/event-management
   Scenario: Post an event returns "OK" response
     Given new "CreateEvent" request
-    And body with value {"data": {"attributes": {"aggregation_key": "aggregation_key_123", "attributes": {"author": {"name": "example@datadog.com", "type": "user"}, "change_metadata": {"dd": {"team": "datadog_team", "user_email": "datadog@datadog.com", "user_id": "datadog_user_id", "user_name": "datadog_username"}, "resource_link": "datadog.com/feature/fallback_payments_test"}, "changed_resource": {"name": "fallback_payments_test", "type": "feature_flag"}, "impacted_resources": [{"name": "payments_api", "type": "service"}], "new_value": {"enabled": true, "percentage": "50%", "rule": {"datacenter": "devcycle.us1.prod"}}, "prev_value": {"enabled": true, "percentage": "10%", "rule": {"datacenter": "devcycle.us1.prod"}}}, "category": "change", "integration_id": "custom-events", "message": "payment_processed feature flag has been enabled", "tags": ["env:api_client_test"], "title": "payment_processed feature flag updated"}, "type": "event"}}
+    And body with value {"data": {"attributes": {"attributes": {"author": {"name": "datadog@datadog.com", "type": "user"}, "change_metadata": {"dd": {"team": "datadog_team", "user_email": "datadog@datadog.com", "user_id": "datadog_user_id", "user_name": "datadog_username"}, "resource_link": "datadog.com/feature/fallback_payments_test"}, "changed_resource": {"name": "fallback_payments_test", "type": "feature_flag"}, "impacted_resources": [{"name": "payments_api", "type": "service"}], "new_value": {"enabled": true, "percentage": "50%", "rule": {"datacenter": "devcycle.us1.prod"}}, "prev_value": {"enabled": true, "percentage": "10%", "rule": {"datacenter": "devcycle.us1.prod"}}}, "category": "change", "message": "payment_processed feature flag has been enabled", "tags": ["env:test"], "title": "payment_processed feature flag updated"}, "type": "event"}}
     When the request is sent
-    Then the response status is 202 OK
-    And the response "data.type" is equal to "event"
-    And the response "data.attributes.attributes.evt" has field "uid"
+    Then the response status is 200 OK
 
   @team:DataDog/event-management
   Scenario: Search events returns "Bad Request" response
