@@ -4183,6 +4183,20 @@ datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_http\_t
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_microsoft\_sentinel module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_microsoft_sentinel
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_microsoft\_sentinel\_type module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_microsoft_sentinel_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_splunk module
 --------------------------------------------------------------------------------------
 
@@ -4292,6 +4306,20 @@ datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destinatio
 ----------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_http_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destination\_microsoft\_sentinel module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_microsoft_sentinel
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destination\_microsoft\_sentinel\_type module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_microsoft_sentinel_type
    :members:
    :show-inheritance:
 
