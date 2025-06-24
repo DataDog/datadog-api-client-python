@@ -488,6 +488,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"monitor-user-template\",\n    \"attributes\": {\n      \"description\": \"It's a threshold\",\n      \"title\": \"api spec given template {{ unique_lower }}\",\n      \"monitor_definition\": {\n        \"message\": \"cats\",\n        \"name\": \"High Error Rate on service\",\n        \"query\": \"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\n        \"type\": \"query alert\"\n      },\n      \"template_variables\": [{\"name\": \"scope\", \"available_values\": [], \"defaults\": [\"cats\"]}],\n      \"tags\": [\"category:test\"]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"monitor_user_template\" in the system",
+    "key": "monitor_user_template",
+    "tag": "Monitors",
+    "operationId": "CreateMonitorUserTemplate"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"resolve_page_on_policy_end\": true,\n      \"retries\": 2,\n      \"steps\": [\n        {\n          \"assignment\": \"default\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\"\n            },\n            {\n              \"id\": \"{{ user.data.id }}\",\n              \"type\": \"users\"\n            }\n          ]\n        },\n        {\n          \"assignment\": \"round-robin\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            }\n          ]\n        }\n      ]\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"{{ dd_team.data.id }}\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"policies\"\n  }\n}"
       }
     ],
