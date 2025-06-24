@@ -1591,9 +1591,13 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.create_monitor_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.create_monitor_notification_rule()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.create_monitor_user_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.create_monitor_user_template()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.delete_monitor_config_policy" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.delete_monitor_config_policy()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.delete_monitor_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.delete_monitor_notification_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.delete_monitor_user_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.delete_monitor_user_template()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.get_monitor_config_policy" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.get_monitor_config_policy()</span></code></a>
         </li>
@@ -1601,11 +1605,21 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.get_monitor_notification_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.get_monitor_notification_rules()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.get_monitor_user_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.get_monitor_user_template()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.list_monitor_config_policies" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.list_monitor_config_policies()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.list_monitor_user_templates" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.list_monitor_user_templates()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.update_monitor_config_policy" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.update_monitor_config_policy()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.update_monitor_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.update_monitor_notification_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.update_monitor_user_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.update_monitor_user_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.validate_existing_monitor_user_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.validate_existing_monitor_user_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.validate_monitor_user_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MonitorsApi.validate_monitor_user_template()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -7358,6 +7372,17 @@ notifies your team when a defined threshold has exceeded.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.create_monitor_user_template">
+<span class="sig-name descname"><span class="pre">create_monitor_user_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_create_request.MonitorUserTemplateCreateRequest" title="datadog_api_client.v2.model.monitor_user_template_create_request.MonitorUserTemplateCreateRequest"><span class="pre">MonitorUserTemplateCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_create_response.MonitorUserTemplateCreateResponse" title="datadog_api_client.v2.model.monitor_user_template_create_response.MonitorUserTemplateCreateResponse"><span class="pre">MonitorUserTemplateCreateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.create_monitor_user_template" title="Link to this definition">¶</a></dt>
+<dd><p>Create a monitor user template.</p>
+<p>Create a new monitor user template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_create_response.MonitorUserTemplateCreateResponse" title="datadog_api_client.v2.model.monitor_user_template_create_response.MonitorUserTemplateCreateResponse">MonitorUserTemplateCreateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.delete_monitor_config_policy">
 <span class="sig-name descname"><span class="pre">delete_monitor_config_policy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.delete_monitor_config_policy" title="Link to this definition">¶</a></dt>
 <dd><p>Delete a monitor configuration policy.</p>
@@ -7379,6 +7404,20 @@ notifies your team when a defined threshold has exceeded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rule_id</strong> (<em>str</em>) – ID of the monitor notification rule to delete.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.delete_monitor_user_template">
+<span class="sig-name descname"><span class="pre">delete_monitor_user_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.delete_monitor_user_template" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a monitor user template.</p>
+<p>Delete an existing monitor user template by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>template_id</strong> (<em>str</em>) – ID of the monitor user template.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -7433,6 +7472,23 @@ path is <code class="docutils literal notranslate"><span class="pre">created_by<
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.get_monitor_user_template">
+<span class="sig-name descname"><span class="pre">get_monitor_user_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_all_versions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse" title="datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse"><span class="pre">MonitorUserTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.get_monitor_user_template" title="Link to this definition">¶</a></dt>
+<dd><p>Get a monitor user template.</p>
+<p>Retrieve a monitor user template by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>template_id</strong> (<em>str</em>) – ID of the monitor user template.</p></li>
+<li><p><strong>with_all_versions</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to include all versions of the template in the response in the versions field.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse" title="datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse">MonitorUserTemplateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.list_monitor_config_policies">
 <span class="sig-name descname"><span class="pre">list_monitor_config_policies</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_config_policy_list_response.MonitorConfigPolicyListResponse" title="datadog_api_client.v2.model.monitor_config_policy_list_response.MonitorConfigPolicyListResponse"><span class="pre">MonitorConfigPolicyListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.list_monitor_config_policies" title="Link to this definition">¶</a></dt>
 <dd><p>Get all monitor configuration policies.</p>
@@ -7440,6 +7496,17 @@ path is <code class="docutils literal notranslate"><span class="pre">created_by<
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_config_policy_list_response.MonitorConfigPolicyListResponse" title="datadog_api_client.v2.model.monitor_config_policy_list_response.MonitorConfigPolicyListResponse">MonitorConfigPolicyListResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.list_monitor_user_templates">
+<span class="sig-name descname"><span class="pre">list_monitor_user_templates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_list_response.MonitorUserTemplateListResponse" title="datadog_api_client.v2.model.monitor_user_template_list_response.MonitorUserTemplateListResponse"><span class="pre">MonitorUserTemplateListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.list_monitor_user_templates" title="Link to this definition">¶</a></dt>
+<dd><p>Get all monitor user templates.</p>
+<p>Retrieve all monitor user templates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_list_response.MonitorUserTemplateListResponse" title="datadog_api_client.v2.model.monitor_user_template_list_response.MonitorUserTemplateListResponse">MonitorUserTemplateListResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7474,6 +7541,45 @@ path is <code class="docutils literal notranslate"><span class="pre">created_by<
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_notification_rule_response.MonitorNotificationRuleResponse" title="datadog_api_client.v2.model.monitor_notification_rule_response.MonitorNotificationRuleResponse">MonitorNotificationRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.update_monitor_user_template">
+<span class="sig-name descname"><span class="pre">update_monitor_user_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_update_request.MonitorUserTemplateUpdateRequest" title="datadog_api_client.v2.model.monitor_user_template_update_request.MonitorUserTemplateUpdateRequest"><span class="pre">MonitorUserTemplateUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse" title="datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse"><span class="pre">MonitorUserTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.update_monitor_user_template" title="Link to this definition">¶</a></dt>
+<dd><p>Update a monitor user template to a new version.</p>
+<p>Creates a new version of an existing monitor user template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>template_id</strong> (<em>str</em>) – ID of the monitor user template.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse" title="datadog_api_client.v2.model.monitor_user_template_response.MonitorUserTemplateResponse">MonitorUserTemplateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.validate_existing_monitor_user_template">
+<span class="sig-name descname"><span class="pre">validate_existing_monitor_user_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_update_request.MonitorUserTemplateUpdateRequest" title="datadog_api_client.v2.model.monitor_user_template_update_request.MonitorUserTemplateUpdateRequest"><span class="pre">MonitorUserTemplateUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.validate_existing_monitor_user_template" title="Link to this definition">¶</a></dt>
+<dd><p>Validate an existing monitor user template.</p>
+<p>Validate the structure and content of an existing monitor user template being updated to a new version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>template_id</strong> (<em>str</em>) – ID of the monitor user template.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.monitors_api.MonitorsApi.validate_monitor_user_template">
+<span class="sig-name descname"><span class="pre">validate_monitor_user_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.monitor_user_template_create_request.MonitorUserTemplateCreateRequest" title="datadog_api_client.v2.model.monitor_user_template_create_request.MonitorUserTemplateCreateRequest"><span class="pre">MonitorUserTemplateCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.monitors_api.MonitorsApi.validate_monitor_user_template" title="Link to this definition">¶</a></dt>
+<dd><p>Validate a monitor user template.</p>
+<p>Validate the structure and content of a monitor user template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>

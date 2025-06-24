@@ -10154,6 +10154,104 @@ datadog\_api\_client.v2.model.monitor\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.monitor\_user\_template module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_create\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_create\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_create\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_list\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_request\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_resource\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_response\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_response\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_response\_data\_with\_versions module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_response_data_with_versions
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_template\_variables\_items module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_template_variables_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_update\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_user\_template\_update\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_user_template_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.monthly\_cost\_attribution\_attributes module
 ---------------------------------------------------------------------------
 
@@ -15905,6 +16003,13 @@ datadog\_api\_client.v2.model.shift\_included module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.shift_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.simple\_monitor\_user\_template module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.simple_monitor_user_template
    :members:
    :show-inheritance:
 
