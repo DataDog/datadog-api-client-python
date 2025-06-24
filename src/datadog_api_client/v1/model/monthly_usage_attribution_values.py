@@ -127,6 +127,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "obs_pipelines_vcpu_usage": (float,),
             "online_archive_percentage": (float,),
             "online_archive_usage": (float,),
+            "product_analytics_session_percentage": (float,),
+            "product_analytics_session_usage": (float,),
             "profiled_container_percentage": (float,),
             "profiled_container_usage": (float,),
             "profiled_fargate_percentage": (float,),
@@ -268,6 +270,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "obs_pipelines_vcpu_usage": "obs_pipelines_vcpu_usage",
         "online_archive_percentage": "online_archive_percentage",
         "online_archive_usage": "online_archive_usage",
+        "product_analytics_session_percentage": "product_analytics_session_percentage",
+        "product_analytics_session_usage": "product_analytics_session_usage",
         "profiled_container_percentage": "profiled_container_percentage",
         "profiled_container_usage": "profiled_container_usage",
         "profiled_fargate_percentage": "profiled_fargate_percentage",
@@ -410,6 +414,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         obs_pipelines_vcpu_usage: Union[float, UnsetType] = unset,
         online_archive_percentage: Union[float, UnsetType] = unset,
         online_archive_usage: Union[float, UnsetType] = unset,
+        product_analytics_session_percentage: Union[float, UnsetType] = unset,
+        product_analytics_session_usage: Union[float, UnsetType] = unset,
         profiled_container_percentage: Union[float, UnsetType] = unset,
         profiled_container_usage: Union[float, UnsetType] = unset,
         profiled_fargate_percentage: Union[float, UnsetType] = unset,
@@ -773,6 +779,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param online_archive_usage: The online archive usage by tag(s).
         :type online_archive_usage: float, optional
 
+        :param product_analytics_session_percentage: The percentage of Product Analytics session usage by tag(s).
+        :type product_analytics_session_percentage: float, optional
+
+        :param product_analytics_session_usage: The total Product Analytics session usage by tag(s).
+        :type product_analytics_session_usage: float, optional
+
         :param profiled_container_percentage: The percentage of profiled container usage by tag(s).
         :type profiled_container_percentage: float, optional
 
@@ -1079,6 +1091,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["online_archive_percentage"] = online_archive_percentage
         if online_archive_usage is not unset:
             kwargs["online_archive_usage"] = online_archive_usage
+        if product_analytics_session_percentage is not unset:
+            kwargs["product_analytics_session_percentage"] = product_analytics_session_percentage
+        if product_analytics_session_usage is not unset:
+            kwargs["product_analytics_session_usage"] = product_analytics_session_usage
         if profiled_container_percentage is not unset:
             kwargs["profiled_container_percentage"] = profiled_container_percentage
         if profiled_container_usage is not unset:

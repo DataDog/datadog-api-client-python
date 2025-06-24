@@ -139,6 +139,7 @@ class UsageSummaryDate(ModelNormal):
             "opentelemetry_apm_host_top99p": (int,),
             "opentelemetry_host_top99p": (int,),
             "orgs": ([UsageSummaryDateOrg],),
+            "product_analytics_sum": (int,),
             "profiling_aas_count_top99p": (int,),
             "profiling_host_top99p": (int,),
             "rum_browser_and_mobile_session_count": (int,),
@@ -305,6 +306,7 @@ class UsageSummaryDate(ModelNormal):
         "opentelemetry_apm_host_top99p": "opentelemetry_apm_host_top99p",
         "opentelemetry_host_top99p": "opentelemetry_host_top99p",
         "orgs": "orgs",
+        "product_analytics_sum": "product_analytics_sum",
         "profiling_aas_count_top99p": "profiling_aas_count_top99p",
         "profiling_host_top99p": "profiling_host_top99p",
         "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
@@ -472,6 +474,7 @@ class UsageSummaryDate(ModelNormal):
         opentelemetry_apm_host_top99p: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p: Union[int, UnsetType] = unset,
         orgs: Union[List[UsageSummaryDateOrg], UnsetType] = unset,
+        product_analytics_sum: Union[int, UnsetType] = unset,
         profiling_aas_count_top99p: Union[int, UnsetType] = unset,
         profiling_host_top99p: Union[int, UnsetType] = unset,
         rum_browser_and_mobile_session_count: Union[int, UnsetType] = unset,
@@ -531,7 +534,7 @@ class UsageSummaryDate(ModelNormal):
         :param apm_azure_app_service_host_top99p: Shows the 99th percentile of all Azure app services using APM over all hours in the current date all organizations.
         :type apm_azure_app_service_host_top99p: int, optional
 
-        :param apm_devsecops_host_top99p: Shows the 99th percentile of all APM DevSecOps hosts over all hours in the current date for the given org.
+        :param apm_devsecops_host_top99p: Shows the 99th percentile of all APM DevSecOps hosts over all hours in the current date for all organizations.
         :type apm_devsecops_host_top99p: int, optional
 
         :param apm_fargate_count_avg: Shows the average of all APM ECS Fargate tasks over all hours in the current date for all organizations.
@@ -579,43 +582,43 @@ class UsageSummaryDate(ModelNormal):
         :param browser_rum_units_sum: Shows the sum of all browser RUM units over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type browser_rum_units_sum: int, optional
 
-        :param ci_pipeline_indexed_spans_sum: Shows the sum of all CI pipeline indexed spans over all hours in the current month for all organizations.
+        :param ci_pipeline_indexed_spans_sum: Shows the sum of all CI pipeline indexed spans over all hours in the current date for all organizations.
         :type ci_pipeline_indexed_spans_sum: int, optional
 
-        :param ci_test_indexed_spans_sum: Shows the sum of all CI test indexed spans over all hours in the current month for all organizations.
+        :param ci_test_indexed_spans_sum: Shows the sum of all CI test indexed spans over all hours in the current date for all organizations.
         :type ci_test_indexed_spans_sum: int, optional
 
-        :param ci_visibility_itr_committers_hwm: Shows the high-water mark of all CI visibility intelligent test runner committers over all hours in the current month for all organizations.
+        :param ci_visibility_itr_committers_hwm: Shows the high-water mark of all CI visibility intelligent test runner committers over all hours in the current date for all organizations.
         :type ci_visibility_itr_committers_hwm: int, optional
 
-        :param ci_visibility_pipeline_committers_hwm: Shows the high-water mark of all CI visibility pipeline committers over all hours in the current month for all organizations.
+        :param ci_visibility_pipeline_committers_hwm: Shows the high-water mark of all CI visibility pipeline committers over all hours in the current date for all organizations.
         :type ci_visibility_pipeline_committers_hwm: int, optional
 
-        :param ci_visibility_test_committers_hwm: Shows the high-water mark of all CI visibility test committers over all hours in the current month for all organizations.
+        :param ci_visibility_test_committers_hwm: Shows the high-water mark of all CI visibility test committers over all hours in the current date for all organizations.
         :type ci_visibility_test_committers_hwm: int, optional
 
-        :param cloud_cost_management_aws_host_count_avg: Host count average of Cloud Cost Management for AWS for the given date and given organization.
+        :param cloud_cost_management_aws_host_count_avg: Host count average for Cloud Cost Management for AWS for the given date for all organizations.
         :type cloud_cost_management_aws_host_count_avg: int, optional
 
-        :param cloud_cost_management_azure_host_count_avg: Host count average of Cloud Cost Management for Azure for the given date and given organization.
+        :param cloud_cost_management_azure_host_count_avg: Host count average for Cloud Cost Management for Azure for the given date for all organizations.
         :type cloud_cost_management_azure_host_count_avg: int, optional
 
-        :param cloud_cost_management_gcp_host_count_avg: Host count average of Cloud Cost Management for GCP for the given date and given organization.
+        :param cloud_cost_management_gcp_host_count_avg: Host count average for Cloud Cost Management for GCP for the given date for all organizations.
         :type cloud_cost_management_gcp_host_count_avg: int, optional
 
-        :param cloud_cost_management_host_count_avg: Host count average of Cloud Cost Management for all cloud providers for the given date and given organization.
+        :param cloud_cost_management_host_count_avg: Host count average for Cloud Cost Management for all cloud providers for the given date for all organizations.
         :type cloud_cost_management_host_count_avg: int, optional
 
-        :param cloud_siem_events_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current date for the given org.
+        :param cloud_siem_events_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current date for all organizations.
         :type cloud_siem_events_sum: int, optional
 
-        :param code_analysis_sa_committers_hwm: Shows the high-water mark of all Static Analysis committers over all hours in the current date for the given org.
+        :param code_analysis_sa_committers_hwm: Shows the high-water mark of all Static Analysis committers over all hours in the current date for all organizations.
         :type code_analysis_sa_committers_hwm: int, optional
 
-        :param code_analysis_sca_committers_hwm: Shows the high-water mark of all static Software Composition Analysis committers over all hours in the current date for the given org.
+        :param code_analysis_sca_committers_hwm: Shows the high-water mark of all static Software Composition Analysis committers over all hours in the current date for all organizations.
         :type code_analysis_sca_committers_hwm: int, optional
 
-        :param code_security_host_top99p: Shows the 99th percentile of all Code Security hosts over all hours in the current date for the given org.
+        :param code_security_host_top99p: Shows the 99th percentile of all Code Security hosts over all hours in the current date for all organizations.
         :type code_security_host_top99p: int, optional
 
         :param container_avg: Shows the average of all distinct containers over all hours in the current date for all organizations.
@@ -627,34 +630,34 @@ class UsageSummaryDate(ModelNormal):
         :param container_hwm: Shows the high-water mark of all distinct containers over all hours in the current date for all organizations.
         :type container_hwm: int, optional
 
-        :param csm_container_enterprise_compliance_count_sum: Shows the sum of all Cloud Security Management Enterprise compliance containers over all hours in the current date for the given org.
+        :param csm_container_enterprise_compliance_count_sum: Shows the sum of all Cloud Security Management Enterprise compliance containers over all hours in the current date for all organizations.
         :type csm_container_enterprise_compliance_count_sum: int, optional
 
-        :param csm_container_enterprise_cws_count_sum: Shows the sum of all Cloud Security Management Enterprise Cloud Workload Security containers over all hours in the current date for the given org.
+        :param csm_container_enterprise_cws_count_sum: Shows the sum of all Cloud Security Management Enterprise Cloud Workload Security containers over all hours in the current date for all organizations.
         :type csm_container_enterprise_cws_count_sum: int, optional
 
-        :param csm_container_enterprise_total_count_sum: Shows the sum of all Cloud Security Management Enterprise containers over all hours in the current date for the given org.
+        :param csm_container_enterprise_total_count_sum: Shows the sum of all Cloud Security Management Enterprise containers over all hours in the current date for all organizations.
         :type csm_container_enterprise_total_count_sum: int, optional
 
-        :param csm_host_enterprise_aas_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Azure app services hosts over all hours in the current date for the given org.
+        :param csm_host_enterprise_aas_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Azure app services hosts over all hours in the current date for all organizations.
         :type csm_host_enterprise_aas_host_count_top99p: int, optional
 
-        :param csm_host_enterprise_aws_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise AWS hosts over all hours in the current date for the given org.
+        :param csm_host_enterprise_aws_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise AWS hosts over all hours on the current date for all organizations.
         :type csm_host_enterprise_aws_host_count_top99p: int, optional
 
-        :param csm_host_enterprise_azure_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Azure hosts over all hours in the current date for the given org.
+        :param csm_host_enterprise_azure_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Azure hosts over all hours on the current date for all organizations.
         :type csm_host_enterprise_azure_host_count_top99p: int, optional
 
-        :param csm_host_enterprise_compliance_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise compliance hosts over all hours in the current date for the given org.
+        :param csm_host_enterprise_compliance_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise compliance hosts over all hours on the current date for all organizations.
         :type csm_host_enterprise_compliance_host_count_top99p: int, optional
 
-        :param csm_host_enterprise_cws_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Cloud Workload Security hosts over all hours in the current date for the given org.
+        :param csm_host_enterprise_cws_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise Cloud Workload Security hosts over all hours on the current date for all organizations.
         :type csm_host_enterprise_cws_host_count_top99p: int, optional
 
-        :param csm_host_enterprise_gcp_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise GCP hosts over all hours in the current date for the given org.
+        :param csm_host_enterprise_gcp_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise GCP hosts over all hours in the current date for all organizations.
         :type csm_host_enterprise_gcp_host_count_top99p: int, optional
 
-        :param csm_host_enterprise_total_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise hosts over all hours in the current date for the given org.
+        :param csm_host_enterprise_total_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise hosts over all hours in the current date for all organizations.
         :type csm_host_enterprise_total_host_count_top99p: int, optional
 
         :param cspm_aas_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro Azure app services hosts over all hours in the current date for all organizations.
@@ -690,7 +693,7 @@ class UsageSummaryDate(ModelNormal):
         :param cws_host_top99p: Shows the 99th percentile of all Cloud Workload Security hosts over all hours in the current date for all organizations.
         :type cws_host_top99p: int, optional
 
-        :param data_jobs_monitoring_host_hr_sum: Shows the sum of all Data Jobs Monitoring hosts over all hours in the current date for the given org.
+        :param data_jobs_monitoring_host_hr_sum: Shows the sum of all Data Jobs Monitoring hosts over all hours in the current date for all organizations.
         :type data_jobs_monitoring_host_hr_sum: int, optional
 
         :param date: The date for the usage.
@@ -702,55 +705,55 @@ class UsageSummaryDate(ModelNormal):
         :param dbm_queries_count_avg: Shows the average of all normalized Database Monitoring queries over all hours in the current date for all organizations.
         :type dbm_queries_count_avg: int, optional
 
-        :param eph_infra_host_agent_sum: Shows the sum of all ephemeral infrastructure hosts with the Datadog Agent over all hours in the current date for the given org.
+        :param eph_infra_host_agent_sum: Shows the sum of all ephemeral infrastructure hosts with the Datadog Agent over all hours in the current date for all organizations.
         :type eph_infra_host_agent_sum: int, optional
 
-        :param eph_infra_host_alibaba_sum: Shows the sum of all ephemeral infrastructure hosts on Alibaba over all hours in the current date for the given org.
+        :param eph_infra_host_alibaba_sum: Shows the sum of all ephemeral infrastructure hosts on Alibaba over all hours in the current date for all organizations.
         :type eph_infra_host_alibaba_sum: int, optional
 
-        :param eph_infra_host_aws_sum: Shows the sum of all ephemeral infrastructure hosts on AWS over all hours in the current date for the given org.
+        :param eph_infra_host_aws_sum: Shows the sum of all ephemeral infrastructure hosts on AWS over all hours in the current date for all organizations.
         :type eph_infra_host_aws_sum: int, optional
 
-        :param eph_infra_host_azure_sum: Shows the sum of all ephemeral infrastructure hosts on Azure over all hours in the current date for the given org.
+        :param eph_infra_host_azure_sum: Shows the sum of all ephemeral infrastructure hosts on Azure over all hours in the current date for all organizations.
         :type eph_infra_host_azure_sum: int, optional
 
-        :param eph_infra_host_ent_sum: Shows the sum of all ephemeral infrastructure hosts for Enterprise over all hours in the current date for the given org.
+        :param eph_infra_host_ent_sum: Shows the sum of all ephemeral infrastructure hosts for Enterprise over all hours in the current date for all organizations.
         :type eph_infra_host_ent_sum: int, optional
 
-        :param eph_infra_host_gcp_sum: Shows the sum of all ephemeral infrastructure hosts on GCP over all hours in the current date for the given org.
+        :param eph_infra_host_gcp_sum: Shows the sum of all ephemeral infrastructure hosts on GCP over all hours in the current date for all organizations.
         :type eph_infra_host_gcp_sum: int, optional
 
-        :param eph_infra_host_heroku_sum: Shows the sum of all ephemeral infrastructure hosts on Heroku over all hours in the current date for the given org.
+        :param eph_infra_host_heroku_sum: Shows the sum of all ephemeral infrastructure hosts on Heroku over all hours in the current date for all organizations.
         :type eph_infra_host_heroku_sum: int, optional
 
-        :param eph_infra_host_only_aas_sum: Shows the sum of all ephemeral infrastructure hosts with only Azure App Services over all hours in the current date for the given org.
+        :param eph_infra_host_only_aas_sum: Shows the sum of all ephemeral infrastructure hosts with only Azure App Services over all hours in the current date for all organizations.
         :type eph_infra_host_only_aas_sum: int, optional
 
-        :param eph_infra_host_only_vsphere_sum: Shows the sum of all ephemeral infrastructure hosts with only vSphere over all hours in the current date for the given org.
+        :param eph_infra_host_only_vsphere_sum: Shows the sum of all ephemeral infrastructure hosts with only vSphere over all hours in the current date for all organizations.
         :type eph_infra_host_only_vsphere_sum: int, optional
 
-        :param eph_infra_host_opentelemetry_apm_sum: Shows the sum of all ephemeral APM hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
+        :param eph_infra_host_opentelemetry_apm_sum: Shows the sum of all ephemeral APM hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for all organizations.
         :type eph_infra_host_opentelemetry_apm_sum: int, optional
 
-        :param eph_infra_host_opentelemetry_sum: Shows the sum of all ephemeral hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for the given org.
+        :param eph_infra_host_opentelemetry_sum: Shows the sum of all ephemeral hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current date for all organizations.
         :type eph_infra_host_opentelemetry_sum: int, optional
 
-        :param eph_infra_host_pro_sum: Shows the sum of all ephemeral infrastructure hosts for Pro over all hours in the current date for the given org.
+        :param eph_infra_host_pro_sum: Shows the sum of all ephemeral infrastructure hosts for Pro over all hours in the current date for all organizations.
         :type eph_infra_host_pro_sum: int, optional
 
-        :param eph_infra_host_proplus_sum: Shows the sum of all ephemeral infrastructure hosts for Pro Plus over all hours in the current date for the given org.
+        :param eph_infra_host_proplus_sum: Shows the sum of all ephemeral infrastructure hosts for Pro Plus over all hours in the current date for all organizations.
         :type eph_infra_host_proplus_sum: int, optional
 
-        :param error_tracking_apm_error_events_sum: Shows the sum of all Error Tracking APM error events over all hours in the current date for the given org.
+        :param error_tracking_apm_error_events_sum: Shows the sum of all Error Tracking APM error events over all hours in the current date for all organizations.
         :type error_tracking_apm_error_events_sum: int, optional
 
-        :param error_tracking_error_events_sum: Shows the sum of all Error Tracking error events over all hours in the current date for the given org.
+        :param error_tracking_error_events_sum: Shows the sum of all Error Tracking error events over all hours in the current date for all organizations.
         :type error_tracking_error_events_sum: int, optional
 
-        :param error_tracking_events_sum: Shows the sum of all Error Tracking events over all hours in the current date for the given org.
+        :param error_tracking_events_sum: Shows the sum of all Error Tracking events over all hours in the current date for all organizations.
         :type error_tracking_events_sum: int, optional
 
-        :param error_tracking_rum_error_events_sum: Shows the sum of all Error Tracking RUM error events over all hours in the current date for the given org.
+        :param error_tracking_rum_error_events_sum: Shows the sum of all Error Tracking RUM error events over all hours in the current date for all organizations.
         :type error_tracking_rum_error_events_sum: int, optional
 
         :param fargate_container_profiler_profiling_fargate_avg: The average number of Profiling Fargate tasks over all hours in the current date for all organizations.
@@ -765,28 +768,28 @@ class UsageSummaryDate(ModelNormal):
         :param fargate_tasks_count_hwm: Shows the average of all Fargate tasks over all hours in the current date for all organizations.
         :type fargate_tasks_count_hwm: int, optional
 
-        :param flex_logs_compute_large_avg: Shows the average number of Flex Logs Compute Large Instances over all hours in the current date for the given org.
+        :param flex_logs_compute_large_avg: Shows the average number of Flex Logs Compute Large Instances over all hours in the current date for all organizations.
         :type flex_logs_compute_large_avg: int, optional
 
-        :param flex_logs_compute_medium_avg: Shows the average number of Flex Logs Compute Medium Instances over all hours in the current date for the given org.
+        :param flex_logs_compute_medium_avg: Shows the average number of Flex Logs Compute Medium Instances over all hours in the current date for all organizations.
         :type flex_logs_compute_medium_avg: int, optional
 
-        :param flex_logs_compute_small_avg: Shows the average number of Flex Logs Compute Small Instances over all hours in the current date for the given org.
+        :param flex_logs_compute_small_avg: Shows the average number of Flex Logs Compute Small Instances over all hours in the current date for all organizations.
         :type flex_logs_compute_small_avg: int, optional
 
-        :param flex_logs_compute_xsmall_avg: Shows the average number of Flex Logs Compute Extra Small Instances over all hours in the current date for the given org.
+        :param flex_logs_compute_xsmall_avg: Shows the average number of Flex Logs Compute Extra Small Instances over all hours in the current date for all organizations.
         :type flex_logs_compute_xsmall_avg: int, optional
 
-        :param flex_logs_starter_avg: Shows the average number of Flex Logs Starter Instances over all hours in the current date for the given org.
+        :param flex_logs_starter_avg: Shows the average number of Flex Logs Starter Instances over all hours in the current date for all organizations.
         :type flex_logs_starter_avg: int, optional
 
-        :param flex_logs_starter_storage_index_avg: Shows the average number of Flex Logs Starter Storage Index Instances over all hours in the current date for the given org.
+        :param flex_logs_starter_storage_index_avg: Shows the average number of Flex Logs Starter Storage Index Instances over all hours in the current date for all organizations.
         :type flex_logs_starter_storage_index_avg: int, optional
 
-        :param flex_logs_starter_storage_retention_adjustment_avg: Shows the average number of Flex Logs Starter Storage Retention Adjustment Instances over all hours in the current date for the given org.
+        :param flex_logs_starter_storage_retention_adjustment_avg: Shows the average number of Flex Logs Starter Storage Retention Adjustment Instances over all hours in the current date for all organizations.
         :type flex_logs_starter_storage_retention_adjustment_avg: int, optional
 
-        :param flex_stored_logs_avg: Shows the average of all Flex Stored Logs over all hours in the current date for the given org.
+        :param flex_stored_logs_avg: Shows the average of all Flex Stored Logs over all hours in the current date for all organizations.
         :type flex_stored_logs_avg: int, optional
 
         :param forwarding_events_bytes_sum: Shows the sum of all log bytes forwarded over all hours in the current date for all organizations.
@@ -840,7 +843,7 @@ class UsageSummaryDate(ModelNormal):
         :param mobile_rum_units_sum: Shows the sum of all mobile RUM units over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type mobile_rum_units_sum: int, optional
 
-        :param ndm_netflow_events_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current date for the given org.
+        :param ndm_netflow_events_sum: Shows the sum of all Network Device Monitoring NetFlow events over all hours in the current date for all organizations.
         :type ndm_netflow_events_sum: int, optional
 
         :param netflow_indexed_events_count_sum: Shows the sum of all Network flows indexed over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
@@ -849,13 +852,13 @@ class UsageSummaryDate(ModelNormal):
         :param npm_host_top99p: Shows the 99th percentile of all distinct Cloud Network Monitoring hosts (formerly known as Network hosts) over all hours in the current date for all organizations.
         :type npm_host_top99p: int, optional
 
-        :param observability_pipelines_bytes_processed_sum: Sum of all observability pipelines bytes processed over all hours in the current date for the given org.
+        :param observability_pipelines_bytes_processed_sum: Sum of all observability pipelines bytes processed over all hours in the current date for all organizations.
         :type observability_pipelines_bytes_processed_sum: int, optional
 
-        :param oci_host_sum: Shows the sum of all Oracle Cloud Infrastructure hosts over all hours in the current date for the given org.
+        :param oci_host_sum: Shows the sum of all Oracle Cloud Infrastructure hosts over all hours in the current date for all organizations.
         :type oci_host_sum: int, optional
 
-        :param oci_host_top99p: Shows the 99th percentile of all Oracle Cloud Infrastructure hosts over all hours in the current date for the given org.
+        :param oci_host_top99p: Shows the 99th percentile of all Oracle Cloud Infrastructure hosts over all hours in the current date for all organizations.
         :type oci_host_top99p: int, optional
 
         :param online_archive_events_count_sum: Sum of all online archived events over all hours in the current date for all organizations.
@@ -870,13 +873,16 @@ class UsageSummaryDate(ModelNormal):
         :param orgs: Organizations associated with a user.
         :type orgs: [UsageSummaryDateOrg], optional
 
+        :param product_analytics_sum: Sum of all product analytics sessions over all hours in the current date for all organizations.
+        :type product_analytics_sum: int, optional
+
         :param profiling_aas_count_top99p: Shows the 99th percentile of all profiled Azure app services over all hours in the current date for all organizations.
         :type profiling_aas_count_top99p: int, optional
 
         :param profiling_host_top99p: Shows the 99th percentile of all profiled hosts over all hours within the current date for all organizations.
         :type profiling_host_top99p: int, optional
 
-        :param rum_browser_and_mobile_session_count: Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current month for all organizations (To be deprecated on October 1st, 2024).
+        :param rum_browser_and_mobile_session_count: Shows the sum of all mobile sessions and all browser lite and legacy sessions over all hours in the current date for all organizations (To be deprecated on October 1st, 2024).
         :type rum_browser_and_mobile_session_count: int, optional
 
         :param rum_browser_legacy_session_count_sum: Shows the sum of all browser RUM legacy sessions over all hours in the current date for all organizations (To be introduced on October 1st, 2024).
@@ -951,10 +957,10 @@ class UsageSummaryDate(ModelNormal):
         :param rum_units_sum: Shows the sum of all browser and mobile RUM units over all hours in the current date for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type rum_units_sum: int, optional
 
-        :param sca_fargate_count_avg: Shows the average of all Software Composition Analysis Fargate tasks over all hours in the current date for the given org.
+        :param sca_fargate_count_avg: Shows the average of all Software Composition Analysis Fargate tasks over all hours in the current date for all organizations.
         :type sca_fargate_count_avg: int, optional
 
-        :param sca_fargate_count_hwm: Shows the sum of the high-water marks of all Software Composition Analysis Fargate tasks over all hours in the current date for the given org.
+        :param sca_fargate_count_hwm: Shows the sum of the high-water marks of all Software Composition Analysis Fargate tasks over all hours in the current date for all organizations.
         :type sca_fargate_count_hwm: int, optional
 
         :param sds_apm_scanned_bytes_sum: Sum of all APM bytes scanned with sensitive data scanner over all hours in the current date for all organizations.
@@ -963,25 +969,25 @@ class UsageSummaryDate(ModelNormal):
         :param sds_events_scanned_bytes_sum: Sum of all event stream events bytes scanned with sensitive data scanner over all hours in the current date for all organizations.
         :type sds_events_scanned_bytes_sum: int, optional
 
-        :param sds_logs_scanned_bytes_sum: Shows the sum of all bytes scanned of logs usage by the Sensitive Data Scanner over all hours in the current month for all organizations.
+        :param sds_logs_scanned_bytes_sum: Shows the sum of all bytes scanned by the Sensitive Data Scanner for logs usage across all organizations over all hours on the current date.
         :type sds_logs_scanned_bytes_sum: int, optional
 
         :param sds_rum_scanned_bytes_sum: Sum of all RUM bytes scanned with sensitive data scanner over all hours in the current date for all organizations.
         :type sds_rum_scanned_bytes_sum: int, optional
 
-        :param sds_total_scanned_bytes_sum: Shows the sum of all bytes scanned across all usage types by the Sensitive Data Scanner over all hours in the current month for all organizations.
+        :param sds_total_scanned_bytes_sum: Shows the sum of all bytes scanned by the Sensitive Data Scanner across all usage types over all hours of the current date for all organizations.
         :type sds_total_scanned_bytes_sum: int, optional
 
-        :param serverless_apps_azure_count_avg: Shows the average of the number of Serverless Apps for Azure for the given date and given org.
+        :param serverless_apps_azure_count_avg: Shows the average number of Serverless Apps for Azure for the given date for all organizations.
         :type serverless_apps_azure_count_avg: int, optional
 
-        :param serverless_apps_google_count_avg: Shows the average of the number of Serverless Apps for Google Cloud for the given date and given org.
+        :param serverless_apps_google_count_avg: Shows the average number of Serverless Apps for Google Cloud for the given date for all organizations.
         :type serverless_apps_google_count_avg: int, optional
 
-        :param serverless_apps_total_count_avg: Shows the average of the number of Serverless Apps for Azure and Google Cloud for the given date and given org.
+        :param serverless_apps_total_count_avg: Shows the average number of Serverless Apps for Azure and Google Cloud for the given date for all organizations.
         :type serverless_apps_total_count_avg: int, optional
 
-        :param siem_analyzed_logs_add_on_count_sum: Shows the sum of all log events analyzed by Cloud SIEM over all hours in the current date for the given org.
+        :param siem_analyzed_logs_add_on_count_sum: Shows the sum of all log events analyzed by Cloud SIEM over all hours in the current date for all organizations.
         :type siem_analyzed_logs_add_on_count_sum: int, optional
 
         :param synthetics_browser_check_calls_count_sum: Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.
@@ -1002,13 +1008,13 @@ class UsageSummaryDate(ModelNormal):
         :param twol_ingested_events_bytes_sum: Shows the sum of all ingested APM span bytes over all hours in the current date for all organizations.
         :type twol_ingested_events_bytes_sum: int, optional
 
-        :param universal_service_monitoring_host_top99p: Shows the 99th percentile of all universal service management hosts over all hours in the current date for the given org.
+        :param universal_service_monitoring_host_top99p: Shows the 99th percentile of all universal service management hosts over all hours on the current date for all organizations.
         :type universal_service_monitoring_host_top99p: int, optional
 
         :param vsphere_host_top99p: Shows the 99th percentile of all vSphere hosts over all hours in the current date for all organizations.
         :type vsphere_host_top99p: int, optional
 
-        :param vuln_management_host_count_top99p: Shows the 99th percentile of all Application Vulnerability Management hosts over all hours in the current date for the given org.
+        :param vuln_management_host_count_top99p: Shows the 99th percentile of all Application Vulnerability Management hosts over all hours on the current date for all organizations.
         :type vuln_management_host_count_top99p: int, optional
 
         :param workflow_executions_usage_sum: Sum of all workflows executed over all hours in the current date for all organizations.
@@ -1252,6 +1258,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["opentelemetry_host_top99p"] = opentelemetry_host_top99p
         if orgs is not unset:
             kwargs["orgs"] = orgs
+        if product_analytics_sum is not unset:
+            kwargs["product_analytics_sum"] = product_analytics_sum
         if profiling_aas_count_top99p is not unset:
             kwargs["profiling_aas_count_top99p"] = profiling_aas_count_top99p
         if profiling_host_top99p is not unset:
