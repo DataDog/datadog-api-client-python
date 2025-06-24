@@ -1,0 +1,64 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template test-update_a_monitor_user_template_to_a_new_version_returns_bad_request_response-1748486182"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '{"data":{"type":"monitor-user-template","attributes":{"version":0,"created":"2025-05-29T02:36:23.224659+00:00","template_variables":[{"available_values":[],"name":"scope","defaults":["cats"]}],"monitor_definition":{"message":"cats","name":"High
+        Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","type":"query alert"},"title":"api spec given template test-update_a_monitor_user_template_to_a_new_version_returns_bad_request_response-1748486182","description":"It''s
+        a threshold","tags":["category:test"],"creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","modified":"2025-05-29T02:36:23.224659+00:00"},"id":"a68243ec-7e1c-40da-a99d-8966282c3726"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"A description.","monitor_definition":{},"tags":["integration:Azure"],"template_variables":[{"available_values":["value1","value2"],"defaults":["defaultValue"],"name":"regionName","tag_key":"datacenter"}],"title":"Postgres
+      DB test-update_a_monitor_user_template_to_a_new_version_returns_bad_request_response-1748486182"},"id":"00000000-0000-1234-0000-000000000000","type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/monitor/template/a68243ec-7e1c-40da-a99d-8966282c3726
+  response:
+    body:
+      string: '{"errors":["Invalid monitor_definition or template variables: Monitor
+        definition cannot be empty."]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/a68243ec-7e1c-40da-a99d-8966282c3726
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

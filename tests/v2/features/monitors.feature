@@ -46,6 +46,22 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "test rule"
 
+  @skip-validation @team:DataDog/monitor-app
+  Scenario: Create a monitor user template returns "Bad Request" response
+    Given new "CreateMonitorUserTemplate" request
+    And operation "CreateMonitorUserTemplate" enabled
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/monitor-app
+  Scenario: Create a monitor user template returns "OK" response
+    Given new "CreateMonitorUserTemplate" request
+    And operation "CreateMonitorUserTemplate" enabled
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {"message": "A msg.", "name": "A name {{ unique_lower }}", "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100", "type": "query alert"}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/monitor-app
   Scenario: Delete a monitor configuration policy returns "Bad Request" response
     Given new "DeleteMonitorConfigPolicy" request
@@ -82,6 +98,22 @@ Feature: Monitors
     And there is a valid "monitor_notification_rule" in the system
     And new "DeleteMonitorNotificationRule" request
     And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @team:DataDog/monitor-app
+  Scenario: Delete a monitor user template returns "Not Found" response
+    Given new "DeleteMonitorUserTemplate" request
+    And operation "DeleteMonitorUserTemplate" enabled
+    And request contains "template_id" parameter with value "00000000-0000-1234-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/monitor-app
+  Scenario: Delete a monitor user template returns "OK" response
+    Given operation "DeleteMonitorUserTemplate" enabled
+    And new "DeleteMonitorUserTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 
@@ -155,6 +187,24 @@ Feature: Monitors
     And the response "data.attributes.name" is equal to "test rule"
 
   @team:DataDog/monitor-app
+  Scenario: Get a monitor user template returns "Not Found" response
+    Given new "GetMonitorUserTemplate" request
+    And operation "GetMonitorUserTemplate" enabled
+    And request contains "template_id" parameter with value "00000000-0000-1234-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/monitor-app
+  Scenario: Get a monitor user template returns "OK" response
+    Given there is a valid "monitor_user_template" in the system
+    And new "GetMonitorUserTemplate" request
+    And operation "GetMonitorUserTemplate" enabled
+    And request contains "template_id" parameter from "monitor_user_template.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "monitor-user-template"
+
+  @team:DataDog/monitor-app
   Scenario: Get all monitor configuration policies returns "OK" response
     Given there is a valid "monitor_configuration_policy" in the system
     And new "ListMonitorConfigPolicies" request
@@ -175,6 +225,15 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data" has length 1
     And the response "data" has item with field "attributes.name" with value "test rule"
+
+  @team:DataDog/monitor-app
+  Scenario: Get all monitor user templates returns "OK" response
+    Given there is a valid "monitor_user_template" in the system
+    And new "ListMonitorUserTemplates" request
+    And operation "ListMonitorUserTemplates" enabled
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
 
   @skip-validation @team:DataDog/monitor-app
   Scenario: Update a monitor notification rule returns "Bad Request" response
@@ -205,3 +264,77 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "updated rule"
+
+  @skip-validation @team:DataDog/monitor-app
+  Scenario: Update a monitor user template to a new version returns "Bad Request" response
+    Given there is a valid "monitor_user_template" in the system
+    And operation "UpdateMonitorUserTemplate" enabled
+    And new "UpdateMonitorUserTemplate" request
+    And request contains "template_id" parameter from "monitor_user_template.data.id"
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/monitor-app
+  Scenario: Update a monitor user template to a new version returns "Not Found" response
+    Given new "UpdateMonitorUserTemplate" request
+    And operation "UpdateMonitorUserTemplate" enabled
+    And request contains "template_id" parameter with value "00000000-0000-1234-0000-000000000000"
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {"message": "A msg.", "name": "A name {{ unique_lower }}", "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100", "type": "query alert"}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/monitor-app
+  Scenario: Update a monitor user template to a new version returns "OK" response
+    Given there is a valid "monitor_user_template" in the system
+    And new "UpdateMonitorUserTemplate" request
+    And operation "UpdateMonitorUserTemplate" enabled
+    And request contains "template_id" parameter from "monitor_user_template.data.id"
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {"message": "A msg.", "name": "A name {{ unique_lower }}", "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100", "type": "query alert"}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip-validation @team:DataDog/monitor-app
+  Scenario: Validate a monitor user template returns "Bad Request" response
+    Given new "ValidateMonitorUserTemplate" request
+    And operation "ValidateMonitorUserTemplate" enabled
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/monitor-app
+  Scenario: Validate a monitor user template returns "OK" response
+    Given new "ValidateMonitorUserTemplate" request
+    And operation "ValidateMonitorUserTemplate" enabled
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {"message": "A msg.", "name": "A name {{ unique_lower }}", "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100", "type": "query alert"}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 204 OK
+
+  @skip-validation @team:DataDog/monitor-app
+  Scenario: Validate an existing monitor user template returns "Bad Request" response
+    Given there is a valid "monitor_user_template" in the system
+    And new "ValidateExistingMonitorUserTemplate" request
+    And operation "ValidateExistingMonitorUserTemplate" enabled
+    And request contains "template_id" parameter from "monitor_user_template.data.id"
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/monitor-app
+  Scenario: Validate an existing monitor user template returns "Not Found" response
+    Given new "ValidateExistingMonitorUserTemplate" request
+    And operation "ValidateExistingMonitorUserTemplate" enabled
+    And request contains "template_id" parameter with value "00000000-0000-1234-0000-000000000000"
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {"message": "A msg.", "name": "A name {{ unique_lower }}", "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100", "type": "query alert"}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/monitor-app
+  Scenario: Validate an existing monitor user template returns "OK" response
+    Given there is a valid "monitor_user_template" in the system
+    And new "ValidateExistingMonitorUserTemplate" request
+    And operation "ValidateExistingMonitorUserTemplate" enabled
+    And request contains "template_id" parameter from "monitor_user_template.data.id"
+    And body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {"message": "A msg.", "name": "A name {{ unique_lower }}", "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100", "type": "query alert"}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-user-template"}}
+    When the request is sent
+    Then the response status is 204 OK
