@@ -2306,6 +2306,73 @@ from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination
 from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination_type import (
     ObservabilityPipelineSentinelOneDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_socket_destination import ObservabilityPipelineSocketDestination
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_encoding import (
+    ObservabilityPipelineSocketDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing import (
+    ObservabilityPipelineSocketDestinationFraming,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing_bytes import (
+    ObservabilityPipelineSocketDestinationFramingBytes,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing_bytes_method import (
+    ObservabilityPipelineSocketDestinationFramingBytesMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing_character_delimited import (
+    ObservabilityPipelineSocketDestinationFramingCharacterDelimited,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing_character_delimited_method import (
+    ObservabilityPipelineSocketDestinationFramingCharacterDelimitedMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing_newline_delimited import (
+    ObservabilityPipelineSocketDestinationFramingNewlineDelimited,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing_newline_delimited_method import (
+    ObservabilityPipelineSocketDestinationFramingNewlineDelimitedMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_mode import (
+    ObservabilityPipelineSocketDestinationMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_destination_type import (
+    ObservabilityPipelineSocketDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing import (
+    ObservabilityPipelineSocketSourceFraming,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_bytes import (
+    ObservabilityPipelineSocketSourceFramingBytes,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_bytes_method import (
+    ObservabilityPipelineSocketSourceFramingBytesMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_character_delimited import (
+    ObservabilityPipelineSocketSourceFramingCharacterDelimited,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_character_delimited_method import (
+    ObservabilityPipelineSocketSourceFramingCharacterDelimitedMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_chunked_gelf import (
+    ObservabilityPipelineSocketSourceFramingChunkedGelf,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_chunked_gelf_method import (
+    ObservabilityPipelineSocketSourceFramingChunkedGelfMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_newline_delimited import (
+    ObservabilityPipelineSocketSourceFramingNewlineDelimited,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_newline_delimited_method import (
+    ObservabilityPipelineSocketSourceFramingNewlineDelimitedMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_octet_counting import (
+    ObservabilityPipelineSocketSourceFramingOctetCounting,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_octet_counting_method import (
+    ObservabilityPipelineSocketSourceFramingOctetCountingMethod,
+)
+from datadog_api_client.v2.model.observability_pipeline_socket_source_mode import ObservabilityPipelineSocketSourceMode
+from datadog_api_client.v2.model.observability_pipeline_socket_source_type import ObservabilityPipelineSocketSourceType
 from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
 from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination import (
@@ -5131,6 +5198,31 @@ __all__ = [
     "ObservabilityPipelineSentinelOneDestination",
     "ObservabilityPipelineSentinelOneDestinationRegion",
     "ObservabilityPipelineSentinelOneDestinationType",
+    "ObservabilityPipelineSocketDestination",
+    "ObservabilityPipelineSocketDestinationEncoding",
+    "ObservabilityPipelineSocketDestinationFraming",
+    "ObservabilityPipelineSocketDestinationFramingBytes",
+    "ObservabilityPipelineSocketDestinationFramingBytesMethod",
+    "ObservabilityPipelineSocketDestinationFramingCharacterDelimited",
+    "ObservabilityPipelineSocketDestinationFramingCharacterDelimitedMethod",
+    "ObservabilityPipelineSocketDestinationFramingNewlineDelimited",
+    "ObservabilityPipelineSocketDestinationFramingNewlineDelimitedMethod",
+    "ObservabilityPipelineSocketDestinationMode",
+    "ObservabilityPipelineSocketDestinationType",
+    "ObservabilityPipelineSocketSource",
+    "ObservabilityPipelineSocketSourceFraming",
+    "ObservabilityPipelineSocketSourceFramingBytes",
+    "ObservabilityPipelineSocketSourceFramingBytesMethod",
+    "ObservabilityPipelineSocketSourceFramingCharacterDelimited",
+    "ObservabilityPipelineSocketSourceFramingCharacterDelimitedMethod",
+    "ObservabilityPipelineSocketSourceFramingChunkedGelf",
+    "ObservabilityPipelineSocketSourceFramingChunkedGelfMethod",
+    "ObservabilityPipelineSocketSourceFramingNewlineDelimited",
+    "ObservabilityPipelineSocketSourceFramingNewlineDelimitedMethod",
+    "ObservabilityPipelineSocketSourceFramingOctetCounting",
+    "ObservabilityPipelineSocketSourceFramingOctetCountingMethod",
+    "ObservabilityPipelineSocketSourceMode",
+    "ObservabilityPipelineSocketSourceType",
     "ObservabilityPipelineSpec",
     "ObservabilityPipelineSpecData",
     "ObservabilityPipelineSplunkHecDestination",
