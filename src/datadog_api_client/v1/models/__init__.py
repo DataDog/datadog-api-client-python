@@ -846,6 +846,7 @@ from datadog_api_client.v1.model.synthetics_test_request_body_file import Synthe
 from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
+from datadog_api_client.v1.model.synthetics_test_request_dns_server_port import SyntheticsTestRequestDNSServerPort
 from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
 from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding import (
@@ -1804,6 +1805,7 @@ __all__ = [
     "SyntheticsTestRequestBodyType",
     "SyntheticsTestRequestCertificate",
     "SyntheticsTestRequestCertificateItem",
+    "SyntheticsTestRequestDNSServerPort",
     "SyntheticsTestRequestPort",
     "SyntheticsTestRequestProxy",
     "SyntheticsTestRestrictionPolicyBinding",
