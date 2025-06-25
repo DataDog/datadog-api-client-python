@@ -30,7 +30,7 @@ class RumRetentionFilterUpdateRequest(ModelNormal):
 
     def __init__(self_, data: RumRetentionFilterUpdateData, **kwargs):
         """
-        The RUM retention filter body to update.
+        The RUM retention filter body to update
 
         :param data: The new RUM retention filter properties to update.
         :type data: RumRetentionFilterUpdateData
