@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ChangeEventCustomAttributesChangedResourceType(ModelSimple):
     """
-    Resource's type.
+    The type of the resource that was changed.
 
     :param value: Must be one of ["feature_flag", "configuration"].
     :type value: str
