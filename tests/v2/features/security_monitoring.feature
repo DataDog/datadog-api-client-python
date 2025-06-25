@@ -539,7 +539,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Get a custom framework returns "OK" response
     Given there is a valid "custom_framework" in the system
     And new "GetCustomFramework" request
