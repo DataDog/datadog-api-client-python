@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
     from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+    from datadog_api_client.v1.model.synthetics_test_request_dns_server_port import SyntheticsTestRequestDNSServerPort
     from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
@@ -46,6 +47,9 @@ class SyntheticsTestRequest(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
         from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
         from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+        from datadog_api_client.v1.model.synthetics_test_request_dns_server_port import (
+            SyntheticsTestRequestDNSServerPort,
+        )
         from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
@@ -65,7 +69,7 @@ class SyntheticsTestRequest(ModelNormal):
             "compressed_json_descriptor": (str,),
             "compressed_proto_file": (str,),
             "dns_server": (str,),
-            "dns_server_port": (str,),
+            "dns_server_port": (SyntheticsTestRequestDNSServerPort,),
             "files": ([SyntheticsTestRequestBodyFile],),
             "follow_redirects": (bool,),
             "form": ({str: (str,)},),
@@ -147,7 +151,7 @@ class SyntheticsTestRequest(ModelNormal):
         compressed_json_descriptor: Union[str, UnsetType] = unset,
         compressed_proto_file: Union[str, UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
-        dns_server_port: Union[str, UnsetType] = unset,
+        dns_server_port: Union[SyntheticsTestRequestDNSServerPort, int, str, UnsetType] = unset,
         files: Union[List[SyntheticsTestRequestBodyFile], UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
         form: Union[Dict[str, str], UnsetType] = unset,
@@ -208,7 +212,7 @@ class SyntheticsTestRequest(ModelNormal):
         :type dns_server: str, optional
 
         :param dns_server_port: DNS server port to use for DNS tests.
-        :type dns_server_port: str, optional
+        :type dns_server_port: SyntheticsTestRequestDNSServerPort, optional
 
         :param files: Files to be used as part of the request in the test. Only valid if ``bodyType`` is ``multipart/form-data``.
         :type files: [SyntheticsTestRequestBodyFile], optional
