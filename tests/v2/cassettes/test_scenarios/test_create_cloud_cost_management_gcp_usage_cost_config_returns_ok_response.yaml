@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"billing_account_id":"123456_A123BC_12AB34","bucket_name":"dd-cost-bucket","export_dataset_name":"billing","export_prefix":"datadog_cloud_cost_usage_export","export_project_name":"dd-cloud-cost-report","service_account":"dd-ccm-gcp-integration@my-environment.iam.gserviceaccount.com"},"type":"gcp_uc_config_post_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cost/gcp_uc_config
+  response:
+    body:
+      string: '{"data":{"id":"0","type":"gcp_uc_config","attributes":{"account_id":"123456_A123BC_12AB34","bucket_name":"dd-cost-bucket","created_at":"2025-03-24T21:00:03.851717","dataset":"billing","error_messages":null,"export_prefix":"datadog_cloud_cost_usage_export","export_project_name":"dd-cloud-cost-report","months":15,"project_id":"","service_account":"dd-ccm-gcp-integration@my-environment.iam.gserviceaccount.com","status":"active","status_updated_at":"2025-05-09T21:01:48.748281","updated_at":"2025-03-24T21:00:03.851717"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
