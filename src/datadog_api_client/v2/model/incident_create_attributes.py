@@ -43,6 +43,7 @@ class IncidentCreateAttributes(ModelNormal):
             "fields": ({str: (IncidentFieldAttributes,)},),
             "incident_type_uuid": (str,),
             "initial_cells": ([IncidentTimelineCellCreateAttributes],),
+            "is_test": (bool,),
             "notification_handles": ([IncidentNotificationHandle],),
             "title": (str,),
         }
@@ -53,6 +54,7 @@ class IncidentCreateAttributes(ModelNormal):
         "fields": "fields",
         "incident_type_uuid": "incident_type_uuid",
         "initial_cells": "initial_cells",
+        "is_test": "is_test",
         "notification_handles": "notification_handles",
         "title": "title",
     }
@@ -75,6 +77,7 @@ class IncidentCreateAttributes(ModelNormal):
         initial_cells: Union[
             List[Union[IncidentTimelineCellCreateAttributes, IncidentTimelineCellMarkdownCreateAttributes]], UnsetType
         ] = unset,
+        is_test: Union[bool, UnsetType] = unset,
         notification_handles: Union[List[IncidentNotificationHandle], UnsetType] = unset,
         **kwargs,
     ):
@@ -96,6 +99,9 @@ class IncidentCreateAttributes(ModelNormal):
         :param initial_cells: An array of initial timeline cells to be placed at the beginning of the incident timeline.
         :type initial_cells: [IncidentTimelineCellCreateAttributes], optional
 
+        :param is_test: A flag indicating whether the incident is a test incident.
+        :type is_test: bool, optional
+
         :param notification_handles: Notification handles that will be notified of the incident at creation.
         :type notification_handles: [IncidentNotificationHandle], optional
 
@@ -110,6 +116,8 @@ class IncidentCreateAttributes(ModelNormal):
             kwargs["incident_type_uuid"] = incident_type_uuid
         if initial_cells is not unset:
             kwargs["initial_cells"] = initial_cells
+        if is_test is not unset:
+            kwargs["is_test"] = is_test
         if notification_handles is not unset:
             kwargs["notification_handles"] = notification_handles
         super().__init__(kwargs)
