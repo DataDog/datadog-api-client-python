@@ -5023,6 +5023,13 @@ datadog\_api\_client.v1.model.synthetics\_test\_request\_certificate\_item modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_test\_request\_dns\_server\_port module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_request_dns_server_port
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_test\_request\_port module
 --------------------------------------------------------------------
 
