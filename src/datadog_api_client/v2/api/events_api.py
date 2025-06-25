@@ -42,6 +42,55 @@ class EventsApi:
                 "operation_id": "create_event",
                 "http_method": "POST",
                 "version": "v2",
+                "servers": [
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "variables": {
+                            "site": {
+                                "description": "The regional site for customers.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": [
+                                    "datadoghq.com",
+                                    "us3.datadoghq.com",
+                                    "us5.datadoghq.com",
+                                    "ap1.datadoghq.com",
+                                    "datadoghq.eu",
+                                    "ddog-gov.com",
+                                ],
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "event-management-intake",
+                            },
+                        },
+                    },
+                    {
+                        "url": "{protocol}://{name}",
+                        "variables": {
+                            "name": {
+                                "description": "Full site DNS name.",
+                                "default_value": "event-management-intake.datadoghq.com",
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
+                    },
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "variables": {
+                            "site": {
+                                "description": "Any Datadog deployment.",
+                                "default_value": "datadoghq.com",
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "event-management-intake",
+                            },
+                        },
+                    },
+                ],
             },
             params_map={
                 "body": {
@@ -129,13 +178,17 @@ class EventsApi:
     ) -> EventCreateResponsePayload:
         """Post an event.
 
-        This endpoint allows you to post events.
+        This endpoint allows you to publish events.
 
-        ✅ **Only events with the change category** are in General Availability. See `Change Tracking <https://docs.datadoghq.com/change_tracking>`_ for more details.
+        ✅ **Only events with the change or alert category** are in General Availability. For change events, see `Change Tracking <https://docs.datadoghq.com/change_tracking>`_ for more details.
 
-        ❌ For use cases involving other event categories, please use the V1 endpoint.
+        ❌ For use cases involving other event categories, use the V1 endpoint or reach out to `support <https://www.datadoghq.com/support/>`_.
 
-        :param body: Event request object
+        ❌ Notifications are not yet supported for events sent to this endpoint. Use the V1 endpoint for notification functionality.
+
+        ❌ This endpoint is not available for the Government (US1-FED) site. Contact your account representative for more information.
+
+        :param body: Event creation request payload.
         :type body: EventCreateRequestPayload
         :rtype: EventCreateResponsePayload
         """
