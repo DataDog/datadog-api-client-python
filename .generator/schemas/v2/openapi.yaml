@@ -31923,7 +31923,7 @@ components:
       - attributes
       type: object
     RumRetentionFilterUpdateRequest:
-      description: The RUM retention filter body to update.
+      description: The RUM retention filter body to update
       properties:
         data:
           $ref: '#/components/schemas/RumRetentionFilterUpdateData'
