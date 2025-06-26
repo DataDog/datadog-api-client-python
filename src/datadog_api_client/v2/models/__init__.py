@@ -111,6 +111,8 @@ from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventNa
 from datadog_api_client.v2.model.app_builder_event_type import AppBuilderEventType
 from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 from datadog_api_client.v2.model.app_deployment_type import AppDeploymentType
+from datadog_api_client.v2.model.app_key_registration_data import AppKeyRegistrationData
+from datadog_api_client.v2.model.app_key_registration_data_type import AppKeyRegistrationDataType
 from datadog_api_client.v2.model.app_meta import AppMeta
 from datadog_api_client.v2.model.app_relationship import AppRelationship
 from datadog_api_client.v2.model.app_trigger_wrapper import AppTriggerWrapper
@@ -1250,6 +1252,7 @@ from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSS
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
 from datadog_api_client.v2.model.get_action_connection_response import GetActionConnectionResponse
+from datadog_api_client.v2.model.get_app_key_registration_response import GetAppKeyRegistrationResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
 from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
 from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
@@ -1525,6 +1528,8 @@ from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
 from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
 from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
+from datadog_api_client.v2.model.list_app_key_registrations_response import ListAppKeyRegistrationsResponse
+from datadog_api_client.v2.model.list_app_key_registrations_response_meta import ListAppKeyRegistrationsResponseMeta
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.list_apps_response import ListAppsResponse
 from datadog_api_client.v2.model.list_apps_response_data_items import ListAppsResponseDataItems
@@ -2553,6 +2558,7 @@ from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
+from datadog_api_client.v2.model.register_app_key_response import RegisterAppKeyResponse
 from datadog_api_client.v2.model.relation_attributes import RelationAttributes
 from datadog_api_client.v2.model.relation_entity import RelationEntity
 from datadog_api_client.v2.model.relation_include_type import RelationIncludeType
@@ -3647,6 +3653,8 @@ __all__ = [
     "AppBuilderEventType",
     "AppDefinitionType",
     "AppDeploymentType",
+    "AppKeyRegistrationData",
+    "AppKeyRegistrationDataType",
     "AppMeta",
     "AppRelationship",
     "AppTriggerWrapper",
@@ -4482,6 +4490,7 @@ __all__ = [
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
     "GetActionConnectionResponse",
+    "GetAppKeyRegistrationResponse",
     "GetAppResponse",
     "GetAppResponseData",
     "GetAppResponseDataAttributes",
@@ -4721,6 +4730,8 @@ __all__ = [
     "ListAPIsResponseDataAttributes",
     "ListAPIsResponseMeta",
     "ListAPIsResponseMetaPagination",
+    "ListAppKeyRegistrationsResponse",
+    "ListAppKeyRegistrationsResponseMeta",
     "ListApplicationKeysResponse",
     "ListAppsResponse",
     "ListAppsResponseDataItems",
@@ -5367,6 +5378,7 @@ __all__ = [
     "RUMWarning",
     "ReadinessGate",
     "ReadinessGateThresholdType",
+    "RegisterAppKeyResponse",
     "RelationAttributes",
     "RelationEntity",
     "RelationIncludeType",
