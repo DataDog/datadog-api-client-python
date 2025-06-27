@@ -33,6 +33,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.reference_table_logs_lookup_processor import ReferenceTableLogsLookupProcessor
     from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
     from datadog_api_client.v1.model.logs_span_remapper import LogsSpanRemapper
+    from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
 
 
 class LogsPipelineProcessor(ModelNormal):
@@ -85,6 +86,7 @@ class LogsPipelineProcessor(ModelNormal):
                     ReferenceTableLogsLookupProcessor,
                     LogsTraceRemapper,
                     LogsSpanRemapper,
+                    LogsArrayProcessor,
                 ]
             ],
             UnsetType,

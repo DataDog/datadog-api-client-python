@@ -256,6 +256,15 @@ from datadog_api_client.v1.model.logs_api_error import LogsAPIError
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
 from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
 from datadog_api_client.v1.model.logs_arithmetic_processor_type import LogsArithmeticProcessorType
+from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
+from datadog_api_client.v1.model.logs_array_processor_operation import LogsArrayProcessorOperation
+from datadog_api_client.v1.model.logs_array_processor_operation_append import LogsArrayProcessorOperationAppend
+from datadog_api_client.v1.model.logs_array_processor_operation_append_type import LogsArrayProcessorOperationAppendType
+from datadog_api_client.v1.model.logs_array_processor_operation_length import LogsArrayProcessorOperationLength
+from datadog_api_client.v1.model.logs_array_processor_operation_length_type import LogsArrayProcessorOperationLengthType
+from datadog_api_client.v1.model.logs_array_processor_operation_select import LogsArrayProcessorOperationSelect
+from datadog_api_client.v1.model.logs_array_processor_operation_select_type import LogsArrayProcessorOperationSelectType
+from datadog_api_client.v1.model.logs_array_processor_type import LogsArrayProcessorType
 from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
 from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
 from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
@@ -1311,6 +1320,15 @@ __all__ = [
     "LogsAPIErrorResponse",
     "LogsArithmeticProcessor",
     "LogsArithmeticProcessorType",
+    "LogsArrayProcessor",
+    "LogsArrayProcessorOperation",
+    "LogsArrayProcessorOperationAppend",
+    "LogsArrayProcessorOperationAppendType",
+    "LogsArrayProcessorOperationLength",
+    "LogsArrayProcessorOperationLengthType",
+    "LogsArrayProcessorOperationSelect",
+    "LogsArrayProcessorOperationSelectType",
+    "LogsArrayProcessorType",
     "LogsAttributeRemapper",
     "LogsAttributeRemapperType",
     "LogsByRetention",
