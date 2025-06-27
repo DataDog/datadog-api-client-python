@@ -36,6 +36,41 @@ Feature: Logs Pipelines
     Then the response status is 200 OK
 
   @team:DataDog/event-platform-experience
+  Scenario: Create a pipeline with Array Processor Append Operation returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayAppend", "processors": [{"type": "array-processor", "is_enabled": true, "name": "append_ip_to_array", "operation": {"type": "append", "source": "network.client.ip", "target": "sourceIps"}}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/event-platform-experience
+  Scenario: Create a pipeline with Array Processor Append Operation with preserve_source false returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayAppendNoPreserve", "processors": [{"type": "array-processor", "is_enabled": true, "name": "append_ip_and_remove_source", "operation": {"type": "append", "source": "network.client.ip", "target": "sourceIps", "preserve_source": false}}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/event-platform-experience
+  Scenario: Create a pipeline with Array Processor Append Operation with preserve_source true returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayAppendPreserve", "processors": [{"type": "array-processor", "is_enabled": true, "name": "append_ip_and_keep_source", "operation": {"type": "append", "source": "network.client.ip", "target": "sourceIps", "preserve_source": true}}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/event-platform-experience
+  Scenario: Create a pipeline with Array Processor Length Operation returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayLength", "processors": [{"type": "array-processor", "is_enabled": true, "name": "count_tags", "operation": {"type": "length", "source": "tags", "target": "tagCount"}}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/event-platform-experience
+  Scenario: Create a pipeline with Array Processor Select Operation returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArraySelect", "processors": [{"type": "array-processor", "is_enabled": true, "name": "extract_referrer", "operation": {"type": "select", "source": "httpRequest.headers", "target": "referrer", "filter": "name:Referrer", "value_to_extract": "value"}}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/event-platform-experience
   Scenario: Create a pipeline with Span Id Remapper returns "OK" response
     Given new "CreateLogsPipeline" request
     And body with value {"filter": {"query": "source:python"}, "name": "testPipeline", "processors": [{"type": "span-id-remapper", "is_enabled" : true, "name" : "test_filter", "sources" : [ "dd.span_id"] }], "tags": []}
