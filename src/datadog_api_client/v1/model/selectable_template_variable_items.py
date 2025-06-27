@@ -21,6 +21,7 @@ class SelectableTemplateVariableItems(ModelNormal):
             "default_value": (str,),
             "name": (str,),
             "prefix": (str,),
+            "type": (str, none_type),
             "visible_tags": ([str], none_type),
         }
 
@@ -28,6 +29,7 @@ class SelectableTemplateVariableItems(ModelNormal):
         "default_value": "default_value",
         "name": "name",
         "prefix": "prefix",
+        "type": "type",
         "visible_tags": "visible_tags",
     }
 
@@ -36,6 +38,7 @@ class SelectableTemplateVariableItems(ModelNormal):
         default_value: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         prefix: Union[str, UnsetType] = unset,
+        type: Union[str, none_type, UnsetType] = unset,
         visible_tags: Union[List[str], none_type, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,6 +54,9 @@ class SelectableTemplateVariableItems(ModelNormal):
         :param prefix: The tag/attribute key associated with the template variable.
         :type prefix: str, optional
 
+        :param type: The type of variable. This is to differentiate between filter variables (interpolated in query) and group by variables (interpolated into group by).
+        :type type: str, none_type, optional
+
         :param visible_tags: List of visible tag values on the shared dashboard.
         :type visible_tags: [str], none_type, optional
         """
@@ -60,6 +66,8 @@ class SelectableTemplateVariableItems(ModelNormal):
             kwargs["name"] = name
         if prefix is not unset:
             kwargs["prefix"] = prefix
+        if type is not unset:
+            kwargs["type"] = type
         if visible_tags is not unset:
             kwargs["visible_tags"] = visible_tags
         super().__init__(kwargs)

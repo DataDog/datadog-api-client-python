@@ -75,7 +75,7 @@ Feature: Dashboards
   @generated @skip @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard returns "Bad Request" response
     Given new "CreateDashboard" request
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "tags": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "tags": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host", "type": "group"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -808,6 +808,17 @@ Feature: Dashboards
     And the response "template_variable_presets[0].template_variables[0].values[0]" is equal to "*"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with template variable type field returns "OK" response
+    Given new "CreateDashboard" request
+    And body with value {"description": null, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "template_variables": [{"available_values": ["service", "datacenter", "env"], "defaults": ["service", "datacenter"], "name": "group_by_var", "type": "group"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "template_variables[0].name" is equal to "group_by_var"
+    And the response "template_variables[0].available_values[0]" is equal to "service"
+    And the response "template_variables[0].defaults[0]" is equal to "service"
+    And the response "template_variables[0].type" is equal to "group"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with timeseries widget and formula style attributes
     Given new "CreateDashboard" request
     And body with value {"title": "{{ unique }} with formula style","widgets": [{"definition": {"title": "styled timeseries","show_legend": true,"legend_layout": "auto","legend_columns": ["avg","min","max","value","sum"],"time": {},"type": "timeseries","requests": [{"formulas": [{"formula": "query1","style": {"palette_index": 4,"palette": "classic"}}],"queries": [{"query": "avg:system.cpu.user{*}","data_source": "metrics","name": "query1"}],"response_format": "timeseries","style": {"palette": "dog_classic","line_type": "solid","line_width": "normal"},"display_type": "line"}]}}],"layout_type": "ordered","reflow_type": "auto"}
@@ -959,6 +970,18 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "dashboard_id" has the same value as "dashboard.id"
     And the response "dashboard_type" is equal to "custom_timeboard"
+
+  @team:DataDog/reporting-and-sharing
+  Scenario: Create a shared dashboard with a group template variable returns "OK" response
+    Given there is a valid "dashboard" in the system
+    And new "CreatePublicDashboard" request
+    And body with value {"dashboard_id": "{{dashboard.id}}", "dashboard_type": "custom_timeboard", "share_type": "open", "global_time": {"live_span": "1h"}, "selectable_template_vars": [{"default_value": "*", "name": "group_by_var", "type": "group", "visible_tags": ["selectableValue1", "selectableValue2"]}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "dashboard_id" has the same value as "dashboard.id"
+    And the response "dashboard_type" is equal to "custom_timeboard"
+    And the response "selectable_template_vars[0].name" is equal to "group_by_var"
+    And the response "selectable_template_vars[0].type" is equal to "group"
 
   @generated @skip @team:DataDog/dashboards-backend
   Scenario: Delete a dashboard returns "Dashboards Not Found" response
@@ -1172,7 +1195,7 @@ Feature: Dashboards
   Scenario: Update a dashboard returns "Bad Request" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "REPLACE.ME"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "tags": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "tags": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host", "type": "group"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1180,7 +1203,7 @@ Feature: Dashboards
   Scenario: Update a dashboard returns "Item Not Found" response
     Given new "UpdateDashboard" request
     And request contains "dashboard_id" parameter from "REPLACE.ME"
-    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "tags": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
+    And body with value {"description": null, "is_read_only": false, "layout_type": "ordered", "notify_list": [], "reflow_type": "auto", "restricted_roles": [], "tags": [], "template_variable_presets": [{"template_variables": [{"values": []}]}], "template_variables": [{"available_values": ["my-host", "host1", "host2"], "default": "my-host", "defaults": ["my-host-1", "my-host-2"], "name": "host1", "prefix": "host", "type": "group"}], "title": "", "widgets": [{"definition": {"requests": {"fill": {"q": "avg:system.cpu.user{*}"}}, "type": "hostmap"}}]}
     When the request is sent
     Then the response status is 404 Item Not Found
 
@@ -1234,3 +1257,20 @@ Feature: Dashboards
     And the response "global_time.live_span" is equal to "15m"
     And the response "share_type" is equal to "open"
     And the response "share_list" has length 0
+
+  @team:DataDog/reporting-and-sharing
+  Scenario: Update a shared dashboard with selectable_template_vars returns "OK" response
+    Given there is a valid "dashboard" in the system
+    And there is a valid "shared_dashboard" in the system
+    And new "UpdatePublicDashboard" request
+    And request contains "token" parameter from "shared_dashboard.token"
+    And body with value {"global_time": {"live_span": "15m"}, "share_list": [], "share_type": "open", "selectable_template_vars": [{"default_value": "*", "name": "group_by_var", "type": "group", "visible_tags": ["selectableValue1", "selectableValue2"]}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "dashboard_id" has the same value as "dashboard.id"
+    And the response "dashboard_type" is equal to "custom_timeboard"
+    And the response "global_time.live_span" is equal to "15m"
+    And the response "share_type" is equal to "open"
+    And the response "share_list" has length 0
+    And the response "selectable_template_vars[0].name" is equal to "group_by_var"
+    And the response "selectable_template_vars[0].type" is equal to "group"

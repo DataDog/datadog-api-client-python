@@ -23,6 +23,7 @@ class DashboardTemplateVariable(ModelNormal):
             "defaults": ([str],),
             "name": (str,),
             "prefix": (str, none_type),
+            "type": (str, none_type),
         }
 
     attribute_map = {
@@ -31,6 +32,7 @@ class DashboardTemplateVariable(ModelNormal):
         "defaults": "defaults",
         "name": "name",
         "prefix": "prefix",
+        "type": "type",
     }
 
     def __init__(
@@ -40,6 +42,7 @@ class DashboardTemplateVariable(ModelNormal):
         default: Union[str, none_type, UnsetType] = unset,
         defaults: Union[List[str], UnsetType] = unset,
         prefix: Union[str, none_type, UnsetType] = unset,
+        type: Union[str, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -59,6 +62,9 @@ class DashboardTemplateVariable(ModelNormal):
 
         :param prefix: The tag prefix associated with the variable. Only tags with this prefix appear in the variable drop-down.
         :type prefix: str, none_type, optional
+
+        :param type: The type of variable. This is to differentiate between filter variables (interpolated in query) and group by variables (interpolated into group by).
+        :type type: str, none_type, optional
         """
         if available_values is not unset:
             kwargs["available_values"] = available_values
@@ -68,6 +74,8 @@ class DashboardTemplateVariable(ModelNormal):
             kwargs["defaults"] = defaults
         if prefix is not unset:
             kwargs["prefix"] = prefix
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
 
         self_.name = name
