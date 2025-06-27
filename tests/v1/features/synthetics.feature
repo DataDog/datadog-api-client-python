@@ -128,6 +128,13 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/synthetics-ct
+  Scenario: Create a mobile test returns "" response
+    Given new "CreateSyntheticsMobileTest" request
+    And body from file "synthetics_mobile_test_payload_missing_message.json"
+    When the request is sent
+    Then the response status is 400 - required message field is missing
+
   @generated @skip @team:DataDog/synthetics-ct
   Scenario: Create a mobile test returns "- JSON format is wrong" response
     Given new "CreateSyntheticsMobileTest" request
