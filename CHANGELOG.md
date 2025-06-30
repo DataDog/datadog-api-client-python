@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## 2.39.0/2025-06-30
+
+### Fixed
+* Synthetics mobile test `message` field is now required [#2657](https://github.com/DataDog/datadog-api-client-python/pull/2657)
+* Make dns port be string and number [#2641](https://github.com/DataDog/datadog-api-client-python/pull/2641)
+* Fix basic auth requirements [#2638](https://github.com/DataDog/datadog-api-client-python/pull/2638)
+* Add support for the api_security detection rule type [#2633](https://github.com/DataDog/datadog-api-client-python/pull/2633)
+
+### Security
+* Remove caseIndex from historical jobs api spec [#2656](https://github.com/DataDog/datadog-api-client-python/pull/2656)
+
+### Changed
+* Update events intake specs for v2 Events post endpoint [#2652](https://github.com/DataDog/datadog-api-client-python/pull/2652)
+* Update events intake specs for v2 Events post endpoint [#2615](https://github.com/DataDog/datadog-api-client-python/pull/2615)
+* Add billing read permission [#2611](https://github.com/DataDog/datadog-api-client-python/pull/2611)
+
+### Added
+* Update Incident API specs to include `is_test` in `POST /incidents` and incidents response [#2651](https://github.com/DataDog/datadog-api-client-python/pull/2651)
+* Add App Key Registration API  [#2645](https://github.com/DataDog/datadog-api-client-python/pull/2645)
+* Microsoft Sentinel Public API support [#2636](https://github.com/DataDog/datadog-api-client-python/pull/2636)
+* Add the AP2 datacenter. [#2634](https://github.com/DataDog/datadog-api-client-python/pull/2634)
+* Add custom fields to Rule update/validate API public documentation. [#2624](https://github.com/DataDog/datadog-api-client-python/pull/2624)
+* Add hash field to actions in CWS agent rules [#2621](https://github.com/DataDog/datadog-api-client-python/pull/2621)
+* Add `form` field for `multipart/form-data` HTTP API tests [#2606](https://github.com/DataDog/datadog-api-client-python/pull/2606)
+
+### Deprecated
+* Deprecate SLO metadata fields in api spec [#2608](https://github.com/DataDog/datadog-api-client-python/pull/2608)
+
 ## 2.38.0/2025-06-24
 
 ### Fixed
