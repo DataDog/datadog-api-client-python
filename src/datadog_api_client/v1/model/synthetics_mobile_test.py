@@ -65,11 +65,11 @@ class SyntheticsMobileTest(ModelNormal):
     def __init__(
         self_,
         config: SyntheticsMobileTestConfig,
+        message: str,
         name: str,
         options: SyntheticsMobileTestOptions,
         type: SyntheticsMobileTestType,
         device_ids: Union[List[str], UnsetType] = unset,
-        message: Union[str, UnsetType] = unset,
         monitor_id: Union[int, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         status: Union[SyntheticsTestPauseStatus, UnsetType] = unset,
@@ -87,7 +87,7 @@ class SyntheticsMobileTest(ModelNormal):
         :type device_ids: [str], optional
 
         :param message: Notification message associated with the test.
-        :type message: str, optional
+        :type message: str
 
         :param monitor_id: The associated monitor ID.
         :type monitor_id: int, optional
@@ -116,8 +116,6 @@ class SyntheticsMobileTest(ModelNormal):
         """
         if device_ids is not unset:
             kwargs["device_ids"] = device_ids
-        if message is not unset:
-            kwargs["message"] = message
         if monitor_id is not unset:
             kwargs["monitor_id"] = monitor_id
         if public_id is not unset:
@@ -131,6 +129,7 @@ class SyntheticsMobileTest(ModelNormal):
         super().__init__(kwargs)
 
         self_.config = config
+        self_.message = message
         self_.name = name
         self_.options = options
         self_.type = type
