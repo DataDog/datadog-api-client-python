@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: '{"description":null,"layout_type":"ordered","notify_list":[],"reflow_type":"auto","restricted_roles":[],"template_variables":[{"available_values":["service","datacenter","env"],"defaults":["service","datacenter"],"name":"group_by_var","type":"group"}],"title":"","widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"zb6-rsj-zej","title":"","description":null,"author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
+        Account","layout_type":"ordered","url":"/dashboard/zb6-rsj-zej/","template_variables":[{"available_values":["service","datacenter","env"],"defaults":["service","datacenter"],"name":"group_by_var","type":"group"}],"widgets":[{"definition":{"requests":{"fill":{"q":"avg:system.cpu.user{*}"}},"type":"hostmap"},"id":2230877325217406}],"notify_list":[],"created_at":"2025-06-30T15:47:17.444093+00:00","modified_at":"2025-06-30T15:47:17.444093+00:00","reflow_type":"auto","restricted_roles":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/zb6-rsj-zej
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"zb6-rsj-zej"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
