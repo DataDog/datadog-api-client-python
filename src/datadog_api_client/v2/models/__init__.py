@@ -1251,6 +1251,23 @@ from datadog_api_client.v2.model.gcpsts_service_account_update_request_data impo
 from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSServiceAccountsResponse
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
+from datadog_api_client.v2.model.gcp_usage_cost_config import GCPUsageCostConfig
+from datadog_api_client.v2.model.gcp_usage_cost_config_attributes import GCPUsageCostConfigAttributes
+from datadog_api_client.v2.model.gcp_usage_cost_config_patch_data import GCPUsageCostConfigPatchData
+from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPUsageCostConfigPatchRequest
+from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request_attributes import (
+    GCPUsageCostConfigPatchRequestAttributes,
+)
+from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request_type import GCPUsageCostConfigPatchRequestType
+from datadog_api_client.v2.model.gcp_usage_cost_config_post_data import GCPUsageCostConfigPostData
+from datadog_api_client.v2.model.gcp_usage_cost_config_post_request import GCPUsageCostConfigPostRequest
+from datadog_api_client.v2.model.gcp_usage_cost_config_post_request_attributes import (
+    GCPUsageCostConfigPostRequestAttributes,
+)
+from datadog_api_client.v2.model.gcp_usage_cost_config_post_request_type import GCPUsageCostConfigPostRequestType
+from datadog_api_client.v2.model.gcp_usage_cost_config_response import GCPUsageCostConfigResponse
+from datadog_api_client.v2.model.gcp_usage_cost_config_type import GCPUsageCostConfigType
+from datadog_api_client.v2.model.gcp_usage_cost_configs_response import GCPUsageCostConfigsResponse
 from datadog_api_client.v2.model.get_action_connection_response import GetActionConnectionResponse
 from datadog_api_client.v2.model.get_app_key_registration_response import GetAppKeyRegistrationResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
@@ -4489,6 +4506,19 @@ __all__ = [
     "GCPSTSServiceAccountsResponse",
     "GCPServiceAccountMeta",
     "GCPServiceAccountType",
+    "GCPUsageCostConfig",
+    "GCPUsageCostConfigAttributes",
+    "GCPUsageCostConfigPatchData",
+    "GCPUsageCostConfigPatchRequest",
+    "GCPUsageCostConfigPatchRequestAttributes",
+    "GCPUsageCostConfigPatchRequestType",
+    "GCPUsageCostConfigPostData",
+    "GCPUsageCostConfigPostRequest",
+    "GCPUsageCostConfigPostRequestAttributes",
+    "GCPUsageCostConfigPostRequestType",
+    "GCPUsageCostConfigResponse",
+    "GCPUsageCostConfigType",
+    "GCPUsageCostConfigsResponse",
     "GetActionConnectionResponse",
     "GetAppKeyRegistrationResponse",
     "GetAppResponse",

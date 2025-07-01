@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"is_enabled":true},"type":"gcp_uc_config_patch_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/cost/gcp_uc_config/12345678
+  response:
+    body:
+      string: "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"rpc error: code\
+        \ = NotFound desc = cloud account '\uFFFD' not found\"}]}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
