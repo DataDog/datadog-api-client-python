@@ -961,11 +961,15 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_cost_azure_uc_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.create_cost_azure_uc_configs()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_cost_gcp_usage_cost_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.create_cost_gcp_usage_cost_config()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_budget" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_budget()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_awscur_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_cost_awscur_config()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_azure_uc_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_cost_azure_uc_config()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_gcp_usage_cost_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_cost_gcp_usage_cost_config()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_custom_costs_file" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.delete_custom_costs_file()</span></code></a>
         </li>
@@ -979,11 +983,15 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_cost_azure_uc_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.list_cost_azure_uc_configs()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_cost_gcp_usage_cost_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.list_cost_gcp_usage_cost_configs()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_custom_costs_files" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.list_custom_costs_files()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_cost_awscur_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.update_cost_awscur_config()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_cost_azure_uc_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.update_cost_azure_uc_configs()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_cost_gcp_usage_cost_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.update_cost_gcp_usage_cost_config()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.upload_custom_costs_file" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CloudCostManagementApi.upload_custom_costs_file()</span></code></a>
         </li>
@@ -3825,7 +3833,7 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CloudCostManagementApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS and Azure. You can query your cost data by using the <a class="reference external" href="https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-data-across-multiple-products">Metrics endpoint</a> and the <code class="docutils literal notranslate"><span class="pre">cloud_cost</span></code> data source. For more information, see the <a class="reference external" href="https://docs.datadoghq.com/cloud_cost_management/">Cloud Cost Management documentation</a>.</p>
+<p>The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS, Azure, and GCP. You can query your cost data by using the <a class="reference external" href="https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-data-across-multiple-products">Metrics endpoint</a> and the <code class="docutils literal notranslate"><span class="pre">cloud_cost</span></code> data source. For more information, see the <a class="reference external" href="https://docs.datadoghq.com/cloud_cost_management/">Cloud Cost Management documentation</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_cost_awscur_config">
 <span class="sig-name descname"><span class="pre">create_cost_awscur_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_cur_config_post_request.AwsCURConfigPostRequest" title="datadog_api_client.v2.model.aws_cur_config_post_request.AwsCURConfigPostRequest"><span class="pre">AwsCURConfigPostRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_cur_config_response.AwsCURConfigResponse" title="datadog_api_client.v2.model.aws_cur_config_response.AwsCURConfigResponse"><span class="pre">AwsCURConfigResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_cost_awscur_config" title="Link to this definition">¶</a></dt>
@@ -3845,6 +3853,17 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.azure_uc_config_pairs_response.AzureUCConfigPairsResponse" title="datadog_api_client.v2.model.azure_uc_config_pairs_response.AzureUCConfigPairsResponse">AzureUCConfigPairsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_cost_gcp_usage_cost_config">
+<span class="sig-name descname"><span class="pre">create_cost_gcp_usage_cost_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_config_post_request.GCPUsageCostConfigPostRequest" title="datadog_api_client.v2.model.gcp_usage_cost_config_post_request.GCPUsageCostConfigPostRequest"><span class="pre">GCPUsageCostConfigPostRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse" title="datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse"><span class="pre">GCPUsageCostConfigResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_cost_gcp_usage_cost_config" title="Link to this definition">¶</a></dt>
+<dd><p>Create Cloud Cost Management GCP Usage Cost config.</p>
+<p>Create a Cloud Cost Management account for an GCP Usage Cost config.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse" title="datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse">GCPUsageCostConfigResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3881,6 +3900,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 <span class="sig-name descname"><span class="pre">delete_cost_azure_uc_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cloud_account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_azure_uc_config" title="Link to this definition">¶</a></dt>
 <dd><p>Delete Cloud Cost Management Azure config.</p>
 <p>Archive a Cloud Cost Management Account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cloud_account_id</strong> (<em>str</em>) – Cloud Account id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_gcp_usage_cost_config">
+<span class="sig-name descname"><span class="pre">delete_cost_gcp_usage_cost_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cloud_account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_cost_gcp_usage_cost_config" title="Link to this definition">¶</a></dt>
+<dd><p>Delete Cloud Cost Management GCP Usage Cost config.</p>
+<p>Archive a Cloud Cost Management account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cloud_account_id</strong> (<em>str</em>) – Cloud Account id.</p>
@@ -3966,6 +3999,17 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_cost_gcp_usage_cost_configs">
+<span class="sig-name descname"><span class="pre">list_cost_gcp_usage_cost_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_configs_response.GCPUsageCostConfigsResponse" title="datadog_api_client.v2.model.gcp_usage_cost_configs_response.GCPUsageCostConfigsResponse"><span class="pre">GCPUsageCostConfigsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_cost_gcp_usage_cost_configs" title="Link to this definition">¶</a></dt>
+<dd><p>List Cloud Cost Management GCP Usage Cost configs.</p>
+<p>List the GCP Usage Cost configs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_configs_response.GCPUsageCostConfigsResponse" title="datadog_api_client.v2.model.gcp_usage_cost_configs_response.GCPUsageCostConfigsResponse">GCPUsageCostConfigsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_custom_costs_files">
 <span class="sig-name descname"><span class="pre">list_custom_costs_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.custom_costs_file_list_response.CustomCostsFileListResponse" title="datadog_api_client.v2.model.custom_costs_file_list_response.CustomCostsFileListResponse"><span class="pre">CustomCostsFileListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_custom_costs_files" title="Link to this definition">¶</a></dt>
 <dd><p>List Custom Costs files.</p>
@@ -4001,6 +4045,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.azure_uc_config_pairs_response.AzureUCConfigPairsResponse" title="datadog_api_client.v2.model.azure_uc_config_pairs_response.AzureUCConfigPairsResponse">AzureUCConfigPairsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_cost_gcp_usage_cost_config">
+<span class="sig-name descname"><span class="pre">update_cost_gcp_usage_cost_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cloud_account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_config_patch_request.GCPUsageCostConfigPatchRequest" title="datadog_api_client.v2.model.gcp_usage_cost_config_patch_request.GCPUsageCostConfigPatchRequest"><span class="pre">GCPUsageCostConfigPatchRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse" title="datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse"><span class="pre">GCPUsageCostConfigResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_cost_gcp_usage_cost_config" title="Link to this definition">¶</a></dt>
+<dd><p>Update Cloud Cost Management GCP Usage Cost config.</p>
+<p>Update the status of an GCP Usage Cost config (active/archived).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cloud_account_id</strong> (<em>str</em>) – Cloud Account id.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse" title="datadog_api_client.v2.model.gcp_usage_cost_config_response.GCPUsageCostConfigResponse">GCPUsageCostConfigResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
