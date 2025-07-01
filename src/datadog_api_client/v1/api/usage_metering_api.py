@@ -1282,7 +1282,8 @@ class UsageMeteringApi:
 
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param usage_type: Usage type to retrieve.
+        :param usage_type: Usage type to retrieve. The following values have been **deprecated** :
+            ``estimated_indexed_spans_usage`` , ``estimated_ingested_spans_usage``.
         :type usage_type: HourlyUsageAttributionUsageType
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
@@ -1444,12 +1445,16 @@ class UsageMeteringApi:
             Maximum of 15 months ago.
         :type start_month: datetime
         :param fields: Comma-separated list of usage types to return, or ``*`` for all usage types.
+            The following values have been **deprecated** :
+            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage``.
         :type fields: MonthlyUsageAttributionSupportedMetrics
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage ending this month.
         :type end_month: datetime, optional
         :param sort_direction: The direction to sort by: ``[desc, asc]``.
         :type sort_direction: UsageSortDirection, optional
         :param sort_name: The field to sort by.
+            The following values have been **deprecated** :
+            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage``.
         :type sort_name: MonthlyUsageAttributionSupportedMetrics, optional
         :param tag_breakdown_keys: Comma separated list of tag keys used to group usage. If no value is provided the usage will not be broken down by tags.
 
