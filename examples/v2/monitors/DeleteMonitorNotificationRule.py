@@ -10,7 +10,6 @@ from datadog_api_client.v2.api.monitors_api import MonitorsApi
 MONITOR_NOTIFICATION_RULE_DATA_ID = environ["MONITOR_NOTIFICATION_RULE_DATA_ID"]
 
 configuration = Configuration()
-configuration.unstable_operations["delete_monitor_notification_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     api_instance.delete_monitor_notification_rule(

@@ -10,7 +10,6 @@ from datadog_api_client.v2.api.monitors_api import MonitorsApi
 MONITOR_NOTIFICATION_RULE_DATA_ID = environ["MONITOR_NOTIFICATION_RULE_DATA_ID"]
 
 configuration = Configuration()
-configuration.unstable_operations["get_monitor_notification_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.get_monitor_notification_rule(
