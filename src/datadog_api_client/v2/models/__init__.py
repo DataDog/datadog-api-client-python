@@ -36,6 +36,16 @@ from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
 from datadog_api_client.v2.model.aws_credentials import AWSCredentials
 from datadog_api_client.v2.model.aws_credentials_update import AWSCredentialsUpdate
 from datadog_api_client.v2.model.aws_integration import AWSIntegration
+from datadog_api_client.v2.model.aws_integration_iam_permissions_response import AWSIntegrationIamPermissionsResponse
+from datadog_api_client.v2.model.aws_integration_iam_permissions_response_attributes import (
+    AWSIntegrationIamPermissionsResponseAttributes,
+)
+from datadog_api_client.v2.model.aws_integration_iam_permissions_response_data import (
+    AWSIntegrationIamPermissionsResponseData,
+)
+from datadog_api_client.v2.model.aws_integration_iam_permissions_response_data_type import (
+    AWSIntegrationIamPermissionsResponseDataType,
+)
 from datadog_api_client.v2.model.aws_integration_type import AWSIntegrationType
 from datadog_api_client.v2.model.aws_integration_update import AWSIntegrationUpdate
 from datadog_api_client.v2.model.aws_lambda_forwarder_config import AWSLambdaForwarderConfig
@@ -3597,6 +3607,10 @@ __all__ = [
     "AWSCredentials",
     "AWSCredentialsUpdate",
     "AWSIntegration",
+    "AWSIntegrationIamPermissionsResponse",
+    "AWSIntegrationIamPermissionsResponseAttributes",
+    "AWSIntegrationIamPermissionsResponseData",
+    "AWSIntegrationIamPermissionsResponseDataType",
     "AWSIntegrationType",
     "AWSIntegrationUpdate",
     "AWSLambdaForwarderConfig",

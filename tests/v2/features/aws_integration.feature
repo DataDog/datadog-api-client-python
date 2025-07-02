@@ -82,6 +82,12 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 200 AWS External ID object
 
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Get AWS integration IAM permissions returns "AWS IAM Permissions object" response
+    Given new "GetAWSIntegrationIAMPermissions" request
+    When the request is sent
+    Then the response status is 200 AWS IAM Permissions object
+
   @team:DataDog/aws-integrations
   Scenario: Get an AWS integration by config ID returns "AWS Account object" response
     Given operation "GetAWSAccount" enabled

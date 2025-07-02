@@ -1214,6 +1214,12 @@
       "type": "safe"
     }
   },
+  "GetAWSIntegrationIAMPermissions": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAWSLogsServices": {
     "tag": "AWS Logs Integration",
     "undo": {
