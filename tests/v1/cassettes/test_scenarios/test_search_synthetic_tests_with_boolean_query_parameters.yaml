@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/search?include_full_config=true&search_suites=true&facets_only=true&start=10&count=5&sort=name%2Cdesc
+  response:
+    body:
+      string: '{"tests":[],"total":0,"facets":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

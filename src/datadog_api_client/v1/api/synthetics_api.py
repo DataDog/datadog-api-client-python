@@ -54,7 +54,7 @@ class SyntheticsApi:
     Datadog Synthetic Monitoring uses simulated user requests and browser rendering to help you ensure uptime,
     identify regional issues, and track your application performance. Synthetic tests come in
     two different flavors, `API tests <https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest>`_
-    and `browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_. You can use Datadog’s API to
+    and `browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_. You can use Datadog's API to
     manage both test types programmatically.
 
     For more information, see the `Synthetic Monitoring documentation <https://docs.datadoghq.com/synthetics/>`_.
@@ -672,6 +672,53 @@ class SyntheticsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._search_tests_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsListTestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/synthetics/tests/search",
+                "operation_id": "search_tests",
+                "http_method": "GET",
+                "version": "v1",
+            },
+            params_map={
+                "include_full_config": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_full_config",
+                    "location": "query",
+                },
+                "search_suites": {
+                    "openapi_types": (bool,),
+                    "attribute": "search_suites",
+                    "location": "query",
+                },
+                "facets_only": {
+                    "openapi_types": (bool,),
+                    "attribute": "facets_only",
+                    "location": "query",
+                },
+                "start": {
+                    "openapi_types": (int,),
+                    "attribute": "start",
+                    "location": "query",
+                },
+                "count": {
+                    "openapi_types": (int,),
+                    "attribute": "count",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -1380,6 +1427,55 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._patch_test_endpoint.call_with_http_info(**kwargs)
+
+    def search_tests(
+        self,
+        *,
+        include_full_config: Union[bool, UnsetType] = unset,
+        search_suites: Union[bool, UnsetType] = unset,
+        facets_only: Union[bool, UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        count: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+    ) -> SyntheticsListTestsResponse:
+        """Search Synthetic tests.
+
+        Search for Synthetic tests and Test Suites.
+
+        :param include_full_config: If true, include the full configuration for each test in the response.
+        :type include_full_config: bool, optional
+        :param search_suites: If true, returns suites instead of tests.
+        :type search_suites: bool, optional
+        :param facets_only: If true, return only facets instead of full test details.
+        :type facets_only: bool, optional
+        :param start: The offset from which to start returning results.
+        :type start: int, optional
+        :param count: The maximum number of results to return.
+        :type count: int, optional
+        :param sort: The sort order for the results (e.g., 'name,asc' or 'name,desc').
+        :type sort: str, optional
+        :rtype: SyntheticsListTestsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include_full_config is not unset:
+            kwargs["include_full_config"] = include_full_config
+
+        if search_suites is not unset:
+            kwargs["search_suites"] = search_suites
+
+        if facets_only is not unset:
+            kwargs["facets_only"] = facets_only
+
+        if start is not unset:
+            kwargs["start"] = start
+
+        if count is not unset:
+            kwargs["count"] = count
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        return self._search_tests_endpoint.call_with_http_info(**kwargs)
 
     def trigger_ci_tests(
         self,

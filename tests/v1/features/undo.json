@@ -1227,6 +1227,12 @@
       "type": "idempotent"
     }
   },
+  "SearchTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "TriggerTests": {
     "tag": "Synthetics",
     "undo": {
