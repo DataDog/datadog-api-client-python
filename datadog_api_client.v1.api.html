@@ -2470,7 +2470,8 @@ Active means the host has reported in the past hour, and up means it has reporte
 <p>This endpoint allows searching for hosts by name, alias, or tag.
 Hosts live within the past 3 hours are included by default.
 Retention is 7 days.
-Results are paginated with a max of 1000 results at a time.</p>
+Results are paginated with a max of 1000 results at a time.
+<strong>Note:</strong> If the host is an Amazon EC2 instance, <code class="docutils literal notranslate"><span class="pre">id</span></code> is replaced with <code class="docutils literal notranslate"><span class="pre">aws_id</span></code> in the response.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
