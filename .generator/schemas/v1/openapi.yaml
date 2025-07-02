@@ -16735,6 +16735,7 @@ components:
       - assertRequests
       - click
       - extractFromJavascript
+      - extractFromEmailBody
       - extractVariable
       - goToEmailLink
       - goToUrl
@@ -16764,6 +16765,7 @@ components:
       - ASSERT_REQUESTS
       - CLICK
       - EXTRACT_FROM_JAVASCRIPT
+      - EXTRACT_FROM_EMAIL_BODY
       - EXTRACT_VARIABLE
       - GO_TO_EMAIL_LINK
       - GO_TO_URL
