@@ -17,6 +17,7 @@ from datadog_api_client.v2.model.aws_account_create_request import AWSAccountCre
 from datadog_api_client.v2.model.aws_account_update_request import AWSAccountUpdateRequest
 from datadog_api_client.v2.model.aws_namespaces_response import AWSNamespacesResponse
 from datadog_api_client.v2.model.aws_new_external_id_response import AWSNewExternalIDResponse
+from datadog_api_client.v2.model.aws_integration_iam_permissions_response import AWSIntegrationIamPermissionsResponse
 
 
 class AWSIntegrationApi:
@@ -106,6 +107,22 @@ class AWSIntegrationApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_aws_integration_iam_permissions_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSIntegrationIamPermissionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/iam_permissions",
+                "operation_id": "get_aws_integration_iam_permissions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -239,6 +256,18 @@ class AWSIntegrationApi:
         kwargs["aws_account_config_id"] = aws_account_config_id
 
         return self._get_aws_account_endpoint.call_with_http_info(**kwargs)
+
+    def get_aws_integration_iam_permissions(
+        self,
+    ) -> AWSIntegrationIamPermissionsResponse:
+        """Get AWS integration IAM permissions.
+
+        Get all AWS IAM permissions required for the AWS integration.
+
+        :rtype: AWSIntegrationIamPermissionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_aws_integration_iam_permissions_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_accounts(
         self,
