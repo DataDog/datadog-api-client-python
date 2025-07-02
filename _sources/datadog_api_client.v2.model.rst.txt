@@ -1390,6 +1390,34 @@ datadog\_api\_client.v2.model.aws\_integration module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_integration\_iam\_permissions\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_integration_iam_permissions_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_integration\_iam\_permissions\_response\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_integration_iam_permissions_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_integration\_iam\_permissions\_response\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_integration_iam_permissions_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_integration\_iam\_permissions\_response\_data\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_integration_iam_permissions_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_integration\_type module
 -----------------------------------------------------------
 
