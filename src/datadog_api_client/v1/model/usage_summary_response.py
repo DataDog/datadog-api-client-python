@@ -129,6 +129,8 @@ class UsageSummaryResponse(ModelNormal):
             "last_updated": (datetime,),
             "live_indexed_events_agg_sum": (int,),
             "live_ingested_bytes_agg_sum": (int,),
+            "llm_observability_agg_sum": (int,),
+            "llm_observability_min_spend_agg_sum": (int,),
             "logs_by_retention": (LogsByRetention,),
             "mobile_rum_lite_session_count_agg_sum": (int,),
             "mobile_rum_session_count_agg_sum": (int,),
@@ -140,6 +142,7 @@ class UsageSummaryResponse(ModelNormal):
             "mobile_rum_units_agg_sum": (int,),
             "ndm_netflow_events_agg_sum": (int,),
             "netflow_indexed_events_count_agg_sum": (int,),
+            "network_device_wireless_top99p_sum": (int,),
             "npm_host_top99p_sum": (int,),
             "observability_pipelines_bytes_processed_agg_sum": (int,),
             "oci_host_agg_sum": (int,),
@@ -147,15 +150,19 @@ class UsageSummaryResponse(ModelNormal):
             "online_archive_events_count_agg_sum": (int,),
             "opentelemetry_apm_host_top99p_sum": (int,),
             "opentelemetry_host_top99p_sum": (int,),
+            "product_analytics_agg_sum": (int,),
             "profiling_aas_count_top99p_sum": (int,),
             "profiling_container_agent_count_avg": (int,),
             "profiling_host_count_top99p_sum": (int,),
+            "published_app_hwm_sum": (int,),
             "rehydrated_indexed_events_agg_sum": (int,),
             "rehydrated_ingested_bytes_agg_sum": (int,),
             "rum_browser_and_mobile_session_count": (int,),
             "rum_browser_legacy_session_count_agg_sum": (int,),
             "rum_browser_lite_session_count_agg_sum": (int,),
             "rum_browser_replay_session_count_agg_sum": (int,),
+            "rum_indexed_sessions_agg_sum": (int,),
+            "rum_ingested_sessions_agg_sum": (int,),
             "rum_lite_session_count_agg_sum": (int,),
             "rum_mobile_legacy_session_count_android_agg_sum": (int,),
             "rum_mobile_legacy_session_count_flutter_agg_sum": (int,),
@@ -175,6 +182,7 @@ class UsageSummaryResponse(ModelNormal):
             "rum_mobile_replay_session_count_reactnative_agg_sum": (int,),
             "rum_replay_session_count_agg_sum": (int,),
             "rum_session_count_agg_sum": (int,),
+            "rum_session_replay_add_on_agg_sum": (int,),
             "rum_total_session_count_agg_sum": (int,),
             "rum_units_agg_sum": (int,),
             "sca_fargate_count_avg_sum": (int,),
@@ -306,6 +314,8 @@ class UsageSummaryResponse(ModelNormal):
         "last_updated": "last_updated",
         "live_indexed_events_agg_sum": "live_indexed_events_agg_sum",
         "live_ingested_bytes_agg_sum": "live_ingested_bytes_agg_sum",
+        "llm_observability_agg_sum": "llm_observability_agg_sum",
+        "llm_observability_min_spend_agg_sum": "llm_observability_min_spend_agg_sum",
         "logs_by_retention": "logs_by_retention",
         "mobile_rum_lite_session_count_agg_sum": "mobile_rum_lite_session_count_agg_sum",
         "mobile_rum_session_count_agg_sum": "mobile_rum_session_count_agg_sum",
@@ -317,6 +327,7 @@ class UsageSummaryResponse(ModelNormal):
         "mobile_rum_units_agg_sum": "mobile_rum_units_agg_sum",
         "ndm_netflow_events_agg_sum": "ndm_netflow_events_agg_sum",
         "netflow_indexed_events_count_agg_sum": "netflow_indexed_events_count_agg_sum",
+        "network_device_wireless_top99p_sum": "network_device_wireless_top99p_sum",
         "npm_host_top99p_sum": "npm_host_top99p_sum",
         "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
         "oci_host_agg_sum": "oci_host_agg_sum",
@@ -324,15 +335,19 @@ class UsageSummaryResponse(ModelNormal):
         "online_archive_events_count_agg_sum": "online_archive_events_count_agg_sum",
         "opentelemetry_apm_host_top99p_sum": "opentelemetry_apm_host_top99p_sum",
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",
+        "product_analytics_agg_sum": "product_analytics_agg_sum",
         "profiling_aas_count_top99p_sum": "profiling_aas_count_top99p_sum",
         "profiling_container_agent_count_avg": "profiling_container_agent_count_avg",
         "profiling_host_count_top99p_sum": "profiling_host_count_top99p_sum",
+        "published_app_hwm_sum": "published_app_hwm_sum",
         "rehydrated_indexed_events_agg_sum": "rehydrated_indexed_events_agg_sum",
         "rehydrated_ingested_bytes_agg_sum": "rehydrated_ingested_bytes_agg_sum",
         "rum_browser_and_mobile_session_count": "rum_browser_and_mobile_session_count",
         "rum_browser_legacy_session_count_agg_sum": "rum_browser_legacy_session_count_agg_sum",
         "rum_browser_lite_session_count_agg_sum": "rum_browser_lite_session_count_agg_sum",
         "rum_browser_replay_session_count_agg_sum": "rum_browser_replay_session_count_agg_sum",
+        "rum_indexed_sessions_agg_sum": "rum_indexed_sessions_agg_sum",
+        "rum_ingested_sessions_agg_sum": "rum_ingested_sessions_agg_sum",
         "rum_lite_session_count_agg_sum": "rum_lite_session_count_agg_sum",
         "rum_mobile_legacy_session_count_android_agg_sum": "rum_mobile_legacy_session_count_android_agg_sum",
         "rum_mobile_legacy_session_count_flutter_agg_sum": "rum_mobile_legacy_session_count_flutter_agg_sum",
@@ -352,6 +367,7 @@ class UsageSummaryResponse(ModelNormal):
         "rum_mobile_replay_session_count_reactnative_agg_sum": "rum_mobile_replay_session_count_reactnative_agg_sum",
         "rum_replay_session_count_agg_sum": "rum_replay_session_count_agg_sum",
         "rum_session_count_agg_sum": "rum_session_count_agg_sum",
+        "rum_session_replay_add_on_agg_sum": "rum_session_replay_add_on_agg_sum",
         "rum_total_session_count_agg_sum": "rum_total_session_count_agg_sum",
         "rum_units_agg_sum": "rum_units_agg_sum",
         "sca_fargate_count_avg_sum": "sca_fargate_count_avg_sum",
@@ -484,6 +500,8 @@ class UsageSummaryResponse(ModelNormal):
         last_updated: Union[datetime, UnsetType] = unset,
         live_indexed_events_agg_sum: Union[int, UnsetType] = unset,
         live_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
+        llm_observability_agg_sum: Union[int, UnsetType] = unset,
+        llm_observability_min_spend_agg_sum: Union[int, UnsetType] = unset,
         logs_by_retention: Union[LogsByRetention, UnsetType] = unset,
         mobile_rum_lite_session_count_agg_sum: Union[int, UnsetType] = unset,
         mobile_rum_session_count_agg_sum: Union[int, UnsetType] = unset,
@@ -495,6 +513,7 @@ class UsageSummaryResponse(ModelNormal):
         mobile_rum_units_agg_sum: Union[int, UnsetType] = unset,
         ndm_netflow_events_agg_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
+        network_device_wireless_top99p_sum: Union[int, UnsetType] = unset,
         npm_host_top99p_sum: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_agg_sum: Union[int, UnsetType] = unset,
         oci_host_agg_sum: Union[int, UnsetType] = unset,
@@ -502,15 +521,19 @@ class UsageSummaryResponse(ModelNormal):
         online_archive_events_count_agg_sum: Union[int, UnsetType] = unset,
         opentelemetry_apm_host_top99p_sum: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p_sum: Union[int, UnsetType] = unset,
+        product_analytics_agg_sum: Union[int, UnsetType] = unset,
         profiling_aas_count_top99p_sum: Union[int, UnsetType] = unset,
         profiling_container_agent_count_avg: Union[int, UnsetType] = unset,
         profiling_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        published_app_hwm_sum: Union[int, UnsetType] = unset,
         rehydrated_indexed_events_agg_sum: Union[int, UnsetType] = unset,
         rehydrated_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
         rum_browser_and_mobile_session_count: Union[int, UnsetType] = unset,
         rum_browser_legacy_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_browser_lite_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_browser_replay_session_count_agg_sum: Union[int, UnsetType] = unset,
+        rum_indexed_sessions_agg_sum: Union[int, UnsetType] = unset,
+        rum_ingested_sessions_agg_sum: Union[int, UnsetType] = unset,
         rum_lite_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_legacy_session_count_android_agg_sum: Union[int, UnsetType] = unset,
         rum_mobile_legacy_session_count_flutter_agg_sum: Union[int, UnsetType] = unset,
@@ -530,6 +553,7 @@ class UsageSummaryResponse(ModelNormal):
         rum_mobile_replay_session_count_reactnative_agg_sum: Union[int, UnsetType] = unset,
         rum_replay_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_session_count_agg_sum: Union[int, UnsetType] = unset,
+        rum_session_replay_add_on_agg_sum: Union[int, UnsetType] = unset,
         rum_total_session_count_agg_sum: Union[int, UnsetType] = unset,
         rum_units_agg_sum: Union[int, UnsetType] = unset,
         sca_fargate_count_avg_sum: Union[int, UnsetType] = unset,
@@ -869,6 +893,12 @@ class UsageSummaryResponse(ModelNormal):
         :param live_ingested_bytes_agg_sum: Shows the sum of all live logs bytes ingested over all hours in the current month for all organizations (data available as of December 1, 2020).
         :type live_ingested_bytes_agg_sum: int, optional
 
+        :param llm_observability_agg_sum: Sum of all LLM observability sessions for all hours in the current month for all organizations.
+        :type llm_observability_agg_sum: int, optional
+
+        :param llm_observability_min_spend_agg_sum: Minimum spend for LLM observability sessions for all hours in the current month for all organizations.
+        :type llm_observability_min_spend_agg_sum: int, optional
+
         :param logs_by_retention: Object containing logs usage data broken down by retention period.
         :type logs_by_retention: LogsByRetention, optional
 
@@ -902,6 +932,9 @@ class UsageSummaryResponse(ModelNormal):
         :param netflow_indexed_events_count_agg_sum: Shows the sum of all Network flows indexed over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type netflow_indexed_events_count_agg_sum: int, optional
 
+        :param network_device_wireless_top99p_sum: Shows the 99th percentile of all Network Device Monitoring wireless devices over all hours in the current month for all organizations.
+        :type network_device_wireless_top99p_sum: int, optional
+
         :param npm_host_top99p_sum: Shows the 99th percentile of all distinct Cloud Network Monitoring hosts (formerly known as Network hosts) over all hours in the current month for all organizations.
         :type npm_host_top99p_sum: int, optional
 
@@ -923,6 +956,9 @@ class UsageSummaryResponse(ModelNormal):
         :param opentelemetry_host_top99p_sum: Shows the 99th percentile of all hosts reported by the Datadog exporter for the OpenTelemetry Collector over all hours in the current month for all organizations.
         :type opentelemetry_host_top99p_sum: int, optional
 
+        :param product_analytics_agg_sum: Sum of all product analytics sessions for all hours in the current month for all organizations.
+        :type product_analytics_agg_sum: int, optional
+
         :param profiling_aas_count_top99p_sum: Shows the 99th percentile of all profiled Azure app services over all hours in the current month for all organizations.
         :type profiling_aas_count_top99p_sum: int, optional
 
@@ -931,6 +967,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param profiling_host_count_top99p_sum: Shows the 99th percentile of all profiled hosts over all hours in the current month for all organizations.
         :type profiling_host_count_top99p_sum: int, optional
+
+        :param published_app_hwm_sum: Shows the high-water mark of all published applications over all hours in the current month for all organizations.
+        :type published_app_hwm_sum: int, optional
 
         :param rehydrated_indexed_events_agg_sum: Shows the sum of all rehydrated logs indexed over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type rehydrated_indexed_events_agg_sum: int, optional
@@ -949,6 +988,12 @@ class UsageSummaryResponse(ModelNormal):
 
         :param rum_browser_replay_session_count_agg_sum: Shows the sum of all browser RUM Session Replay counts over all hours in the current month for all organizations (To be introduced on October 1st, 2024).
         :type rum_browser_replay_session_count_agg_sum: int, optional
+
+        :param rum_indexed_sessions_agg_sum: Sum of all RUM indexed sessions for all hours in the current month for all organizations.
+        :type rum_indexed_sessions_agg_sum: int, optional
+
+        :param rum_ingested_sessions_agg_sum: Sum of all RUM ingested sessions for all hours in the current month for all organizations.
+        :type rum_ingested_sessions_agg_sum: int, optional
 
         :param rum_lite_session_count_agg_sum: Shows the sum of all RUM lite sessions (browser and mobile) over all hours in the current month for all organizations (To be introduced on October 1st, 2024).
         :type rum_lite_session_count_agg_sum: int, optional
@@ -1006,6 +1051,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param rum_session_count_agg_sum: Shows the sum of all browser RUM lite sessions over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type rum_session_count_agg_sum: int, optional
+
+        :param rum_session_replay_add_on_agg_sum: Sum of all RUM session replay add-on sessions for all hours in the current month for all organizations.
+        :type rum_session_replay_add_on_agg_sum: int, optional
 
         :param rum_total_session_count_agg_sum: Shows the sum of RUM sessions (browser and mobile) over all hours in the current month for all organizations.
         :type rum_total_session_count_agg_sum: int, optional
@@ -1300,6 +1348,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["live_indexed_events_agg_sum"] = live_indexed_events_agg_sum
         if live_ingested_bytes_agg_sum is not unset:
             kwargs["live_ingested_bytes_agg_sum"] = live_ingested_bytes_agg_sum
+        if llm_observability_agg_sum is not unset:
+            kwargs["llm_observability_agg_sum"] = llm_observability_agg_sum
+        if llm_observability_min_spend_agg_sum is not unset:
+            kwargs["llm_observability_min_spend_agg_sum"] = llm_observability_min_spend_agg_sum
         if logs_by_retention is not unset:
             kwargs["logs_by_retention"] = logs_by_retention
         if mobile_rum_lite_session_count_agg_sum is not unset:
@@ -1322,6 +1374,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["ndm_netflow_events_agg_sum"] = ndm_netflow_events_agg_sum
         if netflow_indexed_events_count_agg_sum is not unset:
             kwargs["netflow_indexed_events_count_agg_sum"] = netflow_indexed_events_count_agg_sum
+        if network_device_wireless_top99p_sum is not unset:
+            kwargs["network_device_wireless_top99p_sum"] = network_device_wireless_top99p_sum
         if npm_host_top99p_sum is not unset:
             kwargs["npm_host_top99p_sum"] = npm_host_top99p_sum
         if observability_pipelines_bytes_processed_agg_sum is not unset:
@@ -1336,12 +1390,16 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["opentelemetry_apm_host_top99p_sum"] = opentelemetry_apm_host_top99p_sum
         if opentelemetry_host_top99p_sum is not unset:
             kwargs["opentelemetry_host_top99p_sum"] = opentelemetry_host_top99p_sum
+        if product_analytics_agg_sum is not unset:
+            kwargs["product_analytics_agg_sum"] = product_analytics_agg_sum
         if profiling_aas_count_top99p_sum is not unset:
             kwargs["profiling_aas_count_top99p_sum"] = profiling_aas_count_top99p_sum
         if profiling_container_agent_count_avg is not unset:
             kwargs["profiling_container_agent_count_avg"] = profiling_container_agent_count_avg
         if profiling_host_count_top99p_sum is not unset:
             kwargs["profiling_host_count_top99p_sum"] = profiling_host_count_top99p_sum
+        if published_app_hwm_sum is not unset:
+            kwargs["published_app_hwm_sum"] = published_app_hwm_sum
         if rehydrated_indexed_events_agg_sum is not unset:
             kwargs["rehydrated_indexed_events_agg_sum"] = rehydrated_indexed_events_agg_sum
         if rehydrated_ingested_bytes_agg_sum is not unset:
@@ -1354,6 +1412,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["rum_browser_lite_session_count_agg_sum"] = rum_browser_lite_session_count_agg_sum
         if rum_browser_replay_session_count_agg_sum is not unset:
             kwargs["rum_browser_replay_session_count_agg_sum"] = rum_browser_replay_session_count_agg_sum
+        if rum_indexed_sessions_agg_sum is not unset:
+            kwargs["rum_indexed_sessions_agg_sum"] = rum_indexed_sessions_agg_sum
+        if rum_ingested_sessions_agg_sum is not unset:
+            kwargs["rum_ingested_sessions_agg_sum"] = rum_ingested_sessions_agg_sum
         if rum_lite_session_count_agg_sum is not unset:
             kwargs["rum_lite_session_count_agg_sum"] = rum_lite_session_count_agg_sum
         if rum_mobile_legacy_session_count_android_agg_sum is not unset:
@@ -1402,6 +1464,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["rum_replay_session_count_agg_sum"] = rum_replay_session_count_agg_sum
         if rum_session_count_agg_sum is not unset:
             kwargs["rum_session_count_agg_sum"] = rum_session_count_agg_sum
+        if rum_session_replay_add_on_agg_sum is not unset:
+            kwargs["rum_session_replay_add_on_agg_sum"] = rum_session_replay_add_on_agg_sum
         if rum_total_session_count_agg_sum is not unset:
             kwargs["rum_total_session_count_agg_sum"] = rum_total_session_count_agg_sum
         if rum_units_agg_sum is not unset:
