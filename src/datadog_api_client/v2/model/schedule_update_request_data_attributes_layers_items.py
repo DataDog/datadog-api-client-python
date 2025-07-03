@@ -78,7 +78,7 @@ class ScheduleUpdateRequestDataAttributesLayersItems(ModelNormal):
         :param id: A unique identifier for the layer being updated.
         :type id: str, optional
 
-        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds.
+        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds. Should be at least 1 hour.
         :type interval: LayerAttributesInterval
 
         :param members: The members assigned to this layer.
