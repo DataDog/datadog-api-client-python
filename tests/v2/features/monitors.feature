@@ -31,16 +31,14 @@ Feature: Monitors
 
   @skip-validation @team:DataDog/monitor-app
   Scenario: Create a monitor notification rule returns "Bad Request" response
-    Given operation "CreateMonitorNotificationRule" enabled
-    And new "CreateMonitorNotificationRule" request
+    Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "test rule", "recipients": ["@slack-test-channel", "@jira-test"]}, "type": "monitor-notification-rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/monitor-app
   Scenario: Create a monitor notification rule returns "OK" response
-    Given operation "CreateMonitorNotificationRule" enabled
-    And new "CreateMonitorNotificationRule" request
+    Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}"]}, "name": "test rule", "recipients": ["slack-test-channel", "jira-test"]}, "type": "monitor-notification-rule"}}
     When the request is sent
     Then the response status is 200 OK
@@ -86,16 +84,14 @@ Feature: Monitors
 
   @team:DataDog/monitor-app
   Scenario: Delete a monitor notification rule returns "Not Found" response
-    Given operation "DeleteMonitorNotificationRule" enabled
-    And new "DeleteMonitorNotificationRule" request
+    Given new "DeleteMonitorNotificationRule" request
     And request contains "rule_id" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:DataDog/monitor-app
   Scenario: Delete a monitor notification rule returns "OK" response
-    Given operation "DeleteMonitorNotificationRule" enabled
-    And there is a valid "monitor_notification_rule" in the system
+    Given there is a valid "monitor_notification_rule" in the system
     And new "DeleteMonitorNotificationRule" request
     And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
     When the request is sent
@@ -170,16 +166,14 @@ Feature: Monitors
 
   @team:DataDog/monitor-app
   Scenario: Get a monitor notification rule returns "Not Found" response
-    Given operation "GetMonitorNotificationRule" enabled
-    And new "GetMonitorNotificationRule" request
+    Given new "GetMonitorNotificationRule" request
     And request contains "rule_id" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:DataDog/monitor-app
   Scenario: Get a monitor notification rule returns "OK" response
-    Given operation "GetMonitorNotificationRule" enabled
-    And there is a valid "monitor_notification_rule" in the system
+    Given there is a valid "monitor_notification_rule" in the system
     And new "GetMonitorNotificationRule" request
     And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
     When the request is sent
@@ -218,8 +212,7 @@ Feature: Monitors
 
   @team:DataDog/monitor-app
   Scenario: Get all monitor notification rules returns "OK" response
-    Given operation "GetMonitorNotificationRules" enabled
-    And there is a valid "monitor_notification_rule" in the system
+    Given there is a valid "monitor_notification_rule" in the system
     And new "GetMonitorNotificationRules" request
     When the request is sent
     Then the response status is 200 OK
@@ -237,8 +230,7 @@ Feature: Monitors
 
   @skip-validation @team:DataDog/monitor-app
   Scenario: Update a monitor notification rule returns "Bad Request" response
-    Given operation "UpdateMonitorNotificationRule" enabled
-    And there is a valid "monitor_notification_rule" in the system
+    Given there is a valid "monitor_notification_rule" in the system
     And new "UpdateMonitorNotificationRule" request
     And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "updated rule", "recipients": ["@slack-test-channel"]}, "id": "{{ monitor_notification_rule.data.id }}", "type": "monitor-notification-rule"}}
@@ -247,8 +239,7 @@ Feature: Monitors
 
   @team:DataDog/monitor-app
   Scenario: Update a monitor notification rule returns "Not Found" response
-    Given operation "UpdateMonitorNotificationRule" enabled
-    And new "UpdateMonitorNotificationRule" request
+    Given new "UpdateMonitorNotificationRule" request
     And request contains "rule_id" parameter with value "00000000-0000-1234-0000-000000000000"
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "updated rule", "recipients": ["slack-test-channel", "jira-test"]}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-notification-rule"}}
     When the request is sent
@@ -256,8 +247,7 @@ Feature: Monitors
 
   @team:DataDog/monitor-app
   Scenario: Update a monitor notification rule returns "OK" response
-    Given operation "UpdateMonitorNotificationRule" enabled
-    And there is a valid "monitor_notification_rule" in the system
+    Given there is a valid "monitor_notification_rule" in the system
     And new "UpdateMonitorNotificationRule" request
     And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "updated rule", "recipients": ["slack-test-channel"]}, "id": "{{ monitor_notification_rule.data.id }}", "type": "monitor-notification-rule"}}
