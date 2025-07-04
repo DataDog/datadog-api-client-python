@@ -524,10 +524,10 @@ class AsyncApiClient(ApiClient):
     async def __aenter__(self) -> Self:
         return self
 
-    async def __aexit__(self, _exc_type, exc, _tb):
+    async def __aexit__(self, exc_type, exc, tb):
         if exc:
             raise exc
-        await self.rest_client._client.shutdown()
+        await self.rest_client._client.__aexit__(exc_type, exc, tb)
 
     def close(self):
         self.rest_client.close()
