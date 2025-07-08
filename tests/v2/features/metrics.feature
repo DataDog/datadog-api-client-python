@@ -153,6 +153,30 @@ Feature: Metrics
     And the response "data[0].type" is equal to "manage_tags"
 
   @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get tag key cardinality details returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "GetMetricTagCardinalityDetails" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get tag key cardinality details returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And new "GetMetricTagCardinalityDetails" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get tag key cardinality details returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And new "GetMetricTagCardinalityDetails" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 Success
+
+  @generated @skip @team:DataDog/metrics-experience
   Scenario: List active tags and aggregations returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListActiveMetricConfigurations" request
