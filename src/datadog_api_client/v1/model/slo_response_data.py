@@ -44,7 +44,6 @@ class SLOResponseData(ModelNormal):
             "modified_at": (int,),
             "monitor_ids": ([int],),
             "monitor_tags": ([str],),
-            "name": (str,),
             "query": (ServiceLevelObjectiveQuery,),
             "sli_specification": (SLOSliSpec,),
             "tags": ([str],),
@@ -65,7 +64,6 @@ class SLOResponseData(ModelNormal):
         "modified_at": "modified_at",
         "monitor_ids": "monitor_ids",
         "monitor_tags": "monitor_tags",
-        "name": "name",
         "query": "query",
         "sli_specification": "sli_specification",
         "tags": "tags",
@@ -93,7 +91,6 @@ class SLOResponseData(ModelNormal):
         modified_at: Union[int, UnsetType] = unset,
         monitor_ids: Union[List[int], UnsetType] = unset,
         monitor_tags: Union[List[str], UnsetType] = unset,
-        name: Union[str, UnsetType] = unset,
         query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
         sli_specification: Union[SLOSliSpec, SLOTimeSliceSpec, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -154,9 +151,6 @@ class SLOResponseData(ModelNormal):
             determined entirely by the ``monitor_ids`` field).
         :type monitor_tags: [str], optional
 
-        :param name: The name of the service level objective object.
-        :type name: str, optional
-
         :param query: A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
             to be used because this will sum up all request counts instead of averaging them, or taking the max or
             min of all of those requests.
@@ -209,8 +203,6 @@ class SLOResponseData(ModelNormal):
             kwargs["monitor_ids"] = monitor_ids
         if monitor_tags is not unset:
             kwargs["monitor_tags"] = monitor_tags
-        if name is not unset:
-            kwargs["name"] = name
         if query is not unset:
             kwargs["query"] = query
         if sli_specification is not unset:
