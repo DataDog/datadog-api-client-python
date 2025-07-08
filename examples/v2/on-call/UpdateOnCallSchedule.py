@@ -50,7 +50,7 @@ body = ScheduleUpdateRequest(
                     effective_date=(datetime.now() + relativedelta(days=-10)),
                     end_date=(datetime.now() + relativedelta(days=10)),
                     interval=LayerAttributesInterval(
-                        seconds=300,
+                        seconds=3600,
                     ),
                     members=[
                         ScheduleRequestDataAttributesLayersItemsMembersItems(
