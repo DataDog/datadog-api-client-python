@@ -62,7 +62,7 @@ class LayerAttributes(ModelNormal):
         :param end_date: When the layer ceases to be active (ISO 8601).
         :type end_date: datetime, optional
 
-        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds.
+        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds. Should be at least 1 hour.
         :type interval: LayerAttributesInterval, optional
 
         :param name: The name of this layer.
