@@ -54,6 +54,15 @@ class CustomDestinationResponseForwardDestination(ModelComposed):
 
         :param tenant_id: Tenant ID from the Datadog Azure integration.
         :type tenant_id: str
+
+        :param customer_id: The customer ID of the Google Security Operations account.
+        :type customer_id: str
+
+        :param namespace: The namespace of the Google Security Operations account.
+        :type namespace: str
+
+        :param regional_endpoint: The `CustomDestinationResponseForwardDestinationGoogleSecurityOperations` `regional_endpoint`.
+        :type regional_endpoint: str
         """
         super().__init__(kwargs)
 
@@ -78,6 +87,9 @@ class CustomDestinationResponseForwardDestination(ModelComposed):
         from datadog_api_client.v2.model.custom_destination_response_forward_destination_microsoft_sentinel import (
             CustomDestinationResponseForwardDestinationMicrosoftSentinel,
         )
+        from datadog_api_client.v2.model.custom_destination_response_forward_destination_google_security_operations import (
+            CustomDestinationResponseForwardDestinationGoogleSecurityOperations,
+        )
 
         return {
             "oneOf": [
@@ -85,5 +97,6 @@ class CustomDestinationResponseForwardDestination(ModelComposed):
                 CustomDestinationResponseForwardDestinationSplunk,
                 CustomDestinationResponseForwardDestinationElasticsearch,
                 CustomDestinationResponseForwardDestinationMicrosoftSentinel,
+                CustomDestinationResponseForwardDestinationGoogleSecurityOperations,
             ],
         }

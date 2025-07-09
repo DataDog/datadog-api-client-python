@@ -805,6 +805,12 @@ from datadog_api_client.v2.model.custom_destination_forward_destination_elastics
 from datadog_api_client.v2.model.custom_destination_forward_destination_elasticsearch_type import (
     CustomDestinationForwardDestinationElasticsearchType,
 )
+from datadog_api_client.v2.model.custom_destination_forward_destination_google_security_operations import (
+    CustomDestinationForwardDestinationGoogleSecurityOperations,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_google_security_operations_type import (
+    CustomDestinationForwardDestinationGoogleSecurityOperationsType,
+)
 from datadog_api_client.v2.model.custom_destination_forward_destination_http import (
     CustomDestinationForwardDestinationHttp,
 )
@@ -822,6 +828,12 @@ from datadog_api_client.v2.model.custom_destination_forward_destination_splunk i
 )
 from datadog_api_client.v2.model.custom_destination_forward_destination_splunk_type import (
     CustomDestinationForwardDestinationSplunkType,
+)
+from datadog_api_client.v2.model.custom_destination_google_security_operations_destination_auth import (
+    CustomDestinationGoogleSecurityOperationsDestinationAuth,
+)
+from datadog_api_client.v2.model.custom_destination_google_security_operations_destination_auth_type import (
+    CustomDestinationGoogleSecurityOperationsDestinationAuthType,
 )
 from datadog_api_client.v2.model.custom_destination_http_destination_auth import CustomDestinationHttpDestinationAuth
 from datadog_api_client.v2.model.custom_destination_http_destination_auth_basic import (
@@ -851,6 +863,12 @@ from datadog_api_client.v2.model.custom_destination_response_forward_destination
 from datadog_api_client.v2.model.custom_destination_response_forward_destination_elasticsearch_type import (
     CustomDestinationResponseForwardDestinationElasticsearchType,
 )
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_google_security_operations import (
+    CustomDestinationResponseForwardDestinationGoogleSecurityOperations,
+)
+from datadog_api_client.v2.model.custom_destination_response_forward_destination_google_security_operations_type import (
+    CustomDestinationResponseForwardDestinationGoogleSecurityOperationsType,
+)
 from datadog_api_client.v2.model.custom_destination_response_forward_destination_http import (
     CustomDestinationResponseForwardDestinationHttp,
 )
@@ -868,6 +886,12 @@ from datadog_api_client.v2.model.custom_destination_response_forward_destination
 )
 from datadog_api_client.v2.model.custom_destination_response_forward_destination_splunk_type import (
     CustomDestinationResponseForwardDestinationSplunkType,
+)
+from datadog_api_client.v2.model.custom_destination_response_google_security_operations_destination_auth import (
+    CustomDestinationResponseGoogleSecurityOperationsDestinationAuth,
+)
+from datadog_api_client.v2.model.custom_destination_response_google_security_operations_destination_auth_type import (
+    CustomDestinationResponseGoogleSecurityOperationsDestinationAuthType,
 )
 from datadog_api_client.v2.model.custom_destination_response_http_destination_auth import (
     CustomDestinationResponseHttpDestinationAuth,
@@ -4172,12 +4196,16 @@ __all__ = [
     "CustomDestinationForwardDestination",
     "CustomDestinationForwardDestinationElasticsearch",
     "CustomDestinationForwardDestinationElasticsearchType",
+    "CustomDestinationForwardDestinationGoogleSecurityOperations",
+    "CustomDestinationForwardDestinationGoogleSecurityOperationsType",
     "CustomDestinationForwardDestinationHttp",
     "CustomDestinationForwardDestinationHttpType",
     "CustomDestinationForwardDestinationMicrosoftSentinel",
     "CustomDestinationForwardDestinationMicrosoftSentinelType",
     "CustomDestinationForwardDestinationSplunk",
     "CustomDestinationForwardDestinationSplunkType",
+    "CustomDestinationGoogleSecurityOperationsDestinationAuth",
+    "CustomDestinationGoogleSecurityOperationsDestinationAuthType",
     "CustomDestinationHttpDestinationAuth",
     "CustomDestinationHttpDestinationAuthBasic",
     "CustomDestinationHttpDestinationAuthBasicType",
@@ -4190,12 +4218,16 @@ __all__ = [
     "CustomDestinationResponseForwardDestination",
     "CustomDestinationResponseForwardDestinationElasticsearch",
     "CustomDestinationResponseForwardDestinationElasticsearchType",
+    "CustomDestinationResponseForwardDestinationGoogleSecurityOperations",
+    "CustomDestinationResponseForwardDestinationGoogleSecurityOperationsType",
     "CustomDestinationResponseForwardDestinationHttp",
     "CustomDestinationResponseForwardDestinationHttpType",
     "CustomDestinationResponseForwardDestinationMicrosoftSentinel",
     "CustomDestinationResponseForwardDestinationMicrosoftSentinelType",
     "CustomDestinationResponseForwardDestinationSplunk",
     "CustomDestinationResponseForwardDestinationSplunkType",
+    "CustomDestinationResponseGoogleSecurityOperationsDestinationAuth",
+    "CustomDestinationResponseGoogleSecurityOperationsDestinationAuthType",
     "CustomDestinationResponseHttpDestinationAuth",
     "CustomDestinationResponseHttpDestinationAuthBasic",
     "CustomDestinationResponseHttpDestinationAuthBasicType",
