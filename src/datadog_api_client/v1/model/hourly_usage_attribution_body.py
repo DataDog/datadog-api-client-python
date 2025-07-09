@@ -95,6 +95,7 @@ class HourlyUsageAttributionBody(ModelNormal):
         :type updated_at: str, optional
 
         :param usage_type: Supported products for hourly usage attribution requests.
+            The following values have been **deprecated** : ``estimated_indexed_spans_usage`` , ``estimated_ingested_spans_usage``.
         :type usage_type: HourlyUsageAttributionUsageType, optional
         """
         if hour is not unset:
