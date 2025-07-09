@@ -484,6 +484,7 @@ class MonthlyUsageAttributionValues(ModelNormal):
     ):
         """
         Fields in Usage Summary by tag(s).
+        The following values have been **deprecated** : ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage``.
 
         :param api_percentage: The percentage of synthetic API test usage by tag(s).
         :type api_percentage: float, optional

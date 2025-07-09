@@ -89,6 +89,7 @@ class MonthlyUsageAttributionBody(ModelNormal):
         :type updated_at: datetime, optional
 
         :param values: Fields in Usage Summary by tag(s).
+            The following values have been **deprecated** : ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage``.
         :type values: MonthlyUsageAttributionValues, optional
         """
         if month is not unset:
