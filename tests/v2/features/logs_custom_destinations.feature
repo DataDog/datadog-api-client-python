@@ -58,6 +58,33 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
 
   @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Create a Google Security Operations custom destination returns "OK" response
+    Given new "CreateLogsCustomDestination" request
+    And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"type": "google_security_operations", "customer_id": "123-456-7890", "regional_endpoint": "https://malachiteingestion-pa.googleapis.com", "namespace": "google-security-operations-namespace", "auth": {"type": "gcp_private_key", "project_id": "gcp-project", "private_key_id": "abc12345678", "client_email": "client@example.com", "client_id": "def123456", "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBK...\n-----END PRIVATE KEY-----\n"}}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data" has field "id"
+    And the response "data.attributes.name" is equal to "Nginx logs"
+    And the response "data.attributes.query" is equal to "source:nginx"
+    And the response "data.attributes.forwarder_destination.type" is equal to "google_security_operations"
+    And the response "data.attributes.forwarder_destination.customer_id" is equal to "123-456-7890"
+    And the response "data.attributes.forwarder_destination.regional_endpoint" is equal to "https://malachiteingestion-pa.googleapis.com"
+    And the response "data.attributes.forwarder_destination.namespace" is equal to "google-security-operations-namespace"
+    And the response "data.attributes.forwarder_destination.auth.type" is equal to "gcp_private_key"
+    And the response "data.attributes.forwarder_destination.auth.project_id" is equal to "gcp-project"
+    And the response "data.attributes.forwarder_destination.auth.client_email" is equal to "client@example.com"
+    And the response "data.attributes.forwarder_destination.auth" does not have field "private_key"
+    And the response "data.attributes.forwarder_destination.auth" does not have field "private_key_id"
+    And the response "data.attributes.forwarder_destination.auth" does not have field "client_id"
+    And the response "data.attributes.enabled" is false
+    And the response "data.attributes.forward_tags" is false
+    And the response "data.attributes.forward_tags_restriction_list" has length 2
+    And the response "data.attributes.forward_tags_restriction_list" array contains value "datacenter"
+    And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
+    And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
   Scenario: Create a Microsoft Sentinel custom destination returns "OK" response
     Given new "CreateLogsCustomDestination" request
     And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"type": "microsoft_sentinel", "tenant_id": "f3c9a8a1-4c2e-4d2e-b911-9f3c28c3c8b2", "client_id": "9a2f4d83-2b5e-429e-a35a-2b3c4182db71", "data_collection_endpoint": "https://my-dce-5kyl.eastus-1.ingest.monitor.azure.com", "data_collection_rule_id": "dcr-000a00a000a00000a000000aa000a0aa", "stream_name": "Custom-MyTable"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}

@@ -4211,6 +4211,20 @@ datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_elastic
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_google\_security\_operations module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_google_security_operations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_google\_security\_operations\_type module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_google_security_operations_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_http module
 ------------------------------------------------------------------------------------
 
@@ -4250,6 +4264,20 @@ datadog\_api\_client.v2.model.custom\_destination\_forward\_destination\_splunk\
 --------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.custom_destination_forward_destination_splunk_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_google\_security\_operations\_destination\_auth module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_google_security_operations_destination_auth
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_google\_security\_operations\_destination\_auth\_type module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_google_security_operations_destination_auth_type
    :members:
    :show-inheritance:
 
@@ -4337,6 +4365,20 @@ datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destination\_google\_security\_operations module
+----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_google_security_operations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destination\_google\_security\_operations\_type module
+----------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_google_security_operations_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destination\_http module
 ----------------------------------------------------------------------------------------------
 
@@ -4376,6 +4418,20 @@ datadog\_api\_client.v2.model.custom\_destination\_response\_forward\_destinatio
 ------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.custom_destination_response_forward_destination_splunk_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_response\_google\_security\_operations\_destination\_auth module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_google_security_operations_destination_auth
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_destination\_response\_google\_security\_operations\_destination\_auth\_type module
+-------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_destination_response_google_security_operations_destination_auth_type
    :members:
    :show-inheritance:
 
