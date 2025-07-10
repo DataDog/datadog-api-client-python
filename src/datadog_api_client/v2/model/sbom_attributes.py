@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.sbom_component import SBOMComponent
+    from datadog_api_client.v2.model.sbom_component_dependency import SBOMComponentDependency
     from datadog_api_client.v2.model.sbom_metadata import SBOMMetadata
     from datadog_api_client.v2.model.spec_version import SpecVersion
 
@@ -21,12 +22,14 @@ class SBOMAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.sbom_component import SBOMComponent
+        from datadog_api_client.v2.model.sbom_component_dependency import SBOMComponentDependency
         from datadog_api_client.v2.model.sbom_metadata import SBOMMetadata
         from datadog_api_client.v2.model.spec_version import SpecVersion
 
         return {
             "bom_format": (str,),
             "components": ([SBOMComponent],),
+            "dependencies": ([SBOMComponentDependency],),
             "metadata": (SBOMMetadata,),
             "serial_number": (str,),
             "spec_version": (SpecVersion,),
@@ -36,6 +39,7 @@ class SBOMAttributes(ModelNormal):
     attribute_map = {
         "bom_format": "bomFormat",
         "components": "components",
+        "dependencies": "dependencies",
         "metadata": "metadata",
         "serial_number": "serialNumber",
         "spec_version": "specVersion",
@@ -46,6 +50,7 @@ class SBOMAttributes(ModelNormal):
         self_,
         bom_format: str,
         components: List[SBOMComponent],
+        dependencies: List[SBOMComponentDependency],
         metadata: SBOMMetadata,
         serial_number: str,
         spec_version: SpecVersion,
@@ -60,6 +65,9 @@ class SBOMAttributes(ModelNormal):
 
         :param components: A list of software and hardware components.
         :type components: [SBOMComponent]
+
+        :param dependencies: List of dependencies between components of the SBOM.
+        :type dependencies: [SBOMComponentDependency]
 
         :param metadata: Provides additional information about a BOM.
         :type metadata: SBOMMetadata
@@ -77,6 +85,7 @@ class SBOMAttributes(ModelNormal):
 
         self_.bom_format = bom_format
         self_.components = components
+        self_.dependencies = dependencies
         self_.metadata = metadata
         self_.serial_number = serial_number
         self_.spec_version = spec_version

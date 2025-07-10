@@ -2730,6 +2730,12 @@
       "type": "safe"
     }
   },
+  "ListAssetsSBOMs": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSBOM": {
     "tag": "Security Monitoring",
     "undo": {

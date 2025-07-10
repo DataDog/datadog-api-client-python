@@ -818,6 +818,38 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 The list of notification rules.
 
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "Not found: There is no request associated with the provided token." response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not found: There is no request associated with the provided token.
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "Not found: asset not found" response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    When the request is sent
+    Then the response status is 404 Not found: asset not found
+
+  @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "OK" response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    And request contains "filter[package_name]" parameter with value "pandas"
+    And request contains "filter[asset_type]" parameter with value "Service"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: List findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListFindings" enabled

@@ -8481,6 +8481,13 @@ datadog\_api\_client.v2.model.list\_apps\_response\_meta\_page module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_assets\_sbo\_ms\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_assets_sbo_ms_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_devices\_response module
 ------------------------------------------------------------
 
@@ -14137,6 +14144,48 @@ datadog\_api\_client.v2.model.sbom\_component module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sbom\_component\_dependency module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component_dependency
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_component\_license module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component_license
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_component\_license\_license module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component_license_license
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_component\_license\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component_license_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_component\_property module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component_property
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_component\_supplier module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_component_supplier
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sbom\_component\_type module
 ----------------------------------------------------------
 
@@ -14148,6 +14197,13 @@ datadog\_api\_client.v2.model.sbom\_metadata module
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.sbom_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sbom\_metadata\_author module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_metadata_author
    :members:
    :show-inheritance:
 

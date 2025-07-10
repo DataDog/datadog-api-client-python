@@ -1566,6 +1566,7 @@ from datadog_api_client.v2.model.list_apps_response_data_items_relationships imp
 )
 from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 from datadog_api_client.v2.model.list_apps_response_meta_page import ListAppsResponseMetaPage
+from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
 from datadog_api_client.v2.model.list_devices_response import ListDevicesResponse
 from datadog_api_client.v2.model.list_devices_response_metadata import ListDevicesResponseMetadata
 from datadog_api_client.v2.model.list_devices_response_metadata_page import ListDevicesResponseMetadataPage
@@ -2767,8 +2768,15 @@ from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAsser
 from datadog_api_client.v2.model.sbom import SBOM
 from datadog_api_client.v2.model.sbom_attributes import SBOMAttributes
 from datadog_api_client.v2.model.sbom_component import SBOMComponent
+from datadog_api_client.v2.model.sbom_component_dependency import SBOMComponentDependency
+from datadog_api_client.v2.model.sbom_component_license import SBOMComponentLicense
+from datadog_api_client.v2.model.sbom_component_license_license import SBOMComponentLicenseLicense
+from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponentLicenseType
+from datadog_api_client.v2.model.sbom_component_property import SBOMComponentProperty
+from datadog_api_client.v2.model.sbom_component_supplier import SBOMComponentSupplier
 from datadog_api_client.v2.model.sbom_component_type import SBOMComponentType
 from datadog_api_client.v2.model.sbom_metadata import SBOMMetadata
+from datadog_api_client.v2.model.sbom_metadata_author import SBOMMetadataAuthor
 from datadog_api_client.v2.model.sbom_metadata_component import SBOMMetadataComponent
 from datadog_api_client.v2.model.sbom_type import SBOMType
 from datadog_api_client.v2.model.slo_report_interval import SLOReportInterval
@@ -4783,6 +4791,7 @@ __all__ = [
     "ListAppsResponseDataItemsRelationships",
     "ListAppsResponseMeta",
     "ListAppsResponseMetaPage",
+    "ListAssetsSBOMsResponse",
     "ListDevicesResponse",
     "ListDevicesResponseMetadata",
     "ListDevicesResponseMetadataPage",
@@ -5592,8 +5601,15 @@ __all__ = [
     "SBOM",
     "SBOMAttributes",
     "SBOMComponent",
+    "SBOMComponentDependency",
+    "SBOMComponentLicense",
+    "SBOMComponentLicenseLicense",
+    "SBOMComponentLicenseType",
+    "SBOMComponentProperty",
+    "SBOMComponentSupplier",
     "SBOMComponentType",
     "SBOMMetadata",
+    "SBOMMetadataAuthor",
     "SBOMMetadataComponent",
     "SBOMType",
     "SLOReportInterval",
