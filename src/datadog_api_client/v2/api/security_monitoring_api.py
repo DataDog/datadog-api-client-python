@@ -38,6 +38,8 @@ from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindi
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
+from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
+from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponentLicenseType
 from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
@@ -917,6 +919,66 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_assets_sbo_ms_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListAssetsSBOMsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/sboms",
+                "operation_id": "list_assets_sbo_ms",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page[token]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_asset_type": {
+                    "openapi_types": (AssetType,),
+                    "attribute": "filter[asset_type]",
+                    "location": "query",
+                },
+                "filter_asset_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset_name]",
+                    "location": "query",
+                },
+                "filter_package_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[package_name]",
+                    "location": "query",
+                },
+                "filter_package_version": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[package_version]",
+                    "location": "query",
+                },
+                "filter_license_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[license_name]",
+                    "location": "query",
+                },
+                "filter_license_type": {
+                    "openapi_types": (SBOMComponentLicenseType,),
+                    "attribute": "filter[license_type]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_findings_endpoint = _Endpoint(
             settings={
                 "response_type": (ListFindingsResponse,),
@@ -1313,6 +1375,11 @@ class SecurityMonitoringApi:
                     "attribute": "filter[repo_digests]",
                     "location": "query",
                 },
+                "filter_origin": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[origin]",
+                    "location": "query",
+                },
                 "filter_asset_name": {
                     "openapi_types": (str,),
                     "attribute": "filter[asset.name]",
@@ -1366,6 +1433,11 @@ class SecurityMonitoringApi:
                 "filter_asset_environments": {
                     "openapi_types": (str,),
                     "attribute": "filter[asset.environments]",
+                    "location": "query",
+                },
+                "filter_asset_teams": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.teams]",
                     "location": "query",
                 },
                 "filter_asset_arch": {
@@ -1466,6 +1538,11 @@ class SecurityMonitoringApi:
                 "filter_environments": {
                     "openapi_types": (str,),
                     "attribute": "filter[environments]",
+                    "location": "query",
+                },
+                "filter_teams": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[teams]",
                     "location": "query",
                 },
                 "filter_arch": {
@@ -2451,6 +2528,79 @@ class SecurityMonitoringApi:
         kwargs: Dict[str, Any] = {}
         return self._get_vulnerability_notification_rules_endpoint.call_with_http_info(**kwargs)
 
+    def list_assets_sbo_ms(
+        self,
+        *,
+        page_token: Union[str, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_asset_type: Union[AssetType, UnsetType] = unset,
+        filter_asset_name: Union[str, UnsetType] = unset,
+        filter_package_name: Union[str, UnsetType] = unset,
+        filter_package_version: Union[str, UnsetType] = unset,
+        filter_license_name: Union[str, UnsetType] = unset,
+        filter_license_type: Union[SBOMComponentLicenseType, UnsetType] = unset,
+    ) -> ListAssetsSBOMsResponse:
+        """List assets SBOMs.
+
+        Get a list of assets SBOMs for an organization.
+
+        **Pagination**
+
+        Please review the `Pagination section <#pagination>`_ for the "List Vulnerabilities" endpoint.
+
+        **Filtering**
+
+        Please review the `Filtering section <#filtering>`_ for the "List Vulnerabilities" endpoint.
+
+        **Metadata**
+
+        Please review the `Metadata section <#metadata>`_ for the "List Vulnerabilities" endpoint.
+
+        :param page_token: Its value must come from the ``links`` section of the response of the first request. Do not manually edit it.
+        :type page_token: str, optional
+        :param page_number: The page number to be retrieved. It should be equal to or greater than 1.
+        :type page_number: int, optional
+        :param filter_asset_type: The type of the assets for the SBOM request.
+        :type filter_asset_type: AssetType, optional
+        :param filter_asset_name: The name of the asset for the SBOM request.
+        :type filter_asset_name: str, optional
+        :param filter_package_name: The name of the component that is a dependency of an asset.
+        :type filter_package_name: str, optional
+        :param filter_package_version: The version of the component that is a dependency of an asset.
+        :type filter_package_version: str, optional
+        :param filter_license_name: The software license name of the component that is a dependency of an asset.
+        :type filter_license_name: str, optional
+        :param filter_license_type: The software license type of the component that is a dependency of an asset.
+        :type filter_license_type: SBOMComponentLicenseType, optional
+        :rtype: ListAssetsSBOMsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_token is not unset:
+            kwargs["page_token"] = page_token
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_asset_type is not unset:
+            kwargs["filter_asset_type"] = filter_asset_type
+
+        if filter_asset_name is not unset:
+            kwargs["filter_asset_name"] = filter_asset_name
+
+        if filter_package_name is not unset:
+            kwargs["filter_package_name"] = filter_package_name
+
+        if filter_package_version is not unset:
+            kwargs["filter_package_version"] = filter_package_version
+
+        if filter_license_name is not unset:
+            kwargs["filter_license_name"] = filter_license_name
+
+        if filter_license_type is not unset:
+            kwargs["filter_license_type"] = filter_license_type
+
+        return self._list_assets_sbo_ms_endpoint.call_with_http_info(**kwargs)
+
     def list_findings(
         self,
         *,
@@ -2929,6 +3079,7 @@ class SecurityMonitoringApi:
         filter_code_location_method: Union[str, UnsetType] = unset,
         filter_fix_available: Union[bool, UnsetType] = unset,
         filter_repo_digests: Union[str, UnsetType] = unset,
+        filter_origin: Union[str, UnsetType] = unset,
         filter_asset_name: Union[str, UnsetType] = unset,
         filter_asset_type: Union[AssetType, UnsetType] = unset,
         filter_asset_version_first: Union[str, UnsetType] = unset,
@@ -2940,6 +3091,7 @@ class SecurityMonitoringApi:
         filter_asset_risks_has_privileged_access: Union[bool, UnsetType] = unset,
         filter_asset_risks_has_access_to_sensitive_data: Union[bool, UnsetType] = unset,
         filter_asset_environments: Union[str, UnsetType] = unset,
+        filter_asset_teams: Union[str, UnsetType] = unset,
         filter_asset_arch: Union[str, UnsetType] = unset,
         filter_asset_operating_system_name: Union[str, UnsetType] = unset,
         filter_asset_operating_system_version: Union[str, UnsetType] = unset,
@@ -3078,6 +3230,8 @@ class SecurityMonitoringApi:
         :type filter_fix_available: bool, optional
         :param filter_repo_digests: Filter by vulnerability ``repo_digest`` (when the vulnerability is related to ``Image`` asset).
         :type filter_repo_digests: str, optional
+        :param filter_origin: Filter by origin.
+        :type filter_origin: str, optional
         :param filter_asset_name: Filter by asset name.
         :type filter_asset_name: str, optional
         :param filter_asset_type: Filter by asset type.
@@ -3100,6 +3254,8 @@ class SecurityMonitoringApi:
         :type filter_asset_risks_has_access_to_sensitive_data: bool, optional
         :param filter_asset_environments: Filter by asset environments.
         :type filter_asset_environments: str, optional
+        :param filter_asset_teams: Filter by asset teams.
+        :type filter_asset_teams: str, optional
         :param filter_asset_arch: Filter by asset architecture.
         :type filter_asset_arch: str, optional
         :param filter_asset_operating_system_name: Filter by asset operating system name.
@@ -3187,6 +3343,9 @@ class SecurityMonitoringApi:
         if filter_repo_digests is not unset:
             kwargs["filter_repo_digests"] = filter_repo_digests
 
+        if filter_origin is not unset:
+            kwargs["filter_origin"] = filter_origin
+
         if filter_asset_name is not unset:
             kwargs["filter_asset_name"] = filter_asset_name
 
@@ -3220,6 +3379,9 @@ class SecurityMonitoringApi:
         if filter_asset_environments is not unset:
             kwargs["filter_asset_environments"] = filter_asset_environments
 
+        if filter_asset_teams is not unset:
+            kwargs["filter_asset_teams"] = filter_asset_teams
+
         if filter_asset_arch is not unset:
             kwargs["filter_asset_arch"] = filter_asset_arch
 
@@ -3247,6 +3409,7 @@ class SecurityMonitoringApi:
         filter_risks_has_privileged_access: Union[bool, UnsetType] = unset,
         filter_risks_has_access_to_sensitive_data: Union[bool, UnsetType] = unset,
         filter_environments: Union[str, UnsetType] = unset,
+        filter_teams: Union[str, UnsetType] = unset,
         filter_arch: Union[str, UnsetType] = unset,
         filter_operating_system_name: Union[str, UnsetType] = unset,
         filter_operating_system_version: Union[str, UnsetType] = unset,
@@ -3293,6 +3456,8 @@ class SecurityMonitoringApi:
         :type filter_risks_has_access_to_sensitive_data: bool, optional
         :param filter_environments: Filter by environment.
         :type filter_environments: str, optional
+        :param filter_teams: Filter by teams.
+        :type filter_teams: str, optional
         :param filter_arch: Filter by architecture.
         :type filter_arch: str, optional
         :param filter_operating_system_name: Filter by operating system name.
@@ -3340,6 +3505,9 @@ class SecurityMonitoringApi:
 
         if filter_environments is not unset:
             kwargs["filter_environments"] = filter_environments
+
+        if filter_teams is not unset:
+            kwargs["filter_teams"] = filter_teams
 
         if filter_arch is not unset:
             kwargs["filter_arch"] = filter_arch
