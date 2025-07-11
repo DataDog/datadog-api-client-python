@@ -2,7 +2,7 @@ interactions:
 - request:
     body: '{"config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":"{{
       DATADOG_PORT }}"}},"locations":["aws:us-east-2"],"message":"BDD test payload:
-      synthetics_api_ssl_test_payload.json","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1733743082","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60},"subtype":"ssl","tags":["testing:api"],"type":"api"}'
+      synthetics_api_ssl_test_payload.json","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1752254637","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"disableAiaIntermediateFetching":true,"tick_every":60},"subtype":"ssl","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json
@@ -12,9 +12,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
   response:
     body:
-      string: '{"public_id":"9f9-ngb-e6m","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1733743082","status":"live","type":"api","subtype":"ssl","tags":["testing:api"],"created_at":"2024-12-09T11:18:03.407511+00:00","modified_at":"2024-12-09T11:18:03.407511+00:00","config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":"{{
+      string: '{"public_id":"ppr-ina-vd6","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1752254637","status":"live","type":"api","subtype":"ssl","tags":["testing:api"],"created_at":"2025-07-11T17:23:58.189592+00:00","modified_at":"2025-07-11T17:23:58.189592+00:00","config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":"{{
         DATADOG_PORT }}"},"configVariables":[{"id":"7865d47f-47df-43b5-a612-e2dea9ed40e8","name":"DATADOG_PORT","type":"global"}]},"message":"BDD
-        test payload: synthetics_api_ssl_test_payload.json","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"tick_every":60},"locations":["aws:us-east-2"],"created_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":159881033,"org_id":321813,"modified_by":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+        test payload: synthetics_api_ssl_test_payload.json","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"disableAiaIntermediateFetching":true,"tick_every":60},"locations":["aws:us-east-2"],"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"},"deleted_at":null,"monitor_id":177655296,"org_id":321813,"modified_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com"}}'
     headers:
       content-type:
       - application/json
@@ -22,7 +24,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"public_ids":["9f9-ngb-e6m"]}'
+    body: '{"public_ids":["ppr-ina-vd6"]}'
     headers:
       accept:
       - application/json
@@ -32,7 +34,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
   response:
     body:
-      string: '{"deleted_tests":[{"public_id":"9f9-ngb-e6m","deleted_at":"2024-12-09T11:18:04.422376+00:00"}]}
+      string: '{"deleted_tests":[{"public_id":"ppr-ina-vd6","deleted_at":"2025-07-11T17:23:59.574697+00:00"}]}
 
         '
     headers:
