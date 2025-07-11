@@ -857,6 +857,37 @@
       "type": "safe"
     }
   },
+  "GetAllDatasets": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "operationId": "DeleteDataset",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateDataDeletionRequest": {
     "tag": "Data Deletion",
     "undo": {

@@ -23,6 +23,7 @@ from datadog_api_client.v2.api.containers_api import ContainersApi
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
+from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.events_api import EventsApi
@@ -96,6 +97,7 @@ __all__ = [
     "DORAMetricsApi",
     "DashboardListsApi",
     "DataDeletionApi",
+    "DatasetsApi",
     "DomainAllowlistApi",
     "DowntimesApi",
     "EventsApi",

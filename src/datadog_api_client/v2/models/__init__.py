@@ -948,6 +948,11 @@ from datadog_api_client.v2.model.data_transform import DataTransform
 from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
 from datadog_api_client.v2.model.data_transform_type import DataTransformType
 from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
+from datadog_api_client.v2.model.dataset import Dataset
+from datadog_api_client.v2.model.dataset_attributes import DatasetAttributes
+from datadog_api_client.v2.model.dataset_create_request import DatasetCreateRequest
+from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMulti
+from datadog_api_client.v2.model.dataset_response_single import DatasetResponseSingle
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
@@ -1229,6 +1234,7 @@ from datadog_api_client.v2.model.fastly_service_request import FastlyServiceRequ
 from datadog_api_client.v2.model.fastly_service_response import FastlyServiceResponse
 from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
+from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.finding_attributes import FindingAttributes
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
@@ -4269,6 +4275,11 @@ __all__ = [
     "DataTransformProperties",
     "DataTransformType",
     "DatabaseMonitoringTriggerWrapper",
+    "Dataset",
+    "DatasetAttributes",
+    "DatasetCreateRequest",
+    "DatasetResponseMulti",
+    "DatasetResponseSingle",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsRequest",
@@ -4496,6 +4507,7 @@ __all__ = [
     "FastlyServiceResponse",
     "FastlyServiceType",
     "FastlyServicesResponse",
+    "FiltersPerProduct",
     "Finding",
     "FindingAttributes",
     "FindingEvaluation",
