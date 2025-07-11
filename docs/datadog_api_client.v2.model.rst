@@ -4666,6 +4666,41 @@ datadog\_api\_client.v2.model.database\_monitoring\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dataset module
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_attributes module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_create\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_response\_multi module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_response_multi
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_response\_single module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_response_single
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 
@@ -6413,6 +6448,13 @@ datadog\_api\_client.v2.model.fastly\_services\_response module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.fastly_services_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.filters\_per\_product module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.filters_per_product
    :members:
    :show-inheritance:
 
