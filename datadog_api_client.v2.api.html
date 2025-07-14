@@ -1181,6 +1181,22 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.datasets_api" class="md-nav__link">datadog_api_client.v2.api.datasets_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.datasets_api.DatasetsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DatasetsApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.create_dataset" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DatasetsApi.create_dataset()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.delete_dataset" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DatasetsApi.delete_dataset()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.get_all_datasets" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DatasetsApi.get_all_datasets()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.get_dataset" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DatasetsApi.get_dataset()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.domain_allowlist_api" class="md-nav__link">datadog_api_client.v2.api.domain_allowlist_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DomainAllowlistApi</span></code></a><nav class="md-nav">
@@ -4978,6 +4994,70 @@ organization.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_data_deletions_response_body.GetDataDeletionsResponseBody" title="datadog_api_client.v2.model.get_data_deletions_response_body.GetDataDeletionsResponseBody">GetDataDeletionsResponseBody</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.datasets_api">
+<span id="datadog-api-client-v2-api-datasets-api-module"></span><h2 id="module-datadog_api_client.v2.api.datasets_api">datadog_api_client.v2.api.datasets_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.datasets_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.datasets_api.DatasetsApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DatasetsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.datasets_api.DatasetsApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Data Access Controls in Datadog is a feature that allows administrators and access managers to regulate
+access to sensitive data. By defining Restricted Datasets, you can ensure that only specific teams or roles can
+view certain types of telemetry (for example, logs, traces, metrics, and RUM data).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.datasets_api.DatasetsApi.create_dataset">
+<span class="sig-name descname"><span class="pre">create_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_create_request.DatasetCreateRequest" title="datadog_api_client.v2.model.dataset_create_request.DatasetCreateRequest"><span class="pre">DatasetCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle" title="datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle"><span class="pre">DatasetResponseSingle</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.create_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Create a dataset.</p>
+<p>Create a dataset with the configurations in the request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_create_request.DatasetCreateRequest" title="datadog_api_client.v2.model.dataset_create_request.DatasetCreateRequest"><em>DatasetCreateRequest</em></a>) – Dataset payload</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle" title="datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle">DatasetResponseSingle</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.datasets_api.DatasetsApi.delete_dataset">
+<span class="sig-name descname"><span class="pre">delete_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.delete_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a dataset.</p>
+<p>Deletes the dataset associated with the ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset_id</strong> (<em>str</em>) – The ID of a defined dataset.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.datasets_api.DatasetsApi.get_all_datasets">
+<span class="sig-name descname"><span class="pre">get_all_datasets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_response_multi.DatasetResponseMulti" title="datadog_api_client.v2.model.dataset_response_multi.DatasetResponseMulti"><span class="pre">DatasetResponseMulti</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.get_all_datasets" title="Link to this definition">¶</a></dt>
+<dd><p>Get all datasets.</p>
+<p>Get all datasets that have been configured for an organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_response_multi.DatasetResponseMulti" title="datadog_api_client.v2.model.dataset_response_multi.DatasetResponseMulti">DatasetResponseMulti</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.datasets_api.DatasetsApi.get_dataset">
+<span class="sig-name descname"><span class="pre">get_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle" title="datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle"><span class="pre">DatasetResponseSingle</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.datasets_api.DatasetsApi.get_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Get a single dataset by ID.</p>
+<p>Retrieves the dataset associated with the ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset_id</strong> (<em>str</em>) – The ID of a defined dataset.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle" title="datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle">DatasetResponseSingle</a></p>
 </dd>
 </dl>
 </dd></dl>
