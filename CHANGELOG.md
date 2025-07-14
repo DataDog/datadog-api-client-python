@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## 2.40.0/2025-07-14
+
+### Added
+* Add Datasets API to Open API Spec  [#2691](https://github.com/DataDog/datadog-api-client-python/pull/2691)
+* Add support for vulnerability management - GetSBOMsList new endpoint and update existing ones [#2690](https://github.com/DataDog/datadog-api-client-python/pull/2690)
+* Add spreadsheet to restriction_policy specs [#2684](https://github.com/DataDog/datadog-api-client-python/pull/2684)
+* Adds missing /api/v1/synthetics/tests/search spec [#2673](https://github.com/DataDog/datadog-api-client-python/pull/2673)
+* Add API spec for AWS Integrations IAM permissions [#2665](https://github.com/DataDog/datadog-api-client-python/pull/2665)
+* New keys added for multiple products [#2663](https://github.com/DataDog/datadog-api-client-python/pull/2663)
+* Add extractFromEmailBody step for synthetics browser test [#2660](https://github.com/DataDog/datadog-api-client-python/pull/2660)
+* Add support for `Array Processor` in `Logs Pipelines` [#2658](https://github.com/DataDog/datadog-api-client-python/pull/2658)
+* Update Incident API specs to include `is_test` in `POST /incidents` and incidents response [#2651](https://github.com/DataDog/datadog-api-client-python/pull/2651)
+
+### Fixed
+* update aiosonic from 0.15.1 to 0.24.0 [#2677](https://github.com/DataDog/datadog-api-client-python/pull/2677)
+* Synthetics mobile test `message` field is now required [#2657](https://github.com/DataDog/datadog-api-client-python/pull/2657)
+
+### Deprecated
+* stop supporting python 3.7 for the client [#2676](https://github.com/DataDog/datadog-api-client-python/pull/2676)
+
+### Changed
+* Update template variable schemas with type field in dashboards and shared dashboards endpoints for group by template variables [#2659](https://github.com/DataDog/datadog-api-client-python/pull/2659)
+* Update events intake specs for v2 Events post endpoint [#2652](https://github.com/DataDog/datadog-api-client-python/pull/2652)
+
+### Security
+* Remove caseIndex from historical jobs api spec [#2656](https://github.com/DataDog/datadog-api-client-python/pull/2656)
+
 ## 2.39.0/2025-06-30
 
 ### Fixed
