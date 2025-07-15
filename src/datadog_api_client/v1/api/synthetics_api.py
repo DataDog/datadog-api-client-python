@@ -593,7 +593,7 @@ class SyntheticsApi:
         self._list_global_variables_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsListGlobalVariablesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ", "AuthZ"],
                 "endpoint_path": "/api/v1/synthetics/variables",
                 "operation_id": "list_global_variables",
                 "http_method": "GET",
