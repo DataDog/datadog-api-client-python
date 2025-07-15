@@ -306,6 +306,7 @@ Feature: Synthetics
     And the response "config.steps[3].request.host" is equal to "example.org"
     And the response "config.steps[3].request.port" is equal to 443
     And the response "config.steps[3].request.checkCertificateRevocation" is equal to true
+    And the response "config.steps[3].request.disableAiaIntermediateFetching" is equal to true
     And the response "config.steps[4].subtype" is equal to "dns"
     And the response "config.steps[4].request.host" is equal to "troisdizaines.com"
     And the response "config.steps[4].request.dnsServer" is equal to "8.8.8.8"

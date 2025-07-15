@@ -131,6 +131,7 @@ body = SyntheticsAPITest(
                 ],
                 request=SyntheticsTestRequest(
                     check_certificate_revocation=True,
+                    disable_aia_intermediate_fetching=True,
                     host="example.org",
                     port=443,
                 ),
