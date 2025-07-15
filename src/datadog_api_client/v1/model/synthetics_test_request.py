@@ -68,6 +68,7 @@ class SyntheticsTestRequest(ModelNormal):
             "check_certificate_revocation": (bool,),
             "compressed_json_descriptor": (str,),
             "compressed_proto_file": (str,),
+            "disable_aia_intermediate_fetching": (bool,),
             "dns_server": (str,),
             "dns_server_port": (SyntheticsTestRequestDNSServerPort,),
             "files": ([SyntheticsTestRequestBodyFile],),
@@ -104,6 +105,7 @@ class SyntheticsTestRequest(ModelNormal):
         "check_certificate_revocation": "checkCertificateRevocation",
         "compressed_json_descriptor": "compressedJsonDescriptor",
         "compressed_proto_file": "compressedProtoFile",
+        "disable_aia_intermediate_fetching": "disableAiaIntermediateFetching",
         "dns_server": "dnsServer",
         "dns_server_port": "dnsServerPort",
         "files": "files",
@@ -150,6 +152,7 @@ class SyntheticsTestRequest(ModelNormal):
         check_certificate_revocation: Union[bool, UnsetType] = unset,
         compressed_json_descriptor: Union[str, UnsetType] = unset,
         compressed_proto_file: Union[str, UnsetType] = unset,
+        disable_aia_intermediate_fetching: Union[bool, UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
         dns_server_port: Union[SyntheticsTestRequestDNSServerPort, int, str, UnsetType] = unset,
         files: Union[List[SyntheticsTestRequestBodyFile], UnsetType] = unset,
@@ -207,6 +210,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param compressed_proto_file: A protobuf file that needs to be gzipped first then base64 encoded.
         :type compressed_proto_file: str, optional
+
+        :param disable_aia_intermediate_fetching: Disable fetching intermediate certificates from AIA.
+        :type disable_aia_intermediate_fetching: bool, optional
 
         :param dns_server: DNS server to use for DNS tests.
         :type dns_server: str, optional
@@ -299,6 +305,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["compressed_json_descriptor"] = compressed_json_descriptor
         if compressed_proto_file is not unset:
             kwargs["compressed_proto_file"] = compressed_proto_file
+        if disable_aia_intermediate_fetching is not unset:
+            kwargs["disable_aia_intermediate_fetching"] = disable_aia_intermediate_fetching
         if dns_server is not unset:
             kwargs["dns_server"] = dns_server
         if dns_server_port is not unset:
