@@ -39,7 +39,7 @@ class {{ classname }}:
                 "response_type": {% if returnType %}({{ returnType }},){% else %}None{% endif %},
     {%- set authMethods = operation.security if "security" in operation else openapi.security %}
                 "auth": [
-{%- for auth in (authMethods or []) %}"{{ '", "'.join(auth.keys()) }}"{%- if not loop.last %}, {% endif %}{%- endfor %}],
+{%- for auth in get_security_names(authMethods)|sort %}"{{ auth }}"{%- if not loop.last %}, {% endif %}{%- endfor %}],
                 "endpoint_path": "{{ path }}",
                 "operation_id": "{{ operation.operationId|safe_snake_case }}",
                 "http_method": "{{httpMethod}}",
