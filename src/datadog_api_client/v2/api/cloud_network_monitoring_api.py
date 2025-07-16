@@ -58,7 +58,7 @@ class CloudNetworkMonitoringApi:
                 },
                 "limit": {
                     "validation": {
-                        "inclusive_maximum": 5000,
+                        "inclusive_maximum": 7500,
                         "inclusive_minimum": 1,
                     },
                     "openapi_types": (int,),
@@ -93,7 +93,7 @@ class CloudNetworkMonitoringApi:
         :type group_by: str, optional
         :param tags: Comma-separated list of tags to filter connections by.
         :type tags: str, optional
-        :param limit: The number of connections to be returned. The maximum value is 5000.
+        :param limit: The number of connections to be returned. The maximum value is 7500.
         :type limit: int, optional
         :rtype: SingleAggregatedConnectionResponseArray
         """
