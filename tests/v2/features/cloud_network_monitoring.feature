@@ -9,7 +9,6 @@ Feature: Cloud Network Monitoring
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "CloudNetworkMonitoring" API
-    And operation "GetAggregatedConnections" enabled
     And new "GetAggregatedConnections" request
 
   @team:Datadog/networks
@@ -19,7 +18,7 @@ Feature: Cloud Network Monitoring
 
   @skip-python @skip-ruby @team:Datadog/networks
   Scenario: Get all aggregated connections returns "Bad Request" response
-    Given request contains "limit" parameter with value 6000
+    Given request contains "limit" parameter with value 8000
     When the request is sent
     Then the response status is 400 Bad Request
 
