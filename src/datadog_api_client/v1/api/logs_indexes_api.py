@@ -108,7 +108,7 @@ class LogsIndexesApi:
         self._list_log_indexes_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndexListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/logs/config/indexes",
                 "operation_id": "list_log_indexes",
                 "http_method": "GET",

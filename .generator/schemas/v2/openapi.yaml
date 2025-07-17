@@ -44884,8 +44884,9 @@ paths:
       tags:
       - AuthN Mappings
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - user_access_read
     post:
       description: Create an AuthN Mapping.
       operationId: CreateAuthNMapping
@@ -44990,8 +44991,9 @@ paths:
       tags:
       - AuthN Mappings
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - user_access_read
     patch:
       description: Edit an AuthN Mapping.
       operationId: UpdateAuthNMapping
@@ -46038,6 +46040,8 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - ci_visibility_read
+      - AuthZ:
+        - test_optimization_read
       summary: Aggregate tests events
       tags:
       - CI Visibility Tests
@@ -46046,6 +46050,7 @@ paths:
         operator: OR
         permissions:
         - ci_visibility_read
+        - test_optimization_read
   /api/v2/ci/tests/events:
     get:
       description: 'List endpoint returns CI Visibility test events that match a [search
@@ -46122,6 +46127,8 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - ci_visibility_read
+      - AuthZ:
+        - test_optimization_read
       summary: Get a list of tests events
       tags:
       - CI Visibility Tests
@@ -46134,6 +46141,7 @@ paths:
         operator: OR
         permissions:
         - ci_visibility_read
+        - test_optimization_read
   /api/v2/ci/tests/events/search:
     post:
       description: 'List endpoint returns CI Visibility test events that match a [search
@@ -46168,6 +46176,8 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - ci_visibility_read
+      - AuthZ:
+        - test_optimization_read
       summary: Search tests events
       tags:
       - CI Visibility Tests
@@ -46181,6 +46191,7 @@ paths:
         operator: OR
         permissions:
         - ci_visibility_read
+        - test_optimization_read
   /api/v2/cloud_security_management/custom_frameworks:
     post:
       description: Create a custom framework.
@@ -47384,15 +47395,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get Monthly Cost Attribution
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/csm/onboarding/agents:
     get:
       description: Get the list of all CSM Agents running on your hosts and containers.
@@ -47969,13 +47978,15 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_read
       summary: Get all datasets
       tags:
       - Datasets
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - user_access_read
     post:
       description: Create a dataset with the configurations in the request.
       operationId: CreateDataset
@@ -48015,14 +48026,16 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_manage
       summary: Create a dataset
       tags:
       - Datasets
       x-codegen-request-body-name: body
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - user_access_manage
   /api/v2/datasets/{dataset_id}:
     delete:
       description: Deletes the dataset associated with the ID.
@@ -48273,6 +48286,8 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
+      - AuthZ:
+        - monitors_write
       summary: Get Domain Allowlist
       tags:
       - Domain Allowlist
@@ -48280,6 +48295,10 @@ paths:
         operator: OR
         permissions:
         - org_management
+        - monitors_write
+        - generate_dashboard_reports
+        - generate_log_reports
+        - manage_log_reports
     patch:
       description: Update the domain allowlist for an organization.
       operationId: PatchDomainAllowlist
@@ -48303,6 +48322,8 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
+      - AuthZ:
+        - monitors_write
       summary: Sets Domain Allowlist
       tags:
       - Domain Allowlist
@@ -48310,6 +48331,10 @@ paths:
         operator: OR
         permissions:
         - org_management
+        - monitors_write
+        - generate_dashboard_reports
+        - generate_log_reports
+        - manage_log_reports
   /api/v2/dora/deployment:
     post:
       description: 'Use this API endpoint to provide data about deployments for DORA
@@ -52627,8 +52652,8 @@ paths:
       x-permission:
         operator: OR
         permissions:
-        - logs_read_data
         - logs_read_config
+        - logs_read_data
     post:
       description: Create a custom destination in your organization.
       operationId: CreateLogsCustomDestination
@@ -52712,8 +52737,8 @@ paths:
       x-permission:
         operator: OR
         permissions:
-        - logs_read_data
         - logs_read_config
+        - logs_read_data
     patch:
       description: Update the given fields of a specific custom destination in your
         organization.
@@ -53898,9 +53923,6 @@ paths:
           description: Forbidden
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Create a monitor notification rule
       tags:
       - Monitors
@@ -53936,9 +53958,6 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Delete a monitor notification rule
       tags:
       - Monitors
@@ -54043,9 +54062,6 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Update a monitor notification rule
       tags:
       - Monitors
@@ -54284,6 +54300,10 @@ paths:
       summary: Get all monitor user templates
       tags:
       - Monitors
+      x-permission:
+        operator: OR
+        permissions:
+        - monitors_read
       x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -54311,12 +54331,13 @@ paths:
           description: Bad Request
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Create a monitor user template
       tags:
       - Monitors
+      x-permission:
+        operator: OR
+        permissions:
+        - monitor_config_policy_write
       x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -54341,12 +54362,13 @@ paths:
           description: Bad Request
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Validate a monitor user template
       tags:
       - Monitors
+      x-permission:
+        operator: OR
+        permissions:
+        - monitor_config_policy_write
       x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -54372,12 +54394,13 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Delete a monitor user template
       tags:
       - Monitors
+      x-permission:
+        operator: OR
+        permissions:
+        - monitor_config_policy_write
       x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -54423,6 +54446,10 @@ paths:
       summary: Get a monitor user template
       tags:
       - Monitors
+      x-permission:
+        operator: OR
+        permissions:
+        - monitors_read
       x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -54463,12 +54490,13 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Update a monitor user template to a new version
       tags:
       - Monitors
+      x-permission:
+        operator: OR
+        permissions:
+        - monitor_config_policy_write
       x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -54508,12 +54536,13 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Validate an existing monitor user template
       tags:
       - Monitors
+      x-permission:
+        operator: OR
+        permissions:
+        - monitor_config_policy_write
       x-unstable: '**Note**: This endpoint is in Preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).'
@@ -57914,17 +57943,14 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Aggregate RUM events
       tags:
       - RUM
       x-codegen-request-body-name: body
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - rum_apps_read
   /api/v2/rum/applications:
     get:
       description: List all the RUM applications in your organization.
@@ -58430,10 +58456,6 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Get a list of RUM events
       tags:
       - RUM
@@ -58443,8 +58465,9 @@ paths:
         limitParam: page[limit]
         resultsPath: data
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - rum_apps_read
   /api/v2/rum/events/search:
     post:
       description: 'List endpoint returns RUM events that match a RUM search query.
@@ -58476,10 +58499,6 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       summary: Search RUM events
       tags:
       - RUM
@@ -58490,8 +58509,9 @@ paths:
         limitParam: body.page.limit
         resultsPath: data
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - rum_apps_read
   /api/v2/saml_configurations/idp_metadata:
     post:
       description: 'Endpoint for uploading IdP metadata for SAML setup.
@@ -64127,15 +64147,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get cost across multi-org account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/usage/estimated_cost:
     get:
       description: 'Get estimated cost across multi-org and single root-org accounts.
@@ -64233,15 +64251,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get estimated cost across your account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/usage/historical_cost:
     get:
       description: 'Get historical cost across multi-org and single root-org accounts.
@@ -64316,15 +64332,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get historical cost across your account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/usage/hourly_usage:
     get:
       description: Get hourly usage by product family.
@@ -64653,15 +64667,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get projected cost across your account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/user_invitations:
     post:
       description: Sends emails to one or more users inviting them to join the organization.
