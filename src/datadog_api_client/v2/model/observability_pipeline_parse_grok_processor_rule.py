@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -46,7 +48,7 @@ class ObservabilityPipelineParseGrokProcessorRule(ModelNormal):
         self_,
         match_rules: List[ObservabilityPipelineParseGrokProcessorRuleMatchRule],
         source: str,
-        support_rules: List[ObservabilityPipelineParseGrokProcessorRuleSupportRule],
+        support_rules: Union[List[ObservabilityPipelineParseGrokProcessorRuleSupportRule], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -61,10 +63,11 @@ class ObservabilityPipelineParseGrokProcessorRule(ModelNormal):
         :type source: str
 
         :param support_rules: A list of Grok helper rules that can be referenced by the parsing rules.
-        :type support_rules: [ObservabilityPipelineParseGrokProcessorRuleSupportRule]
+        :type support_rules: [ObservabilityPipelineParseGrokProcessorRuleSupportRule], optional
         """
+        if support_rules is not unset:
+            kwargs["support_rules"] = support_rules
         super().__init__(kwargs)
 
         self_.match_rules = match_rules
         self_.source = source
-        self_.support_rules = support_rules
