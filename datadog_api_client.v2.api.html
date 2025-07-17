@@ -1261,6 +1261,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.events_api.EventsApi.create_event" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">EventsApi.create_event()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.events_api.EventsApi.get_event" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">EventsApi.get_event()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.events_api.EventsApi.list_events" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">EventsApi.list_events()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.events_api.EventsApi.list_events_with_pagination" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">EventsApi.list_events_with_pagination()</span></code></a>
@@ -5388,6 +5390,20 @@ paths are <code class="docutils literal notranslate"><span class="pre">created_b
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.event_create_response_payload.EventCreateResponsePayload" title="datadog_api_client.v2.model.event_create_response_payload.EventCreateResponsePayload">EventCreateResponsePayload</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.events_api.EventsApi.get_event">
+<span class="sig-name descname"><span class="pre">get_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.v2_event_response.V2EventResponse" title="datadog_api_client.v2.model.v2_event_response.V2EventResponse"><span class="pre">V2EventResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.events_api.EventsApi.get_event" title="Link to this definition">¶</a></dt>
+<dd><p>Get an event.</p>
+<p>Get the details of an event by <code class="docutils literal notranslate"><span class="pre">event_id</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event_id</strong> (<em>str</em>) – The UID of the event.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.v2_event_response.V2EventResponse" title="datadog_api_client.v2.model.v2_event_response.V2EventResponse">V2EventResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
