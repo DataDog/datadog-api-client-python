@@ -1719,6 +1719,34 @@ datadog\_api\_client.v1.model.logs\_date\_remapper\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_decoder\_processor module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_decoder\_processor\_binary\_to\_text\_encoding module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor_binary_to_text_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_decoder\_processor\_input\_representation module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor_input_representation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_decoder\_processor\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_exclusion module
 ----------------------------------------------------
 

@@ -94,6 +94,12 @@ class LogsProcessor(ModelComposed):
 
         :param operation: Configuration of the array processor operation to perform.
         :type operation: LogsArrayProcessorOperation
+
+        :param binary_to_text_encoding: The encoding used to represent the binary data.
+        :type binary_to_text_encoding: LogsDecoderProcessorBinaryToTextEncoding
+
+        :param input_representation: The original representation of input string.
+        :type input_representation: LogsDecoderProcessorInputRepresentation
         """
         super().__init__(kwargs)
 
@@ -124,6 +130,7 @@ class LogsProcessor(ModelComposed):
         from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
         from datadog_api_client.v1.model.logs_span_remapper import LogsSpanRemapper
         from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
+        from datadog_api_client.v1.model.logs_decoder_processor import LogsDecoderProcessor
 
         return {
             "oneOf": [
@@ -145,5 +152,6 @@ class LogsProcessor(ModelComposed):
                 LogsTraceRemapper,
                 LogsSpanRemapper,
                 LogsArrayProcessor,
+                LogsDecoderProcessor,
             ],
         }
