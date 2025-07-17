@@ -16,7 +16,7 @@ class SecurityMonitoringRuleCaseActionType(ModelSimple):
     """
     The action type.
 
-    :param value: Must be one of ["block_ip", "block_user", "user_behavior"].
+    :param value: Must be one of ["block_ip", "block_user", "user_behavior", "flag_ip"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class SecurityMonitoringRuleCaseActionType(ModelSimple):
         "block_ip",
         "block_user",
         "user_behavior",
+        "flag_ip",
     }
     BLOCK_IP: ClassVar["SecurityMonitoringRuleCaseActionType"]
     BLOCK_USER: ClassVar["SecurityMonitoringRuleCaseActionType"]
     USER_BEHAVIOR: ClassVar["SecurityMonitoringRuleCaseActionType"]
+    FLAG_IP: ClassVar["SecurityMonitoringRuleCaseActionType"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class SecurityMonitoringRuleCaseActionType(ModelSimple):
 SecurityMonitoringRuleCaseActionType.BLOCK_IP = SecurityMonitoringRuleCaseActionType("block_ip")
 SecurityMonitoringRuleCaseActionType.BLOCK_USER = SecurityMonitoringRuleCaseActionType("block_user")
 SecurityMonitoringRuleCaseActionType.USER_BEHAVIOR = SecurityMonitoringRuleCaseActionType("user_behavior")
+SecurityMonitoringRuleCaseActionType.FLAG_IP = SecurityMonitoringRuleCaseActionType("flag_ip")
