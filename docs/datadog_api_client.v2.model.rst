@@ -14774,6 +14774,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_case\_action\_options 
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_case\_action\_options\_flagged\_ip\_type module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_case_action_options_flagged_ip_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_case\_action\_type module
 -----------------------------------------------------------------------------------
 

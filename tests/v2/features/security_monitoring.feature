@@ -225,7 +225,7 @@ Feature: Security Monitoring
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'application_security 'returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
-    And body with value {"type":"application_security","name":"{{unique}}_appsec_rule","queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","aggregation":"count","groupByFields":["service","@http.client_ip"],"distinctFields":[]}],"filters":[],"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 100000","actions":[{"type":"block_ip","options":{"duration":900}}, {"type":"user_behavior","options":{"userBehaviorName":"behavior"}}]}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900,"detectionMethod":"threshold"},"isEnabled":true,"message":"Test rule","tags":[],"groupSignalsBy":["service"]}
+    And body with value {"type":"application_security","name":"{{unique}}_appsec_rule","queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","aggregation":"count","groupByFields":["service","@http.client_ip"],"distinctFields":[]}],"filters":[],"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 100000","actions":[{"type":"block_ip","options":{"duration":900}}, {"type":"user_behavior","options":{"userBehaviorName":"behavior"}},{"type":"flag_ip","options":{"flaggedIPType":"FLAGGED"}}]}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900,"detectionMethod":"threshold"},"isEnabled":true,"message":"Test rule","tags":[],"groupSignalsBy":["service"]}
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_appsec_rule"

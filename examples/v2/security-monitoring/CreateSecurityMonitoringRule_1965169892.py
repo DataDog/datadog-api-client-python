@@ -8,6 +8,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_case_action import Sec
 from datadog_api_client.v2.model.security_monitoring_rule_case_action_options import (
     SecurityMonitoringRuleCaseActionOptions,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_case_action_options_flagged_ip_type import (
+    SecurityMonitoringRuleCaseActionOptionsFlaggedIPType,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_case_action_type import SecurityMonitoringRuleCaseActionType
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_detection_method import SecurityMonitoringRuleDetectionMethod
@@ -61,6 +64,12 @@ body = SecurityMonitoringStandardRuleCreatePayload(
                     type=SecurityMonitoringRuleCaseActionType.USER_BEHAVIOR,
                     options=SecurityMonitoringRuleCaseActionOptions(
                         user_behavior_name="behavior",
+                    ),
+                ),
+                SecurityMonitoringRuleCaseAction(
+                    type=SecurityMonitoringRuleCaseActionType.FLAG_IP,
+                    options=SecurityMonitoringRuleCaseActionOptions(
+                        flagged_ip_type=SecurityMonitoringRuleCaseActionOptionsFlaggedIPType.FLAGGED,
                     ),
                 ),
             ],
