@@ -103,6 +103,11 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
+from datadog_api_client.v2.model.alert_event_attributes import AlertEventAttributes
+from datadog_api_client.v2.model.alert_event_attributes_links_item import AlertEventAttributesLinksItem
+from datadog_api_client.v2.model.alert_event_attributes_links_item_category import AlertEventAttributesLinksItemCategory
+from datadog_api_client.v2.model.alert_event_attributes_priority import AlertEventAttributesPriority
+from datadog_api_client.v2.model.alert_event_attributes_status import AlertEventAttributesStatus
 from datadog_api_client.v2.model.alert_event_custom_attributes import AlertEventCustomAttributes
 from datadog_api_client.v2.model.alert_event_custom_attributes_custom import AlertEventCustomAttributesCustom
 from datadog_api_client.v2.model.alert_event_custom_attributes_links_items import AlertEventCustomAttributesLinksItems
@@ -490,6 +495,19 @@ from datadog_api_client.v2.model.case_update_status_request import CaseUpdateSta
 from datadog_api_client.v2.model.cases_response import CasesResponse
 from datadog_api_client.v2.model.cases_response_meta import CasesResponseMeta
 from datadog_api_client.v2.model.cases_response_meta_pagination import CasesResponseMetaPagination
+from datadog_api_client.v2.model.change_event_attributes import ChangeEventAttributes
+from datadog_api_client.v2.model.change_event_attributes_author import ChangeEventAttributesAuthor
+from datadog_api_client.v2.model.change_event_attributes_author_type import ChangeEventAttributesAuthorType
+from datadog_api_client.v2.model.change_event_attributes_changed_resource import ChangeEventAttributesChangedResource
+from datadog_api_client.v2.model.change_event_attributes_changed_resource_type import (
+    ChangeEventAttributesChangedResourceType,
+)
+from datadog_api_client.v2.model.change_event_attributes_impacted_resources_item import (
+    ChangeEventAttributesImpactedResourcesItem,
+)
+from datadog_api_client.v2.model.change_event_attributes_impacted_resources_item_type import (
+    ChangeEventAttributesImpactedResourcesItemType,
+)
 from datadog_api_client.v2.model.change_event_custom_attributes import ChangeEventCustomAttributes
 from datadog_api_client.v2.model.change_event_custom_attributes_author import ChangeEventCustomAttributesAuthor
 from datadog_api_client.v2.model.change_event_custom_attributes_author_type import ChangeEventCustomAttributesAuthorType
@@ -1195,6 +1213,9 @@ from datadog_api_client.v2.model.event_priority import EventPriority
 from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_response_attributes import EventResponseAttributes
 from datadog_api_client.v2.model.event_status_type import EventStatusType
+from datadog_api_client.v2.model.event_system_attributes import EventSystemAttributes
+from datadog_api_client.v2.model.event_system_attributes_category import EventSystemAttributesCategory
+from datadog_api_client.v2.model.event_system_attributes_integration_id import EventSystemAttributesIntegrationId
 from datadog_api_client.v2.model.event_type import EventType
 from datadog_api_client.v2.model.events_aggregation import EventsAggregation
 from datadog_api_client.v2.model.events_compute import EventsCompute
@@ -3534,6 +3555,10 @@ from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.users_relationship import UsersRelationship
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.users_type import UsersType
+from datadog_api_client.v2.model.v2_event import V2Event
+from datadog_api_client.v2.model.v2_event_attributes import V2EventAttributes
+from datadog_api_client.v2.model.v2_event_attributes_attributes import V2EventAttributesAttributes
+from datadog_api_client.v2.model.v2_event_response import V2EventResponse
 from datadog_api_client.v2.model.validation_error import ValidationError
 from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMeta
 from datadog_api_client.v2.model.validation_response import ValidationResponse
@@ -3682,6 +3707,11 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "AddMemberTeamRequest",
     "Advisory",
+    "AlertEventAttributes",
+    "AlertEventAttributesLinksItem",
+    "AlertEventAttributesLinksItemCategory",
+    "AlertEventAttributesPriority",
+    "AlertEventAttributesStatus",
     "AlertEventCustomAttributes",
     "AlertEventCustomAttributesCustom",
     "AlertEventCustomAttributesLinksItems",
@@ -3975,6 +4005,13 @@ __all__ = [
     "CasesResponse",
     "CasesResponseMeta",
     "CasesResponseMetaPagination",
+    "ChangeEventAttributes",
+    "ChangeEventAttributesAuthor",
+    "ChangeEventAttributesAuthorType",
+    "ChangeEventAttributesChangedResource",
+    "ChangeEventAttributesChangedResourceType",
+    "ChangeEventAttributesImpactedResourcesItem",
+    "ChangeEventAttributesImpactedResourcesItemType",
     "ChangeEventCustomAttributes",
     "ChangeEventCustomAttributesAuthor",
     "ChangeEventCustomAttributesAuthorType",
@@ -4468,6 +4505,9 @@ __all__ = [
     "EventResponse",
     "EventResponseAttributes",
     "EventStatusType",
+    "EventSystemAttributes",
+    "EventSystemAttributesCategory",
+    "EventSystemAttributesIntegrationId",
     "EventType",
     "EventsAggregation",
     "EventsCompute",
@@ -6185,6 +6225,10 @@ __all__ = [
     "UsersRelationship",
     "UsersResponse",
     "UsersType",
+    "V2Event",
+    "V2EventAttributes",
+    "V2EventAttributesAttributes",
+    "V2EventResponse",
     "ValidationError",
     "ValidationErrorMeta",
     "ValidationResponse",

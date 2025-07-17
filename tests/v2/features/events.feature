@@ -50,6 +50,27 @@ Feature: Events
     Then the response status is 200 OK
     And the response "data" has length 0
 
+  @generated @skip @team:DataDog/event-management
+  Scenario: Get an event returns "Bad Request" response
+    Given new "GetEvent" request
+    And request contains "event_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/event-management
+  Scenario: Get an event returns "Not Found" response
+    Given new "GetEvent" request
+    And request contains "event_id" parameter with value "AAAAAAAAAAAAAAAAAAAAAAAA"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/event-management
+  Scenario: Get an event returns "OK" response
+    Given new "GetEvent" request
+    And request contains "event_id" parameter with value "AZeF-nTCAABzkAgGXzYPtgAA"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/event-management
   Scenario: Post an event returns "Bad request" response
     Given new "CreateEvent" request

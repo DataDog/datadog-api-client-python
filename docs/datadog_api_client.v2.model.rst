@@ -221,6 +221,41 @@ datadog\_api\_client.v2.model.advisory module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.alert\_event\_attributes module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_attributes\_links\_item module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_attributes_links_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_attributes\_links\_item\_category module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_attributes_links_item_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_attributes\_priority module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_attributes_priority
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.alert\_event\_attributes\_status module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.alert_event_attributes_status
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.alert\_event\_custom\_attributes module
 ---------------------------------------------------------------------
 
@@ -2206,6 +2241,55 @@ datadog\_api\_client.v2.model.cases\_response\_meta\_pagination module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cases_response_meta_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_event\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_event\_attributes\_author module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_attributes_author
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_event\_attributes\_author\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_attributes_author_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_event\_attributes\_changed\_resource module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_attributes_changed_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_event\_attributes\_changed\_resource\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_attributes_changed_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_event\_attributes\_impacted\_resources\_item module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_attributes_impacted_resources_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_event\_attributes\_impacted\_resources\_item\_type module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_event_attributes_impacted_resources_item_type
    :members:
    :show-inheritance:
 
@@ -6175,6 +6259,27 @@ datadog\_api\_client.v2.model.event\_status\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.event_status_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_system\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_system_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_system\_attributes\_category module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_system_attributes_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_system\_attributes\_integration\_id module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_system_attributes_integration_id
    :members:
    :show-inheritance:
 
@@ -18152,6 +18257,34 @@ datadog\_api\_client.v2.model.users\_type module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.users_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.v2\_event module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.v2_event
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.v2\_event\_attributes module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.v2_event_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.v2\_event\_attributes\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.v2_event_attributes_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.v2\_event\_response module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.v2_event_response
    :members:
    :show-inheritance:
 

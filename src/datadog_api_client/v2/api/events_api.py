@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
 from datadog_api_client.v2.model.event_create_request_payload import EventCreateRequestPayload
 from datadog_api_client.v2.model.events_list_request import EventsListRequest
+from datadog_api_client.v2.model.v2_event_response import V2EventResponse
 
 
 class EventsApi:
@@ -100,6 +101,29 @@ class EventsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_event_endpoint = _Endpoint(
+            settings={
+                "response_type": (V2EventResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/events/{event_id}",
+                "operation_id": "get_event",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "event_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "event_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -196,6 +220,23 @@ class EventsApi:
         kwargs["body"] = body
 
         return self._create_event_endpoint.call_with_http_info(**kwargs)
+
+    def get_event(
+        self,
+        event_id: str,
+    ) -> V2EventResponse:
+        """Get an event.
+
+        Get the details of an event by ``event_id``.
+
+        :param event_id: The UID of the event.
+        :type event_id: str
+        :rtype: V2EventResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["event_id"] = event_id
+
+        return self._get_event_endpoint.call_with_http_info(**kwargs)
 
     def list_events(
         self,
