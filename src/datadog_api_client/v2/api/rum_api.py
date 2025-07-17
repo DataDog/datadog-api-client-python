@@ -40,7 +40,7 @@ class RUMApi:
         self._aggregate_rum_events_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMAnalyticsAggregateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/analytics/aggregate",
                 "operation_id": "aggregate_rum_events",
                 "http_method": "POST",
@@ -142,7 +142,7 @@ class RUMApi:
         self._list_rum_events_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/events",
                 "operation_id": "list_rum_events",
                 "http_method": "GET",
@@ -192,7 +192,7 @@ class RUMApi:
         self._search_rum_events_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/events/search",
                 "operation_id": "search_rum_events",
                 "http_method": "POST",

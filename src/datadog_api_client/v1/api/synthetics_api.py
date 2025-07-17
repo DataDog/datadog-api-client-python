@@ -1452,7 +1452,7 @@ class SyntheticsApi:
         :type start: int, optional
         :param count: The maximum number of results to return.
         :type count: int, optional
-        :param sort: The sort order for the results (e.g., 'name,asc' or 'name,desc').
+        :param sort: The sort order for the results (e.g., ``name,asc`` or ``name,desc`` ).
         :type sort: str, optional
         :rtype: SyntheticsListTestsResponse
         """
