@@ -108,6 +108,12 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param log_type: The log type metadata associated with the Chronicle destination.
         :type log_type: str, optional
+
+        :param framing: Framing method configuration.
+        :type framing: ObservabilityPipelineSocketDestinationFraming
+
+        :param mode: Protocol used to send logs.
+        :type mode: ObservabilityPipelineSocketDestinationMode
         """
         super().__init__(kwargs)
 
@@ -161,6 +167,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination import (
             ObservabilityPipelineAmazonOpenSearchDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_socket_destination import (
+            ObservabilityPipelineSocketDestination,
+        )
 
         return {
             "oneOf": [
@@ -179,5 +188,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineSentinelOneDestination,
                 ObservabilityPipelineOpenSearchDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
+                ObservabilityPipelineSocketDestination,
             ],
         }

@@ -102,6 +102,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param window: The time window in seconds over which the threshold applies.
         :type window: float
+
+        :param remaps: Array of VRL remap rules.
+        :type remaps: [ObservabilityPipelineCustomProcessorProcessorRemap]
         """
         super().__init__(kwargs)
 
@@ -162,6 +165,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
             ObservabilityPipelineThrottleProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_custom_processor_processor import (
+            ObservabilityPipelineCustomProcessorProcessor,
+        )
 
         return {
             "oneOf": [
@@ -181,5 +187,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineEnrichmentTableProcessor,
                 ObservabilityPipelineReduceProcessor,
                 ObservabilityPipelineThrottleProcessor,
+                ObservabilityPipelineCustomProcessorProcessor,
             ],
         }
