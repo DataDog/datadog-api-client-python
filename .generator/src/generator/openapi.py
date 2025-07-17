@@ -649,3 +649,15 @@ def get_type_at_path(operation, attribute_path):
     for attr in attribute_path.split("."):
         content = content["properties"][attr]
     return get_type_for_items(content)
+
+
+def get_security_names(security):
+    if security is None:
+        return []
+
+    auth_names = set()
+    for auth in security:
+        for key in auth.keys() if isinstance(auth, dict) else [auth]:
+            auth_names.add(key)
+
+    return list(auth_names)

@@ -58,6 +58,7 @@ def cli(specs, output):
     env.globals["type_to_python"] = openapi.type_to_python
     env.globals["get_default"] = openapi.get_default
     env.globals["get_type_at_path"] = openapi.get_type_at_path
+    env.globals["get_security_names"] = openapi.get_security_names
 
     api_j2 = env.get_template("api.j2")
     apis_j2 = env.get_template("apis.j2")

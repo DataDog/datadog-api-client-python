@@ -25773,6 +25773,10 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - dashboards_public_share
+      - AuthZ:
+        - dashboards_embed_share
+      - AuthZ:
+        - dashboards_invite_share
       summary: Create a shared dashboard
       tags:
       - Dashboards
@@ -25781,6 +25785,8 @@ paths:
         operator: OR
         permissions:
         - dashboards_public_share
+        - dashboards_embed_share
+        - dashboards_invite_share
   /api/v1/dashboard/public/{token}:
     delete:
       description: Revoke the public URL for a dashboard (rendering it private) associated
@@ -25819,6 +25825,10 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - dashboards_public_share
+      - AuthZ:
+        - dashboards_embed_share
+      - AuthZ:
+        - dashboards_invite_share
       summary: Revoke a shared dashboard URL
       tags:
       - Dashboards
@@ -25826,6 +25836,8 @@ paths:
         operator: OR
         permissions:
         - dashboards_public_share
+        - dashboards_embed_share
+        - dashboards_invite_share
     get:
       description: Fetch an existing shared dashboard's sharing metadata associated
         with the specified token.
@@ -25936,6 +25948,10 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - dashboards_public_share
+      - AuthZ:
+        - dashboards_embed_share
+      - AuthZ:
+        - dashboards_invite_share
       summary: Update a shared dashboard
       tags:
       - Dashboards
@@ -25944,6 +25960,8 @@ paths:
         operator: OR
         permissions:
         - dashboards_public_share
+        - dashboards_embed_share
+        - dashboards_invite_share
   /api/v1/dashboard/public/{token}/invitation:
     delete:
       description: Revoke previously sent invitation emails and active sessions used
@@ -25991,7 +26009,7 @@ paths:
       - apiKeyAuth: []
         appKeyAuth: []
       - AuthZ:
-        - dashboards_public_share
+        - dashboards_invite_share
       summary: Revoke shared dashboard invitations
       tags:
       - Dashboards
@@ -25999,7 +26017,7 @@ paths:
       x-permission:
         operator: OR
         permissions:
-        - dashboards_public_share
+        - dashboards_invite_share
     get:
       description: Describe the invitations that exist for the given shared dashboard
         (paginated).
@@ -26050,14 +26068,14 @@ paths:
       - apiKeyAuth: []
         appKeyAuth: []
       - AuthZ:
-        - dashboards_public_share
+        - dashboards_invite_share
       summary: Get all invitations for a shared dashboard
       tags:
       - Dashboards
       x-permission:
         operator: OR
         permissions:
-        - dashboards_public_share
+        - dashboards_invite_share
     post:
       description: Send emails to specified email addresses containing links to access
         a given authenticated shared dashboard. Email addresses must already belong
@@ -26115,7 +26133,7 @@ paths:
       - apiKeyAuth: []
         appKeyAuth: []
       - AuthZ:
-        - dashboards_public_share
+        - dashboards_invite_share
       summary: Send shared dashboard invitation email
       tags:
       - Dashboards
@@ -26123,7 +26141,7 @@ paths:
       x-permission:
         operator: OR
         permissions:
-        - dashboards_public_share
+        - dashboards_invite_share
   /api/v1/dashboard/{dashboard_id}:
     delete:
       description: Delete a dashboard using the specified ID.
