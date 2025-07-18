@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
     from datadog_api_client.v2.model.aws_integration_update import AWSIntegrationUpdate
+    from datadog_api_client.v2.model.datadog_integration_update import DatadogIntegrationUpdate
     from datadog_api_client.v2.model.http_integration_update import HTTPIntegrationUpdate
 
 
@@ -37,7 +38,11 @@ class ActionConnectionAttributesUpdate(ModelNormal):
     def __init__(
         self_,
         integration: Union[
-            ActionConnectionIntegrationUpdate, AWSIntegrationUpdate, HTTPIntegrationUpdate, UnsetType
+            ActionConnectionIntegrationUpdate,
+            AWSIntegrationUpdate,
+            DatadogIntegrationUpdate,
+            HTTPIntegrationUpdate,
+            UnsetType,
         ] = unset,
         name: Union[str, UnsetType] = unset,
         **kwargs,

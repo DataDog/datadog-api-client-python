@@ -36,11 +36,13 @@ class ActionConnectionIntegration(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.aws_integration import AWSIntegration
+        from datadog_api_client.v2.model.datadog_integration import DatadogIntegration
         from datadog_api_client.v2.model.http_integration import HTTPIntegration
 
         return {
             "oneOf": [
                 AWSIntegration,
+                DatadogIntegration,
                 HTTPIntegration,
             ],
         }

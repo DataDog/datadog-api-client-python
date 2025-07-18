@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.action_connection_integration import ActionConnectionIntegration
     from datadog_api_client.v2.model.aws_integration import AWSIntegration
+    from datadog_api_client.v2.model.datadog_integration import DatadogIntegration
     from datadog_api_client.v2.model.http_integration import HTTPIntegration
 
 
@@ -33,7 +34,10 @@ class ActionConnectionAttributes(ModelNormal):
     }
 
     def __init__(
-        self_, integration: Union[ActionConnectionIntegration, AWSIntegration, HTTPIntegration], name: str, **kwargs
+        self_,
+        integration: Union[ActionConnectionIntegration, AWSIntegration, DatadogIntegration, HTTPIntegration],
+        name: str,
+        **kwargs,
     ):
         """
         The definition of ``ActionConnectionAttributes`` object.

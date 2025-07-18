@@ -966,6 +966,14 @@ from datadog_api_client.v2.model.data_transform import DataTransform
 from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
 from datadog_api_client.v2.model.data_transform_type import DataTransformType
 from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
+from datadog_api_client.v2.model.datadog_api_key import DatadogAPIKey
+from datadog_api_client.v2.model.datadog_api_key_type import DatadogAPIKeyType
+from datadog_api_client.v2.model.datadog_api_key_update import DatadogAPIKeyUpdate
+from datadog_api_client.v2.model.datadog_credentials import DatadogCredentials
+from datadog_api_client.v2.model.datadog_credentials_update import DatadogCredentialsUpdate
+from datadog_api_client.v2.model.datadog_integration import DatadogIntegration
+from datadog_api_client.v2.model.datadog_integration_type import DatadogIntegrationType
+from datadog_api_client.v2.model.datadog_integration_update import DatadogIntegrationUpdate
 from datadog_api_client.v2.model.dataset import Dataset
 from datadog_api_client.v2.model.dataset_attributes import DatasetAttributes
 from datadog_api_client.v2.model.dataset_create_request import DatasetCreateRequest
@@ -4316,6 +4324,14 @@ __all__ = [
     "DataTransformProperties",
     "DataTransformType",
     "DatabaseMonitoringTriggerWrapper",
+    "DatadogAPIKey",
+    "DatadogAPIKeyType",
+    "DatadogAPIKeyUpdate",
+    "DatadogCredentials",
+    "DatadogCredentialsUpdate",
+    "DatadogIntegration",
+    "DatadogIntegrationType",
+    "DatadogIntegrationUpdate",
     "Dataset",
     "DatasetAttributes",
     "DatasetCreateRequest",
