@@ -30,6 +30,7 @@ from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations_response
 from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsResponse
 from datadog_api_client.v2.model.metric_assets_response import MetricAssetsResponse
 from datadog_api_client.v2.model.metric_estimate_response import MetricEstimateResponse
+from datadog_api_client.v2.model.metric_tag_cardinalities_response import MetricTagCardinalitiesResponse
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
 from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
@@ -206,6 +207,29 @@ class MetricsApi:
                     "openapi_types": (int,),
                     "attribute": "filter[timespan_h]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_metric_tag_cardinality_details_endpoint = _Endpoint(
+            settings={
+                "response_type": (MetricTagCardinalitiesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/tag-cardinalities",
+                "operation_id": "get_metric_tag_cardinality_details",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -627,6 +651,23 @@ class MetricsApi:
             kwargs["filter_timespan_h"] = filter_timespan_h
 
         return self._estimate_metrics_output_series_endpoint.call_with_http_info(**kwargs)
+
+    def get_metric_tag_cardinality_details(
+        self,
+        metric_name: str,
+    ) -> MetricTagCardinalitiesResponse:
+        """Get tag key cardinality details.
+
+        Returns the cardinality details of tags for a specific metric.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: MetricTagCardinalitiesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._get_metric_tag_cardinality_details_endpoint.call_with_http_info(**kwargs)
 
     def list_active_metric_configurations(
         self,

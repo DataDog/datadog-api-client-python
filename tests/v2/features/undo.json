@@ -1864,6 +1864,12 @@
       "type": "safe"
     }
   },
+  "GetMetricTagCardinalityDetails": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTagConfiguration": {
     "tag": "Metrics",
     "undo": {

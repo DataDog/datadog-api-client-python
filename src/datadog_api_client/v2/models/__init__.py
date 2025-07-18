@@ -1780,6 +1780,10 @@ from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations_response
     MetricSuggestedTagsAndAggregationsResponse,
 )
 from datadog_api_client.v2.model.metric_suggested_tags_attributes import MetricSuggestedTagsAttributes
+from datadog_api_client.v2.model.metric_tag_cardinalities_meta import MetricTagCardinalitiesMeta
+from datadog_api_client.v2.model.metric_tag_cardinalities_response import MetricTagCardinalitiesResponse
+from datadog_api_client.v2.model.metric_tag_cardinality import MetricTagCardinality
+from datadog_api_client.v2.model.metric_tag_cardinality_attributes import MetricTagCardinalityAttributes
 from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
 from datadog_api_client.v2.model.metric_tag_configuration_attributes import MetricTagConfigurationAttributes
 from datadog_api_client.v2.model.metric_tag_configuration_create_attributes import (
@@ -5024,6 +5028,10 @@ __all__ = [
     "MetricSuggestedTagsAndAggregations",
     "MetricSuggestedTagsAndAggregationsResponse",
     "MetricSuggestedTagsAttributes",
+    "MetricTagCardinalitiesMeta",
+    "MetricTagCardinalitiesResponse",
+    "MetricTagCardinality",
+    "MetricTagCardinalityAttributes",
     "MetricTagConfiguration",
     "MetricTagConfigurationAttributes",
     "MetricTagConfigurationCreateAttributes",
