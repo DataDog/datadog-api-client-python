@@ -15,7 +15,7 @@ class EntityV3(ModelComposed):
         """
         Entity schema v3.
 
-        :param api_version: The schema version of entity type. The field is known as schema-version in the previous version.
+        :param api_version: The version of the schema data that was used to populate this entity's data. This could be via the API, Terraform, or YAML file in a repository. The field is known as schema-version in the previous version.
         :type api_version: EntityV3APIVersion
 
         :param datadog: Datadog product integrations for the service entity.
