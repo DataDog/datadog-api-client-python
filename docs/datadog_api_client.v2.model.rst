@@ -4750,6 +4750,62 @@ datadog\_api\_client.v2.model.database\_monitoring\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.datadog\_api\_key module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_api_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_api\_key\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_api_key_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_api\_key\_update module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_api_key_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_credentials module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_credentials
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_credentials\_update module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_credentials_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_integration module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_integration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_integration\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_integration_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datadog\_integration\_update module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datadog_integration_update
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dataset module
 --------------------------------------------
 
