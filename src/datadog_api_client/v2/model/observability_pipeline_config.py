@@ -102,6 +102,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
         ObservabilityPipelineThrottleProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
+        ObservabilityPipelineDatadogTagsProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
@@ -224,6 +227,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                     ObservabilityPipelineEnrichmentTableProcessor,
                     ObservabilityPipelineReduceProcessor,
                     ObservabilityPipelineThrottleProcessor,
+                    ObservabilityPipelineDatadogTagsProcessor,
                 ]
             ],
             UnsetType,

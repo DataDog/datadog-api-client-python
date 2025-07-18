@@ -11008,6 +11008,34 @@ datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_logs\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_tags\_processor module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_tags\_processor\_action module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_tags\_processor\_mode module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_tags\_processor\_type module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_decoding module
 ----------------------------------------------------------------------
 
