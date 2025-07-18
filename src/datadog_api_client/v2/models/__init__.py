@@ -2065,6 +2065,18 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination
 from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
     ObservabilityPipelineDatadogLogsDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
+    ObservabilityPipelineDatadogTagsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_action import (
+    ObservabilityPipelineDatadogTagsProcessorAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_mode import (
+    ObservabilityPipelineDatadogTagsProcessorMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_type import (
+    ObservabilityPipelineDatadogTagsProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode import (
@@ -5195,6 +5207,10 @@ __all__ = [
     "ObservabilityPipelineDatadogAgentSourceType",
     "ObservabilityPipelineDatadogLogsDestination",
     "ObservabilityPipelineDatadogLogsDestinationType",
+    "ObservabilityPipelineDatadogTagsProcessor",
+    "ObservabilityPipelineDatadogTagsProcessorAction",
+    "ObservabilityPipelineDatadogTagsProcessorMode",
+    "ObservabilityPipelineDatadogTagsProcessorType",
     "ObservabilityPipelineDecoding",
     "ObservabilityPipelineDedupeProcessor",
     "ObservabilityPipelineDedupeProcessorMode",
