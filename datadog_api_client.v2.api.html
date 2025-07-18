@@ -1563,6 +1563,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.metrics_api.MetricsApi.estimate_metrics_output_series" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MetricsApi.estimate_metrics_output_series()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.metrics_api.MetricsApi.get_metric_tag_cardinality_details" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MetricsApi.get_metric_tag_cardinality_details()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.metrics_api.MetricsApi.list_active_metric_configurations" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MetricsApi.list_active_metric_configurations()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.metrics_api.MetricsApi.list_metric_assets" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">MetricsApi.list_metric_assets()</span></code></a>
@@ -7179,6 +7181,20 @@ keys from users with the <code class="docutils literal notranslate"><span class=
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_estimate_response.MetricEstimateResponse" title="datadog_api_client.v2.model.metric_estimate_response.MetricEstimateResponse">MetricEstimateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.metrics_api.MetricsApi.get_metric_tag_cardinality_details">
+<span class="sig-name descname"><span class="pre">get_metric_tag_cardinality_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_tag_cardinalities_response.MetricTagCardinalitiesResponse" title="datadog_api_client.v2.model.metric_tag_cardinalities_response.MetricTagCardinalitiesResponse"><span class="pre">MetricTagCardinalitiesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.metrics_api.MetricsApi.get_metric_tag_cardinality_details" title="Link to this definition">¶</a></dt>
+<dd><p>Get tag key cardinality details.</p>
+<p>Returns the cardinality details of tags for a specific metric.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>metric_name</strong> (<em>str</em>) – The name of the metric.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_tag_cardinalities_response.MetricTagCardinalitiesResponse" title="datadog_api_client.v2.model.metric_tag_cardinalities_response.MetricTagCardinalitiesResponse">MetricTagCardinalitiesResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

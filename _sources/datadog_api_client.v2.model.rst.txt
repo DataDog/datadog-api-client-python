@@ -9881,6 +9881,34 @@ datadog\_api\_client.v2.model.metric\_suggested\_tags\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.metric\_tag\_cardinalities\_meta module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_tag_cardinalities_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_tag\_cardinalities\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_tag_cardinalities_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_tag\_cardinality module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_tag_cardinality
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_tag\_cardinality\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_tag_cardinality_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.metric\_tag\_configuration module
 ---------------------------------------------------------------
 
