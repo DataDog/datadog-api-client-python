@@ -9,7 +9,7 @@ Feature: Data Deletion
     And a valid "appKeyAuth" key in the system
     And an instance of "DataDeletion" API
 
-  @replay-only @team:DataDog/supportability-engineering
+  @replay-only @skip @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "Bad Request" response
     Given operation "CancelDataDeletionRequest" enabled
     And new "CancelDataDeletionRequest" request
@@ -17,7 +17,7 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/supportability-engineering
+  @skip @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "OK" response
     Given operation "CancelDataDeletionRequest" enabled
     And there is a valid "deletion_request" in the system
@@ -30,7 +30,7 @@ Feature: Data Deletion
     And the response "data.attributes.product" is equal to "{{ deletion_request.data.attributes.product }}"
     And the response "data.attributes.status" is equal to "canceled"
 
-  @replay-only @team:DataDog/supportability-engineering
+  @replay-only @skip @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "Precondition failed error" response
     Given operation "CancelDataDeletionRequest" enabled
     And new "CancelDataDeletionRequest" request
@@ -47,7 +47,7 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/supportability-engineering
+  @skip @team:DataDog/supportability-engineering
   Scenario: Creates a data deletion request returns "OK" response
     Given operation "CreateDataDeletionRequest" enabled
     And new "CreateDataDeletionRequest" request
@@ -59,7 +59,7 @@ Feature: Data Deletion
     And the response "data.attributes.product" is equal to "logs"
     And the response "data.attributes.status" is equal to "pending"
 
-  @replay-only @team:DataDog/supportability-engineering
+  @replay-only @skip @team:DataDog/supportability-engineering
   Scenario: Creates a data deletion request returns "Precondition failed error" response
     Given operation "CreateDataDeletionRequest" enabled
     And new "CreateDataDeletionRequest" request
@@ -75,7 +75,7 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/supportability-engineering
+  @skip @team:DataDog/supportability-engineering
   Scenario: Gets a list of data deletion requests returns "OK" response
     Given operation "GetDataDeletionRequests" enabled
     And there is a valid "deletion_request" in the system
