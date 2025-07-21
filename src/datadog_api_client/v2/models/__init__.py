@@ -479,6 +479,7 @@ from datadog_api_client.v2.model.case_empty import CaseEmpty
 from datadog_api_client.v2.model.case_empty_request import CaseEmptyRequest
 from datadog_api_client.v2.model.case_priority import CasePriority
 from datadog_api_client.v2.model.case_relationships import CaseRelationships
+from datadog_api_client.v2.model.case_resource_attributes import CaseResourceAttributes
 from datadog_api_client.v2.model.case_resource_type import CaseResourceType
 from datadog_api_client.v2.model.case_response import CaseResponse
 from datadog_api_client.v2.model.case_sortable_field import CaseSortableField
@@ -486,6 +487,9 @@ from datadog_api_client.v2.model.case_status import CaseStatus
 from datadog_api_client.v2.model.case_trigger import CaseTrigger
 from datadog_api_client.v2.model.case_trigger_wrapper import CaseTriggerWrapper
 from datadog_api_client.v2.model.case_type import CaseType
+from datadog_api_client.v2.model.case_update_attributes import CaseUpdateAttributes
+from datadog_api_client.v2.model.case_update_attributes_attributes import CaseUpdateAttributesAttributes
+from datadog_api_client.v2.model.case_update_attributes_request import CaseUpdateAttributesRequest
 from datadog_api_client.v2.model.case_update_priority import CaseUpdatePriority
 from datadog_api_client.v2.model.case_update_priority_attributes import CaseUpdatePriorityAttributes
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
@@ -4001,6 +4005,7 @@ __all__ = [
     "CaseEmptyRequest",
     "CasePriority",
     "CaseRelationships",
+    "CaseResourceAttributes",
     "CaseResourceType",
     "CaseResponse",
     "CaseSortableField",
@@ -4008,6 +4013,9 @@ __all__ = [
     "CaseTrigger",
     "CaseTriggerWrapper",
     "CaseType",
+    "CaseUpdateAttributes",
+    "CaseUpdateAttributesAttributes",
+    "CaseUpdateAttributesRequest",
     "CaseUpdatePriority",
     "CaseUpdatePriorityAttributes",
     "CaseUpdatePriorityRequest",

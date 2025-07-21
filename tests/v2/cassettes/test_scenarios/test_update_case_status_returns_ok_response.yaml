@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:19.487094769Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","key":"DDFC-195","priority":"P4","public_id":"255","status":"OPEN","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
+      string: '{"data":{"id":"6d09fb31-6357-4f35-b1af-eaa0047f19f0","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:59.449985Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"6d09fb31-6357-4f35-b1af-eaa0047f19f0","key":"DDFC-72332","merge_status":"NOT_MERGED","priority":"P4","public_id":"72392","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -26,11 +26,11 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/d1633979-1770-4e5b-a2d0-2ede9f2a8f43/status
+    uri: https://api.datadoghq.com/api/v2/cases/6d09fb31-6357-4f35-b1af-eaa0047f19f0/status
   response:
     body:
-      string: '{"data":{"id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:19.487095Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"d1633979-1770-4e5b-a2d0-2ede9f2a8f43","key":"DDFC-195","modified_at":"2024-02-14T18:55:19.559421Z","priority":"P4","public_id":"255","status":"IN_PROGRESS","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"modified_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
+      string: '{"data":{"id":"6d09fb31-6357-4f35-b1af-eaa0047f19f0","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:59.449985Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"6d09fb31-6357-4f35-b1af-eaa0047f19f0","key":"DDFC-72332","merge_status":"NOT_MERGED","modified_at":"2025-07-21T13:52:59.835103Z","priority":"P4","public_id":"72392","status":"IN_PROGRESS","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"modified_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
     headers:
       content-type:
       - application/vnd.api+json

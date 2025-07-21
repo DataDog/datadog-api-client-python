@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.case_attributes import CaseAttributes
+    from datadog_api_client.v2.model.case_resource_attributes import CaseResourceAttributes
     from datadog_api_client.v2.model.case_relationships import CaseRelationships
     from datadog_api_client.v2.model.case_resource_type import CaseResourceType
 
@@ -22,12 +22,12 @@ if TYPE_CHECKING:
 class Case(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.case_attributes import CaseAttributes
+        from datadog_api_client.v2.model.case_resource_attributes import CaseResourceAttributes
         from datadog_api_client.v2.model.case_relationships import CaseRelationships
         from datadog_api_client.v2.model.case_resource_type import CaseResourceType
 
         return {
-            "attributes": (CaseAttributes,),
+            "attributes": (CaseResourceAttributes,),
             "id": (str,),
             "relationships": (CaseRelationships,),
             "type": (CaseResourceType,),
@@ -42,7 +42,7 @@ class Case(ModelNormal):
 
     def __init__(
         self_,
-        attributes: CaseAttributes,
+        attributes: CaseResourceAttributes,
         id: str,
         type: CaseResourceType,
         relationships: Union[CaseRelationships, UnsetType] = unset,
@@ -51,8 +51,8 @@ class Case(ModelNormal):
         """
         A case
 
-        :param attributes: Case attributes
-        :type attributes: CaseAttributes
+        :param attributes: Case resource attributes
+        :type attributes: CaseResourceAttributes
 
         :param id: Case's identifier
         :type id: str

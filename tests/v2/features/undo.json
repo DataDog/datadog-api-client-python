@@ -446,6 +446,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateAttributes": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpdatePriority": {
     "tag": "Case Management",
     "undo": {
