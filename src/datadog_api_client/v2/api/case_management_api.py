@@ -24,6 +24,7 @@ from datadog_api_client.v2.model.project_response import ProjectResponse
 from datadog_api_client.v2.model.project_create_request import ProjectCreateRequest
 from datadog_api_client.v2.model.case_empty_request import CaseEmptyRequest
 from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
+from datadog_api_client.v2.model.case_update_attributes_request import CaseUpdateAttributesRequest
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
 
@@ -302,6 +303,32 @@ class CaseManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CaseEmptyRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_attributes_endpoint = _Endpoint(
+            settings={
+                "response_type": (CaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/attributes",
+                "operation_id": "update_attributes",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CaseUpdateAttributesRequest,),
                     "location": "body",
                 },
             },
@@ -643,6 +670,28 @@ class CaseManagementApi:
         kwargs["body"] = body
 
         return self._unassign_case_endpoint.call_with_http_info(**kwargs)
+
+    def update_attributes(
+        self,
+        case_id: str,
+        body: CaseUpdateAttributesRequest,
+    ) -> CaseResponse:
+        """Update case attributes.
+
+        Update case attributes
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param body: Case attributes update payload
+        :type body: CaseUpdateAttributesRequest
+        :rtype: CaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["body"] = body
+
+        return self._update_attributes_endpoint.call_with_http_info(**kwargs)
 
     def update_priority(
         self,

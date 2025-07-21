@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"7c588891-1486-4cf6-992f-f0c3a97f0245","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:18.021909299Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"7c588891-1486-4cf6-992f-f0c3a97f0245","key":"DDFC-188","priority":"P4","public_id":"248","status":"OPEN","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
+      string: '{"data":{"id":"5fd92551-50b8-46e9-899d-5846cf3eab9e","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:50.459513Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"5fd92551-50b8-46e9-899d-5846cf3eab9e","key":"DDFC-72323","merge_status":"NOT_MERGED","priority":"P4","public_id":"72383","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -26,7 +26,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/7c588891-1486-4cf6-992f-f0c3a97f0245/unarchive
+    uri: https://api.datadoghq.com/api/v2/cases/5fd92551-50b8-46e9-899d-5846cf3eab9e/unarchive
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type

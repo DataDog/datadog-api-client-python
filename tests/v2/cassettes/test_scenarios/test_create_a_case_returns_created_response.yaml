@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Create_a_case_returns_CREATED_response-1707936917@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Create_a_case_returns_CREATED_response-1753105967@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"97fb5e7f-cb6a-11ee-8de6-d2393b962484","attributes":{"name":null,"handle":"test-create_a_case_returns_created_response-1707936917@datadoghq.com","created_at":"2024-02-14T18:55:17.186960+00:00","modified_at":"2024-02-14T18:55:17.186960+00:00","email":"test-create_a_case_returns_created_response-1707936917@datadoghq.com","icon":"https://secure.gravatar.com/avatar/04ba872d0c124a11691bb75e2b774d08?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","attributes":{"name":null,"handle":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","created_at":"2025-07-21T13:52:47.902815+00:00","modified_at":"2025-07-21T13:52:47.902815+00:00","email":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","icon":"https://secure.gravatar.com/avatar/600ad64c52b4a9b6a9f2a46d8fa9ec0a?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
 
         '
@@ -23,7 +23,7 @@ interactions:
       message: Created
 - request:
     body: '{"data":{"attributes":{"priority":"NOT_DEFINED","title":"Security breach
-      investigation in 8216c516b64665ce","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"97fb5e7f-cb6a-11ee-8de6-d2393b962484","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+      investigation in 20df485fb3942e6f","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
     headers:
       accept:
       - application/json
@@ -33,8 +33,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"93237ca1-b5ee-4116-9bfc-d94f99cd9629","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:17.301872096Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"93237ca1-b5ee-4116-9bfc-d94f99cd9629","key":"DDFC-186","priority":"NOT_DEFINED","public_id":"246","status":"OPEN","title":"Security
-        breach investigation in 8216c516b64665ce","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"97fb5e7f-cb6a-11ee-8de6-d2393b962484","type":"user"}},"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}},{"id":"97fb5e7f-cb6a-11ee-8de6-d2393b962484","type":"user","attributes":{"email":"test-create_a_case_returns_created_response-1707936917@datadoghq.com","handle":"test-create_a_case_returns_created_response-1707936917@datadoghq.com","name":""}}]}'
+      string: '{"data":{"id":"2275ce7b-781b-4539-b0f3-2cc1b2140565","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:48.320633Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"2275ce7b-781b-4539-b0f3-2cc1b2140565","key":"DDFC-72321","merge_status":"NOT_MERGED","priority":"NOT_DEFINED","public_id":"72381","status":"OPEN","title":"Security
+        breach investigation in 20df485fb3942e6f","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"assignee":{"data":{"id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","type":"user"}},"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}},{"id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","type":"user","attributes":{"active":false,"email":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","handle":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","name":""}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -47,7 +47,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/97fb5e7f-cb6a-11ee-8de6-d2393b962484
+    uri: https://api.datadoghq.com/api/v2/users/fc35a29f-6639-11f0-8bee-a24ce66fd256
   response:
     body:
       string: ''
