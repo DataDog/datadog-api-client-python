@@ -2918,6 +2918,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_case_action import Sec
 from datadog_api_client.v2.model.security_monitoring_rule_case_action_options import (
     SecurityMonitoringRuleCaseActionOptions,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_case_action_options_flagged_ip_type import (
+    SecurityMonitoringRuleCaseActionOptionsFlaggedIPType,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_case_action_type import SecurityMonitoringRuleCaseActionType
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
@@ -5768,6 +5771,7 @@ __all__ = [
     "SecurityMonitoringRuleCase",
     "SecurityMonitoringRuleCaseAction",
     "SecurityMonitoringRuleCaseActionOptions",
+    "SecurityMonitoringRuleCaseActionOptionsFlaggedIPType",
     "SecurityMonitoringRuleCaseActionType",
     "SecurityMonitoringRuleCaseCreate",
     "SecurityMonitoringRuleConvertPayload",
