@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"filter":{"query":"source:python"},"name":"testDecoderProcessor","processors":[{"binary_to_text_encoding":"base16","input_representation":"utf_8","is_enabled":true,"name":"test_decoder","source":"encoded.field","target":"decoded.field","type":"decoder-processor"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines
+  response:
+    body:
+      string: '{"id":"BEg5CcvmSfyIGoMi9PWyTQ","type":"pipeline","name":"testDecoderProcessor","is_enabled":false,"is_read_only":false,"filter":{"query":"source:python"},"processors":[{"name":"test_decoder","is_enabled":true,"source":"encoded.field","target":"decoded.field","binary_to_text_encoding":"base16","input_representation":"utf_8","type":"decoder-processor"}],"tags":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines/BEg5CcvmSfyIGoMi9PWyTQ
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

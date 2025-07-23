@@ -71,6 +71,13 @@ Feature: Logs Pipelines
     Then the response status is 200 OK
 
   @team:DataDog/event-platform-experience
+  Scenario: Create a pipeline with Decoder Processor returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testDecoderProcessor", "processors": [{"type": "decoder-processor", "is_enabled": true, "name": "test_decoder", "source": "encoded.field", "target": "decoded.field", "binary_to_text_encoding": "base16", "input_representation": "utf_8"}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/event-platform-experience
   Scenario: Create a pipeline with Span Id Remapper returns "OK" response
     Given new "CreateLogsPipeline" request
     And body with value {"filter": {"query": "source:python"}, "name": "testPipeline", "processors": [{"type": "span-id-remapper", "is_enabled" : true, "name" : "test_filter", "sources" : [ "dd.span_id"] }], "tags": []}
