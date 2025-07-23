@@ -277,6 +277,14 @@ from datadog_api_client.v1.model.logs_category_processor_type import LogsCategor
 from datadog_api_client.v1.model.logs_daily_limit_reset import LogsDailyLimitReset
 from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
 from datadog_api_client.v1.model.logs_date_remapper_type import LogsDateRemapperType
+from datadog_api_client.v1.model.logs_decoder_processor import LogsDecoderProcessor
+from datadog_api_client.v1.model.logs_decoder_processor_binary_to_text_encoding import (
+    LogsDecoderProcessorBinaryToTextEncoding,
+)
+from datadog_api_client.v1.model.logs_decoder_processor_input_representation import (
+    LogsDecoderProcessorInputRepresentation,
+)
+from datadog_api_client.v1.model.logs_decoder_processor_type import LogsDecoderProcessorType
 from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
 from datadog_api_client.v1.model.logs_exclusion_filter import LogsExclusionFilter
 from datadog_api_client.v1.model.logs_filter import LogsFilter
@@ -1341,6 +1349,10 @@ __all__ = [
     "LogsDailyLimitReset",
     "LogsDateRemapper",
     "LogsDateRemapperType",
+    "LogsDecoderProcessor",
+    "LogsDecoderProcessorBinaryToTextEncoding",
+    "LogsDecoderProcessorInputRepresentation",
+    "LogsDecoderProcessorType",
     "LogsExclusion",
     "LogsExclusionFilter",
     "LogsFilter",
