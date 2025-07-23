@@ -64,6 +64,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination import (
         ObservabilityPipelineAmazonOpenSearchDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_socket_destination import (
+        ObservabilityPipelineSocketDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
     from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
         ObservabilityPipelineParseJSONProcessor,
@@ -102,6 +105,10 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
         ObservabilityPipelineThrottleProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_custom_processor import ObservabilityPipelineCustomProcessor
+    from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
+        ObservabilityPipelineDatadogTagsProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
@@ -135,6 +142,7 @@ if TYPE_CHECKING:
         ObservabilityPipelineHttpClientSource,
     )
     from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
+    from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
 
 
 class ObservabilityPipelineConfig(ModelNormal):
@@ -182,6 +190,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSentinelOneDestination,
                 ObservabilityPipelineOpenSearchDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
+                ObservabilityPipelineSocketDestination,
             ]
         ],
         sources: List[
@@ -202,6 +211,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineGooglePubSubSource,
                 ObservabilityPipelineHttpClientSource,
                 ObservabilityPipelineLogstashSource,
+                ObservabilityPipelineSocketSource,
             ]
         ],
         processors: Union[
@@ -224,6 +234,8 @@ class ObservabilityPipelineConfig(ModelNormal):
                     ObservabilityPipelineEnrichmentTableProcessor,
                     ObservabilityPipelineReduceProcessor,
                     ObservabilityPipelineThrottleProcessor,
+                    ObservabilityPipelineCustomProcessor,
+                    ObservabilityPipelineDatadogTagsProcessor,
                 ]
             ],
             UnsetType,
