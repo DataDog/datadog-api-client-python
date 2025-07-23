@@ -806,6 +806,7 @@ Feature: Synthetics
   @team:DataDog/synthetics-ct
   Scenario: Search Synthetic tests with boolean query parameters
     Given new "SearchTests" request
+    And request contains "text" parameter with value "tag:value"
     And request contains "include_full_config" parameter with value true
     And request contains "search_suites" parameter with value true
     And request contains "facets_only" parameter with value true
