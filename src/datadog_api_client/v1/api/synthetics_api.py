@@ -685,6 +685,11 @@ class SyntheticsApi:
                 "version": "v1",
             },
             params_map={
+                "text": {
+                    "openapi_types": (str,),
+                    "attribute": "text",
+                    "location": "query",
+                },
                 "include_full_config": {
                     "openapi_types": (bool,),
                     "attribute": "include_full_config",
@@ -1431,6 +1436,7 @@ class SyntheticsApi:
     def search_tests(
         self,
         *,
+        text: Union[str, UnsetType] = unset,
         include_full_config: Union[bool, UnsetType] = unset,
         search_suites: Union[bool, UnsetType] = unset,
         facets_only: Union[bool, UnsetType] = unset,
@@ -1442,6 +1448,8 @@ class SyntheticsApi:
 
         Search for Synthetic tests and Test Suites.
 
+        :param text: The search query.
+        :type text: str, optional
         :param include_full_config: If true, include the full configuration for each test in the response.
         :type include_full_config: bool, optional
         :param search_suites: If true, returns suites instead of tests.
@@ -1457,6 +1465,9 @@ class SyntheticsApi:
         :rtype: SyntheticsListTestsResponse
         """
         kwargs: Dict[str, Any] = {}
+        if text is not unset:
+            kwargs["text"] = text
+
         if include_full_config is not unset:
             kwargs["include_full_config"] = include_full_config
 

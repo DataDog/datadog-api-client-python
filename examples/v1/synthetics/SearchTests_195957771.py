@@ -9,6 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.search_tests(
+        text="tag:value",
         include_full_config=True,
         search_suites=True,
         facets_only=True,
