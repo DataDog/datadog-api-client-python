@@ -42,7 +42,7 @@ class MetricMonitorAsset(ModelNormal):
         """
         A monitor object with title.
 
-        :param attributes: Assets related to the object, including title and url.
+        :param attributes: Assets related to the object, including title, url, and tags.
         :type attributes: MetricAssetAttributes, optional
 
         :param id: The related monitor's ID.
