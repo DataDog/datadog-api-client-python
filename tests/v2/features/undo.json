@@ -888,6 +888,12 @@
       "type": "safe"
     }
   },
+  "UpdateDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateDataDeletionRequest": {
     "tag": "Data Deletion",
     "undo": {

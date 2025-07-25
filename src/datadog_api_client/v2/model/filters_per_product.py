@@ -34,8 +34,8 @@ class FiltersPerProduct(ModelNormal):
             per telemetry type.
         :type filters: [str]
 
-        :param product: Name of the product the dataset is for. Possible values are 'apm', 'rum', 'synthetics',
-            'metrics', 'logs', 'sd_repoinfo', 'error_tracking', 'cloud_cost', and 'ml_obs'.
+        :param product: Name of the product the dataset is for. Possible values are 'apm', 'rum',
+            'metrics', 'logs', 'error_tracking', and 'cloud_cost'.
         :type product: str
         """
         super().__init__(kwargs)

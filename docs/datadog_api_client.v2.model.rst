@@ -4841,6 +4841,13 @@ datadog\_api\_client.v2.model.dataset\_response\_single module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dataset\_update\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 

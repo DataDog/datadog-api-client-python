@@ -54,6 +54,30 @@ Feature: Datasets
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/aaa-granular-access
+  Scenario: Edit a dataset returns "Bad Request" response
+    Given new "UpdateDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/aaa-granular-access
+  Scenario: Edit a dataset returns "Not Found" response
+    Given new "UpdateDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/aaa-granular-access
+  Scenario: Edit a dataset returns "OK" response
+    Given new "UpdateDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/aaa-granular-access
   Scenario: Get a single dataset by ID returns "Bad Request" response
     Given new "GetDataset" request
     And request contains "dataset_id" parameter from "REPLACE.ME"
