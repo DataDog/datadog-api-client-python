@@ -10,6 +10,7 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMulti
 from datadog_api_client.v2.model.dataset_response_single import DatasetResponseSingle
 from datadog_api_client.v2.model.dataset_create_request import DatasetCreateRequest
+from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
 
 
 class DatasetsApi:
@@ -106,6 +107,32 @@ class DatasetsApi:
             api_client=api_client,
         )
 
+        self._update_dataset_endpoint = _Endpoint(
+            settings={
+                "response_type": (DatasetResponseSingle,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/datasets/{dataset_id}",
+                "operation_id": "update_dataset",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (DatasetUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_dataset(
         self,
         body: DatasetCreateRequest,
@@ -168,3 +195,25 @@ class DatasetsApi:
         kwargs["dataset_id"] = dataset_id
 
         return self._get_dataset_endpoint.call_with_http_info(**kwargs)
+
+    def update_dataset(
+        self,
+        dataset_id: str,
+        body: DatasetUpdateRequest,
+    ) -> DatasetResponseSingle:
+        """Edit a dataset.
+
+        Edits the dataset associated with the ID.
+
+        :param dataset_id: The ID of a defined dataset.
+        :type dataset_id: str
+        :param body: Dataset payload
+        :type body: DatasetUpdateRequest
+        :rtype: DatasetResponseSingle
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["dataset_id"] = dataset_id
+
+        kwargs["body"] = body
+
+        return self._update_dataset_endpoint.call_with_http_info(**kwargs)

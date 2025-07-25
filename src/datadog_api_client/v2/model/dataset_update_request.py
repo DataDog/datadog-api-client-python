@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.dataset import Dataset
 
 
-class DatasetResponseSingle(ModelNormal):
+class DatasetUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.dataset import Dataset
@@ -30,7 +30,7 @@ class DatasetResponseSingle(ModelNormal):
 
     def __init__(self_, data: Dataset, **kwargs):
         """
-        Response containing a single dataset object.
+        Edit request for a dataset.
 
         :param data: Dataset object.
 
