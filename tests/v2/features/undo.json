@@ -2078,6 +2078,12 @@
       "type": "safe"
     }
   },
+  "GetAggregatedDns": {
+    "tag": "Cloud Network Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateOnCallEscalationPolicy": {
     "tag": "On-Call",
     "undo": {
