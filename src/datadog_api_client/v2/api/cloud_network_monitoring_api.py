@@ -89,7 +89,7 @@ class CloudNetworkMonitoringApi:
         :type _from: int, optional
         :param to: Unix timestamp (number of seconds since epoch) of the end of the query window. If not provided, the end of the query window is the current time. If neither ``from`` nor ``to`` are provided, the query window is ``[now - 15m, now]``.
         :type to: int, optional
-        :param group_by: Comma-separated list of fields to group connections by.
+        :param group_by: Comma-separated list of fields to group connections by. The maximum number of group_by(s) is 10.
         :type group_by: str, optional
         :param tags: Comma-separated list of tags to filter connections by.
         :type tags: str, optional
