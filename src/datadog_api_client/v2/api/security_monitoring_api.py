@@ -1041,6 +1041,11 @@ class SecurityMonitoringApi:
                     "attribute": "filter[resource_type]",
                     "location": "query",
                 },
+                "filter_resource_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[@resource_id]",
+                    "location": "query",
+                },
                 "filter_discovery_timestamp": {
                     "openapi_types": (str,),
                     "attribute": "filter[discovery_timestamp]",
@@ -2613,6 +2618,7 @@ class SecurityMonitoringApi:
         filter_rule_id: Union[str, UnsetType] = unset,
         filter_rule_name: Union[str, UnsetType] = unset,
         filter_resource_type: Union[str, UnsetType] = unset,
+        filter_resource_id: Union[str, UnsetType] = unset,
         filter_discovery_timestamp: Union[str, UnsetType] = unset,
         filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
         filter_status: Union[FindingStatus, UnsetType] = unset,
@@ -2654,6 +2660,7 @@ class SecurityMonitoringApi:
         * ``external_id`` : The resource external ID related to the finding.
         * ``description`` : The description and remediation steps for the finding.
         * ``datadog_link`` : The Datadog relative link for the finding.
+        * ``ip_addresses`` : The list of private IP addresses for the resource related to the finding.
 
         **Response**
 
@@ -2684,6 +2691,8 @@ class SecurityMonitoringApi:
         :type filter_rule_name: str, optional
         :param filter_resource_type: Return only findings for the specified resource type.
         :type filter_resource_type: str, optional
+        :param filter_resource_id: Return only findings for the specified resource id.
+        :type filter_resource_id: str, optional
         :param filter_discovery_timestamp: Return findings that were found on a specified date (Unix ms) or date range (using comparison operators).
         :type filter_discovery_timestamp: str, optional
         :param filter_evaluation: Return only ``pass`` or ``fail`` findings.
@@ -2724,6 +2733,9 @@ class SecurityMonitoringApi:
         if filter_resource_type is not unset:
             kwargs["filter_resource_type"] = filter_resource_type
 
+        if filter_resource_id is not unset:
+            kwargs["filter_resource_id"] = filter_resource_id
+
         if filter_discovery_timestamp is not unset:
             kwargs["filter_discovery_timestamp"] = filter_discovery_timestamp
 
@@ -2753,6 +2765,7 @@ class SecurityMonitoringApi:
         filter_rule_id: Union[str, UnsetType] = unset,
         filter_rule_name: Union[str, UnsetType] = unset,
         filter_resource_type: Union[str, UnsetType] = unset,
+        filter_resource_id: Union[str, UnsetType] = unset,
         filter_discovery_timestamp: Union[str, UnsetType] = unset,
         filter_evaluation: Union[FindingEvaluation, UnsetType] = unset,
         filter_status: Union[FindingStatus, UnsetType] = unset,
@@ -2781,6 +2794,8 @@ class SecurityMonitoringApi:
         :type filter_rule_name: str, optional
         :param filter_resource_type: Return only findings for the specified resource type.
         :type filter_resource_type: str, optional
+        :param filter_resource_id: Return only findings for the specified resource id.
+        :type filter_resource_id: str, optional
         :param filter_discovery_timestamp: Return findings that were found on a specified date (Unix ms) or date range (using comparison operators).
         :type filter_discovery_timestamp: str, optional
         :param filter_evaluation: Return only ``pass`` or ``fail`` findings.
@@ -2822,6 +2837,9 @@ class SecurityMonitoringApi:
 
         if filter_resource_type is not unset:
             kwargs["filter_resource_type"] = filter_resource_type
+
+        if filter_resource_id is not unset:
+            kwargs["filter_resource_id"] = filter_resource_id
 
         if filter_discovery_timestamp is not unset:
             kwargs["filter_discovery_timestamp"] = filter_discovery_timestamp
