@@ -14,16 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.dataset_attributes import DatasetAttributes
+    from datadog_api_client.v2.model.dataset_attributes_response import DatasetAttributesResponse
 
 
-class Dataset(ModelNormal):
+class DatasetResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.dataset_attributes import DatasetAttributes
+        from datadog_api_client.v2.model.dataset_attributes_response import DatasetAttributesResponse
 
         return {
-            "attributes": (DatasetAttributes,),
+            "attributes": (DatasetAttributesResponse,),
             "id": (str,),
             "type": (str,),
         }
@@ -34,11 +34,15 @@ class Dataset(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: DatasetAttributes, type: str, id: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        attributes: Union[DatasetAttributesResponse, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
-        Dataset object.
-
-        **Datasets Constraints**
+        **Datasets Object Constraints**
 
         *
           **Tag Limit per Dataset** :
@@ -58,17 +62,18 @@ class Dataset(ModelNormal):
           * A tag value used in one dataset cannot be reused in another dataset of the same telemetry type.
 
         :param attributes: Dataset metadata and configuration(s).
-        :type attributes: DatasetAttributes
+        :type attributes: DatasetAttributesResponse, optional
 
         :param id: Unique identifier for the dataset.
         :type id: str, optional
 
         :param type: Resource type, always "dataset".
-        :type type: str
+        :type type: str, optional
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         if id is not unset:
             kwargs["id"] = id
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_.attributes = attributes
-        self_.type = type

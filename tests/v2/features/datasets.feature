@@ -11,95 +11,113 @@ Feature: Datasets
     And a valid "appKeyAuth" key in the system
     And an instance of "Datasets" API
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/aaa-granular-access
   Scenario: Create a dataset returns "Bad Request" response
     Given new "CreateDataset" request
-    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    And operation "CreateDataset" enabled
+    And body with value {"test": "bad_request"}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Create a dataset returns "Conflict" response
-    Given new "CreateDataset" request
-    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    Given there is a valid "dataset" in the system
+    And operation "CreateDataset" enabled
+    And new "CreateDataset" request
+    And body with value {"data": {"attributes": {"name": "Security Audit Dataset", "principals": ["role:94172442-be03-11e9-a77a-3b7612558ac1"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "metrics"}]}, "type": "dataset"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Create a dataset returns "OK" response
     Given new "CreateDataset" request
-    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    And operation "CreateDataset" enabled
+    And body with value {"data": {"attributes": {"name": "Security Audit Dataset", "principals": ["role:94172442-be03-11e9-a77a-3b7612558ac1"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "metrics"}]}, "type": "dataset"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Delete a dataset returns "Bad Request" response
     Given new "DeleteDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And operation "DeleteDataset" enabled
+    And request contains "dataset_id" parameter with value "malformed_id"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Delete a dataset returns "No Content" response
-    Given new "DeleteDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
+    Given there is a valid "dataset" in the system
+    And operation "DeleteDataset" enabled
+    And new "DeleteDataset" request
+    And request contains "dataset_id" parameter from "dataset.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Delete a dataset returns "Not Found" response
     Given new "DeleteDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And operation "DeleteDataset" enabled
+    And request contains "dataset_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/aaa-granular-access
   Scenario: Edit a dataset returns "Bad Request" response
     Given new "UpdateDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    And operation "UpdateDataset" enabled
+    And request contains "dataset_id" parameter with value "malformed_id"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @skip @team:DataDog/aaa-granular-access
   Scenario: Edit a dataset returns "Not Found" response
-    Given new "UpdateDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    Given there is a valid "dataset" in the system
+    And operation "UpdateDataset" enabled
+    And new "UpdateDataset" request
+    And request contains "dataset_id" parameter from "dataset.data.id"
+    And body with value {"data": {"attributes": {"name": "Security Audit Dataset", "principals": ["role:94172442-be03-11e9-a77a-3b7612558ac1"], "product_filters": [{"filters": ["@application.id:1234"], "product": "metrics"}]}, "type": "dataset"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Edit a dataset returns "OK" response
-    Given new "UpdateDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"created_at": null, "name": "Security Audit Dataset", "principals": ["role:86245fce-0a4e-11f0-92bd-da7ad0900002"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "logs"}]}, "id": "123e4567-e89b-12d3-a456-426614174000", "type": "dataset"}}
+    Given there is a valid "dataset" in the system
+    And operation "UpdateDataset" enabled
+    And new "UpdateDataset" request
+    And request contains "dataset_id" parameter from "dataset.data.id"
+    And body with value {"data": {"attributes": {"name": "Security Audit Dataset", "principals": ["role:94172442-be03-11e9-a77a-3b7612558ac1"], "product_filters": [{"filters": ["@application.id:1234"], "product": "metrics"}]}, "type": "dataset"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Get a single dataset by ID returns "Bad Request" response
     Given new "GetDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And operation "GetDataset" enabled
+    And request contains "dataset_id" parameter with value "malformed_id"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @skip @team:DataDog/aaa-granular-access
   Scenario: Get a single dataset by ID returns "Not Found" response
-    Given new "GetDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
+    Given operation "GetDataset" enabled
+    And new "GetDataset" request
+    And request contains "dataset_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Get a single dataset by ID returns "OK" response
-    Given new "GetDataset" request
-    And request contains "dataset_id" parameter from "REPLACE.ME"
+    Given there is a valid "dataset" in the system
+    And operation "GetDataset" enabled
+    And new "GetDataset" request
+    And request contains "dataset_id" parameter from "dataset.data.id"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-granular-access
+  @team:DataDog/aaa-granular-access
   Scenario: Get all datasets returns "OK" response
-    Given new "GetAllDatasets" request
+    Given there is a valid "dataset" in the system
+    And operation "GetAllDatasets" enabled
+    And new "GetAllDatasets" request
     When the request is sent
     Then the response status is 200 OK

@@ -13145,31 +13145,33 @@ components:
       required:
       - type
       type: object
-    Dataset:
-      description: "Dataset object.\n\n### Datasets Constraints\n- **Tag Limit per
-        Dataset**:\n  - Each restricted dataset supports a maximum of 10 key:value
-        pairs per product.\n\n- **Tag Key Rules per Telemetry Type**:\n  - Only one
-        tag key or attribute may be used to define access within a single telemetry
-        type.\n  - The same or different tag key may be used across different telemetry
-        types.\n\n- **Tag Value Uniqueness**:\n  - Tag values must be unique within
-        a single dataset.\n  - A tag value used in one dataset cannot be reused in
-        another dataset of the same telemetry type."
+    DatasetAttributesRequest:
+      description: Dataset metadata and configurations.
       properties:
-        attributes:
-          $ref: '#/components/schemas/DatasetAttributes'
-        id:
-          description: Unique identifier for the dataset.
-          example: 123e4567-e89b-12d3-a456-426614174000
+        name:
+          description: Name of the dataset.
+          example: Security Audit Dataset
           type: string
-        type:
-          description: Resource type, always "dataset".
-          example: dataset
-          type: string
+        principals:
+          description: List of access principals, formatted as `principal_type:id`.
+            Principal can be 'team' or 'role'.
+          example:
+          - role:94172442-be03-11e9-a77a-3b7612558ac1
+          items:
+            example: role:94172442-be03-11e9-a77a-3b7612558ac1
+            type: string
+          type: array
+        product_filters:
+          description: List of product-specific filters.
+          items:
+            $ref: '#/components/schemas/FiltersPerProduct'
+          type: array
       required:
-      - type
-      - attributes
+      - name
+      - product_filters
+      - principals
       type: object
-    DatasetAttributes:
+    DatasetAttributesResponse:
       description: Dataset metadata and configuration(s).
       properties:
         created_at:
@@ -13199,18 +13201,55 @@ components:
           items:
             $ref: '#/components/schemas/FiltersPerProduct'
           type: array
-      required:
-      - name
-      - product_filters
-      - principals
       type: object
     DatasetCreateRequest:
       description: Create request for a dataset.
       properties:
         data:
-          $ref: '#/components/schemas/Dataset'
+          $ref: '#/components/schemas/DatasetRequest'
       required:
       - data
+      type: object
+    DatasetRequest:
+      description: "**Datasets Object Constraints**\n- **Tag limit per dataset**:\n
+        \ - Each restricted dataset supports a maximum of 10 key:value pairs per product.\n\n-
+        **Tag key rules per telemetry type**:\n  - Only one tag key or attribute may
+        be used to define access within a single telemetry type.\n  - The same or
+        different tag key may be used across different telemetry types.\n\n- **Tag
+        value uniqueness**:\n  - Tag values must be unique within a single dataset.\n
+        \ - A tag value used in one dataset cannot be reused in another dataset of
+        the same telemetry type."
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DatasetAttributesRequest'
+        type:
+          description: Resource type, always "dataset".
+          example: dataset
+          type: string
+      required:
+      - type
+      - attributes
+      type: object
+    DatasetResponse:
+      description: "**Datasets Object Constraints**\n- **Tag Limit per Dataset**:\n
+        \ - Each restricted dataset supports a maximum of 10 key:value pairs per product.\n\n-
+        **Tag Key Rules per Telemetry Type**:\n  - Only one tag key or attribute may
+        be used to define access within a single telemetry type.\n  - The same or
+        different tag key may be used across different telemetry types.\n\n- **Tag
+        Value Uniqueness**:\n  - Tag values must be unique within a single dataset.\n
+        \ - A tag value used in one dataset cannot be reused in another dataset of
+        the same telemetry type."
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DatasetAttributesResponse'
+        id:
+          description: Unique identifier for the dataset.
+          example: 123e4567-e89b-12d3-a456-426614174000
+          type: string
+        type:
+          description: Resource type, always "dataset".
+          example: dataset
+          type: string
       type: object
     DatasetResponseMulti:
       description: Response containing a list of datasets.
@@ -13218,24 +13257,20 @@ components:
         data:
           description: The list of datasets returned in response.
           items:
-            $ref: '#/components/schemas/Dataset'
+            $ref: '#/components/schemas/DatasetResponse'
           type: array
-      required:
-      - data
       type: object
     DatasetResponseSingle:
       description: Response containing a single dataset object.
       properties:
         data:
-          $ref: '#/components/schemas/Dataset'
-      required:
-      - data
+          $ref: '#/components/schemas/DatasetResponse'
       type: object
     DatasetUpdateRequest:
       description: Edit request for a dataset.
       properties:
         data:
-          $ref: '#/components/schemas/Dataset'
+          $ref: '#/components/schemas/DatasetRequest'
       required:
       - data
       type: object
@@ -49913,6 +49948,9 @@ paths:
         operator: OR
         permissions:
         - user_access_read
+      x-unstable: '**Note: Data Access is in preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).**'
     post:
       description: Create a dataset with the configurations in the request.
       operationId: CreateDataset
@@ -49924,7 +49962,7 @@ paths:
                 attributes:
                   name: Test RUM Dataset
                   principals:
-                  - role:23bacb30-1c59-11f0-a596-da7ad0900002
+                  - role:94172442-be03-11e9-a77a-3b7612558ac1
                   product_filters:
                   - filters:
                     - '@application.id:application_123'
@@ -49962,6 +50000,9 @@ paths:
         operator: OR
         permissions:
         - user_access_manage
+      x-unstable: '**Note: Data Access is in preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).**'
   /api/v2/datasets/{dataset_id}:
     delete:
       description: Deletes the dataset associated with the ID.
@@ -49989,6 +50030,9 @@ paths:
       x-permission:
         operator: OPEN
         permissions: []
+      x-unstable: '**Note: Data Access is in preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).**'
     get:
       description: Retrieves the dataset associated with the ID.
       operationId: GetDataset
@@ -50019,6 +50063,9 @@ paths:
       x-permission:
         operator: OPEN
         permissions: []
+      x-unstable: '**Note: Data Access is in preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).**'
     put:
       description: Edits the dataset associated with the ID.
       operationId: UpdateDataset
@@ -50057,6 +50104,9 @@ paths:
       x-permission:
         operator: OPEN
         permissions: []
+      x-unstable: '**Note: Data Access is in preview. If you have any feedback,
+
+        contact [Datadog support](https://docs.datadoghq.com/help/).**'
   /api/v2/deletion/data/{product}:
     post:
       description: Creates a data deletion request by providing a query and a timeframe
