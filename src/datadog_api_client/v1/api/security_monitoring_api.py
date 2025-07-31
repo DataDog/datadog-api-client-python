@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -128,9 +129,9 @@ class SecurityMonitoringApi:
         signal_id: str,
         body: SignalAssigneeUpdateRequest,
     ) -> SuccessfulSignalUpdateResponse:
-        """Modify the triage assignee of a security signal.
+        """Modify the triage assignee of a security signal. **Deprecated**.
 
-        Modify the triage assignee of a security signal.
+        This endpoint is deprecated - Modify the triage assignee of a security signal.
 
         :param signal_id: The ID of the signal.
         :type signal_id: str
@@ -143,6 +144,7 @@ class SecurityMonitoringApi:
 
         kwargs["body"] = body
 
+        warnings.warn("edit_security_monitoring_signal_assignee is deprecated", DeprecationWarning, stacklevel=2)
         return self._edit_security_monitoring_signal_assignee_endpoint.call_with_http_info(**kwargs)
 
     def edit_security_monitoring_signal_state(
@@ -150,9 +152,9 @@ class SecurityMonitoringApi:
         signal_id: str,
         body: SignalStateUpdateRequest,
     ) -> SuccessfulSignalUpdateResponse:
-        """Change the triage state of a security signal.
+        """Change the triage state of a security signal. **Deprecated**.
 
-        Change the triage state of a security signal.
+        This endpoint is deprecated - Change the triage state of a security signal.
 
         :param signal_id: The ID of the signal.
         :type signal_id: str
@@ -165,4 +167,5 @@ class SecurityMonitoringApi:
 
         kwargs["body"] = body
 
+        warnings.warn("edit_security_monitoring_signal_state is deprecated", DeprecationWarning, stacklevel=2)
         return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
