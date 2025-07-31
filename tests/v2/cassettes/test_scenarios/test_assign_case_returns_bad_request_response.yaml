@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"cf2e3b59-d504-4714-9853-38e4ceddb858","type":"case","attributes":{"attributes":{},"created_at":"2024-02-14T18:55:15.728783622Z","creation_source":"MANUAL","description":"","insights":[],"internal_id":"cf2e3b59-d504-4714-9853-38e4ceddb858","key":"DDFC-184","priority":"P4","public_id":"244","status":"OPEN","title":"My
-        new case","type":"STANDARD"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":""}}]}'
+      string: '{"data":{"id":"510b0121-1477-43c0-8986-78f011016d48","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:43.335245Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"510b0121-1477-43c0-8986-78f011016d48","key":"DDFC-72319","merge_status":"NOT_MERGED","priority":"P4","public_id":"72379","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -26,11 +26,10 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/cf2e3b59-d504-4714-9853-38e4ceddb858/assign
+    uri: https://api.datadoghq.com/api/v2/cases/510b0121-1477-43c0-8986-78f011016d48/assign
   response:
     body:
-      string: '{"errors":[{"code":"invalid_command","title":"error when validating
-        input command: ''assigneeid'' field must be an uuid","meta":{"entity":"assigneeid","rule":"uuid"}}]}'
+      string: '{"errors":[{"status":"400","title":"Bad Request"}]}'
     headers:
       content-type:
       - application/vnd.api+json
