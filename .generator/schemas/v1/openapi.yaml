@@ -31780,7 +31780,9 @@ paths:
         - security_monitoring_signals_write
   /api/v1/security_analytics/signals/{signal_id}/assignee:
     patch:
-      description: Modify the triage assignee of a security signal.
+      deprecated: true
+      description: This endpoint is deprecated - Modify the triage assignee of a security
+        signal.
       operationId: EditSecurityMonitoringSignalAssignee
       parameters:
       - $ref: '#/components/parameters/SignalID'
@@ -31828,7 +31830,9 @@ paths:
         - security_monitoring_signals_write
   /api/v1/security_analytics/signals/{signal_id}/state:
     patch:
-      description: Change the triage state of a security signal.
+      deprecated: true
+      description: This endpoint is deprecated - Change the triage state of a security
+        signal.
       operationId: EditSecurityMonitoringSignalState
       parameters:
       - $ref: '#/components/parameters/SignalID'
