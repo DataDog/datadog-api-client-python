@@ -51,7 +51,7 @@ class Case(ModelNormal):
         """
         A case
 
-        :param attributes: Case attributes
+        :param attributes: Case resource attributes
         :type attributes: CaseAttributes
 
         :param id: Case's identifier

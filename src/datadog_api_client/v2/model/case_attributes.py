@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.case_object_attributes import CaseObjectAttributes
     from datadog_api_client.v2.model.jira_issue import JiraIssue
     from datadog_api_client.v2.model.case_priority import CasePriority
     from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
@@ -26,6 +27,7 @@ if TYPE_CHECKING:
 class CaseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.case_object_attributes import CaseObjectAttributes
         from datadog_api_client.v2.model.jira_issue import JiraIssue
         from datadog_api_client.v2.model.case_priority import CasePriority
         from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
@@ -34,6 +36,7 @@ class CaseAttributes(ModelNormal):
 
         return {
             "archived_at": (datetime, none_type),
+            "attributes": (CaseObjectAttributes,),
             "closed_at": (datetime, none_type),
             "created_at": (datetime,),
             "description": (str,),
@@ -49,6 +52,7 @@ class CaseAttributes(ModelNormal):
 
     attribute_map = {
         "archived_at": "archived_at",
+        "attributes": "attributes",
         "closed_at": "closed_at",
         "created_at": "created_at",
         "description": "description",
@@ -73,6 +77,7 @@ class CaseAttributes(ModelNormal):
     def __init__(
         self_,
         archived_at: Union[datetime, none_type, UnsetType] = unset,
+        attributes: Union[CaseObjectAttributes, UnsetType] = unset,
         closed_at: Union[datetime, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
@@ -87,10 +92,13 @@ class CaseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Case attributes
+        Case resource attributes
 
         :param archived_at: Timestamp of when the case was archived
         :type archived_at: datetime, none_type, optional
+
+        :param attributes: The definition of ``CaseObjectAttributes`` object.
+        :type attributes: CaseObjectAttributes, optional
 
         :param closed_at: Timestamp of when the case was closed
         :type closed_at: datetime, none_type, optional
@@ -127,6 +135,8 @@ class CaseAttributes(ModelNormal):
         """
         if archived_at is not unset:
             kwargs["archived_at"] = archived_at
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         if closed_at is not unset:
             kwargs["closed_at"] = closed_at
         if created_at is not unset:
