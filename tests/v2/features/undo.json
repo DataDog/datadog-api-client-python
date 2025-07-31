@@ -875,7 +875,7 @@
       "operationId": "DeleteDataset",
       "parameters": [
         {
-          "name": "id",
+          "name": "dataset_id",
           "source": "data.id"
         }
       ],

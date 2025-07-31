@@ -3,38 +3,38 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.dataset import Dataset
+    from datadog_api_client.v2.model.dataset_response import DatasetResponse
 
 
 class DatasetResponseSingle(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.dataset import Dataset
+        from datadog_api_client.v2.model.dataset_response import DatasetResponse
 
         return {
-            "data": (Dataset,),
+            "data": (DatasetResponse,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Dataset, **kwargs):
+    def __init__(self_, data: Union[DatasetResponse, UnsetType] = unset, **kwargs):
         """
         Response containing a single dataset object.
 
-        :param data: Dataset object.
-
-            **Datasets Constraints**
+        :param data: **Datasets Object Constraints**
 
             *
               **Tag Limit per Dataset** :
@@ -52,8 +52,8 @@ class DatasetResponseSingle(ModelNormal):
 
               * Tag values must be unique within a single dataset.
               * A tag value used in one dataset cannot be reused in another dataset of the same telemetry type.
-        :type data: Dataset
+        :type data: DatasetResponse, optional
         """
+        if data is not unset:
+            kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_.data = data

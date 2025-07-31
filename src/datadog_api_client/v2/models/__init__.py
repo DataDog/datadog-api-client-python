@@ -1037,9 +1037,11 @@ from datadog_api_client.v2.model.datadog_credentials_update import DatadogCreden
 from datadog_api_client.v2.model.datadog_integration import DatadogIntegration
 from datadog_api_client.v2.model.datadog_integration_type import DatadogIntegrationType
 from datadog_api_client.v2.model.datadog_integration_update import DatadogIntegrationUpdate
-from datadog_api_client.v2.model.dataset import Dataset
-from datadog_api_client.v2.model.dataset_attributes import DatasetAttributes
+from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
+from datadog_api_client.v2.model.dataset_attributes_response import DatasetAttributesResponse
 from datadog_api_client.v2.model.dataset_create_request import DatasetCreateRequest
+from datadog_api_client.v2.model.dataset_request import DatasetRequest
+from datadog_api_client.v2.model.dataset_response import DatasetResponse
 from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMulti
 from datadog_api_client.v2.model.dataset_response_single import DatasetResponseSingle
 from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
@@ -4574,9 +4576,11 @@ __all__ = [
     "DatadogIntegration",
     "DatadogIntegrationType",
     "DatadogIntegrationUpdate",
-    "Dataset",
-    "DatasetAttributes",
+    "DatasetAttributesRequest",
+    "DatasetAttributesResponse",
     "DatasetCreateRequest",
+    "DatasetRequest",
+    "DatasetResponse",
     "DatasetResponseMulti",
     "DatasetResponseSingle",
     "DatasetUpdateRequest",

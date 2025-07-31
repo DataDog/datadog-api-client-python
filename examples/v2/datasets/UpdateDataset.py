@@ -2,38 +2,41 @@
 Edit a dataset returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
-from datadog_api_client.v2.model.dataset import Dataset
-from datadog_api_client.v2.model.dataset_attributes import DatasetAttributes
+from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
+from datadog_api_client.v2.model.dataset_request import DatasetRequest
 from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
 from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
 
+# there is a valid "dataset" in the system
+DATASET_DATA_ID = environ["DATASET_DATA_ID"]
+
 body = DatasetUpdateRequest(
-    data=Dataset(
-        attributes=DatasetAttributes(
-            created_at=None,
+    data=DatasetRequest(
+        attributes=DatasetAttributesRequest(
             name="Security Audit Dataset",
             principals=[
-                "role:86245fce-0a4e-11f0-92bd-da7ad0900002",
+                "role:94172442-be03-11e9-a77a-3b7612558ac1",
             ],
             product_filters=[
                 FiltersPerProduct(
                     filters=[
-                        "@application.id:ABCD",
+                        "@application.id:1234",
                     ],
-                    product="logs",
+                    product="metrics",
                 ),
             ],
         ),
-        id="123e4567-e89b-12d3-a456-426614174000",
         type="dataset",
     ),
 )
 
 configuration = Configuration()
+configuration.unstable_operations["update_dataset"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DatasetsApi(api_client)
-    response = api_instance.update_dataset(dataset_id="dataset_id", body=body)
+    response = api_instance.update_dataset(dataset_id=DATASET_DATA_ID, body=body)
 
     print(response)

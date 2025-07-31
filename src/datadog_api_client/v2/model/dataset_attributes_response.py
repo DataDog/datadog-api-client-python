@@ -20,7 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
 
 
-class DatasetAttributes(ModelNormal):
+class DatasetAttributesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
@@ -43,11 +43,11 @@ class DatasetAttributes(ModelNormal):
 
     def __init__(
         self_,
-        name: str,
-        principals: List[str],
-        product_filters: List[FiltersPerProduct],
         created_at: Union[datetime, none_type, UnsetType] = unset,
         created_by: Union[UUID, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        principals: Union[List[str], UnsetType] = unset,
+        product_filters: Union[List[FiltersPerProduct], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -60,20 +60,22 @@ class DatasetAttributes(ModelNormal):
         :type created_by: UUID, optional
 
         :param name: Name of the dataset.
-        :type name: str
+        :type name: str, optional
 
         :param principals: List of access principals, formatted as ``principal_type:id``. Principal can be 'team' or 'role'.
-        :type principals: [str]
+        :type principals: [str], optional
 
         :param product_filters: List of product-specific filters.
-        :type product_filters: [FiltersPerProduct]
+        :type product_filters: [FiltersPerProduct], optional
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if created_by is not unset:
             kwargs["created_by"] = created_by
+        if name is not unset:
+            kwargs["name"] = name
+        if principals is not unset:
+            kwargs["principals"] = principals
+        if product_filters is not unset:
+            kwargs["product_filters"] = product_filters
         super().__init__(kwargs)
-
-        self_.name = name
-        self_.principals = principals
-        self_.product_filters = product_filters
