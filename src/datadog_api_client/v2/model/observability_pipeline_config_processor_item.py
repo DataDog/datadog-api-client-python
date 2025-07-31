@@ -61,6 +61,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param metrics: Configuration for generating individual metrics.
         :type metrics: [ObservabilityPipelineGeneratedMetric]
 
+        :param group_by: Optional list of fields to group events by. Each group will be sampled independently
+        :type group_by: [str], optional
+
         :param percentage: The percentage of logs to sample.
         :type percentage: float, optional
 
@@ -90,9 +93,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param target: Path where enrichment results should be stored in the log.
         :type target: str
-
-        :param group_by: A list of fields used to group log events for merging.
-        :type group_by: [str]
 
         :param merge_strategies: List of merge strategies defining how values from grouped events should be combined.
         :type merge_strategies: [ObservabilityPipelineReduceProcessorMergeStrategy]
