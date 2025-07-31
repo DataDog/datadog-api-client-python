@@ -5247,17 +5247,17 @@ datadog\_api\_client.v2.model.datadog\_integration\_update module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.dataset module
---------------------------------------------
+datadog\_api\_client.v2.model.dataset\_attributes\_request module
+-----------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.dataset
+.. automodule:: datadog_api_client.v2.model.dataset_attributes_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.dataset\_attributes module
---------------------------------------------------------
+datadog\_api\_client.v2.model.dataset\_attributes\_response module
+------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.dataset_attributes
+.. automodule:: datadog_api_client.v2.model.dataset_attributes_response
    :members:
    :show-inheritance:
 
@@ -5265,6 +5265,20 @@ datadog\_api\_client.v2.model.dataset\_create\_request module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.dataset_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_request module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_response module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_response
    :members:
    :show-inheritance:
 
