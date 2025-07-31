@@ -909,6 +909,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.unassign_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.unassign_case()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_attributes" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_attributes()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_priority" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_priority()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_status" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_status()</span></code></a>
@@ -3621,6 +3623,23 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
 <li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_empty_request.CaseEmptyRequest" title="datadog_api_client.v2.model.case_empty_request.CaseEmptyRequest"><em>CaseEmptyRequest</em></a>) – Unassign case payload</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse">CaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_attributes">
+<span class="sig-name descname"><span class="pre">update_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_update_attributes_request.CaseUpdateAttributesRequest" title="datadog_api_client.v2.model.case_update_attributes_request.CaseUpdateAttributesRequest"><span class="pre">CaseUpdateAttributesRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse"><span class="pre">CaseResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_attributes" title="Link to this definition">¶</a></dt>
+<dd><p>Update case attributes.</p>
+<p>Update case attributes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_update_attributes_request.CaseUpdateAttributesRequest" title="datadog_api_client.v2.model.case_update_attributes_request.CaseUpdateAttributesRequest"><em>CaseUpdateAttributesRequest</em></a>) – Case attributes update payload</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>

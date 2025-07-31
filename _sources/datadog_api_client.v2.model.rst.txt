@@ -2118,6 +2118,13 @@ datadog\_api\_client.v2.model.case\_empty\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.case\_object\_attributes module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_object_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case\_priority module
 ---------------------------------------------------
 
@@ -2178,6 +2185,27 @@ datadog\_api\_client.v2.model.case\_type module
 -----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.case_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_attributes module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_attributes\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_attributes_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_attributes\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_attributes_request
    :members:
    :show-inheritance:
 
