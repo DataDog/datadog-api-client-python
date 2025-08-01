@@ -11,7 +11,7 @@ Feature: Datasets
     And a valid "appKeyAuth" key in the system
     And an instance of "Datasets" API
 
-  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/aaa-granular-access
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/aaa-granular-access
   Scenario: Create a dataset returns "Bad Request" response
     Given new "CreateDataset" request
     And operation "CreateDataset" enabled
@@ -19,7 +19,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Create a dataset returns "Conflict" response
     Given there is a valid "dataset" in the system
     And operation "CreateDataset" enabled
@@ -28,7 +28,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Create a dataset returns "OK" response
     Given new "CreateDataset" request
     And operation "CreateDataset" enabled
@@ -36,7 +36,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Delete a dataset returns "Bad Request" response
     Given new "DeleteDataset" request
     And operation "DeleteDataset" enabled
@@ -44,7 +44,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Delete a dataset returns "No Content" response
     Given there is a valid "dataset" in the system
     And operation "DeleteDataset" enabled
@@ -53,7 +53,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Delete a dataset returns "Not Found" response
     Given new "DeleteDataset" request
     And operation "DeleteDataset" enabled
@@ -61,7 +61,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-typescript @skip-validation @team:DataDog/aaa-granular-access
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/aaa-granular-access
   Scenario: Edit a dataset returns "Bad Request" response
     Given new "UpdateDataset" request
     And operation "UpdateDataset" enabled
@@ -69,7 +69,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/aaa-granular-access
+  @skip @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Edit a dataset returns "Not Found" response
     Given there is a valid "dataset" in the system
     And operation "UpdateDataset" enabled
@@ -79,7 +79,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Edit a dataset returns "OK" response
     Given there is a valid "dataset" in the system
     And operation "UpdateDataset" enabled
@@ -89,7 +89,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Get a single dataset by ID returns "Bad Request" response
     Given new "GetDataset" request
     And operation "GetDataset" enabled
@@ -97,7 +97,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/aaa-granular-access
+  @skip @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Get a single dataset by ID returns "Not Found" response
     Given operation "GetDataset" enabled
     And new "GetDataset" request
@@ -105,7 +105,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Get a single dataset by ID returns "OK" response
     Given there is a valid "dataset" in the system
     And operation "GetDataset" enabled
@@ -114,7 +114,7 @@ Feature: Datasets
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-granular-access
+  @skip-terraform-config @team:DataDog/aaa-granular-access
   Scenario: Get all datasets returns "OK" response
     Given there is a valid "dataset" in the system
     And operation "GetAllDatasets" enabled
