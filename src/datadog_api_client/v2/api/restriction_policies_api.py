@@ -112,7 +112,7 @@ class RestrictionPoliciesApi:
 
         Deletes the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , `on-call-team-routing-rules.
         :type resource_id: str
         :rtype: None
         """
@@ -129,7 +129,7 @@ class RestrictionPoliciesApi:
 
         Retrieves the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , `on-call-team-routing-rules.
         :type resource_id: str
         :rtype: RestrictionPolicyResponse
         """
@@ -172,6 +172,9 @@ class RestrictionPoliciesApi:
         * RUM Applications: ``rum-application``
         * Cross Org Connections: ``cross-org-connection``
         * Spreadsheets: ``spreadsheet``
+        * On-Call Schedules: ``on-call-schedule``
+        * On-Call Escalation Policies: ``on-call-escalation-policy``
+        * On-Call Team Routing Rules: ``on-call-team-routing-rules``
 
         **Supported relations for resources**
 
@@ -218,9 +221,15 @@ class RestrictionPoliciesApi:
              - ``viewer`` , ``editor``
            * - Spreadsheets
              - ``viewer`` , ``editor``
+           * - On-Call Schedules
+             - ``viewer`` , ``overrider`` , ``editor``
+           * - On-Call Escalation Policies
+             - ``viewer`` , ``editor``
+           * - On-Call Team Routing Rules
+             - ``viewer`` , ``editor``
 
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , `on-call-team-routing-rules.
         :type resource_id: str
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
