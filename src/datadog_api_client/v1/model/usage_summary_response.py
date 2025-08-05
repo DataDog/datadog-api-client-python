@@ -105,6 +105,9 @@ class UsageSummaryResponse(ModelNormal):
             "error_tracking_error_events_agg_sum": (int,),
             "error_tracking_events_agg_sum": (int,),
             "error_tracking_rum_error_events_agg_sum": (int,),
+            "event_management_correlation_agg_sum": (int,),
+            "event_management_correlation_correlated_events_agg_sum": (int,),
+            "event_management_correlation_correlated_related_events_agg_sum": (int,),
             "fargate_container_profiler_profiling_fargate_avg_sum": (int,),
             "fargate_container_profiler_profiling_fargate_eks_avg_sum": (int,),
             "fargate_tasks_count_avg_sum": (int,),
@@ -290,6 +293,9 @@ class UsageSummaryResponse(ModelNormal):
         "error_tracking_error_events_agg_sum": "error_tracking_error_events_agg_sum",
         "error_tracking_events_agg_sum": "error_tracking_events_agg_sum",
         "error_tracking_rum_error_events_agg_sum": "error_tracking_rum_error_events_agg_sum",
+        "event_management_correlation_agg_sum": "event_management_correlation_agg_sum",
+        "event_management_correlation_correlated_events_agg_sum": "event_management_correlation_correlated_events_agg_sum",
+        "event_management_correlation_correlated_related_events_agg_sum": "event_management_correlation_correlated_related_events_agg_sum",
         "fargate_container_profiler_profiling_fargate_avg_sum": "fargate_container_profiler_profiling_fargate_avg_sum",
         "fargate_container_profiler_profiling_fargate_eks_avg_sum": "fargate_container_profiler_profiling_fargate_eks_avg_sum",
         "fargate_tasks_count_avg_sum": "fargate_tasks_count_avg_sum",
@@ -476,6 +482,9 @@ class UsageSummaryResponse(ModelNormal):
         error_tracking_error_events_agg_sum: Union[int, UnsetType] = unset,
         error_tracking_events_agg_sum: Union[int, UnsetType] = unset,
         error_tracking_rum_error_events_agg_sum: Union[int, UnsetType] = unset,
+        event_management_correlation_agg_sum: Union[int, UnsetType] = unset,
+        event_management_correlation_correlated_events_agg_sum: Union[int, UnsetType] = unset,
+        event_management_correlation_correlated_related_events_agg_sum: Union[int, UnsetType] = unset,
         fargate_container_profiler_profiling_fargate_avg_sum: Union[int, UnsetType] = unset,
         fargate_container_profiler_profiling_fargate_eks_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg_sum: Union[int, UnsetType] = unset,
@@ -820,6 +829,15 @@ class UsageSummaryResponse(ModelNormal):
 
         :param error_tracking_rum_error_events_agg_sum: Shows the sum of all Error Tracking RUM error events over all hours in the current month for all organizations.
         :type error_tracking_rum_error_events_agg_sum: int, optional
+
+        :param event_management_correlation_agg_sum: Shows the sum of all Event Management correlations over all hours in the current month for all organizations.
+        :type event_management_correlation_agg_sum: int, optional
+
+        :param event_management_correlation_correlated_events_agg_sum: Shows the sum of all Event Management correlated events over all hours in the current month for all organizations.
+        :type event_management_correlation_correlated_events_agg_sum: int, optional
+
+        :param event_management_correlation_correlated_related_events_agg_sum: Shows the sum of all Event Management correlated related events over all hours in the current month for all organizations.
+        :type event_management_correlation_correlated_related_events_agg_sum: int, optional
 
         :param fargate_container_profiler_profiling_fargate_avg_sum: The average number of Profiling Fargate tasks over all hours in the current month for all organizations.
         :type fargate_container_profiler_profiling_fargate_avg_sum: int, optional
@@ -1292,6 +1310,16 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["error_tracking_events_agg_sum"] = error_tracking_events_agg_sum
         if error_tracking_rum_error_events_agg_sum is not unset:
             kwargs["error_tracking_rum_error_events_agg_sum"] = error_tracking_rum_error_events_agg_sum
+        if event_management_correlation_agg_sum is not unset:
+            kwargs["event_management_correlation_agg_sum"] = event_management_correlation_agg_sum
+        if event_management_correlation_correlated_events_agg_sum is not unset:
+            kwargs[
+                "event_management_correlation_correlated_events_agg_sum"
+            ] = event_management_correlation_correlated_events_agg_sum
+        if event_management_correlation_correlated_related_events_agg_sum is not unset:
+            kwargs[
+                "event_management_correlation_correlated_related_events_agg_sum"
+            ] = event_management_correlation_correlated_related_events_agg_sum
         if fargate_container_profiler_profiling_fargate_avg_sum is not unset:
             kwargs[
                 "fargate_container_profiler_profiling_fargate_avg_sum"
