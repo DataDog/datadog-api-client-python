@@ -302,6 +302,7 @@ class Configuration:
                 "v2.validate_existing_monitor_user_template": False,
                 "v2.validate_monitor_user_template": False,
                 "v2.get_aggregated_connections": False,
+                "v2.get_aggregated_dns": False,
                 "v2.create_pipeline": False,
                 "v2.delete_pipeline": False,
                 "v2.get_pipeline": False,
