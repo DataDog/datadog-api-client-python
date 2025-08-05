@@ -1064,6 +1064,7 @@ from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingTyp
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
+from datadog_api_client.v2.model.dns_metric_key import DnsMetricKey
 from datadog_api_client.v2.model.domain_allowlist import DomainAllowlist
 from datadog_api_client.v2.model.domain_allowlist_attributes import DomainAllowlistAttributes
 from datadog_api_client.v2.model.domain_allowlist_request import DomainAllowlistRequest
@@ -3441,6 +3442,18 @@ from datadog_api_client.v2.model.single_aggregated_connection_response_data_attr
 from datadog_api_client.v2.model.single_aggregated_connection_response_data_type import (
     SingleAggregatedConnectionResponseDataType,
 )
+from datadog_api_client.v2.model.single_aggregated_dns_response_array import SingleAggregatedDnsResponseArray
+from datadog_api_client.v2.model.single_aggregated_dns_response_data import SingleAggregatedDnsResponseData
+from datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes import (
+    SingleAggregatedDnsResponseDataAttributes,
+)
+from datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes_group_by_items import (
+    SingleAggregatedDnsResponseDataAttributesGroupByItems,
+)
+from datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes_metrics_items import (
+    SingleAggregatedDnsResponseDataAttributesMetricsItems,
+)
+from datadog_api_client.v2.model.single_aggregated_dns_response_data_type import SingleAggregatedDnsResponseDataType
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
@@ -4603,6 +4616,7 @@ __all__ = [
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
     "DevicesListData",
+    "DnsMetricKey",
     "DomainAllowlist",
     "DomainAllowlistAttributes",
     "DomainAllowlistRequest",
@@ -6334,6 +6348,12 @@ __all__ = [
     "SingleAggregatedConnectionResponseData",
     "SingleAggregatedConnectionResponseDataAttributes",
     "SingleAggregatedConnectionResponseDataType",
+    "SingleAggregatedDnsResponseArray",
+    "SingleAggregatedDnsResponseData",
+    "SingleAggregatedDnsResponseDataAttributes",
+    "SingleAggregatedDnsResponseDataAttributesGroupByItems",
+    "SingleAggregatedDnsResponseDataAttributesMetricsItems",
+    "SingleAggregatedDnsResponseDataType",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",

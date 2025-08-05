@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/network/dns/aggregate?group_by=server_ungrouped%2Cserver_service
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Cannot combine server_ungrouped
+        with other server groupings or network.dns_query"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
