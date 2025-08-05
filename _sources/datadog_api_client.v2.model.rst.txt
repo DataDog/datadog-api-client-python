@@ -5436,6 +5436,13 @@ datadog\_api\_client.v2.model.devices\_list\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dns\_metric\_key module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dns_metric_key
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.domain\_allowlist module
 ------------------------------------------------------
 
@@ -17627,6 +17634,48 @@ datadog\_api\_client.v2.model.single\_aggregated\_connection\_response\_data\_ty
 -----------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.single_aggregated_connection_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_dns\_response\_array module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_dns_response_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_dns\_response\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_dns_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_dns\_response\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_dns\_response\_data\_attributes\_group\_by\_items module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes_group_by_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_dns\_response\_data\_attributes\_metrics\_items module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes_metrics_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.single\_aggregated\_dns\_response\_data\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.single_aggregated_dns_response_data_type
    :members:
    :show-inheritance:
 
