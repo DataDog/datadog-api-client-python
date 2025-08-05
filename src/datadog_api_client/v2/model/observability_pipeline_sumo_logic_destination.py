@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination_encoding import (
         ObservabilityPipelineSumoLogicDestinationEncoding,
     )
@@ -23,11 +24,21 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination_type import (
         ObservabilityPipelineSumoLogicDestinationType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
+    )
 
 
 class ObservabilityPipelineSumoLogicDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination_encoding import (
             ObservabilityPipelineSumoLogicDestinationEncoding,
         )
@@ -39,6 +50,7 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
         )
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineSumoLogicDestinationEncoding,),
             "header_custom_fields": ([ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem],),
             "header_host_name": (str,),
@@ -50,6 +62,7 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "encoding": "encoding",
         "header_custom_fields": "header_custom_fields",
         "header_host_name": "header_host_name",
@@ -65,6 +78,13 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineSumoLogicDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         encoding: Union[ObservabilityPipelineSumoLogicDestinationEncoding, UnsetType] = unset,
         header_custom_fields: Union[
             List[ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem], UnsetType
@@ -76,6 +96,9 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
     ):
         """
         The ``sumo_logic`` destination forwards logs to Sumo Logic.
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param encoding: The output encoding format.
         :type encoding: ObservabilityPipelineSumoLogicDestinationEncoding, optional
@@ -101,6 +124,8 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
         :param type: The destination type. The value should always be ``sumo_logic``.
         :type type: ObservabilityPipelineSumoLogicDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if encoding is not unset:
             kwargs["encoding"] = encoding
         if header_custom_fields is not unset:

@@ -18,12 +18,22 @@ if TYPE_CHECKING:
         ObservabilityPipelineGoogleCloudStorageDestinationAcl,
     )
     from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
     from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_storage_class import (
         ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
     )
     from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_type import (
         ObservabilityPipelineGoogleCloudStorageDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
 
 
@@ -34,6 +44,7 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
             ObservabilityPipelineGoogleCloudStorageDestinationAcl,
         )
         from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
         from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_storage_class import (
             ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
@@ -46,6 +57,7 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
             "acl": (ObservabilityPipelineGoogleCloudStorageDestinationAcl,),
             "auth": (ObservabilityPipelineGcpAuth,),
             "bucket": (str,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "id": (str,),
             "inputs": ([str],),
             "key_prefix": (str,),
@@ -58,6 +70,7 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         "acl": "acl",
         "auth": "auth",
         "bucket": "bucket",
+        "buffer": "buffer",
         "id": "id",
         "inputs": "inputs",
         "key_prefix": "key_prefix",
@@ -75,6 +88,13 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         inputs: List[str],
         storage_class: ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
         type: ObservabilityPipelineGoogleCloudStorageDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         key_prefix: Union[str, UnsetType] = unset,
         metadata: Union[List[ObservabilityPipelineMetadataEntry], UnsetType] = unset,
         **kwargs,
@@ -91,6 +111,9 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
 
         :param bucket: Name of the GCS bucket.
         :type bucket: str
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param id: Unique identifier for the destination component.
         :type id: str
@@ -110,6 +133,8 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         :param type: The destination type. Always ``google_cloud_storage``.
         :type type: ObservabilityPipelineGoogleCloudStorageDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
         if metadata is not unset:
