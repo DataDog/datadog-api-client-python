@@ -45042,6 +45042,7 @@ paths:
     delete:
       description: Delete an existing Action Connection. This API requires a [registered
         application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: DeleteActionConnection
       parameters:
       - $ref: '#/components/parameters/ConnectionId'
@@ -45069,10 +45070,6 @@ paths:
       summary: Delete an existing Action Connection
       tags:
       - Action Connection
-      x-permission:
-        operator: OR
-        permissions:
-        - connection_write
     get:
       description: Get an existing Action Connection. This API requires a [registered
         application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
@@ -46146,6 +46143,7 @@ paths:
     delete:
       description: Delete multiple apps in a single request from a list of app IDs.
         This API requires a [registered application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: DeleteApps
       requestBody:
         content:
@@ -46183,15 +46181,12 @@ paths:
       summary: Delete Multiple Apps
       tags:
       - App Builder
-      x-permission:
-        operator: OR
-        permissions:
-        - apps_write
     get:
       description: List all apps, with optional filters and sorting. This endpoint
         is paginated. Only basic app information such as the app ID, name, and description
         is returned by this endpoint. This API requires a [registered application
         key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: ListApps
       parameters:
       - description: The number of apps to return per page.
@@ -46292,13 +46287,10 @@ paths:
       summary: List Apps
       tags:
       - App Builder
-      x-permission:
-        operator: OR
-        permissions:
-        - apps_run
     post:
       description: Create a new app, returning the app ID. This API requires a [registered
         application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: CreateApp
       requestBody:
         content:
@@ -46330,16 +46322,11 @@ paths:
       summary: Create App
       tags:
       - App Builder
-      x-permission:
-        operator: AND
-        permissions:
-        - apps_write
-        - connections_resolve
-        - workflows_run
   /api/v2/app-builder/apps/{app_id}:
     delete:
       description: Delete a single app. This API requires a [registered application
         key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: DeleteApp
       parameters:
       - description: The ID of the app to delete.
@@ -46386,13 +46373,10 @@ paths:
       summary: Delete App
       tags:
       - App Builder
-      x-permission:
-        operator: OR
-        permissions:
-        - apps_write
     get:
       description: Get the full definition of an app. This API requires a [registered
         application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: GetApp
       parameters:
       - description: The ID of the app to retrieve.
@@ -46448,14 +46432,10 @@ paths:
       summary: Get App
       tags:
       - App Builder
-      x-permission:
-        operator: AND
-        permissions:
-        - apps_run
-        - connections_read
     patch:
       description: Update an existing app. This creates a new version of the app.
         This API requires a [registered application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: UpdateApp
       parameters:
       - description: The ID of the app to update.
@@ -46496,12 +46476,6 @@ paths:
       summary: Update App
       tags:
       - App Builder
-      x-permission:
-        operator: AND
-        permissions:
-        - apps_write
-        - connections_resolve
-        - workflows_run
   /api/v2/app-builder/apps/{app_id}/deployment:
     delete:
       description: Unpublish an app, removing the live version of the app. Unpublishing
@@ -46509,6 +46483,7 @@ paths:
         (`00000000-0000-0000-0000-000000000000`). The app can still be updated and
         published again in the future. This API requires a [registered application
         key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: UnpublishApp
       parameters:
       - description: The ID of the app to unpublish.
@@ -46549,15 +46524,12 @@ paths:
       summary: Unpublish App
       tags:
       - App Builder
-      x-permission:
-        operator: OR
-        permissions:
-        - apps_write
     post:
       description: Publish an app for use by other users. To ensure the app is accessible
         to the correct users, you also need to set a [Restriction Policy](https://docs.datadoghq.com/api/latest/restriction-policies/)
         on the app if a policy does not yet exist. This API requires a [registered
         application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: PublishApp
       parameters:
       - description: The ID of the app to publish.
@@ -46598,10 +46570,6 @@ paths:
       summary: Publish App
       tags:
       - App Builder
-      x-permission:
-        operator: OR
-        permissions:
-        - apps_write
   /api/v2/application_keys:
     get:
       description: List all application keys available for your org
@@ -67426,6 +67394,7 @@ paths:
     post:
       description: Create a new workflow, returning the workflow ID. This API requires
         a [registered application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: CreateWorkflow
       requestBody:
         content:
@@ -67461,14 +67430,11 @@ paths:
       summary: Create a Workflow
       tags:
       - Workflow Automation
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_write
   /api/v2/workflows/{workflow_id}:
     delete:
       description: Delete a workflow by ID. This API requires a [registered application
         key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: DeleteWorkflow
       parameters:
       - $ref: '#/components/parameters/WorkflowId'
@@ -67496,13 +67462,10 @@ paths:
       summary: Delete an existing Workflow
       tags:
       - Workflow Automation
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_write
     get:
       description: Get a workflow by ID. This API requires a [registered application
         key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: GetWorkflow
       parameters:
       - $ref: '#/components/parameters/WorkflowId'
@@ -67540,13 +67503,10 @@ paths:
       summary: Get an existing Workflow
       tags:
       - Workflow Automation
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_read
     patch:
       description: Update a workflow by ID. This API requires a [registered application
         key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: UpdateWorkflow
       parameters:
       - $ref: '#/components/parameters/WorkflowId'
@@ -67590,14 +67550,11 @@ paths:
       summary: Update an existing Workflow
       tags:
       - Workflow Automation
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_write
   /api/v2/workflows/{workflow_id}/instances:
     get:
       description: List all instances of a given workflow. This API requires a [registered
         application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: ListWorkflowInstances
       parameters:
       - $ref: '#/components/parameters/WorkflowId'
@@ -67624,13 +67581,10 @@ paths:
       summary: List workflow instances
       tags:
       - Workflow Automation
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_read
     post:
       description: Execute the given workflow. This API requires a [registered application
         key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: CreateWorkflowInstance
       parameters:
       - $ref: '#/components/parameters/WorkflowId'
@@ -67662,14 +67616,11 @@ paths:
       tags:
       - Workflow Automation
       x-codegen-request-body-name: body
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_run
   /api/v2/workflows/{workflow_id}/instances/{instance_id}:
     get:
       description: Get a specific execution of a given workflow. This API requires
         a [registered application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: GetWorkflowInstance
       parameters:
       - $ref: '#/components/parameters/WorkflowId'
@@ -67697,14 +67648,11 @@ paths:
       summary: Get a workflow instance
       tags:
       - Workflow Automation
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_read
   /api/v2/workflows/{workflow_id}/instances/{instance_id}/cancel:
     put:
       description: Cancels a specific execution of a given workflow. This API requires
         a [registered application key](https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key).
+        Alternatively, you can also configure these permissions [in our UI](https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access).
       operationId: CancelWorkflowInstance
       parameters:
       - $ref: '#/components/parameters/WorkflowId'
@@ -67727,10 +67675,6 @@ paths:
       summary: Cancel a workflow instance
       tags:
       - Workflow Automation
-      x-permission:
-        operator: OR
-        permissions:
-        - workflows_run
 security:
 - apiKeyAuth: []
   appKeyAuth: []
