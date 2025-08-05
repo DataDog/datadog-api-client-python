@@ -2174,6 +2174,13 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source_type im
     ObservabilityPipelineAmazonS3SourceType,
 )
 from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
+from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+from datadog_api_client.v2.model.observability_pipeline_buffer_options_disk_type import (
+    ObservabilityPipelineBufferOptionsDiskType,
+)
+from datadog_api_client.v2.model.observability_pipeline_buffer_options_memory_type import (
+    ObservabilityPipelineBufferOptionsMemoryType,
+)
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
 from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
     ObservabilityPipelineConfigDestinationItem,
@@ -2203,6 +2210,9 @@ from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode im
 )
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_type import (
     ObservabilityPipelineDedupeProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+    ObservabilityPipelineDiskBufferOptions,
 )
 from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
     ObservabilityPipelineElasticsearchDestination,
@@ -2329,6 +2339,12 @@ from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import
 from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
 from datadog_api_client.v2.model.observability_pipeline_logstash_source_type import (
     ObservabilityPipelineLogstashSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+    ObservabilityPipelineMemoryBufferOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+    ObservabilityPipelineMemoryBufferSizeOptions,
 )
 from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
 from datadog_api_client.v2.model.observability_pipeline_metric_value import ObservabilityPipelineMetricValue
@@ -5510,6 +5526,9 @@ __all__ = [
     "ObservabilityPipelineAmazonS3Source",
     "ObservabilityPipelineAmazonS3SourceType",
     "ObservabilityPipelineAwsAuth",
+    "ObservabilityPipelineBufferOptions",
+    "ObservabilityPipelineBufferOptionsDiskType",
+    "ObservabilityPipelineBufferOptionsMemoryType",
     "ObservabilityPipelineConfig",
     "ObservabilityPipelineConfigDestinationItem",
     "ObservabilityPipelineConfigProcessorItem",
@@ -5524,6 +5543,7 @@ __all__ = [
     "ObservabilityPipelineDedupeProcessor",
     "ObservabilityPipelineDedupeProcessorMode",
     "ObservabilityPipelineDedupeProcessorType",
+    "ObservabilityPipelineDiskBufferOptions",
     "ObservabilityPipelineElasticsearchDestination",
     "ObservabilityPipelineElasticsearchDestinationApiVersion",
     "ObservabilityPipelineElasticsearchDestinationType",
@@ -5574,6 +5594,8 @@ __all__ = [
     "ObservabilityPipelineKafkaSourceType",
     "ObservabilityPipelineLogstashSource",
     "ObservabilityPipelineLogstashSourceType",
+    "ObservabilityPipelineMemoryBufferOptions",
+    "ObservabilityPipelineMemoryBufferSizeOptions",
     "ObservabilityPipelineMetadataEntry",
     "ObservabilityPipelineMetricValue",
     "ObservabilityPipelineNewRelicDestination",
