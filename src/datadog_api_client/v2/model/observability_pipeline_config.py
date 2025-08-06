@@ -64,6 +64,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination import (
         ObservabilityPipelineAmazonOpenSearchDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
+        ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
     from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
         ObservabilityPipelineParseJSONProcessor,
@@ -182,6 +185,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSentinelOneDestination,
                 ObservabilityPipelineOpenSearchDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
+                ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
             ]
         ],
         sources: List[

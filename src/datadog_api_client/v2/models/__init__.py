@@ -2182,6 +2182,21 @@ from datadog_api_client.v2.model.observability_pipeline_config_processor_item im
     ObservabilityPipelineConfigProcessorItem,
 )
 from datadog_api_client.v2.model.observability_pipeline_config_source_item import ObservabilityPipelineConfigSourceItem
+from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
+    ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_compression import (
+    ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_compression_algorithm import (
+    ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompressionAlgorithm,
+)
+from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_encoding import (
+    ObservabilityPipelineCrowdStrikeNextGenSiemDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_type import (
+    ObservabilityPipelineCrowdStrikeNextGenSiemDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_data import ObservabilityPipelineData
 from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
 from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
@@ -5514,6 +5529,11 @@ __all__ = [
     "ObservabilityPipelineConfigDestinationItem",
     "ObservabilityPipelineConfigProcessorItem",
     "ObservabilityPipelineConfigSourceItem",
+    "ObservabilityPipelineCrowdStrikeNextGenSiemDestination",
+    "ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression",
+    "ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompressionAlgorithm",
+    "ObservabilityPipelineCrowdStrikeNextGenSiemDestinationEncoding",
+    "ObservabilityPipelineCrowdStrikeNextGenSiemDestinationType",
     "ObservabilityPipelineData",
     "ObservabilityPipelineDataAttributes",
     "ObservabilityPipelineDatadogAgentSource",

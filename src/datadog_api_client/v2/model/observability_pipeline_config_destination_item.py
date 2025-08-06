@@ -108,6 +108,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param log_type: The log type metadata associated with the Chronicle destination.
         :type log_type: str, optional
+
+        :param compression: Compression configuration for log events.
+        :type compression: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression, optional
         """
         super().__init__(kwargs)
 
@@ -161,6 +164,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination import (
             ObservabilityPipelineAmazonOpenSearchDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
+            ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
+        )
 
         return {
             "oneOf": [
@@ -179,5 +185,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineSentinelOneDestination,
                 ObservabilityPipelineOpenSearchDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
+                ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
             ],
         }
