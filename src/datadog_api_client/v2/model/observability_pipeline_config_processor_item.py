@@ -102,6 +102,15 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param window: The time window in seconds over which the threshold applies.
         :type window: float
+
+        :param remaps: Array of VRL remap rules.
+        :type remaps: [ObservabilityPipelineCustomProcessorRemap]
+
+        :param action: The action to take on tags with matching keys.
+        :type action: ObservabilityPipelineDatadogTagsProcessorAction
+
+        :param keys: A list of tag keys.
+        :type keys: [str]
         """
         super().__init__(kwargs)
 
@@ -162,6 +171,12 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
             ObservabilityPipelineThrottleProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_custom_processor import (
+            ObservabilityPipelineCustomProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
+            ObservabilityPipelineDatadogTagsProcessor,
+        )
 
         return {
             "oneOf": [
@@ -181,5 +196,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineEnrichmentTableProcessor,
                 ObservabilityPipelineReduceProcessor,
                 ObservabilityPipelineThrottleProcessor,
+                ObservabilityPipelineCustomProcessor,
+                ObservabilityPipelineDatadogTagsProcessor,
             ],
         }
