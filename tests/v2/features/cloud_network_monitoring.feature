@@ -14,37 +14,32 @@ Feature: Cloud Network Monitoring
 
   @team:Datadog/networks
   Scenario: Get aggregated connections returns "OK" response
-    Given operation "GetAggregatedConnections" enabled
-    And new "GetAggregatedConnections" request
+    Given new "GetAggregatedConnections" request
     When the request is sent
     Then the response status is 200 OK
 
   @team:Datadog/networks
   Scenario: Get all aggregated DNS traffic returns "Bad Request" response
-    Given operation "GetAggregatedDns" enabled
-    And new "GetAggregatedDns" request
+    Given new "GetAggregatedDns" request
     And request contains "group_by" parameter with value "server_ungrouped,server_service"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:Datadog/networks
   Scenario: Get all aggregated DNS traffic returns "OK" response
-    Given operation "GetAggregatedDns" enabled
-    And new "GetAggregatedDns" request
+    Given new "GetAggregatedDns" request
     When the request is sent
     Then the response status is 200 OK
 
   @skip-python @skip-ruby @team:Datadog/networks
   Scenario: Get all aggregated connections returns "Bad Request" response
-    Given operation "GetAggregatedConnections" enabled
-    And new "GetAggregatedConnections" request
+    Given new "GetAggregatedConnections" request
     And request contains "limit" parameter with value 8000
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:Datadog/networks
   Scenario: Get all aggregated connections returns "OK" response
-    Given operation "GetAggregatedConnections" enabled
-    And new "GetAggregatedConnections" request
+    Given new "GetAggregatedConnections" request
     When the request is sent
     Then the response status is 200 OK
