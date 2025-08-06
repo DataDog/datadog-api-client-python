@@ -11883,6 +11883,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_config\_source\_item modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_crowd\_strike\_next\_gen\_siem\_destination module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_crowd\_strike\_next\_gen\_siem\_destination\_compression module
+----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_crowd\_strike\_next\_gen\_siem\_destination\_compression\_algorithm module
+---------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_compression_algorithm
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_crowd\_strike\_next\_gen\_siem\_destination\_encoding module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_crowd\_strike\_next\_gen\_siem\_destination\_type module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_data module
 ------------------------------------------------------------------
 
