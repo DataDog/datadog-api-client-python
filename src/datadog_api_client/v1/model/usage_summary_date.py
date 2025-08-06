@@ -110,6 +110,7 @@ class UsageSummaryDate(ModelNormal):
             "flex_logs_compute_large_avg": (int,),
             "flex_logs_compute_medium_avg": (int,),
             "flex_logs_compute_small_avg": (int,),
+            "flex_logs_compute_xlarge_avg": (int,),
             "flex_logs_compute_xsmall_avg": (int,),
             "flex_logs_starter_avg": (int,),
             "flex_logs_starter_storage_index_avg": (int,),
@@ -287,6 +288,7 @@ class UsageSummaryDate(ModelNormal):
         "flex_logs_compute_large_avg": "flex_logs_compute_large_avg",
         "flex_logs_compute_medium_avg": "flex_logs_compute_medium_avg",
         "flex_logs_compute_small_avg": "flex_logs_compute_small_avg",
+        "flex_logs_compute_xlarge_avg": "flex_logs_compute_xlarge_avg",
         "flex_logs_compute_xsmall_avg": "flex_logs_compute_xsmall_avg",
         "flex_logs_starter_avg": "flex_logs_starter_avg",
         "flex_logs_starter_storage_index_avg": "flex_logs_starter_storage_index_avg",
@@ -465,6 +467,7 @@ class UsageSummaryDate(ModelNormal):
         flex_logs_compute_large_avg: Union[int, UnsetType] = unset,
         flex_logs_compute_medium_avg: Union[int, UnsetType] = unset,
         flex_logs_compute_small_avg: Union[int, UnsetType] = unset,
+        flex_logs_compute_xlarge_avg: Union[int, UnsetType] = unset,
         flex_logs_compute_xsmall_avg: Union[int, UnsetType] = unset,
         flex_logs_starter_avg: Union[int, UnsetType] = unset,
         flex_logs_starter_storage_index_avg: Union[int, UnsetType] = unset,
@@ -815,6 +818,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param flex_logs_compute_small_avg: Shows the average number of Flex Logs Compute Small Instances over all hours in the current date for the given org.
         :type flex_logs_compute_small_avg: int, optional
+
+        :param flex_logs_compute_xlarge_avg: Shows the average number of Flex Logs Compute Extra Large Instances over all hours in the current date for the given org.
+        :type flex_logs_compute_xlarge_avg: int, optional
 
         :param flex_logs_compute_xsmall_avg: Shows the average number of Flex Logs Compute Extra Small Instances over all hours in the current date for the given org.
         :type flex_logs_compute_xsmall_avg: int, optional
@@ -1262,6 +1268,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["flex_logs_compute_medium_avg"] = flex_logs_compute_medium_avg
         if flex_logs_compute_small_avg is not unset:
             kwargs["flex_logs_compute_small_avg"] = flex_logs_compute_small_avg
+        if flex_logs_compute_xlarge_avg is not unset:
+            kwargs["flex_logs_compute_xlarge_avg"] = flex_logs_compute_xlarge_avg
         if flex_logs_compute_xsmall_avg is not unset:
             kwargs["flex_logs_compute_xsmall_avg"] = flex_logs_compute_xsmall_avg
         if flex_logs_starter_avg is not unset:
