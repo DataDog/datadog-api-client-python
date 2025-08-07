@@ -1586,6 +1586,20 @@ datadog\_api\_client.v2.model.aws\_lambda\_forwarder\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_lambda\_forwarder\_config\_log\_source\_config module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_lambda_forwarder_config_log_source_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_log\_source\_tag\_filter module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_log_source_tag_filter
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_logs\_config module
 ------------------------------------------------------
 

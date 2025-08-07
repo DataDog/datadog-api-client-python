@@ -49,6 +49,10 @@ from datadog_api_client.v2.model.aws_integration_iam_permissions_response_data_t
 from datadog_api_client.v2.model.aws_integration_type import AWSIntegrationType
 from datadog_api_client.v2.model.aws_integration_update import AWSIntegrationUpdate
 from datadog_api_client.v2.model.aws_lambda_forwarder_config import AWSLambdaForwarderConfig
+from datadog_api_client.v2.model.aws_lambda_forwarder_config_log_source_config import (
+    AWSLambdaForwarderConfigLogSourceConfig,
+)
+from datadog_api_client.v2.model.aws_log_source_tag_filter import AWSLogSourceTagFilter
 from datadog_api_client.v2.model.aws_logs_config import AWSLogsConfig
 from datadog_api_client.v2.model.aws_logs_services_response import AWSLogsServicesResponse
 from datadog_api_client.v2.model.aws_logs_services_response_attributes import AWSLogsServicesResponseAttributes
@@ -3859,6 +3863,8 @@ __all__ = [
     "AWSIntegrationType",
     "AWSIntegrationUpdate",
     "AWSLambdaForwarderConfig",
+    "AWSLambdaForwarderConfigLogSourceConfig",
+    "AWSLogSourceTagFilter",
     "AWSLogsConfig",
     "AWSLogsServicesResponse",
     "AWSLogsServicesResponseAttributes",
