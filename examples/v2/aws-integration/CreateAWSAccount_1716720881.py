@@ -11,6 +11,10 @@ from datadog_api_client.v2.model.aws_account_partition import AWSAccountPartitio
 from datadog_api_client.v2.model.aws_account_type import AWSAccountType
 from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
 from datadog_api_client.v2.model.aws_lambda_forwarder_config import AWSLambdaForwarderConfig
+from datadog_api_client.v2.model.aws_lambda_forwarder_config_log_source_config import (
+    AWSLambdaForwarderConfigLogSourceConfig,
+)
+from datadog_api_client.v2.model.aws_log_source_tag_filter import AWSLogSourceTagFilter
 from datadog_api_client.v2.model.aws_logs_config import AWSLogsConfig
 from datadog_api_client.v2.model.aws_metrics_config import AWSMetricsConfig
 from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
@@ -33,6 +37,16 @@ body = AWSAccountCreateRequest(
                     lambdas=[
                         "arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder",
                     ],
+                    log_source_config=AWSLambdaForwarderConfigLogSourceConfig(
+                        tag_filters=[
+                            AWSLogSourceTagFilter(
+                                source="s3",
+                                tags=[
+                                    "test:test",
+                                ],
+                            ),
+                        ],
+                    ),
                     sources=[
                         "s3",
                     ],
