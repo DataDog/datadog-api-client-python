@@ -34,7 +34,7 @@ class RelationshipToIncidentUserDefinedFieldData(ModelNormal):
         """
         Relationship to impact object.
 
-        :param id: A unique identifier that represents the responder.
+        :param id: A unique identifier that represents the user defined field.
         :type id: str
 
         :param type: The incident user defined fields type.
