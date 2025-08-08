@@ -3,6 +3,7 @@ from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFilt
 from datadog_api_client.v2.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v2.api.aws_logs_integration_api import AWSLogsIntegrationApi
 from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
+from datadog_api_client.v2.api.actions_datastores_api import ActionsDatastoresApi
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 from datadog_api_client.v2.api.application_security_api import ApplicationSecurityApi
@@ -77,6 +78,7 @@ __all__ = [
     "AWSIntegrationApi",
     "AWSLogsIntegrationApi",
     "ActionConnectionApi",
+    "ActionsDatastoresApi",
     "AgentlessScanningApi",
     "AppBuilderApi",
     "ApplicationSecurityApi",

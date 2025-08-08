@@ -1,0 +1,16 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/221012bd-9acc-4719-8973-b23e5669a25a
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
