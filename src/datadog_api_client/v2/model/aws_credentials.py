@@ -13,21 +13,24 @@ from datadog_api_client.model_utils import (
 class AWSCredentials(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``AWSCredentials`` object.
+        The definition of the ``AWSCredentials`` object.
 
-        :param account_id: AWS account the connection is created for
+        :param account_id: AWS account the connection is created for.
         :type account_id: str
 
-        :param external_id: External ID used to scope which connection can be used to assume the role
+        :param external_id: External ID used to scope which connection can be used to assume the role.
         :type external_id: str, optional
 
-        :param principal_id: AWS account that will assume the role
+        :param generate_new_external_id: Pass true if the `external_id` should be regenerated.
+        :type generate_new_external_id: bool, optional
+
+        :param principal_id: AWS account that will assume the role.
         :type principal_id: str, optional
 
-        :param role: Role to assume
+        :param role: Role to assume.
         :type role: str
 
-        :param type: The definition of `AWSAssumeRoleType` object.
+        :param type: The definition of the `AWSAssumeRole` object.
         :type type: AWSAssumeRoleType
         """
         super().__init__(kwargs)

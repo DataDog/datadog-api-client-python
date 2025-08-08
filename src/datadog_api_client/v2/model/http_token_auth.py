@@ -67,7 +67,7 @@ class HTTPTokenAuth(ModelNormal):
         :param tokens: The ``HTTPTokenAuth`` ``tokens``.
         :type tokens: [HTTPToken], optional
 
-        :param type: The definition of ``HTTPTokenAuthType`` object.
+        :param type: The definition of the ``HTTPTokenAuth`` object.
         :type type: HTTPTokenAuthType
 
         :param url_parameters: The ``HTTPTokenAuth`` ``url_parameters``.

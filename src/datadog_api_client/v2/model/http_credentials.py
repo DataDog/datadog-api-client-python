@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class HTTPCredentials(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``HTTPCredentials`` object.
+        The definition of the ``HTTPCredentials`` object.
 
         :param body: The definition of `HTTPBody` object.
         :type body: HTTPBody, optional
@@ -24,11 +24,23 @@ class HTTPCredentials(ModelComposed):
         :param tokens: The `HTTPTokenAuth` `tokens`.
         :type tokens: [HTTPToken], optional
 
-        :param type: The definition of `HTTPTokenAuthType` object.
+        :param type: The definition of the `HTTPTokenAuth` object.
         :type type: HTTPTokenAuthType
 
         :param url_parameters: The `HTTPTokenAuth` `url_parameters`.
         :type url_parameters: [UrlParam], optional
+
+        :param password: Password used for authentication. Saved in a secret store
+        :type password: str
+
+        :param username: Username used for authentication.
+        :type username: str
+
+        :param certificate: Certificate of authority used to sign the request.
+        :type certificate: str
+
+        :param private_key: Private key used for the MTLS handshake
+        :type private_key: str
         """
         super().__init__(kwargs)
 
@@ -42,9 +54,13 @@ class HTTPCredentials(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.http_token_auth import HTTPTokenAuth
+        from datadog_api_client.v2.model.http_basic_auth import HTTPBasicAuth
+        from datadog_api_client.v2.model.http_mtls_auth import HTTPMtlsAuth
 
         return {
             "oneOf": [
                 HTTPTokenAuth,
+                HTTPBasicAuth,
+                HTTPMtlsAuth,
             ],
         }
