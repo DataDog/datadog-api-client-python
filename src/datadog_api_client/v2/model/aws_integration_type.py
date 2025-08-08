@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class AWSIntegrationType(ModelSimple):
     """
-    The definition of `AWSIntegrationType` object.
+    The definition of the `AWSIntegrationType` object.
 
     :param value: If omitted defaults to "AWS". Must be one of ["AWS"].
     :type value: str

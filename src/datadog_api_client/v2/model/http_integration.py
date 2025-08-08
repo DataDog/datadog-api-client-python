@@ -15,6 +15,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.http_credentials import HTTPCredentials
     from datadog_api_client.v2.model.http_integration_type import HTTPIntegrationType
     from datadog_api_client.v2.model.http_token_auth import HTTPTokenAuth
+    from datadog_api_client.v2.model.http_basic_auth import HTTPBasicAuth
+    from datadog_api_client.v2.model.http_mtls_auth import HTTPMtlsAuth
 
 
 class HTTPIntegration(ModelNormal):
@@ -36,18 +38,22 @@ class HTTPIntegration(ModelNormal):
     }
 
     def __init__(
-        self_, base_url: str, credentials: Union[HTTPCredentials, HTTPTokenAuth], type: HTTPIntegrationType, **kwargs
+        self_,
+        base_url: str,
+        credentials: Union[HTTPCredentials, HTTPTokenAuth, HTTPBasicAuth, HTTPMtlsAuth],
+        type: HTTPIntegrationType,
+        **kwargs,
     ):
         """
-        The definition of ``HTTPIntegration`` object.
+        The definition of the ``HTTPIntegration`` object.
 
-        :param base_url: Base HTTP url for the integration
+        :param base_url: Base HTTP url for the integration.
         :type base_url: str
 
-        :param credentials: The definition of ``HTTPCredentials`` object.
+        :param credentials: The definition of the ``HTTPCredentials`` object.
         :type credentials: HTTPCredentials
 
-        :param type: The definition of ``HTTPIntegrationType`` object.
+        :param type: The definition of the ``HTTPIntegrationType`` object.
         :type type: HTTPIntegrationType
         """
         super().__init__(kwargs)
