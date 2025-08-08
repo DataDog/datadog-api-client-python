@@ -16237,6 +16237,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_validate\_payload modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_scheduling\_options module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_scheduling_options
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_signal module
 -----------------------------------------------------------------
 
