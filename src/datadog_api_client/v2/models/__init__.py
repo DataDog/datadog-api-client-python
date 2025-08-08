@@ -3126,6 +3126,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_type_read import Secur
 from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
+from datadog_api_client.v2.model.security_monitoring_scheduling_options import SecurityMonitoringSchedulingOptions
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import SecurityMonitoringSignalArchiveReason
 from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_attributes import (
@@ -6148,6 +6149,7 @@ __all__ = [
     "SecurityMonitoringRuleTypeTest",
     "SecurityMonitoringRuleUpdatePayload",
     "SecurityMonitoringRuleValidatePayload",
+    "SecurityMonitoringSchedulingOptions",
     "SecurityMonitoringSignal",
     "SecurityMonitoringSignalArchiveReason",
     "SecurityMonitoringSignalAssigneeUpdateAttributes",

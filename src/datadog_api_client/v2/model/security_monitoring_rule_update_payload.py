@@ -8,12 +8,14 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.calculated_field import CalculatedField
     from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
     from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
         CloudConfigurationRuleComplianceSignalOptions,
@@ -22,6 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
     from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
+    from datadog_api_client.v2.model.security_monitoring_scheduling_options import SecurityMonitoringSchedulingOptions
     from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
         SecurityMonitoringThirdPartyRuleCase,
     )
@@ -38,6 +41,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.calculated_field import CalculatedField
         from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
         from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
             CloudConfigurationRuleComplianceSignalOptions,
@@ -46,11 +50,15 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
         from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
         from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
+        from datadog_api_client.v2.model.security_monitoring_scheduling_options import (
+            SecurityMonitoringSchedulingOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
             SecurityMonitoringThirdPartyRuleCase,
         )
 
         return {
+            "calculated_fields": ([CalculatedField],),
             "cases": ([SecurityMonitoringRuleCase],),
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "custom_message": (str,),
@@ -64,12 +72,14 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             "options": (SecurityMonitoringRuleOptions,),
             "queries": ([SecurityMonitoringRuleQuery],),
             "reference_tables": ([SecurityMonitoringReferenceTable],),
+            "scheduling_options": (SecurityMonitoringSchedulingOptions,),
             "tags": ([str],),
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCase],),
             "version": (int,),
         }
 
     attribute_map = {
+        "calculated_fields": "calculatedFields",
         "cases": "cases",
         "compliance_signal_options": "complianceSignalOptions",
         "custom_message": "customMessage",
@@ -83,6 +93,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         "options": "options",
         "queries": "queries",
         "reference_tables": "referenceTables",
+        "scheduling_options": "schedulingOptions",
         "tags": "tags",
         "third_party_cases": "thirdPartyCases",
         "version": "version",
@@ -90,6 +101,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
 
     def __init__(
         self_,
+        calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
         compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         custom_message: Union[str, UnsetType] = unset,
@@ -110,6 +122,7 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             UnsetType,
         ] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
+        scheduling_options: Union[SecurityMonitoringSchedulingOptions, none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCase], UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
@@ -117,6 +130,9 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
     ):
         """
         Update an existing rule.
+
+        :param calculated_fields: Calculated fields. Only allowed for scheduled rules - in other words, when schedulingOptions is also defined.
+        :type calculated_fields: [CalculatedField], optional
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
@@ -157,6 +173,9 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         :param reference_tables: Reference tables for the rule.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional
 
+        :param scheduling_options: Options for scheduled rules. When this field is present, the rule runs based on the schedule. When absent, it runs real-time on ingested logs.
+        :type scheduling_options: SecurityMonitoringSchedulingOptions, none_type, optional
+
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
@@ -166,6 +185,8 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
         :param version: The version of the rule being updated.
         :type version: int, optional
         """
+        if calculated_fields is not unset:
+            kwargs["calculated_fields"] = calculated_fields
         if cases is not unset:
             kwargs["cases"] = cases
         if compliance_signal_options is not unset:
@@ -192,6 +213,8 @@ class SecurityMonitoringRuleUpdatePayload(ModelNormal):
             kwargs["queries"] = queries
         if reference_tables is not unset:
             kwargs["reference_tables"] = reference_tables
+        if scheduling_options is not unset:
+            kwargs["scheduling_options"] = scheduling_options
         if tags is not unset:
             kwargs["tags"] = tags
         if third_party_cases is not unset:
