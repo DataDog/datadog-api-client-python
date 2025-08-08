@@ -1,0 +1,121 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"","name":"Test Datastore","org_access":"contributor","primary_column_name":"id","primary_key_generation_strategy":"none"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"data":{"id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/c159050b-6170-4a5c-b2a3-94e38236f2ef
+  response:
+    body:
+      string: '{"data":{"id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","type":"datastores","attributes":{"created_at":"2025-08-08T20:30:56.657302Z","creator_user_id":1445416,"creator_user_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"","modified_at":"2025-08-08T20:30:56.657302Z","name":"Test
+        Datastore","org_id":321813,"primary_column_name":"id","primary_key_generation_strategy":"none"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"value":{"data":"test-value","id":"test-key"}},"id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/c159050b-6170-4a5c-b2a3-94e38236f2ef/items
+  response:
+    body:
+      string: '{"data":{"id":"81757ad4-b47f-4fd3-809c-74b49b9229e9","type":"items"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/c159050b-6170-4a5c-b2a3-94e38236f2ef/items?itemKey=test-key
+  response:
+    body:
+      string: '{"data":[{"id":"81757ad4-b47f-4fd3-809c-74b49b9229e9","type":"items","attributes":{"created_at":"2025-08-08T20:30:56.985009Z","modified_at":"2025-08-08T20:30:56.985009Z","org_id":321813,"primary_column_name":"id","signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"3Sh//jFQJZ+uhUOwvHL8krXnbOjEFxMZrYnngo8J/AY=\\\",\\\"timestamp\\\":1754685056,\\\"proof\\\":\\\"MGQCMG5l1nADDFjEqDxICPrYrubOkQxF1AKfy+MuhKdU8y2rGuG7XowV///E4DQQgZD1dwIwRuP1ewsr0ynADjaP3PxSe5S/UnnfexZpCSQbvzizBH470vKq8VyH00OogOeAPkri\\\"}\",\"version\":1}","store_id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","value":{"data":"test-value","id":"test-key"}}}],"meta":{"page":{"totalCount":1,"totalFilteredCount":1,"hasMore":false},"schema":{"primary_key":"id","fields":[{"name":"id","type":"STRING"},{"name":"data","type":"JSON"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"id":"81757ad4-b47f-4fd3-809c-74b49b9229e9","item_key":"undefined"},"id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","type":"items"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/c159050b-6170-4a5c-b2a3-94e38236f2ef/items
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: '{"data":{"attributes":{"id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","item_key":"test-key"},"id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","type":"items"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/c159050b-6170-4a5c-b2a3-94e38236f2ef/items
+  response:
+    body:
+      string: '{"data":{"id":"81757ad4-b47f-4fd3-809c-74b49b9229e9","type":"items"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/c159050b-6170-4a5c-b2a3-94e38236f2ef
+  response:
+    body:
+      string: '{"data":{"id":"c159050b-6170-4a5c-b2a3-94e38236f2ef","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

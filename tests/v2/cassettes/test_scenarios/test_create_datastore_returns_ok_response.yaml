@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"datastore-name","primary_column_name":"primaryKey"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"data":{"id":"1790fffb-7ad1-4104-b2fa-be7c7a17873e","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json, */*
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/1790fffb-7ad1-4104-b2fa-be7c7a17873e
+  response:
+    body:
+      string: '{"data":{"id":"1790fffb-7ad1-4104-b2fa-be7c7a17873e","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
