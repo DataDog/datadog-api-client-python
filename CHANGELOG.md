@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## 2.41.0/2025-08-12
+
+### Added
+* Add Flex_Logs_Compute_XL to API Spec [#2750](https://github.com/DataDog/datadog-api-client-python/pull/2750)
+* Support Host and IaC finding types in security notifications  [#2749](https://github.com/DataDog/datadog-api-client-python/pull/2749)
+* New keys for summary public endpoint for Event Management Correlation product [#2745](https://github.com/DataDog/datadog-api-client-python/pull/2745)
+* Add log autosubscription tag filters config to aws v2 API [#2741](https://github.com/DataDog/datadog-api-client-python/pull/2741)
+* Extended List Findings API to expose resource related Private IP Addresses to details [#2733](https://github.com/DataDog/datadog-api-client-python/pull/2733)
+* update metrics.yaml for ListMetricAssets and include Dashboard info [#2728](https://github.com/DataDog/datadog-api-client-python/pull/2728)
+* Support Cloud SIEM scheduled rules in API client [#2725](https://github.com/DataDog/datadog-api-client-python/pull/2725)
+* Uncomment edit dataset block, add dataset limitations into endpoint descriptions  [#2723](https://github.com/DataDog/datadog-api-client-python/pull/2723)
+* Add `text` field in synthetics search endpoint [#2722](https://github.com/DataDog/datadog-api-client-python/pull/2722)
+* Adding all action connection types to public API [#2721](https://github.com/DataDog/datadog-api-client-python/pull/2721)
+* Document case management attributes endpoints [#2719](https://github.com/DataDog/datadog-api-client-python/pull/2719)
+* add AP2 endpoint for On-Call Paging [#2716](https://github.com/DataDog/datadog-api-client-python/pull/2716)
+* Flag IP case action [#2714](https://github.com/DataDog/datadog-api-client-python/pull/2714)
+* Add DNS specs for Cloud Network Monitoring API [#2712](https://github.com/DataDog/datadog-api-client-python/pull/2712)
+* Adding Datadog Connection to Connection API [#2706](https://github.com/DataDog/datadog-api-client-python/pull/2706)
+
+### Fixed
+* Split Dataset into separate request and response objects, mark unstable [#2732](https://github.com/DataDog/datadog-api-client-python/pull/2732)
+* Disables some tests to avoid fails as the service is disabled [#2727](https://github.com/DataDog/datadog-api-client-python/pull/2727)
+* OP make 'support_rules' field in parse_grok processor optional [#2717](https://github.com/DataDog/datadog-api-client-python/pull/2717)
+
+### Deprecated
+* Deprecate signals triage v1 endpoints [#2729](https://github.com/DataDog/datadog-api-client-python/pull/2729)
+
 ## 2.40.0/2025-07-14
 
 ### Added
