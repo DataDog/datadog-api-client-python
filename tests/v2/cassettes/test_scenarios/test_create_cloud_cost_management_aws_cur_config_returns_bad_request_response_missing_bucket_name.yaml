@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"account_id":"123456789123","bucket_region":"us-east-1","report_name":"dd-report-name","report_prefix":"dd-report-prefix"},"type":"aws_cur_config_post_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cost/aws_cur_config
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"attribute
+        \"bucket_name\" is required"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

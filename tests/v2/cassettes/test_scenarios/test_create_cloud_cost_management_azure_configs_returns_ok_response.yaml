@@ -17,14 +17,14 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cost/azure_uc_config
   response:
     body:
-      string: '{"data": {"type": "azure_uc_configs", "id": 1, "attributes": {"configs":
-        [{"id": 1, "storage_container": "test_storage_container", "scope": "test_scope",
+      string: '{"data": {"type": "azure_uc_configs", "id": "1234", "attributes": {"configs":
+        [{"id": "1234", "storage_container": "test_storage_container", "scope": "test_scope",
         "status": "active", "account_id": "1234abcd-1234-abcd-1234-1234abcd1234",
         "client_id": "test_client_id", "storage_account": "test_storage_account",
         "months": 15, "error_messages": [], "dataset_type": "actual", "status_updated_at":
         "2023-12-12T17:11:56.855669", "created_at": "2023-12-12T17:11:56.860554",
         "updated_at": "2023-12-12T17:11:56.860554", "export_name": "test_export_name",
-        "export_path": "test_export_path"}, {"id": 1, "storage_container": "test_storage_container",
+        "export_path": "test_export_path"}, {"id": "1234", "storage_container": "test_storage_container",
         "scope": "test_scope", "status": "active", "account_id": "test_account_id",
         "client_id": "test_client_id", "storage_account": "test_storage_account",
         "months": 15, "error_messages": [], "dataset_type": "amortized", "status_updated_at":

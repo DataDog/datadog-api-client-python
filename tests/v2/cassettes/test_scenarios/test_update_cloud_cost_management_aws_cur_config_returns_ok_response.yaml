@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cost/aws_cur_config/100
   response:
     body:
-      string: '{"data": [{"type": "aws_cur_config", "id": 100, "attributes": {"account_id":
+      string: '{"data": [{"type": "aws_cur_config", "id": "100", "attributes": {"account_id":
         "000000000000", "bucket_name": "test_bucket_name", "bucket_region": "us-east-1",
         "report_prefix": "cur-report-hourly", "report_name": "cur-hourly", "months":
         15, "updated_at": "2023-10-18T08:15:45.265597", "created_at": "2022-07-25T17:19:47.190482",

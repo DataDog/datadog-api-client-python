@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost/custom_costs?page%5Bnumber%5D=1&page%5Bsize%5D=10&sort=-created_at
+  response:
+    body:
+      string: '{"data":[],"meta":{"version":"1.0","total_filtered_count":1}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

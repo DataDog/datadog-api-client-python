@@ -13,14 +13,14 @@ Feature: Cloud Cost Management
     And a valid "appKeyAuth" key in the system
     And an instance of "CloudCostManagement" API
 
-  @generated @skip @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Create Cloud Cost Management AWS CUR config returns "Bad Request" response
     Given new "CreateCostAWSCURConfig" request
     And body with value {"data": {"attributes": {"account_filters": {"excluded_accounts": ["123456789123", "123456789143"], "include_new_accounts": true, "included_accounts": ["123456789123", "123456789143"]}, "account_id": "123456789123", "bucket_name": "dd-cost-bucket", "bucket_region": "us-east-1", "report_name": "dd-report-name", "report_prefix": "dd-report-prefix"}, "type": "aws_cur_config_post_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Create Cloud Cost Management AWS CUR config returns "OK" response
     Given new "CreateCostAWSCURConfig" request
     And body with value {"data": {"attributes": {"account_id": "123456789123", "bucket_name": "dd-cost-bucket", "bucket_region": "us-east-1", "report_name": "dd-report-name", "report_prefix": "dd-report-prefix"}, "type": "aws_cur_config_post_request"}}
@@ -28,14 +28,21 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data.attributes.account_id" is equal to "123456789123"
 
-  @generated @skip @team:Datadog/cloud-cost-management
+  @replay-only @team:Datadog/cloud-cost-management
   Scenario: Create Cloud Cost Management Azure configs returns "Bad Request" response
+    Given new "CreateCostAzureUCConfigs" request
+    And body with value {"data": {"attributes": {"account_id": "1234abcd-1234-abcd-1234-1234abcd1234", "actual_bill_config": {"export_name": "dd-actual-export", "export_path": "dd-export-path", "storage_account": "dd-storage-account", "storage_container": "dd-storage-container"}, "amortized_bill_config": {"export_name": "dd-actual-export", "export_path": "dd-export-path", "storage_account": "dd-storage-account", "storage_container": "dd-storage-container"}, "client_id": "1234abcd-1234-abcd-1234-1234abcd1234", "is_enabled": true, "scope": "invalid-scope-format"}, "type": "azure_uc_config_post_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Create Cloud Cost Management Azure configs returns "Bad Request" response missing required is_enabled field
     Given new "CreateCostAzureUCConfigs" request
     And body with value {"data": {"attributes": {"account_id": "1234abcd-1234-abcd-1234-1234abcd1234", "actual_bill_config": {"export_name": "dd-actual-export", "export_path": "dd-export-path", "storage_account": "dd-storage-account", "storage_container": "dd-storage-container"}, "amortized_bill_config": {"export_name": "dd-actual-export", "export_path": "dd-export-path", "storage_account": "dd-storage-account", "storage_container": "dd-storage-container"}, "client_id": "1234abcd-1234-abcd-1234-1234abcd1234", "scope": "/subscriptions/1234abcd-1234-abcd-1234-1234abcd1234"}, "type": "azure_uc_config_post_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Create Cloud Cost Management Azure configs returns "OK" response
     Given new "CreateCostAzureUCConfigs" request
     And body with value {"data": {"attributes": {"account_id": "1234abcd-1234-abcd-1234-1234abcd1234", "actual_bill_config": {"export_name": "dd-actual-export", "export_path": "dd-export-path", "storage_account": "dd-storage-account", "storage_container": "dd-storage-container"}, "amortized_bill_config": {"export_name": "dd-actual-export", "export_path": "dd-export-path", "storage_account": "dd-storage-account", "storage_container": "dd-storage-container"}, "client_id": "1234abcd-1234-abcd-1234-1234abcd1234", "is_enabled": true, "scope": "subscriptions/1234abcd-1234-abcd-1234-1234abcd1234"}, "type": "azure_uc_config_post_request"}}
@@ -50,7 +57,7 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Create Cloud Cost Management GCP Usage Cost config returns "OK" response
     Given new "CreateCostGCPUsageCostConfig" request
     And body with value {"data": {"attributes": {"billing_account_id": "123456_A123BC_12AB34", "bucket_name": "dd-cost-bucket", "export_dataset_name": "billing", "export_prefix": "datadog_cloud_cost_usage_export", "export_project_name": "dd-cloud-cost-report", "service_account": "dd-ccm-gcp-integration@my-environment.iam.gserviceaccount.com"}, "type": "gcp_uc_config_post_request"}}
@@ -86,17 +93,17 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management AWS CUR config returns "No Content" response
     Given new "DeleteCostAWSCURConfig" request
-    And request contains "cloud_account_id" parameter with value "100"
+    And request contains "cloud_account_id" parameter with value 100
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management AWS CUR config returns "Not Found" response
     Given new "DeleteCostAWSCURConfig" request
-    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    And request contains "cloud_account_id" parameter with value 123456
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -107,54 +114,54 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management Azure config returns "No Content" response
     Given new "DeleteCostAzureUCConfig" request
-    And request contains "cloud_account_id" parameter with value "100"
+    And request contains "cloud_account_id" parameter with value 100
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management Azure config returns "Not Found" response
     Given new "DeleteCostAzureUCConfig" request
-    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    And request contains "cloud_account_id" parameter with value 123456
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/cloud-cost-management
+  @generated @skip @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management GCP Usage Cost config returns "Bad Request" response
     Given new "DeleteCostGCPUsageCostConfig" request
-    And request contains "cloud_account_id" parameter with value "Invalid"
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management GCP Usage Cost config returns "No Content" response
     Given new "DeleteCostGCPUsageCostConfig" request
-    And request contains "cloud_account_id" parameter with value "100"
+    And request contains "cloud_account_id" parameter with value 100
     When the request is sent
     Then the response status is 204 No Content
 
   @team:Datadog/cloud-cost-management
   Scenario: Delete Cloud Cost Management GCP Usage Cost config returns "Not Found" response
     Given new "DeleteCostGCPUsageCostConfig" request
-    And request contains "cloud_account_id" parameter with value "123456"
+    And request contains "cloud_account_id" parameter with value 123456
     When the request is sent
     Then the response status is 404 Not Found
 
   @replay-only @team:Datadog/cloud-cost-management
-  Scenario: Delete Custom Costs File returns "No Content" response
+  Scenario: Delete Custom Costs file returns "No Content" response
     Given new "DeleteCustomCostsFile" request
-    And request contains "file_id" parameter with value "9d055d22-a838-4e9f-bc34-a4f9ab66280c"
+    And request contains "file_id" parameter with value "9ed1a245-8291-44de-9f59-1dc87975ca4a"
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:Datadog/cloud-cost-management
-  Scenario: Delete Custom Costs file returns "No Content" response
+  @team:Datadog/cloud-cost-management
+  Scenario: Delete Custom Costs file returns "Not Found" response
     Given new "DeleteCustomCostsFile" request
-    And request contains "file_id" parameter from "REPLACE.ME"
+    And request contains "file_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
-    Then the response status is 204 No Content
+    Then the response status is 404 Not Found
 
   @team:Datadog/cloud-cost-management
   Scenario: Delete a budget returns "Bad Request" response
@@ -170,21 +177,21 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @replay-only @team:Datadog/cloud-cost-management
-  Scenario: Get Custom Costs File returns "OK" response
+  @team:Datadog/cloud-cost-management
+  Scenario: Get Custom Costs file returns "Not Found" response
     Given new "GetCustomCostsFile" request
-    And request contains "file_id" parameter with value "9d055d22-a838-4e9f-bc34-a4f9ab66280c"
+    And request contains "file_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:Datadog/cloud-cost-management
+  Scenario: Get Custom Costs file returns "OK" response
+    Given new "GetCustomCostsFile" request
+    And request contains "file_id" parameter with value "9ed1a245-8291-44de-9f59-1dc87975ca4a"
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "data.json"
     And the response "data.attributes.content[0].ChargeDescription" is equal to "my_description"
-
-  @generated @skip @team:Datadog/cloud-cost-management
-  Scenario: Get Custom Costs file returns "OK" response
-    Given new "GetCustomCostsFile" request
-    And request contains "file_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
 
   @generated @skip @team:Datadog/cloud-cost-management
   Scenario: Get a budget returns "Bad Request" response
@@ -207,14 +214,14 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: List Cloud Cost Management AWS CUR configs returns "OK" response
     Given new "ListCostAWSCURConfigs" request
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.bucket_name" is equal to "test_bucket_name"
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: List Cloud Cost Management Azure configs returns "OK" response
     Given new "ListCostAzureUCConfigs" request
     When the request is sent
@@ -226,17 +233,30 @@ Feature: Cloud Cost Management
     Given new "ListCostGCPUsageCostConfigs" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" is equal to []
 
-  @replay-only @team:Datadog/cloud-cost-management
-  Scenario: List Custom Costs Files returns "OK" response
+  @team:Datadog/cloud-cost-management
+  Scenario: List Custom Costs files returns "Bad Request" response
+    Given new "ListCustomCostsFiles" request
+    And request contains "filter[status]" parameter with value "not_a_real_filter"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:Datadog/cloud-cost-management
+  Scenario: List Custom Costs files returns "OK" response
     Given new "ListCustomCostsFiles" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "meta.version" is equal to "1.0"
     And the response "data[0].attributes.name" is equal to "data.json"
 
-  @generated @skip @team:Datadog/cloud-cost-management
-  Scenario: List Custom Costs files returns "OK" response
+  @team:Datadog/cloud-cost-management
+  Scenario: List Custom Costs files with pagination parameters returns "OK" response
     Given new "ListCustomCostsFiles" request
+    And request contains "page[number]" parameter with value 1
+    And request contains "page[size]" parameter with value 10
+    And request contains "sort" parameter with value "-created_at"
     When the request is sent
     Then the response status is 200 OK
 
@@ -246,10 +266,10 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management AWS CUR config returns "OK" response
     Given new "UpdateCostAWSCURConfig" request
-    And request contains "cloud_account_id" parameter with value "100"
+    And request contains "cloud_account_id" parameter with value 100
     And body with value {"data": {"attributes": {"is_enabled": true}, "type": "aws_cur_config_patch_request"}}
     When the request is sent
     Then the response status is 200 OK
@@ -263,19 +283,19 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management Azure config returns "OK" response
     Given new "UpdateCostAzureUCConfigs" request
-    And request contains "cloud_account_id" parameter with value "100"
+    And request contains "cloud_account_id" parameter with value 100
     And body with value {"data": {"attributes": {"is_enabled": true}, "type": "azure_uc_config_patch_request"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "azure_uc_configs"
 
-  @team:Datadog/cloud-cost-management
+  @generated @skip @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management GCP Usage Cost config returns "Bad Request" response
     Given new "UpdateCostGCPUsageCostConfig" request
-    And request contains "cloud_account_id" parameter with value "InvalidValue"
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"is_enabled": true}, "type": "gcp_uc_config_patch_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -283,31 +303,39 @@ Feature: Cloud Cost Management
   @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management GCP Usage Cost config returns "Not Found" response
     Given new "UpdateCostGCPUsageCostConfig" request
-    And request contains "cloud_account_id" parameter with value "12345678"
+    And request contains "cloud_account_id" parameter with value 12345678
     And body with value {"data": {"attributes": {"is_enabled": true}, "type": "gcp_uc_config_patch_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/cloud-cost-management
+  @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management GCP Usage Cost config returns "OK" response
     Given new "UpdateCostGCPUsageCostConfig" request
-    And request contains "cloud_account_id" parameter with value "100"
+    And request contains "cloud_account_id" parameter with value 100
     And body with value {"data": {"attributes": {"is_enabled": true}, "type": "gcp_uc_config_patch_request"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
 
-  @replay-only @team:Datadog/cloud-cost-management
-  Scenario: Upload Custom Costs File returns "Accepted" response
+  @team:Datadog/cloud-cost-management
+  Scenario: Upload Custom Costs file returns "Accepted" response
     Given new "UploadCustomCostsFile" request
     And body with value [{ "ProviderName": "my_provider", "ChargePeriodStart": "2023-05-06", "ChargePeriodEnd": "2023-06-06","ChargeDescription": "my_description","BilledCost": 250,"BillingCurrency": "USD","Tags": {"key": "value"}}]
     When the request is sent
     Then the response status is 202 Accepted
     And the response "data.attributes.name" is equal to "data.json"
+    And the response "data.type" is equal to "cost_metadata"
 
-  @generated @skip @team:Datadog/cloud-cost-management
-  Scenario: Upload Custom Costs file returns "Accepted" response
+  @team:Datadog/cloud-cost-management
+  Scenario: Upload Custom Costs file returns "Bad Request" response
     Given new "UploadCustomCostsFile" request
     And body with value [{"BilledCost": 100.5, "BillingCurrency": "USD", "ChargeDescription": "Monthly usage charge for my service", "ChargePeriodEnd": "2023-02-28", "ChargePeriodStart": "2023-02-01"}]
     When the request is sent
-    Then the response status is 202 Accepted
+    Then the response status is 400 Bad Request
+
+  @team:Datadog/cloud-cost-management
+  Scenario: Upload Custom Costs file returns "Bad Request" response, empty file
+    Given new "UploadCustomCostsFile" request
+    And body with value []
+    When the request is sent
+    Then the response status is 400 Bad Request

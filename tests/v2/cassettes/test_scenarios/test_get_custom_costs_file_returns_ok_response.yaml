@@ -5,11 +5,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/cost/custom_costs/9d055d22-a838-4e9f-bc34-a4f9ab66280c
+    uri: https://api.datadoghq.com/api/v2/cost/custom_costs/1234abcd-1234-abcd-1234-1234abcd1234
   response:
     body:
-      string: '{"data":{"id":"9d055d22-a838-4e9f-bc34-a4f9ab66280c","type":"cost_metadata","attributes":{"billed_cost":250,"billing_currency":"USD","charge_period":{"start":1683331200000,"end":1686009600000},"content":[{"BilledCost":250,"BillingCurrency":"USD","ChargeDescription":"my_description","Tags":{"key":"value"},"ProviderName":"my_provider","ChargePeriodStart":"2023-05-06","ChargePeriodEnd":"2023-06-06"}],"name":"data.json","provider_names":["my_provider"],"status":"ACTIVE","uploaded_at":1721322924169,"uploaded_by":{"name":"Julien
-        Hemery","icon":"https://secure.gravatar.com/avatar/f12684c6ebe1bdd70c36789c5270aac0?d=retro\u0026s=48","email":"julien.hemery@datadoghq.com"}}},"meta":{"version":"1.0"}}'
+      string: '{"data":{"id":"1234abcd-1234-abcd-1234-1234abcd1234","type":"cost_metadata","attributes":{"billed_cost":250,"billing_currency":"USD","charge_period":{"start":1683331200000,"end":1686009600000},"content":[{"BilledCost":250,"BillingCurrency":"USD","ChargeDescription":"my_description","Tags":{"key":"value"},"ProviderName":"my_provider","ChargePeriodStart":"2023-05-06","ChargePeriodEnd":"2023-06-06"}],"name":"data.json","provider_names":["my_provider"],"status":"PROCESSING","uploaded_at":1754684414611,"uploaded_by":{"name":"frog","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?d=retro\u0026s=48","email":"frog@datadoghq.com"}}},"meta":{"version":"1.0"}}'
     headers:
       content-type:
       - application/vnd.api+json

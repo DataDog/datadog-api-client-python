@@ -1,13 +1,11 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"is_enabled":true},"type":"gcp_uc_config_patch_request"}}'
+    body: null
     headers:
       accept:
-      - application/json
-      content-type:
-      - application/json
-    method: PATCH
-    uri: https://api.datadoghq.com/api/v2/cost/gcp_uc_config/InvalidValue
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cost/aws_cur_config/invalid
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Invalid Parameter","detail":"invalid

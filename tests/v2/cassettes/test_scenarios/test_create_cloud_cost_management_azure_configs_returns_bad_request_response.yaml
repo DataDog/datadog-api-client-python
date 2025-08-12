@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"account_id":"1234abcd-1234-abcd-1234-1234abcd1234","actual_bill_config":{"export_name":"dd-actual-export","export_path":"dd-export-path","storage_account":"dd-storage-account","storage_container":"dd-storage-container"},"amortized_bill_config":{"export_name":"dd-actual-export","export_path":"dd-export-path","storage_account":"dd-storage-account","storage_container":"dd-storage-container"},"client_id":"1234abcd-1234-abcd-1234-1234abcd1234","scope":"/subscriptions/1234abcd-1234-abcd-1234-1234abcd1234"},"type":"azure_uc_config_post_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cost/azure_uc_config
+  response:
+    body:
+      string: '{"errors":[{"title":"Validation Error","detail":"[key=DUPLICATE_SETUP]
+        You can not setup multiple exports with the same export name in the same container
+        path. This will cause Azure to overwrite them. A cost export with storage_account
+        ''dd-storage-account'', storage_container ''dd-storage-container'', storage_directory
+        ''dd-export-path'' and export_name ''dd-actual-export'' already exists."},{"title":"Validation
+        Error","detail":"[key=MISSING_AZURE_INTEGRATION] Could not find any valid
+        integrations for tenant ''1234abcd-1234-abcd-1234-1234abcd1234'' and app registration
+        ''1234abcd-1234-abcd-1234-1234abcd1234''. Please check the Azure Integrations
+        UI."}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

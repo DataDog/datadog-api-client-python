@@ -5,13 +5,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/cost/custom_costs/9d055d22-a838-4e9f-bc34-a4f9ab66280c
+    uri: https://api.datadoghq.com/api/v2/cost/custom_costs/1234abcd-1234-abcd-1234-1234abcd1234
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - application/vnd.api+json
+    headers: {}
     status:
       code: 204
       message: No Content

@@ -9,7 +9,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = CloudCostManagementApi(api_client)
     response = api_instance.get_custom_costs_file(
-        file_id="file_id",
+        file_id="9ed1a245-8291-44de-9f59-1dc87975ca4a",
     )
 
     print(response)
