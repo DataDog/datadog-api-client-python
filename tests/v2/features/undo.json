@@ -452,6 +452,12 @@
       "type": "idempotent"
     }
   },
+  "CommentCase": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdatePriority": {
     "tag": "Case Management",
     "undo": {

@@ -2258,6 +2258,27 @@ datadog\_api\_client.v2.model.case\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.case\_comment module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_comment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_comment\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_comment_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_comment\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_comment_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case\_create module
 -------------------------------------------------
 
@@ -18880,6 +18901,83 @@ datadog\_api\_client.v2.model.time\_restrictions module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.time_restrictions
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author\_user module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author\_user\_content module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author_user_content
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author\_user\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author_user_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_content module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_content
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_content\_comment module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_content_comment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_resource module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_resource\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_response module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_response
    :members:
    :show-inheritance:
 

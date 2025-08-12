@@ -499,6 +499,9 @@ from datadog_api_client.v2.model.case_assign import CaseAssign
 from datadog_api_client.v2.model.case_assign_attributes import CaseAssignAttributes
 from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
 from datadog_api_client.v2.model.case_attributes import CaseAttributes
+from datadog_api_client.v2.model.case_comment import CaseComment
+from datadog_api_client.v2.model.case_comment_attributes import CaseCommentAttributes
+from datadog_api_client.v2.model.case_comment_request import CaseCommentRequest
 from datadog_api_client.v2.model.case_create import CaseCreate
 from datadog_api_client.v2.model.case_create_attributes import CaseCreateAttributes
 from datadog_api_client.v2.model.case_create_relationships import CaseCreateRelationships
@@ -3642,6 +3645,17 @@ from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
 from datadog_api_client.v2.model.time_restriction import TimeRestriction
 from datadog_api_client.v2.model.time_restrictions import TimeRestrictions
+from datadog_api_client.v2.model.timeline_cell import TimelineCell
+from datadog_api_client.v2.model.timeline_cell_author import TimelineCellAuthor
+from datadog_api_client.v2.model.timeline_cell_author_user import TimelineCellAuthorUser
+from datadog_api_client.v2.model.timeline_cell_author_user_content import TimelineCellAuthorUserContent
+from datadog_api_client.v2.model.timeline_cell_author_user_type import TimelineCellAuthorUserType
+from datadog_api_client.v2.model.timeline_cell_content import TimelineCellContent
+from datadog_api_client.v2.model.timeline_cell_content_comment import TimelineCellContentComment
+from datadog_api_client.v2.model.timeline_cell_resource import TimelineCellResource
+from datadog_api_client.v2.model.timeline_cell_resource_type import TimelineCellResourceType
+from datadog_api_client.v2.model.timeline_cell_type import TimelineCellType
+from datadog_api_client.v2.model.timeline_response import TimelineResponse
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
@@ -4218,6 +4232,9 @@ __all__ = [
     "CaseAssignAttributes",
     "CaseAssignRequest",
     "CaseAttributes",
+    "CaseComment",
+    "CaseCommentAttributes",
+    "CaseCommentRequest",
     "CaseCreate",
     "CaseCreateAttributes",
     "CaseCreateRelationships",
@@ -6525,6 +6542,17 @@ __all__ = [
     "TeamsResponseMetaPagination",
     "TimeRestriction",
     "TimeRestrictions",
+    "TimelineCell",
+    "TimelineCellAuthor",
+    "TimelineCellAuthorUser",
+    "TimelineCellAuthorUserContent",
+    "TimelineCellAuthorUserType",
+    "TimelineCellContent",
+    "TimelineCellContentComment",
+    "TimelineCellResource",
+    "TimelineCellResourceType",
+    "TimelineCellType",
+    "TimelineResponse",
     "TimeseriesFormulaQueryRequest",
     "TimeseriesFormulaQueryResponse",
     "TimeseriesFormulaRequest",

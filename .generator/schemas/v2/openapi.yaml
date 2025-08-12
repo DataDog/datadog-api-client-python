@@ -7280,6 +7280,35 @@ components:
         type:
           $ref: '#/components/schemas/CaseType'
       type: object
+    CaseComment:
+      description: Case comment
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CaseCommentAttributes'
+        type:
+          $ref: '#/components/schemas/CaseResourceType'
+      required:
+      - attributes
+      - type
+      type: object
+    CaseCommentAttributes:
+      description: Case comment attributes
+      properties:
+        comment:
+          description: The `CaseCommentAttributes` `message`.
+          example: This is my comment !
+          type: string
+      required:
+      - comment
+      type: object
+    CaseCommentRequest:
+      description: Case comment request
+      properties:
+        data:
+          $ref: '#/components/schemas/CaseComment'
+      required:
+      - data
+      type: object
     CaseCreate:
       description: Case creation data
       properties:
@@ -42538,6 +42567,120 @@ components:
       - time_zone
       - restrictions
       type: object
+    TimelineCell:
+      description: timeline cell
+      properties:
+        author:
+          $ref: '#/components/schemas/TimelineCellAuthor'
+        cell_content:
+          $ref: '#/components/schemas/TimelineCellContent'
+        created_at:
+          description: Timestamp of when the cell was created
+          format: date-time
+          readOnly: true
+          type: string
+        deleted_at:
+          description: Timestamp of when the cell was deleted
+          format: date-time
+          readOnly: true
+          type: string
+        modified_at:
+          description: Timestamp of when the cell was last modified
+          format: date-time
+          readOnly: true
+          type: string
+        type:
+          $ref: '#/components/schemas/TimelineCellType'
+      type: object
+    TimelineCellAuthor:
+      description: author of the timeline cell
+      oneOf:
+      - $ref: '#/components/schemas/TimelineCellAuthorUser'
+    TimelineCellAuthorUser:
+      description: timeline cell user author
+      properties:
+        content:
+          $ref: '#/components/schemas/TimelineCellAuthorUserContent'
+        type:
+          $ref: '#/components/schemas/TimelineCellAuthorUserType'
+      type: object
+    TimelineCellAuthorUserContent:
+      description: user author content.
+      properties:
+        email:
+          description: user email
+          type: string
+        handle:
+          description: user handle
+          type: string
+        id:
+          description: user UUID
+          type: string
+        name:
+          description: user name
+          type: string
+      type: object
+    TimelineCellAuthorUserType:
+      description: user author type.
+      enum:
+      - USER
+      example: USER
+      type: string
+      x-enum-varnames:
+      - USER
+    TimelineCellContent:
+      description: timeline cell content
+      oneOf:
+      - $ref: '#/components/schemas/TimelineCellContentComment'
+    TimelineCellContentComment:
+      description: comment content
+      properties:
+        message:
+          description: comment message
+          type: string
+      type: object
+    TimelineCellResource:
+      description: Timeline cell JSON:API resource
+      properties:
+        attributes:
+          $ref: '#/components/schemas/TimelineCell'
+        id:
+          description: Timeline cell's identifier
+          example: aeadc05e-98a8-11ec-ac2c-da7ad0900001
+          type: string
+        type:
+          $ref: '#/components/schemas/TimelineCellResourceType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    TimelineCellResourceType:
+      default: timeline_cell
+      description: Timeline cell JSON:API resource type
+      enum:
+      - timeline_cell
+      example: timeline_cell
+      type: string
+      x-enum-varnames:
+      - TIMELINE_CELL
+    TimelineCellType:
+      description: Timeline cell content type
+      enum:
+      - COMMENT
+      example: COMMENT
+      type: string
+      x-enum-varnames:
+      - COMMENT
+    TimelineResponse:
+      description: Timeline response
+      properties:
+        data:
+          description: The `TimelineResponse` `data`.
+          items:
+            $ref: '#/components/schemas/TimelineCellResource'
+          type: array
+      type: object
     TimeseriesFormulaQueryRequest:
       description: A request wrapper around a single timeseries query to be executed.
       properties:
@@ -47568,6 +47711,39 @@ paths:
       - AuthZ:
         - cases_write
       summary: Update case attributes
+      tags:
+      - Case Management
+  /api/v2/cases/{case_id}/comment:
+    post:
+      description: Comment case
+      operationId: CommentCase
+      parameters:
+      - $ref: '#/components/parameters/CaseIDPathParameter'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CaseCommentRequest'
+        description: Case comment payload
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimelineResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '401':
+          $ref: '#/components/responses/UnauthorizedResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Comment case
       tags:
       - Case Management
   /api/v2/cases/{case_id}/priority:
