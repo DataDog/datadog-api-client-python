@@ -55856,8 +55856,9 @@ paths:
       tags:
       - Metrics
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - metrics_read
   /api/v2/metrics/{metric_name}/tag-cardinalities:
     get:
       description: Returns the cardinality details of tags for a specific metric.
@@ -56149,8 +56150,9 @@ paths:
       tags:
       - Metrics
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - metrics_read
   /api/v2/monitor/notification_rule:
     get:
       description: Returns a list of all monitor notification rules.
