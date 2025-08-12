@@ -25,6 +25,8 @@ from datadog_api_client.v2.model.project_create_request import ProjectCreateRequ
 from datadog_api_client.v2.model.case_empty_request import CaseEmptyRequest
 from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
 from datadog_api_client.v2.model.case_update_attributes_request import CaseUpdateAttributesRequest
+from datadog_api_client.v2.model.timeline_response import TimelineResponse
+from datadog_api_client.v2.model.case_comment_request import CaseCommentRequest
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
 
@@ -84,6 +86,32 @@ class CaseManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CaseAssignRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._comment_case_endpoint = _Endpoint(
+            settings={
+                "response_type": (TimelineResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cases/{case_id}/comment",
+                "operation_id": "comment_case",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CaseCommentRequest,),
                     "location": "body",
                 },
             },
@@ -431,6 +459,28 @@ class CaseManagementApi:
         kwargs["body"] = body
 
         return self._assign_case_endpoint.call_with_http_info(**kwargs)
+
+    def comment_case(
+        self,
+        case_id: str,
+        body: CaseCommentRequest,
+    ) -> TimelineResponse:
+        """Comment case.
+
+        Comment case
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param body: Case comment payload
+        :type body: CaseCommentRequest
+        :rtype: TimelineResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["body"] = body
+
+        return self._comment_case_endpoint.call_with_http_info(**kwargs)
 
     def create_case(
         self,

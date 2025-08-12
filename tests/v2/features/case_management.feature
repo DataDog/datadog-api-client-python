@@ -65,6 +65,32 @@ Feature: Case Management
     Then the response status is 200 OK
 
   @team:DataDog/case-management
+  Scenario: Comment case returns "Bad Request" response
+    Given new "CommentCase" request
+    And there is a valid "case" in the system
+    And request contains "case_id" parameter from "case.id"
+    And body with value {"data": {"attributes": {"comment": ""}, "type": "case"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/case-management
+  Scenario: Comment case returns "Not Found" response
+    Given new "CommentCase" request
+    And request contains "case_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
+    And body with value {"data": {"attributes": {"comment": "Hello world !"}, "type": "case"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/case-management
+  Scenario: Comment case returns "OK" response
+    Given new "CommentCase" request
+    And there is a valid "case" in the system
+    And request contains "case_id" parameter from "case.id"
+    And body with value {"data": {"attributes": {"comment": "Hello World !"}, "type": "case"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/case-management
   Scenario: Create a case returns "Bad Request" response
     Given new "CreateCase" request
     And body with value {"data": {"attributes": {"priority": "NOT_DEFINED", "title": "Security breach investigation", "type": "STANDARD"}, "relationships": {"assignee": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "userx"}}, "project": {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}}, "type": "case"}}
