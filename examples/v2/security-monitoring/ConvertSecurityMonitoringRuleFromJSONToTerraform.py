@@ -22,7 +22,7 @@ from datadog_api_client.v2.model.security_monitoring_standard_rule_payload impor
 from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
 
 body = SecurityMonitoringStandardRulePayload(
-    name="Example-Security-Monitoring",
+    name="_49768568946de993",
     queries=[
         SecurityMonitoringStandardRuleQuery(
             query="@test:true",
