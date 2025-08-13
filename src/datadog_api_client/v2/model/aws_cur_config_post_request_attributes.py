@@ -33,7 +33,6 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
             "account_id": (str,),
             "bucket_name": (str,),
             "bucket_region": (str,),
-            "is_enabled": (bool,),
             "months": (int,),
             "report_name": (str,),
             "report_prefix": (str,),
@@ -44,7 +43,6 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
         "account_id": "account_id",
         "bucket_name": "bucket_name",
         "bucket_region": "bucket_region",
-        "is_enabled": "is_enabled",
         "months": "months",
         "report_name": "report_name",
         "report_prefix": "report_prefix",
@@ -58,7 +56,6 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
         report_prefix: str,
         account_filters: Union[AccountFilteringConfig, UnsetType] = unset,
         bucket_region: Union[str, UnsetType] = unset,
-        is_enabled: Union[bool, UnsetType] = unset,
         months: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -77,9 +74,6 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
         :param bucket_region: The region the bucket is located in.
         :type bucket_region: str, optional
 
-        :param is_enabled: Whether or not the Cloud Cost Management account is enabled.
-        :type is_enabled: bool, optional
-
         :param months: The month of the report.
         :type months: int, optional
 
@@ -93,8 +87,6 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
             kwargs["account_filters"] = account_filters
         if bucket_region is not unset:
             kwargs["bucket_region"] = bucket_region
-        if is_enabled is not unset:
-            kwargs["is_enabled"] = is_enabled
         if months is not unset:
             kwargs["months"] = months
         super().__init__(kwargs)

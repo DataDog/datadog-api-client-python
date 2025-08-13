@@ -9,5 +9,5 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = CloudCostManagementApi(api_client)
     api_instance.delete_cost_gcp_usage_cost_config(
-        cloud_account_id="100",
+        cloud_account_id=100,
     )

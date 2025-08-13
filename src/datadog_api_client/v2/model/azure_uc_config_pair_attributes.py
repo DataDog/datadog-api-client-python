@@ -24,7 +24,7 @@ class AzureUCConfigPairAttributes(ModelNormal):
 
         return {
             "configs": ([AzureUCConfig],),
-            "id": (int,),
+            "id": (str,),
         }
 
     attribute_map = {
@@ -32,7 +32,7 @@ class AzureUCConfigPairAttributes(ModelNormal):
         "id": "id",
     }
 
-    def __init__(self_, configs: List[AzureUCConfig], id: Union[int, UnsetType] = unset, **kwargs):
+    def __init__(self_, configs: List[AzureUCConfig], id: Union[str, UnsetType] = unset, **kwargs):
         """
         Attributes for Azure config pair.
 
@@ -40,7 +40,7 @@ class AzureUCConfigPairAttributes(ModelNormal):
         :type configs: [AzureUCConfig]
 
         :param id: The ID of the Azure config pair.
-        :type id: int, optional
+        :type id: str, optional
         """
         if id is not unset:
             kwargs["id"] = id

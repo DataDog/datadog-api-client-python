@@ -26,7 +26,7 @@ class AzureUCConfigPair(ModelNormal):
 
         return {
             "attributes": (AzureUCConfigPairAttributes,),
-            "id": (int,),
+            "id": (str,),
             "type": (AzureUCConfigPairType,),
         }
 
@@ -40,7 +40,7 @@ class AzureUCConfigPair(ModelNormal):
         self_,
         attributes: AzureUCConfigPairAttributes,
         type: AzureUCConfigPairType,
-        id: Union[int, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -50,7 +50,7 @@ class AzureUCConfigPair(ModelNormal):
         :type attributes: AzureUCConfigPairAttributes
 
         :param id: The ID of Cloud Cost Management account.
-        :type id: int, optional
+        :type id: str, optional
 
         :param type: Type of Azure config pair.
         :type type: AzureUCConfigPairType

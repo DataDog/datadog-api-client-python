@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost/custom_costs?filter%5Bstatus%5D=invalid_file_status
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"unknown
+        status, got invalid_file_status"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
