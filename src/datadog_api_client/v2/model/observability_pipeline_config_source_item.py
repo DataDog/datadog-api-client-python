@@ -64,6 +64,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param scrape_timeout_secs: The timeout (in seconds) for each scrape request.
         :type scrape_timeout_secs: int, optional
+
+        :param framing: Framing method configuration for the socket source.
+        :type framing: ObservabilityPipelineSocketSourceFraming
         """
         super().__init__(kwargs)
 
@@ -115,6 +118,7 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_logstash_source import (
             ObservabilityPipelineLogstashSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
 
         return {
             "oneOf": [
@@ -133,5 +137,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
                 ObservabilityPipelineGooglePubSubSource,
                 ObservabilityPipelineHttpClientSource,
                 ObservabilityPipelineLogstashSource,
+                ObservabilityPipelineSocketSource,
             ],
         }
