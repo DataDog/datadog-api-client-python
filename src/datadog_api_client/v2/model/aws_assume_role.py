@@ -29,6 +29,7 @@ class AWSAssumeRole(ModelNormal):
         return {
             "account_id": (str,),
             "external_id": (str,),
+            "generate_new_external_id": (bool,),
             "principal_id": (str,),
             "role": (str,),
             "type": (AWSAssumeRoleType,),
@@ -37,6 +38,7 @@ class AWSAssumeRole(ModelNormal):
     attribute_map = {
         "account_id": "account_id",
         "external_id": "external_id",
+        "generate_new_external_id": "generate_new_external_id",
         "principal_id": "principal_id",
         "role": "role",
         "type": "type",
@@ -52,29 +54,35 @@ class AWSAssumeRole(ModelNormal):
         role: str,
         type: AWSAssumeRoleType,
         external_id: Union[str, UnsetType] = unset,
+        generate_new_external_id: Union[bool, UnsetType] = unset,
         principal_id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``AWSAssumeRole`` object.
+        The definition of the ``AWSAssumeRole`` object.
 
-        :param account_id: AWS account the connection is created for
+        :param account_id: AWS account the connection is created for.
         :type account_id: str
 
-        :param external_id: External ID used to scope which connection can be used to assume the role
+        :param external_id: External ID used to scope which connection can be used to assume the role.
         :type external_id: str, optional
 
-        :param principal_id: AWS account that will assume the role
+        :param generate_new_external_id: Pass true if the ``external_id`` should be regenerated.
+        :type generate_new_external_id: bool, optional
+
+        :param principal_id: AWS account that will assume the role.
         :type principal_id: str, optional
 
-        :param role: Role to assume
+        :param role: Role to assume.
         :type role: str
 
-        :param type: The definition of ``AWSAssumeRoleType`` object.
+        :param type: The definition of the ``AWSAssumeRole`` object.
         :type type: AWSAssumeRoleType
         """
         if external_id is not unset:
             kwargs["external_id"] = external_id
+        if generate_new_external_id is not unset:
+            kwargs["generate_new_external_id"] = generate_new_external_id
         if principal_id is not unset:
             kwargs["principal_id"] = principal_id
         super().__init__(kwargs)

@@ -15,13 +15,13 @@ class ActionConnectionIntegrationUpdate(ModelComposed):
         """
         The definition of ``ActionConnectionIntegrationUpdate`` object.
 
-        :param credentials: The definition of `AWSCredentialsUpdate` object.
+        :param credentials: The definition of the `AWSCredentialsUpdate` object.
         :type credentials: AWSCredentialsUpdate, optional
 
-        :param type: The definition of `AWSIntegrationType` object.
+        :param type: The definition of the `AWSIntegrationType` object.
         :type type: AWSIntegrationType
 
-        :param base_url: Base HTTP url for the integration
+        :param base_url: Base HTTP url for the integration.
         :type base_url: str, optional
         """
         super().__init__(kwargs)

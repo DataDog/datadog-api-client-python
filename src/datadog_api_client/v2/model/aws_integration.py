@@ -35,12 +35,12 @@ class AWSIntegration(ModelNormal):
 
     def __init__(self_, credentials: Union[AWSCredentials, AWSAssumeRole], type: AWSIntegrationType, **kwargs):
         """
-        The definition of ``AWSIntegration`` object.
+        The definition of the ``AWSIntegration`` object.
 
-        :param credentials: The definition of ``AWSCredentials`` object.
+        :param credentials: The definition of the ``AWSCredentials`` object.
         :type credentials: AWSCredentials
 
-        :param type: The definition of ``AWSIntegrationType`` object.
+        :param type: The definition of the ``AWSIntegrationType`` object.
         :type type: AWSIntegrationType
         """
         super().__init__(kwargs)
