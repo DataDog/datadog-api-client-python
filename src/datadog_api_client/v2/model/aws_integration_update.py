@@ -42,12 +42,12 @@ class AWSIntegrationUpdate(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AWSIntegrationUpdate`` object.
+        The definition of the ``AWSIntegrationUpdate`` object.
 
-        :param credentials: The definition of ``AWSCredentialsUpdate`` object.
+        :param credentials: The definition of the ``AWSCredentialsUpdate`` object.
         :type credentials: AWSCredentialsUpdate, optional
 
-        :param type: The definition of ``AWSIntegrationType`` object.
+        :param type: The definition of the ``AWSIntegrationType`` object.
         :type type: AWSIntegrationType
         """
         if credentials is not unset:

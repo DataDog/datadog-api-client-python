@@ -17,6 +17,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.http_credentials_update import HTTPCredentialsUpdate
     from datadog_api_client.v2.model.http_integration_type import HTTPIntegrationType
     from datadog_api_client.v2.model.http_token_auth_update import HTTPTokenAuthUpdate
+    from datadog_api_client.v2.model.http_basic_auth_update import HTTPBasicAuthUpdate
+    from datadog_api_client.v2.model.http_mtls_auth_update import HTTPMtlsAuthUpdate
 
 
 class HTTPIntegrationUpdate(ModelNormal):
@@ -41,19 +43,21 @@ class HTTPIntegrationUpdate(ModelNormal):
         self_,
         type: HTTPIntegrationType,
         base_url: Union[str, UnsetType] = unset,
-        credentials: Union[HTTPCredentialsUpdate, HTTPTokenAuthUpdate, UnsetType] = unset,
+        credentials: Union[
+            HTTPCredentialsUpdate, HTTPTokenAuthUpdate, HTTPBasicAuthUpdate, HTTPMtlsAuthUpdate, UnsetType
+        ] = unset,
         **kwargs,
     ):
         """
-        The definition of ``HTTPIntegrationUpdate`` object.
+        The definition of the ``HTTPIntegrationUpdate`` object.
 
-        :param base_url: Base HTTP url for the integration
+        :param base_url: Base HTTP url for the integration.
         :type base_url: str, optional
 
-        :param credentials: The definition of ``HTTPCredentialsUpdate`` object.
+        :param credentials: The definition of the ``HTTPCredentialsUpdate`` object.
         :type credentials: HTTPCredentialsUpdate, optional
 
-        :param type: The definition of ``HTTPIntegrationType`` object.
+        :param type: The definition of the ``HTTPIntegrationType`` object.
         :type type: HTTPIntegrationType
         """
         if base_url is not unset:

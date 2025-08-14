@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class AWSAssumeRoleType(ModelSimple):
     """
-    The definition of `AWSAssumeRoleType` object.
+    The definition of the `AWSAssumeRole` object.
 
     :param value: If omitted defaults to "AWSAssumeRole". Must be one of ["AWSAssumeRole"].
     :type value: str

@@ -8026,6 +8026,27 @@ datadog\_api\_client.v2.model.hourly\_usage\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.http\_basic\_auth module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_basic_auth
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.http\_basic\_auth\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_basic_auth_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.http\_basic\_auth\_update module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_basic_auth_update
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.http\_body module
 -----------------------------------------------
 
@@ -8107,6 +8128,27 @@ datadog\_api\_client.v2.model.http\_log\_item module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.http_log_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.http\_mtls\_auth module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_mtls_auth
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.http\_mtls\_auth\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_mtls_auth_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.http\_mtls\_auth\_update module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.http_mtls_auth_update
    :members:
    :show-inheritance:
 

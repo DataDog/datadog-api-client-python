@@ -13,18 +13,18 @@ from datadog_api_client.model_utils import (
 class AWSCredentialsUpdate(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``AWSCredentialsUpdate`` object.
+        The definition of the ``AWSCredentialsUpdate`` object.
 
-        :param account_id: AWS account the connection is created for
+        :param account_id: AWS account the connection is created for.
         :type account_id: str, optional
 
-        :param generate_new_external_id: The `AWSAssumeRoleUpdate` `generate_new_external_id`.
+        :param generate_new_external_id: Pass true if the `external_id` should be regenerated.
         :type generate_new_external_id: bool, optional
 
-        :param role: Role to assume
+        :param role: Role to assume.
         :type role: str, optional
 
-        :param type: The definition of `AWSAssumeRoleType` object.
+        :param type: The definition of the `AWSAssumeRole` object.
         :type type: AWSAssumeRoleType
         """
         super().__init__(kwargs)

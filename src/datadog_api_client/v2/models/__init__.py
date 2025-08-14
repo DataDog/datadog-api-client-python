@@ -1459,6 +1459,9 @@ from datadog_api_client.v2.model.grey_noise_integration_type import GreyNoiseInt
 from datadog_api_client.v2.model.grey_noise_integration_update import GreyNoiseIntegrationUpdate
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
+from datadog_api_client.v2.model.http_basic_auth import HTTPBasicAuth
+from datadog_api_client.v2.model.http_basic_auth_type import HTTPBasicAuthType
+from datadog_api_client.v2.model.http_basic_auth_update import HTTPBasicAuthUpdate
 from datadog_api_client.v2.model.http_body import HTTPBody
 from datadog_api_client.v2.model.httpci_app_error import HTTPCIAppError
 from datadog_api_client.v2.model.httpci_app_errors import HTTPCIAppErrors
@@ -1473,6 +1476,9 @@ from datadog_api_client.v2.model.http_log import HTTPLog
 from datadog_api_client.v2.model.http_log_error import HTTPLogError
 from datadog_api_client.v2.model.http_log_errors import HTTPLogErrors
 from datadog_api_client.v2.model.http_log_item import HTTPLogItem
+from datadog_api_client.v2.model.http_mtls_auth import HTTPMtlsAuth
+from datadog_api_client.v2.model.http_mtls_auth_type import HTTPMtlsAuthType
+from datadog_api_client.v2.model.http_mtls_auth_update import HTTPMtlsAuthUpdate
 from datadog_api_client.v2.model.http_token import HTTPToken
 from datadog_api_client.v2.model.http_token_auth import HTTPTokenAuth
 from datadog_api_client.v2.model.http_token_auth_type import HTTPTokenAuthType
@@ -5061,6 +5067,9 @@ __all__ = [
     "GreyNoiseIntegrationUpdate",
     "GroupScalarColumn",
     "GroupTags",
+    "HTTPBasicAuth",
+    "HTTPBasicAuthType",
+    "HTTPBasicAuthUpdate",
     "HTTPBody",
     "HTTPCIAppError",
     "HTTPCIAppErrors",
@@ -5075,6 +5084,9 @@ __all__ = [
     "HTTPLogError",
     "HTTPLogErrors",
     "HTTPLogItem",
+    "HTTPMtlsAuth",
+    "HTTPMtlsAuthType",
+    "HTTPMtlsAuthUpdate",
     "HTTPToken",
     "HTTPTokenAuth",
     "HTTPTokenAuthType",

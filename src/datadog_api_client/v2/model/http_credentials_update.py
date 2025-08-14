@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class HTTPCredentialsUpdate(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``HTTPCredentialsUpdate`` object.
+        The definition of the ``HTTPCredentialsUpdate`` object.
 
         :param body: The definition of `HTTPBody` object.
         :type body: HTTPBody, optional
@@ -24,11 +24,23 @@ class HTTPCredentialsUpdate(ModelComposed):
         :param tokens: The `HTTPTokenAuthUpdate` `tokens`.
         :type tokens: [HTTPTokenUpdate], optional
 
-        :param type: The definition of `HTTPTokenAuthType` object.
+        :param type: The definition of the `HTTPTokenAuth` object.
         :type type: HTTPTokenAuthType
 
         :param url_parameters: The `HTTPTokenAuthUpdate` `url_parameters`.
         :type url_parameters: [UrlParamUpdate], optional
+
+        :param password: Password used for authentication. Saved in a secret store
+        :type password: str, optional
+
+        :param username: Username used for authentication.
+        :type username: str, optional
+
+        :param certificate: Certificate of authority used to sign the request.
+        :type certificate: str, optional
+
+        :param private_key: Private key used for the MTLS handshake
+        :type private_key: str, optional
         """
         super().__init__(kwargs)
 
@@ -42,9 +54,13 @@ class HTTPCredentialsUpdate(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.http_token_auth_update import HTTPTokenAuthUpdate
+        from datadog_api_client.v2.model.http_basic_auth_update import HTTPBasicAuthUpdate
+        from datadog_api_client.v2.model.http_mtls_auth_update import HTTPMtlsAuthUpdate
 
         return {
             "oneOf": [
                 HTTPTokenAuthUpdate,
+                HTTPBasicAuthUpdate,
+                HTTPMtlsAuthUpdate,
             ],
         }

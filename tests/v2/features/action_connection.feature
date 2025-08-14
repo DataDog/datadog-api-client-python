@@ -29,6 +29,41 @@ Feature: Action Connection
     Then the response status is 201 Successfully created Action Connection
 
   @team:DataDog/workflow-automation-dev
+  Scenario: Create a new Action Connection with HTTPBasicAuth returns "Successfully created Action Connection" response
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"HTTP Basic Auth Connection {{ unique_lower_alnum }}","integration":{"type":"HTTP","base_url":"https://api.example.com","credentials":{"type":"HTTPBasicAuth","username":"test-user","password":"test-password"}}}}}
+    When the request is sent
+    Then the response status is 201 Successfully created Action Connection
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Create a new Action Connection with HTTPMtlsAuth returns "Successfully created Action Connection" response
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"HTTP mTLS Connection {{ unique_lower_alnum }}","integration":{"type":"HTTP","base_url":"https://api.example.com","credentials":{"type":"HTTPMtlsAuth","certificate":"-----BEGIN CERTIFICATE-----\nMIICXjCCAUYCCQDOGcCfCHfhPzANBgkqhkiG9w0BAQsFADAzMQswCQYDVQQGEwJV\nUzELMAkGA1UECAwCQ0ExFTATBgNVBAoMDERhdGFkb2cgSW5jLjAeFw0yNDA1MTQw\nMDA1NThaFw0yNTA1MTQwMDA1NThaMDMxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJD\nQTEVMBMGA1UECgwMRGF0YWRvZyBJbmMuMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A\nMIIBCgKCAQEAwQDTmLqWv2L6YhzBcjKgPEzd3kE+9dZ4hBXBCjK6HgF/3aOKOSYq\nM9KPFHgJj6SjUJ+8TqX4sV6yW5xGX8dKjOpTYQfExEjGYcVrqKoOGg2k6dGkHyGm\n2VzL4zKyK1C3zJ4KpJnMYK8dPPcgzJvO7jGxGKMgLVU3VNdxKGTrqKmC6RbZLQOz\nM3fLp7bF2VcJ6VkGKW+yBK6vVMbQKMvjTbGqr3vIRd8SZzKRTsyIzXQDKgOv2vPn\nSqYJjKFJ8vJ7JeH6zGyLjQ1cGVy9jJ3+TjJoJhCGOyGzJpBGIcXfYjFDLcSRh7KE\nQIDAQABo1MwUTAdBgNVHQ4EFgQU/V8vJkPJ8b9yQnC/9bJ2kJGJ5MjoyEwHwYDVR0j\nBBgwFoAU/V8vJkPJ8b9yQnC/9bJ2kJGJ5Mjo\n-----END CERTIFICATE-----","private_key":"-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDBaNOMV7V8T7gR\nOmNcNfqGHxPrLLo1w2J7J8h6S8bVD9yCH2JKV8J5G2J8J0V8J3Jg8b3Jg8LxJgV\nV8J6JgV8J9JgJg8LJg8VJgV5JgLLJgVVJg8V4Jg8VLJg8V6JgV8JqJgVV8J3JgV\nV8J7JgVV8J5JgVV8J8JgVVJg8LJgJVLJgLVJgVVJgLJgVVJgVVJgVVJgLVJgVV\nJgVVJgVVJgLJgVVJgLVJgLLJgVVJgVLJgVVJgVLJgVVJgVVJgVVJgVVJgVVJg\nVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJgVVJ\nAgMBAAECggEBAKoJkJJJJkJJkJ\n-----END PRIVATE KEY-----"}}}}}
+    When the request is sent
+    Then the response status is 201 Successfully created Action Connection
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Create a new Action Connection with HTTPTokenAuth returns "Successfully created Action Connection" response
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"HTTP Token Connection {{ unique_lower_alnum }}","integration":{"type":"HTTP","base_url":"https://api.example.com","credentials":{"type":"HTTPTokenAuth","tokens":[{"name":"ApiKey","type":"SECRET","value":"secret-token-value"}],"headers":[{"name":"Authorization","value":"Bearer token-value"}]}}}}}
+    When the request is sent
+    Then the response status is 201 Successfully created Action Connection
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Create a new Action Connection with invalid HTTPCredentials returns "Bad Request" response
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"Invalid HTTP Connection","integration":{"type":"HTTP","base_url":"https://api.example.com","credentials":{"type":"HTTPBasicAuth","username":"test-user"}}}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Create a new Action Connection with missing base_url returns "Bad Request" response
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"Missing Base URL Connection","integration":{"type":"HTTP","credentials":{"type":"HTTPBasicAuth","username":"test-user","password":"test-password"}}}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/workflow-automation-dev
   Scenario: Delete an existing Action Connection returns "Not Found" response
     Given new "DeleteActionConnection" request
     And request contains "connection_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
@@ -153,5 +188,13 @@ Feature: Action Connection
     Given new "UpdateActionConnection" request
     And request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
     And body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"123456789123"}}}}}
+    When the request is sent
+    Then the response status is 200 Successfully updated Action Connection
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: Update an existing Action Connection with HTTPBasicAuth returns "Successfully updated Action Connection" response
+    Given new "UpdateActionConnection" request
+    And request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"HTTP Basic Auth Updated","integration":{"type":"HTTP","base_url":"https://api.updated.com","credentials":{"type":"HTTPBasicAuth","username":"updated-user","password":"updated-password"}}}}}
     When the request is sent
     Then the response status is 200 Successfully updated Action Connection

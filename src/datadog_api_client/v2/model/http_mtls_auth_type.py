@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class HTTPIntegrationType(ModelSimple):
+class HTTPMtlsAuthType(ModelSimple):
     """
-    The definition of the `HTTPIntegrationType` object.
+    The definition of the `HTTPMtlsAuth` object.
 
-    :param value: If omitted defaults to "HTTP". Must be one of ["HTTP"].
+    :param value: If omitted defaults to "HTTPMtlsAuth". Must be one of ["HTTPMtlsAuth"].
     :type value: str
     """
 
     allowed_values = {
-        "HTTP",
+        "HTTPMtlsAuth",
     }
-    HTTP: ClassVar["HTTPIntegrationType"]
+    HTTPMTLSAUTH: ClassVar["HTTPMtlsAuthType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class HTTPIntegrationType(ModelSimple):
         }
 
 
-HTTPIntegrationType.HTTP = HTTPIntegrationType("HTTP")
+HTTPMtlsAuthType.HTTPMTLSAUTH = HTTPMtlsAuthType("HTTPMtlsAuth")

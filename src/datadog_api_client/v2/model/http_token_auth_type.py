@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class HTTPTokenAuthType(ModelSimple):
     """
-    The definition of `HTTPTokenAuthType` object.
+    The definition of the `HTTPTokenAuth` object.
 
     :param value: If omitted defaults to "HTTPTokenAuth". Must be one of ["HTTPTokenAuth"].
     :type value: str

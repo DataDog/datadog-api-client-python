@@ -49,18 +49,18 @@ class AWSAssumeRoleUpdate(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AWSAssumeRoleUpdate`` object.
+        The definition of the ``AWSAssumeRole`` object.
 
-        :param account_id: AWS account the connection is created for
+        :param account_id: AWS account the connection is created for.
         :type account_id: str, optional
 
-        :param generate_new_external_id: The ``AWSAssumeRoleUpdate`` ``generate_new_external_id``.
+        :param generate_new_external_id: Pass true if the ``external_id`` should be regenerated.
         :type generate_new_external_id: bool, optional
 
-        :param role: Role to assume
+        :param role: Role to assume.
         :type role: str, optional
 
-        :param type: The definition of ``AWSAssumeRoleType`` object.
+        :param type: The definition of the ``AWSAssumeRole`` object.
         :type type: AWSAssumeRoleType
         """
         if account_id is not unset:
