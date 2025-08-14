@@ -87,6 +87,15 @@ Feature: Events
     And the response "data.type" is equal to "event"
     And the response "data.attributes.attributes.evt" has field "uid"
 
+  @skip-validation @team:DataDog/event-management
+  Scenario: Post an event with metric_configuration resource type returns "OK" response
+    Given new "CreateEvent" request
+    And body with value {"data": {"attributes": {"aggregation_key": "aggregation_key_123", "attributes": {"author": {"name": "example@datadog.com", "type": "user"}, "change_metadata": {"dd": {"team": "datadog_team", "user_email": "datadog@datadog.com", "user_id": "datadog_user_id", "user_name": "datadog_username"}, "resource_link": "datadog.com/metric/config_test"}, "changed_resource": {"name": "config_test", "type": "metric_configuration"}, "impacted_resources": [{"name": "system.cpu.usage", "type": "service"}], "new_value": {"aggregation": "avg", "tags": ["env:prod", "service:web"], "unit": "percent"}, "prev_value": {"aggregation": "sum", "tags": ["env:prod"], "unit": "percent"}}, "category": "change", "integration_id": "custom-events", "message": "metric configuration has been updated", "tags": ["env:api_client_test"], "title": "metric configuration updated"}, "type": "event"}}
+    When the request is sent
+    Then the response status is 202 OK
+    And the response "data.type" is equal to "event"
+    And the response "data.attributes.attributes.evt" has field "uid"
+
   @team:DataDog/event-management
   Scenario: Search events returns "Bad Request" response
     Given new "SearchEvents" request
