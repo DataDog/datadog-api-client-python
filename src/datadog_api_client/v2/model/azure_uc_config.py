@@ -33,7 +33,7 @@ class AzureUCConfig(ModelNormal):
             "error_messages": ([str],),
             "export_name": (str,),
             "export_path": (str,),
-            "id": (int,),
+            "id": (str,),
             "months": (int,),
             "scope": (str,),
             "status": (str,),
@@ -74,7 +74,7 @@ class AzureUCConfig(ModelNormal):
         storage_container: str,
         created_at: Union[str, UnsetType] = unset,
         error_messages: Union[List[str], UnsetType] = unset,
-        id: Union[int, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
         months: Union[int, UnsetType] = unset,
         status_updated_at: Union[str, UnsetType] = unset,
         updated_at: Union[str, UnsetType] = unset,
@@ -105,7 +105,7 @@ class AzureUCConfig(ModelNormal):
         :type export_path: str
 
         :param id: The ID of the Azure config.
-        :type id: int, optional
+        :type id: str, optional
 
         :param months: The number of months the report has been backfilled. **Deprecated**.
         :type months: int, optional

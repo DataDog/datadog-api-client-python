@@ -23,6 +23,6 @@ body = GCPUsageCostConfigPatchRequest(
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = CloudCostManagementApi(api_client)
-    response = api_instance.update_cost_gcp_usage_cost_config(cloud_account_id="100", body=body)
+    response = api_instance.update_cost_gcp_usage_cost_config(cloud_account_id=100, body=body)
 
     print(response)

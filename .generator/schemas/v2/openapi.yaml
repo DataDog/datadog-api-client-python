@@ -221,7 +221,8 @@ components:
       name: cloud_account_id
       required: true
       schema:
-        type: string
+        format: int64
+        type: integer
     CloudWorkloadSecurityAgentRuleID:
       description: The ID of the Agent rule
       example: 3b5-v82-ns6
@@ -4500,8 +4501,7 @@ components:
           $ref: '#/components/schemas/AwsCURConfigAttributes'
         id:
           description: The ID of the AWS CUR config.
-          format: int64
-          type: integer
+          type: string
         type:
           $ref: '#/components/schemas/AwsCURConfigType'
       required:
@@ -4642,9 +4642,6 @@ components:
           description: The region the bucket is located in.
           example: us-east-1
           type: string
-        is_enabled:
-          description: Whether or not the Cloud Cost Management account is enabled.
-          type: boolean
         months:
           description: The month of the report.
           format: int32
@@ -5136,8 +5133,7 @@ components:
           type: string
         id:
           description: The ID of the Azure config.
-          format: int64
-          type: integer
+          type: string
         months:
           deprecated: true
           description: The number of months the report has been backfilled.
@@ -5187,8 +5183,7 @@ components:
           $ref: '#/components/schemas/AzureUCConfigPairAttributes'
         id:
           description: The ID of Cloud Cost Management account.
-          format: int64
-          type: integer
+          type: string
         type:
           $ref: '#/components/schemas/AzureUCConfigPairType'
       required:
@@ -5205,8 +5200,7 @@ components:
           type: array
         id:
           description: The ID of the Azure config pair.
-          format: int64
-          type: integer
+          type: string
       required:
       - configs
       type: object
@@ -49730,6 +49724,31 @@ paths:
     get:
       description: List the Custom Costs files.
       operationId: ListCustomCostsFiles
+      parameters:
+      - description: Page number for pagination
+        in: query
+        name: page[number]
+        schema:
+          format: int64
+          type: integer
+      - description: Page size for pagination
+        in: query
+        name: page[size]
+        schema:
+          default: 100
+          format: int64
+          type: integer
+      - description: Filter by file status
+        in: query
+        name: filter[status]
+        schema:
+          type: string
+      - description: Sort key with optional descending prefix
+        in: query
+        name: sort
+        schema:
+          default: created_at
+          type: string
       responses:
         '200':
           content:
@@ -49737,6 +49756,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/CustomCostsFileListResponse'
           description: OK
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
         '403':
           content:
             application/json:
@@ -49769,6 +49794,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/CustomCostsFileUploadResponse'
           description: Accepted
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Bad Request
         '403':
           content:
             application/json:
@@ -49800,6 +49831,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -49828,6 +49865,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/APIErrorResponse'
           description: Forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIErrorResponse'
+          description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
