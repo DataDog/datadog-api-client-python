@@ -19058,6 +19058,48 @@ datadog\_api\_client.v2.model.team\_routing\_rules\_request\_rule module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_sync\_attributes module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_attributes\_source module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_attributes_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_attributes\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_attributes_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_bulk\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_bulk_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_data module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_request module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_target module
 -------------------------------------------------
 

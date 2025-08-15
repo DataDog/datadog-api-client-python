@@ -3735,6 +3735,12 @@ from datadog_api_client.v2.model.team_routing_rules_request_data import TeamRout
 from datadog_api_client.v2.model.team_routing_rules_request_data_attributes import TeamRoutingRulesRequestDataAttributes
 from datadog_api_client.v2.model.team_routing_rules_request_data_type import TeamRoutingRulesRequestDataType
 from datadog_api_client.v2.model.team_routing_rules_request_rule import TeamRoutingRulesRequestRule
+from datadog_api_client.v2.model.team_sync_attributes import TeamSyncAttributes
+from datadog_api_client.v2.model.team_sync_attributes_source import TeamSyncAttributesSource
+from datadog_api_client.v2.model.team_sync_attributes_type import TeamSyncAttributesType
+from datadog_api_client.v2.model.team_sync_bulk_type import TeamSyncBulkType
+from datadog_api_client.v2.model.team_sync_data import TeamSyncData
+from datadog_api_client.v2.model.team_sync_request import TeamSyncRequest
 from datadog_api_client.v2.model.team_target import TeamTarget
 from datadog_api_client.v2.model.team_target_type import TeamTargetType
 from datadog_api_client.v2.model.team_type import TeamType
@@ -6657,6 +6663,12 @@ __all__ = [
     "TeamRoutingRulesRequestDataAttributes",
     "TeamRoutingRulesRequestDataType",
     "TeamRoutingRulesRequestRule",
+    "TeamSyncAttributes",
+    "TeamSyncAttributesSource",
+    "TeamSyncAttributesType",
+    "TeamSyncBulkType",
+    "TeamSyncData",
+    "TeamSyncRequest",
     "TeamTarget",
     "TeamTargetType",
     "TeamType",
