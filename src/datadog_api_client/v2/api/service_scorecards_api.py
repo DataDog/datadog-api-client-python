@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.outcomes_response import OutcomesResponse
 from datadog_api_client.v2.model.outcomes_response_data_item import OutcomesResponseDataItem
+from datadog_api_client.v2.model.update_outcomes_async_request import UpdateOutcomesAsyncRequest
 from datadog_api_client.v2.model.outcomes_batch_response import OutcomesBatchResponse
 from datadog_api_client.v2.model.outcomes_batch_request import OutcomesBatchRequest
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
@@ -232,6 +233,26 @@ class ServiceScorecardsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._update_scorecard_outcomes_async_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/scorecard/outcomes",
+                "operation_id": "update_scorecard_outcomes_async",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateOutcomesAsyncRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -627,6 +648,23 @@ class ServiceScorecardsApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def update_scorecard_outcomes_async(
+        self,
+        body: UpdateOutcomesAsyncRequest,
+    ) -> None:
+        """Update Scorecard outcomes asynchronously.
+
+        Updates multiple scorecard rule outcomes in a single batched request.
+
+        :param body: Set of scorecard outcomes.
+        :type body: UpdateOutcomesAsyncRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_scorecard_outcomes_async_endpoint.call_with_http_info(**kwargs)
 
     def update_scorecard_rule(
         self,
