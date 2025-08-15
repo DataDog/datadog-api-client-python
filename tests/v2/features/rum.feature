@@ -44,6 +44,19 @@ Feature: RUM
     And the response "data.attributes.name" is equal to "test-rum-{{ unique_hash }}"
 
   @skip-validation @team:DataDog/rum-backend
+  Scenario: Create a new RUM application with Product Scales returns "OK" response
+    Given new "CreateRUMApplication" request
+    And body with value {"data": {"attributes": {"name": "test-rum-with-product-scales-{{ unique_hash }}", "type": "browser", "rum_event_processing_state": "ERROR_FOCUSED_MODE", "rum_product_analytics_retention_state": "NONE"}, "type": "rum_application_create"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "rum_application"
+    And the response "data.attributes.name" is equal to "test-rum-with-product-scales-{{ unique_hash }}"
+    And the response "data.attributes.product_scales.rum_event_processing_scale.state" is equal to "ERROR_FOCUSED_MODE"
+    And the response "data.attributes.product_scales.product_analytics_retention_scale.state" is equal to "NONE"
+    And the response "data.attributes.product_scales.rum_event_processing_scale" has field "last_modified_at"
+    And the response "data.attributes.product_scales.product_analytics_retention_scale" has field "last_modified_at"
+
+  @skip-validation @team:DataDog/rum-backend
   Scenario: Delete a RUM application returns "No Content" response
     Given there is a valid "rum_application" in the system
     And new "DeleteRUMApplication" request
@@ -136,7 +149,7 @@ Feature: RUM
   Scenario: Update a RUM application returns "Bad Request" response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "rum_event_processing_state": "ALL", "rum_product_analytics_retention_state": "MAX", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -144,7 +157,7 @@ Feature: RUM
   Scenario: Update a RUM application returns "Not Found" response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "rum_event_processing_state": "ALL", "rum_product_analytics_retention_state": "MAX", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -169,3 +182,18 @@ Feature: RUM
     And body with value {"data": {"id": "this_id_will_not_match", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity.
+
+  @skip-validation @team:DataDog/rum-backend
+  Scenario: Update a RUM application with Product Scales returns "OK" response
+    Given there is a valid "rum_application" in the system
+    And new "UpdateRUMApplication" request
+    And request contains "id" parameter from "rum_application.data.id"
+    And body with value {"data": {"attributes": {"name": "updated_rum_with_product_scales", "rum_event_processing_state": "ALL", "rum_product_analytics_retention_state": "MAX"}, "id": "{{ rum_application.data.id }}", "type": "rum_application_update"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "rum_application"
+    And the response "data.attributes.name" is equal to "updated_rum_with_product_scales"
+    And the response "data.attributes.product_scales.rum_event_processing_scale.state" is equal to "ALL"
+    And the response "data.attributes.product_scales.product_analytics_retention_scale.state" is equal to "MAX"
+    And the response "data.attributes.product_scales.rum_event_processing_scale" has field "last_modified_at"
+    And the response "data.attributes.product_scales.product_analytics_retention_scale" has field "last_modified_at"

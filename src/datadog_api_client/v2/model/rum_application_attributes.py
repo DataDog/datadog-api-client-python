@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -11,6 +11,10 @@ from datadog_api_client.model_utils import (
     unset,
     UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.rum_product_scales import RUMProductScales
 
 
 class RUMApplicationAttributes(ModelNormal):
@@ -22,6 +26,8 @@ class RUMApplicationAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.rum_product_scales import RUMProductScales
+
         return {
             "application_id": (str,),
             "client_token": (str,),
@@ -31,6 +37,7 @@ class RUMApplicationAttributes(ModelNormal):
             "is_active": (bool,),
             "name": (str,),
             "org_id": (int,),
+            "product_scales": (RUMProductScales,),
             "type": (str,),
             "updated_at": (int,),
             "updated_by_handle": (str,),
@@ -45,6 +52,7 @@ class RUMApplicationAttributes(ModelNormal):
         "is_active": "is_active",
         "name": "name",
         "org_id": "org_id",
+        "product_scales": "product_scales",
         "type": "type",
         "updated_at": "updated_at",
         "updated_by_handle": "updated_by_handle",
@@ -63,6 +71,7 @@ class RUMApplicationAttributes(ModelNormal):
         updated_by_handle: str,
         hash: Union[str, UnsetType] = unset,
         is_active: Union[bool, UnsetType] = unset,
+        product_scales: Union[RUMProductScales, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -92,6 +101,9 @@ class RUMApplicationAttributes(ModelNormal):
         :param org_id: Org ID of the RUM application.
         :type org_id: int
 
+        :param product_scales: Product Scales configuration for the RUM application.
+        :type product_scales: RUMProductScales, optional
+
         :param type: Type of the RUM application. Supported values are ``browser`` , ``ios`` , ``android`` , ``react-native`` , ``flutter`` , ``roku`` , ``electron`` , ``unity`` , ``kotlin-multiplatform``.
         :type type: str
 
@@ -105,6 +117,8 @@ class RUMApplicationAttributes(ModelNormal):
             kwargs["hash"] = hash
         if is_active is not unset:
             kwargs["is_active"] = is_active
+        if product_scales is not unset:
+            kwargs["product_scales"] = product_scales
         super().__init__(kwargs)
 
         self_.application_id = application_id
