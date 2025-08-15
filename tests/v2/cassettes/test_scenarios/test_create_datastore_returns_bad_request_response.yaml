@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"datastore-name","primary_column_name":"0invalid_key"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"errors":[{"title":"invalid column name","detail":"column name ''0invalid_key''
+        does not start with a letter or an underscore","source":{"pointer":"/data/attributes/primary_column_name"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

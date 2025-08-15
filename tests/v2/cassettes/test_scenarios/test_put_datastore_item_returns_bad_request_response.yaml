@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"","name":"Test Datastore","org_access":"contributor","primary_column_name":"id","primary_key_generation_strategy":"none"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"data":{"id":"5d430898-fa17-4fe6-aab0-75f1b2880b9c","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"value":{"missing":"item-key"}},"type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/5d430898-fa17-4fe6-aab0-75f1b2880b9c/items
+  response:
+    body:
+      string: '{"errors":[{"title":"item key missing or invalid","detail":"item at
+        index 0: primary column \"id\" is missing"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/5d430898-fa17-4fe6-aab0-75f1b2880b9c
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 200
+      message: No Content
+version: 1

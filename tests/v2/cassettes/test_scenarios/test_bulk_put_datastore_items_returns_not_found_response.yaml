@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"values":[{"primaryKey":"key1","value":{"data":"example
+      data 1","key":"value"}},{"primaryKey":"key2","value":{"data":"example data 2","key":"value"}}]},"id":"70b87c26-886f-497a-bd9d-09f53bc9b40c","type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/70b87c26-886f-497a-bd9d-09f53bc9b40c/items/bulk
+  response:
+    body:
+      string: '{"errors":[{"title":"datastore not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
