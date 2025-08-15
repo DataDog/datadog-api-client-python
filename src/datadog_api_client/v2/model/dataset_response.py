@@ -15,17 +15,19 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.dataset_attributes_response import DatasetAttributesResponse
+    from datadog_api_client.v2.model.dataset_type import DatasetType
 
 
 class DatasetResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.dataset_attributes_response import DatasetAttributesResponse
+        from datadog_api_client.v2.model.dataset_type import DatasetType
 
         return {
             "attributes": (DatasetAttributesResponse,),
             "id": (str,),
-            "type": (str,),
+            "type": (DatasetType,),
         }
 
     attribute_map = {
@@ -38,7 +40,7 @@ class DatasetResponse(ModelNormal):
         self_,
         attributes: Union[DatasetAttributesResponse, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
+        type: Union[DatasetType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -67,8 +69,8 @@ class DatasetResponse(ModelNormal):
         :param id: Unique identifier for the dataset.
         :type id: str, optional
 
-        :param type: Resource type, always "dataset".
-        :type type: str, optional
+        :param type: Resource type, always set to ``dataset``.
+        :type type: DatasetType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

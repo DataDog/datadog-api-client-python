@@ -7,6 +7,7 @@ from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
 from datadog_api_client.v2.model.dataset_create_request import DatasetCreateRequest
 from datadog_api_client.v2.model.dataset_request import DatasetRequest
+from datadog_api_client.v2.model.dataset_type import DatasetType
 from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
 
 body = DatasetCreateRequest(
@@ -25,7 +26,7 @@ body = DatasetCreateRequest(
                 ),
             ],
         ),
-        type="dataset",
+        type=DatasetType.DATASET,
     ),
 )
 

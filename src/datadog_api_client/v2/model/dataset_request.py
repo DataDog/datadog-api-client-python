@@ -13,16 +13,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
+    from datadog_api_client.v2.model.dataset_type import DatasetType
 
 
 class DatasetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
+        from datadog_api_client.v2.model.dataset_type import DatasetType
 
         return {
             "attributes": (DatasetAttributesRequest,),
-            "type": (str,),
+            "type": (DatasetType,),
         }
 
     attribute_map = {
@@ -30,7 +32,7 @@ class DatasetRequest(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: DatasetAttributesRequest, type: str, **kwargs):
+    def __init__(self_, attributes: DatasetAttributesRequest, type: DatasetType, **kwargs):
         """
         **Datasets Object Constraints**
 
@@ -54,8 +56,8 @@ class DatasetRequest(ModelNormal):
         :param attributes: Dataset metadata and configurations.
         :type attributes: DatasetAttributesRequest
 
-        :param type: Resource type, always "dataset".
-        :type type: str
+        :param type: Resource type, always set to ``dataset``.
+        :type type: DatasetType
         """
         super().__init__(kwargs)
 
