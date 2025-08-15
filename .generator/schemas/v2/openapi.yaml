@@ -61985,12 +61985,13 @@ paths:
             token.'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: List vulnerable assets
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
@@ -62142,12 +62143,13 @@ paths:
           description: 'Not found: asset not found'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: List assets SBOMs
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
@@ -62208,12 +62210,13 @@ paths:
           description: 'Not found: asset not found'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: Get SBOM
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
@@ -62773,12 +62776,13 @@ paths:
             token.'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
       summary: List vulnerabilities
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
