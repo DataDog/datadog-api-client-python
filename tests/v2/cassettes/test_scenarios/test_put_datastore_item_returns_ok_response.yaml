@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"","name":"Test Datastore","org_access":"contributor","primary_column_name":"id","primary_key_generation_strategy":"none"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"data":{"id":"4bb0f4ff-bb80-45fe-ac06-73a66bb7b488","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/4bb0f4ff-bb80-45fe-ac06-73a66bb7b488
+  response:
+    body:
+      string: '{"data":{"id":"4bb0f4ff-bb80-45fe-ac06-73a66bb7b488","type":"datastores","attributes":{"created_at":"2025-08-11T22:19:06.69789Z","creator_user_id":1445416,"creator_user_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"","modified_at":"2025-08-11T22:19:06.69789Z","name":"Test
+        Datastore","org_id":321813,"primary_column_name":"id","primary_key_generation_strategy":"none"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"value":{"data":"example data","id":"new-item-key","key":"value"}},"id":"e7e64418-b60c-4789-9612-895ac8423207","type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/4bb0f4ff-bb80-45fe-ac06-73a66bb7b488/items
+  response:
+    body:
+      string: '{"data":{"id":"94a0f1d7-0049-4a89-bd8b-38d596feb328","type":"items"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/4bb0f4ff-bb80-45fe-ac06-73a66bb7b488
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 200
+      message: No Content
+version: 1

@@ -1,4 +1,91 @@
 {
+  "ListDatastores": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "operationId": "DeleteDatastore",
+      "parameters": [
+        {
+          "name": "datastore_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateDatastoreFromImport": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "operationId": "DeleteDatastore",
+      "parameters": [
+        {
+          "name": "datastore_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteDatastoreItem": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListDatastoreItems": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PutDatastoreItem": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "operationId": "DeleteDatastoreItem",
+      "parameters": [
+        {
+          "name": "datastore_id",
+          "origin": "request",
+          "source": "data.id"
+        },
+        {
+          "name": "body",
+          "origin": "request",
+          "template": "{\n  \"data\": {\n    \"type\": \"items\",\n    \"attributes\": {\n      \"id\": \"{{data.id}}\",\n      \"item_key\": \"test-key\"\n    },\n    \"id\": \"{{data.id}}\"\n  }\n}"
+        }
+      ],
+      "type": "idempotent"
+    }
+  },
+  "BulkPutDatastoreItems": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAppKeyRegistrations": {
     "tag": "Action Connection",
     "undo": {
