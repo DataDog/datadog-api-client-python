@@ -3411,6 +3411,12 @@
       "type": "unsafe"
     }
   },
+  "SyncTeams": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListMemberTeams": {
     "tag": "Teams",
     "undo": {

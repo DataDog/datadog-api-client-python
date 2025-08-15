@@ -21,6 +21,7 @@ from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
+from datadog_api_client.v2.model.team_sync_request import TeamSyncRequest
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
 from datadog_api_client.v2.model.team_links_response import TeamLinksResponse
@@ -509,6 +510,26 @@ class TeamsApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._sync_teams_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/sync",
+                "operation_id": "sync_teams",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TeamSyncRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1190,6 +1211,32 @@ class TeamsApi:
         kwargs["member_team_id"] = member_team_id
 
         return self._remove_member_team_endpoint.call_with_http_info(**kwargs)
+
+    def sync_teams(
+        self,
+        body: TeamSyncRequest,
+    ) -> None:
+        """Link Teams with GitHub Teams.
+
+        This endpoint attempts to link your existing Datadog teams with GitHub teams by matching their names.
+        It evaluates all current Datadog teams and compares them against teams in the GitHub organization
+        connected to your Datadog account, based on Datadog Team handle and GitHub Team slug
+        (lowercased and kebab-cased).
+
+        This operation is read-only on the GitHub side, no teams will be modified or created.
+
+        `A GitHub organization must be connected to your Datadog account <https://docs.datadoghq.com/integrations/github/>`_ ,
+        and the GitHub App integrated with Datadog must have the ``Members Read`` permission. Matching is performed by comparing the Datadog team handle to the GitHub team slug
+        using a normalized exact match; case is ignored and spaces are removed. No modifications are made
+        to teams in GitHub. This will not create new Teams in Datadog.
+
+        :type body: TeamSyncRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._sync_teams_endpoint.call_with_http_info(**kwargs)
 
     def update_team(
         self,

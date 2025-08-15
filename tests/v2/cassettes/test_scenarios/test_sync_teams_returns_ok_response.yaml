@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"source":"github","type":"link"},"type":"team_sync_bulk"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team/sync
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/plain
+    status:
+      code: 200
+      message: OK
+version: 1
