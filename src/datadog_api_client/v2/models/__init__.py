@@ -1048,6 +1048,7 @@ from datadog_api_client.v2.model.dataset_request import DatasetRequest
 from datadog_api_client.v2.model.dataset_response import DatasetResponse
 from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMulti
 from datadog_api_client.v2.model.dataset_response_single import DatasetResponseSingle
+from datadog_api_client.v2.model.dataset_type import DatasetType
 from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
@@ -4716,6 +4717,7 @@ __all__ = [
     "DatasetResponse",
     "DatasetResponseMulti",
     "DatasetResponseSingle",
+    "DatasetType",
     "DatasetUpdateRequest",
     "DeleteAppResponse",
     "DeleteAppResponseData",
