@@ -5310,6 +5310,13 @@ datadog\_api\_client.v2.model.dataset\_response\_single module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dataset\_type module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dataset\_update\_request module
 -------------------------------------------------------------
 
