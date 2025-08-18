@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
         with:
           # Fetch all history for applying timestamps to every page
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4.9.1
         with:
           python-version: "3.11"
           cache: "pip"
@@ -39,7 +39,7 @@ jobs:
           echo "SPHINX_VERSION=$(.tox/docs/bin/python -c "import importlib.metadata;print(importlib.metadata.version('sphinx'))")" >> $GITHUB_ENV
 
       - name: Cache sphinx
-        uses: actions/cache@v3
+        uses: actions/cache@2f8e54208210a422b2efd51efaa6bd6d7ca8920f # v3.4.3
         with:
           path: docs/.sphinx
           key: sphinx-${{ env.SPHINX_VERSION }}-${{ hashFiles('.generator/schemas/**/openapi.yaml') }}
@@ -51,7 +51,7 @@ jobs:
       - name: Compress site
         run: tar czf site.tar.gz site
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: documentation
           path: site.tar.gz
@@ -64,7 +64,7 @@ jobs:
       - build
 
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: documentation
           path: site
@@ -72,7 +72,7 @@ jobs:
       - name: Uncompress site
         run: tar xzf site/site.tar.gz && rm site/site.tar.gz
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847 # v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
