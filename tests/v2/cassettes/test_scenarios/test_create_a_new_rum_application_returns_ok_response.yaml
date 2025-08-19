@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"test-rum-5be7aad200899ffd","type":"ios"},"type":"rum_application_create"}}'
+    body: '{"data":{"attributes":{"name":"test-rum-33452889744bdeee","type":"ios"},"type":"rum_application_create"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/rum/applications
   response:
     body:
-      string: '{"data":{"type":"rum_application","attributes":{"hash":"pub53e9a8788cac8b240efc0bfd17073059","type":"ios","name":"test-rum-5be7aad200899ffd","tags":[],"created_at":1733845240406,"updated_at":1733845240406,"created_by_handle":"frog@datadoghq.com","rum_enabled_at":1733845240406,"org_id":321813,"updated_by_handle":"frog@datadoghq.com","product_analytics_disabled_at":1733845240406,"rum_enabled":true,"application_id":"2ce2bdc3-efa2-4182-9bc1-b75b2ff09be4","product_analytics_enabled_at":1733845240406,"rum_disabled_at":0,"product_analytics_enabled":false,"is_active":false,"client_token":"pub53e9a8788cac8b240efc0bfd17073059"},"id":"2ce2bdc3-efa2-4182-9bc1-b75b2ff09be4"}}
+      string: '{"data":{"type":"rum_application","attributes":{"type":"ios","updated_at":1755613213992,"created_by_handle":"frog@datadoghq.com","name":"test-rum-33452889744bdeee","org_id":321813,"tags":[],"created_at":1755613213992,"product_analytics_replay_sample_rate":100,"product_scales":{"product_analytics_retention_scale":{"state":"NONE","last_modified_at":1755613213992},"rum_event_processing_scale":{"state":"ALL","last_modified_at":1755613213992}},"updated_by_handle":"frog@datadoghq.com","application_id":"ee0b4d74-7159-4498-bec7-2b4f2b5ba642","client_token":"pub994be67f562b7afec4436673d77927fe","hash":"pub994be67f562b7afec4436673d77927fe","is_active":false},"id":"ee0b4d74-7159-4498-bec7-2b4f2b5ba642"}}
 
         '
     headers:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/applications/2ce2bdc3-efa2-4182-9bc1-b75b2ff09be4
+    uri: https://api.datadoghq.com/api/v2/rum/applications/ee0b4d74-7159-4498-bec7-2b4f2b5ba642
   response:
     body:
       string: ''

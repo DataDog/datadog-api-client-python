@@ -2865,12 +2865,17 @@ from datadog_api_client.v2.model.rum_compute import RUMCompute
 from datadog_api_client.v2.model.rum_compute_type import RUMComputeType
 from datadog_api_client.v2.model.rum_event import RUMEvent
 from datadog_api_client.v2.model.rum_event_attributes import RUMEventAttributes
+from datadog_api_client.v2.model.rum_event_processing_scale import RUMEventProcessingScale
+from datadog_api_client.v2.model.rum_event_processing_state import RUMEventProcessingState
 from datadog_api_client.v2.model.rum_event_type import RUMEventType
 from datadog_api_client.v2.model.rum_events_response import RUMEventsResponse
 from datadog_api_client.v2.model.rum_group_by import RUMGroupBy
 from datadog_api_client.v2.model.rum_group_by_histogram import RUMGroupByHistogram
 from datadog_api_client.v2.model.rum_group_by_missing import RUMGroupByMissing
 from datadog_api_client.v2.model.rum_group_by_total import RUMGroupByTotal
+from datadog_api_client.v2.model.rum_product_analytics_retention_scale import RUMProductAnalyticsRetentionScale
+from datadog_api_client.v2.model.rum_product_analytics_retention_state import RUMProductAnalyticsRetentionState
+from datadog_api_client.v2.model.rum_product_scales import RUMProductScales
 from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
 from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
 from datadog_api_client.v2.model.rum_query_page_options import RUMQueryPageOptions
@@ -5990,12 +5995,17 @@ __all__ = [
     "RUMComputeType",
     "RUMEvent",
     "RUMEventAttributes",
+    "RUMEventProcessingScale",
+    "RUMEventProcessingState",
     "RUMEventType",
     "RUMEventsResponse",
     "RUMGroupBy",
     "RUMGroupByHistogram",
     "RUMGroupByMissing",
     "RUMGroupByTotal",
+    "RUMProductAnalyticsRetentionScale",
+    "RUMProductAnalyticsRetentionState",
+    "RUMProductScales",
     "RUMQueryFilter",
     "RUMQueryOptions",
     "RUMQueryPageOptions",
