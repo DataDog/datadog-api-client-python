@@ -15243,6 +15243,20 @@ datadog\_api\_client.v2.model.rum\_event\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_event\_processing\_scale module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_event_processing_scale
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_event\_processing\_state module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_event_processing_state
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_event\_type module
 -----------------------------------------------------
 
@@ -15443,6 +15457,27 @@ datadog\_api\_client.v2.model.rum\_metrics\_response module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rum_metrics_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_product\_analytics\_retention\_scale module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_product_analytics_retention_scale
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_product\_analytics\_retention\_state module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_product_analytics_retention_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_product\_scales module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_product_scales
    :members:
    :show-inheritance:
 
