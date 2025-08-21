@@ -21,6 +21,9 @@ if TYPE_CHECKING:
 
 class ObservabilityPipelineSampleProcessor(ModelNormal):
     validations = {
+        "group_by": {
+            "min_items": 1,
+        },
         "rate": {
             "inclusive_minimum": 1,
         },
@@ -33,6 +36,7 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         )
 
         return {
+            "group_by": ([str],),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -42,6 +46,7 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "group_by": "group_by",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -56,12 +61,16 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         include: str,
         inputs: List[str],
         type: ObservabilityPipelineSampleProcessorType,
+        group_by: Union[List[str], UnsetType] = unset,
         percentage: Union[float, UnsetType] = unset,
         rate: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``sample`` processor allows probabilistic sampling of logs at a fixed rate.
+
+        :param group_by: Optional list of fields to group events by. Each group is sampled independently.
+        :type group_by: [str], optional
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
@@ -81,6 +90,8 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``sample``.
         :type type: ObservabilityPipelineSampleProcessorType
         """
+        if group_by is not unset:
+            kwargs["group_by"] = group_by
         if percentage is not unset:
             kwargs["percentage"] = percentage
         if rate is not unset:

@@ -30,8 +30,8 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param field: The name of the log field that contains a JSON string.
         :type field: str
 
-        :param drop_events: If set to `true`, logs that matched the quota filter and sent after the quota has been met are dropped; only logs that did not match the filter query continue through the pipeline.
-        :type drop_events: bool
+        :param drop_events: If set to `true`, logs that match the quota filter and are sent after the quota is exceeded are dropped. Logs that do not match the filter continue through the pipeline. **Note**: You can set either `drop_events` or `overflow_action`, but not both.
+        :type drop_events: bool, optional
 
         :param ignore_when_missing_partitions: If `true`, the processor skips quota checks when partition fields are missing from the logs.
         :type ignore_when_missing_partitions: bool, optional
@@ -42,7 +42,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param name: Name of the quota.
         :type name: str
 
-        :param overflow_action: The action to take when the quota is exceeded. Options:
+        :param overflow_action: The action to take when the quota or bucket limit is exceeded. Options:
             - `drop`: Drop the event.
             - `no_action`: Let the event pass through.
             - `overflow_routing`: Route to an overflow destination.
@@ -55,11 +55,21 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param partition_fields: A list of fields used to segment log traffic for quota enforcement. Quotas are tracked independently by unique combinations of these field values.
         :type partition_fields: [str], optional
 
+        :param too_many_buckets_action: The action to take when the quota or bucket limit is exceeded. Options:
+            - `drop`: Drop the event.
+            - `no_action`: Let the event pass through.
+            - `overflow_routing`: Route to an overflow destination.
+
+        :type too_many_buckets_action: ObservabilityPipelineQuotaProcessorOverflowAction, optional
+
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
 
         :param metrics: Configuration for generating individual metrics.
         :type metrics: [ObservabilityPipelineGeneratedMetric]
+
+        :param group_by: Optional list of fields to group events by. Each group is sampled independently.
+        :type group_by: [str], optional
 
         :param percentage: The percentage of logs to sample.
         :type percentage: float, optional
@@ -90,9 +100,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param target: Path where enrichment results should be stored in the log.
         :type target: str
-
-        :param group_by: A list of fields used to group log events for merging.
-        :type group_by: [str]
 
         :param merge_strategies: List of merge strategies defining how values from grouped events should be combined.
         :type merge_strategies: [ObservabilityPipelineReduceProcessorMergeStrategy]

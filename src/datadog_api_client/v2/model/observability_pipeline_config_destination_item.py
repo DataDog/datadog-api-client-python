@@ -15,6 +15,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         """
         A destination for the pipeline.
 
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
+
         :param id: The unique identifier for this component.
         :type id: str
 
