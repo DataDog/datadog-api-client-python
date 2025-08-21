@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class IPAllowlistEntryType(ModelSimple):
     """
-    IP allowlist Entry type.
+    IP allowlist entry type.
 
     :param value: If omitted defaults to "ip_allowlist_entry". Must be one of ["ip_allowlist_entry"].
     :type value: str

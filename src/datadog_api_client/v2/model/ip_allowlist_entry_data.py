@@ -52,7 +52,7 @@ class IPAllowlistEntryData(ModelNormal):
         :param id: The unique identifier of the IP allowlist entry.
         :type id: str, optional
 
-        :param type: IP allowlist Entry type.
+        :param type: IP allowlist entry type.
         :type type: IPAllowlistEntryType
         """
         if attributes is not unset:
