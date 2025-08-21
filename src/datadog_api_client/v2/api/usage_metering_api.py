@@ -55,7 +55,13 @@ class UsageMeteringApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "month": {
+                    "openapi_types": (datetime,),
+                    "attribute": "month",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
             },
@@ -442,14 +448,21 @@ class UsageMeteringApi:
 
     def get_active_billing_dimensions(
         self,
+        *,
+        month: Union[datetime, UnsetType] = unset,
     ) -> ActiveBillingDimensionsResponse:
         """Get active billing dimensions for cost attribution.
 
-        Get active billing dimensions for cost attribution. Cost data for a given month becomes available no later than the 19th of the following month.
+        Get active billing dimensions for cost attribution in a given month. Note that billing dimensions active in a given month may not appear in the Monthly Cost Attribution API response until the 19th of the following month. For the most accurate results, request the same month for both endpoints.
 
+        :param month: Datetime in ISO-8601 format, UTC, precise to month: [YYYY-MM] for billing dimensions active this month. Defaults to the current month.
+        :type month: datetime, optional
         :rtype: ActiveBillingDimensionsResponse
         """
         kwargs: Dict[str, Any] = {}
+        if month is not unset:
+            kwargs["month"] = month
+
         return self._get_active_billing_dimensions_endpoint.call_with_http_info(**kwargs)
 
     def get_billing_dimension_mapping(
