@@ -312,6 +312,7 @@ class Configuration:
                 "v2.delete_scorecard_rule": False,
                 "v2.list_scorecard_outcomes": False,
                 "v2.list_scorecard_rules": False,
+                "v2.update_scorecard_outcomes_async": False,
                 "v2.update_scorecard_rule": False,
                 "v2.create_incident_service": False,
                 "v2.delete_incident_service": False,
