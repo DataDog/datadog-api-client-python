@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class MicrosoftTeamsChannelInfoType(ModelSimple):
     """
-    Channel info resource type.
+    Microsoft Teams channel info resource type.
 
     :param value: If omitted defaults to "ms-teams-channel-info". Must be one of ["ms-teams-channel-info"].
     :type value: str

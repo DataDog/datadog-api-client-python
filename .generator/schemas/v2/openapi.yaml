@@ -25120,7 +25120,7 @@ components:
       type: object
     MicrosoftTeamsChannelInfoType:
       default: ms-teams-channel-info
-      description: Channel info resource type.
+      description: Microsoft Teams channel info resource type.
       enum:
       - ms-teams-channel-info
       example: ms-teams-channel-info
