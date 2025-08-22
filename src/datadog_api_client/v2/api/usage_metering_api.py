@@ -174,15 +174,15 @@ class UsageMeteringApi:
                 "version": "v2",
             },
             params_map={
-                "view": {
-                    "openapi_types": (str,),
-                    "attribute": "view",
-                    "location": "query",
-                },
                 "start_month": {
                     "required": True,
                     "openapi_types": (datetime,),
                     "attribute": "start_month",
+                    "location": "query",
+                },
+                "view": {
+                    "openapi_types": (str,),
+                    "attribute": "view",
                     "location": "query",
                 },
                 "end_month": {
@@ -591,10 +591,10 @@ class UsageMeteringApi:
         :rtype: CostByOrgResponse
         """
         kwargs: Dict[str, Any] = {}
+        kwargs["start_month"] = start_month
+
         if view is not unset:
             kwargs["view"] = view
-
-        kwargs["start_month"] = start_month
 
         if end_month is not unset:
             kwargs["end_month"] = end_month
