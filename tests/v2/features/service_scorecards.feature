@@ -121,6 +121,24 @@ Feature: Service Scorecards
     Then the response status is 200 OK
     And the response has 4 items
 
+  @team:DataDog/service-catalog
+  Scenario: Update Scorecard outcomes asynchronously returns "Accepted" response
+    Given operation "UpdateScorecardOutcomesAsync" enabled
+    And there is a valid "create_scorecard_rule" in the system
+    And new "UpdateScorecardOutcomesAsync" request
+    And body with value {"data": {"attributes": {"results": [{"rule_id": "{{create_scorecard_rule.data.id}}", "entity_reference": "service:my-service", "remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>", "state": "pass"}]}, "type": "batched-outcome"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @team:DataDog/service-catalog
+  Scenario: Update Scorecard outcomes asynchronously returns "Bad Request" response
+    Given operation "UpdateScorecardOutcomesAsync" enabled
+    And there is a valid "create_scorecard_rule" in the system
+    And new "UpdateScorecardOutcomesAsync" request
+    And body with value {"data": {"attributes": {"results": [{"rule_id": "{{create_scorecard_rule.data.id}}", "entity_reference": "service:my-service", "state": "INVALID"}]}, "type": "batched-outcome"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @generated @skip @team:DataDog/service-catalog
   Scenario: Update an existing rule returns "Bad Request" response
     Given operation "UpdateScorecardRule" enabled
