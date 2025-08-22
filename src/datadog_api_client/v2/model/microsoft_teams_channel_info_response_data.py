@@ -63,7 +63,7 @@ class MicrosoftTeamsChannelInfoResponseData(ModelNormal):
         :param id: The ID of the channel.
         :type id: str, optional
 
-        :param type: Channel info resource type.
+        :param type: Microsoft Teams channel info resource type.
         :type type: MicrosoftTeamsChannelInfoType, optional
         """
         if attributes is not unset:
