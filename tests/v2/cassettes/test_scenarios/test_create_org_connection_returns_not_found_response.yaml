@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"connection_types":["logs"]},"relationships":{"sink_org":{"data":{"id":"nonexistent-org-id","type":"orgs"}}},"type":"org_connection"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/org_connections
+  response:
+    body:
+      string: '{"errors":["Not found"]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
