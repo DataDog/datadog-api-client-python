@@ -11,7 +11,6 @@ from datadog_api_client.v2.model.case_create_relationships import CaseCreateRela
 from datadog_api_client.v2.model.case_create_request import CaseCreateRequest
 from datadog_api_client.v2.model.case_priority import CasePriority
 from datadog_api_client.v2.model.case_resource_type import CaseResourceType
-from datadog_api_client.v2.model.case_type import CaseType
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
 from datadog_api_client.v2.model.project_relationship import ProjectRelationship
@@ -27,7 +26,7 @@ body = CaseCreateRequest(
         attributes=CaseCreateAttributes(
             priority=CasePriority.NOT_DEFINED,
             title="Security breach investigation in 0cfbc5cbc676ee71",
-            type=CaseType.STANDARD,
+            type_id="00000000-0000-0000-0000-000000000001",
         ),
         relationships=CaseCreateRelationships(
             assignee=NullableUserRelationship(
