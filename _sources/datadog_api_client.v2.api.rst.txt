@@ -452,6 +452,13 @@ datadog\_api\_client.v2.api.software\_catalog\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.spa\_api module
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.spa_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.spans\_api module
 ---------------------------------------------
 

@@ -3686,6 +3686,13 @@ datadog\_api\_client.v2.model.component\_properties\_is\_visible module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.component\_recommendation module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.component_recommendation
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.component\_type module
 ----------------------------------------------------
 
@@ -4222,6 +4229,13 @@ datadog\_api\_client.v2.model.cost\_by\_org\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cost_by_org_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cpu module
+----------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cpu
    :members:
    :show-inheritance:
 
@@ -6672,6 +6686,13 @@ datadog\_api\_client.v2.model.escalation\_type module
 -----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.escalation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.estimation module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.estimation
    :members:
    :show-inheritance:
 
@@ -14176,6 +14197,34 @@ datadog\_api\_client.v2.model.readiness\_gate\_threshold\_type module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.readiness_gate_threshold_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendation\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendation_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendation\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendation_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendation\_document module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendation_document
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendation\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendation_type
    :members:
    :show-inheritance:
 

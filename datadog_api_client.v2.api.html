@@ -2211,6 +2211,16 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.spa_api" class="md-nav__link">datadog_api_client.v2.api.spa_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.spa_api.SpaApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SpaApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SpaApi.get_spa_recommendations()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.spans_api" class="md-nav__link">datadog_api_client.v2.api.spans_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.spans_api.SpansApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SpansApi</span></code></a><nav class="md-nav">
@@ -11345,6 +11355,32 @@ and improve communication with internal and external users.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.upsert_catalog_kind_response.UpsertCatalogKindResponse" title="datadog_api_client.v2.model.upsert_catalog_kind_response.UpsertCatalogKindResponse">UpsertCatalogKindResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.spa_api">
+<span id="datadog-api-client-v2-api-spa-api-module"></span><h2 id="module-datadog_api_client.v2.api.spa_api">datadog_api_client.v2.api.spa_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.spa_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.spa_api.SpaApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SpaApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.spa_api.SpaApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>SPA (Spark Pod Autosizing) API. Provides resource recommendations and cost insights to help optimize Spark job configurations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations">
+<span class="sig-name descname"><span class="pre">get_spa_recommendations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shard</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.recommendation_document.RecommendationDocument" title="datadog_api_client.v2.model.recommendation_document.RecommendationDocument"><span class="pre">RecommendationDocument</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations" title="Link to this definition">¶</a></dt>
+<dd><p>Get SPA Recommendations.</p>
+<p>Retrieve resource recommendations for a Spark job. The caller (Spark Gateway or DJM UI) provides a service name and shard identifier, and SPA returns structured recommendations for driver and executor resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shard</strong> (<em>str</em>) – The shard tag for a spark job, which differentiates jobs within the same service that have different resource needs</p></li>
+<li><p><strong>service</strong> (<em>str</em>) – The service name for a spark job</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.recommendation_document.RecommendationDocument" title="datadog_api_client.v2.model.recommendation_document.RecommendationDocument">RecommendationDocument</a></p>
 </dd>
 </dl>
 </dd></dl>
