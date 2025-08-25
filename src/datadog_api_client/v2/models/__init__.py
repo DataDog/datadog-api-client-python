@@ -700,6 +700,7 @@ from datadog_api_client.v2.model.component_grid_properties_is_visible import Com
 from datadog_api_client.v2.model.component_grid_type import ComponentGridType
 from datadog_api_client.v2.model.component_properties import ComponentProperties
 from datadog_api_client.v2.model.component_properties_is_visible import ComponentPropertiesIsVisible
+from datadog_api_client.v2.model.component_recommendation import ComponentRecommendation
 from datadog_api_client.v2.model.component_type import ComponentType
 from datadog_api_client.v2.model.config_cat_credentials import ConfigCatCredentials
 from datadog_api_client.v2.model.config_cat_credentials_update import ConfigCatCredentialsUpdate
@@ -783,6 +784,7 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.cpu import Cpu
 from datadog_api_client.v2.model.create_action_connection_request import CreateActionConnectionRequest
 from datadog_api_client.v2.model.create_action_connection_response import CreateActionConnectionResponse
 from datadog_api_client.v2.model.create_app_request import CreateAppRequest
@@ -1270,6 +1272,7 @@ from datadog_api_client.v2.model.escalation_relationships_responders_data_items_
 from datadog_api_client.v2.model.escalation_target import EscalationTarget
 from datadog_api_client.v2.model.escalation_targets import EscalationTargets
 from datadog_api_client.v2.model.escalation_type import EscalationType
+from datadog_api_client.v2.model.estimation import Estimation
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_category import EventCategory
@@ -2889,6 +2892,10 @@ from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
+from datadog_api_client.v2.model.recommendation_attributes import RecommendationAttributes
+from datadog_api_client.v2.model.recommendation_data import RecommendationData
+from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
+from datadog_api_client.v2.model.recommendation_type import RecommendationType
 from datadog_api_client.v2.model.register_app_key_response import RegisterAppKeyResponse
 from datadog_api_client.v2.model.relation_attributes import RelationAttributes
 from datadog_api_client.v2.model.relation_entity import RelationEntity
@@ -4468,6 +4475,7 @@ __all__ = [
     "ComponentGridType",
     "ComponentProperties",
     "ComponentPropertiesIsVisible",
+    "ComponentRecommendation",
     "ComponentType",
     "ConfigCatCredentials",
     "ConfigCatCredentialsUpdate",
@@ -4545,6 +4553,7 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "Cpu",
     "CreateActionConnectionRequest",
     "CreateActionConnectionResponse",
     "CreateAppRequest",
@@ -4894,6 +4903,7 @@ __all__ = [
     "EscalationTarget",
     "EscalationTargets",
     "EscalationType",
+    "Estimation",
     "Event",
     "EventAttributes",
     "EventCategory",
@@ -6019,6 +6029,10 @@ __all__ = [
     "RUMWarning",
     "ReadinessGate",
     "ReadinessGateThresholdType",
+    "RecommendationAttributes",
+    "RecommendationData",
+    "RecommendationDocument",
+    "RecommendationType",
     "RegisterAppKeyResponse",
     "RelationAttributes",
     "RelationEntity",
