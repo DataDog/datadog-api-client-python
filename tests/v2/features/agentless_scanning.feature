@@ -123,10 +123,10 @@ Feature: Agentless Scanning
   @team:DataDog/k9-agentless
   Scenario: Post an AWS on demand task returns "AWS on demand task created successfully." response
     Given new "CreateAwsOnDemandTask" request
-    And body with value {"data": {"attributes": {"arn": "arn:aws:lambda:eu-west-3:376334461865:function:This-Is-An-Api-Spec-Test"}, "type": "aws_resource"}}
+    And body with value {"data": {"attributes": {"arn": "arn:aws:lambda:us-west-2:123456789012:function:my-function"}, "type": "aws_resource"}}
     When the request is sent
     Then the response status is 201 AWS on demand task created successfully
-    And the response "data.attributes.arn" is equal to "arn:aws:lambda:eu-west-3:376334461865:function:This-Is-An-Api-Spec-Test"
+    And the response "data.attributes.arn" is equal to "arn:aws:lambda:us-west-2:123456789012:function:my-function"
     And the response "data.attributes.status" is equal to "QUEUED"
 
   @team:DataDog/k9-agentless
