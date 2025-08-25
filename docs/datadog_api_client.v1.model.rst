@@ -1558,6 +1558,13 @@ datadog\_api\_client.v1.model.logs\_api\_error\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_api\_limit\_reached\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_api_limit_reached_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_arithmetic\_processor module
 ----------------------------------------------------------------
 

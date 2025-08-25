@@ -254,6 +254,7 @@ from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWi
 from datadog_api_client.v1.model.log_stream_widget_definition_type import LogStreamWidgetDefinitionType
 from datadog_api_client.v1.model.logs_api_error import LogsAPIError
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_api_limit_reached_response import LogsAPILimitReachedResponse
 from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
 from datadog_api_client.v1.model.logs_arithmetic_processor_type import LogsArithmeticProcessorType
 from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
@@ -1326,6 +1327,7 @@ __all__ = [
     "LogStreamWidgetDefinitionType",
     "LogsAPIError",
     "LogsAPIErrorResponse",
+    "LogsAPILimitReachedResponse",
     "LogsArithmeticProcessor",
     "LogsArithmeticProcessorType",
     "LogsArrayProcessor",
