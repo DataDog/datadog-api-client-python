@@ -321,6 +321,7 @@ class Configuration:
                 "v2.create_slo_report_job": False,
                 "v2.get_slo_report": False,
                 "v2.get_slo_report_job_status": False,
+                "v2.get_spa_recommendations": False,
                 "v2.add_member_team": False,
                 "v2.list_member_teams": False,
                 "v2.remove_member_team": False,
