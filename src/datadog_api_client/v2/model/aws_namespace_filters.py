@@ -15,8 +15,8 @@ class AWSNamespaceFilters(ModelComposed):
         """
         AWS Metrics namespace filters. Defaults to ``exclude_only``.
 
-        :param exclude_only: Exclude only these namespaces from metrics collection. Defaults to `["AWS/SQS", "AWS/ElasticMapReduce"]`.
-            `AWS/SQS` and `AWS/ElasticMapReduce` are excluded by default to reduce your AWS CloudWatch costs from `GetMetricData` API calls.
+        :param exclude_only: Exclude only these namespaces from metrics collection. Defaults to `["AWS/SQS", "AWS/ElasticMapReduce", "AWS/Usage"]`.
+            `AWS/SQS`, `AWS/ElasticMapReduce`, and `AWS/Usage` are excluded by default to reduce your AWS CloudWatch costs from `GetMetricData` API calls.
         :type exclude_only: [str]
 
         :param include_only: Include only these namespaces.
