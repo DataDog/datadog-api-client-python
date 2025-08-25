@@ -16,14 +16,16 @@ class CaseType(ModelSimple):
     """
     Case type
 
-    :param value: If omitted defaults to "STANDARD". Must be one of ["STANDARD"].
+    :param value: Must be one of ["STANDARD", "TUNKNOWN"].
     :type value: str
     """
 
     allowed_values = {
         "STANDARD",
+        "TUNKNOWN",
     }
     STANDARD: ClassVar["CaseType"]
+    TUNKNOWN: ClassVar["CaseType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class CaseType(ModelSimple):
 
 
 CaseType.STANDARD = CaseType("STANDARD")
+CaseType.TUNKNOWN = CaseType("TUNKNOWN")
