@@ -63,7 +63,23 @@ Feature: Agentless Scanning
     And the response "data[0].type" is equal to "aws_resource"
 
   @team:DataDog/k9-agentless
+  Scenario: Get AWS Scan Options returns "Not Found" response
+    Given new "GetAwsScanOptions" request
+    And request contains "account_id" parameter with value "404404404404"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-agentless
   Scenario: Get AWS Scan Options returns "OK" response
+    Given there is a valid "aws_scan_options" in the system
+    And new "GetAwsScanOptions" request
+    And request contains "account_id" parameter with value "{{ aws_scan_options.id }}"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" is equal to {{ aws_scan_options }}
+
+  @team:DataDog/k9-agentless
+  Scenario: List AWS Scan Options returns "OK" response
     Given new "ListAwsScanOptions" request
     When the request is sent
     Then the response status is 200 OK
