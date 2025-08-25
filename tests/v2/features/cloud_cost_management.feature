@@ -267,6 +267,14 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
+  @team:Datadog/cloud-cost-management
+  Scenario: Update Cloud Cost Management AWS CUR config returns "Not Found" response
+    Given new "UpdateCostAWSCURConfig" request
+    And request contains "cloud_account_id" parameter with value 12345678
+    And body with value {"data": {"attributes": {"is_enabled": true}, "type": "aws_cur_config_patch_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @replay-only @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management AWS CUR config returns "OK" response
     Given new "UpdateCostAWSCURConfig" request
@@ -283,6 +291,14 @@ Feature: Cloud Cost Management
     And body with value {"data": {"attributes": {"is_enabled": true}, "type": "azure_uc_config_patch_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @team:Datadog/cloud-cost-management
+  Scenario: Update Cloud Cost Management Azure config returns "Not Found" response
+    Given new "UpdateCostAzureUCConfigs" request
+    And request contains "cloud_account_id" parameter with value 12345678
+    And body with value {"data": {"attributes": {"is_enabled": true}, "type": "azure_uc_config_patch_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @replay-only @team:Datadog/cloud-cost-management
   Scenario: Update Cloud Cost Management Azure config returns "OK" response
