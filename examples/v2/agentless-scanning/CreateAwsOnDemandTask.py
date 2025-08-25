@@ -12,7 +12,7 @@ from datadog_api_client.v2.model.aws_on_demand_type import AwsOnDemandType
 body = AwsOnDemandCreateRequest(
     data=AwsOnDemandCreateData(
         attributes=AwsOnDemandCreateAttributes(
-            arn="arn:aws:lambda:eu-west-3:376334461865:function:This-Is-An-Api-Spec-Test",
+            arn="arn:aws:lambda:us-west-2:123456789012:function:my-function",
         ),
         type=AwsOnDemandType.AWS_RESOURCE,
     ),
