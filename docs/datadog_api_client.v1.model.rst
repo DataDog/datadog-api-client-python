@@ -6626,6 +6626,13 @@ datadog\_api\_client.v1.model.widget\_time module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.widget\_time\_hide\_incomplete\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_time_hide_incomplete_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.widget\_time\_windows module
 ----------------------------------------------------------
 

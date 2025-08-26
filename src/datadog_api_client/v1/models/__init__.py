@@ -1099,6 +1099,7 @@ from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
 from datadog_api_client.v1.model.widget_time import WidgetTime
+from datadog_api_client.v1.model.widget_time_hide_incomplete_data import WidgetTimeHideIncompleteData
 from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
 from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
 from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
@@ -2052,6 +2053,7 @@ __all__ = [
     "WidgetTextAlign",
     "WidgetTickEdge",
     "WidgetTime",
+    "WidgetTimeHideIncompleteData",
     "WidgetTimeWindows",
     "WidgetVerticalAlign",
     "WidgetViewMode",

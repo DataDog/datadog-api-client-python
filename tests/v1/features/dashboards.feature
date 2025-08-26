@@ -911,6 +911,14 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].search.query" is equal to "test_level:test"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new timeseries widget with hide incomplete cost data
+    Given new "CreateDashboard" request
+    And body with value {"title":"{{ unique }} with hide incomplete cost data","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.time.hide_incomplete_cost_data" is equal to true
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with incident_analytics data source
     Given new "CreateDashboard" request
     And body with value {"title":"{{ unique }} with incident_analytics datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"incident_analytics","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}

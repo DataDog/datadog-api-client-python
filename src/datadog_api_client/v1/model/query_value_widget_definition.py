@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
     from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
     from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+    from datadog_api_client.v1.model.widget_time_hide_incomplete_data import WidgetTimeHideIncompleteData
 
 
 class QueryValueWidgetDefinition(ModelNormal):
@@ -81,7 +82,14 @@ class QueryValueWidgetDefinition(ModelNormal):
         custom_unit: Union[str, UnsetType] = unset,
         precision: Union[int, UnsetType] = unset,
         text_align: Union[WidgetTextAlign, UnsetType] = unset,
-        time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
+        time: Union[
+            WidgetTime,
+            WidgetLegacyLiveSpan,
+            WidgetNewLiveSpan,
+            WidgetNewFixedSpan,
+            WidgetTimeHideIncompleteData,
+            UnsetType,
+        ] = unset,
         timeseries_background: Union[TimeseriesBackground, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,

@@ -31,6 +31,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
     from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
     from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+    from datadog_api_client.v1.model.widget_time_hide_incomplete_data import WidgetTimeHideIncompleteData
 
 
 class SplitGraphWidgetDefinition(ModelNormal):
@@ -80,7 +81,14 @@ class SplitGraphWidgetDefinition(ModelNormal):
         split_config: SplitConfig,
         type: SplitGraphWidgetDefinitionType,
         has_uniform_y_axes: Union[bool, UnsetType] = unset,
-        time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
+        time: Union[
+            WidgetTime,
+            WidgetLegacyLiveSpan,
+            WidgetNewLiveSpan,
+            WidgetNewFixedSpan,
+            WidgetTimeHideIncompleteData,
+            UnsetType,
+        ] = unset,
         title: Union[str, UnsetType] = unset,
         **kwargs,
     ):

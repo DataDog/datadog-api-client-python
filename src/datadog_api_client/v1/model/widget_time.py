@@ -32,6 +32,9 @@ class WidgetTime(ModelComposed):
 
         :param to: End time in seconds since epoch.
         :type to: int
+
+        :param hide_incomplete_cost_data: Whether to hide incomplete cost data in the widget.
+        :type hide_incomplete_cost_data: bool
         """
         super().__init__(kwargs)
 
@@ -47,11 +50,13 @@ class WidgetTime(ModelComposed):
         from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
         from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
         from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+        from datadog_api_client.v1.model.widget_time_hide_incomplete_data import WidgetTimeHideIncompleteData
 
         return {
             "oneOf": [
                 WidgetLegacyLiveSpan,
                 WidgetNewLiveSpan,
                 WidgetNewFixedSpan,
+                WidgetTimeHideIncompleteData,
             ],
         }
