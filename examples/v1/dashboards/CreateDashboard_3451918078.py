@@ -52,6 +52,7 @@ body = Dashboard(
                     type=WidgetNewFixedSpanType.FIXED,
                     _from=1712080128,
                     to=1712083128,
+                    hide_incomplete_cost_data=True,
                 ),
                 type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[
