@@ -10,11 +10,11 @@ Feature: Service Scorecards
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceScorecards" API
 
-  @generated @skip @team:DataDog/service-catalog
+  @team:DataDog/service-catalog
   Scenario: Create a new rule returns "Bad Request" response
     Given operation "CreateScorecardRule" enabled
     And new "CreateScorecardRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Team Defined", "scorecard_name": "Deployments automated via Deployment Trains"}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"enabled": true, "level": 2, "name": "Team Defined", "scorecard_id": "NOT.FOUND"}, "type": "rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -121,12 +121,41 @@ Feature: Service Scorecards
     Then the response status is 200 OK
     And the response has 4 items
 
+  @team:DataDog/service-catalog
+  Scenario: Update Scorecard outcomes asynchronously returns "Accepted" response
+    Given operation "UpdateScorecardOutcomesAsync" enabled
+    And there is a valid "create_scorecard_rule" in the system
+    And new "UpdateScorecardOutcomesAsync" request
+    And body with value {"data": {"attributes": {"results": [{"rule_id": "{{create_scorecard_rule.data.id}}", "entity_reference": "service:my-service", "remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>", "state": "pass"}]}, "type": "batched-outcome"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @team:DataDog/service-catalog
+  Scenario: Update Scorecard outcomes asynchronously returns "Bad Request" response
+    Given operation "UpdateScorecardOutcomesAsync" enabled
+    And there is a valid "create_scorecard_rule" in the system
+    And new "UpdateScorecardOutcomesAsync" request
+    And body with value {"data": {"attributes": {"results": [{"rule_id": "{{create_scorecard_rule.data.id}}", "entity_reference": "service:my-service", "state": "INVALID"}]}, "type": "batched-outcome"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0]" has field "detail"
+
+  @team:DataDog/service-catalog
+  Scenario: Update Scorecard outcomes asynchronously returns "Conflict" response
+    Given operation "UpdateScorecardOutcomesAsync" enabled
+    And new "UpdateScorecardOutcomesAsync" request
+    And body with value {"data": {"attributes": {"results": [{"rule_id": "INVALID.RULE_ID", "entity_reference": "service:my-service", "remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>", "state": "pass"}]}, "type": "batched-outcome"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+    And the response "errors" has length 1
+
   @generated @skip @team:DataDog/service-catalog
   Scenario: Update an existing rule returns "Bad Request" response
     Given operation "UpdateScorecardRule" enabled
     And new "UpdateScorecardRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Team Defined", "scorecard_name": "Deployments automated via Deployment Trains"}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"enabled": true, "level": 2, "name": "Team Defined", "scorecard_name": "Deployments automated via Deployment Trains"}, "type": "rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -139,3 +168,22 @@ Feature: Service Scorecards
     And body with value {"data": { "attributes" : {"enabled": true, "name": "{{create_scorecard_rule.data.attributes.name}}", "scorecard_name": "{{create_scorecard_rule.data.attributes.scorecard_name}}", "description": "Updated description via test"}}}
     When the request is sent
     Then the response status is 200 Rule updated successfully
+
+  @team:DataDog/service-catalog
+  Scenario: Update an existing scorecard rule returns "Bad Request" response
+    Given operation "UpdateScorecardRule" enabled
+    And there is a valid "create_scorecard_rule" in the system
+    And new "UpdateScorecardRule" request
+    And request contains "rule_id" parameter from "create_scorecard_rule.data.id"
+    And body with value {"data": {"attributes": {"enabled": true, "level": 2, "name": "Team Defined", "scorecard_id": "NOT.FOUND"}, "type": "rule"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/service-catalog
+  Scenario: Update an existing scorecard rule returns "Not Found" response
+    Given operation "UpdateScorecardRule" enabled
+    And new "UpdateScorecardRule" request
+    And request contains "rule_id" parameter with value "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "level": 2, "name": "Team Defined", "scorecard_name": "Deployments automated via Deployment Trains"}, "type": "rule"}}
+    When the request is sent
+    Then the response status is 404 Not Found

@@ -3802,6 +3802,11 @@ from datadog_api_client.v2.model.update_custom_framework_response import UpdateC
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
+from datadog_api_client.v2.model.update_outcomes_async_attributes import UpdateOutcomesAsyncAttributes
+from datadog_api_client.v2.model.update_outcomes_async_request import UpdateOutcomesAsyncRequest
+from datadog_api_client.v2.model.update_outcomes_async_request_data import UpdateOutcomesAsyncRequestData
+from datadog_api_client.v2.model.update_outcomes_async_request_item import UpdateOutcomesAsyncRequestItem
+from datadog_api_client.v2.model.update_outcomes_async_type import UpdateOutcomesAsyncType
 from datadog_api_client.v2.model.update_resource_evaluation_filters_request import (
     UpdateResourceEvaluationFiltersRequest,
 )
@@ -6743,6 +6748,11 @@ __all__ = [
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
+    "UpdateOutcomesAsyncAttributes",
+    "UpdateOutcomesAsyncRequest",
+    "UpdateOutcomesAsyncRequestData",
+    "UpdateOutcomesAsyncRequestItem",
+    "UpdateOutcomesAsyncType",
     "UpdateResourceEvaluationFiltersRequest",
     "UpdateResourceEvaluationFiltersRequestData",
     "UpdateResourceEvaluationFiltersResponse",

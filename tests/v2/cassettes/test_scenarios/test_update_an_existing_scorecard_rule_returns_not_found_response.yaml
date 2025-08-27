@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"level":2,"name":"Team Defined","scorecard_name":"Deployments
+      automated via Deployment Trains"},"type":"rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules/REPLACE.ME
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"rule not found:
+        REPLACE.ME"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
