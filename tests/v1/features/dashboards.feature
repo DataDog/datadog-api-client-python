@@ -922,30 +922,33 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with legacy live span time format
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with legacy live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"live_span": "5m"},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with legacy live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"live_span": "5m", "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.time.live_span" is equal to "5m"
+    And the response "widgets[0].definition.time.hide_incomplete_cost_data" is equal to true
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with new fixed span time format
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with new fixed span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "fixed", "from": 1712080128, "to": 1712083128},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with new fixed span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "fixed", "from": 1712080128, "to": 1712083128, "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.time.type" is equal to "fixed"
     And the response "widgets[0].definition.time.from" is equal to 1712080128
     And the response "widgets[0].definition.time.to" is equal to 1712083128
+    And the response "widgets[0].definition.time.hide_incomplete_cost_data" is equal to true
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with new live span time format
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with new live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "live", "unit": "minute", "value": 8},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with new live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "live", "unit": "minute", "value": 8, "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.time.type" is equal to "live"
     And the response "widgets[0].definition.time.unit" is equal to "minute"
     And the response "widgets[0].definition.time.value" is equal to 8
+    And the response "widgets[0].definition.time.hide_incomplete_cost_data" is equal to true
 
   @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Create a shared dashboard returns "Bad Request" response
