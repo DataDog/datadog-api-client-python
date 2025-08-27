@@ -28,6 +28,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
             "starting_at": (str,),
             "status": (str,),
             "to_time": (int,),
+            "total_displayed": (int,),
             "total_unrestricted": (int,),
             "updated_at": (str,),
         }
@@ -44,6 +45,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         "starting_at": "starting_at",
         "status": "status",
         "to_time": "to_time",
+        "total_displayed": "total_displayed",
         "total_unrestricted": "total_unrestricted",
         "updated_at": "updated_at",
     }
@@ -60,6 +62,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         starting_at: str,
         status: str,
         to_time: int,
+        total_displayed: int,
         total_unrestricted: int,
         updated_at: str,
         indexes: Union[List[str], UnsetType] = unset,
@@ -101,6 +104,9 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         :param to_time: End of requested time window, milliseconds since Unix epoch.
         :type to_time: int
 
+        :param total_displayed: Total number of elements to be deleted according to the UI.
+        :type total_displayed: int
+
         :param total_unrestricted: Total number of elements to be deleted. Only the data accessible to the current user that matches the query and timeframe provided will be deleted.
         :type total_unrestricted: int
 
@@ -121,5 +127,6 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         self_.starting_at = starting_at
         self_.status = status
         self_.to_time = to_time
+        self_.total_displayed = total_displayed
         self_.total_unrestricted = total_unrestricted
         self_.updated_at = updated_at

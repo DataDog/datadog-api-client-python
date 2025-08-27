@@ -10662,6 +10662,12 @@ components:
     CreateDataDeletionRequestBodyAttributes:
       description: Attributes for creating a data deletion request.
       properties:
+        displayed_total:
+          description: The total number of elements to be deleted that the UI shows
+            to the user.
+          example: 25000
+          format: int64
+          type: integer
         from:
           description: Start of requested time window, milliseconds since Unix epoch.
           example: 1672527600000
@@ -10694,6 +10700,7 @@ components:
       - query
       - from
       - to
+      - displayed_total
       type: object
     CreateDataDeletionRequestBodyData:
       description: Data needed to create a data deletion request.
@@ -12947,6 +12954,11 @@ components:
           example: 1704063600000
           format: int64
           type: integer
+        total_displayed:
+          description: Total number of elements to be deleted according to the UI.
+          example: 100
+          format: int64
+          type: integer
         total_unrestricted:
           description: Total number of elements to be deleted. Only the data accessible
             to the current user that matches the query and timeframe provided will
@@ -12969,6 +12981,7 @@ components:
       - starting_at
       - status
       - to_time
+      - total_displayed
       - total_unrestricted
       - updated_at
       type: object
