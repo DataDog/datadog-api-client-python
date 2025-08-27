@@ -19,6 +19,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         return {
             "created_at": (str,),
             "created_by": (str,),
+            "displayed_total": (int,),
             "from_time": (int,),
             "indexes": ([str],),
             "is_created": (bool,),
@@ -35,6 +36,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
     attribute_map = {
         "created_at": "created_at",
         "created_by": "created_by",
+        "displayed_total": "displayed_total",
         "from_time": "from_time",
         "indexes": "indexes",
         "is_created": "is_created",
@@ -52,6 +54,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         self_,
         created_at: str,
         created_by: str,
+        displayed_total: int,
         from_time: int,
         is_created: bool,
         org_id: int,
@@ -73,6 +76,9 @@ class DataDeletionResponseItemAttributes(ModelNormal):
 
         :param created_by: User who created the deletion request.
         :type created_by: str
+
+        :param displayed_total: Total number of elements to be deleted according to the UI.
+        :type displayed_total: int
 
         :param from_time: Start of requested time window, milliseconds since Unix epoch.
         :type from_time: int
@@ -113,6 +119,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
 
         self_.created_at = created_at
         self_.created_by = created_by
+        self_.displayed_total = displayed_total
         self_.from_time = from_time
         self_.is_created = is_created
         self_.org_id = org_id

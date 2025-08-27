@@ -10662,6 +10662,11 @@ components:
     CreateDataDeletionRequestBodyAttributes:
       description: Attributes for creating a data deletion request.
       properties:
+        displayed_total:
+          description: Total number of elements to be deleted according to the UI.
+          example: 25000
+          format: int64
+          type: integer
         from:
           description: Start of requested time window, milliseconds since Unix epoch.
           example: 1672527600000
@@ -10694,6 +10699,7 @@ components:
       - query
       - from
       - to
+      - displayed_total
       type: object
     CreateDataDeletionRequestBodyData:
       description: Data needed to create a data deletion request.
@@ -12900,6 +12906,11 @@ components:
           description: User who created the deletion request.
           example: test.user@datadoghq.com
           type: string
+        displayed_total:
+          description: Total number of elements to be deleted according to the UI.
+          example: 25000
+          format: int64
+          type: integer
         from_time:
           description: Start of requested time window, milliseconds since Unix epoch.
           example: 1672527600000
@@ -12961,6 +12972,7 @@ components:
       required:
       - created_at
       - created_by
+      - displayed_total
       - from_time
       - is_created
       - org_id

@@ -16,6 +16,7 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
 body = CreateDataDeletionRequestBody(
     data=CreateDataDeletionRequestBodyData(
         attributes=CreateDataDeletionRequestBodyAttributes(
+            displayed_total=25000,
             _from=1672527600000,
             indexes=[
                 "test-index",

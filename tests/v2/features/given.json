@@ -197,7 +197,7 @@
       },
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"from\": 1672527600000,\n      \"to\": 1704063600000,\n      \"indexes\": [\"test-index\", \"test-index-2\"],\n      \"query\": {\"host\": \"abc\", \"service\": \"xyz\"}\n    },\n    \"type\": \"create_deletion_req\"\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"displayed_total\": 25000,\n      \"from\": 1672527600000,\n      \"to\": 1704063600000,\n      \"indexes\": [\"test-index\", \"test-index-2\"],\n      \"query\": {\"host\": \"abc\", \"service\": \"xyz\"}\n    },\n    \"type\": \"create_deletion_req\"\n  }\n}"
       }
     ],
     "step": "there is a valid \"deletion_request\" in the system",
