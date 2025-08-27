@@ -35,12 +35,14 @@ class SensitiveDataScannerTextReplacement(ModelNormal):
         return {
             "number_of_chars": (int,),
             "replacement_string": (str,),
+            "should_save_match": (bool,),
             "type": (SensitiveDataScannerTextReplacementType,),
         }
 
     attribute_map = {
         "number_of_chars": "number_of_chars",
         "replacement_string": "replacement_string",
+        "should_save_match": "should_save_match",
         "type": "type",
     }
 
@@ -48,6 +50,7 @@ class SensitiveDataScannerTextReplacement(ModelNormal):
         self_,
         number_of_chars: Union[int, UnsetType] = unset,
         replacement_string: Union[str, UnsetType] = unset,
+        should_save_match: Union[bool, UnsetType] = unset,
         type: Union[SensitiveDataScannerTextReplacementType, UnsetType] = unset,
         **kwargs,
     ):
@@ -61,6 +64,9 @@ class SensitiveDataScannerTextReplacement(ModelNormal):
         :param replacement_string: Required if type == 'replacement_string'.
         :type replacement_string: str, optional
 
+        :param should_save_match: Only valid when type == ``replacement_string``. When enabled, matches can be unmasked in logs by users with ‘Data Scanner Unmask’ permission. As a security best practice, avoid masking for highly-sensitive, long-lived data.
+        :type should_save_match: bool, optional
+
         :param type: Type of the replacement text. None means no replacement.
             hash means the data will be stubbed. replacement_string means that
             one can chose a text to replace the data. partial_replacement_from_beginning
@@ -73,6 +79,8 @@ class SensitiveDataScannerTextReplacement(ModelNormal):
             kwargs["number_of_chars"] = number_of_chars
         if replacement_string is not unset:
             kwargs["replacement_string"] = replacement_string
+        if should_save_match is not unset:
+            kwargs["should_save_match"] = should_save_match
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)

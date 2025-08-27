@@ -50,6 +50,17 @@ Feature: Sensitive Data Scanner
     And the response "data.attributes.included_keyword_configuration.character_count" is equal to 35
     And the response "data.attributes.included_keyword_configuration.keywords[0]" is equal to "credit card"
 
+  @team:DataDog/sensitive-data-scanner
+  Scenario: Create Scanning Rule with should_save_match returns "OK" response
+    Given a valid "configuration" in the system
+    And there is a valid "scanning_group" in the system
+    And new "CreateScanningRule" request
+    And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"replacement_string","replacement_string":"REDACTED","should_save_match":true},"tags":["sensitive_data:true"],"is_enabled":true,"priority":1},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "sensitive_data_scanner_rule"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+
   @generated @skip @team:DataDog/sensitive-data-scanner
   Scenario: Delete Scanning Group returns "Bad Request" response
     Given new "DeleteScanningGroup" request
