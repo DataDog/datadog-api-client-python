@@ -28,7 +28,7 @@ class OnCallPagingApi:
         self._acknowledge_on_call_page_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/on-call/pages/{page_id}/acknowledge",
                 "operation_id": "acknowledge_on_call_page",
                 "http_method": "POST",
@@ -96,7 +96,7 @@ class OnCallPagingApi:
         self._create_on_call_page_endpoint = _Endpoint(
             settings={
                 "response_type": (CreatePageResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/on-call/pages",
                 "operation_id": "create_on_call_page",
                 "http_method": "POST",
@@ -161,7 +161,7 @@ class OnCallPagingApi:
         self._escalate_on_call_page_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/on-call/pages/{page_id}/escalate",
                 "operation_id": "escalate_on_call_page",
                 "http_method": "POST",
@@ -229,7 +229,7 @@ class OnCallPagingApi:
         self._resolve_on_call_page_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/on-call/pages/{page_id}/resolve",
                 "operation_id": "resolve_on_call_page",
                 "http_method": "POST",

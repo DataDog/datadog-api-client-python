@@ -58234,10 +58234,6 @@ paths:
           description: OK.
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       servers:
       - url: https://{site}
         variables:
@@ -58270,6 +58266,10 @@ paths:
       summary: Create On-Call Page
       tags:
       - On-Call Paging
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_page
   /api/v2/on-call/pages/{page_id}/acknowledge:
     post:
       description: 'Acknowledges an On-Call Page.
@@ -58290,10 +58290,6 @@ paths:
           description: Accepted.
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       servers:
       - url: https://{site}
         variables:
@@ -58326,6 +58322,10 @@ paths:
       summary: Acknowledge On-Call Page
       tags:
       - On-Call Paging
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_respond
   /api/v2/on-call/pages/{page_id}/escalate:
     post:
       description: 'Escalates an On-Call Page.
@@ -58346,10 +58346,6 @@ paths:
           description: Accepted.
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       servers:
       - url: https://{site}
         variables:
@@ -58382,6 +58378,10 @@ paths:
       summary: Escalate On-Call Page
       tags:
       - On-Call Paging
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_page
   /api/v2/on-call/pages/{page_id}/resolve:
     post:
       description: 'Resolves an On-Call Page.
@@ -58402,10 +58402,6 @@ paths:
           description: Accepted.
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
       servers:
       - url: https://{site}
         variables:
@@ -58438,6 +58434,10 @@ paths:
       summary: Resolve On-Call Page
       tags:
       - On-Call Paging
+      x-permission:
+        operator: AND
+        permissions:
+        - on_call_respond
   /api/v2/on-call/schedules:
     post:
       description: Create a new On-Call schedule
