@@ -49,7 +49,6 @@ class SyntheticsCITest(ModelNormal):
             "retry": (SyntheticsTestOptionsRetry,),
             "start_url": (str,),
             "variables": ({str: (str,)},),
-            "version": (int,),
         }
 
     attribute_map = {
@@ -67,7 +66,6 @@ class SyntheticsCITest(ModelNormal):
         "retry": "retry",
         "start_url": "startUrl",
         "variables": "variables",
-        "version": "version",
     }
 
     def __init__(
@@ -95,7 +93,6 @@ class SyntheticsCITest(ModelNormal):
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         start_url: Union[str, UnsetType] = unset,
         variables: Union[Dict[str, str], UnsetType] = unset,
-        version: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -142,9 +139,6 @@ class SyntheticsCITest(ModelNormal):
 
         :param variables: Variables to replace in the test.
         :type variables: {str: (str,)}, optional
-
-        :param version: The version number of the Synthetic test version to trigger.
-        :type version: int, optional
         """
         if allow_insecure_certificates is not unset:
             kwargs["allow_insecure_certificates"] = allow_insecure_certificates
@@ -172,8 +166,6 @@ class SyntheticsCITest(ModelNormal):
             kwargs["start_url"] = start_url
         if variables is not unset:
             kwargs["variables"] = variables
-        if version is not unset:
-            kwargs["version"] = version
         super().__init__(kwargs)
 
         self_.public_id = public_id
