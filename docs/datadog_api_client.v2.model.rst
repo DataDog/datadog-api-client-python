@@ -19527,6 +19527,41 @@ datadog\_api\_client.v2.model.update\_open\_api\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_outcomes\_async\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_outcomes_async_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_outcomes\_async\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_outcomes_async_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_outcomes\_async\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_outcomes_async_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_outcomes\_async\_request\_item module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_outcomes_async_request_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_outcomes\_async\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_outcomes_async_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_resource\_evaluation\_filters\_request module
 -----------------------------------------------------------------------------------
 

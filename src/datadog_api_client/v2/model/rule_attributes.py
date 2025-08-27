@@ -15,6 +15,13 @@ from datadog_api_client.model_utils import (
 
 
 class RuleAttributes(ModelNormal):
+    validations = {
+        "level": {
+            "inclusive_maximum": 3,
+            "inclusive_minimum": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -23,6 +30,7 @@ class RuleAttributes(ModelNormal):
             "custom": (bool,),
             "description": (str,),
             "enabled": (bool,),
+            "level": (int,),
             "modified_at": (datetime,),
             "name": (str,),
             "owner": (str,),
@@ -35,6 +43,7 @@ class RuleAttributes(ModelNormal):
         "custom": "custom",
         "description": "description",
         "enabled": "enabled",
+        "level": "level",
         "modified_at": "modified_at",
         "name": "name",
         "owner": "owner",
@@ -48,6 +57,7 @@ class RuleAttributes(ModelNormal):
         custom: Union[bool, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
+        level: Union[int, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         owner: Union[str, UnsetType] = unset,
@@ -72,6 +82,9 @@ class RuleAttributes(ModelNormal):
         :param enabled: If enabled, the rule is calculated as part of the score.
         :type enabled: bool, optional
 
+        :param level: The maturity level of the rule (1, 2, or 3).
+        :type level: int, optional
+
         :param modified_at: Time of the last rule outcome modification.
         :type modified_at: datetime, optional
 
@@ -94,6 +107,8 @@ class RuleAttributes(ModelNormal):
             kwargs["description"] = description
         if enabled is not unset:
             kwargs["enabled"] = enabled
+        if level is not unset:
+            kwargs["level"] = level
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if name is not unset:

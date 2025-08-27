@@ -2742,6 +2742,12 @@
       "type": "safe"
     }
   },
+  "UpdateScorecardOutcomesAsync": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateScorecardOutcomesBatch": {
     "tag": "Service Scorecards",
     "undo": {

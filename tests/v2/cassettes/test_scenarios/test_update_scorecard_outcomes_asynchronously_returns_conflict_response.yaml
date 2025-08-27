@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"results":[{"entity_reference":"service:my-service","remarks":"See:
+      <a href=\"https://app.datadoghq.com/services\">Services</a>","rule_id":"INVALID.RULE_ID","state":"pass"}]},"type":"batched-outcome"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/scorecard/outcomes
+  response:
+    body:
+      string: '{"errors":[{"status":"409","title":"Invalid rule_id"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+version: 1
