@@ -50455,15 +50455,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get Monthly Cost Attribution
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/csm/onboarding/agents:
     get:
       description: Get the list of all CSM Agents running on your hosts and containers.
@@ -67511,15 +67509,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get cost across multi-org account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/usage/estimated_cost:
     get:
       description: 'Get estimated cost across multi-org and single root-org accounts.
@@ -67617,15 +67613,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get estimated cost across your account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/usage/historical_cost:
     get:
       description: 'Get historical cost across multi-org and single root-org accounts.
@@ -67700,15 +67694,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get historical cost across your account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/usage/hourly_usage:
     get:
       description: Get hourly usage by product family.
@@ -68037,15 +68029,13 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - usage_read
-        - billing_read
       summary: Get projected cost across your account
       tags:
       - Usage Metering
       x-permission:
-        operator: AND
+        operator: OR
         permissions:
         - usage_read
-        - billing_read
   /api/v2/user_invitations:
     post:
       description: Sends emails to one or more users inviting them to join the organization.
