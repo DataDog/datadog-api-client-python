@@ -12,6 +12,13 @@
     "operationId": "CreateActionConnection"
   },
   {
+    "source": "data[0]",
+    "step": "there is a valid \"aws_scan_options\" in the system",
+    "key": "aws_scan_options",
+    "tag": "Agentless Scanning",
+    "operationId": "ListAwsScanOptions"
+  },
+  {
     "parameters": [
       {
         "name": "body",
