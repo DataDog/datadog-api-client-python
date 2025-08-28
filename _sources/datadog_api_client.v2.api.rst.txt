@@ -347,6 +347,13 @@ datadog\_api\_client.v2.api.opsgenie\_integration\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.org\_connections\_api module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.org_connections_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.organizations\_api module
 -----------------------------------------------------
 
