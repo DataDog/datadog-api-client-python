@@ -2228,37 +2228,6 @@
       "type": "idempotent"
     }
   },
-  "ListOrgConnections": {
-    "tag": "Org Connections",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateOrgConnections": {
-    "tag": "Org Connections",
-    "undo": {
-      "operationId": "DeleteOrgConnections",
-      "parameters": [
-        {
-          "name": "connection_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteOrgConnections": {
-    "tag": "Org Connections",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "UpdateOrgConnections": {
-    "tag": "Org Connections",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "ListPermissions": {
     "tag": "Roles",
     "undo": {
