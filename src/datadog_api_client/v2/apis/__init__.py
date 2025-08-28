@@ -47,7 +47,6 @@ from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.on_call_api import OnCallApi
 from datadog_api_client.v2.api.on_call_paging_api import OnCallPagingApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
-from datadog_api_client.v2.api.org_connections_api import OrgConnectionsApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
@@ -123,7 +122,6 @@ __all__ = [
     "OnCallApi",
     "OnCallPagingApi",
     "OpsgenieIntegrationApi",
-    "OrgConnectionsApi",
     "OrganizationsApi",
     "PowerpackApi",
     "ProcessesApi",

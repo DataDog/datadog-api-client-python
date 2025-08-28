@@ -557,19 +557,6 @@
     "operationId": "SetOnCallTeamRoutingRules"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "origin": "request",
-        "value": "{\n  \"data\": {\n    \"type\": \"org_connection\",\n    \"relationships\": {\n      \"sink_org\": {\n        \"data\": {\n          \"type\": \"orgs\",\n          \"id\": \"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\"\n        }\n      }\n    },\n    \"attributes\": {\n      \"connection_types\": [\"logs\"]\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"org_connection\" in the system",
-    "key": "org_connection",
-    "tag": "Org Connections",
-    "operationId": "CreateOrgConnections"
-  },
-  {
     "source": "data[4]",
     "step": "there is a valid \"permission\" in the system",
     "key": "permission",
