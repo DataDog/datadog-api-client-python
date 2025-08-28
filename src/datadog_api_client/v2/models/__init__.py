@@ -2757,28 +2757,6 @@ from datadog_api_client.v2.model.org_config_type import OrgConfigType
 from datadog_api_client.v2.model.org_config_write import OrgConfigWrite
 from datadog_api_client.v2.model.org_config_write_attributes import OrgConfigWriteAttributes
 from datadog_api_client.v2.model.org_config_write_request import OrgConfigWriteRequest
-from datadog_api_client.v2.model.org_connection import OrgConnection
-from datadog_api_client.v2.model.org_connection_attributes import OrgConnectionAttributes
-from datadog_api_client.v2.model.org_connection_create import OrgConnectionCreate
-from datadog_api_client.v2.model.org_connection_create_attributes import OrgConnectionCreateAttributes
-from datadog_api_client.v2.model.org_connection_create_relationships import OrgConnectionCreateRelationships
-from datadog_api_client.v2.model.org_connection_create_request import OrgConnectionCreateRequest
-from datadog_api_client.v2.model.org_connection_list_response import OrgConnectionListResponse
-from datadog_api_client.v2.model.org_connection_list_response_meta import OrgConnectionListResponseMeta
-from datadog_api_client.v2.model.org_connection_list_response_meta_page import OrgConnectionListResponseMetaPage
-from datadog_api_client.v2.model.org_connection_org_relationship import OrgConnectionOrgRelationship
-from datadog_api_client.v2.model.org_connection_org_relationship_data import OrgConnectionOrgRelationshipData
-from datadog_api_client.v2.model.org_connection_org_relationship_data_type import OrgConnectionOrgRelationshipDataType
-from datadog_api_client.v2.model.org_connection_relationships import OrgConnectionRelationships
-from datadog_api_client.v2.model.org_connection_response import OrgConnectionResponse
-from datadog_api_client.v2.model.org_connection_type import OrgConnectionType
-from datadog_api_client.v2.model.org_connection_type_enum import OrgConnectionTypeEnum
-from datadog_api_client.v2.model.org_connection_update import OrgConnectionUpdate
-from datadog_api_client.v2.model.org_connection_update_attributes import OrgConnectionUpdateAttributes
-from datadog_api_client.v2.model.org_connection_update_request import OrgConnectionUpdateRequest
-from datadog_api_client.v2.model.org_connection_user_relationship import OrgConnectionUserRelationship
-from datadog_api_client.v2.model.org_connection_user_relationship_data import OrgConnectionUserRelationshipData
-from datadog_api_client.v2.model.org_connection_user_relationship_data_type import OrgConnectionUserRelationshipDataType
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
@@ -5927,28 +5905,6 @@ __all__ = [
     "OrgConfigWrite",
     "OrgConfigWriteAttributes",
     "OrgConfigWriteRequest",
-    "OrgConnection",
-    "OrgConnectionAttributes",
-    "OrgConnectionCreate",
-    "OrgConnectionCreateAttributes",
-    "OrgConnectionCreateRelationships",
-    "OrgConnectionCreateRequest",
-    "OrgConnectionListResponse",
-    "OrgConnectionListResponseMeta",
-    "OrgConnectionListResponseMetaPage",
-    "OrgConnectionOrgRelationship",
-    "OrgConnectionOrgRelationshipData",
-    "OrgConnectionOrgRelationshipDataType",
-    "OrgConnectionRelationships",
-    "OrgConnectionResponse",
-    "OrgConnectionType",
-    "OrgConnectionTypeEnum",
-    "OrgConnectionUpdate",
-    "OrgConnectionUpdateAttributes",
-    "OrgConnectionUpdateRequest",
-    "OrgConnectionUserRelationship",
-    "OrgConnectionUserRelationshipData",
-    "OrgConnectionUserRelationshipDataType",
     "Organization",
     "OrganizationAttributes",
     "OrganizationsType",
