@@ -713,6 +713,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.get_aws_on_demand_task" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.get_aws_on_demand_task()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.get_aws_scan_options" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.get_aws_scan_options()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_on_demand_tasks" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.list_aws_on_demand_tasks()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_scan_options" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi.list_aws_scan_options()</span></code></a>
@@ -2629,6 +2631,20 @@ Go to <a class="reference external" href="https://www.datadoghq.com/blog/agentle
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.get_aws_scan_options">
+<span class="sig-name descname"><span class="pre">get_aws_scan_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_scan_options_response.AwsScanOptionsResponse" title="datadog_api_client.v2.model.aws_scan_options_response.AwsScanOptionsResponse"><span class="pre">AwsScanOptionsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.get_aws_scan_options" title="Link to this definition">¶</a></dt>
+<dd><p>Get AWS scan options.</p>
+<p>Fetches the Agentless scan options for an activated account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_id</strong> (<em>str</em>) – The ID of an AWS account.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_scan_options_response.AwsScanOptionsResponse" title="datadog_api_client.v2.model.aws_scan_options_response.AwsScanOptionsResponse">AwsScanOptionsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_on_demand_tasks">
 <span class="sig-name descname"><span class="pre">list_aws_on_demand_tasks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_on_demand_list_response.AwsOnDemandListResponse" title="datadog_api_client.v2.model.aws_on_demand_list_response.AwsOnDemandListResponse"><span class="pre">AwsOnDemandListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_on_demand_tasks" title="Link to this definition">¶</a></dt>
 <dd><p>Get AWS On Demand tasks.</p>
@@ -2642,7 +2658,7 @@ Go to <a class="reference external" href="https://www.datadoghq.com/blog/agentle
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_scan_options">
 <span class="sig-name descname"><span class="pre">list_aws_scan_options</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_scan_options_list_response.AwsScanOptionsListResponse" title="datadog_api_client.v2.model.aws_scan_options_list_response.AwsScanOptionsListResponse"><span class="pre">AwsScanOptionsListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.list_aws_scan_options" title="Link to this definition">¶</a></dt>
-<dd><p>Get AWS Scan Options.</p>
+<dd><p>List AWS Scan Options.</p>
 <p>Fetches the scan options configured for AWS accounts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
