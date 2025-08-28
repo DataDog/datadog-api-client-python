@@ -1795,22 +1795,6 @@
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.org_connections_api" class="md-nav__link">datadog_api_client.v2.api.org_connections_api module</a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OrgConnectionsApi</span></code></a><nav class="md-nav">
-              <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.create_org_connections" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OrgConnectionsApi.create_org_connections()</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.delete_org_connections" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OrgConnectionsApi.delete_org_connections()</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.list_org_connections" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OrgConnectionsApi.list_org_connections()</span></code></a>
-        </li>
-        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.update_org_connections" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OrgConnectionsApi.update_org_connections()</span></code></a>
-        </li></ul>
-            </nav>
-        </li></ul>
-            </nav>
-        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.organizations_api" class="md-nav__link">datadog_api_client.v2.api.organizations_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.organizations_api.OrganizationsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OrganizationsApi</span></code></a><nav class="md-nav">
@@ -8570,65 +8554,6 @@ directly through the Datadog API.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.opsgenie_service_response.OpsgenieServiceResponse" title="datadog_api_client.v2.model.opsgenie_service_response.OpsgenieServiceResponse">OpsgenieServiceResponse</a></p>
-</dd>
-</dl>
-</dd></dl>
-</dd></dl>
-</section>
-<section id="module-datadog_api_client.v2.api.org_connections_api">
-<span id="datadog-api-client-v2-api-org-connections-api-module"></span><h2 id="module-datadog_api_client.v2.api.org_connections_api">datadog_api_client.v2.api.org_connections_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.org_connections_api" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OrgConnectionsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Manage connections between organizations. Org connections allow for controlled sharing of data between different Datadog organizations. See the <a class="reference external" href="https://docs.datadoghq.com/account_management/org_settings/cross_org_visibility/">Cross-Organization Visibiltiy</a> page for more information.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.create_org_connections">
-<span class="sig-name descname"><span class="pre">create_org_connections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_create_request.OrgConnectionCreateRequest" title="datadog_api_client.v2.model.org_connection_create_request.OrgConnectionCreateRequest"><span class="pre">OrgConnectionCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse" title="datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse"><span class="pre">OrgConnectionResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.create_org_connections" title="Link to this definition">¶</a></dt>
-<dd><p>Create Org Connection.</p>
-<p>Create a new org connection between the current org and a target org.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse" title="datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse">OrgConnectionResponse</a></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.delete_org_connections">
-<span class="sig-name descname"><span class="pre">delete_org_connections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.delete_org_connections" title="Link to this definition">¶</a></dt>
-<dd><p>Delete Org Connection.</p>
-<p>Delete an existing org connection.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>connection_id</strong> (<em>UUID</em>) – The unique identifier of the org connection.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.list_org_connections">
-<span class="sig-name descname"><span class="pre">list_org_connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_list_response.OrgConnectionListResponse" title="datadog_api_client.v2.model.org_connection_list_response.OrgConnectionListResponse"><span class="pre">OrgConnectionListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.list_org_connections" title="Link to this definition">¶</a></dt>
-<dd><p>List Org Connections.</p>
-<p>Returns a list of org connections.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_list_response.OrgConnectionListResponse" title="datadog_api_client.v2.model.org_connection_list_response.OrgConnectionListResponse">OrgConnectionListResponse</a></p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.update_org_connections">
-<span class="sig-name descname"><span class="pre">update_org_connections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_update_request.OrgConnectionUpdateRequest" title="datadog_api_client.v2.model.org_connection_update_request.OrgConnectionUpdateRequest"><span class="pre">OrgConnectionUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse" title="datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse"><span class="pre">OrgConnectionResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.org_connections_api.OrgConnectionsApi.update_org_connections" title="Link to this definition">¶</a></dt>
-<dd><p>Update Org Connection.</p>
-<p>Update an existing org connection.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>connection_id</strong> (<em>UUID</em>) – The unique identifier of the org connection.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse" title="datadog_api_client.v2.model.org_connection_response.OrgConnectionResponse">OrgConnectionResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
