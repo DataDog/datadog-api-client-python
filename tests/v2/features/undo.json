@@ -79,6 +79,12 @@
       "type": "idempotent"
     }
   },
+  "GetAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateAwsScanOptions": {
     "tag": "Agentless Scanning",
     "undo": {

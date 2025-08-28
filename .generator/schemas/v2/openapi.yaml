@@ -46152,7 +46152,7 @@ paths:
           $ref: '#/components/responses/NotAuthorizedResponse'
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      summary: Get AWS Scan Options
+      summary: List AWS Scan Options
       tags:
       - Agentless Scanning
     post:
@@ -46202,6 +46202,29 @@ paths:
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Delete AWS Scan Options
+      tags:
+      - Agentless Scanning
+    get:
+      description: Fetches the Agentless scan options for an activated account.
+      operationId: GetAwsScanOptions
+      parameters:
+      - $ref: '#/components/parameters/AwsAccountId'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwsScanOptionsResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get AWS scan options
       tags:
       - Agentless Scanning
     patch:
