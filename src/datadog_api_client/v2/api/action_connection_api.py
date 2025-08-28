@@ -248,7 +248,7 @@ class ActionConnectionApi:
     ) -> None:
         """Delete an existing Action Connection.
 
-        Delete an existing Action Connection. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_.
+        Delete an existing Action Connection. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_. Alternatively, you can configure these permissions `in the UI <https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access>`_.
 
         :param connection_id: The ID of the action connection
         :type connection_id: str
