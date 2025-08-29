@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"","name":"Test Datastore","org_access":"contributor","primary_column_name":"id","primary_key_generation_strategy":"none"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"data":{"id":"dee6610c-a9b5-42c3-ab4b-ea131f55c9c5","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"values":[{"id":"cust_3141","name":"Johnathan"},{"id":"cust_3142","name":"Mary"}]},"type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/dee6610c-a9b5-42c3-ab4b-ea131f55c9c5/items/bulk
+  response:
+    body:
+      string: '{"data":[{"id":"ce100abd-c60a-486a-b069-d8e34fa75b08","type":"items"},{"id":"765a1eed-8fb5-420a-9e59-dd339a1707dd","type":"items"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/dee6610c-a9b5-42c3-ab4b-ea131f55c9c5
+  response:
+    body:
+      string: '{"data":{"id":"dee6610c-a9b5-42c3-ab4b-ea131f55c9c5","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

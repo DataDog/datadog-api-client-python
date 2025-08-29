@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"","name":"Test Datastore","org_access":"contributor","primary_column_name":"id","primary_key_generation_strategy":"none"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"data":{"id":"0897a535-85dd-4c5e-ab27-97ed4a8f54fd","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"values":[{"id":"cust_3141","name":"Johnathan"},{"badPrimaryKey":"key2","name":"Johnathan"}]},"id":"0897a535-85dd-4c5e-ab27-97ed4a8f54fd","type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/0897a535-85dd-4c5e-ab27-97ed4a8f54fd/items/bulk
+  response:
+    body:
+      string: '{"errors":[{"status":"400","id":"24f4ef0c-a849-41dd-8a0e-35338086172c","title":"item
+        key missing or invalid","detail":"primary column \"id\" is missing"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/0897a535-85dd-4c5e-ab27-97ed4a8f54fd
+  response:
+    body:
+      string: '{"data":{"id":"0897a535-85dd-4c5e-ab27-97ed4a8f54fd","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
