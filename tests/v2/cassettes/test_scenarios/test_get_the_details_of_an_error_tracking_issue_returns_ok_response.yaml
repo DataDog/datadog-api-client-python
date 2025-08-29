@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from":1755012813000,"query":"service:synthetics-browser","to":1756308813000,"track":"rum"},"type":"search_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/search
+  response:
+    body:
+      string: '{"data":[{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"error_tracking_search_result","attributes":{"impacted_sessions":1,"total_count":1},"relationships":{"issue":{"data":{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"issue"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002
+  response:
+    body:
+      string: '{"data":{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"issue","attributes":{"error_message":"HTTP
+        error","error_type":"Error","file_path":"","first_seen":1753944082256,"first_seen_version":"","function_name":"","is_crash":false,"languages":["JAVASCRIPT"],"last_seen":1755686259367,"last_seen_version":"","platform":"BROWSER","service":"synthetics-browser","state":"RESOLVED"},"relationships":{"case":{"data":{"id":"f1b32a47-621d-4c57-9642-045aeb83891e","type":"case"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

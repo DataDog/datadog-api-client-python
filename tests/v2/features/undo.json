@@ -1022,6 +1022,30 @@
       "type": "idempotent"
     }
   },
+  "SearchIssues": {
+    "tag": "Error Tracking",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetIssue": {
+    "tag": "Error Tracking",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIssueAssignee": {
+    "tag": "Error Tracking",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIssueState": {
+    "tag": "Error Tracking",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListEvents": {
     "tag": "Events",
     "undo": {
