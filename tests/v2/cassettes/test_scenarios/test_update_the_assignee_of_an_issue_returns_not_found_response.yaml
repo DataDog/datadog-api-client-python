@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"assignee"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/67d80aa3-36ff-44b9-a694-c501a7591737/assignee
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"issue not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

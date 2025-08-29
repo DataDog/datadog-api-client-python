@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from":1755012815000,"query":"service:synthetics-browser","to":1756308815000,"track":"rum"},"type":"search_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/search
+  response:
+    body:
+      string: '{"data":[{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"error_tracking_search_result","attributes":{"impacted_sessions":1,"total_count":1},"relationships":{"issue":{"data":{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"issue"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"state":"invalid-state"},"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"error_tracking_issue"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002/state
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"invalid
+        json value for IssueState: \"invalid-state\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

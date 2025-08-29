@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from":1755012815000,"query":"service:synthetics-browser","to":1756308815000,"track":"rum"},"type":"search_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/search
+  response:
+    body:
+      string: '{"data":[{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"error_tracking_search_result","attributes":{"impacted_sessions":1,"total_count":1},"relationships":{"issue":{"data":{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"issue"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"state":"RESOLVED"},"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"error_tracking_issue"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002/state
+  response:
+    body:
+      string: '{"data":{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"issue","attributes":{"error_message":"HTTP
+        error","error_type":"Error","file_path":"","first_seen":1753944082256,"first_seen_version":"","function_name":"","is_crash":false,"languages":["JAVASCRIPT"],"last_seen":1755686259367,"last_seen_version":"","platform":"BROWSER","service":"synthetics-browser","state":"RESOLVED"},"relationships":{"assignee":{"data":{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user"}},"case":{"data":{"id":"f1b32a47-621d-4c57-9642-045aeb83891e","type":"case"}}}},"included":[{"id":"f1b32a47-621d-4c57-9642-045aeb83891e","type":"case","attributes":{"closed_at":"2025-08-21T17:21:13.882831Z","created_at":"2025-08-21T17:20:22.807979Z","creation_source":"ERROR_TRACKING","description":"","insights":[{"type":"ERROR_TRACKING","ref":"/error-tracking?issueId=5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","resource_id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002"}],"key":"ET-1","modified_at":"2025-08-21T17:21:13.882831Z","priority":"NOT_DEFINED","status":"CLOSED","title":"Error:
+        HTTP error","type":"ERROR_TRACKING_ISSUE"},"relationships":{"assignee":{"data":{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user"}},"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"modified_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"384521ba-dc5f-481f-942d-15bd48428029","type":"project"}}}},{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user","attributes":{"email":"","handle":"","name":""}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

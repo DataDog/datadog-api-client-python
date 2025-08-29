@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/invalid-issue-id
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"issue id
+        is not an uuid"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
