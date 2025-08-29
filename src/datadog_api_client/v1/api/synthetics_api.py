@@ -1456,7 +1456,7 @@ class SyntheticsApi:
         :type search_suites: bool, optional
         :param facets_only: If true, return only facets instead of full test details.
         :type facets_only: bool, optional
-        :param start: The offset from which to start returning results.
+        :param start: (Only available on legacy search backend. Contact support for more info.) The offset from which to start returning results.
         :type start: int, optional
         :param count: The maximum number of results to return.
         :type count: int, optional
