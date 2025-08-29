@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/5bf53b3f-b230-4b35-ab1a-b39f2633eb22
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"ed0f2851-9b29-4323-bd5b-37a701a17207","title":"datastore
+        not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
