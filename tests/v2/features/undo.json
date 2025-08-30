@@ -2988,6 +2988,18 @@
       "type": "unsafe"
     }
   },
+  "GetSuppressionsAffectingFutureRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSuppressionsAffectingRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteSecurityMonitoringSuppression": {
     "tag": "Security Monitoring",
     "undo": {
