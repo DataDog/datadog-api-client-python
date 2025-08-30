@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"invalid_key":"invalid_value"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/rules
+  response:
+    body:
+      string: '{"errors":["invalid_argument(Invalid rule configuration)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

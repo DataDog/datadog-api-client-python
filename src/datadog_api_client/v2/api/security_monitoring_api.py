@@ -59,11 +59,6 @@ from datadog_api_client.v2.model.security_monitoring_suppression_response import
 from datadog_api_client.v2.model.security_monitoring_suppression_create_request import (
     SecurityMonitoringSuppressionCreateRequest,
 )
-from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
-    SecurityMonitoringSuppressionUpdateRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
-from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
@@ -72,6 +67,11 @@ from datadog_api_client.v2.model.security_monitoring_signal_rule_create_payload 
     SecurityMonitoringSignalRuleCreatePayload,
 )
 from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import CloudConfigurationRuleCreatePayload
+from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
+    SecurityMonitoringSuppressionUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
@@ -874,6 +874,49 @@ class SecurityMonitoringApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_suppressions_affecting_future_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSuppressionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions/rules",
+                "operation_id": "get_suppressions_affecting_future_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleCreatePayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_suppressions_affecting_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSuppressionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions/rules/{rule_id}",
+                "operation_id": "get_suppressions_affecting_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -2503,6 +2546,44 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_signal_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_suppressions_affecting_future_rule(
+        self,
+        body: Union[
+            SecurityMonitoringRuleCreatePayload,
+            SecurityMonitoringStandardRuleCreatePayload,
+            SecurityMonitoringSignalRuleCreatePayload,
+            CloudConfigurationRuleCreatePayload,
+        ],
+    ) -> SecurityMonitoringSuppressionsResponse:
+        """Get suppressions affecting future rule.
+
+        Get the list of suppressions that would affect a rule.
+
+        :type body: SecurityMonitoringRuleCreatePayload
+        :rtype: SecurityMonitoringSuppressionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._get_suppressions_affecting_future_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_suppressions_affecting_rule(
+        self,
+        rule_id: str,
+    ) -> SecurityMonitoringSuppressionsResponse:
+        """Get suppressions affecting a specific rule.
+
+        Get the list of suppressions that affect a specific existing rule by its ID.
+
+        :param rule_id: The ID of the rule.
+        :type rule_id: str
+        :rtype: SecurityMonitoringSuppressionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._get_suppressions_affecting_rule_endpoint.call_with_http_info(**kwargs)
 
     def get_vulnerability_notification_rule(
         self,
