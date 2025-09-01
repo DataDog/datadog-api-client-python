@@ -55,7 +55,7 @@ class ApiClient:
 
         # Cache for validation performance optimization - persists across requests
         # Simple size limiting to prevent memory leaks
-        self._validation_cache: dict[str, Any] = {}
+        self._validation_cache: Dict[str, Any] = {}
         self._validation_cache_max_size = 1000  # Configurable limit
         if self.configuration.compress:
             self.default_headers["Accept-Encoding"] = "gzip"
