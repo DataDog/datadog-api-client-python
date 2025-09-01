@@ -228,6 +228,19 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"query\": \"service:synthetics-browser\",\n      \"from\": {{ timestamp(\"now - 15d\") }}000,\n      \"to\": {{ timestamp(\"now\") }}000,\n      \"track\": \"rum\"\n    },\n    \"type\": \"search_request\"\n  }\n}"
+      }
+    ],
+    "source": "data[0]",
+    "step": "there is a valid \"issue\" in the system",
+    "key": "issue",
+    "tag": "Error Tracking",
+    "operationId": "SearchIssues"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
     ],
