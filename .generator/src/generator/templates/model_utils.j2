@@ -912,6 +912,30 @@ def order_response_types(required_types):
     return tuple(sorted_types)
 
 
+def remove_uncoercible(required_types_classes, current_item, spec_property_naming, must_convert=True):
+    """Only keeps the type conversions that are possible.
+
+    :param required_types_classes: Classes that are required, these should be
+        ordered by COERCION_INDEX_BY_TYPE.
+    :type required_types_classes: tuple
+    :param spec_property_naming: True if the variable names in the input data
+        are serialized names as specified in the OpenAPI document.  False if the
+        variables names in the input data are python variable names in PEP-8 snake
+        case.
+    :type spec_property_naming: bool
+    :param current_item: The current item (input data) to be converted.
+
+    :param must_convert: If True the item to convert is of the wrong type and
+        we want a big list of coercibles if False, we want a limited list of coercibles.
+    :type must_convert: bool
+
+    :return: The remaining coercible required types, classes only.
+    :rtype: list
+    """
+    current_type_simple = get_simple_class(current_item)
+    return list(_remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert))
+
+
 def _remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert=True):
     """Implementation of remove_uncoercible logic."""
     results_classes = []
@@ -936,30 +960,6 @@ def _remove_uncoercible_impl(required_types_classes, current_type_simple, spec_p
         elif class_pair in UPCONVERSION_TYPE_PAIRS:
             results_classes.append(required_type_class)
     return tuple(results_classes)
-
-
-def remove_uncoercible(required_types_classes, current_item, spec_property_naming, must_convert=True):
-    """Only keeps the type conversions that are possible.
-
-    :param required_types_classes: Classes that are required, these should be
-        ordered by COERCION_INDEX_BY_TYPE.
-    :type required_types_classes: tuple
-    :param spec_property_naming: True if the variable names in the input data
-        are serialized names as specified in the OpenAPI document.  False if the
-        variables names in the input data are python variable names in PEP-8 snake
-        case.
-    :type spec_property_naming: bool
-    :param current_item: The current item (input data) to be converted.
-
-    :param must_convert: If True the item to convert is of the wrong type and
-        we want a big list of coercibles if False, we want a limited list of coercibles.
-    :type must_convert: bool
-
-    :return: The remaining coercible required types, classes only.
-    :rtype: list
-    """
-    current_type_simple = get_simple_class(current_item)
-    return list(_remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert))
 
 
 def get_possible_classes(cls, from_server_context):

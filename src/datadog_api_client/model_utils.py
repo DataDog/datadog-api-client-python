@@ -926,32 +926,6 @@ def order_response_types(required_types):
     return tuple(sorted_types)
 
 
-def _remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert=True):
-    """Implementation of remove_uncoercible logic."""
-    results_classes = []
-    for required_type_class in required_types_classes:
-        # convert our models to OpenApiModel
-        required_type_class_simplified = required_type_class
-        if isinstance(required_type_class_simplified, type):
-            if issubclass(required_type_class_simplified, ModelComposed):
-                required_type_class_simplified = ModelComposed
-            elif issubclass(required_type_class_simplified, ModelNormal):
-                required_type_class_simplified = ModelNormal
-            elif issubclass(required_type_class_simplified, ModelSimple):
-                required_type_class_simplified = ModelSimple
-
-        if required_type_class_simplified == current_type_simple:
-            # don't consider converting to one's own class
-            continue
-
-        class_pair = (current_type_simple, required_type_class_simplified)
-        if must_convert and class_pair in COERCIBLE_TYPE_PAIRS[spec_property_naming]:
-            results_classes.append(required_type_class)
-        elif class_pair in UPCONVERSION_TYPE_PAIRS:
-            results_classes.append(required_type_class)
-    return tuple(results_classes)
-
-
 def remove_uncoercible(required_types_classes, current_item, spec_property_naming, must_convert=True):
     """Only keeps the type conversions that are possible.
 
@@ -976,6 +950,32 @@ def remove_uncoercible(required_types_classes, current_item, spec_property_namin
     return list(
         _remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert)
     )
+
+
+def _remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert=True):
+    """Implementation of remove_uncoercible logic."""
+    results_classes = []
+    for required_type_class in required_types_classes:
+        # convert our models to OpenApiModel
+        required_type_class_simplified = required_type_class
+        if isinstance(required_type_class_simplified, type):
+            if issubclass(required_type_class_simplified, ModelComposed):
+                required_type_class_simplified = ModelComposed
+            elif issubclass(required_type_class_simplified, ModelNormal):
+                required_type_class_simplified = ModelNormal
+            elif issubclass(required_type_class_simplified, ModelSimple):
+                required_type_class_simplified = ModelSimple
+
+        if required_type_class_simplified == current_type_simple:
+            # don't consider converting to one's own class
+            continue
+
+        class_pair = (current_type_simple, required_type_class_simplified)
+        if must_convert and class_pair in COERCIBLE_TYPE_PAIRS[spec_property_naming]:
+            results_classes.append(required_type_class)
+        elif class_pair in UPCONVERSION_TYPE_PAIRS:
+            results_classes.append(required_type_class)
+    return tuple(results_classes)
 
 
 def get_possible_classes(cls, from_server_context):
