@@ -822,6 +822,35 @@ Feature: Security Monitoring
     And the response "data.attributes.count" is equal to 1
     And the response "data.attributes.data[1].rule.name" has the same value as "security_rule.name"
 
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get suppressions affecting a specific rule returns "Not Found" response
+    Given new "GetSuppressionsAffectingRule" request
+    And request contains "rule_id" parameter with value "aaa-bbb-ccc-ddd"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get suppressions affecting a specific rule returns "OK" response
+    Given new "GetSuppressionsAffectingRule" request
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get suppressions affecting future rule returns "Bad Request" response
+    Given new "GetSuppressionsAffectingFutureRule" request
+    And body with value {"invalid_key":"invalid_value"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get suppressions affecting future rule returns "OK" response
+    Given new "GetSuppressionsAffectingFutureRule" request
+    And body from file "security_monitoring_future_rule_suppression_payload.json"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/cloud-security-posture-management
   Scenario: Get the list of signal-based notification rules returns "The list of notification rules." response
     Given there is a valid "valid_signal_notification_rule" in the system

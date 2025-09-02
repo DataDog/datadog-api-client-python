@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/rules/aaa-bbb-ccc-ddd
+  response:
+    body:
+      string: '{"errors":["not_found(Threat detection rule not found: aaa-bbb-ccc-ddd)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
