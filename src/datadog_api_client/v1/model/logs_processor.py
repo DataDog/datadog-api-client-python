@@ -91,6 +91,15 @@ class LogsProcessor(ModelComposed):
 
         :param lookup_enrichment_table: Name of the Reference Table for the source attribute and their associated target attribute values.
         :type lookup_enrichment_table: str
+
+        :param operation: Configuration of the array processor operation to perform.
+        :type operation: LogsArrayProcessorOperation
+
+        :param binary_to_text_encoding: The encoding used to represent the binary data.
+        :type binary_to_text_encoding: LogsDecoderProcessorBinaryToTextEncoding
+
+        :param input_representation: The original representation of input string.
+        :type input_representation: LogsDecoderProcessorInputRepresentation
         """
         super().__init__(kwargs)
 
@@ -120,6 +129,8 @@ class LogsProcessor(ModelComposed):
         from datadog_api_client.v1.model.reference_table_logs_lookup_processor import ReferenceTableLogsLookupProcessor
         from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
         from datadog_api_client.v1.model.logs_span_remapper import LogsSpanRemapper
+        from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
+        from datadog_api_client.v1.model.logs_decoder_processor import LogsDecoderProcessor
 
         return {
             "oneOf": [
@@ -140,5 +151,7 @@ class LogsProcessor(ModelComposed):
                 ReferenceTableLogsLookupProcessor,
                 LogsTraceRemapper,
                 LogsSpanRemapper,
+                LogsArrayProcessor,
+                LogsDecoderProcessor,
             ],
         }

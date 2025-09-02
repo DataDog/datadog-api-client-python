@@ -4,7 +4,7 @@ This repository contains a Python API client for the [Datadog API](https://docs.
 
 ## Requirements
 
-Building and using the API client library requires [Python 3.7+](https://www.python.org/downloads/).
+Building and using the API client library requires [Python 3.8+](https://www.python.org/downloads/).
 
 ## Installation
 

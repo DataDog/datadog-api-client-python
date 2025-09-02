@@ -71,7 +71,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
         :param end_date: The date/time after which this layer no longer applies (in ISO 8601).
         :type end_date: datetime, optional
 
-        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds.
+        :param interval: Defines how often the rotation repeats, using a combination of days and optional seconds. Should be at least 1 hour.
         :type interval: LayerAttributesInterval
 
         :param members: A list of members who participate in this layer's rotation.

@@ -23,6 +23,7 @@ from datadog_api_client.v2.api.containers_api import ContainersApi
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
+from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.events_api import EventsApi
@@ -61,6 +62,7 @@ from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionAp
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
 from datadog_api_client.v2.api.software_catalog_api import SoftwareCatalogApi
+from datadog_api_client.v2.api.spa_api import SpaApi
 from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
@@ -96,6 +98,7 @@ __all__ = [
     "DORAMetricsApi",
     "DashboardListsApi",
     "DataDeletionApi",
+    "DatasetsApi",
     "DomainAllowlistApi",
     "DowntimesApi",
     "EventsApi",
@@ -134,6 +137,7 @@ __all__ = [
     "ServiceLevelObjectivesApi",
     "ServiceScorecardsApi",
     "SoftwareCatalogApi",
+    "SpaApi",
     "SpansApi",
     "SpansMetricsApi",
     "SyntheticsApi",

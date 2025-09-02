@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"A description.","monitor_definition":{"message":"A
+      msg.","name":"A name test-validate_a_monitor_user_template_returns_ok_response-1748486184","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["integration:Azure"],"template_variables":[{"available_values":["value1","value2"],"defaults":["defaultValue"],"name":"regionName","tag_key":"datacenter"}],"title":"Postgres
+      DB test-validate_a_monitor_user_template_returns_ok_response-1748486184"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template/validate
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

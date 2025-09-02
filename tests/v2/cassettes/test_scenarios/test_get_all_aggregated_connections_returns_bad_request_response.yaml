@@ -5,10 +5,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/network/connections/aggregate?limit=6000
+    uri: https://api.datadoghq.com/api/v2/network/connections/aggregate?limit=8000
   response:
     body:
-      string: '{"errors":[{"status":"400","title":"Invalid limit"}]}'
+      string: '{"errors":[{"status":"400","title":"Invalid limit","detail":"Limit
+        must meet requirements listed in https://docs.datadoghq.com/api/latest/cloud-network-monitoring/"}]}'
     headers:
       content-type:
       - application/vnd.api+json

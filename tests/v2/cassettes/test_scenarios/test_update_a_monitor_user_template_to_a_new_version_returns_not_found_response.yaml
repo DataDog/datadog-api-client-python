@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"A description.","monitor_definition":{"message":"A
+      msg.","name":"A name test-update_a_monitor_user_template_to_a_new_version_returns_not_found_response-1748486183","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["integration:Azure"],"template_variables":[{"available_values":["value1","value2"],"defaults":["defaultValue"],"name":"regionName","tag_key":"datacenter"}],"title":"Postgres
+      DB test-update_a_monitor_user_template_to_a_new_version_returns_not_found_response-1748486183"},"id":"00000000-0000-1234-0000-000000000000","type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/monitor/template/00000000-0000-1234-0000-000000000000
+  response:
+    body:
+      string: '{"errors":["Monitor template not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

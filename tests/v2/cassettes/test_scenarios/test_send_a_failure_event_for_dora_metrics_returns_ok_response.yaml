@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"finished_at":1707842944600000000,"git":{"commit_sha":"66adc9350f2cc9b250b69abddab733dd55e1a588","repository_url":"https://github.com/organization/example-repository"},"name":"Webserver
+      is down failing all requests","services":["shopist"],"severity":"High","started_at":1707842944500000000,"team":"backend","version":"v1.12.07"}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/dora/incident
+  response:
+    body:
+      string: '{"data":{"id":"2775a2d3-6c28-4934-ae60-0ef9ce3720ee","type":"dora_failure"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

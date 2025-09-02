@@ -25,7 +25,6 @@ body = DORADeploymentRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_dora_deployment"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DORAMetricsApi(api_client)
     response = api_instance.create_dora_deployment(body=body)

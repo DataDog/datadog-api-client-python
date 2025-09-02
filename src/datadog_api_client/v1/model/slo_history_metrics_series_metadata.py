@@ -56,19 +56,19 @@ class SLOHistoryMetricsSeriesMetadata(ModelNormal):
         """
         Query metadata.
 
-        :param aggr: Query aggregator function.
+        :param aggr: Query aggregator function. **Deprecated**.
         :type aggr: str, optional
 
-        :param expression: Query expression.
+        :param expression: Query expression. **Deprecated**.
         :type expression: str, optional
 
-        :param metric: Query metric used.
+        :param metric: Query metric used. **Deprecated**.
         :type metric: str, optional
 
-        :param query_index: Query index from original combined query.
+        :param query_index: Query index from original combined query. **Deprecated**.
         :type query_index: int, optional
 
-        :param scope: Query scope.
+        :param scope: Query scope. **Deprecated**.
         :type scope: str, optional
 
         :param unit: An array of metric units that contains up to two unit objects.

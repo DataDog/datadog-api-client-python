@@ -50,6 +50,7 @@ body = Dashboard(
                 ],
                 time=WidgetLegacyLiveSpan(
                     live_span=WidgetLiveSpan.PAST_FIVE_MINUTES,
+                    hide_incomplete_cost_data=True,
                 ),
                 type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[

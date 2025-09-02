@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1747319658"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1748341494"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"7rg-8sh-bnx","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1747319658","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319658110,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"zkg-owo-mcp","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1748341494","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341494354,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1747319658","policy_id":"7rg-8sh-bnx","product_tags":[]},"type":"agent_rule"}}'
+      == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1748341494","policy_id":"zkg-owo-mcp","product_tags":[]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -30,10 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"kkx-har-lqe","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1747319658762,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"ymx-atn-xux","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1748341495064,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"monitoring":["7rg-8sh-bnx"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1747319658","product_tags":[],"updateDate":1747319658762,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["zkg-owo-mcp"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1748341494","product_tags":[],"updateDate":1748341495064,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/kkx-har-lqe
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/ymx-atn-xux
   response:
     body:
       string: ''
@@ -62,7 +62,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/7rg-8sh-bnx
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/zkg-owo-mcp
   response:
     body:
       string: ''

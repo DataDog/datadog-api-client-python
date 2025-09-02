@@ -53,6 +53,7 @@ body = Dashboard(
                     type=WidgetNewLiveSpanType.LIVE,
                     unit=WidgetLiveSpanUnit.MINUTE,
                     value=8,
+                    hide_incomplete_cost_data=True,
                 ),
                 type=TimeseriesWidgetDefinitionType.TIMESERIES,
                 requests=[

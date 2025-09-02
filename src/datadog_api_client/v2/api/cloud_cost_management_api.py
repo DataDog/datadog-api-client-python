@@ -3,10 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
 from datadog_api_client.v2.model.aws_cur_config_response import AwsCURConfigResponse
 from datadog_api_client.v2.model.aws_cur_config_post_request import AwsCURConfigPostRequest
@@ -21,11 +25,15 @@ from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCo
 from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
 from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
 from datadog_api_client.v2.model.custom_costs_file_get_response import CustomCostsFileGetResponse
+from datadog_api_client.v2.model.gcp_usage_cost_configs_response import GCPUsageCostConfigsResponse
+from datadog_api_client.v2.model.gcp_usage_cost_config_response import GCPUsageCostConfigResponse
+from datadog_api_client.v2.model.gcp_usage_cost_config_post_request import GCPUsageCostConfigPostRequest
+from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPUsageCostConfigPatchRequest
 
 
 class CloudCostManagementApi:
     """
-    The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS and Azure. You can query your cost data by using the `Metrics endpoint <https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-data-across-multiple-products>`_ and the ``cloud_cost`` data source. For more information, see the `Cloud Cost Management documentation <https://docs.datadoghq.com/cloud_cost_management/>`_.
+    The Cloud Cost Management API allows you to set up, edit, and delete Cloud Cost Management accounts for AWS, Azure, and GCP. You can query your cost data by using the `Metrics endpoint <https://docs.datadoghq.com/api/latest/metrics/#query-timeseries-data-across-multiple-products>`_ and the ``cloud_cost`` data source. For more information, see the `Cloud Cost Management documentation <https://docs.datadoghq.com/cloud_cost_management/>`_.
     """
 
     def __init__(self, api_client=None):
@@ -73,6 +81,26 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._create_cost_gcp_usage_cost_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (GCPUsageCostConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/gcp_uc_config",
+                "operation_id": "create_cost_gcp_usage_cost_config",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (GCPUsageCostConfigPostRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_budget_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -108,7 +136,7 @@ class CloudCostManagementApi:
             params_map={
                 "cloud_account_id": {
                     "required": True,
-                    "openapi_types": (str,),
+                    "openapi_types": (int,),
                     "attribute": "cloud_account_id",
                     "location": "path",
                 },
@@ -131,7 +159,30 @@ class CloudCostManagementApi:
             params_map={
                 "cloud_account_id": {
                     "required": True,
-                    "openapi_types": (str,),
+                    "openapi_types": (int,),
+                    "attribute": "cloud_account_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_cost_gcp_usage_cost_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/gcp_uc_config/{cloud_account_id}",
+                "operation_id": "delete_cost_gcp_usage_cost_config",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "cloud_account_id": {
+                    "required": True,
+                    "openapi_types": (int,),
                     "attribute": "cloud_account_id",
                     "location": "path",
                 },
@@ -259,6 +310,22 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._list_cost_gcp_usage_cost_configs_endpoint = _Endpoint(
+            settings={
+                "response_type": (GCPUsageCostConfigsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/gcp_uc_config",
+                "operation_id": "list_cost_gcp_usage_cost_configs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_custom_costs_files_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomCostsFileListResponse,),
@@ -268,7 +335,28 @@ class CloudCostManagementApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "filter_status": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[status]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -287,7 +375,7 @@ class CloudCostManagementApi:
             params_map={
                 "cloud_account_id": {
                     "required": True,
-                    "openapi_types": (str,),
+                    "openapi_types": (int,),
                     "attribute": "cloud_account_id",
                     "location": "path",
                 },
@@ -313,13 +401,39 @@ class CloudCostManagementApi:
             params_map={
                 "cloud_account_id": {
                     "required": True,
-                    "openapi_types": (str,),
+                    "openapi_types": (int,),
                     "attribute": "cloud_account_id",
                     "location": "path",
                 },
                 "body": {
                     "required": True,
                     "openapi_types": (AzureUCConfigPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_cost_gcp_usage_cost_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (GCPUsageCostConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/gcp_uc_config/{cloud_account_id}",
+                "operation_id": "update_cost_gcp_usage_cost_config",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "cloud_account_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "cloud_account_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (GCPUsageCostConfigPatchRequest,),
                     "location": "body",
                 },
             },
@@ -400,6 +514,22 @@ class CloudCostManagementApi:
 
         return self._create_cost_azure_uc_configs_endpoint.call_with_http_info(**kwargs)
 
+    def create_cost_gcp_usage_cost_config(
+        self,
+        body: GCPUsageCostConfigPostRequest,
+    ) -> GCPUsageCostConfigResponse:
+        """Create Cloud Cost Management GCP Usage Cost config.
+
+        Create a Cloud Cost Management account for an GCP Usage Cost config.
+
+        :type body: GCPUsageCostConfigPostRequest
+        :rtype: GCPUsageCostConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
+
     def delete_budget(
         self,
         budget_id: str,
@@ -419,14 +549,14 @@ class CloudCostManagementApi:
 
     def delete_cost_awscur_config(
         self,
-        cloud_account_id: str,
+        cloud_account_id: int,
     ) -> None:
         """Delete Cloud Cost Management AWS CUR config.
 
         Archive a Cloud Cost Management Account.
 
         :param cloud_account_id: Cloud Account id.
-        :type cloud_account_id: str
+        :type cloud_account_id: int
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
@@ -436,20 +566,37 @@ class CloudCostManagementApi:
 
     def delete_cost_azure_uc_config(
         self,
-        cloud_account_id: str,
+        cloud_account_id: int,
     ) -> None:
         """Delete Cloud Cost Management Azure config.
 
         Archive a Cloud Cost Management Account.
 
         :param cloud_account_id: Cloud Account id.
-        :type cloud_account_id: str
+        :type cloud_account_id: int
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
         kwargs["cloud_account_id"] = cloud_account_id
 
         return self._delete_cost_azure_uc_config_endpoint.call_with_http_info(**kwargs)
+
+    def delete_cost_gcp_usage_cost_config(
+        self,
+        cloud_account_id: int,
+    ) -> None:
+        """Delete Cloud Cost Management GCP Usage Cost config.
+
+        Archive a Cloud Cost Management account.
+
+        :param cloud_account_id: Cloud Account id.
+        :type cloud_account_id: int
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["cloud_account_id"] = cloud_account_id
+
+        return self._delete_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
     def delete_custom_costs_file(
         self,
@@ -538,21 +685,58 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._list_cost_azure_uc_configs_endpoint.call_with_http_info(**kwargs)
 
+    def list_cost_gcp_usage_cost_configs(
+        self,
+    ) -> GCPUsageCostConfigsResponse:
+        """List Cloud Cost Management GCP Usage Cost configs.
+
+        List the GCP Usage Cost configs.
+
+        :rtype: GCPUsageCostConfigsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_cost_gcp_usage_cost_configs_endpoint.call_with_http_info(**kwargs)
+
     def list_custom_costs_files(
         self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        filter_status: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
     ) -> CustomCostsFileListResponse:
         """List Custom Costs files.
 
         List the Custom Costs files.
 
+        :param page_number: Page number for pagination
+        :type page_number: int, optional
+        :param page_size: Page size for pagination
+        :type page_size: int, optional
+        :param filter_status: Filter by file status
+        :type filter_status: str, optional
+        :param sort: Sort key with optional descending prefix
+        :type sort: str, optional
         :rtype: CustomCostsFileListResponse
         """
         kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._list_custom_costs_files_endpoint.call_with_http_info(**kwargs)
 
     def update_cost_awscur_config(
         self,
-        cloud_account_id: str,
+        cloud_account_id: int,
         body: AwsCURConfigPatchRequest,
     ) -> AwsCURConfigsResponse:
         """Update Cloud Cost Management AWS CUR config.
@@ -560,7 +744,7 @@ class CloudCostManagementApi:
         Update the status (active/archived) and/or account filtering configuration of an AWS CUR config.
 
         :param cloud_account_id: Cloud Account id.
-        :type cloud_account_id: str
+        :type cloud_account_id: int
         :type body: AwsCURConfigPatchRequest
         :rtype: AwsCURConfigsResponse
         """
@@ -573,7 +757,7 @@ class CloudCostManagementApi:
 
     def update_cost_azure_uc_configs(
         self,
-        cloud_account_id: str,
+        cloud_account_id: int,
         body: AzureUCConfigPatchRequest,
     ) -> AzureUCConfigPairsResponse:
         """Update Cloud Cost Management Azure config.
@@ -581,7 +765,7 @@ class CloudCostManagementApi:
         Update the status of an  Azure config (active/archived).
 
         :param cloud_account_id: Cloud Account id.
-        :type cloud_account_id: str
+        :type cloud_account_id: int
         :type body: AzureUCConfigPatchRequest
         :rtype: AzureUCConfigPairsResponse
         """
@@ -591,6 +775,27 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._update_cost_azure_uc_configs_endpoint.call_with_http_info(**kwargs)
+
+    def update_cost_gcp_usage_cost_config(
+        self,
+        cloud_account_id: int,
+        body: GCPUsageCostConfigPatchRequest,
+    ) -> GCPUsageCostConfigResponse:
+        """Update Cloud Cost Management GCP Usage Cost config.
+
+        Update the status of an GCP Usage Cost config (active/archived).
+
+        :param cloud_account_id: Cloud Account id.
+        :type cloud_account_id: int
+        :type body: GCPUsageCostConfigPatchRequest
+        :rtype: GCPUsageCostConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["cloud_account_id"] = cloud_account_id
+
+        kwargs["body"] = body
+
+        return self._update_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
     def upload_custom_costs_file(
         self,

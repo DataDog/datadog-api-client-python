@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
     from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
     from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+    from datadog_api_client.v1.model.synthetics_test_request_dns_server_port import SyntheticsTestRequestDNSServerPort
     from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
@@ -46,6 +47,9 @@ class SyntheticsTestRequest(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
         from datadog_api_client.v1.model.synthetics_test_call_type import SyntheticsTestCallType
         from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
+        from datadog_api_client.v1.model.synthetics_test_request_dns_server_port import (
+            SyntheticsTestRequestDNSServerPort,
+        )
         from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
@@ -61,15 +65,19 @@ class SyntheticsTestRequest(ModelNormal):
             "call_type": (SyntheticsTestCallType,),
             "certificate": (SyntheticsTestRequestCertificate,),
             "certificate_domains": ([str],),
+            "check_certificate_revocation": (bool,),
             "compressed_json_descriptor": (str,),
             "compressed_proto_file": (str,),
+            "disable_aia_intermediate_fetching": (bool,),
             "dns_server": (str,),
-            "dns_server_port": (str,),
+            "dns_server_port": (SyntheticsTestRequestDNSServerPort,),
             "files": ([SyntheticsTestRequestBodyFile],),
             "follow_redirects": (bool,),
+            "form": ({str: (str,)},),
             "headers": (SyntheticsTestHeaders,),
             "host": (str,),
             "http_version": (SyntheticsTestOptionsHTTPVersion,),
+            "is_message_base64_encoded": (bool,),
             "message": (str,),
             "metadata": (SyntheticsTestMetadata,),
             "method": (str,),
@@ -94,15 +102,19 @@ class SyntheticsTestRequest(ModelNormal):
         "call_type": "callType",
         "certificate": "certificate",
         "certificate_domains": "certificateDomains",
+        "check_certificate_revocation": "checkCertificateRevocation",
         "compressed_json_descriptor": "compressedJsonDescriptor",
         "compressed_proto_file": "compressedProtoFile",
+        "disable_aia_intermediate_fetching": "disableAiaIntermediateFetching",
         "dns_server": "dnsServer",
         "dns_server_port": "dnsServerPort",
         "files": "files",
         "follow_redirects": "follow_redirects",
+        "form": "form",
         "headers": "headers",
         "host": "host",
         "http_version": "httpVersion",
+        "is_message_base64_encoded": "isMessageBase64Encoded",
         "message": "message",
         "metadata": "metadata",
         "method": "method",
@@ -137,15 +149,19 @@ class SyntheticsTestRequest(ModelNormal):
         call_type: Union[SyntheticsTestCallType, UnsetType] = unset,
         certificate: Union[SyntheticsTestRequestCertificate, UnsetType] = unset,
         certificate_domains: Union[List[str], UnsetType] = unset,
+        check_certificate_revocation: Union[bool, UnsetType] = unset,
         compressed_json_descriptor: Union[str, UnsetType] = unset,
         compressed_proto_file: Union[str, UnsetType] = unset,
+        disable_aia_intermediate_fetching: Union[bool, UnsetType] = unset,
         dns_server: Union[str, UnsetType] = unset,
-        dns_server_port: Union[str, UnsetType] = unset,
+        dns_server_port: Union[SyntheticsTestRequestDNSServerPort, int, str, UnsetType] = unset,
         files: Union[List[SyntheticsTestRequestBodyFile], UnsetType] = unset,
         follow_redirects: Union[bool, UnsetType] = unset,
+        form: Union[Dict[str, str], UnsetType] = unset,
         headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
         host: Union[str, UnsetType] = unset,
         http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
+        is_message_base64_encoded: Union[bool, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         metadata: Union[SyntheticsTestMetadata, UnsetType] = unset,
         method: Union[str, UnsetType] = unset,
@@ -186,23 +202,32 @@ class SyntheticsTestRequest(ModelNormal):
         :param certificate_domains: By default, the client certificate is applied on the domain of the starting URL for browser tests. If you want your client certificate to be applied on other domains instead, add them in ``certificateDomains``.
         :type certificate_domains: [str], optional
 
+        :param check_certificate_revocation: Check for certificate revocation.
+        :type check_certificate_revocation: bool, optional
+
         :param compressed_json_descriptor: A protobuf JSON descriptor that needs to be gzipped first then base64 encoded.
         :type compressed_json_descriptor: str, optional
 
         :param compressed_proto_file: A protobuf file that needs to be gzipped first then base64 encoded.
         :type compressed_proto_file: str, optional
 
+        :param disable_aia_intermediate_fetching: Disable fetching intermediate certificates from AIA.
+        :type disable_aia_intermediate_fetching: bool, optional
+
         :param dns_server: DNS server to use for DNS tests.
         :type dns_server: str, optional
 
         :param dns_server_port: DNS server port to use for DNS tests.
-        :type dns_server_port: str, optional
+        :type dns_server_port: SyntheticsTestRequestDNSServerPort, optional
 
-        :param files: Files to be used as part of the request in the test.
+        :param files: Files to be used as part of the request in the test. Only valid if ``bodyType`` is ``multipart/form-data``.
         :type files: [SyntheticsTestRequestBodyFile], optional
 
         :param follow_redirects: Specifies whether or not the request follows redirects.
         :type follow_redirects: bool, optional
+
+        :param form: Form to be used as part of the request in the test. Only valid if ``bodyType`` is ``multipart/form-data``.
+        :type form: {str: (str,)}, optional
 
         :param headers: Headers to include when performing the test.
         :type headers: SyntheticsTestHeaders, optional
@@ -212,6 +237,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param http_version: HTTP version to use for a Synthetic test.
         :type http_version: SyntheticsTestOptionsHTTPVersion, optional
+
+        :param is_message_base64_encoded: Whether the message is base64 encoded.
+        :type is_message_base64_encoded: bool, optional
 
         :param message: Message to send for UDP or WebSocket tests.
         :type message: str, optional
@@ -271,10 +299,14 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["certificate"] = certificate
         if certificate_domains is not unset:
             kwargs["certificate_domains"] = certificate_domains
+        if check_certificate_revocation is not unset:
+            kwargs["check_certificate_revocation"] = check_certificate_revocation
         if compressed_json_descriptor is not unset:
             kwargs["compressed_json_descriptor"] = compressed_json_descriptor
         if compressed_proto_file is not unset:
             kwargs["compressed_proto_file"] = compressed_proto_file
+        if disable_aia_intermediate_fetching is not unset:
+            kwargs["disable_aia_intermediate_fetching"] = disable_aia_intermediate_fetching
         if dns_server is not unset:
             kwargs["dns_server"] = dns_server
         if dns_server_port is not unset:
@@ -283,12 +315,16 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["files"] = files
         if follow_redirects is not unset:
             kwargs["follow_redirects"] = follow_redirects
+        if form is not unset:
+            kwargs["form"] = form
         if headers is not unset:
             kwargs["headers"] = headers
         if host is not unset:
             kwargs["host"] = host
         if http_version is not unset:
             kwargs["http_version"] = http_version
+        if is_message_base64_encoded is not unset:
+            kwargs["is_message_base64_encoded"] = is_message_base64_encoded
         if message is not unset:
             kwargs["message"] = message
         if metadata is not unset:

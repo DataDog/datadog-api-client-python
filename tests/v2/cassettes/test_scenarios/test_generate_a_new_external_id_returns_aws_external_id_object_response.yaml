@@ -8,7 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integration/aws/generate_new_external_id
   response:
     body:
-      string: '{"data":{"id":"417e89773bab4d459dc060836ee276be","type":"external_id","attributes":{"external_id":"417e89773bab4d459dc060836ee276be"}}}'
+      string: '{"data":{"id":"b8dba3ff8a224e718da6eecb83f51d25","type":"external_id","attributes":{"external_id":"b8dba3ff8a224e718da6eecb83f51d25"}}}'
     headers:
       content-type:
       - application/vnd.api+json

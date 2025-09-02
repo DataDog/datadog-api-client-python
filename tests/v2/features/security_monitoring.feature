@@ -132,10 +132,10 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-security-platform
   Scenario: Convert a rule from JSON to Terraform returns "OK" response
     Given new "ConvertSecurityMonitoringRuleFromJSONToTerraform" request
-    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
+    And body with value {"name":"_{{ unique_hash }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection"}
     When the request is sent
     Then the response status is 200 OK
-    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
+    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"_{{ unique_hash }}\" {\n\tname = \"_{{ unique_hash }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Convert an existing rule from JSON to Terraform returns "Bad Request" response
@@ -154,11 +154,11 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-security-platform
   Scenario: Convert an existing rule from JSON to Terraform returns "OK" response
     Given new "ConvertExistingSecurityMonitoringRule" request
-    And there is a valid "security_rule" in the system
-    And request contains "rule_id" parameter from "security_rule.id"
+    And there is a valid "security_rule_hash" in the system
+    And request contains "rule_id" parameter from "security_rule_hash.id"
     When the request is sent
     Then the response status is 200 OK
-    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"{{ unique_lower }}\" {\n\tname = \"{{ unique }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
+    And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"_{{ unique_hash }}\" {\n\tname = \"_{{ unique_hash }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
 
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a cloud_configuration rule returns "OK" response
@@ -178,7 +178,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-security-platform
   Scenario: Create a custom framework returns "Conflict" response
     Given there is a valid "custom_framework" in the system
     And new "CreateCustomFramework" request
@@ -186,7 +186,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @team:DataDog/k9-cloud-security-platform
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-security-platform
   Scenario: Create a custom framework returns "OK" response
     Given new "CreateCustomFramework" request
     And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
@@ -225,7 +225,7 @@ Feature: Security Monitoring
   @skip-validation @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with type 'application_security 'returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
-    And body with value {"type":"application_security","name":"{{unique}}_appsec_rule","queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","aggregation":"count","groupByFields":["service","@http.client_ip"],"distinctFields":[]}],"filters":[],"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 100000","actions":[{"type":"block_ip","options":{"duration":900}}, {"type":"user_behavior","options":{"userBehaviorName":"behavior"}}]}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900,"detectionMethod":"threshold"},"isEnabled":true,"message":"Test rule","tags":[],"groupSignalsBy":["service"]}
+    And body with value {"type":"application_security","name":"{{unique}}_appsec_rule","queries":[{"query":"@appsec.security_activity:business_logic.users.login.failure","aggregation":"count","groupByFields":["service","@http.client_ip"],"distinctFields":[]}],"filters":[],"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 100000","actions":[{"type":"block_ip","options":{"duration":900}}, {"type":"user_behavior","options":{"userBehaviorName":"behavior"}}, {"type":"flag_ip","options":{"flaggedIPType":"FLAGGED"}}]}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900,"detectionMethod":"threshold"},"isEnabled":true,"message":"Test rule","tags":[],"groupSignalsBy":["service"]}
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_appsec_rule"
@@ -294,6 +294,24 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 201 Successfully created the notification rule.
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a scheduled detection rule returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"index":"main"}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection", "schedulingOptions": {"rrule": "FREQ=HOURLY;INTERVAL=2;", "start": "2025-06-18T12:00:00", "timezone": "Europe/Paris"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "log_detection"
+    And the response "message" is equal to "Test rule"
+    And the response "schedulingOptions" is equal to {"rrule": "FREQ=HOURLY;INTERVAL=2;", "start": "2025-06-18T12:00:00", "timezone": "Europe/Paris"}
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a scheduled rule without rrule returns "Bad Request" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"index":"main"}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection", "schedulingOptions": {"start": "2025-06-18T12:00:00", "timezone": "Europe/Paris"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a security filter returns "Bad Request" response
@@ -539,7 +557,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform
+  @replay-only @team:DataDog/k9-cloud-security-platform
   Scenario: Get a custom framework returns "OK" response
     Given there is a valid "custom_framework" in the system
     And new "GetCustomFramework" request
@@ -818,6 +836,38 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 The list of notification rules.
 
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "Not found: There is no request associated with the provided token." response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not found: There is no request associated with the provided token.
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "Not found: asset not found" response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    When the request is sent
+    Then the response status is 404 Not found: asset not found
+
+  @team:DataDog/asm-vm
+  Scenario: List assets SBOMs returns "OK" response
+    Given operation "ListAssetsSBOMs" enabled
+    And new "ListAssetsSBOMs" request
+    And request contains "filter[package_name]" parameter with value "pandas"
+    And request contains "filter[asset_type]" parameter with value "Service"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: List findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListFindings" enabled
@@ -839,6 +889,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "finding"
+
+  @team:DataDog/cloud-security-posture-management
+  Scenario: List findings returns "OK" response with details
+    Given operation "ListFindings" enabled
+    And new "ListFindings" request
+    And request contains "detailed_findings" parameter with value true
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-security-posture-management @with-pagination
   Scenario: List findings returns "OK" response with pagination
@@ -1087,7 +1145,7 @@ Feature: Security Monitoring
   Scenario: Run a historical job returns "Not Found" response
     Given operation "RunHistoricalJob" enabled
     And new "RunHistoricalJob" request
-    And body with value {"data": { "type": "historicalDetectionsJobCreate", "attributes": {"fromRule": {"caseIndex": 0, "from": 1730201035064, "id": "non-existng", "index": "main", "notifications": [], "to": 1730204635115}}}}
+    And body with value {"data": { "type": "historicalDetectionsJobCreate", "attributes": {"fromRule": {"from": 1730201035064, "id": "non-existng", "index": "main", "notifications": [], "to": 1730204635115}}}}
     When the request is sent
     Then the response status is 404 Not Found
 

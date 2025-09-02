@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"billing_account_id":"123456_A123BC_12AB34","bucket_name":"dd-cost-bucket","export_dataset_name":"billing","export_prefix":"datadog_cloud_cost_usage_export","export_project_name":"dd-cloud-cost-report","service_account":"InvalidServiceAccount"},"type":"gcp_uc_config_post_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cost/gcp_uc_config
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"not a valid service_account"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

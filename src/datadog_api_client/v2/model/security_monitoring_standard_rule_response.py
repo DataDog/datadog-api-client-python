@@ -8,12 +8,14 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.calculated_field import CalculatedField
     from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
     from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
         CloudConfigurationRuleComplianceSignalOptions,
@@ -22,6 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
     from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
+    from datadog_api_client.v2.model.security_monitoring_scheduling_options import SecurityMonitoringSchedulingOptions
     from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
         SecurityMonitoringThirdPartyRuleCase,
     )
@@ -31,6 +34,7 @@ if TYPE_CHECKING:
 class SecurityMonitoringStandardRuleResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.calculated_field import CalculatedField
         from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
         from datadog_api_client.v2.model.cloud_configuration_rule_compliance_signal_options import (
             CloudConfigurationRuleComplianceSignalOptions,
@@ -41,16 +45,22 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             SecurityMonitoringStandardRuleQuery,
         )
         from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
+        from datadog_api_client.v2.model.security_monitoring_scheduling_options import (
+            SecurityMonitoringSchedulingOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import (
             SecurityMonitoringThirdPartyRuleCase,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 
         return {
+            "calculated_fields": ([CalculatedField],),
             "cases": ([SecurityMonitoringRuleCase],),
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "created_at": (int,),
             "creation_author_id": (int,),
+            "custom_message": (str,),
+            "custom_name": (str,),
             "default_tags": ([str],),
             "deprecation_date": (int,),
             "filters": ([SecurityMonitoringFilter],),
@@ -65,6 +75,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             "options": (SecurityMonitoringRuleOptions,),
             "queries": ([SecurityMonitoringStandardRuleQuery],),
             "reference_tables": ([SecurityMonitoringReferenceTable],),
+            "scheduling_options": (SecurityMonitoringSchedulingOptions,),
             "tags": ([str],),
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCase],),
             "type": (SecurityMonitoringRuleTypeRead,),
@@ -74,10 +85,13 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         }
 
     attribute_map = {
+        "calculated_fields": "calculatedFields",
         "cases": "cases",
         "compliance_signal_options": "complianceSignalOptions",
         "created_at": "createdAt",
         "creation_author_id": "creationAuthorId",
+        "custom_message": "customMessage",
+        "custom_name": "customName",
         "default_tags": "defaultTags",
         "deprecation_date": "deprecationDate",
         "filters": "filters",
@@ -92,6 +106,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         "options": "options",
         "queries": "queries",
         "reference_tables": "referenceTables",
+        "scheduling_options": "schedulingOptions",
         "tags": "tags",
         "third_party_cases": "thirdPartyCases",
         "type": "type",
@@ -102,10 +117,13 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
     def __init__(
         self_,
+        calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
         compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         creation_author_id: Union[int, UnsetType] = unset,
+        custom_message: Union[str, UnsetType] = unset,
+        custom_name: Union[str, UnsetType] = unset,
         default_tags: Union[List[str], UnsetType] = unset,
         deprecation_date: Union[int, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
@@ -120,6 +138,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         options: Union[SecurityMonitoringRuleOptions, UnsetType] = unset,
         queries: Union[List[SecurityMonitoringStandardRuleQuery], UnsetType] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
+        scheduling_options: Union[SecurityMonitoringSchedulingOptions, none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCase], UnsetType] = unset,
         type: Union[SecurityMonitoringRuleTypeRead, UnsetType] = unset,
@@ -130,6 +149,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
     ):
         """
         Rule.
+
+        :param calculated_fields: Calculated fields. Only allowed for scheduled rules - in other words, when schedulingOptions is also defined.
+        :type calculated_fields: [CalculatedField], optional
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
@@ -142,6 +164,12 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param default_tags: Default Tags for default rules (included in tags)
         :type default_tags: [str], optional
@@ -185,6 +213,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         :param reference_tables: Reference tables for the rule.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional
 
+        :param scheduling_options: Options for scheduled rules. When this field is present, the rule runs based on the schedule. When absent, it runs real-time on ingested logs.
+        :type scheduling_options: SecurityMonitoringSchedulingOptions, none_type, optional
+
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
@@ -203,6 +234,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         :param version: The version of the rule.
         :type version: int, optional
         """
+        if calculated_fields is not unset:
+            kwargs["calculated_fields"] = calculated_fields
         if cases is not unset:
             kwargs["cases"] = cases
         if compliance_signal_options is not unset:
@@ -211,6 +244,10 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["created_at"] = created_at
         if creation_author_id is not unset:
             kwargs["creation_author_id"] = creation_author_id
+        if custom_message is not unset:
+            kwargs["custom_message"] = custom_message
+        if custom_name is not unset:
+            kwargs["custom_name"] = custom_name
         if default_tags is not unset:
             kwargs["default_tags"] = default_tags
         if deprecation_date is not unset:
@@ -239,6 +276,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["queries"] = queries
         if reference_tables is not unset:
             kwargs["reference_tables"] = reference_tables
+        if scheduling_options is not unset:
+            kwargs["scheduling_options"] = scheduling_options
         if tags is not unset:
             kwargs["tags"] = tags
         if third_party_cases is not unset:

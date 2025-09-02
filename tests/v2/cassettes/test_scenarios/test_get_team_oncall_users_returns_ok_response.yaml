@@ -1,0 +1,177 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Get_team_on_call_users_returns_OK_response-1748503817@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"c534e9e3-3c5e-11f0-b6eb-6e406f40657f","attributes":{"name":null,"handle":"test-get_team_on_call_users_returns_ok_response-1748503817@datadoghq.com","created_at":"2025-05-29T07:30:18.165739+00:00","modified_at":"2025-05-29T07:30:18.165739+00:00","email":"test-get_team_on_call_users_returns_ok_response-1748503817@datadoghq.com","icon":"https://secure.gravatar.com/avatar/a9b817a05a2ad95be147030f20ff95fb?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-aa0dbd3d9b27ea9e","name":"test-name-aa0dbd3d9b27ea9e"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"type":"team","id":"6a8339f9-9d86-4948-a469-1b0cbef769bb","attributes":{"name":"test-name-aa0dbd3d9b27ea9e","handle":"test-handle-aa0dbd3d9b27ea9e","summary":null,"description":null,"avatar":null,"banner":1,"visible_modules":[],"hidden_modules":[],"created_at":"2025-05-29T07:30:18.898463+00:00","modified_at":"2025-05-29T07:30:18.898474+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/6a8339f9-9d86-4948-a469-1b0cbef769bb/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/6a8339f9-9d86-4948-a469-1b0cbef769bb/permission-settings"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"layers":[{"effective_date":"2025-05-19T07:30:17.381Z","end_date":"2025-06-08T07:30:17.381Z","interval":{"days":1},"members":[{"user":{"id":"c534e9e3-3c5e-11f0-b6eb-6e406f40657f"}}],"name":"Layer
+      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2025-05-24T07:30:17.381Z"}],"name":"Test-Get_team_on_call_users_returns_OK_response-1748503817","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules
+  response:
+    body:
+      string: '{"data":{"id":"ba6c57a1-bb93-4f5a-a22b-174f84b0c5d6","type":"schedules","attributes":{"name":"Test-Get_team_on_call_users_returns_OK_response-1748503817","time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"d12469b6-85d8-461a-89c6-61fc956c1446","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Get_team_on_call_users_returns_OK_response-1748503817","resolve_page_on_policy_end":true,"retries":2,"steps":[{"assignment":"default","escalate_after_seconds":3600,"targets":[{"id":"6a8339f9-9d86-4948-a469-1b0cbef769bb","type":"teams"},{"id":"ba6c57a1-bb93-4f5a-a22b-174f84b0c5d6","type":"schedules"},{"id":"c534e9e3-3c5e-11f0-b6eb-6e406f40657f","type":"users"}]},{"assignment":"round-robin","escalate_after_seconds":3600,"targets":[{"id":"6a8339f9-9d86-4948-a469-1b0cbef769bb","type":"teams"}]}]},"relationships":{"teams":{"data":[{"id":"6a8339f9-9d86-4948-a469-1b0cbef769bb","type":"teams"}]}},"type":"policies"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/on-call/escalation-policies
+  response:
+    body:
+      string: '{"data":{"id":"5cfa8139-510a-4965-8f10-dc79488fcd89","type":"policies","attributes":{"name":"Test-Get_team_on_call_users_returns_OK_response-1748503817","resolve_page_on_policy_end":true,"retries":2},"relationships":{"steps":{"data":[{"id":"03c363ed-929e-4fa1-8397-e80a5b422648","type":"steps"},{"id":"0c678f92-8639-4d72-ad5a-f40307c1d935","type":"steps"}]},"teams":{"data":[{"id":"6a8339f9-9d86-4948-a469-1b0cbef769bb","type":"teams"}]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"rules":[{"actions":[],"policy_id":"5cfa8139-510a-4965-8f10-dc79488fcd89","query":"","urgency":"low"}]},"id":"6a8339f9-9d86-4948-a469-1b0cbef769bb","type":"team_routing_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/on-call/teams/6a8339f9-9d86-4948-a469-1b0cbef769bb/routing-rules
+  response:
+    body:
+      string: '{"data":{"id":"6a8339f9-9d86-4948-a469-1b0cbef769bb","type":"team_routing_rules","relationships":{"rules":{"data":[{"id":"virtual-6a8339f9-9d86-4948-a469-1b0cbef769bb-rule-0","type":"team_routing_rules"}]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/on-call/teams/6a8339f9-9d86-4948-a469-1b0cbef769bb/on-call?include=responders%2Cescalations.responders
+  response:
+    body:
+      string: '{"data":{"id":"6a8339f9-9d86-4948-a469-1b0cbef769bb-1748503821","type":"team_oncall_responders","relationships":{"escalations":{"data":[]},"responders":{"data":[{"id":"c534e9e3-3c5e-11f0-b6eb-6e406f40657f","type":"users"}]}}},"included":[{"id":"c534e9e3-3c5e-11f0-b6eb-6e406f40657f","type":"users","attributes":{"email":"test-get_team_on_call_users_returns_ok_response-1748503817@datadoghq.com","name":"","status":"pending"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/on-call/escalation-policies/5cfa8139-510a-4965-8f10-dc79488fcd89
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"policy[5cfa8139-510a-4965-8f10-dc79488fcd89]
+        is in use"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/ba6c57a1-bb93-4f5a-a22b-174f84b0c5d6
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"schedule[ba6c57a1-bb93-4f5a-a22b-174f84b0c5d6]
+        is in use"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/6a8339f9-9d86-4948-a469-1b0cbef769bb
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/c534e9e3-3c5e-11f0-b6eb-6e406f40657f
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -1,5 +1,5 @@
 """
-Get AWS Scan Options returns "OK" response
+List AWS Scan Options returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

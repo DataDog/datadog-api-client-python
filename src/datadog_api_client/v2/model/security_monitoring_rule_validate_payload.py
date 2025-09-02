@@ -15,8 +15,17 @@ class SecurityMonitoringRuleValidatePayload(ModelComposed):
         """
         Validate a rule.
 
+        :param calculated_fields: Calculated fields. Only allowed for scheduled rules - in other words, when schedulingOptions is also defined.
+        :type calculated_fields: [CalculatedField], optional
+
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
@@ -44,6 +53,9 @@ class SecurityMonitoringRuleValidatePayload(ModelComposed):
 
         :param reference_tables: Reference tables for the rule.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional
+
+        :param scheduling_options: Options for scheduled rules. When this field is present, the rule runs based on the schedule. When absent, it runs real-time on ingested logs.
+        :type scheduling_options: SecurityMonitoringSchedulingOptions, none_type, optional
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional

@@ -18,6 +18,9 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
 
+        :param custom_query_extension: Query extension to append to the logs query.
+        :type custom_query_extension: str, optional
+
         :param data_source: Source of events, either logs, audit trail, or Datadog events.
         :type data_source: SecurityMonitoringStandardDataSource, optional
 
@@ -29,6 +32,10 @@ class SecurityMonitoringRuleQuery(ModelComposed):
 
         :param has_optional_group_by_fields: When false, events without a group-by value are ignored by the rule. When true, events with missing group-by fields are processed with `N/A`, replacing the missing values.
         :type has_optional_group_by_fields: bool, optional
+
+        :param index: **This field is currently unstable and might be removed in a minor version upgrade.**
+            The index to run the query on, if the `dataSource` is `logs`. Only used for scheduled rules - in other words, when the `schedulingOptions` field is present in the rule payload.
+        :type index: str, optional
 
         :param metric: (Deprecated) The target field to aggregate over when using the sum or max
             aggregations. `metrics` field should be used instead.

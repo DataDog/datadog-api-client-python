@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"filter":{"query":"source:python"},"name":"testPipelineArrayAppendPreserve","processors":[{"is_enabled":true,"name":"append_ip_and_keep_source","operation":{"preserve_source":true,"source":"network.client.ip","target":"sourceIps","type":"append"},"type":"array-processor"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines
+  response:
+    body:
+      string: '{"id":"VX29vifpTjOKtlFWDp2-gA","type":"pipeline","name":"testPipelineArrayAppendPreserve","is_enabled":false,"is_read_only":false,"filter":{"query":"source:python"},"processors":[{"name":"append_ip_and_keep_source","is_enabled":true,"operation":{"source":"network.client.ip","target":"sourceIps","preserve_source":true,"type":"append"},"type":"array-processor"}],"tags":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines/VX29vifpTjOKtlFWDp2-gA
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

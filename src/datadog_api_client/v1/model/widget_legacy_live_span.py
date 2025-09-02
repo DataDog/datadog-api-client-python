@@ -27,20 +27,32 @@ class WidgetLegacyLiveSpan(ModelNormal):
         from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
 
         return {
+            "hide_incomplete_cost_data": (bool,),
             "live_span": (WidgetLiveSpan,),
         }
 
     attribute_map = {
+        "hide_incomplete_cost_data": "hide_incomplete_cost_data",
         "live_span": "live_span",
     }
 
-    def __init__(self_, live_span: Union[WidgetLiveSpan, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        hide_incomplete_cost_data: Union[bool, UnsetType] = unset,
+        live_span: Union[WidgetLiveSpan, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Wrapper for live span
+
+        :param hide_incomplete_cost_data: Whether to hide incomplete cost data in the widget.
+        :type hide_incomplete_cost_data: bool, optional
 
         :param live_span: The available timeframes depend on the widget you are using.
         :type live_span: WidgetLiveSpan, optional
         """
+        if hide_incomplete_cost_data is not unset:
+            kwargs["hide_incomplete_cost_data"] = hide_incomplete_cost_data
         if live_span is not unset:
             kwargs["live_span"] = live_span
         super().__init__(kwargs)

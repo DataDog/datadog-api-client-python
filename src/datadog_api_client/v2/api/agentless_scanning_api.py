@@ -116,6 +116,29 @@ class AgentlessScanningApi:
             api_client=api_client,
         )
 
+        self._get_aws_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (AwsScanOptionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/aws/{account_id}",
+                "operation_id": "get_aws_scan_options",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_aws_on_demand_tasks_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsOnDemandListResponse,),
@@ -242,6 +265,23 @@ class AgentlessScanningApi:
 
         return self._get_aws_on_demand_task_endpoint.call_with_http_info(**kwargs)
 
+    def get_aws_scan_options(
+        self,
+        account_id: str,
+    ) -> AwsScanOptionsResponse:
+        """Get AWS scan options.
+
+        Fetches the Agentless scan options for an activated account.
+
+        :param account_id: The ID of an AWS account.
+        :type account_id: str
+        :rtype: AwsScanOptionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["account_id"] = account_id
+
+        return self._get_aws_scan_options_endpoint.call_with_http_info(**kwargs)
+
     def list_aws_on_demand_tasks(
         self,
     ) -> AwsOnDemandListResponse:
@@ -257,7 +297,7 @@ class AgentlessScanningApi:
     def list_aws_scan_options(
         self,
     ) -> AwsScanOptionsListResponse:
-        """Get AWS Scan Options.
+        """List AWS Scan Options.
 
         Fetches the scan options configured for AWS accounts.
 

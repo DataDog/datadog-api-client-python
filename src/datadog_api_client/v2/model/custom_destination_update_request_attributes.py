@@ -27,6 +27,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.custom_destination_forward_destination_elasticsearch import (
         CustomDestinationForwardDestinationElasticsearch,
     )
+    from datadog_api_client.v2.model.custom_destination_forward_destination_microsoft_sentinel import (
+        CustomDestinationForwardDestinationMicrosoftSentinel,
+    )
 
 
 class CustomDestinationUpdateRequestAttributes(ModelNormal):
@@ -77,6 +80,7 @@ class CustomDestinationUpdateRequestAttributes(ModelNormal):
             CustomDestinationForwardDestinationHttp,
             CustomDestinationForwardDestinationSplunk,
             CustomDestinationForwardDestinationElasticsearch,
+            CustomDestinationForwardDestinationMicrosoftSentinel,
             UnsetType,
         ] = unset,
         name: Union[str, UnsetType] = unset,

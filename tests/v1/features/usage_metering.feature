@@ -39,7 +39,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly logs usage by retention returns "Bad Request" response
     Given new "GetUsageLogsByRetention" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -47,7 +47,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly logs usage by retention returns "OK" response
     Given new "GetUsageLogsByRetention" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -71,7 +71,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for CI visibility returns "Bad Request" response
     Given new "GetUsageCIApp" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -79,7 +79,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for CI visibility returns "OK" response
     Given new "GetUsageCIApp" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -94,14 +94,14 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for CSM Pro returns "OK" response
     Given new "GetUsageCloudSecurityPostureManagement" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Database Monitoring returns "OK" response
     Given new "GetUsageDBM" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -109,7 +109,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Fargate returns "Bad Request" response
     Given new "GetUsageFargate" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -117,7 +117,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Fargate returns "OK" response
     Given new "GetUsageFargate" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -125,7 +125,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for IoT returns "Bad Request" response
     Given new "GetUsageInternetOfThings" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -133,7 +133,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for IoT returns "OK" response
     Given new "GetUsageInternetOfThings" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -141,7 +141,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Lambda returns "Bad Request" response
     Given new "GetUsageLambda" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -149,7 +149,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Lambda returns "OK" response
     Given new "GetUsageLambda" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -173,7 +173,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Logs returns "Bad Request" response
     Given new "GetUsageLogs" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -181,7 +181,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Logs returns "OK" response
     Given new "GetUsageLogs" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -189,7 +189,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Network Flows returns "Bad Request" response
     Given new "GetUsageNetworkFlows" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -197,7 +197,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Network Flows returns "OK" response
     Given new "GetUsageNetworkFlows" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -205,7 +205,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Network Hosts returns "Bad Request" response
     Given new "GetUsageNetworkHosts" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -213,7 +213,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Network Hosts returns "OK" response
     Given new "GetUsageNetworkHosts" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -221,7 +221,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Online Archive returns "Bad Request" response
     Given new "GetUsageOnlineArchive" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -229,7 +229,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Online Archive returns "OK" response
     Given new "GetUsageOnlineArchive" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -237,7 +237,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for RUM Sessions returns "Bad Request" response
     Given new "GetUsageRumSessions" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -245,7 +245,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for RUM Sessions returns "OK" response
     Given new "GetUsageRumSessions" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -253,7 +253,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for RUM Units returns "OK" response
     Given new "GetUsageRumUnits" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -289,7 +289,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for SNMP devices returns "Bad Request" response
     Given new "GetUsageSNMP" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -297,7 +297,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for SNMP devices returns "OK" response
     Given new "GetUsageSNMP" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -305,7 +305,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Sensitive Data Scanner returns "OK" response
     Given new "GetUsageSDS" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -313,7 +313,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Synthetics API Checks returns "Bad Request" response
     Given new "GetUsageSyntheticsAPI" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -321,7 +321,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Synthetics API Checks returns "OK" response
     Given new "GetUsageSyntheticsAPI" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -329,7 +329,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Synthetics Browser Checks returns "Bad Request" response
     Given new "GetUsageSyntheticsBrowser" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -337,7 +337,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for Synthetics Browser Checks returns "OK" response
     Given new "GetUsageSyntheticsBrowser" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -345,7 +345,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for analyzed logs returns "Bad Request" response
     Given new "GetUsageAnalyzedLogs" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -353,7 +353,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for analyzed logs returns "OK" response
     Given new "GetUsageAnalyzedLogs" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -368,7 +368,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for audit logs returns "OK" response
     Given new "GetUsageAuditLogs" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -383,7 +383,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for cloud workload security returns "OK" response
     Given new "GetUsageCWS" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -391,7 +391,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for custom metrics returns "Bad Request" response
     Given new "GetUsageTimeseries" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -399,7 +399,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for custom metrics returns "OK" response
     Given new "GetUsageTimeseries" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -421,7 +421,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for hosts and containers returns "Bad Request" response
     Given new "GetUsageHosts" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -429,7 +429,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for hosts and containers returns "OK" response
     Given new "GetUsageHosts" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -437,7 +437,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for incident management returns "Bad Request" response
     Given new "GetIncidentManagement" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -445,7 +445,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for incident management returns "OK" response
     Given new "GetIncidentManagement" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -453,7 +453,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for indexed spans returns "Bad Request" response
     Given new "GetUsageIndexedSpans" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -461,7 +461,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for indexed spans returns "OK" response
     Given new "GetUsageIndexedSpans" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -469,7 +469,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for ingested spans returns "Bad Request" response
     Given new "GetIngestedSpans" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -477,7 +477,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for ingested spans returns "OK" response
     Given new "GetIngestedSpans" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -541,7 +541,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for profiled hosts returns "Bad Request" response
     Given new "GetUsageProfiling" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -549,7 +549,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for profiled hosts returns "OK" response
     Given new "GetUsageProfiling" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -613,7 +613,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/revenue-query
+  @skip @team:DataDog/revenue-query
   Scenario: Get mobile hourly usage for RUM Sessions returns "OK" response
     Given new "GetUsageRumSessions" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"

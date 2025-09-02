@@ -18,9 +18,9 @@ class RuleTypesItems(ModelSimple):
         Signal-based notification rules can filter signals based on rule types application_security, log_detection,
         workload_security, signal_correlation, cloud_configuration and infrastructure_configuration.
         Vulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,
-        application_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, and api_security.
+        application_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration, api_security, host_vulnerability and iac_misconfiguration.
 
-    :param value: Must be one of ["application_security", "log_detection", "workload_security", "signal_correlation", "cloud_configuration", "infrastructure_configuration", "application_code_vulnerability", "application_library_vulnerability", "attack_path", "container_image_vulnerability", "identity_risk", "misconfiguration", "api_security"].
+    :param value: Must be one of ["application_security", "log_detection", "workload_security", "signal_correlation", "cloud_configuration", "infrastructure_configuration", "application_code_vulnerability", "application_library_vulnerability", "attack_path", "container_image_vulnerability", "identity_risk", "misconfiguration", "api_security", "host_vulnerability", "iac_misconfiguration"].
     :type value: str
     """
 
@@ -38,6 +38,8 @@ class RuleTypesItems(ModelSimple):
         "identity_risk",
         "misconfiguration",
         "api_security",
+        "host_vulnerability",
+        "iac_misconfiguration",
     }
     APPLICATION_SECURITY: ClassVar["RuleTypesItems"]
     LOG_DETECTION: ClassVar["RuleTypesItems"]
@@ -52,6 +54,8 @@ class RuleTypesItems(ModelSimple):
     IDENTITY_RISK: ClassVar["RuleTypesItems"]
     MISCONFIGURATION: ClassVar["RuleTypesItems"]
     API_SECURITY: ClassVar["RuleTypesItems"]
+    HOST_VULNERABILITY: ClassVar["RuleTypesItems"]
+    IAC_MISCONFIGURATION: ClassVar["RuleTypesItems"]
 
     @cached_property
     def openapi_types(_):
@@ -73,3 +77,5 @@ RuleTypesItems.CONTAINER_IMAGE_VULNERABILITY = RuleTypesItems("container_image_v
 RuleTypesItems.IDENTITY_RISK = RuleTypesItems("identity_risk")
 RuleTypesItems.MISCONFIGURATION = RuleTypesItems("misconfiguration")
 RuleTypesItems.API_SECURITY = RuleTypesItems("api_security")
+RuleTypesItems.HOST_VULNERABILITY = RuleTypesItems("host_vulnerability")
+RuleTypesItems.IAC_MISCONFIGURATION = RuleTypesItems("iac_misconfiguration")

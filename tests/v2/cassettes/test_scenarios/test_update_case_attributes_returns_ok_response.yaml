@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type":"STANDARD"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"f396c907-777d-4985-9e9d-2a420a0c0515","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T18:42:41.549781Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"f396c907-777d-4985-9e9d-2a420a0c0515","key":"DDFC-72342","merge_status":"NOT_MERGED","priority":"P4","public_id":"72402","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"attributes":{"env":["test"],"service":["web-store","web-api"],"team":["engineer"]}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/f396c907-777d-4985-9e9d-2a420a0c0515/attributes
+  response:
+    body:
+      string: '{"data":{"id":"f396c907-777d-4985-9e9d-2a420a0c0515","type":"case","attributes":{"attributes":{"env":["test"],"service":["web-store","web-api"],"team":["engineer"]},"comment_count":0,"created_at":"2025-07-21T18:42:41.549781Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"f396c907-777d-4985-9e9d-2a420a0c0515","key":"DDFC-72342","merge_status":"NOT_MERGED","modified_at":"2025-07-21T18:42:41.694883Z","priority":"P4","public_id":"72402","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"modified_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

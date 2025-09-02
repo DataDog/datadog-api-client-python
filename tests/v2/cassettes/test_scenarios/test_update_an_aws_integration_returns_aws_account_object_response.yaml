@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":false,"collect_custom_metrics":false,"enabled":true,"namespace_filters":{"include_only":["AWS/EC2"]},"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}},"type":"account"}}'
+    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]},"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":false,"collect_custom_metrics":false,"enabled":true,"namespace_filters":{"include_only":["AWS/EC2"]},"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}},"type":"account"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integration/aws/accounts
   response:
     body:
-      string: '{"data":{"id":"da257b29-9c21-471f-9f5d-41ccfbedd320","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"532ab1a205b74240a3ca14407209b4a6"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2024-11-14T20:08:04.788732465Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"]}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":false,"collect_cloudwatch_alarms":false,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2024-11-14T20:08:04.788740678Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
+      string: '{"data":{"id":"ab6528e3-5dab-4375-ae47-4ce93d1216e2","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"36416390710445e7be511e1622ee4149"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2025-08-06T17:41:52.510132689Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]}}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":false,"collect_cloudwatch_alarms":false,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2025-08-06T17:41:52.510132689Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -18,17 +18,17 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole"},"aws_account_id":"123456789012","aws_partition":"aws","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":true,"collect_custom_metrics":true,"enabled":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{}},"type":"account"}}'
+    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole"},"aws_account_id":"123456789012","aws_partition":"aws","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]},"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":true,"collect_custom_metrics":true,"enabled":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{}},"type":"account"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/da257b29-9c21-471f-9f5d-41ccfbedd320
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/ab6528e3-5dab-4375-ae47-4ce93d1216e2
   response:
     body:
-      string: '{"data":{"id":"da257b29-9c21-471f-9f5d-41ccfbedd320","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"532ab1a205b74240a3ca14407209b4a6"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2024-11-14T20:08:04.788732Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"]}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":true,"collect_cloudwatch_alarms":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2024-11-14T20:08:04.980569196Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
+      string: '{"data":{"id":"ab6528e3-5dab-4375-ae47-4ce93d1216e2","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"36416390710445e7be511e1622ee4149"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2025-08-06T17:41:52.510132Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]}}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":true,"collect_cloudwatch_alarms":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2025-08-06T17:41:52.717094345Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -41,7 +41,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/da257b29-9c21-471f-9f5d-41ccfbedd320
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/ab6528e3-5dab-4375-ae47-4ce93d1216e2
   response:
     body:
       string: ''

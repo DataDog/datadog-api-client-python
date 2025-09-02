@@ -29,6 +29,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.custom_destination_response_forward_destination_elasticsearch import (
         CustomDestinationResponseForwardDestinationElasticsearch,
     )
+    from datadog_api_client.v2.model.custom_destination_response_forward_destination_microsoft_sentinel import (
+        CustomDestinationResponseForwardDestinationMicrosoftSentinel,
+    )
 
 
 class CustomDestinationResponseAttributes(ModelNormal):
@@ -79,6 +82,7 @@ class CustomDestinationResponseAttributes(ModelNormal):
             CustomDestinationResponseForwardDestinationHttp,
             CustomDestinationResponseForwardDestinationSplunk,
             CustomDestinationResponseForwardDestinationElasticsearch,
+            CustomDestinationResponseForwardDestinationMicrosoftSentinel,
             UnsetType,
         ] = unset,
         name: Union[str, UnsetType] = unset,

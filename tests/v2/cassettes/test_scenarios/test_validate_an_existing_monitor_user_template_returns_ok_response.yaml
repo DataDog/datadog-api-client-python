@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"It''s a threshold","monitor_definition":{"message":"cats","name":"High
+      Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["category:test"],"template_variables":[{"available_values":[],"defaults":["cats"],"name":"scope"}],"title":"api
+      spec given template test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185"},"type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template
+  response:
+    body:
+      string: '{"data":{"type":"monitor-user-template","attributes":{"created":"2025-05-29T02:36:25.594440+00:00","version":0,"description":"It''s
+        a threshold","tags":["category:test"],"modified":"2025-05-29T02:36:25.594440+00:00","template_variables":[{"defaults":["cats"],"available_values":[],"name":"scope"}],"creator_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","monitor_definition":{"message":"cats","name":"High
+        Error Rate on service","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+        > 100","type":"query alert"},"title":"api spec given template test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185"},"id":"dc86b1ba-9e7c-40cf-8859-777c53e4f1a2"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"A description.","monitor_definition":{"message":"A
+      msg.","name":"A name test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185","query":"avg(last_5m):sum:system.net.bytes_rcvd{host:host0}
+      > 100","type":"query alert"},"tags":["integration:Azure"],"template_variables":[{"available_values":["value1","value2"],"defaults":["defaultValue"],"name":"regionName","tag_key":"datacenter"}],"title":"Postgres
+      DB test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185"},"id":"00000000-0000-1234-0000-000000000000","type":"monitor-user-template"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/template/dc86b1ba-9e7c-40cf-8859-777c53e4f1a2/validate
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/template/dc86b1ba-9e7c-40cf-8859-777c53e4f1a2
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

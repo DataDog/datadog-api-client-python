@@ -31,7 +31,7 @@ class LogsApi:
         self._list_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs-queries/list",
                 "operation_id": "list_logs",
                 "http_method": "POST",
@@ -68,6 +68,7 @@ class LogsApi:
                                     "us3.datadoghq.com",
                                     "us5.datadoghq.com",
                                     "ap1.datadoghq.com",
+                                    "ap2.datadoghq.com",
                                     "datadoghq.eu",
                                     "ddog-gov.com",
                                 ],

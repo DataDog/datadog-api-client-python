@@ -1,8 +1,8 @@
 interactions:
 - request:
-    body: '{"message":"some message","name":"Test-Create_an_Error_Tracking_monitor_returns_OK_response-1647547501","options":{"thresholds":{"critical":1}},"priority":3,"query":"error-tracking-rum(\"service:foo
+    body: '{"draft_status":"draft","message":"some message","name":"Test-Create_an_Error_Tracking_monitor_returns_OK_response-1747261042","options":{"thresholds":{"critical":1}},"priority":3,"query":"error-tracking-rum(\"service:foo
       AND @error.source:source\").rollup(\"count\").by(\"@issue.id\").last(\"1h\")
-      >= 1","tags":["test:testcreateanerrortrackingmonitorreturnsokresponse1647547501","env:ci"],"type":"error-tracking
+      >= 1","tags":["test:testcreateanerrortrackingmonitorreturnsokresponse1747261042","env:ci"],"type":"error-tracking
       alert"}'
     headers:
       accept:
@@ -13,10 +13,13 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
-      string: '{"restricted_roles":null,"tags":["test:testcreateanerrortrackingmonitorreturnsokresponse1647547501","env:ci"],"deleted":null,"query":"error-tracking-rum(\"service:foo
+      string: '{"id":172139812,"org_id":2,"type":"error-tracking alert","name":"Test-Create_an_Error_Tracking_monitor_returns_OK_response-1747261042","message":"some
+        message","tags":["test:testcreateanerrortrackingmonitorreturnsokresponse1747261042","env:ci"],"query":"error-tracking-rum(\"service:foo
         AND @error.source:source\").rollup(\"count\").by(\"@issue.id\").last(\"1h\")
-        >= 1","message":"some message","id":66239295,"multi":true,"name":"Test-Create_an_Error_Tracking_monitor_returns_OK_response-1647547501","created":"2022-03-17T20:05:01.603951+00:00","created_at":1647547501000,"creator":{"id":1445416,"handle":"frog@datadoghq.com","name":null,"email":"frog@datadoghq.com"},"org_id":321813,"modified":"2022-03-17T20:05:01.603951+00:00","priority":3,"overall_state_modified":null,"overall_state":"No
-        Data","type":"error-tracking alert","options":{"notify_audit":false,"silenced":{},"include_tags":true,"thresholds":{"critical":1.0},"new_host_delay":300,"notify_no_data":false,"groupby_simple_monitor":false}}'
+        >= 1","options":{"thresholds":{"critical":1.0},"notify_no_data":false,"notify_audit":false,"new_host_delay":300,"include_tags":true,"groupby_simple_monitor":false,"silenced":{},"avalanche_window":20},"multi":true,"created_at":1747261042000,"created":"2025-05-14T22:17:22.989000+00:00","modified":"2025-05-14T22:17:22.989000+00:00","deleted":null,"priority":3,"draft_status":"draft","restricted_roles":null,"restriction_policy":null,"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"Carl Martensen","handle":"carl.martensen@datadoghq.com","email":"carl.martensen@datadoghq.com","id":638339},"run_as":null,"restricted":true}
+
+        '
     headers:
       content-type:
       - application/json
@@ -29,10 +32,12 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/66239295
+    uri: https://api.datadoghq.com/api/v1/monitor/172139812
   response:
     body:
-      string: '{"deleted_monitor_id":66239295}'
+      string: '{"deleted_monitor_id":172139812}
+
+        '
     headers:
       content-type:
       - application/json

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":false,"collect_custom_metrics":false,"enabled":true,"namespace_filters":{"include_only":["AWS/EC2"]},"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}},"type":"account"}}'
+    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]},"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":false,"collect_custom_metrics":false,"enabled":true,"namespace_filters":{"include_only":["AWS/EC2"]},"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}},"type":"account"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integration/aws/accounts
   response:
     body:
-      string: '{"data":{"id":"cb0d64ac-ca8e-4c17-9da4-02d8519b0de6","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"4e38efc3d9104693974dc774562c0063"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2024-11-14T20:08:03.23291721Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"]}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":false,"collect_cloudwatch_alarms":false,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2024-11-14T20:08:03.232922592Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
+      string: '{"data":{"id":"957a9f7c-72ec-4946-baf4-42f00420f299","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"329146b44caa4f4fa7d0b6478f392c9e"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2025-08-06T17:41:50.383382183Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]}}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":false,"collect_cloudwatch_alarms":false,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2025-08-06T17:41:50.383382183Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -23,10 +23,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/cb0d64ac-ca8e-4c17-9da4-02d8519b0de6
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/957a9f7c-72ec-4946-baf4-42f00420f299
   response:
     body:
-      string: '{"data":{"id":"cb0d64ac-ca8e-4c17-9da4-02d8519b0de6","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"4e38efc3d9104693974dc774562c0063"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2024-11-14T20:08:03.232917Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"]}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":false,"collect_cloudwatch_alarms":false,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2024-11-14T20:08:03.232923Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
+      string: '{"data":{"id":"957a9f7c-72ec-4946-baf4-42f00420f299","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"role_name":"DatadogIntegrationRole","external_id":"329146b44caa4f4fa7d0b6478f392c9e"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_only":["us-east-1"]},"created_at":"2025-08-06T17:41:50.383382Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]}}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":false,"collect_cloudwatch_alarms":false,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"include_only":["AWS/EC2"]}},"modified_at":"2025-08-06T17:41:50.383382Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":["AWS/AppSync"]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -39,7 +39,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/cb0d64ac-ca8e-4c17-9da4-02d8519b0de6
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/957a9f7c-72ec-4946-baf4-42f00420f299
   response:
     body:
       string: ''

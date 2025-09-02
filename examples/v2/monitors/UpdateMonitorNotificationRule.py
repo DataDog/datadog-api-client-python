@@ -36,7 +36,6 @@ body = MonitorNotificationRuleUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_monitor_notification_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.update_monitor_notification_rule(rule_id=MONITOR_NOTIFICATION_RULE_DATA_ID, body=body)

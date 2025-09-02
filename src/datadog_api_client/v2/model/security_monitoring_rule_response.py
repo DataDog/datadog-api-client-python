@@ -15,6 +15,9 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         """
         Create a new rule.
 
+        :param calculated_fields: Calculated fields. Only allowed for scheduled rules - in other words, when schedulingOptions is also defined.
+        :type calculated_fields: [CalculatedField], optional
+
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
 
@@ -26,6 +29,12 @@ class SecurityMonitoringRuleResponse(ModelComposed):
 
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param default_tags: Default Tags for default rules (included in tags)
         :type default_tags: [str], optional
@@ -68,6 +77,9 @@ class SecurityMonitoringRuleResponse(ModelComposed):
 
         :param reference_tables: Reference tables for the rule.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional
+
+        :param scheduling_options: Options for scheduled rules. When this field is present, the rule runs based on the schedule. When absent, it runs real-time on ingested logs.
+        :type scheduling_options: SecurityMonitoringSchedulingOptions, none_type, optional
 
         :param tags: Tags for generated signals.
         :type tags: [str], optional

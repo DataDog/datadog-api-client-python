@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"test-rum-437f87a61b37ca7e","type":"ios"},"type":"rum_application_create"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/rum/applications
+  response:
+    body:
+      string: '{"data":{"type":"rum_application","attributes":{"updated_by_handle":"frog@datadoghq.com","product_scales":{"rum_event_processing_scale":{"state":"ALL","last_modified_at":1755612183425},"product_analytics_retention_scale":{"state":"NONE","last_modified_at":1755612183425}},"client_token":"pub601ee82f2a03f18ee4750e75918179a9","is_active":false,"created_by_handle":"frog@datadoghq.com","tags":[],"org_id":321813,"type":"ios","product_analytics_replay_sample_rate":100,"name":"test-rum-437f87a61b37ca7e","application_id":"c82755b7-9938-4241-ae5a-24dd5760402b","hash":"pub601ee82f2a03f18ee4750e75918179a9","updated_at":1755612183425,"created_at":1755612183425},"id":"c82755b7-9938-4241-ae5a-24dd5760402b"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"name":"updated_rum_with_product_scales","product_analytics_retention_state":"MAX","rum_event_processing_state":"ALL"},"id":"c82755b7-9938-4241-ae5a-24dd5760402b","type":"rum_application_update"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/applications/c82755b7-9938-4241-ae5a-24dd5760402b
+  response:
+    body:
+      string: '{"data":{"type":"rum_application","attributes":{"tags":[],"application_id":"c82755b7-9938-4241-ae5a-24dd5760402b","is_active":false,"hash":"pub601ee82f2a03f18ee4750e75918179a9","product_analytics_replay_sample_rate":100,"product_scales":{"product_analytics_retention_scale":{"state":"MAX","last_modified_at":1755612183687},"rum_event_processing_scale":{"state":"ALL","last_modified_at":1755612183425}},"updated_by_handle":"frog@datadoghq.com","org_id":321813,"created_by_handle":"frog@datadoghq.com","type":"ios","name":"updated_rum_with_product_scales","client_token":"pub601ee82f2a03f18ee4750e75918179a9","created_at":1755612183425,"updated_at":1755612183687},"id":"c82755b7-9938-4241-ae5a-24dd5760402b"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/rum/applications/c82755b7-9938-4241-ae5a-24dd5760402b
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws
+  response:
+    body:
+      string: '{"data":[{"id":"000000000002","type":"aws_scan_options","attributes":{"lambda":false,"sensitive_data":false,"vuln_containers_os":true,"vuln_host_os":true}},{"id":"123456789012","type":"aws_scan_options","attributes":{"lambda":true,"sensitive_data":true,"vuln_containers_os":true,"vuln_host_os":true}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,75 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"alt-4q4-baa","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818","policyVersion":"1","priority":1000000013,"ruleCount":226,"updateDate":1749827818428,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}},{"hash":{}}],"description":"My
+      Agent rule with set action","enabled":true,"expression":"exec.file.name == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818","policy_id":"alt-4q4-baa","product_tags":[]},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"ps3-64e-shx","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
+        Activity","creationDate":1749827819065,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+        Agent rule with set action","enabled":true,"expression":"exec.file.name ==
+        \"sh\"","filters":["os == \"linux\""],"monitoring":["alt-4q4-baa"],"name":"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1749827818","product_tags":[],"updateDate":1749827819065,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/ps3-64e-shx
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/alt-4q4-baa
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
     from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+    from datadog_api_client.v2.model.sensitive_data_scanner_samplings import SensitiveDataScannerSamplings
 
 
 class SensitiveDataScannerGroupAttributes(ModelNormal):
@@ -23,6 +24,7 @@ class SensitiveDataScannerGroupAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
         from datadog_api_client.v2.model.sensitive_data_scanner_product import SensitiveDataScannerProduct
+        from datadog_api_client.v2.model.sensitive_data_scanner_samplings import SensitiveDataScannerSamplings
 
         return {
             "description": (str,),
@@ -30,6 +32,7 @@ class SensitiveDataScannerGroupAttributes(ModelNormal):
             "is_enabled": (bool,),
             "name": (str,),
             "product_list": ([SensitiveDataScannerProduct],),
+            "samplings": ([SensitiveDataScannerSamplings],),
         }
 
     attribute_map = {
@@ -38,6 +41,7 @@ class SensitiveDataScannerGroupAttributes(ModelNormal):
         "is_enabled": "is_enabled",
         "name": "name",
         "product_list": "product_list",
+        "samplings": "samplings",
     }
 
     def __init__(
@@ -47,6 +51,7 @@ class SensitiveDataScannerGroupAttributes(ModelNormal):
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         product_list: Union[List[SensitiveDataScannerProduct], UnsetType] = unset,
+        samplings: Union[List[SensitiveDataScannerSamplings], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -66,6 +71,9 @@ class SensitiveDataScannerGroupAttributes(ModelNormal):
 
         :param product_list: List of products the scanning group applies.
         :type product_list: [SensitiveDataScannerProduct], optional
+
+        :param samplings: List of sampling rates per product type.
+        :type samplings: [SensitiveDataScannerSamplings], optional
         """
         if description is not unset:
             kwargs["description"] = description
@@ -77,4 +85,6 @@ class SensitiveDataScannerGroupAttributes(ModelNormal):
             kwargs["name"] = name
         if product_list is not unset:
             kwargs["product_list"] = product_list
+        if samplings is not unset:
+            kwargs["samplings"] = samplings
         super().__init__(kwargs)

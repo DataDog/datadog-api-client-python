@@ -37,7 +37,7 @@ class LayerAttributesInterval(ModelNormal):
 
     def __init__(self_, days: Union[int, UnsetType] = unset, seconds: Union[int, UnsetType] = unset, **kwargs):
         """
-        Defines how often the rotation repeats, using a combination of days and optional seconds.
+        Defines how often the rotation repeats, using a combination of days and optional seconds. Should be at least 1 hour.
 
         :param days: The number of days in each rotation cycle.
         :type days: int, optional

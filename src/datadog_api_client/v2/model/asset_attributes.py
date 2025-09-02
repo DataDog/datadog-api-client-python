@@ -34,6 +34,7 @@ class AssetAttributes(ModelNormal):
             "name": (str,),
             "operating_system": (AssetOperatingSystem,),
             "risks": (AssetRisks,),
+            "teams": ([str],),
             "type": (AssetType,),
             "version": (AssetVersion,),
         }
@@ -44,6 +45,7 @@ class AssetAttributes(ModelNormal):
         "name": "name",
         "operating_system": "operating_system",
         "risks": "risks",
+        "teams": "teams",
         "type": "type",
         "version": "version",
     }
@@ -56,6 +58,7 @@ class AssetAttributes(ModelNormal):
         type: AssetType,
         arch: Union[str, UnsetType] = unset,
         operating_system: Union[AssetOperatingSystem, UnsetType] = unset,
+        teams: Union[List[str], UnsetType] = unset,
         version: Union[AssetVersion, UnsetType] = unset,
         **kwargs,
     ):
@@ -77,6 +80,9 @@ class AssetAttributes(ModelNormal):
         :param risks: Asset risks.
         :type risks: AssetRisks
 
+        :param teams: List of teams that own the asset.
+        :type teams: [str], optional
+
         :param type: The asset type
         :type type: AssetType
 
@@ -87,6 +93,8 @@ class AssetAttributes(ModelNormal):
             kwargs["arch"] = arch
         if operating_system is not unset:
             kwargs["operating_system"] = operating_system
+        if teams is not unset:
+            kwargs["teams"] = teams
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)

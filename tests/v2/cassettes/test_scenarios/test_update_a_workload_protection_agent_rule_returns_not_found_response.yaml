@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1747319695"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1748341520"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"ybs-zrz-2xw","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1747319695","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319695364,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"tox-zep-tvj","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1748341520","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341520649,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","policy_id":"ybs-zrz-2xw","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
+      == \"sh\"","policy_id":"tox-zep-tvj","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/ybs-zrz-2xw
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/tox-zep-tvj
   response:
     body:
       string: ''

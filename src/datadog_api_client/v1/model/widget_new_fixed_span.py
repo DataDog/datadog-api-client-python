@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,22 +33,34 @@ class WidgetNewFixedSpan(ModelNormal):
 
         return {
             "_from": (int,),
+            "hide_incomplete_cost_data": (bool,),
             "to": (int,),
             "type": (WidgetNewFixedSpanType,),
         }
 
     attribute_map = {
         "_from": "from",
+        "hide_incomplete_cost_data": "hide_incomplete_cost_data",
         "to": "to",
         "type": "type",
     }
 
-    def __init__(self_, _from: int, to: int, type: WidgetNewFixedSpanType, **kwargs):
+    def __init__(
+        self_,
+        _from: int,
+        to: int,
+        type: WidgetNewFixedSpanType,
+        hide_incomplete_cost_data: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Used for fixed span times, such as 'March 1 to March 7'.
 
         :param _from: Start time in seconds since epoch.
         :type _from: int
+
+        :param hide_incomplete_cost_data: Whether to hide incomplete cost data in the widget.
+        :type hide_incomplete_cost_data: bool, optional
 
         :param to: End time in seconds since epoch.
         :type to: int
@@ -54,6 +68,8 @@ class WidgetNewFixedSpan(ModelNormal):
         :param type: Type "fixed" denotes a fixed span.
         :type type: WidgetNewFixedSpanType
         """
+        if hide_incomplete_cost_data is not unset:
+            kwargs["hide_incomplete_cost_data"] = hide_incomplete_cost_data
         super().__init__(kwargs)
 
         self_._from = _from

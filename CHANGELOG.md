@@ -1,5 +1,151 @@
 # CHANGELOG
 
+## 2.41.0/2025-08-12
+
+### Added
+* Add Flex_Logs_Compute_XL to API Spec [#2750](https://github.com/DataDog/datadog-api-client-python/pull/2750)
+* Support Host and IaC finding types in security notifications  [#2749](https://github.com/DataDog/datadog-api-client-python/pull/2749)
+* New keys for summary public endpoint for Event Management Correlation product [#2745](https://github.com/DataDog/datadog-api-client-python/pull/2745)
+* Add log autosubscription tag filters config to aws v2 API [#2741](https://github.com/DataDog/datadog-api-client-python/pull/2741)
+* Extended List Findings API to expose resource related Private IP Addresses to details [#2733](https://github.com/DataDog/datadog-api-client-python/pull/2733)
+* update metrics.yaml for ListMetricAssets and include Dashboard info [#2728](https://github.com/DataDog/datadog-api-client-python/pull/2728)
+* Support Cloud SIEM scheduled rules in API client [#2725](https://github.com/DataDog/datadog-api-client-python/pull/2725)
+* Uncomment edit dataset block, add dataset limitations into endpoint descriptions  [#2723](https://github.com/DataDog/datadog-api-client-python/pull/2723)
+* Add `text` field in synthetics search endpoint [#2722](https://github.com/DataDog/datadog-api-client-python/pull/2722)
+* Adding all action connection types to public API [#2721](https://github.com/DataDog/datadog-api-client-python/pull/2721)
+* Document case management attributes endpoints [#2719](https://github.com/DataDog/datadog-api-client-python/pull/2719)
+* add AP2 endpoint for On-Call Paging [#2716](https://github.com/DataDog/datadog-api-client-python/pull/2716)
+* Flag IP case action [#2714](https://github.com/DataDog/datadog-api-client-python/pull/2714)
+* Add DNS specs for Cloud Network Monitoring API [#2712](https://github.com/DataDog/datadog-api-client-python/pull/2712)
+* Adding Datadog Connection to Connection API [#2706](https://github.com/DataDog/datadog-api-client-python/pull/2706)
+
+### Fixed
+* Split Dataset into separate request and response objects, mark unstable [#2732](https://github.com/DataDog/datadog-api-client-python/pull/2732)
+* Disables some tests to avoid fails as the service is disabled [#2727](https://github.com/DataDog/datadog-api-client-python/pull/2727)
+* OP make 'support_rules' field in parse_grok processor optional [#2717](https://github.com/DataDog/datadog-api-client-python/pull/2717)
+
+### Deprecated
+* Deprecate signals triage v1 endpoints [#2729](https://github.com/DataDog/datadog-api-client-python/pull/2729)
+
+## 2.40.0/2025-07-14
+
+### Added
+* Add Datasets API to Open API Spec  [#2691](https://github.com/DataDog/datadog-api-client-python/pull/2691)
+* Add support for vulnerability management - GetSBOMsList new endpoint and update existing ones [#2690](https://github.com/DataDog/datadog-api-client-python/pull/2690)
+* Add spreadsheet to restriction_policy specs [#2684](https://github.com/DataDog/datadog-api-client-python/pull/2684)
+* Adds missing /api/v1/synthetics/tests/search spec [#2673](https://github.com/DataDog/datadog-api-client-python/pull/2673)
+* Add API spec for AWS Integrations IAM permissions [#2665](https://github.com/DataDog/datadog-api-client-python/pull/2665)
+* New keys added for multiple products [#2663](https://github.com/DataDog/datadog-api-client-python/pull/2663)
+* Add extractFromEmailBody step for synthetics browser test [#2660](https://github.com/DataDog/datadog-api-client-python/pull/2660)
+* Add support for `Array Processor` in `Logs Pipelines` [#2658](https://github.com/DataDog/datadog-api-client-python/pull/2658)
+* Update Incident API specs to include `is_test` in `POST /incidents` and incidents response [#2651](https://github.com/DataDog/datadog-api-client-python/pull/2651)
+
+### Fixed
+* update aiosonic from 0.15.1 to 0.24.0 [#2677](https://github.com/DataDog/datadog-api-client-python/pull/2677)
+* Synthetics mobile test `message` field is now required [#2657](https://github.com/DataDog/datadog-api-client-python/pull/2657)
+
+### Deprecated
+* stop supporting python 3.7 for the client [#2676](https://github.com/DataDog/datadog-api-client-python/pull/2676)
+
+### Changed
+* Update template variable schemas with type field in dashboards and shared dashboards endpoints for group by template variables [#2659](https://github.com/DataDog/datadog-api-client-python/pull/2659)
+* Update events intake specs for v2 Events post endpoint [#2652](https://github.com/DataDog/datadog-api-client-python/pull/2652)
+
+### Removed
+* Remove caseIndex from historical jobs api spec [#2656](https://github.com/DataDog/datadog-api-client-python/pull/2656)
+
+## 2.39.0/2025-06-30
+
+### Fixed
+* Synthetics mobile test `message` field is now required [#2657](https://github.com/DataDog/datadog-api-client-python/pull/2657)
+* Make dns port be string and number [#2641](https://github.com/DataDog/datadog-api-client-python/pull/2641)
+* Fix basic auth requirements [#2638](https://github.com/DataDog/datadog-api-client-python/pull/2638)
+* Add support for the api_security detection rule type [#2633](https://github.com/DataDog/datadog-api-client-python/pull/2633)
+
+### Security
+* Remove caseIndex from historical jobs api spec [#2656](https://github.com/DataDog/datadog-api-client-python/pull/2656)
+
+### Changed
+* Update events intake specs for v2 Events post endpoint [#2652](https://github.com/DataDog/datadog-api-client-python/pull/2652)
+* Update events intake specs for v2 Events post endpoint [#2615](https://github.com/DataDog/datadog-api-client-python/pull/2615)
+* Add billing read permission [#2611](https://github.com/DataDog/datadog-api-client-python/pull/2611)
+
+### Added
+* Update Incident API specs to include `is_test` in `POST /incidents` and incidents response [#2651](https://github.com/DataDog/datadog-api-client-python/pull/2651)
+* Add App Key Registration API  [#2645](https://github.com/DataDog/datadog-api-client-python/pull/2645)
+* Microsoft Sentinel Public API support [#2636](https://github.com/DataDog/datadog-api-client-python/pull/2636)
+* Add the AP2 datacenter. [#2634](https://github.com/DataDog/datadog-api-client-python/pull/2634)
+* Add custom fields to Rule update/validate API public documentation. [#2624](https://github.com/DataDog/datadog-api-client-python/pull/2624)
+* Add hash field to actions in CWS agent rules [#2621](https://github.com/DataDog/datadog-api-client-python/pull/2621)
+* Add `form` field for `multipart/form-data` HTTP API tests [#2606](https://github.com/DataDog/datadog-api-client-python/pull/2606)
+
+### Deprecated
+* Deprecate SLO metadata fields in api spec [#2608](https://github.com/DataDog/datadog-api-client-python/pull/2608)
+
+## 2.38.0/2025-06-24
+
+### Fixed
+* Fix basic auth requirements [#2638](https://github.com/DataDog/datadog-api-client-python/pull/2638)
+* Add support for the api_security detection rule type [#2633](https://github.com/DataDog/datadog-api-client-python/pull/2633)
+
+### Added
+* Microsoft Sentinel Public API support [#2636](https://github.com/DataDog/datadog-api-client-python/pull/2636)
+* Add the AP2 datacenter. [#2634](https://github.com/DataDog/datadog-api-client-python/pull/2634)
+* Add custom fields to Rule update/validate API public documentation. [#2624](https://github.com/DataDog/datadog-api-client-python/pull/2624)
+* Add hash field to actions in CWS agent rules [#2621](https://github.com/DataDog/datadog-api-client-python/pull/2621)
+* Add `form` field for `multipart/form-data` HTTP API tests [#2606](https://github.com/DataDog/datadog-api-client-python/pull/2606)
+* SDCD-1142: adding `custom_tags` optional attribute to DORA API spec [#2605](https://github.com/DataDog/datadog-api-client-python/pull/2605)
+* Add sampling fields to SDS spec [#2601](https://github.com/DataDog/datadog-api-client-python/pull/2601)
+* Add new endpoint to upsert/list/delete custom kinds [#2600](https://github.com/DataDog/datadog-api-client-python/pull/2600)
+* Add spec for team on-call endpoint [#2598](https://github.com/DataDog/datadog-api-client-python/pull/2598)
+
+### Changed
+* Update events intake specs for v2 Events post endpoint [#2615](https://github.com/DataDog/datadog-api-client-python/pull/2615)
+* Add billing read permission [#2611](https://github.com/DataDog/datadog-api-client-python/pull/2611)
+
+## 2.37.0/2025-06-23
+
+### Fixed
+* Fix basic auth requirements [#2638](https://github.com/DataDog/datadog-api-client-python/pull/2638)
+* Add support for the api_security detection rule type [#2633](https://github.com/DataDog/datadog-api-client-python/pull/2633)
+
+### Added
+* Microsoft Sentinel Public API support [#2636](https://github.com/DataDog/datadog-api-client-python/pull/2636)
+* Add custom fields to Rule update/validate API public documentation. [#2624](https://github.com/DataDog/datadog-api-client-python/pull/2624)
+* Add hash field to actions in CWS agent rules [#2621](https://github.com/DataDog/datadog-api-client-python/pull/2621)
+* Add `form` field for `multipart/form-data` HTTP API tests [#2606](https://github.com/DataDog/datadog-api-client-python/pull/2606)
+* SDCD-1142: adding `custom_tags` optional attribute to DORA API spec [#2605](https://github.com/DataDog/datadog-api-client-python/pull/2605)
+* Add sampling fields to SDS spec [#2601](https://github.com/DataDog/datadog-api-client-python/pull/2601)
+* Add new endpoint to upsert/list/delete custom kinds [#2600](https://github.com/DataDog/datadog-api-client-python/pull/2600)
+* Add spec for team on-call endpoint [#2598](https://github.com/DataDog/datadog-api-client-python/pull/2598)
+
+### Changed
+* Update events intake specs for v2 Events post endpoint [#2615](https://github.com/DataDog/datadog-api-client-python/pull/2615)
+* Add billing read permission [#2611](https://github.com/DataDog/datadog-api-client-python/pull/2611)
+* Update DORA endpoints [#2591](https://github.com/DataDog/datadog-api-client-python/pull/2591)
+
+## 2.36.0/2025-06-16
+
+### Changed
+* Add billing read permission [#2611](https://github.com/DataDog/datadog-api-client-python/pull/2611)
+* Update DORA endpoints [#2591](https://github.com/DataDog/datadog-api-client-python/pull/2591)
+
+### Added
+* Add `form` field for `multipart/form-data` HTTP API tests [#2606](https://github.com/DataDog/datadog-api-client-python/pull/2606)
+* Add new endpoint to upsert/list/delete custom kinds [#2600](https://github.com/DataDog/datadog-api-client-python/pull/2600)
+* Add spec for team on-call endpoint [#2598](https://github.com/DataDog/datadog-api-client-python/pull/2598)
+* Add support for Datadog Events as a data source for rules [#2578](https://github.com/DataDog/datadog-api-client-python/pull/2578)
+* Add public APIs to search DORA events [#2575](https://github.com/DataDog/datadog-api-client-python/pull/2575)
+* Add support for all subtypes in multistep steps [#2573](https://github.com/DataDog/datadog-api-client-python/pull/2573)
+* Added new optional field definition to include more detail in findings for '/api/v2/posture_management/findings'  [#2569](https://github.com/DataDog/datadog-api-client-python/pull/2569)
+* Exposing set action on Terraform V2 [#2568](https://github.com/DataDog/datadog-api-client-python/pull/2568)
+* Adding endpoints to manage Resource Evaluation Filters [#2567](https://github.com/DataDog/datadog-api-client-python/pull/2567)
+* Add monitor draft status field [#2566](https://github.com/DataDog/datadog-api-client-python/pull/2566)
+
+### Fixed
+* add `include` parameter to On-Call team rules test [#2582](https://github.com/DataDog/datadog-api-client-python/pull/2582)
+* fix On-Call spec [#2572](https://github.com/DataDog/datadog-api-client-python/pull/2572)
+
 ## 2.35.0/2025-05-28
 
 ### Fixed

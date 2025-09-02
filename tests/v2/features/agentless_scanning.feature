@@ -63,7 +63,31 @@ Feature: Agentless Scanning
     And the response "data[0].type" is equal to "aws_resource"
 
   @team:DataDog/k9-agentless
-  Scenario: Get AWS Scan Options returns "OK" response
+  Scenario: Get AWS scan options returns "Bad Request" response
+    Given new "GetAwsScanOptions" request
+    And request contains "account_id" parameter with value "not-an-account-id"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-agentless
+  Scenario: Get AWS scan options returns "Not Found" response
+    Given new "GetAwsScanOptions" request
+    And request contains "account_id" parameter with value "404404404404"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-agentless
+  Scenario: Get AWS scan options returns "OK" response
+    Given there is a valid "aws_scan_options" in the system
+    And new "GetAwsScanOptions" request
+    And request contains "account_id" parameter with value "{{ aws_scan_options.id }}"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ aws_scan_options.id }}"
+    And the response "data.type" is equal to "{{ aws_scan_options.type }}"
+
+  @team:DataDog/k9-agentless
+  Scenario: List AWS Scan Options returns "OK" response
     Given new "ListAwsScanOptions" request
     When the request is sent
     Then the response status is 200 OK
@@ -123,10 +147,10 @@ Feature: Agentless Scanning
   @team:DataDog/k9-agentless
   Scenario: Post an AWS on demand task returns "AWS on demand task created successfully." response
     Given new "CreateAwsOnDemandTask" request
-    And body with value {"data": {"attributes": {"arn": "arn:aws:lambda:eu-west-3:376334461865:function:This-Is-An-Api-Spec-Test"}, "type": "aws_resource"}}
+    And body with value {"data": {"attributes": {"arn": "arn:aws:lambda:us-west-2:123456789012:function:my-function"}, "type": "aws_resource"}}
     When the request is sent
     Then the response status is 201 AWS on demand task created successfully
-    And the response "data.attributes.arn" is equal to "arn:aws:lambda:eu-west-3:376334461865:function:This-Is-An-Api-Spec-Test"
+    And the response "data.attributes.arn" is equal to "arn:aws:lambda:us-west-2:123456789012:function:my-function"
     And the response "data.attributes.status" is equal to "QUEUED"
 
   @team:DataDog/k9-agentless

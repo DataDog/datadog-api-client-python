@@ -1,4 +1,28 @@
 {
+  "ListAppKeyRegistrations": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UnregisterAppKey": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAppKeyRegistration": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RegisterAppKey": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateActionConnection": {
     "tag": "Action Connection",
     "undo": {
@@ -53,6 +77,12 @@
     "tag": "Agentless Scanning",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetAwsScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateAwsScanOptions": {
@@ -422,6 +452,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateAttributes": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpdatePriority": {
     "tag": "Case Management",
     "undo": {
@@ -466,6 +502,31 @@
     }
   },
   "DeleteCatalogEntity": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListCatalogKind": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertCatalogKind": {
+    "tag": "Software Catalog",
+    "undo": {
+      "operationId": "DeleteCatalogKind",
+      "parameters": [
+        {
+          "name": "kind_id",
+          "source": "data[0].id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCatalogKind": {
     "tag": "Software Catalog",
     "undo": {
       "type": "idempotent"
@@ -681,6 +742,30 @@
       "type": "safe"
     }
   },
+  "ListCostGCPUsageCostConfigs": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCostGCPUsageCostConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteCostGCPUsageCostConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateCostGCPUsageCostConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetActiveBillingDimensions": {
     "tag": "Usage Metering",
     "undo": {
@@ -784,6 +869,43 @@
       "type": "safe"
     }
   },
+  "GetAllDatasets": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "operationId": "DeleteDataset",
+      "parameters": [
+        {
+          "name": "dataset_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDataset": {
+    "tag": "Datasets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateDataDeletionRequest": {
     "tag": "Data Deletion",
     "undo": {
@@ -837,6 +959,12 @@
     "tag": "DORA Metrics",
     "undo": {
       "type": "safe"
+    }
+  },
+  "CreateDORAFailure": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListDORAFailures": {
@@ -903,10 +1031,16 @@
   "CreateEvent": {
     "tag": "Events",
     "undo": {
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "SearchEvents": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEvent": {
     "tag": "Events",
     "undo": {
       "type": "safe"
@@ -1130,6 +1264,12 @@
     }
   },
   "CreateNewAWSExternalID": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAWSIntegrationIAMPermissions": {
     "tag": "AWS Integration",
     "undo": {
       "type": "safe"
@@ -1742,6 +1882,12 @@
       "type": "safe"
     }
   },
+  "GetMetricTagCardinalityDetails": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTagConfiguration": {
     "tag": "Metrics",
     "undo": {
@@ -1853,6 +1999,55 @@
       "type": "idempotent"
     }
   },
+  "ListMonitorUserTemplates": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "operationId": "DeleteMonitorUserTemplate",
+      "parameters": [
+        {
+          "name": "template_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ValidateMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ValidateExistingMonitorUserTemplate": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListMonitorDowntimes": {
     "tag": "Downtimes",
     "undo": {
@@ -1890,6 +2085,12 @@
     }
   },
   "GetAggregatedConnections": {
+    "tag": "Cloud Network Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAggregatedDns": {
     "tag": "Cloud Network Monitoring",
     "undo": {
       "type": "safe"
@@ -1986,6 +2187,12 @@
     }
   },
   "GetScheduleOnCallUser": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetTeamOnCallUsers": {
     "tag": "On-Call",
     "undo": {
       "type": "safe"
@@ -2541,6 +2748,12 @@
       "type": "safe"
     }
   },
+  "UpdateScorecardOutcomesAsync": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateScorecardOutcomesBatch": {
     "tag": "Service Scorecards",
     "undo": {
@@ -2586,6 +2799,12 @@
   },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "CSM Threats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAssetsSBOMs": {
+    "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }
@@ -3155,6 +3374,12 @@
       "type": "safe"
     }
   },
+  "GetSPARecommendations": {
+    "tag": "Spa",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "AggregateSpans": {
     "tag": "Spans",
     "undo": {
@@ -3202,6 +3427,31 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "SyncTeams": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListMemberTeams": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AddMemberTeam": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "RemoveMemberTeam",
+      "type": "unsafe"
+    }
+  },
+  "RemoveMemberTeam": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "DeleteTeam": {

@@ -11,8 +11,8 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_historical_cost_by_org(
-        view="sub-org",
         start_month=(datetime.now() + relativedelta(months=-2)),
+        view="sub-org",
     )
 
     print(response)

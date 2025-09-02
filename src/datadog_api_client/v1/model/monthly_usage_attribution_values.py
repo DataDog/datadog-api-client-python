@@ -93,6 +93,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "invocations_usage": (float,),
             "lambda_traced_invocations_percentage": (float,),
             "lambda_traced_invocations_usage": (float,),
+            "llm_observability_percentage": (float,),
+            "llm_observability_usage": (float,),
             "logs_indexed_15day_percentage": (float,),
             "logs_indexed_15day_usage": (float,),
             "logs_indexed_180day_percentage": (float,),
@@ -119,6 +121,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "mobile_app_testing_usage": (float,),
             "ndm_netflow_percentage": (float,),
             "ndm_netflow_usage": (float,),
+            "network_device_wireless_percentage": (float,),
+            "network_device_wireless_usage": (float,),
             "npm_host_percentage": (float,),
             "npm_host_usage": (float,),
             "obs_pipeline_bytes_percentage": (float,),
@@ -127,16 +131,26 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "obs_pipelines_vcpu_usage": (float,),
             "online_archive_percentage": (float,),
             "online_archive_usage": (float,),
+            "product_analytics_session_percentage": (float,),
+            "product_analytics_session_usage": (float,),
             "profiled_container_percentage": (float,),
             "profiled_container_usage": (float,),
             "profiled_fargate_percentage": (float,),
             "profiled_fargate_usage": (float,),
             "profiled_host_percentage": (float,),
             "profiled_host_usage": (float,),
+            "published_app_percentage": (float,),
+            "published_app_usage": (float,),
             "rum_browser_mobile_sessions_percentage": (float,),
             "rum_browser_mobile_sessions_usage": (float,),
+            "rum_ingested_percentage": (float,),
+            "rum_ingested_usage": (float,),
+            "rum_investigate_percentage": (float,),
+            "rum_investigate_usage": (float,),
             "rum_replay_sessions_percentage": (float,),
             "rum_replay_sessions_usage": (float,),
+            "rum_session_replay_add_on_percentage": (float,),
+            "rum_session_replay_add_on_usage": (float,),
             "sca_fargate_percentage": (float,),
             "sca_fargate_usage": (float,),
             "sds_scanned_bytes_percentage": (float,),
@@ -234,6 +248,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "invocations_usage": "invocations_usage",
         "lambda_traced_invocations_percentage": "lambda_traced_invocations_percentage",
         "lambda_traced_invocations_usage": "lambda_traced_invocations_usage",
+        "llm_observability_percentage": "llm_observability_percentage",
+        "llm_observability_usage": "llm_observability_usage",
         "logs_indexed_15day_percentage": "logs_indexed_15day_percentage",
         "logs_indexed_15day_usage": "logs_indexed_15day_usage",
         "logs_indexed_180day_percentage": "logs_indexed_180day_percentage",
@@ -260,6 +276,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "mobile_app_testing_usage": "mobile_app_testing_usage",
         "ndm_netflow_percentage": "ndm_netflow_percentage",
         "ndm_netflow_usage": "ndm_netflow_usage",
+        "network_device_wireless_percentage": "network_device_wireless_percentage",
+        "network_device_wireless_usage": "network_device_wireless_usage",
         "npm_host_percentage": "npm_host_percentage",
         "npm_host_usage": "npm_host_usage",
         "obs_pipeline_bytes_percentage": "obs_pipeline_bytes_percentage",
@@ -268,16 +286,26 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "obs_pipelines_vcpu_usage": "obs_pipelines_vcpu_usage",
         "online_archive_percentage": "online_archive_percentage",
         "online_archive_usage": "online_archive_usage",
+        "product_analytics_session_percentage": "product_analytics_session_percentage",
+        "product_analytics_session_usage": "product_analytics_session_usage",
         "profiled_container_percentage": "profiled_container_percentage",
         "profiled_container_usage": "profiled_container_usage",
         "profiled_fargate_percentage": "profiled_fargate_percentage",
         "profiled_fargate_usage": "profiled_fargate_usage",
         "profiled_host_percentage": "profiled_host_percentage",
         "profiled_host_usage": "profiled_host_usage",
+        "published_app_percentage": "published_app_percentage",
+        "published_app_usage": "published_app_usage",
         "rum_browser_mobile_sessions_percentage": "rum_browser_mobile_sessions_percentage",
         "rum_browser_mobile_sessions_usage": "rum_browser_mobile_sessions_usage",
+        "rum_ingested_percentage": "rum_ingested_percentage",
+        "rum_ingested_usage": "rum_ingested_usage",
+        "rum_investigate_percentage": "rum_investigate_percentage",
+        "rum_investigate_usage": "rum_investigate_usage",
         "rum_replay_sessions_percentage": "rum_replay_sessions_percentage",
         "rum_replay_sessions_usage": "rum_replay_sessions_usage",
+        "rum_session_replay_add_on_percentage": "rum_session_replay_add_on_percentage",
+        "rum_session_replay_add_on_usage": "rum_session_replay_add_on_usage",
         "sca_fargate_percentage": "sca_fargate_percentage",
         "sca_fargate_usage": "sca_fargate_usage",
         "sds_scanned_bytes_percentage": "sds_scanned_bytes_percentage",
@@ -376,6 +404,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         invocations_usage: Union[float, UnsetType] = unset,
         lambda_traced_invocations_percentage: Union[float, UnsetType] = unset,
         lambda_traced_invocations_usage: Union[float, UnsetType] = unset,
+        llm_observability_percentage: Union[float, UnsetType] = unset,
+        llm_observability_usage: Union[float, UnsetType] = unset,
         logs_indexed_15day_percentage: Union[float, UnsetType] = unset,
         logs_indexed_15day_usage: Union[float, UnsetType] = unset,
         logs_indexed_180day_percentage: Union[float, UnsetType] = unset,
@@ -402,6 +432,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         mobile_app_testing_usage: Union[float, UnsetType] = unset,
         ndm_netflow_percentage: Union[float, UnsetType] = unset,
         ndm_netflow_usage: Union[float, UnsetType] = unset,
+        network_device_wireless_percentage: Union[float, UnsetType] = unset,
+        network_device_wireless_usage: Union[float, UnsetType] = unset,
         npm_host_percentage: Union[float, UnsetType] = unset,
         npm_host_usage: Union[float, UnsetType] = unset,
         obs_pipeline_bytes_percentage: Union[float, UnsetType] = unset,
@@ -410,16 +442,26 @@ class MonthlyUsageAttributionValues(ModelNormal):
         obs_pipelines_vcpu_usage: Union[float, UnsetType] = unset,
         online_archive_percentage: Union[float, UnsetType] = unset,
         online_archive_usage: Union[float, UnsetType] = unset,
+        product_analytics_session_percentage: Union[float, UnsetType] = unset,
+        product_analytics_session_usage: Union[float, UnsetType] = unset,
         profiled_container_percentage: Union[float, UnsetType] = unset,
         profiled_container_usage: Union[float, UnsetType] = unset,
         profiled_fargate_percentage: Union[float, UnsetType] = unset,
         profiled_fargate_usage: Union[float, UnsetType] = unset,
         profiled_host_percentage: Union[float, UnsetType] = unset,
         profiled_host_usage: Union[float, UnsetType] = unset,
+        published_app_percentage: Union[float, UnsetType] = unset,
+        published_app_usage: Union[float, UnsetType] = unset,
         rum_browser_mobile_sessions_percentage: Union[float, UnsetType] = unset,
         rum_browser_mobile_sessions_usage: Union[float, UnsetType] = unset,
+        rum_ingested_percentage: Union[float, UnsetType] = unset,
+        rum_ingested_usage: Union[float, UnsetType] = unset,
+        rum_investigate_percentage: Union[float, UnsetType] = unset,
+        rum_investigate_usage: Union[float, UnsetType] = unset,
         rum_replay_sessions_percentage: Union[float, UnsetType] = unset,
         rum_replay_sessions_usage: Union[float, UnsetType] = unset,
+        rum_session_replay_add_on_percentage: Union[float, UnsetType] = unset,
+        rum_session_replay_add_on_usage: Union[float, UnsetType] = unset,
         sca_fargate_percentage: Union[float, UnsetType] = unset,
         sca_fargate_usage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_percentage: Union[float, UnsetType] = unset,
@@ -442,6 +484,7 @@ class MonthlyUsageAttributionValues(ModelNormal):
     ):
         """
         Fields in Usage Summary by tag(s).
+        The following values have been **deprecated** : ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage``.
 
         :param api_percentage: The percentage of synthetic API test usage by tag(s).
         :type api_percentage: float, optional
@@ -671,6 +714,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param lambda_traced_invocations_usage: The Serverless APM usage by tag(s).
         :type lambda_traced_invocations_usage: float, optional
 
+        :param llm_observability_percentage: The percentage of LLM Observability usage by tag(s).
+        :type llm_observability_percentage: float, optional
+
+        :param llm_observability_usage: The LLM Observability usage by tag(s).
+        :type llm_observability_usage: float, optional
+
         :param logs_indexed_15day_percentage: The percentage of Indexed Logs (15-day Retention) usage by tag(s).
         :type logs_indexed_15day_percentage: float, optional
 
@@ -749,6 +798,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param ndm_netflow_usage: The Network Device Monitoring NetFlow usage by tag(s).
         :type ndm_netflow_usage: float, optional
 
+        :param network_device_wireless_percentage: The percentage of network device wireless usage by tag(s).
+        :type network_device_wireless_percentage: float, optional
+
+        :param network_device_wireless_usage: The network device wireless usage by tag(s).
+        :type network_device_wireless_usage: float, optional
+
         :param npm_host_percentage: The percentage of network host usage by tag(s).
         :type npm_host_percentage: float, optional
 
@@ -773,6 +828,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param online_archive_usage: The online archive usage by tag(s).
         :type online_archive_usage: float, optional
 
+        :param product_analytics_session_percentage: The percentage of Product Analytics session usage by tag(s).
+        :type product_analytics_session_percentage: float, optional
+
+        :param product_analytics_session_usage: The Product Analytics session usage by tag(s).
+        :type product_analytics_session_usage: float, optional
+
         :param profiled_container_percentage: The percentage of profiled container usage by tag(s).
         :type profiled_container_percentage: float, optional
 
@@ -791,17 +852,41 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param profiled_host_usage: The profiled hosts usage by tag(s).
         :type profiled_host_usage: float, optional
 
+        :param published_app_percentage: The percentage of published application usage by tag(s).
+        :type published_app_percentage: float, optional
+
+        :param published_app_usage: The published application usage by tag(s).
+        :type published_app_usage: float, optional
+
         :param rum_browser_mobile_sessions_percentage: The percentage of RUM Browser and Mobile usage by tag(s).
         :type rum_browser_mobile_sessions_percentage: float, optional
 
         :param rum_browser_mobile_sessions_usage: The total RUM Browser and Mobile usage by tag(s).
         :type rum_browser_mobile_sessions_usage: float, optional
 
+        :param rum_ingested_percentage: The percentage of RUM Ingested usage by tag(s).
+        :type rum_ingested_percentage: float, optional
+
+        :param rum_ingested_usage: The total RUM Ingested usage by tag(s).
+        :type rum_ingested_usage: float, optional
+
+        :param rum_investigate_percentage: The percentage of RUM Investigate usage by tag(s).
+        :type rum_investigate_percentage: float, optional
+
+        :param rum_investigate_usage: The total RUM Investigate usage by tag(s).
+        :type rum_investigate_usage: float, optional
+
         :param rum_replay_sessions_percentage: The percentage of RUM Session Replay usage by tag(s).
         :type rum_replay_sessions_percentage: float, optional
 
         :param rum_replay_sessions_usage: The total RUM Session Replay usage by tag(s).
         :type rum_replay_sessions_usage: float, optional
+
+        :param rum_session_replay_add_on_percentage: The percentage of RUM Session Replay Add-On usage by tag(s).
+        :type rum_session_replay_add_on_percentage: float, optional
+
+        :param rum_session_replay_add_on_usage: The total RUM Session Replay Add-On usage by tag(s).
+        :type rum_session_replay_add_on_usage: float, optional
 
         :param sca_fargate_percentage: The percentage of Software Composition Analysis Fargate task usage by tag(s).
         :type sca_fargate_percentage: float, optional
@@ -1011,6 +1096,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["lambda_traced_invocations_percentage"] = lambda_traced_invocations_percentage
         if lambda_traced_invocations_usage is not unset:
             kwargs["lambda_traced_invocations_usage"] = lambda_traced_invocations_usage
+        if llm_observability_percentage is not unset:
+            kwargs["llm_observability_percentage"] = llm_observability_percentage
+        if llm_observability_usage is not unset:
+            kwargs["llm_observability_usage"] = llm_observability_usage
         if logs_indexed_15day_percentage is not unset:
             kwargs["logs_indexed_15day_percentage"] = logs_indexed_15day_percentage
         if logs_indexed_15day_usage is not unset:
@@ -1063,6 +1152,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["ndm_netflow_percentage"] = ndm_netflow_percentage
         if ndm_netflow_usage is not unset:
             kwargs["ndm_netflow_usage"] = ndm_netflow_usage
+        if network_device_wireless_percentage is not unset:
+            kwargs["network_device_wireless_percentage"] = network_device_wireless_percentage
+        if network_device_wireless_usage is not unset:
+            kwargs["network_device_wireless_usage"] = network_device_wireless_usage
         if npm_host_percentage is not unset:
             kwargs["npm_host_percentage"] = npm_host_percentage
         if npm_host_usage is not unset:
@@ -1079,6 +1172,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["online_archive_percentage"] = online_archive_percentage
         if online_archive_usage is not unset:
             kwargs["online_archive_usage"] = online_archive_usage
+        if product_analytics_session_percentage is not unset:
+            kwargs["product_analytics_session_percentage"] = product_analytics_session_percentage
+        if product_analytics_session_usage is not unset:
+            kwargs["product_analytics_session_usage"] = product_analytics_session_usage
         if profiled_container_percentage is not unset:
             kwargs["profiled_container_percentage"] = profiled_container_percentage
         if profiled_container_usage is not unset:
@@ -1091,14 +1188,30 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["profiled_host_percentage"] = profiled_host_percentage
         if profiled_host_usage is not unset:
             kwargs["profiled_host_usage"] = profiled_host_usage
+        if published_app_percentage is not unset:
+            kwargs["published_app_percentage"] = published_app_percentage
+        if published_app_usage is not unset:
+            kwargs["published_app_usage"] = published_app_usage
         if rum_browser_mobile_sessions_percentage is not unset:
             kwargs["rum_browser_mobile_sessions_percentage"] = rum_browser_mobile_sessions_percentage
         if rum_browser_mobile_sessions_usage is not unset:
             kwargs["rum_browser_mobile_sessions_usage"] = rum_browser_mobile_sessions_usage
+        if rum_ingested_percentage is not unset:
+            kwargs["rum_ingested_percentage"] = rum_ingested_percentage
+        if rum_ingested_usage is not unset:
+            kwargs["rum_ingested_usage"] = rum_ingested_usage
+        if rum_investigate_percentage is not unset:
+            kwargs["rum_investigate_percentage"] = rum_investigate_percentage
+        if rum_investigate_usage is not unset:
+            kwargs["rum_investigate_usage"] = rum_investigate_usage
         if rum_replay_sessions_percentage is not unset:
             kwargs["rum_replay_sessions_percentage"] = rum_replay_sessions_percentage
         if rum_replay_sessions_usage is not unset:
             kwargs["rum_replay_sessions_usage"] = rum_replay_sessions_usage
+        if rum_session_replay_add_on_percentage is not unset:
+            kwargs["rum_session_replay_add_on_percentage"] = rum_session_replay_add_on_percentage
+        if rum_session_replay_add_on_usage is not unset:
+            kwargs["rum_session_replay_add_on_usage"] = rum_session_replay_add_on_usage
         if sca_fargate_percentage is not unset:
             kwargs["sca_fargate_percentage"] = sca_fargate_percentage
         if sca_fargate_usage is not unset:

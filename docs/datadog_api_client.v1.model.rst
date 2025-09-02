@@ -1558,6 +1558,13 @@ datadog\_api\_client.v1.model.logs\_api\_error\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_api\_limit\_reached\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_api_limit_reached_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_arithmetic\_processor module
 ----------------------------------------------------------------
 
@@ -1569,6 +1576,69 @@ datadog\_api\_client.v1.model.logs\_arithmetic\_processor\_type module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_arithmetic_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_append module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_append
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_append\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_append_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_length module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_length
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_length\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_length_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_select module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_select
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_select\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_select_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_type
    :members:
    :show-inheritance:
 
@@ -1653,6 +1723,34 @@ datadog\_api\_client.v1.model.logs\_date\_remapper\_type module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.logs_date_remapper_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_decoder\_processor module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_decoder\_processor\_binary\_to\_text\_encoding module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor_binary_to_text_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_decoder\_processor\_input\_representation module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor_input_representation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_decoder\_processor\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_decoder_processor_type
    :members:
    :show-inheritance:
 
@@ -2038,6 +2136,13 @@ datadog\_api\_client.v1.model.monitor\_device\_id module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_device_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_draft\_status module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_draft_status
    :members:
    :show-inheritance:
 
@@ -5013,6 +5118,13 @@ datadog\_api\_client.v1.model.synthetics\_test\_request\_certificate\_item modul
 ---------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_test_request_certificate_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_test\_request\_dns\_server\_port module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_request_dns_server_port
    :members:
    :show-inheritance:
 

@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions/app_key_registrations/b7feea52-994e-4714-a100-1bd9eff5aee1
+  response:
+    body:
+      string: '{"data":{"id":"b7feea52-994e-4714-a100-1bd9eff5aee1","type":"app_key_registration"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

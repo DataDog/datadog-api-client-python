@@ -14,16 +14,22 @@ from typing import ClassVar
 
 class EntityV3APIVersion(ModelSimple):
     """
-    The schema version of entity type. The field is known as schema-version in the previous version.
+    The version of the schema data that was used to populate this entity's data. This could be via the API, Terraform, or YAML file in a repository. The field is known as schema-version in the previous version.
 
-    :param value: If omitted defaults to "v3". Must be one of ["v3"].
+    :param value: Must be one of ["v3", "v2.2", "v2.1", "v2"].
     :type value: str
     """
 
     allowed_values = {
         "v3",
+        "v2.2",
+        "v2.1",
+        "v2",
     }
     V3: ClassVar["EntityV3APIVersion"]
+    V2_2: ClassVar["EntityV3APIVersion"]
+    V2_1: ClassVar["EntityV3APIVersion"]
+    V2: ClassVar["EntityV3APIVersion"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +39,6 @@ class EntityV3APIVersion(ModelSimple):
 
 
 EntityV3APIVersion.V3 = EntityV3APIVersion("v3")
+EntityV3APIVersion.V2_2 = EntityV3APIVersion("v2.2")
+EntityV3APIVersion.V2_1 = EntityV3APIVersion("v2.1")
+EntityV3APIVersion.V2 = EntityV3APIVersion("v2")

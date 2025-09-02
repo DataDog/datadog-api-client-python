@@ -53,6 +53,7 @@ class SyntheticsTestOptions(ModelNormal):
             "check_certificate_revocation": (bool,),
             "ci": (SyntheticsTestCiOptions,),
             "device_ids": ([str],),
+            "disable_aia_intermediate_fetching": (bool,),
             "disable_cors": (bool,),
             "disable_csp": (bool,),
             "enable_profiling": (bool,),
@@ -80,6 +81,7 @@ class SyntheticsTestOptions(ModelNormal):
         "check_certificate_revocation": "checkCertificateRevocation",
         "ci": "ci",
         "device_ids": "device_ids",
+        "disable_aia_intermediate_fetching": "disableAiaIntermediateFetching",
         "disable_cors": "disableCors",
         "disable_csp": "disableCsp",
         "enable_profiling": "enableProfiling",
@@ -108,6 +110,7 @@ class SyntheticsTestOptions(ModelNormal):
         check_certificate_revocation: Union[bool, UnsetType] = unset,
         ci: Union[SyntheticsTestCiOptions, UnsetType] = unset,
         device_ids: Union[List[str], UnsetType] = unset,
+        disable_aia_intermediate_fetching: Union[bool, UnsetType] = unset,
         disable_cors: Union[bool, UnsetType] = unset,
         disable_csp: Union[bool, UnsetType] = unset,
         enable_profiling: Union[bool, UnsetType] = unset,
@@ -132,14 +135,14 @@ class SyntheticsTestOptions(ModelNormal):
         """
         Object describing the extra options for a Synthetic test.
 
-        :param accept_self_signed: For SSL test, whether or not the test should allow self signed
+        :param accept_self_signed: For SSL tests, whether or not the test should allow self signed
             certificates.
         :type accept_self_signed: bool, optional
 
         :param allow_insecure: Allows loading insecure content for an HTTP request in an API test.
         :type allow_insecure: bool, optional
 
-        :param check_certificate_revocation: For SSL test, whether or not the test should fail on revoked certificate in stapled OCSP.
+        :param check_certificate_revocation: For SSL tests, whether or not the test should fail on revoked certificate in stapled OCSP.
         :type check_certificate_revocation: bool, optional
 
         :param ci: CI/CD options for a Synthetic test.
@@ -147,6 +150,9 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param device_ids: For browser test, array with the different device IDs used to run the test.
         :type device_ids: [str], optional
+
+        :param disable_aia_intermediate_fetching: For SSL tests, whether or not the test should disable fetching intermediate certificates from AIA.
+        :type disable_aia_intermediate_fetching: bool, optional
 
         :param disable_cors: Whether or not to disable CORS mechanism.
         :type disable_cors: bool, optional
@@ -227,6 +233,8 @@ class SyntheticsTestOptions(ModelNormal):
             kwargs["ci"] = ci
         if device_ids is not unset:
             kwargs["device_ids"] = device_ids
+        if disable_aia_intermediate_fetching is not unset:
+            kwargs["disable_aia_intermediate_fetching"] = disable_aia_intermediate_fetching
         if disable_cors is not unset:
             kwargs["disable_cors"] = disable_cors
         if disable_csp is not unset:

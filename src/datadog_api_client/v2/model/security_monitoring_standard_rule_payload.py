@@ -8,17 +8,20 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.calculated_field import CalculatedField
     from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
     from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
     from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
     from datadog_api_client.v2.model.security_monitoring_standard_rule_query import SecurityMonitoringStandardRuleQuery
     from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
+    from datadog_api_client.v2.model.security_monitoring_scheduling_options import SecurityMonitoringSchedulingOptions
     from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
         SecurityMonitoringThirdPartyRuleCaseCreate,
     )
@@ -28,6 +31,7 @@ if TYPE_CHECKING:
 class SecurityMonitoringStandardRulePayload(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.calculated_field import CalculatedField
         from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
         from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
         from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
@@ -35,13 +39,19 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
             SecurityMonitoringStandardRuleQuery,
         )
         from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
+        from datadog_api_client.v2.model.security_monitoring_scheduling_options import (
+            SecurityMonitoringSchedulingOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
             SecurityMonitoringThirdPartyRuleCaseCreate,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_type_create import SecurityMonitoringRuleTypeCreate
 
         return {
+            "calculated_fields": ([CalculatedField],),
             "cases": ([SecurityMonitoringRuleCaseCreate],),
+            "custom_message": (str,),
+            "custom_name": (str,),
             "filters": ([SecurityMonitoringFilter],),
             "group_signals_by": ([str],),
             "has_extended_title": (bool,),
@@ -51,13 +61,17 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
             "options": (SecurityMonitoringRuleOptions,),
             "queries": ([SecurityMonitoringStandardRuleQuery],),
             "reference_tables": ([SecurityMonitoringReferenceTable],),
+            "scheduling_options": (SecurityMonitoringSchedulingOptions,),
             "tags": ([str],),
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCaseCreate],),
             "type": (SecurityMonitoringRuleTypeCreate,),
         }
 
     attribute_map = {
+        "calculated_fields": "calculatedFields",
         "cases": "cases",
+        "custom_message": "customMessage",
+        "custom_name": "customName",
         "filters": "filters",
         "group_signals_by": "groupSignalsBy",
         "has_extended_title": "hasExtendedTitle",
@@ -67,6 +81,7 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
         "options": "options",
         "queries": "queries",
         "reference_tables": "referenceTables",
+        "scheduling_options": "schedulingOptions",
         "tags": "tags",
         "third_party_cases": "thirdPartyCases",
         "type": "type",
@@ -80,10 +95,14 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
         name: str,
         options: SecurityMonitoringRuleOptions,
         queries: List[SecurityMonitoringStandardRuleQuery],
+        calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
+        custom_message: Union[str, UnsetType] = unset,
+        custom_name: Union[str, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         group_signals_by: Union[List[str], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
+        scheduling_options: Union[SecurityMonitoringSchedulingOptions, none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCaseCreate], UnsetType] = unset,
         type: Union[SecurityMonitoringRuleTypeCreate, UnsetType] = unset,
@@ -92,8 +111,17 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
         """
         The payload of a rule.
 
+        :param calculated_fields: Calculated fields. Only allowed for scheduled rules - in other words, when schedulingOptions is also defined.
+        :type calculated_fields: [CalculatedField], optional
+
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCaseCreate]
+
+        :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
+        :type custom_message: str, optional
+
+        :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
+        :type custom_name: str, optional
 
         :param filters: Additional queries to filter matched events before they are processed. This field is deprecated for log detection, signal correlation, and workload security rules.
         :type filters: [SecurityMonitoringFilter], optional
@@ -122,6 +150,9 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
         :param reference_tables: Reference tables for the rule.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional
 
+        :param scheduling_options: Options for scheduled rules. When this field is present, the rule runs based on the schedule. When absent, it runs real-time on ingested logs.
+        :type scheduling_options: SecurityMonitoringSchedulingOptions, none_type, optional
+
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
@@ -131,6 +162,12 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
         :param type: The rule type.
         :type type: SecurityMonitoringRuleTypeCreate, optional
         """
+        if calculated_fields is not unset:
+            kwargs["calculated_fields"] = calculated_fields
+        if custom_message is not unset:
+            kwargs["custom_message"] = custom_message
+        if custom_name is not unset:
+            kwargs["custom_name"] = custom_name
         if filters is not unset:
             kwargs["filters"] = filters
         if group_signals_by is not unset:
@@ -139,6 +176,8 @@ class SecurityMonitoringStandardRulePayload(ModelNormal):
             kwargs["has_extended_title"] = has_extended_title
         if reference_tables is not unset:
             kwargs["reference_tables"] = reference_tables
+        if scheduling_options is not unset:
+            kwargs["scheduling_options"] = scheduling_options
         if tags is not unset:
             kwargs["tags"] = tags
         if third_party_cases is not unset:

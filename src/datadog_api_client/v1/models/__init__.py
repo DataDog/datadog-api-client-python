@@ -254,8 +254,18 @@ from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWi
 from datadog_api_client.v1.model.log_stream_widget_definition_type import LogStreamWidgetDefinitionType
 from datadog_api_client.v1.model.logs_api_error import LogsAPIError
 from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResponse
+from datadog_api_client.v1.model.logs_api_limit_reached_response import LogsAPILimitReachedResponse
 from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
 from datadog_api_client.v1.model.logs_arithmetic_processor_type import LogsArithmeticProcessorType
+from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
+from datadog_api_client.v1.model.logs_array_processor_operation import LogsArrayProcessorOperation
+from datadog_api_client.v1.model.logs_array_processor_operation_append import LogsArrayProcessorOperationAppend
+from datadog_api_client.v1.model.logs_array_processor_operation_append_type import LogsArrayProcessorOperationAppendType
+from datadog_api_client.v1.model.logs_array_processor_operation_length import LogsArrayProcessorOperationLength
+from datadog_api_client.v1.model.logs_array_processor_operation_length_type import LogsArrayProcessorOperationLengthType
+from datadog_api_client.v1.model.logs_array_processor_operation_select import LogsArrayProcessorOperationSelect
+from datadog_api_client.v1.model.logs_array_processor_operation_select_type import LogsArrayProcessorOperationSelectType
+from datadog_api_client.v1.model.logs_array_processor_type import LogsArrayProcessorType
 from datadog_api_client.v1.model.logs_attribute_remapper import LogsAttributeRemapper
 from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
 from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
@@ -268,6 +278,14 @@ from datadog_api_client.v1.model.logs_category_processor_type import LogsCategor
 from datadog_api_client.v1.model.logs_daily_limit_reset import LogsDailyLimitReset
 from datadog_api_client.v1.model.logs_date_remapper import LogsDateRemapper
 from datadog_api_client.v1.model.logs_date_remapper_type import LogsDateRemapperType
+from datadog_api_client.v1.model.logs_decoder_processor import LogsDecoderProcessor
+from datadog_api_client.v1.model.logs_decoder_processor_binary_to_text_encoding import (
+    LogsDecoderProcessorBinaryToTextEncoding,
+)
+from datadog_api_client.v1.model.logs_decoder_processor_input_representation import (
+    LogsDecoderProcessorInputRepresentation,
+)
+from datadog_api_client.v1.model.logs_decoder_processor_type import LogsDecoderProcessorType
 from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
 from datadog_api_client.v1.model.logs_exclusion_filter import LogsExclusionFilter
 from datadog_api_client.v1.model.logs_filter import LogsFilter
@@ -323,6 +341,7 @@ from datadog_api_client.v1.model.metrics_query_response import MetricsQueryRespo
 from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
+from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
     MonitorFormulaAndFunctionCostAggregator,
 )
@@ -845,6 +864,7 @@ from datadog_api_client.v1.model.synthetics_test_request_body_file import Synthe
 from datadog_api_client.v1.model.synthetics_test_request_body_type import SyntheticsTestRequestBodyType
 from datadog_api_client.v1.model.synthetics_test_request_certificate import SyntheticsTestRequestCertificate
 from datadog_api_client.v1.model.synthetics_test_request_certificate_item import SyntheticsTestRequestCertificateItem
+from datadog_api_client.v1.model.synthetics_test_request_dns_server_port import SyntheticsTestRequestDNSServerPort
 from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
 from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
 from datadog_api_client.v1.model.synthetics_test_restriction_policy_binding import (
@@ -1307,8 +1327,18 @@ __all__ = [
     "LogStreamWidgetDefinitionType",
     "LogsAPIError",
     "LogsAPIErrorResponse",
+    "LogsAPILimitReachedResponse",
     "LogsArithmeticProcessor",
     "LogsArithmeticProcessorType",
+    "LogsArrayProcessor",
+    "LogsArrayProcessorOperation",
+    "LogsArrayProcessorOperationAppend",
+    "LogsArrayProcessorOperationAppendType",
+    "LogsArrayProcessorOperationLength",
+    "LogsArrayProcessorOperationLengthType",
+    "LogsArrayProcessorOperationSelect",
+    "LogsArrayProcessorOperationSelectType",
+    "LogsArrayProcessorType",
     "LogsAttributeRemapper",
     "LogsAttributeRemapperType",
     "LogsByRetention",
@@ -1321,6 +1351,10 @@ __all__ = [
     "LogsDailyLimitReset",
     "LogsDateRemapper",
     "LogsDateRemapperType",
+    "LogsDecoderProcessor",
+    "LogsDecoderProcessorBinaryToTextEncoding",
+    "LogsDecoderProcessorInputRepresentation",
+    "LogsDecoderProcessorType",
     "LogsExclusion",
     "LogsExclusionFilter",
     "LogsFilter",
@@ -1376,6 +1410,7 @@ __all__ = [
     "MetricsQueryUnit",
     "Monitor",
     "MonitorDeviceID",
+    "MonitorDraftStatus",
     "MonitorFormulaAndFunctionCostAggregator",
     "MonitorFormulaAndFunctionCostDataSource",
     "MonitorFormulaAndFunctionCostQueryDefinition",
@@ -1802,6 +1837,7 @@ __all__ = [
     "SyntheticsTestRequestBodyType",
     "SyntheticsTestRequestCertificate",
     "SyntheticsTestRequestCertificateItem",
+    "SyntheticsTestRequestDNSServerPort",
     "SyntheticsTestRequestPort",
     "SyntheticsTestRequestProxy",
     "SyntheticsTestRestrictionPolicyBinding",

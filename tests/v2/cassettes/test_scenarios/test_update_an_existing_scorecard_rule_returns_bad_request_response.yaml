@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Update_an_existing_scorecard_rule_returns_Bad_Request_response-1756236808","owner":"Datadog","scorecard_name":"OpenAPI
+      Spec Test Best Practices"},"type":"rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules
+  response:
+    body:
+      string: '{"data":{"id":"z661h8n2bpc5q0kx","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2025-08-26T19:32:32.06573621Z","custom":true,"enabled":true,"level":3,"modified_at":"2025-08-26T19:32:32.06573621Z","name":"Test-Update_an_existing_scorecard_rule_returns_Bad_Request_response-1756236808","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"level":2,"name":"Team Defined","scorecard_id":"NOT.FOUND"},"type":"rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules/z661h8n2bpc5q0kx
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"attribute
+        \"scorecard_id\" failed scorecard lookup"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules/z661h8n2bpc5q0kx
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

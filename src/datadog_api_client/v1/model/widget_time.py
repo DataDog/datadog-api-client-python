@@ -15,6 +15,9 @@ class WidgetTime(ModelComposed):
         """
         Time setting for the widget.
 
+        :param hide_incomplete_cost_data: Whether to hide incomplete cost data in the widget.
+        :type hide_incomplete_cost_data: bool, optional
+
         :param live_span: The available timeframes depend on the widget you are using.
         :type live_span: WidgetLiveSpan, optional
 

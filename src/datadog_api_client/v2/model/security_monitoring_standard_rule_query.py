@@ -34,10 +34,12 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         return {
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
+            "custom_query_extension": (str,),
             "data_source": (SecurityMonitoringStandardDataSource,),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
             "has_optional_group_by_fields": (bool,),
+            "index": (str,),
             "metric": (str,),
             "metrics": ([str],),
             "name": (str,),
@@ -46,10 +48,12 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
     attribute_map = {
         "aggregation": "aggregation",
+        "custom_query_extension": "customQueryExtension",
         "data_source": "dataSource",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
         "has_optional_group_by_fields": "hasOptionalGroupByFields",
+        "index": "index",
         "metric": "metric",
         "metrics": "metrics",
         "name": "name",
@@ -62,10 +66,12 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
     def __init__(
         self_,
         aggregation: Union[SecurityMonitoringRuleQueryAggregation, UnsetType] = unset,
+        custom_query_extension: Union[str, UnsetType] = unset,
         data_source: Union[SecurityMonitoringStandardDataSource, UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
         has_optional_group_by_fields: Union[bool, UnsetType] = unset,
+        index: Union[str, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -78,6 +84,9 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional
 
+        :param custom_query_extension: Query extension to append to the logs query.
+        :type custom_query_extension: str, optional
+
         :param data_source: Source of events, either logs, audit trail, or Datadog events.
         :type data_source: SecurityMonitoringStandardDataSource, optional
 
@@ -89,6 +98,10 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         :param has_optional_group_by_fields: When false, events without a group-by value are ignored by the rule. When true, events with missing group-by fields are processed with ``N/A`` , replacing the missing values.
         :type has_optional_group_by_fields: bool, optional
+
+        :param index: **This field is currently unstable and might be removed in a minor version upgrade.**
+            The index to run the query on, if the ``dataSource`` is ``logs``. Only used for scheduled rules - in other words, when the ``schedulingOptions`` field is present in the rule payload.
+        :type index: str, optional
 
         :param metric: (Deprecated) The target field to aggregate over when using the sum or max
             aggregations. ``metrics`` field should be used instead. **Deprecated**.
@@ -105,6 +118,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         """
         if aggregation is not unset:
             kwargs["aggregation"] = aggregation
+        if custom_query_extension is not unset:
+            kwargs["custom_query_extension"] = custom_query_extension
         if data_source is not unset:
             kwargs["data_source"] = data_source
         if distinct_fields is not unset:
@@ -113,6 +128,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             kwargs["group_by_fields"] = group_by_fields
         if has_optional_group_by_fields is not unset:
             kwargs["has_optional_group_by_fields"] = has_optional_group_by_fields
+        if index is not unset:
+            kwargs["index"] = index
         if metric is not unset:
             kwargs["metric"] = metric
         if metrics is not unset:

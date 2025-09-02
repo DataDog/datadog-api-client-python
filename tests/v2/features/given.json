@@ -12,6 +12,13 @@
     "operationId": "CreateActionConnection"
   },
   {
+    "source": "data[0]",
+    "step": "there is a valid \"aws_scan_options\" in the system",
+    "key": "aws_scan_options",
+    "tag": "Agentless Scanning",
+    "operationId": "ListAwsScanOptions"
+  },
+  {
     "parameters": [
       {
         "name": "body",
@@ -112,6 +119,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"kind\": \"my-job\",\n  \"displayName\": \"My Job\",\n  \"description\": \"A job entity in the catalog.\"\n}"
+      }
+    ],
+    "step": "there is a valid kind",
+    "key": "kind",
+    "tag": "Software Catalog",
+    "operationId": "UpsertCatalogKind"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\":\"custom_framework\",\n    \"attributes\":{\n      \"name\":\"name\",\n      \"handle\":\"create-framework-new\",\n      \"version\":\"10\",\n      \"icon_url\":\"test-url\",\n      \"requirements\":[{\n        \"name\":\"requirement\",\n        \"controls\":[{\n          \"name\":\"control\",\n          \"rules_id\":\n            [\"def-000-be9\"]\n        }]\n      }]\n    }\n  }\n}"
       }
     ],
@@ -163,6 +182,19 @@
     "key": "dashboard_list_screenboard_dashboard",
     "tag": "Dashboard Lists",
     "operationId": "CreateDashboardListItems"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "origin": "request",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"Security Audit Dataset\",\n      \"principals\": [\n        \"role:94172442-be03-11e9-a77a-3b7612558ac1\"\n      ],\n      \"product_filters\": [\n        {\n          \"filters\": [\n            \"@application.id:ABCD\"\n          ],\n          \"product\": \"metrics\"\n        }\n      ]\n    },\n    \"type\": \"dataset\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"dataset\" in the system",
+    "key": "dataset",
+    "tag": "Datasets",
+    "operationId": "CreateDataset"
   },
   {
     "parameters": [
@@ -268,7 +300,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"account\",\n    \"attributes\": {\n      \"account_tags\": [\n        \"key:value\"\n      ],\n      \"auth_config\": {\n        \"role_name\": \"DatadogIntegrationRole\"\n      },\n      \"aws_account_id\": \"123456789012\",\n      \"aws_partition\": \"aws\",\n      \"aws_regions\": {\n        \"include_only\": [\n          \"us-east-1\"\n        ]\n      },\n      \"logs_config\": {\n        \"lambda_forwarder\": {\n          \"lambdas\": [\n            \"arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder\"\n          ],\n          \"sources\": [\n            \"s3\"\n          ]\n        }\n      },\n      \"metrics_config\": {\n        \"enabled\": true,\n        \"automute_enabled\": true,\n        \"collect_custom_metrics\": false,\n        \"collect_cloudwatch_alarms\": false,\n        \"tag_filters\": [\n          {\n            \"namespace\": \"AWS/EC2\",\n            \"tags\": [\n              \"key:value\"\n            ]\n          }\n        ],\n        \"namespace_filters\": {\n          \"include_only\": [\n            \"AWS/EC2\"\n          ]\n        }\n      },\n      \"resources_config\": {\n        \"cloud_security_posture_management_collection\": false,\n        \"extended_collection\": false\n      },\n      \"traces_config\": {\n        \"xray_services\": {\n          \"include_only\": [\n            \"AWS/AppSync\"\n          ]\n        }\n      }\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"account\",\n    \"attributes\": {\n      \"account_tags\": [\n        \"key:value\"\n      ],\n      \"auth_config\": {\n        \"role_name\": \"DatadogIntegrationRole\"\n      },\n      \"aws_account_id\": \"123456789012\",\n      \"aws_partition\": \"aws\",\n      \"aws_regions\": {\n        \"include_only\": [\n          \"us-east-1\"\n        ]\n      },\n      \"logs_config\": {\n        \"lambda_forwarder\": {\n          \"lambdas\": [\n            \"arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder\"\n          ],\n          \"sources\": [\n            \"s3\"\n          ],\n          \"log_source_config\": {\n            \"tag_filters\": [\n              {\n                \"source\": \"s3\",\n                \"tags\": [\"test:test\"]\n              }\n            ]\n          }\n        }\n      },\n      \"metrics_config\": {\n        \"enabled\": true,\n        \"automute_enabled\": true,\n        \"collect_custom_metrics\": false,\n        \"collect_cloudwatch_alarms\": false,\n        \"tag_filters\": [\n          {\n            \"namespace\": \"AWS/EC2\",\n            \"tags\": [\n              \"key:value\"\n            ]\n          }\n        ],\n        \"namespace_filters\": {\n          \"include_only\": [\n            \"AWS/EC2\"\n          ]\n        }\n      },\n      \"resources_config\": {\n        \"cloud_security_posture_management_collection\": false,\n        \"extended_collection\": false\n      },\n      \"traces_config\": {\n        \"xray_services\": {\n          \"include_only\": [\n            \"AWS/AppSync\"\n          ]\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"aws_account_v2\" in the system",
@@ -476,6 +508,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"monitor-user-template\",\n    \"attributes\": {\n      \"description\": \"It's a threshold\",\n      \"title\": \"api spec given template {{ unique_lower }}\",\n      \"monitor_definition\": {\n        \"message\": \"cats\",\n        \"name\": \"High Error Rate on service\",\n        \"query\": \"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\n        \"type\": \"query alert\"\n      },\n      \"template_variables\": [{\"name\": \"scope\", \"available_values\": [], \"defaults\": [\"cats\"]}],\n      \"tags\": [\"category:test\"]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"monitor_user_template\" in the system",
+    "key": "monitor_user_template",
+    "tag": "Monitors",
+    "operationId": "CreateMonitorUserTemplate"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"resolve_page_on_policy_end\": true,\n      \"retries\": 2,\n      \"steps\": [\n        {\n          \"assignment\": \"default\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\"\n            },\n            {\n              \"id\": \"{{ user.data.id }}\",\n              \"type\": \"users\"\n            }\n          ]\n        },\n        {\n          \"assignment\": \"round-robin\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            }\n          ]\n        }\n      ]\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"{{ dd_team.data.id }}\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"policies\"\n  }\n}"
       }
     ],
@@ -488,7 +532,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"layers\": [\n        {\n          \"effective_date\": \"{{ timeISO('now - 10d') }}\",\n          \"end_date\": \"{{ timeISO('now + 10d') }}\",\n          \"interval\": {\n            \"days\": 1\n          },\n          \"members\": [\n            {\n              \"user\": {\n                \"id\": \"890f29d4-0b7a-11f0-aeb2-760fcae4f596\"\n              }\n            }\n          ],\n          \"name\": \"Layer 1\",\n          \"restrictions\": [\n            {\n              \"end_day\": \"friday\",\n              \"end_time\": \"17:00:00\",\n              \"start_day\": \"monday\",\n              \"start_time\": \"09:00:00\"\n            }\n          ],\n          \"rotation_start\": \"{{ timeISO('now - 5d') }}\"\n        }\n      ],\n      \"name\": \"{{ unique }}\",\n      \"time_zone\": \"America/New_York\"\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"schedules\"\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"layers\": [\n        {\n          \"effective_date\": \"{{ timeISO('now - 10d') }}\",\n          \"end_date\": \"{{ timeISO('now + 10d') }}\",\n          \"interval\": {\n            \"days\": 1\n          },\n          \"members\": [\n            {\n              \"user\": {\n                \"id\": \"{{ user.data.id }}\"\n              }\n            }\n          ],\n          \"name\": \"Layer 1\",\n          \"restrictions\": [\n            {\n              \"end_day\": \"friday\",\n              \"end_time\": \"17:00:00\",\n              \"start_day\": \"monday\",\n              \"start_time\": \"09:00:00\"\n            }\n          ],\n          \"rotation_start\": \"{{ timeISO('now - 5d') }}\"\n        }\n      ],\n      \"name\": \"{{ unique }}\",\n      \"time_zone\": \"America/New_York\"\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"schedules\"\n  }\n}"
       }
     ],
     "step": "there is a valid \"schedule\" in the system",
@@ -499,8 +543,12 @@
   {
     "parameters": [
       {
+        "name": "team_id",
+        "source": "dd_team.data.id"
+      },
+      {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"rules\": [\n        {\n          \"query\": \"\",\n          \"policy_id\": \"{{ escalation_policy.data.id }}\",\n          \"urgency\": \"low\",\n          \"time_restriction\": null,\n          \"actions\": []\n        }\n      ]\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"team_routing_rules\",\n    \"id\": \"{{ dd_team.data.id }}\",\n    \"attributes\": {\n      \"rules\": [\n        {\n          \"query\": \"\",\n          \"policy_id\": \"{{ escalation_policy.data.id }}\",\n          \"urgency\": \"low\",\n          \"actions\": []\n        }\n      ]\n    }\n  }\n}"
       }
     ],
     "step": "there are valid \"routing_rules\" in the system",
@@ -555,7 +603,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true,\n      \"product_tags\": [\"security:attack\", \"technique:T1059\"],\n      \"policy_id\": \"{{ policy.data.id }}\"\n     }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true,\n      \"product_tags\": [\"security:attack\", \"technique:T1059\"],\n      \"actions\": [{\"set\": {\"name\": \"test_set\", \"value\": \"test_value\", \"scope\": \"process\"}}, {\"hash\": {}}],\n      \"policy_id\": \"{{ policy.data.id }}\"\n     }\n  }\n}"
       }
     ],
     "step": "there is a valid \"agent_rule_rc\" in the system",
@@ -764,6 +812,18 @@
     "operationId": "CreateSecurityMonitoringRule"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"name\": \"_{{ unique_hash }}\",\n  \"queries\": [{\n    \"query\": \"@test:true\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metrics\": []\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule\",\n  \"tags\": [],\n  \"isEnabled\": true,\n  \"type\": \"log_detection\"\n}"
+      }
+    ],
+    "step": "there is a valid \"security_rule_hash\" in the system",
+    "key": "security_rule_hash",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityMonitoringRule"
+  },
+  {
     "step": "a valid \"configuration\" in the system",
     "key": "configuration",
     "tag": "Sensitive Data Scanner",
@@ -773,7 +833,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_group\",\n    \"attributes\": {\n      \"name\": \"my-test-group\",\n      \"is_enabled\": false,\n      \"product_list\": [\n          \"logs\"\n      ],\n      \"filter\": {\n          \"query\": \"*\"\n      }\n    },\n    \"relationships\": {\n      \"configuration\": {\n        \"data\": {\n          \"id\": \"{{ configuration.data.id }}\",\n          \"type\": \"{{ configuration.data.type }}\"\n        }\n      },\n      \"rules\": {\n          \"data\": []\n      }\n    }\n  },\n  \"meta\": {}\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"sensitive_data_scanner_group\",\n    \"attributes\": {\n      \"name\": \"my-test-group\",\n      \"is_enabled\": false,\n      \"product_list\": [\n          \"logs\"\n      ],\n      \"filter\": {\n          \"query\": \"*\"\n      },\n      \"samplings\": [{\"product\": \"logs\", \"rate\": 100}]\n    },\n    \"relationships\": {\n      \"configuration\": {\n        \"data\": {\n          \"id\": \"{{ configuration.data.id }}\",\n          \"type\": \"{{ configuration.data.type }}\"\n        }\n      },\n      \"rules\": {\n          \"data\": []\n      }\n    }\n  },\n  \"meta\": {}\n}"
       }
     ],
     "step": "there is a valid \"scanning_group\" in the system",

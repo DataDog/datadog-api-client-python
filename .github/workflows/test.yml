@@ -76,22 +76,23 @@ jobs:
 
   test:
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.7", "3.12"]
+        python-version: ["3.8", "3.12"]
         platform: [ubuntu-22.04, ubuntu-latest, macos-latest] # windows-latest
         # test only latest version on macos and windows
         exclude:
           - platform: macos-latest
-            python-version: "3.7"
+            python-version: "3.8"
           - platform: ubuntu-latest
-            python-version: "3.7"
+            python-version: "3.8"
           - platform: ubuntu-22.04
             python-version: "3.12"
           # TODO enable once dd-trace-py is updated
           # - platform: windows-latest
-          #  python-version: 3.7
+          #  python-version: 3.8
           # - platform: windows-latest
-          #   python-version: 3.7
+          #   python-version: 3.8
     runs-on: ${{ matrix.platform }}
     if: (github.event.pull_request.draft == false && !contains(github.event.pull_request.labels.*.name, 'ci/skip') && !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/')) || github.event_name == 'schedule'
     steps:
@@ -152,4 +153,4 @@ jobs:
           github-token: ${{ steps.get_token.outputs.token }}
           repo: datadog-api-spec
           status: ${{ (needs.test.result == 'cancelled' || needs.examples.result == 'cancelled') && 'pending' || needs.test.result == 'success' && needs.examples.result == 'success' && 'success' || 'failure' }}
-          context: unit
+          context: master/unit

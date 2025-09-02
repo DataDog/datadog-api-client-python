@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Update_Scorecard_outcomes_asynchronously_returns_Accepted_response-1756219577","owner":"Datadog","scorecard_name":"OpenAPI
+      Spec Test Best Practices"},"type":"rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules
+  response:
+    body:
+      string: '{"data":{"id":"5e3dexz6x_4f_4pa","type":"rule","attributes":{"category":"OpenAPI
+        Spec Test Best Practices","created_at":"2025-08-26T14:46:18.889883535Z","custom":true,"enabled":true,"level":3,"modified_at":"2025-08-26T14:46:18.889883535Z","name":"Test-Update_Scorecard_outcomes_asynchronously_returns_Accepted_response-1756219577","owner":"Datadog","scorecard_name":"OpenAPI
+        Spec Test Best Practices"},"relationships":{"scorecard":{"data":{"id":"qsxpoYRhU_yz","type":"scorecard"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"results":[{"entity_reference":"service:my-service","remarks":"See:
+      <a href=\"https://app.datadoghq.com/services\">Services</a>","rule_id":"5e3dexz6x_4f_4pa","state":"pass"}]},"type":"batched-outcome"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/scorecard/outcomes
+  response:
+    body:
+      string: '{"data":{"id":"4iexte5r8prsrlrtzzxpy","type":"async-request"},"meta":{"total_received":1}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/scorecard/rules/5e3dexz6x_4f_4pa
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

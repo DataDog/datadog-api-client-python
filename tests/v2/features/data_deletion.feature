@@ -17,7 +17,7 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/supportability-engineering
+  @replay-only @team:DataDog/supportability-engineering
   Scenario: Cancels a data deletion request returns "OK" response
     Given operation "CancelDataDeletionRequest" enabled
     And there is a valid "deletion_request" in the system
@@ -47,7 +47,7 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/supportability-engineering
+  @replay-only @team:DataDog/supportability-engineering
   Scenario: Creates a data deletion request returns "OK" response
     Given operation "CreateDataDeletionRequest" enabled
     And new "CreateDataDeletionRequest" request
@@ -75,7 +75,7 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/supportability-engineering
+  @replay-only @team:DataDog/supportability-engineering
   Scenario: Gets a list of data deletion requests returns "OK" response
     Given operation "GetDataDeletionRequests" enabled
     And there is a valid "deletion_request" in the system

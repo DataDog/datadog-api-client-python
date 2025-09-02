@@ -26,7 +26,7 @@ class AwsCURConfig(ModelNormal):
 
         return {
             "attributes": (AwsCURConfigAttributes,),
-            "id": (int,),
+            "id": (str,),
             "type": (AwsCURConfigType,),
         }
 
@@ -37,7 +37,7 @@ class AwsCURConfig(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: AwsCURConfigAttributes, type: AwsCURConfigType, id: Union[int, UnsetType] = unset, **kwargs
+        self_, attributes: AwsCURConfigAttributes, type: AwsCURConfigType, id: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         AWS CUR config.
@@ -46,7 +46,7 @@ class AwsCURConfig(ModelNormal):
         :type attributes: AwsCURConfigAttributes
 
         :param id: The ID of the AWS CUR config.
-        :type id: int, optional
+        :type id: str, optional
 
         :param type: Type of AWS CUR config.
         :type type: AwsCURConfigType

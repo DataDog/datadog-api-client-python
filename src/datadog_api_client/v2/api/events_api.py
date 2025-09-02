@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
 from datadog_api_client.v2.model.event_create_request_payload import EventCreateRequestPayload
 from datadog_api_client.v2.model.events_list_request import EventsListRequest
+from datadog_api_client.v2.model.v2_event_response import V2EventResponse
 
 
 class EventsApi:
@@ -42,6 +43,55 @@ class EventsApi:
                 "operation_id": "create_event",
                 "http_method": "POST",
                 "version": "v2",
+                "servers": [
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "variables": {
+                            "site": {
+                                "description": "The regional site for customers.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": [
+                                    "datadoghq.com",
+                                    "us3.datadoghq.com",
+                                    "us5.datadoghq.com",
+                                    "ap1.datadoghq.com",
+                                    "datadoghq.eu",
+                                    "ddog-gov.com",
+                                ],
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "event-management-intake",
+                            },
+                        },
+                    },
+                    {
+                        "url": "{protocol}://{name}",
+                        "variables": {
+                            "name": {
+                                "description": "Full site DNS name.",
+                                "default_value": "event-management-intake.datadoghq.com",
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
+                    },
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "variables": {
+                            "site": {
+                                "description": "Any Datadog deployment.",
+                                "default_value": "datadoghq.com",
+                            },
+                            "subdomain": {
+                                "description": "The subdomain where the API is deployed.",
+                                "default_value": "event-management-intake",
+                            },
+                        },
+                    },
+                ],
             },
             params_map={
                 "body": {
@@ -51,6 +101,29 @@ class EventsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_event_endpoint = _Endpoint(
+            settings={
+                "response_type": (V2EventResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/events/{event_id}",
+                "operation_id": "get_event",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "event_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "event_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -129,13 +202,17 @@ class EventsApi:
     ) -> EventCreateResponsePayload:
         """Post an event.
 
-        This endpoint allows you to post events.
+        This endpoint allows you to publish events.
 
-        ✅ **Only events with the change category** are in General Availability. See `Change Tracking <https://docs.datadoghq.com/change_tracking>`_ for more details.
+        **Note:** To utilize this endpoint with our client libraries, please ensure you are using the latest version released on or after July 1, 2025. Earlier versions do not support this functionality.
 
-        ❌ For use cases involving other event categories, please use the V1 endpoint.
+        ✅ **Only events with the change or alert category** are in General Availability. For change events, see `Change Tracking <https://docs.datadoghq.com/change_tracking>`_ for more details.
 
-        :param body: Event request object
+        ❌ For use cases involving other event categories, use the V1 endpoint or reach out to `support <https://www.datadoghq.com/support/>`_.
+
+        ❌ Notifications are not yet supported for events sent to this endpoint. Use the V1 endpoint for notification functionality.
+
+        :param body: Event creation request payload.
         :type body: EventCreateRequestPayload
         :rtype: EventCreateResponsePayload
         """
@@ -143,6 +220,23 @@ class EventsApi:
         kwargs["body"] = body
 
         return self._create_event_endpoint.call_with_http_info(**kwargs)
+
+    def get_event(
+        self,
+        event_id: str,
+    ) -> V2EventResponse:
+        """Get an event.
+
+        Get the details of an event by ``event_id``.
+
+        :param event_id: The UID of the event.
+        :type event_id: str
+        :rtype: V2EventResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["event_id"] = event_id
+
+        return self._get_event_endpoint.call_with_http_info(**kwargs)
 
     def list_events(
         self,

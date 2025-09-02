@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Convert_a_rule_from_JSON_to_Terraform_returns_OK_response-1745494490","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"log_detection"}'
+      rule","name":"_b87eac89722bbff0","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metric":"","query":"@test:true"}],"tags":[],"type":"log_detection"}'
     headers:
       accept:
       - application/json
@@ -12,9 +12,8 @@ interactions:
   response:
     body:
       string: '{"terraformContent":"resource \"datadog_security_monitoring_rule\"
-        \"test-convert_a_rule_from_json_to_terraform_returns_ok_response-1745494490\"
-        {\n\tname = \"Test-Convert_a_rule_from_JSON_to_Terraform_returns_OK_response-1745494490\"\n\tenabled
-        = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields
+        \"_b87eac89722bbff0\" {\n\tname = \"_b87eac89722bbff0\"\n\tenabled = true\n\tquery
+        {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\tdistinct_fields
         = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions
         {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method
         = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus

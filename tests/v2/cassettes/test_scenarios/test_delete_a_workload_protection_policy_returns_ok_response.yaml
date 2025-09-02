@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteaworkloadprotectionpolicyreturnsokresponse1747319667"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteaworkloadprotectionpolicyreturnsokresponse1748341506"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"koo-gxa-p0y","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testdeleteaworkloadprotectionpolicyreturnsokresponse1747319667","policyVersion":"1","priority":1000000070,"ruleCount":226,"updateDate":1747319667081,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"1a4-eoy-qob","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testdeleteaworkloadprotectionpolicyreturnsokresponse1748341506","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341506537,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -24,7 +24,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/koo-gxa-p0y
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/1a4-eoy-qob
   response:
     body:
       string: ''
@@ -40,7 +40,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/koo-gxa-p0y
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/1a4-eoy-qob
   response:
     body:
       string: '{"errors":[{"title":"failed to delete policy"}]}
