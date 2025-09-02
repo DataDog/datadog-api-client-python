@@ -422,6 +422,9 @@ from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes
     CIAppCreatePipelineEventRequestAttributesResource,
 )
 from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data import CIAppCreatePipelineEventRequestData
+from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_single_or_array import (
+    CIAppCreatePipelineEventRequestDataSingleOrArray,
+)
 from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type import (
     CIAppCreatePipelineEventRequestDataType,
 )
@@ -4338,6 +4341,7 @@ __all__ = [
     "CIAppCreatePipelineEventRequestAttributes",
     "CIAppCreatePipelineEventRequestAttributesResource",
     "CIAppCreatePipelineEventRequestData",
+    "CIAppCreatePipelineEventRequestDataSingleOrArray",
     "CIAppCreatePipelineEventRequestDataType",
     "CIAppEventAttributes",
     "CIAppGitInfo",
