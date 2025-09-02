@@ -3024,6 +3024,12 @@
       "type": "safe"
     }
   },
+  "ValidateSecurityMonitoringSuppression": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteSecurityMonitoringSuppression": {
     "tag": "Security Monitoring",
     "undo": {

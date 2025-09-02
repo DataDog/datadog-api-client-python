@@ -1389,3 +1389,17 @@ Feature: Security Monitoring
     And body with value {"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 0"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My security monitoring rule","name":"My security monitoring rule","options":{"evaluationWindow":1800,"keepAlive":1800,"maxSignalDuration":1800,"detectionMethod":"threshold"},"queries":[{"query":"source:source_here","groupByFields":["@userIdentity.assumed_role"],"distinctFields":[],"aggregation":"count","name":""}],"tags":["env:prod","team:security"],"type":"log_detection"}
     When the request is sent
     Then the response status is 204 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Validate a suppression rule returns "Bad Request" response
+    Given new "ValidateSecurityMonitoringSuppression" request
+    And body with value {"data": {"attributes": {"data_exclusion_query": "not enough attributes"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Validate a suppression rule returns "OK" response
+    Given new "ValidateSecurityMonitoringSuppression" request
+    And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail"}, "type": "suppressions"}}
+    When the request is sent
+    Then the response status is 204 OK

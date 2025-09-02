@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"data_exclusion_query":"source:cloudtrail account_id:12345","description":"This
+      rule suppresses low-severity signals in staging environments.","enabled":true,"name":"Custom
+      suppression","rule_query":"type:log_detection source:cloudtrail"},"type":"suppressions"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/validation
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
