@@ -26,6 +26,7 @@ from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
+from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationApi
 from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi
@@ -101,6 +102,7 @@ __all__ = [
     "DatasetsApi",
     "DomainAllowlistApi",
     "DowntimesApi",
+    "ErrorTrackingApi",
     "EventsApi",
     "FastlyIntegrationApi",
     "GCPIntegrationApi",

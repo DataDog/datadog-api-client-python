@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"state":"resolved"},"id":"67d80aa3-36ff-44b9-a694-c501a7591737","type":"error_tracking_issue"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/67d80aa3-36ff-44b9-a694-c501a7591737/state
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"issue not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

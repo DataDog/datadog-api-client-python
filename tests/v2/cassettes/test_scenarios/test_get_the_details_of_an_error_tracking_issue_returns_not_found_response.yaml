@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"from":1755012813000,"query":"service:synthetics-browser","to":1756308813000,"track":"rum"},"type":"search_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/search
+  response:
+    body:
+      string: '{"data":[{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"error_tracking_search_result","attributes":{"impacted_sessions":1,"total_count":1},"relationships":{"issue":{"data":{"id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","type":"issue"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/error-tracking/issues/67d80aa3-36ff-44b9-a694-c501a7591737
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"issue not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

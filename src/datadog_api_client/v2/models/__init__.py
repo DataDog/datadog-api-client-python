@@ -1433,6 +1433,7 @@ from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
+from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
 from datadog_api_client.v2.model.get_resource_evaluation_filters_response import GetResourceEvaluationFiltersResponse
 from datadog_api_client.v2.model.get_resource_evaluation_filters_response_data import (
     GetResourceEvaluationFiltersResponseData,
@@ -1677,6 +1678,62 @@ from datadog_api_client.v2.model.input_schema_parameters_type import InputSchema
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
+from datadog_api_client.v2.model.issue import Issue
+from datadog_api_client.v2.model.issue_assignee_relationship import IssueAssigneeRelationship
+from datadog_api_client.v2.model.issue_attributes import IssueAttributes
+from datadog_api_client.v2.model.issue_case import IssueCase
+from datadog_api_client.v2.model.issue_case_attributes import IssueCaseAttributes
+from datadog_api_client.v2.model.issue_case_insight import IssueCaseInsight
+from datadog_api_client.v2.model.issue_case_jira_issue import IssueCaseJiraIssue
+from datadog_api_client.v2.model.issue_case_jira_issue_result import IssueCaseJiraIssueResult
+from datadog_api_client.v2.model.issue_case_reference import IssueCaseReference
+from datadog_api_client.v2.model.issue_case_relationship import IssueCaseRelationship
+from datadog_api_client.v2.model.issue_case_relationships import IssueCaseRelationships
+from datadog_api_client.v2.model.issue_case_resource_type import IssueCaseResourceType
+from datadog_api_client.v2.model.issue_included import IssueIncluded
+from datadog_api_client.v2.model.issue_language import IssueLanguage
+from datadog_api_client.v2.model.issue_platform import IssuePlatform
+from datadog_api_client.v2.model.issue_reference import IssueReference
+from datadog_api_client.v2.model.issue_relationships import IssueRelationships
+from datadog_api_client.v2.model.issue_response import IssueResponse
+from datadog_api_client.v2.model.issue_state import IssueState
+from datadog_api_client.v2.model.issue_team import IssueTeam
+from datadog_api_client.v2.model.issue_team_attributes import IssueTeamAttributes
+from datadog_api_client.v2.model.issue_team_owners_relationship import IssueTeamOwnersRelationship
+from datadog_api_client.v2.model.issue_team_reference import IssueTeamReference
+from datadog_api_client.v2.model.issue_team_type import IssueTeamType
+from datadog_api_client.v2.model.issue_type import IssueType
+from datadog_api_client.v2.model.issue_update_assignee_request import IssueUpdateAssigneeRequest
+from datadog_api_client.v2.model.issue_update_assignee_request_data import IssueUpdateAssigneeRequestData
+from datadog_api_client.v2.model.issue_update_assignee_request_data_type import IssueUpdateAssigneeRequestDataType
+from datadog_api_client.v2.model.issue_update_state_request import IssueUpdateStateRequest
+from datadog_api_client.v2.model.issue_update_state_request_data import IssueUpdateStateRequestData
+from datadog_api_client.v2.model.issue_update_state_request_data_attributes import IssueUpdateStateRequestDataAttributes
+from datadog_api_client.v2.model.issue_update_state_request_data_type import IssueUpdateStateRequestDataType
+from datadog_api_client.v2.model.issue_user import IssueUser
+from datadog_api_client.v2.model.issue_user_attributes import IssueUserAttributes
+from datadog_api_client.v2.model.issue_user_reference import IssueUserReference
+from datadog_api_client.v2.model.issue_user_type import IssueUserType
+from datadog_api_client.v2.model.issues_search_request import IssuesSearchRequest
+from datadog_api_client.v2.model.issues_search_request_data import IssuesSearchRequestData
+from datadog_api_client.v2.model.issues_search_request_data_attributes import IssuesSearchRequestDataAttributes
+from datadog_api_client.v2.model.issues_search_request_data_attributes_order_by import (
+    IssuesSearchRequestDataAttributesOrderBy,
+)
+from datadog_api_client.v2.model.issues_search_request_data_attributes_persona import (
+    IssuesSearchRequestDataAttributesPersona,
+)
+from datadog_api_client.v2.model.issues_search_request_data_attributes_track import (
+    IssuesSearchRequestDataAttributesTrack,
+)
+from datadog_api_client.v2.model.issues_search_request_data_type import IssuesSearchRequestDataType
+from datadog_api_client.v2.model.issues_search_response import IssuesSearchResponse
+from datadog_api_client.v2.model.issues_search_result import IssuesSearchResult
+from datadog_api_client.v2.model.issues_search_result_attributes import IssuesSearchResultAttributes
+from datadog_api_client.v2.model.issues_search_result_included import IssuesSearchResultIncluded
+from datadog_api_client.v2.model.issues_search_result_issue_relationship import IssuesSearchResultIssueRelationship
+from datadog_api_client.v2.model.issues_search_result_relationships import IssuesSearchResultRelationships
+from datadog_api_client.v2.model.issues_search_result_type import IssuesSearchResultType
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
@@ -3165,6 +3222,7 @@ from datadog_api_client.v2.model.schedule_user import ScheduleUser
 from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAttributes
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
+from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
@@ -5061,6 +5119,7 @@ __all__ = [
     "GetFindingResponse",
     "GetInterfacesData",
     "GetInterfacesResponse",
+    "GetIssueIncludeQueryParameterItem",
     "GetResourceEvaluationFiltersResponse",
     "GetResourceEvaluationFiltersResponseData",
     "GetRuleVersionHistoryData",
@@ -5271,6 +5330,56 @@ __all__ = [
     "IntakePayloadAccepted",
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
+    "Issue",
+    "IssueAssigneeRelationship",
+    "IssueAttributes",
+    "IssueCase",
+    "IssueCaseAttributes",
+    "IssueCaseInsight",
+    "IssueCaseJiraIssue",
+    "IssueCaseJiraIssueResult",
+    "IssueCaseReference",
+    "IssueCaseRelationship",
+    "IssueCaseRelationships",
+    "IssueCaseResourceType",
+    "IssueIncluded",
+    "IssueLanguage",
+    "IssuePlatform",
+    "IssueReference",
+    "IssueRelationships",
+    "IssueResponse",
+    "IssueState",
+    "IssueTeam",
+    "IssueTeamAttributes",
+    "IssueTeamOwnersRelationship",
+    "IssueTeamReference",
+    "IssueTeamType",
+    "IssueType",
+    "IssueUpdateAssigneeRequest",
+    "IssueUpdateAssigneeRequestData",
+    "IssueUpdateAssigneeRequestDataType",
+    "IssueUpdateStateRequest",
+    "IssueUpdateStateRequestData",
+    "IssueUpdateStateRequestDataAttributes",
+    "IssueUpdateStateRequestDataType",
+    "IssueUser",
+    "IssueUserAttributes",
+    "IssueUserReference",
+    "IssueUserType",
+    "IssuesSearchRequest",
+    "IssuesSearchRequestData",
+    "IssuesSearchRequestDataAttributes",
+    "IssuesSearchRequestDataAttributesOrderBy",
+    "IssuesSearchRequestDataAttributesPersona",
+    "IssuesSearchRequestDataAttributesTrack",
+    "IssuesSearchRequestDataType",
+    "IssuesSearchResponse",
+    "IssuesSearchResult",
+    "IssuesSearchResultAttributes",
+    "IssuesSearchResultIncluded",
+    "IssuesSearchResultIssueRelationship",
+    "IssuesSearchResultRelationships",
+    "IssuesSearchResultType",
     "JSONAPIErrorItem",
     "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
@@ -6277,6 +6386,7 @@ __all__ = [
     "ScheduleUserAttributes",
     "ScheduleUserType",
     "ScorecardType",
+    "SearchIssuesIncludeQueryParameterItem",
     "SecurityFilter",
     "SecurityFilterAttributes",
     "SecurityFilterCreateAttributes",
