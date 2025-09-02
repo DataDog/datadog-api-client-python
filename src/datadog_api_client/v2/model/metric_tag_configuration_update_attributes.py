@@ -47,7 +47,7 @@ class MetricTagConfigurationUpdateAttributes(ModelNormal):
         """
         Object containing the definition of a metric tag configuration to be updated.
 
-        :param aggregations: Deprecated. You no longer need to configure specific time and space aggregations for Metrics Without Limits.
+        :param aggregations: Deprecated. You no longer need to configure specific time and space aggregations for Metrics without Limits™.
         :type aggregations: MetricCustomAggregations, optional
 
         :param exclude_tags_mode: When set to true, the configuration will exclude the configured tags and include any other submitted tags.
