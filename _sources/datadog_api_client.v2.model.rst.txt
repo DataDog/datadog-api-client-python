@@ -7760,6 +7760,13 @@ datadog\_api\_client.v2.model.get\_interfaces\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.get\_issue\_include\_query\_parameter\_item module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_issue_include_query_parameter_item
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.get\_resource\_evaluation\_filters\_response module
 ---------------------------------------------------------------------------------
 
@@ -9227,6 +9234,356 @@ datadog\_api\_client.v2.model.ip\_allowlist\_update\_request module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ip_allowlist_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue module
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_assignee\_relationship module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_assignee_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_attributes module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_insight module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_insight
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_jira\_issue module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_jira_issue
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_jira\_issue\_result module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_jira_issue_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_reference module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_relationship module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_relationships module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_resource\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_included module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_language module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_language
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_platform module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_platform
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_reference module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_relationships module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_response module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_state module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_team module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_team
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_team\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_team_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_team\_owners\_relationship module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_team_owners_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_team\_reference module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_team_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_team\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_team_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_update\_assignee\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_update_assignee_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_update\_assignee\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_update_assignee_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_update\_assignee\_request\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_update_assignee_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_update\_state\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_update_state_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_update\_state\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_update_state_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_update\_state\_request\_data\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_update_state_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_update\_state\_request\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_update_state_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_user module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_user\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_user\_reference module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_user_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_user\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_user_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_request module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_request\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_request\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_request\_data\_attributes\_order\_by module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_request_data_attributes_order_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_request\_data\_attributes\_persona module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_request_data_attributes_persona
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_request\_data\_attributes\_track module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_request_data_attributes_track
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_request\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_result module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_result\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_result_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_result\_included module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_result_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_result\_issue\_relationship module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_result_issue_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_result\_relationships module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_result_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issues\_search\_result\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issues_search_result_type
    :members:
    :show-inheritance:
 
@@ -16213,6 +16570,13 @@ datadog\_api\_client.v2.model.scorecard\_type module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.scorecard_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.search\_issues\_include\_query\_parameter\_item module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.search_issues_include_query_parameter_item
    :members:
    :show-inheritance:
 
