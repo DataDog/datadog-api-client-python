@@ -6,7 +6,7 @@
 *                       @DataDog/web-frameworks-approvers @DataDog/web-frameworks
 
 # Documentation
-*.md                    @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
-LICENSE                 @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
-NOTICE                  @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
-LICENSE-3rdparty.csv    @DataDog/documentation @DataDog/web-frameworks-approvers @DataDog/web-frameworks
+*.md                    @DataDog/web-frameworks-approvers @DataDog/web-frameworks
+LICENSE                 @DataDog/web-frameworks-approvers @DataDog/web-frameworks
+NOTICE                  @DataDog/web-frameworks-approvers @DataDog/web-frameworks
+LICENSE-3rdparty.csv    @DataDog/web-frameworks-approvers @DataDog/web-frameworks
