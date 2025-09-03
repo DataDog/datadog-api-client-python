@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"data_exclusion_query":"not enough attributes"},"type":"suppressions"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/validation
+  response:
+    body:
+      string: '{"errors":["input_validation_error(Field ''data.attributes.rule_query''
+        is invalid: field ''rule_query'' is required)","input_validation_error(Field
+        ''data.attributes.name'' is invalid: name cannot be empty)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

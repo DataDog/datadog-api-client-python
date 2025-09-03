@@ -1922,6 +1922,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._validate_security_monitoring_suppression_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions/validation",
+                "operation_id": "validate_security_monitoring_suppression",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSuppressionUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def cancel_historical_job(
         self,
         job_id: str,
@@ -3923,3 +3943,19 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._validate_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def validate_security_monitoring_suppression(
+        self,
+        body: SecurityMonitoringSuppressionUpdateRequest,
+    ) -> None:
+        """Validate a suppression rule.
+
+        Validate a suppression rule.
+
+        :type body: SecurityMonitoringSuppressionUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._validate_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
