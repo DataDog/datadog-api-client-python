@@ -3362,6 +3362,24 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityMonitoringHistsignals": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchSecurityMonitoringHistsignals": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSecurityMonitoringHistsignal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListHistoricalJobs": {
     "tag": "Security Monitoring",
     "undo": {
@@ -3396,6 +3414,12 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetSecurityMonitoringHistsignalsByJobId": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "CreateSLOReportJob": {

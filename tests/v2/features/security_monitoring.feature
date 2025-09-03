@@ -591,6 +591,30 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "data.attributes.evaluation" is equal to "pass"
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a hist signal's details returns "Bad Request" response
+    Given operation "GetSecurityMonitoringHistsignal" enabled
+    And new "GetSecurityMonitoringHistsignal" request
+    And request contains "histsignal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a hist signal's details returns "Not Found" response
+    Given operation "GetSecurityMonitoringHistsignal" enabled
+    And new "GetSecurityMonitoringHistsignal" request
+    And request contains "histsignal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a hist signal's details returns "OK" response
+    Given operation "GetSecurityMonitoringHistsignal" enabled
+    And new "GetSecurityMonitoringHistsignal" request
+    And request contains "histsignal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Get a job's details returns "Bad Request" response
     Given operation "GetHistoricalJob" enabled
@@ -614,6 +638,30 @@ Feature: Security Monitoring
     And new "GetHistoricalJob" request
     And there is a valid "historical_job" in the system
     And request contains "job_id" parameter from "historical_job.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a job's hist signals returns "Bad Request" response
+    Given operation "GetSecurityMonitoringHistsignalsByJobId" enabled
+    And new "GetSecurityMonitoringHistsignalsByJobId" request
+    And request contains "job_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a job's hist signals returns "Not Found" response
+    Given operation "GetSecurityMonitoringHistsignalsByJobId" enabled
+    And new "GetSecurityMonitoringHistsignalsByJobId" request
+    And request contains "job_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a job's hist signals returns "OK" response
+    Given operation "GetSecurityMonitoringHistsignalsByJobId" enabled
+    And new "GetSecurityMonitoringHistsignalsByJobId" request
+    And request contains "job_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -943,6 +991,27 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List hist signals returns "Bad Request" response
+    Given operation "ListSecurityMonitoringHistsignals" enabled
+    And new "ListSecurityMonitoringHistsignals" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List hist signals returns "Not Found" response
+    Given operation "ListSecurityMonitoringHistsignals" enabled
+    And new "ListSecurityMonitoringHistsignals" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List hist signals returns "OK" response
+    Given operation "ListSecurityMonitoringHistsignals" enabled
+    And new "ListSecurityMonitoringHistsignals" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List historical jobs returns "Bad Request" response
     Given operation "ListHistoricalJobs" enabled
     And new "ListHistoricalJobs" request
@@ -1185,6 +1254,30 @@ Feature: Security Monitoring
     And body with value {"data":{"type":"historicalDetectionsJobCreate","attributes":{"jobDefinition":{"type":"log_detection","name":"Excessive number of failed attempts.","queries":[{"query":"source:non_existing_src_weekend","aggregation":"count","groupByFields":[],"distinctFields":[]}],"cases":[{"name":"Condition 1","status":"info","notifications":[],"condition":"a > 1"}],"options":{"keepAlive":3600,"maxSignalDuration":86400,"evaluationWindow":900},"message":"A large number of failed login attempts.","tags":[],"from":1730387522611,"to":1730387532611,"index":"main"}}}}
     When the request is sent
     Then the response status is 201 Status created
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Search hist signals returns "Bad Request" response
+    Given operation "SearchSecurityMonitoringHistsignals" enabled
+    And new "SearchSecurityMonitoringHistsignals" request
+    And body with value {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Search hist signals returns "Not Found" response
+    Given operation "SearchSecurityMonitoringHistsignals" enabled
+    And new "SearchSecurityMonitoringHistsignals" request
+    And body with value {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Search hist signals returns "OK" response
+    Given operation "SearchSecurityMonitoringHistsignals" enabled
+    And new "SearchSecurityMonitoringHistsignals" request
+    And body with value {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    When the request is sent
+    Then the response status is 200 OK
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Test a rule returns "Bad Request" response

@@ -772,6 +772,85 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_security_monitoring_histsignal_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/siem-historical-detections/histsignals/{histsignal_id}",
+                "operation_id": "get_security_monitoring_histsignal",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "histsignal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "histsignal_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_security_monitoring_histsignals_by_job_id_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs/{job_id}/histsignals",
+                "operation_id": "get_security_monitoring_histsignals_by_job_id",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "job_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "job_id",
+                    "location": "path",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "filter_from": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[to]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (SecurityMonitoringSignalsSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
@@ -1169,6 +1248,56 @@ class SecurityMonitoringApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_security_monitoring_histsignals_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/siem-historical-detections/histsignals",
+                "operation_id": "list_security_monitoring_histsignals",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "filter_from": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[to]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (SecurityMonitoringSignalsSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1700,6 +1829,25 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (RunHistoricalJobRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._search_security_monitoring_histsignals_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/siem-historical-detections/histsignals/search",
+                "operation_id": "search_security_monitoring_histsignals",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "openapi_types": (SecurityMonitoringSignalListRequest,),
                     "location": "body",
                 },
             },
@@ -2487,6 +2635,77 @@ class SecurityMonitoringApi:
 
         return self._get_security_filter_endpoint.call_with_http_info(**kwargs)
 
+    def get_security_monitoring_histsignal(
+        self,
+        histsignal_id: str,
+    ) -> SecurityMonitoringSignalResponse:
+        """Get a hist signal's details.
+
+        Get a hist signal's details.
+
+        :param histsignal_id: The ID of the historical signal.
+        :type histsignal_id: str
+        :rtype: SecurityMonitoringSignalResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["histsignal_id"] = histsignal_id
+
+        return self._get_security_monitoring_histsignal_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_monitoring_histsignals_by_job_id(
+        self,
+        job_id: str,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[SecurityMonitoringSignalsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> SecurityMonitoringSignalsListResponse:
+        """Get a job's hist signals.
+
+        Get a job's hist signals.
+
+        :param job_id: The ID of the job.
+        :type job_id: str
+        :param filter_query: The search query for security signals.
+        :type filter_query: str, optional
+        :param filter_from: The minimum timestamp for requested security signals.
+        :type filter_from: datetime, optional
+        :param filter_to: The maximum timestamp for requested security signals.
+        :type filter_to: datetime, optional
+        :param sort: The order of the security signals in results.
+        :type sort: SecurityMonitoringSignalsSort, optional
+        :param page_cursor: A list of results using the cursor provided in the previous query.
+        :type page_cursor: str, optional
+        :param page_limit: The maximum number of security signals in the response.
+        :type page_limit: int, optional
+        :rtype: SecurityMonitoringSignalsListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["job_id"] = job_id
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        return self._get_security_monitoring_histsignals_by_job_id_endpoint.call_with_http_info(**kwargs)
+
     def get_security_monitoring_rule(
         self,
         rule_id: str,
@@ -3018,6 +3237,55 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_monitoring_histsignals(
+        self,
+        *,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        sort: Union[SecurityMonitoringSignalsSort, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> SecurityMonitoringSignalsListResponse:
+        """List hist signals.
+
+        List hist signals.
+
+        :param filter_query: The search query for security signals.
+        :type filter_query: str, optional
+        :param filter_from: The minimum timestamp for requested security signals.
+        :type filter_from: datetime, optional
+        :param filter_to: The maximum timestamp for requested security signals.
+        :type filter_to: datetime, optional
+        :param sort: The order of the security signals in results.
+        :type sort: SecurityMonitoringSignalsSort, optional
+        :param page_cursor: A list of results using the cursor provided in the previous query.
+        :type page_cursor: str, optional
+        :param page_limit: The maximum number of security signals in the response.
+        :type page_limit: int, optional
+        :rtype: SecurityMonitoringSignalsListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        return self._list_security_monitoring_histsignals_endpoint.call_with_http_info(**kwargs)
 
     def list_security_monitoring_rules(
         self,
@@ -3723,6 +3991,24 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._run_historical_job_endpoint.call_with_http_info(**kwargs)
+
+    def search_security_monitoring_histsignals(
+        self,
+        *,
+        body: Union[SecurityMonitoringSignalListRequest, UnsetType] = unset,
+    ) -> SecurityMonitoringSignalsListResponse:
+        """Search hist signals.
+
+        Search hist signals.
+
+        :type body: SecurityMonitoringSignalListRequest, optional
+        :rtype: SecurityMonitoringSignalsListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
+        return self._search_security_monitoring_histsignals_endpoint.call_with_http_info(**kwargs)
 
     def search_security_monitoring_signals(
         self,
