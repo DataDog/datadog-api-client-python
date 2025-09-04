@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"connection_types":["logs"]},"relationships":{"sink_org":{"data":{"id":"83999dcd-7f97-11f0-8de1-1ecf66f1aa85","type":"orgs"}}},"type":"org_connection"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/org_connections
+  response:
+    body:
+      string: '{"data":{"type":"org_connection","id":"d348b9ab-c7cf-4298-83a6-b4762fafff5e","attributes":{"created_at":"2025-08-26T20:19:37.737812+00:00","connection_types":["logs"]},"relationships":{"source_org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5","name":"DD
+        Integration Tests (321813)"}},"sink_org":{"data":{"type":"orgs","id":"83999dcd-7f97-11f0-8de1-1ecf66f1aa85","name":"Cross-Org
+        BDD Test Org"}},"created_by":{"data":{"type":"users","id":"03e6bc43-7ecc-11f0-b50b-f28f2be41840","name":"Amy
+        Li"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"connection_types":["logs","metrics"]},"id":"00000000-0000-0000-0000-000000000000","type":"org_connection"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/org_connections/00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '{"errors":["Org connection with id:00000000-0000-0000-0000-000000000000
+        not found not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/org_connections/d348b9ab-c7cf-4298-83a6-b4762fafff5e
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
