@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: "{\"data\":{\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\"\
+      :\"\U0001F30D\",\"name\":\"World\"},\"type\":\"case_type\"}}"
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types
+  response:
+    body:
+      string: "{\"data\":{\"id\":\"cf9dfa09-a302-428a-83c0-cd9a61ca3308\",\"type\"\
+        :\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"\
+        emoji\":\"\U0001F30D\",\"name\":\"World\"}}}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cases/types/cf9dfa09-a302-428a-83c0-cd9a61ca3308/custom_attributes
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/types/cf9dfa09-a302-428a-83c0-cd9a61ca3308
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
