@@ -1486,7 +1486,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-security-platform
   Scenario: Validate a suppression rule returns "Bad Request" response
     Given new "ValidateSecurityMonitoringSuppression" request
-    And body with value {"data": {"attributes": {"data_exclusion_query": "not enough attributes"}, "type": "suppressions"}}
+    And body with value {"data": {"attributes": {"name" : "cold_harbour", "enabled": false, "rule_query":"rule:[A-Invalid", "data_exclusion_query": "not enough attributes"}, "type": "suppressions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"data_exclusion_query":"not enough attributes"},"type":"suppressions"}}'
+    body: '{"data":{"attributes":{"data_exclusion_query":"not enough attributes","enabled":false,"name":"cold_harbour","rule_query":"rule:[A-Invalid"},"type":"suppressions"}}'
     headers:
       accept:
       - '*/*'
@@ -11,8 +11,7 @@ interactions:
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''data.attributes.rule_query''
-        is invalid: field ''rule_query'' is required)","input_validation_error(Field
-        ''data.attributes.name'' is invalid: name cannot be empty)"]}'
+        is invalid: rule query is invalid)"]}'
     headers:
       content-type:
       - application/json
