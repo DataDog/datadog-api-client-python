@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"connection_types":["logs"]},"relationships":{"sink_org":{"data":{"id":"83999dcd-7f97-11f0-8de1-1ecf66f1aa85","type":"orgs"}}},"type":"org_connection"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/org_connections
+  response:
+    body:
+      string: '{"data":{"type":"org_connection","id":"40bbb1c2-32b2-4aa3-8a1a-5d93b5382e3d","attributes":{"created_at":"2025-08-26T20:19:36.177236+00:00","connection_types":["logs"]},"relationships":{"source_org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5","name":"DD
+        Integration Tests (321813)"}},"sink_org":{"data":{"type":"orgs","id":"83999dcd-7f97-11f0-8de1-1ecf66f1aa85","name":"Cross-Org
+        BDD Test Org"}},"created_by":{"data":{"type":"users","id":"03e6bc43-7ecc-11f0-b50b-f28f2be41840","name":"Amy
+        Li"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/org_connections/40bbb1c2-32b2-4aa3-8a1a-5d93b5382e3d
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
