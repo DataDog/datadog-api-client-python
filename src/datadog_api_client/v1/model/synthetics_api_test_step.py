@@ -35,6 +35,7 @@ class SyntheticsAPITestStep(ModelNormal):
             "exit_if_succeed": (bool,),
             "extracted_values": ([SyntheticsParsingOptions],),
             "extracted_values_from_script": (str,),
+            "id": (str,),
             "is_critical": (bool,),
             "name": (str,),
             "request": (SyntheticsTestRequest,),
@@ -48,11 +49,15 @@ class SyntheticsAPITestStep(ModelNormal):
         "exit_if_succeed": "exitIfSucceed",
         "extracted_values": "extractedValues",
         "extracted_values_from_script": "extractedValuesFromScript",
+        "id": "id",
         "is_critical": "isCritical",
         "name": "name",
         "request": "request",
         "retry": "retry",
         "subtype": "subtype",
+    }
+    read_only_vars = {
+        "id",
     }
 
     def __init__(
@@ -64,6 +69,7 @@ class SyntheticsAPITestStep(ModelNormal):
         exit_if_succeed: Union[bool, UnsetType] = unset,
         extracted_values: Union[List[SyntheticsParsingOptions], UnsetType] = unset,
         extracted_values_from_script: Union[str, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
         is_critical: Union[bool, UnsetType] = unset,
         retry: Union[SyntheticsTestOptionsRetry, UnsetType] = unset,
         **kwargs,
@@ -85,6 +91,9 @@ class SyntheticsAPITestStep(ModelNormal):
 
         :param extracted_values_from_script: Generate variables using JavaScript.
         :type extracted_values_from_script: str, optional
+
+        :param id: ID of the step.
+        :type id: str, optional
 
         :param is_critical: Determines whether or not to consider the entire test as failed if this step fails.
             Can be used only if ``allowFailure`` is ``true``.
@@ -110,6 +119,8 @@ class SyntheticsAPITestStep(ModelNormal):
             kwargs["extracted_values"] = extracted_values
         if extracted_values_from_script is not unset:
             kwargs["extracted_values_from_script"] = extracted_values_from_script
+        if id is not unset:
+            kwargs["id"] = id
         if is_critical is not unset:
             kwargs["is_critical"] = is_critical
         if retry is not unset:
