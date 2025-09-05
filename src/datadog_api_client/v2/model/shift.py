@@ -42,9 +42,9 @@ class Shift(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``Shift`` object.
+        An on-call shift with its associated data and relationships.
 
-        :param data: The definition of ``ShiftData`` object.
+        :param data: Data for an on-call shift.
         :type data: ShiftData, optional
 
         :param included: The ``Shift`` ``included``.
