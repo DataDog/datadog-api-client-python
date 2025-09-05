@@ -230,6 +230,34 @@ class MonitorsApi:
                 "version": "v2",
             },
             params_map={
+                "page": {
+                    "validation": {
+                        "inclusive_maximum": 1000000,
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
+                },
+                "per_page": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "per_page",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "filters": {
+                    "openapi_types": (str,),
+                    "attribute": "filters",
+                    "location": "query",
+                },
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
@@ -572,18 +600,46 @@ class MonitorsApi:
     def get_monitor_notification_rules(
         self,
         *,
+        page: Union[int, UnsetType] = unset,
+        per_page: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        filters: Union[str, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
     ) -> MonitorNotificationRuleListResponse:
         """Get all monitor notification rules.
 
         Returns a list of all monitor notification rules.
 
+        :param page: The page to start paginating from. If ``page`` is not specified, the argument defaults to the first page.
+        :type page: int, optional
+        :param per_page: The number of rules to return per page. If ``per_page`` is not specified, the argument defaults to 100.
+        :type per_page: int, optional
+        :param sort: String for sort order, composed of field and sort order separated by a colon, for example ``name:asc``. Supported sort directions: ``asc`` , ``desc``. Supported fields: ``name`` , ``created_at``.
+        :type sort: str, optional
+        :param filters: JSON-encoded filter object. Supported keys:
+
+            * ``text`` : Free-text query matched against rule name, tags, and recipients.
+            * ``tags`` : Array of strings. Return rules that have any of these tags.
+            * ``recipients`` : Array of strings. Return rules that have any of these recipients.
+        :type filters: str, optional
         :param include: Comma-separated list of resource paths for related resources to include in the response. Supported resource
             path is ``created_by``.
         :type include: str, optional
         :rtype: MonitorNotificationRuleListResponse
         """
         kwargs: Dict[str, Any] = {}
+        if page is not unset:
+            kwargs["page"] = page
+
+        if per_page is not unset:
+            kwargs["per_page"] = per_page
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filters is not unset:
+            kwargs["filters"] = filters
+
         if include is not unset:
             kwargs["include"] = include
 
