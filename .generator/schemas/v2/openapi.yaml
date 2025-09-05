@@ -52370,13 +52370,15 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_manage
       summary: Delete a dataset
       tags:
       - Datasets
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - user_access_manage
       x-unstable: '**Note: Data Access is in preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).**'
@@ -52403,7 +52405,8 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_read
       summary: Get a single dataset by ID
       tags:
       - Datasets
@@ -52443,14 +52446,16 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ: []
+      - AuthZ:
+        - user_access_manage
       summary: Edit a dataset
       tags:
       - Datasets
       x-codegen-request-body-name: body
       x-permission:
-        operator: OPEN
-        permissions: []
+        operator: OR
+        permissions:
+        - user_access_manage
       x-unstable: '**Note: Data Access is in preview. If you have any feedback,
 
         contact [Datadog support](https://docs.datadoghq.com/help/).**'
