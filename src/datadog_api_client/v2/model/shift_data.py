@@ -49,15 +49,15 @@ class ShiftData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``ShiftData`` object.
+        Data for an on-call shift.
 
-        :param attributes: The definition of ``ShiftDataAttributes`` object.
+        :param attributes: Attributes for an on-call shift.
         :type attributes: ShiftDataAttributes, optional
 
         :param id: The ``ShiftData`` ``id``.
         :type id: str, optional
 
-        :param relationships: The definition of ``ShiftDataRelationships`` object.
+        :param relationships: Relationships for an on-call shift.
         :type relationships: ShiftDataRelationships, optional
 
         :param type: Indicates that the resource is of type 'shifts'.
