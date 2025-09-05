@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"category":"alert","content":"An incident has been
+      declared. Please join the incident channel for updates.","name":"Incident Alert
+      Template","subject":"Incident Alert"},"relationships":{"incident_type":{"data":{"id":"00000000-1111-2222-3333-444444444444","type":"incident_types"}}},"type":"notification_templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"incident type not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

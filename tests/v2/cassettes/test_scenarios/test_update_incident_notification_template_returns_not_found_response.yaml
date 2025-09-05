@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"category":"update","content":"Incident Status Update:
+      For more details, visit the incident page.","name":"Updated Template Name","subject":"Incident
+      Update"},"id":"00000000-1111-2222-3333-444444444444","type":"notification_templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/00000000-1111-2222-3333-444444444444
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
