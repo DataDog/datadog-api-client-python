@@ -401,6 +401,11 @@ from datadog_api_client.v2.model.bulk_mute_findings_request_meta_findings import
 from datadog_api_client.v2.model.bulk_mute_findings_request_properties import BulkMuteFindingsRequestProperties
 from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
 from datadog_api_client.v2.model.bulk_mute_findings_response_data import BulkMuteFindingsResponseData
+from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request import BulkPutAppsDatastoreItemsRequest
+from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request_data import BulkPutAppsDatastoreItemsRequestData
+from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request_data_attributes import (
+    BulkPutAppsDatastoreItemsRequestDataAttributes,
+)
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value import CIAppAggregateBucketValue
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries import CIAppAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries_point import (
@@ -792,6 +797,13 @@ from datadog_api_client.v2.model.create_app_request_data import CreateAppRequest
 from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
 from datadog_api_client.v2.model.create_app_response import CreateAppResponse
 from datadog_api_client.v2.model.create_app_response_data import CreateAppResponseData
+from datadog_api_client.v2.model.create_apps_datastore_request import CreateAppsDatastoreRequest
+from datadog_api_client.v2.model.create_apps_datastore_request_data import CreateAppsDatastoreRequestData
+from datadog_api_client.v2.model.create_apps_datastore_request_data_attributes import (
+    CreateAppsDatastoreRequestDataAttributes,
+)
+from datadog_api_client.v2.model.create_apps_datastore_response import CreateAppsDatastoreResponse
+from datadog_api_client.v2.model.create_apps_datastore_response_data import CreateAppsDatastoreResponseData
 from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
 from datadog_api_client.v2.model.create_custom_framework_response import CreateCustomFrameworkResponse
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
@@ -1052,8 +1064,23 @@ from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMu
 from datadog_api_client.v2.model.dataset_response_single import DatasetResponseSingle
 from datadog_api_client.v2.model.dataset_type import DatasetType
 from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
+from datadog_api_client.v2.model.datastore import Datastore
+from datadog_api_client.v2.model.datastore_array import DatastoreArray
+from datadog_api_client.v2.model.datastore_data import DatastoreData
+from datadog_api_client.v2.model.datastore_data_attributes import DatastoreDataAttributes
+from datadog_api_client.v2.model.datastore_data_type import DatastoreDataType
+from datadog_api_client.v2.model.datastore_item_conflict_mode import DatastoreItemConflictMode
+from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItemsDataType
+from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
+from datadog_api_client.v2.model.delete_apps_datastore_item_request import DeleteAppsDatastoreItemRequest
+from datadog_api_client.v2.model.delete_apps_datastore_item_request_data import DeleteAppsDatastoreItemRequestData
+from datadog_api_client.v2.model.delete_apps_datastore_item_request_data_attributes import (
+    DeleteAppsDatastoreItemRequestDataAttributes,
+)
+from datadog_api_client.v2.model.delete_apps_datastore_item_response import DeleteAppsDatastoreItemResponse
+from datadog_api_client.v2.model.delete_apps_datastore_item_response_data import DeleteAppsDatastoreItemResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
 from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteAppsRequestDataItems
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
@@ -1734,6 +1761,15 @@ from datadog_api_client.v2.model.issues_search_result_included import IssuesSear
 from datadog_api_client.v2.model.issues_search_result_issue_relationship import IssuesSearchResultIssueRelationship
 from datadog_api_client.v2.model.issues_search_result_relationships import IssuesSearchResultRelationships
 from datadog_api_client.v2.model.issues_search_result_type import IssuesSearchResultType
+from datadog_api_client.v2.model.item_api_payload import ItemApiPayload
+from datadog_api_client.v2.model.item_api_payload_array import ItemApiPayloadArray
+from datadog_api_client.v2.model.item_api_payload_data import ItemApiPayloadData
+from datadog_api_client.v2.model.item_api_payload_data_attributes import ItemApiPayloadDataAttributes
+from datadog_api_client.v2.model.item_api_payload_data_attributes_value import ItemApiPayloadDataAttributesValue
+from datadog_api_client.v2.model.item_api_payload_meta import ItemApiPayloadMeta
+from datadog_api_client.v2.model.item_api_payload_meta_page import ItemApiPayloadMetaPage
+from datadog_api_client.v2.model.item_api_payload_meta_schema import ItemApiPayloadMetaSchema
+from datadog_api_client.v2.model.item_api_payload_meta_schema_field import ItemApiPayloadMetaSchemaField
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
@@ -2912,6 +2948,8 @@ from datadog_api_client.v2.model.projected_cost_response import ProjectedCostRes
 from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
 from datadog_api_client.v2.model.projects_response import ProjectsResponse
 from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
+from datadog_api_client.v2.model.put_apps_datastore_item_response_array import PutAppsDatastoreItemResponseArray
+from datadog_api_client.v2.model.put_apps_datastore_item_response_data import PutAppsDatastoreItemResponseData
 from datadog_api_client.v2.model.query import Query
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
@@ -3877,6 +3915,22 @@ from datadog_api_client.v2.model.update_app_request_data_attributes import Updat
 from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_response_data import UpdateAppResponseData
 from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
+from datadog_api_client.v2.model.update_apps_datastore_item_request import UpdateAppsDatastoreItemRequest
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data import UpdateAppsDatastoreItemRequestData
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data_attributes import (
+    UpdateAppsDatastoreItemRequestDataAttributes,
+)
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data_attributes_item_changes import (
+    UpdateAppsDatastoreItemRequestDataAttributesItemChanges,
+)
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data_type import (
+    UpdateAppsDatastoreItemRequestDataType,
+)
+from datadog_api_client.v2.model.update_apps_datastore_request import UpdateAppsDatastoreRequest
+from datadog_api_client.v2.model.update_apps_datastore_request_data import UpdateAppsDatastoreRequestData
+from datadog_api_client.v2.model.update_apps_datastore_request_data_attributes import (
+    UpdateAppsDatastoreRequestDataAttributes,
+)
 from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
 from datadog_api_client.v2.model.update_custom_framework_response import UpdateCustomFrameworkResponse
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
@@ -4345,6 +4399,9 @@ __all__ = [
     "BulkMuteFindingsRequestProperties",
     "BulkMuteFindingsResponse",
     "BulkMuteFindingsResponseData",
+    "BulkPutAppsDatastoreItemsRequest",
+    "BulkPutAppsDatastoreItemsRequestData",
+    "BulkPutAppsDatastoreItemsRequestDataAttributes",
     "CIAppAggregateBucketValue",
     "CIAppAggregateBucketValueTimeseries",
     "CIAppAggregateBucketValueTimeseriesPoint",
@@ -4646,6 +4703,11 @@ __all__ = [
     "CreateAppRequestDataAttributes",
     "CreateAppResponse",
     "CreateAppResponseData",
+    "CreateAppsDatastoreRequest",
+    "CreateAppsDatastoreRequestData",
+    "CreateAppsDatastoreRequestDataAttributes",
+    "CreateAppsDatastoreResponse",
+    "CreateAppsDatastoreResponseData",
     "CreateCustomFrameworkRequest",
     "CreateCustomFrameworkResponse",
     "CreateDataDeletionRequestBody",
@@ -4818,8 +4880,21 @@ __all__ = [
     "DatasetResponseSingle",
     "DatasetType",
     "DatasetUpdateRequest",
+    "Datastore",
+    "DatastoreArray",
+    "DatastoreData",
+    "DatastoreDataAttributes",
+    "DatastoreDataType",
+    "DatastoreItemConflictMode",
+    "DatastoreItemsDataType",
+    "DatastorePrimaryKeyGenerationStrategy",
     "DeleteAppResponse",
     "DeleteAppResponseData",
+    "DeleteAppsDatastoreItemRequest",
+    "DeleteAppsDatastoreItemRequestData",
+    "DeleteAppsDatastoreItemRequestDataAttributes",
+    "DeleteAppsDatastoreItemResponse",
+    "DeleteAppsDatastoreItemResponseData",
     "DeleteAppsRequest",
     "DeleteAppsRequestDataItems",
     "DeleteAppsResponse",
@@ -5402,6 +5477,15 @@ __all__ = [
     "IssuesSearchResultIssueRelationship",
     "IssuesSearchResultRelationships",
     "IssuesSearchResultType",
+    "ItemApiPayload",
+    "ItemApiPayloadArray",
+    "ItemApiPayloadData",
+    "ItemApiPayloadDataAttributes",
+    "ItemApiPayloadDataAttributesValue",
+    "ItemApiPayloadMeta",
+    "ItemApiPayloadMetaPage",
+    "ItemApiPayloadMetaSchema",
+    "ItemApiPayloadMetaSchemaField",
     "JSONAPIErrorItem",
     "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
@@ -6130,6 +6214,8 @@ __all__ = [
     "ProjectedCostType",
     "ProjectsResponse",
     "PublishAppResponse",
+    "PutAppsDatastoreItemResponseArray",
+    "PutAppsDatastoreItemResponseData",
     "Query",
     "QueryFormula",
     "QuerySortOrder",
@@ -6897,6 +6983,14 @@ __all__ = [
     "UpdateAppResponse",
     "UpdateAppResponseData",
     "UpdateAppResponseDataAttributes",
+    "UpdateAppsDatastoreItemRequest",
+    "UpdateAppsDatastoreItemRequestData",
+    "UpdateAppsDatastoreItemRequestDataAttributes",
+    "UpdateAppsDatastoreItemRequestDataAttributesItemChanges",
+    "UpdateAppsDatastoreItemRequestDataType",
+    "UpdateAppsDatastoreRequest",
+    "UpdateAppsDatastoreRequestData",
+    "UpdateAppsDatastoreRequestDataAttributes",
     "UpdateCustomFrameworkRequest",
     "UpdateCustomFrameworkResponse",
     "UpdateOpenAPIResponse",
