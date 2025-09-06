@@ -1,0 +1,102 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Any incidents that harm (or have
+      the potential to) the confidentiality, integrity, or availability of our data.","is_default":false,"name":"Security
+      Incident"},"type":"incident_types"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types
+  response:
+    body:
+      string: '{"data":{"id":"614d7660-ec56-4b27-98f5-3a58dfffba02","type":"incident_types","attributes":{"createdAt":"2025-09-05T02:20:00.720888811Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
+        incidents that harm (or have the potential to) the confidentiality, integrity,
+        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2025-09-05T02:20:00.720888909Z","name":"Security
+        Incident","prefix":"IR"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"google_meet_configuration":{"data":null},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"microsoft_teams_configuration":{"data":null},"zoom_configuration":{"data":null}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"category":"alert","content":"Test notification
+      template","name":"Test Template Test-Update_incident_notification_template_returns_OK_response-1757038800","subject":"Test
+      Subject"},"relationships":{"incident_type":{"data":{"id":"614d7660-ec56-4b27-98f5-3a58dfffba02","type":"incident_types"}}},"type":"notification_templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates
+  response:
+    body:
+      string: '{"data":{"id":"0975a4b5-8190-449c-8342-64dab1a90c65","type":"notification_templates","attributes":{"category":"alert","content":"Test
+        notification template","created":"2025-09-05T02:20:00.936994Z","modified":"2025-09-05T02:20:00.936994Z","name":"Test
+        Template Test-Update_incident_notification_template_returns_OK_response-1757038800","subject":"Test
+        Subject"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident_type":{"data":{"id":"614d7660-ec56-4b27-98f5-3a58dfffba02","type":"incident_types"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"category":"update","content":"Incident Status Update:\n\nTitle:
+      Sample Incident Title\nNew Status: resolved\nSeverity: SEV-2\nServices: web-service,
+      database-service\nCommander: John Doe\n\nFor more details, visit the incident
+      page.","name":"Test-Update_incident_notification_template_returns_OK_response-1757038800","subject":"Incident
+      Update: Sample Incident Title - resolved"},"id":"0975a4b5-8190-449c-8342-64dab1a90c65","type":"notification_templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/0975a4b5-8190-449c-8342-64dab1a90c65
+  response:
+    body:
+      string: '{"data":{"id":"0975a4b5-8190-449c-8342-64dab1a90c65","type":"notification_templates","attributes":{"category":"update","content":"Incident
+        Status Update:\n\nTitle: Sample Incident Title\nNew Status: resolved\nSeverity:
+        SEV-2\nServices: web-service, database-service\nCommander: John Doe\n\nFor
+        more details, visit the incident page.","created":"2025-09-05T02:20:00.936994Z","modified":"2025-09-05T02:20:01.067409Z","name":"Test-Update_incident_notification_template_returns_OK_response-1757038800","subject":"Incident
+        Update: Sample Incident Title - resolved"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident_type":{"data":{"id":"614d7660-ec56-4b27-98f5-3a58dfffba02","type":"incident_types"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/0975a4b5-8190-449c-8342-64dab1a90c65
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/614d7660-ec56-4b27-98f5-3a58dfffba02
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
