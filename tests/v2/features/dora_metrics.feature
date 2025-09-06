@@ -1,6 +1,6 @@
 @endpoint(dora-metrics) @endpoint(dora-metrics-v2)
 Feature: DORA Metrics
-  Search or send events for DORA Metrics to measure and improve your
+  Search, send or delete events for DORA Metrics to measure and improve your
   software delivery performance. See the [DORA Metrics
   page](https://docs.datadoghq.com/dora_metrics/) for more information.
   **Note**: DORA Metrics are not available in the US1-FED site.
@@ -8,6 +8,32 @@ Feature: DORA Metrics
   Background:
     Given a valid "apiKeyAuth" key in the system
     And an instance of "DORAMetrics" API
+
+  @team:DataDog/ci-app-backend
+  Scenario: Delete a deployment event returns "Accepted" response
+    Given new "DeleteDORADeployment" request
+    And request contains "deployment_id" parameter with value "{unique_lower}"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @team:DataDog/ci-app-backend
+  Scenario: Delete a deployment event returns "Bad Request" response
+    Given new "DeleteDORADeployment" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/ci-app-backend
+  Scenario: Delete a failure event returns "Accepted" response
+    Given new "DeleteDORAFailure" request
+    And request contains "failure_id" parameter with value "{unique_lower}"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @team:DataDog/ci-app-backend
+  Scenario: Delete a failure event returns "Bad Request" response
+    Given new "DeleteDORAFailure" request
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a deployment event returns "Bad Request" response
