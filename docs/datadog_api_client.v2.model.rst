@@ -4337,6 +4337,13 @@ datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_incident\_notification\_template\_request module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_incident_notification_template_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_notification\_rule\_parameters module
 ---------------------------------------------------------------------------
 
@@ -7893,6 +7900,20 @@ datadog\_api\_client.v2.model.gitlab\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.google\_meet\_configuration\_reference module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_meet_configuration_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_meet\_configuration\_reference\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_meet_configuration_reference_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.grey\_noise\_api\_key module
 ----------------------------------------------------------
 
@@ -8495,6 +8516,104 @@ datadog\_api\_client.v2.model.incident\_notification\_handle module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_notification\_template module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_array module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_array\_meta module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_array_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_array\_meta\_page module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_array_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_create\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_create\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_create\_data\_relationships module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_create_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_included\_items module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_included_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_relationships module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_response\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_update\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_update\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_update_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_postmortem\_type module
 ---------------------------------------------------------------
 
@@ -9045,6 +9164,13 @@ datadog\_api\_client.v2.model.incident\_type\_patch\_request module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_type_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_relationships module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_relationships
    :members:
    :show-inheritance:
 
@@ -11411,6 +11537,20 @@ datadog\_api\_client.v2.model.microsoft\_teams\_channel\_info\_type module
 --------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.microsoft_teams_channel_info_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_configuration\_reference module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_configuration_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.microsoft\_teams\_configuration\_reference\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.microsoft_teams_configuration_reference_data
    :members:
    :show-inheritance:
 
@@ -14375,6 +14515,13 @@ datadog\_api\_client.v2.model.partial\_application\_key\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.patch\_incident\_notification\_template\_request module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_incident_notification_template_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.patch\_notification\_rule\_parameters module
 --------------------------------------------------------------------------
 
@@ -14890,6 +15037,20 @@ datadog\_api\_client.v2.model.relationship\_to\_incident\_responders module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_incident_responders
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_incident\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_incident\_type\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_type_data
    :members:
    :show-inheritance:
 
@@ -20966,6 +21127,20 @@ datadog\_api\_client.v2.model.x\_ray\_services\_list module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.x_ray_services_list
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.zoom\_configuration\_reference module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.zoom_configuration_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.zoom\_configuration\_reference\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.zoom_configuration_reference_data
    :members:
    :show-inheritance:
 

@@ -803,6 +803,9 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_incident_notification_template_request import (
+    CreateIncidentNotificationTemplateRequest,
+)
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.create_notification_rule_parameters_data import CreateNotificationRuleParametersData
 from datadog_api_client.v2.model.create_notification_rule_parameters_data_attributes import (
@@ -1454,6 +1457,8 @@ from datadog_api_client.v2.model.gitlab_credentials_update import GitlabCredenti
 from datadog_api_client.v2.model.gitlab_integration import GitlabIntegration
 from datadog_api_client.v2.model.gitlab_integration_type import GitlabIntegrationType
 from datadog_api_client.v2.model.gitlab_integration_update import GitlabIntegrationUpdate
+from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
+from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
 from datadog_api_client.v2.model.grey_noise_api_key import GreyNoiseAPIKey
 from datadog_api_client.v2.model.grey_noise_api_key_type import GreyNoiseAPIKeyType
 from datadog_api_client.v2.model.grey_noise_api_key_update import GreyNoiseAPIKeyUpdate
@@ -1569,6 +1574,38 @@ from datadog_api_client.v2.model.incident_integration_metadata_type import Incid
 from datadog_api_client.v2.model.incident_integration_relationships import IncidentIntegrationRelationships
 from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
 from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+from datadog_api_client.v2.model.incident_notification_template import IncidentNotificationTemplate
+from datadog_api_client.v2.model.incident_notification_template_array import IncidentNotificationTemplateArray
+from datadog_api_client.v2.model.incident_notification_template_array_meta import IncidentNotificationTemplateArrayMeta
+from datadog_api_client.v2.model.incident_notification_template_array_meta_page import (
+    IncidentNotificationTemplateArrayMetaPage,
+)
+from datadog_api_client.v2.model.incident_notification_template_attributes import IncidentNotificationTemplateAttributes
+from datadog_api_client.v2.model.incident_notification_template_create_attributes import (
+    IncidentNotificationTemplateCreateAttributes,
+)
+from datadog_api_client.v2.model.incident_notification_template_create_data import (
+    IncidentNotificationTemplateCreateData,
+)
+from datadog_api_client.v2.model.incident_notification_template_create_data_relationships import (
+    IncidentNotificationTemplateCreateDataRelationships,
+)
+from datadog_api_client.v2.model.incident_notification_template_included_items import (
+    IncidentNotificationTemplateIncludedItems,
+)
+from datadog_api_client.v2.model.incident_notification_template_relationships import (
+    IncidentNotificationTemplateRelationships,
+)
+from datadog_api_client.v2.model.incident_notification_template_response_data import (
+    IncidentNotificationTemplateResponseData,
+)
+from datadog_api_client.v2.model.incident_notification_template_type import IncidentNotificationTemplateType
+from datadog_api_client.v2.model.incident_notification_template_update_attributes import (
+    IncidentNotificationTemplateUpdateAttributes,
+)
+from datadog_api_client.v2.model.incident_notification_template_update_data import (
+    IncidentNotificationTemplateUpdateData,
+)
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_responders_type import IncidentRespondersType
@@ -1660,6 +1697,7 @@ from datadog_api_client.v2.model.incident_type_list_response import IncidentType
 from datadog_api_client.v2.model.incident_type_object import IncidentTypeObject
 from datadog_api_client.v2.model.incident_type_patch_data import IncidentTypePatchData
 from datadog_api_client.v2.model.incident_type_patch_request import IncidentTypePatchRequest
+from datadog_api_client.v2.model.incident_type_relationships import IncidentTypeRelationships
 from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
 from datadog_api_client.v2.model.incident_type_type import IncidentTypeType
 from datadog_api_client.v2.model.incident_type_update_attributes import IncidentTypeUpdateAttributes
@@ -2017,6 +2055,10 @@ from datadog_api_client.v2.model.microsoft_teams_channel_info_response_attribute
 )
 from datadog_api_client.v2.model.microsoft_teams_channel_info_response_data import MicrosoftTeamsChannelInfoResponseData
 from datadog_api_client.v2.model.microsoft_teams_channel_info_type import MicrosoftTeamsChannelInfoType
+from datadog_api_client.v2.model.microsoft_teams_configuration_reference import MicrosoftTeamsConfigurationReference
+from datadog_api_client.v2.model.microsoft_teams_configuration_reference_data import (
+    MicrosoftTeamsConfigurationReferenceData,
+)
 from datadog_api_client.v2.model.microsoft_teams_create_tenant_based_handle_request import (
     MicrosoftTeamsCreateTenantBasedHandleRequest,
 )
@@ -2867,6 +2909,9 @@ from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKey
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
 from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
 from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
+from datadog_api_client.v2.model.patch_incident_notification_template_request import (
+    PatchIncidentNotificationTemplateRequest,
+)
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data import PatchNotificationRuleParametersData
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
@@ -3001,6 +3046,8 @@ from datadog_api_client.v2.model.relationship_to_incident_postmortem import Rela
 from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import RelationshipToIncidentPostmortemData
 from datadog_api_client.v2.model.relationship_to_incident_responder_data import RelationshipToIncidentResponderData
 from datadog_api_client.v2.model.relationship_to_incident_responders import RelationshipToIncidentResponders
+from datadog_api_client.v2.model.relationship_to_incident_type import RelationshipToIncidentType
+from datadog_api_client.v2.model.relationship_to_incident_type_data import RelationshipToIncidentTypeData
 from datadog_api_client.v2.model.relationship_to_incident_user_defined_field_data import (
     RelationshipToIncidentUserDefinedFieldData,
 )
@@ -4028,6 +4075,8 @@ from datadog_api_client.v2.model.worklflow_get_instance_response_data_attributes
 from datadog_api_client.v2.model.x_ray_services_include_all import XRayServicesIncludeAll
 from datadog_api_client.v2.model.x_ray_services_include_only import XRayServicesIncludeOnly
 from datadog_api_client.v2.model.x_ray_services_list import XRayServicesList
+from datadog_api_client.v2.model.zoom_configuration_reference import ZoomConfigurationReference
+from datadog_api_client.v2.model.zoom_configuration_reference_data import ZoomConfigurationReferenceData
 
 __all__ = [
     "APIErrorResponse",
@@ -4653,6 +4702,7 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateIncidentNotificationTemplateRequest",
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
     "CreateNotificationRuleParametersDataAttributes",
@@ -5160,6 +5210,8 @@ __all__ = [
     "GitlabIntegration",
     "GitlabIntegrationType",
     "GitlabIntegrationUpdate",
+    "GoogleMeetConfigurationReference",
+    "GoogleMeetConfigurationReferenceData",
     "GreyNoiseAPIKey",
     "GreyNoiseAPIKeyType",
     "GreyNoiseAPIKeyUpdate",
@@ -5255,6 +5307,20 @@ __all__ = [
     "IncidentIntegrationRelationships",
     "IncidentNonDatadogCreator",
     "IncidentNotificationHandle",
+    "IncidentNotificationTemplate",
+    "IncidentNotificationTemplateArray",
+    "IncidentNotificationTemplateArrayMeta",
+    "IncidentNotificationTemplateArrayMetaPage",
+    "IncidentNotificationTemplateAttributes",
+    "IncidentNotificationTemplateCreateAttributes",
+    "IncidentNotificationTemplateCreateData",
+    "IncidentNotificationTemplateCreateDataRelationships",
+    "IncidentNotificationTemplateIncludedItems",
+    "IncidentNotificationTemplateRelationships",
+    "IncidentNotificationTemplateResponseData",
+    "IncidentNotificationTemplateType",
+    "IncidentNotificationTemplateUpdateAttributes",
+    "IncidentNotificationTemplateUpdateData",
     "IncidentPostmortemType",
     "IncidentRelatedObject",
     "IncidentRespondersType",
@@ -5334,6 +5400,7 @@ __all__ = [
     "IncidentTypeObject",
     "IncidentTypePatchData",
     "IncidentTypePatchRequest",
+    "IncidentTypeRelationships",
     "IncidentTypeResponse",
     "IncidentTypeType",
     "IncidentTypeUpdateAttributes",
@@ -5665,6 +5732,8 @@ __all__ = [
     "MicrosoftTeamsChannelInfoResponseAttributes",
     "MicrosoftTeamsChannelInfoResponseData",
     "MicrosoftTeamsChannelInfoType",
+    "MicrosoftTeamsConfigurationReference",
+    "MicrosoftTeamsConfigurationReferenceData",
     "MicrosoftTeamsCreateTenantBasedHandleRequest",
     "MicrosoftTeamsCreateWorkflowsWebhookHandleRequest",
     "MicrosoftTeamsGetChannelByNameResponse",
@@ -6087,6 +6156,7 @@ __all__ = [
     "PartialApplicationKey",
     "PartialApplicationKeyAttributes",
     "PartialApplicationKeyResponse",
+    "PatchIncidentNotificationTemplateRequest",
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
@@ -6213,6 +6283,8 @@ __all__ = [
     "RelationshipToIncidentPostmortemData",
     "RelationshipToIncidentResponderData",
     "RelationshipToIncidentResponders",
+    "RelationshipToIncidentType",
+    "RelationshipToIncidentTypeData",
     "RelationshipToIncidentUserDefinedFieldData",
     "RelationshipToIncidentUserDefinedFields",
     "RelationshipToOrganization",
@@ -7034,4 +7106,6 @@ __all__ = [
     "XRayServicesIncludeAll",
     "XRayServicesIncludeOnly",
     "XRayServicesList",
+    "ZoomConfigurationReference",
+    "ZoomConfigurationReferenceData",
 ]
