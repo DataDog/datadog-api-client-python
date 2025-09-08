@@ -146,6 +146,35 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:Datadog/incident-app
+  Scenario: Create incident notification template returns "Bad Request" response
+    Given operation "CreateIncidentNotificationTemplate" enabled
+    And new "CreateIncidentNotificationTemplate" request
+    And body with value {"data": {"attributes": {"category": "alert", "content": "An incident has been declared. Please join the incident channel for updates.", "name": "Test Template", "subject": "Incident Alert"}, "type": "invalid_type"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:Datadog/incident-app
+  Scenario: Create incident notification template returns "Created" response
+    Given there is a valid "incident_type" in the system
+    And operation "CreateIncidentNotificationTemplate" enabled
+    And new "CreateIncidentNotificationTemplate" request
+    And body with value {"data": {"attributes": {"category": "alert", "content": "An incident has been declared.\n\nTitle: Sample Incident Title\nSeverity: SEV-2\nAffected Services: web-service, database-service\nStatus: active\n\nPlease join the incident channel for updates.", "name": "{{ unique }}", "subject": "SEV-2 Incident: Sample Incident Title"}, "relationships": {"incident_type": {"data": {"id": "{{ incident_type.data.id }}", "type": "incident_types"}}}, "type": "notification_templates"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.type" is equal to "notification_templates"
+    And the response "data.attributes.name" has the same value as "unique"
+    And the response "data.attributes.category" is equal to "alert"
+    And the response "data.relationships.incident_type.data.id" has the same value as "incident_type.data.id"
+
+  @team:Datadog/incident-app
+  Scenario: Create incident notification template returns "Not Found" response
+    Given operation "CreateIncidentNotificationTemplate" enabled
+    And new "CreateIncidentNotificationTemplate" request
+    And body with value {"data": {"attributes": {"category": "alert", "content": "An incident has been declared. Please join the incident channel for updates.", "name": "Incident Alert Template", "subject": "Incident Alert"}, "relationships": {"incident_type": {"data": {"id": "00000000-1111-2222-3333-444444444444", "type": "incident_types"}}}, "type": "notification_templates"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Create, update, and delete incident attachments returns "Bad Request" response
     Given operation "UpdateIncidentAttachments" enabled
@@ -172,6 +201,30 @@ Feature: Incidents
     And body with value {"data": [{"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/123", "title": "Postmortem IR-123"}, "attachment_type": "postmortem"}, "id": "00000000-abcd-0002-0000-000000000000", "type": "incident_attachments"}, {"attributes": {"attachment": {"documentUrl": "https://www.example.com/webstore-failure-runbook", "title": "Runbook for webstore service failures"}, "attachment_type": "link"}, "type": "incident_attachments"}, {"id": "00000000-abcd-0003-0000-000000000000", "type": "incident_attachments"}]}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete a notification template returns "Bad Request" response
+    Given operation "DeleteIncidentNotificationTemplate" enabled
+    And new "DeleteIncidentNotificationTemplate" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete a notification template returns "No Content" response
+    Given operation "DeleteIncidentNotificationTemplate" enabled
+    And new "DeleteIncidentNotificationTemplate" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete a notification template returns "Not Found" response
+    Given operation "DeleteIncidentNotificationTemplate" enabled
+    And new "DeleteIncidentNotificationTemplate" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Delete an existing incident returns "Bad Request" response
@@ -280,6 +333,16 @@ Feature: Incidents
     And request contains "incident_type_id" parameter from "incident_type.data.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @team:Datadog/incident-app
+  Scenario: Delete incident notification template returns "No Content" response
+    Given there is a valid "incident_type" in the system
+    And there is a valid "notification_template" in the system
+    And operation "DeleteIncidentNotificationTemplate" enabled
+    And new "DeleteIncidentNotificationTemplate" request
+    And request contains "id" parameter from "notification_template.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
@@ -451,6 +514,36 @@ Feature: Incidents
     Then the response status is 200 OK
 
   @generated @skip @team:Datadog/incident-app
+  Scenario: Get incident notification template returns "Bad Request" response
+    Given operation "GetIncidentNotificationTemplate" enabled
+    And new "GetIncidentNotificationTemplate" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get incident notification template returns "Not Found" response
+    Given operation "GetIncidentNotificationTemplate" enabled
+    And new "GetIncidentNotificationTemplate" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Get incident notification template returns "OK" response
+    Given there is a valid "incident_type" in the system
+    And there is a valid "notification_template" in the system
+    And operation "GetIncidentNotificationTemplate" enabled
+    And new "GetIncidentNotificationTemplate" request
+    And request contains "id" parameter from "notification_template.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "notification_templates"
+    And the response "data.id" has the same value as "notification_template.data.id"
+    And the response "data" has field "attributes"
+    And the response "data" has field "relationships"
+
+  @generated @skip @team:Datadog/incident-app
   Scenario: Get incident todo details returns "Bad Request" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -530,6 +623,28 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.title" has the same value as "incident.data.attributes.title"
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: List incident notification templates returns "Bad Request" response
+    Given operation "ListIncidentNotificationTemplates" enabled
+    And new "ListIncidentNotificationTemplates" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: List incident notification templates returns "Not Found" response
+    Given operation "ListIncidentNotificationTemplates" enabled
+    And new "ListIncidentNotificationTemplates" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: List incident notification templates returns "OK" response
+    Given operation "ListIncidentNotificationTemplates" enabled
+    And new "ListIncidentNotificationTemplates" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
 
   @team:DataDog/incident-app
   Scenario: Remove commander from an incident returns "OK" response
@@ -702,3 +817,36 @@ Feature: Incidents
     And body with value {"data": {"id": "{{incident_type.data.id}}", "attributes": {"name": "{{incident_type.data.attributes.name}}-updated"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:Datadog/incident-app
+  Scenario: Update incident notification template returns "Bad Request" response
+    Given operation "UpdateIncidentNotificationTemplate" enabled
+    And new "UpdateIncidentNotificationTemplate" request
+    And request contains "id" parameter with value "00000000-1111-2222-3333-444444444444"
+    And body with value {"data": {"attributes": {"category": "update", "content": "Incident Status Update: For more details, visit the incident page.", "name": "Update Template", "subject": "Incident Update"}, "id": "00000000-0000-0000-0000-000000000001", "type": "invalid_type"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:Datadog/incident-app
+  Scenario: Update incident notification template returns "Not Found" response
+    Given operation "UpdateIncidentNotificationTemplate" enabled
+    And new "UpdateIncidentNotificationTemplate" request
+    And request contains "id" parameter with value "00000000-1111-2222-3333-444444444444"
+    And body with value {"data": {"attributes": {"category": "update", "content": "Incident Status Update: For more details, visit the incident page.", "name": "Updated Template Name", "subject": "Incident Update"}, "id": "00000000-1111-2222-3333-444444444444", "type": "notification_templates"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Update incident notification template returns "OK" response
+    Given there is a valid "incident_type" in the system
+    And there is a valid "notification_template" in the system
+    And operation "UpdateIncidentNotificationTemplate" enabled
+    And new "UpdateIncidentNotificationTemplate" request
+    And request contains "id" parameter from "notification_template.data.id"
+    And body with value {"data": {"attributes": {"category": "update", "content": "Incident Status Update:\n\nTitle: Sample Incident Title\nNew Status: resolved\nSeverity: SEV-2\nServices: web-service, database-service\nCommander: John Doe\n\nFor more details, visit the incident page.", "name": "{{ unique }}", "subject": "Incident Update: Sample Incident Title - resolved"}, "id": "{{ notification_template.data.id }}", "type": "notification_templates"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "notification_templates"
+    And the response "data.id" has the same value as "notification_template.data.id"
+    And the response "data.attributes.name" has the same value as "unique"
+    And the response "data.attributes.category" is equal to "update"
