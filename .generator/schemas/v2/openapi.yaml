@@ -55263,9 +55263,6 @@ paths:
         operator: OR
         permissions:
         - aws_configuration_read
-      x-unstable: '**Note: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
     post:
       description: Create a new AWS Account Integration Config.
       operationId: CreateAWSAccount
@@ -55298,9 +55295,6 @@ paths:
         operator: OR
         permissions:
         - aws_configurations_manage
-      x-unstable: '**Note: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
   /api/v2/integration/aws/accounts/{aws_account_config_id}:
     delete:
       description: Delete an AWS Account Integration Config by config ID.
@@ -55325,9 +55319,6 @@ paths:
         operator: OR
         permissions:
         - aws_configurations_manage
-      x-unstable: '**Note: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
     get:
       description: Get an AWS Account Integration Config by config ID.
       operationId: GetAWSAccount
@@ -55355,9 +55346,6 @@ paths:
         operator: OR
         permissions:
         - aws_configuration_read
-      x-unstable: '**Note: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
     patch:
       description: Update an AWS Account Integration Config by config ID.
       operationId: UpdateAWSAccount
@@ -55392,9 +55380,6 @@ paths:
         operator: OR
         permissions:
         - aws_configuration_edit
-      x-unstable: '**Note: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
   /api/v2/integration/aws/available_namespaces:
     get:
       description: Get a list of available AWS CloudWatch namespaces that can send
@@ -55418,9 +55403,6 @@ paths:
         operator: OR
         permissions:
         - aws_configuration_read
-      x-unstable: '**Note: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
   /api/v2/integration/aws/generate_new_external_id:
     post:
       description: Generate a new external ID for AWS role-based authentication.
@@ -55443,9 +55425,6 @@ paths:
         operator: OR
         permissions:
         - aws_configuration_edit
-      x-unstable: '**Note: This endpoint is in Preview. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
   /api/v2/integration/aws/iam_permissions:
     get:
       description: Get all AWS IAM permissions required for the AWS integration.
@@ -55484,9 +55463,6 @@ paths:
         operator: OR
         permissions:
         - aws_configuration_read
-      x-unstable: '**Note: This endpoint is in public beta. If you have any feedback,
-
-        contact [Datadog support](https://docs.datadoghq.com/help/).**'
   /api/v2/integration/gcp/accounts:
     get:
       description: List all GCP STS-enabled service accounts configured in your Datadog

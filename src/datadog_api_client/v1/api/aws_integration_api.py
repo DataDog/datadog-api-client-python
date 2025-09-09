@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -302,7 +303,7 @@ class AWSIntegrationApi:
         self,
         body: AWSAccount,
     ) -> AWSAccountCreateResponse:
-        """Create an AWS integration.
+        """Create an AWS integration. **Deprecated**.
 
         Create a Datadog-Amazon Web Services integration.
         Using the ``POST`` method updates your integration configuration
@@ -316,6 +317,7 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_aws_account is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_aws_account_endpoint.call_with_http_info(**kwargs)
 
     def create_aws_event_bridge_source(
@@ -339,7 +341,7 @@ class AWSIntegrationApi:
         self,
         body: AWSTagFilterCreateRequest,
     ) -> dict:
-        """Set an AWS tag filter.
+        """Set an AWS tag filter. **Deprecated**.
 
         Set an AWS tag filter.
 
@@ -351,13 +353,14 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_aws_tag_filter is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_aws_tag_filter_endpoint.call_with_http_info(**kwargs)
 
     def create_new_aws_external_id(
         self,
         body: AWSAccount,
     ) -> AWSAccountCreateResponse:
-        """Generate a new external ID.
+        """Generate a new external ID. **Deprecated**.
 
         Generate a new AWS external ID for a given AWS account ID and role name pair.
 
@@ -370,13 +373,14 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_new_aws_external_id is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_new_aws_external_id_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_account(
         self,
         body: AWSAccountDeleteRequest,
     ) -> dict:
-        """Delete an AWS integration.
+        """Delete an AWS integration. **Deprecated**.
 
         Delete a Datadog-AWS integration matching the specified ``account_id`` and ``role_name parameters``.
 
@@ -387,6 +391,7 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("delete_aws_account is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_aws_account_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_event_bridge_source(
@@ -410,7 +415,7 @@ class AWSIntegrationApi:
         self,
         body: AWSTagFilterDeleteRequest,
     ) -> dict:
-        """Delete a tag filtering entry.
+        """Delete a tag filtering entry. **Deprecated**.
 
         Delete a tag filtering entry.
 
@@ -421,18 +426,20 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("delete_aws_tag_filter is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_aws_tag_filter_endpoint.call_with_http_info(**kwargs)
 
     def list_available_aws_namespaces(
         self,
     ) -> List[str]:
-        """List namespace rules.
+        """List namespace rules. **Deprecated**.
 
         List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.
 
         :rtype: [str]
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_available_aws_namespaces is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_available_aws_namespaces_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_accounts(
@@ -442,7 +449,7 @@ class AWSIntegrationApi:
         role_name: Union[str, UnsetType] = unset,
         access_key_id: Union[str, UnsetType] = unset,
     ) -> AWSAccountListResponse:
-        """List all AWS integrations.
+        """List all AWS integrations. **Deprecated**.
 
         List all Datadog-AWS integrations available in your Datadog organization.
 
@@ -464,6 +471,7 @@ class AWSIntegrationApi:
         if access_key_id is not unset:
             kwargs["access_key_id"] = access_key_id
 
+        warnings.warn("list_aws_accounts is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_accounts_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_event_bridge_sources(
@@ -482,7 +490,7 @@ class AWSIntegrationApi:
         self,
         account_id: str,
     ) -> AWSTagFilterListResponse:
-        """Get all AWS tag filters.
+        """Get all AWS tag filters. **Deprecated**.
 
         Get all AWS tag filters.
 
@@ -493,6 +501,7 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["account_id"] = account_id
 
+        warnings.warn("list_aws_tag_filters is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_tag_filters_endpoint.call_with_http_info(**kwargs)
 
     def update_aws_account(
@@ -503,7 +512,7 @@ class AWSIntegrationApi:
         role_name: Union[str, UnsetType] = unset,
         access_key_id: Union[str, UnsetType] = unset,
     ) -> dict:
-        """Update an AWS integration.
+        """Update an AWS integration. **Deprecated**.
 
         Update a Datadog-Amazon Web Services integration.
 
@@ -531,4 +540,5 @@ class AWSIntegrationApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_aws_account is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_aws_account_endpoint.call_with_http_info(**kwargs)
