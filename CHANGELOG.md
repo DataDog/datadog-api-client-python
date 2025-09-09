@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## 2.42.0/2025-09-09
+
+### Added
+* Add Incident Notification Template Public Docs [#2819](https://github.com/DataDog/datadog-api-client-python/pull/2819)
+* Add Cross Org API to Open API specs [#2818](https://github.com/DataDog/datadog-api-client-python/pull/2818)
+* Add readonly ID of synthetics test steps [#2814](https://github.com/DataDog/datadog-api-client-python/pull/2814)
+* Create Cloud SIEM histsignals endpoints [#2813](https://github.com/DataDog/datadog-api-client-python/pull/2813)
+* Security Monitoring - Validation Endpoint for Suppressions [#2810](https://github.com/DataDog/datadog-api-client-python/pull/2810)
+* Update Get All Notification Rules API docs to include pagination, sorting, and filtering params [#2808](https://github.com/DataDog/datadog-api-client-python/pull/2808)
+* Security Monitoring - Related Suppressions for a Rule [#2805](https://github.com/DataDog/datadog-api-client-python/pull/2805)
+* Extend Widget time schema with support for hide_incomplete_cost_data [#2793](https://github.com/DataDog/datadog-api-client-python/pull/2793)
+* Add SDS rule `should_save_match` field [#2791](https://github.com/DataDog/datadog-api-client-python/pull/2791)
+* Add spec for Agentless GetAwsScanOptions [#2788](https://github.com/DataDog/datadog-api-client-python/pull/2788)
+* Add Cross Org API to Open API specs [#2786](https://github.com/DataDog/datadog-api-client-python/pull/2786)
+* Add DNAP Spark Pod Autosizing service to API client [#2782](https://github.com/DataDog/datadog-api-client-python/pull/2782)
+* Add version parameter to synthetic test trigger ci endpoint [#2781](https://github.com/DataDog/datadog-api-client-python/pull/2781)
+* Document Error Tracking public APIs [#2778](https://github.com/DataDog/datadog-api-client-python/pull/2778)
+* Add docs for 404 not found error in cost-onboarding-api [#2772](https://github.com/DataDog/datadog-api-client-python/pull/2772)
+* Adds async Scorecard outcomes batch update endpoint [#2763](https://github.com/DataDog/datadog-api-client-python/pull/2763)
+
+### Fixed
+* Security Monitoring - Fix payload of Validation Endpoint for Suppressions [#2815](https://github.com/DataDog/datadog-api-client-python/pull/2815)
+* [CCA-938][CCC-883] Audit existing CCM endpoints in OpenAPI spec [#2768](https://github.com/DataDog/datadog-api-client-python/pull/2768)
+* Add enum Dataset type to Dataset API spec [#2766](https://github.com/DataDog/datadog-api-client-python/pull/2766)
+
+### Changed
+* Update public cost permissions [#2790](https://github.com/DataDog/datadog-api-client-python/pull/2790)
+* Add Product Scales support to RUM v2 Applications API [#2770](https://github.com/DataDog/datadog-api-client-python/pull/2770)
+
 ## 2.41.0/2025-08-12
 
 ### Added
