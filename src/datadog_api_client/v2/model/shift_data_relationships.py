@@ -32,7 +32,7 @@ class ShiftDataRelationships(ModelNormal):
 
     def __init__(self_, user: Union[ShiftDataRelationshipsUser, UnsetType] = unset, **kwargs):
         """
-        The definition of ``ShiftDataRelationships`` object.
+        Relationships for an on-call shift.
 
         :param user: Defines the relationship between a shift and the user who is working that shift.
         :type user: ShiftDataRelationshipsUser, optional

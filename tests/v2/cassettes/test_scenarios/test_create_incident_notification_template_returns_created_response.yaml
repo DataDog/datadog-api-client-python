@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Any incidents that harm (or have
+      the potential to) the confidentiality, integrity, or availability of our data.","is_default":false,"name":"Security
+      Incident"},"type":"incident_types"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types
+  response:
+    body:
+      string: '{"data":{"id":"943312c7-755d-4167-9bd4-bd87603c1784","type":"incident_types","attributes":{"createdAt":"2025-09-05T02:18:47.87671627Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
+        incidents that harm (or have the potential to) the confidentiality, integrity,
+        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2025-09-05T02:18:47.876716352Z","name":"Security
+        Incident","prefix":"IR"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"google_meet_configuration":{"data":null},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"microsoft_teams_configuration":{"data":null},"zoom_configuration":{"data":null}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"category":"alert","content":"An incident has been
+      declared.\n\nTitle: Sample Incident Title\nSeverity: SEV-2\nAffected Services:
+      web-service, database-service\nStatus: active\n\nPlease join the incident channel
+      for updates.","name":"Test-Create_incident_notification_template_returns_Created_response-1757038727","subject":"SEV-2
+      Incident: Sample Incident Title"},"relationships":{"incident_type":{"data":{"id":"943312c7-755d-4167-9bd4-bd87603c1784","type":"incident_types"}}},"type":"notification_templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates
+  response:
+    body:
+      string: '{"data":{"id":"ffbd2758-c695-4879-8355-07371b09aeea","type":"notification_templates","attributes":{"category":"alert","content":"An
+        incident has been declared.\n\nTitle: Sample Incident Title\nSeverity: SEV-2\nAffected
+        Services: web-service, database-service\nStatus: active\n\nPlease join the
+        incident channel for updates.","created":"2025-09-05T02:18:48.112073Z","modified":"2025-09-05T02:18:48.112073Z","name":"Test-Create_incident_notification_template_returns_Created_response-1757038727","subject":"SEV-2
+        Incident: Sample Incident Title"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident_type":{"data":{"id":"943312c7-755d-4167-9bd4-bd87603c1784","type":"incident_types"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/ffbd2758-c695-4879-8355-07371b09aeea
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/943312c7-755d-4167-9bd4-bd87603c1784
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

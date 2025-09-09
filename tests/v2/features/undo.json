@@ -1089,6 +1089,43 @@
       "type": "unsafe"
     }
   },
+  "ListIncidentNotificationTemplates": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentNotificationTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentNotificationTemplate",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentNotificationTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentNotificationTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentNotificationTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentTypes": {
     "tag": "Incidents",
     "undo": {
@@ -2248,6 +2285,37 @@
   },
   "UpdateOrgConfig": {
     "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListOrgConnections": {
+    "tag": "Org Connections",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOrgConnections": {
+    "tag": "Org Connections",
+    "undo": {
+      "operationId": "DeleteOrgConnections",
+      "parameters": [
+        {
+          "name": "connection_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOrgConnections": {
+    "tag": "Org Connections",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateOrgConnections": {
+    "tag": "Org Connections",
     "undo": {
       "type": "idempotent"
     }

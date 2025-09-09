@@ -250,6 +250,18 @@
     "operationId": "CreateIncident"
   },
   {
+    "operationId": "CreateIncidentNotificationTemplate",
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"category\": \"alert\",\n      \"content\": \"Test notification template\",\n      \"name\": \"Test Template {{ unique }}\",\n      \"subject\": \"Test Subject\"\n    },\n    \"relationships\": {\n      \"incident_type\": {\n        \"data\": {\n          \"id\": \"{{ incident_type.data.id }}\",\n          \"type\": \"incident_types\"\n        }\n      }\n    },\n    \"type\": \"notification_templates\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"notification_template\" in the system",
+    "key": "notification_template",
+    "tag": "Incidents"
+  },
+  {
     "parameters": [
       {
         "name": "body",
@@ -568,6 +580,19 @@
     "key": "routing_rules",
     "tag": "On-Call",
     "operationId": "SetOnCallTeamRoutingRules"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "origin": "request",
+        "value": "{\n  \"data\": {\n    \"type\": \"org_connection\",\n    \"relationships\": {\n      \"sink_org\": {\n        \"data\": {\n          \"type\": \"orgs\",\n          \"id\": \"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\"\n        }\n      }\n    },\n    \"attributes\": {\n      \"connection_types\": [\"logs\"]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"org_connection\" in the system",
+    "key": "org_connection",
+    "tag": "Org Connections",
+    "operationId": "CreateOrgConnections"
   },
   {
     "source": "data[4]",

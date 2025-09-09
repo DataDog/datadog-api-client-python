@@ -2082,7 +2082,7 @@ class SecurityMonitoringApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (SecurityMonitoringSuppressionUpdateRequest,),
+                    "openapi_types": (SecurityMonitoringSuppressionCreateRequest,),
                     "location": "body",
                 },
             },
@@ -4232,13 +4232,13 @@ class SecurityMonitoringApi:
 
     def validate_security_monitoring_suppression(
         self,
-        body: SecurityMonitoringSuppressionUpdateRequest,
+        body: SecurityMonitoringSuppressionCreateRequest,
     ) -> None:
         """Validate a suppression rule.
 
         Validate a suppression rule.
 
-        :type body: SecurityMonitoringSuppressionUpdateRequest
+        :type body: SecurityMonitoringSuppressionCreateRequest
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}

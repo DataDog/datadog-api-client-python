@@ -4,20 +4,20 @@ Validate a suppression rule returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.model.security_monitoring_suppression_create_attributes import (
+    SecurityMonitoringSuppressionCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_data import (
+    SecurityMonitoringSuppressionCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_create_request import (
+    SecurityMonitoringSuppressionCreateRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_suppression_type import SecurityMonitoringSuppressionType
-from datadog_api_client.v2.model.security_monitoring_suppression_update_attributes import (
-    SecurityMonitoringSuppressionUpdateAttributes,
-)
-from datadog_api_client.v2.model.security_monitoring_suppression_update_data import (
-    SecurityMonitoringSuppressionUpdateData,
-)
-from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
-    SecurityMonitoringSuppressionUpdateRequest,
-)
 
-body = SecurityMonitoringSuppressionUpdateRequest(
-    data=SecurityMonitoringSuppressionUpdateData(
-        attributes=SecurityMonitoringSuppressionUpdateAttributes(
+body = SecurityMonitoringSuppressionCreateRequest(
+    data=SecurityMonitoringSuppressionCreateData(
+        attributes=SecurityMonitoringSuppressionCreateAttributes(
             data_exclusion_query="source:cloudtrail account_id:12345",
             description="This rule suppresses low-severity signals in staging environments.",
             enabled=True,

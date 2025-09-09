@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class ShiftIncluded(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``ShiftIncluded`` object.
+        Included data for shift operations.
 
         :param attributes: Provides basic user information for a schedule, including a name and email address.
         :type attributes: ScheduleUserAttributes, optional

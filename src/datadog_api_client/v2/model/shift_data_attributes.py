@@ -29,7 +29,7 @@ class ShiftDataAttributes(ModelNormal):
 
     def __init__(self_, end: Union[datetime, UnsetType] = unset, start: Union[datetime, UnsetType] = unset, **kwargs):
         """
-        The definition of ``ShiftDataAttributes`` object.
+        Attributes for an on-call shift.
 
         :param end: The end time of the shift.
         :type end: datetime, optional
