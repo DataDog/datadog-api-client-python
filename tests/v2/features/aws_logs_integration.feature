@@ -10,7 +10,6 @@ Feature: AWS Logs Integration
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "AWSLogsIntegration" API
-    And operation "ListAWSLogsServices" enabled
     And new "ListAWSLogsServices" request
     When the request is sent
     Then the response status is 200 AWS Logs Services List object

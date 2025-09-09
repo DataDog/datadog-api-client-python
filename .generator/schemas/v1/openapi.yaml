@@ -27347,6 +27347,7 @@ paths:
         - hosts_read
   /api/v1/integration/aws:
     delete:
+      deprecated: true
       description: Delete a Datadog-AWS integration matching the specified `account_id`
         and `role_name parameters`.
       operationId: DeleteAWSAccount
@@ -27393,6 +27394,7 @@ paths:
         permissions:
         - aws_configurations_manage
     get:
+      deprecated: true
       description: List all Datadog-AWS integrations available in your Datadog organization.
       operationId: ListAWSAccounts
       parameters:
@@ -27443,6 +27445,7 @@ paths:
         permissions:
         - aws_configuration_read
     post:
+      deprecated: true
       description: 'Create a Datadog-Amazon Web Services integration.
 
         Using the `POST` method updates your integration configuration
@@ -27494,6 +27497,7 @@ paths:
         permissions:
         - aws_configurations_manage
     put:
+      deprecated: true
       description: Update a Datadog-Amazon Web Services integration.
       operationId: UpdateAWSAccount
       parameters:
@@ -27563,6 +27567,7 @@ paths:
         - aws_configuration_edit
   /api/v1/integration/aws/available_namespace_rules:
     get:
+      deprecated: true
       description: List all namespace rules for a given Datadog-AWS integration. This
         endpoint takes no arguments.
       operationId: ListAvailableAWSNamespaces
@@ -27708,6 +27713,7 @@ paths:
         - manage_integrations
   /api/v1/integration/aws/filtering:
     delete:
+      deprecated: true
       description: Delete a tag filtering entry.
       operationId: DeleteAWSTagFilter
       requestBody:
@@ -27749,6 +27755,7 @@ paths:
         permissions:
         - aws_configuration_edit
     get:
+      deprecated: true
       description: Get all AWS tag filters.
       operationId: ListAWSTagFilters
       parameters:
@@ -27787,6 +27794,7 @@ paths:
         permissions:
         - aws_configuration_read
     post:
+      deprecated: true
       description: Set an AWS tag filter.
       operationId: CreateAWSTagFilter
       requestBody:
@@ -27832,6 +27840,7 @@ paths:
         - aws_configuration_edit
   /api/v1/integration/aws/generate_new_external_id:
     put:
+      deprecated: true
       description: Generate a new AWS external ID for a given AWS account ID and role
         name pair.
       operationId: CreateNewAWSExternalID
@@ -27917,6 +27926,7 @@ paths:
         permissions:
         - aws_configuration_edit
     get:
+      deprecated: true
       description: List all Datadog-AWS Logs integrations configured in your Datadog
         account.
       operationId: ListAWSLogsIntegrations
@@ -28058,6 +28068,7 @@ paths:
         - aws_configuration_read
   /api/v1/integration/aws/logs/services:
     get:
+      deprecated: true
       description: Get the list of current AWS services that Datadog offers automatic
         log collection. Use returned service IDs with the services parameter for the
         Enable an AWS service log collection API endpoint.
@@ -28100,6 +28111,7 @@ paths:
         permissions:
         - aws_configuration_read
     post:
+      deprecated: true
       description: Enable automatic log collection for a list of services. This should
         be run after running `CreateAWSLambdaARN` to save the configuration.
       operationId: EnableAWSLogServices
