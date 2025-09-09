@@ -1467,7 +1467,7 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_aws_account">
 <span class="sig-name descname"><span class="pre">create_aws_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_account.AWSAccount" title="datadog_api_client.v1.model.aws_account.AWSAccount"><span class="pre">AWSAccount</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_account_create_response.AWSAccountCreateResponse" title="datadog_api_client.v1.model.aws_account_create_response.AWSAccountCreateResponse"><span class="pre">AWSAccountCreateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_aws_account" title="Link to this definition">¶</a></dt>
-<dd><p>Create an AWS integration.</p>
+<dd><p>Create an AWS integration. <strong>Deprecated</strong>.</p>
 <p>Create a Datadog-Amazon Web Services integration.
 Using the <code class="docutils literal notranslate"><span class="pre">POST</span></code> method updates your integration configuration
 by adding your new configuration to the existing one in your Datadog organization.
@@ -1498,7 +1498,7 @@ A unique AWS Account ID for role based authentication.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_aws_tag_filter">
 <span class="sig-name descname"><span class="pre">create_aws_tag_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_tag_filter_create_request.AWSTagFilterCreateRequest" title="datadog_api_client.v1.model.aws_tag_filter_create_request.AWSTagFilterCreateRequest"><span class="pre">AWSTagFilterCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_aws_tag_filter" title="Link to this definition">¶</a></dt>
-<dd><p>Set an AWS tag filter.</p>
+<dd><p>Set an AWS tag filter. <strong>Deprecated</strong>.</p>
 <p>Set an AWS tag filter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1513,7 +1513,7 @@ Namespace options are <code class="docutils literal notranslate"><span class="pr
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_new_aws_external_id">
 <span class="sig-name descname"><span class="pre">create_new_aws_external_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_account.AWSAccount" title="datadog_api_client.v1.model.aws_account.AWSAccount"><span class="pre">AWSAccount</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_account_create_response.AWSAccountCreateResponse" title="datadog_api_client.v1.model.aws_account_create_response.AWSAccountCreateResponse"><span class="pre">AWSAccountCreateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_new_aws_external_id" title="Link to this definition">¶</a></dt>
-<dd><p>Generate a new external ID.</p>
+<dd><p>Generate a new external ID. <strong>Deprecated</strong>.</p>
 <p>Generate a new AWS external ID for a given AWS account ID and role name pair.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1529,7 +1529,7 @@ see the <a class="reference external" href="https://docs.datadoghq.com/integrati
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.delete_aws_account">
 <span class="sig-name descname"><span class="pre">delete_aws_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_account_delete_request.AWSAccountDeleteRequest" title="datadog_api_client.v1.model.aws_account_delete_request.AWSAccountDeleteRequest"><span class="pre">AWSAccountDeleteRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.delete_aws_account" title="Link to this definition">¶</a></dt>
-<dd><p>Delete an AWS integration.</p>
+<dd><p>Delete an AWS integration. <strong>Deprecated</strong>.</p>
 <p>Delete a Datadog-AWS integration matching the specified <code class="docutils literal notranslate"><span class="pre">account_id</span></code> and <code class="docutils literal notranslate"><span class="pre">role_name</span> <span class="pre">parameters</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1557,7 +1557,7 @@ see the <a class="reference external" href="https://docs.datadoghq.com/integrati
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.delete_aws_tag_filter">
 <span class="sig-name descname"><span class="pre">delete_aws_tag_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_tag_filter_delete_request.AWSTagFilterDeleteRequest" title="datadog_api_client.v1.model.aws_tag_filter_delete_request.AWSTagFilterDeleteRequest"><span class="pre">AWSTagFilterDeleteRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.delete_aws_tag_filter" title="Link to this definition">¶</a></dt>
-<dd><p>Delete a tag filtering entry.</p>
+<dd><p>Delete a tag filtering entry. <strong>Deprecated</strong>.</p>
 <p>Delete a tag filtering entry.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1571,7 +1571,7 @@ see the <a class="reference external" href="https://docs.datadoghq.com/integrati
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.list_available_aws_namespaces">
 <span class="sig-name descname"><span class="pre">list_available_aws_namespaces</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.list_available_aws_namespaces" title="Link to this definition">¶</a></dt>
-<dd><p>List namespace rules.</p>
+<dd><p>List namespace rules. <strong>Deprecated</strong>.</p>
 <p>List all namespace rules for a given Datadog-AWS integration. This endpoint takes no arguments.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1582,7 +1582,7 @@ see the <a class="reference external" href="https://docs.datadoghq.com/integrati
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.list_aws_accounts">
 <span class="sig-name descname"><span class="pre">list_aws_accounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_key_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_account_list_response.AWSAccountListResponse" title="datadog_api_client.v1.model.aws_account_list_response.AWSAccountListResponse"><span class="pre">AWSAccountListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.list_aws_accounts" title="Link to this definition">¶</a></dt>
-<dd><p>List all AWS integrations.</p>
+<dd><p>List all AWS integrations. <strong>Deprecated</strong>.</p>
 <p>List all Datadog-AWS integrations available in your Datadog organization.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1611,7 +1611,7 @@ see the <a class="reference external" href="https://docs.datadoghq.com/integrati
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.list_aws_tag_filters">
 <span class="sig-name descname"><span class="pre">list_aws_tag_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_tag_filter_list_response.AWSTagFilterListResponse" title="datadog_api_client.v1.model.aws_tag_filter_list_response.AWSTagFilterListResponse"><span class="pre">AWSTagFilterListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.list_aws_tag_filters" title="Link to this definition">¶</a></dt>
-<dd><p>Get all AWS tag filters.</p>
+<dd><p>Get all AWS tag filters. <strong>Deprecated</strong>.</p>
 <p>Get all AWS tag filters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1625,7 +1625,7 @@ see the <a class="reference external" href="https://docs.datadoghq.com/integrati
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.update_aws_account">
 <span class="sig-name descname"><span class="pre">update_aws_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_account.AWSAccount" title="datadog_api_client.v1.model.aws_account.AWSAccount"><span class="pre">AWSAccount</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_key_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.update_aws_account" title="Link to this definition">¶</a></dt>
-<dd><p>Update an AWS integration.</p>
+<dd><p>Update an AWS integration. <strong>Deprecated</strong>.</p>
 <p>Update a Datadog-Amazon Web Services integration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1730,7 +1730,7 @@ in the AWS account.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.enable_aws_log_services">
 <span class="sig-name descname"><span class="pre">enable_aws_log_services</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_logs_services_request.AWSLogsServicesRequest" title="datadog_api_client.v1.model.aws_logs_services_request.AWSLogsServicesRequest"><span class="pre">AWSLogsServicesRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.enable_aws_log_services" title="Link to this definition">¶</a></dt>
-<dd><p>Enable an AWS Logs integration.</p>
+<dd><p>Enable an AWS Logs integration. <strong>Deprecated</strong>.</p>
 <p>Enable automatic log collection for a list of services. This should be run after running <code class="docutils literal notranslate"><span class="pre">CreateAWSLambdaARN</span></code> to save the configuration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1744,7 +1744,7 @@ in the AWS account.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.list_aws_logs_integrations">
 <span class="sig-name descname"><span class="pre">list_aws_logs_integrations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_logs_list_response.AWSLogsListResponse" title="datadog_api_client.v1.model.aws_logs_list_response.AWSLogsListResponse"><span class="pre">AWSLogsListResponse</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.list_aws_logs_integrations" title="Link to this definition">¶</a></dt>
-<dd><p>List all AWS Logs integrations.</p>
+<dd><p>List all AWS Logs integrations. <strong>Deprecated</strong>.</p>
 <p>List all Datadog-AWS Logs integrations configured in your Datadog account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
@@ -1755,7 +1755,7 @@ in the AWS account.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.list_aws_logs_services">
 <span class="sig-name descname"><span class="pre">list_aws_logs_services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.aws_logs_list_services_response.AWSLogsListServicesResponse" title="datadog_api_client.v1.model.aws_logs_list_services_response.AWSLogsListServicesResponse"><span class="pre">AWSLogsListServicesResponse</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.list_aws_logs_services" title="Link to this definition">¶</a></dt>
-<dd><p>Get list of AWS log ready services.</p>
+<dd><p>Get list of AWS log ready services. <strong>Deprecated</strong>.</p>
 <p>Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
