@@ -59,9 +59,6 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         "name": "name",
         "query": "query",
     }
-    read_only_vars = {
-        "has_optional_group_by_fields",
-    }
 
     def __init__(
         self_,
