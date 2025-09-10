@@ -4337,6 +4337,13 @@ datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_incident\_notification\_rule\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_incident_notification_rule_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_incident\_notification\_template\_request module
 --------------------------------------------------------------------------------------
 
@@ -8516,6 +8523,118 @@ datadog\_api\_client.v2.model.incident\_notification\_handle module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_notification\_rule module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_array module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_array\_meta module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_array_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_array\_meta\_page module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_array_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_attributes\_visibility module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_attributes_visibility
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_conditions\_items module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_conditions_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_create\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_create\_attributes\_visibility module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_create\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_create\_data\_relationships module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_create_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_included\_items module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_included_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_relationships module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_response\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_rule\_update\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_rule_update_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_notification\_template module
 ---------------------------------------------------------------------
 
@@ -8576,6 +8695,13 @@ datadog\_api\_client.v2.model.incident\_notification\_template\_included\_items 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_notification_template_included_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_notification\_template\_object module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_notification_template_object
    :members:
    :show-inheritance:
 
@@ -14823,6 +14949,13 @@ datadog\_api\_client.v2.model.publish\_app\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.put\_incident\_notification\_rule\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.put_incident_notification_rule_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.query module
 ------------------------------------------
 
@@ -15009,6 +15142,20 @@ datadog\_api\_client.v2.model.relationship\_to\_incident\_integration\_metadatas
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_incident_integration_metadatas
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_incident\_notification\_template module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_notification_template
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_incident\_notification\_template\_data module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_notification_template_data
    :members:
    :show-inheritance:
 

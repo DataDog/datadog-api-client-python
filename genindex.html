@@ -2218,10 +2218,10 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.connection_group.ConnectionGroup">ConnectionGroup (class in datadog_api_client.v2.model.connection_group)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.container.Container">Container (class in datadog_api_client.v2.model.container)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.container_attributes.ContainerAttributes">ContainerAttributes (class in datadog_api_client.v2.model.container_attributes)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.container_group.ContainerGroup">ContainerGroup (class in datadog_api_client.v2.model.container_group)</a>
@@ -2420,6 +2420,8 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.create_incident_integration">create_incident_integration() (IncidentsApi method)</a>
 </li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.create_incident_notification_rule">create_incident_notification_rule() (IncidentsApi method)</a>
+</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.create_incident_notification_template">create_incident_notification_template() (IncidentsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incident_services_api.IncidentServicesApi.create_incident_service">create_incident_service() (IncidentServicesApi method)</a>
@@ -2575,6 +2577,8 @@
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_data_deletion_request_body_data_type.CreateDataDeletionRequestBodyDataType">CreateDataDeletionRequestBodyDataType (class in datadog_api_client.v2.model.create_data_deletion_request_body_data_type)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_data_deletion_response_body.CreateDataDeletionResponseBody">CreateDataDeletionResponseBody (class in datadog_api_client.v2.model.create_data_deletion_response_body)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_incident_notification_rule_request.CreateIncidentNotificationRuleRequest">CreateIncidentNotificationRuleRequest (class in datadog_api_client.v2.model.create_incident_notification_rule_request)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_incident_notification_template_request.CreateIncidentNotificationTemplateRequest">CreateIncidentNotificationTemplateRequest (class in datadog_api_client.v2.model.create_incident_notification_template_request)</a>
 </li>
@@ -14693,6 +14697,13 @@
 </li>
       </ul></li>
       <li>
+    datadog_api_client.v2.model.create_incident_notification_rule_request
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_incident_notification_rule_request">module</a>
+</li>
+      </ul></li>
+      <li>
     datadog_api_client.v2.model.create_incident_notification_template_request
 
       <ul>
@@ -17555,8 +17566,6 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.finding">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     datadog_api_client.v2.model.finding_attributes
 
@@ -17620,6 +17629,8 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.formula_limit">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     datadog_api_client.v2.model.framework_handle_and_version_response_data
 
@@ -18874,6 +18885,118 @@
 </li>
       </ul></li>
       <li>
+    datadog_api_client.v2.model.incident_notification_rule
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_array
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_array">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_array_meta
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_array_meta">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_array_meta_page
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_array_meta_page">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_attributes
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_attributes">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_attributes_visibility
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_attributes_visibility">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_conditions_items
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_conditions_items">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_create_attributes
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_attributes">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_create_data
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_data">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_create_data_relationships
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_data_relationships">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_included_items
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_included_items">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_relationships
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_relationships">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_response_data
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_response_data">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_type
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_type">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_rule_update_data
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_update_data">module</a>
+</li>
+      </ul></li>
+      <li>
     datadog_api_client.v2.model.incident_notification_template
 
       <ul>
@@ -18934,6 +19057,13 @@
 
       <ul>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template_included_items">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.incident_notification_template_object
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template_object">module</a>
 </li>
       </ul></li>
       <li>
@@ -25181,6 +25311,13 @@
 </li>
       </ul></li>
       <li>
+    datadog_api_client.v2.model.put_incident_notification_rule_request
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.put_incident_notification_rule_request">module</a>
+</li>
+      </ul></li>
+      <li>
     datadog_api_client.v2.model.query
 
       <ul>
@@ -25367,6 +25504,20 @@
 
       <ul>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_integration_metadatas">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.relationship_to_incident_notification_template
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_notification_template">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.relationship_to_incident_notification_template_data
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_notification_template_data">module</a>
 </li>
       </ul></li>
       <li>
@@ -31645,6 +31796,8 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_integration">delete_incident_integration() (IncidentsApi method)</a>
 </li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_notification_rule">delete_incident_notification_rule() (IncidentsApi method)</a>
+</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.delete_incident_notification_template">delete_incident_notification_template() (IncidentsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incident_services_api.IncidentServicesApi.delete_incident_service">delete_incident_service() (IncidentServicesApi method)</a>
@@ -32821,6 +32974,8 @@
 </li>
       <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.usage_metering_api.UsageMeteringApi.get_incident_management">get_incident_management() (UsageMeteringApi method)</a>
 </li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.get_incident_notification_rule">get_incident_notification_rule() (IncidentsApi method)</a>
+</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.get_incident_notification_template">get_incident_notification_template() (IncidentsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incident_services_api.IncidentServicesApi.get_incident_service">get_incident_service() (IncidentServicesApi method)</a>
@@ -33441,6 +33596,38 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_handle.IncidentNotificationHandle">IncidentNotificationHandle (class in datadog_api_client.v2.model.incident_notification_handle)</a>
 </li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule.IncidentNotificationRule">IncidentNotificationRule (class in datadog_api_client.v2.model.incident_notification_rule)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_array.IncidentNotificationRuleArray">IncidentNotificationRuleArray (class in datadog_api_client.v2.model.incident_notification_rule_array)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_array_meta.IncidentNotificationRuleArrayMeta">IncidentNotificationRuleArrayMeta (class in datadog_api_client.v2.model.incident_notification_rule_array_meta)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_array_meta_page.IncidentNotificationRuleArrayMetaPage">IncidentNotificationRuleArrayMetaPage (class in datadog_api_client.v2.model.incident_notification_rule_array_meta_page)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_attributes.IncidentNotificationRuleAttributes">IncidentNotificationRuleAttributes (class in datadog_api_client.v2.model.incident_notification_rule_attributes)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_attributes_visibility.IncidentNotificationRuleAttributesVisibility">IncidentNotificationRuleAttributesVisibility (class in datadog_api_client.v2.model.incident_notification_rule_attributes_visibility)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_conditions_items.IncidentNotificationRuleConditionsItems">IncidentNotificationRuleConditionsItems (class in datadog_api_client.v2.model.incident_notification_rule_conditions_items)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_create_attributes.IncidentNotificationRuleCreateAttributes">IncidentNotificationRuleCreateAttributes (class in datadog_api_client.v2.model.incident_notification_rule_create_attributes)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility.IncidentNotificationRuleCreateAttributesVisibility">IncidentNotificationRuleCreateAttributesVisibility (class in datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_create_data.IncidentNotificationRuleCreateData">IncidentNotificationRuleCreateData (class in datadog_api_client.v2.model.incident_notification_rule_create_data)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_create_data_relationships.IncidentNotificationRuleCreateDataRelationships">IncidentNotificationRuleCreateDataRelationships (class in datadog_api_client.v2.model.incident_notification_rule_create_data_relationships)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_included_items.IncidentNotificationRuleIncludedItems">IncidentNotificationRuleIncludedItems (class in datadog_api_client.v2.model.incident_notification_rule_included_items)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_relationships.IncidentNotificationRuleRelationships">IncidentNotificationRuleRelationships (class in datadog_api_client.v2.model.incident_notification_rule_relationships)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_response_data.IncidentNotificationRuleResponseData">IncidentNotificationRuleResponseData (class in datadog_api_client.v2.model.incident_notification_rule_response_data)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_type.IncidentNotificationRuleType">IncidentNotificationRuleType (class in datadog_api_client.v2.model.incident_notification_rule_type)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_rule_update_data.IncidentNotificationRuleUpdateData">IncidentNotificationRuleUpdateData (class in datadog_api_client.v2.model.incident_notification_rule_update_data)</a>
+</li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_template.IncidentNotificationTemplate">IncidentNotificationTemplate (class in datadog_api_client.v2.model.incident_notification_template)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_template_array.IncidentNotificationTemplateArray">IncidentNotificationTemplateArray (class in datadog_api_client.v2.model.incident_notification_template_array)</a>
@@ -33458,6 +33645,8 @@
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_template_create_data_relationships.IncidentNotificationTemplateCreateDataRelationships">IncidentNotificationTemplateCreateDataRelationships (class in datadog_api_client.v2.model.incident_notification_template_create_data_relationships)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_template_included_items.IncidentNotificationTemplateIncludedItems">IncidentNotificationTemplateIncludedItems (class in datadog_api_client.v2.model.incident_notification_template_included_items)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_template_object.IncidentNotificationTemplateObject">IncidentNotificationTemplateObject (class in datadog_api_client.v2.model.incident_notification_template_object)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_notification_template_relationships.IncidentNotificationTemplateRelationships">IncidentNotificationTemplateRelationships (class in datadog_api_client.v2.model.incident_notification_template_relationships)</a>
 </li>
@@ -33567,6 +33756,8 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incident_teams_api.IncidentTeamsApi">IncidentTeamsApi (class in datadog_api_client.v2.api.incident_teams_api)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_teams_response.IncidentTeamsResponse">IncidentTeamsResponse (class in datadog_api_client.v2.model.incident_teams_response)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_team_type.IncidentTeamType">IncidentTeamType (class in datadog_api_client.v2.model.incident_team_type)</a>
@@ -33585,8 +33776,6 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content.IncidentTimelineCellMarkdownCreateAttributesContent">IncidentTimelineCellMarkdownCreateAttributesContent (class in datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_todo_anonymous_assignee.IncidentTodoAnonymousAssignee">IncidentTodoAnonymousAssignee (class in datadog_api_client.v2.model.incident_todo_anonymous_assignee)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.incident_todo_anonymous_assignee_source.IncidentTodoAnonymousAssigneeSource">IncidentTodoAnonymousAssigneeSource (class in datadog_api_client.v2.model.incident_todo_anonymous_assignee_source)</a>
@@ -34086,6 +34275,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_attachments">list_incident_attachments() (IncidentsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_integrations">list_incident_integrations() (IncidentsApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_notification_rules">list_incident_notification_rules() (IncidentsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.list_incident_notification_templates">list_incident_notification_templates() (IncidentsApi method)</a>
 </li>
@@ -38405,6 +38596,8 @@
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_data_deletion_response_body">datadog_api_client.v2.model.create_data_deletion_response_body</a>
 </li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_incident_notification_rule_request">datadog_api_client.v2.model.create_incident_notification_rule_request</a>
+</li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_incident_notification_template_request">datadog_api_client.v2.model.create_incident_notification_template_request</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_notification_rule_parameters">datadog_api_client.v2.model.create_notification_rule_parameters</a>
@@ -39599,6 +39792,38 @@
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_handle">datadog_api_client.v2.model.incident_notification_handle</a>
 </li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule">datadog_api_client.v2.model.incident_notification_rule</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_array">datadog_api_client.v2.model.incident_notification_rule_array</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_array_meta">datadog_api_client.v2.model.incident_notification_rule_array_meta</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_array_meta_page">datadog_api_client.v2.model.incident_notification_rule_array_meta_page</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_attributes">datadog_api_client.v2.model.incident_notification_rule_attributes</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_attributes_visibility">datadog_api_client.v2.model.incident_notification_rule_attributes_visibility</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_conditions_items">datadog_api_client.v2.model.incident_notification_rule_conditions_items</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_attributes">datadog_api_client.v2.model.incident_notification_rule_create_attributes</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility">datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_data">datadog_api_client.v2.model.incident_notification_rule_create_data</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_create_data_relationships">datadog_api_client.v2.model.incident_notification_rule_create_data_relationships</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_included_items">datadog_api_client.v2.model.incident_notification_rule_included_items</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_relationships">datadog_api_client.v2.model.incident_notification_rule_relationships</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_response_data">datadog_api_client.v2.model.incident_notification_rule_response_data</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_type">datadog_api_client.v2.model.incident_notification_rule_type</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_rule_update_data">datadog_api_client.v2.model.incident_notification_rule_update_data</a>
+</li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template">datadog_api_client.v2.model.incident_notification_template</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template_array">datadog_api_client.v2.model.incident_notification_template_array</a>
@@ -39616,6 +39841,8 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template_create_data_relationships">datadog_api_client.v2.model.incident_notification_template_create_data_relationships</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template_included_items">datadog_api_client.v2.model.incident_notification_template_included_items</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template_object">datadog_api_client.v2.model.incident_notification_template_object</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.incident_notification_template_relationships">datadog_api_client.v2.model.incident_notification_template_relationships</a>
 </li>
@@ -41401,6 +41628,8 @@
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.publish_app_response">datadog_api_client.v2.model.publish_app_response</a>
 </li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.put_incident_notification_rule_request">datadog_api_client.v2.model.put_incident_notification_rule_request</a>
+</li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.query">datadog_api_client.v2.model.query</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.query_formula">datadog_api_client.v2.model.query_formula</a>
@@ -41454,6 +41683,10 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data">datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_integration_metadatas">datadog_api_client.v2.model.relationship_to_incident_integration_metadatas</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_notification_template">datadog_api_client.v2.model.relationship_to_incident_notification_template</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_notification_template_data">datadog_api_client.v2.model.relationship_to_incident_notification_template_data</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.relationship_to_incident_postmortem">datadog_api_client.v2.model.relationship_to_incident_postmortem</a>
 </li>
@@ -44356,10 +44589,10 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.powerpack_group_widget_layout.PowerpackGroupWidgetLayout">PowerpackGroupWidgetLayout (class in datadog_api_client.v2.model.powerpack_group_widget_layout)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.powerpack_inner_widget_layout.PowerpackInnerWidgetLayout">PowerpackInnerWidgetLayout (class in datadog_api_client.v2.model.powerpack_inner_widget_layout)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.powerpack_inner_widgets.PowerpackInnerWidgets">PowerpackInnerWidgets (class in datadog_api_client.v2.model.powerpack_inner_widgets)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.powerpack_relationships.PowerpackRelationships">PowerpackRelationships (class in datadog_api_client.v2.model.powerpack_relationships)</a>
@@ -44431,6 +44664,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.app_builder_api.AppBuilderApi.publish_app">publish_app() (AppBuilderApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.publish_app_response.PublishAppResponse">PublishAppResponse (class in datadog_api_client.v2.model.publish_app_response)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.put_incident_notification_rule_request.PutIncidentNotificationRuleRequest">PutIncidentNotificationRuleRequest (class in datadog_api_client.v2.model.put_incident_notification_rule_request)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -44515,6 +44750,10 @@
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data.RelationshipToIncidentIntegrationMetadataData">RelationshipToIncidentIntegrationMetadataData (class in datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.relationship_to_incident_integration_metadatas.RelationshipToIncidentIntegrationMetadatas">RelationshipToIncidentIntegrationMetadatas (class in datadog_api_client.v2.model.relationship_to_incident_integration_metadatas)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.relationship_to_incident_notification_template.RelationshipToIncidentNotificationTemplate">RelationshipToIncidentNotificationTemplate (class in datadog_api_client.v2.model.relationship_to_incident_notification_template)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.relationship_to_incident_notification_template_data.RelationshipToIncidentNotificationTemplateData">RelationshipToIncidentNotificationTemplateData (class in datadog_api_client.v2.model.relationship_to_incident_notification_template_data)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.relationship_to_incident_postmortem.RelationshipToIncidentPostmortem">RelationshipToIncidentPostmortem (class in datadog_api_client.v2.model.relationship_to_incident_postmortem)</a>
 </li>
@@ -44718,10 +44957,10 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.roles_response.RolesResponse">RolesResponse (class in datadog_api_client.v2.model.roles_response)</a>
 </li>
-      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.roles_sort.RolesSort">RolesSort (class in datadog_api_client.v2.model.roles_sort)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.roles_sort.RolesSort">RolesSort (class in datadog_api_client.v2.model.roles_sort)</a>
+</li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.roles_type.RolesType">RolesType (class in datadog_api_client.v2.model.roles_type)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.role_update_attributes.RoleUpdateAttributes">RoleUpdateAttributes (class in datadog_api_client.v2.model.role_update_attributes)</a>
@@ -47012,6 +47251,8 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_integration">update_incident_integration() (IncidentsApi method)</a>
 </li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_notification_rule">update_incident_notification_rule() (IncidentsApi method)</a>
+</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incidents_api.IncidentsApi.update_incident_notification_template">update_incident_notification_template() (IncidentsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.incident_services_api.IncidentServicesApi.update_incident_service">update_incident_service() (IncidentServicesApi method)</a>
@@ -47216,10 +47457,10 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.software_catalog_api.SoftwareCatalogApi.upsert_catalog_kind">upsert_catalog_kind() (SoftwareCatalogApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.upsert_catalog_entity_request.UpsertCatalogEntityRequest">UpsertCatalogEntityRequest (class in datadog_api_client.v2.model.upsert_catalog_entity_request)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.upsert_catalog_entity_request.UpsertCatalogEntityRequest">UpsertCatalogEntityRequest (class in datadog_api_client.v2.model.upsert_catalog_entity_request)</a>
+</li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.upsert_catalog_entity_response.UpsertCatalogEntityResponse">UpsertCatalogEntityResponse (class in datadog_api_client.v2.model.upsert_catalog_entity_response)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.upsert_catalog_entity_response_included_item.UpsertCatalogEntityResponseIncludedItem">UpsertCatalogEntityResponseIncludedItem (class in datadog_api_client.v2.model.upsert_catalog_entity_response_included_item)</a>
