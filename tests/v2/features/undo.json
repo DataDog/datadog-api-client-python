@@ -1089,6 +1089,43 @@
       "type": "unsafe"
     }
   },
+  "ListIncidentNotificationRules": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentNotificationRule": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentNotificationRule",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentNotificationRule": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentNotificationRule": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentNotificationRule": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentNotificationTemplates": {
     "tag": "Incidents",
     "undo": {

@@ -803,6 +803,7 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
 )
@@ -1574,6 +1575,32 @@ from datadog_api_client.v2.model.incident_integration_metadata_type import Incid
 from datadog_api_client.v2.model.incident_integration_relationships import IncidentIntegrationRelationships
 from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
 from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+from datadog_api_client.v2.model.incident_notification_rule import IncidentNotificationRule
+from datadog_api_client.v2.model.incident_notification_rule_array import IncidentNotificationRuleArray
+from datadog_api_client.v2.model.incident_notification_rule_array_meta import IncidentNotificationRuleArrayMeta
+from datadog_api_client.v2.model.incident_notification_rule_array_meta_page import IncidentNotificationRuleArrayMetaPage
+from datadog_api_client.v2.model.incident_notification_rule_attributes import IncidentNotificationRuleAttributes
+from datadog_api_client.v2.model.incident_notification_rule_attributes_visibility import (
+    IncidentNotificationRuleAttributesVisibility,
+)
+from datadog_api_client.v2.model.incident_notification_rule_conditions_items import (
+    IncidentNotificationRuleConditionsItems,
+)
+from datadog_api_client.v2.model.incident_notification_rule_create_attributes import (
+    IncidentNotificationRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility import (
+    IncidentNotificationRuleCreateAttributesVisibility,
+)
+from datadog_api_client.v2.model.incident_notification_rule_create_data import IncidentNotificationRuleCreateData
+from datadog_api_client.v2.model.incident_notification_rule_create_data_relationships import (
+    IncidentNotificationRuleCreateDataRelationships,
+)
+from datadog_api_client.v2.model.incident_notification_rule_included_items import IncidentNotificationRuleIncludedItems
+from datadog_api_client.v2.model.incident_notification_rule_relationships import IncidentNotificationRuleRelationships
+from datadog_api_client.v2.model.incident_notification_rule_response_data import IncidentNotificationRuleResponseData
+from datadog_api_client.v2.model.incident_notification_rule_type import IncidentNotificationRuleType
+from datadog_api_client.v2.model.incident_notification_rule_update_data import IncidentNotificationRuleUpdateData
 from datadog_api_client.v2.model.incident_notification_template import IncidentNotificationTemplate
 from datadog_api_client.v2.model.incident_notification_template_array import IncidentNotificationTemplateArray
 from datadog_api_client.v2.model.incident_notification_template_array_meta import IncidentNotificationTemplateArrayMeta
@@ -1593,6 +1620,7 @@ from datadog_api_client.v2.model.incident_notification_template_create_data_rela
 from datadog_api_client.v2.model.incident_notification_template_included_items import (
     IncidentNotificationTemplateIncludedItems,
 )
+from datadog_api_client.v2.model.incident_notification_template_object import IncidentNotificationTemplateObject
 from datadog_api_client.v2.model.incident_notification_template_relationships import (
     IncidentNotificationTemplateRelationships,
 )
@@ -2957,6 +2985,7 @@ from datadog_api_client.v2.model.projected_cost_response import ProjectedCostRes
 from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
 from datadog_api_client.v2.model.projects_response import ProjectsResponse
 from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
+from datadog_api_client.v2.model.put_incident_notification_rule_request import PutIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.query import Query
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
@@ -3041,6 +3070,12 @@ from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_d
 )
 from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
     RelationshipToIncidentIntegrationMetadatas,
+)
+from datadog_api_client.v2.model.relationship_to_incident_notification_template import (
+    RelationshipToIncidentNotificationTemplate,
+)
+from datadog_api_client.v2.model.relationship_to_incident_notification_template_data import (
+    RelationshipToIncidentNotificationTemplateData,
 )
 from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import RelationshipToIncidentPostmortemData
@@ -4702,6 +4737,7 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
@@ -5307,6 +5343,22 @@ __all__ = [
     "IncidentIntegrationRelationships",
     "IncidentNonDatadogCreator",
     "IncidentNotificationHandle",
+    "IncidentNotificationRule",
+    "IncidentNotificationRuleArray",
+    "IncidentNotificationRuleArrayMeta",
+    "IncidentNotificationRuleArrayMetaPage",
+    "IncidentNotificationRuleAttributes",
+    "IncidentNotificationRuleAttributesVisibility",
+    "IncidentNotificationRuleConditionsItems",
+    "IncidentNotificationRuleCreateAttributes",
+    "IncidentNotificationRuleCreateAttributesVisibility",
+    "IncidentNotificationRuleCreateData",
+    "IncidentNotificationRuleCreateDataRelationships",
+    "IncidentNotificationRuleIncludedItems",
+    "IncidentNotificationRuleRelationships",
+    "IncidentNotificationRuleResponseData",
+    "IncidentNotificationRuleType",
+    "IncidentNotificationRuleUpdateData",
     "IncidentNotificationTemplate",
     "IncidentNotificationTemplateArray",
     "IncidentNotificationTemplateArrayMeta",
@@ -5316,6 +5368,7 @@ __all__ = [
     "IncidentNotificationTemplateCreateData",
     "IncidentNotificationTemplateCreateDataRelationships",
     "IncidentNotificationTemplateIncludedItems",
+    "IncidentNotificationTemplateObject",
     "IncidentNotificationTemplateRelationships",
     "IncidentNotificationTemplateResponseData",
     "IncidentNotificationTemplateType",
@@ -6200,6 +6253,7 @@ __all__ = [
     "ProjectedCostType",
     "ProjectsResponse",
     "PublishAppResponse",
+    "PutIncidentNotificationRuleRequest",
     "Query",
     "QueryFormula",
     "QuerySortOrder",
@@ -6279,6 +6333,8 @@ __all__ = [
     "RelationshipToIncidentImpacts",
     "RelationshipToIncidentIntegrationMetadataData",
     "RelationshipToIncidentIntegrationMetadatas",
+    "RelationshipToIncidentNotificationTemplate",
+    "RelationshipToIncidentNotificationTemplateData",
     "RelationshipToIncidentPostmortem",
     "RelationshipToIncidentPostmortemData",
     "RelationshipToIncidentResponderData",

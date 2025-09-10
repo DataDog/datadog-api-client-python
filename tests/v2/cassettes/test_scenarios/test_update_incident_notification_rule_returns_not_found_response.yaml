@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"conditions":[{"field":"severity","values":["SEV-1"]}],"enabled":false,"handles":["@test-email@company.com"],"trigger":"incident_created_trigger"},"id":"00000000-0000-0000-0000-000000000001","relationships":{"incident_type":{"data":{"id":"00000000-0000-0000-0000-000000000001","type":"incident_types"}}},"type":"incident_notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-rules/00000000-0000-0000-0000-000000000001
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"incident type doesn''t
+        exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
