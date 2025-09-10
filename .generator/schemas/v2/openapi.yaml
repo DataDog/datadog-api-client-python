@@ -17694,6 +17694,37 @@ components:
           example: aiplatform
           type: string
       type: object
+    GCPMonitoredResourceConfig:
+      description: Configuration for a GCP monitored resource.
+      properties:
+        filters:
+          description: 'List of filters to limit the monitored resources that are
+            pulled into Datadog by using tags.
+
+            Only monitored resources that apply to specified filters are imported
+            into Datadog.'
+          example:
+          - $KEY:$VALUE
+          items:
+            description: A monitored resource filter
+            type: string
+          type: array
+        type:
+          $ref: '#/components/schemas/GCPMonitoredResourceConfigType'
+      type: object
+    GCPMonitoredResourceConfigType:
+      description: The GCP monitored resource type. Only a subset of resource types
+        are supported.
+      enum:
+      - cloud_function
+      - cloud_run_revision
+      - gce_instance
+      example: gce_instance
+      type: string
+      x-enum-varnames:
+      - CLOUD_FUNCTION
+      - CLOUD_RUN_REVISION
+      - GCE_INSTANCE
     GCPSTSDelegateAccount:
       description: Datadog principal service account info.
       properties:
@@ -17761,21 +17792,35 @@ components:
           example: datadog-service-account@test-project.iam.gserviceaccount.com
           type: string
         cloud_run_revision_filters:
+          deprecated: true
           description: 'List of filters to limit the Cloud Run revisions that are
             pulled into Datadog by using tags.
 
             Only Cloud Run revision resources that apply to specified filters are
-            imported into Datadog.'
+            imported into Datadog.
+
+            **Note:** This field is deprecated. Instead, use `monitored_resource_configs`
+            with `type=cloud_run_revision`'
           example:
           - $KEY:$VALUE
           items:
-            description: Cloud Run Filters
+            description: Cloud Run revision filters
             type: string
           type: array
         host_filters:
-          description: Your Host Filters.
+          deprecated: true
+          description: 'List of filters to limit the VM instances that are pulled
+            into Datadog by using tags.
+
+            Only VM instance resources that apply to specified filters are imported
+            into Datadog.
+
+            **Note:** This field is deprecated. Instead, use `monitored_resource_configs`
+            with `type=gce_instance`'
+          example:
+          - $KEY:$VALUE
           items:
-            description: Host Filters
+            description: VM instance filters
             type: string
           type: array
         is_cspm_enabled:
@@ -17810,6 +17855,15 @@ components:
             id: aiplatform
           items:
             $ref: '#/components/schemas/GCPMetricNamespaceConfig'
+          type: array
+        monitored_resource_configs:
+          description: Configurations for GCP monitored resources.
+          example:
+          - filters:
+            - $KEY:$VALUE
+            type: gce_instance
+          items:
+            $ref: '#/components/schemas/GCPMonitoredResourceConfig'
           type: array
         resource_collection_enabled:
           description: When enabled, Datadog scans for all resources in your GCP environment.

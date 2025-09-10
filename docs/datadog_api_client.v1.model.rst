@@ -1040,6 +1040,20 @@ datadog\_api\_client.v1.model.gcp\_account\_list\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.gcp\_monitored\_resource\_config module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.gcp_monitored_resource_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.gcp\_monitored\_resource\_config\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.gcp_monitored_resource_config_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.geomap\_widget\_definition module
 ---------------------------------------------------------------
 

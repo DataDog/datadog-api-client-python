@@ -15,12 +15,14 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
+    from datadog_api_client.v2.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
 
 
 class GCPSTSServiceAccountAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
+        from datadog_api_client.v2.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
 
         return {
             "account_tags": ([str],),
@@ -33,6 +35,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
             "metric_namespace_configs": ([GCPMetricNamespaceConfig],),
+            "monitored_resource_configs": ([GCPMonitoredResourceConfig],),
             "resource_collection_enabled": (bool,),
         }
 
@@ -47,6 +50,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
         "metric_namespace_configs": "metric_namespace_configs",
+        "monitored_resource_configs": "monitored_resource_configs",
         "resource_collection_enabled": "resource_collection_enabled",
     }
 
@@ -62,6 +66,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
         metric_namespace_configs: Union[List[GCPMetricNamespaceConfig], UnsetType] = unset,
+        monitored_resource_configs: Union[List[GCPMonitoredResourceConfig], UnsetType] = unset,
         resource_collection_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -79,9 +84,12 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
 
         :param cloud_run_revision_filters: List of filters to limit the Cloud Run revisions that are pulled into Datadog by using tags.
             Only Cloud Run revision resources that apply to specified filters are imported into Datadog.
+            **Note:** This field is deprecated. Instead, use ``monitored_resource_configs`` with ``type=cloud_run_revision`` **Deprecated**.
         :type cloud_run_revision_filters: [str], optional
 
-        :param host_filters: Your Host Filters.
+        :param host_filters: List of filters to limit the VM instances that are pulled into Datadog by using tags.
+            Only VM instance resources that apply to specified filters are imported into Datadog.
+            **Note:** This field is deprecated. Instead, use ``monitored_resource_configs`` with ``type=gce_instance`` **Deprecated**.
         :type host_filters: [str], optional
 
         :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
@@ -98,6 +106,9 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
 
         :param metric_namespace_configs: Configurations for GCP metric namespaces.
         :type metric_namespace_configs: [GCPMetricNamespaceConfig], optional
+
+        :param monitored_resource_configs: Configurations for GCP monitored resources.
+        :type monitored_resource_configs: [GCPMonitoredResourceConfig], optional
 
         :param resource_collection_enabled: When enabled, Datadog scans for all resources in your GCP environment.
         :type resource_collection_enabled: bool, optional
@@ -122,6 +133,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["is_security_command_center_enabled"] = is_security_command_center_enabled
         if metric_namespace_configs is not unset:
             kwargs["metric_namespace_configs"] = metric_namespace_configs
+        if monitored_resource_configs is not unset:
+            kwargs["monitored_resource_configs"] = monitored_resource_configs
         if resource_collection_enabled is not unset:
             kwargs["resource_collection_enabled"] = resource_collection_enabled
         super().__init__(kwargs)
