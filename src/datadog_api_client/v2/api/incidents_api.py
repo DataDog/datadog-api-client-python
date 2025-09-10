@@ -20,6 +20,10 @@ from datadog_api_client.v2.model.incident_related_object import IncidentRelatedO
 from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
+from datadog_api_client.v2.model.incident_notification_rule_array import IncidentNotificationRuleArray
+from datadog_api_client.v2.model.incident_notification_rule import IncidentNotificationRule
+from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
+from datadog_api_client.v2.model.put_incident_notification_rule_request import PutIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.incident_notification_template_array import IncidentNotificationTemplateArray
 from datadog_api_client.v2.model.incident_notification_template import IncidentNotificationTemplate
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
@@ -106,6 +110,26 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (IncidentIntegrationMetadataCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentNotificationRule,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/notification-rules",
+                "operation_id": "create_incident_notification_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateIncidentNotificationRuleRequest,),
                     "location": "body",
                 },
             },
@@ -223,6 +247,34 @@ class IncidentsApi:
                     "openapi_types": (str,),
                     "attribute": "integration_metadata_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_incident_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/notification-rules/{id}",
+                "operation_id": "delete_incident_notification_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -369,6 +421,34 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._get_incident_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentNotificationRule,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/notification-rules/{id}",
+                "operation_id": "get_incident_notification_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_incident_notification_template_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentNotificationTemplate,),
@@ -499,6 +579,28 @@ class IncidentsApi:
                     "openapi_types": (str,),
                     "attribute": "incident_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_notification_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentNotificationRuleArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/notification-rules",
+                "operation_id": "list_incident_notification_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -751,6 +853,37 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentNotificationRule,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/notification-rules/{id}",
+                "operation_id": "update_incident_notification_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PutIncidentNotificationRuleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_incident_notification_template_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentNotificationTemplate,),
@@ -879,6 +1012,22 @@ class IncidentsApi:
 
         return self._create_incident_integration_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_notification_rule(
+        self,
+        body: CreateIncidentNotificationRuleRequest,
+    ) -> IncidentNotificationRule:
+        """Create an incident notification rule.
+
+        Creates a new notification rule.
+
+        :type body: CreateIncidentNotificationRuleRequest
+        :rtype: IncidentNotificationRule
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_incident_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def create_incident_notification_template(
         self,
         body: CreateIncidentNotificationTemplateRequest,
@@ -972,6 +1121,30 @@ class IncidentsApi:
         kwargs["integration_metadata_id"] = integration_metadata_id
 
         return self._delete_incident_integration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_notification_rule(
+        self,
+        id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> None:
+        """Delete an incident notification rule.
+
+        Deletes a notification rule by its ID.
+
+        :param id: The ID of the notification rule.
+        :type id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: ``created_by_user`` , ``last_modified_by_user`` , ``incident_type`` , ``notification_template``
+        :type include: str, optional
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._delete_incident_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_notification_template(
         self,
@@ -1082,6 +1255,30 @@ class IncidentsApi:
 
         return self._get_incident_integration_endpoint.call_with_http_info(**kwargs)
 
+    def get_incident_notification_rule(
+        self,
+        id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentNotificationRule:
+        """Get an incident notification rule.
+
+        Retrieves a specific notification rule by its ID.
+
+        :param id: The ID of the notification rule.
+        :type id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: ``created_by_user`` , ``last_modified_by_user`` , ``incident_type`` , ``notification_template``
+        :type include: str, optional
+        :rtype: IncidentNotificationRule
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_incident_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def get_incident_notification_template(
         self,
         id: UUID,
@@ -1191,6 +1388,25 @@ class IncidentsApi:
         kwargs["incident_id"] = incident_id
 
         return self._list_incident_integrations_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_notification_rules(
+        self,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentNotificationRuleArray:
+        """List incident notification rules.
+
+        Lists all notification rules for the organization. Optionally filter by incident type.
+
+        :param include: Comma-separated list of resources to include. Supported values: ``created_by_user`` , ``last_modified_by_user`` , ``incident_type`` , ``notification_template``
+        :type include: str, optional
+        :rtype: IncidentNotificationRuleArray
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_incident_notification_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_notification_templates(
         self,
@@ -1511,6 +1727,34 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_integration_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_notification_rule(
+        self,
+        id: UUID,
+        body: PutIncidentNotificationRuleRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentNotificationRule:
+        """Update an incident notification rule.
+
+        Updates an existing notification rule with a complete replacement.
+
+        :param id: The ID of the notification rule.
+        :type id: UUID
+        :type body: PutIncidentNotificationRuleRequest
+        :param include: Comma-separated list of resources to include. Supported values: ``created_by_user`` , ``last_modified_by_user`` , ``incident_type`` , ``notification_template``
+        :type include: str, optional
+        :rtype: IncidentNotificationRule
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_incident_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_notification_template(
         self,

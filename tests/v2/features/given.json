@@ -250,6 +250,18 @@
     "operationId": "CreateIncident"
   },
   {
+    "operationId": "CreateIncidentNotificationRule",
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"conditions\": [{\"field\": \"severity\", \"values\": [\"SEV-1\", \"SEV-2\"]}],\n      \"handles\": [\"@test-email@company.com\"],\n      \"visibility\": \"organization\",\n      \"trigger\": \"incident_created_trigger\",\n      \"enabled\": true\n    },\n    \"relationships\": {\n      \"incident_type\": {\n        \"data\": {\n          \"id\": \"{{ incident_type.data.id }}\",\n          \"type\": \"incident_types\"\n        }\n      }\n    },\n    \"type\": \"incident_notification_rules\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"notification_rule\" in the system",
+    "key": "notification_rule",
+    "tag": "Incidents"
+  },
+  {
     "operationId": "CreateIncidentNotificationTemplate",
     "parameters": [
       {

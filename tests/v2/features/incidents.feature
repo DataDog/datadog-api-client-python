@@ -66,6 +66,30 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create an incident notification rule returns "Bad Request" response
+    Given operation "CreateIncidentNotificationRule" enabled
+    And new "CreateIncidentNotificationRule" request
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create an incident notification rule returns "Created" response
+    Given operation "CreateIncidentNotificationRule" enabled
+    And new "CreateIncidentNotificationRule" request
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create an incident notification rule returns "Not Found" response
+    Given operation "CreateIncidentNotificationRule" enabled
+    And new "CreateIncidentNotificationRule" request
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
@@ -145,6 +169,26 @@ Feature: Incidents
     And body with value {"data": {"attributes": {"description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.", "is_default": false, "name": "Security Incident"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Create incident notification rule returns "Bad Request" response
+    Given operation "CreateIncidentNotificationRule" enabled
+    And new "CreateIncidentNotificationRule" request
+    And body with value {"data": {"type": "invalid_type", "attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "handles": ["@test-email@company.com"], "visibility": "organization", "trigger": "incident_created_trigger", "enabled": true}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:Datadog/incident-app
+  Scenario: Create incident notification rule returns "Created" response
+    Given there is a valid "incident_type" in the system
+    And operation "CreateIncidentNotificationRule" enabled
+    And new "CreateIncidentNotificationRule" request
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "handles": ["@test-email@company.com"], "visibility": "organization", "trigger": "incident_created_trigger", "enabled": true}, "relationships": {"incident_type": {"data": {"id": "{{ incident_type.data.id }}", "type": "incident_types"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.type" is equal to "incident_notification_rules"
+    And the response "data.attributes.visibility" is equal to "organization"
+    And the response "data.attributes.enabled" is equal to true
 
   @team:Datadog/incident-app
   Scenario: Create incident notification template returns "Bad Request" response
@@ -281,6 +325,30 @@ Feature: Incidents
     Then the response status is 204 OK
 
   @generated @skip @team:Datadog/incident-app
+  Scenario: Delete an incident notification rule returns "Bad Request" response
+    Given operation "DeleteIncidentNotificationRule" enabled
+    And new "DeleteIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete an incident notification rule returns "No Content" response
+    Given operation "DeleteIncidentNotificationRule" enabled
+    And new "DeleteIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete an incident notification rule returns "Not Found" response
+    Given operation "DeleteIncidentNotificationRule" enabled
+    And new "DeleteIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
   Scenario: Delete an incident todo returns "Bad Request" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -333,6 +401,24 @@ Feature: Incidents
     And request contains "incident_type_id" parameter from "incident_type.data.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @team:Datadog/incident-app
+  Scenario: Delete incident notification rule returns "No Content" response
+    Given there is a valid "incident_type" in the system
+    And there is a valid "notification_rule" in the system
+    And operation "DeleteIncidentNotificationRule" enabled
+    And new "DeleteIncidentNotificationRule" request
+    And request contains "id" parameter from "notification_rule.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:Datadog/incident-app
+  Scenario: Delete incident notification rule returns "Not Found" response
+    Given operation "DeleteIncidentNotificationRule" enabled
+    And new "DeleteIncidentNotificationRule" request
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000001"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @team:Datadog/incident-app
   Scenario: Delete incident notification template returns "No Content" response
@@ -470,6 +556,30 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response has 3 items
 
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get an incident notification rule returns "Bad Request" response
+    Given operation "GetIncidentNotificationRule" enabled
+    And new "GetIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get an incident notification rule returns "Not Found" response
+    Given operation "GetIncidentNotificationRule" enabled
+    And new "GetIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Get an incident notification rule returns "OK" response
+    Given operation "GetIncidentNotificationRule" enabled
+    And new "GetIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/incident-app
   Scenario: Get incident attachments returns "OK" response
     Given operation "ListIncidentAttachments" enabled
@@ -512,6 +622,26 @@ Feature: Incidents
     And request contains "integration_metadata_id" parameter from "incident_integration_metadata.data.id"
     When the request is sent
     Then the response status is 200 OK
+
+  @team:Datadog/incident-app
+  Scenario: Get incident notification rule returns "Not Found" response
+    Given operation "GetIncidentNotificationRule" enabled
+    And new "GetIncidentNotificationRule" request
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000001"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Get incident notification rule returns "OK" response
+    Given there is a valid "incident_type" in the system
+    And there is a valid "notification_rule" in the system
+    And operation "GetIncidentNotificationRule" enabled
+    And new "GetIncidentNotificationRule" request
+    And request contains "id" parameter from "notification_rule.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "incident_notification_rules"
+    And the response "data.id" has the same value as "notification_rule.data.id"
 
   @generated @skip @team:Datadog/incident-app
   Scenario: Get incident notification template returns "Bad Request" response
@@ -623,6 +753,31 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.title" has the same value as "incident.data.attributes.title"
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: List incident notification rules returns "Bad Request" response
+    Given operation "ListIncidentNotificationRules" enabled
+    And new "ListIncidentNotificationRules" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: List incident notification rules returns "Not Found" response
+    Given operation "ListIncidentNotificationRules" enabled
+    And new "ListIncidentNotificationRules" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: List incident notification rules returns "OK" response
+    Given there is a valid "incident_type" in the system
+    And there is a valid "notification_rule" in the system
+    And operation "ListIncidentNotificationRules" enabled
+    And new "ListIncidentNotificationRules" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].type" is equal to "incident_notification_rules"
 
   @generated @skip @team:Datadog/incident-app
   Scenario: List incident notification templates returns "Bad Request" response
@@ -757,6 +912,33 @@ Feature: Incidents
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"
 
   @generated @skip @team:Datadog/incident-app
+  Scenario: Update an incident notification rule returns "Bad Request" response
+    Given operation "UpdateIncidentNotificationRule" enabled
+    And new "UpdateIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update an incident notification rule returns "Not Found" response
+    Given operation "UpdateIncidentNotificationRule" enabled
+    And new "UpdateIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update an incident notification rule returns "OK" response
+    Given operation "UpdateIncidentNotificationRule" enabled
+    And new "UpdateIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:Datadog/incident-app
   Scenario: Update an incident todo returns "Bad Request" response
     Given operation "UpdateIncidentTodo" enabled
     And new "UpdateIncidentTodo" request
@@ -817,6 +999,39 @@ Feature: Incidents
     And body with value {"data": {"id": "{{incident_type.data.id}}", "attributes": {"name": "{{incident_type.data.attributes.name}}-updated"}, "type": "incident_types"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:Datadog/incident-app
+  Scenario: Update incident notification rule returns "Bad Request" response
+    Given operation "UpdateIncidentNotificationRule" enabled
+    And new "UpdateIncidentNotificationRule" request
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000001"
+    And body with value {"data": {"type": "invalid_type", "attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "handles": ["@test-email@company.com"], "visibility": "organization", "trigger": "incident_created_trigger", "enabled": true}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "id": "00000000-0000-0000-0000-000000000001"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:Datadog/incident-app
+  Scenario: Update incident notification rule returns "Not Found" response
+    Given operation "UpdateIncidentNotificationRule" enabled
+    And new "UpdateIncidentNotificationRule" request
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000001"
+    And body with value {"data": {"attributes": {"enabled": false, "conditions": [{"field": "severity", "values": ["SEV-1"]}], "handles": ["@test-email@company.com"], "trigger": "incident_created_trigger"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "incident_types"}}}, "id": "00000000-0000-0000-0000-000000000001", "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:Datadog/incident-app
+  Scenario: Update incident notification rule returns "OK" response
+    Given there is a valid "incident_type" in the system
+    And there is a valid "notification_rule" in the system
+    And operation "UpdateIncidentNotificationRule" enabled
+    And new "UpdateIncidentNotificationRule" request
+    And request contains "id" parameter from "notification_rule.data.id"
+    And body with value {"data": {"attributes": {"enabled": false, "conditions": [{"field": "severity", "values": ["SEV-1"]}], "handles": ["@updated-team-email@company.com"], "visibility": "private", "trigger": "incident_modified_trigger"}, "relationships": {"incident_type": {"data": {"id": "{{ incident_type.data.id }}", "type": "incident_types"}}}, "id": "{{ notification_rule.data.id }}", "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "incident_notification_rules"
+    And the response "data.id" has the same value as "notification_rule.data.id"
+    And the response "data.attributes.visibility" is equal to "private"
+    And the response "data.attributes.enabled" is equal to false
 
   @team:Datadog/incident-app
   Scenario: Update incident notification template returns "Bad Request" response
