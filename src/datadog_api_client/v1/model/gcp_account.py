@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
+
+
 class GCPAccount(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
+
         return {
             "auth_provider_x509_cert_url": (str,),
             "auth_uri": (str,),
@@ -29,6 +35,7 @@ class GCPAccount(ModelNormal):
             "is_cspm_enabled": (bool,),
             "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
+            "monitored_resource_configs": ([GCPMonitoredResourceConfig],),
             "private_key": (str,),
             "private_key_id": (str,),
             "project_id": (str,),
@@ -50,6 +57,7 @@ class GCPAccount(ModelNormal):
         "is_cspm_enabled": "is_cspm_enabled",
         "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
+        "monitored_resource_configs": "monitored_resource_configs",
         "private_key": "private_key",
         "private_key_id": "private_key_id",
         "project_id": "project_id",
@@ -72,6 +80,7 @@ class GCPAccount(ModelNormal):
         is_cspm_enabled: Union[bool, UnsetType] = unset,
         is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
+        monitored_resource_configs: Union[List[GCPMonitoredResourceConfig], UnsetType] = unset,
         private_key: Union[str, UnsetType] = unset,
         private_key_id: Union[str, UnsetType] = unset,
         project_id: Union[str, UnsetType] = unset,
@@ -102,15 +111,17 @@ class GCPAccount(ModelNormal):
             where ``$CLIENT_EMAIL`` is the email found in your JSON service account key.
         :type client_x509_cert_url: str, optional
 
-        :param cloud_run_revision_filters: Limit the Cloud Run revisions that are pulled into Datadog by using tags.
+        :param cloud_run_revision_filters: List of filters to limit the Cloud Run revisions that are pulled into Datadog by using tags.
             Only Cloud Run revision resources that apply to specified filters are imported into Datadog.
+            **Note:** This field is deprecated. Instead, use ``monitored_resource_configs`` with ``type=cloud_run_revision`` **Deprecated**.
         :type cloud_run_revision_filters: [str], optional
 
         :param errors: An array of errors.
         :type errors: [str], optional
 
-        :param host_filters: Limit the GCE instances that are pulled into Datadog by using tags.
-            Only hosts that match one of the defined tags are imported into Datadog.
+        :param host_filters: A comma-separated list of filters to limit the VM instances that are pulled into Datadog by using tags.
+            Only VM instance resources that apply to specified filters are imported into Datadog.
+            **Note:** This field is deprecated. Instead, use ``monitored_resource_configs`` with ``type=gce_instance`` **Deprecated**.
         :type host_filters: str, optional
 
         :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
@@ -121,6 +132,9 @@ class GCPAccount(ModelNormal):
 
         :param is_security_command_center_enabled: When enabled, Datadog will attempt to collect Security Command Center Findings. Note: This requires additional permissions on the service account.
         :type is_security_command_center_enabled: bool, optional
+
+        :param monitored_resource_configs: Configurations for GCP monitored resources.
+        :type monitored_resource_configs: [GCPMonitoredResourceConfig], optional
 
         :param private_key: Your private key name found in your JSON service account key.
         :type private_key: str, optional
@@ -164,6 +178,8 @@ class GCPAccount(ModelNormal):
             kwargs["is_resource_change_collection_enabled"] = is_resource_change_collection_enabled
         if is_security_command_center_enabled is not unset:
             kwargs["is_security_command_center_enabled"] = is_security_command_center_enabled
+        if monitored_resource_configs is not unset:
+            kwargs["monitored_resource_configs"] = monitored_resource_configs
         if private_key is not unset:
             kwargs["private_key"] = private_key
         if private_key_id is not unset:

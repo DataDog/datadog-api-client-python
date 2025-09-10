@@ -180,6 +180,8 @@ from datadog_api_client.v1.model.funnel_widget_definition_type import FunnelWidg
 from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest
 from datadog_api_client.v1.model.gcp_account import GCPAccount
 from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountListResponse
+from datadog_api_client.v1.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
+from datadog_api_client.v1.model.gcp_monitored_resource_config_type import GCPMonitoredResourceConfigType
 from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
 from datadog_api_client.v1.model.geomap_widget_definition_style import GeomapWidgetDefinitionStyle
 from datadog_api_client.v1.model.geomap_widget_definition_type import GeomapWidgetDefinitionType
@@ -1253,6 +1255,8 @@ __all__ = [
     "FunnelWidgetRequest",
     "GCPAccount",
     "GCPAccountListResponse",
+    "GCPMonitoredResourceConfig",
+    "GCPMonitoredResourceConfigType",
     "GeomapWidgetDefinition",
     "GeomapWidgetDefinitionStyle",
     "GeomapWidgetDefinitionType",
