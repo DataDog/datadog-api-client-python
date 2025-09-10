@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -39,6 +42,7 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -53,10 +57,14 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         inputs: List[str],
         rules: List[ObservabilityPipelineSensitiveDataScannerProcessorRule],
         type: ObservabilityPipelineSensitiveDataScannerProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``sensitive_data_scanner`` processor detects and optionally redacts sensitive data in log events.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
         :type id: str
@@ -73,6 +81,8 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``sensitive_data_scanner``.
         :type type: ObservabilityPipelineSensitiveDataScannerProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.id = id

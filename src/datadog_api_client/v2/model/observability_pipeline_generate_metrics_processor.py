@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -29,6 +31,7 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -37,6 +40,7 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -51,11 +55,15 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         inputs: List[str],
         metrics: List[ObservabilityPipelineGeneratedMetric],
         type: ObservabilityPipelineGenerateMetricsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``generate_datadog_metrics`` processor creates custom metrics from logs and sends them to Datadog.
         Metrics can be counters, gauges, or distributions and optionally grouped by log fields.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline.
         :type id: str
@@ -72,6 +80,8 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         :param type: The processor type. Always ``generate_datadog_metrics``.
         :type type: ObservabilityPipelineGenerateMetricsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.id = id

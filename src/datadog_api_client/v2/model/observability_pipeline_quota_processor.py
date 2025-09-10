@@ -46,6 +46,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
         return {
             "drop_events": (bool,),
+            "enabled": (bool,),
             "id": (str,),
             "ignore_when_missing_partitions": (bool,),
             "include": (str,),
@@ -60,6 +61,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
     attribute_map = {
         "drop_events": "drop_events",
+        "enabled": "enabled",
         "id": "id",
         "ignore_when_missing_partitions": "ignore_when_missing_partitions",
         "include": "include",
@@ -81,6 +83,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         limit: ObservabilityPipelineQuotaProcessorLimit,
         name: str,
         type: ObservabilityPipelineQuotaProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         ignore_when_missing_partitions: Union[bool, UnsetType] = unset,
         overflow_action: Union[ObservabilityPipelineQuotaProcessorOverflowAction, UnsetType] = unset,
         overrides: Union[List[ObservabilityPipelineQuotaProcessorOverride], UnsetType] = unset,
@@ -92,6 +95,9 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
         :param drop_events: If set to ``true`` , logs that matched the quota filter and sent after the quota has been met are dropped; only logs that did not match the filter query continue through the pipeline.
         :type drop_events: bool
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
@@ -127,6 +133,8 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``quota``.
         :type type: ObservabilityPipelineQuotaProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         if ignore_when_missing_partitions is not unset:
             kwargs["ignore_when_missing_partitions"] = ignore_when_missing_partitions
         if overflow_action is not unset:

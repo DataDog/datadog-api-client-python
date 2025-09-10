@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -25,6 +27,7 @@ class ObservabilityPipelineRemoveFieldsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([str],),
             "id": (str,),
             "include": (str,),
@@ -33,6 +36,7 @@ class ObservabilityPipelineRemoveFieldsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
@@ -47,10 +51,14 @@ class ObservabilityPipelineRemoveFieldsProcessor(ModelNormal):
         include: str,
         inputs: List[str],
         type: ObservabilityPipelineRemoveFieldsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``remove_fields`` processor deletes specified fields from logs.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param fields: A list of field names to be removed from each log event.
         :type fields: [str]
@@ -67,6 +75,8 @@ class ObservabilityPipelineRemoveFieldsProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``remove_fields``.
         :type type: ObservabilityPipelineRemoveFieldsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.fields = fields

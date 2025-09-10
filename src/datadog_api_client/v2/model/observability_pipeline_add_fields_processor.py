@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -27,6 +29,7 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([ObservabilityPipelineFieldValue],),
             "id": (str,),
             "include": (str,),
@@ -35,6 +38,7 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
@@ -49,10 +53,14 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         include: str,
         inputs: List[str],
         type: ObservabilityPipelineAddFieldsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``add_fields`` processor adds static key-value fields to logs.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
@@ -69,6 +77,8 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``add_fields``.
         :type type: ObservabilityPipelineAddFieldsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.fields = fields

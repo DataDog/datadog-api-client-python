@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -25,6 +27,7 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -32,6 +35,7 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -39,10 +43,19 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
     }
 
     def __init__(
-        self_, id: str, include: str, inputs: List[str], type: ObservabilityPipelineFilterProcessorType, **kwargs
+        self_,
+        id: str,
+        include: str,
+        inputs: List[str],
+        type: ObservabilityPipelineFilterProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
+        **kwargs,
     ):
         """
         The ``filter`` processor allows conditional processing of logs based on a Datadog search query. Logs that match the ``include`` query are passed through; others are discarded.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
@@ -56,6 +69,8 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``filter``.
         :type type: ObservabilityPipelineFilterProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.id = id

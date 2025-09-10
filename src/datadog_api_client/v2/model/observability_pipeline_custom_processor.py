@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -37,6 +39,7 @@ class ObservabilityPipelineCustomProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -45,6 +48,7 @@ class ObservabilityPipelineCustomProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -58,10 +62,14 @@ class ObservabilityPipelineCustomProcessor(ModelNormal):
         inputs: List[str],
         remaps: List[ObservabilityPipelineCustomProcessorRemap],
         type: ObservabilityPipelineCustomProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``custom_processor`` processor transforms events using `Vector Remap Language (VRL) <https://vector.dev/docs/reference/vrl/>`_ scripts with advanced filtering capabilities.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this processor.
         :type id: str
@@ -78,6 +86,8 @@ class ObservabilityPipelineCustomProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``custom_processor``.
         :type type: ObservabilityPipelineCustomProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
         include = kwargs.get("include", "*")
 

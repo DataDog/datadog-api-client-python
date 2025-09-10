@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineReduceProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "group_by": ([str],),
             "id": (str,),
             "include": (str,),
@@ -40,6 +43,7 @@ class ObservabilityPipelineReduceProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "group_by": "group_by",
         "id": "id",
         "include": "include",
@@ -56,10 +60,14 @@ class ObservabilityPipelineReduceProcessor(ModelNormal):
         inputs: List[str],
         merge_strategies: List[ObservabilityPipelineReduceProcessorMergeStrategy],
         type: ObservabilityPipelineReduceProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``reduce`` processor aggregates and merges logs based on matching keys and merge strategies.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param group_by: A list of fields used to group log events for merging.
         :type group_by: [str]
@@ -79,6 +87,8 @@ class ObservabilityPipelineReduceProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``reduce``.
         :type type: ObservabilityPipelineReduceProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.group_by = group_by

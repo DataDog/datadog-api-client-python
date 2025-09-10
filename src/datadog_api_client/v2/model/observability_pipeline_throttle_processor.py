@@ -27,6 +27,7 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "group_by": ([str],),
             "id": (str,),
             "include": (str,),
@@ -37,6 +38,7 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "group_by": "group_by",
         "id": "id",
         "include": "include",
@@ -54,11 +56,15 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         threshold: int,
         type: ObservabilityPipelineThrottleProcessorType,
         window: float,
+        enabled: Union[bool, UnsetType] = unset,
         group_by: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``throttle`` processor limits the number of events that pass through over a given time window.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param group_by: Optional list of fields used to group events before the threshold has been reached.
         :type group_by: [str], optional
@@ -81,6 +87,8 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         :param window: The time window in seconds over which the threshold applies.
         :type window: float
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         if group_by is not unset:
             kwargs["group_by"] = group_by
         super().__init__(kwargs)

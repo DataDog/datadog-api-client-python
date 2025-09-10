@@ -39,6 +39,7 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "file": (ObservabilityPipelineEnrichmentTableFile,),
             "geoip": (ObservabilityPipelineEnrichmentTableGeoIp,),
             "id": (str,),
@@ -49,6 +50,7 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "file": "file",
         "geoip": "geoip",
         "id": "id",
@@ -65,12 +67,16 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         inputs: List[str],
         target: str,
         type: ObservabilityPipelineEnrichmentTableProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         file: Union[ObservabilityPipelineEnrichmentTableFile, UnsetType] = unset,
         geoip: Union[ObservabilityPipelineEnrichmentTableGeoIp, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``enrichment_table`` processor enriches logs using a static CSV file or GeoIP database.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param file: Defines a static enrichment table loaded from a CSV file.
         :type file: ObservabilityPipelineEnrichmentTableFile, optional
@@ -93,6 +99,8 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``enrichment_table``.
         :type type: ObservabilityPipelineEnrichmentTableProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         if file is not unset:
             kwargs["file"] = file
         if geoip is not unset:

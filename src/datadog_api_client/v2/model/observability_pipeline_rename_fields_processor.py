@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([ObservabilityPipelineRenameFieldsProcessorField],),
             "id": (str,),
             "include": (str,),
@@ -39,6 +42,7 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
@@ -53,10 +57,14 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         include: str,
         inputs: List[str],
         type: ObservabilityPipelineRenameFieldsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``rename_fields`` processor changes field names.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param fields: A list of rename rules specifying which fields to rename in the event, what to rename them to, and whether to preserve the original fields.
         :type fields: [ObservabilityPipelineRenameFieldsProcessorField]
@@ -73,6 +81,8 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``rename_fields``.
         :type type: ObservabilityPipelineRenameFieldsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.fields = fields

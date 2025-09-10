@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -25,6 +27,7 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "field": (str,),
             "id": (str,),
             "include": (str,),
@@ -33,6 +36,7 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "field": "field",
         "id": "id",
         "include": "include",
@@ -47,10 +51,14 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         include: str,
         inputs: List[str],
         type: ObservabilityPipelineParseJSONProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``parse_json`` processor extracts JSON from a specified field and flattens it into the event. This is useful when logs contain embedded JSON as a string.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param field: The name of the log field that contains a JSON string.
         :type field: str
@@ -67,6 +75,8 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``parse_json``.
         :type type: ObservabilityPipelineParseJSONProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.field = field

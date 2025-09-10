@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -39,6 +42,7 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -53,10 +57,14 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         inputs: List[str],
         type: ObservabilityPipelineAddEnvVarsProcessorType,
         variables: List[ObservabilityPipelineAddEnvVarsProcessorVariable],
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``add_env_vars`` processor adds environment variable values to log events.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this component. Used to reference this processor in the pipeline.
         :type id: str
@@ -73,6 +81,8 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         :param variables: A list of environment variable mappings to apply to log fields.
         :type variables: [ObservabilityPipelineAddEnvVarsProcessorVariable]
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.id = id

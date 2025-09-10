@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -38,6 +40,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
         return {
             "action": (ObservabilityPipelineDatadogTagsProcessorAction,),
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -48,6 +51,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
     attribute_map = {
         "action": "action",
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -65,6 +69,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         keys: List[str],
         mode: ObservabilityPipelineDatadogTagsProcessorMode,
         type: ObservabilityPipelineDatadogTagsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -72,6 +77,9 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
         :param action: The action to take on tags with matching keys.
         :type action: ObservabilityPipelineDatadogTagsProcessorAction
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
@@ -91,6 +99,8 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``datadog_tags``.
         :type type: ObservabilityPipelineDatadogTagsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.action = action

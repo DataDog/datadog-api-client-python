@@ -34,6 +34,7 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
 
         return {
             "disable_library_rules": (bool,),
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -43,6 +44,7 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
 
     attribute_map = {
         "disable_library_rules": "disable_library_rules",
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -58,6 +60,7 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
         rules: List[ObservabilityPipelineParseGrokProcessorRule],
         type: ObservabilityPipelineParseGrokProcessorType,
         disable_library_rules: Union[bool, UnsetType] = unset,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -65,6 +68,9 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
 
         :param disable_library_rules: If set to ``true`` , disables the default Grok rules provided by Datadog.
         :type disable_library_rules: bool, optional
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param id: A unique identifier for this processor.
         :type id: str
@@ -83,6 +89,8 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
         """
         if disable_library_rules is not unset:
             kwargs["disable_library_rules"] = disable_library_rules
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.id = id

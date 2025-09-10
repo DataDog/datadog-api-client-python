@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([str],),
             "id": (str,),
             "include": (str,),
@@ -40,6 +43,7 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
@@ -56,10 +60,14 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         inputs: List[str],
         mode: ObservabilityPipelineDedupeProcessorMode,
         type: ObservabilityPipelineDedupeProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``dedupe`` processor removes duplicate fields in log events.
+
+        :param enabled: The processor passes through all events if it is set to ``false``. Defaults to ``true``.
+        :type enabled: bool, optional
 
         :param fields: A list of log field paths to check for duplicates.
         :type fields: [str]
@@ -79,6 +87,8 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``dedupe``.
         :type type: ObservabilityPipelineDedupeProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.fields = fields

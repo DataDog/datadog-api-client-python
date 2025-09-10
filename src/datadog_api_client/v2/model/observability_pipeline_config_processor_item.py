@@ -15,6 +15,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         """
         A processor for the pipeline.
 
+        :param enabled: The processor passes through all events if it is set to `false`. Defaults to `true`.
+        :type enabled: bool, optional
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the `input` to downstream components).
         :type id: str
 
