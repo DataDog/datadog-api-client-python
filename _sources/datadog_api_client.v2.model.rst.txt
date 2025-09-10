@@ -7417,6 +7417,20 @@ datadog\_api\_client.v2.model.gcp\_metric\_namespace\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.gcp\_monitored\_resource\_config module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_monitored_resource_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_monitored\_resource\_config\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_monitored_resource_config_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.gcp\_service\_account module
 ----------------------------------------------------------
 
