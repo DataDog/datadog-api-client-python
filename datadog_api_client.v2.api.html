@@ -701,6 +701,32 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.actions_datastores_api" class="md-nav__link">datadog_api_client.v2.api.actions_datastores_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.bulk_write_datastore_items" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.bulk_write_datastore_items()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.create_datastore" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.create_datastore()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.delete_datastore" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.delete_datastore()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.delete_datastore_item" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.delete_datastore_item()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.get_datastore" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.get_datastore()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.list_datastore_items" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.list_datastore_items()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.list_datastores" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.list_datastores()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.update_datastore" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.update_datastore()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.update_datastore_item" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ActionsDatastoresApi.update_datastore_item()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.agentless_scanning_api" class="md-nav__link">datadog_api_client.v2.api.agentless_scanning_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AgentlessScanningApi</span></code></a><nav class="md-nav">
@@ -2624,6 +2650,143 @@ Workflow Automation and App Builder.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_action_connection_response.UpdateActionConnectionResponse" title="datadog_api_client.v2.model.update_action_connection_response.UpdateActionConnectionResponse">UpdateActionConnectionResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.actions_datastores_api">
+<span id="datadog-api-client-v2-api-actions-datastores-api-module"></span><h2 id="module-datadog_api_client.v2.api.actions_datastores_api">datadog_api_client.v2.api.actions_datastores_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.actions_datastores_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ActionsDatastoresApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Leverage the Actions Datastore API to create, modify, and delete
+items in datastores owned by your organization.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.bulk_write_datastore_items">
+<span class="sig-name descname"><span class="pre">bulk_write_datastore_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.bulk_put_apps_datastore_items_request.BulkPutAppsDatastoreItemsRequest" title="datadog_api_client.v2.model.bulk_put_apps_datastore_items_request.BulkPutAppsDatastoreItemsRequest"><span class="pre">BulkPutAppsDatastoreItemsRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.put_apps_datastore_item_response_array.PutAppsDatastoreItemResponseArray" title="datadog_api_client.v2.model.put_apps_datastore_item_response_array.PutAppsDatastoreItemResponseArray"><span class="pre">PutAppsDatastoreItemResponseArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.bulk_write_datastore_items" title="Link to this definition">¶</a></dt>
+<dd><p>Bulk write datastore items.</p>
+<p>Creates or replaces multiple items in a datastore by their keys in a single operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datastore_id</strong> (<em>str</em>) – The unique identifier of the datastore to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.put_apps_datastore_item_response_array.PutAppsDatastoreItemResponseArray" title="datadog_api_client.v2.model.put_apps_datastore_item_response_array.PutAppsDatastoreItemResponseArray">PutAppsDatastoreItemResponseArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.create_datastore">
+<span class="sig-name descname"><span class="pre">create_datastore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_apps_datastore_request.CreateAppsDatastoreRequest" title="datadog_api_client.v2.model.create_apps_datastore_request.CreateAppsDatastoreRequest"><span class="pre">CreateAppsDatastoreRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_apps_datastore_response.CreateAppsDatastoreResponse" title="datadog_api_client.v2.model.create_apps_datastore_response.CreateAppsDatastoreResponse"><span class="pre">CreateAppsDatastoreResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.create_datastore" title="Link to this definition">¶</a></dt>
+<dd><p>Create datastore.</p>
+<p>Creates a new datastore.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_apps_datastore_response.CreateAppsDatastoreResponse" title="datadog_api_client.v2.model.create_apps_datastore_response.CreateAppsDatastoreResponse">CreateAppsDatastoreResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.delete_datastore">
+<span class="sig-name descname"><span class="pre">delete_datastore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.delete_datastore" title="Link to this definition">¶</a></dt>
+<dd><p>Delete datastore.</p>
+<p>Deletes a datastore by its unique identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datastore_id</strong> (<em>str</em>) – The unique identifier of the datastore to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.delete_datastore_item">
+<span class="sig-name descname"><span class="pre">delete_datastore_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.delete_apps_datastore_item_request.DeleteAppsDatastoreItemRequest" title="datadog_api_client.v2.model.delete_apps_datastore_item_request.DeleteAppsDatastoreItemRequest"><span class="pre">DeleteAppsDatastoreItemRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.delete_apps_datastore_item_response.DeleteAppsDatastoreItemResponse" title="datadog_api_client.v2.model.delete_apps_datastore_item_response.DeleteAppsDatastoreItemResponse"><span class="pre">DeleteAppsDatastoreItemResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.delete_datastore_item" title="Link to this definition">¶</a></dt>
+<dd><p>Delete datastore item.</p>
+<p>Deletes an item from a datastore by its key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datastore_id</strong> (<em>str</em>) – The unique identifier of the datastore to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.delete_apps_datastore_item_response.DeleteAppsDatastoreItemResponse" title="datadog_api_client.v2.model.delete_apps_datastore_item_response.DeleteAppsDatastoreItemResponse">DeleteAppsDatastoreItemResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.get_datastore">
+<span class="sig-name descname"><span class="pre">get_datastore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.datastore.Datastore" title="datadog_api_client.v2.model.datastore.Datastore"><span class="pre">Datastore</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.get_datastore" title="Link to this definition">¶</a></dt>
+<dd><p>Get datastore.</p>
+<p>Retrieves a specific datastore by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datastore_id</strong> (<em>str</em>) – The unique identifier of the datastore to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.datastore.Datastore" title="datadog_api_client.v2.model.datastore.Datastore">Datastore</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.list_datastore_items">
+<span class="sig-name descname"><span class="pre">list_datastore_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.item_api_payload_array.ItemApiPayloadArray" title="datadog_api_client.v2.model.item_api_payload_array.ItemApiPayloadArray"><span class="pre">ItemApiPayloadArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.list_datastore_items" title="Link to this definition">¶</a></dt>
+<dd><p>List datastore items.</p>
+<p>Lists items from a datastore. You can filter the results by specifying either an item key or a filter query parameter, but not both at the same time. Supports server-side pagination for large datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>datastore_id</strong> (<em>str</em>) – The unique identifier of the datastore to retrieve.</p></li>
+<li><p><strong>filter</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional query filter to search items using the <a class="reference external" href="https://docs.datadoghq.com/logs/explorer/search_syntax/">logs search syntax</a>.</p></li>
+<li><p><strong>item_key</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional primary key value to retrieve a specific item. Cannot be used together with the filter parameter.</p></li>
+<li><p><strong>page_limit</strong> (<em>int</em><em>, </em><em>optional</em>) – Optional field to limit the number of items to return per page for pagination. Up to 100 items can be returned per page.</p></li>
+<li><p><strong>page_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Optional field to offset the number of items to skip from the beginning of the result set for pagination.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional field to sort results by. Prefix with ‘-’ for descending order (e.g., ‘-created_at’).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.item_api_payload_array.ItemApiPayloadArray" title="datadog_api_client.v2.model.item_api_payload_array.ItemApiPayloadArray">ItemApiPayloadArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.list_datastores">
+<span class="sig-name descname"><span class="pre">list_datastores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.datastore_array.DatastoreArray" title="datadog_api_client.v2.model.datastore_array.DatastoreArray"><span class="pre">DatastoreArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.list_datastores" title="Link to this definition">¶</a></dt>
+<dd><p>List datastores.</p>
+<p>Lists all datastores for the organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.datastore_array.DatastoreArray" title="datadog_api_client.v2.model.datastore_array.DatastoreArray">DatastoreArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.update_datastore">
+<span class="sig-name descname"><span class="pre">update_datastore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_apps_datastore_request.UpdateAppsDatastoreRequest" title="datadog_api_client.v2.model.update_apps_datastore_request.UpdateAppsDatastoreRequest"><span class="pre">UpdateAppsDatastoreRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.datastore.Datastore" title="datadog_api_client.v2.model.datastore.Datastore"><span class="pre">Datastore</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.update_datastore" title="Link to this definition">¶</a></dt>
+<dd><p>Update datastore.</p>
+<p>Updates an existing datastore’s attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datastore_id</strong> (<em>str</em>) – The unique identifier of the datastore to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.datastore.Datastore" title="datadog_api_client.v2.model.datastore.Datastore">Datastore</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.update_datastore_item">
+<span class="sig-name descname"><span class="pre">update_datastore_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datastore_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_apps_datastore_item_request.UpdateAppsDatastoreItemRequest" title="datadog_api_client.v2.model.update_apps_datastore_item_request.UpdateAppsDatastoreItemRequest"><span class="pre">UpdateAppsDatastoreItemRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.item_api_payload.ItemApiPayload" title="datadog_api_client.v2.model.item_api_payload.ItemApiPayload"><span class="pre">ItemApiPayload</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.actions_datastores_api.ActionsDatastoresApi.update_datastore_item" title="Link to this definition">¶</a></dt>
+<dd><p>Update datastore item.</p>
+<p>Partially updates an item in a datastore by its key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>datastore_id</strong> (<em>str</em>) – The unique identifier of the datastore to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.item_api_payload.ItemApiPayload" title="datadog_api_client.v2.model.item_api_payload.ItemApiPayload">ItemApiPayload</a></p>
 </dd>
 </dl>
 </dd></dl>
