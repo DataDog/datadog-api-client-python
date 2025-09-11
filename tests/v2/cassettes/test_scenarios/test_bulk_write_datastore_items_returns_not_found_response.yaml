@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"values":[{"id":"cust_3141","name":"Johnathan"},{"id":"cust_3142","name":"Mary"}]},"type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/70b87c26-886f-497a-bd9d-09f53bc9b40c/items/bulk
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"b799bd68-cfb7-4c3d-8026-e0e00c27252f","title":"datastore
+        not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

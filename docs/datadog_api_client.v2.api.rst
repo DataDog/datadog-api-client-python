@@ -11,6 +11,13 @@ datadog\_api\_client.v2.api.action\_connection\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.actions\_datastores\_api module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.actions_datastores_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.agentless\_scanning\_api module
 -----------------------------------------------------------
 
