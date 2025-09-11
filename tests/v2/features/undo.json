@@ -1,4 +1,65 @@
 {
+  "ListDatastores": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "operationId": "DeleteDatastore",
+      "parameters": [
+        {
+          "name": "datastore_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDatastore": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteDatastoreItem": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListDatastoreItems": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDatastoreItem": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "BulkWriteDatastoreItems": {
+    "tag": "Actions Datastores",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAppKeyRegistrations": {
     "tag": "Action Connection",
     "undo": {

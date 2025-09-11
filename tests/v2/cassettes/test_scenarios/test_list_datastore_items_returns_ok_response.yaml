@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"","name":"Test Datastore","org_access":"contributor","primary_column_name":"id","primary_key_generation_strategy":"none"},"type":"datastores"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores
+  response:
+    body:
+      string: '{"data":{"id":"edfe7784-570c-4984-a4ae-883642b561d8","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"conflict_mode":"fail_on_conflict","values":[{"data":"test-value","id":"test-key"}]},"type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/edfe7784-570c-4984-a4ae-883642b561d8/items/bulk
+  response:
+    body:
+      string: '{"data":[{"id":"b20fe87b-f383-4afc-91ee-8fbc178942a2","type":"items"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/edfe7784-570c-4984-a4ae-883642b561d8/items
+  response:
+    body:
+      string: '{"data":[{"id":"b20fe87b-f383-4afc-91ee-8fbc178942a2","type":"items","attributes":{"created_at":"2025-09-05T22:54:10.544424Z","modified_at":"2025-09-05T22:54:10.544424Z","org_id":321813,"primary_column_name":"id","signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"voTcDho3mVIVzY8m98GyVfIib84TgbZoHSWzVQ09TFU=\\\",\\\"timestamp\\\":1757112850,\\\"proof\\\":\\\"MGUCMDX1ijfjUxZK9hVzaMIxU+DociQUkZpkz7FD7tAiykeviU/66p2j1sDf4fYGK3agCwIxALarzvBhasIVGC46VgJuoC0MIkb5WyVWZKh50ist9OfVCQbbe4ZTKKvrW3pVQN34rg==\\\"}\",\"version\":1}","store_id":"edfe7784-570c-4984-a4ae-883642b561d8","value":{"data":"test-value","id":"test-key"}}}],"meta":{"page":{"totalCount":1,"totalFilteredCount":1,"hasMore":false},"schema":{"primary_key":"id","fields":[{"name":"id","type":"STRING"},{"name":"data","type":"JSON"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/edfe7784-570c-4984-a4ae-883642b561d8
+  response:
+    body:
+      string: '{"data":{"id":"edfe7784-570c-4984-a4ae-883642b561d8","type":"datastores"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
