@@ -17,20 +17,29 @@ class SecurityMonitoringRuleConvertResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "rule_id": (str,),
             "terraform_content": (str,),
         }
 
     attribute_map = {
+        "rule_id": "ruleId",
         "terraform_content": "terraformContent",
     }
 
-    def __init__(self_, terraform_content: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, rule_id: Union[str, UnsetType] = unset, terraform_content: Union[str, UnsetType] = unset, **kwargs
+    ):
         """
         Result of the convert rule request containing Terraform content.
+
+        :param rule_id: the ID of the rule.
+        :type rule_id: str, optional
 
         :param terraform_content: Terraform string as a result of converting the rule from JSON.
         :type terraform_content: str, optional
         """
+        if rule_id is not unset:
+            kwargs["rule_id"] = rule_id
         if terraform_content is not unset:
             kwargs["terraform_content"] = terraform_content
         super().__init__(kwargs)
