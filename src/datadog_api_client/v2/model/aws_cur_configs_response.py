@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,13 +28,13 @@ class AwsCURConfigsResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[AwsCURConfig], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: List[AwsCURConfig], **kwargs):
         """
         List of AWS CUR configs.
 
         :param data: An AWS CUR config.
-        :type data: [AwsCURConfig], optional
+        :type data: [AwsCURConfig]
         """
-        if data is not unset:
-            kwargs["data"] = data
         super().__init__(kwargs)
+
+        self_.data = data

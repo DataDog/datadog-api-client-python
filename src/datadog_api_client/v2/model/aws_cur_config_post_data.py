@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -32,17 +34,23 @@ class AwsCURConfigPostData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: AwsCURConfigPostRequestAttributes, type: AwsCURConfigPostRequestType, **kwargs):
+    def __init__(
+        self_,
+        type: AwsCURConfigPostRequestType,
+        attributes: Union[AwsCURConfigPostRequestAttributes, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         AWS CUR config Post data.
 
         :param attributes: Attributes for AWS CUR config Post Request.
-        :type attributes: AwsCURConfigPostRequestAttributes
+        :type attributes: AwsCURConfigPostRequestAttributes, optional
 
         :param type: Type of AWS CUR config Post Request.
         :type type: AwsCURConfigPostRequestType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         super().__init__(kwargs)
 
-        self_.attributes = attributes
         self_.type = type

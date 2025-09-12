@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -37,7 +38,7 @@ class AwsCURConfigAttributes(ModelNormal):
             "bucket_name": (str,),
             "bucket_region": (str,),
             "created_at": (str,),
-            "error_messages": ([str],),
+            "error_messages": ([str], none_type),
             "months": (int,),
             "report_name": (str,),
             "report_prefix": (str,),
@@ -71,7 +72,7 @@ class AwsCURConfigAttributes(ModelNormal):
         status: str,
         account_filters: Union[AccountFilteringConfig, UnsetType] = unset,
         created_at: Union[str, UnsetType] = unset,
-        error_messages: Union[List[str], UnsetType] = unset,
+        error_messages: Union[List[str], none_type, UnsetType] = unset,
         months: Union[int, UnsetType] = unset,
         status_updated_at: Union[str, UnsetType] = unset,
         updated_at: Union[str, UnsetType] = unset,
@@ -96,7 +97,7 @@ class AwsCURConfigAttributes(ModelNormal):
         :type created_at: str, optional
 
         :param error_messages: The error messages for the AWS CUR config.
-        :type error_messages: [str], optional
+        :type error_messages: [str], none_type, optional
 
         :param months: The number of months the report has been backfilled. **Deprecated**.
         :type months: int, optional

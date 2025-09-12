@@ -32,9 +32,9 @@ class GCPUsageCostConfigResponse(ModelNormal):
 
     def __init__(self_, data: Union[GCPUsageCostConfig, UnsetType] = unset, **kwargs):
         """
-        Response of GCP Usage Cost config.
+        Response of Google Cloud Usage Cost config.
 
-        :param data: GCP Usage Cost config.
+        :param data: Google Cloud Usage Cost config.
         :type data: GCPUsageCostConfig, optional
         """
         if data is not unset:

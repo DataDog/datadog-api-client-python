@@ -1,5 +1,5 @@
 """
-Update Cloud Cost Management GCP Usage Cost config returns "OK" response
+Update Google Cloud Usage Cost config returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
