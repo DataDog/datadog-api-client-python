@@ -401,6 +401,11 @@ from datadog_api_client.v2.model.bulk_mute_findings_request_meta_findings import
 from datadog_api_client.v2.model.bulk_mute_findings_request_properties import BulkMuteFindingsRequestProperties
 from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
 from datadog_api_client.v2.model.bulk_mute_findings_response_data import BulkMuteFindingsResponseData
+from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request import BulkPutAppsDatastoreItemsRequest
+from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request_data import BulkPutAppsDatastoreItemsRequestData
+from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request_data_attributes import (
+    BulkPutAppsDatastoreItemsRequestDataAttributes,
+)
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value import CIAppAggregateBucketValue
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries import CIAppAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.ci_app_aggregate_bucket_value_timeseries_point import (
@@ -422,6 +427,9 @@ from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_attributes
     CIAppCreatePipelineEventRequestAttributesResource,
 )
 from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data import CIAppCreatePipelineEventRequestData
+from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_single_or_array import (
+    CIAppCreatePipelineEventRequestDataSingleOrArray,
+)
 from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type import (
     CIAppCreatePipelineEventRequestDataType,
 )
@@ -792,6 +800,16 @@ from datadog_api_client.v2.model.create_app_request_data import CreateAppRequest
 from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
 from datadog_api_client.v2.model.create_app_response import CreateAppResponse
 from datadog_api_client.v2.model.create_app_response_data import CreateAppResponseData
+from datadog_api_client.v2.model.create_apps_datastore_request import CreateAppsDatastoreRequest
+from datadog_api_client.v2.model.create_apps_datastore_request_data import CreateAppsDatastoreRequestData
+from datadog_api_client.v2.model.create_apps_datastore_request_data_attributes import (
+    CreateAppsDatastoreRequestDataAttributes,
+)
+from datadog_api_client.v2.model.create_apps_datastore_request_data_attributes_org_access import (
+    CreateAppsDatastoreRequestDataAttributesOrgAccess,
+)
+from datadog_api_client.v2.model.create_apps_datastore_response import CreateAppsDatastoreResponse
+from datadog_api_client.v2.model.create_apps_datastore_response_data import CreateAppsDatastoreResponseData
 from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
 from datadog_api_client.v2.model.create_custom_framework_response import CreateCustomFrameworkResponse
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
@@ -803,6 +821,7 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
 )
@@ -1055,8 +1074,23 @@ from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMu
 from datadog_api_client.v2.model.dataset_response_single import DatasetResponseSingle
 from datadog_api_client.v2.model.dataset_type import DatasetType
 from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
+from datadog_api_client.v2.model.datastore import Datastore
+from datadog_api_client.v2.model.datastore_array import DatastoreArray
+from datadog_api_client.v2.model.datastore_data import DatastoreData
+from datadog_api_client.v2.model.datastore_data_attributes import DatastoreDataAttributes
+from datadog_api_client.v2.model.datastore_data_type import DatastoreDataType
+from datadog_api_client.v2.model.datastore_item_conflict_mode import DatastoreItemConflictMode
+from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItemsDataType
+from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
+from datadog_api_client.v2.model.delete_apps_datastore_item_request import DeleteAppsDatastoreItemRequest
+from datadog_api_client.v2.model.delete_apps_datastore_item_request_data import DeleteAppsDatastoreItemRequestData
+from datadog_api_client.v2.model.delete_apps_datastore_item_request_data_attributes import (
+    DeleteAppsDatastoreItemRequestDataAttributes,
+)
+from datadog_api_client.v2.model.delete_apps_datastore_item_response import DeleteAppsDatastoreItemResponse
+from datadog_api_client.v2.model.delete_apps_datastore_item_response_data import DeleteAppsDatastoreItemResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
 from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteAppsRequestDataItems
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
@@ -1381,6 +1415,8 @@ from datadog_api_client.v2.model.gcp_integration import GCPIntegration
 from datadog_api_client.v2.model.gcp_integration_type import GCPIntegrationType
 from datadog_api_client.v2.model.gcp_integration_update import GCPIntegrationUpdate
 from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
+from datadog_api_client.v2.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
+from datadog_api_client.v2.model.gcp_monitored_resource_config_type import GCPMonitoredResourceConfigType
 from datadog_api_client.v2.model.gcpsts_delegate_account import GCPSTSDelegateAccount
 from datadog_api_client.v2.model.gcpsts_delegate_account_attributes import GCPSTSDelegateAccountAttributes
 from datadog_api_client.v2.model.gcpsts_delegate_account_response import GCPSTSDelegateAccountResponse
@@ -1574,6 +1610,32 @@ from datadog_api_client.v2.model.incident_integration_metadata_type import Incid
 from datadog_api_client.v2.model.incident_integration_relationships import IncidentIntegrationRelationships
 from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
 from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
+from datadog_api_client.v2.model.incident_notification_rule import IncidentNotificationRule
+from datadog_api_client.v2.model.incident_notification_rule_array import IncidentNotificationRuleArray
+from datadog_api_client.v2.model.incident_notification_rule_array_meta import IncidentNotificationRuleArrayMeta
+from datadog_api_client.v2.model.incident_notification_rule_array_meta_page import IncidentNotificationRuleArrayMetaPage
+from datadog_api_client.v2.model.incident_notification_rule_attributes import IncidentNotificationRuleAttributes
+from datadog_api_client.v2.model.incident_notification_rule_attributes_visibility import (
+    IncidentNotificationRuleAttributesVisibility,
+)
+from datadog_api_client.v2.model.incident_notification_rule_conditions_items import (
+    IncidentNotificationRuleConditionsItems,
+)
+from datadog_api_client.v2.model.incident_notification_rule_create_attributes import (
+    IncidentNotificationRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.incident_notification_rule_create_attributes_visibility import (
+    IncidentNotificationRuleCreateAttributesVisibility,
+)
+from datadog_api_client.v2.model.incident_notification_rule_create_data import IncidentNotificationRuleCreateData
+from datadog_api_client.v2.model.incident_notification_rule_create_data_relationships import (
+    IncidentNotificationRuleCreateDataRelationships,
+)
+from datadog_api_client.v2.model.incident_notification_rule_included_items import IncidentNotificationRuleIncludedItems
+from datadog_api_client.v2.model.incident_notification_rule_relationships import IncidentNotificationRuleRelationships
+from datadog_api_client.v2.model.incident_notification_rule_response_data import IncidentNotificationRuleResponseData
+from datadog_api_client.v2.model.incident_notification_rule_type import IncidentNotificationRuleType
+from datadog_api_client.v2.model.incident_notification_rule_update_data import IncidentNotificationRuleUpdateData
 from datadog_api_client.v2.model.incident_notification_template import IncidentNotificationTemplate
 from datadog_api_client.v2.model.incident_notification_template_array import IncidentNotificationTemplateArray
 from datadog_api_client.v2.model.incident_notification_template_array_meta import IncidentNotificationTemplateArrayMeta
@@ -1593,6 +1655,7 @@ from datadog_api_client.v2.model.incident_notification_template_create_data_rela
 from datadog_api_client.v2.model.incident_notification_template_included_items import (
     IncidentNotificationTemplateIncludedItems,
 )
+from datadog_api_client.v2.model.incident_notification_template_object import IncidentNotificationTemplateObject
 from datadog_api_client.v2.model.incident_notification_template_relationships import (
     IncidentNotificationTemplateRelationships,
 )
@@ -1772,6 +1835,15 @@ from datadog_api_client.v2.model.issues_search_result_included import IssuesSear
 from datadog_api_client.v2.model.issues_search_result_issue_relationship import IssuesSearchResultIssueRelationship
 from datadog_api_client.v2.model.issues_search_result_relationships import IssuesSearchResultRelationships
 from datadog_api_client.v2.model.issues_search_result_type import IssuesSearchResultType
+from datadog_api_client.v2.model.item_api_payload import ItemApiPayload
+from datadog_api_client.v2.model.item_api_payload_array import ItemApiPayloadArray
+from datadog_api_client.v2.model.item_api_payload_data import ItemApiPayloadData
+from datadog_api_client.v2.model.item_api_payload_data_attributes import ItemApiPayloadDataAttributes
+from datadog_api_client.v2.model.item_api_payload_data_attributes_value import ItemApiPayloadDataAttributesValue
+from datadog_api_client.v2.model.item_api_payload_meta import ItemApiPayloadMeta
+from datadog_api_client.v2.model.item_api_payload_meta_page import ItemApiPayloadMetaPage
+from datadog_api_client.v2.model.item_api_payload_meta_schema import ItemApiPayloadMetaSchema
+from datadog_api_client.v2.model.item_api_payload_meta_schema_field import ItemApiPayloadMetaSchemaField
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
@@ -2957,6 +3029,9 @@ from datadog_api_client.v2.model.projected_cost_response import ProjectedCostRes
 from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
 from datadog_api_client.v2.model.projects_response import ProjectsResponse
 from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
+from datadog_api_client.v2.model.put_apps_datastore_item_response_array import PutAppsDatastoreItemResponseArray
+from datadog_api_client.v2.model.put_apps_datastore_item_response_data import PutAppsDatastoreItemResponseData
+from datadog_api_client.v2.model.put_incident_notification_rule_request import PutIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.query import Query
 from datadog_api_client.v2.model.query_formula import QueryFormula
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
@@ -3041,6 +3116,12 @@ from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_d
 )
 from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
     RelationshipToIncidentIntegrationMetadatas,
+)
+from datadog_api_client.v2.model.relationship_to_incident_notification_template import (
+    RelationshipToIncidentNotificationTemplate,
+)
+from datadog_api_client.v2.model.relationship_to_incident_notification_template_data import (
+    RelationshipToIncidentNotificationTemplateData,
 )
 from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import RelationshipToIncidentPostmortemData
@@ -3924,6 +4005,22 @@ from datadog_api_client.v2.model.update_app_request_data_attributes import Updat
 from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_response_data import UpdateAppResponseData
 from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
+from datadog_api_client.v2.model.update_apps_datastore_item_request import UpdateAppsDatastoreItemRequest
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data import UpdateAppsDatastoreItemRequestData
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data_attributes import (
+    UpdateAppsDatastoreItemRequestDataAttributes,
+)
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data_attributes_item_changes import (
+    UpdateAppsDatastoreItemRequestDataAttributesItemChanges,
+)
+from datadog_api_client.v2.model.update_apps_datastore_item_request_data_type import (
+    UpdateAppsDatastoreItemRequestDataType,
+)
+from datadog_api_client.v2.model.update_apps_datastore_request import UpdateAppsDatastoreRequest
+from datadog_api_client.v2.model.update_apps_datastore_request_data import UpdateAppsDatastoreRequestData
+from datadog_api_client.v2.model.update_apps_datastore_request_data_attributes import (
+    UpdateAppsDatastoreRequestDataAttributes,
+)
 from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
 from datadog_api_client.v2.model.update_custom_framework_response import UpdateCustomFrameworkResponse
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
@@ -4394,6 +4491,9 @@ __all__ = [
     "BulkMuteFindingsRequestProperties",
     "BulkMuteFindingsResponse",
     "BulkMuteFindingsResponseData",
+    "BulkPutAppsDatastoreItemsRequest",
+    "BulkPutAppsDatastoreItemsRequestData",
+    "BulkPutAppsDatastoreItemsRequestDataAttributes",
     "CIAppAggregateBucketValue",
     "CIAppAggregateBucketValueTimeseries",
     "CIAppAggregateBucketValueTimeseriesPoint",
@@ -4409,6 +4509,7 @@ __all__ = [
     "CIAppCreatePipelineEventRequestAttributes",
     "CIAppCreatePipelineEventRequestAttributesResource",
     "CIAppCreatePipelineEventRequestData",
+    "CIAppCreatePipelineEventRequestDataSingleOrArray",
     "CIAppCreatePipelineEventRequestDataType",
     "CIAppEventAttributes",
     "CIAppGitInfo",
@@ -4695,6 +4796,12 @@ __all__ = [
     "CreateAppRequestDataAttributes",
     "CreateAppResponse",
     "CreateAppResponseData",
+    "CreateAppsDatastoreRequest",
+    "CreateAppsDatastoreRequestData",
+    "CreateAppsDatastoreRequestDataAttributes",
+    "CreateAppsDatastoreRequestDataAttributesOrgAccess",
+    "CreateAppsDatastoreResponse",
+    "CreateAppsDatastoreResponseData",
     "CreateCustomFrameworkRequest",
     "CreateCustomFrameworkResponse",
     "CreateDataDeletionRequestBody",
@@ -4702,6 +4809,7 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
@@ -4868,8 +4976,21 @@ __all__ = [
     "DatasetResponseSingle",
     "DatasetType",
     "DatasetUpdateRequest",
+    "Datastore",
+    "DatastoreArray",
+    "DatastoreData",
+    "DatastoreDataAttributes",
+    "DatastoreDataType",
+    "DatastoreItemConflictMode",
+    "DatastoreItemsDataType",
+    "DatastorePrimaryKeyGenerationStrategy",
     "DeleteAppResponse",
     "DeleteAppResponseData",
+    "DeleteAppsDatastoreItemRequest",
+    "DeleteAppsDatastoreItemRequestData",
+    "DeleteAppsDatastoreItemRequestDataAttributes",
+    "DeleteAppsDatastoreItemResponse",
+    "DeleteAppsDatastoreItemResponseData",
     "DeleteAppsRequest",
     "DeleteAppsRequestDataItems",
     "DeleteAppsResponse",
@@ -5140,6 +5261,8 @@ __all__ = [
     "GCPIntegrationType",
     "GCPIntegrationUpdate",
     "GCPMetricNamespaceConfig",
+    "GCPMonitoredResourceConfig",
+    "GCPMonitoredResourceConfigType",
     "GCPSTSDelegateAccount",
     "GCPSTSDelegateAccountAttributes",
     "GCPSTSDelegateAccountResponse",
@@ -5307,6 +5430,22 @@ __all__ = [
     "IncidentIntegrationRelationships",
     "IncidentNonDatadogCreator",
     "IncidentNotificationHandle",
+    "IncidentNotificationRule",
+    "IncidentNotificationRuleArray",
+    "IncidentNotificationRuleArrayMeta",
+    "IncidentNotificationRuleArrayMetaPage",
+    "IncidentNotificationRuleAttributes",
+    "IncidentNotificationRuleAttributesVisibility",
+    "IncidentNotificationRuleConditionsItems",
+    "IncidentNotificationRuleCreateAttributes",
+    "IncidentNotificationRuleCreateAttributesVisibility",
+    "IncidentNotificationRuleCreateData",
+    "IncidentNotificationRuleCreateDataRelationships",
+    "IncidentNotificationRuleIncludedItems",
+    "IncidentNotificationRuleRelationships",
+    "IncidentNotificationRuleResponseData",
+    "IncidentNotificationRuleType",
+    "IncidentNotificationRuleUpdateData",
     "IncidentNotificationTemplate",
     "IncidentNotificationTemplateArray",
     "IncidentNotificationTemplateArrayMeta",
@@ -5316,6 +5455,7 @@ __all__ = [
     "IncidentNotificationTemplateCreateData",
     "IncidentNotificationTemplateCreateDataRelationships",
     "IncidentNotificationTemplateIncludedItems",
+    "IncidentNotificationTemplateObject",
     "IncidentNotificationTemplateRelationships",
     "IncidentNotificationTemplateResponseData",
     "IncidentNotificationTemplateType",
@@ -5469,6 +5609,15 @@ __all__ = [
     "IssuesSearchResultIssueRelationship",
     "IssuesSearchResultRelationships",
     "IssuesSearchResultType",
+    "ItemApiPayload",
+    "ItemApiPayloadArray",
+    "ItemApiPayloadData",
+    "ItemApiPayloadDataAttributes",
+    "ItemApiPayloadDataAttributesValue",
+    "ItemApiPayloadMeta",
+    "ItemApiPayloadMetaPage",
+    "ItemApiPayloadMetaSchema",
+    "ItemApiPayloadMetaSchemaField",
     "JSONAPIErrorItem",
     "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
@@ -6200,6 +6349,9 @@ __all__ = [
     "ProjectedCostType",
     "ProjectsResponse",
     "PublishAppResponse",
+    "PutAppsDatastoreItemResponseArray",
+    "PutAppsDatastoreItemResponseData",
+    "PutIncidentNotificationRuleRequest",
     "Query",
     "QueryFormula",
     "QuerySortOrder",
@@ -6279,6 +6431,8 @@ __all__ = [
     "RelationshipToIncidentImpacts",
     "RelationshipToIncidentIntegrationMetadataData",
     "RelationshipToIncidentIntegrationMetadatas",
+    "RelationshipToIncidentNotificationTemplate",
+    "RelationshipToIncidentNotificationTemplateData",
     "RelationshipToIncidentPostmortem",
     "RelationshipToIncidentPostmortemData",
     "RelationshipToIncidentResponderData",
@@ -6969,6 +7123,14 @@ __all__ = [
     "UpdateAppResponse",
     "UpdateAppResponseData",
     "UpdateAppResponseDataAttributes",
+    "UpdateAppsDatastoreItemRequest",
+    "UpdateAppsDatastoreItemRequestData",
+    "UpdateAppsDatastoreItemRequestDataAttributes",
+    "UpdateAppsDatastoreItemRequestDataAttributesItemChanges",
+    "UpdateAppsDatastoreItemRequestDataType",
+    "UpdateAppsDatastoreRequest",
+    "UpdateAppsDatastoreRequestData",
+    "UpdateAppsDatastoreRequestDataAttributes",
     "UpdateCustomFrameworkRequest",
     "UpdateCustomFrameworkResponse",
     "UpdateOpenAPIResponse",

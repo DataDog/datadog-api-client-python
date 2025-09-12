@@ -75,7 +75,7 @@ class DORAFailureRequestAttributes(ModelNormal):
         :param env: Environment name that was impacted by the failure.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp when the failure finished. It must be in nanoseconds, milliseconds, or seconds, and it should not be older than 1 hour.
+        :param finished_at: Unix timestamp when the failure finished. It must be in nanoseconds, milliseconds, or seconds.
         :type finished_at: int, optional
 
         :param git: Git info for DORA Metrics events.

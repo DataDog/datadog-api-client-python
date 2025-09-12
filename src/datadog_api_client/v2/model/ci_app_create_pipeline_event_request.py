@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_single_or_array import (
+        CIAppCreatePipelineEventRequestDataSingleOrArray,
+    )
     from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data import (
         CIAppCreatePipelineEventRequestData,
     )
@@ -22,24 +25,33 @@ if TYPE_CHECKING:
 class CIAppCreatePipelineEventRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data import (
-            CIAppCreatePipelineEventRequestData,
+        from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_single_or_array import (
+            CIAppCreatePipelineEventRequestDataSingleOrArray,
         )
 
         return {
-            "data": (CIAppCreatePipelineEventRequestData,),
+            "data": (CIAppCreatePipelineEventRequestDataSingleOrArray,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[CIAppCreatePipelineEventRequestData, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        data: Union[
+            CIAppCreatePipelineEventRequestDataSingleOrArray,
+            CIAppCreatePipelineEventRequestData,
+            List[CIAppCreatePipelineEventRequestData],
+            UnsetType,
+        ] = unset,
+        **kwargs,
+    ):
         """
         Request object.
 
-        :param data: Data of the pipeline event to create.
-        :type data: CIAppCreatePipelineEventRequestData, optional
+        :param data: Data of the pipeline events to create.
+        :type data: CIAppCreatePipelineEventRequestDataSingleOrArray, optional
         """
         if data is not unset:
             kwargs["data"] = data

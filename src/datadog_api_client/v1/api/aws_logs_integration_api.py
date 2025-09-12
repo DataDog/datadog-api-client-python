@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -245,7 +246,7 @@ class AWSLogsIntegrationApi:
         self,
         body: AWSLogsServicesRequest,
     ) -> dict:
-        """Enable an AWS Logs integration.
+        """Enable an AWS Logs integration. **Deprecated**.
 
         Enable automatic log collection for a list of services. This should be run after running ``CreateAWSLambdaARN`` to save the configuration.
 
@@ -256,28 +257,31 @@ class AWSLogsIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("enable_aws_log_services is deprecated", DeprecationWarning, stacklevel=2)
         return self._enable_aws_log_services_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_logs_integrations(
         self,
     ) -> List[AWSLogsListResponse]:
-        """List all AWS Logs integrations.
+        """List all AWS Logs integrations. **Deprecated**.
 
         List all Datadog-AWS Logs integrations configured in your Datadog account.
 
         :rtype: [AWSLogsListResponse]
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_aws_logs_integrations is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_logs_integrations_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_logs_services(
         self,
     ) -> List[AWSLogsListServicesResponse]:
-        """Get list of AWS log ready services.
+        """Get list of AWS log ready services. **Deprecated**.
 
         Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
 
         :rtype: [AWSLogsListServicesResponse]
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_aws_logs_services is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_logs_services_endpoint.call_with_http_info(**kwargs)

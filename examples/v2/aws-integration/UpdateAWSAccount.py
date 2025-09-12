@@ -81,7 +81,6 @@ body = AWSAccountUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_aws_account"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AWSIntegrationApi(api_client)
     response = api_instance.update_aws_account(aws_account_config_id=AWS_ACCOUNT_V2_DATA_ID, body=body)

@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/invalid-uuid/items
+  response:
+    body:
+      string: '{"errors":[{"status":"400","id":"d41a11e1-5db7-47bf-a542-b469768194dd","title":"invalid
+        path parameter","detail":"invalid datastoreId format in path","source":{"parameter":"datastoreId"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
