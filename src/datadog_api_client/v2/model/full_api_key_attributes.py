@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -27,6 +28,7 @@ class FullAPIKeyAttributes(ModelNormal):
         return {
             "category": (str,),
             "created_at": (datetime,),
+            "date_last_used": (datetime, none_type),
             "key": (str,),
             "last4": (str,),
             "modified_at": (datetime,),
@@ -37,6 +39,7 @@ class FullAPIKeyAttributes(ModelNormal):
     attribute_map = {
         "category": "category",
         "created_at": "created_at",
+        "date_last_used": "date_last_used",
         "key": "key",
         "last4": "last4",
         "modified_at": "modified_at",
@@ -45,6 +48,7 @@ class FullAPIKeyAttributes(ModelNormal):
     }
     read_only_vars = {
         "created_at",
+        "date_last_used",
         "key",
         "last4",
         "modified_at",
@@ -54,6 +58,7 @@ class FullAPIKeyAttributes(ModelNormal):
         self_,
         category: Union[str, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
+        date_last_used: Union[datetime, none_type, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
@@ -69,6 +74,9 @@ class FullAPIKeyAttributes(ModelNormal):
 
         :param created_at: Creation date of the API key.
         :type created_at: datetime, optional
+
+        :param date_last_used: Date the API Key was last used
+        :type date_last_used: datetime, none_type, optional
 
         :param key: The API key.
         :type key: str, optional
@@ -89,6 +97,8 @@ class FullAPIKeyAttributes(ModelNormal):
             kwargs["category"] = category
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if date_last_used is not unset:
+            kwargs["date_last_used"] = date_last_used
         if key is not unset:
             kwargs["key"] = key
         if last4 is not unset:
