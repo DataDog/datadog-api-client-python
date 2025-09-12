@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"query":"*"},"page":{"limit":2000},"sort":"fqn"},"type":"search_flaky_tests_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/test/flaky-test-management/tests
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"limit must
+        be greater than 1 and less than 1000"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

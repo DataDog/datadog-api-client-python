@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"query":"*"},"page":{"cursor":"Q29udGludW91cyBUZXN0aW5nLltETyBOT1QgREVMRVRFXVtPTi1ERU1BTkQgRlVOQ1RJT05BTElUSUVTXVtPVkVSUklERV0gRXh0cmFWYXJpYWJsZXM=","limit":2},"sort":"fqn"},"type":"search_flaky_tests_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/test/flaky-test-management/tests
+  response:
+    body:
+      string: '{"data":[{"id":"89d47ec1dfe7399","type":"flaky_test","attributes":{"attempt_to_fix_id":"9C4M3R","codeowners":[],"envs":["none"],"first_flaked_branch":"ci-functionalities-test","first_flaked_sha":"2a66078f244554ababb6d687632e9ca8ca6b4db8","first_flaked_ts":1740549969,"flaky_category":null,"flaky_state":"active","last_flaked_branch":"ci-functionalities-test","last_flaked_sha":"7c23e3126dffdb10f01dd57787283f5d03b8040e","last_flaked_ts":1757664275,"module":null,"name":"[DO
+        NOT DELETE][ON-DEMAND FUNCTIONALITIES][OVERRIDE] RequestBasicAuth","pipeline_stats":null,"services":["synthetics","unknown-service"],"suite":"Continuous
+        Testing","test_run_metadata":{"source_file":"","source_start":null,"source_end":null,"error_message":"[{\"actual\":1380.1,\"operator\":\"lessThan\",\"target\":1000,\"type\":\"responseTime\"}]","error_stack":"","duration_ms":1380},"test_stats":{"failure_rate_pct":0}}},{"id":"d492dd7ed429b046","type":"flaky_test","attributes":{"attempt_to_fix_id":"AIYTFV","codeowners":[],"envs":["none"],"first_flaked_branch":"ci-functionalities-test","first_flaked_sha":"2a66078f244554ababb6d687632e9ca8ca6b4db8","first_flaked_ts":1740549969,"flaky_category":null,"flaky_state":"active","last_flaked_branch":"ci-functionalities-test","last_flaked_sha":"7c23e3126dffdb10f01dd57787283f5d03b8040e","last_flaked_ts":1757664275,"module":null,"name":"[DO
+        NOT DELETE][ON-DEMAND FUNCTIONALITIES][OVERRIDE] RequestContentType","pipeline_stats":null,"services":["synthetics","unknown-service"],"suite":"Continuous
+        Testing","test_run_metadata":{"source_file":"","source_start":null,"source_end":null,"error_message":"[{\"actual\":5696.2,\"operator\":\"lessThan\",\"target\":1000,\"type\":\"responseTime\"}]","error_stack":"","duration_ms":5696},"test_stats":{"failure_rate_pct":0}}}],"meta":{"pagination":{"next_page":"Q29udGludW91cyBUZXN0aW5nLltETyBOT1QgREVMRVRFXVtPTi1ERU1BTkQgRlVOQ1RJT05BTElUSUVTXVtPVkVSUklERV0gUmVxdWVzdENvbnRlbnRUeXBl"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
