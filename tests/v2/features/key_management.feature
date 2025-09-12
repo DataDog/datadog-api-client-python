@@ -182,10 +182,10 @@ Feature: Key Management
     And the response "data.id" is equal to "{{ application_key.data.id }}"
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}-updated"
 
-  @generated @skip @team:DataDog/credentials-management
+  @team:DataDog/credentials-management
   Scenario: Get API key returns "Not Found" response
     Given new "GetAPIKey" request
-    And request contains "api_key_id" parameter from "REPLACE.ME"
+    And request contains "api_key_id" parameter with value "invalidId"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -198,6 +198,7 @@ Feature: Key Management
     Then the response status is 200 OK
     And the response "data.type" is equal to "api_keys"
     And the response "data.id" is equal to "{{ api_key.data.id }}"
+    And the response "data.attributes" has field "date_last_used"
 
   @generated @skip @team:DataDog/credentials-management
   Scenario: Get all API keys returns "Bad Request" response
@@ -213,6 +214,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "api_keys"
+    And the response "data[0].attributes" has field "date_last_used"
 
   @generated @skip @team:DataDog/credentials-management
   Scenario: Get all application keys owned by current user returns "Bad Request" response
@@ -232,6 +234,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "application_keys"
+    And the response "data[0].attributes" has field "last_used_at"
 
   @generated @skip @team:DataDog/credentials-management
   Scenario: Get all application keys returns "Bad Request" response
@@ -252,6 +255,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "application_keys"
+    And the response "data[0].attributes" has field "last_used_at"
 
   @generated @skip @team:DataDog/credentials-management
   Scenario: Get an application key returns "Bad Request" response
@@ -260,10 +264,10 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @team:DataDog/credentials-management
   Scenario: Get an application key returns "Not Found" response
     Given new "GetApplicationKey" request
-    And request contains "app_key_id" parameter from "REPLACE.ME"
+    And request contains "app_key_id" parameter with value "invalidId"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -276,17 +280,24 @@ Feature: Key Management
     Then the response status is 200 OK
     And the response "data.type" is equal to "application_keys"
     And the response "data.id" has the same value as "application_key.data.id"
+    And the response "data.attributes" has field "last_used_at"
 
-  @generated @skip @team:DataDog/credentials-management
+  @team:DataDog/credentials-management
   Scenario: Get one application key owned by current user returns "Not Found" response
     Given new "GetCurrentUserApplicationKey" request
-    And request contains "app_key_id" parameter from "REPLACE.ME"
+    And request contains "app_key_id" parameter with value "incorrectId"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/credentials-management
+  @team:DataDog/credentials-management
   Scenario: Get one application key owned by current user returns "OK" response
-    Given new "GetCurrentUserApplicationKey" request
-    And request contains "app_key_id" parameter from "REPLACE.ME"
+    Given there is a valid "application_key" in the system
+    And new "GetCurrentUserApplicationKey" request
+    And request contains "app_key_id" parameter from "application_key.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "application_keys"
+    And the response "data.id" is equal to "{{ application_key.data.id }}"
+    And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}"
+    And the response "data.attributes" has field "scopes"
+    And the response "data.attributes" has field "last_used_at"

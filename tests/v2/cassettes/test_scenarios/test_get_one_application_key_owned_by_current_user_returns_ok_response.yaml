@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1697462503"},"type":"application_keys"}}'
+    body: '{"data":{"attributes":{"name":"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1757540407"},"type":"application_keys"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/current_user/application_keys
   response:
     body:
-      string: '{"data":{"type":"application_keys","id":"577b3f55-23d8-44a9-b15c-adff216bbdd0","attributes":{"name":"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1697462503","created_at":"2023-10-16T13:21:43.802416+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}}}}'
+      string: '{"data":{"type":"application_keys","id":"1c6c0fa5-6608-4e3f-8ce0-2b861590fecd","attributes":{"name":"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1757540407","created_at":"2025-09-10T21:40:08.244976+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"leak_information":{"data":null}}}}'
     headers:
       content-type:
       - application/json
@@ -23,11 +23,12 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/577b3f55-23d8-44a9-b15c-adff216bbdd0
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/1c6c0fa5-6608-4e3f-8ce0-2b861590fecd
   response:
     body:
-      string: '{"data":{"type":"application_keys","id":"577b3f55-23d8-44a9-b15c-adff216bbdd0","attributes":{"name":"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1697462503","created_at":"2023-10-16T13:21:43.802416+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"name":null,"handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2020-06-15T12:33:12.884459+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"roles":{"data":[{"type":"roles","id":"667cbd82-c7d1-11ec-aad8-da7ad0900002"},{"type":"roles","id":"94172442-be03-11e9-a77a-3b7612558ac1"}]}}},{"type":"roles","id":"667cbd82-c7d1-11ec-aad8-da7ad0900002","attributes":{"name":"abc","created_at":"2022-04-29T15:31:12.318318+00:00","modified_at":"2022-04-29T15:31:12.389973+00:00"}},{"type":"roles","id":"94172442-be03-11e9-a77a-3b7612558ac1","attributes":{"name":"Datadog
-        Admin Role","created_at":"2019-08-13T19:50:19.022791+00:00","modified_at":"2019-08-13T19:50:19.022791+00:00"}}]}'
+      string: '{"data":{"type":"application_keys","id":"1c6c0fa5-6608-4e3f-8ce0-2b861590fecd","attributes":{"name":"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1757540407","created_at":"2025-09-10T21:40:08.244977+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null,"last_used_at":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"leak_information":{"data":null}}},"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2020-12-29T22:58:44.733921+00:00","modified_at":"2021-04-27T13:54:01.547888+00:00","email":"team-intg-tools-libs-spam@datadoghq.com","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro","title":null,"verified":true,"service_account":true,"disabled":false,"allowed_login_methods":[],"status":"Active"},"relationships":{"roles":{"data":[{"type":"roles","id":"94172442-be03-11e9-a77a-3b7612558ac1"}]}}},{"type":"roles","id":"94172442-be03-11e9-a77a-3b7612558ac1","attributes":{"name":"Datadog
+        Admin Role","managed":true,"created_at":"2019-08-13T19:50:19.022791+00:00","modified_at":"2019-08-13T19:50:19.022791+00:00"}}]}'
     headers:
       content-type:
       - application/json
@@ -40,7 +41,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/577b3f55-23d8-44a9-b15c-adff216bbdd0
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/1c6c0fa5-6608-4e3f-8ce0-2b861590fecd
   response:
     body:
       string: ''

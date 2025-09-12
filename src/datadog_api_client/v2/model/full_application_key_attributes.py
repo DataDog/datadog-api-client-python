@@ -29,6 +29,7 @@ class FullApplicationKeyAttributes(ModelNormal):
             "created_at": (datetime,),
             "key": (str,),
             "last4": (str,),
+            "last_used_at": (datetime, none_type),
             "name": (str,),
             "scopes": ([str], none_type),
         }
@@ -37,6 +38,7 @@ class FullApplicationKeyAttributes(ModelNormal):
         "created_at": "created_at",
         "key": "key",
         "last4": "last4",
+        "last_used_at": "last_used_at",
         "name": "name",
         "scopes": "scopes",
     }
@@ -44,6 +46,7 @@ class FullApplicationKeyAttributes(ModelNormal):
         "created_at",
         "key",
         "last4",
+        "last_used_at",
     }
 
     def __init__(
@@ -51,6 +54,7 @@ class FullApplicationKeyAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
+        last_used_at: Union[datetime, none_type, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         scopes: Union[List[str], none_type, UnsetType] = unset,
         **kwargs,
@@ -67,6 +71,9 @@ class FullApplicationKeyAttributes(ModelNormal):
         :param last4: The last four characters of the application key.
         :type last4: str, optional
 
+        :param last_used_at: Last usage timestamp of the application key.
+        :type last_used_at: datetime, none_type, optional
+
         :param name: Name of the application key.
         :type name: str, optional
 
@@ -79,6 +86,8 @@ class FullApplicationKeyAttributes(ModelNormal):
             kwargs["key"] = key
         if last4 is not unset:
             kwargs["last4"] = last4
+        if last_used_at is not unset:
+            kwargs["last_used_at"] = last_used_at
         if name is not unset:
             kwargs["name"] = name
         if scopes is not unset:

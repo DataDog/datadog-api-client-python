@@ -8,6 +8,8 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -26,6 +28,7 @@ class PartialAPIKeyAttributes(ModelNormal):
         return {
             "category": (str,),
             "created_at": (str,),
+            "date_last_used": (datetime, none_type),
             "last4": (str,),
             "modified_at": (str,),
             "name": (str,),
@@ -35,6 +38,7 @@ class PartialAPIKeyAttributes(ModelNormal):
     attribute_map = {
         "category": "category",
         "created_at": "created_at",
+        "date_last_used": "date_last_used",
         "last4": "last4",
         "modified_at": "modified_at",
         "name": "name",
@@ -42,6 +46,7 @@ class PartialAPIKeyAttributes(ModelNormal):
     }
     read_only_vars = {
         "created_at",
+        "date_last_used",
         "last4",
         "modified_at",
     }
@@ -50,6 +55,7 @@ class PartialAPIKeyAttributes(ModelNormal):
         self_,
         category: Union[str, UnsetType] = unset,
         created_at: Union[str, UnsetType] = unset,
+        date_last_used: Union[datetime, none_type, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
         modified_at: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -64,6 +70,9 @@ class PartialAPIKeyAttributes(ModelNormal):
 
         :param created_at: Creation date of the API key.
         :type created_at: str, optional
+
+        :param date_last_used: Date the API Key was last used.
+        :type date_last_used: datetime, none_type, optional
 
         :param last4: The last four characters of the API key.
         :type last4: str, optional
@@ -81,6 +90,8 @@ class PartialAPIKeyAttributes(ModelNormal):
             kwargs["category"] = category
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if date_last_used is not unset:
+            kwargs["date_last_used"] = date_last_used
         if last4 is not unset:
             kwargs["last4"] = last4
         if modified_at is not unset:
