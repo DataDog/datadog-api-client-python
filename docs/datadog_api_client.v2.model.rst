@@ -2692,6 +2692,13 @@ datadog\_api\_client.v2.model.ci\_app\_create\_pipeline\_event\_request\_data mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ci\_app\_create\_pipeline\_event\_request\_data\_single\_or\_array module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_single_or_array
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ci\_app\_create\_pipeline\_event\_request\_data\_type module
 ------------------------------------------------------------------------------------------
 
