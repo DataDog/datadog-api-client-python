@@ -7,7 +7,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/cost/gcp_uc_config/12345678
+    uri: https://api.datadoghq.com/api/v2/cost/gcp_uc_config/123456
   response:
     body:
       string: "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"rpc error: code\

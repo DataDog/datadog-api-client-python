@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -34,17 +36,23 @@ class AzureUCConfigPostData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: AzureUCConfigPostRequestAttributes, type: AzureUCConfigPostRequestType, **kwargs):
+    def __init__(
+        self_,
+        type: AzureUCConfigPostRequestType,
+        attributes: Union[AzureUCConfigPostRequestAttributes, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Azure config Post data.
 
         :param attributes: Attributes for Azure config Post Request.
-        :type attributes: AzureUCConfigPostRequestAttributes
+        :type attributes: AzureUCConfigPostRequestAttributes, optional
 
         :param type: Type of Azure config Post Request.
         :type type: AzureUCConfigPostRequestType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         super().__init__(kwargs)
 
-        self_.attributes = attributes
         self_.type = type

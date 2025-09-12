@@ -8,6 +8,7 @@ from typing import List, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -30,7 +31,7 @@ class AzureUCConfig(ModelNormal):
             "client_id": (str,),
             "created_at": (str,),
             "dataset_type": (str,),
-            "error_messages": ([str],),
+            "error_messages": ([str], none_type),
             "export_name": (str,),
             "export_path": (str,),
             "id": (str,),
@@ -73,7 +74,7 @@ class AzureUCConfig(ModelNormal):
         storage_account: str,
         storage_container: str,
         created_at: Union[str, UnsetType] = unset,
-        error_messages: Union[List[str], UnsetType] = unset,
+        error_messages: Union[List[str], none_type, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         months: Union[int, UnsetType] = unset,
         status_updated_at: Union[str, UnsetType] = unset,
@@ -83,7 +84,7 @@ class AzureUCConfig(ModelNormal):
         """
         Azure config.
 
-        :param account_id: The tenant ID of the azure account.
+        :param account_id: The tenant ID of the Azure account.
         :type account_id: str
 
         :param client_id: The client ID of the Azure account.
@@ -96,7 +97,7 @@ class AzureUCConfig(ModelNormal):
         :type dataset_type: str
 
         :param error_messages: The error messages for the Azure config.
-        :type error_messages: [str], optional
+        :type error_messages: [str], none_type, optional
 
         :param export_name: The name of the configured Azure Export.
         :type export_name: str

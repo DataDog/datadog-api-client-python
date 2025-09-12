@@ -42,12 +42,12 @@ class GCPUsageCostConfigPatchData(ModelNormal):
         self_, attributes: GCPUsageCostConfigPatchRequestAttributes, type: GCPUsageCostConfigPatchRequestType, **kwargs
     ):
         """
-        GCP Usage Cost config patch data.
+        Google Cloud Usage Cost config patch data.
 
-        :param attributes: Attributes for GCP Usage Cost config patch request.
+        :param attributes: Attributes for Google Cloud Usage Cost config patch request.
         :type attributes: GCPUsageCostConfigPatchRequestAttributes
 
-        :param type: Type of GCP Usage Cost config patch request.
+        :param type: Type of Google Cloud Usage Cost config patch request.
         :type type: GCPUsageCostConfigPatchRequestType
         """
         super().__init__(kwargs)

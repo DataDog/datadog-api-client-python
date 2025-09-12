@@ -27,7 +27,6 @@ body = AzureUCConfigPostRequest(
                 storage_container="dd-storage-container",
             ),
             client_id="1234abcd-1234-abcd-1234-1234abcd1234",
-            is_enabled=True,
             scope="subscriptions/1234abcd-1234-abcd-1234-1234abcd1234",
         ),
         type=AzureUCConfigPostRequestType.AZURE_UC_CONFIG_POST_REQUEST,

@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost/gcp_uc_config/123456
+  response:
+    body:
+      string: '{"data":{"id":"123456","type":"gcp_uc_config","attributes":{"account_id":"123456_ABCDEF_123ABC","bucket_name":"test-bucket-name","created_at":"2024-04-29T13:10:37.516579","dataset":"test-dataset","error_messages":null,"export_prefix":"datadog_cloud_cost_detailed_usage_export","export_project_name":"test-export-project-name","months":15,"project_id":"","service_account":"dd-ccm-gcp-test-integration@some-test-project.iam.gserviceaccount.com","status":"active","status_updated_at":"2025-08-02T14:23:19.542138","updated_at":"2024-04-29T13:10:37.516579"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -44,15 +44,15 @@ class GCPUsageCostConfig(ModelNormal):
         **kwargs,
     ):
         """
-        GCP Usage Cost config.
+        Google Cloud Usage Cost config.
 
-        :param attributes: Attributes for a GCP Usage Cost config.
+        :param attributes: Attributes for a Google Cloud Usage Cost config.
         :type attributes: GCPUsageCostConfigAttributes
 
-        :param id: The ID of the GCP Usage Cost config.
+        :param id: The ID of the Google Cloud Usage Cost config.
         :type id: str, optional
 
-        :param type: Type of GCP Usage Cost config.
+        :param type: Type of Google Cloud Usage Cost config.
         :type type: GCPUsageCostConfigType
         """
         if id is not unset:

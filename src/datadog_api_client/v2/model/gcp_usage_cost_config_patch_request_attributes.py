@@ -23,7 +23,7 @@ class GCPUsageCostConfigPatchRequestAttributes(ModelNormal):
 
     def __init__(self_, is_enabled: bool, **kwargs):
         """
-        Attributes for GCP Usage Cost config patch request.
+        Attributes for Google Cloud Usage Cost config patch request.
 
         :param is_enabled: Whether or not the Cloud Cost Management account is enabled.
         :type is_enabled: bool
