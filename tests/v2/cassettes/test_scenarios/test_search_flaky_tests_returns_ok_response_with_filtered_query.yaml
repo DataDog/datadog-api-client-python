@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"query":"flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""},"page":{"limit":2},"sort":"-last_flaked"},"type":"search_flaky_tests_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/test/flaky-test-management/tests
+  response:
+    body:
+      string: '{"data":[{"id":"4eb1887a8adb1847","type":"flaky_test","attributes":{"attempt_to_fix_id":"8MDT91","codeowners":["@shopist-devs","@shopist/qa-team"],"envs":["testo","none","staging"],"first_flaked_branch":"staging","first_flaked_sha":"fddf3a7fead8203dc4d30af879f60ac53eacfa07","first_flaked_ts":1639061516,"flaky_category":null,"flaky_state":"active","last_flaked_branch":"jhanna/feature-2025-09-12","last_flaked_sha":"d52443e6902f55a1c992d3f2388ab3fcca66acc2","last_flaked_ts":1757683655,"module":null,"name":"test_now_himself_exist_board_space","pipeline_stats":{"failed_pipelines":319,"total_lost_time_ms":1527550000},"services":["shopist"],"suite":"TestWindNationMakeTalkShoulder","test_run_metadata":{"source_file":"","source_start":null,"source_end":null,"error_message":"Expecting
+        actual not to be empty","error_stack":"","duration_ms":27398},"test_stats":{"failure_rate_pct":0}}},{"id":"7c5610a07a8dc4ab","type":"flaky_test","attributes":{"attempt_to_fix_id":"41UAA4","codeowners":["@shopist-devs","@shopist/qa-team"],"envs":["none","testo","staging"],"first_flaked_branch":"staging","first_flaked_sha":"29b68adc1b5e813e8e611669537eeaa5a7aa3f3d","first_flaked_ts":1639060848,"flaky_category":null,"flaky_state":"active","last_flaked_branch":"staging","last_flaked_sha":"984720998f1ab123cf156b80e76f08fc09f50858","last_flaked_ts":1757683651,"module":null,"name":"test_one_economy_raise_social_speak","pipeline_stats":{"failed_pipelines":308,"total_lost_time_ms":1528940000},"services":["shopist"],"suite":"TestCoupleKeepAgainPhysicalPaper","test_run_metadata":{"source_file":"","source_start":null,"source_end":null,"error_message":"Expecting
+        actual not to be empty","error_stack":"","duration_ms":26320},"test_stats":{"failure_rate_pct":0}}}],"meta":{"pagination":{"next_page":"MTc1NzY4MzY1MVx4MDBUZXN0Q291cGxlS2VlcEFnYWluUGh5c2ljYWxQYXBlci50ZXN0X29uZV9lY29ub215X3JhaXNlX3NvY2lhbF9zcGVhaw=="}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
