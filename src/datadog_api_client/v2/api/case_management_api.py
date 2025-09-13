@@ -25,8 +25,13 @@ from datadog_api_client.v2.model.project_create_request import ProjectCreateRequ
 from datadog_api_client.v2.model.case_empty_request import CaseEmptyRequest
 from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
 from datadog_api_client.v2.model.case_update_attributes_request import CaseUpdateAttributesRequest
+from datadog_api_client.v2.model.timeline_response import TimelineResponse
+from datadog_api_client.v2.model.case_comment_request import CaseCommentRequest
+from datadog_api_client.v2.model.case_update_custom_attribute_request import CaseUpdateCustomAttributeRequest
+from datadog_api_client.v2.model.case_update_description_request import CaseUpdateDescriptionRequest
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
+from datadog_api_client.v2.model.case_update_title_request import CaseUpdateTitleRequest
 
 
 class CaseManagementApi:
@@ -91,6 +96,32 @@ class CaseManagementApi:
             api_client=api_client,
         )
 
+        self._comment_case_endpoint = _Endpoint(
+            settings={
+                "response_type": (TimelineResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cases/{case_id}/comment",
+                "operation_id": "comment_case",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CaseCommentRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
@@ -128,6 +159,64 @@ class CaseManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_case_comment_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cases/{case_id}/comment/{cell_id}",
+                "operation_id": "delete_case_comment",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "cell_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "cell_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_case_custom_attribute_endpoint = _Endpoint(
+            settings={
+                "response_type": (CaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/custom_attributes/{custom_attribute_key}",
+                "operation_id": "delete_case_custom_attribute",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "custom_attribute_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_attribute_key",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -336,6 +425,90 @@ class CaseManagementApi:
             api_client=api_client,
         )
 
+        self._update_case_custom_attribute_endpoint = _Endpoint(
+            settings={
+                "response_type": (CaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/custom_attributes/{custom_attribute_key}",
+                "operation_id": "update_case_custom_attribute",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "custom_attribute_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_attribute_key",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CaseUpdateCustomAttributeRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_case_description_endpoint = _Endpoint(
+            settings={
+                "response_type": (CaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/description",
+                "operation_id": "update_case_description",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CaseUpdateDescriptionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_case_title_endpoint = _Endpoint(
+            settings={
+                "response_type": (CaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/title",
+                "operation_id": "update_case_title",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CaseUpdateTitleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_priority_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
@@ -432,6 +605,28 @@ class CaseManagementApi:
 
         return self._assign_case_endpoint.call_with_http_info(**kwargs)
 
+    def comment_case(
+        self,
+        case_id: str,
+        body: CaseCommentRequest,
+    ) -> TimelineResponse:
+        """Comment case.
+
+        Comment case
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param body: Case comment payload
+        :type body: CaseCommentRequest
+        :rtype: TimelineResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["body"] = body
+
+        return self._comment_case_endpoint.call_with_http_info(**kwargs)
+
     def create_case(
         self,
         body: CaseCreateRequest,
@@ -465,6 +660,50 @@ class CaseManagementApi:
         kwargs["body"] = body
 
         return self._create_project_endpoint.call_with_http_info(**kwargs)
+
+    def delete_case_comment(
+        self,
+        case_id: str,
+        cell_id: str,
+    ) -> None:
+        """Delete case comment.
+
+        Delete case comment
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param cell_id: Timeline cell's UUID
+        :type cell_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["cell_id"] = cell_id
+
+        return self._delete_case_comment_endpoint.call_with_http_info(**kwargs)
+
+    def delete_case_custom_attribute(
+        self,
+        case_id: str,
+        custom_attribute_key: str,
+    ) -> CaseResponse:
+        """Delete custom attribute from case.
+
+        Delete custom attribute from case
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param custom_attribute_key: Case Custom attribute's key
+        :type custom_attribute_key: str
+        :rtype: CaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["custom_attribute_key"] = custom_attribute_key
+
+        return self._delete_case_custom_attribute_endpoint.call_with_http_info(**kwargs)
 
     def delete_project(
         self,
@@ -692,6 +931,77 @@ class CaseManagementApi:
         kwargs["body"] = body
 
         return self._update_attributes_endpoint.call_with_http_info(**kwargs)
+
+    def update_case_custom_attribute(
+        self,
+        case_id: str,
+        custom_attribute_key: str,
+        body: CaseUpdateCustomAttributeRequest,
+    ) -> CaseResponse:
+        """Update case custom attribute.
+
+        Update case custom attribute
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param custom_attribute_key: Case Custom attribute's key
+        :type custom_attribute_key: str
+        :param body: Update case custom attribute payload
+        :type body: CaseUpdateCustomAttributeRequest
+        :rtype: CaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["custom_attribute_key"] = custom_attribute_key
+
+        kwargs["body"] = body
+
+        return self._update_case_custom_attribute_endpoint.call_with_http_info(**kwargs)
+
+    def update_case_description(
+        self,
+        case_id: str,
+        body: CaseUpdateDescriptionRequest,
+    ) -> CaseResponse:
+        """Update case description.
+
+        Update case description
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param body: Case description update payload
+        :type body: CaseUpdateDescriptionRequest
+        :rtype: CaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["body"] = body
+
+        return self._update_case_description_endpoint.call_with_http_info(**kwargs)
+
+    def update_case_title(
+        self,
+        case_id: str,
+        body: CaseUpdateTitleRequest,
+    ) -> CaseResponse:
+        """Update case title.
+
+        Update case title
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param body: Case title update payload
+        :type body: CaseUpdateTitleRequest
+        :rtype: CaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["body"] = body
+
+        return self._update_case_title_endpoint.call_with_http_info(**kwargs)
 
     def update_priority(
         self,
