@@ -148,6 +148,9 @@ if TYPE_CHECKING:
         ObservabilityPipelineHttpClientSource,
     )
     from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
+    from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
+        ObservabilityPipelineOpentelemetrySource,
+    )
     from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
 
 
@@ -219,6 +222,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineGooglePubSubSource,
                 ObservabilityPipelineHttpClientSource,
                 ObservabilityPipelineLogstashSource,
+                ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelineSocketSource,
             ]
         ],
