@@ -80,7 +80,7 @@ class AwsCURConfigAttributes(ModelNormal):
         """
         Attributes for An AWS CUR config.
 
-        :param account_filters: The account filtering configuration.
+        :param account_filters: The account filtering configuration object.
         :type account_filters: AccountFilteringConfig, optional
 
         :param account_id: The AWS account ID.

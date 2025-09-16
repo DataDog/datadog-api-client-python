@@ -62,7 +62,7 @@ class AwsCURConfigPostRequestAttributes(ModelNormal):
         """
         Attributes for AWS CUR config Post Request.
 
-        :param account_filters: The account filtering configuration.
+        :param account_filters: The account filtering configuration object.
         :type account_filters: AccountFilteringConfig, optional
 
         :param account_id: The AWS account ID.

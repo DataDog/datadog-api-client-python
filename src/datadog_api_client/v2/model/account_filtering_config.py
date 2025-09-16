@@ -36,7 +36,7 @@ class AccountFilteringConfig(ModelNormal):
         **kwargs,
     ):
         """
-        The account filtering configuration.
+        The account filtering configuration object.
 
         :param excluded_accounts: The AWS account IDs to be excluded from your billing dataset. This field is used when ``include_new_accounts`` is ``true``.
         :type excluded_accounts: [str], optional

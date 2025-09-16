@@ -41,7 +41,7 @@ class AwsCURConfigPatchRequestAttributes(ModelNormal):
         """
         Attributes for AWS CUR config Patch Request.
 
-        :param account_filters: The account filtering configuration.
+        :param account_filters: The account filtering configuration object.
         :type account_filters: AccountFilteringConfig, optional
 
         :param is_enabled: Whether or not the Cloud Cost Management account is enabled.
