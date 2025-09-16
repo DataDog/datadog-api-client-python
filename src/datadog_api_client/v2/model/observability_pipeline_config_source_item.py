@@ -118,6 +118,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_logstash_source import (
             ObservabilityPipelineLogstashSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
+            ObservabilityPipelineOpentelemetrySource,
+        )
         from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
 
         return {
@@ -137,6 +140,7 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
                 ObservabilityPipelineGooglePubSubSource,
                 ObservabilityPipelineHttpClientSource,
                 ObservabilityPipelineLogstashSource,
+                ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelineSocketSource,
             ],
         }
