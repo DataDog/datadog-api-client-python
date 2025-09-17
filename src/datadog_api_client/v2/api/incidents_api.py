@@ -45,6 +45,10 @@ from datadog_api_client.v2.model.incident_attachment_related_object import Incid
 from datadog_api_client.v2.model.incident_attachment_attachment_type import IncidentAttachmentAttachmentType
 from datadog_api_client.v2.model.incident_attachment_update_response import IncidentAttachmentUpdateResponse
 from datadog_api_client.v2.model.incident_attachment_update_request import IncidentAttachmentUpdateRequest
+from datadog_api_client.v2.model.incident_impacts_response import IncidentImpactsResponse
+from datadog_api_client.v2.model.incident_impact_related_object import IncidentImpactRelatedObject
+from datadog_api_client.v2.model.incident_impact_response import IncidentImpactResponse
+from datadog_api_client.v2.model.incident_impact_create_request import IncidentImpactCreateRequest
 from datadog_api_client.v2.model.incident_integration_metadata_list_response import (
     IncidentIntegrationMetadataListResponse,
 )
@@ -84,6 +88,38 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (IncidentCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_impact_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentImpactResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/impacts",
+                "operation_id": "create_incident_impact",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": ([IncidentImpactRelatedObject],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentImpactCreateRequest,),
                     "location": "body",
                 },
             },
@@ -217,6 +253,35 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "incident_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_incident_impact_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/impacts/{impact_id}",
+                "operation_id": "delete_incident_impact",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "impact_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "impact_id",
                     "location": "path",
                 },
             },
@@ -554,6 +619,35 @@ class IncidentsApi:
                 "filter_attachment_type": {
                     "openapi_types": ([IncidentAttachmentAttachmentType],),
                     "attribute": "filter[attachment_type]",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_impacts_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentImpactsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/impacts",
+                "operation_id": "list_incident_impacts",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": ([IncidentImpactRelatedObject],),
+                    "attribute": "include",
                     "location": "query",
                     "collection_format": "csv",
                 },
@@ -990,6 +1084,35 @@ class IncidentsApi:
 
         return self._create_incident_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_impact(
+        self,
+        incident_id: str,
+        body: IncidentImpactCreateRequest,
+        *,
+        include: Union[List[IncidentImpactRelatedObject], UnsetType] = unset,
+    ) -> IncidentImpactResponse:
+        """Create an incident impact.
+
+        Create an impact for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Incident impact payload.
+        :type body: IncidentImpactCreateRequest
+        :param include: Specifies which related resources should be included in the response.
+        :type include: [IncidentImpactRelatedObject], optional
+        :rtype: IncidentImpactResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_incident_impact_endpoint.call_with_http_info(**kwargs)
+
     def create_incident_integration(
         self,
         incident_id: str,
@@ -1099,6 +1222,28 @@ class IncidentsApi:
         kwargs["incident_id"] = incident_id
 
         return self._delete_incident_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_impact(
+        self,
+        incident_id: str,
+        impact_id: str,
+    ) -> None:
+        """Delete an incident impact.
+
+        Delete an incident impact.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param impact_id: The UUID of the incident impact.
+        :type impact_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["impact_id"] = impact_id
+
+        return self._delete_incident_impact_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_integration(
         self,
@@ -1371,6 +1516,30 @@ class IncidentsApi:
             kwargs["filter_attachment_type"] = filter_attachment_type
 
         return self._list_incident_attachments_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_impacts(
+        self,
+        incident_id: str,
+        *,
+        include: Union[List[IncidentImpactRelatedObject], UnsetType] = unset,
+    ) -> IncidentImpactsResponse:
+        """List an incident's impacts.
+
+        Get all impacts for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param include: Specifies which related resources should be included in the response.
+        :type include: [IncidentImpactRelatedObject], optional
+        :rtype: IncidentImpactsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_incident_impacts_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_integrations(
         self,

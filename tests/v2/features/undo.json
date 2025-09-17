@@ -1297,6 +1297,35 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentImpacts": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentImpact": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentImpact",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.relationships.incident.data.id"
+        },
+        {
+          "name": "impact_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentImpact": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentIntegrations": {
     "tag": "Incidents",
     "undo": {

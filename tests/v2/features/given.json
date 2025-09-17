@@ -330,6 +330,22 @@
     "operationId": "UpdateIncidentAttachments"
   },
   {
+    "operationId": "CreateIncidentImpact",
+    "parameters": [
+      {
+        "name": "incident_id",
+        "source": "incident.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"incident_impacts\",\n    \"attributes\": {\n      \"start_at\": \"2025-09-12T13:50:00.000Z\",\n      \"end_at\": \"2025-09-12T14:50:00.000Z\",\n      \"description\": \"Outage in the us-east-1 region\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "the \"incident\" has an \"incident_impact\"",
+    "key": "incident_impact",
+    "tag": "Incidents"
+  },
+  {
     "parameters": [
       {
         "name": "incident_id",
