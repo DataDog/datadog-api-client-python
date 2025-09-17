@@ -80,6 +80,18 @@ Feature: AWS Integration
     Then the response status is 200 AWS IAM Permissions object
 
   @team:DataDog/aws-integrations
+  Scenario: Get AWS integration standard IAM permissions returns "AWS IAM Permissions object" response
+    Given new "GetAWSIntegrationIAMPermissionsStandard" request
+    When the request is sent
+    Then the response status is 200 AWS IAM Permissions object
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Get AWS integration standard IAM permissions returns "AWS integration standard IAM permissions." response
+    Given new "GetAWSIntegrationIAMPermissionsStandard" request
+    When the request is sent
+    Then the response status is 200 AWS integration standard IAM permissions.
+
+  @team:DataDog/aws-integrations
   Scenario: Get an AWS integration by config ID returns "AWS Account object" response
     Given there is a valid "aws_account_v2" in the system
     And new "GetAWSAccount" request
@@ -100,6 +112,18 @@ Feature: AWS Integration
     And request contains "aws_account_config_id" parameter with value "448169a8-251c-4344-abee-1c4edef39f7a"
     When the request is sent
     Then the response status is 404 Not Found
+
+  @team:DataDog/aws-integrations
+  Scenario: Get resource collection IAM permissions returns "AWS IAM Permissions object" response
+    Given new "GetAWSIntegrationIAMPermissionsResourceCollection" request
+    When the request is sent
+    Then the response status is 200 AWS IAM Permissions object
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Get resource collection IAM permissions returns "AWS integration resource collection IAM permissions." response
+    Given new "GetAWSIntegrationIAMPermissionsResourceCollection" request
+    When the request is sent
+    Then the response status is 200 AWS integration resource collection IAM permissions.
 
   @team:DataDog/aws-integrations
   Scenario: List all AWS integrations returns "AWS Accounts List object" response
