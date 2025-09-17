@@ -239,7 +239,7 @@ class IncidentTeamsApi:
 
         :param include: Specifies which types of related objects should be included in the response.
         :type include: IncidentRelatedObject, optional
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param page_offset: Specific offset to use as the beginning of the returned page.
         :type page_offset: int, optional

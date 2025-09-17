@@ -543,7 +543,7 @@ class RolesApi:
 
         Returns all roles, including their names and their unique identifiers.
 
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -590,7 +590,7 @@ class RolesApi:
 
         :param role_id: The unique identifier of the role.
         :type role_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional

@@ -868,7 +868,7 @@ class TeamsApi:
 
         :param team_id: None
         :type team_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -910,7 +910,7 @@ class TeamsApi:
 
         :param team_id: None
         :type team_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -997,7 +997,7 @@ class TeamsApi:
 
         :param super_team_id: None
         :type super_team_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -1033,7 +1033,7 @@ class TeamsApi:
 
         :param super_team_id: None
         :type super_team_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -1085,7 +1085,7 @@ class TeamsApi:
 
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param sort: Specifies the order of the returned teams
         :type sort: ListTeamsSort, optional
@@ -1140,7 +1140,7 @@ class TeamsApi:
 
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 100. Test change to trigger client generation.
         :type page_size: int, optional
         :param sort: Specifies the order of the returned teams
         :type sort: ListTeamsSort, optional
