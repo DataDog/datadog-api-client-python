@@ -8593,6 +8593,83 @@ datadog\_api\_client.v2.model.incident\_field\_attributes\_value\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_impact\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_create\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_create\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_create\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_fields\_object module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_fields_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_related\_object module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_related_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_relationships module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impact\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impact_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_impacts\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_impacts_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_impacts\_type module
 ------------------------------------------------------------
 
@@ -15355,6 +15432,13 @@ datadog\_api\_client.v2.model.relationship\_item module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.relationship\_to\_incident module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.relationship\_to\_incident\_attachment module
 ---------------------------------------------------------------------------
 
@@ -15366,6 +15450,13 @@ datadog\_api\_client.v2.model.relationship\_to\_incident\_attachment\_data modul
 ---------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_incident_attachment_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_incident\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_incident_data
    :members:
    :show-inheritance:
 

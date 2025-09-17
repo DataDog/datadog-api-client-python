@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Service was unavailable for external
+      users","end_at":"2025-08-29T13:17:00Z","fields":{"customers_impacted":"all","products_impacted":["shopping","marketing"]},"start_at":"2025-08-28T13:17:00Z"},"type":"incident_impacts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/00000000-0000-0000-0000-000000000000/impacts
+  response:
+    body:
+      string: '{"errors":[{"title":"Bad Request","detail":"invalid impact data: incident
+        id is required: invalid impact"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

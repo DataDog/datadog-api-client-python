@@ -1,0 +1,88 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"customer_impacted":false,"title":"Test-Delete_an_incident_impact_returns_No_Content_response-1758052037"},"type":"incidents"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents
+  response:
+    body:
+      string: '{"data":{"type":"incidents","id":"1a838ffb-9c95-5df6-978c-4cf21f854fd1","attributes":{"public_id":309852,"incident_type_uuid":"41d2e10b-4108-4736-92d7-791d00ea0702","title":"Test-Delete_an_incident_impact_returns_No_Content_response-1758052037","resolved":null,"customer_impact_scope":null,"customer_impact_start":null,"customer_impact_end":null,"customer_impacted":false,"notification_handles":null,"last_modified_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":"frog","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"last_modified_by_uuid":null,"created":"2025-09-16T19:47:17.862681+00:00","modified":"2025-09-16T19:47:17.862681+00:00","commander":null,"detected":"2025-09-16T19:47:17.850799+00:00","created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":"frog","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"created_by_uuid":null,"creation_idempotency_key":null,"customer_impact_duration":0,"time_to_detect":0,"time_to_repair":0,"time_to_internal_response":0,"time_to_resolve":0,"archived":null,"is_test":false,"declared":"2025-09-16T19:47:17.862681+00:00","declared_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","name":"frog","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro"}}},"declared_by_uuid":null,"fields":{"severity":{"type":"dropdown","value":"UNKNOWN"},"state":{"type":"dropdown","value":"active"},"detection_method":{"type":"dropdown","value":"unknown"},"root_cause":{"type":"textbox","value":null},"summary":{"type":"textbox","value":null},"services":{"type":"autocomplete","value":null},"teams":{"type":"autocomplete","value":null}},"field_analytics":null,"severity":"UNKNOWN","state":"active","non_datadog_creator":null,"visibility":"organization","case_id":null},"relationships":{"created_by_user":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"last_modified_by_user":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"commander_user":{"data":null},"declared_by_user":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"user_defined_fields":{"data":[{"type":"user_defined_field","id":"33457d2a-570c-5567-b4af-979a2a8f1164"},{"type":"user_defined_field","id":"d003693c-bee9-5420-8d46-859269c20914"},{"type":"user_defined_field","id":"1ddff6f6-cb1f-51a0-9d81-dc18ef52cc9d"},{"type":"user_defined_field","id":"6bc9d32b-c2cd-591e-9b7a-74c886a5ddcf"},{"type":"user_defined_field","id":"95c53547-2ba3-5d8a-9c3b-cf245bc0c629"},{"type":"user_defined_field","id":"39044b03-cee4-555f-b1e0-3eb3aa759a86"},{"type":"user_defined_field","id":"3cbe9e60-d794-532c-acc0-73641f782813"}]},"integrations":{"data":[]},"attachments":{"data":[]},"responders":{"data":[]},"impacts":{"data":[]}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"Outage in the us-east-1 region","end_at":"2025-09-12T14:50:00.000Z","start_at":"2025-09-12T13:50:00.000Z"},"type":"incident_impacts"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/1a838ffb-9c95-5df6-978c-4cf21f854fd1/impacts
+  response:
+    body:
+      string: '{"data":{"id":"db11b25d-0383-4f98-bde7-bfc4a10d16eb","type":"incident_impacts","attributes":{"created":"2025-09-16T19:47:18.208811Z","description":"Outage
+        in the us-east-1 region","end_at":"2025-09-12T14:50:00Z","fields":null,"impact_type":"customer","modified":"2025-09-16T19:47:18.208811Z","start_at":"2025-09-12T13:50:00Z"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident":{"data":{"id":"1a838ffb-9c95-5df6-978c-4cf21f854fd1","type":"incidents"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/1a838ffb-9c95-5df6-978c-4cf21f854fd1/impacts/db11b25d-0383-4f98-bde7-bfc4a10d16eb
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/1a838ffb-9c95-5df6-978c-4cf21f854fd1/impacts/db11b25d-0383-4f98-bde7-bfc4a10d16eb
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"rpc error: code = NotFound
+        desc = impact not found: impact not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/incidents/1a838ffb-9c95-5df6-978c-4cf21f854fd1
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

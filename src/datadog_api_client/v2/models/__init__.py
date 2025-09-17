@@ -1585,6 +1585,17 @@ from datadog_api_client.v2.model.incident_field_attributes_single_value_type imp
     IncidentFieldAttributesSingleValueType,
 )
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
+from datadog_api_client.v2.model.incident_impact_attributes import IncidentImpactAttributes
+from datadog_api_client.v2.model.incident_impact_create_attributes import IncidentImpactCreateAttributes
+from datadog_api_client.v2.model.incident_impact_create_data import IncidentImpactCreateData
+from datadog_api_client.v2.model.incident_impact_create_request import IncidentImpactCreateRequest
+from datadog_api_client.v2.model.incident_impact_fields_object import IncidentImpactFieldsObject
+from datadog_api_client.v2.model.incident_impact_related_object import IncidentImpactRelatedObject
+from datadog_api_client.v2.model.incident_impact_relationships import IncidentImpactRelationships
+from datadog_api_client.v2.model.incident_impact_response import IncidentImpactResponse
+from datadog_api_client.v2.model.incident_impact_response_data import IncidentImpactResponseData
+from datadog_api_client.v2.model.incident_impact_type import IncidentImpactType
+from datadog_api_client.v2.model.incident_impacts_response import IncidentImpactsResponse
 from datadog_api_client.v2.model.incident_impacts_type import IncidentImpactsType
 from datadog_api_client.v2.model.incident_integration_metadata_attributes import IncidentIntegrationMetadataAttributes
 from datadog_api_client.v2.model.incident_integration_metadata_create_data import IncidentIntegrationMetadataCreateData
@@ -3107,8 +3118,10 @@ from datadog_api_client.v2.model.relation_response_type import RelationResponseT
 from datadog_api_client.v2.model.relation_to_entity import RelationToEntity
 from datadog_api_client.v2.model.relation_type import RelationType
 from datadog_api_client.v2.model.relationship_item import RelationshipItem
+from datadog_api_client.v2.model.relationship_to_incident import RelationshipToIncident
 from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
 from datadog_api_client.v2.model.relationship_to_incident_attachment_data import RelationshipToIncidentAttachmentData
+from datadog_api_client.v2.model.relationship_to_incident_data import RelationshipToIncidentData
 from datadog_api_client.v2.model.relationship_to_incident_impact_data import RelationshipToIncidentImpactData
 from datadog_api_client.v2.model.relationship_to_incident_impacts import RelationshipToIncidentImpacts
 from datadog_api_client.v2.model.relationship_to_incident_integration_metadata_data import (
@@ -5415,6 +5428,17 @@ __all__ = [
     "IncidentFieldAttributesSingleValue",
     "IncidentFieldAttributesSingleValueType",
     "IncidentFieldAttributesValueType",
+    "IncidentImpactAttributes",
+    "IncidentImpactCreateAttributes",
+    "IncidentImpactCreateData",
+    "IncidentImpactCreateRequest",
+    "IncidentImpactFieldsObject",
+    "IncidentImpactRelatedObject",
+    "IncidentImpactRelationships",
+    "IncidentImpactResponse",
+    "IncidentImpactResponseData",
+    "IncidentImpactType",
+    "IncidentImpactsResponse",
     "IncidentImpactsType",
     "IncidentIntegrationMetadataAttributes",
     "IncidentIntegrationMetadataCreateData",
@@ -6425,8 +6449,10 @@ __all__ = [
     "RelationToEntity",
     "RelationType",
     "RelationshipItem",
+    "RelationshipToIncident",
     "RelationshipToIncidentAttachment",
     "RelationshipToIncidentAttachmentData",
+    "RelationshipToIncidentData",
     "RelationshipToIncidentImpactData",
     "RelationshipToIncidentImpacts",
     "RelationshipToIncidentIntegrationMetadataData",
