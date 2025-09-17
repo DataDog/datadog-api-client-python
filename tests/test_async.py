@@ -6,27 +6,25 @@ from aiosonic import HttpHeaders
 
 from datadog_api_client.api_client import AsyncApiClient
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.exceptions import ForbiddenException
+from datadog_api_client.exceptions import UnauthorizedException
 from datadog_api_client.v1.api import dashboards_api, metrics_api
 
 
 @pytest.mark.asyncio
 async def test_error():
     configuration = Configuration()
-    configuration.api_key["apiKeyAuth"] = "00000000000000000000000000000000"
-    configuration.api_key["appKeyAuth"] = "00000000000000000000000000000000"
 
     async with AsyncApiClient(configuration) as api_client:
         api_instance = metrics_api.MetricsApi(api_client)
-        with pytest.raises(ForbiddenException) as e:
+        with pytest.raises(UnauthorizedException) as e:
             await api_instance.get_metric_metadata("some_metric")
         error = str(e.value)
-        assert "(403)" in error
-        assert "Reason: Forbidden" in error
+        assert "(401)" in error
+        assert "Reason: Unauthorized" in error
         # cast headers to HttpHeaders to make them case insensitive
         headers = HttpHeaders(e.value.headers)
         assert headers["content-type"] == "application/json"
-        assert e.value.body["errors"] == ["Forbidden"]
+        assert e.value.body["errors"] == ["Unauthorized"]
 
 
 @pytest.mark.asyncio
