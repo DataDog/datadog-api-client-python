@@ -956,6 +956,167 @@ datadog\_api\_client.v2.model.apps\_sort\_field module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes\_costs\_to\_allocate\_items module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_costs_to_allocate_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes\_strategy module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_strategy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes\_strategy\_allocated\_by\_filters\_items module
+--------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_strategy_allocated_by_filters_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes\_strategy\_allocated\_by\_items module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_strategy_allocated_by_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes\_strategy\_allocated\_by\_items\_allocated\_tags\_items module
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_strategy_allocated_by_items_allocated_tags_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes\_strategy\_based\_on\_costs\_items module
+--------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_strategy_based_on_costs_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_attributes\_strategy\_evaluate\_grouped\_by\_filters\_items module
+----------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_strategy_evaluate_grouped_by_filters_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_cost\_upsert\_request\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_array module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes\_costs\_to\_allocate\_items module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_costs_to_allocate_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes\_strategy module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes\_strategy\_allocated\_by\_filters\_items module
+-------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_allocated_by_filters_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes\_strategy\_allocated\_by\_items module
+----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_allocated_by_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes\_strategy\_allocated\_by\_items\_allocated\_tags\_items module
+----------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_allocated_by_items_allocated_tags_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes\_strategy\_based\_on\_costs\_items module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_based_on_costs_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_attributes\_strategy\_evaluate\_grouped\_by\_filters\_items module
+---------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_evaluate_grouped_by_filters_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.asana\_access\_token module
 ---------------------------------------------------------
 
@@ -1513,6 +1674,34 @@ datadog\_api\_client.v2.model.aws\_cur\_config\_response module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_cur_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cur\_config\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cur\_config\_response\_data\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cur\_config\_response\_data\_attributes\_account\_filters module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_response_data_attributes_account_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cur\_config\_response\_data\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cur_config_response_data_type
    :members:
    :show-inheritance:
 
@@ -4544,6 +4733,76 @@ datadog\_api\_client.v2.model.create\_rule\_response\_data module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items\_mapping module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items\_query module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items\_query\_addition module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query_addition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items\_reference\_table module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_reference_table
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items\_reference\_table\_field\_pairs\_items module
+------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_reference_table_field_pairs_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_type
    :members:
    :show-inheritance:
 
@@ -7624,6 +7883,34 @@ datadog\_api\_client.v2.model.gcp\_service\_account\_update module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.gcp_service_account_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_uc\_config\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_uc_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_uc\_config\_response\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_uc_config_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_uc\_config\_response\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_uc_config_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.gcp\_uc\_config\_response\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.gcp_uc_config_response_data_type
    :members:
    :show-inheritance:
 
@@ -15775,6 +16062,48 @@ datadog\_api\_client.v2.model.reorder\_retention\_filters\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.reorder\_rule\_resource\_array module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_rule_resource_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_rule\_resource\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_rule_resource_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_rule\_resource\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_rule_resource_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_ruleset\_resource\_array module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_ruleset_resource_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_ruleset\_resource\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_ruleset_resource_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reorder\_ruleset\_resource\_data\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reorder_ruleset_resource_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.resource\_filter\_attributes module
 -----------------------------------------------------------------
 
@@ -16241,6 +16570,160 @@ datadog\_api\_client.v2.model.rule\_versions module
 ---------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rule_versions
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_request\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_request\_data\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_request\_data\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_response\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rules\_validate\_query\_response\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rules_validate_query_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_item\_metadata module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_item_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_array module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_created module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_created
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_modified module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_modified
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items\_mapping module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items\_query module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items\_query\_addition module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query_addition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items\_reference\_table module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_reference_table
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items\_reference\_table\_field\_pairs\_items module
+-------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_reference_table_field_pairs_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_resp\_data\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_type
    :members:
    :show-inheritance:
 
@@ -20591,6 +21074,41 @@ datadog\_api\_client.v2.model.trigger\_source module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.uc\_config\_pair module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.uc_config_pair
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.uc\_config\_pair\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.uc_config_pair_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.uc\_config\_pair\_data\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.uc_config_pair_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.uc\_config\_pair\_data\_attributes\_configs\_items module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.uc_config_pair_data_attributes_configs_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.uc\_config\_pair\_data\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.uc_config_pair_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.unit module
 -----------------------------------------
 
@@ -20840,6 +21358,76 @@ datadog\_api\_client.v2.model.update\_rule\_response\_data module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\_items module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\_items\_mapping module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\_items\_query module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\_items\_query\_addition module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query_addition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\_items\_reference\_table module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_reference_table
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\_items\_reference\_table\_field\_pairs\_items module
+------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_reference_table_field_pairs_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_type
    :members:
    :show-inheritance:
 
