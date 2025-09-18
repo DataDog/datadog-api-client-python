@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class GCPUsageCostConfigPostRequestType(ModelSimple):
     """
-    Type of GCP Usage Cost config post request.
+    Type of Google Cloud Usage Cost config post request.
 
     :param value: If omitted defaults to "gcp_uc_config_post_request". Must be one of ["gcp_uc_config_post_request"].
     :type value: str

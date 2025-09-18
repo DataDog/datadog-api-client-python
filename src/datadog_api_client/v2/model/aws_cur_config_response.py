@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.aws_cur_config import AwsCURConfig
+    from datadog_api_client.v2.model.aws_cur_config_response_data import AwsCurConfigResponseData
 
 
-class AwsCURConfigResponse(ModelNormal):
+class AwsCurConfigResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.aws_cur_config import AwsCURConfig
+        from datadog_api_client.v2.model.aws_cur_config_response_data import AwsCurConfigResponseData
 
         return {
-            "data": (AwsCURConfig,),
+            "data": (AwsCurConfigResponseData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[AwsCURConfig, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[AwsCurConfigResponseData, UnsetType] = unset, **kwargs):
         """
-        Response of AWS CUR config.
+        The definition of ``AwsCurConfigResponse`` object.
 
-        :param data: AWS CUR config.
-        :type data: AwsCURConfig, optional
+        :param data: The definition of ``AwsCurConfigResponseData`` object.
+        :type data: AwsCurConfigResponseData, optional
         """
         if data is not unset:
             kwargs["data"] = data

@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -27,7 +25,6 @@ class AzureUCConfigPostRequestAttributes(ModelNormal):
             "actual_bill_config": (BillConfig,),
             "amortized_bill_config": (BillConfig,),
             "client_id": (str,),
-            "is_enabled": (bool,),
             "scope": (str,),
         }
 
@@ -36,7 +33,6 @@ class AzureUCConfigPostRequestAttributes(ModelNormal):
         "actual_bill_config": "actual_bill_config",
         "amortized_bill_config": "amortized_bill_config",
         "client_id": "client_id",
-        "is_enabled": "is_enabled",
         "scope": "scope",
     }
 
@@ -47,13 +43,12 @@ class AzureUCConfigPostRequestAttributes(ModelNormal):
         amortized_bill_config: BillConfig,
         client_id: str,
         scope: str,
-        is_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes for Azure config Post Request.
 
-        :param account_id: The tenant ID of the azure account.
+        :param account_id: The tenant ID of the Azure account.
         :type account_id: str
 
         :param actual_bill_config: Bill config.
@@ -62,17 +57,12 @@ class AzureUCConfigPostRequestAttributes(ModelNormal):
         :param amortized_bill_config: Bill config.
         :type amortized_bill_config: BillConfig
 
-        :param client_id: The client ID of the azure account.
+        :param client_id: The client ID of the Azure account.
         :type client_id: str
-
-        :param is_enabled: Whether or not the Cloud Cost Management account is enabled.
-        :type is_enabled: bool, optional
 
         :param scope: The scope of your observed subscription.
         :type scope: str
         """
-        if is_enabled is not unset:
-            kwargs["is_enabled"] = is_enabled
         super().__init__(kwargs)
 
         self_.account_id = account_id

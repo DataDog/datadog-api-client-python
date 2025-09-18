@@ -700,6 +700,42 @@
       "type": "safe"
     }
   },
+  "ListArbitraryCostRules": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ReorderArbitraryCostRules": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCostAWSCURConfigs": {
     "tag": "Cloud Cost Management",
     "undo": {
@@ -716,6 +752,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetCostAWSCURConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateCostAWSCURConfig": {
@@ -740,6 +782,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetCostAzureUCConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateCostAzureUCConfigs": {
@@ -819,6 +867,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetCostGCPUsageCostConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateCostGCPUsageCostConfig": {
@@ -3669,6 +3723,48 @@
     "tag": "Synthetics",
     "undo": {
       "type": "safe"
+    }
+  },
+  "ListRulesets": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ReorderRulesets": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ValidateQuery": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListTeams": {

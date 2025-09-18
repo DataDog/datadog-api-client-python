@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -34,17 +36,23 @@ class AzureUCConfigPatchData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: AzureUCConfigPatchRequestAttributes, type: AzureUCConfigPatchRequestType, **kwargs):
+    def __init__(
+        self_,
+        type: AzureUCConfigPatchRequestType,
+        attributes: Union[AzureUCConfigPatchRequestAttributes, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Azure config Patch data.
 
         :param attributes: Attributes for Azure config Patch Request.
-        :type attributes: AzureUCConfigPatchRequestAttributes
+        :type attributes: AzureUCConfigPatchRequestAttributes, optional
 
         :param type: Type of Azure config Patch Request.
         :type type: AzureUCConfigPatchRequestType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         super().__init__(kwargs)
 
-        self_.attributes = attributes
         self_.type = type

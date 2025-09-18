@@ -8,6 +8,7 @@ from typing import List, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -18,7 +19,7 @@ class AccountFilteringConfig(ModelNormal):
     def openapi_types(_):
         return {
             "excluded_accounts": ([str],),
-            "include_new_accounts": (bool,),
+            "include_new_accounts": (bool, none_type),
             "included_accounts": ([str],),
         }
 
@@ -31,7 +32,7 @@ class AccountFilteringConfig(ModelNormal):
     def __init__(
         self_,
         excluded_accounts: Union[List[str], UnsetType] = unset,
-        include_new_accounts: Union[bool, UnsetType] = unset,
+        include_new_accounts: Union[bool, none_type, UnsetType] = unset,
         included_accounts: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -42,7 +43,7 @@ class AccountFilteringConfig(ModelNormal):
         :type excluded_accounts: [str], optional
 
         :param include_new_accounts: Whether or not to automatically include new member accounts by default in your billing dataset.
-        :type include_new_accounts: bool, optional
+        :type include_new_accounts: bool, none_type, optional
 
         :param included_accounts: The AWS account IDs to be included in your billing dataset. This field is used when ``include_new_accounts`` is ``false``.
         :type included_accounts: [str], optional

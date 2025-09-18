@@ -45,24 +45,24 @@ class GCPUsageCostConfigPostRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for GCP Usage Cost config post request.
+        Attributes for Google Cloud Usage Cost config post request.
 
-        :param billing_account_id: The GCP account ID.
+        :param billing_account_id: The Google Cloud account ID.
         :type billing_account_id: str
 
-        :param bucket_name: The GCP bucket name used to store the Usage Cost export.
+        :param bucket_name: The Google Cloud bucket name used to store the Usage Cost export.
         :type bucket_name: str
 
-        :param export_dataset_name: The export dataset name used for the GCP Usage Cost report.
+        :param export_dataset_name: The export dataset name used for the Google Cloud Usage Cost report.
         :type export_dataset_name: str
 
-        :param export_prefix: The export prefix used for the GCP Usage Cost report.
+        :param export_prefix: The export prefix used for the Google Cloud Usage Cost report.
         :type export_prefix: str, optional
 
-        :param export_project_name: The name of the GCP Usage Cost report.
+        :param export_project_name: The name of the Google Cloud Usage Cost report.
         :type export_project_name: str
 
-        :param service_account: The unique GCP service account email.
+        :param service_account: The unique Google Cloud service account email.
         :type service_account: str
         """
         if export_prefix is not unset:
