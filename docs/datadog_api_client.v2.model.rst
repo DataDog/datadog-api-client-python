@@ -13458,6 +13458,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_open\_search\_destination
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_opentelemetry\_source module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_opentelemetry_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_opentelemetry\_source\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_opentelemetry_source_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor module
 ------------------------------------------------------------------------------------
 
