@@ -1,0 +1,16 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/tags/enrichment/1c5dae14-237d-4b9a-a515-aa55b3939142
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

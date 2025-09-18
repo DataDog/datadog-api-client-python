@@ -76,45 +76,45 @@ class GCPUsageCostConfigAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for a GCP Usage Cost config.
+        Attributes for a Google Cloud Usage Cost config.
 
-        :param account_id: The GCP account ID.
+        :param account_id: The Google Cloud account ID.
         :type account_id: str
 
-        :param bucket_name: The GCP bucket name used to store the Usage Cost export.
+        :param bucket_name: The Google Cloud bucket name used to store the Usage Cost export.
         :type bucket_name: str
 
-        :param created_at: The timestamp when the GCP Usage Cost config was created.
+        :param created_at: The timestamp when the Google Cloud Usage Cost config was created.
         :type created_at: str, optional
 
-        :param dataset: The export dataset name used for the GCP Usage Cost Report.
+        :param dataset: The export dataset name used for the Google Cloud Usage Cost Report.
         :type dataset: str
 
-        :param error_messages: The error messages for the GCP Usage Cost config.
+        :param error_messages: The error messages for the Google Cloud Usage Cost config.
         :type error_messages: [str], none_type, optional
 
-        :param export_prefix: The export prefix used for the GCP Usage Cost Report.
+        :param export_prefix: The export prefix used for the Google Cloud Usage Cost Report.
         :type export_prefix: str
 
-        :param export_project_name: The name of the GCP Usage Cost Report.
+        :param export_project_name: The name of the Google Cloud Usage Cost Report.
         :type export_project_name: str
 
         :param months: The number of months the report has been backfilled. **Deprecated**.
         :type months: int, optional
 
-        :param project_id: The ``project_id`` of the GCP Usage Cost report.
+        :param project_id: The ``project_id`` of the Google Cloud Usage Cost report.
         :type project_id: str, optional
 
-        :param service_account: The unique GCP service account email.
+        :param service_account: The unique Google Cloud service account email.
         :type service_account: str
 
-        :param status: The status of the GCP Usage Cost config.
+        :param status: The status of the Google Cloud Usage Cost config.
         :type status: str
 
-        :param status_updated_at: The timestamp when the GCP Usage Cost config status was updated.
+        :param status_updated_at: The timestamp when the Google Cloud Usage Cost config status was updated.
         :type status_updated_at: str, optional
 
-        :param updated_at: The timestamp when the GCP Usage Cost config status was updated.
+        :param updated_at: The timestamp when the Google Cloud Usage Cost config status was updated.
         :type updated_at: str, optional
         """
         if created_at is not unset:

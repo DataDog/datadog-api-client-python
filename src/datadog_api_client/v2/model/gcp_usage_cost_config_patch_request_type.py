@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class GCPUsageCostConfigPatchRequestType(ModelSimple):
     """
-    Type of GCP Usage Cost config patch request.
+    Type of Google Cloud Usage Cost config patch request.
 
     :param value: If omitted defaults to "gcp_uc_config_patch_request". Must be one of ["gcp_uc_config_patch_request"].
     :type value: str

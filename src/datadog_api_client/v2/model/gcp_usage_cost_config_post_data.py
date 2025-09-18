@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -39,18 +41,22 @@ class GCPUsageCostConfigPostData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: GCPUsageCostConfigPostRequestAttributes, type: GCPUsageCostConfigPostRequestType, **kwargs
+        self_,
+        type: GCPUsageCostConfigPostRequestType,
+        attributes: Union[GCPUsageCostConfigPostRequestAttributes, UnsetType] = unset,
+        **kwargs,
     ):
         """
-        GCP Usage Cost config post data.
+        Google Cloud Usage Cost config post data.
 
-        :param attributes: Attributes for GCP Usage Cost config post request.
-        :type attributes: GCPUsageCostConfigPostRequestAttributes
+        :param attributes: Attributes for Google Cloud Usage Cost config post request.
+        :type attributes: GCPUsageCostConfigPostRequestAttributes, optional
 
-        :param type: Type of GCP Usage Cost config post request.
+        :param type: Type of Google Cloud Usage Cost config post request.
         :type type: GCPUsageCostConfigPostRequestType
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         super().__init__(kwargs)
 
-        self_.attributes = attributes
         self_.type = type

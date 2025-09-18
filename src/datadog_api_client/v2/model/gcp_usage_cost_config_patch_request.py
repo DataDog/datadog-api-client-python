@@ -30,9 +30,9 @@ class GCPUsageCostConfigPatchRequest(ModelNormal):
 
     def __init__(self_, data: GCPUsageCostConfigPatchData, **kwargs):
         """
-        GCP Usage Cost config patch request.
+        Google Cloud Usage Cost config patch request.
 
-        :param data: GCP Usage Cost config patch data.
+        :param data: Google Cloud Usage Cost config patch data.
         :type data: GCPUsageCostConfigPatchData
         """
         super().__init__(kwargs)
