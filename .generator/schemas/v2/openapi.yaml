@@ -18761,6 +18761,13 @@ components:
           format: date-time
           readOnly: true
           type: string
+        date_last_used:
+          description: Date the API Key was last used
+          example: '2020-11-27T10:00:00.000Z'
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
         key:
           description: The API key.
           readOnly: true
@@ -18817,6 +18824,13 @@ components:
           example: abcd
           maxLength: 4
           minLength: 4
+          readOnly: true
+          type: string
+        last_used_at:
+          description: Last usage timestamp of the application key.
+          example: '2020-12-20T10:00:00.000Z'
+          format: date-time
+          nullable: true
           readOnly: true
           type: string
         name:
@@ -34754,6 +34768,13 @@ components:
           example: '2020-11-23T10:00:00.000Z'
           readOnly: true
           type: string
+        date_last_used:
+          description: Date the API Key was last used.
+          example: '2020-11-27T10:00:00.000Z'
+          format: date-time
+          nullable: true
+          readOnly: true
+          type: string
         last4:
           description: The last four characters of the API key.
           example: abcd
@@ -34800,6 +34821,12 @@ components:
           example: abcd
           maxLength: 4
           minLength: 4
+          readOnly: true
+          type: string
+        last_used_at:
+          description: Last usage timestamp of the application key.
+          example: '2020-12-20T10:00:00.000Z'
+          nullable: true
           readOnly: true
           type: string
         name:
@@ -37778,6 +37805,7 @@ components:
       - type
       type: object
     RoleAttributes:
+      additionalProperties: {}
       description: Attributes of the role.
       properties:
         created_at:
