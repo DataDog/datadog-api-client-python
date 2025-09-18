@@ -120,6 +120,12 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param compression: Compression configuration for log events.
         :type compression: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression, optional
+
+        :param project: The GCP project ID that owns the Pub/Sub topic.
+        :type project: str
+
+        :param topic: The Pub/Sub topic name to publish logs to.
+        :type topic: str
         """
         super().__init__(kwargs)
 
@@ -182,6 +188,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
             ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
+            ObservabilityPipelineGooglePubSubDestination,
+        )
 
         return {
             "oneOf": [
@@ -203,5 +212,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineSocketDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
+                ObservabilityPipelineGooglePubSubDestination,
             ],
         }
