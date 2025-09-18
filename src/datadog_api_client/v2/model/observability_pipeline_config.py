@@ -73,6 +73,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
         ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
+        ObservabilityPipelineGooglePubSubDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
     from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
         ObservabilityPipelineParseJSONProcessor,
@@ -199,6 +202,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSocketDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
+                ObservabilityPipelineGooglePubSubDestination,
             ]
         ],
         sources: List[
