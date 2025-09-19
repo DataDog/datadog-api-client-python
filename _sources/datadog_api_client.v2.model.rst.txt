@@ -18183,6 +18183,27 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_sequence\_detection\_options module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_sequence_detection_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_sequence\_detection\_step module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_sequence_detection_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_sequence\_detection\_step\_transition module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_sequence_detection_step_transition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_severity module
 -------------------------------------------------------------------------
 
