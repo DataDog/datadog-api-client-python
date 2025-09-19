@@ -72587,6 +72587,10 @@ paths:
         cursorPath: meta.page.after
         limitParam: page[limit]
         resultsPath: data
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_read
   /api/v2/spans/events/search:
     post:
       description: 'List endpoint returns spans that match a span search query.
@@ -72636,6 +72640,10 @@ paths:
         cursorPath: meta.page.after
         limitParam: body.data.attributes.page.limit
         resultsPath: data
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_read
   /api/v2/synthetics/settings/on_demand_concurrency_cap:
     get:
       description: Get the on-demand concurrency cap.
