@@ -36,6 +36,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import (
         SecurityMonitoringRuleNewValueOptions,
     )
+    from datadog_api_client.v2.model.security_monitoring_rule_sequence_detection_options import (
+        SecurityMonitoringRuleSequenceDetectionOptions,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
         SecurityMonitoringRuleThirdPartyOptions,
     )
@@ -66,6 +69,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import (
             SecurityMonitoringRuleNewValueOptions,
         )
+        from datadog_api_client.v2.model.security_monitoring_rule_sequence_detection_options import (
+            SecurityMonitoringRuleSequenceDetectionOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_rule_third_party_options import (
             SecurityMonitoringRuleThirdPartyOptions,
         )
@@ -80,6 +86,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),
             "new_value_options": (SecurityMonitoringRuleNewValueOptions,),
+            "sequence_detection_options": (SecurityMonitoringRuleSequenceDetectionOptions,),
             "third_party_rule_options": (SecurityMonitoringRuleThirdPartyOptions,),
         }
 
@@ -93,6 +100,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         "keep_alive": "keepAlive",
         "max_signal_duration": "maxSignalDuration",
         "new_value_options": "newValueOptions",
+        "sequence_detection_options": "sequenceDetectionOptions",
         "third_party_rule_options": "thirdPartyRuleOptions",
     }
 
@@ -107,6 +115,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         keep_alive: Union[SecurityMonitoringRuleKeepAlive, UnsetType] = unset,
         max_signal_duration: Union[SecurityMonitoringRuleMaxSignalDuration, UnsetType] = unset,
         new_value_options: Union[SecurityMonitoringRuleNewValueOptions, UnsetType] = unset,
+        sequence_detection_options: Union[SecurityMonitoringRuleSequenceDetectionOptions, UnsetType] = unset,
         third_party_rule_options: Union[SecurityMonitoringRuleThirdPartyOptions, UnsetType] = unset,
         **kwargs,
     ):
@@ -146,6 +155,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param new_value_options: Options on new value detection method.
         :type new_value_options: SecurityMonitoringRuleNewValueOptions, optional
 
+        :param sequence_detection_options: Options on sequence detection method.
+        :type sequence_detection_options: SecurityMonitoringRuleSequenceDetectionOptions, optional
+
         :param third_party_rule_options: Options on third party detection method.
         :type third_party_rule_options: SecurityMonitoringRuleThirdPartyOptions, optional
         """
@@ -167,6 +179,8 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             kwargs["max_signal_duration"] = max_signal_duration
         if new_value_options is not unset:
             kwargs["new_value_options"] = new_value_options
+        if sequence_detection_options is not unset:
+            kwargs["sequence_detection_options"] = sequence_detection_options
         if third_party_rule_options is not unset:
             kwargs["third_party_rule_options"] = third_party_rule_options
         super().__init__(kwargs)
