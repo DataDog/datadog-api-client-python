@@ -5737,6 +5737,20 @@ datadog\_api\_client.v2.model.datastore\_primary\_key\_generation\_strategy modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.datastore\_trigger module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datastore_trigger
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.datastore\_trigger\_wrapper module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.datastore_trigger_wrapper
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 

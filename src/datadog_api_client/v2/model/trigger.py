@@ -33,6 +33,9 @@ class Trigger(ModelComposed):
         :param database_monitoring_trigger: Trigger a workflow from Database Monitoring.
         :type database_monitoring_trigger: dict
 
+        :param datastore_trigger: Trigger a workflow from a Datastore. For automatic triggering a handle must be configured and the workflow must be published.
+        :type datastore_trigger: DatastoreTrigger
+
         :param dashboard_trigger: Trigger a workflow from a Dashboard.
         :type dashboard_trigger: dict
 
@@ -82,6 +85,7 @@ class Trigger(ModelComposed):
         from datadog_api_client.v2.model.case_trigger_wrapper import CaseTriggerWrapper
         from datadog_api_client.v2.model.change_event_trigger_wrapper import ChangeEventTriggerWrapper
         from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
+        from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
         from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
         from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
         from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
@@ -101,6 +105,7 @@ class Trigger(ModelComposed):
                 CaseTriggerWrapper,
                 ChangeEventTriggerWrapper,
                 DatabaseMonitoringTriggerWrapper,
+                DatastoreTriggerWrapper,
                 DashboardTriggerWrapper,
                 GithubWebhookTriggerWrapper,
                 IncidentTriggerWrapper,
