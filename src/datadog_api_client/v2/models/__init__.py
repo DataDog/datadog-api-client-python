@@ -1163,6 +1163,8 @@ from datadog_api_client.v2.model.datastore_data_type import DatastoreDataType
 from datadog_api_client.v2.model.datastore_item_conflict_mode import DatastoreItemConflictMode
 from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItemsDataType
 from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
+from datadog_api_client.v2.model.datastore_trigger import DatastoreTrigger
+from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_datastore_item_request import DeleteAppsDatastoreItemRequest
@@ -5199,6 +5201,8 @@ __all__ = [
     "DatastoreItemConflictMode",
     "DatastoreItemsDataType",
     "DatastorePrimaryKeyGenerationStrategy",
+    "DatastoreTrigger",
+    "DatastoreTriggerWrapper",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsDatastoreItemRequest",
