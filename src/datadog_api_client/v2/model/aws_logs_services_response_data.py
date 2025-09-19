@@ -51,7 +51,7 @@ class AWSLogsServicesResponseData(ModelNormal):
         :param id: The ``AWSLogsServicesResponseData`` ``id``.
         :type id: str
 
-        :param type: The ``AWSLogsServicesResponseData`` ``type``.
+        :param type: The ``AWSLogsServicesResponseData`` ``type``. Test to trigger client generation.
         :type type: AWSLogsServicesResponseDataType
         """
         if attributes is not unset:
