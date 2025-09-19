@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_product_analytics_data_source-1758221477
+      with product_analytics datasource","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"product_analytics","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"zvr-td5-ppm","title":"Test-Create_a_new_timeseries_widget_with_product_analytics_data_source-1758221477
+        with product_analytics datasource","description":null,"author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
+        Account","layout_type":"ordered","url":"/dashboard/zvr-td5-ppm/test-createanewtimeserieswidgetwithproductanalyticsdatasource-1758221477-with-pr","template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"product_analytics","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":6058978575853641}],"notify_list":null,"created_at":"2025-09-18T18:51:18.107135+00:00","modified_at":"2025-09-18T18:51:18.107135+00:00","reflow_type":"auto","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/zvr-td5-ppm
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"zvr-td5-ppm"}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
