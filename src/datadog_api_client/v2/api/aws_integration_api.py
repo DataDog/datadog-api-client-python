@@ -129,6 +129,38 @@ class AWSIntegrationApi:
             api_client=api_client,
         )
 
+        self._get_aws_integration_iam_permissions_resource_collection_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSIntegrationIamPermissionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/iam_permissions/resource_collection",
+                "operation_id": "get_aws_integration_iam_permissions_resource_collection",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_aws_integration_iam_permissions_standard_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSIntegrationIamPermissionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/iam_permissions/standard",
+                "operation_id": "get_aws_integration_iam_permissions_standard",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_aws_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountsResponse,),
@@ -268,6 +300,30 @@ class AWSIntegrationApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_aws_integration_iam_permissions_endpoint.call_with_http_info(**kwargs)
+
+    def get_aws_integration_iam_permissions_resource_collection(
+        self,
+    ) -> AWSIntegrationIamPermissionsResponse:
+        """Get resource collection IAM permissions.
+
+        Get all resource collection AWS IAM permissions required for the AWS integration.
+
+        :rtype: AWSIntegrationIamPermissionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_aws_integration_iam_permissions_resource_collection_endpoint.call_with_http_info(**kwargs)
+
+    def get_aws_integration_iam_permissions_standard(
+        self,
+    ) -> AWSIntegrationIamPermissionsResponse:
+        """Get AWS integration standard IAM permissions.
+
+        Get all standard AWS IAM permissions required for the AWS integration.
+
+        :rtype: AWSIntegrationIamPermissionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_aws_integration_iam_permissions_standard_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_accounts(
         self,

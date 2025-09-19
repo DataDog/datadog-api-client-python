@@ -1517,6 +1517,18 @@
       "type": "safe"
     }
   },
+  "GetAWSIntegrationIAMPermissionsResourceCollection": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAWSIntegrationIAMPermissionsStandard": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAWSLogsServices": {
     "tag": "AWS Logs Integration",
     "undo": {
