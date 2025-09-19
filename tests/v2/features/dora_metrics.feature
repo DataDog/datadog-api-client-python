@@ -42,28 +42,32 @@ Feature: DORA Metrics
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a deployment event returns "Bad Request" response
-    Given new "GetDORADeployment" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORADeployment" request
     And request contains "deployment_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a deployment event returns "OK" response
-    Given new "GetDORADeployment" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORADeployment" request
     And request contains "deployment_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a failure event returns "Bad Request" response
-    Given new "GetDORAFailure" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORAFailure" request
     And request contains "failure_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a failure event returns "OK" response
-    Given new "GetDORAFailure" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORAFailure" request
     And request contains "failure_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
