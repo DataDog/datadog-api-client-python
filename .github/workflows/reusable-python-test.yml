@@ -1,0 +1,59 @@
+name: Reusable Python Testing Workflow
+
+on:
+  workflow_call:
+    inputs:
+      target-branch:
+        description: 'Branch to checkout and test (defaults to the calling branch)'
+        required: false
+        type: string
+        default: ''
+      python-versions:
+        description: 'JSON array of Python versions to test against'
+        required: false
+        type: string
+        default: '["3.8", "3.12"]'
+      platforms:
+        description: 'JSON array of platforms to run tests on'
+        required: false
+        type: string
+        default: '["ubuntu-22.04", "ubuntu-latest", "macos-latest"]'
+      matrix-exclude:
+        description: 'JSON array of matrix combinations to exclude'
+        required: false
+        type: string
+        default: '[{"platform": "macos-latest", "python-version": "3.8"}, {"platform": "ubuntu-latest", "python-version": "3.8"}, {"platform": "ubuntu-22.04", "python-version": "3.12"}]'
+    secrets:
+      PIPELINE_GITHUB_APP_ID:
+        required: false
+      PIPELINE_GITHUB_APP_PRIVATE_KEY:
+        required: false
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ${{ fromJSON(inputs.python-versions) }}
+        platform: ${{ fromJSON(inputs.platforms) }}
+        exclude: ${{ fromJSON(inputs.matrix-exclude) }}
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: DataDog/datadog-api-client-python
+          ref: ${{ inputs.target-branch || github.ref }}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade wheel setuptools build
+      - name: Install
+        run: pip install --disable-pip-version-check -e .[tests]
+      - name: Test
+        run: ./run-tests.sh
+        shell: bash
