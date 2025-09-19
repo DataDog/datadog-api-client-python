@@ -27,6 +27,7 @@ class PartialApplicationKeyAttributes(ModelNormal):
         return {
             "created_at": (str,),
             "last4": (str,),
+            "last_used_at": (str, none_type),
             "name": (str,),
             "scopes": ([str], none_type),
         }
@@ -34,18 +35,21 @@ class PartialApplicationKeyAttributes(ModelNormal):
     attribute_map = {
         "created_at": "created_at",
         "last4": "last4",
+        "last_used_at": "last_used_at",
         "name": "name",
         "scopes": "scopes",
     }
     read_only_vars = {
         "created_at",
         "last4",
+        "last_used_at",
     }
 
     def __init__(
         self_,
         created_at: Union[str, UnsetType] = unset,
         last4: Union[str, UnsetType] = unset,
+        last_used_at: Union[str, none_type, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         scopes: Union[List[str], none_type, UnsetType] = unset,
         **kwargs,
@@ -59,6 +63,9 @@ class PartialApplicationKeyAttributes(ModelNormal):
         :param last4: The last four characters of the application key.
         :type last4: str, optional
 
+        :param last_used_at: Last usage timestamp of the application key.
+        :type last_used_at: str, none_type, optional
+
         :param name: Name of the application key.
         :type name: str, optional
 
@@ -69,6 +76,8 @@ class PartialApplicationKeyAttributes(ModelNormal):
             kwargs["created_at"] = created_at
         if last4 is not unset:
             kwargs["last4"] = last4
+        if last_used_at is not unset:
+            kwargs["last_used_at"] = last_used_at
         if name is not unset:
             kwargs["name"] = name
         if scopes is not unset:
