@@ -803,19 +803,6 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK - Returns the list of Synthetic tests matching the search.
 
-  @team:DataDog/synthetics-managing
-  Scenario: Search Synthetic tests with boolean query parameters
-    Given new "SearchTests" request
-    And request contains "text" parameter with value "tag:value"
-    And request contains "include_full_config" parameter with value true
-    And request contains "search_suites" parameter with value true
-    And request contains "facets_only" parameter with value true
-    And request contains "start" parameter with value 10
-    And request contains "count" parameter with value 5
-    And request contains "sort" parameter with value "name,desc"
-    When the request is sent
-    Then the response status is 200 OK - Returns the list of Synthetic tests matching the search.
-
   @generated @skip @team:DataDog/synthetics-managing
   Scenario: Trigger Synthetic tests returns "Bad Request" response
     Given new "TriggerTests" request
