@@ -53646,6 +53646,10 @@ paths:
         limitParam: page[limit]
         pageOffsetParam: page[offset]
         resultsPath: data
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_service_catalog_read
     post:
       description: Create or update entities in Software Catalog.
       operationId: UpsertCatalogEntity
@@ -53678,6 +53682,10 @@ paths:
       tags:
       - Software Catalog
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_service_catalog_write
   /api/v2/catalog/entity/{entity_id}:
     delete:
       description: Delete a single entity in Software Catalog.
@@ -53745,6 +53753,10 @@ paths:
         limitParam: page[limit]
         pageOffsetParam: page[offset]
         resultsPath: data
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_service_catalog_read
     post:
       description: Create or update kinds in Software Catalog.
       operationId: UpsertCatalogKind
@@ -53777,6 +53789,10 @@ paths:
       tags:
       - Software Catalog
       x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_service_catalog_write
   /api/v2/catalog/kind/{kind_id}:
     delete:
       description: Delete a single kind in Software Catalog.
@@ -53844,6 +53860,10 @@ paths:
         limitParam: page[limit]
         pageOffsetParam: page[offset]
         resultsPath: data
+      x-permission:
+        operator: OR
+        permissions:
+        - apm_service_catalog_read
   /api/v2/ci/pipeline:
     post:
       description: 'Send your pipeline event to your Datadog platform over HTTP. For
