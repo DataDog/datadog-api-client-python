@@ -68,6 +68,7 @@ jobs:
     uses: ./.github/workflows/reusable-integration-test.yml
     with:
       target-branch: ${{ inputs.target-branch }}
+      has-integration-label: ${{ contains(github.event.pull_request.labels.*.name, 'ci/integrations') }}
     secrets:
       PIPELINE_GITHUB_APP_ID: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
       PIPELINE_GITHUB_APP_PRIVATE_KEY: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}

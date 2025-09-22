@@ -56,14 +56,21 @@ jobs:
         with:
           path: ~/.cache/pre-commit
           key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
+      - name: Determine pre-commit range
+        id: commit_range
+        run: |
+          FROM_REF=$(git merge-base HEAD origin/master)
+          echo "from_ref=$FROM_REF" >> $GITHUB_OUTPUT
+          echo "to_ref=HEAD" >> $GITHUB_OUTPUT
+          echo "Pre-commit will check from $FROM_REF to HEAD"
       - id: pre_commit
         name: Run pre-commit
         if: github.event.action != 'closed' && github.event.pull_request.merged != true
         run: |
           pre-commit run --from-ref "${FROM_REF}" --to-ref "${TO_REF}" --show-diff-on-failure --color=always
         env:
-          FROM_REF: ${{ github.event.pull_request.base.sha }}
-          TO_REF: ${{ github.event.pull_request.head.sha }}
+          FROM_REF: ${{ steps.commit_range.outputs.from_ref }}
+          TO_REF: ${{ steps.commit_range.outputs.to_ref }}
       - name: Commit changes
         if: ${{ failure() && inputs.enable-commit-changes }}
         run: |-
