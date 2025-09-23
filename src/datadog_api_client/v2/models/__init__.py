@@ -2617,6 +2617,15 @@ from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_des
 from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_type import (
     ObservabilityPipelineGoogleCloudStorageDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
+    ObservabilityPipelineGooglePubSubDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination_encoding import (
+    ObservabilityPipelineGooglePubSubDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination_type import (
+    ObservabilityPipelineGooglePubSubDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source import (
     ObservabilityPipelineGooglePubSubSource,
 )
@@ -6299,6 +6308,9 @@ __all__ = [
     "ObservabilityPipelineGoogleCloudStorageDestinationAcl",
     "ObservabilityPipelineGoogleCloudStorageDestinationStorageClass",
     "ObservabilityPipelineGoogleCloudStorageDestinationType",
+    "ObservabilityPipelineGooglePubSubDestination",
+    "ObservabilityPipelineGooglePubSubDestinationEncoding",
+    "ObservabilityPipelineGooglePubSubDestinationType",
     "ObservabilityPipelineGooglePubSubSource",
     "ObservabilityPipelineGooglePubSubSourceType",
     "ObservabilityPipelineHttpClientSource",
