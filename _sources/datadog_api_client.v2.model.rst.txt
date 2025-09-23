@@ -13577,6 +13577,27 @@ datadog\_api\_client.v2.model.observability\_pipeline\_google\_cloud\_storage\_d
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_pub\_sub\_destination module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_pub\_sub\_destination\_encoding module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_pub\_sub\_destination\_type module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_google\_pub\_sub\_source module
 --------------------------------------------------------------------------------------
 
