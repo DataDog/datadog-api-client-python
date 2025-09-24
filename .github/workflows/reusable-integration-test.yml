@@ -58,7 +58,7 @@ on:
         required: false
 
 concurrency:
-  group: integration-${{ github.head_ref }}
+  group: integration-python-${{ inputs.target-branch || github.head_ref }}
   cancel-in-progress: true
 
 jobs:
