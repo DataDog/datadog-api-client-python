@@ -55330,11 +55330,13 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ:
-        - cloud_cost_management_write
       summary: Create or update a budget
       tags:
       - Cloud Cost Management
+      x-permission:
+        operator: OR
+        permissions:
+        - cloud_cost_management_write
   /api/v2/cost/budget/{budget_id}:
     delete:
       description: Delete a budget.
@@ -55398,11 +55400,13 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      - AuthZ:
-        - cloud_cost_management_read
       summary: List budgets
       tags:
       - Cloud Cost Management
+      x-permission:
+        operator: OR
+        permissions:
+        - cloud_cost_management_read
   /api/v2/cost/custom_costs:
     get:
       description: List the Custom Costs files.

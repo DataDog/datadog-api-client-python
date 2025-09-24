@@ -495,7 +495,7 @@ class CloudCostManagementApi:
         self._list_budgets_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cost/budgets",
                 "operation_id": "list_budgets",
                 "http_method": "GET",
@@ -803,7 +803,7 @@ class CloudCostManagementApi:
         self._upsert_budget_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetWithEntries,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cost/budget",
                 "operation_id": "upsert_budget",
                 "http_method": "PUT",
