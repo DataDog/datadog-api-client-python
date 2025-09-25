@@ -695,11 +695,6 @@ class SyntheticsApi:
                     "attribute": "include_full_config",
                     "location": "query",
                 },
-                "search_suites": {
-                    "openapi_types": (bool,),
-                    "attribute": "search_suites",
-                    "location": "query",
-                },
                 "facets_only": {
                     "openapi_types": (bool,),
                     "attribute": "facets_only",
@@ -1438,7 +1433,6 @@ class SyntheticsApi:
         *,
         text: Union[str, UnsetType] = unset,
         include_full_config: Union[bool, UnsetType] = unset,
-        search_suites: Union[bool, UnsetType] = unset,
         facets_only: Union[bool, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
         count: Union[int, UnsetType] = unset,
@@ -1446,14 +1440,12 @@ class SyntheticsApi:
     ) -> SyntheticsListTestsResponse:
         """Search Synthetic tests.
 
-        Search for Synthetic tests and Test Suites.
+        Search for Synthetic tests.
 
         :param text: The search query.
         :type text: str, optional
         :param include_full_config: If true, include the full configuration for each test in the response.
         :type include_full_config: bool, optional
-        :param search_suites: If true, returns suites instead of tests.
-        :type search_suites: bool, optional
         :param facets_only: If true, return only facets instead of full test details.
         :type facets_only: bool, optional
         :param start: The offset from which to start returning results.
@@ -1470,9 +1462,6 @@ class SyntheticsApi:
 
         if include_full_config is not unset:
             kwargs["include_full_config"] = include_full_config
-
-        if search_suites is not unset:
-            kwargs["search_suites"] = search_suites
 
         if facets_only is not unset:
             kwargs["facets_only"] = facets_only
