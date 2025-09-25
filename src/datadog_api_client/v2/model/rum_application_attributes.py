@@ -19,6 +19,9 @@ if TYPE_CHECKING:
 
 class RUMApplicationAttributes(ModelNormal):
     validations = {
+        "api_key_id": {
+            "inclusive_maximum": 2147483647,
+        },
         "org_id": {
             "inclusive_maximum": 2147483647,
         },
@@ -29,6 +32,7 @@ class RUMApplicationAttributes(ModelNormal):
         from datadog_api_client.v2.model.rum_product_scales import RUMProductScales
 
         return {
+            "api_key_id": (int,),
             "application_id": (str,),
             "client_token": (str,),
             "created_at": (int,),
@@ -44,6 +48,7 @@ class RUMApplicationAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "api_key_id": "api_key_id",
         "application_id": "application_id",
         "client_token": "client_token",
         "created_at": "created_at",
@@ -69,6 +74,7 @@ class RUMApplicationAttributes(ModelNormal):
         type: str,
         updated_at: int,
         updated_by_handle: str,
+        api_key_id: Union[int, UnsetType] = unset,
         hash: Union[str, UnsetType] = unset,
         is_active: Union[bool, UnsetType] = unset,
         product_scales: Union[RUMProductScales, UnsetType] = unset,
@@ -76,6 +82,9 @@ class RUMApplicationAttributes(ModelNormal):
     ):
         """
         RUM application attributes.
+
+        :param api_key_id: ID of the API key associated with the application.
+        :type api_key_id: int, optional
 
         :param application_id: ID of the RUM application.
         :type application_id: str
@@ -113,6 +122,8 @@ class RUMApplicationAttributes(ModelNormal):
         :param updated_by_handle: Handle of the updater user.
         :type updated_by_handle: str
         """
+        if api_key_id is not unset:
+            kwargs["api_key_id"] = api_key_id
         if hash is not unset:
             kwargs["hash"] = hash
         if is_active is not unset:
