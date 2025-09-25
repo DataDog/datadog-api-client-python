@@ -26,11 +26,6 @@ env:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
-    if: >
-      (github.event.pull_request.draft == false &&
-       !contains(github.event.pull_request.labels.*.name, 'ci/skip') &&
-       !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/')) ||
-      github.event_name == 'schedule'
     steps:
       - name: Get GitHub App token
         id: get_token
