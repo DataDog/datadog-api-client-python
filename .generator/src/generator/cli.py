@@ -72,6 +72,8 @@ def cli(specs, output):
         "exceptions.py": env.get_template("exceptions.j2"),
         "model_utils.py": env.get_template("model_utils.j2"),
         "rest.py": env.get_template("rest.j2"),
+        "delegated_auth.py": env.get_template("delegated_auth.j2"),
+        "aws.py": env.get_template("aws.j2"),
     }
 
     top_package = output / PACKAGE_NAME

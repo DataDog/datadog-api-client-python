@@ -454,6 +454,49 @@ class ApiClient:
             return "application/json"
         return content_types[0]
 
+    def use_delegated_token_auth(self, headers: Dict[str, Any]) -> None:
+        """Use delegated token authentication if configured.
+
+        :param headers: Header parameters dict to be updated.
+        :raises: ApiValueError if delegated token authentication fails
+        """
+        if not self.configuration.delegated_token_config:
+            return
+
+        # Get or create delegated token credentials
+        if not hasattr(self, "_delegated_token_credentials") or self._delegated_token_credentials is None:
+            self._delegated_token_credentials = self._get_delegated_token()
+        elif self._delegated_token_credentials.is_expired():
+            # Token is expired, get a new one
+            self._delegated_token_credentials = self._get_delegated_token()
+
+        # Set the Authorization header with the delegated token
+        headers["Authorization"] = f"Bearer {self._delegated_token_credentials.delegated_token}"
+
+    def get_delegated_token(self) -> "DelegatedTokenCredentials":
+        """Get a delegated token using the configured provider (public API).
+        
+        :return: DelegatedTokenCredentials object
+        :raises: ApiValueError if token retrieval fails
+        """
+        return self._get_delegated_token()
+
+    def _get_delegated_token(self) -> "DelegatedTokenCredentials":
+        """Get a new delegated token using the configured provider.
+
+        :return: DelegatedTokenCredentials object
+        :raises: ApiValueError if token retrieval fails
+        """
+        if not self.configuration.delegated_token_config:
+            raise ApiValueError("Delegated token configuration is not set")
+
+        try:
+            return self.configuration.delegated_token_config.provider_auth.authenticate(
+                self.configuration.delegated_token_config
+            )
+        except Exception as e:
+            raise ApiValueError(f"Failed to get delegated token: {str(e)}")
+
 
 class ThreadedApiClient(ApiClient):
     _pool = None
@@ -822,18 +865,26 @@ class Endpoint:
         if not self.settings["auth"]:
             return
 
-        for auth in self.settings["auth"]:
-            auth_setting = self.api_client.configuration.auth_settings().get(auth)
-            if auth_setting:
-                if auth_setting["in"] == "header":
-                    if auth_setting["type"] != "http-signature":
-                        if auth_setting["value"] is None:
-                            raise ApiValueError("Invalid authentication token for {}".format(auth_setting["key"]))
-                        headers[auth_setting["key"]] = auth_setting["value"]
-                elif auth_setting["in"] == "query":
-                    queries.append((auth_setting["key"], auth_setting["value"]))
-                else:
-                    raise ApiValueError("Authentication token must be in `query` or `header`")
+        # Check if this endpoint uses appKeyAuth and if delegated token config is available
+        has_app_key_auth = "appKeyAuth" in self.settings["auth"]
+
+        if has_app_key_auth and self.api_client.configuration.delegated_token_config is not None:
+            # Use delegated token authentication
+            self.api_client.use_delegated_token_auth(headers)
+        else:
+            # Use regular authentication
+            for auth in self.settings["auth"]:
+                auth_setting = self.api_client.configuration.auth_settings().get(auth)
+                if auth_setting:
+                    if auth_setting["in"] == "header":
+                        if auth_setting["type"] != "http-signature":
+                            if auth_setting["value"] is None:
+                                raise ApiValueError("Invalid authentication token for {}".format(auth_setting["key"]))
+                            headers[auth_setting["key"]] = auth_setting["value"]
+                    elif auth_setting["in"] == "query":
+                        queries.append((auth_setting["key"], auth_setting["value"]))
+                    else:
+                        raise ApiValueError("Authentication token must be in `query` or `header`")
 
 
 def user_agent() -> str:
