@@ -3737,6 +3737,22 @@
       "type": "safe"
     }
   },
+  "PostSCAResult": {
+    "tag": "Static Analysis",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "PostSCAResolveVulnerableSymbols": {
+    "tag": "Static Analysis",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "GetOnDemandConcurrencyCap": {
     "tag": "Synthetics",
     "undo": {
