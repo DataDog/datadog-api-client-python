@@ -1476,6 +1476,23 @@ from datadog_api_client.v2.model.finding_rule import FindingRule
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
 from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
+from datadog_api_client.v2.model.flaky_test import FlakyTest
+from datadog_api_client.v2.model.flaky_test_attributes import FlakyTestAttributes
+from datadog_api_client.v2.model.flaky_test_attributes_flaky_state import FlakyTestAttributesFlakyState
+from datadog_api_client.v2.model.flaky_test_pipeline_stats import FlakyTestPipelineStats
+from datadog_api_client.v2.model.flaky_test_run_metadata import FlakyTestRunMetadata
+from datadog_api_client.v2.model.flaky_test_stats import FlakyTestStats
+from datadog_api_client.v2.model.flaky_test_type import FlakyTestType
+from datadog_api_client.v2.model.flaky_tests_pagination import FlakyTestsPagination
+from datadog_api_client.v2.model.flaky_tests_search_filter import FlakyTestsSearchFilter
+from datadog_api_client.v2.model.flaky_tests_search_page_options import FlakyTestsSearchPageOptions
+from datadog_api_client.v2.model.flaky_tests_search_request import FlakyTestsSearchRequest
+from datadog_api_client.v2.model.flaky_tests_search_request_attributes import FlakyTestsSearchRequestAttributes
+from datadog_api_client.v2.model.flaky_tests_search_request_data import FlakyTestsSearchRequestData
+from datadog_api_client.v2.model.flaky_tests_search_request_data_type import FlakyTestsSearchRequestDataType
+from datadog_api_client.v2.model.flaky_tests_search_response import FlakyTestsSearchResponse
+from datadog_api_client.v2.model.flaky_tests_search_response_meta import FlakyTestsSearchResponseMeta
+from datadog_api_client.v2.model.flaky_tests_search_sort import FlakyTestsSearchSort
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.freshservice_api_key import FreshserviceAPIKey
@@ -5467,6 +5484,23 @@ __all__ = [
     "FindingStatus",
     "FindingType",
     "FindingVulnerabilityType",
+    "FlakyTest",
+    "FlakyTestAttributes",
+    "FlakyTestAttributesFlakyState",
+    "FlakyTestPipelineStats",
+    "FlakyTestRunMetadata",
+    "FlakyTestStats",
+    "FlakyTestType",
+    "FlakyTestsPagination",
+    "FlakyTestsSearchFilter",
+    "FlakyTestsSearchPageOptions",
+    "FlakyTestsSearchRequest",
+    "FlakyTestsSearchRequestAttributes",
+    "FlakyTestsSearchRequestData",
+    "FlakyTestsSearchRequestDataType",
+    "FlakyTestsSearchResponse",
+    "FlakyTestsSearchResponseMeta",
+    "FlakyTestsSearchSort",
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
     "FreshserviceAPIKey",
