@@ -1390,7 +1390,13 @@ class SecurityMonitoringApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -3427,14 +3433,21 @@ class SecurityMonitoringApi:
 
     def list_security_monitoring_suppressions(
         self,
+        *,
+        query: Union[str, UnsetType] = unset,
     ) -> SecurityMonitoringSuppressionsResponse:
         """Get all suppression rules.
 
         Get the list of all suppression rules.
 
+        :param query: Query string.
+        :type query: str, optional
         :rtype: SecurityMonitoringSuppressionsResponse
         """
         kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
         return self._list_security_monitoring_suppressions_endpoint.call_with_http_info(**kwargs)
 
     def list_vulnerabilities(
