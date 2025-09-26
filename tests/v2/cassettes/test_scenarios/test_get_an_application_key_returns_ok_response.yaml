@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Test-Get_an_application_key_returns_OK_response-1652349139"},"type":"application_keys"}}'
+    body: '{"data":{"attributes":{"name":"Test-Get_an_application_key_returns_OK_response-1757323488"},"type":"application_keys"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/current_user/application_keys
   response:
     body:
-      string: '{"data":{"type":"application_keys","id":"17d9fa70-2830-450c-904b-0720d93722a9","attributes":{"name":"Test-Get_an_application_key_returns_OK_response-1652349139","created_at":"2022-05-12T09:52:20.054892+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}}}}'
+      string: '{"data":{"type":"application_keys","id":"0292830c-dde3-4e62-a568-573e4be65dff","attributes":{"name":"Test-Get_an_application_key_returns_OK_response-1757323488","created_at":"2025-09-08T09:24:48.499395+00:00","last4":"xxxx","key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"leak_information":{"data":null}}}}'
     headers:
       content-type:
       - application/json
@@ -23,10 +23,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/application_keys/17d9fa70-2830-450c-904b-0720d93722a9
+    uri: https://api.datadoghq.com/api/v2/application_keys/0292830c-dde3-4e62-a568-573e4be65dff
   response:
     body:
-      string: '{"data":{"type":"application_keys","id":"17d9fa70-2830-450c-904b-0720d93722a9","attributes":{"name":"Test-Get_an_application_key_returns_OK_response-1652349139","created_at":"2022-05-12T09:52:20.054892+00:00","last4":"xxxx","scopes":null},"relationships":{"owned_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}},"leak_information":{"data":null}}}}'
+      string: '{"data":{"type":"application_keys","id":"0292830c-dde3-4e62-a568-573e4be65dff","attributes":{"name":"Test-Get_an_application_key_returns_OK_response-1757323488","created_at":"2025-09-08T09:24:48.499395+00:00","last4":"xxxx","scopes":null,"last_used_at":null},"relationships":{"owned_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}},"leak_information":{"data":null}}}}'
     headers:
       content-type:
       - application/json
@@ -39,11 +39,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/17d9fa70-2830-450c-904b-0720d93722a9
+    uri: https://api.datadoghq.com/api/v2/current_user/application_keys/0292830c-dde3-4e62-a568-573e4be65dff
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content

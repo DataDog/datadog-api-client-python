@@ -1,0 +1,79 @@
+name: Reusable Complete CI Workflow
+
+on:
+  workflow_call:
+    inputs:
+      target-branch:
+        description: 'Branch to checkout and test (defaults to the calling branch)'
+        required: false
+        type: string
+        default: ''
+      python-versions:
+        description: 'JSON array of Python versions to test against'
+        required: false
+        type: string
+        default: '["3.8", "3.12"]'
+      platforms:
+        description: 'JSON array of platforms to run tests on'
+        required: false
+        type: string
+        default: '["ubuntu-22.04", "ubuntu-latest", "macos-latest"]'
+      matrix-exclude:
+        description: 'JSON array of matrix combinations to exclude'
+        required: false
+        type: string
+        default: '[{"platform": "macos-latest", "python-version": "3.8"}, {"platform": "ubuntu-latest", "python-version": "3.8"}, {"platform": "ubuntu-22.04", "python-version": "3.12"}]'
+    secrets:
+      PIPELINE_GITHUB_APP_ID:
+        required: false
+      PIPELINE_GITHUB_APP_PRIVATE_KEY:
+        required: false
+      # Integration test secrets
+      DD_API_KEY:
+        required: false
+      DD_CLIENT_API_KEY:
+        required: false
+      DD_CLIENT_APP_KEY:
+        required: false
+      SLEEP_AFTER_REQUEST:
+        required: false
+
+jobs:
+  pre-commit:
+    uses: ./.github/workflows/reusable-pre-commit.yml
+    with:
+      target-branch: ${{ inputs.target-branch }}
+      enable-commit-changes: false  # Don't auto-commit in external CI
+    secrets:
+      PIPELINE_GITHUB_APP_ID: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
+      PIPELINE_GITHUB_APP_PRIVATE_KEY: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+
+  test:
+    uses: ./.github/workflows/reusable-python-test.yml
+    with:
+      target-branch: ${{ inputs.target-branch }}
+      python-versions: ${{ inputs.python-versions }}
+      platforms: ${{ inputs.platforms }}
+      matrix-exclude: ${{ inputs.matrix-exclude }}
+    secrets:
+      PIPELINE_GITHUB_APP_ID: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
+      PIPELINE_GITHUB_APP_PRIVATE_KEY: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+
+  examples:
+    uses: ./.github/workflows/reusable-examples.yml
+    with:
+      target-branch: ${{ inputs.target-branch }}
+
+  integration:
+    uses: ./.github/workflows/reusable-integration-test.yml
+    with:
+      target-branch: ${{ inputs.target-branch }}
+      has-integration-label: ${{ contains(github.event.pull_request.labels.*.name, 'ci/integrations') }}
+    secrets:
+      PIPELINE_GITHUB_APP_ID: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
+      PIPELINE_GITHUB_APP_PRIVATE_KEY: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+      DD_API_KEY: ${{ secrets.DD_API_KEY }}
+      DD_CLIENT_API_KEY: ${{ secrets.DD_CLIENT_API_KEY }}
+      DD_CLIENT_APP_KEY: ${{ secrets.DD_CLIENT_APP_KEY }}
+      SLEEP_AFTER_REQUEST: ${{ secrets.SLEEP_AFTER_REQUEST }}
+

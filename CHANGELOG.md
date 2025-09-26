@@ -1,5 +1,37 @@
 # CHANGELOG
 
+## 2.43.0/2025-09-15
+
+### Added
+* Add Query Parameters to ListOrgConnections Endpoint [#2830](https://github.com/DataDog/datadog-api-client-python/pull/2830)
+* Add Incident Notification Rules Public Spec [#2825](https://github.com/DataDog/datadog-api-client-python/pull/2825)
+* Update v1 and v2 GCP API specs to support `monitored_resource_configs` [#2823](https://github.com/DataDog/datadog-api-client-python/pull/2823)
+* Add Incident Notification Template Public Docs [#2819](https://github.com/DataDog/datadog-api-client-python/pull/2819)
+* Add Cross Org API to Open API specs [#2818](https://github.com/DataDog/datadog-api-client-python/pull/2818)
+* Add readonly ID of synthetics test steps [#2814](https://github.com/DataDog/datadog-api-client-python/pull/2814)
+* Create Cloud SIEM histsignals endpoints [#2813](https://github.com/DataDog/datadog-api-client-python/pull/2813)
+* Security Monitoring - Validation Endpoint for Suppressions [#2810](https://github.com/DataDog/datadog-api-client-python/pull/2810)
+* Update Get All Notification Rules API docs to include pagination, sorting, and filtering params [#2808](https://github.com/DataDog/datadog-api-client-python/pull/2808)
+* Security Monitoring - Related Suppressions for a Rule [#2805](https://github.com/DataDog/datadog-api-client-python/pull/2805)
+* Add action datastore API [#2803](https://github.com/DataDog/datadog-api-client-python/pull/2803)
+* Extend Widget time schema with support for hide_incomplete_cost_data [#2793](https://github.com/DataDog/datadog-api-client-python/pull/2793)
+* Add SDS rule `should_save_match` field [#2791](https://github.com/DataDog/datadog-api-client-python/pull/2791)
+* Add spec for Agentless GetAwsScanOptions [#2788](https://github.com/DataDog/datadog-api-client-python/pull/2788)
+* Add Cross Org API to Open API specs [#2786](https://github.com/DataDog/datadog-api-client-python/pull/2786)
+* Add DNAP Spark Pod Autosizing service to API client [#2782](https://github.com/DataDog/datadog-api-client-python/pull/2782)
+* Add version parameter to synthetic test trigger ci endpoint [#2781](https://github.com/DataDog/datadog-api-client-python/pull/2781)
+* Document Error Tracking public APIs [#2778](https://github.com/DataDog/datadog-api-client-python/pull/2778)
+
+### Deprecated
+* Promote unstable aws v2 APIs and deprecate v1 [#2822](https://github.com/DataDog/datadog-api-client-python/pull/2822)
+
+### Fixed
+* Security Monitoring - Fix payload of Validation Endpoint for Suppressions [#2815](https://github.com/DataDog/datadog-api-client-python/pull/2815)
+
+### Changed
+* Allow to send batches of events in pipelines API [#2807](https://github.com/DataDog/datadog-api-client-python/pull/2807)
+* Update public cost permissions [#2790](https://github.com/DataDog/datadog-api-client-python/pull/2790)
+
 ## 2.42.0/2025-09-09
 
 ### Added

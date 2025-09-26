@@ -212,6 +212,16 @@ Feature: Security Monitoring
     And the response "referenceTables" is equal to [{"tableName": "synthetics_test_reference_table_dont_delete", "columnName": "value", "logFieldPath":"testtag", "checkPresence":true, "ruleQueryName":"a"}]
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a detection rule with detection method 'sequence_detection' returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}","type":"log_detection","isEnabled":true,"queries":[{"aggregation":"count","dataSource":"logs","distinctFields":[],"groupByFields":[],"hasOptionalGroupByFields":false,"name":"","query":"service:logs-rule-reducer source:paul test2"},{"aggregation":"count","dataSource":"logs","distinctFields":[],"groupByFields":[],"hasOptionalGroupByFields":false,"name":"","query":"service:logs-rule-reducer source:paul test1"}],"cases":[{"name":"","status":"info","notifications":[],"condition":"step_b > 0"}],"message":"Logs and signals asdf","options":{"detectionMethod":"sequence_detection","evaluationWindow":0,"keepAlive":300,"maxSignalDuration":600,"sequenceDetectionOptions":{"stepTransitions":[{"child":"step_b","evaluationWindow":900,"parent":"step_a"}],"steps":[{"condition":"a > 0","evaluationWindow":60,"name":"step_a"},{"condition":"b > 0","evaluationWindow":60,"name":"step_b"}]}},"tags":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "log_detection"
+    And the response "options.detectionMethod" is equal to "sequence_detection"
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with detection method 'third_party' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}","type":"log_detection","isEnabled":true,"thirdPartyCases":[{"query":"status:error","name":"high","status":"high"},{"query":"status:info","name":"low","status":"low"}],"queries":[],"cases":[],"message":"This is a third party rule","options":{"detectionMethod":"third_party","keepAlive":0,"maxSignalDuration":600,"thirdPartyRuleOptions":{"defaultStatus":"info","rootQueries":[{"query":"source:guardduty @details.alertType:*EC2*", "groupByFields":["instance-id"]},{"query":"source:guardduty", "groupByFields":[]}]}}}
@@ -1480,6 +1490,13 @@ Feature: Security Monitoring
   Scenario: Validate a detection rule returns "OK" response
     Given new "ValidateSecurityMonitoringRule" request
     And body with value {"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 0"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My security monitoring rule","name":"My security monitoring rule","options":{"evaluationWindow":1800,"keepAlive":1800,"maxSignalDuration":1800,"detectionMethod":"threshold"},"queries":[{"query":"source:source_here","groupByFields":["@userIdentity.assumed_role"],"distinctFields":[],"aggregation":"count","name":""}],"tags":["env:prod","team:security"],"type":"log_detection"}
+    When the request is sent
+    Then the response status is 204 OK
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Validate a detection rule with detection method 'sequence_detection' returns "OK" response
+    Given new "ValidateSecurityMonitoringRule" request
+    And body with value {"cases":[{"name":"","status":"info","notifications":[],"condition":"step_b > 0"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My security monitoring rule","name":"My security monitoring rule","options":{"evaluationWindow":0,"keepAlive":300,"maxSignalDuration":600,"detectionMethod":"sequence_detection","sequenceDetectionOptions":{"stepTransitions":[{"child":"step_b","evaluationWindow":900,"parent":"step_a"}],"steps":[{"condition":"a > 0","evaluationWindow":60,"name":"step_a"},{"condition":"b > 0","evaluationWindow":60,"name":"step_b"}]}},"queries":[{"query":"source:source_here","groupByFields":["@userIdentity.assumed_role"],"distinctFields":[],"aggregation":"count","name":""},{"query":"source:source_here2","groupByFields":[],"distinctFields":[],"aggregation":"count","name":""}],"tags":["env:prod","team:security"],"type":"log_detection"}
     When the request is sent
     Then the response status is 204 OK
 

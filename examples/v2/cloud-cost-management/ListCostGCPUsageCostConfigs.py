@@ -1,5 +1,5 @@
 """
-List Cloud Cost Management GCP Usage Cost configs returns "OK" response
+List Google Cloud Usage Cost configs returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

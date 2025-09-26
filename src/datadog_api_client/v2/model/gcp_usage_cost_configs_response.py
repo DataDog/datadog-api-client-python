@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,13 +28,13 @@ class GCPUsageCostConfigsResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[GCPUsageCostConfig], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: List[GCPUsageCostConfig], **kwargs):
         """
-        List of GCP Usage Cost configs.
+        List of Google Cloud Usage Cost configs.
 
-        :param data: A GCP Usage Cost config.
-        :type data: [GCPUsageCostConfig], optional
+        :param data: A Google Cloud Usage Cost config.
+        :type data: [GCPUsageCostConfig]
         """
-        if data is not unset:
-            kwargs["data"] = data
         super().__init__(kwargs)
+
+        self_.data = data

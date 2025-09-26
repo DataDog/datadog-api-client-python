@@ -1,0 +1,84 @@
+name: Reusable Pre-commit Workflow
+
+on:
+  workflow_call:
+    inputs:
+      target-branch:
+        description: 'Branch to checkout and test (defaults to the calling branch)'
+        required: false
+        type: string
+        default: ''
+      enable-commit-changes:
+        description: 'Whether to commit and push pre-commit fixes'
+        required: false
+        type: boolean
+        default: true
+    secrets:
+      PIPELINE_GITHUB_APP_ID:
+        required: false
+      PIPELINE_GITHUB_APP_PRIVATE_KEY:
+        required: false
+
+env:
+  GIT_AUTHOR_EMAIL: "packages@datadoghq.com"
+  GIT_AUTHOR_NAME: "ci.datadog-api-spec"
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get GitHub App token
+        id: get_token
+        if: inputs.enable-commit-changes
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
+          private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          repository: DataDog/datadog-api-client-python
+          ref: ${{ inputs.target-branch || github.event.pull_request.head.sha || github.ref }}
+          token: ${{ inputs.enable-commit-changes && steps.get_token.outputs.token || github.token }}
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install pre-commit
+        run: python -m pip install pre-commit
+      - name: set PY
+        run: echo "PY=$(python -c 'import platform;print(platform.python_version())')" >> $GITHUB_ENV
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
+      - name: Determine pre-commit range
+        id: commit_range
+        run: |
+          FROM_REF=$(git merge-base HEAD origin/master)
+          echo "from_ref=$FROM_REF" >> $GITHUB_OUTPUT
+          echo "to_ref=HEAD" >> $GITHUB_OUTPUT
+          echo "Pre-commit will check from $FROM_REF to HEAD"
+      - id: pre_commit
+        name: Run pre-commit
+        if: github.event.action != 'closed' && github.event.pull_request.merged != true
+        run: |
+          pre-commit run --from-ref "${FROM_REF}" --to-ref "${TO_REF}" --show-diff-on-failure --color=always
+        env:
+          FROM_REF: ${{ steps.commit_range.outputs.from_ref }}
+          TO_REF: ${{ steps.commit_range.outputs.to_ref }}
+      - name: Commit changes
+        if: ${{ failure() && inputs.enable-commit-changes }}
+        run: |-
+          git add -A
+          git config user.name "${GIT_AUTHOR_NAME}"
+          git config user.email "${GIT_AUTHOR_EMAIL}"
+          git commit -m "pre-commit fixes"
+          git push origin "HEAD:${HEAD_REF}"
+          exit 1
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+      - id: pre_commit_schedule
+        name: Run pre-commit in schedule
+        if: github.event_name == 'schedule'
+        run: |
+          pre-commit run --all-files --show-diff-on-failure --color=always

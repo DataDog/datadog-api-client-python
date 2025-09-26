@@ -700,6 +700,42 @@
       "type": "safe"
     }
   },
+  "ListArbitraryCostRules": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ReorderArbitraryCostRules": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateArbitraryCostRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCostAWSCURConfigs": {
     "tag": "Cloud Cost Management",
     "undo": {
@@ -716,6 +752,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetCostAWSCURConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateCostAWSCURConfig": {
@@ -740,6 +782,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetCostAzureUCConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateCostAzureUCConfigs": {
@@ -819,6 +867,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetCostGCPUsageCostConfig": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateCostGCPUsageCostConfig": {
@@ -1010,6 +1064,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteDORADeployment": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDORADeployments": {
     "tag": "DORA Metrics",
     "undo": {
@@ -1023,6 +1083,12 @@
     }
   },
   "CreateDORAFailure": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteDORAFailure": {
     "tag": "DORA Metrics",
     "undo": {
       "type": "idempotent"
@@ -1297,6 +1363,35 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentImpacts": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentImpact": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentImpact",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.relationships.incident.data.id"
+        },
+        {
+          "name": "impact_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentImpact": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentIntegrations": {
     "tag": "Incidents",
     "undo": {
@@ -1429,6 +1524,18 @@
     }
   },
   "GetAWSIntegrationIAMPermissions": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAWSIntegrationIAMPermissionsResourceCollection": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAWSIntegrationIAMPermissionsStandard": {
     "tag": "AWS Integration",
     "undo": {
       "type": "safe"
@@ -3640,6 +3747,48 @@
     "tag": "Synthetics",
     "undo": {
       "type": "safe"
+    }
+  },
+  "ListRulesets": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ReorderRulesets": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ValidateQuery": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRuleset": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListTeams": {

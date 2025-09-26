@@ -16,8 +16,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
     from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
+    from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
     from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
     from datadog_api_client.v2.model.incident_severity import IncidentSeverity
     from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
@@ -29,8 +29,8 @@ if TYPE_CHECKING:
 class IncidentResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
         from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
+        from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
         from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
         from datadog_api_client.v2.model.incident_severity import IncidentSeverity
 
@@ -43,6 +43,9 @@ class IncidentResponseAttributes(ModelNormal):
             "customer_impact_scope": (str, none_type),
             "customer_impact_start": (datetime, none_type),
             "customer_impacted": (bool,),
+            "declared": (datetime,),
+            "declared_by": (IncidentNonDatadogCreator,),
+            "declared_by_uuid": (str, none_type),
             "detected": (datetime, none_type),
             "fields": ({str: (IncidentFieldAttributes,)},),
             "incident_type_uuid": (str,),
@@ -71,6 +74,9 @@ class IncidentResponseAttributes(ModelNormal):
         "customer_impact_scope": "customer_impact_scope",
         "customer_impact_start": "customer_impact_start",
         "customer_impacted": "customer_impacted",
+        "declared": "declared",
+        "declared_by": "declared_by",
+        "declared_by_uuid": "declared_by_uuid",
         "detected": "detected",
         "fields": "fields",
         "incident_type_uuid": "incident_type_uuid",
@@ -93,6 +99,7 @@ class IncidentResponseAttributes(ModelNormal):
         "archived",
         "created",
         "customer_impact_duration",
+        "declared",
         "modified",
         "time_to_detect",
         "time_to_internal_response",
@@ -111,6 +118,9 @@ class IncidentResponseAttributes(ModelNormal):
         customer_impact_scope: Union[str, none_type, UnsetType] = unset,
         customer_impact_start: Union[datetime, none_type, UnsetType] = unset,
         customer_impacted: Union[bool, UnsetType] = unset,
+        declared: Union[datetime, UnsetType] = unset,
+        declared_by: Union[IncidentNonDatadogCreator, none_type, UnsetType] = unset,
+        declared_by_uuid: Union[str, none_type, UnsetType] = unset,
         detected: Union[datetime, none_type, UnsetType] = unset,
         fields: Union[
             Dict[
@@ -164,6 +174,15 @@ class IncidentResponseAttributes(ModelNormal):
 
         :param customer_impacted: A flag indicating whether the incident caused customer impact.
         :type customer_impacted: bool, optional
+
+        :param declared: Timestamp when the incident was declared.
+        :type declared: datetime, optional
+
+        :param declared_by: Incident's non Datadog creator.
+        :type declared_by: IncidentNonDatadogCreator, none_type, optional
+
+        :param declared_by_uuid: UUID of the user who declared the incident.
+        :type declared_by_uuid: str, none_type, optional
 
         :param detected: Timestamp when the incident was detected.
         :type detected: datetime, none_type, optional
@@ -233,6 +252,12 @@ class IncidentResponseAttributes(ModelNormal):
             kwargs["customer_impact_start"] = customer_impact_start
         if customer_impacted is not unset:
             kwargs["customer_impacted"] = customer_impacted
+        if declared is not unset:
+            kwargs["declared"] = declared
+        if declared_by is not unset:
+            kwargs["declared_by"] = declared_by
+        if declared_by_uuid is not unset:
+            kwargs["declared_by_uuid"] = declared_by_uuid
         if detected is not unset:
             kwargs["detected"] = detected
         if fields is not unset:

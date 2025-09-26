@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,13 +28,13 @@ class AzureUCConfigsResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[AzureUCConfigPair], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: List[AzureUCConfigPair], **kwargs):
         """
         List of Azure accounts with configs.
 
         :param data: An Azure config pair.
-        :type data: [AzureUCConfigPair], optional
+        :type data: [AzureUCConfigPair]
         """
-        if data is not unset:
-            kwargs["data"] = data
         super().__init__(kwargs)
+
+        self_.data = data

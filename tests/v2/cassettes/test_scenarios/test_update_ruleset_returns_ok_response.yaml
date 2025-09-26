@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"last_version":3601919,"rules":[{"enabled":true,"mapping":{"destination_key":"team_owner","if_not_exists":true,"source_keys":["account_name","account_id"]},"name":"Account
+      Name Mapping","query":null,"reference_table":null}]},"type":"update_ruleset"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/tags/enrichment/1c5dae14-237d-4b9a-a515-aa55b3939142
+  response:
+    body:
+      string: '{"data":{"id":"1c5dae14-237d-4b9a-a515-aa55b3939142","type":"ruleset","attributes":{"created":{"seconds":1757623356,"nanos":940863000},"enabled":true,"last_modified_user_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","modified":{"seconds":1757623356,"nanos":940863000},"name":"New
+        Ruleset","position":1,"rules":[{"name":"Account Name Mapping","enabled":true,"query":null,"mapping":{"source_keys":["account_name","account_id"],"destination_key":"team_owner","if_not_exists":true},"reference_table":null,"metadata":null}],"version":3601923}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,7 +1,7 @@
 @endpoint(dora-metrics) @endpoint(dora-metrics-v2)
 Feature: DORA Metrics
-  Search or send events for DORA Metrics to measure and improve your
-  software delivery performance. See the [DORA Metrics
+  Search, send, or delete events for DORA Metrics to measure and improve
+  your software delivery performance. See the [DORA Metrics
   page](https://docs.datadoghq.com/dora_metrics/) for more information.
   **Note**: DORA Metrics are not available in the US1-FED site.
 
@@ -9,30 +9,65 @@ Feature: DORA Metrics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "DORAMetrics" API
 
+  @skip @team:DataDog/ci-app-backend
+  Scenario: Delete a deployment event returns "Accepted" response
+    Given new "DeleteDORADeployment" request
+    And a valid "appKeyAuth" key in the system
+    And request contains "deployment_id" parameter with value "NO_VALUE"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @skip @team:DataDog/ci-app-backend
+  Scenario: Delete a deployment event returns "Bad Request" response
+    Given new "DeleteDORADeployment" request
+    And request contains "deployment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/ci-app-backend
+  Scenario: Delete a failure event returns "Accepted" response
+    Given new "DeleteDORAFailure" request
+    And a valid "appKeyAuth" key in the system
+    And request contains "failure_id" parameter with value "NO_VALUE"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @skip @team:DataDog/ci-app-backend
+  Scenario: Delete a failure event returns "Bad Request" response
+    Given new "DeleteDORAFailure" request
+    And a valid "appKeyAuth" key in the system
+    And request contains "failure_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a deployment event returns "Bad Request" response
-    Given new "GetDORADeployment" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORADeployment" request
     And request contains "deployment_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a deployment event returns "OK" response
-    Given new "GetDORADeployment" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORADeployment" request
     And request contains "deployment_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a failure event returns "Bad Request" response
-    Given new "GetDORAFailure" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORAFailure" request
     And request contains "failure_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get a failure event returns "OK" response
-    Given new "GetDORAFailure" request
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDORAFailure" request
     And request contains "failure_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK

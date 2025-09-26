@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"rules":[{"enabled":true,"mapping":null,"name":"Add
+      Cost Center Tag","query":{"addition":{"key":"cost_center","value":"engineering"},"case_insensitivity":false,"if_not_exists":true,"query":"account_id:\"123456789\"
+      AND service:\"web-api\""},"reference_table":null}]},"id":"New Ruleset","type":"create_ruleset"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/tags/enrichment
+  response:
+    body:
+      string: '{"data":{"id":"1b680ec0-8e29-4b79-bb01-45f0c645a789","type":"ruleset","attributes":{"created":{"seconds":1758041403,"nanos":117388000},"enabled":true,"last_modified_user_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","modified":{"seconds":1758041403,"nanos":117388000},"name":"New
+        Ruleset","position":1,"rules":[{"name":"Add Cost Center Tag","enabled":true,"query":{"query":"account_id:\"123456789\"
+        AND service:\"web-api\"","addition":{"key":"cost_center","value":"engineering"},"if_not_exists":true,"case_insensitivity":false},"mapping":null,"reference_table":null,"metadata":null}],"version":3603412}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

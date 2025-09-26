@@ -30,9 +30,9 @@ class GCPUsageCostConfigPostRequest(ModelNormal):
 
     def __init__(self_, data: GCPUsageCostConfigPostData, **kwargs):
         """
-        GCP Usage Cost config post request.
+        Google Cloud Usage Cost config post request.
 
-        :param data: GCP Usage Cost config post data.
+        :param data: Google Cloud Usage Cost config post data.
         :type data: GCPUsageCostConfigPostData
         """
         super().__init__(kwargs)

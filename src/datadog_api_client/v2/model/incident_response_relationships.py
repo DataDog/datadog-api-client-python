@@ -47,6 +47,7 @@ class IncidentResponseRelationships(ModelNormal):
             "attachments": (RelationshipToIncidentAttachment,),
             "commander_user": (NullableRelationshipToUser,),
             "created_by_user": (RelationshipToUser,),
+            "declared_by_user": (RelationshipToUser,),
             "impacts": (RelationshipToIncidentImpacts,),
             "integrations": (RelationshipToIncidentIntegrationMetadatas,),
             "last_modified_by_user": (RelationshipToUser,),
@@ -58,6 +59,7 @@ class IncidentResponseRelationships(ModelNormal):
         "attachments": "attachments",
         "commander_user": "commander_user",
         "created_by_user": "created_by_user",
+        "declared_by_user": "declared_by_user",
         "impacts": "impacts",
         "integrations": "integrations",
         "last_modified_by_user": "last_modified_by_user",
@@ -70,6 +72,7 @@ class IncidentResponseRelationships(ModelNormal):
         attachments: Union[RelationshipToIncidentAttachment, UnsetType] = unset,
         commander_user: Union[NullableRelationshipToUser, none_type, UnsetType] = unset,
         created_by_user: Union[RelationshipToUser, UnsetType] = unset,
+        declared_by_user: Union[RelationshipToUser, UnsetType] = unset,
         impacts: Union[RelationshipToIncidentImpacts, UnsetType] = unset,
         integrations: Union[RelationshipToIncidentIntegrationMetadatas, UnsetType] = unset,
         last_modified_by_user: Union[RelationshipToUser, UnsetType] = unset,
@@ -88,6 +91,9 @@ class IncidentResponseRelationships(ModelNormal):
 
         :param created_by_user: Relationship to user.
         :type created_by_user: RelationshipToUser, optional
+
+        :param declared_by_user: Relationship to user.
+        :type declared_by_user: RelationshipToUser, optional
 
         :param impacts: Relationship to impacts.
         :type impacts: RelationshipToIncidentImpacts, optional
@@ -110,6 +116,8 @@ class IncidentResponseRelationships(ModelNormal):
             kwargs["commander_user"] = commander_user
         if created_by_user is not unset:
             kwargs["created_by_user"] = created_by_user
+        if declared_by_user is not unset:
+            kwargs["declared_by_user"] = declared_by_user
         if impacts is not unset:
             kwargs["impacts"] = impacts
         if integrations is not unset:
