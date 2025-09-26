@@ -344,6 +344,9 @@ class Configuration:
             }
         )
 
+        # Delegated token configuration
+        self.delegated_token_config = None
+
         # Load default values from environment
         if "DD_SITE" in os.environ:
             self.server_variables["site"] = os.environ["DD_SITE"]
