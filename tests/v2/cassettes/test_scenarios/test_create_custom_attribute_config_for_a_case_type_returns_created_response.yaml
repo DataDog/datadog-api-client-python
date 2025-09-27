@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: "{\"data\":{\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\"\
+      :\"\U0001F30D\",\"name\":\"World\"},\"type\":\"case_type\"}}"
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types
+  response:
+    body:
+      string: "{\"data\":{\"id\":\"1fab87e4-341d-4a79-a294-171b4e2c22f8\",\"type\"\
+        :\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"\
+        emoji\":\"\U0001F30D\",\"name\":\"World\"}}}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"display_name":"AWS Region 17569771-0000-0000-0000-175697711500","is_multi":true,"key":"region_eaa423ff52828a39","type":"NUMBER"},"type":"custom_attribute"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types/1fab87e4-341d-4a79-a294-171b4e2c22f8/custom_attributes
+  response:
+    body:
+      string: '{"data":{"id":"0dc4a14f-f96b-4a27-893a-72341da7ce1d","type":"custom_attribute","attributes":{"case_type":"TUNKNOWN","case_type_id":"1fab87e4-341d-4a79-a294-171b4e2c22f8","display_name":"AWS
+        Region 17569771-0000-0000-0000-175697711500","is_multi":true,"key":"region_eaa423ff52828a39","type":"NUMBER"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/types/1fab87e4-341d-4a79-a294-171b4e2c22f8
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

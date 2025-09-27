@@ -495,6 +495,55 @@
       "type": "safe"
     }
   },
+  "GetAllCaseTypes": {
+    "tag": "Case Management Type",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCaseType": {
+    "tag": "Case Management Type",
+    "undo": {
+      "operationId": "DeleteCaseType",
+      "parameters": [
+        {
+          "name": "case_type_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetAllCustomAttributes": {
+    "tag": "Case Management Attribute",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteCaseType": {
+    "tag": "Case Management Type",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAllCustomAttributeConfigsByCaseType": {
+    "tag": "Case Management Attribute",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCustomAttributeConfig": {
+    "tag": "Case Management Attribute",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteCustomAttributeConfig": {
+    "tag": "Case Management Attribute",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetCase": {
     "tag": "Case Management",
     "undo": {
@@ -519,6 +568,36 @@
       "type": "idempotent"
     }
   },
+  "CommentCase": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteCaseComment": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteCaseCustomAttribute": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateCaseCustomAttribute": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateCaseDescription": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpdatePriority": {
     "tag": "Case Management",
     "undo": {
@@ -526,6 +605,12 @@
     }
   },
   "UpdateStatus": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateCaseTitle": {
     "tag": "Case Management",
     "undo": {
       "type": "idempotent"
