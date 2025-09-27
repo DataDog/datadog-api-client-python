@@ -86,8 +86,8 @@ class AzureAccount(ModelNormal):
         """
         Datadog-Azure integrations configured for your organization.
 
-        :param app_service_plan_filters: Limit the Azure app service plans that are pulled into Datadog using tags.
-            Only app service plans that match one of the defined tags are imported into Datadog.
+        :param app_service_plan_filters: Limit the Azure app service plans (and Consumption Function Apps) that are pulled into Datadog using tags.
+            Filtering an App Service Plan applies to all Apps running on that plan.
         :type app_service_plan_filters: str, optional
 
         :param automute: Silence monitors for expected Azure VM shutdowns.
