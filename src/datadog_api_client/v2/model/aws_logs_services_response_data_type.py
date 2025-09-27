@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class AWSLogsServicesResponseDataType(ModelSimple):
     """
-    The `AWSLogsServicesResponseData` `type`.
+    The `AWSLogsServicesResponseData` `type`. Test to trigger client generation.
 
     :param value: If omitted defaults to "logs_services". Must be one of ["logs_services"].
     :type value: str
