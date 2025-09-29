@@ -473,14 +473,6 @@ class ApiClient:
         # Set the Authorization header with the delegated token
         headers["Authorization"] = f"Bearer {self._delegated_token_credentials.delegated_token}"
 
-    def get_delegated_token(self) -> "DelegatedTokenCredentials":
-        """Get a delegated token using the configured provider (public API).
-        
-        :return: DelegatedTokenCredentials object
-        :raises: ApiValueError if token retrieval fails
-        """
-        return self._get_delegated_token()
-
     def _get_delegated_token(self) -> "DelegatedTokenCredentials":
         """Get a new delegated token using the configured provider.
 

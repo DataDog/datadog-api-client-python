@@ -65,17 +65,18 @@ class AWSAuth(DelegatedTokenProvider):
     
     def authenticate(self, config: DelegatedTokenConfig) -> DelegatedTokenCredentials:
         """Authenticate using AWS credentials and return delegated token credentials.
-        
+
         :param config: Delegated token configuration
         :return: DelegatedTokenCredentials object
         :raises: ApiValueError if authentication fails
         """
-        # Get local AWS Credentials
-        creds = self.get_credentials()
-        
+        # Check org UUID first
         if not config or not config.org_uuid:
             raise ApiValueError("Missing org UUID in config")
-        
+
+        # Get local AWS Credentials
+        creds = self.get_credentials()
+
         # Use the credentials to generate the signing data
         data = self.generate_aws_auth_data(config.org_uuid, creds)
         

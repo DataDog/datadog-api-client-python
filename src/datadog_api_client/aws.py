@@ -76,7 +76,7 @@ class AWSAuth(DelegatedTokenProvider):
         :return: DelegatedTokenCredentials object
         :raises: ApiValueError if authentication fails
         """
-        # Check config first before attempting to get credentials
+        # Check org UUID first
         if not config or not config.org_uuid:
             raise ApiValueError("Missing org UUID in config")
 
