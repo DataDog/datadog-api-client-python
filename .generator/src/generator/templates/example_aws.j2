@@ -8,8 +8,7 @@ for authentication instead of API keys.
 import os
 from {{ package }} import ApiClient, Configuration
 from {{ package }}.aws import AWSAuth
-from {{ package }}.delegated_auth import DelegatedTokenConfig
-from {{ package }}.{{ version }}.api.authentication_api import AuthenticationApi
+from {{ package }}.v2.api.teams_api import TeamsApi
 
 
 def main():
@@ -30,11 +29,10 @@ def main():
         print("Please set AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN")
         return
     
-    # Your Datadog organization UUID
-    # This should be provided by your Datadog administrator
-    org_uuid = os.getenv("DD_ORG_UUID")
+
+    org_uuid = os.getenv("DD_TEST_ORG_UUID")
     if not org_uuid:
-        print("Error: DD_ORG_UUID environment variable not set.")
+        print("Error: DD_TEST_ORG_UUID environment variable not set.")
         print("Please set your Datadog organization UUID")
         return
     
@@ -43,27 +41,22 @@ def main():
     aws_region = os.getenv("AWS_REGION", "us-east-1")
     aws_auth = AWSAuth(aws_region=aws_region)
     
-    # Create delegated token configuration
-    delegated_config = DelegatedTokenConfig(
-        org_uuid=org_uuid,
-        provider="aws",
-        provider_auth=aws_auth
-    )
-    
-    # Create configuration and set delegated token config
+    # Create configuration with AWS authentication
     configuration = Configuration()
-    configuration.delegated_token_config = delegated_config
+    configuration.delegated_auth_provider = aws_auth
+    configuration.delegated_auth_org_uuid = org_uuid
     
     # Create API client with the configuration
     with ApiClient(configuration) as api_client:
-        # Create API instance
-        api_instance = AuthenticationApi(api_client)
+        # Create API instance - using TeamsApi as an example
+        api_instance = TeamsApi(api_client)
         
         try:
-            # Test the authentication by validating credentials
-            api_response = api_instance.validate()
+            # Test the authentication by listing teams
+            # The client will automatically use AWS authentication for this call
+            api_response = api_instance.list_teams()
             print("Authentication successful!")
-            print(f"Valid: {api_response.valid}")
+            print(f"Found {len(api_response.data)} teams")
             
         except Exception as e:
             print(f"Authentication failed: {e}")

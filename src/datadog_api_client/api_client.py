@@ -460,33 +460,35 @@ class ApiClient:
         :param headers: Header parameters dict to be updated.
         :raises: ApiValueError if delegated token authentication fails
         """
-        if not self.configuration.delegated_token_config:
-            return
+        from datadog_api_client.delegated_auth import DelegatedTokenConfig
 
-        if not hasattr(self, "_delegated_token_credentials") or self._delegated_token_credentials is None:
-            self._delegated_token_credentials = self._get_delegated_token()
-        elif self._delegated_token_credentials.is_expired():
-            # Token is expired, get a new one
-            self._delegated_token_credentials = self._get_delegated_token()
+        # Check if we have cached credentials
+        if not hasattr(self.configuration, "_delegated_token_credentials"):
+            self.configuration._delegated_token_credentials = None
+
+        # Check if we need to get or refresh the token
+        if (
+            self.configuration._delegated_token_credentials is None
+            or self.configuration._delegated_token_credentials.is_expired()
+        ):
+            # Create config for the provider
+            config = DelegatedTokenConfig(
+                org_uuid=self.configuration.delegated_auth_org_uuid,
+                provider="aws",  # This could be made configurable
+                provider_auth=self.configuration.delegated_auth_provider,
+            )
+
+            # Get new token from provider
+            try:
+                self.configuration._delegated_token_credentials = (
+                    self.configuration.delegated_auth_provider.authenticate(config)
+                )
+            except Exception as e:
+                raise ApiValueError(f"Failed to get delegated token: {str(e)}")
 
         # Set the Authorization header with the delegated token
-        headers["Authorization"] = f"Bearer {self._delegated_token_credentials.delegated_token}"
-
-    def _get_delegated_token(self) -> "DelegatedTokenCredentials":
-        """Get a new delegated token using the configured provider.
-
-        :return: DelegatedTokenCredentials object
-        :raises: ApiValueError if token retrieval fails
-        """
-        if not self.configuration.delegated_token_config:
-            raise ApiValueError("Delegated token configuration is not set")
-
-        try:
-            return self.configuration.delegated_token_config.provider_auth.authenticate(
-                self.configuration.delegated_token_config
-            )
-        except Exception as e:
-            raise ApiValueError(f"Failed to get delegated token: {str(e)}")
+        token = self.configuration._delegated_token_credentials.delegated_token
+        headers["Authorization"] = f"Bearer {token}"
 
 
 class ThreadedApiClient(ApiClient):
@@ -859,10 +861,17 @@ class Endpoint:
         # check if endpoint uses appKeyAuth and if delegated token config is available
         has_app_key_auth = "appKeyAuth" in self.settings["auth"]
 
-        if has_app_key_auth and self.api_client.configuration.delegated_token_config is not None:
+        # Check if delegated auth is configured (using our actual attributes)
+        has_delegated_auth = (
+            hasattr(self.api_client.configuration, "delegated_auth_provider")
+            and self.api_client.configuration.delegated_auth_provider is not None
+            and hasattr(self.api_client.configuration, "delegated_auth_org_uuid")
+            and self.api_client.configuration.delegated_auth_org_uuid is not None
+        )
+
+        if has_app_key_auth and has_delegated_auth:
             # Use delegated token authentication
             self.api_client.use_delegated_token_auth(headers)
-            print(f"headers: {headers}")
         else:
             # Use regular authentication
             for auth in self.settings["auth"]:
