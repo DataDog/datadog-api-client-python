@@ -463,7 +463,6 @@ class ApiClient:
         if not self.configuration.delegated_token_config:
             return
 
-        # Get or create delegated token credentials
         if not hasattr(self, "_delegated_token_credentials") or self._delegated_token_credentials is None:
             self._delegated_token_credentials = self._get_delegated_token()
         elif self._delegated_token_credentials.is_expired():
@@ -857,7 +856,7 @@ class Endpoint:
         if not self.settings["auth"]:
             return
 
-        # Check if this endpoint uses appKeyAuth and if delegated token config is available
+        # check if endpoint uses appKeyAuth and if delegated token config is available
         has_app_key_auth = "appKeyAuth" in self.settings["auth"]
 
         if has_app_key_auth and self.api_client.configuration.delegated_token_config is not None:

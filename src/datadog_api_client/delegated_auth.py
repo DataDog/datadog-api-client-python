@@ -111,8 +111,7 @@ def parse_delegated_token_response(
     if not token:
         raise ApiValueError(f"Failed to get token from response: {token_response}")
 
-    # Get the expiration time from the response
-    # Default to 15 minutes if the expiration time is not set
+    # get expiration time from the response, defualt to 15 min
     expiration_time = datetime.now() + timedelta(minutes=15)
     expires_str = attributes.get("expires")
     if expires_str:

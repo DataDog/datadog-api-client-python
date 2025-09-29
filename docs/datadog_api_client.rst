@@ -20,10 +20,24 @@ datadog\_api\_client.api\_client module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.aws module
+-------------------------------
+
+.. automodule:: datadog_api_client.aws
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.configuration module
 -----------------------------------------
 
 .. automodule:: datadog_api_client.configuration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.delegated\_auth module
+-------------------------------------------
+
+.. automodule:: datadog_api_client.delegated_auth
    :members:
    :show-inheritance:
 
