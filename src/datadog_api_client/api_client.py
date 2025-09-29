@@ -862,6 +862,7 @@ class Endpoint:
         if has_app_key_auth and self.api_client.configuration.delegated_token_config is not None:
             # Use delegated token authentication
             self.api_client.use_delegated_token_auth(headers)
+            print(f"headers: {headers}")
         else:
             # Use regular authentication
             for auth in self.settings["auth"]:
