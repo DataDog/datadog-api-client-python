@@ -478,10 +478,10 @@ class ApiClient:
                 provider_auth=self.configuration.delegated_auth_provider,
             )
 
-            # Get new token from provider
+            # Get new token from provider, passing the API configuration
             try:
                 self.configuration._delegated_token_credentials = (
-                    self.configuration.delegated_auth_provider.authenticate(config)
+                    self.configuration.delegated_auth_provider.authenticate(config, self.configuration)
                 )
             except Exception as e:
                 raise ApiValueError(f"Failed to get delegated token: {str(e)}")

@@ -42,20 +42,25 @@ class DelegatedTokenConfig:
 class DelegatedTokenProvider:
     """Abstract base class for delegated token providers."""
 
-    def authenticate(self, config: DelegatedTokenConfig) -> DelegatedTokenCredentials:
-        """Authenticate and return delegated token credentials."""
+    def authenticate(self, config: DelegatedTokenConfig, api_config: Configuration) -> DelegatedTokenCredentials:
+        """Authenticate and return delegated token credentials.
+
+        :param config: Delegated token configuration
+        :param api_config: API client configuration with host and other settings
+        :return: DelegatedTokenCredentials object
+        """
         raise NotImplementedError("Subclasses must implement authenticate method")
 
 
-def get_delegated_token(org_uuid: str, delegated_auth_proof: str) -> DelegatedTokenCredentials:
+def get_delegated_token(org_uuid: str, delegated_auth_proof: str, config: Configuration) -> DelegatedTokenCredentials:
     """Get a delegated token from the Datadog API.
 
     :param org_uuid: Organization UUID
     :param delegated_auth_proof: Authentication proof string
+    :param config: Configuration object with host and other settings
     :return: DelegatedTokenCredentials object
     :raises: ApiValueError if the request fails
     """
-    config = Configuration()
     url = get_delegated_token_url(config)
 
     # Create REST client

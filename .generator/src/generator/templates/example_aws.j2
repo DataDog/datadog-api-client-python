@@ -42,7 +42,7 @@ def main():
     aws_auth = AWSAuth(aws_region=aws_region)
     
     # Create configuration with AWS authentication
-    configuration = Configuration()
+    configuration = Configuration(host="https://dd.datad0g.com")
     configuration.delegated_auth_provider = aws_auth
     configuration.delegated_auth_org_uuid = org_uuid
     

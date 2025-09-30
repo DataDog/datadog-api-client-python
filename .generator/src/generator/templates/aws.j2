@@ -9,6 +9,7 @@ from datetime import datetime
 from typing import Dict, List, Optional
 from urllib.parse import quote
 
+from {{ package }}.configuration import Configuration
 from {{ package }}.delegated_auth import DelegatedTokenProvider, DelegatedTokenConfig, DelegatedTokenCredentials, get_delegated_token
 from {{ package }}.exceptions import ApiValueError
 
@@ -63,10 +64,11 @@ class AWSAuth(DelegatedTokenProvider):
     def __init__(self, aws_region: Optional[str] = None):
         self.aws_region = aws_region
     
-    def authenticate(self, config: DelegatedTokenConfig) -> DelegatedTokenCredentials:
+    def authenticate(self, config: DelegatedTokenConfig, api_config: Configuration) -> DelegatedTokenCredentials:
         """Authenticate using AWS credentials and return delegated token credentials.
 
         :param config: Delegated token configuration
+        :param api_config: API client configuration with host and other settings
         :return: DelegatedTokenCredentials object
         :raises: ApiValueError if authentication fails
         """
@@ -83,7 +85,8 @@ class AWSAuth(DelegatedTokenProvider):
         # Generate the auth string passed to the token endpoint
         auth_string = f"{data.body_encoded}|{data.headers_encoded}|{data.method}|{data.url_encoded}"
         
-        auth_response = get_delegated_token(config.org_uuid, auth_string)
+        # Pass the api_config to get_delegated_token to use the correct host
+        auth_response = get_delegated_token(config.org_uuid, auth_string, api_config)
         return auth_response
     
     def get_credentials(self) -> AWSCredentials:
