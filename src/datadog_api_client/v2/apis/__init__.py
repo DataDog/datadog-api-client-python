@@ -70,6 +70,7 @@ from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
+from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomationApi
@@ -148,6 +149,7 @@ __all__ = [
     "SpansMetricsApi",
     "SyntheticsApi",
     "TeamsApi",
+    "TestOptimizationApi",
     "UsageMeteringApi",
     "UsersApi",
     "WorkflowAutomationApi",
