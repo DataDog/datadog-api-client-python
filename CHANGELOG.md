@@ -1,5 +1,35 @@
 # CHANGELOG
 
+## 2.44.0/2025-09-30
+
+### Added
+* Add API Key ID to rum application response [#2857](https://github.com/DataDog/datadog-api-client-python/pull/2857)
+* Add suppression list query string parameter [#2856](https://github.com/DataDog/datadog-api-client-python/pull/2856)
+* Add datastore trigger to workflows public API  [#2853](https://github.com/DataDog/datadog-api-client-python/pull/2853)
+* Add Google PubSub destination to the Observability Pipelines API [#2844](https://github.com/DataDog/datadog-api-client-python/pull/2844)
+* Add API spec for AWS Integrations standard and resource collection IAM permissions [#2842](https://github.com/DataDog/datadog-api-client-python/pull/2842)
+* Publish new incident impact APIs [#2837](https://github.com/DataDog/datadog-api-client-python/pull/2837)
+* Add product analytics to FormulaAndFunctionEventsDataSource [#2836](https://github.com/DataDog/datadog-api-client-python/pull/2836)
+* Add sequence detection to security monitoring rules [#2833](https://github.com/DataDog/datadog-api-client-python/pull/2833)
+* Add Query Parameters to ListOrgConnections Endpoint [#2830](https://github.com/DataDog/datadog-api-client-python/pull/2830)
+* Add Incident Notification Rules Public Spec [#2825](https://github.com/DataDog/datadog-api-client-python/pull/2825)
+* Update v1 and v2 GCP API specs to support `monitored_resource_configs` [#2823](https://github.com/DataDog/datadog-api-client-python/pull/2823)
+* Add Incident Notification Template Public Docs [#2819](https://github.com/DataDog/datadog-api-client-python/pull/2819)
+* Add Cross Org API to Open API specs [#2818](https://github.com/DataDog/datadog-api-client-python/pull/2818)
+* Add Public Delete Dora Events Endpoints [#2817](https://github.com/DataDog/datadog-api-client-python/pull/2817)
+* Add readonly ID of synthetics test steps [#2814](https://github.com/DataDog/datadog-api-client-python/pull/2814)
+* Create Cloud SIEM histsignals endpoints [#2813](https://github.com/DataDog/datadog-api-client-python/pull/2813)
+
+### Fixed
+* Remove any references to synthetics test suites [#2848](https://github.com/DataDog/datadog-api-client-python/pull/2848)
+* Security Monitoring - Fix payload of Validation Endpoint for Suppressions [#2815](https://github.com/DataDog/datadog-api-client-python/pull/2815)
+
+### Changed
+* Add tag pipeline, custom allocation rule and get cloud account by id for AWS/Azure/GCP configs APIs [#2831](https://github.com/DataDog/datadog-api-client-python/pull/2831)
+
+### Deprecated
+* Promote unstable aws v2 APIs and deprecate v1 [#2822](https://github.com/DataDog/datadog-api-client-python/pull/2822)
+
 ## 2.43.0/2025-09-15
 
 ### Added
