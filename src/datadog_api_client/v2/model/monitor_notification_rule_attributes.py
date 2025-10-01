@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.monitor_notification_rule_conditional_recipients import (
+        MonitorNotificationRuleConditionalRecipients,
+    )
     from datadog_api_client.v2.model.monitor_notification_rule_filter import MonitorNotificationRuleFilter
     from datadog_api_client.v2.model.monitor_notification_rule_filter_tags import MonitorNotificationRuleFilterTags
 
@@ -36,15 +39,20 @@ class MonitorNotificationRuleAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.monitor_notification_rule_conditional_recipients import (
+            MonitorNotificationRuleConditionalRecipients,
+        )
         from datadog_api_client.v2.model.monitor_notification_rule_filter import MonitorNotificationRuleFilter
 
         return {
+            "conditional_recipients": (MonitorNotificationRuleConditionalRecipients,),
             "filter": (MonitorNotificationRuleFilter,),
             "name": (str,),
             "recipients": ([str],),
         }
 
     attribute_map = {
+        "conditional_recipients": "conditional_recipients",
         "filter": "filter",
         "name": "name",
         "recipients": "recipients",
@@ -53,12 +61,16 @@ class MonitorNotificationRuleAttributes(ModelNormal):
     def __init__(
         self_,
         name: str,
-        recipients: List[str],
+        conditional_recipients: Union[MonitorNotificationRuleConditionalRecipients, UnsetType] = unset,
         filter: Union[MonitorNotificationRuleFilter, MonitorNotificationRuleFilterTags, UnsetType] = unset,
+        recipients: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes of the monitor notification rule.
+
+        :param conditional_recipients: Use conditional recipients to define different recipients for different situations.
+        :type conditional_recipients: MonitorNotificationRuleConditionalRecipients, optional
 
         :param filter: Filter used to associate the notification rule with monitors.
         :type filter: MonitorNotificationRuleFilter, optional
@@ -67,11 +79,14 @@ class MonitorNotificationRuleAttributes(ModelNormal):
         :type name: str
 
         :param recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'.
-        :type recipients: [str]
+        :type recipients: [str], optional
         """
+        if conditional_recipients is not unset:
+            kwargs["conditional_recipients"] = conditional_recipients
         if filter is not unset:
             kwargs["filter"] = filter
+        if recipients is not unset:
+            kwargs["recipients"] = recipients
         super().__init__(kwargs)
 
         self_.name = name
-        self_.recipients = recipients
