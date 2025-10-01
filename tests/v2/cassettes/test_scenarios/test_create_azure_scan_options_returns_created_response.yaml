@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"vuln_containers_os":true,"vuln_host_os":true},"id":"12345678-90ab-cdef-1234-567890abcdef","type":"azure_scan_options"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/azure
+  response:
+    body:
+      string: '{"data":{"id":"12345678-90ab-cdef-1234-567890abcdef","type":"azure_scan_options","attributes":{"vuln_containers_os":true,"vuln_host_os":true}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/azure/12345678-90ab-cdef-1234-567890abcdef
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

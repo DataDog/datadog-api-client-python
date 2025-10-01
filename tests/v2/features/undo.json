@@ -152,6 +152,37 @@
       "type": "idempotent"
     }
   },
+  "ListAzureScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAzureScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "operationId": "DeleteAzureScanOptions",
+      "parameters": [
+        {
+          "name": "subscription_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAzureScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAzureScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAwsOnDemandTasks": {
     "tag": "Agentless Scanning",
     "undo": {
