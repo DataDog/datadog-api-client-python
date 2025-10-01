@@ -9,14 +9,14 @@ Feature: On-Call
     And a valid "appKeyAuth" key in the system
     And an instance of "On-Call" API
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Create On-Call escalation policy returns "Bad Request" response
     Given new "CreateOnCallEscalationPolicy" request
     And body with value {"data": {"attributes": {"name": "Escalation Policy 1", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}, {"id": "00000000-aba3-0000-0000-000000000000", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-abb1-0000-0000-000000000000", "type": "users"}]}]}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Create On-Call escalation policy returns "Created" response
     Given new "CreateOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -27,14 +27,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Create On-Call schedule returns "Bad Request" response
     Given new "CreateOnCallSchedule" request
     And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"days": 1}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "name": "On-Call Schedule", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Create On-Call schedule returns "Created" response
     Given new "CreateOnCallSchedule" request
     And there is a valid "user" in the system
@@ -43,7 +43,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Delete On-Call escalation policy returns "No Content" response
     Given new "DeleteOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -54,14 +54,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Delete On-Call escalation policy returns "Not Found" response
     Given new "DeleteOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Delete On-Call schedule returns "No Content" response
     Given new "DeleteOnCallSchedule" request
     And there is a valid "user" in the system
@@ -70,28 +70,28 @@ Feature: On-Call
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Delete On-Call schedule returns "Not Found" response
     Given new "DeleteOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get On-Call escalation policy returns "Bad Request" response
     Given new "GetOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get On-Call escalation policy returns "Not Found" response
     Given new "GetOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Get On-Call escalation policy returns "OK" response
     Given new "GetOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -103,14 +103,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get On-Call schedule returns "Not Found" response
     Given new "GetOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Get On-Call schedule returns "OK" response
     Given new "GetOnCallSchedule" request
     And there is a valid "user" in the system
@@ -119,28 +119,28 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get On-Call team routing rules returns "OK" response
     Given new "GetOnCallTeamRoutingRules" request
     And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get team on-call users returns "Bad Request" response
     Given new "GetTeamOnCallUsers" request
     And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get team on-call users returns "Not Found" response
     Given new "GetTeamOnCallUsers" request
     And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Get team on-call users returns "OK" response
     Given new "GetTeamOnCallUsers" request
     And there is a valid "user" in the system
@@ -153,21 +153,21 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get the schedule on-call user returns "Bad Request" response
     Given new "GetScheduleOnCallUser" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Get the schedule on-call user returns "Not Found" response
     Given new "GetScheduleOnCallUser" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Get the schedule on-call user returns "OK" response
     Given new "GetScheduleOnCallUser" request
     And there is a valid "user" in the system
@@ -176,7 +176,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-python @team:DataDog/bugle
+  @skip-python @team:DataDog/on-call
   Scenario: Set On-Call team routing rules returns "OK" response
     Given new "SetOnCallTeamRoutingRules" request
     And there is a valid "user" in the system
@@ -189,7 +189,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Update On-Call escalation policy returns "Bad Request" response
     Given new "UpdateOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
@@ -197,7 +197,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Update On-Call escalation policy returns "Not Found" response
     Given new "UpdateOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
@@ -205,7 +205,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Update On-Call escalation policy returns "OK" response
     Given new "UpdateOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -217,7 +217,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Update On-Call schedule returns "Bad Request" response
     Given new "UpdateOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
@@ -225,7 +225,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bugle
+  @generated @skip @team:DataDog/on-call
   Scenario: Update On-Call schedule returns "Not Found" response
     Given new "UpdateOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
@@ -233,7 +233,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/bugle
+  @team:DataDog/on-call
   Scenario: Update On-Call schedule returns "OK" response
     Given new "UpdateOnCallSchedule" request
     And there is a valid "user" in the system
