@@ -7697,6 +7697,125 @@ datadog\_api\_client.v2.model.finding\_vulnerability\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.flaky\_test module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_attributes\_flaky\_state module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_attributes_flaky_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_pipeline\_stats module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_pipeline_stats
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_run\_metadata module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_run_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_stats module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_stats
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_pagination module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_filter module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_page\_options module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_page_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_request\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_request\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_response\_meta module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_tests\_search\_sort module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_tests_search_sort
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.formula\_limit module
 ---------------------------------------------------
 
