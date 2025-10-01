@@ -11,6 +11,9 @@ from datadog_api_client.v2.model.aws_scan_options_list_response import AwsScanOp
 from datadog_api_client.v2.model.aws_scan_options_response import AwsScanOptionsResponse
 from datadog_api_client.v2.model.aws_scan_options_create_request import AwsScanOptionsCreateRequest
 from datadog_api_client.v2.model.aws_scan_options_update_request import AwsScanOptionsUpdateRequest
+from datadog_api_client.v2.model.azure_scan_options_array import AzureScanOptionsArray
+from datadog_api_client.v2.model.azure_scan_options import AzureScanOptions
+from datadog_api_client.v2.model.azure_scan_options_input_update import AzureScanOptionsInputUpdate
 from datadog_api_client.v2.model.aws_on_demand_list_response import AwsOnDemandListResponse
 from datadog_api_client.v2.model.aws_on_demand_response import AwsOnDemandResponse
 from datadog_api_client.v2.model.aws_on_demand_create_request import AwsOnDemandCreateRequest
@@ -33,7 +36,7 @@ class AgentlessScanningApi:
         self._create_aws_on_demand_task_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsOnDemandResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/ondemand/aws",
                 "operation_id": "create_aws_on_demand_task",
                 "http_method": "POST",
@@ -53,7 +56,7 @@ class AgentlessScanningApi:
         self._create_aws_scan_options_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsScanOptionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/accounts/aws",
                 "operation_id": "create_aws_scan_options",
                 "http_method": "POST",
@@ -70,10 +73,30 @@ class AgentlessScanningApi:
             api_client=api_client,
         )
 
+        self._create_azure_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (AzureScanOptions,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/azure",
+                "operation_id": "create_azure_scan_options",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AzureScanOptions,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_aws_scan_options_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/accounts/aws/{account_id}",
                 "operation_id": "delete_aws_scan_options",
                 "http_method": "DELETE",
@@ -93,10 +116,33 @@ class AgentlessScanningApi:
             api_client=api_client,
         )
 
+        self._delete_azure_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/azure/{subscription_id}",
+                "operation_id": "delete_azure_scan_options",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "subscription_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "subscription_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_aws_on_demand_task_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsOnDemandResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/ondemand/aws/{task_id}",
                 "operation_id": "get_aws_on_demand_task",
                 "http_method": "GET",
@@ -119,7 +165,7 @@ class AgentlessScanningApi:
         self._get_aws_scan_options_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsScanOptionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/accounts/aws/{account_id}",
                 "operation_id": "get_aws_scan_options",
                 "http_method": "GET",
@@ -142,7 +188,7 @@ class AgentlessScanningApi:
         self._list_aws_on_demand_tasks_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsOnDemandListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/ondemand/aws",
                 "operation_id": "list_aws_on_demand_tasks",
                 "http_method": "GET",
@@ -158,9 +204,25 @@ class AgentlessScanningApi:
         self._list_aws_scan_options_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsScanOptionsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/accounts/aws",
                 "operation_id": "list_aws_scan_options",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_azure_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (AzureScanOptionsArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/azure",
+                "operation_id": "list_azure_scan_options",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -174,7 +236,7 @@ class AgentlessScanningApi:
         self._update_aws_scan_options_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/accounts/aws/{account_id}",
                 "operation_id": "update_aws_scan_options",
                 "http_method": "PATCH",
@@ -194,6 +256,32 @@ class AgentlessScanningApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_azure_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (AzureScanOptions,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/azure/{subscription_id}",
+                "operation_id": "update_azure_scan_options",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "subscription_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "subscription_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AzureScanOptionsInputUpdate,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -231,6 +319,22 @@ class AgentlessScanningApi:
 
         return self._create_aws_scan_options_endpoint.call_with_http_info(**kwargs)
 
+    def create_azure_scan_options(
+        self,
+        body: AzureScanOptions,
+    ) -> AzureScanOptions:
+        """Create azure scan options.
+
+        Activate Agentless scan options for an Azure subscription.
+
+        :type body: AzureScanOptions
+        :rtype: AzureScanOptions
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_azure_scan_options_endpoint.call_with_http_info(**kwargs)
+
     def delete_aws_scan_options(
         self,
         account_id: str,
@@ -247,6 +351,23 @@ class AgentlessScanningApi:
         kwargs["account_id"] = account_id
 
         return self._delete_aws_scan_options_endpoint.call_with_http_info(**kwargs)
+
+    def delete_azure_scan_options(
+        self,
+        subscription_id: str,
+    ) -> None:
+        """Delete azure scan options.
+
+        Delete Agentless scan options for an Azure subscription.
+
+        :param subscription_id: The Azure subscription ID.
+        :type subscription_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["subscription_id"] = subscription_id
+
+        return self._delete_azure_scan_options_endpoint.call_with_http_info(**kwargs)
 
     def get_aws_on_demand_task(
         self,
@@ -306,6 +427,18 @@ class AgentlessScanningApi:
         kwargs: Dict[str, Any] = {}
         return self._list_aws_scan_options_endpoint.call_with_http_info(**kwargs)
 
+    def list_azure_scan_options(
+        self,
+    ) -> AzureScanOptionsArray:
+        """List azure scan options.
+
+        Fetches the scan options configured for Azure accounts.
+
+        :rtype: AzureScanOptionsArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_azure_scan_options_endpoint.call_with_http_info(**kwargs)
+
     def update_aws_scan_options(
         self,
         account_id: str,
@@ -327,3 +460,24 @@ class AgentlessScanningApi:
         kwargs["body"] = body
 
         return self._update_aws_scan_options_endpoint.call_with_http_info(**kwargs)
+
+    def update_azure_scan_options(
+        self,
+        subscription_id: str,
+        body: AzureScanOptionsInputUpdate,
+    ) -> AzureScanOptions:
+        """Update azure scan options.
+
+        Update the Agentless scan options for an activated subscription.
+
+        :param subscription_id: The Azure subscription ID.
+        :type subscription_id: str
+        :type body: AzureScanOptionsInputUpdate
+        :rtype: AzureScanOptions
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["subscription_id"] = subscription_id
+
+        kwargs["body"] = body
+
+        return self._update_azure_scan_options_endpoint.call_with_http_info(**kwargs)

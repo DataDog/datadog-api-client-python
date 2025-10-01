@@ -12,6 +12,13 @@ Feature: Agentless Scanning
     And a valid "appKeyAuth" key in the system
     And an instance of "AgentlessScanning" API
 
+  @skip-validation @team:DataDog/k9-agentless
+  Scenario: Create azure scan options returns "Created" response
+    Given new "CreateAzureScanOptions" request
+    And body with value {"data": {"attributes": {"vuln_containers_os": true, "vuln_host_os": true}, "id": "12345678-90ab-cdef-1234-567890abcdef", "type": "azure_scan_options"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @team:DataDog/k9-agentless
   Scenario: Delete AWS Scan Options returns "Bad Request" response
     Given new "DeleteAwsScanOptions" request
@@ -32,6 +39,13 @@ Feature: Agentless Scanning
     And request contains "account_id" parameter with value "000000000005"
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-agentless
+  Scenario: Delete azure scan options returns "No Content" response
+    Given new "DeleteAzureScanOptions" request
+    And request contains "subscription_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @team:DataDog/k9-agentless
   Scenario: Get AWS On Demand task by id returns "Bad Request" response
@@ -89,6 +103,12 @@ Feature: Agentless Scanning
   @team:DataDog/k9-agentless
   Scenario: List AWS Scan Options returns "OK" response
     Given new "ListAwsScanOptions" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-agentless
+  Scenario: List azure scan options returns "OK" response
+    Given new "ListAzureScanOptions" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -159,3 +179,11 @@ Feature: Agentless Scanning
     And body with value {"data": {"attributes": {"arn": "invalid-arn"}, "type": "aws_resource"}}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-agentless
+  Scenario: Update azure scan options returns "OK" response
+    Given new "UpdateAzureScanOptions" request
+    And request contains "subscription_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "12345678-90ab-cdef-1234-567890abcdef", "type": "azure_scan_options"}}
+    When the request is sent
+    Then the response status is 200 OK

@@ -415,6 +415,17 @@ from datadog_api_client.v2.model.azure_credentials_update import AzureCredential
 from datadog_api_client.v2.model.azure_integration import AzureIntegration
 from datadog_api_client.v2.model.azure_integration_type import AzureIntegrationType
 from datadog_api_client.v2.model.azure_integration_update import AzureIntegrationUpdate
+from datadog_api_client.v2.model.azure_scan_options import AzureScanOptions
+from datadog_api_client.v2.model.azure_scan_options_array import AzureScanOptionsArray
+from datadog_api_client.v2.model.azure_scan_options_data import AzureScanOptionsData
+from datadog_api_client.v2.model.azure_scan_options_data_attributes import AzureScanOptionsDataAttributes
+from datadog_api_client.v2.model.azure_scan_options_data_type import AzureScanOptionsDataType
+from datadog_api_client.v2.model.azure_scan_options_input_update import AzureScanOptionsInputUpdate
+from datadog_api_client.v2.model.azure_scan_options_input_update_data import AzureScanOptionsInputUpdateData
+from datadog_api_client.v2.model.azure_scan_options_input_update_data_attributes import (
+    AzureScanOptionsInputUpdateDataAttributes,
+)
+from datadog_api_client.v2.model.azure_scan_options_input_update_data_type import AzureScanOptionsInputUpdateDataType
 from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
 from datadog_api_client.v2.model.azure_storage_destination_type import AzureStorageDestinationType
 from datadog_api_client.v2.model.azure_tenant import AzureTenant
@@ -4685,6 +4696,15 @@ __all__ = [
     "AzureIntegration",
     "AzureIntegrationType",
     "AzureIntegrationUpdate",
+    "AzureScanOptions",
+    "AzureScanOptionsArray",
+    "AzureScanOptionsData",
+    "AzureScanOptionsDataAttributes",
+    "AzureScanOptionsDataType",
+    "AzureScanOptionsInputUpdate",
+    "AzureScanOptionsInputUpdateData",
+    "AzureScanOptionsInputUpdateDataAttributes",
+    "AzureScanOptionsInputUpdateDataType",
     "AzureStorageDestination",
     "AzureStorageDestinationType",
     "AzureTenant",
