@@ -3978,6 +3978,12 @@
       "type": "idempotent"
     }
   },
+  "SearchFlakyTests": {
+    "tag": "Test Optimization",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageApplicationSecurityMonitoring": {
     "tag": "Usage Metering",
     "undo": {
