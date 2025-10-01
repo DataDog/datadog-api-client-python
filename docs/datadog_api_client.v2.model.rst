@@ -9027,6 +9027,41 @@ datadog\_api\_client.v2.model.incident\_create\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_create\_page\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_create_page_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_create\_page\_from\_incident\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_create_page_from_incident_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_create\_page\_from\_incident\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_create_page_from_incident_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_create\_page\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_create_page_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_create\_page\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_create_page_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_create\_relationships module
 --------------------------------------------------------------------
 
@@ -9472,6 +9507,34 @@ datadog\_api\_client.v2.model.incident\_notification\_template\_update\_data mod
 -----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_notification_template_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_page\_id\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_page_id_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_page\_target module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_page_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_page\_target\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_page_target_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_page\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_page_type
    :members:
    :show-inheritance:
 
