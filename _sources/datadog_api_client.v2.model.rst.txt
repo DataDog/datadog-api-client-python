@@ -2118,6 +2118,69 @@ datadog\_api\_client.v2.model.azure\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.azure\_scan\_options module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_array module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_data\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_data\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_input\_update module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_input_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_input\_update\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_input_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_input\_update\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_input_update_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.azure\_scan\_options\_input\_update\_data\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.azure_scan_options_input_update_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.azure\_storage\_destination module
 ----------------------------------------------------------------
 
