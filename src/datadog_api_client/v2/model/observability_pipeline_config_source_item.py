@@ -38,7 +38,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
-
         :type auth: ObservabilityPipelineAwsAuth, optional
 
         :param region: AWS region where the S3 bucket resides.

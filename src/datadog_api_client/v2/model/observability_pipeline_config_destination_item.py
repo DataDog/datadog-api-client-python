@@ -26,7 +26,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
-
         :type auth: ObservabilityPipelineAwsAuth, optional
 
         :param bucket: S3 bucket name.
@@ -52,7 +51,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param auto_extract_timestamp: If `true`, Splunk tries to extract timestamps from incoming log events.
             If `false`, Splunk assigns the time the event was received.
-
         :type auto_extract_timestamp: bool, optional
 
         :param encoding: Encoding format for log events.

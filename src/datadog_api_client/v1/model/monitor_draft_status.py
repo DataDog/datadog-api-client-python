@@ -21,7 +21,6 @@ class MonitorDraftStatus(ModelSimple):
 
         This field is in preview. The draft value is only available to customers with the feature enabled.
 
-
     :param value: If omitted defaults to "published". Must be one of ["draft", "published"].
     :type value: str
     """

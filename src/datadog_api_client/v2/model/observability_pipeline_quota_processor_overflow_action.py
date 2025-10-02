@@ -19,7 +19,6 @@ class ObservabilityPipelineQuotaProcessorOverflowAction(ModelSimple):
         - `no_action`: Let the event pass through.
         - `overflow_routing`: Route to an overflow destination.
 
-
     :param value: Must be one of ["drop", "no_action", "overflow_routing"].
     :type value: str
     """

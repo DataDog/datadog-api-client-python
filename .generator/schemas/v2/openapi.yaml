@@ -513,9 +513,7 @@ components:
         type: string
     IncidentNotificationRuleIncludeQueryParameter:
       description: 'Comma-separated list of resources to include. Supported values:
-        `created_by_user`, `last_modified_by_user`, `incident_type`, `notification_template`
-
-        '
+        `created_by_user`, `last_modified_by_user`, `incident_type`, `notification_template`'
       explode: false
       in: query
       name: include
@@ -544,9 +542,7 @@ components:
         type: string
     IncidentNotificationTemplateIncludeQueryParameter:
       description: 'Comma-separated list of relationships to include. Supported values:
-        `created_by_user`, `last_modified_by_user`, `incident_type`
-
-        '
+        `created_by_user`, `last_modified_by_user`, `incident_type`'
       explode: false
       in: query
       name: include
@@ -6621,9 +6617,7 @@ components:
             It must be set to a value greater than the current timestamp.
 
             If this field is not provided, the finding will be muted or unmuted indefinitely,
-            which is equivalent to setting the expiration date to 9999999999999.
-
-            '
+            which is equivalent to setting the expiration date to 9999999999999.'
           example: 1778721573794
           format: int64
           type: integer
@@ -9023,25 +9017,19 @@ components:
       description: 'Options for cloud_configuration rules.
 
         Fields `resourceType` and `regoRule` are mandatory when managing custom `cloud_configuration`
-        rules.
-
-        '
+        rules.'
       properties:
         complexRule:
           description: 'Whether the rule is a complex one.
 
             Must be set to true if `regoRule.resourceTypes` contains more than one
-            item. Defaults to false.
-
-            '
+            item. Defaults to false.'
           type: boolean
         regoRule:
           $ref: '#/components/schemas/CloudConfigurationRegoRule'
         resourceType:
-          description: 'Main resource type to be checked by the rule. It should be
+          description: Main resource type to be checked by the rule. It should be
             specified again in `regoRule.resourceTypes`.
-
-            '
           example: aws_acm
           type: string
       type: object
@@ -9058,7 +9046,7 @@ components:
             evaluates to true if the resource is not compliant\n  true\n}\n\n# This
             part remains unchanged for all rules\nresults contains result if {\n  some
             resource in input.resources[input.main_resource_type]\n  result := dd_output.format(resource,
-            eval(resource))\n}\n"
+            eval(resource))\n}"
           type: string
         resourceTypes:
           description: List of resource types that will be evaluated upon. Must have
@@ -9116,11 +9104,9 @@ components:
       description: Create a new cloud configuration rule.
       properties:
         cases:
-          description: 'Description of generated findings and signals (severity and
+          description: Description of generated findings and signals (severity and
             channels to be notified in case of a signal). Must contain exactly one
             item.
-
-            '
           items:
             $ref: '#/components/schemas/CloudConfigurationRuleCaseCreate'
           type: array
@@ -9145,9 +9131,7 @@ components:
 
             #Remediation
 
-            How to fix the security issue.
-
-            '
+            How to fix the security issue.'
           type: string
         name:
           description: The name of the rule.
@@ -9186,11 +9170,9 @@ components:
       description: The payload of a cloud configuration rule.
       properties:
         cases:
-          description: 'Description of generated findings and signals (severity and
+          description: Description of generated findings and signals (severity and
             channels to be notified in case of a signal). Must contain exactly one
             item.
-
-            '
           items:
             $ref: '#/components/schemas/CloudConfigurationRuleCaseCreate'
           type: array
@@ -9223,9 +9205,7 @@ components:
 
             #Remediation
 
-            How to fix the security issue.
-
-            '
+            How to fix the security issue.'
           type: string
         name:
           description: The name of the rule.
@@ -16013,7 +15993,7 @@ components:
       type: object
     EntityRaw:
       description: Entity definition in raw JSON or YAML representation.
-      example: "apiVersion: v3\nkind: service\nmetadata:\n  name: myservice\n"
+      example: "apiVersion: v3\nkind: service\nmetadata:\n  name: myservice"
       type: string
     EntityReference:
       description: The unique reference for an IDP entity.
@@ -19021,9 +19001,7 @@ components:
 
             - `@test.codeowners`
 
-            - `env`
-
-            '
+            - `env`'
           example: flaky_test_state:active @git.repository.id_v2:"github.com/datadog/shopist"
           type: string
       type: object
@@ -25434,9 +25412,7 @@ components:
 
         displayName: Service
 
-        description: A service entity in the catalog.
-
-        '
+        description: A service entity in the catalog.'
       type: string
     KindResponseData:
       description: List of kind responses.
@@ -28414,16 +28390,12 @@ components:
         metric_name:
           description: 'The name of metric for which the tag cardinalities are returned.
 
-            This matches the metric name provided in the request.
-
-            '
+            This matches the metric name provided in the request.'
           type: string
       type: object
     MetricTagCardinalitiesResponse:
-      description: 'Response object that includes an array of objects representing
-        the cardinality details of a metric''s tags.
-
-        '
+      description: Response object that includes an array of objects representing
+        the cardinality details of a metric's tags.
       properties:
         data:
           $ref: '#/components/schemas/MetricTagCardinalitiesData'
@@ -30165,9 +30137,7 @@ components:
         rule types, rule tags, and so on), and the targets to notify.
 
         A notification rule is composed of a rule ID, a rule type, and the rule attributes.
-        All fields are required.
-
-        '
+        All fields are required.'
       properties:
         attributes:
           $ref: '#/components/schemas/NotificationRuleAttributes'
@@ -30523,9 +30493,7 @@ components:
       description: 'Authentication settings for the Amazon OpenSearch destination.
 
         The `strategy` field determines whether basic or AWS-based authentication
-        is used.
-
-        '
+        is used.'
       properties:
         assume_role:
           description: The ARN of the role to assume (used with `aws` strategy).
@@ -30642,9 +30610,7 @@ components:
     ObservabilityPipelineAmazonS3Source:
       description: 'The `amazon_s3` source ingests logs from an Amazon S3 bucket.
 
-        It supports AWS authentication and TLS encryption.
-
-        '
+        It supports AWS authentication and TLS encryption.'
       properties:
         auth:
           $ref: '#/components/schemas/ObservabilityPipelineAwsAuth'
@@ -30677,10 +30643,8 @@ components:
       x-enum-varnames:
       - AMAZON_S3
     ObservabilityPipelineAmazonSecurityLakeDestination:
-      description: 'The `amazon_security_lake` destination sends your logs to Amazon
+      description: The `amazon_security_lake` destination sends your logs to Amazon
         Security Lake.
-
-        '
       properties:
         auth:
           $ref: '#/components/schemas/ObservabilityPipelineAwsAuth'
@@ -30732,7 +30696,7 @@ components:
     ObservabilityPipelineAwsAuth:
       description: "AWS authentication credentials used for accessing AWS services
         such as S3.\nIf omitted, the system\u2019s default credentials are used (for
-        example, the IAM role and environment variables).\n"
+        example, the IAM role and environment variables)."
       properties:
         assume_role:
           description: The Amazon Resource Name (ARN) of the role to assume.
@@ -31572,9 +31536,7 @@ components:
       x-enum-varnames:
       - FLUENTD
     ObservabilityPipelineGcpAuth:
-      description: 'GCP credentials used to authenticate with Google Cloud Storage.
-
-        '
+      description: GCP credentials used to authenticate with Google Cloud Storage.
       properties:
         credentials_file:
           description: Path to the GCP service account key file.
@@ -31588,9 +31550,7 @@ components:
         from logs and sends them to Datadog.
 
         Metrics can be counters, gauges, or distributions and optionally grouped by
-        log fields.
-
-        '
+        log fields.'
       properties:
         id:
           description: The unique identifier for this component. Used to reference
@@ -31637,9 +31597,7 @@ components:
       description: 'Defines a log-based custom metric, including its name, type, filter,
         value computation strategy,
 
-        and optional grouping fields.
-
-        '
+        and optional grouping fields.'
       properties:
         group_by:
           description: Optional fields used to group the metric series.
@@ -31778,9 +31736,7 @@ components:
       description: 'The `google_cloud_storage` destination stores logs in a Google
         Cloud Storage (GCS) bucket.
 
-        It requires a bucket name, GCP authentication, and metadata fields.
-
-        '
+        It requires a bucket name, GCP authentication, and metadata fields.'
       properties:
         acl:
           $ref: '#/components/schemas/ObservabilityPipelineGoogleCloudStorageDestinationAcl'
@@ -32398,17 +32354,13 @@ components:
       description: 'A Grok parsing rule used in the `parse_grok` processor. Each rule
         defines how to extract structured fields
 
-        from a specific log field using Grok patterns.
-
-        '
+        from a specific log field using Grok patterns.'
       properties:
         match_rules:
           description: 'A list of Grok parsing rules that define how to extract fields
             from the source field.
 
-            Each rule must contain a name and a valid Grok pattern.
-
-            '
+            Each rule must contain a name and a valid Grok pattern.'
           example:
           - name: MyParsingRule
             rule: '%{word:user} connected on %{date("MM/dd/yyyy"):date}'
@@ -32421,10 +32373,8 @@ components:
           example: message
           type: string
         support_rules:
-          description: 'A list of Grok helper rules that can be referenced by the
-            parsing rules.
-
-            '
+          description: A list of Grok helper rules that can be referenced by the parsing
+            rules.
           example:
           - name: user
             rule: '%{word:user.name}'
@@ -32440,9 +32390,7 @@ components:
         from log content using named Grok patterns.
 
         Each rule must have a unique name and a valid Datadog Grok pattern that will
-        be applied to the source field.
-
-        '
+        be applied to the source field.'
       properties:
         name:
           description: The name of the rule.
@@ -32637,9 +32585,7 @@ components:
 
         - `no_action`: Let the event pass through.
 
-        - `overflow_routing`: Route to an overflow destination.
-
-        '
+        - `overflow_routing`: Route to an overflow destination.'
       enum:
       - drop
       - no_action
@@ -33412,10 +33358,8 @@ components:
       x-enum-varnames:
       - SENTINEL_ONE
     ObservabilityPipelineSocketDestination:
-      description: 'The `socket` destination sends logs over TCP or UDP to a remote
+      description: The `socket` destination sends logs over TCP or UDP to a remote
         server.
-
-        '
       properties:
         encoding:
           $ref: '#/components/schemas/ObservabilityPipelineSocketDestinationEncoding'
@@ -33542,9 +33486,7 @@ components:
       x-enum-varnames:
       - SOCKET
     ObservabilityPipelineSocketSource:
-      description: 'The `socket` source ingests logs over TCP or UDP.
-
-        '
+      description: The `socket` source ingests logs over TCP or UDP.
       properties:
         framing:
           $ref: '#/components/schemas/ObservabilityPipelineSocketSourceFraming'
@@ -33708,18 +33650,14 @@ components:
       - attributes
       type: object
     ObservabilityPipelineSplunkHecDestination:
-      description: 'The `splunk_hec` destination forwards logs to Splunk using the
+      description: The `splunk_hec` destination forwards logs to Splunk using the
         HTTP Event Collector (HEC).
-
-        '
       properties:
         auto_extract_timestamp:
           description: 'If `true`, Splunk tries to extract timestamps from incoming
             log events.
 
-            If `false`, Splunk assigns the time the event was received.
-
-            '
+            If `false`, Splunk assigns the time the event was received.'
           example: true
           type: boolean
         encoding:
@@ -33773,10 +33711,8 @@ components:
       x-enum-varnames:
       - SPLUNK_HEC
     ObservabilityPipelineSplunkHecSource:
-      description: 'The `splunk_hec` source implements the Splunk HTTP Event Collector
+      description: The `splunk_hec` source implements the Splunk HTTP Event Collector
         (HEC) API.
-
-        '
       properties:
         id:
           description: The unique identifier for this component. Used to reference
@@ -33805,9 +33741,7 @@ components:
       description: 'The `splunk_tcp` source receives logs from a Splunk Universal
         Forwarder over TCP.
 
-        TLS is supported for secure transmission.
-
-        '
+        TLS is supported for secure transmission.'
       properties:
         id:
           description: The unique identifier for this component. Used to reference
@@ -44336,9 +44270,7 @@ components:
 
         schema-version: v2
 
-        dd-service: my-service
-
-        '
+        dd-service: my-service'
       type: string
     ServiceDefinitionSchema:
       description: Service definition schema.
@@ -52375,9 +52307,7 @@ paths:
         replace all API content of the given ID.
 
         The ID is returned by the create API, or can be found in the URL in the API
-        catalog UI.
-
-        '
+        catalog UI.'
       operationId: UpdateOpenAPI
       parameters:
       - description: ID of the API to modify
@@ -52443,9 +52373,7 @@ paths:
 
         information about the possible metadata.
 
-        It returns the created API ID.
-
-        '
+        It returns the created API ID.'
       operationId: CreateOpenAPI
       requestBody:
         content:
@@ -62052,9 +61980,7 @@ paths:
                 summary: Multi Raw Messages
                 value: '2019-11-19T14:37:58,995 INFO [process.name][20081] Hello
 
-                  2019-11-19T14:37:58,995 INFO [process.name][20081] World
-
-                  '
+                  2019-11-19T14:37:58,995 INFO [process.name][20081] World'
               simple-raw-message:
                 description: 'Submit log string. Log attributes can be passed as query
                   parameters in the URL. This enables the addition of tags or the
@@ -65105,9 +65031,7 @@ paths:
         - on_call_write
   /api/v2/on-call/pages:
     post:
-      description: 'Trigger a new On-Call Page.
-
-        '
+      description: Trigger a new On-Call Page.
       operationId: CreateOnCallPage
       requestBody:
         content:
@@ -65162,9 +65086,7 @@ paths:
       - On-Call Paging
   /api/v2/on-call/pages/{page_id}/acknowledge:
     post:
-      description: 'Acknowledges an On-Call Page.
-
-        '
+      description: Acknowledges an On-Call Page.
       operationId: AcknowledgeOnCallPage
       parameters:
       - description: The page ID.
@@ -65218,9 +65140,7 @@ paths:
       - On-Call Paging
   /api/v2/on-call/pages/{page_id}/escalate:
     post:
-      description: 'Escalates an On-Call Page.
-
-        '
+      description: Escalates an On-Call Page.
       operationId: EscalateOnCallPage
       parameters:
       - description: The page ID.
@@ -65274,9 +65194,7 @@ paths:
       - On-Call Paging
   /api/v2/on-call/pages/{page_id}/resolve:
     post:
-      description: 'Resolves an On-Call Page.
-
-        '
+      description: Resolves an On-Call Page.
       operationId: ResolveOnCallPage
       parameters:
       - description: The page ID.
@@ -66005,7 +65923,7 @@ paths:
         ID that can be used in a `GetFinding` request to retrieve the full finding
         details.\n- Core attributes, including status, evaluation, high-level resource
         details, muted state, and rule details.\n- `evaluation_changed_at` and `resource_discovery_date`
-        time stamps.\n- An array of associated tags.\n"
+        time stamps.\n- An array of associated tags."
       operationId: ListFindings
       parameters:
       - description: Limit the number of findings returned. Must be <= 1000.
@@ -66167,7 +66085,7 @@ paths:
           \ - To mute a finding: `PENDING_FIX`, `FALSE_POSITIVE`, `ACCEPTED_RISK`,
           `OTHER`.\n  - To unmute a finding : `NO_PENDING_FIX`, `HUMAN_ERROR`, `NO_LONGER_ACCEPTED_RISK`,
           `OTHER`.\n\n### Meta\n\nThe request body must include a list of the finding
-          IDs to be updated.\n"
+          IDs to be updated."
         required: true
       responses:
         '200':
@@ -67293,9 +67211,7 @@ paths:
       description: 'Validates a pipeline configuration without creating or updating
         any resources.
 
-        Returns a list of validation errors, if any.
-
-        '
+        Returns a list of validation errors, if any.'
       operationId: ValidatePipeline
       requestBody:
         content:
@@ -69226,9 +69142,7 @@ paths:
 
 
         Please review the [Metadata section for the "List Vulnerabilities"](#metadata)
-        endpoint.
-
-        '
+        endpoint.'
       operationId: ListVulnerableAssets
       parameters:
       - description: Its value must come from the `links` section of the response
@@ -69552,9 +69466,7 @@ paths:
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
   /api/v2/security/sboms/{asset_type}:
     get:
-      description: 'Get a single SBOM related to an asset by its type and name.
-
-        '
+      description: Get a single SBOM related to an asset by its type and name.
       operationId: GetSBOM
       parameters:
       - description: The type of the asset for the SBOM request.
@@ -69650,9 +69562,7 @@ paths:
           of the rule type and the rule attributes:
 
           the rule name, the selectors, the notification targets, and the rule enabled
-          status.
-
-          '
+          status.'
         required: true
       responses:
         '201':
@@ -69828,7 +69738,7 @@ paths:
         For more details on each of the properties included in this section, check
         the endpoints response tables.\n\n```JSON\n{\n  \"data\": [...],\n  \"meta\":
         {\n    \"total\": 1500,\n    \"count\": 18732,\n    \"token\": \"some_token\"\n
-        \ },\n  \"links\": {...}\n}\n```\n"
+        \ },\n  \"links\": {...}\n}\n```"
       operationId: ListVulnerabilities
       parameters:
       - description: Its value must come from the `links` section of the response
@@ -70215,9 +70125,7 @@ paths:
           of the rule type and the rule attributes:
 
           the rule name, the selectors, the notification targets, and the rule enabled
-          status.
-
-          '
+          status.'
         required: true
       responses:
         '201':
