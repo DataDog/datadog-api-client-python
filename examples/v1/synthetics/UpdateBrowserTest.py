@@ -85,6 +85,7 @@ body = SyntheticsBrowserTest(
     message="",
     name="Example test name",
     options=SyntheticsTestOptions(
+        blocked_request_patterns=[],
         ci=SyntheticsTestCiOptions(
             execution_rule=SyntheticsTestExecutionRule.BLOCKING,
         ),
