@@ -56,6 +56,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             "monitoring": ([str],),
             "name": (str,),
             "product_tags": ([str],),
+            "silent": (bool,),
             "update_author_uu_id": (str,),
             "update_date": (int,),
             "updated_at": (int,),
@@ -80,6 +81,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         "monitoring": "monitoring",
         "name": "name",
         "product_tags": "product_tags",
+        "silent": "silent",
         "update_author_uu_id": "updateAuthorUuId",
         "update_date": "updateDate",
         "updated_at": "updatedAt",
@@ -105,6 +107,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         monitoring: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         product_tags: Union[List[str], UnsetType] = unset,
+        silent: Union[bool, UnsetType] = unset,
         update_author_uu_id: Union[str, UnsetType] = unset,
         update_date: Union[int, UnsetType] = unset,
         updated_at: Union[int, UnsetType] = unset,
@@ -163,6 +166,9 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         :param product_tags: The list of product tags associated with the rule
         :type product_tags: [str], optional
 
+        :param silent: Whether the rule is silent.
+        :type silent: bool, optional
+
         :param update_author_uu_id: The ID of the user who updated the rule
         :type update_author_uu_id: str, optional
 
@@ -210,6 +216,8 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             kwargs["name"] = name
         if product_tags is not unset:
             kwargs["product_tags"] = product_tags
+        if silent is not unset:
+            kwargs["silent"] = silent
         if update_author_uu_id is not unset:
             kwargs["update_author_uu_id"] = update_author_uu_id
         if update_date is not unset:

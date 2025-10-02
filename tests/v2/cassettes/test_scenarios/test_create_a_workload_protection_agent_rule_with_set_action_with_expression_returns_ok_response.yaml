@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1759408819"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"cbw-w25-hki","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1759408819","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1759408819928,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"actions":[{"set":{"default_value":"/dev/null","expression":"open.file.path","name":"test_set","scope":"process"}}],"description":"My
+      Agent rule with set action with expression","enabled":true,"expression":"exec.file.name
+      == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1759408819","policy_id":"cbw-w25-hki","product_tags":[]},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"csy-0yk-vqe","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","default_value":"/dev/null","scope":"process","expression":"open.file.path","inherited":false},"disabled":false}],"category":"Process
+        Activity","creationDate":1759408820918,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+        Agent rule with set action with expression","enabled":true,"expression":"exec.file.name
+        == \"sh\"","filters":["os == \"linux\""],"monitoring":["cbw-w25-hki"],"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1759408819","product_tags":[],"updateDate":1759408820918,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/csy-0yk-vqe
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/cbw-w25-hki
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

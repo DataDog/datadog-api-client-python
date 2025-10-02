@@ -1,10 +1,14 @@
 """
-Create a Workload Protection agent rule returns "OK" response
+Create a Workload Protection agent rule with set action with expression returns "OK" response
 """
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import CloudWorkloadSecurityAgentRuleAction
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_set import (
+    CloudWorkloadSecurityAgentRuleActionSet,
+)
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_create_attributes import (
     CloudWorkloadSecurityAgentRuleCreateAttributes,
 )
@@ -22,14 +26,23 @@ POLICY_DATA_ID = environ["POLICY_DATA_ID"]
 body = CloudWorkloadSecurityAgentRuleCreateRequest(
     data=CloudWorkloadSecurityAgentRuleCreateData(
         attributes=CloudWorkloadSecurityAgentRuleCreateAttributes(
-            description="My Agent rule",
+            description="My Agent rule with set action with expression",
             enabled=True,
             expression='exec.file.name == "sh"',
-            agent_version="> 7.60",
             filters=[],
             name="examplecsmthreat",
             policy_id=POLICY_DATA_ID,
             product_tags=[],
+            actions=[
+                CloudWorkloadSecurityAgentRuleAction(
+                    set=CloudWorkloadSecurityAgentRuleActionSet(
+                        name="test_set",
+                        expression="open.file.path",
+                        default_value="/dev/null",
+                        scope="process",
+                    ),
+                ),
+            ],
         ),
         type=CloudWorkloadSecurityAgentRuleType.AGENT_RULE,
     ),
