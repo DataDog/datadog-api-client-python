@@ -1,0 +1,1352 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cases/types
+  response:
+    body:
+      string: "{\"data\":[{\"id\":\"00000000-0000-0000-0000-000000000001\",\"type\"\
+        :\"case_type\",\"attributes\":{\"description\":\"General tasks and investigations\"\
+        ,\"emoji\":\"\",\"internal\":true,\"name\":\"Standard\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"00000000-0000-0000-0000-000000000002\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Triage and investigate\
+        \ correlated alerts and events\",\"emoji\":\"\",\"internal\":true,\"name\"\
+        :\"Event Management\",\"statuses_config\":{\"open\":{\"status_options\":[{\"\
+        name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"00000000-0000-0000-0000-000000000003\",\"type\":\"case_type\",\"attributes\"\
+        :{\"description\":\"Used By Datadog Security products and for general security\
+        \ workflows\",\"emoji\":\"\",\"internal\":true,\"name\":\"Security\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"00000000-0000-0000-0000-000000000004\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Request and track\
+        \ approvals\",\"emoji\":\"\",\"internal\":true,\"name\":\"Change Request\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"Pending\
+        \ Approval\"},{\"name\":\"Approved\"},{\"name\":\"Implementing\"}],\"default\"\
+        :\"Pending Approval\"},\"closed\":{\"status_options\":[{\"name\":\"Completed\"\
+        },{\"name\":\"Cancelled\"},{\"name\":\"Declined\"}],\"default\":\"Completed\"\
+        }}}},{\"id\":\"00000000-0000-0000-0000-000000000005\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"description\":\"Triage and investigate errors\",\"emoji\"\
+        :\"\",\"internal\":true,\"name\":\"Error Tracking\",\"statuses_config\":{\"\
+        open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"\
+        in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"38d28f4f-7ce8-4fbd-ae42-326edf758eb8\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Investigations done\
+        \ in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"name\"\
+        :\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\":[{\"\
+        name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"b2304cb7-a65c-4f71-bb17-0800b4badb16\",\"type\":\"case_type\",\"attributes\"\
+        :{\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"95802802-1241-4825-835b-1c0322a7ef97\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"description\":\"Investigations done in case management\"\
+        ,\"emoji\":\"\U0001F451\",\"internal\":false,\"name\":\"Investigation\",\"\
+        statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\"\
+        :\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1855fd31-e717-4af4-85d0-698c652ea0b6\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Investigations done\
+        \ in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"name\"\
+        :\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\":[{\"\
+        name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"0cab85fe-12ee-423e-a86e-2363d0e6f5ac\",\"type\":\"case_type\",\"attributes\"\
+        :{\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"5755912a-fb4b-4597-b118-1b0b40f7bb85\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T09:09:06.196109Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"7ab3b17d-a929-465f-80fa-ada92a865000\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Investigations done\
+        \ in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"name\"\
+        :\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\":[{\"\
+        name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"7c4b1f31-e48a-49c3-bd41-4646baa16649\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T09:13:20.969149Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"09c05ec2-311a-4c36-a813-f72a4a85ec45\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Investigations done\
+        \ in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"name\"\
+        :\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\":[{\"\
+        name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"ecea0a37-7f91-4e88-9b16-6f25cd4bdef3\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T09:15:45.46212Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"5458e2b8-7362-4b38-85b3-1ab1ea73e08f\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Investigations done\
+        \ in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"name\"\
+        :\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\":[{\"\
+        name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"9daa0418-d01c-498a-96d2-7cfe1b2158d5\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T09:17:15.497537Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1e2c240d-168c-4b12-aa9b-92376f59f633\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T09:18:31.367268Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"af272a35-fa50-4619-b3df-1ee540b8586a\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-08-19T09:18:32.54125Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"e7717df7-6d36-4cf0-9e07-e58a5fac1cde\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T09:22:35.514966Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"c0da0f83-128b-434c-a535-b1414efab20b\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-08-19T09:22:36.72Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"a6029ab5-177f-437c-97cb-764b2dc80cb6\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T18:24:37.254566Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"933b2876-4617-4674-8ac1-64fa9fa56b87\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-08-19T18:24:38.561424Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"20303a04-10d7-4a67-8afb-cecfb6783004\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T18:29:15.253583Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"08c89b77-5c9d-4f4f-8d0f-fe6d36351539\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-08-19T18:29:16.570705Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"0aec1cee-fa44-468c-86ff-3afab2292f30\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T18:34:51.437054Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"dd0ca022-0166-4012-8179-dab74b6e4946\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-08-19T18:34:52.380136Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"581f9946-2777-4ca2-98f5-839a8583507b\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:12:42.070634Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"d9a99e7c-255c-4328-b29c-249bbbce55d5\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:12:43.427514Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"05978c06-ac0e-480b-a7d5-e1a8f8fe8005\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:12:45.680688Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"ce6e2d21-6719-46d8-8639-f8a196f42678\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:25:30.303213Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"3d9d8463-80fa-4434-a9e4-5dc4f3669c4e\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:25:31.642643Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"fa261a4c-91f2-4d06-972f-a35bee0543f3\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:25:33.792069Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1de6d896-26ac-4349-9b00-6acfe4879fda\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:37:44.971336Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"f2578542-b2b9-4180-81cf-2eec21b94af1\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:37:46.300977Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"e3c1d47a-e3ae-43ab-8181-334c3bba197e\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:37:48.496084Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"3d603ba5-4391-425b-b12c-cb6dcecc44d6\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:43:19.932314Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"29174d43-f800-4e6f-8756-bf632cd6de41\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:43:22.335462Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"f997d450-7912-4801-a26b-dde8e5ee077e\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:44:00.498935Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"94df43bd-6d07-4187-9a0a-0b8fdee7d1cc\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:44:02.704517Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"b53a3523-4a91-4a29-8634-7d10457d7922\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:46:02.69294Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"2ce0cf3d-c48e-40a2-a3c1-bd5790617e48\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:46:04.026799Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"f86f0afb-4e9d-4cd3-b72a-c62befbee6f1\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:46:05.838903Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"3d86fef6-9e70-4167-b067-4136058dac19\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:49:07.463675Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"55be152c-d505-406f-b1b6-e3ea735cbf5b\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:49:08.784736Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"b108c666-e8e9-4c4e-b912-2c12b00f4f32\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:49:10.569418Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"a706b5ab-f74e-4a11-b3a2-02eb6879241d\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:49:50.869037Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"921b1edd-bbd8-4130-8fb6-417d0be654bd\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:49:52.205117Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"27f02f54-745d-4398-a1a5-ca77708df7e1\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:49:53.955522Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1e002aff-0037-49f2-b266-4929032860be\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:52:04.296502Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"d9c649e3-92d5-4149-8f1b-e512c466a16d\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:52:05.632924Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"07eb5ad1-bac7-4eab-9341-8edb850f1b74\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:52:07.394803Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"f15cae28-3df0-4c46-ba06-2bd1570a7f68\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:57:00.706851Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"4a252863-46c5-474a-acef-dfd42982ed68\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:57:02.039005Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"9e32b021-edaf-408e-8659-c2b850a1abf3\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:57:03.353195Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"c229eb1e-e333-4f9b-937e-5aeb78d9069f\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:58:47.224259Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"0f4d4aed-e1d3-4fec-88db-f932656653dd\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T19:58:48.558757Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"c5065726-f32f-4554-a819-de0362e5a773\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T19:58:50.336027Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"e2018774-4cfa-4ad6-8bd0-366479b8de8e\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T20:03:19.632702Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"a46e33f1-d290-4aa8-a192-b4f58e063330\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T20:03:20.945982Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"e935a49b-d4cf-45f3-a63d-5fc857237fbe\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T20:03:22.683799Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"cb091c10-d4b9-4d93-be90-3b8c1166c4e4\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T20:05:50.137825Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"12b06e26-8f8f-45d0-be5d-0a3c1046ebb8\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T20:05:51.471366Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"ada38cc4-4191-484d-bfea-604c921839f5\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T20:05:53.224893Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"ce15011e-b4ea-41e6-8628-4131f2773ae4\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T20:07:00.572959Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"a8f6af82-7364-4fa2-be63-f9d82d49f126\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T20:07:01.933445Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"2f08290c-c478-4c47-9f00-36973b7b021a\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T20:07:03.713436Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"6bdcc12d-4f8f-4b9f-b33a-645b1c1fac78\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T20:16:47.195594Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"d3f2e924-efb4-4fea-858a-b0a104de58f1\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-19T20:16:48.531005Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"6e204166-35d3-4150-85c9-2b3f1d6a85c5\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-19T20:16:50.266373Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"3024568e-3252-40be-b2c5-ecc1898ad815\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T09:16:27.084779Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"2b8488a4-bdab-482c-8a9c-d2a571da65a9\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T09:17:37.421421Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"f0e8ea33-8b30-47de-b9fe-f77b651381a7\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T09:20:12.422783Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"127dd6ad-3a98-4fc6-9e51-edb38b509385\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T09:20:13.955239Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"e7773938-e80d-4bbc-874f-7c655daadee8\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T10:57:28.035038Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"c8e6f6e7-19e3-433e-bba9-73a013527105\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T10:57:35.415978Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"3feeec2b-a582-42a2-a4a2-b6ea50dc5876\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T10:57:36.981262Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1c08bb63-9e9e-4a0d-bc5a-b90dabe3c95d\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T11:19:10.000286Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"fe1f962c-99bd-4de2-90c2-0d685a383ce1\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T11:19:17.329016Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"45efdca9-7cde-4363-888c-c6ffc37000fc\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T11:19:19.242715Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"6fc2e97b-4d59-48ee-8a00-039b07f147e4\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T11:22:49.696501Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"387f5315-b404-40f6-9005-cccac8ef06fa\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T11:22:57.691398Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"37ab3980-5401-4a6f-ae3d-f0f428310448\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T11:23:00.351616Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"9b42bc58-728f-4ea3-8ab9-d6194ef6e6a8\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T11:46:41.280003Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"d3f86d4c-876b-4ebd-9c71-050d5d60aacb\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T11:46:49.368221Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"644f21a0-a650-410c-a8ec-c7ceadeaa28d\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T11:46:51.227809Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"14b8f6a9-3bd9-4fad-b66e-68dac1bf547a\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T11:59:08.635193Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"6c66be3b-c6d1-45b0-b1c4-473c04f3dc39\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T11:59:16.615113Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"fbd65d3f-0fd5-4898-958d-f1e4ded98164\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T11:59:19.279382Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"581c81f2-968c-4f23-bc35-e5a4f76246e6\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T12:20:04.568041Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"2cf3b0ea-aced-42f8-af92-252b294fb478\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T12:20:12.864796Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"e2d429a0-5dc2-4e7d-aafc-07588da368b2\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T12:20:15.558827Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"7a657b5f-8683-451e-a006-57ea6976073f\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T12:57:00.687594Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"cfbe7974-89c8-4198-ab82-8a184607d214\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"6915e7c1-3e5e-40fb-b7c8-6bc23b427d20\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T12:57:03.107095Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"71f640f9-7639-4531-93a7-de3fb2ca12a0\",\"type\":\"case_type\",\"attributes\"\
+        :{\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"96dd3710-e051-49f3-b26a-e8dd9a51f87f\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T12:57:05.538619Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"4d130488-a5f8-4f0a-a738-91dbf1fbf3a6\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:00:30.252878Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"d34c57fb-54a6-4f6c-a86e-3a73de621e2d\",\"type\":\"case_type\",\"attributes\"\
+        :{\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"184c9894-a9a3-49cf-a6cc-489e6842a3dd\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:00:32.655453Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"032f775d-3a79-426c-bcb7-6b42d3be7ac7\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"fb17bf17-f0bb-4722-b4e5-32445e7f5527\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:00:35.022904Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"7f184906-a942-4917-a4e0-e8e2fa74b990\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:02:24.873029Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"70214597-0ebf-470d-a7c8-6c596d786ba2\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:02:26.060226Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"e7b57afc-4e28-4c57-9d17-42b1c48eebd9\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:02:27.638116Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"289574f3-de0e-47f0-81c7-06ae80937f31\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:02:29.214104Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"897c1c2e-5f52-46be-9abd-e7a01d3420f4\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:02:30.403304Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"eefd1896-506b-4035-9b60-110ac28e1814\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:07:20.994716Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"c351af96-9af2-4847-a0c8-11b201b1ae5f\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:07:29.127227Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"0c16ab5a-ac15-49a0-ad03-aef57d4d42e8\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:07:31.878967Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"5ee6243b-b005-4bd4-a5f2-fe8c4ff2ddfe\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:13:13.116651Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"7f70d4a0-d06d-49f5-928f-c2ca73aeb862\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:13:21.344841Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"1387ec4d-f40a-4b31-8d0f-bc161326e588\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:13:24.125802Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"02323717-20b8-4ecf-8c34-ef7dd1841f46\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:23:39.707537Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"8ba67013-03d9-47e6-b0fc-746ce6587cef\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:23:48.028828Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"7615e5a7-d95b-41b2-a082-47bf7ac815b9\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:23:50.74861Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"b9e753b2-d41d-40d6-8c1c-3e8522b9cfd5\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:26:49.560438Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"ba86214d-a2f3-4067-b507-77d75ad9db7d\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:26:58.639584Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"7a256076-d73a-4581-a955-c036ca560fd3\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:27:01.335547Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"ca5baeb1-1abf-4983-8761-922382085818\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:28:12.129245Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"a080a4f4-8f02-47b0-854f-b96d06d137e8\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:28:20.260597Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"220d930b-828d-4b57-a38f-f09ced11d439\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:28:23.005866Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"7eb35cdb-4622-4a60-beb1-d292387b0314\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:32:16.836893Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"bb399fc7-2ae4-4b9c-a645-b46f50b01347\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:32:24.852829Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"2402c3fb-d0a2-4460-bd62-da434e3dff7c\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:32:27.626252Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"14c085b7-3e9b-4dfd-9dc0-3adc9e2aaef8\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:59:31.577893Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"ebfc643b-bf3e-4dab-bff0-8c297d1773f3\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-08-20T13:59:32.398071Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"dc882f3b-36c2-4488-bb32-60367b473df2\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:59:53.449498Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"b300e2b4-5084-443b-b8f2-d1d3611be8d6\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:59:54.609448Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"adc74163-422f-4667-a3a6-9c361863333e\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:59:56.196341Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"25acc483-052f-412f-92a5-00ef2c22fbbb\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T13:59:57.745023Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"ffa14c93-06d0-4cc2-bcce-f41901be46df\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T13:59:58.908354Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"c8338d5b-1e0b-4d0e-a404-35ca2f47ff0d\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T14:00:40.051477Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"3879f548-5eec-4c3f-8d7b-b0b2671fd522\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T14:00:49.182953Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"6e04d185-29aa-4770-b14d-fd2741f049cc\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T14:00:52.010409Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"02f6995d-1ce3-4890-b797-e00b3761eafc\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T15:46:45.09765Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"895b0b2c-98de-482b-b315-195ca654cfd0\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T15:46:46.298225Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1debd831-4fa0-40af-b9ca-58e1a718ecb3\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T15:46:47.832594Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"fe5f13b0-63d5-4a2a-8396-08a2a4e831ab\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T15:46:49.386532Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"34c76089-ee0c-4f48-bf98-6b9d4e792544\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T15:46:50.530716Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"a7168617-45a8-4fa1-9657-b6c18f4b4a1b\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T15:47:09.132674Z\",\"description\":\"Investigations\
+        \ done in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"\
+        name\":\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"b7459998-1c94-4840-a0ab-3d030f5d582b\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T15:47:09.896859Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"9adc531f-1c5f-4140-b833-32f35e8dbee2\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T15:50:13.125537Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"f66b10ec-73f2-420c-8c2e-b2264cb5577a\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T15:50:14.31455Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"da768aba-f8c0-473c-bd1c-e4ea9d9f682b\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T15:50:15.939157Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"4937b115-31fa-4b14-b03b-774a978cbe86\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-20T15:50:17.533068Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"887f07b4-8b57-4949-880d-12fb460c9b37\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-20T15:50:18.74212Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"559cfd8c-3fb3-4a1c-b0f1-bb36cde9634a\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:14:45.824907Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"a9a925b3-6198-4ad1-8fb7-1d6e2691ed4f\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:14:46.984977Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"e5e19e07-79a9-42d1-b8b7-72d4290648eb\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:14:48.524998Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1ceaf193-152c-481f-8eb0-08e9470f6d8b\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:14:50.414457Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"6cef1f4c-7201-4e60-b7a1-7843a82835d2\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:14:51.834989Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"6d142c7f-6ab3-4d54-8cdf-f600ddb40ea2\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:15:15.232477Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"d6cc97e5-830f-467f-9d7e-d44fe9376cb2\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-08-21T11:15:16.048802Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"b93415ca-0644-47d6-9547-f1af159ebe69\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:15:52.950749Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"e9e97b17-30cf-4068-8c5a-657b509b56bf\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:16:01.620133Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"56855740-86fc-42c5-9ed3-82bed933cfa3\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:16:04.310919Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"21779b8e-c1e1-4886-94e9-1b5b18d21366\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:27:38.520987Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"dd9805ac-43e8-447d-a521-25bbddf47f8a\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:27:47.342964Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"1295370d-69c2-43d1-899f-71e9d67e5474\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:27:50.106242Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"b7b7e66e-e6a4-451f-95a1-ad427e83da19\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:44:03.293497Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"615f2510-83f5-46ba-b244-012ced51027a\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:44:11.483169Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"6010ef55-cf69-4e91-959d-a6f14a6384ee\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:44:14.154381Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"e4641157-ebc4-4e6d-b785-84fc8f0347f3\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:49:04.540305Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"602b0512-58e4-4fa5-a004-dccd954b7ab8\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T11:49:12.994315Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"0295702b-41e6-4a9e-8681-a237d11b5843\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T11:49:15.713764Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"bfa696f1-341e-4216-ba15-81ac431d6419\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T12:02:32.063175Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"54997fa0-0c3f-43cb-9e84-39f5f5ce3f09\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T12:02:40.160052Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1e036814-3134-4bc5-8e97-1f14ba77fac3\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T12:02:42.899008Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"3dd78296-b989-466d-97ef-428517d851ee\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T12:21:44.554387Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"b36e8af6-a952-43bb-b54b-d7b80fc1344e\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T12:21:52.745427Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"bf109065-175f-4d2f-848d-8f5232dfce1a\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T12:21:55.422802Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"869f4c88-f545-4aa1-a03f-152bb52186bf\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T12:41:43.69428Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"c19925d5-97c0-4e0e-a49e-fef562db5519\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T12:41:44.899197Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"1f787bd5-127a-4005-85df-6d24eb8955c1\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T12:41:46.505589Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"fdf93265-be3d-4a97-ae0d-540b049f7753\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T12:41:48.1106Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"f69a1398-c8b2-47bf-a624-4374634b4cf6\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-08-21T12:41:49.337557Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"5ec976bf-2f12-43c4-be20-542518b5906e\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T12:42:17.873694Z\",\"description\":\"Investigations\
+        \ done in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"\
+        name\":\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"c0bff0de-fe8f-4edd-83c5-b07e1480ca5f\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-08-21T12:42:18.644537Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"cd55412c-1231-4a0f-bc15-ea9b18d3a725\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-09-04T08:57:05.266866Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"c731cc10-0e89-436c-a9aa-4bd8a2e6ca31\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-09-04T08:57:06.551977Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"80c93fe7-a888-4e9d-abb1-abd31f5df031\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-09-04T08:57:08.15913Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"38619645-ccb4-4787-9755-6d3881fa5c3e\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-09-04T08:57:09.311993Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"f1e661ad-1076-4f84-8165-254304c10a2a\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-09-04T08:57:28.016602Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"a2cbb86a-010d-4dae-8d90-f97207c3ce63\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-09-04T08:57:28.845895Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"00000000-0000-0000-0000-000000000007\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Triage and investigate\
+        \ logs optimization insights\",\"emoji\":\"\",\"internal\":true,\"name\":\"\
+        Logs Optimization Insights\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"658965cb-30af-417a-b83d-4ea61d7ad995\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-09-04T09:04:13.717815Z\",\"description\":\"Investigations\
+        \ done in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"\
+        name\":\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"baa64ec8-924d-4d8e-bc41-819fe61d6e22\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-09-04T09:04:14.541556Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"b13fcd85-8d58-4539-9100-2b7d811a1fb4\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-09-04T09:05:19.972962Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"3e9ee917-5e9d-405b-a9e7-433092714e91\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-09-04T09:05:20.810533Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"fd1c8062-ecc0-4b79-b466-3ab057b54018\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-09-04T09:10:58.297595Z\"\
+        ,\"description\":\"Investigations done in case management\",\"emoji\":\"\U0001F451\
+        \",\"internal\":false,\"name\":\"Investigation\",\"statuses_config\":{\"open\"\
+        :{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\"\
+        :{\"status_options\":[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"\
+        },\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"\
+        }}}},{\"id\":\"3e4616fc-83a9-4321-a026-a710a71d082b\",\"type\":\"case_type\"\
+        ,\"attributes\":{\"deleted_at\":\"2025-09-04T09:10:59.098774Z\",\"description\"\
+        :\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\"\
+        :\"World\",\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"\
+        Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\"\
+        :\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"status_options\"\
+        :[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"cd95d1a3-d547-4fd6-99ee-af1c7cc5e4c5\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-09-04T09:11:55.879801Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"1fab87e4-341d-4a79-a294-171b4e2c22f8\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-09-04T09:11:57.084868Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"8fa9005a-76e7-4742-ab6c-b68b1b9f036b\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"deleted_at\":\"2025-09-04T09:11:58.678865Z\"\
+        ,\"description\":\"Worldwide case type\",\"emoji\":\"\U0001F30D\",\"internal\"\
+        :false,\"name\":\"World\",\"statuses_config\":{\"open\":{\"status_options\"\
+        :[{\"name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"cf9dfa09-a302-428a-83c0-cd9a61ca3308\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-09-04T09:11:59.862839Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\":\"be22d02b-fbd1-4bc8-919b-e81873b33f15\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"e91f9e49-6352-4a49-89b1-2ecadbe47190\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"2bb990c4-2d35-412c-9d9f-c66980cbf830\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"416ecaad-9be8-423f-bd23-df5062de555e\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"a52ea7e5-7cdf-4414-a585-63e58d3dc7a0\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"d6472e40-180e-4f7f-bdc0-9c8a749da7ee\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"3ffd2bc8-e360-40d4-8ed6-60f72161fd89\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"f91c5f4a-53c4-4f18-a21d-9f82fd7bd3e9\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\"\
+        ,\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}},{\"id\":\"e3cb41d0-cd05-4c9d-8158-fc044587487f\"\
+        ,\"type\":\"case_type\",\"attributes\":{\"description\":\"Investigations done\
+        \ in case management\",\"emoji\":\"\U0001F451\",\"internal\":false,\"name\"\
+        :\"Investigation\",\"statuses_config\":{\"open\":{\"status_options\":[{\"\
+        name\":\"Open\"}],\"default\":\"Open\"},\"in_progress\":{\"status_options\"\
+        :[{\"name\":\"In Progress\"}],\"default\":\"In Progress\"},\"closed\":{\"\
+        status_options\":[{\"name\":\"Closed\"}],\"default\":\"Closed\"}}}},{\"id\"\
+        :\"f580bda9-aed7-49b6-ad70-5707d1c183fa\",\"type\":\"case_type\",\"attributes\"\
+        :{\"deleted_at\":\"2025-10-01T12:50:38.54792Z\",\"description\":\"Worldwide\
+        \ case type\",\"emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\"\
+        ,\"statuses_config\":{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"\
+        default\":\"Open\"},\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"\
+        }],\"default\":\"In Progress\"},\"closed\":{\"status_options\":[{\"name\"\
+        :\"Closed\"}],\"default\":\"Closed\"}}}}]}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

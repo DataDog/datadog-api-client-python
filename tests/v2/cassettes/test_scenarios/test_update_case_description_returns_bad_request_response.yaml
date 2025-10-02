@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type":"STANDARD"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"efb715f8-47e6-4035-a8aa-2562ac8d46b1","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-08-20T11:23:00.725437Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"efb715f8-47e6-4035-a8aa-2562ac8d46b1","key":"DDFC-77120","merge_status":"NOT_MERGED","priority":"P4","public_id":"77187","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"Seeing some weird memory increase...
+      We shouldn''t ignore this"},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/efb715f8-47e6-4035-a8aa-2562ac8d46b1/description
+  response:
+    body:
+      string: '{"data":{"id":"efb715f8-47e6-4035-a8aa-2562ac8d46b1","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-08-20T11:23:00.725437Z","creation_source":"MANUAL","custom_attributes":{},"description":"Seeing
+        some weird memory increase... We shouldn''t ignore this","insights":[],"internal_id":"efb715f8-47e6-4035-a8aa-2562ac8d46b1","key":"DDFC-77120","merge_status":"NOT_MERGED","modified_at":"2025-08-20T11:23:01.102685Z","priority":"P4","public_id":"77187","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"modified_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

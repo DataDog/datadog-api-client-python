@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type":"STANDARD"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"57868e9a-2697-4384-b724-8e118b20a7f3","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:56.317328Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"57868e9a-2697-4384-b724-8e118b20a7f3","key":"DDFC-72329","merge_status":"NOT_MERGED","priority":"P4","public_id":"72389","status":"OPEN","title":"My
+      string: '{"data":{"id":"66eb3131-0b3b-489b-b672-2781600cc1e6","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:47:00.373489Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"66eb3131-0b3b-489b-b672-2781600cc1e6","key":"DDFC-82985","merge_status":"NOT_MERGED","priority":"P4","public_id":"83074","status":"OPEN","status_name":"Open","title":"My
         new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
     headers:
       content-type:
@@ -26,11 +26,11 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/57868e9a-2697-4384-b724-8e118b20a7f3/priority
+    uri: https://api.datadoghq.com/api/v2/cases/66eb3131-0b3b-489b-b672-2781600cc1e6/priority
   response:
     body:
       string: '{"errors":[{"title":"Generic Error","detail":"invalid priority P1234.
-        Must be one of P2, P3, P4, P5, NOT_DEFINED, P1"}]}'
+        Must be one of NOT_DEFINED, P1, P2, P3, P4, P5"}]}'
     headers:
       content-type:
       - application/vnd.api+json
