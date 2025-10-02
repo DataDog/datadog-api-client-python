@@ -216,6 +216,13 @@ Feature: Roles
     And the response "data" has item with field "attributes.restricted" with value false
     And the response "data" has item with field "attributes.name" with value "admin"
 
+  @generated @skip @team:DataDog/aaa-core-access
+  Scenario: List role templates returns "OK" response
+    Given operation "ListRoleTemplates" enabled
+    And new "ListRoleTemplates" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/aaa-core-access
   Scenario: List roles returns "OK" response
     Given there is a valid "role" in the system

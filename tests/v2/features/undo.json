@@ -2869,6 +2869,12 @@
       "type": "unsafe"
     }
   },
+  "ListRoleTemplates": {
+    "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteRole": {
     "tag": "Roles",
     "undo": {
