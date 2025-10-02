@@ -16608,6 +16608,34 @@ datadog\_api\_client.v2.model.role\_response\_relationships module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.role\_template\_array module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.role_template_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.role\_template\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.role_template_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.role\_template\_data\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.role_template_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.role\_template\_data\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.role_template_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.role\_update\_attributes module
 -------------------------------------------------------------
 
