@@ -16,6 +16,7 @@ from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.role_create_response import RoleCreateResponse
 from datadog_api_client.v2.model.role_create_request import RoleCreateRequest
+from datadog_api_client.v2.model.role_template_array import RoleTemplateArray
 from datadog_api_client.v2.model.role_response import RoleResponse
 from datadog_api_client.v2.model.role_update_response import RoleUpdateResponse
 from datadog_api_client.v2.model.role_update_request import RoleUpdateRequest
@@ -261,6 +262,22 @@ class RolesApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_role_templates_endpoint = _Endpoint(
+            settings={
+                "response_type": (RoleTemplateArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/roles/templates",
+                "operation_id": "list_role_templates",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -574,6 +591,18 @@ class RolesApi:
             kwargs["filter_id"] = filter_id
 
         return self._list_roles_endpoint.call_with_http_info(**kwargs)
+
+    def list_role_templates(
+        self,
+    ) -> RoleTemplateArray:
+        """List role templates.
+
+        List all role templates
+
+        :rtype: RoleTemplateArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_role_templates_endpoint.call_with_http_info(**kwargs)
 
     def list_role_users(
         self,

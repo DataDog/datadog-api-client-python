@@ -3352,6 +3352,10 @@ from datadog_api_client.v2.model.role_create_response_data import RoleCreateResp
 from datadog_api_client.v2.model.role_relationships import RoleRelationships
 from datadog_api_client.v2.model.role_response import RoleResponse
 from datadog_api_client.v2.model.role_response_relationships import RoleResponseRelationships
+from datadog_api_client.v2.model.role_template_array import RoleTemplateArray
+from datadog_api_client.v2.model.role_template_data import RoleTemplateData
+from datadog_api_client.v2.model.role_template_data_attributes import RoleTemplateDataAttributes
+from datadog_api_client.v2.model.role_template_data_type import RoleTemplateDataType
 from datadog_api_client.v2.model.role_update_attributes import RoleUpdateAttributes
 from datadog_api_client.v2.model.role_update_data import RoleUpdateData
 from datadog_api_client.v2.model.role_update_request import RoleUpdateRequest
@@ -6821,6 +6825,10 @@ __all__ = [
     "RoleRelationships",
     "RoleResponse",
     "RoleResponseRelationships",
+    "RoleTemplateArray",
+    "RoleTemplateData",
+    "RoleTemplateDataAttributes",
+    "RoleTemplateDataType",
     "RoleUpdateAttributes",
     "RoleUpdateData",
     "RoleUpdateRequest",
