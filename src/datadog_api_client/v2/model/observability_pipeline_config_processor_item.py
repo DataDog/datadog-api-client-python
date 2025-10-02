@@ -46,7 +46,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
             - `drop`: Drop the event.
             - `no_action`: Let the event pass through.
             - `overflow_routing`: Route to an overflow destination.
-
         :type overflow_action: ObservabilityPipelineQuotaProcessorOverflowAction, optional
 
         :param overrides: A list of alternate quota rules that apply to specific sets of events, identified by matching field values. Each override can define a custom limit.
