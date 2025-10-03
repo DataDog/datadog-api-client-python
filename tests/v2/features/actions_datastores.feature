@@ -4,9 +4,36 @@ Feature: Actions Datastores
   datastores owned by your organization.
 
   Background:
-    Given an instance of "ActionsDatastores" API
-    And a valid "apiKeyAuth" key in the system
+    Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
+    And an instance of "ActionsDatastores" API
+
+  @team:DataDog/app-builder-backend
+  Scenario: Bulk delete datastore items returns "Bad Request" response
+    Given new "BulkDeleteDatastoreItems" request
+    And there is a valid "datastore" in the system
+    And request contains "datastore_id" parameter from "datastore.data.id"
+    And body with value {"data": {"attributes": {"item_keys": []}, "type": "items"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/app-builder-backend
+  Scenario: Bulk delete datastore items returns "Not Found" response
+    Given new "BulkDeleteDatastoreItems" request
+    And request contains "datastore_id" parameter with value "c1eb5bb8-726a-4e59-9a61-ccbb26f95329"
+    And body with value {"data": {"attributes": {"item_keys": ["nonexistent"]}, "type": "items"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-typescript @team:DataDog/app-builder-backend
+  Scenario: Bulk delete datastore items returns "OK" response
+    Given new "BulkDeleteDatastoreItems" request
+    And there is a valid "datastore" in the system
+    And there is a valid "datastore_item" in the system
+    And request contains "datastore_id" parameter from "datastore.data.id"
+    And body with value {"data": {"attributes": {"item_keys": ["test-key"]}, "type": "items"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/app-builder-backend
   Scenario: Bulk write datastore items returns "Bad Request" response

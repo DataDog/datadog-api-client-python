@@ -2398,6 +2398,34 @@ datadog\_api\_client.v2.model.budget\_with\_entries\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.bulk\_delete\_apps\_datastore\_items\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.bulk\_delete\_apps\_datastore\_items\_request\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.bulk\_delete\_apps\_datastore\_items\_request\_data\_attributes module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.bulk\_delete\_apps\_datastore\_items\_request\_data\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.bulk\_mute\_findings\_request module
 ------------------------------------------------------------------
 
@@ -5853,6 +5881,13 @@ datadog\_api\_client.v2.model.delete\_apps\_datastore\_item\_response module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.delete_apps_datastore_item_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.delete\_apps\_datastore\_item\_response\_array module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.delete_apps_datastore_item_response_array
    :members:
    :show-inheritance:
 

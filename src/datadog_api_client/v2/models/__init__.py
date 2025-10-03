@@ -463,6 +463,16 @@ from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
 from datadog_api_client.v2.model.budget_entry import BudgetEntry
 from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
 from datadog_api_client.v2.model.budget_with_entries_data import BudgetWithEntriesData
+from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request import BulkDeleteAppsDatastoreItemsRequest
+from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data import (
+    BulkDeleteAppsDatastoreItemsRequestData,
+)
+from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data_attributes import (
+    BulkDeleteAppsDatastoreItemsRequestDataAttributes,
+)
+from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data_type import (
+    BulkDeleteAppsDatastoreItemsRequestDataType,
+)
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.bulk_mute_findings_request_attributes import BulkMuteFindingsRequestAttributes
 from datadog_api_client.v2.model.bulk_mute_findings_request_data import BulkMuteFindingsRequestData
@@ -1184,6 +1194,7 @@ from datadog_api_client.v2.model.delete_apps_datastore_item_request_data_attribu
     DeleteAppsDatastoreItemRequestDataAttributes,
 )
 from datadog_api_client.v2.model.delete_apps_datastore_item_response import DeleteAppsDatastoreItemResponse
+from datadog_api_client.v2.model.delete_apps_datastore_item_response_array import DeleteAppsDatastoreItemResponseArray
 from datadog_api_client.v2.model.delete_apps_datastore_item_response_data import DeleteAppsDatastoreItemResponseData
 from datadog_api_client.v2.model.delete_apps_request import DeleteAppsRequest
 from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteAppsRequestDataItems
@@ -4740,6 +4751,10 @@ __all__ = [
     "BudgetEntry",
     "BudgetWithEntries",
     "BudgetWithEntriesData",
+    "BulkDeleteAppsDatastoreItemsRequest",
+    "BulkDeleteAppsDatastoreItemsRequestData",
+    "BulkDeleteAppsDatastoreItemsRequestDataAttributes",
+    "BulkDeleteAppsDatastoreItemsRequestDataType",
     "BulkMuteFindingsRequest",
     "BulkMuteFindingsRequestAttributes",
     "BulkMuteFindingsRequestData",
@@ -5259,6 +5274,7 @@ __all__ = [
     "DeleteAppsDatastoreItemRequestData",
     "DeleteAppsDatastoreItemRequestDataAttributes",
     "DeleteAppsDatastoreItemResponse",
+    "DeleteAppsDatastoreItemResponseArray",
     "DeleteAppsDatastoreItemResponseData",
     "DeleteAppsRequest",
     "DeleteAppsRequestDataItems",
