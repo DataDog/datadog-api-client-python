@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test reference table without upload
+      or access details","schema":{"fields":[{"name":"id","type":"STRING"}],"primary_keys":["id"]},"source":"LOCAL_FILE","table_name":"test_invalid_table_Test-Create_reference_table_without_upload_or_access_details_returns_Bad_Request_response-1759351883","tags":["test_tag"]},"type":"reference_table"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/reference-tables/tables
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"upload_id is required
+        for tables with ''LOCAL_FILE'' source"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -2641,6 +2641,55 @@
       "type": "idempotent"
     }
   },
+  "ListTables": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateReferenceTable": {
+    "tag": "Reference Tables",
+    "undo": {
+      "operationId": "DeleteTable",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTable": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTable": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateReferenceTable": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRowsByID": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateReferenceTableUpload": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListApplicationSecurityWAFCustomRules": {
     "tag": "Application Security",
     "undo": {
