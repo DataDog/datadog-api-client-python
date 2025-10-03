@@ -21,7 +21,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"cells":[{"attributes":{"definition":{"text":"##
-      Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells"},{"attributes":{"definition":{"requests":[{"display_type":"line","q":"avg:system.load.1{*}","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"type":"timeseries","yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells"}],"name":"Test-Update_a_notebook_returns_OK_response-1652349010-updated","status":"published","time":{"live_span":"1h"}},"type":"notebooks"}}'
+      Some test markdown\n\n```\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells"},{"attributes":{"definition":{"requests":[{"display_type":"line","q":"avg:system.load.1{*}","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"type":"timeseries","yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells"}],"name":"Test-Update_a_notebook_returns_OK_response-1652349010-updated","status":"published","time":{"live_span":"1h"}},"type":"notebooks"}}'
     headers:
       accept:
       - application/json
@@ -32,7 +32,7 @@ interactions:
   response:
     body:
       string: '{"data":{"type":"notebooks","id":2466034,"attributes":{"name":"Test-Update_a_notebook_returns_OK_response-1652349010-updated","cells":[{"attributes":{"definition":{"text":"##
-        Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells","id":"7th9aiq2"},{"attributes":{"definition":{"requests":[{"q":"avg:system.load.1{*}","style":{"line_width":"normal","palette":"dog_classic","line_type":"solid"},"display_type":"line"}],"type":"timeseries","show_legend":true,"yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells","id":"dvsx205s"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-05-12T09:50:10.903600+00:00","created":"2022-05-12T09:50:10.418530+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
+        Some test markdown\n\n```\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells","id":"7th9aiq2"},{"attributes":{"definition":{"requests":[{"q":"avg:system.load.1{*}","style":{"line_width":"normal","palette":"dog_classic","line_type":"solid"},"display_type":"line"}],"type":"timeseries","show_legend":true,"yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells","id":"dvsx205s"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-05-12T09:50:10.903600+00:00","created":"2022-05-12T09:50:10.418530+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
     headers:
       content-type:
       - application/json
