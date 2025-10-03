@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"item_keys":["nonexistent"]},"type":"items"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions-datastores/c1eb5bb8-726a-4e59-9a61-ccbb26f95329/items/bulk
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"d53325f5-a7f3-4075-ace7-f8e22a25b72f","title":"datastore
+        not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

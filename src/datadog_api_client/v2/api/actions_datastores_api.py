@@ -21,6 +21,8 @@ from datadog_api_client.v2.model.delete_apps_datastore_item_request import Delet
 from datadog_api_client.v2.model.item_api_payload_array import ItemApiPayloadArray
 from datadog_api_client.v2.model.item_api_payload import ItemApiPayload
 from datadog_api_client.v2.model.update_apps_datastore_item_request import UpdateAppsDatastoreItemRequest
+from datadog_api_client.v2.model.delete_apps_datastore_item_response_array import DeleteAppsDatastoreItemResponseArray
+from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request import BulkDeleteAppsDatastoreItemsRequest
 from datadog_api_client.v2.model.put_apps_datastore_item_response_array import PutAppsDatastoreItemResponseArray
 from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request import BulkPutAppsDatastoreItemsRequest
 
@@ -35,6 +37,32 @@ class ActionsDatastoresApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._bulk_delete_datastore_items_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeleteAppsDatastoreItemResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/actions-datastores/{datastore_id}/items/bulk",
+                "operation_id": "bulk_delete_datastore_items",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "datastore_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "datastore_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (BulkDeleteAppsDatastoreItemsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._bulk_write_datastore_items_endpoint = _Endpoint(
             settings={
@@ -276,6 +304,27 @@ class ActionsDatastoresApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def bulk_delete_datastore_items(
+        self,
+        datastore_id: str,
+        body: BulkDeleteAppsDatastoreItemsRequest,
+    ) -> DeleteAppsDatastoreItemResponseArray:
+        """Bulk delete datastore items.
+
+        Deletes multiple items from a datastore by their keys in a single operation.
+
+        :param datastore_id: The ID of the datastore.
+        :type datastore_id: str
+        :type body: BulkDeleteAppsDatastoreItemsRequest
+        :rtype: DeleteAppsDatastoreItemResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["datastore_id"] = datastore_id
+
+        kwargs["body"] = body
+
+        return self._bulk_delete_datastore_items_endpoint.call_with_http_info(**kwargs)
 
     def bulk_write_datastore_items(
         self,
