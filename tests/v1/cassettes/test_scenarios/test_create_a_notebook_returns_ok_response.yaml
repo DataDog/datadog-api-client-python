@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"cells":[{"attributes":{"definition":{"text":"##
-      Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells"},{"attributes":{"definition":{"requests":[{"display_type":"line","q":"avg:system.load.1{*}","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"type":"timeseries","yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells"}],"name":"Test-Create_a_notebook_returns_OK_response-1652349005","status":"published","time":{"live_span":"1h"}},"type":"notebooks"}}'
+      Some test markdown\n\n```\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells"},{"attributes":{"definition":{"requests":[{"display_type":"line","q":"avg:system.load.1{*}","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"type":"timeseries","yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells"}],"name":"Test-Create_a_notebook_returns_OK_response-1759502996","status":"published","time":{"live_span":"1h"}},"type":"notebooks"}}'
     headers:
       accept:
       - application/json
@@ -11,8 +11,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/notebooks
   response:
     body:
-      string: '{"data":{"type":"notebooks","id":2466031,"attributes":{"name":"Test-Create_a_notebook_returns_OK_response-1652349005","cells":[{"attributes":{"definition":{"text":"##
-        Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```","type":"markdown"}},"type":"notebook_cells","id":"1eb30d08"},{"attributes":{"definition":{"requests":[{"q":"avg:system.load.1{*}","style":{"line_width":"normal","palette":"dog_classic","line_type":"solid"},"display_type":"line"}],"type":"timeseries","show_legend":true,"yaxis":{"scale":"linear"}},"graph_size":"m","split_by":{"keys":[],"tags":[]},"time":null},"type":"notebook_cells","id":"k0c63hgi"}],"time":{"live_span":"1h"},"metadata":{"is_favorite":false,"is_template":false,"type":null,"take_snapshots":false},"template_variables":[],"status":"published","modified":"2022-05-12T09:50:06.026505+00:00","created":"2022-05-12T09:50:06.026505+00:00","author":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}'
+      string: '{"data":{"type":"notebooks","id":13244449,"attributes":{"name":"Test-Create_a_notebook_returns_OK_response-1759502996","cells":[{"type":"notebook_cells","id":"p2ywawtx","attributes":{"definition":{"type":"markdown","text":"##
+        Some test markdown\n\n```\nvar x, y;\nx = 5;\ny = 6;\n```"}}},{"type":"notebook_cells","attributes":{"time":null,"split_by":{"keys":[],"tags":[]},"definition":{"type":"timeseries","requests":[{"display_type":"line","q":"avg:system.load.1{*}","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"yaxis":{"scale":"linear"}},"graph_size":"m"},"id":"g9sa14n1"}],"time":{"live_span":"1h"},"metadata":{"take_snapshots":false,"is_template":false,"is_favorite":false,"type":null},"template_variables":[],"status":"published","modified":"2025-10-03T14:49:57.096812+00:00","created":"2025-10-03T14:49:57.096812+00:00","deleted":null,"tags":null,"author":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2020-12-29T22:58:44.733921+00:00","email":"team-intg-tools-libs-spam@datadoghq.com","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro","title":null,"verified":true,"disabled":false,"status":"Active"}}}}
+
+        '
     headers:
       content-type:
       - application/json
@@ -25,11 +28,13 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/notebooks/2466031
+    uri: https://api.datadoghq.com/api/v1/notebooks/13244449
   response:
     body:
       string: ''
-    headers: {}
+    headers:
+      content-type:
+      - text/html; charset=utf-8
     status:
       code: 204
       message: No Content

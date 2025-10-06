@@ -18,8 +18,8 @@ body = LogsPipeline(
     processors=[
         LogsGrokParser(
             grok=LogsGrokParserRules(
-                match_rules="rule_name_1 foo\nrule_name_2 bar\n",
-                support_rules="rule_name_1 foo\nrule_name_2 bar\n",
+                match_rules="rule_name_1 foo\nrule_name_2 bar",
+                support_rules="rule_name_1 foo\nrule_name_2 bar",
             ),
             is_enabled=False,
             samples=[],
