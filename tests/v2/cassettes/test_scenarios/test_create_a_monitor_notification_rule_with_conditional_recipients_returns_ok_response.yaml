@@ -1,0 +1,41 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"conditional_recipients":{"conditions":[{"recipients":["slack-test-channel","jira-test"],"scope":"transition_type:is_alert"}]},"filter":{"tags":["test:test-create_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851459"]},"name":"test
+      rule"},"type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
+  response:
+    body:
+      string: '{"data":{"type":"monitor-notification-rule","attributes":{"name":"test
+        rule","filter":{"tags":["test:test-create_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851459"]},"created_at":"2025-09-26T01:51:00.132009+00:00","conditional_recipients":{"conditions":[{"recipients":["slack-test-channel","jira-test"],"scope":"transition_type:is_alert"}]},"modified_at":"1970-01-01T00:00:00+00:00"},"id":"707b82d7-6898-4b20-a577-64f76881fe89","relationships":{"created_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2020-12-29T22:58:44.733921+00:00","modified_at":"2021-04-27T13:54:01.547888+00:00","email":"team-intg-tools-libs-spam@datadoghq.com","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro","title":null,"verified":true,"service_account":true,"disabled":false,"allowed_login_methods":[],"status":"Active"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/707b82d7-6898-4b20-a577-64f76881fe89
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
