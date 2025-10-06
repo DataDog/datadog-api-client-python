@@ -104,6 +104,9 @@ from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
 from datadog_api_client.v2.model.historical_job_response import HistoricalJobResponse
+from datadog_api_client.v2.model.get_multiple_rulesets_response import GetMultipleRulesetsResponse
+from datadog_api_client.v2.model.get_multiple_rulesets_request import GetMultipleRulesetsRequest
+from datadog_api_client.v2.model.secret_rule_array import SecretRuleArray
 
 
 class SecurityMonitoringApi:
@@ -749,6 +752,22 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_secrets_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecretRuleArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/secrets/rules",
+                "operation_id": "get_secrets_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
@@ -1235,6 +1254,26 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._list_multiple_rulesets_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetMultipleRulesetsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/rulesets",
+                "operation_id": "list_multiple_rulesets",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (GetMultipleRulesetsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -2621,6 +2660,18 @@ class SecurityMonitoringApi:
 
         return self._get_sbom_endpoint.call_with_http_info(**kwargs)
 
+    def get_secrets_rules(
+        self,
+    ) -> SecretRuleArray:
+        """Returns list of Secrets rules.
+
+        Returns list of Secrets rules with ID, Pattern, Description, Priority, and SDS ID
+
+        :rtype: SecretRuleArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_secrets_rules_endpoint.call_with_http_info(**kwargs)
+
     def get_security_filter(
         self,
         security_filter_id: str,
@@ -3231,6 +3282,22 @@ class SecurityMonitoringApi:
             kwargs["filter_query"] = filter_query
 
         return self._list_historical_jobs_endpoint.call_with_http_info(**kwargs)
+
+    def list_multiple_rulesets(
+        self,
+        body: GetMultipleRulesetsRequest,
+    ) -> GetMultipleRulesetsResponse:
+        """Ruleset get multiple.
+
+        Get rules for multiple rulesets in batch.
+
+        :type body: GetMultipleRulesetsRequest
+        :rtype: GetMultipleRulesetsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._list_multiple_rulesets_endpoint.call_with_http_info(**kwargs)
 
     def list_security_filters(
         self,
