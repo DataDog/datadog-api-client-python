@@ -35,7 +35,7 @@ body = NotebookCreateRequest(
                 NotebookCellCreateRequest(
                     attributes=NotebookMarkdownCellAttributes(
                         definition=NotebookMarkdownCellDefinition(
-                            text="## Some test markdown\n\n```js\nvar x, y;\nx = 5;\ny = 6;\n```",
+                            text="## Some test markdown\n\n```\nvar x, y;\nx = 5;\ny = 6;\n```",
                             type=NotebookMarkdownCellDefinitionType.MARKDOWN,
                         ),
                     ),
