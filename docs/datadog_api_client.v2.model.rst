@@ -669,6 +669,104 @@ datadog\_api\_client.v2.model.application\_keys\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.application\_security\_policy\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_create\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_create\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_create\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_list\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_metadata module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_rule\_override module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_rule_override
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_scope module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_update\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_update\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_policy\_update\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_policy_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_action module
 -------------------------------------------------------------------------------------
 

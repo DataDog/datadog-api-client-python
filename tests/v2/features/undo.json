@@ -2715,6 +2715,43 @@
       "type": "idempotent"
     }
   },
+  "ListApplicationSecurityWAFPolicies": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateApplicationSecurityWafPolicy": {
+    "tag": "Application Security",
+    "undo": {
+      "operationId": "DeleteApplicationSecurityWafPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteApplicationSecurityWafPolicy": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetApplicationSecurityWafPolicy": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApplicationSecurityWafPolicy": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCSMThreatsAgentRules": {
     "tag": "CSM Threats",
     "undo": {

@@ -156,6 +156,28 @@ from datadog_api_client.v2.model.application_key_update_data import ApplicationK
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSort
 from datadog_api_client.v2.model.application_keys_type import ApplicationKeysType
+from datadog_api_client.v2.model.application_security_policy_attributes import ApplicationSecurityPolicyAttributes
+from datadog_api_client.v2.model.application_security_policy_create_attributes import (
+    ApplicationSecurityPolicyCreateAttributes,
+)
+from datadog_api_client.v2.model.application_security_policy_create_data import ApplicationSecurityPolicyCreateData
+from datadog_api_client.v2.model.application_security_policy_create_request import (
+    ApplicationSecurityPolicyCreateRequest,
+)
+from datadog_api_client.v2.model.application_security_policy_data import ApplicationSecurityPolicyData
+from datadog_api_client.v2.model.application_security_policy_list_response import ApplicationSecurityPolicyListResponse
+from datadog_api_client.v2.model.application_security_policy_metadata import ApplicationSecurityPolicyMetadata
+from datadog_api_client.v2.model.application_security_policy_response import ApplicationSecurityPolicyResponse
+from datadog_api_client.v2.model.application_security_policy_rule_override import ApplicationSecurityPolicyRuleOverride
+from datadog_api_client.v2.model.application_security_policy_scope import ApplicationSecurityPolicyScope
+from datadog_api_client.v2.model.application_security_policy_type import ApplicationSecurityPolicyType
+from datadog_api_client.v2.model.application_security_policy_update_attributes import (
+    ApplicationSecurityPolicyUpdateAttributes,
+)
+from datadog_api_client.v2.model.application_security_policy_update_data import ApplicationSecurityPolicyUpdateData
+from datadog_api_client.v2.model.application_security_policy_update_request import (
+    ApplicationSecurityPolicyUpdateRequest,
+)
 from datadog_api_client.v2.model.application_security_waf_custom_rule_action import (
     ApplicationSecurityWafCustomRuleAction,
 )
@@ -4560,6 +4582,20 @@ __all__ = [
     "ApplicationKeyUpdateRequest",
     "ApplicationKeysSort",
     "ApplicationKeysType",
+    "ApplicationSecurityPolicyAttributes",
+    "ApplicationSecurityPolicyCreateAttributes",
+    "ApplicationSecurityPolicyCreateData",
+    "ApplicationSecurityPolicyCreateRequest",
+    "ApplicationSecurityPolicyData",
+    "ApplicationSecurityPolicyListResponse",
+    "ApplicationSecurityPolicyMetadata",
+    "ApplicationSecurityPolicyResponse",
+    "ApplicationSecurityPolicyRuleOverride",
+    "ApplicationSecurityPolicyScope",
+    "ApplicationSecurityPolicyType",
+    "ApplicationSecurityPolicyUpdateAttributes",
+    "ApplicationSecurityPolicyUpdateData",
+    "ApplicationSecurityPolicyUpdateRequest",
     "ApplicationSecurityWafCustomRuleAction",
     "ApplicationSecurityWafCustomRuleActionAction",
     "ApplicationSecurityWafCustomRuleActionParameters",
