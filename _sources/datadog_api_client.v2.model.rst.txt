@@ -12835,6 +12835,20 @@ datadog\_api\_client.v2.model.monitor\_notification\_rule\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_condition module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_conditional\_recipients module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_conditional_recipients
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.monitor\_notification\_rule\_create\_request module
 ---------------------------------------------------------------------------------
 
