@@ -5828,8 +5828,8 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_deployment">
 <span class="sig-name descname"><span class="pre">create_dora_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_deployment_request.DORADeploymentRequest" title="datadog_api_client.v2.model.dora_deployment_request.DORADeploymentRequest"><span class="pre">DORADeploymentRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_deployment_response.DORADeploymentResponse" title="datadog_api_client.v2.model.dora_deployment_response.DORADeploymentResponse"><span class="pre">DORADeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_deployment" title="Link to this definition">¶</a></dt>
-<dd><p>Send a deployment event for DORA Metrics.</p>
-<p>Use this API endpoint to provide data about deployments for DORA metrics.</p>
+<dd><p>Send a deployment event.</p>
+<p>Use this API endpoint to provide deployment data.</p>
 <p>This is necessary for:</p>
 <ul class="simple">
 <li><p>Deployment Frequency</p></li>
@@ -5845,8 +5845,8 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_failure">
 <span class="sig-name descname"><span class="pre">create_dora_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_failure_request.DORAFailureRequest" title="datadog_api_client.v2.model.dora_failure_request.DORAFailureRequest"><span class="pre">DORAFailureRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_failure_response.DORAFailureResponse" title="datadog_api_client.v2.model.dora_failure_response.DORAFailureResponse"><span class="pre">DORAFailureResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_failure" title="Link to this definition">¶</a></dt>
-<dd><p>Send a failure event for DORA Metrics.</p>
-<p>Use this API endpoint to provide failure data for DORA metrics.</p>
+<dd><p>Send a failure event.</p>
+<p>Use this API endpoint to provide failure data.</p>
 <p>This is necessary for:</p>
 <ul class="simple">
 <li><p>Change Failure Rate</p></li>
@@ -5861,9 +5861,9 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_incident">
 <span class="sig-name descname"><span class="pre">create_dora_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_failure_request.DORAFailureRequest" title="datadog_api_client.v2.model.dora_failure_request.DORAFailureRequest"><span class="pre">DORAFailureRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dora_failure_response.DORAFailureResponse" title="datadog_api_client.v2.model.dora_failure_response.DORAFailureResponse"><span class="pre">DORAFailureResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.dora_metrics_api.DORAMetricsApi.create_dora_incident" title="Link to this definition">¶</a></dt>
-<dd><p>Send an incident event for DORA Metrics. <strong>Deprecated</strong>.</p>
+<dd><p>Send an incident event. <strong>Deprecated</strong>.</p>
 <p><strong>Note</strong> : This endpoint is deprecated. Please use <code class="docutils literal notranslate"><span class="pre">/api/v2/dora/failure</span></code> instead.</p>
-<p>Use this API endpoint to provide failure data for DORA metrics.</p>
+<p>Use this API endpoint to provide failure data.</p>
 <p>This is necessary for:</p>
 <ul class="simple">
 <li><p>Change Failure Rate</p></li>
