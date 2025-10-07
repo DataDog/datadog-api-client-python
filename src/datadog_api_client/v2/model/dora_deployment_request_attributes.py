@@ -69,7 +69,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param env: Environment name to where the service was deployed.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp when the deployment finished. It must be in nanoseconds, milliseconds, or seconds, and it should not be older than 1 hour.
+        :param finished_at: Unix timestamp when the deployment finished. It must be in nanoseconds, milliseconds, or seconds.
         :type finished_at: int
 
         :param git: Git info for DORA Metrics events.

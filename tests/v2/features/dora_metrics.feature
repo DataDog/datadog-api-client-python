@@ -105,63 +105,63 @@ Feature: DORA Metrics
     Then the response status is 200 OK
 
   @skip @team:DataDog/ci-app-backend
-  Scenario: Send a deployment event for DORA Metrics returns "Bad Request" response
+  Scenario: Send a deployment event returns "Bad Request" response
     Given new "CreateDORADeployment" request
     And body with value {"data": {"attributes": {}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
-  Scenario: Send a deployment event for DORA Metrics returns "OK - but delayed due to incident" response
+  Scenario: Send a deployment event returns "OK - but delayed due to incident" response
     Given new "CreateDORADeployment" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
   @replay-only @team:DataDog/ci-app-backend
-  Scenario: Send a deployment event for DORA Metrics returns "OK" response
+  Scenario: Send a deployment event returns "OK" response
     Given new "CreateDORADeployment" request
     And body with value {"data": {"attributes": {"finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 200 OK
 
   @skip @team:DataDog/ci-app-backend
-  Scenario: Send a failure event for DORA Metrics returns "Bad Request" response
+  Scenario: Send a failure event returns "Bad Request" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
-  Scenario: Send a failure event for DORA Metrics returns "OK - but delayed due to incident" response
+  Scenario: Send a failure event returns "OK - but delayed due to incident" response
     Given new "CreateDORAFailure" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
   @replay-only @team:DataDog/ci-app-backend
-  Scenario: Send a failure event for DORA Metrics returns "OK" response
+  Scenario: Send a failure event returns "OK" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"finished_at": 1707842944600000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "services": ["shopist"], "severity": "High", "started_at": 1707842944500000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ci-app-backend
-  Scenario: Send an incident event for DORA Metrics returns "Bad Request" response
+  Scenario: Send an incident event returns "Bad Request" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
-  Scenario: Send an incident event for DORA Metrics returns "OK - but delayed due to incident" response
+  Scenario: Send an incident event returns "OK - but delayed due to incident" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
   @generated @skip @team:DataDog/ci-app-backend
-  Scenario: Send an incident event for DORA Metrics returns "OK" response
+  Scenario: Send an incident event returns "OK" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent

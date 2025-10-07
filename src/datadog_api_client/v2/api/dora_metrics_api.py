@@ -226,9 +226,9 @@ class DORAMetricsApi:
         self,
         body: DORADeploymentRequest,
     ) -> DORADeploymentResponse:
-        """Send a deployment event for DORA Metrics.
+        """Send a deployment event.
 
-        Use this API endpoint to provide data about deployments for DORA metrics.
+        Use this API endpoint to provide deployment data.
 
         This is necessary for:
 
@@ -248,9 +248,9 @@ class DORAMetricsApi:
         self,
         body: DORAFailureRequest,
     ) -> DORAFailureResponse:
-        """Send a failure event for DORA Metrics.
+        """Send a failure event.
 
-        Use this API endpoint to provide failure data for DORA metrics.
+        Use this API endpoint to provide failure data.
 
         This is necessary for:
 
@@ -269,11 +269,11 @@ class DORAMetricsApi:
         self,
         body: DORAFailureRequest,
     ) -> DORAFailureResponse:
-        """Send an incident event for DORA Metrics. **Deprecated**.
+        """Send an incident event. **Deprecated**.
 
         **Note** : This endpoint is deprecated. Please use ``/api/v2/dora/failure`` instead.
 
-        Use this API endpoint to provide failure data for DORA metrics.
+        Use this API endpoint to provide failure data.
 
         This is necessary for:
 

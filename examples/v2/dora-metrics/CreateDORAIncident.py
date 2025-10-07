@@ -1,5 +1,5 @@
 """
-Send an incident event for DORA Metrics returns "OK" response
+Send an incident event returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
