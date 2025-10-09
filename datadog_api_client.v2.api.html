@@ -1977,6 +1977,28 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.reference_tables_api" class="md-nav__link">datadog_api_client.v2.api.reference_tables_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.create_reference_table()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table_upload" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.create_reference_table_upload()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_table" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.delete_table()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_rows_by_id" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.get_rows_by_id()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_table" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.get_table()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.list_tables" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.list_tables()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.update_reference_table" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.update_reference_table()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.restriction_policies_api" class="md-nav__link">datadog_api_client.v2.api.restriction_policies_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.restriction_policies_api.RestrictionPoliciesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RestrictionPoliciesApi</span></code></a><nav class="md-nav">
@@ -9805,6 +9827,117 @@ This key is provided with each valid response from the API in <code class="docut
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>collections.abc.Iterable[<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.process_summary.ProcessSummary" title="datadog_api_client.v2.model.process_summary.ProcessSummary">ProcessSummary</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.reference_tables_api">
+<span id="datadog-api-client-v2-api-reference-tables-api-module"></span><h2 id="module-datadog_api_client.v2.api.reference_tables_api">datadog_api_client.v2.api.reference_tables_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.reference_tables_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ReferenceTablesApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Auto-generated tag Reference Tables</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table">
+<span class="sig-name descname"><span class="pre">create_reference_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_table_request.CreateTableRequest" title="datadog_api_client.v2.model.create_table_request.CreateTableRequest"><span class="pre">CreateTableRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2.TableResultV2" title="datadog_api_client.v2.model.table_result_v2.TableResultV2"><span class="pre">TableResultV2</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table" title="Link to this definition">¶</a></dt>
+<dd><p>Create reference table.</p>
+<p>Create a new reference table. You can provide data in two ways: 1) Call POST api/v2/reference-tables/upload first to get an upload ID, then PUT chunks of CSV data to each provided URL, and finally call this POST endpoint with the upload_id in file_metadata, OR 2) Provide access_details in file_metadata pointing to a CSV file in cloud storage (Amazon S3, Azure Blob Storage, or GCP Cloud Storage).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2.TableResultV2" title="datadog_api_client.v2.model.table_result_v2.TableResultV2">TableResultV2</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table_upload">
+<span class="sig-name descname"><span class="pre">create_reference_table_upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_upload_request.CreateUploadRequest" title="datadog_api_client.v2.model.create_upload_request.CreateUploadRequest"><span class="pre">CreateUploadRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_upload_response.CreateUploadResponse" title="datadog_api_client.v2.model.create_upload_response.CreateUploadResponse"><span class="pre">CreateUploadResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table_upload" title="Link to this definition">¶</a></dt>
+<dd><p>Create reference table upload.</p>
+<p>Create a reference table upload for bulk data ingestion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_upload_response.CreateUploadResponse" title="datadog_api_client.v2.model.create_upload_response.CreateUploadResponse">CreateUploadResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_table">
+<span class="sig-name descname"><span class="pre">delete_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_table" title="Link to this definition">¶</a></dt>
+<dd><p>Delete table.</p>
+<p>Delete a reference table by ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the reference table to delete</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_rows_by_id">
+<span class="sig-name descname"><span class="pre">get_rows_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_row_resource_array.TableRowResourceArray" title="datadog_api_client.v2.model.table_row_resource_array.TableRowResourceArray"><span class="pre">TableRowResourceArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_rows_by_id" title="Link to this definition">¶</a></dt>
+<dd><p>Get rows by id.</p>
+<p>Get reference table rows by their primary key values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – The ID of the reference table</p></li>
+<li><p><strong>row_id</strong> (<em>[</em><em>str</em><em>]</em>) – List of row IDs (primary key values) to retrieve from the reference table.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_row_resource_array.TableRowResourceArray" title="datadog_api_client.v2.model.table_row_resource_array.TableRowResourceArray">TableRowResourceArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_table">
+<span class="sig-name descname"><span class="pre">get_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2.TableResultV2" title="datadog_api_client.v2.model.table_result_v2.TableResultV2"><span class="pre">TableResultV2</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_table" title="Link to this definition">¶</a></dt>
+<dd><p>Get table.</p>
+<p>Get a reference table by ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the reference table to retrieve</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2.TableResultV2" title="datadog_api_client.v2.model.table_result_v2.TableResultV2">TableResultV2</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.list_tables">
+<span class="sig-name descname"><span class="pre">list_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType" title="datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType"><span class="pre">ReferenceTableSortType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_table_name_exact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_table_name_contains</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2_array.TableResultV2Array" title="datadog_api_client.v2.model.table_result_v2_array.TableResultV2Array"><span class="pre">TableResultV2Array</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.list_tables" title="Link to this definition">¶</a></dt>
+<dd><p>List tables.</p>
+<p>List all reference tables in this organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of tables to return.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of tables to skip for pagination.</p></li>
+<li><p><strong>sort</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType" title="datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType"><em>ReferenceTableSortType</em></a><em>, </em><em>optional</em>) – Sort field and direction. Use field name for ascending, prefix with “-” for descending.</p></li>
+<li><p><strong>filter_status</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by table status.</p></li>
+<li><p><strong>filter_table_name_exact</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by exact table name match.</p></li>
+<li><p><strong>filter_table_name_contains</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by table name containing substring.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2_array.TableResultV2Array" title="datadog_api_client.v2.model.table_result_v2_array.TableResultV2Array">TableResultV2Array</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.update_reference_table">
+<span class="sig-name descname"><span class="pre">update_reference_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.patch_table_request.PatchTableRequest" title="datadog_api_client.v2.model.patch_table_request.PatchTableRequest"><span class="pre">PatchTableRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.update_reference_table" title="Link to this definition">¶</a></dt>
+<dd><p>Update reference table.</p>
+<p>Update a reference table by ID. You can update the table’s data, description, and tags. Note: The source type cannot be changed after table creation. For data updates: For existing tables of type <cite>source:LOCAL_FILE</cite>, call POST api/v2/reference-tables/uploads first to get an upload ID, then PUT chunks of CSV data to each provided URL, and finally call this PATCH endpoint with the upload_id in file_metadata. For existing tables with <cite>source:</cite> types of <cite>S3 `</cite>,`` GCS <code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">or</span></code> AZURE`, provide updated access_details in file_metadata pointing to a CSV file in the same type of cloud storage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the reference table to update</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>

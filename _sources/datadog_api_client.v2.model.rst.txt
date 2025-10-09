@@ -4897,6 +4897,153 @@ datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_table\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_file\_metadata module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_file\_metadata\_cloud\_storage module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_cloud_storage
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_file\_metadata\_local\_file module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_local_file
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_aws\_detail module
+------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_aws_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_azure\_detail module
+--------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_azure_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_gcp\_detail module
+------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_gcp_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_schema module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_attributes\_schema\_fields\_items module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_attributes_schema_fields_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_table\_request\_data\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_table_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_request module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_request\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_request\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_request\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_response\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_response\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_upload\_response\_data\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_upload_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_workflow\_request module
 --------------------------------------------------------------
 
@@ -15537,6 +15684,97 @@ datadog\_api\_client.v2.model.patch\_notification\_rule\_parameters\_data\_attri
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.patch\_table\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_file\_metadata module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_file\_metadata\_cloud\_storage module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_cloud_storage
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_file\_metadata\_local\_file module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_local_file
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details module
+----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_aws\_detail module
+-----------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details_aws_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_azure\_detail module
+-------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details_azure_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_gcp\_detail module
+-----------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details_gcp_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_schema module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_attributes\_schema\_fields\_items module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_attributes_schema_fields_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_table\_request\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_table_request_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.permission module
 -----------------------------------------------
 
@@ -15898,6 +16136,34 @@ datadog\_api\_client.v2.model.recommendation\_type module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.recommendation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reference\_table\_create\_source\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reference_table_create_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reference\_table\_schema\_field\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reference_table_schema_field_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reference\_table\_sort\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reference_table_sort_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.reference\_table\_source\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.reference_table_source_type
    :members:
    :show-inheritance:
 
@@ -20714,6 +20980,139 @@ datadog\_api\_client.v2.model.step\_display\_bounds module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.step_display_bounds
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2 module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_array module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_cloud\_storage module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_cloud\_storage\_error\_type module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage_error_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_local\_file module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_local_file
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_one\_of\_access\_details module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_aws\_detail module
+-------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details_aws_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_azure\_detail module
+---------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details_azure_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_one\_of\_access\_details\_gcp\_detail module
+-------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details_gcp_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_schema module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_schema\_fields\_items module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_schema_fields_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_result\_v2\_data\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_result_v2_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_row\_resource\_array module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_row_resource_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_row\_resource\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_row_resource_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_row\_resource\_data\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_row_resource_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_row\_resource\_data\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_row_resource_data_type
    :members:
    :show-inheritance:
 
