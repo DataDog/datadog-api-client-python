@@ -947,6 +947,45 @@ from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_it
     CreateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems,
 )
 from datadog_api_client.v2.model.create_ruleset_request_data_type import CreateRulesetRequestDataType
+from datadog_api_client.v2.model.create_table_request import CreateTableRequest
+from datadog_api_client.v2.model.create_table_request_data import CreateTableRequestData
+from datadog_api_client.v2.model.create_table_request_data_attributes import CreateTableRequestDataAttributes
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata import (
+    CreateTableRequestDataAttributesFileMetadata,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_cloud_storage import (
+    CreateTableRequestDataAttributesFileMetadataCloudStorage,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_local_file import (
+    CreateTableRequestDataAttributesFileMetadataLocalFile,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details import (
+    CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_aws_detail import (
+    CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_azure_detail import (
+    CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_gcp_detail import (
+    CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_schema import (
+    CreateTableRequestDataAttributesSchema,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_schema_fields_items import (
+    CreateTableRequestDataAttributesSchemaFieldsItems,
+)
+from datadog_api_client.v2.model.create_table_request_data_type import CreateTableRequestDataType
+from datadog_api_client.v2.model.create_upload_request import CreateUploadRequest
+from datadog_api_client.v2.model.create_upload_request_data import CreateUploadRequestData
+from datadog_api_client.v2.model.create_upload_request_data_attributes import CreateUploadRequestDataAttributes
+from datadog_api_client.v2.model.create_upload_request_data_type import CreateUploadRequestDataType
+from datadog_api_client.v2.model.create_upload_response import CreateUploadResponse
+from datadog_api_client.v2.model.create_upload_response_data import CreateUploadResponseData
+from datadog_api_client.v2.model.create_upload_response_data_attributes import CreateUploadResponseDataAttributes
+from datadog_api_client.v2.model.create_upload_response_data_type import CreateUploadResponseDataType
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
@@ -3139,6 +3178,35 @@ from datadog_api_client.v2.model.patch_notification_rule_parameters_data import 
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
     PatchNotificationRuleParametersDataAttributes,
 )
+from datadog_api_client.v2.model.patch_table_request import PatchTableRequest
+from datadog_api_client.v2.model.patch_table_request_data import PatchTableRequestData
+from datadog_api_client.v2.model.patch_table_request_data_attributes import PatchTableRequestDataAttributes
+from datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata import (
+    PatchTableRequestDataAttributesFileMetadata,
+)
+from datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_cloud_storage import (
+    PatchTableRequestDataAttributesFileMetadataCloudStorage,
+)
+from datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_local_file import (
+    PatchTableRequestDataAttributesFileMetadataLocalFile,
+)
+from datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details import (
+    PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails,
+)
+from datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details_aws_detail import (
+    PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail,
+)
+from datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details_azure_detail import (
+    PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail,
+)
+from datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_one_of_access_details_gcp_detail import (
+    PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail,
+)
+from datadog_api_client.v2.model.patch_table_request_data_attributes_schema import PatchTableRequestDataAttributesSchema
+from datadog_api_client.v2.model.patch_table_request_data_attributes_schema_fields_items import (
+    PatchTableRequestDataAttributesSchemaFieldsItems,
+)
+from datadog_api_client.v2.model.patch_table_request_data_type import PatchTableRequestDataType
 from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
@@ -3245,6 +3313,10 @@ from datadog_api_client.v2.model.recommendation_attributes import Recommendation
 from datadog_api_client.v2.model.recommendation_data import RecommendationData
 from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
 from datadog_api_client.v2.model.recommendation_type import RecommendationType
+from datadog_api_client.v2.model.reference_table_create_source_type import ReferenceTableCreateSourceType
+from datadog_api_client.v2.model.reference_table_schema_field_type import ReferenceTableSchemaFieldType
+from datadog_api_client.v2.model.reference_table_sort_type import ReferenceTableSortType
+from datadog_api_client.v2.model.reference_table_source_type import ReferenceTableSourceType
 from datadog_api_client.v2.model.register_app_key_response import RegisterAppKeyResponse
 from datadog_api_client.v2.model.relation_attributes import RelationAttributes
 from datadog_api_client.v2.model.relation_entity import RelationEntity
@@ -4088,6 +4160,43 @@ from datadog_api_client.v2.model.statsig_integration_update import StatsigIntegr
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
+from datadog_api_client.v2.model.table_result_v2 import TableResultV2
+from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
+from datadog_api_client.v2.model.table_result_v2_data import TableResultV2Data
+from datadog_api_client.v2.model.table_result_v2_data_attributes import TableResultV2DataAttributes
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata import (
+    TableResultV2DataAttributesFileMetadata,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage import (
+    TableResultV2DataAttributesFileMetadataCloudStorage,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage_error_type import (
+    TableResultV2DataAttributesFileMetadataCloudStorageErrorType,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_local_file import (
+    TableResultV2DataAttributesFileMetadataLocalFile,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details import (
+    TableResultV2DataAttributesFileMetadataOneOfAccessDetails,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details_aws_detail import (
+    TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details_azure_detail import (
+    TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAzureDetail,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details_gcp_detail import (
+    TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail,
+)
+from datadog_api_client.v2.model.table_result_v2_data_attributes_schema import TableResultV2DataAttributesSchema
+from datadog_api_client.v2.model.table_result_v2_data_attributes_schema_fields_items import (
+    TableResultV2DataAttributesSchemaFieldsItems,
+)
+from datadog_api_client.v2.model.table_result_v2_data_type import TableResultV2DataType
+from datadog_api_client.v2.model.table_row_resource_array import TableRowResourceArray
+from datadog_api_client.v2.model.table_row_resource_data import TableRowResourceData
+from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
+from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
 from datadog_api_client.v2.model.tag_filter import TagFilter
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
@@ -5115,6 +5224,27 @@ __all__ = [
     "CreateRulesetRequestDataAttributesRulesItemsReferenceTable",
     "CreateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems",
     "CreateRulesetRequestDataType",
+    "CreateTableRequest",
+    "CreateTableRequestData",
+    "CreateTableRequestDataAttributes",
+    "CreateTableRequestDataAttributesFileMetadata",
+    "CreateTableRequestDataAttributesFileMetadataCloudStorage",
+    "CreateTableRequestDataAttributesFileMetadataLocalFile",
+    "CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails",
+    "CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail",
+    "CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail",
+    "CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail",
+    "CreateTableRequestDataAttributesSchema",
+    "CreateTableRequestDataAttributesSchemaFieldsItems",
+    "CreateTableRequestDataType",
+    "CreateUploadRequest",
+    "CreateUploadRequestData",
+    "CreateUploadRequestDataAttributes",
+    "CreateUploadRequestDataType",
+    "CreateUploadResponse",
+    "CreateUploadResponseData",
+    "CreateUploadResponseDataAttributes",
+    "CreateUploadResponseDataType",
     "CreateWorkflowRequest",
     "CreateWorkflowResponse",
     "Creator",
@@ -6635,6 +6765,19 @@ __all__ = [
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
+    "PatchTableRequest",
+    "PatchTableRequestData",
+    "PatchTableRequestDataAttributes",
+    "PatchTableRequestDataAttributesFileMetadata",
+    "PatchTableRequestDataAttributesFileMetadataCloudStorage",
+    "PatchTableRequestDataAttributesFileMetadataLocalFile",
+    "PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails",
+    "PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail",
+    "PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail",
+    "PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail",
+    "PatchTableRequestDataAttributesSchema",
+    "PatchTableRequestDataAttributesSchemaFieldsItems",
+    "PatchTableRequestDataType",
     "Permission",
     "PermissionAttributes",
     "PermissionsResponse",
@@ -6739,6 +6882,10 @@ __all__ = [
     "RecommendationData",
     "RecommendationDocument",
     "RecommendationType",
+    "ReferenceTableCreateSourceType",
+    "ReferenceTableSchemaFieldType",
+    "ReferenceTableSortType",
+    "ReferenceTableSourceType",
     "RegisterAppKeyResponse",
     "RelationAttributes",
     "RelationEntity",
@@ -7380,6 +7527,25 @@ __all__ = [
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
+    "TableResultV2",
+    "TableResultV2Array",
+    "TableResultV2Data",
+    "TableResultV2DataAttributes",
+    "TableResultV2DataAttributesFileMetadata",
+    "TableResultV2DataAttributesFileMetadataCloudStorage",
+    "TableResultV2DataAttributesFileMetadataCloudStorageErrorType",
+    "TableResultV2DataAttributesFileMetadataLocalFile",
+    "TableResultV2DataAttributesFileMetadataOneOfAccessDetails",
+    "TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail",
+    "TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAzureDetail",
+    "TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail",
+    "TableResultV2DataAttributesSchema",
+    "TableResultV2DataAttributesSchemaFieldsItems",
+    "TableResultV2DataType",
+    "TableRowResourceArray",
+    "TableRowResourceData",
+    "TableRowResourceDataAttributes",
+    "TableRowResourceDataType",
     "TagFilter",
     "TagsEventAttribute",
     "Team",
