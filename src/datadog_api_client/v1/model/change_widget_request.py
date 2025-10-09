@@ -66,6 +66,7 @@ class ChangeWidgetRequest(ModelNormal):
             "event_query": (LogQueryDefinition,),
             "formulas": ([WidgetFormula],),
             "increase_good": (bool,),
+            "limit": (int,),
             "log_query": (LogQueryDefinition,),
             "network_query": (LogQueryDefinition,),
             "order_by": (WidgetOrderBy,),
@@ -87,6 +88,7 @@ class ChangeWidgetRequest(ModelNormal):
         "event_query": "event_query",
         "formulas": "formulas",
         "increase_good": "increase_good",
+        "limit": "limit",
         "log_query": "log_query",
         "network_query": "network_query",
         "order_by": "order_by",
@@ -109,6 +111,7 @@ class ChangeWidgetRequest(ModelNormal):
         event_query: Union[LogQueryDefinition, UnsetType] = unset,
         formulas: Union[List[WidgetFormula], UnsetType] = unset,
         increase_good: Union[bool, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
         log_query: Union[LogQueryDefinition, UnsetType] = unset,
         network_query: Union[LogQueryDefinition, UnsetType] = unset,
         order_by: Union[WidgetOrderBy, UnsetType] = unset,
@@ -158,6 +161,9 @@ class ChangeWidgetRequest(ModelNormal):
         :param increase_good: Whether to show increase as good.
         :type increase_good: bool, optional
 
+        :param limit: The number of items to show.
+        :type limit: int, optional
+
         :param log_query: The log query.
         :type log_query: LogQueryDefinition, optional
 
@@ -206,6 +212,8 @@ class ChangeWidgetRequest(ModelNormal):
             kwargs["formulas"] = formulas
         if increase_good is not unset:
             kwargs["increase_good"] = increase_good
+        if limit is not unset:
+            kwargs["limit"] = limit
         if log_query is not unset:
             kwargs["log_query"] = log_query
         if network_query is not unset:
