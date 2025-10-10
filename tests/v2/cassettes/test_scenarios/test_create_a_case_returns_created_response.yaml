@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Create_a_case_returns_CREATED_response-1753105967@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Create_a_case_returns_CREATED_response-1759322799@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","attributes":{"name":null,"handle":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","created_at":"2025-07-21T13:52:47.902815+00:00","modified_at":"2025-07-21T13:52:47.902815+00:00","email":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","icon":"https://secure.gravatar.com/avatar/600ad64c52b4a9b6a9f2a46d8fa9ec0a?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"ace4fe48-9ec4-11f0-988b-7627cf2efb1e","attributes":{"name":null,"handle":"test-create_a_case_returns_created_response-1759322799@datadoghq.com","created_at":"2025-10-01T12:46:39.995279+00:00","modified_at":"2025-10-01T12:46:39.995279+00:00","email":"test-create_a_case_returns_created_response-1759322799@datadoghq.com","icon":"https://secure.gravatar.com/avatar/a3dcdca0c5122ad399c31e6815d86aef?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
 
         '
@@ -23,7 +23,7 @@ interactions:
       message: Created
 - request:
     body: '{"data":{"attributes":{"priority":"NOT_DEFINED","title":"Security breach
-      investigation in 20df485fb3942e6f","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+      investigation in 6667abc22c9b9dc7","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"assignee":{"data":{"id":"ace4fe48-9ec4-11f0-988b-7627cf2efb1e","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
     headers:
       accept:
       - application/json
@@ -33,8 +33,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"2275ce7b-781b-4539-b0f3-2cc1b2140565","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:48.320633Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"2275ce7b-781b-4539-b0f3-2cc1b2140565","key":"DDFC-72321","merge_status":"NOT_MERGED","priority":"NOT_DEFINED","public_id":"72381","status":"OPEN","title":"Security
-        breach investigation in 20df485fb3942e6f","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"assignee":{"data":{"id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","type":"user"}},"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}},{"id":"fc35a29f-6639-11f0-8bee-a24ce66fd256","type":"user","attributes":{"active":false,"email":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","handle":"test-create_a_case_returns_created_response-1753105967@datadoghq.com","name":""}}]}'
+      string: '{"data":{"id":"58b1c40f-26af-4aed-84bf-6008b6f16d91","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:46:40.526592Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"58b1c40f-26af-4aed-84bf-6008b6f16d91","key":"DDFC-82974","merge_status":"NOT_MERGED","priority":"NOT_DEFINED","public_id":"83062","status":"OPEN","status_name":"Open","title":"Security
+        breach investigation in 6667abc22c9b9dc7","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"assignee":{"data":{"id":"ace4fe48-9ec4-11f0-988b-7627cf2efb1e","type":"user"}},"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}},{"id":"ace4fe48-9ec4-11f0-988b-7627cf2efb1e","type":"user","attributes":{"active":false,"email":"test-create_a_case_returns_created_response-1759322799@datadoghq.com","handle":"test-create_a_case_returns_created_response-1759322799@datadoghq.com","name":""}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -47,7 +47,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/fc35a29f-6639-11f0-8bee-a24ce66fd256
+    uri: https://api.datadoghq.com/api/v2/users/ace4fe48-9ec4-11f0-988b-7627cf2efb1e
   response:
     body:
       string: ''

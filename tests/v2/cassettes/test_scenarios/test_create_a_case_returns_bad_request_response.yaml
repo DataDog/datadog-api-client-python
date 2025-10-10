@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"priority":"NOT_DEFINED","title":"Security breach
-      investigation","type":"STANDARD"},"relationships":{"assignee":{"data":{"id":"00000000-0000-0000-0000-000000000000","type":"userx"}},"project":{"data":{"id":"e555e290-ed65-49bd-ae18-8acbfcf18db7","type":"project"}}},"type":"case"}}'
+      investigation","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"assignee":{"data":{"id":"e555e290-ed65-49bd-ae18-8acbfcf18db7","type":"userx"}},"project":{"data":{"id":"e555e290-ed65-49bd-ae18-8acbfcf18db7","type":"project"}}},"type":"case"}}'
     headers:
       accept:
       - application/json
