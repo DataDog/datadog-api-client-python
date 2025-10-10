@@ -54,26 +54,6 @@ class CloudCostManagementApi:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
 
-        self._create_arbitrary_cost_rule_endpoint = _Endpoint(
-            settings={
-                "response_type": (ArbitraryRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/arbitrary_rule",
-                "operation_id": "create_arbitrary_cost_rule",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (ArbitraryCostUpsertRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._create_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCurConfigResponse,),
@@ -134,12 +114,32 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-        self._create_ruleset_endpoint = _Endpoint(
+        self._create_custom_allocation_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (ArbitraryRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/arbitrary_rule",
+                "operation_id": "create_custom_allocation_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ArbitraryCostUpsertRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_tag_pipelines_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (RulesetResp,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment",
-                "operation_id": "create_ruleset",
+                "operation_id": "create_tag_pipelines_ruleset",
                 "http_method": "POST",
                 "version": "v2",
             },
@@ -151,29 +151,6 @@ class CloudCostManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._delete_arbitrary_cost_rule_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/arbitrary_rule/{rule_id}",
-                "operation_id": "delete_arbitrary_cost_rule",
-                "http_method": "DELETE",
-                "version": "v2",
-            },
-            params_map={
-                "rule_id": {
-                    "required": True,
-                    "openapi_types": (int,),
-                    "attribute": "rule_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
-            },
             api_client=api_client,
         )
 
@@ -269,6 +246,29 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._delete_custom_allocation_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/arbitrary_rule/{rule_id}",
+                "operation_id": "delete_custom_allocation_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_custom_costs_file_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -292,12 +292,12 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-        self._delete_ruleset_endpoint = _Endpoint(
+        self._delete_tag_pipelines_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment/{ruleset_id}",
-                "operation_id": "delete_ruleset",
+                "operation_id": "delete_tag_pipelines_ruleset",
                 "http_method": "DELETE",
                 "version": "v2",
             },
@@ -311,29 +311,6 @@ class CloudCostManagementApi:
             },
             headers_map={
                 "accept": ["*/*"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_arbitrary_cost_rule_endpoint = _Endpoint(
-            settings={
-                "response_type": (ArbitraryRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/arbitrary_rule/{rule_id}",
-                "operation_id": "get_arbitrary_cost_rule",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "rule_id": {
-                    "required": True,
-                    "openapi_types": (int,),
-                    "attribute": "rule_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -430,6 +407,29 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_custom_allocation_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (ArbitraryRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/arbitrary_rule/{rule_id}",
+                "operation_id": "get_custom_allocation_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_custom_costs_file_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomCostsFileGetResponse,),
@@ -453,12 +453,12 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-        self._get_ruleset_endpoint = _Endpoint(
+        self._get_tag_pipelines_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (RulesetResp,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment/{ruleset_id}",
-                "operation_id": "get_ruleset",
+                "operation_id": "get_tag_pipelines_ruleset",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -470,22 +470,6 @@ class CloudCostManagementApi:
                     "location": "path",
                 },
             },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._list_arbitrary_cost_rules_endpoint = _Endpoint(
-            settings={
-                "response_type": (ArbitraryRuleResponseArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/arbitrary_rule",
-                "operation_id": "list_arbitrary_cost_rules",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -556,6 +540,22 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._list_custom_allocation_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (ArbitraryRuleResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/arbitrary_rule",
+                "operation_id": "list_custom_allocation_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_custom_costs_files_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomCostsFileListResponse,),
@@ -593,12 +593,12 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-        self._list_rulesets_endpoint = _Endpoint(
+        self._list_tag_pipelines_rulesets_endpoint = _Endpoint(
             settings={
                 "response_type": (RulesetRespArray,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment",
-                "operation_id": "list_rulesets",
+                "operation_id": "list_tag_pipelines_rulesets",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -609,12 +609,12 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-        self._reorder_arbitrary_cost_rules_endpoint = _Endpoint(
+        self._reorder_custom_allocation_rules_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/arbitrary_rule/reorder",
-                "operation_id": "reorder_arbitrary_cost_rules",
+                "operation_id": "reorder_custom_allocation_rules",
                 "http_method": "POST",
                 "version": "v2",
             },
@@ -629,12 +629,12 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-        self._reorder_rulesets_endpoint = _Endpoint(
+        self._reorder_tag_pipelines_rulesets_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment/reorder",
-                "operation_id": "reorder_rulesets",
+                "operation_id": "reorder_tag_pipelines_rulesets",
                 "http_method": "POST",
                 "version": "v2",
             },
@@ -646,32 +646,6 @@ class CloudCostManagementApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._update_arbitrary_cost_rule_endpoint = _Endpoint(
-            settings={
-                "response_type": (ArbitraryRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/arbitrary_rule/{rule_id}",
-                "operation_id": "update_arbitrary_cost_rule",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "rule_id": {
-                    "required": True,
-                    "openapi_types": (int,),
-                    "attribute": "rule_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (ArbitraryCostUpsertRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -753,12 +727,38 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-        self._update_ruleset_endpoint = _Endpoint(
+        self._update_custom_allocation_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (ArbitraryRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/arbitrary_rule/{rule_id}",
+                "operation_id": "update_custom_allocation_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ArbitraryCostUpsertRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_tag_pipelines_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (RulesetResp,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment/{ruleset_id}",
-                "operation_id": "update_ruleset",
+                "operation_id": "update_tag_pipelines_ruleset",
                 "http_method": "PATCH",
                 "version": "v2",
             },
@@ -840,36 +840,6 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
-    def create_arbitrary_cost_rule(
-        self,
-        body: ArbitraryCostUpsertRequest,
-    ) -> ArbitraryRuleResponse:
-        """Create arbitrary cost rule.
-
-        Create a new arbitrary cost rule with the specified filters and allocation strategy.
-
-        **Strategy Methods:**
-
-        * **PROPORTIONAL/EVEN** : Allocates costs proportionally/evenly based on existing costs. Requires: granularity, allocated_by_tag_keys. Optional: based_on_costs, allocated_by_filters, evaluate_grouped_by_tag_keys, evaluate_grouped_by_filters.
-        * **PROPORTIONAL_TIMESERIES/EVEN_TIMESERIES** : Allocates based on timeseries data. Requires: granularity, based_on_timeseries. Optional: evaluate_grouped_by_tag_keys.
-        * **PERCENT** : Allocates fixed percentages to specific tags. Requires: allocated_by (array of percentage allocations).
-
-        **Filter Conditions:**
-
-        * Use **value** for single-value conditions: "is", "is not", "contains", "does not contain", "=", "!=", "like", "not like", "is all values", "is untagged"
-        * Use **values** for multi-value conditions: "in", "not in"
-        * Cannot use both value and values simultaneously.
-
-        **Supported operators** : is, is not, is all values, is untagged, contains, does not contain, in, not in, =, !=, like, not like
-
-        :type body: ArbitraryCostUpsertRequest
-        :rtype: ArbitraryRuleResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._create_arbitrary_cost_rule_endpoint.call_with_http_info(**kwargs)
-
     def create_cost_awscur_config(
         self,
         body: AwsCURConfigPostRequest,
@@ -918,11 +888,41 @@ class CloudCostManagementApi:
 
         return self._create_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
-    def create_ruleset(
+    def create_custom_allocation_rule(
+        self,
+        body: ArbitraryCostUpsertRequest,
+    ) -> ArbitraryRuleResponse:
+        """Create custom allocation rule.
+
+        Create a new custom allocation rule with the specified filters and allocation strategy.
+
+        **Strategy Methods:**
+
+        * **PROPORTIONAL/EVEN** : Allocates costs proportionally/evenly based on existing costs. Requires: granularity, allocated_by_tag_keys. Optional: based_on_costs, allocated_by_filters, evaluate_grouped_by_tag_keys, evaluate_grouped_by_filters.
+        * **PROPORTIONAL_TIMESERIES/EVEN_TIMESERIES** : Allocates based on timeseries data. Requires: granularity, based_on_timeseries. Optional: evaluate_grouped_by_tag_keys.
+        * **PERCENT** : Allocates fixed percentages to specific tags. Requires: allocated_by (array of percentage allocations).
+
+        **Filter Conditions:**
+
+        * Use **value** for single-value conditions: "is", "is not", "contains", "does not contain", "=", "!=", "like", "not like", "is all values", "is untagged"
+        * Use **values** for multi-value conditions: "in", "not in"
+        * Cannot use both value and values simultaneously.
+
+        **Supported operators** : is, is not, is all values, is untagged, contains, does not contain, in, not in, =, !=, like, not like
+
+        :type body: ArbitraryCostUpsertRequest
+        :rtype: ArbitraryRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_custom_allocation_rule_endpoint.call_with_http_info(**kwargs)
+
+    def create_tag_pipelines_ruleset(
         self,
         body: CreateRulesetRequest,
     ) -> RulesetResp:
-        """Create ruleset.
+        """Create tag pipeline ruleset.
 
         Create a new tag pipeline ruleset with the specified rules and configuration
 
@@ -932,24 +932,7 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        return self._create_ruleset_endpoint.call_with_http_info(**kwargs)
-
-    def delete_arbitrary_cost_rule(
-        self,
-        rule_id: int,
-    ) -> None:
-        """Delete arbitrary cost rule.
-
-        Delete an arbitrary cost rule - Delete an existing arbitrary cost rule by its ID
-
-        :param rule_id: The unique identifier of the arbitrary cost rule
-        :type rule_id: int
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["rule_id"] = rule_id
-
-        return self._delete_arbitrary_cost_rule_endpoint.call_with_http_info(**kwargs)
+        return self._create_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
 
     def delete_budget(
         self,
@@ -1019,6 +1002,23 @@ class CloudCostManagementApi:
 
         return self._delete_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
+    def delete_custom_allocation_rule(
+        self,
+        rule_id: int,
+    ) -> None:
+        """Delete custom allocation rule.
+
+        Delete a custom allocation rule - Delete an existing custom allocation rule by its ID
+
+        :param rule_id: The unique identifier of the custom allocation rule
+        :type rule_id: int
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._delete_custom_allocation_rule_endpoint.call_with_http_info(**kwargs)
+
     def delete_custom_costs_file(
         self,
         file_id: str,
@@ -1036,11 +1036,11 @@ class CloudCostManagementApi:
 
         return self._delete_custom_costs_file_endpoint.call_with_http_info(**kwargs)
 
-    def delete_ruleset(
+    def delete_tag_pipelines_ruleset(
         self,
         ruleset_id: str,
     ) -> None:
-        """Delete ruleset.
+        """Delete tag pipeline ruleset.
 
         Delete a tag pipeline ruleset - Delete an existing tag pipeline ruleset by its ID
 
@@ -1051,24 +1051,7 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["ruleset_id"] = ruleset_id
 
-        return self._delete_ruleset_endpoint.call_with_http_info(**kwargs)
-
-    def get_arbitrary_cost_rule(
-        self,
-        rule_id: int,
-    ) -> ArbitraryRuleResponse:
-        """Get arbitrary cost rule.
-
-        Get a specific arbitrary cost rule - Retrieve a specific arbitrary cost rule by its ID
-
-        :param rule_id: The unique identifier of the arbitrary cost rule
-        :type rule_id: int
-        :rtype: ArbitraryRuleResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["rule_id"] = rule_id
-
-        return self._get_arbitrary_cost_rule_endpoint.call_with_http_info(**kwargs)
+        return self._delete_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
 
     def get_budget(
         self,
@@ -1138,6 +1121,23 @@ class CloudCostManagementApi:
 
         return self._get_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
+    def get_custom_allocation_rule(
+        self,
+        rule_id: int,
+    ) -> ArbitraryRuleResponse:
+        """Get custom allocation rule.
+
+        Get a specific custom allocation rule - Retrieve a specific custom allocation rule by its ID
+
+        :param rule_id: The unique identifier of the custom allocation rule
+        :type rule_id: int
+        :rtype: ArbitraryRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._get_custom_allocation_rule_endpoint.call_with_http_info(**kwargs)
+
     def get_custom_costs_file(
         self,
         file_id: str,
@@ -1155,7 +1155,7 @@ class CloudCostManagementApi:
 
         return self._get_custom_costs_file_endpoint.call_with_http_info(**kwargs)
 
-    def get_ruleset(
+    def get_tag_pipelines_ruleset(
         self,
         ruleset_id: str,
     ) -> RulesetResp:
@@ -1170,19 +1170,7 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["ruleset_id"] = ruleset_id
 
-        return self._get_ruleset_endpoint.call_with_http_info(**kwargs)
-
-    def list_arbitrary_cost_rules(
-        self,
-    ) -> ArbitraryRuleResponseArray:
-        """List arbitrary cost rules.
-
-        List all arbitrary cost rules - Retrieve a list of all arbitrary cost rules for the organization
-
-        :rtype: ArbitraryRuleResponseArray
-        """
-        kwargs: Dict[str, Any] = {}
-        return self._list_arbitrary_cost_rules_endpoint.call_with_http_info(**kwargs)
+        return self._get_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
 
     def list_budgets(
         self,
@@ -1232,6 +1220,18 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._list_cost_gcp_usage_cost_configs_endpoint.call_with_http_info(**kwargs)
 
+    def list_custom_allocation_rules(
+        self,
+    ) -> ArbitraryRuleResponseArray:
+        """List custom allocation rules.
+
+        List all custom allocation rules - Retrieve a list of all custom allocation rules for the organization
+
+        :rtype: ArbitraryRuleResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_custom_allocation_rules_endpoint.call_with_http_info(**kwargs)
+
     def list_custom_costs_files(
         self,
         *,
@@ -1269,25 +1269,25 @@ class CloudCostManagementApi:
 
         return self._list_custom_costs_files_endpoint.call_with_http_info(**kwargs)
 
-    def list_rulesets(
+    def list_tag_pipelines_rulesets(
         self,
     ) -> RulesetRespArray:
-        """List rulesets.
+        """List tag pipeline rulesets.
 
         List all tag pipeline rulesets - Retrieve a list of all tag pipeline rulesets for the organization
 
         :rtype: RulesetRespArray
         """
         kwargs: Dict[str, Any] = {}
-        return self._list_rulesets_endpoint.call_with_http_info(**kwargs)
+        return self._list_tag_pipelines_rulesets_endpoint.call_with_http_info(**kwargs)
 
-    def reorder_arbitrary_cost_rules(
+    def reorder_custom_allocation_rules(
         self,
         body: ReorderRuleResourceArray,
     ) -> None:
-        """Reorder arbitrary cost rules.
+        """Reorder custom allocation rules.
 
-        Reorder arbitrary cost rules - Change the execution order of arbitrary cost rules.
+        Reorder custom allocation rules - Change the execution order of custom allocation rules.
 
         **Important** : You must provide the **complete list** of all rule IDs in the desired execution order. The API will reorder ALL rules according to the provided sequence.
 
@@ -1301,13 +1301,13 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        return self._reorder_arbitrary_cost_rules_endpoint.call_with_http_info(**kwargs)
+        return self._reorder_custom_allocation_rules_endpoint.call_with_http_info(**kwargs)
 
-    def reorder_rulesets(
+    def reorder_tag_pipelines_rulesets(
         self,
         body: ReorderRulesetResourceArray,
     ) -> None:
-        """Reorder rulesets.
+        """Reorder tag pipeline rulesets.
 
         Reorder tag pipeline rulesets - Change the execution order of tag pipeline rulesets
 
@@ -1317,43 +1317,7 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        return self._reorder_rulesets_endpoint.call_with_http_info(**kwargs)
-
-    def update_arbitrary_cost_rule(
-        self,
-        rule_id: int,
-        body: ArbitraryCostUpsertRequest,
-    ) -> ArbitraryRuleResponse:
-        """Update arbitrary cost rule.
-
-        Update an existing arbitrary cost rule with new filters and allocation strategy.
-
-        **Strategy Methods:**
-
-        * **PROPORTIONAL/EVEN** : Allocates costs proportionally/evenly based on existing costs. Requires: granularity, allocated_by_tag_keys. Optional: based_on_costs, allocated_by_filters, evaluate_grouped_by_tag_keys, evaluate_grouped_by_filters.
-        * **PROPORTIONAL_TIMESERIES/EVEN_TIMESERIES** : Allocates based on timeseries data. Requires: granularity, based_on_timeseries. Optional: evaluate_grouped_by_tag_keys.
-        * **PERCENT** : Allocates fixed percentages to specific tags. Requires: allocated_by (array of percentage allocations).
-        * **USAGE_METRIC** : Allocates based on usage metrics (implementation varies).
-
-        **Filter Conditions:**
-
-        * Use **value** for single-value conditions: "is", "is not", "contains", "does not contain", "=", "!=", "like", "not like", "is all values", "is untagged"
-        * Use **values** for multi-value conditions: "in", "not in"
-        * Cannot use both value and values simultaneously.
-
-        **Supported operators** : is, is not, is all values, is untagged, contains, does not contain, in, not in, =, !=, like, not like
-
-        :param rule_id: The unique identifier of the arbitrary cost rule
-        :type rule_id: int
-        :type body: ArbitraryCostUpsertRequest
-        :rtype: ArbitraryRuleResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["rule_id"] = rule_id
-
-        kwargs["body"] = body
-
-        return self._update_arbitrary_cost_rule_endpoint.call_with_http_info(**kwargs)
+        return self._reorder_tag_pipelines_rulesets_endpoint.call_with_http_info(**kwargs)
 
     def update_cost_awscur_config(
         self,
@@ -1418,12 +1382,48 @@ class CloudCostManagementApi:
 
         return self._update_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
-    def update_ruleset(
+    def update_custom_allocation_rule(
+        self,
+        rule_id: int,
+        body: ArbitraryCostUpsertRequest,
+    ) -> ArbitraryRuleResponse:
+        """Update custom allocation rule.
+
+        Update an existing custom allocation rule with new filters and allocation strategy.
+
+        **Strategy Methods:**
+
+        * **PROPORTIONAL/EVEN** : Allocates costs proportionally/evenly based on existing costs. Requires: granularity, allocated_by_tag_keys. Optional: based_on_costs, allocated_by_filters, evaluate_grouped_by_tag_keys, evaluate_grouped_by_filters.
+        * **PROPORTIONAL_TIMESERIES/EVEN_TIMESERIES** : Allocates based on timeseries data. Requires: granularity, based_on_timeseries. Optional: evaluate_grouped_by_tag_keys.
+        * **PERCENT** : Allocates fixed percentages to specific tags. Requires: allocated_by (array of percentage allocations).
+        * **USAGE_METRIC** : Allocates based on usage metrics (implementation varies).
+
+        **Filter Conditions:**
+
+        * Use **value** for single-value conditions: "is", "is not", "contains", "does not contain", "=", "!=", "like", "not like", "is all values", "is untagged"
+        * Use **values** for multi-value conditions: "in", "not in"
+        * Cannot use both value and values simultaneously.
+
+        **Supported operators** : is, is not, is all values, is untagged, contains, does not contain, in, not in, =, !=, like, not like
+
+        :param rule_id: The unique identifier of the custom allocation rule
+        :type rule_id: int
+        :type body: ArbitraryCostUpsertRequest
+        :rtype: ArbitraryRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._update_custom_allocation_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_tag_pipelines_ruleset(
         self,
         ruleset_id: str,
         body: UpdateRulesetRequest,
     ) -> RulesetResp:
-        """Update ruleset.
+        """Update tag pipeline ruleset.
 
         Update a tag pipeline ruleset - Update an existing tag pipeline ruleset with new rules and configuration
 
@@ -1437,7 +1437,7 @@ class CloudCostManagementApi:
 
         kwargs["body"] = body
 
-        return self._update_ruleset_endpoint.call_with_http_info(**kwargs)
+        return self._update_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
 
     def upload_custom_costs_file(
         self,

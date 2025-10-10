@@ -737,37 +737,37 @@
       "type": "safe"
     }
   },
-  "ListArbitraryCostRules": {
+  "ListCustomAllocationRules": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "safe"
     }
   },
-  "CreateArbitraryCostRule": {
+  "CreateCustomAllocationRule": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
     }
   },
-  "ReorderArbitraryCostRules": {
+  "ReorderCustomAllocationRules": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
     }
   },
-  "DeleteArbitraryCostRule": {
+  "DeleteCustomAllocationRule": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
     }
   },
-  "GetArbitraryCostRule": {
+  "GetCustomAllocationRule": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "safe"
     }
   },
-  "UpdateArbitraryCostRule": {
+  "UpdateCustomAllocationRule": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
@@ -3841,19 +3841,19 @@
       "type": "safe"
     }
   },
-  "ListRulesets": {
+  "ListTagPipelinesRulesets": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "safe"
     }
   },
-  "CreateRuleset": {
+  "CreateTagPipelinesRuleset": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
     }
   },
-  "ReorderRulesets": {
+  "ReorderTagPipelinesRulesets": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
@@ -3865,19 +3865,19 @@
       "type": "safe"
     }
   },
-  "DeleteRuleset": {
+  "DeleteTagPipelinesRuleset": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
     }
   },
-  "GetRuleset": {
+  "GetTagPipelinesRuleset": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "safe"
     }
   },
-  "UpdateRuleset": {
+  "UpdateTagPipelinesRuleset": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"

@@ -45,6 +45,7 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
             "enabled": (bool,),
             "last_modified_user_uuid": (str,),
             "order_id": (int,),
+            "processing_status": (str,),
             "provider": ([str],),
             "rejected": (bool,),
             "rule_name": (str,),
@@ -60,6 +61,7 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         "enabled": "enabled",
         "last_modified_user_uuid": "last_modified_user_uuid",
         "order_id": "order_id",
+        "processing_status": "processing_status",
         "provider": "provider",
         "rejected": "rejected",
         "rule_name": "rule_name",
@@ -82,6 +84,7 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         type: str,
         updated: datetime,
         version: int,
+        processing_status: Union[str, UnsetType] = unset,
         rejected: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -102,6 +105,9 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
 
         :param order_id: The ``attributes`` ``order_id``.
         :type order_id: int
+
+        :param processing_status: The ``attributes`` ``processing_status``.
+        :type processing_status: str, optional
 
         :param provider: The ``attributes`` ``provider``.
         :type provider: [str]
@@ -124,6 +130,8 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         :param version: The ``attributes`` ``version``.
         :type version: int
         """
+        if processing_status is not unset:
+            kwargs["processing_status"] = processing_status
         if rejected is not unset:
             kwargs["rejected"] = rejected
         super().__init__(kwargs)

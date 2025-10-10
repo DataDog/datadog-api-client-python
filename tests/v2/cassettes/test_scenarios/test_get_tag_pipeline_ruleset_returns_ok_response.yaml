@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/tags/enrichment/ee10c3ff-312f-464c-b4f6-46adaa6d00a1
+  response:
+    body:
+      string: '{"data":{"id":"ee10c3ff-312f-464c-b4f6-46adaa6d00a1","type":"ruleset","attributes":{"created":{"seconds":1759947966,"nanos":679638000},"enabled":true,"last_modified_user_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","modified":{"seconds":1759947966,"nanos":679638000},"name":"New
+        Ruleset","position":1,"processing_status":"error","rules":[{"name":"Add Cost
+        Center Tag","enabled":true,"query":{"query":"account_id:\"123456789\" AND
+        service:\"web-api\"","addition":{"key":"cost_center","value":"engineering"},"if_not_exists":true,"case_insensitivity":false},"mapping":null,"reference_table":null,"metadata":null}],"version":3611102}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
