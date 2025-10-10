@@ -5,7 +5,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/non-existent-rule-id
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/abc-def-ghi
   response:
     body:
       string: '{"errors":[{"title":"failed to get rule"}]}

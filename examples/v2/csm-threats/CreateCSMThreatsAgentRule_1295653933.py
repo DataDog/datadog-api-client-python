@@ -42,6 +42,7 @@ body = CloudWorkloadSecurityAgentRuleCreateRequest(
                         name="test_set",
                         value="test_value",
                         scope="process",
+                        inherited=True,
                     ),
                 ),
                 CloudWorkloadSecurityAgentRuleAction(
