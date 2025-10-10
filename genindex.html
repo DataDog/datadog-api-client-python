@@ -1194,10 +1194,10 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_cost_upsert_request.ArbitraryCostUpsertRequest">ArbitraryCostUpsertRequest (class in datadog_api_client.v2.model.arbitrary_cost_upsert_request)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_cost_upsert_request_data.ArbitraryCostUpsertRequestData">ArbitraryCostUpsertRequestData (class in datadog_api_client.v2.model.arbitrary_cost_upsert_request_data)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes.ArbitraryCostUpsertRequestDataAttributes">ArbitraryCostUpsertRequestDataAttributes (class in datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_costs_to_allocate_items.ArbitraryCostUpsertRequestDataAttributesCostsToAllocateItems">ArbitraryCostUpsertRequestDataAttributesCostsToAllocateItems (class in datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_costs_to_allocate_items)</a>
@@ -1219,6 +1219,8 @@
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_rule_response.ArbitraryRuleResponse">ArbitraryRuleResponse (class in datadog_api_client.v2.model.arbitrary_rule_response)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_rule_response_array.ArbitraryRuleResponseArray">ArbitraryRuleResponseArray (class in datadog_api_client.v2.model.arbitrary_rule_response_array)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_rule_response_array_meta.ArbitraryRuleResponseArrayMeta">ArbitraryRuleResponseArrayMeta (class in datadog_api_client.v2.model.arbitrary_rule_response_array_meta)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.arbitrary_rule_response_data.ArbitraryRuleResponseData">ArbitraryRuleResponseData (class in datadog_api_client.v2.model.arbitrary_rule_response_data)</a>
 </li>
@@ -2440,8 +2442,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.create_application_security_waf_exclusion_filter">create_application_security_waf_exclusion_filter() (ApplicationSecurityApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_arbitrary_cost_rule">create_arbitrary_cost_rule() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.authn_mappings_api.AuthNMappingsApi.create_authn_mapping">create_authn_mapping() (AuthNMappingsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_aws_account">create_aws_account() (AWSIntegrationApi method)</a>, <a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_aws_account">[1]</a>
@@ -2487,6 +2487,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.csm_threats_api.CSMThreatsApi.create_csm_threats_agent_rule">create_csm_threats_agent_rule() (CSMThreatsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.key_management_api.KeyManagementApi.create_current_user_application_key">create_current_user_application_key() (KeyManagementApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_custom_allocation_rule">create_custom_allocation_rule() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_custom_framework">create_custom_framework() (SecurityMonitoringApi method)</a>
 </li>
@@ -2600,8 +2602,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.roles_api.RolesApi.create_role">create_role() (RolesApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_ruleset">create_ruleset() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_api.RUMApi.create_rum_application">create_rum_application() (RUMApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_metrics_api.RumMetricsApi.create_rum_metric">create_rum_metric() (RumMetricsApi method)</a>
@@ -2643,6 +2643,8 @@
       <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.create_synthetics_mobile_test">create_synthetics_mobile_test() (SyntheticsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.metrics_api.MetricsApi.create_tag_configuration">create_tag_configuration() (MetricsApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.create_tag_pipelines_ruleset">create_tag_pipelines_ruleset() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.teams_api.TeamsApi.create_team">create_team() (TeamsApi method)</a>
 </li>
@@ -11632,6 +11634,13 @@
 </li>
       </ul></li>
       <li>
+    datadog_api_client.v2.model.arbitrary_rule_response_array_meta
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.arbitrary_rule_response_array_meta">module</a>
+</li>
+      </ul></li>
+      <li>
     datadog_api_client.v2.model.arbitrary_rule_response_data
 
       <ul>
@@ -18729,6 +18738,8 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.full_api_key_attributes">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     datadog_api_client.v2.model.full_application_key
 
@@ -18736,8 +18747,6 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.full_application_key">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     datadog_api_client.v2.model.full_application_key_attributes
 
@@ -33668,8 +33677,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.app_builder_api.AppBuilderApi.delete_apps">delete_apps() (AppBuilderApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_arbitrary_cost_rule">delete_arbitrary_cost_rule() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.authn_mappings_api.AuthNMappingsApi.delete_authn_mapping">delete_authn_mapping() (AuthNMappingsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.delete_aws_account">delete_aws_account() (AWSIntegrationApi method)</a>, <a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.delete_aws_account">[1]</a>
@@ -33713,6 +33720,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.csm_threats_api.CSMThreatsApi.delete_csm_threats_agent_rule">delete_csm_threats_agent_rule() (CSMThreatsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.key_management_api.KeyManagementApi.delete_current_user_application_key">delete_current_user_application_key() (KeyManagementApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_custom_allocation_rule">delete_custom_allocation_rule() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_custom_costs_file">delete_custom_costs_file() (CloudCostManagementApi method)</a>
 </li>
@@ -33820,8 +33829,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.roles_api.RolesApi.delete_role">delete_role() (RolesApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_ruleset">delete_ruleset() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_api.RUMApi.delete_rum_application">delete_rum_application() (RUMApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_metrics_api.RumMetricsApi.delete_rum_metric">delete_rum_metric() (RumMetricsApi method)</a>
@@ -33855,6 +33862,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_table">delete_table() (ReferenceTablesApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.metrics_api.MetricsApi.delete_tag_configuration">delete_tag_configuration() (MetricsApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.delete_tag_pipelines_ruleset">delete_tag_pipelines_ruleset() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team">delete_team() (TeamsApi method)</a>
 </li>
@@ -34888,8 +34897,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.get_application_security_waf_exclusion_filter">get_application_security_waf_exclusion_filter() (ApplicationSecurityApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_arbitrary_cost_rule">get_arbitrary_cost_rule() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.html#datadog_api_client.model_utils.get_attribute_from_path">get_attribute_from_path() (in module datadog_api_client.model_utils)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.authn_mappings_api.AuthNMappingsApi.get_authn_mapping">get_authn_mapping() (AuthNMappingsApi method)</a>
@@ -34949,6 +34956,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.csm_threats_api.CSMThreatsApi.get_csm_threats_agent_rule">get_csm_threats_agent_rule() (CSMThreatsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.key_management_api.KeyManagementApi.get_current_user_application_key">get_current_user_application_key() (KeyManagementApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_custom_allocation_rule">get_custom_allocation_rule() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_custom_costs_file">get_custom_costs_file() (CloudCostManagementApi method)</a>
 </li>
@@ -35142,8 +35151,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_rule_version_history">get_rule_version_history() (SecurityMonitoringApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_ruleset">get_ruleset() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_api.RUMApi.get_rum_application">get_rum_application() (RUMApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_api.RUMApi.get_rum_applications">get_rum_applications() (RUMApi method)</a>
@@ -35209,6 +35216,8 @@
       <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.synthetics_api.SyntheticsApi.get_synthetics_default_locations">get_synthetics_default_locations() (SyntheticsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_table">get_table() (ReferenceTablesApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.get_tag_pipelines_ruleset">get_tag_pipelines_ruleset() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.teams_api.TeamsApi.get_team">get_team() (TeamsApi method)</a>
 </li>
@@ -36236,8 +36245,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.app_builder_api.AppBuilderApi.list_apps">list_apps() (AppBuilderApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_arbitrary_cost_rules">list_arbitrary_cost_rules() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.logs_archives_api.LogsArchivesApi.list_archive_read_roles">list_archive_read_roles() (LogsArchivesApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_assets_sbo_ms">list_assets_sbo_ms() (SecurityMonitoringApi method)</a>
@@ -36319,6 +36326,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.csm_threats_api.CSMThreatsApi.list_csm_threats_agent_rules">list_csm_threats_agent_rules() (CSMThreatsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.key_management_api.KeyManagementApi.list_current_user_application_keys">list_current_user_application_keys() (KeyManagementApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_custom_allocation_rules">list_custom_allocation_rules() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_custom_costs_files">list_custom_costs_files() (CloudCostManagementApi method)</a>
 </li>
@@ -36468,8 +36477,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.roles_api.RolesApi.list_roles">list_roles() (RolesApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_rulesets">list_rulesets() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_api.RUMApi.list_rum_events">list_rum_events() (RUMApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_api.RUMApi.list_rum_events_with_pagination">list_rum_events_with_pagination() (RUMApi method)</a>
@@ -36531,6 +36538,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.metrics_api.MetricsApi.list_tag_configurations">list_tag_configurations() (MetricsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.metrics_api.MetricsApi.list_tag_configurations_with_pagination">list_tag_configurations_with_pagination() (MetricsApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.list_tag_pipelines_rulesets">list_tag_pipelines_rulesets() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.metrics_api.MetricsApi.list_tags_by_metric_name">list_tags_by_metric_name() (MetricsApi method)</a>
 </li>
@@ -39771,6 +39780,8 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.arbitrary_rule_response">datadog_api_client.v2.model.arbitrary_rule_response</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.arbitrary_rule_response_array">datadog_api_client.v2.model.arbitrary_rule_response_array</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.arbitrary_rule_response_array_meta">datadog_api_client.v2.model.arbitrary_rule_response_array_meta</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.arbitrary_rule_response_data">datadog_api_client.v2.model.arbitrary_rule_response_data</a>
 </li>
@@ -47507,11 +47518,11 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.apm_retention_filters_api.APMRetentionFiltersApi.reorder_apm_retention_filters">reorder_apm_retention_filters() (APMRetentionFiltersApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.reorder_arbitrary_cost_rules">reorder_arbitrary_cost_rules() (CloudCostManagementApi method)</a>
-</li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.reorder_rulesets">reorder_rulesets() (CloudCostManagementApi method)</a>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.reorder_custom_allocation_rules">reorder_custom_allocation_rules() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.sensitive_data_scanner_api.SensitiveDataScannerApi.reorder_scanning_groups">reorder_scanning_groups() (SensitiveDataScannerApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.reorder_tag_pipelines_rulesets">reorder_tag_pipelines_rulesets() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.reorder_retention_filters_request.ReorderRetentionFiltersRequest">ReorderRetentionFiltersRequest (class in datadog_api_client.v2.model.reorder_retention_filters_request)</a>
 </li>
@@ -49971,8 +49982,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.application_security_api.ApplicationSecurityApi.update_application_security_waf_exclusion_filter">update_application_security_waf_exclusion_filter() (ApplicationSecurityApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_arbitrary_cost_rule">update_arbitrary_cost_rule() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_attributes">update_attributes() (CaseManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.authn_mappings_api.AuthNMappingsApi.update_authn_mapping">update_authn_mapping() (AuthNMappingsApi method)</a>
@@ -50008,6 +50017,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.csm_threats_api.CSMThreatsApi.update_csm_threats_agent_rule">update_csm_threats_agent_rule() (CSMThreatsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.key_management_api.KeyManagementApi.update_current_user_application_key">update_current_user_application_key() (KeyManagementApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_custom_allocation_rule">update_custom_allocation_rule() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.update_custom_framework">update_custom_framework() (SecurityMonitoringApi method)</a>
 </li>
@@ -50129,8 +50140,6 @@
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.roles_api.RolesApi.update_role">update_role() (RolesApi method)</a>
 </li>
-      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_ruleset">update_ruleset() (CloudCostManagementApi method)</a>
-</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_api.RUMApi.update_rum_application">update_rum_application() (RUMApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.rum_metrics_api.RumMetricsApi.update_rum_metric">update_rum_metric() (RumMetricsApi method)</a>
@@ -50162,6 +50171,8 @@
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_status">update_status() (CaseManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.metrics_api.MetricsApi.update_tag_configuration">update_tag_configuration() (MetricsApi method)</a>
+</li>
+      <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.cloud_cost_management_api.CloudCostManagementApi.update_tag_pipelines_ruleset">update_tag_pipelines_ruleset() (CloudCostManagementApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.teams_api.TeamsApi.update_team">update_team() (TeamsApi method)</a>
 </li>

@@ -1047,6 +1047,13 @@ datadog\_api\_client.v2.model.arbitrary\_rule\_response\_array module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.arbitrary\_rule\_response\_array\_meta module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_response_array_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data module
 --------------------------------------------------------------------
 
