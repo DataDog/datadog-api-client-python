@@ -298,6 +298,7 @@ from datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_s
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_type import ArbitraryCostUpsertRequestDataType
 from datadog_api_client.v2.model.arbitrary_rule_response import ArbitraryRuleResponse
 from datadog_api_client.v2.model.arbitrary_rule_response_array import ArbitraryRuleResponseArray
+from datadog_api_client.v2.model.arbitrary_rule_response_array_meta import ArbitraryRuleResponseArrayMeta
 from datadog_api_client.v2.model.arbitrary_rule_response_data import ArbitraryRuleResponseData
 from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes import ArbitraryRuleResponseDataAttributes
 from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_costs_to_allocate_items import (
@@ -4723,6 +4724,7 @@ __all__ = [
     "ArbitraryCostUpsertRequestDataType",
     "ArbitraryRuleResponse",
     "ArbitraryRuleResponseArray",
+    "ArbitraryRuleResponseArrayMeta",
     "ArbitraryRuleResponseData",
     "ArbitraryRuleResponseDataAttributes",
     "ArbitraryRuleResponseDataAttributesCostsToAllocateItems",

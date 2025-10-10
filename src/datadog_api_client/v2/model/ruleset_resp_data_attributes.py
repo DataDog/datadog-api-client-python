@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -39,6 +41,7 @@ class RulesetRespDataAttributes(ModelNormal):
             "modified": (RulesetRespDataAttributesModified,),
             "name": (str,),
             "position": (int,),
+            "processing_status": (str,),
             "rules": ([RulesetRespDataAttributesRulesItems],),
             "version": (int,),
         }
@@ -50,6 +53,7 @@ class RulesetRespDataAttributes(ModelNormal):
         "modified": "modified",
         "name": "name",
         "position": "position",
+        "processing_status": "processing_status",
         "rules": "rules",
         "version": "version",
     }
@@ -64,6 +68,7 @@ class RulesetRespDataAttributes(ModelNormal):
         position: int,
         rules: List[RulesetRespDataAttributesRulesItems],
         version: int,
+        processing_status: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -87,12 +92,17 @@ class RulesetRespDataAttributes(ModelNormal):
         :param position: The ``attributes`` ``position``.
         :type position: int
 
+        :param processing_status: The ``attributes`` ``processing_status``.
+        :type processing_status: str, optional
+
         :param rules: The ``attributes`` ``rules``.
         :type rules: [RulesetRespDataAttributesRulesItems]
 
         :param version: The ``attributes`` ``version``.
         :type version: int
         """
+        if processing_status is not unset:
+            kwargs["processing_status"] = processing_status
         super().__init__(kwargs)
 
         self_.created = created

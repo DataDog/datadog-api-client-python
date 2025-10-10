@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cost/arbitrary_rule
+  response:
+    body:
+      string: '{"data":[{"id":"683","type":"arbitrary_rule","attributes":{"costs_to_allocate":[{"tag":"account_id","condition":"is","value":"123456789","values":null},{"tag":"environment","condition":"in","value":"","values":["production","staging"]}],"created":"2025-10-08T19:31:23.246204Z","enabled":true,"last_modified_user_uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","order_id":1,"processing_status":"error","provider":["aws","gcp"],"rule_name":"example-arbitrary-cost-rule","strategy":{"method":"proportional","granularity":"daily","based_on_costs":[{"tag":"service","condition":"is","value":"web-api","values":null},{"tag":"team","condition":"not
+        in","value":"","values":["legacy","deprecated"]}],"allocated_by_tag_keys":["team","environment"]},"type":"shared","updated":"2025-10-08T19:31:23.246204Z","version":1}}],"meta":{"total_count":1}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
