@@ -24,6 +24,7 @@ class UserAttributes(ModelNormal):
             "email": (str,),
             "handle": (str,),
             "icon": (str,),
+            "last_login_time": (datetime, none_type),
             "mfa_enabled": (bool,),
             "modified_at": (datetime,),
             "name": (str, none_type),
@@ -39,6 +40,7 @@ class UserAttributes(ModelNormal):
         "email": "email",
         "handle": "handle",
         "icon": "icon",
+        "last_login_time": "last_login_time",
         "mfa_enabled": "mfa_enabled",
         "modified_at": "modified_at",
         "name": "name",
@@ -48,6 +50,7 @@ class UserAttributes(ModelNormal):
         "verified": "verified",
     }
     read_only_vars = {
+        "last_login_time",
         "mfa_enabled",
     }
 
@@ -58,6 +61,7 @@ class UserAttributes(ModelNormal):
         email: Union[str, UnsetType] = unset,
         handle: Union[str, UnsetType] = unset,
         icon: Union[str, UnsetType] = unset,
+        last_login_time: Union[datetime, none_type, UnsetType] = unset,
         mfa_enabled: Union[bool, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, none_type, UnsetType] = unset,
@@ -84,6 +88,9 @@ class UserAttributes(ModelNormal):
 
         :param icon: URL of the user's icon.
         :type icon: str, optional
+
+        :param last_login_time: The last time the user logged in.
+        :type last_login_time: datetime, none_type, optional
 
         :param mfa_enabled: If user has MFA enabled.
         :type mfa_enabled: bool, optional
@@ -116,6 +123,8 @@ class UserAttributes(ModelNormal):
             kwargs["handle"] = handle
         if icon is not unset:
             kwargs["icon"] = icon
+        if last_login_time is not unset:
+            kwargs["last_login_time"] = last_login_time
         if mfa_enabled is not unset:
             kwargs["mfa_enabled"] = mfa_enabled
         if modified_at is not unset:
