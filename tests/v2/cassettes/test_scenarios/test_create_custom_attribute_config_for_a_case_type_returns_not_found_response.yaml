@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"display_name":"AWS Region 79eef6c4d883c2c5","is_multi":true,"key":"region_79eef6c4d883c2c5","type":"NUMBER"},"type":"custom_attribute"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types/9fd476d7-a955-454a-851d-980c655c02d3/custom_attributes
+  response:
+    body:
+      string: '{"errors":[{"code":"resource_not_found","title":"case_type not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
