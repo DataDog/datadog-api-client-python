@@ -697,6 +697,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"policy\",\n    \"attributes\": {\n      \"name\": \"Test policy\",\n      \"description\": \"This is a test policy.\",\n      \"basedOn\": \"recommended\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"policy\" in the system",
+    "key": "policy",
+    "tag": "Application Security",
+    "operationId": "CreateApplicationSecurityWafPolicy"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true,\n      \"product_tags\": [\"security:attack\", \"technique:T1059\"],\n      \"actions\": [{\"set\": {\"name\": \"test_set\", \"value\": \"test_value\", \"scope\": \"process\"}}, {\"hash\": {}}],\n      \"policy_id\": \"{{ policy.data.id }}\"\n     }\n  }\n}"
       }
     ],

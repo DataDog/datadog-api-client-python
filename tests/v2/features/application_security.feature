@@ -14,6 +14,27 @@ Feature: Application Security
     And an instance of "ApplicationSecurity" API
 
   @generated @skip @team:DataDog/asm-backend
+  Scenario: Create a WAF Policy returns "Bad Request" response
+    Given new "CreateApplicationSecurityWafPolicy" request
+    And body with value {"data": {"attributes": {"basedOn": "recommended", "description": "Policy applied to internal web applications.", "isDefault": false, "name": "Internal Network Policy", "protectionPresets": ["attack-tools"], "rules": [{"blocking": false, "enabled": true, "id": "rasp-001-002"}], "scope": [{"env": "prod", "service": "billing-service"}], "version": 0}, "type": "policy"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Create a WAF Policy returns "Concurrent Modification" response
+    Given new "CreateApplicationSecurityWafPolicy" request
+    And body with value {"data": {"attributes": {"basedOn": "recommended", "description": "Policy applied to internal web applications.", "isDefault": false, "name": "Internal Network Policy", "protectionPresets": ["attack-tools"], "rules": [{"blocking": false, "enabled": true, "id": "rasp-001-002"}], "scope": [{"env": "prod", "service": "billing-service"}], "version": 0}, "type": "policy"}}
+    When the request is sent
+    Then the response status is 409 Concurrent Modification
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Create a WAF Policy returns "Created" response
+    Given new "CreateApplicationSecurityWafPolicy" request
+    And body with value {"data": {"attributes": {"basedOn": "recommended", "description": "Policy applied to internal web applications.", "isDefault": false, "name": "Internal Network Policy", "protectionPresets": ["attack-tools"], "rules": [{"blocking": false, "enabled": true, "id": "rasp-001-002"}], "scope": [{"env": "prod", "service": "billing-service"}], "version": 0}, "type": "policy"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/asm-backend
   Scenario: Create a WAF custom rule returns "Bad Request" response
     Given new "CreateApplicationSecurityWafCustomRule" request
     And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "value": "custom_tag"}}], "enabled": false, "name": "Block request from a bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
@@ -85,6 +106,27 @@ Feature: Application Security
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/asm-backend
+  Scenario: Delete a WAF Policy returns "Concurrent Modification" response
+    Given new "DeleteApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Concurrent Modification
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Delete a WAF Policy returns "No Content" response
+    Given new "DeleteApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Delete a WAF Policy returns "Not Found" response
+    Given new "DeleteApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/asm-backend
   Scenario: Delete a WAF exclusion filter returns "Concurrent Modification" response
     Given new "DeleteApplicationSecurityWafExclusionFilter" request
     And request contains "exclusion_filter_id" parameter from "REPLACE.ME"
@@ -105,6 +147,13 @@ Feature: Application Security
     And request contains "exclusion_filter_id" parameter from "exclusion_filter.data.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Get a WAF Policy returns "OK" response
+    Given new "GetApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/asm-backend
   Scenario: Get a WAF custom rule returns "OK" response
@@ -140,6 +189,12 @@ Feature: Application Security
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: List all WAF policies returns "OK" response
+    Given new "ListApplicationSecurityWAFPolicies" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/asm-backend
   Scenario: Update a WAF Custom Rule returns "Bad Request" response
     Given there is a valid "custom_rule" in the system
@@ -171,6 +226,38 @@ Feature: Application Security
     And new "UpdateApplicationSecurityWafCustomRule" request
     And request contains "custom_rule_id" parameter from "custom_rule.data.id"
     And body with value {"data": {"type": "custom_rule", "attributes": {"blocking": false, "conditions": [{"operator": "match_regex", "parameters": { "inputs": [ { "address": "server.request.query", "key_path": [ "id" ] } ], "regex": "badactor" } } ], "enabled": false, "name": "test", "path_glob": "/test", "scope": [ { "env": "test", "service": "test" } ], "tags": { "category": "attack_attempt", "type": "test"}}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Update a WAF Policy returns "Bad Request" response
+    Given new "UpdateApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Policy applied to internal web applications.", "isDefault": false, "name": "Internal Network Policy", "protectionPresets": ["attack-tools"], "rules": [{"blocking": false, "enabled": true, "id": "rasp-001-002"}], "scope": [{"env": "prod", "service": "billing-service"}], "version": 0}, "type": "policy"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Update a WAF Policy returns "Concurrent Modification" response
+    Given new "UpdateApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Policy applied to internal web applications.", "isDefault": false, "name": "Internal Network Policy", "protectionPresets": ["attack-tools"], "rules": [{"blocking": false, "enabled": true, "id": "rasp-001-002"}], "scope": [{"env": "prod", "service": "billing-service"}], "version": 0}, "type": "policy"}}
+    When the request is sent
+    Then the response status is 409 Concurrent Modification
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Update a WAF Policy returns "Not Found" response
+    Given new "UpdateApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Policy applied to internal web applications.", "isDefault": false, "name": "Internal Network Policy", "protectionPresets": ["attack-tools"], "rules": [{"blocking": false, "enabled": true, "id": "rasp-001-002"}], "scope": [{"env": "prod", "service": "billing-service"}], "version": 0}, "type": "policy"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Update a WAF Policy returns "OK" response
+    Given new "UpdateApplicationSecurityWafPolicy" request
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Policy applied to internal web applications.", "isDefault": false, "name": "Internal Network Policy", "protectionPresets": ["attack-tools"], "rules": [{"blocking": false, "enabled": true, "id": "rasp-001-002"}], "scope": [{"env": "prod", "service": "billing-service"}], "version": 0}, "type": "policy"}}
     When the request is sent
     Then the response status is 200 OK
 
