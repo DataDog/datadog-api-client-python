@@ -3829,6 +3829,18 @@
       "type": "safe"
     }
   },
+  "CreateSCAResult": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSCAResolveVulnerableSymbols": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetOnDemandConcurrencyCap": {
     "tag": "Synthetics",
     "undo": {
