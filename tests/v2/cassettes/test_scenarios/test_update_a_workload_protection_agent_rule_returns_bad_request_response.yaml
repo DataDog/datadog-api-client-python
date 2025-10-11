@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1749827788"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1760109685"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"fuv-zyk-wli","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1749827788","policyVersion":"1","priority":1000000013,"ruleCount":226,"updateDate":1749827789001,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"ipm-pga-f7v","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1760109685","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109685700,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}},{"hash":{}}],"description":"My
-      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1749827788","policy_id":"fuv-zyk-wli","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
+      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1760109685","policy_id":"ipm-pga-f7v","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -30,10 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"f8u-th8-0er","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
-        Activity","creationDate":1749827789457,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"eqm-2k6-tav","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process","inherited":false},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
+        Activity","creationDate":1760109686541,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"monitoring":["fuv-zyk-wli"],"name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1749827788","product_tags":["security:attack","technique:T1059"],"updateDate":1749827789457,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["ipm-pga-f7v"],"name":"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1760109685","product_tags":["security:attack","technique:T1059"],"updateDate":1760109686541,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -42,14 +42,14 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","policy_id":"fuv-zyk-wli","product_tags":[]},"id":"invalid-agent-rule-id","type":"agent_rule"}}'
+      == \"sh\"","policy_id":"ipm-pga-f7v","product_tags":[]},"id":"invalid-agent-rule-id","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/f8u-th8-0er
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/eqm-2k6-tav
   response:
     body:
       string: '{"errors":[{"title":"failed to update rule"}]}
@@ -67,7 +67,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/f8u-th8-0er
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/eqm-2k6-tav
   response:
     body:
       string: ''
@@ -83,7 +83,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/fuv-zyk-wli
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/ipm-pga-f7v
   response:
     body:
       string: ''

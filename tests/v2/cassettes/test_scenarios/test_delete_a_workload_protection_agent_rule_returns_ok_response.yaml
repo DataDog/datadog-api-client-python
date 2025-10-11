@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1749827803"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1760109657"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"tn0-tjy-vwh","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTags":["env:staging"],"monitoringRulesCount":225,"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1749827803","policyVersion":"1","priority":1000000013,"ruleCount":226,"updateDate":1749827803539,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"xm5-r6n-xej","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1760109657","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109657799,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}},{"hash":{}}],"description":"My
-      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1749827803","policy_id":"tn0-tjy-vwh","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
+      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1760109657","policy_id":"xm5-r6n-xej","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -30,10 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"hm0-n7p-hq7","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
-        Activity","creationDate":1749827804150,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"tpa-28k-utt","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process","inherited":false},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
+        Activity","creationDate":1760109658753,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"monitoring":["tn0-tjy-vwh"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1749827803","product_tags":["security:attack","technique:T1059"],"updateDate":1749827804150,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["xm5-r6n-xej"],"name":"testdeleteaworkloadprotectionagentrulereturnsokresponse1760109657","product_tags":["security:attack","technique:T1059"],"updateDate":1760109658753,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/hm0-n7p-hq7?policy_id=tn0-tjy-vwh
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/tpa-28k-utt?policy_id=xm5-r6n-xej
   response:
     body:
       string: ''
@@ -62,7 +62,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/hm0-n7p-hq7
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/tpa-28k-utt
   response:
     body:
       string: '{"errors":[{"title":"failed to delete rule"}]}
@@ -80,7 +80,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/tn0-tjy-vwh
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/xm5-r6n-xej
   response:
     body:
       string: ''

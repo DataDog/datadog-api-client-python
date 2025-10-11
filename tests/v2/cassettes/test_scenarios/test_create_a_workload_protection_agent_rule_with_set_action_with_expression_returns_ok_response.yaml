@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1760109650"},"type":"policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
+  response:
+    body:
+      string: '{"data":{"id":"lrl-nbx-opl","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1760109650","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109650938,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"actions":[{"set":{"default_value":"/dev/null","expression":"open.file.path","name":"test_set","scope":"process"}}],"description":"My
+      Agent rule with set action with expression","enabled":true,"expression":"exec.file.name
+      == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1760109650","policy_id":"lrl-nbx-opl","product_tags":[]},"type":"agent_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
+  response:
+    body:
+      string: '{"data":{"id":"ye3-8k9-6ut","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","default_value":"/dev/null","scope":"process","expression":"open.file.path","inherited":false},"disabled":false}],"category":"Process
+        Activity","creationDate":1760109651835,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+        Agent rule with set action with expression","enabled":true,"expression":"exec.file.name
+        == \"sh\"","filters":["os == \"linux\""],"monitoring":["lrl-nbx-opl"],"name":"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1760109650","product_tags":[],"updateDate":1760109651835,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/ye3-8k9-6ut
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/lrl-nbx-opl
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1
