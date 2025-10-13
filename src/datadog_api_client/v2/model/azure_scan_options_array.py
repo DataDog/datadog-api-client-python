@@ -30,9 +30,9 @@ class AzureScanOptionsArray(ModelNormal):
 
     def __init__(self_, data: List[AzureScanOptionsData], **kwargs):
         """
-        The definition of ``AzureScanOptionsArray`` object.
+        Response object containing a list of Azure scan options.
 
-        :param data: The ``AzureScanOptionsArray`` ``data``.
+        :param data: A list of Azure scan options.
         :type data: [AzureScanOptionsData]
         """
         super().__init__(kwargs)

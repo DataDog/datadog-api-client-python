@@ -9,7 +9,7 @@ interactions:
   response:
     body:
       string: '{"errors":[{"status":"404","detail":"no aws scan options found for
-        subscription 404404404404"}]}'
+        account 404404404404"}]}'
     headers:
       content-type:
       - application/vnd.api+json

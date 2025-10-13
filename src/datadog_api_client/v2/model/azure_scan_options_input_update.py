@@ -32,9 +32,9 @@ class AzureScanOptionsInputUpdate(ModelNormal):
 
     def __init__(self_, data: Union[AzureScanOptionsInputUpdateData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``AzureScanOptionsInputUpdate`` object.
+        Request object for updating Azure scan options.
 
-        :param data: The definition of ``AzureScanOptionsInputUpdateData`` object.
+        :param data: Data object for updating the scan options of a single Azure subscription.
         :type data: AzureScanOptionsInputUpdateData, optional
         """
         if data is not unset:

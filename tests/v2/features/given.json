@@ -47,6 +47,13 @@
     "operationId": "ListAwsScanOptions"
   },
   {
+    "source": "data[0]",
+    "step": "there is a valid \"gcp_scan_options\" in the system",
+    "key": "gcp_scan_options",
+    "tag": "Agentless Scanning",
+    "operationId": "ListGcpScanOptions"
+  },
+  {
     "parameters": [
       {
         "name": "body",

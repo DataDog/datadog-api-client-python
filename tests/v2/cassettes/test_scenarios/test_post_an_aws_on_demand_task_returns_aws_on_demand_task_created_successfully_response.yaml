@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/agentless_scanning/ondemand/aws
   response:
     body:
-      string: '{"data":{"id":"20fa1c5c-0f03-4db7-b1d9-e360226bb786","type":"aws_resource","attributes":{"arn":"arn:aws:lambda:us-west-2:123456789012:function:my-function","created_at":"2025-08-24T22:41:51.043274Z","status":"QUEUED"}}}'
+      string: '{"data":{"id":"874b5481-1668-4af3-b536-007f85fcf64c","type":"aws_resource","attributes":{"arn":"arn:aws:lambda:us-west-2:123456789012:function:my-function","created_at":"2025-10-12T15:50:03.035807Z","status":"QUEUED"}}}'
     headers:
       content-type:
       - application/vnd.api+json

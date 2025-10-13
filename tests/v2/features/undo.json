@@ -183,7 +183,50 @@
       "type": "idempotent"
     }
   },
+  "GetAzureScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateAzureScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListGcpScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGcpScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "operationId": "DeleteGcpScanOptions",
+      "parameters": [
+        {
+          "name": "project_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteGcpScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGcpScanOptions": {
+    "tag": "Agentless Scanning",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGcpScanOptions": {
     "tag": "Agentless Scanning",
     "undo": {
       "type": "idempotent"
