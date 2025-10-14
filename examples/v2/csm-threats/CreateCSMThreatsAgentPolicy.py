@@ -25,7 +25,7 @@ body = CloudWorkloadSecurityAgentPolicyCreateRequest(
                     "env:test",
                 ],
             ],
-            name="my_agent_policy",
+            name="my_agent_policy_2",
         ),
         type=CloudWorkloadSecurityAgentPolicyType.POLICY,
     ),

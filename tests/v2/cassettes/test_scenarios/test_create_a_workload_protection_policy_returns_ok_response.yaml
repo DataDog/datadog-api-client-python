@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTagsLists":[["env:test"]],"name":"my_agent_policy"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTagsLists":[["env:test"]],"name":"my_agent_policy_2"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"sw9-gtj-ll2","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":225,"name":"my_agent_policy","policyVersion":"1","priority":1000000011,"ruleCount":226,"updateDate":1748341500859,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"fwg-18e-cfb","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":7,"name":"my_agent_policy_2","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109655264,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -24,7 +24,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/sw9-gtj-ll2
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/fwg-18e-cfb
   response:
     body:
       string: ''

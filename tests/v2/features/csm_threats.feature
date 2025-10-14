@@ -57,7 +57,7 @@ Feature: CSM Threats
   Scenario: Create a Workload Protection agent rule returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "agent_version": "> 7.60", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -65,7 +65,15 @@ Feature: CSM Threats
   Scenario: Create a Workload Protection agent rule with set action returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
-    And body with value {"data": {"attributes": {"description": "My Agent rule with set action", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "value": "test_value", "scope": "process"}}, {"hash": {}}]}, "type": "agent_rule"}}
+    And body with value {"data": {"attributes": {"description": "My Agent rule with set action", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "value": "test_value", "scope": "process", "inherited": true}}, {"hash": {}}]}, "type": "agent_rule"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  Scenario: Create a Workload Protection agent rule with set action with expression returns "OK" response
+    Given there is a valid "policy_rc" in the system
+    And new "CreateCSMThreatsAgentRule" request
+    And body with value {"data": {"attributes": {"description": "My Agent rule with set action with expression", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "expression": "open.file.path", "default_value": "/dev/null", "scope": "process"}}]}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -86,7 +94,7 @@ Feature: CSM Threats
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection policy returns "OK" response
     Given new "CreateCSMThreatsAgentPolicy" request
-    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy"}, "type": "policy"}}
+    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy_2"}, "type": "policy"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -152,7 +160,7 @@ Feature: CSM Threats
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection agent rule (US1-FED) returns "Not Found" response
     Given new "GetCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+    And request contains "agent_rule_id" parameter with value "abc-def-ghi"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -167,7 +175,7 @@ Feature: CSM Threats
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection agent rule returns "Not Found" response
     Given new "GetCSMThreatsAgentRule" request
-    And request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+    And request contains "agent_rule_id" parameter with value "abc-def-ghi"
     When the request is sent
     Then the response status is 404 Not Found
 
