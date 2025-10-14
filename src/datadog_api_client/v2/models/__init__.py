@@ -1616,6 +1616,17 @@ from datadog_api_client.v2.model.gcp_usage_cost_config_post_request_type import 
 from datadog_api_client.v2.model.gcp_usage_cost_config_response import GCPUsageCostConfigResponse
 from datadog_api_client.v2.model.gcp_usage_cost_config_type import GCPUsageCostConfigType
 from datadog_api_client.v2.model.gcp_usage_cost_configs_response import GCPUsageCostConfigsResponse
+from datadog_api_client.v2.model.gcp_scan_options import GcpScanOptions
+from datadog_api_client.v2.model.gcp_scan_options_array import GcpScanOptionsArray
+from datadog_api_client.v2.model.gcp_scan_options_data import GcpScanOptionsData
+from datadog_api_client.v2.model.gcp_scan_options_data_attributes import GcpScanOptionsDataAttributes
+from datadog_api_client.v2.model.gcp_scan_options_data_type import GcpScanOptionsDataType
+from datadog_api_client.v2.model.gcp_scan_options_input_update import GcpScanOptionsInputUpdate
+from datadog_api_client.v2.model.gcp_scan_options_input_update_data import GcpScanOptionsInputUpdateData
+from datadog_api_client.v2.model.gcp_scan_options_input_update_data_attributes import (
+    GcpScanOptionsInputUpdateDataAttributes,
+)
+from datadog_api_client.v2.model.gcp_scan_options_input_update_data_type import GcpScanOptionsInputUpdateDataType
 from datadog_api_client.v2.model.gcp_uc_config_response import GcpUcConfigResponse
 from datadog_api_client.v2.model.gcp_uc_config_response_data import GcpUcConfigResponseData
 from datadog_api_client.v2.model.gcp_uc_config_response_data_attributes import GcpUcConfigResponseDataAttributes
@@ -5735,6 +5746,15 @@ __all__ = [
     "GCPUsageCostConfigResponse",
     "GCPUsageCostConfigType",
     "GCPUsageCostConfigsResponse",
+    "GcpScanOptions",
+    "GcpScanOptionsArray",
+    "GcpScanOptionsData",
+    "GcpScanOptionsDataAttributes",
+    "GcpScanOptionsDataType",
+    "GcpScanOptionsInputUpdate",
+    "GcpScanOptionsInputUpdateData",
+    "GcpScanOptionsInputUpdateDataAttributes",
+    "GcpScanOptionsInputUpdateDataType",
     "GcpUcConfigResponse",
     "GcpUcConfigResponseData",
     "GcpUcConfigResponseDataAttributes",

@@ -33,12 +33,12 @@ class AzureScanOptionsDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AzureScanOptionsDataAttributes`` object.
+        Attributes for Azure scan options configuration.
 
-        :param vuln_containers_os: The ``attributes`` ``vuln_containers_os``.
+        :param vuln_containers_os: Indicates if scanning for vulnerabilities in containers is enabled.
         :type vuln_containers_os: bool, optional
 
-        :param vuln_host_os: The ``attributes`` ``vuln_host_os``.
+        :param vuln_host_os: Indicates if scanning for vulnerabilities in hosts is enabled.
         :type vuln_host_os: bool, optional
         """
         if vuln_containers_os is not unset:

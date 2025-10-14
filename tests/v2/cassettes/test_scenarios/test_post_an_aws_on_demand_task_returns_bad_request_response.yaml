@@ -10,8 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/agentless_scanning/ondemand/aws
   response:
     body:
-      string: '{"errors":[{"title":"Generic Error","detail":"invalid aws resource
-        arn"}]}'
+      string: '{"errors":[{"title":"Generic Error","detail":"invalid aws arn"}]}'
     headers:
       content-type:
       - application/vnd.api+json

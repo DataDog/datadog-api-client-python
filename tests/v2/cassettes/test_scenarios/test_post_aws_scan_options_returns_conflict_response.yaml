@@ -11,7 +11,7 @@ interactions:
   response:
     body:
       string: '{"errors":[{"status":"409","detail":"aws scan options already exist
-        for subscription 000000000002"}]}'
+        for account 000000000002"}]}'
     headers:
       content-type:
       - application/vnd.api+json

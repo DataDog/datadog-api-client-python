@@ -52,12 +52,12 @@ class AzureScanOptionsInputUpdateData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AzureScanOptionsInputUpdateData`` object.
+        Data object for updating the scan options of a single Azure subscription.
 
-        :param attributes: The definition of ``AzureScanOptionsInputUpdateDataAttributes`` object.
+        :param attributes: Attributes for updating Azure scan options configuration.
         :type attributes: AzureScanOptionsInputUpdateDataAttributes, optional
 
-        :param id: The ``AzureScanOptionsInputUpdateData`` ``id``.
+        :param id: The Azure subscription ID.
         :type id: str
 
         :param type: Azure scan options resource type.

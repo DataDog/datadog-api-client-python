@@ -14,6 +14,9 @@ from datadog_api_client.v2.model.aws_scan_options_update_request import AwsScanO
 from datadog_api_client.v2.model.azure_scan_options_array import AzureScanOptionsArray
 from datadog_api_client.v2.model.azure_scan_options import AzureScanOptions
 from datadog_api_client.v2.model.azure_scan_options_input_update import AzureScanOptionsInputUpdate
+from datadog_api_client.v2.model.gcp_scan_options_array import GcpScanOptionsArray
+from datadog_api_client.v2.model.gcp_scan_options import GcpScanOptions
+from datadog_api_client.v2.model.gcp_scan_options_input_update import GcpScanOptionsInputUpdate
 from datadog_api_client.v2.model.aws_on_demand_list_response import AwsOnDemandListResponse
 from datadog_api_client.v2.model.aws_on_demand_response import AwsOnDemandResponse
 from datadog_api_client.v2.model.aws_on_demand_create_request import AwsOnDemandCreateRequest
@@ -93,6 +96,26 @@ class AgentlessScanningApi:
             api_client=api_client,
         )
 
+        self._create_gcp_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (GcpScanOptions,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/gcp",
+                "operation_id": "create_gcp_scan_options",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (GcpScanOptions,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_aws_scan_options_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -130,6 +153,29 @@ class AgentlessScanningApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "subscription_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_gcp_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/gcp/{project_id}",
+                "operation_id": "delete_gcp_scan_options",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
                     "location": "path",
                 },
             },
@@ -185,6 +231,52 @@ class AgentlessScanningApi:
             api_client=api_client,
         )
 
+        self._get_azure_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (AzureScanOptions,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/azure/{subscription_id}",
+                "operation_id": "get_azure_scan_options",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "subscription_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "subscription_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_gcp_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (GcpScanOptions,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/gcp/{project_id}",
+                "operation_id": "get_gcp_scan_options",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_aws_on_demand_tasks_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsOnDemandListResponse,),
@@ -223,6 +315,22 @@ class AgentlessScanningApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/agentless_scanning/accounts/azure",
                 "operation_id": "list_azure_scan_options",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_gcp_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (GcpScanOptionsArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/gcp",
+                "operation_id": "list_gcp_scan_options",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -285,6 +393,32 @@ class AgentlessScanningApi:
             api_client=api_client,
         )
 
+        self._update_gcp_scan_options_endpoint = _Endpoint(
+            settings={
+                "response_type": (GcpScanOptions,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/agentless_scanning/accounts/gcp/{project_id}",
+                "operation_id": "update_gcp_scan_options",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (GcpScanOptionsInputUpdate,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_aws_on_demand_task(
         self,
         body: AwsOnDemandCreateRequest,
@@ -335,6 +469,23 @@ class AgentlessScanningApi:
 
         return self._create_azure_scan_options_endpoint.call_with_http_info(**kwargs)
 
+    def create_gcp_scan_options(
+        self,
+        body: GcpScanOptions,
+    ) -> GcpScanOptions:
+        """Post GCP Scan Options.
+
+        Activate Agentless scan options for a GCP project.
+
+        :param body: The definition of the new scan options.
+        :type body: GcpScanOptions
+        :rtype: GcpScanOptions
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_gcp_scan_options_endpoint.call_with_http_info(**kwargs)
+
     def delete_aws_scan_options(
         self,
         account_id: str,
@@ -369,6 +520,23 @@ class AgentlessScanningApi:
 
         return self._delete_azure_scan_options_endpoint.call_with_http_info(**kwargs)
 
+    def delete_gcp_scan_options(
+        self,
+        project_id: str,
+    ) -> None:
+        """Delete GCP Scan Options.
+
+        Delete Agentless scan options for a GCP project.
+
+        :param project_id: The GCP project ID.
+        :type project_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        return self._delete_gcp_scan_options_endpoint.call_with_http_info(**kwargs)
+
     def get_aws_on_demand_task(
         self,
         task_id: str,
@@ -402,6 +570,40 @@ class AgentlessScanningApi:
         kwargs["account_id"] = account_id
 
         return self._get_aws_scan_options_endpoint.call_with_http_info(**kwargs)
+
+    def get_azure_scan_options(
+        self,
+        subscription_id: str,
+    ) -> AzureScanOptions:
+        """Get Azure scan options.
+
+        Fetches the Agentless scan options for an activated subscription.
+
+        :param subscription_id: The Azure subscription ID.
+        :type subscription_id: str
+        :rtype: AzureScanOptions
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["subscription_id"] = subscription_id
+
+        return self._get_azure_scan_options_endpoint.call_with_http_info(**kwargs)
+
+    def get_gcp_scan_options(
+        self,
+        project_id: str,
+    ) -> GcpScanOptions:
+        """Get GCP scan options.
+
+        Fetches the Agentless scan options for an activated GCP project.
+
+        :param project_id: The GCP project ID.
+        :type project_id: str
+        :rtype: GcpScanOptions
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        return self._get_gcp_scan_options_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_on_demand_tasks(
         self,
@@ -438,6 +640,18 @@ class AgentlessScanningApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_azure_scan_options_endpoint.call_with_http_info(**kwargs)
+
+    def list_gcp_scan_options(
+        self,
+    ) -> GcpScanOptionsArray:
+        """List GCP Scan Options.
+
+        Fetches the scan options configured for all GCP projects.
+
+        :rtype: GcpScanOptionsArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_gcp_scan_options_endpoint.call_with_http_info(**kwargs)
 
     def update_aws_scan_options(
         self,
@@ -481,3 +695,25 @@ class AgentlessScanningApi:
         kwargs["body"] = body
 
         return self._update_azure_scan_options_endpoint.call_with_http_info(**kwargs)
+
+    def update_gcp_scan_options(
+        self,
+        project_id: str,
+        body: GcpScanOptionsInputUpdate,
+    ) -> GcpScanOptions:
+        """Patch GCP Scan Options.
+
+        Update the Agentless scan options for an activated GCP project.
+
+        :param project_id: The GCP project ID.
+        :type project_id: str
+        :param body: New definition of the scan options.
+        :type body: GcpScanOptionsInputUpdate
+        :rtype: GcpScanOptions
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["body"] = body
+
+        return self._update_gcp_scan_options_endpoint.call_with_http_info(**kwargs)
