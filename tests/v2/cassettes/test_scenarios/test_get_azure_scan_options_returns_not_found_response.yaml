@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/azure/00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '{"errors":[{"status":"404","detail":"no azure scan options found for
+        subscription 00000000-0000-0000-0000-000000000000"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

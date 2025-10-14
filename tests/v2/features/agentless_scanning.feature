@@ -40,6 +40,27 @@ Feature: Agentless Scanning
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/k9-agentless
+  Scenario: Delete GCP Scan Options returns "Bad Request" response
+    Given new "DeleteGcpScanOptions" request
+    And request contains "project_id" parameter with value "no"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-agentless
+  Scenario: Delete GCP Scan Options returns "No Content" response
+    Given new "DeleteGcpScanOptions" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/k9-agentless
+  Scenario: Delete GCP Scan Options returns "Not Found" response
+    Given new "DeleteGcpScanOptions" request
+    And request contains "project_id" parameter with value "nonexistent-project-id"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:DataDog/k9-agentless
   Scenario: Delete azure scan options returns "No Content" response
     Given new "DeleteAzureScanOptions" request
@@ -100,9 +121,60 @@ Feature: Agentless Scanning
     And the response "data.id" is equal to "{{ aws_scan_options.id }}"
     And the response "data.type" is equal to "{{ aws_scan_options.type }}"
 
+  @skip @team:DataDog/k9-agentless
+  Scenario: Get Azure scan options returns "Bad Request" response
+    Given new "GetAzureScanOptions" request
+    And request contains "subscription_id" parameter with value "invalid uuid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-agentless
+  Scenario: Get Azure scan options returns "Not Found" response
+    Given new "GetAzureScanOptions" request
+    And request contains "subscription_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-agentless
+  Scenario: Get Azure scan options returns "OK" response
+    Given new "GetAzureScanOptions" request
+    And request contains "subscription_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-agentless
+  Scenario: Get GCP scan options returns "Bad Request" response
+    Given new "GetGcpScanOptions" request
+    And request contains "project_id" parameter with value "no"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-agentless
+  Scenario: Get GCP scan options returns "Not Found" response
+    Given new "GetGcpScanOptions" request
+    And request contains "project_id" parameter with value "nonexistent-project-id"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-agentless
+  Scenario: Get GCP scan options returns "OK" response
+    Given there is a valid "gcp_scan_options" in the system
+    And new "GetGcpScanOptions" request
+    And request contains "project_id" parameter with value "api-spec-test"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "api-spec-test"
+    And the response "data.type" is equal to "{{ gcp_scan_options.type }}"
+
   @team:DataDog/k9-agentless
   Scenario: List AWS Scan Options returns "OK" response
     Given new "ListAwsScanOptions" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-agentless
+  Scenario: List GCP Scan Options returns "OK" response
+    Given new "ListGcpScanOptions" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -143,6 +215,33 @@ Feature: Agentless Scanning
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/k9-agentless
+  Scenario: Patch GCP Scan Options returns "Bad Request" response
+    Given new "UpdateGcpScanOptions" request
+    And request contains "project_id" parameter with value "no"
+    And body with value {"data": {"id": "different-project-id", "type": "gcp_scan_options"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-agentless
+  Scenario: Patch GCP Scan Options returns "Not Found" response
+    Given new "UpdateGcpScanOptions" request
+    And request contains "project_id" parameter with value "nonexistent-project-id"
+    And body with value {"data": {"id": "nonexistent-project-id", "type": "gcp_scan_options", "attributes": {"vuln_host_os": true, "vuln_containers_os": true}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-agentless
+  Scenario: Patch GCP Scan Options returns "OK" response
+    Given new "UpdateGcpScanOptions" request
+    And request contains "project_id" parameter with value "api-spec-test"
+    And body with value {"data": {"id": "api-spec-test", "type": "gcp_scan_options", "attributes": {"vuln_containers_os": false}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "api-spec-test"
+    And the response "data.attributes.vuln_host_os" is equal to true
+    And the response "data.attributes.vuln_containers_os" is equal to false
+
   @skip @team:DataDog/k9-agentless
   Scenario: Post AWS Scan Options returns "Agentless scan options enabled successfully." response
     Given new "CreateAwsScanOptions" request
@@ -161,6 +260,27 @@ Feature: Agentless Scanning
   Scenario: Post AWS Scan Options returns "Conflict" response
     Given new "CreateAwsScanOptions" request
     And body with value {"data":{"type":"aws_scan_options","id":"000000000002","attributes":{"vuln_host_os":true,"vuln_containers_os":true,"sensitive_data":false,"lambda":false}}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/k9-agentless
+  Scenario: Post GCP Scan Options returns "Agentless scan options enabled successfully." response
+    Given new "CreateGcpScanOptions" request
+    And body with value {"data": {"id": "new-project", "type": "gcp_scan_options", "attributes": {"vuln_host_os": true, "vuln_containers_os": true}}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @team:DataDog/k9-agentless
+  Scenario: Post GCP Scan Options returns "Bad Request" response
+    Given new "CreateGcpScanOptions" request
+    And body with value {"data": {"id": "no", "type": "gcp_scan_options", "attributes": {"vuln_host_os": true, "vuln_containers_os": true}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-agentless
+  Scenario: Post GCP Scan Options returns "Conflict" response
+    Given new "CreateGcpScanOptions" request
+    And body with value {"data": {"id": "api-spec-test", "type": "gcp_scan_options", "attributes": {"vuln_host_os": true, "vuln_containers_os": true}}}
     When the request is sent
     Then the response status is 409 Conflict
 

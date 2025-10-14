@@ -32,9 +32,9 @@ class AzureScanOptions(ModelNormal):
 
     def __init__(self_, data: Union[AzureScanOptionsData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``AzureScanOptions`` object.
+        Response object containing Azure scan options for a single subscription.
 
-        :param data: The definition of ``AzureScanOptionsData`` object.
+        :param data: Single Azure scan options entry.
         :type data: AzureScanOptionsData, optional
         """
         if data is not unset:

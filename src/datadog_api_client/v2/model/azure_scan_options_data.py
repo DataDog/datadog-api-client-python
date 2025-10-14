@@ -44,12 +44,12 @@ class AzureScanOptionsData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AzureScanOptionsData`` object.
+        Single Azure scan options entry.
 
-        :param attributes: The definition of ``AzureScanOptionsDataAttributes`` object.
+        :param attributes: Attributes for Azure scan options configuration.
         :type attributes: AzureScanOptionsDataAttributes, optional
 
-        :param id: The ``AzureScanOptionsData`` ``id``.
+        :param id: The Azure subscription ID.
         :type id: str
 
         :param type: The type of the resource. The value should always be ``azure_scan_options``.
