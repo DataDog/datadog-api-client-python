@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.cloud_workload_security_agent_policy_updater_attributes import (
         CloudWorkloadSecurityAgentPolicyUpdaterAttributes,
     )
+    from datadog_api_client.v2.model.cloud_workload_security_agent_policy_version import (
+        CloudWorkloadSecurityAgentPolicyVersion,
+    )
 
 
 class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
@@ -40,6 +43,9 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         from datadog_api_client.v2.model.cloud_workload_security_agent_policy_updater_attributes import (
             CloudWorkloadSecurityAgentPolicyUpdaterAttributes,
         )
+        from datadog_api_client.v2.model.cloud_workload_security_agent_policy_version import (
+            CloudWorkloadSecurityAgentPolicyVersion,
+        )
 
         return {
             "blocking_rules_count": (int,),
@@ -51,12 +57,14 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
             "host_tags_lists": ([[str]],),
             "monitoring_rules_count": (int,),
             "name": (str,),
+            "pinned": (bool,),
             "policy_version": (str,),
             "priority": (int,),
             "rule_count": (int,),
             "update_date": (int,),
             "updated_at": (int,),
             "updater": (CloudWorkloadSecurityAgentPolicyUpdaterAttributes,),
+            "versions": ([CloudWorkloadSecurityAgentPolicyVersion],),
         }
 
     attribute_map = {
@@ -69,12 +77,14 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         "host_tags_lists": "hostTagsLists",
         "monitoring_rules_count": "monitoringRulesCount",
         "name": "name",
+        "pinned": "pinned",
         "policy_version": "policyVersion",
         "priority": "priority",
         "rule_count": "ruleCount",
         "update_date": "updateDate",
         "updated_at": "updatedAt",
         "updater": "updater",
+        "versions": "versions",
     }
 
     def __init__(
@@ -88,12 +98,14 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         host_tags_lists: Union[List[List[str]], UnsetType] = unset,
         monitoring_rules_count: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        pinned: Union[bool, UnsetType] = unset,
         policy_version: Union[str, UnsetType] = unset,
         priority: Union[int, UnsetType] = unset,
         rule_count: Union[int, UnsetType] = unset,
         update_date: Union[int, UnsetType] = unset,
         updated_at: Union[int, UnsetType] = unset,
         updater: Union[CloudWorkloadSecurityAgentPolicyUpdaterAttributes, UnsetType] = unset,
+        versions: Union[List[CloudWorkloadSecurityAgentPolicyVersion], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -126,6 +138,9 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         :param name: The name of the policy
         :type name: str, optional
 
+        :param pinned: Whether the policy is pinned
+        :type pinned: bool, optional
+
         :param policy_version: The version of the policy
         :type policy_version: str, optional
 
@@ -143,6 +158,9 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
 
         :param updater: The attributes of the user who last updated the policy
         :type updater: CloudWorkloadSecurityAgentPolicyUpdaterAttributes, optional
+
+        :param versions: The versions of the policy
+        :type versions: [CloudWorkloadSecurityAgentPolicyVersion], optional
         """
         if blocking_rules_count is not unset:
             kwargs["blocking_rules_count"] = blocking_rules_count
@@ -162,6 +180,8 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
             kwargs["monitoring_rules_count"] = monitoring_rules_count
         if name is not unset:
             kwargs["name"] = name
+        if pinned is not unset:
+            kwargs["pinned"] = pinned
         if policy_version is not unset:
             kwargs["policy_version"] = policy_version
         if priority is not unset:
@@ -174,4 +194,6 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
             kwargs["updated_at"] = updated_at
         if updater is not unset:
             kwargs["updater"] = updater
+        if versions is not unset:
+            kwargs["versions"] = versions
         super().__init__(kwargs)

@@ -29,6 +29,7 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
 
         return {
             "actions": ([CloudWorkloadSecurityAgentRuleAction],),
+            "agent_version": (str,),
             "blocking": ([str],),
             "description": (str,),
             "disabled": ([str],),
@@ -37,10 +38,12 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
             "monitoring": ([str],),
             "policy_id": (str,),
             "product_tags": ([str],),
+            "silent": (bool,),
         }
 
     attribute_map = {
         "actions": "actions",
+        "agent_version": "agent_version",
         "blocking": "blocking",
         "description": "description",
         "disabled": "disabled",
@@ -49,11 +52,13 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
         "monitoring": "monitoring",
         "policy_id": "policy_id",
         "product_tags": "product_tags",
+        "silent": "silent",
     }
 
     def __init__(
         self_,
         actions: Union[List[CloudWorkloadSecurityAgentRuleAction], none_type, UnsetType] = unset,
+        agent_version: Union[str, UnsetType] = unset,
         blocking: Union[List[str], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         disabled: Union[List[str], UnsetType] = unset,
@@ -62,6 +67,7 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
         monitoring: Union[List[str], UnsetType] = unset,
         policy_id: Union[str, UnsetType] = unset,
         product_tags: Union[List[str], UnsetType] = unset,
+        silent: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -69,6 +75,9 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
 
         :param actions: The array of actions the rule can perform if triggered
         :type actions: [CloudWorkloadSecurityAgentRuleAction], none_type, optional
+
+        :param agent_version: Constrain the rule to specific versions of the Datadog Agent
+        :type agent_version: str, optional
 
         :param blocking: The blocking policies that the rule belongs to
         :type blocking: [str], optional
@@ -93,9 +102,14 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
 
         :param product_tags: The list of product tags associated with the rule
         :type product_tags: [str], optional
+
+        :param silent: Whether the rule is silent.
+        :type silent: bool, optional
         """
         if actions is not unset:
             kwargs["actions"] = actions
+        if agent_version is not unset:
+            kwargs["agent_version"] = agent_version
         if blocking is not unset:
             kwargs["blocking"] = blocking
         if description is not unset:
@@ -112,4 +126,6 @@ class CloudWorkloadSecurityAgentRuleUpdateAttributes(ModelNormal):
             kwargs["policy_id"] = policy_id
         if product_tags is not unset:
             kwargs["product_tags"] = product_tags
+        if silent is not unset:
+            kwargs["silent"] = silent
         super().__init__(kwargs)
