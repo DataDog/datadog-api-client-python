@@ -32,6 +32,28 @@ Feature: Error Tracking
     Then the response status is 200 OK
     And the response "data.id" is equal to "{{ issue.id }}"
 
+  @generated @skip @team:DataDog/error-tracking
+  Scenario: Remove the assignee of an issue returns "Bad Request" response
+    Given new "DeleteIssueAssignee" request
+    And request contains "issue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/error-tracking
+  Scenario: Remove the assignee of an issue returns "No Content" response
+    Given new "DeleteIssueAssignee" request
+    And there is a valid "issue" in the system
+    And request contains "issue_id" parameter from "issue.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/error-tracking
+  Scenario: Remove the assignee of an issue returns "Not Found" response
+    Given new "DeleteIssueAssignee" request
+    And request contains "issue_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/error-tracking
   Scenario: Search error tracking issues returns "Bad Request" response
     Given new "SearchIssues" request

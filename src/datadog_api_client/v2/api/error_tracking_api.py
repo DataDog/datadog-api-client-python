@@ -30,6 +30,29 @@ class ErrorTrackingApi:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
 
+        self._delete_issue_assignee_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/error-tracking/issues/{issue_id}/assignee",
+                "operation_id": "delete_issue_assignee",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "issue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "issue_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_issue_endpoint = _Endpoint(
             settings={
                 "response_type": (IssueResponse,),
@@ -136,6 +159,23 @@ class ErrorTrackingApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def delete_issue_assignee(
+        self,
+        issue_id: str,
+    ) -> None:
+        """Remove the assignee of an issue.
+
+        Remove the assignee of an issue by ``issue_id``.
+
+        :param issue_id: The identifier of the issue.
+        :type issue_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["issue_id"] = issue_id
+
+        return self._delete_issue_assignee_endpoint.call_with_http_info(**kwargs)
 
     def get_issue(
         self,
