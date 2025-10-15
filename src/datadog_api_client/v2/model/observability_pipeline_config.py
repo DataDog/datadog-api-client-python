@@ -171,12 +171,14 @@ class ObservabilityPipelineConfig(ModelNormal):
             "destinations": ([ObservabilityPipelineConfigDestinationItem],),
             "processors": ([ObservabilityPipelineConfigProcessorItem],),
             "sources": ([ObservabilityPipelineConfigSourceItem],),
+            "use_legacy_search_syntax": (bool,),
         }
 
     attribute_map = {
         "destinations": "destinations",
         "processors": "processors",
         "sources": "sources",
+        "use_legacy_search_syntax": "use_legacy_search_syntax",
     }
 
     def __init__(
@@ -252,6 +254,7 @@ class ObservabilityPipelineConfig(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        use_legacy_search_syntax: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -265,9 +268,14 @@ class ObservabilityPipelineConfig(ModelNormal):
 
         :param sources: A list of configured data sources for the pipeline.
         :type sources: [ObservabilityPipelineConfigSourceItem]
+
+        :param use_legacy_search_syntax: Use this field to configure the pipeline's filter queries to use the deprecated search syntax.
+        :type use_legacy_search_syntax: bool, optional
         """
         if processors is not unset:
             kwargs["processors"] = processors
+        if use_legacy_search_syntax is not unset:
+            kwargs["use_legacy_search_syntax"] = use_legacy_search_syntax
         super().__init__(kwargs)
 
         self_.destinations = destinations
