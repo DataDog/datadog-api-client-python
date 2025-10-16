@@ -2215,6 +2215,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_historical_jobs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_historical_jobs()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_scanned_assets_metadata" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_scanned_assets_metadata()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_filters" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_security_filters()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_monitoring_histsignals" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_security_monitoring_histsignals()</span></code></a>
@@ -11146,7 +11148,7 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom">
-<span class="sig-name descname"><span class="pre">get_sbom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_type.AssetType" title="datadog_api_client.v2.model.asset_type.AssetType"><span class="pre">AssetType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_asset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_repo_digest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse" title="datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse"><span class="pre">GetSBOMResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_sbom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_type.AssetType" title="datadog_api_client.v2.model.asset_type.AssetType"><span class="pre">AssetType</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_asset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_repo_digest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_format.SBOMFormat" title="datadog_api_client.v2.model.sbom_format.SBOMFormat"><span class="pre">SBOMFormat</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse" title="datadog_api_client.v2.model.get_sbom_response.GetSBOMResponse"><span class="pre">GetSBOMResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom" title="Link to this definition">¶</a></dt>
 <dd><p>Get SBOM.</p>
 <p>Get a single SBOM related to an asset by its type and name.</p>
 <dl class="field-list simple">
@@ -11155,6 +11157,7 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 <li><p><strong>asset_type</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_type.AssetType" title="datadog_api_client.v2.model.asset_type.AssetType"><em>AssetType</em></a>) – The type of the asset for the SBOM request.</p></li>
 <li><p><strong>filter_asset_name</strong> (<em>str</em>) – The name of the asset for the SBOM request.</p></li>
 <li><p><strong>filter_repo_digest</strong> (<em>str</em><em>, </em><em>optional</em>) – The container image <code class="docutils literal notranslate"><span class="pre">repo_digest</span></code> for the SBOM request. When the requested asset type is ‘Image’, this filter is mandatory.</p></li>
+<li><p><strong>ext_format</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.sbom_format.SBOMFormat" title="datadog_api_client.v2.model.sbom_format.SBOMFormat"><em>SBOMFormat</em></a><em>, </em><em>optional</em>) – The standard of the SBOM.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -11475,6 +11478,97 @@ for more examples.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_scanned_assets_metadata">
+<span class="sig-name descname"><span class="pre">list_scanned_assets_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_asset_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.cloud_asset_type.CloudAssetType" title="datadog_api_client.v2.model.cloud_asset_type.CloudAssetType"><span class="pre">CloudAssetType</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_asset_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_last_success_origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_last_success_env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.scanned_assets_metadata.ScannedAssetsMetadata" title="datadog_api_client.v2.model.scanned_assets_metadata.ScannedAssetsMetadata"><span class="pre">ScannedAssetsMetadata</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_scanned_assets_metadata" title="Link to this definition">¶</a></dt>
+<dd><p>List scanned assets metadata.</p>
+<p>Get a list of security scanned assets metadata for an organization.</p>
+<p><strong>Pagination</strong></p>
+<p>For the “List Vulnerabilities” endpoint, see the <a class="reference external" href="#pagination">Pagination section</a>.</p>
+<p><strong>Filtering</strong></p>
+<p>For the “List Vulnerabilities” endpoint, see the <a class="reference external" href="#filtering">Filtering section</a>.</p>
+<p><strong>Metadata</strong></p>
+<blockquote>
+<div><p>For the “List Vulnerabilities” endpoint, see the <a class="reference external" href="#metadata">Metadata section</a>.</p>
+</div></blockquote>
+<p><strong>Related endpoints</strong></p>
+<p>This endpoint returns additional metadata for cloud resources that is not available from the standard resource endpoints. To access a richer dataset, call this endpoint together with the relevant resource endpoint(s) and merge (join) their results using the resource identifier.</p>
+<p><strong>Hosts</strong></p>
+<p>To enrich host data, join the response from the <a class="reference external" href="https://docs.datadoghq.com/api/latest/hosts/">Hosts</a> endpoint with the response from the scanned-assets-metadata endpoint on the following key fields:</p>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>ENDPOINT</p></th>
+<th class="head"><p>JOIN KEY</p></th>
+<th class="head"><p>TYPE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.datadoghq.com/api/latest/hosts/">/api/v1/hosts</a></p></td>
+<td><p>host_list.host_name</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>/api/v2/security/scanned-assets-metadata</p></td>
+<td><p>data.attributes.asset.name</p></td>
+<td><p>string</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Host Images</strong></p>
+<p>To enrich host image data, join the response from the <a class="reference external" href="https://docs.datadoghq.com/api/latest/hosts/">Hosts</a> endpoint with the response from the scanned-assets-metadata endpoint on the following key fields:</p>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>ENDPOINT</p></th>
+<th class="head"><p>JOIN KEY</p></th>
+<th class="head"><p>TYPE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.datadoghq.com/api/latest/hosts/">/api/v1/hosts</a></p></td>
+<td><p>host_list.tags_by_source[“Amazon Web Services”][“image”]</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>/api/v2/security/scanned-assets-metadata</p></td>
+<td><p>data.attributes.asset.name</p></td>
+<td><p>string</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Container Images</strong></p>
+<p>To enrich container image data, join the response from the <a class="reference external" href="https://docs.datadoghq.com/api/latest/container-images/">Container Images</a> endpoint with the response from the scanned-assets-metadata endpoint on the following key fields:</p>
+<table>
+<thead>
+<tr class="row-odd"><th class="head"><p>ENDPOINT</p></th>
+<th class="head"><p>JOIN KEY</p></th>
+<th class="head"><p>TYPE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.datadoghq.com/api/latest/container-images/">/api/v2/container_images</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data.attributes.name</span></code> @ <code class="docutils literal notranslate"><span class="pre">data.attributes.repo_digest</span></code></p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>/api/v2/security/scanned-assets-metadata</p></td>
+<td><p>data.attributes.asset.name</p></td>
+<td><p>string</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_token</strong> (<em>str</em><em>, </em><em>optional</em>) – Its value must come from the <code class="docutils literal notranslate"><span class="pre">links</span></code> section of the response of the first request. Do not manually edit it.</p></li>
+<li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – The page number to be retrieved. It should be equal to or greater than 1.</p></li>
+<li><p><strong>filter_asset_type</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.cloud_asset_type.CloudAssetType" title="datadog_api_client.v2.model.cloud_asset_type.CloudAssetType"><em>CloudAssetType</em></a><em>, </em><em>optional</em>) – The type of the scanned asset.</p></li>
+<li><p><strong>filter_asset_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the scanned asset.</p></li>
+<li><p><strong>filter_last_success_origin</strong> (<em>str</em><em>, </em><em>optional</em>) – The origin of last success scan.</p></li>
+<li><p><strong>filter_last_success_env</strong> (<em>str</em><em>, </em><em>optional</em>) – The environment of last success scan.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.scanned_assets_metadata.ScannedAssetsMetadata" title="datadog_api_client.v2.model.scanned_assets_metadata.ScannedAssetsMetadata">ScannedAssetsMetadata</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_filters">
 <span class="sig-name descname"><span class="pre">list_security_filters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_filters_response.SecurityFiltersResponse" title="datadog_api_client.v2.model.security_filters_response.SecurityFiltersResponse"><span class="pre">SecurityFiltersResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_filters" title="Link to this definition">¶</a></dt>
 <dd><p>Get all security filters.</p>
@@ -11616,10 +11710,12 @@ security signals.</p>
 <p>We consider a request to be the first request when there is no <code class="docutils literal notranslate"><span class="pre">page[token]</span></code> parameter.</p>
 <p>The response of this first request contains the newly created token in the <code class="docutils literal notranslate"><span class="pre">links</span></code> section.</p>
 <p>This token can then be used in the subsequent paginated requests.</p>
+<p><em>Note: The first request may take longer to complete than subsequent requests.</em></p>
 <p><strong>Subsequent requests</strong></p>
 <p>Any request containing valid <code class="docutils literal notranslate"><span class="pre">page[token]</span></code> and <code class="docutils literal notranslate"><span class="pre">page[number]</span></code> parameters will be considered a subsequent request.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">token</span></code> is invalid, a <code class="docutils literal notranslate"><span class="pre">404</span></code> response will be returned.</p>
 <p>If the page <code class="docutils literal notranslate"><span class="pre">number</span></code> is invalid, a <code class="docutils literal notranslate"><span class="pre">400</span></code> response will be returned.</p>
+<p>The returned <code class="docutils literal notranslate"><span class="pre">token</span></code> is valid for all requests in the pagination sequence. To send paginated requests in parallel, reuse the same <code class="docutils literal notranslate"><span class="pre">token</span></code> and change only the <code class="docutils literal notranslate"><span class="pre">page[number]</span></code> parameter.</p>
 <p><strong>Filtering</strong></p>
 <p>The request can include some filter parameters to filter the data to be retrieved. The format of the filter parameters follows the <a class="reference external" href="https://jsonapi.org/format/#fetching-filtering">JSON:API format</a> : <code class="docutils literal notranslate"><span class="pre">filter[$prop_name]</span></code> , where <code class="docutils literal notranslate"><span class="pre">prop_name</span></code> is the property name in the entity being filtered by.</p>
 <p>All filters can include multiple values, where data will be filtered with an OR clause: <code class="docutils literal notranslate"><span class="pre">filter[title]=Title1,Title2</span></code> will filter all vulnerabilities where title is equal to <code class="docutils literal notranslate"><span class="pre">Title1</span></code> OR <code class="docutils literal notranslate"><span class="pre">Title2</span></code>.</p>
@@ -11641,6 +11737,9 @@ security signals.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p><strong>Extensions</strong></p>
+<p>Requests may include extensions to modify the behavior of the requested endpoint. The filter parameters follow the <a class="reference external" href="https://jsonapi.org/extensions/#extensions">JSON:API format</a> format: <code class="docutils literal notranslate"><span class="pre">ext:$extension_name</span></code> , where <code class="docutils literal notranslate"><span class="pre">extension_name</span></code> is the name of the modifier that is being applied.</p>
+<p>Extensions can only include one value: <code class="docutils literal notranslate"><span class="pre">ext:modifier=value</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -11672,7 +11771,7 @@ security signals.</p>
 <li><p><strong>filter_fix_available</strong> (<em>bool</em><em>, </em><em>optional</em>) – Filter by fix availability.</p></li>
 <li><p><strong>filter_repo_digests</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by vulnerability <code class="docutils literal notranslate"><span class="pre">repo_digest</span></code> (when the vulnerability is related to <code class="docutils literal notranslate"><span class="pre">Image</span></code> asset).</p></li>
 <li><p><strong>filter_origin</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by origin.</p></li>
-<li><p><strong>filter_asset_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by asset name.</p></li>
+<li><p><strong>filter_asset_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by asset name. This field supports the usage of wildcards (*).</p></li>
 <li><p><strong>filter_asset_type</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_type.AssetType" title="datadog_api_client.v2.model.asset_type.AssetType"><em>AssetType</em></a><em>, </em><em>optional</em>) – Filter by asset type.</p></li>
 <li><p><strong>filter_asset_version_first</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by the first version of the asset this vulnerability has been detected on.</p></li>
 <li><p><strong>filter_asset_version_last</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by the last version of the asset this vulnerability has been detected on.</p></li>
@@ -11710,7 +11809,7 @@ security signals.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>page_token</strong> (<em>str</em><em>, </em><em>optional</em>) – Its value must come from the <code class="docutils literal notranslate"><span class="pre">links</span></code> section of the response of the first request. Do not manually edit it.</p></li>
 <li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – The page number to be retrieved. It should be equal or greater than <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
-<li><p><strong>filter_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by name.</p></li>
+<li><p><strong>filter_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by name. This field supports the usage of wildcards (*).</p></li>
 <li><p><strong>filter_type</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.asset_type.AssetType" title="datadog_api_client.v2.model.asset_type.AssetType"><em>AssetType</em></a><em>, </em><em>optional</em>) – Filter by type.</p></li>
 <li><p><strong>filter_version_first</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by the first version of the asset since it has been vulnerable.</p></li>
 <li><p><strong>filter_version_last</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by the last detected version of the asset.</p></li>
