@@ -40,6 +40,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             "group_by_fields": ([str],),
             "has_optional_group_by_fields": (bool,),
             "index": (str,),
+            "indexes": ([str],),
             "metric": (str,),
             "metrics": ([str],),
             "name": (str,),
@@ -54,6 +55,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         "group_by_fields": "groupByFields",
         "has_optional_group_by_fields": "hasOptionalGroupByFields",
         "index": "index",
+        "indexes": "indexes",
         "metric": "metric",
         "metrics": "metrics",
         "name": "name",
@@ -69,6 +71,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         group_by_fields: Union[List[str], UnsetType] = unset,
         has_optional_group_by_fields: Union[bool, UnsetType] = unset,
         index: Union[str, UnsetType] = unset,
+        indexes: Union[List[str], UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -100,6 +103,9 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             The index to run the query on, if the ``dataSource`` is ``logs``. Only used for scheduled rules - in other words, when the ``schedulingOptions`` field is present in the rule payload.
         :type index: str, optional
 
+        :param indexes: List of indexes to query when the ``dataSource`` is ``logs``. Only used for scheduled rules, such as when the ``schedulingOptions`` field is present in the rule payload.
+        :type indexes: [str], optional
+
         :param metric: (Deprecated) The target field to aggregate over when using the sum or max
             aggregations. ``metrics`` field should be used instead. **Deprecated**.
         :type metric: str, optional
@@ -127,6 +133,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             kwargs["has_optional_group_by_fields"] = has_optional_group_by_fields
         if index is not unset:
             kwargs["index"] = index
+        if indexes is not unset:
+            kwargs["indexes"] = indexes
         if metric is not unset:
             kwargs["metric"] = metric
         if metrics is not unset:

@@ -32,7 +32,9 @@ body = SecurityMonitoringStandardRuleCreatePayload(
             aggregation=SecurityMonitoringRuleQueryAggregation.COUNT,
             group_by_fields=[],
             distinct_fields=[],
-            index="main",
+            indexes=[
+                "main",
+            ],
         ),
     ],
     filters=[],

@@ -308,7 +308,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a scheduled detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
-    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"index":"main"}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection", "schedulingOptions": {"rrule": "FREQ=HOURLY;INTERVAL=2;", "start": "2025-06-18T12:00:00", "timezone": "Europe/Paris"}}
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"indexes":["main"]}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection", "schedulingOptions": {"rrule": "FREQ=HOURLY;INTERVAL=2;", "start": "2025-06-18T12:00:00", "timezone": "Europe/Paris"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}"
@@ -319,7 +319,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a scheduled rule without rrule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
-    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"index":"main"}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection", "schedulingOptions": {"start": "2025-06-18T12:00:00", "timezone": "Europe/Paris"}}
+    And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"indexes":["main"]}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type":"log_detection", "schedulingOptions": {"start": "2025-06-18T12:00:00", "timezone": "Europe/Paris"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
