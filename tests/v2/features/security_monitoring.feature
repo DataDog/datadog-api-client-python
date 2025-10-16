@@ -1065,6 +1065,29 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/asm-vm
+  Scenario: List scanned assets metadata returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
+    Given operation "ListScannedAssetsMetadata" enabled
+    And new "ListScannedAssetsMetadata" request
+    When the request is sent
+    Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
+
+  @team:DataDog/asm-vm
+  Scenario: List scanned assets metadata returns "Not found: asset not found" response
+    Given operation "ListScannedAssetsMetadata" enabled
+    And new "ListScannedAssetsMetadata" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not found: asset not found
+
+  @team:DataDog/asm-vm
+  Scenario: List scanned assets metadata returns "OK" response
+    Given operation "ListScannedAssetsMetadata" enabled
+    And new "ListScannedAssetsMetadata" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/asm-vm
   Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListVulnerabilities" enabled

@@ -36,11 +36,13 @@ from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
-from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
-from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
+from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponentLicenseType
 from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
+from datadog_api_client.v2.model.sbom_format import SBOMFormat
+from datadog_api_client.v2.model.scanned_assets_metadata import ScannedAssetsMetadata
+from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
@@ -50,6 +52,7 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_ecosystem import VulnerabilityEcosystem
+from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -742,6 +745,11 @@ class SecurityMonitoringApi:
                     "attribute": "filter[repo_digest]",
                     "location": "query",
                 },
+                "ext_format": {
+                    "openapi_types": (SBOMFormat,),
+                    "attribute": "ext:format",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -1238,6 +1246,56 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_scanned_assets_metadata_endpoint = _Endpoint(
+            settings={
+                "response_type": (ScannedAssetsMetadata,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/scanned-assets-metadata",
+                "operation_id": "list_scanned_assets_metadata",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page[token]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_asset_type": {
+                    "openapi_types": (CloudAssetType,),
+                    "attribute": "filter[asset.type]",
+                    "location": "query",
+                },
+                "filter_asset_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[asset.name]",
+                    "location": "query",
+                },
+                "filter_last_success_origin": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[last_success.origin]",
+                    "location": "query",
+                },
+                "filter_last_success_env": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[last_success.env]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_security_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFiltersResponse,),
@@ -1491,7 +1549,7 @@ class SecurityMonitoringApi:
                 },
                 "filter_advisory_id": {
                     "openapi_types": (str,),
-                    "attribute": "filter[advisory_id]",
+                    "attribute": "filter[advisory.id]",
                     "location": "query",
                 },
                 "filter_risks_exploitation_probability": {
@@ -1649,7 +1707,7 @@ class SecurityMonitoringApi:
             settings={
                 "response_type": (ListVulnerableAssetsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/security/assets",
+                "endpoint_path": "/api/v2/security/vulnerable-assets",
                 "operation_id": "list_vulnerable_assets",
                 "http_method": "GET",
                 "version": "v2",
@@ -2598,6 +2656,7 @@ class SecurityMonitoringApi:
         filter_asset_name: str,
         *,
         filter_repo_digest: Union[str, UnsetType] = unset,
+        ext_format: Union[SBOMFormat, UnsetType] = unset,
     ) -> GetSBOMResponse:
         """Get SBOM.
 
@@ -2609,6 +2668,8 @@ class SecurityMonitoringApi:
         :type filter_asset_name: str
         :param filter_repo_digest: The container image ``repo_digest`` for the SBOM request. When the requested asset type is 'Image', this filter is mandatory.
         :type filter_repo_digest: str, optional
+        :param ext_format: The standard of the SBOM.
+        :type ext_format: SBOMFormat, optional
         :rtype: GetSBOMResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -2618,6 +2679,9 @@ class SecurityMonitoringApi:
 
         if filter_repo_digest is not unset:
             kwargs["filter_repo_digest"] = filter_repo_digest
+
+        if ext_format is not unset:
+            kwargs["ext_format"] = ext_format
 
         return self._get_sbom_endpoint.call_with_http_info(**kwargs)
 
@@ -3232,6 +3296,123 @@ class SecurityMonitoringApi:
 
         return self._list_historical_jobs_endpoint.call_with_http_info(**kwargs)
 
+    def list_scanned_assets_metadata(
+        self,
+        *,
+        page_token: Union[str, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_asset_type: Union[CloudAssetType, UnsetType] = unset,
+        filter_asset_name: Union[str, UnsetType] = unset,
+        filter_last_success_origin: Union[str, UnsetType] = unset,
+        filter_last_success_env: Union[str, UnsetType] = unset,
+    ) -> ScannedAssetsMetadata:
+        """List scanned assets metadata.
+
+        Get a list of security scanned assets metadata for an organization.
+
+        **Pagination**
+
+        For the "List Vulnerabilities" endpoint, see the `Pagination section <#pagination>`_.
+
+        **Filtering**
+
+        For the "List Vulnerabilities" endpoint, see the `Filtering section <#filtering>`_.
+
+        **Metadata**
+
+         For the "List Vulnerabilities" endpoint, see the `Metadata section <#metadata>`_.
+
+        **Related endpoints**
+
+        This endpoint returns additional metadata for cloud resources that is not available from the standard resource endpoints. To access a richer dataset, call this endpoint together with the relevant resource endpoint(s) and merge (join) their results using the resource identifier.
+
+        **Hosts**
+
+        To enrich host data, join the response from the `Hosts <https://docs.datadoghq.com/api/latest/hosts/>`_ endpoint with the response from the scanned-assets-metadata endpoint on the following key fields:
+
+        .. list-table::
+           :header-rows: 1
+
+           * - ENDPOINT
+             - JOIN KEY
+             - TYPE
+           * - `/api/v1/hosts <https://docs.datadoghq.com/api/latest/hosts/>`_
+             - host_list.host_name
+             - string
+           * - /api/v2/security/scanned-assets-metadata
+             - data.attributes.asset.name
+             - string
+
+        **Host Images**
+
+        To enrich host image data, join the response from the `Hosts <https://docs.datadoghq.com/api/latest/hosts/>`_ endpoint with the response from the scanned-assets-metadata endpoint on the following key fields:
+
+        .. list-table::
+           :header-rows: 1
+
+           * - ENDPOINT
+             - JOIN KEY
+             - TYPE
+           * - `/api/v1/hosts <https://docs.datadoghq.com/api/latest/hosts/>`_
+             - host_list.tags_by_source["Amazon Web Services"]["image"]
+             - string
+           * - /api/v2/security/scanned-assets-metadata
+             - data.attributes.asset.name
+             - string
+
+        **Container Images**
+
+        To enrich container image data, join the response from the `Container Images <https://docs.datadoghq.com/api/latest/container-images/>`_ endpoint with the response from the scanned-assets-metadata endpoint on the following key fields:
+
+        .. list-table::
+           :header-rows: 1
+
+           * - ENDPOINT
+             - JOIN KEY
+             - TYPE
+           * - `/api/v2/container_images <https://docs.datadoghq.com/api/latest/container-images/>`_
+             - ``data.attributes.name`` @ ``data.attributes.repo_digest``
+             - string
+           * - /api/v2/security/scanned-assets-metadata
+             - data.attributes.asset.name
+             - string
+
+
+        :param page_token: Its value must come from the ``links`` section of the response of the first request. Do not manually edit it.
+        :type page_token: str, optional
+        :param page_number: The page number to be retrieved. It should be equal to or greater than 1.
+        :type page_number: int, optional
+        :param filter_asset_type: The type of the scanned asset.
+        :type filter_asset_type: CloudAssetType, optional
+        :param filter_asset_name: The name of the scanned asset.
+        :type filter_asset_name: str, optional
+        :param filter_last_success_origin: The origin of last success scan.
+        :type filter_last_success_origin: str, optional
+        :param filter_last_success_env: The environment of last success scan.
+        :type filter_last_success_env: str, optional
+        :rtype: ScannedAssetsMetadata
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_token is not unset:
+            kwargs["page_token"] = page_token
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_asset_type is not unset:
+            kwargs["filter_asset_type"] = filter_asset_type
+
+        if filter_asset_name is not unset:
+            kwargs["filter_asset_name"] = filter_asset_name
+
+        if filter_last_success_origin is not unset:
+            kwargs["filter_last_success_origin"] = filter_last_success_origin
+
+        if filter_last_success_env is not unset:
+            kwargs["filter_last_success_env"] = filter_last_success_env
+
+        return self._list_scanned_assets_metadata_endpoint.call_with_http_info(**kwargs)
+
     def list_security_filters(
         self,
     ) -> SecurityFiltersResponse:
@@ -3538,6 +3719,8 @@ class SecurityMonitoringApi:
 
         This token can then be used in the subsequent paginated requests.
 
+        *Note: The first request may take longer to complete than subsequent requests.*
+
         **Subsequent requests**
 
         Any request containing valid ``page[token]`` and ``page[number]`` parameters will be considered a subsequent request.
@@ -3545,6 +3728,8 @@ class SecurityMonitoringApi:
         If the ``token`` is invalid, a ``404`` response will be returned.
 
         If the page ``number`` is invalid, a ``400`` response will be returned.
+
+        The returned ``token`` is valid for all requests in the pagination sequence. To send paginated requests in parallel, reuse the same ``token`` and change only the ``page[number]`` parameter.
 
         **Filtering**
 
@@ -3577,6 +3762,12 @@ class SecurityMonitoringApi:
              },
              "links": {...}
            }
+
+        **Extensions**
+
+        Requests may include extensions to modify the behavior of the requested endpoint. The filter parameters follow the `JSON:API format <https://jsonapi.org/extensions/#extensions>`_ format: ``ext:$extension_name`` , where ``extension_name`` is the name of the modifier that is being applied.
+
+        Extensions can only include one value: ``ext:modifier=value``.
 
         :param page_token: Its value must come from the ``links`` section of the response of the first request. Do not manually edit it.
         :type page_token: str, optional
@@ -3632,7 +3823,7 @@ class SecurityMonitoringApi:
         :type filter_repo_digests: str, optional
         :param filter_origin: Filter by origin.
         :type filter_origin: str, optional
-        :param filter_asset_name: Filter by asset name.
+        :param filter_asset_name: Filter by asset name. This field supports the usage of wildcards (*).
         :type filter_asset_name: str, optional
         :param filter_asset_type: Filter by asset type.
         :type filter_asset_type: AssetType, optional
@@ -3834,7 +4025,7 @@ class SecurityMonitoringApi:
         :type page_token: str, optional
         :param page_number: The page number to be retrieved. It should be equal or greater than ``1``
         :type page_number: int, optional
-        :param filter_name: Filter by name.
+        :param filter_name: Filter by name. This field supports the usage of wildcards (*).
         :type filter_name: str, optional
         :param filter_type: Filter by type.
         :type filter_type: AssetType, optional

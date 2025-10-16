@@ -3504,6 +3504,13 @@ datadog\_api\_client.v2.model.clickup\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cloud\_asset\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_asset_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cloud\_configuration\_compliance\_rule\_options module
 ------------------------------------------------------------------------------------
 
@@ -18106,6 +18113,13 @@ datadog\_api\_client.v2.model.sbom\_component\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sbom\_format module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sbom_format
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sbom\_metadata module
 ---------------------------------------------------
 
@@ -18229,6 +18243,41 @@ datadog\_api\_client.v2.model.scalar\_response module
 -----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.scalar_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scanned\_asset\_metadata module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scanned_asset_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scanned\_asset\_metadata\_asset module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scanned_asset_metadata_asset
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scanned\_asset\_metadata\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scanned_asset_metadata_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scanned\_asset\_metadata\_last\_success module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scanned_asset_metadata_last_success
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scanned\_assets\_metadata module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scanned_assets_metadata
    :members:
    :show-inheritance:
 
@@ -22765,6 +22814,13 @@ datadog\_api\_client.v2.model.vulnerability module
 --------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.vulnerability
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vulnerability\_advisory module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vulnerability_advisory
    :members:
    :show-inheritance:
 

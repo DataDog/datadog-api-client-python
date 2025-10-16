@@ -662,6 +662,7 @@ from datadog_api_client.v2.model.clickup_credentials_update import ClickupCreden
 from datadog_api_client.v2.model.clickup_integration import ClickupIntegration
 from datadog_api_client.v2.model.clickup_integration_type import ClickupIntegrationType
 from datadog_api_client.v2.model.clickup_integration_update import ClickupIntegrationUpdate
+from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
 )
@@ -3577,6 +3578,7 @@ from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponen
 from datadog_api_client.v2.model.sbom_component_property import SBOMComponentProperty
 from datadog_api_client.v2.model.sbom_component_supplier import SBOMComponentSupplier
 from datadog_api_client.v2.model.sbom_component_type import SBOMComponentType
+from datadog_api_client.v2.model.sbom_format import SBOMFormat
 from datadog_api_client.v2.model.sbom_metadata import SBOMMetadata
 from datadog_api_client.v2.model.sbom_metadata_author import SBOMMetadataAuthor
 from datadog_api_client.v2.model.sbom_metadata_component import SBOMMetadataComponent
@@ -3602,6 +3604,11 @@ from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormu
 from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
 from datadog_api_client.v2.model.scalar_response import ScalarResponse
+from datadog_api_client.v2.model.scanned_asset_metadata import ScannedAssetMetadata
+from datadog_api_client.v2.model.scanned_asset_metadata_asset import ScannedAssetMetadataAsset
+from datadog_api_client.v2.model.scanned_asset_metadata_attributes import ScannedAssetMetadataAttributes
+from datadog_api_client.v2.model.scanned_asset_metadata_last_success import ScannedAssetMetadataLastSuccess
+from datadog_api_client.v2.model.scanned_assets_metadata import ScannedAssetsMetadata
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_create_request_data import ScheduleCreateRequestData
@@ -4490,6 +4497,7 @@ from datadog_api_client.v2.model.virus_total_integration_type import VirusTotalI
 from datadog_api_client.v2.model.virus_total_integration_update import VirusTotalIntegrationUpdate
 from datadog_api_client.v2.model.vulnerabilities_type import VulnerabilitiesType
 from datadog_api_client.v2.model.vulnerability import Vulnerability
+from datadog_api_client.v2.model.vulnerability_advisory import VulnerabilityAdvisory
 from datadog_api_client.v2.model.vulnerability_attributes import VulnerabilityAttributes
 from datadog_api_client.v2.model.vulnerability_cvss import VulnerabilityCvss
 from datadog_api_client.v2.model.vulnerability_dependency_locations import VulnerabilityDependencyLocations
@@ -5040,6 +5048,7 @@ __all__ = [
     "ClickupIntegration",
     "ClickupIntegrationType",
     "ClickupIntegrationUpdate",
+    "CloudAssetType",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
     "CloudConfigurationRuleCaseCreate",
@@ -7127,6 +7136,7 @@ __all__ = [
     "SBOMComponentProperty",
     "SBOMComponentSupplier",
     "SBOMComponentType",
+    "SBOMFormat",
     "SBOMMetadata",
     "SBOMMetadataAuthor",
     "SBOMMetadataComponent",
@@ -7152,6 +7162,11 @@ __all__ = [
     "ScalarMeta",
     "ScalarQuery",
     "ScalarResponse",
+    "ScannedAssetMetadata",
+    "ScannedAssetMetadataAsset",
+    "ScannedAssetMetadataAttributes",
+    "ScannedAssetMetadataLastSuccess",
+    "ScannedAssetsMetadata",
     "Schedule",
     "ScheduleCreateRequest",
     "ScheduleCreateRequestData",
@@ -7798,6 +7813,7 @@ __all__ = [
     "VirusTotalIntegrationUpdate",
     "VulnerabilitiesType",
     "Vulnerability",
+    "VulnerabilityAdvisory",
     "VulnerabilityAttributes",
     "VulnerabilityCvss",
     "VulnerabilityDependencyLocations",
