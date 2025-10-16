@@ -10,7 +10,7 @@ interactions:
     body:
       string: "# IMPORTANT: Edits to this file will not be reflected in the Datadog\
         \ App and will be overwritten with new policy file downloads. Please modify\
-        \ rules in the Datadog App for full functionality.\nversion: '1760109666865'\n\
+        \ rules in the Datadog App for full functionality.\nversion: '1760630583977'\n\
         rules:\n- id: apparmor_modified_tty\n  version: a7f3b5c2\n  description: An\
         \ AppArmor profile was modified in an interactive session\n  expression: exec.file.name\
         \ in [\"aa-disable\", \"aa-complain\", \"aa-audit\"] && exec.tty_name\n  \
