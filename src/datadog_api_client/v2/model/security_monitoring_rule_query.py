@@ -37,6 +37,9 @@ class SecurityMonitoringRuleQuery(ModelComposed):
             The index to run the query on, if the `dataSource` is `logs`. Only used for scheduled rules - in other words, when the `schedulingOptions` field is present in the rule payload.
         :type index: str, optional
 
+        :param indexes: List of indexes to query when the `dataSource` is `logs`. Only used for scheduled rules, such as when the `schedulingOptions` field is present in the rule payload.
+        :type indexes: [str], optional
+
         :param metric: (Deprecated) The target field to aggregate over when using the sum or max
             aggregations. `metrics` field should be used instead.
         :type metric: str, optional

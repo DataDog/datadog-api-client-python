@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
-      rule","name":"Test-Create_a_scheduled_rule_without_rrule_returns_Bad_Request_response-1753948154","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"index":"main","query":"@test:true"}],"schedulingOptions":{"start":"2025-06-18T12:00:00","timezone":"Europe/Paris"},"tags":[],"type":"log_detection"}'
+      rule","name":"Test-Create_a_scheduled_rule_without_rrule_returns_Bad_Request_response-1760389966","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"indexes":["main"],"query":"@test:true"}],"schedulingOptions":{"start":"2025-06-18T12:00:00","timezone":"Europe/Paris"},"tags":[],"type":"log_detection"}'
     headers:
       accept:
       - application/json
