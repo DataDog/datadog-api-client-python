@@ -87,14 +87,14 @@ Feature: CSM Threats
   @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection policy returns "Conflict" response
     Given new "CreateCSMThreatsAgentPolicy" request
-    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "name": "my_agent_policy"}, "type": "policy"}}
+    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "name": "{{ unique_lower_alnum }}"}, "type": "policy"}}
     When the request is sent
     Then the response status is 409 Conflict
 
   @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection policy returns "OK" response
     Given new "CreateCSMThreatsAgentPolicy" request
-    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy_2"}, "type": "policy"}}
+    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "{{ unique_lower_alnum }}"}, "type": "policy"}}
     When the request is sent
     Then the response status is 200 OK
 

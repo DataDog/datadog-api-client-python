@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1760109689"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1760630600"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"o6h-d6x-6ed","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1760109689","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109689734,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"9yd-fit-o2r","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1760630600","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760630601105,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name
-      == \"sh\"","policy_id":"o6h-d6x-6ed","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
+      == \"sh\"","policy_id":"9yd-fit-o2r","product_tags":[]},"id":"non-existent-rule-id","type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/o6h-d6x-6ed
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/9yd-fit-o2r
   response:
     body:
       string: ''

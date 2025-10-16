@@ -2815,16 +2815,28 @@
   },
   "CreateCSMThreatsAgentRule": {
     "tag": "CSM Threats",
-    "undo": {
-      "operationId": "DeleteCSMThreatsAgentRule",
-      "parameters": [
-        {
-          "name": "agent_rule_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
+    "undo": [
+      {
+        "operationId": "DeleteCSMThreatsAgentRule",
+        "parameters": [
+          {
+            "name": "agent_rule_id",
+            "source": "data.id"
+          }
+        ],
+        "type": "unsafe"
+      },
+      {
+        "operationId": "DeleteCSMThreatsAgentPolicy",
+        "parameters": [
+          {
+            "name": "policy_id",
+            "source": "data.attributes.monitoring[0]"
+          }
+        ],
+        "type": "unsafe"
+      }
+    ]
   },
   "DeleteCSMThreatsAgentRule": {
     "tag": "CSM Threats",
