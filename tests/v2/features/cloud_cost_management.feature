@@ -263,6 +263,15 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
+  Scenario: Get a tag pipeline ruleset returns "OK" response
+    Given new "GetTagPipelinesRuleset" request
+    And request contains "ruleset_id" parameter with value "a1e9de9b-b88e-41c6-a0cd-cc0ebd7092de"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "ruleset"
+    And the response "data.attributes.name" is equal to "EVP Cost Tags"
+
+  @replay-only @team:DataDog/cloud-cost-management
   Scenario: Get cost AWS CUR config returns "OK" response
     Given new "GetCostAWSCURConfig" request
     And request contains "cloud_account_id" parameter with value 123456
@@ -287,22 +296,6 @@ Feature: Cloud Cost Management
     And request contains "rule_id" parameter with value 683
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/cloud-cost-management
-  Scenario: Get ruleset returns "OK" response
-    Given new "GetTagPipelinesRuleset" request
-    And request contains "ruleset_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @replay-only @team:DataDog/cloud-cost-management
-  Scenario: Get tag pipeline ruleset returns "OK" response
-    Given new "GetTagPipelinesRuleset" request
-    And request contains "ruleset_id" parameter with value "ee10c3ff-312f-464c-b4f6-46adaa6d00a1"
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data.type" is equal to "ruleset"
-    And the response "data.attributes.name" is equal to "New Ruleset"
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List Cloud Cost Management AWS CUR configs returns "OK" response
