@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/tags/enrichment/a1e9de9b-b88e-41c6-a0cd-cc0ebd7092de
+  response:
+    body:
+      string: '{"data":{"id":"a1e9de9b-b88e-41c6-a0cd-cc0ebd7092de","type":"ruleset","attributes":{"created":{"seconds":1753803214,"nanos":75009000},"enabled":false,"last_modified_user_uuid":"4acae75b-78ac-11ef-9c0d-e6936f49688e","modified":{"seconds":1753803214,"nanos":75009000},"name":"EVP
+        Cost Tags","position":1,"processing_status":"done","rules":[{"name":"EVP Cost
+        Tags","enabled":true,"query":null,"mapping":null,"reference_table":{"table_name":"evp_cost_tags","source_keys":["pod_name"],"field_pairs":[{"input_column":"cost_service","output_key":"cost_service"},{"input_column":"cogs","output_key":"cogs"},{"input_column":"cost_team","output_key":"cost_team"},{"input_column":"cost_product","output_key":"cost_product"},{"input_column":"subscription","output_key":"subscription"},{"input_column":"cost_group","output_key":"cost_group"},{"input_column":"cost_subservice","output_key":"cost_subservice"},{"input_column":"cost_customer","output_key":"cost_customer"},{"input_column":"cost_isolation_id","output_key":"cost_isolation_id"}],"case_insensitivity":false,"if_not_exists":false},"metadata":null},{"name":"Load
+        balancer runtimecosts-team","enabled":true,"query":{"query":"dd-frontend-service:evp_*
+        OR dd-frontend-service:logs_*","addition":{"key":"runtimecosts-team","value":"event-platform"},"if_not_exists":true,"case_insensitivity":false},"mapping":null,"reference_table":null,"metadata":null}],"version":3588223}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

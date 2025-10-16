@@ -1159,7 +1159,7 @@ class CloudCostManagementApi:
         self,
         ruleset_id: str,
     ) -> RulesetResp:
-        """Get ruleset.
+        """Get a tag pipeline ruleset.
 
         Get a specific tag pipeline ruleset - Retrieve a specific tag pipeline ruleset by its ID
 

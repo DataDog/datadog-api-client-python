@@ -75610,7 +75610,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - cloud_cost_management_read
-      summary: Get ruleset
+      summary: Get a tag pipeline ruleset
       tags:
       - Cloud Cost Management
     patch:
