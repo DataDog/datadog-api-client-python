@@ -253,6 +253,7 @@ class Configuration:
                 "v2.list_assets_sbo_ms": False,
                 "v2.list_findings": False,
                 "v2.list_historical_jobs": False,
+                "v2.list_scanned_assets_metadata": False,
                 "v2.list_security_monitoring_histsignals": False,
                 "v2.list_vulnerabilities": False,
                 "v2.list_vulnerable_assets": False,

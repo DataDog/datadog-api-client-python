@@ -3223,12 +3223,6 @@
       "type": "idempotent"
     }
   },
-  "ListVulnerableAssets": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "CSM Threats",
     "undo": {
@@ -3242,6 +3236,12 @@
     }
   },
   "GetSBOM": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListScannedAssetsMetadata": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
@@ -3325,6 +3325,12 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListVulnerableAssets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListCloudWorkloadSecurityAgentRules": {
