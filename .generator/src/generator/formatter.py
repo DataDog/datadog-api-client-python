@@ -390,6 +390,13 @@ def format_data_with_schema_list(
     return parameters, imports
 
 
+def _is_valid_identifier(key):
+    """Check if a key can be used as a Python keyword argument."""
+    if not key or not key[0].isalpha() and key[0] != '_':
+        return False
+    return all(c.isalnum() or c == '_' for c in key)
+
+
 @format_data_with_schema.register(dict)
 def format_data_with_schema_dict(
     data,
@@ -402,6 +409,7 @@ def format_data_with_schema_dict(
     """Format data with schema."""
     assert version is not None
     name, imports = get_name_and_imports(schema, version, imports)
+    use_dict_literal = False
 
     parameters = ""
     if "properties" in schema:
@@ -436,7 +444,13 @@ def format_data_with_schema_dict(
                 replace_values=replace_values,
                 version=version,
             )
-            parameters += f"{escape_reserved_keyword(k)}={value}, "
+            safe_key = escape_reserved_keyword(k)
+            if not _is_valid_identifier(safe_key):
+                # Key contains special characters (like dots), must use dict literal
+                use_dict_literal = True
+                parameters += f'"{k}": {value}, '
+            else:
+                parameters += f"{safe_key}={value}, "
             imports = _merge_imports(imports, extra_imports)
 
     if "oneOf" in schema:
@@ -458,6 +472,9 @@ def format_data_with_schema_dict(
         parameters = f"[{key_val_pairs}]"
 
     if name:
+        # If we detected invalid identifiers, use dict literal syntax
+        if use_dict_literal:
+            return f"{{{parameters}}}", imports
         return f"{name}({parameters})", imports
 
     return parameters, imports
