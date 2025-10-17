@@ -88,6 +88,20 @@ datadog\_api\_client.v2.api.case\_management\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.case\_management\_attribute\_api module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.case_management_attribute_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.case\_management\_type\_api module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.case_management_type_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.ci\_visibility\_pipelines\_api module
 -----------------------------------------------------------------
 

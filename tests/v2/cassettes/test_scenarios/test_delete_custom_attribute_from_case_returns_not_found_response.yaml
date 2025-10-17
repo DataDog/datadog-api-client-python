@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"16b310dd-5329-48c5-82fe-ccd2b39cb0e5","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:46:43.066117Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"16b310dd-5329-48c5-82fe-ccd2b39cb0e5","key":"DDFC-82976","merge_status":"NOT_MERGED","priority":"P4","public_id":"83065","status":"OPEN","status_name":"Open","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/16b310dd-5329-48c5-82fe-ccd2b39cb0e5/custom_attributes/invalid_key
+  response:
+    body:
+      string: '{"errors":[{"code":"resource_not_found","title":"failed to update case
+        (command func error): custom attribute configuration not found","meta":{"key":"invalid_key"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"ba3da7da-9df1-4b1d-82be-e7d3d8ee865f","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-08-21T12:21:39.790273Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"ba3da7da-9df1-4b1d-82be-e7d3d8ee865f","key":"DDFC-77683","merge_status":"NOT_MERGED","priority":"P4","public_id":"77766","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"comment":"This is my new comment !"},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/ba3da7da-9df1-4b1d-82be-e7d3d8ee865f/comment
+  response:
+    body:
+      string: '{"data":[{"id":"bd8ee088-15bc-43a1-bc95-92e365b71459","type":"timeline_cell","attributes":{"author":{"type":"USER","content":{"ID":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"frog","email":"frog@datadoghq.com","handle":"frog@datadoghq.com","active":true}},"cell_content":{"message":"This
+        is my new comment !"},"content":"{\"message\":\"This is my new comment !\"}","created_at":"2025-08-21T12:21:40.169700502Z","type":"COMMENT"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/ba3da7da-9df1-4b1d-82be-e7d3d8ee865f/comment/bd8ee088-15bc-43a1-bc95-92e365b71459
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/ba3da7da-9df1-4b1d-82be-e7d3d8ee865f/comment/bd8ee088-15bc-43a1-bc95-92e365b71459
+  response:
+    body:
+      string: '{"errors":[{"code":"resource_not_found","title":"timeline cell not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

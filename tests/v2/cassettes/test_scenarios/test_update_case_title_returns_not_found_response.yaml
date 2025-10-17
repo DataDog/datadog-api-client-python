@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"title":"Memory leak investigation on API"},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/0198c6b8-b08f-7c08-978a-d95217f2eeac/title
+  response:
+    body:
+      string: '{"errors":[{"code":"resource_not_found","title":"case not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -129,7 +129,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"My new case\",\n      \"type\": \"STANDARD\",\n      \"priority\": \"P4\"\n    },\n    \"relationships\": {\n      \"project\": {\n        \"data\": {\n          \"id\": \"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\n          \"type\": \"project\"\n        }\n      }\n    },\n    \"type\": \"case\"\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"My new case\",\n      \"type_id\": \"00000000-0000-0000-0000-000000000001\",\n      \"priority\": \"P4\"\n    },\n    \"relationships\": {\n      \"project\": {\n        \"data\": {\n          \"id\": \"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\n          \"type\": \"project\"\n        }\n      }\n    },\n    \"type\": \"case\"\n  }\n}"
       }
     ],
     "source": "data",
@@ -137,6 +137,66 @@
     "key": "case",
     "tag": "Case Management",
     "operationId": "CreateCase"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"My new case\",\n      \"type_id\": \"{{ case_type.id }}\",\n      \"priority\": \"P4\"\n    },\n    \"relationships\": {\n      \"project\": {\n        \"data\": {\n          \"id\": \"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\n          \"type\": \"project\"\n        }\n      }\n    },\n    \"type\": \"case\"\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"case\" with a custom \"case_type\" in the system",
+    "key": "case_with_type",
+    "tag": "Case Management",
+    "operationId": "CreateCase"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"case_type\",\n    \"attributes\": {\n      \"description\": \"Worldwide case type\",\n      \"emoji\": \"\ud83c\udf0d\",\n      \"name\": \"World\"\n    }\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"case_type\" in the system",
+    "key": "case_type",
+    "tag": "Case Management Type",
+    "operationId": "CreateCaseType"
+  },
+  {
+    "parameters": [
+      {
+        "name": "case_type_id",
+        "source": "case_type.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"custom_attribute\",\n    \"attributes\": {\n      \"display_name\":\"Attribute {{uuid}}\",\n      \"key\":\"attribute_{{unique_hash}}\",\n      \"description\":\"And its brand new description\",\n      \"type\":\"TEXT\",\n      \"is_multi\":true\n    }\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"custom_attribute\" in the system",
+    "key": "custom_attribute",
+    "tag": "Case Management Attribute",
+    "operationId": "CreateCustomAttributeConfig"
+  },
+  {
+    "parameters": [
+      {
+        "name": "case_id",
+        "source": "case.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"case\",\n    \"attributes\": {\n      \"comment\": \"This is my new comment !\"\n    }\n  }\n}"
+      }
+    ],
+    "source": "data[0]",
+    "step": "there is a valid \"comment\" in the system",
+    "key": "comment",
+    "tag": "Case Management",
+    "operationId": "CommentCase"
   },
   {
     "parameters": [
