@@ -82,9 +82,12 @@ JINJA_ENV.filters["snake_case"] = snake_case
 JINJA_ENV.filters["safe_snake_case"] = safe_snake_case
 JINJA_ENV.globals["format_data_with_schema"] = format_data_with_schema
 JINJA_ENV.globals["format_parameters"] = format_parameters
+JINJA_ENV.globals["package"] = "datadog_api_client"
 
 PYTHON_EXAMPLE_J2 = JINJA_ENV.get_template("example.j2")
-
+DATADOG_EXAMPLES_J2 = {
+    "aws.py": JINJA_ENV.get_template("example_aws.j2")
+}
 
 def pytest_bdd_after_scenario(request, feature, scenario):
     try:
@@ -136,6 +139,19 @@ def pytest_bdd_after_scenario(request, feature, scenario):
 
     with output.open("w") as f:
         f.write(data)
+
+    for file_name, template in DATADOG_EXAMPLES_J2.items():
+        output = ROOT_PATH / "examples" / "datadog" / file_name
+        output.parent.mkdir(parents=True, exist_ok=True)
+
+        data = template.render(
+            context=context,
+            version=version,
+            scenario=scenario,
+            operation_spec=operation_spec.spec,
+        )
+        with output.open("w") as f:
+            f.write(data)
 
 
 def pytest_bdd_apply_tag(tag, function):
