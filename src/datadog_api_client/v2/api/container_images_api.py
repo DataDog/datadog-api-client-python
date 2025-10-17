@@ -86,6 +86,7 @@ class ContainerImagesApi:
         """Get all Container Images.
 
         Get all Container Images for your organization.
+        **Note** : To enrich the data returned by this endpoint with security scans, see the new `api/v2/security/scanned-assets-metadata <https://docs.datadoghq.com/api/latest/security-monitoring/#list-scanned-assets-metadata>`_ endpoint.
 
         :param filter_tags: Comma-separated list of tags to filter Container Images by.
         :type filter_tags: str, optional
