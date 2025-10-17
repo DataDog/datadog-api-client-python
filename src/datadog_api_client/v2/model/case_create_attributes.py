@@ -15,33 +15,31 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.case_priority import CasePriority
-    from datadog_api_client.v2.model.case_type import CaseType
 
 
 class CaseCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.case_priority import CasePriority
-        from datadog_api_client.v2.model.case_type import CaseType
 
         return {
             "description": (str,),
             "priority": (CasePriority,),
             "title": (str,),
-            "type": (CaseType,),
+            "type_id": (str,),
         }
 
     attribute_map = {
         "description": "description",
         "priority": "priority",
         "title": "title",
-        "type": "type",
+        "type_id": "type_id",
     }
 
     def __init__(
         self_,
         title: str,
-        type: CaseType,
+        type_id: str,
         description: Union[str, UnsetType] = unset,
         priority: Union[CasePriority, UnsetType] = unset,
         **kwargs,
@@ -58,8 +56,8 @@ class CaseCreateAttributes(ModelNormal):
         :param title: Title
         :type title: str
 
-        :param type: Case type
-        :type type: CaseType
+        :param type_id: Case type UUID
+        :type type_id: str
         """
         if description is not unset:
             kwargs["description"] = description
@@ -68,4 +66,4 @@ class CaseCreateAttributes(ModelNormal):
         super().__init__(kwargs)
 
         self_.title = title
-        self_.type = type
+        self_.type_id = type_id

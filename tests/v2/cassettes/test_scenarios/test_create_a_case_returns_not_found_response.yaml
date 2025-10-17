@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"NOT_DEFINED","title":"Security breach
+      investigation","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"assignee":{"data":{"id":"721074c8-63df-4d8f-a43d-ab41dd24ec35","type":"user"}},"project":{"data":{"id":"721074c8-63df-4d8f-a43d-ab41dd24ec35","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"errors":[{"code":"resource_not_found","title":"project not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

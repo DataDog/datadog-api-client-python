@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"b17ef97a-c38f-4b67-91a6-546a0a3da4d3","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-08-21T12:21:39.002325Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"b17ef97a-c38f-4b67-91a6-546a0a3da4d3","key":"DDFC-77682","merge_status":"NOT_MERGED","priority":"P4","public_id":"77765","status":"OPEN","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/b17ef97a-c38f-4b67-91a6-546a0a3da4d3/comment/not-an-uuid
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Invalid Parameter","detail":"invalid
+        parameter \"CommentID\" in \"path\"; expected type \"uuid\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

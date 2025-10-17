@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: "{\"data\":{\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\"\
+      :\"\U0001F30D\",\"name\":\"World\"},\"type\":\"case_type\"}}"
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types
+  response:
+    body:
+      string: "{\"data\":{\"id\":\"d6472e40-180e-4f7f-bdc0-9c8a749da7ee\",\"type\"\
+        :\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"\
+        emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}}}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"display_name":"AWS Region 17593230-0000-0000-0000-175932301200","is_multi":true,"key":"region_34a76e3ae14c4076","type":"NUMBER"},"type":"custom_attribute"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types/d6472e40-180e-4f7f-bdc0-9c8a749da7ee/custom_attributes
+  response:
+    body:
+      string: '{"data":{"id":"d57aff81-87df-478e-af85-9553e0a5d221","type":"custom_attribute","attributes":{"case_type":"TUNKNOWN","case_type_id":"d6472e40-180e-4f7f-bdc0-9c8a749da7ee","display_name":"AWS
+        Region 17593230-0000-0000-0000-175932301200","is_multi":true,"key":"region_34a76e3ae14c4076","type":"NUMBER"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+version: 1

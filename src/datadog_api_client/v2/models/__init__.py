@@ -588,6 +588,9 @@ from datadog_api_client.v2.model.case_assign import CaseAssign
 from datadog_api_client.v2.model.case_assign_attributes import CaseAssignAttributes
 from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
 from datadog_api_client.v2.model.case_attributes import CaseAttributes
+from datadog_api_client.v2.model.case_comment import CaseComment
+from datadog_api_client.v2.model.case_comment_attributes import CaseCommentAttributes
+from datadog_api_client.v2.model.case_comment_request import CaseCommentRequest
 from datadog_api_client.v2.model.case_create import CaseCreate
 from datadog_api_client.v2.model.case_create_attributes import CaseCreateAttributes
 from datadog_api_client.v2.model.case_create_relationships import CaseCreateRelationships
@@ -604,15 +607,30 @@ from datadog_api_client.v2.model.case_status import CaseStatus
 from datadog_api_client.v2.model.case_trigger import CaseTrigger
 from datadog_api_client.v2.model.case_trigger_wrapper import CaseTriggerWrapper
 from datadog_api_client.v2.model.case_type import CaseType
+from datadog_api_client.v2.model.case_type_create import CaseTypeCreate
+from datadog_api_client.v2.model.case_type_create_request import CaseTypeCreateRequest
+from datadog_api_client.v2.model.case_type_resource import CaseTypeResource
+from datadog_api_client.v2.model.case_type_resource_attributes import CaseTypeResourceAttributes
+from datadog_api_client.v2.model.case_type_resource_type import CaseTypeResourceType
+from datadog_api_client.v2.model.case_type_response import CaseTypeResponse
+from datadog_api_client.v2.model.case_types_response import CaseTypesResponse
 from datadog_api_client.v2.model.case_update_attributes import CaseUpdateAttributes
 from datadog_api_client.v2.model.case_update_attributes_attributes import CaseUpdateAttributesAttributes
 from datadog_api_client.v2.model.case_update_attributes_request import CaseUpdateAttributesRequest
+from datadog_api_client.v2.model.case_update_custom_attribute import CaseUpdateCustomAttribute
+from datadog_api_client.v2.model.case_update_custom_attribute_request import CaseUpdateCustomAttributeRequest
+from datadog_api_client.v2.model.case_update_description import CaseUpdateDescription
+from datadog_api_client.v2.model.case_update_description_attributes import CaseUpdateDescriptionAttributes
+from datadog_api_client.v2.model.case_update_description_request import CaseUpdateDescriptionRequest
 from datadog_api_client.v2.model.case_update_priority import CaseUpdatePriority
 from datadog_api_client.v2.model.case_update_priority_attributes import CaseUpdatePriorityAttributes
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
 from datadog_api_client.v2.model.case_update_status import CaseUpdateStatus
 from datadog_api_client.v2.model.case_update_status_attributes import CaseUpdateStatusAttributes
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
+from datadog_api_client.v2.model.case_update_title import CaseUpdateTitle
+from datadog_api_client.v2.model.case_update_title_attributes import CaseUpdateTitleAttributes
+from datadog_api_client.v2.model.case_update_title_request import CaseUpdateTitleRequest
 from datadog_api_client.v2.model.cases_response import CasesResponse
 from datadog_api_client.v2.model.cases_response_meta import CasesResponseMeta
 from datadog_api_client.v2.model.cases_response_meta_pagination import CasesResponseMetaPagination
@@ -1019,6 +1037,19 @@ from datadog_api_client.v2.model.csm_serverless_coverage_analysis_attributes imp
 )
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_data import CsmServerlessCoverageAnalysisData
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_response import CsmServerlessCoverageAnalysisResponse
+from datadog_api_client.v2.model.custom_attribute_config import CustomAttributeConfig
+from datadog_api_client.v2.model.custom_attribute_config_attributes_create import CustomAttributeConfigAttributesCreate
+from datadog_api_client.v2.model.custom_attribute_config_create import CustomAttributeConfigCreate
+from datadog_api_client.v2.model.custom_attribute_config_create_request import CustomAttributeConfigCreateRequest
+from datadog_api_client.v2.model.custom_attribute_config_resource_attributes import (
+    CustomAttributeConfigResourceAttributes,
+)
+from datadog_api_client.v2.model.custom_attribute_config_resource_type import CustomAttributeConfigResourceType
+from datadog_api_client.v2.model.custom_attribute_config_response import CustomAttributeConfigResponse
+from datadog_api_client.v2.model.custom_attribute_configs_response import CustomAttributeConfigsResponse
+from datadog_api_client.v2.model.custom_attribute_type import CustomAttributeType
+from datadog_api_client.v2.model.custom_attribute_value import CustomAttributeValue
+from datadog_api_client.v2.model.custom_attribute_values_union import CustomAttributeValuesUnion
 from datadog_api_client.v2.model.custom_connection import CustomConnection
 from datadog_api_client.v2.model.custom_connection_attributes import CustomConnectionAttributes
 from datadog_api_client.v2.model.custom_connection_attributes_on_prem_runner import (
@@ -4314,6 +4345,17 @@ from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
 from datadog_api_client.v2.model.time_restriction import TimeRestriction
 from datadog_api_client.v2.model.time_restrictions import TimeRestrictions
+from datadog_api_client.v2.model.timeline_cell import TimelineCell
+from datadog_api_client.v2.model.timeline_cell_author import TimelineCellAuthor
+from datadog_api_client.v2.model.timeline_cell_author_user import TimelineCellAuthorUser
+from datadog_api_client.v2.model.timeline_cell_author_user_content import TimelineCellAuthorUserContent
+from datadog_api_client.v2.model.timeline_cell_author_user_type import TimelineCellAuthorUserType
+from datadog_api_client.v2.model.timeline_cell_content import TimelineCellContent
+from datadog_api_client.v2.model.timeline_cell_content_comment import TimelineCellContentComment
+from datadog_api_client.v2.model.timeline_cell_resource import TimelineCellResource
+from datadog_api_client.v2.model.timeline_cell_resource_type import TimelineCellResourceType
+from datadog_api_client.v2.model.timeline_cell_type import TimelineCellType
+from datadog_api_client.v2.model.timeline_response import TimelineResponse
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
@@ -4988,6 +5030,9 @@ __all__ = [
     "CaseAssignAttributes",
     "CaseAssignRequest",
     "CaseAttributes",
+    "CaseComment",
+    "CaseCommentAttributes",
+    "CaseCommentRequest",
     "CaseCreate",
     "CaseCreateAttributes",
     "CaseCreateRelationships",
@@ -5004,15 +5049,30 @@ __all__ = [
     "CaseTrigger",
     "CaseTriggerWrapper",
     "CaseType",
+    "CaseTypeCreate",
+    "CaseTypeCreateRequest",
+    "CaseTypeResource",
+    "CaseTypeResourceAttributes",
+    "CaseTypeResourceType",
+    "CaseTypeResponse",
+    "CaseTypesResponse",
     "CaseUpdateAttributes",
     "CaseUpdateAttributesAttributes",
     "CaseUpdateAttributesRequest",
+    "CaseUpdateCustomAttribute",
+    "CaseUpdateCustomAttributeRequest",
+    "CaseUpdateDescription",
+    "CaseUpdateDescriptionAttributes",
+    "CaseUpdateDescriptionRequest",
     "CaseUpdatePriority",
     "CaseUpdatePriorityAttributes",
     "CaseUpdatePriorityRequest",
     "CaseUpdateStatus",
     "CaseUpdateStatusAttributes",
     "CaseUpdateStatusRequest",
+    "CaseUpdateTitle",
+    "CaseUpdateTitleAttributes",
+    "CaseUpdateTitleRequest",
     "CasesResponse",
     "CasesResponseMeta",
     "CasesResponseMetaPagination",
@@ -5287,6 +5347,17 @@ __all__ = [
     "CsmServerlessCoverageAnalysisAttributes",
     "CsmServerlessCoverageAnalysisData",
     "CsmServerlessCoverageAnalysisResponse",
+    "CustomAttributeConfig",
+    "CustomAttributeConfigAttributesCreate",
+    "CustomAttributeConfigCreate",
+    "CustomAttributeConfigCreateRequest",
+    "CustomAttributeConfigResourceAttributes",
+    "CustomAttributeConfigResourceType",
+    "CustomAttributeConfigResponse",
+    "CustomAttributeConfigsResponse",
+    "CustomAttributeType",
+    "CustomAttributeValue",
+    "CustomAttributeValuesUnion",
     "CustomConnection",
     "CustomConnectionAttributes",
     "CustomConnectionAttributesOnPremRunner",
@@ -7664,6 +7735,17 @@ __all__ = [
     "TeamsResponseMetaPagination",
     "TimeRestriction",
     "TimeRestrictions",
+    "TimelineCell",
+    "TimelineCellAuthor",
+    "TimelineCellAuthorUser",
+    "TimelineCellAuthorUserContent",
+    "TimelineCellAuthorUserType",
+    "TimelineCellContent",
+    "TimelineCellContentComment",
+    "TimelineCellResource",
+    "TimelineCellResourceType",
+    "TimelineCellType",
+    "TimelineResponse",
     "TimeseriesFormulaQueryRequest",
     "TimeseriesFormulaQueryResponse",
     "TimeseriesFormulaRequest",

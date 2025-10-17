@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: "{\"data\":{\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\"\
+      :\"\U0001F30D\",\"name\":\"World\"},\"type\":\"case_type\"}}"
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types
+  response:
+    body:
+      string: "{\"data\":{\"id\":\"3ffd2bc8-e360-40d4-8ed6-60f72161fd89\",\"type\"\
+        :\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"\
+        emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}}}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/types/3ffd2bc8-e360-40d4-8ed6-60f72161fd89/custom_attributes/not-an-uuid
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Invalid Parameter","detail":"invalid
+        parameter \"CustomAttributeId\" in \"path\"; expected type \"uuid\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

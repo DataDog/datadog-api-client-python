@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"email":"Test-Assign_case_returns_Not_Found_response-1753105963@datadoghq.com","title":"user
+    body: '{"data":{"attributes":{"email":"Test-Assign_case_returns_Not_Found_response-1759322792@datadoghq.com","title":"user
       title"},"type":"users"}}'
     headers:
       accept:
@@ -11,7 +11,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/users
   response:
     body:
-      string: '{"data":{"type":"users","id":"fa033cd0-6639-11f0-b658-96290b93dbfc","attributes":{"name":null,"handle":"test-assign_case_returns_not_found_response-1753105963@datadoghq.com","created_at":"2025-07-21T13:52:44.217086+00:00","modified_at":"2025-07-21T13:52:44.217086+00:00","email":"test-assign_case_returns_not_found_response-1753105963@datadoghq.com","icon":"https://secure.gravatar.com/avatar/de9eda912656e39d585005ddc0880775?s=48&d=retro","title":"user
+      string: '{"data":{"type":"users","id":"a906fadf-9ec4-11f0-8e55-4666095c4509","attributes":{"name":null,"handle":"test-assign_case_returns_not_found_response-1759322792@datadoghq.com","created_at":"2025-10-01T12:46:33.507125+00:00","modified_at":"2025-10-01T12:46:33.507125+00:00","email":"test-assign_case_returns_not_found_response-1759322792@datadoghq.com","icon":"https://secure.gravatar.com/avatar/4d05db0354c1408750042bd62d0f0663?s=48&d=retro","title":"user
         title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending"},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
 
         '
@@ -22,7 +22,7 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"assignee_id":"fa033cd0-6639-11f0-b658-96290b93dbfc"},"type":"case"}}'
+    body: '{"data":{"attributes":{"assignee_id":"a906fadf-9ec4-11f0-8e55-4666095c4509"},"type":"case"}}'
     headers:
       accept:
       - application/json
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/users/fa033cd0-6639-11f0-b658-96290b93dbfc
+    uri: https://api.datadoghq.com/api/v2/users/a906fadf-9ec4-11f0-8e55-4666095c4509
   response:
     body:
       string: ''

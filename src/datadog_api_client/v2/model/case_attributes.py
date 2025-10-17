@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.case_object_attributes import CaseObjectAttributes
+    from datadog_api_client.v2.model.custom_attribute_value import CustomAttributeValue
     from datadog_api_client.v2.model.jira_issue import JiraIssue
     from datadog_api_client.v2.model.case_priority import CasePriority
     from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
@@ -28,6 +29,7 @@ class CaseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.case_object_attributes import CaseObjectAttributes
+        from datadog_api_client.v2.model.custom_attribute_value import CustomAttributeValue
         from datadog_api_client.v2.model.jira_issue import JiraIssue
         from datadog_api_client.v2.model.case_priority import CasePriority
         from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
@@ -39,6 +41,7 @@ class CaseAttributes(ModelNormal):
             "attributes": (CaseObjectAttributes,),
             "closed_at": (datetime, none_type),
             "created_at": (datetime,),
+            "custom_attributes": ({str: (CustomAttributeValue,)},),
             "description": (str,),
             "jira_issue": (JiraIssue,),
             "key": (str,),
@@ -48,6 +51,7 @@ class CaseAttributes(ModelNormal):
             "status": (CaseStatus,),
             "title": (str,),
             "type": (CaseType,),
+            "type_id": (str,),
         }
 
     attribute_map = {
@@ -55,6 +59,7 @@ class CaseAttributes(ModelNormal):
         "attributes": "attributes",
         "closed_at": "closed_at",
         "created_at": "created_at",
+        "custom_attributes": "custom_attributes",
         "description": "description",
         "jira_issue": "jira_issue",
         "key": "key",
@@ -64,6 +69,7 @@ class CaseAttributes(ModelNormal):
         "status": "status",
         "title": "title",
         "type": "type",
+        "type_id": "type_id",
     }
     read_only_vars = {
         "archived_at",
@@ -80,6 +86,7 @@ class CaseAttributes(ModelNormal):
         attributes: Union[CaseObjectAttributes, UnsetType] = unset,
         closed_at: Union[datetime, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
+        custom_attributes: Union[Dict[str, CustomAttributeValue], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         jira_issue: Union[JiraIssue, none_type, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
@@ -89,6 +96,7 @@ class CaseAttributes(ModelNormal):
         status: Union[CaseStatus, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         type: Union[CaseType, UnsetType] = unset,
+        type_id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -105,6 +113,9 @@ class CaseAttributes(ModelNormal):
 
         :param created_at: Timestamp of when the case was created
         :type created_at: datetime, optional
+
+        :param custom_attributes: Case custom attributes
+        :type custom_attributes: {str: (CustomAttributeValue,)}, optional
 
         :param description: Description
         :type description: str, optional
@@ -130,8 +141,11 @@ class CaseAttributes(ModelNormal):
         :param title: Title
         :type title: str, optional
 
-        :param type: Case type
+        :param type: Case type **Deprecated**.
         :type type: CaseType, optional
+
+        :param type_id: Case type UUID
+        :type type_id: str, optional
         """
         if archived_at is not unset:
             kwargs["archived_at"] = archived_at
@@ -141,6 +155,8 @@ class CaseAttributes(ModelNormal):
             kwargs["closed_at"] = closed_at
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if custom_attributes is not unset:
+            kwargs["custom_attributes"] = custom_attributes
         if description is not unset:
             kwargs["description"] = description
         if jira_issue is not unset:
@@ -159,4 +175,6 @@ class CaseAttributes(ModelNormal):
             kwargs["title"] = title
         if type is not unset:
             kwargs["type"] = type
+        if type_id is not unset:
+            kwargs["type_id"] = type_id
         super().__init__(kwargs)

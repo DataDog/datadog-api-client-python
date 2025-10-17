@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type":"STANDARD"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"98319575-b53b-43be-96b2-7595a5f1be6c","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-07-21T13:52:58.293018Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"98319575-b53b-43be-96b2-7595a5f1be6c","key":"DDFC-72331","merge_status":"NOT_MERGED","priority":"P4","public_id":"72391","status":"OPEN","title":"My
+      string: '{"data":{"id":"53897bb0-8e8b-4652-985b-0b9e2e8c3a30","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:47:04.237961Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"53897bb0-8e8b-4652-985b-0b9e2e8c3a30","key":"DDFC-82987","merge_status":"NOT_MERGED","priority":"P4","public_id":"83076","status":"OPEN","status_name":"Open","title":"My
         new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
     headers:
       content-type:
@@ -26,13 +26,13 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/98319575-b53b-43be-96b2-7595a5f1be6c/status
+    uri: https://api.datadoghq.com/api/v2/cases/53897bb0-8e8b-4652-985b-0b9e2e8c3a30/status
   response:
     body:
       string: '{"errors":[{"title":"Generic Error","detail":"invalid status OPENED.
-        Must be one of PENDING_APPROVAL, APPROVED, IMPLEMENTING, CANCELLED, SUNKNOWN,
-        ACKNOWLEDGED, TRIGGERED, RESOLVED, COMPLETED, DECLINED, OPEN, IN_PROGRESS,
-        CLOSED"}]}'
+        Must be one of CANCELLED, DECLINED, NOT_STARTED, SUNKNOWN, IN_PROGRESS, ACKNOWLEDGED,
+        TRIGGERED, PENDING_APPROVAL, IMPLEMENTING, COMPLETED, OPEN, CLOSED, RESOLVED,
+        APPROVED"}]}'
     headers:
       content-type:
       - application/vnd.api+json

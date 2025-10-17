@@ -1,0 +1,97 @@
+interactions:
+- request:
+    body: "{\"data\":{\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\"\
+      :\"\U0001F30D\",\"name\":\"World\"},\"type\":\"case_type\"}}"
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types
+  response:
+    body:
+      string: "{\"data\":{\"id\":\"bf109065-175f-4d2f-848d-8f5232dfce1a\",\"type\"\
+        :\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"\
+        emoji\":\"\U0001F30D\",\"name\":\"World\"}}}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"description":"And its brand new description","display_name":"Attribute
+      17557789-0000-0000-0000-175577891300","is_multi":true,"key":"attribute_661efcf8a00203e4","type":"TEXT"},"type":"custom_attribute"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types/bf109065-175f-4d2f-848d-8f5232dfce1a/custom_attributes
+  response:
+    body:
+      string: '{"data":{"id":"df10a213-93aa-4406-98a7-f9a7c5dccefd","type":"custom_attribute","attributes":{"case_type":"TUNKNOWN","case_type_id":"bf109065-175f-4d2f-848d-8f5232dfce1a","description":"And
+        its brand new description","display_name":"Attribute 17557789-0000-0000-0000-175577891300","is_multi":true,"key":"attribute_661efcf8a00203e4","type":"TEXT"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"priority":"P4","title":"My new case","type_id":"bf109065-175f-4d2f-848d-8f5232dfce1a"},"relationships":{"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases
+  response:
+    body:
+      string: '{"data":{"id":"4e88fd93-7a35-46a1-881e-3ee48185afe4","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-08-21T12:21:54.635083Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"4e88fd93-7a35-46a1-881e-3ee48185afe4","key":"DDFC-77695","merge_status":"NOT_MERGED","priority":"P4","public_id":"77778","status":"OPEN","title":"My
+        new case","type":"TUNKNOWN","type_id":"bf109065-175f-4d2f-848d-8f5232dfce1a"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"is_multi":true,"type":"TEXT","value":["Abba","The
+      Cure"]},"type":"case"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/4e88fd93-7a35-46a1-881e-3ee48185afe4/custom_attributes/attribute_661efcf8a00203e4
+  response:
+    body:
+      string: '{"data":{"id":"4e88fd93-7a35-46a1-881e-3ee48185afe4","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-08-21T12:21:54.635083Z","creation_source":"MANUAL","custom_attributes":{"attribute_661efcf8a00203e4":{"type":"TEXT","is_multi":true,"value":["Abba","The
+        Cure"]}},"description":"","insights":[],"internal_id":"4e88fd93-7a35-46a1-881e-3ee48185afe4","key":"DDFC-77695","merge_status":"NOT_MERGED","modified_at":"2025-08-21T12:21:55.036815Z","priority":"P4","public_id":"77778","status":"OPEN","title":"My
+        new case","type":"TUNKNOWN","type_id":"bf109065-175f-4d2f-848d-8f5232dfce1a"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/cases/types/bf109065-175f-4d2f-848d-8f5232dfce1a
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

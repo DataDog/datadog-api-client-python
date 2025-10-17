@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: "{\"data\":{\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\"\
+      :\"\U0001F30D\",\"name\":\"World\"},\"type\":\"case_type\"}}"
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/cases/types
+  response:
+    body:
+      string: "{\"data\":{\"id\":\"f91c5f4a-53c4-4f18-a21d-9f82fd7bd3e9\",\"type\"\
+        :\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"\
+        emoji\":\"\U0001F30D\",\"internal\":false,\"name\":\"World\",\"statuses_config\"\
+        :{\"open\":{\"status_options\":[{\"name\":\"Open\"}],\"default\":\"Open\"\
+        },\"in_progress\":{\"status_options\":[{\"name\":\"In Progress\"}],\"default\"\
+        :\"In Progress\"},\"closed\":{\"status_options\":[{\"name\":\"Closed\"}],\"\
+        default\":\"Closed\"}}}}}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cases/types/f91c5f4a-53c4-4f18-a21d-9f82fd7bd3e9/custom_attributes
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
