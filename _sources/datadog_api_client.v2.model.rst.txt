@@ -2566,6 +2566,27 @@ datadog\_api\_client.v2.model.case\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.case\_comment module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_comment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_comment\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_comment_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_comment\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_comment_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case\_create module
 -------------------------------------------------
 
@@ -2678,6 +2699,55 @@ datadog\_api\_client.v2.model.case\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.case\_type\_create module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_type_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_type\_create\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_type_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_type\_resource module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_type_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_type\_resource\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_type_resource_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_type\_resource\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_type_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_type\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_type_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_types\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_types_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case\_update\_attributes module
 -------------------------------------------------------------
 
@@ -2696,6 +2766,41 @@ datadog\_api\_client.v2.model.case\_update\_attributes\_request module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.case_update_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_custom\_attribute module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_custom_attribute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_custom\_attribute\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_custom_attribute_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_description module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_description
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_description\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_description_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_description\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_description_request
    :members:
    :show-inheritance:
 
@@ -2738,6 +2843,27 @@ datadog\_api\_client.v2.model.case\_update\_status\_request module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.case_update_status_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_title module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_title
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_title\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_title_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_update\_title\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_update_title_request
    :members:
    :show-inheritance:
 
@@ -5181,6 +5307,83 @@ datadog\_api\_client.v2.model.csm\_serverless\_coverage\_analysis\_response modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.csm_serverless_coverage_analysis_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_config module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_config\_attributes\_create module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_config_attributes_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_config\_create module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_config_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_config\_create\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_config_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_config\_resource\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_config_resource_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_config\_resource\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_config_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_config\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_configs\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_configs_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_value module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_attribute\_values\_union module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_attribute_values_union
    :members:
    :show-inheritance:
 
@@ -21771,6 +21974,83 @@ datadog\_api\_client.v2.model.time\_restrictions module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.time_restrictions
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author\_user module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author\_user\_content module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author_user_content
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_author\_user\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_author_user_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_content module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_content
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_content\_comment module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_content_comment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_resource module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_resource\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_cell\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_cell_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timeline\_response module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timeline_response
    :members:
    :show-inheritance:
 
