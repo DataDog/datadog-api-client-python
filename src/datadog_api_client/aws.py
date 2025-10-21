@@ -68,16 +68,14 @@ class AWSAuth(DelegatedTokenProvider):
     """AWS authentication provider for delegated tokens."""
 
     def __init__(self, aws_region: Optional[str] = None):
+        super().__init__()
         self.aws_region = aws_region
 
-    def authenticate(
-        self, config: DelegatedTokenConfig, api_config: Configuration, rest_client=None
-    ) -> DelegatedTokenCredentials:
+    def authenticate(self, config: DelegatedTokenConfig, api_config: Configuration) -> DelegatedTokenCredentials:
         """Authenticate using AWS credentials and return delegated token credentials.
 
         :param config: Delegated token configuration
         :param api_config: API client configuration with host and other settings
-        :param rest_client: Optional REST client to use for requests (if not provided, a new one will be created)
         :return: DelegatedTokenCredentials object
         :raises: ApiValueError if authentication fails
         """
@@ -94,8 +92,8 @@ class AWSAuth(DelegatedTokenProvider):
         # Generate the auth string passed to the token endpoint
         auth_string = f"{data.body_encoded}|{data.headers_encoded}|{data.method}|{data.url_encoded}"
 
-        # Pass the api_config and rest_client to get_delegated_token
-        auth_response = get_delegated_token(config.org_uuid, auth_string, api_config, rest_client)
+        # Pass the api_config and self (provider) to get_delegated_token for REST client caching
+        auth_response = get_delegated_token(config.org_uuid, auth_string, api_config, self)
         return auth_response
 
     def get_credentials(self) -> AWSCredentials:

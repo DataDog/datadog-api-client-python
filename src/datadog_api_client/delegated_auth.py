@@ -42,36 +42,41 @@ class DelegatedTokenConfig:
 class DelegatedTokenProvider:
     """Abstract base class for delegated token providers."""
 
-    def authenticate(
-        self, config: DelegatedTokenConfig, api_config: Configuration, rest_client=None
-    ) -> DelegatedTokenCredentials:
+    def __init__(self):
+        self._rest_client = None
+
+    def authenticate(self, config: DelegatedTokenConfig, api_config: Configuration) -> DelegatedTokenCredentials:
         """Authenticate and return delegated token credentials.
 
         :param config: Delegated token configuration
         :param api_config: API client configuration with host and other settings
-        :param rest_client: Optional REST client to use for requests (if not provided, a new one will be created)
         :return: DelegatedTokenCredentials object
         """
         raise NotImplementedError("Subclasses must implement authenticate method")
 
 
 def get_delegated_token(
-    org_uuid: str, delegated_auth_proof: str, config: Configuration, rest_client=None
+    org_uuid: str, delegated_auth_proof: str, config: Configuration, provider=None
 ) -> DelegatedTokenCredentials:
     """Get a delegated token from the Datadog API.
 
     :param org_uuid: Organization UUID
     :param delegated_auth_proof: Authentication proof string
     :param config: Configuration object with host and other settings
-    :param rest_client: Optional REST client to use for requests (if not provided, a new one will be created)
+    :param provider: Optional provider instance that may have a cached REST client
     :return: DelegatedTokenCredentials object
     :raises: ApiValueError if the request fails
     """
     url = get_delegated_token_url(config)
 
-    # Use provided REST client or create a new one
-    if rest_client is None:
+    # Use provider's cached REST client if available, otherwise create a new one
+    if provider and hasattr(provider, "_rest_client") and provider._rest_client is not None:
+        rest_client = provider._rest_client
+    else:
         rest_client = rest.RESTClientObject(config)
+        # Cache it in the provider if provided
+        if provider:
+            provider._rest_client = rest_client
 
     headers = {
         "Content-Type": APPLICATION_JSON,
