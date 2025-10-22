@@ -460,6 +460,10 @@ class ApiClient:
         :param headers: Header parameters dict to be updated.
         :raises: ApiValueError if delegated token authentication fails
         """
+        # Skip if no provider configured
+        if self.configuration.delegated_auth_provider is None:
+            return
+            
         from datetime import datetime
         from {{ package }}.delegated_auth import DelegatedTokenConfig
         

@@ -15,7 +15,7 @@ from datadog_api_client.delegated_auth import (
     DelegatedTokenConfig,
     DelegatedTokenProvider,
 )
-from datadog_api_client.aws import AWSAuth, PROVIDER_AWS
+from datadog_api_client.aws import AWSAuth
 from datadog_api_client.exceptions import ApiValueError
 
 
@@ -34,7 +34,7 @@ class MockDelegatedTokenProvider(DelegatedTokenProvider):
         self.expiration_minutes = expiration_minutes
         self.authenticate_calls = []
 
-    def authenticate(self, config: DelegatedTokenConfig) -> DelegatedTokenCredentials:
+    def authenticate(self, config: DelegatedTokenConfig, api_config: Configuration) -> DelegatedTokenCredentials:
         """Mock authenticate method."""
         self.authenticate_calls.append(config)
         expiration = datetime.now() + timedelta(minutes=self.expiration_minutes)
@@ -59,17 +59,23 @@ class TestClientDelegatedAuthentication:
         # Create mock provider
         mock_provider = MockDelegatedTokenProvider()
 
-        # Create configuration with delegated token config
+        # Create configuration with delegated auth
         config = Configuration()
-        config.delegated_token_config = DelegatedTokenConfig(
-            org_uuid=FAKE_ORG_UUID, provider=PROVIDER_AWS, provider_auth=mock_provider
-        )
+        config.delegated_auth_provider = mock_provider
+        config.delegated_auth_org_uuid = FAKE_ORG_UUID
 
         # Create API client
         api_client = ApiClient(config)
 
-        # Test _get_delegated_token method
-        token = api_client._get_delegated_token()
+        headers = {}
+        api_client.use_delegated_token_auth(headers)
+
+        # Verify headers were set
+        assert "Authorization" in headers
+        assert headers["Authorization"] == f"Bearer {FAKE_TOKEN}"
+
+        # Get the cached token
+        token = api_client.configuration._delegated_token_credentials
         assert token is not None
         assert token.delegated_token == FAKE_TOKEN
         assert token.org_uuid == FAKE_ORG_UUID
@@ -85,11 +91,9 @@ class TestClientDelegatedAuthentication:
         # Create mock provider
         mock_provider = MockDelegatedTokenProvider()
 
-        # Create configuration with delegated token config
         config = Configuration()
-        config.delegated_token_config = DelegatedTokenConfig(
-            org_uuid=FAKE_ORG_UUID, provider=PROVIDER_AWS, provider_auth=mock_provider
-        )
+        config.delegated_auth_provider = mock_provider
+        config.delegated_auth_org_uuid = FAKE_ORG_UUID
 
         # Create API client
         api_client = ApiClient(config)
@@ -113,9 +117,8 @@ class TestClientDelegatedAuthentication:
 
         # Create configuration
         config = Configuration()
-        config.delegated_token_config = DelegatedTokenConfig(
-            org_uuid=FAKE_ORG_UUID, provider=PROVIDER_AWS, provider_auth=expired_provider
-        )
+        config.delegated_auth_provider = expired_provider
+        config.delegated_auth_org_uuid = FAKE_ORG_UUID
 
         # Create API client and get initial (expired) token
         api_client = ApiClient(config)
@@ -127,11 +130,10 @@ class TestClientDelegatedAuthentication:
         assert headers["Authorization"] == f"Bearer {FAKE_TOKEN}"
 
         # Verify expired token was created
-        assert hasattr(api_client, "_delegated_token_credentials")
-        assert api_client._delegated_token_credentials.is_expired()
+        assert api_client.configuration._delegated_token_credentials.is_expired()
 
         # Switch to valid provider for re-authentication
-        config.delegated_token_config.provider_auth = valid_provider
+        config.delegated_auth_provider = valid_provider
 
         # Second call should re-authenticate due to expired token
         headers2 = {}
@@ -140,7 +142,7 @@ class TestClientDelegatedAuthentication:
         assert headers2["Authorization"] == f"Bearer {FAKE_TOKEN}"
 
         # Verify new token is not expired
-        assert not api_client._delegated_token_credentials.is_expired()
+        assert not api_client.configuration._delegated_token_credentials.is_expired()
 
         # Verify both providers were called
         assert len(expired_provider.authenticate_calls) == 1
@@ -153,9 +155,8 @@ class TestClientDelegatedAuthentication:
 
         # Create configuration
         config = Configuration()
-        config.delegated_token_config = DelegatedTokenConfig(
-            org_uuid=FAKE_ORG_UUID, provider=PROVIDER_AWS, provider_auth=mock_provider
-        )
+        config.delegated_auth_provider = mock_provider
+        config.delegated_auth_org_uuid = FAKE_ORG_UUID
 
         # Create API client
         api_client = ApiClient(config)
@@ -191,9 +192,8 @@ class TestClientDelegatedAuthentication:
 
         # Create configuration
         config = Configuration()
-        config.delegated_token_config = DelegatedTokenConfig(
-            org_uuid=FAKE_ORG_UUID, provider=PROVIDER_AWS, provider_auth=aws_auth
-        )
+        config.delegated_auth_provider = aws_auth
+        config.delegated_auth_org_uuid = FAKE_ORG_UUID
 
         # Mock the get_delegated_token function called by AWS provider
         mock_creds = DelegatedTokenCredentials(
@@ -207,15 +207,14 @@ class TestClientDelegatedAuthentication:
             # Create API client
             api_client = ApiClient(config)
 
-            # Test token retrieval
-            token = api_client._get_delegated_token()
-            assert token.delegated_token == FAKE_TOKEN
-            assert token.org_uuid == FAKE_ORG_UUID
-
             # Test header generation
             headers = {}
             api_client.use_delegated_token_auth(headers)
             assert headers["Authorization"] == f"Bearer {FAKE_TOKEN}"
+
+            # Verify token was cached
+            assert api_client.configuration._delegated_token_credentials.delegated_token == FAKE_TOKEN
+            assert api_client.configuration._delegated_token_credentials.org_uuid == FAKE_ORG_UUID
 
     def test_api_key_authentication_comparison(self):
         """Test traditional API key authentication for comparison with delegated auth."""
@@ -238,25 +237,27 @@ class TestClientDelegatedAuthentication:
 
     def test_delegated_auth_error_handling(self):
         """Test error handling in delegated authentication."""
-        # Test with no configuration
+        # Test with no configuration - should simply not add auth header
         config = Configuration()
         api_client = ApiClient(config)
 
-        with pytest.raises(ApiValueError, match="Delegated token configuration is not set"):
-            api_client._get_delegated_token()
+        headers = {}
+        api_client.use_delegated_token_auth(headers)
+        # Should not add Authorization header when no provider configured
+        assert "Authorization" not in headers
 
         # Test with provider that raises an exception
         class FailingProvider(DelegatedTokenProvider):
-            def authenticate(self, config):
+            def authenticate(self, config, api_config):
                 raise Exception("Authentication failed")
 
-        config.delegated_token_config = DelegatedTokenConfig(
-            org_uuid=FAKE_ORG_UUID, provider=PROVIDER_AWS, provider_auth=FailingProvider()
-        )
+        config.delegated_auth_provider = FailingProvider()
+        config.delegated_auth_org_uuid = FAKE_ORG_UUID
 
         api_client = ApiClient(config)
         with pytest.raises(ApiValueError, match="Failed to get delegated token"):
-            api_client._get_delegated_token()
+            headers = {}
+            api_client.use_delegated_token_auth(headers)
 
     def test_multiple_api_clients_isolation(self):
         """Test that multiple API clients with different configs work independently."""
@@ -266,27 +267,16 @@ class TestClientDelegatedAuthentication:
 
         # Create two configurations
         config1 = Configuration()
-        config1.delegated_token_config = DelegatedTokenConfig(
-            org_uuid="org1", provider=PROVIDER_AWS, provider_auth=provider1
-        )
+        config1.delegated_auth_provider = provider1
+        config1.delegated_auth_org_uuid = "org1"
 
         config2 = Configuration()
-        config2.delegated_token_config = DelegatedTokenConfig(
-            org_uuid="org2", provider=PROVIDER_AWS, provider_auth=provider2
-        )
+        config2.delegated_auth_provider = provider2
+        config2.delegated_auth_org_uuid = "org2"
 
         # Create two API clients
         client1 = ApiClient(config1)
         client2 = ApiClient(config2)
-
-        # Test that they get different tokens
-        token1 = client1._get_delegated_token()
-        token2 = client2._get_delegated_token()
-
-        assert token1.delegated_token == "token1"
-        assert token1.org_uuid == "org1"
-        assert token2.delegated_token == "token2"
-        assert token2.org_uuid == "org2"
 
         # Test header generation for both
         headers1 = {}
@@ -298,6 +288,12 @@ class TestClientDelegatedAuthentication:
         assert headers1["Authorization"] == "Bearer token1"
         assert headers2["Authorization"] == "Bearer token2"
 
+        # Verify they have different cached tokens
+        assert client1.configuration._delegated_token_credentials.delegated_token == "token1"
+        assert client1.configuration._delegated_token_credentials.org_uuid == "org1"
+        assert client2.configuration._delegated_token_credentials.delegated_token == "token2"
+        assert client2.configuration._delegated_token_credentials.org_uuid == "org2"
+
 
 class TestClientDelegatedAuthenticationWithRealMocks:
     """Test client integration with more realistic mocking scenarios."""
@@ -308,7 +304,7 @@ class TestClientDelegatedAuthenticationWithRealMocks:
         call_count = 0
 
         class CountingProvider(DelegatedTokenProvider):
-            def authenticate(self, config):
+            def authenticate(self, config, api_config):
                 nonlocal call_count
                 call_count += 1
 
@@ -327,9 +323,8 @@ class TestClientDelegatedAuthenticationWithRealMocks:
 
         # Setup
         config = Configuration()
-        config.delegated_token_config = DelegatedTokenConfig(
-            org_uuid=FAKE_ORG_UUID, provider=PROVIDER_AWS, provider_auth=CountingProvider()
-        )
+        config.delegated_auth_provider = CountingProvider()
+        config.delegated_auth_org_uuid = FAKE_ORG_UUID
 
         api_client = ApiClient(config)
 
@@ -346,7 +341,7 @@ class TestClientDelegatedAuthenticationWithRealMocks:
         assert call_count == 1  # No new call
 
         # Force expiration by manipulating the cached token
-        api_client._delegated_token_credentials.expiration = datetime.now() - timedelta(minutes=1)
+        api_client.configuration._delegated_token_credentials.expiration = datetime.now() - timedelta(minutes=1)
 
         # Third call should refresh due to expiration
         headers3 = {}
