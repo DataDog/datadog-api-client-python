@@ -1319,6 +1319,12 @@
       "type": "safe"
     }
   },
+  "DeleteIssueAssignee": {
+    "tag": "Error Tracking",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpdateIssueAssignee": {
     "tag": "Error Tracking",
     "undo": {
