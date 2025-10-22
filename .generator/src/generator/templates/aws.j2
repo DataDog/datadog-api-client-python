@@ -6,7 +6,7 @@ import hmac
 import json
 import os
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import quote
 
 from {{ package }}.configuration import Configuration
@@ -109,7 +109,7 @@ class AWSAuth(DelegatedTokenProvider):
             session_token=session_token
         )
     
-    def _get_connection_parameters(self) -> tuple[str, str, str]:
+    def _get_connection_parameters(self) -> Tuple[str, str, str]:
         """Get connection parameters for AWS STS.
         
         :return: Tuple of (sts_full_url, region, host)

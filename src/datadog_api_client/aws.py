@@ -8,7 +8,7 @@ import hmac
 import json
 import os
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Tuple
 
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.delegated_auth import (
@@ -113,7 +113,7 @@ class AWSAuth(DelegatedTokenProvider):
 
         return AWSCredentials(access_key_id=access_key, secret_access_key=secret_key, session_token=session_token)
 
-    def _get_connection_parameters(self) -> tuple[str, str, str]:
+    def _get_connection_parameters(self) -> Tuple[str, str, str]:
         """Get connection parameters for AWS STS.
 
         :return: Tuple of (sts_full_url, region, host)
