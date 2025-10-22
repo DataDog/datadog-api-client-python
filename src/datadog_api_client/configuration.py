@@ -346,6 +346,9 @@ class Configuration:
 
         # Delegated token configuration
         self.delegated_token_config = None
+        self.delegated_auth_provider = None
+        self.delegated_auth_org_uuid = None
+        self._delegated_token_credentials = None
 
         # Load default values from environment
         if "DD_SITE" in os.environ:

@@ -462,10 +462,6 @@ class ApiClient:
         """
         from datadog_api_client.delegated_auth import DelegatedTokenConfig
 
-        # Check if we have cached credentials
-        if not hasattr(self.configuration, "_delegated_token_credentials"):
-            self.configuration._delegated_token_credentials = None
-
         # Check if we need to get or refresh the token
         if (
             self.configuration._delegated_token_credentials is None
