@@ -4507,7 +4507,8 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dd><p>Send pipeline event.</p>
 <p>Send your pipeline event to your Datadog platform over HTTP. For details about how pipeline executions are modeled and what execution types we support, see <a class="reference external" href="https://docs.datadoghq.com/continuous_integration/guides/pipeline_data_model/">Pipeline Data Model And Execution Types</a>.</p>
 <p>Multiple events can be sent in an array (up to 1000).</p>
-<p>Pipeline events can be submitted with a timestamp that is up to 18 hours in the past.</p>
+<p>Pipeline events can be submitted with a timestamp that is up to 18 hours in the past.
+The duration between the event start and end times cannot exceed 1 year.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
