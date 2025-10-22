@@ -119,8 +119,9 @@ class TestGetDelegatedToken:
 
         org_uuid = "test-org-uuid"
         proof = "test-proof"
+        config = Configuration()
 
-        creds = get_delegated_token(org_uuid, proof)
+        creds = get_delegated_token(org_uuid, proof, config)
 
         assert creds.org_uuid == org_uuid
         assert creds.delegated_token == "test-token"
@@ -136,5 +137,7 @@ class TestGetDelegatedToken:
         mock_response.status = 401
         mock_rest_client.request.return_value = mock_response
 
+        config = Configuration()
+
         with pytest.raises(ApiValueError, match="Failed to get token: 401"):
-            get_delegated_token("org", "proof")
+            get_delegated_token("org", "proof", config)

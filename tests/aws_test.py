@@ -10,6 +10,7 @@ from datadog_api_client.aws import (
     SigningData,
     PROVIDER_AWS,
 )
+from datadog_api_client.configuration import Configuration
 from datadog_api_client.delegated_auth import DelegatedTokenConfig
 from datadog_api_client.exceptions import ApiValueError
 
@@ -188,8 +189,9 @@ class TestAWSAuth:
 
         auth = AWSAuth()
         config = DelegatedTokenConfig("test-org-uuid", PROVIDER_AWS, auth)
+        api_config = Configuration()
 
-        result = auth.authenticate(config)
+        result = auth.authenticate(config, api_config)
 
         assert result == mock_credentials
         mock_get_delegated_token.assert_called_once()
@@ -198,13 +200,15 @@ class TestAWSAuth:
         """Test authentication with missing org UUID."""
         auth = AWSAuth()
         config = DelegatedTokenConfig("", PROVIDER_AWS, auth)
+        api_config = Configuration()
 
         with pytest.raises(ApiValueError, match="Missing org UUID in config"):
-            auth.authenticate(config)
+            auth.authenticate(config, api_config)
 
     def test_authenticate_missing_config(self):
         """Test authentication with missing config."""
         auth = AWSAuth()
+        api_config = Configuration()
 
         with pytest.raises(ApiValueError, match="Missing org UUID in config"):
-            auth.authenticate(None)
+            auth.authenticate(None, api_config)
