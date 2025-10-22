@@ -57,6 +57,20 @@ class ApiClient:
         # Set default User-Agent.
         self.user_agent = user_agent()
 
+        # Initialize delegated token config if delegated auth is configured
+        self._delegated_token_config = None
+        if (
+            self.configuration.delegated_auth_provider is not None
+            and self.configuration.delegated_auth_org_uuid is not None
+        ):
+            from datadog_api_client.delegated_auth import DelegatedTokenConfig
+
+            self._delegated_token_config = DelegatedTokenConfig(
+                org_uuid=self.configuration.delegated_auth_org_uuid,
+                provider="aws",  # This could be made configurable
+                provider_auth=self.configuration.delegated_auth_provider,
+            )
+
     def __enter__(self) -> Self:
         return self
 
@@ -460,28 +474,21 @@ class ApiClient:
         :param headers: Header parameters dict to be updated.
         :raises: ApiValueError if delegated token authentication fails
         """
-        # Skip if no provider configured
-        if self.configuration.delegated_auth_provider is None:
+        # Skip if no delegated token config
+        if self._delegated_token_config is None:
             return
-
-        from datadog_api_client.delegated_auth import DelegatedTokenConfig
 
         # Check if we need to get or refresh the token
         if (
             self.configuration._delegated_token_credentials is None
             or self.configuration._delegated_token_credentials.is_expired()
         ):
-            # Create config for the provider
-            config = DelegatedTokenConfig(
-                org_uuid=self.configuration.delegated_auth_org_uuid,
-                provider="aws",  # This could be made configurable
-                provider_auth=self.configuration.delegated_auth_provider,
-            )
-
             # Get new token from provider, passing the API configuration
             try:
                 self.configuration._delegated_token_credentials = (
-                    self.configuration.delegated_auth_provider.authenticate(config, self.configuration)
+                    self.configuration.delegated_auth_provider.authenticate(
+                        self._delegated_token_config, self.configuration
+                    )
                 )
             except Exception as e:
                 raise ApiValueError(f"Failed to get delegated token: {str(e)}")
