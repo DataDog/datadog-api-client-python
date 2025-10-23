@@ -3445,6 +3445,31 @@ from datadog_api_client.v2.model.reorder_rule_resource_data_type import ReorderR
 from datadog_api_client.v2.model.reorder_ruleset_resource_array import ReorderRulesetResourceArray
 from datadog_api_client.v2.model.reorder_ruleset_resource_data import ReorderRulesetResourceData
 from datadog_api_client.v2.model.reorder_ruleset_resource_data_type import ReorderRulesetResourceDataType
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data import ResolveVulnerableSymbolsRequestData
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data_attributes import (
+    ResolveVulnerableSymbolsRequestDataAttributes,
+)
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data_type import (
+    ResolveVulnerableSymbolsRequestDataType,
+)
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_response import ResolveVulnerableSymbolsResponse
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_response_data import ResolveVulnerableSymbolsResponseData
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_response_data_attributes import (
+    ResolveVulnerableSymbolsResponseDataAttributes,
+)
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_response_data_type import (
+    ResolveVulnerableSymbolsResponseDataType,
+)
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_response_results import (
+    ResolveVulnerableSymbolsResponseResults,
+)
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_response_results_vulnerable_symbols import (
+    ResolveVulnerableSymbolsResponseResultsVulnerableSymbols,
+)
+from datadog_api_client.v2.model.resolve_vulnerable_symbols_response_results_vulnerable_symbols_symbols import (
+    ResolveVulnerableSymbolsResponseResultsVulnerableSymbolsSymbols,
+)
 from datadog_api_client.v2.model.resource_filter_attributes import ResourceFilterAttributes
 from datadog_api_client.v2.model.resource_filter_request_type import ResourceFilterRequestType
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
@@ -3621,6 +3646,37 @@ from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
 from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
 from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
 from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
+from datadog_api_client.v2.model.sca_request import ScaRequest
+from datadog_api_client.v2.model.sca_request_data import ScaRequestData
+from datadog_api_client.v2.model.sca_request_data_attributes import ScaRequestDataAttributes
+from datadog_api_client.v2.model.sca_request_data_attributes_commit import ScaRequestDataAttributesCommit
+from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items import (
+    ScaRequestDataAttributesDependenciesItems,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items import (
+    ScaRequestDataAttributesDependenciesItemsLocationsItems,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_file_position import (
+    ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_position import (
+    ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_reachable_symbol_properties_items import (
+    ScaRequestDataAttributesDependenciesItemsReachableSymbolPropertiesItems,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_files_items import ScaRequestDataAttributesFilesItems
+from datadog_api_client.v2.model.sca_request_data_attributes_relations_items import (
+    ScaRequestDataAttributesRelationsItems,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_repository import ScaRequestDataAttributesRepository
+from datadog_api_client.v2.model.sca_request_data_attributes_vulnerabilities_items import (
+    ScaRequestDataAttributesVulnerabilitiesItems,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_vulnerabilities_items_affects_items import (
+    ScaRequestDataAttributesVulnerabilitiesItemsAffectsItems,
+)
+from datadog_api_client.v2.model.sca_request_data_type import ScaRequestDataType
 from datadog_api_client.v2.model.scalar_column import ScalarColumn
 from datadog_api_client.v2.model.scalar_column_type_group import ScalarColumnTypeGroup
 from datadog_api_client.v2.model.scalar_column_type_number import ScalarColumnTypeNumber
@@ -7059,6 +7115,17 @@ __all__ = [
     "ReorderRulesetResourceArray",
     "ReorderRulesetResourceData",
     "ReorderRulesetResourceDataType",
+    "ResolveVulnerableSymbolsRequest",
+    "ResolveVulnerableSymbolsRequestData",
+    "ResolveVulnerableSymbolsRequestDataAttributes",
+    "ResolveVulnerableSymbolsRequestDataType",
+    "ResolveVulnerableSymbolsResponse",
+    "ResolveVulnerableSymbolsResponseData",
+    "ResolveVulnerableSymbolsResponseDataAttributes",
+    "ResolveVulnerableSymbolsResponseDataType",
+    "ResolveVulnerableSymbolsResponseResults",
+    "ResolveVulnerableSymbolsResponseResultsVulnerableSymbols",
+    "ResolveVulnerableSymbolsResponseResultsVulnerableSymbolsSymbols",
     "ResourceFilterAttributes",
     "ResourceFilterRequestType",
     "ResponseMetaAttributes",
@@ -7219,6 +7286,21 @@ __all__ = [
     "SLOReportStatusGetResponse",
     "SLOReportStatusGetResponseAttributes",
     "SLOReportStatusGetResponseData",
+    "ScaRequest",
+    "ScaRequestData",
+    "ScaRequestDataAttributes",
+    "ScaRequestDataAttributesCommit",
+    "ScaRequestDataAttributesDependenciesItems",
+    "ScaRequestDataAttributesDependenciesItemsLocationsItems",
+    "ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition",
+    "ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition",
+    "ScaRequestDataAttributesDependenciesItemsReachableSymbolPropertiesItems",
+    "ScaRequestDataAttributesFilesItems",
+    "ScaRequestDataAttributesRelationsItems",
+    "ScaRequestDataAttributesRepository",
+    "ScaRequestDataAttributesVulnerabilitiesItems",
+    "ScaRequestDataAttributesVulnerabilitiesItemsAffectsItems",
+    "ScaRequestDataType",
     "ScalarColumn",
     "ScalarColumnTypeGroup",
     "ScalarColumnTypeNumber",
