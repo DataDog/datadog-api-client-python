@@ -1964,6 +1964,83 @@ datadog\_api\_client.v1.model.logs\_retention\_sum\_usage module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_schema\_category\_mapper module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_category_mapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_category\_mapper\_category module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_category_mapper_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_category\_mapper\_fallback module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_category_mapper_fallback
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_category\_mapper\_targets module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_category_mapper_targets
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_category\_mapper\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_category_mapper_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_data module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_mapper module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_mapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_processor module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_processor\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_remapper module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_remapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_schema\_remapper\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_schema_remapper_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_service\_remapper module
 ------------------------------------------------------------
 

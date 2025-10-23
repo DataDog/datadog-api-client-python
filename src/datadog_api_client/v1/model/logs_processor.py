@@ -100,6 +100,12 @@ class LogsProcessor(ModelComposed):
 
         :param input_representation: The original representation of input string.
         :type input_representation: LogsDecoderProcessorInputRepresentation
+
+        :param mappers: The `LogsSchemaProcessor` `mappers`.
+        :type mappers: [LogsSchemaMapper]
+
+        :param schema: Configuration of the schema data to use.
+        :type schema: LogsSchemaData
         """
         super().__init__(kwargs)
 
@@ -131,6 +137,7 @@ class LogsProcessor(ModelComposed):
         from datadog_api_client.v1.model.logs_span_remapper import LogsSpanRemapper
         from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
         from datadog_api_client.v1.model.logs_decoder_processor import LogsDecoderProcessor
+        from datadog_api_client.v1.model.logs_schema_processor import LogsSchemaProcessor
 
         return {
             "oneOf": [
@@ -153,5 +160,6 @@ class LogsProcessor(ModelComposed):
                 LogsSpanRemapper,
                 LogsArrayProcessor,
                 LogsDecoderProcessor,
+                LogsSchemaProcessor,
             ],
         }

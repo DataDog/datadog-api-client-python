@@ -316,6 +316,17 @@ from datadog_api_client.v1.model.logs_processor import LogsProcessor
 from datadog_api_client.v1.model.logs_query_compute import LogsQueryCompute
 from datadog_api_client.v1.model.logs_retention_agg_sum_usage import LogsRetentionAggSumUsage
 from datadog_api_client.v1.model.logs_retention_sum_usage import LogsRetentionSumUsage
+from datadog_api_client.v1.model.logs_schema_category_mapper import LogsSchemaCategoryMapper
+from datadog_api_client.v1.model.logs_schema_category_mapper_category import LogsSchemaCategoryMapperCategory
+from datadog_api_client.v1.model.logs_schema_category_mapper_fallback import LogsSchemaCategoryMapperFallback
+from datadog_api_client.v1.model.logs_schema_category_mapper_targets import LogsSchemaCategoryMapperTargets
+from datadog_api_client.v1.model.logs_schema_category_mapper_type import LogsSchemaCategoryMapperType
+from datadog_api_client.v1.model.logs_schema_data import LogsSchemaData
+from datadog_api_client.v1.model.logs_schema_mapper import LogsSchemaMapper
+from datadog_api_client.v1.model.logs_schema_processor import LogsSchemaProcessor
+from datadog_api_client.v1.model.logs_schema_processor_type import LogsSchemaProcessorType
+from datadog_api_client.v1.model.logs_schema_remapper import LogsSchemaRemapper
+from datadog_api_client.v1.model.logs_schema_remapper_type import LogsSchemaRemapperType
 from datadog_api_client.v1.model.logs_service_remapper import LogsServiceRemapper
 from datadog_api_client.v1.model.logs_service_remapper_type import LogsServiceRemapperType
 from datadog_api_client.v1.model.logs_sort import LogsSort
@@ -1387,6 +1398,17 @@ __all__ = [
     "LogsQueryCompute",
     "LogsRetentionAggSumUsage",
     "LogsRetentionSumUsage",
+    "LogsSchemaCategoryMapper",
+    "LogsSchemaCategoryMapperCategory",
+    "LogsSchemaCategoryMapperFallback",
+    "LogsSchemaCategoryMapperTargets",
+    "LogsSchemaCategoryMapperType",
+    "LogsSchemaData",
+    "LogsSchemaMapper",
+    "LogsSchemaProcessor",
+    "LogsSchemaProcessorType",
+    "LogsSchemaRemapper",
+    "LogsSchemaRemapperType",
     "LogsServiceRemapper",
     "LogsServiceRemapperType",
     "LogsSort",
