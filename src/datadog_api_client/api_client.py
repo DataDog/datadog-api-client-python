@@ -67,7 +67,7 @@ class ApiClient:
 
             self._delegated_token_config = DelegatedTokenConfig(
                 org_uuid=self.configuration.delegated_auth_org_uuid,
-                provider="aws",  # This could be made configurable
+                provider="aws",
                 provider_auth=self.configuration.delegated_auth_provider,
             )
 
