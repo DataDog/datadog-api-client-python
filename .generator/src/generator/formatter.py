@@ -167,7 +167,7 @@ class CustomRenderer(m2r2.RestRenderer):
 
 def docstring(text):
     return (
-        m2r2.convert(text.replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]
+        m2r2.convert((text or "").replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]
         .replace("\\ ", " ")
         .replace("\\`", "\\\\`")
         .replace("\n\n\n", "\n\n")
