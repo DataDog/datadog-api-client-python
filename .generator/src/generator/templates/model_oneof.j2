@@ -8,10 +8,10 @@ class {{ name }}(ModelComposed):
 
     def __init__(self, **kwargs):
         """
-        {{ model.description|docstring|indent(8) }}
+        {{ (model.description or "")|docstring|indent(8) }}
 {%- for attr, definition, schema in get_oneof_parameters(model) %}
 {# keep new line #}
-        :param {{ attr|attribute_name }}: {{ definition.description|indent(12) }}
+        :param {{ attr|attribute_name }}: {{ (definition.description or "")|indent(12) }}
         :type {{ attr|attribute_name }}: {{ get_type_for_attribute(schema, attr, current_name=name) }}{% if definition.nullable %}, none_type{% endif %}{% if attr not in schema.get("required", []) %}, optional{% endif %}
 {%- endfor %}
         """

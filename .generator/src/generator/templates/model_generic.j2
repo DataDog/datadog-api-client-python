@@ -122,10 +122,10 @@ class {{ name }}(ModelNormal):
         {%- if attr not in model.get("required", []) %} {{ attr|attribute_name }}: {{ get_typing_for_attribute(model, attr, current_name=name, optional=True) }}=unset,{% endif %}
 {%- endfor %} **kwargs):
         """
-        {{ model.description|docstring|indent(8) }}
+        {{ (model.description or "")|docstring|indent(8) }}
 {%- for attr, definition in model.get("properties", {}).items() %}
 {# keep new line #}
-        :param {{ attr|attribute_name }}: {{ definition.description|docstring|indent(12) }}{% if definition.deprecated %} **Deprecated**.{% endif %}
+        :param {{ attr|attribute_name }}: {{ (definition.description or "")|docstring|indent(12) }}{% if definition.deprecated %} **Deprecated**.{% endif %}
         :type {{ attr|attribute_name }}: {{ get_type_for_attribute(model, attr, current_name=name) }}{% if definition.nullable %}, none_type{% endif %}{% if attr not in model.get("required", []) %}, optional{% endif %}
 {%- endfor %}
         """

@@ -2,7 +2,7 @@
 
 class {{ name }}(ModelSimple):
     """
-    {{ model.description|docstring|indent(8) }}
+    {{ (model.description or "")|docstring|indent(8) }}
 
 {# empty line #}
 {%- if "default" in model and model.default != None %}

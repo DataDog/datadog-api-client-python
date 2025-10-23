@@ -3,7 +3,7 @@ from typing import ClassVar
 
 class {{ name }}(ModelSimple):
     """
-    {{ model.description|indent(8) }}
+    {{ (model.description or "")|indent(8) }}
 
     :param value: {%- if default != None %} If omitted defaults to {{ default|format_value }}.{%- endif %} Must be one of [{%- for value in model.enum %}{{ value|format_value }}{% if not loop.last %}, {% endif %}{%- endfor %}].
     :type value: {{ get_enum_type(model) }}
