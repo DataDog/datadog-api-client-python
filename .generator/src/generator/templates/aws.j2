@@ -5,9 +5,11 @@ import hashlib
 import hmac
 import json
 import os
+import platform
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 from urllib.parse import quote
+from {{ package }}.version import __version__
 
 from {{ package }}.configuration import Configuration
 from {{ package }}.delegated_auth import DelegatedTokenProvider, DelegatedTokenConfig, DelegatedTokenCredentials, get_delegated_token
@@ -257,7 +259,5 @@ class AWSAuth(DelegatedTokenProvider):
         
         :return: User agent string
         """
-        import platform
-        from {{ package }}.version import __version__
         
         return f"datadog-api-client-python/{__version__} (python {platform.python_version()}; os {platform.system()}; arch {platform.machine()})"

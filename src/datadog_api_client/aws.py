@@ -7,8 +7,10 @@ import hashlib
 import hmac
 import json
 import os
+import platform
 from datetime import datetime
 from typing import Optional, Tuple
+from datadog_api_client.version import __version__
 
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.delegated_auth import (
@@ -275,7 +277,5 @@ class AWSAuth(DelegatedTokenProvider):
 
         :return: User agent string
         """
-        import platform
-        from datadog_api_client.version import __version__
 
         return f"datadog-api-client-python/{__version__} (python {platform.python_version()}; os {platform.system()}; arch {platform.machine()})"
