@@ -1,4 +1,35 @@
 {
+  "ListFleetDeployments": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateFleetDeploymentConfigure": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "operationId": "CancelFleetDeployment",
+      "parameters": [
+        {
+          "name": "deployment_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetFleetDeployment": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CancelFleetDeployment": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDatastores": {
     "tag": "Actions Datastores",
     "undo": {

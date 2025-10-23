@@ -1590,6 +1590,18 @@ from datadog_api_client.v2.model.flaky_tests_search_request_data_type import Fla
 from datadog_api_client.v2.model.flaky_tests_search_response import FlakyTestsSearchResponse
 from datadog_api_client.v2.model.flaky_tests_search_response_meta import FlakyTestsSearchResponseMeta
 from datadog_api_client.v2.model.flaky_tests_search_sort import FlakyTestsSearchSort
+from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
+from datadog_api_client.v2.model.fleet_deployment_attributes import FleetDeploymentAttributes
+from datadog_api_client.v2.model.fleet_deployment_configure_attributes import FleetDeploymentConfigureAttributes
+from datadog_api_client.v2.model.fleet_deployment_configure_create import FleetDeploymentConfigureCreate
+from datadog_api_client.v2.model.fleet_deployment_configure_create_request import FleetDeploymentConfigureCreateRequest
+from datadog_api_client.v2.model.fleet_deployment_file_op import FleetDeploymentFileOp
+from datadog_api_client.v2.model.fleet_deployment_operation import FleetDeploymentOperation
+from datadog_api_client.v2.model.fleet_deployment_resource_type import FleetDeploymentResourceType
+from datadog_api_client.v2.model.fleet_deployment_response import FleetDeploymentResponse
+from datadog_api_client.v2.model.fleet_deployments_page import FleetDeploymentsPage
+from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
+from datadog_api_client.v2.model.fleet_deployments_response_meta import FleetDeploymentsResponseMeta
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.freshservice_api_key import FreshserviceAPIKey
@@ -5772,6 +5784,18 @@ __all__ = [
     "FlakyTestsSearchResponse",
     "FlakyTestsSearchResponseMeta",
     "FlakyTestsSearchSort",
+    "FleetDeployment",
+    "FleetDeploymentAttributes",
+    "FleetDeploymentConfigureAttributes",
+    "FleetDeploymentConfigureCreate",
+    "FleetDeploymentConfigureCreateRequest",
+    "FleetDeploymentFileOp",
+    "FleetDeploymentOperation",
+    "FleetDeploymentResourceType",
+    "FleetDeploymentResponse",
+    "FleetDeploymentsPage",
+    "FleetDeploymentsResponse",
+    "FleetDeploymentsResponseMeta",
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
     "FreshserviceAPIKey",
