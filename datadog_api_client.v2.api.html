@@ -1459,6 +1459,22 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.fleet_automation_api" class="md-nav__link">datadog_api_client.v2.api.fleet_automation_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.cancel_fleet_deployment" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.cancel_fleet_deployment()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_configure" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.create_fleet_deployment_configure()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.get_fleet_deployment()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_deployments" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.list_fleet_deployments()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.gcp_integration_api" class="md-nav__link">datadog_api_client.v2.api.gcp_integration_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.gcp_integration_api.GCPIntegrationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">GCPIntegrationApi</span></code></a><nav class="md-nav">
@@ -6853,6 +6869,80 @@ paths are <code class="docutils literal notranslate"><span class="pre">created_b
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fastly_service_response.FastlyServiceResponse" title="datadog_api_client.v2.model.fastly_service_response.FastlyServiceResponse">FastlyServiceResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.fleet_automation_api">
+<span id="datadog-api-client-v2-api-fleet-automation-api-module"></span><h2 id="module-datadog_api_client.v2.api.fleet_automation_api">datadog_api_client.v2.api.fleet_automation_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.fleet_automation_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FleetAutomationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manage automated deployments across your fleet of hosts.
+Use these endpoints to create, retrieve, and cancel deployments
+that apply configuration changes to multiple hosts at once.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.cancel_fleet_deployment">
+<span class="sig-name descname"><span class="pre">cancel_fleet_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.cancel_fleet_deployment" title="Link to this definition">¶</a></dt>
+<dd><p>Cancel a deployment.</p>
+<p>Cancel this deployment and stop all associated operations.
+If a workflow is currently running for this deployment, it is canceled immediately.
+Changes already applied to hosts are not rolled back.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deployment_id</strong> (<em>str</em>) – The unique identifier of the deployment to cancel.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_configure">
+<span class="sig-name descname"><span class="pre">create_fleet_deployment_configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest" title="datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest"><span class="pre">FleetDeploymentConfigureCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_configure" title="Link to this definition">¶</a></dt>
+<dd><p>Create a deployment.</p>
+<p>Create a new deployment to apply configuration changes
+to a fleet of hosts matching the specified filter query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest" title="datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest"><em>FleetDeploymentConfigureCreateRequest</em></a>) – Request payload containing the deployment details.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse">FleetDeploymentResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment">
+<span class="sig-name descname"><span class="pre">get_fleet_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment" title="Link to this definition">¶</a></dt>
+<dd><p>Get a deployment by ID.</p>
+<p>Retrieve the details of a specific deployment using its unique identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deployment_id</strong> (<em>str</em>) – The unique identifier of the deployment to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse">FleetDeploymentResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_deployments">
+<span class="sig-name descname"><span class="pre">list_fleet_deployments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployments_response.FleetDeploymentsResponse" title="datadog_api_client.v2.model.fleet_deployments_response.FleetDeploymentsResponse"><span class="pre">FleetDeploymentsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_deployments" title="Link to this definition">¶</a></dt>
+<dd><p>List all deployments.</p>
+<p>Retrieve a list of all deployments for fleet automation.
+Use the <code class="docutils literal notranslate"><span class="pre">page_size</span></code> and <code class="docutils literal notranslate"><span class="pre">page_offset</span></code> parameters to paginate results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of deployments to return per page. Maximum value is 100.</p></li>
+<li><p><strong>page_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Index of the first deployment to return. Use this with <code class="docutils literal notranslate"><span class="pre">page_size</span></code> to paginate through results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployments_response.FleetDeploymentsResponse" title="datadog_api_client.v2.model.fleet_deployments_response.FleetDeploymentsResponse">FleetDeploymentsResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

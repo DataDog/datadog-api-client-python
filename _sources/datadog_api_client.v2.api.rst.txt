@@ -242,6 +242,13 @@ datadog\_api\_client.v2.api.fastly\_integration\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.fleet\_automation\_api module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.fleet_automation_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.gcp\_integration\_api module
 --------------------------------------------------------
 
