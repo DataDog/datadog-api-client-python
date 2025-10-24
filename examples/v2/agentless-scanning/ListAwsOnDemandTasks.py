@@ -1,5 +1,5 @@
 """
-Get AWS On Demand tasks returns "OK" response
+List AWS on demand tasks returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

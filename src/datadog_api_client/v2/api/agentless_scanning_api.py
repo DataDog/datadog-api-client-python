@@ -423,7 +423,7 @@ class AgentlessScanningApi:
         self,
         body: AwsOnDemandCreateRequest,
     ) -> AwsOnDemandResponse:
-        """Post an AWS on demand task.
+        """Create AWS on demand task.
 
         Trigger the scan of an AWS resource with a high priority. Agentless scanning must be activated for the AWS account containing the resource to scan.
 
@@ -440,7 +440,7 @@ class AgentlessScanningApi:
         self,
         body: AwsScanOptionsCreateRequest,
     ) -> AwsScanOptionsResponse:
-        """Post AWS Scan Options.
+        """Create AWS scan options.
 
         Activate Agentless scan options for an AWS account.
 
@@ -457,7 +457,7 @@ class AgentlessScanningApi:
         self,
         body: AzureScanOptions,
     ) -> AzureScanOptions:
-        """Create azure scan options.
+        """Create Azure scan options.
 
         Activate Agentless scan options for an Azure subscription.
 
@@ -473,7 +473,7 @@ class AgentlessScanningApi:
         self,
         body: GcpScanOptions,
     ) -> GcpScanOptions:
-        """Post GCP Scan Options.
+        """Create GCP scan options.
 
         Activate Agentless scan options for a GCP project.
 
@@ -490,7 +490,7 @@ class AgentlessScanningApi:
         self,
         account_id: str,
     ) -> None:
-        """Delete AWS Scan Options.
+        """Delete AWS scan options.
 
         Delete Agentless scan options for an AWS account.
 
@@ -507,7 +507,7 @@ class AgentlessScanningApi:
         self,
         subscription_id: str,
     ) -> None:
-        """Delete azure scan options.
+        """Delete Azure scan options.
 
         Delete Agentless scan options for an Azure subscription.
 
@@ -524,7 +524,7 @@ class AgentlessScanningApi:
         self,
         project_id: str,
     ) -> None:
-        """Delete GCP Scan Options.
+        """Delete GCP scan options.
 
         Delete Agentless scan options for a GCP project.
 
@@ -541,7 +541,7 @@ class AgentlessScanningApi:
         self,
         task_id: str,
     ) -> AwsOnDemandResponse:
-        """Get AWS On Demand task by id.
+        """Get AWS on demand task.
 
         Fetch the data of a specific on demand task.
 
@@ -608,7 +608,7 @@ class AgentlessScanningApi:
     def list_aws_on_demand_tasks(
         self,
     ) -> AwsOnDemandListResponse:
-        """Get AWS On Demand tasks.
+        """List AWS on demand tasks.
 
         Fetches the most recent 1000 AWS on demand tasks.
 
@@ -620,7 +620,7 @@ class AgentlessScanningApi:
     def list_aws_scan_options(
         self,
     ) -> AwsScanOptionsListResponse:
-        """List AWS Scan Options.
+        """List AWS scan options.
 
         Fetches the scan options configured for AWS accounts.
 
@@ -632,7 +632,7 @@ class AgentlessScanningApi:
     def list_azure_scan_options(
         self,
     ) -> AzureScanOptionsArray:
-        """List azure scan options.
+        """List Azure scan options.
 
         Fetches the scan options configured for Azure accounts.
 
@@ -644,7 +644,7 @@ class AgentlessScanningApi:
     def list_gcp_scan_options(
         self,
     ) -> GcpScanOptionsArray:
-        """List GCP Scan Options.
+        """List GCP scan options.
 
         Fetches the scan options configured for all GCP projects.
 
@@ -658,7 +658,7 @@ class AgentlessScanningApi:
         account_id: str,
         body: AwsScanOptionsUpdateRequest,
     ) -> None:
-        """Patch AWS Scan Options.
+        """Update AWS scan options.
 
         Update the Agentless scan options for an activated account.
 
@@ -680,7 +680,7 @@ class AgentlessScanningApi:
         subscription_id: str,
         body: AzureScanOptionsInputUpdate,
     ) -> AzureScanOptions:
-        """Update azure scan options.
+        """Update Azure scan options.
 
         Update the Agentless scan options for an activated subscription.
 
@@ -701,7 +701,7 @@ class AgentlessScanningApi:
         project_id: str,
         body: GcpScanOptionsInputUpdate,
     ) -> GcpScanOptions:
-        """Patch GCP Scan Options.
+        """Update GCP scan options.
 
         Update the Agentless scan options for an activated GCP project.
 

@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"lambda":true,"sensitive_data":false,"vuln_containers_os":true,"vuln_host_os":true},"id":"184366314700","type":"incorrect_type"}}'
+    body: '{"data":{"attributes":{"lambda":true,"sensitive_data":false,"vuln_containers_os":true,"vuln_host_os":true},"id":"123","type":"aws_scan_options"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/aws
   response:
     body:
-      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
-        \"incorrect_type\" expected one of \"aws_scan_options\""}]}'
+      string: '{"errors":[{"title":"Generic Error","detail":"the provided Aws account
+        id is not valid"}]}'
     headers:
       content-type:
       - application/vnd.api+json

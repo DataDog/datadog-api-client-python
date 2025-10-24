@@ -1,5 +1,5 @@
 """
-List GCP Scan Options returns "OK" response
+List GCP scan options returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

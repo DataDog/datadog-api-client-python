@@ -1,5 +1,5 @@
 """
-Create azure scan options returns "Created" response
+Create Azure scan options returns "Created" response
 """
 
 from datadog_api_client import ApiClient, Configuration

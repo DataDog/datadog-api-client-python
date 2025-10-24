@@ -1,5 +1,5 @@
 """
-Post GCP Scan Options returns "Agentless scan options enabled successfully." response
+Create GCP scan options returns "Agentless scan options enabled successfully." response
 """
 
 from datadog_api_client import ApiClient, Configuration
