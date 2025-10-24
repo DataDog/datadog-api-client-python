@@ -54561,7 +54561,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - security_monitoring_findings_read
-      summary: List AWS Scan Options
+      summary: List AWS scan options
       tags:
       - Agentless Scanning
     post:
@@ -54594,7 +54594,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Post AWS Scan Options
+      summary: Create AWS scan options
       tags:
       - Agentless Scanning
       x-codegen-request-body-name: body
@@ -54620,7 +54620,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Delete AWS Scan Options
+      summary: Delete AWS scan options
       tags:
       - Agentless Scanning
     get:
@@ -54679,7 +54679,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Patch AWS Scan Options
+      summary: Update AWS scan options
       tags:
       - Agentless Scanning
       x-codegen-request-body-name: body
@@ -54701,7 +54701,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - security_monitoring_findings_read
-      summary: List azure scan options
+      summary: List Azure scan options
       tags:
       - Agentless Scanning
     post:
@@ -54727,7 +54727,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Create azure scan options
+      summary: Create Azure scan options
       tags:
       - Agentless Scanning
   /api/v2/agentless_scanning/accounts/azure/{subscription_id}:
@@ -54752,7 +54752,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Delete azure scan options
+      summary: Delete Azure scan options
       tags:
       - Agentless Scanning
     get:
@@ -54820,7 +54820,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Update azure scan options
+      summary: Update Azure scan options
       tags:
       - Agentless Scanning
   /api/v2/agentless_scanning/accounts/gcp:
@@ -54843,7 +54843,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - security_monitoring_findings_read
-      summary: List GCP Scan Options
+      summary: List GCP scan options
       tags:
       - Agentless Scanning
     post:
@@ -54876,7 +54876,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Post GCP Scan Options
+      summary: Create GCP scan options
       tags:
       - Agentless Scanning
       x-codegen-request-body-name: body
@@ -54908,7 +54908,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Delete GCP Scan Options
+      summary: Delete GCP scan options
       tags:
       - Agentless Scanning
     get:
@@ -54983,7 +54983,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Patch GCP Scan Options
+      summary: Update GCP scan options
       tags:
       - Agentless Scanning
       x-codegen-request-body-name: body
@@ -55007,7 +55007,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - security_monitoring_findings_read
-      summary: Get AWS On Demand tasks
+      summary: List AWS on demand tasks
       tags:
       - Agentless Scanning
       x-permission:
@@ -55044,7 +55044,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - org_management
-      summary: Post an AWS on demand task
+      summary: Create AWS on demand task
       tags:
       - Agentless Scanning
       x-codegen-request-body-name: body
@@ -55078,7 +55078,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - security_monitoring_findings_read
-      summary: Get AWS On Demand task by id
+      summary: Get AWS on demand task
       tags:
       - Agentless Scanning
       x-permission:

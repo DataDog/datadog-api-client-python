@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"id":"different-project-id","type":"gcp_scan_options"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/gcp/no
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"project id must be 6-30
+        characters, got 2"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -1,5 +1,5 @@
 """
-Patch GCP Scan Options returns "OK" response
+Update GCP scan options returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

@@ -1,5 +1,5 @@
 """
-List azure scan options returns "OK" response
+List Azure scan options returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

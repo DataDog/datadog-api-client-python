@@ -1,5 +1,5 @@
 """
-Post an AWS on demand task returns "AWS on demand task created successfully." response
+Create AWS on demand task returns "AWS on demand task created successfully." response
 """
 
 from datadog_api_client import ApiClient, Configuration

@@ -1,5 +1,5 @@
 """
-Delete azure scan options returns "No Content" response
+Delete Azure scan options returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration
