@@ -125,7 +125,7 @@ def cli(specs, output):
             api_path = package / "api" / filename
             api_path.parent.mkdir(parents=True, exist_ok=True)
             with api_path.open("w") as fp:
-                fp.write(api_j2.render(name=name, operations=operations, description=tags_by_name[name]["description"]))
+                fp.write(api_j2.render(name=name, operations=operations, description=tags_by_name[name].get("description")))
 
         api_init_path = package / "api" / "__init__.py"
         with api_init_path.open("w") as fp:
