@@ -19,6 +19,10 @@ from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
 from datadog_api_client.v2.model.event_create_request_payload import EventCreateRequestPayload
+from datadog_api_client.v2.model.event_email_address_response_array import EventEmailAddressResponseArray
+from datadog_api_client.v2.model.event_email_address_response import EventEmailAddressResponse
+from datadog_api_client.v2.model.create_event_email_address_request import CreateEventEmailAddressRequest
+from datadog_api_client.v2.model.create_on_call_event_email_address_request import CreateOnCallEventEmailAddressRequest
 from datadog_api_client.v2.model.events_list_request import EventsListRequest
 from datadog_api_client.v2.model.v2_event_response import V2EventResponse
 
@@ -104,6 +108,46 @@ class EventsApi:
             api_client=api_client,
         )
 
+        self._create_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail",
+                "operation_id": "create_event_email_address",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateEventEmailAddressRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_on_call_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/on-call",
+                "operation_id": "create_on_call_event_email_address",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateOnCallEventEmailAddressRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._get_event_endpoint = _Endpoint(
             settings={
                 "response_type": (V2EventResponse,),
@@ -121,6 +165,38 @@ class EventsApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_on_call_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/on-call",
+                "operation_id": "get_on_call_event_email_address",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_event_email_addresses_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail",
+                "operation_id": "list_event_email_addresses",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -221,6 +297,34 @@ class EventsApi:
 
         return self._create_event_endpoint.call_with_http_info(**kwargs)
 
+    def create_event_email_address(
+        self,
+        body: CreateEventEmailAddressRequest,
+    ) -> EventEmailAddressResponse:
+        """Create event email address.
+
+        :type body: CreateEventEmailAddressRequest
+        :rtype: EventEmailAddressResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_event_email_address_endpoint.call_with_http_info(**kwargs)
+
+    def create_on_call_event_email_address(
+        self,
+        body: CreateOnCallEventEmailAddressRequest,
+    ) -> EventEmailAddressResponse:
+        """Create on-call event email address.
+
+        :type body: CreateOnCallEventEmailAddressRequest
+        :rtype: EventEmailAddressResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_on_call_event_email_address_endpoint.call_with_http_info(**kwargs)
+
     def get_event(
         self,
         event_id: str,
@@ -237,6 +341,26 @@ class EventsApi:
         kwargs["event_id"] = event_id
 
         return self._get_event_endpoint.call_with_http_info(**kwargs)
+
+    def get_on_call_event_email_address(
+        self,
+    ) -> EventEmailAddressResponseArray:
+        """Get on-call event email address.
+
+        :rtype: EventEmailAddressResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_on_call_event_email_address_endpoint.call_with_http_info(**kwargs)
+
+    def list_event_email_addresses(
+        self,
+    ) -> EventEmailAddressResponseArray:
+        """List event email addresses.
+
+        :rtype: EventEmailAddressResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_event_email_addresses_endpoint.call_with_http_info(**kwargs)
 
     def list_events(
         self,

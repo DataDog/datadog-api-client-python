@@ -924,6 +924,11 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_event_email_address_request import CreateEventEmailAddressRequest
+from datadog_api_client.v2.model.create_event_email_address_request_data import CreateEventEmailAddressRequestData
+from datadog_api_client.v2.model.create_event_email_address_request_data_attributes import (
+    CreateEventEmailAddressRequestDataAttributes,
+)
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
@@ -932,6 +937,13 @@ from datadog_api_client.v2.model.create_notification_rule_parameters import Crea
 from datadog_api_client.v2.model.create_notification_rule_parameters_data import CreateNotificationRuleParametersData
 from datadog_api_client.v2.model.create_notification_rule_parameters_data_attributes import (
     CreateNotificationRuleParametersDataAttributes,
+)
+from datadog_api_client.v2.model.create_on_call_event_email_address_request import CreateOnCallEventEmailAddressRequest
+from datadog_api_client.v2.model.create_on_call_event_email_address_request_data import (
+    CreateOnCallEventEmailAddressRequestData,
+)
+from datadog_api_client.v2.model.create_on_call_event_email_address_request_data_attributes import (
+    CreateOnCallEventEmailAddressRequestDataAttributes,
 )
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
@@ -1506,6 +1518,22 @@ from datadog_api_client.v2.model.event_create_response_attributes_attributes_evt
 )
 from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
 from datadog_api_client.v2.model.event_create_response_payload_links import EventCreateResponsePayloadLinks
+from datadog_api_client.v2.model.event_email_address_response import EventEmailAddressResponse
+from datadog_api_client.v2.model.event_email_address_response_array import EventEmailAddressResponseArray
+from datadog_api_client.v2.model.event_email_address_response_data import EventEmailAddressResponseData
+from datadog_api_client.v2.model.event_email_address_response_data_attributes import (
+    EventEmailAddressResponseDataAttributes,
+)
+from datadog_api_client.v2.model.event_email_address_response_data_relationships import (
+    EventEmailAddressResponseDataRelationships,
+)
+from datadog_api_client.v2.model.event_email_address_response_data_relationships_user import (
+    EventEmailAddressResponseDataRelationshipsUser,
+)
+from datadog_api_client.v2.model.event_email_address_response_data_relationships_user_data import (
+    EventEmailAddressResponseDataRelationshipsUserData,
+)
+from datadog_api_client.v2.model.event_emails_type import EventEmailsType
 from datadog_api_client.v2.model.event_payload import EventPayload
 from datadog_api_client.v2.model.event_payload_attributes import EventPayloadAttributes
 from datadog_api_client.v2.model.event_payload_integration_id import EventPayloadIntegrationId
@@ -5292,11 +5320,17 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateEventEmailAddressRequest",
+    "CreateEventEmailAddressRequestData",
+    "CreateEventEmailAddressRequestDataAttributes",
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
     "CreateNotificationRuleParametersDataAttributes",
+    "CreateOnCallEventEmailAddressRequest",
+    "CreateOnCallEventEmailAddressRequestData",
+    "CreateOnCallEventEmailAddressRequestDataAttributes",
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
@@ -5700,6 +5734,14 @@ __all__ = [
     "EventCreateResponseAttributesAttributesEvt",
     "EventCreateResponsePayload",
     "EventCreateResponsePayloadLinks",
+    "EventEmailAddressResponse",
+    "EventEmailAddressResponseArray",
+    "EventEmailAddressResponseData",
+    "EventEmailAddressResponseDataAttributes",
+    "EventEmailAddressResponseDataRelationships",
+    "EventEmailAddressResponseDataRelationshipsUser",
+    "EventEmailAddressResponseDataRelationshipsUserData",
+    "EventEmailsType",
     "EventPayload",
     "EventPayloadAttributes",
     "EventPayloadIntegrationId",

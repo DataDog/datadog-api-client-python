@@ -18,6 +18,22 @@ Feature: Events
     And an instance of "Events" API
 
   @generated @skip @team:DataDog/event-management
+  Scenario: Create event email address returns "Created" response
+    Given operation "CreateEventEmailAddress" enabled
+    And new "CreateEventEmailAddress" request
+    And body with value {"data": {"attributes": {"format": "", "notify_handles": [""], "tags": [""]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Create on-call event email address returns "Created" response
+    Given operation "CreateOnCallEventEmailAddress" enabled
+    And new "CreateOnCallEventEmailAddress" request
+    And body with value {"data": {"attributes": {"format": "", "tags": [""]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/event-management
   Scenario: Get a list of events returns "Bad Request" response
     Given new "ListEvents" request
     When the request is sent
@@ -68,6 +84,20 @@ Feature: Events
   Scenario: Get an event returns "OK" response
     Given new "GetEvent" request
     And request contains "event_id" parameter with value "AZeF-nTCAABzkAgGXzYPtgAA"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Get on-call event email address returns "OK" response
+    Given operation "GetOnCallEventEmailAddress" enabled
+    And new "GetOnCallEventEmailAddress" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: List event email addresses returns "OK" response
+    Given operation "ListEventEmailAddresses" enabled
+    And new "ListEventEmailAddresses" request
     When the request is sent
     Then the response status is 200 OK
 

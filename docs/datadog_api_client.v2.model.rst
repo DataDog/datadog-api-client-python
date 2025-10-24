@@ -4827,6 +4827,27 @@ datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_event\_email\_address\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_event_email_address_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_event\_email\_address\_request\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_event_email_address_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_event\_email\_address\_request\_data\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_event_email_address_request_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_incident\_notification\_rule\_request module
 ----------------------------------------------------------------------------------
 
@@ -4859,6 +4880,27 @@ datadog\_api\_client.v2.model.create\_notification\_rule\_parameters\_data\_attr
 ---------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_notification_rule_parameters_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_on\_call\_event\_email\_address\_request module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_on_call_event_email_address_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_on\_call\_event\_email\_address\_request\_data module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_on_call_event_email_address_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_on\_call\_event\_email\_address\_request\_data\_attributes module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_on_call_event_email_address_request_data_attributes
    :members:
    :show-inheritance:
 
@@ -7687,6 +7729,62 @@ datadog\_api\_client.v2.model.event\_create\_response\_payload\_links module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.event_create_response_payload_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_email\_address\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_email_address_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_email\_address\_response\_array module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_email_address_response_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_email\_address\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_email_address_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_email\_address\_response\_data\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_email_address_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_email\_address\_response\_data\_relationships module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_email_address_response_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_email\_address\_response\_data\_relationships\_user module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_email_address_response_data_relationships_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_email\_address\_response\_data\_relationships\_user\_data module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_email_address_response_data_relationships_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.event\_emails\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.event_emails_type
    :members:
    :show-inheritance:
 
