@@ -2,9 +2,7 @@
 
 class {{ name }}(ModelSimple):
     """
-{%- if "description" in model %}
-    {{ model.description|docstring|indent(8) }}
-{%- endif %}
+    {{ (model.description or "")|docstring|indent(8) }}
 
 {# empty line #}
 {%- if "default" in model and model.default != None %}

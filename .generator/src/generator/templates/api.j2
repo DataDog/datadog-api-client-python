@@ -25,7 +25,7 @@ from {{ package }}.{{ version }}.model.{{ model|safe_snake_case }} import {{ mod
 {% set classname = name|class_name %}
 class {{ classname }}:
     """
-    {{ description|docstring|indent(4) }}
+    {{ (description or "")|docstring|indent(4) }}
     """
     def __init__(self, api_client=None):
         if api_client is None:
@@ -140,18 +140,18 @@ class {{ classname }}:
 {%- for path, method, operation in operations|sort(attribute="2.operationId") %}
 {%- set returnType = operation|return_type %}
     def {{ operation.operationId|safe_snake_case }}(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}: {{ get_type_for_parameter(parameter, typing=True) }}, {% endfor %}{% for name, parameter in operation|parameters if not parameter.required %}{% if loop.first %}*, {% endif %}{{name|attribute_name}}: Union[{{ get_type_for_parameter(parameter, typing=True) }}, UnsetType]=unset, {% endfor %}) -> {% if returnType %}{{ returnType.replace("[", "List[") }}{% else %}None{% endif %}:
-        """{{ operation.summary|indent(8) }}.{% if operation.deprecated %} **Deprecated**.{% endif %}
+        """{{ (operation.summary or "")|indent(8) }}.{% if operation.deprecated %} **Deprecated**.{% endif %}
 {% if operation.description %}
-        {{ operation.description|docstring|indent(8) }}
+        {{ (operation.description or "")|docstring|indent(8) }}
 {% endif %}
 {%- for name, parameter in operation|parameters if parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ (parameter.description or "")|docstring|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}
 {%- endfor %}
 {%- for name, parameter in operation|parameters if not parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ (parameter.description or "")|docstring|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
 {%- endfor %}
 
@@ -175,18 +175,18 @@ class {{ classname }}:
     {%- set pagination = operation["x-pagination"] %}
 
     def {{ operation.operationId|safe_snake_case }}_with_pagination(self, {% for name, parameter in operation|parameters if parameter.required %}{{name|attribute_name}}: {{ get_type_for_parameter(parameter, typing=True) }}, {% endfor %}{% for name, parameter in operation|parameters if not parameter.required %}{% if loop.first %}*, {% endif %}{{name|attribute_name}}: Union[{{ get_type_for_parameter(parameter, typing=True) }}, UnsetType]=unset, {% endfor %}) -> collections.abc.Iterable[{{ get_type_at_path(operation, pagination.resultsPath) }}]:
-        """{{ operation.summary|indent(8) }}.
+        """{{ (operation.summary or "")|indent(8) }}.
 
         Provide a paginated version of :meth:`{{ operation.operationId|safe_snake_case }}`, returning all items.
 {# keep new line #}
 {%- for name, parameter in operation|parameters if parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ (parameter.description or "")|docstring|indent(12) }}{% if parameter.default %} Defaults to {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}
 {%- endfor %}
 {%- for name, parameter in operation|parameters if not parameter.required %}
 {%- if parameter.description %}
-        :param {{ name|attribute_name }}: {{ parameter.description|docstring|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
+        :param {{ name|attribute_name }}: {{ (parameter.description or "")|docstring|indent(12) }}{%- if parameter.default %} If omitted the server will use the default value of {{ parameter.default }}.{% endif %}{% endif %}
         :type {{ name|attribute_name }}: {{ get_type_for_parameter(parameter) }}, optional
 {%- endfor %}
 
