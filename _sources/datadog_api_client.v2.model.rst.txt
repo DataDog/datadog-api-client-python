@@ -17000,6 +17000,83 @@ datadog\_api\_client.v2.model.reorder\_ruleset\_resource\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_request\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_request\_data\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_request\_data\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_response\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_response\_data\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_response\_data\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_response\_results module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_response_results
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_response\_results\_vulnerable\_symbols module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_response_results_vulnerable_symbols
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_response\_results\_vulnerable\_symbols\_symbols module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.resolve_vulnerable_symbols_response_results_vulnerable_symbols_symbols
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.resource\_filter\_attributes module
 -----------------------------------------------------------------
 
@@ -18432,6 +18509,111 @@ datadog\_api\_client.v2.model.sbom\_type module
 -----------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.sbom_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_commit module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_commit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_items module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_items\_locations\_items module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_items\_locations\_items\_file\_position module
+--------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_file_position
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_items\_locations\_items\_position module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_position
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_items\_reachable\_symbol\_properties\_items module
+------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_reachable_symbol_properties_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_files\_items module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_files_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_relations\_items module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_relations_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_repository module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_repository
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_vulnerabilities\_items module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_vulnerabilities_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_vulnerabilities\_items\_affects\_items module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_vulnerabilities_items_affects_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_type
    :members:
    :show-inheritance:
 
