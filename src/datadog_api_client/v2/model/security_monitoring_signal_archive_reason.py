@@ -16,7 +16,7 @@ class SecurityMonitoringSignalArchiveReason(ModelSimple):
     """
     Reason a signal is archived.
 
-    :param value: Must be one of ["none", "false_positive", "testing_or_maintenance", "investigated_case_opened", "other"].
+    :param value: Must be one of ["none", "false_positive", "testing_or_maintenance", "investigated_case_opened", "true_positive_benign", "true_positive_malicious", "other"].
     :type value: str
     """
 
@@ -25,12 +25,16 @@ class SecurityMonitoringSignalArchiveReason(ModelSimple):
         "false_positive",
         "testing_or_maintenance",
         "investigated_case_opened",
+        "true_positive_benign",
+        "true_positive_malicious",
         "other",
     }
     NONE: ClassVar["SecurityMonitoringSignalArchiveReason"]
     FALSE_POSITIVE: ClassVar["SecurityMonitoringSignalArchiveReason"]
     TESTING_OR_MAINTENANCE: ClassVar["SecurityMonitoringSignalArchiveReason"]
     INVESTIGATED_CASE_OPENED: ClassVar["SecurityMonitoringSignalArchiveReason"]
+    TRUE_POSITIVE_BENIGN: ClassVar["SecurityMonitoringSignalArchiveReason"]
+    TRUE_POSITIVE_MALICIOUS: ClassVar["SecurityMonitoringSignalArchiveReason"]
     OTHER: ClassVar["SecurityMonitoringSignalArchiveReason"]
 
     @cached_property
@@ -47,5 +51,11 @@ SecurityMonitoringSignalArchiveReason.TESTING_OR_MAINTENANCE = SecurityMonitorin
 )
 SecurityMonitoringSignalArchiveReason.INVESTIGATED_CASE_OPENED = SecurityMonitoringSignalArchiveReason(
     "investigated_case_opened"
+)
+SecurityMonitoringSignalArchiveReason.TRUE_POSITIVE_BENIGN = SecurityMonitoringSignalArchiveReason(
+    "true_positive_benign"
+)
+SecurityMonitoringSignalArchiveReason.TRUE_POSITIVE_MALICIOUS = SecurityMonitoringSignalArchiveReason(
+    "true_positive_malicious"
 )
 SecurityMonitoringSignalArchiveReason.OTHER = SecurityMonitoringSignalArchiveReason("other")
