@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## 2.45.0/2025-10-27
+
+### Added
+* Add endpoints for Software Composition Analysis [#2911](https://github.com/DataDog/datadog-api-client-python/pull/2911)
+* Add support for `Schema Processor` in `Logs Pipelines` [#2892](https://github.com/DataDog/datadog-api-client-python/pull/2892)
+* Add new DeleteAssignee endpoint to Error Tracking APIs [#2886](https://github.com/DataDog/datadog-api-client-python/pull/2886)
+* document agentless GCP scan options CRUD endpoints [#2883](https://github.com/DataDog/datadog-api-client-python/pull/2883)
+* Document `/api/v2/roles/templates`  [#2871](https://github.com/DataDog/datadog-api-client-python/pull/2871)
+* Add Reference Tables API spec [#2868](https://github.com/DataDog/datadog-api-client-python/pull/2868)
+* Add blockedRequestPatterns to synthetics browser test options [#2864](https://github.com/DataDog/datadog-api-client-python/pull/2864)
+* Add `BulkDeleteDatastoreItems` to Datastore API spec [#2863](https://github.com/DataDog/datadog-api-client-python/pull/2863)
+* Add some missing Workload Protection agent rule fields [#2862](https://github.com/DataDog/datadog-api-client-python/pull/2862)
+* Add AzureScanOptions to agentless scanning API [#2859](https://github.com/DataDog/datadog-api-client-python/pull/2859)
+
+### Fixed
+* Fix formatter to handle dict keys with special characters [#2891](https://github.com/DataDog/datadog-api-client-python/pull/2891)
+* Update the summary name for get a tag pipeline ruleset. [#2887](https://github.com/DataDog/datadog-api-client-python/pull/2887)
+
+### Changed
+* Include mention to new scanned-assets-metadata endpoint on container images v1 endpoint [#2890](https://github.com/DataDog/datadog-api-client-python/pull/2890)
+* Include mention to new scanned-assets-metadata endpoint on hosts v1 endpoint [#2889](https://github.com/DataDog/datadog-api-client-python/pull/2889)
+* security_monitoring - Add indexes to deprecate index in ruleQuery [#2884](https://github.com/DataDog/datadog-api-client-python/pull/2884)
+* Add support for vulnerability management - Add ListScannedAssetsMetadata new endpoint and update existing ones [#2882](https://github.com/DataDog/datadog-api-client-python/pull/2882)
+* Update description, operationId and examples for tag pipeline and custom allocation rules [#2877](https://github.com/DataDog/datadog-api-client-python/pull/2877)
+
 ## 2.44.0/2025-09-30
 
 ### Added
