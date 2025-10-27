@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
+    from datadog_api_client.v2.model.run_threat_hunting_job_request_data import RunThreatHuntingJobRequestData
 
 
-class RunHistoricalJobRequest(ModelNormal):
+class RunThreatHuntingJobRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
+        from datadog_api_client.v2.model.run_threat_hunting_job_request_data import RunThreatHuntingJobRequestData
 
         return {
-            "data": (RunHistoricalJobRequestData,),
+            "data": (RunThreatHuntingJobRequestData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[RunHistoricalJobRequestData, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[RunThreatHuntingJobRequestData, UnsetType] = unset, **kwargs):
         """
-        Run a historical job request.
+        Run a threat hunting job request.
 
-        :param data: Data for running a historical job request.
-        :type data: RunHistoricalJobRequestData, optional
+        :param data: Data for running a threat hunting job request.
+        :type data: RunThreatHuntingJobRequestData, optional
         """
         if data is not unset:
             kwargs["data"] = data

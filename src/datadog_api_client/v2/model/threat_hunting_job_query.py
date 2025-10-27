@@ -22,7 +22,7 @@ if TYPE_CHECKING:
     )
 
 
-class HistoricalJobQuery(ModelNormal):
+class ThreatHuntingJobQuery(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
@@ -67,7 +67,7 @@ class HistoricalJobQuery(ModelNormal):
         **kwargs,
     ):
         """
-        Query for selecting logs analyzed by the historical job.
+        Query for selecting logs analyzed by the threat hunting job.
 
         :param aggregation: The aggregation type.
         :type aggregation: SecurityMonitoringRuleQueryAggregation, optional

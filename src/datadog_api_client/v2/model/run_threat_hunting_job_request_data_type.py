@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RunHistoricalJobRequestDataType(ModelSimple):
+class RunThreatHuntingJobRequestDataType(ModelSimple):
     """
     Type of data.
 
@@ -23,7 +23,7 @@ class RunHistoricalJobRequestDataType(ModelSimple):
     allowed_values = {
         "historicalDetectionsJobCreate",
     }
-    HISTORICALDETECTIONSJOBCREATE: ClassVar["RunHistoricalJobRequestDataType"]
+    HISTORICALDETECTIONSJOBCREATE: ClassVar["RunThreatHuntingJobRequestDataType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,6 +32,6 @@ class RunHistoricalJobRequestDataType(ModelSimple):
         }
 
 
-RunHistoricalJobRequestDataType.HISTORICALDETECTIONSJOBCREATE = RunHistoricalJobRequestDataType(
+RunThreatHuntingJobRequestDataType.HISTORICALDETECTIONSJOBCREATE = RunThreatHuntingJobRequestDataType(
     "historicalDetectionsJobCreate"
 )

@@ -8,7 +8,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs/signal_convert
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs/signal_convert
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Generic Error","detail":"empty

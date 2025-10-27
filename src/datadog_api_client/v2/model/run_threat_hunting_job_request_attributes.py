@@ -18,7 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.job_definition import JobDefinition
 
 
-class RunHistoricalJobRequestAttributes(ModelNormal):
+class RunThreatHuntingJobRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.job_definition_from_rule import JobDefinitionFromRule
@@ -44,15 +44,15 @@ class RunHistoricalJobRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Run a historical job request.
+        Run a threat hunting job request.
 
-        :param from_rule: Definition of a historical job based on a security monitoring rule.
+        :param from_rule: Definition of a threat hunting job based on a security monitoring rule.
         :type from_rule: JobDefinitionFromRule, optional
 
         :param id: Request ID.
         :type id: str, optional
 
-        :param job_definition: Definition of a historical job.
+        :param job_definition: Definition of a threat hunting job.
         :type job_definition: JobDefinition, optional
         """
         if from_rule is not unset:

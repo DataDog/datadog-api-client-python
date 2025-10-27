@@ -7,7 +7,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs
   response:
     body:
       string: '{"errors":[{"status":"404","title":"Not Found"}]}'

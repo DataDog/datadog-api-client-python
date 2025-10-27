@@ -9,10 +9,10 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs
   response:
     body:
-      string: '{"data":{"id":"7b16f110-0ce9-46cd-9dad-b658ced2ac50","type":"historicalDetectionsJob"}}'
+      string: '{"data":{"id":"e935c6c8-ba76-4ebf-8770-bb772a5ec1ed","type":"historicalDetectionsJob"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,17 +25,17 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs?filter%5Bquery%5D=id%3A7b16f110-0ce9-46cd-9dad-b658ced2ac50
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs?filter%5Bquery%5D=id%3Ae935c6c8-ba76-4ebf-8770-bb772a5ec1ed
   response:
     body:
-      string: '{"data":[{"id":"7b16f110-0ce9-46cd-9dad-b658ced2ac50","type":"historicalDetectionsJob","attributes":{"createdAt":"2024-12-18
-        17:02:40.144396+00","createdByHandle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","createdByName":"CI
+      string: '{"data":[{"id":"e935c6c8-ba76-4ebf-8770-bb772a5ec1ed","type":"historicalDetectionsJob","attributes":{"createdAt":"2025-10-24
+        14:24:02.256887+00","createdByHandle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","createdByName":"CI
         Account","jobDefinition":{"from":1730387522611,"to":1730387532611,"index":"main","name":"Excessive
         number of failed attempts.","cases":[{"name":"Condition 1","status":"info","notifications":[],"condition":"a
-        \u003e 1"}],"queries":[{"query":"source:non_existing_src_weekend","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":""}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"message":"A
+        \u003e 1"}],"queries":[{"query":"source:non_existing_src_weekend","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"logs"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"message":"A
         large number of failed login attempts.","tags":[],"type":"log_detection"},"jobName":"Excessive
-        number of failed attempts.","jobStatus":"pending","modifiedAt":"2024-12-18
-        17:02:40.144396+00"}}],"meta":{"totalCount":1}}'
+        number of failed attempts.","jobStatus":"pending","modifiedAt":"2025-10-24
+        14:24:02.256887+00"}}],"meta":{"totalCount":1}}'
     headers:
       content-type:
       - application/vnd.api+json

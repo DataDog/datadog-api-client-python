@@ -36,7 +36,7 @@ class JobDefinitionFromRule(ModelNormal):
         self_, _from: int, id: str, index: str, to: int, notifications: Union[List[str], UnsetType] = unset, **kwargs
     ):
         """
-        Definition of a historical job based on a security monitoring rule.
+        Definition of a threat hunting job based on a security monitoring rule.
 
         :param _from: Starting time of data analyzed by the job.
         :type _from: int

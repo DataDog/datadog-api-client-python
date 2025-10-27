@@ -9195,55 +9195,6 @@ datadog\_api\_client.v2.model.group\_tags module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.historical\_job\_data\_type module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.historical_job_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.historical\_job\_list\_meta module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.historical_job_list_meta
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.historical\_job\_options module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.historical_job_options
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.historical\_job\_query module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.historical_job_query
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.historical\_job\_response module
---------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.historical_job_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.historical\_job\_response\_attributes module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.historical_job_response_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.historical\_job\_response\_data module
---------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.historical_job_response_data
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.hourly\_usage module
 --------------------------------------------------
 
@@ -11617,13 +11568,6 @@ datadog\_api\_client.v2.model.list\_findings\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.list\_historical\_jobs\_response module
----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_historical_jobs_response
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.list\_kind\_catalog\_response module
 ------------------------------------------------------------------
 
@@ -11719,6 +11663,13 @@ datadog\_api\_client.v2.model.list\_teams\_sort module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_teams_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_threat\_hunting\_jobs\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_threat_hunting_jobs_response
    :members:
    :show-inheritance:
 
@@ -18358,31 +18309,31 @@ datadog\_api\_client.v2.model.rum\_warning module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.run\_historical\_job\_request module
-------------------------------------------------------------------
+datadog\_api\_client.v2.model.run\_threat\_hunting\_job\_request module
+-----------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.run_historical_job_request
+.. automodule:: datadog_api_client.v2.model.run_threat_hunting_job_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.run\_historical\_job\_request\_attributes module
-------------------------------------------------------------------------------
+datadog\_api\_client.v2.model.run\_threat\_hunting\_job\_request\_attributes module
+-----------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.run_historical_job_request_attributes
+.. automodule:: datadog_api_client.v2.model.run_threat_hunting_job_request_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.run\_historical\_job\_request\_data module
-------------------------------------------------------------------------
+datadog\_api\_client.v2.model.run\_threat\_hunting\_job\_request\_data module
+-----------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.run_historical_job_request_data
+.. automodule:: datadog_api_client.v2.model.run_threat_hunting_job_request_data
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.run\_historical\_job\_request\_data\_type module
-------------------------------------------------------------------------------
+datadog\_api\_client.v2.model.run\_threat\_hunting\_job\_request\_data\_type module
+-----------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.run_historical_job_request_data_type
+.. automodule:: datadog_api_client.v2.model.run_threat_hunting_job_request_data_type
    :members:
    :show-inheritance:
 
@@ -22226,6 +22177,55 @@ datadog\_api\_client.v2.model.teams\_response\_meta\_pagination module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.teams_response_meta_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_hunting\_job\_data\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_hunting_job_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_hunting\_job\_list\_meta module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_hunting_job_list_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_hunting\_job\_options module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_hunting_job_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_hunting\_job\_query module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_hunting_job_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_hunting\_job\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_hunting_job_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_hunting\_job\_response\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_hunting_job_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_hunting\_job\_response\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_hunting_job_response_data
    :members:
    :show-inheritance:
 

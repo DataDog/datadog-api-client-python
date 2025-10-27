@@ -32,7 +32,7 @@ class JobCreateResponse(ModelNormal):
 
     def __init__(self_, data: Union[JobCreateResponseData, UnsetType] = unset, **kwargs):
         """
-        Run a historical job response.
+        Run a threat hunting job response.
 
         :param data: The definition of ``JobCreateResponseData`` object.
         :type data: JobCreateResponseData, optional

@@ -14,20 +14,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.historical_job_response_attributes import HistoricalJobResponseAttributes
-    from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
+    from datadog_api_client.v2.model.threat_hunting_job_response_attributes import ThreatHuntingJobResponseAttributes
+    from datadog_api_client.v2.model.threat_hunting_job_data_type import ThreatHuntingJobDataType
 
 
-class HistoricalJobResponseData(ModelNormal):
+class ThreatHuntingJobResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.historical_job_response_attributes import HistoricalJobResponseAttributes
-        from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
+        from datadog_api_client.v2.model.threat_hunting_job_response_attributes import (
+            ThreatHuntingJobResponseAttributes,
+        )
+        from datadog_api_client.v2.model.threat_hunting_job_data_type import ThreatHuntingJobDataType
 
         return {
-            "attributes": (HistoricalJobResponseAttributes,),
+            "attributes": (ThreatHuntingJobResponseAttributes,),
             "id": (str,),
-            "type": (HistoricalJobDataType,),
+            "type": (ThreatHuntingJobDataType,),
         }
 
     attribute_map = {
@@ -38,22 +40,22 @@ class HistoricalJobResponseData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[HistoricalJobResponseAttributes, UnsetType] = unset,
+        attributes: Union[ThreatHuntingJobResponseAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[HistoricalJobDataType, UnsetType] = unset,
+        type: Union[ThreatHuntingJobDataType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Historical job response data.
+        Threat hunting job response data.
 
-        :param attributes: Historical job attributes.
-        :type attributes: HistoricalJobResponseAttributes, optional
+        :param attributes: Threat hunting job attributes.
+        :type attributes: ThreatHuntingJobResponseAttributes, optional
 
         :param id: ID of the job.
         :type id: str, optional
 
         :param type: Type of payload.
-        :type type: HistoricalJobDataType, optional
+        :type type: ThreatHuntingJobDataType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

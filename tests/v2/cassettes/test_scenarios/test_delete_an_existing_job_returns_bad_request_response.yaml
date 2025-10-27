@@ -5,7 +5,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs/inva-lid
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs/inva-lid
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Generic Error","detail":"invalid

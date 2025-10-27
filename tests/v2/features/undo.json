@@ -3909,13 +3909,13 @@
       "type": "safe"
     }
   },
-  "ListHistoricalJobs": {
+  "ListThreatHuntingJobs": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }
   },
-  "RunHistoricalJob": {
+  "RunThreatHuntingJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
@@ -3927,19 +3927,19 @@
       "type": "idempotent"
     }
   },
-  "DeleteHistoricalJob": {
+  "DeleteThreatHuntingJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
     }
   },
-  "GetHistoricalJob": {
+  "GetThreatHuntingJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }
   },
-  "CancelHistoricalJob": {
+  "CancelThreatHuntingJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"

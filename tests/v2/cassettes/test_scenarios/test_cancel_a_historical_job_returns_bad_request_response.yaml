@@ -5,7 +5,7 @@ interactions:
       accept:
       - '*/*'
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs/inva-lid/cancel
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs/inva-lid/cancel
   response:
     body:
       string: '{"errors":[{"status":"400","detail":"invalid jobId"}]}'
