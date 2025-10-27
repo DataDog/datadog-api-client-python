@@ -1697,6 +1697,42 @@ from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
 from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
+from datadog_api_client.v2.model.get_multiple_rulesets_request import GetMultipleRulesetsRequest
+from datadog_api_client.v2.model.get_multiple_rulesets_request_data import GetMultipleRulesetsRequestData
+from datadog_api_client.v2.model.get_multiple_rulesets_request_data_attributes import (
+    GetMultipleRulesetsRequestDataAttributes,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_request_data_type import GetMultipleRulesetsRequestDataType
+from datadog_api_client.v2.model.get_multiple_rulesets_response import GetMultipleRulesetsResponse
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data import GetMultipleRulesetsResponseData
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes import (
+    GetMultipleRulesetsResponseDataAttributes,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItems,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItemsData,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data_type import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItemsDataType,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_arguments_items import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsArgumentsItems,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_data import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsData,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_data_type import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsDataType,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_tests_items import (
+    GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsTestsItems,
+)
+from datadog_api_client.v2.model.get_multiple_rulesets_response_data_type import GetMultipleRulesetsResponseDataType
 from datadog_api_client.v2.model.get_resource_evaluation_filters_response import GetResourceEvaluationFiltersResponse
 from datadog_api_client.v2.model.get_resource_evaluation_filters_response_data import (
     GetResourceEvaluationFiltersResponseData,
@@ -3757,6 +3793,19 @@ from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAtt
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
+from datadog_api_client.v2.model.secret_rule_array import SecretRuleArray
+from datadog_api_client.v2.model.secret_rule_data import SecretRuleData
+from datadog_api_client.v2.model.secret_rule_data_attributes import SecretRuleDataAttributes
+from datadog_api_client.v2.model.secret_rule_data_attributes_match_validation import (
+    SecretRuleDataAttributesMatchValidation,
+)
+from datadog_api_client.v2.model.secret_rule_data_attributes_match_validation_invalid_http_status_code_items import (
+    SecretRuleDataAttributesMatchValidationInvalidHttpStatusCodeItems,
+)
+from datadog_api_client.v2.model.secret_rule_data_attributes_match_validation_valid_http_status_code_items import (
+    SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems,
+)
+from datadog_api_client.v2.model.secret_rule_data_type import SecretRuleDataType
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
@@ -5941,6 +5990,22 @@ __all__ = [
     "GetInterfacesData",
     "GetInterfacesResponse",
     "GetIssueIncludeQueryParameterItem",
+    "GetMultipleRulesetsRequest",
+    "GetMultipleRulesetsRequestData",
+    "GetMultipleRulesetsRequestDataAttributes",
+    "GetMultipleRulesetsRequestDataType",
+    "GetMultipleRulesetsResponse",
+    "GetMultipleRulesetsResponseData",
+    "GetMultipleRulesetsResponseDataAttributes",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItems",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsData",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsDataType",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsArgumentsItems",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsData",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsDataType",
+    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsTestsItems",
+    "GetMultipleRulesetsResponseDataType",
     "GetResourceEvaluationFiltersResponse",
     "GetResourceEvaluationFiltersResponseData",
     "GetRuleVersionHistoryData",
@@ -7375,6 +7440,13 @@ __all__ = [
     "ScheduleUserType",
     "ScorecardType",
     "SearchIssuesIncludeQueryParameterItem",
+    "SecretRuleArray",
+    "SecretRuleData",
+    "SecretRuleDataAttributes",
+    "SecretRuleDataAttributesMatchValidation",
+    "SecretRuleDataAttributesMatchValidationInvalidHttpStatusCodeItems",
+    "SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems",
+    "SecretRuleDataType",
     "SecurityFilter",
     "SecurityFilterAttributes",
     "SecurityFilterCreateAttributes",
