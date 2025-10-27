@@ -32,9 +32,9 @@ class ConvertJobResultsToSignalsRequest(ModelNormal):
 
     def __init__(self_, data: Union[ConvertJobResultsToSignalsData, UnsetType] = unset, **kwargs):
         """
-        Request for converting historical job results to signals.
+        Request for converting threat hunting job results to signals.
 
-        :param data: Data for converting historical job results to signals.
+        :param data: Data for converting threat hunting job results to signals.
         :type data: ConvertJobResultsToSignalsData, optional
         """
         if data is not unset:

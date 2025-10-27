@@ -38,7 +38,7 @@ if TYPE_CHECKING:
     )
 
 
-class HistoricalJobOptions(ModelNormal):
+class ThreatHuntingJobOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (

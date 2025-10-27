@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class HistoricalJobListMeta(ModelNormal):
+class ThreatHuntingJobListMeta(ModelNormal):
     validations = {
         "total_count": {
             "inclusive_maximum": 2147483647,

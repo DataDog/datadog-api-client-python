@@ -48,7 +48,7 @@ class ConvertJobResultsToSignalsAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for converting historical job results to signals.
+        Attributes for converting threat hunting job results to signals.
 
         :param id: Request ID.
         :type id: str, optional

@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.job_definition import JobDefinition
 
 
-class HistoricalJobResponseAttributes(ModelNormal):
+class ThreatHuntingJobResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.job_definition import JobDefinition
@@ -57,7 +57,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Historical job attributes.
+        Threat hunting job attributes.
 
         :param created_at: Time when the job was created.
         :type created_at: str, optional
@@ -71,7 +71,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
         :param created_from_rule_id: ID of the rule used to create the job (if it is created from a rule).
         :type created_from_rule_id: str, optional
 
-        :param job_definition: Definition of a historical job.
+        :param job_definition: Definition of a threat hunting job.
         :type job_definition: JobDefinition, optional
 
         :param job_name: Job name.

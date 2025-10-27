@@ -9,10 +9,10 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs
   response:
     body:
-      string: '{"data":{"id":"6f4c9c40-782b-4d14-900f-65ccc02389db","type":"historicalDetectionsJob"}}'
+      string: '{"data":{"id":"6ff7a8ce-a0d1-4ea3-8cc9-e9c52cda0d24","type":"historicalDetectionsJob"}}'
     headers:
       content-type:
       - application/vnd.api+json

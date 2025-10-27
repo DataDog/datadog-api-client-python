@@ -9,10 +9,10 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs
   response:
     body:
-      string: '{"data":{"id":"e332b07e-d573-45fa-b2df-9a1bcc27f17e","type":"historicalDetectionsJob"}}'
+      string: '{"data":{"id":"cafe565c-106b-486e-ad21-a712656723b4","type":"historicalDetectionsJob"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs/e332b07e-d573-45fa-b2df-9a1bcc27f17e/cancel
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs/cafe565c-106b-486e-ad21-a712656723b4/cancel
   response:
     body:
       string: ''
