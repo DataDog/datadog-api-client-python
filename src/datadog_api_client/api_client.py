@@ -883,9 +883,9 @@ class Endpoint:
             # Use regular authentication
             for auth in self.settings["auth"]:
                 auth_setting = self.api_client.configuration.auth_settings().get(auth)
-                if not auth_setting:
-                  continue
-                    if auth_setting["in"] == "header" && auth_setting["type"] != "http-signature":
+                if auth_setting:
+                    if auth_setting["in"] == "header":
+                        if auth_setting["type"] != "http-signature":
                             if auth_setting["value"] is None:
                                 raise ApiValueError("Invalid authentication token for {}".format(auth_setting["key"]))
                             headers[auth_setting["key"]] = auth_setting["value"]
