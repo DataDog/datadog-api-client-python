@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -18,26 +18,39 @@ class GCPMetricNamespaceConfig(ModelNormal):
     def openapi_types(_):
         return {
             "disabled": (bool,),
+            "filters": ([str],),
             "id": (str,),
         }
 
     attribute_map = {
         "disabled": "disabled",
+        "filters": "filters",
         "id": "id",
     }
 
-    def __init__(self_, disabled: Union[bool, UnsetType] = unset, id: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        disabled: Union[bool, UnsetType] = unset,
+        filters: Union[List[str], UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Configuration for a GCP metric namespace.
 
         :param disabled: When disabled, Datadog does not collect metrics that are related to this GCP metric namespace.
         :type disabled: bool, optional
 
+        :param filters: When enabled, Datadog applies these additional filters to limit metric collection. A metric is collected only if it does not match all exclusion filters and matches at least one allow filter.
+        :type filters: [str], optional
+
         :param id: The id of the GCP metric namespace.
         :type id: str, optional
         """
         if disabled is not unset:
             kwargs["disabled"] = disabled
+        if filters is not unset:
+            kwargs["filters"] = filters
         if id is not unset:
             kwargs["id"] = id
         super().__init__(kwargs)
