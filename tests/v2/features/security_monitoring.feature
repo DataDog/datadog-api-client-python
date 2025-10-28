@@ -5,9 +5,9 @@ Feature: Security Monitoring
   information.
 
   Background:
-    Given a valid "apiKeyAuth" key in the system
+    Given an instance of "SecurityMonitoring" API
+    And a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "SecurityMonitoring" API
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Cancel a historical job returns "Bad Request" response
@@ -1294,6 +1294,21 @@ Feature: Security Monitoring
     And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Returns list of Secrets rules returns "OK" response
+    Given operation "GetSecretsRules" enabled
+    And new "GetSecretsRules" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Ruleset get multiple returns "OK" response
+    Given operation "ListMultipleRulesets" enabled
+    And new "ListMultipleRulesets" request
+    And body with value {"data": {"attributes": {"rulesets": []}, "type": "get_multiple_rulesets_request"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Run a threat hunting job returns "Bad Request" response

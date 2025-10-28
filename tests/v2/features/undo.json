@@ -4025,6 +4025,20 @@
       "type": "safe"
     }
   },
+  "ListMultipleRulesets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetSecretsRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetOnDemandConcurrencyCap": {
     "tag": "Synthetics",
     "undo": {
