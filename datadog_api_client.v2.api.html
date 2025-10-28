@@ -2247,6 +2247,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_sbom" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_sbom()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_secrets_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_secrets_rules()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_filter()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_monitoring_histsignal" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_security_monitoring_histsignal()</span></code></a>
@@ -2278,6 +2280,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_findings" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_findings()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_findings_with_pagination" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_findings_with_pagination()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_multiple_rulesets" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_multiple_rulesets()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_scanned_assets_metadata" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.list_scanned_assets_metadata()</span></code></a>
         </li>
@@ -11583,6 +11587,17 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_secrets_rules">
+<span class="sig-name descname"><span class="pre">get_secrets_rules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.secret_rule_array.SecretRuleArray" title="datadog_api_client.v2.model.secret_rule_array.SecretRuleArray"><span class="pre">SecretRuleArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_secrets_rules" title="Link to this definition">¶</a></dt>
+<dd><p>Returns list of Secrets rules.</p>
+<p>Returns list of Secrets rules with ID, Pattern, Description, Priority, and SDS ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.secret_rule_array.SecretRuleArray" title="datadog_api_client.v2.model.secret_rule_array.SecretRuleArray">SecretRuleArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_filter">
 <span class="sig-name descname"><span class="pre">get_security_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">security_filter_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_filter_response.SecurityFilterResponse" title="datadog_api_client.v2.model.security_filter_response.SecurityFilterResponse"><span class="pre">SecurityFilterResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_security_filter" title="Link to this definition">¶</a></dt>
 <dd><p>Get a security filter.</p>
@@ -11886,6 +11901,17 @@ for more examples.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>collections.abc.Iterable[<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding.Finding" title="datadog_api_client.v2.model.finding.Finding">Finding</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_multiple_rulesets">
+<span class="sig-name descname"><span class="pre">list_multiple_rulesets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_multiple_rulesets_request.GetMultipleRulesetsRequest" title="datadog_api_client.v2.model.get_multiple_rulesets_request.GetMultipleRulesetsRequest"><span class="pre">GetMultipleRulesetsRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_multiple_rulesets_response.GetMultipleRulesetsResponse" title="datadog_api_client.v2.model.get_multiple_rulesets_response.GetMultipleRulesetsResponse"><span class="pre">GetMultipleRulesetsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_multiple_rulesets" title="Link to this definition">¶</a></dt>
+<dd><p>Ruleset get multiple.</p>
+<p>Get rules for multiple rulesets in batch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_multiple_rulesets_response.GetMultipleRulesetsResponse" title="datadog_api_client.v2.model.get_multiple_rulesets_response.GetMultipleRulesetsResponse">GetMultipleRulesetsResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

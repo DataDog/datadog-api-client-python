@@ -9125,6 +9125,118 @@ datadog\_api\_client.v2.model.get\_issue\_include\_query\_parameter\_item module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_request\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_request\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items\_data module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items\_data\_type module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items\_rules\_items module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items\_rules\_items\_arguments\_items module
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_arguments_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items\_rules\_items\_data module
+-----------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items\_rules\_items\_data\_type module
+-----------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_attributes\_rulesets\_items\_rules\_items\_tests\_items module
+-------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_tests_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_multiple\_rulesets\_response\_data\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_multiple_rulesets_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.get\_resource\_evaluation\_filters\_response module
 ---------------------------------------------------------------------------------
 
@@ -19104,6 +19216,55 @@ datadog\_api\_client.v2.model.search\_issues\_include\_query\_parameter\_item mo
 ------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.search_issues_include_query_parameter_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secret\_rule\_array module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secret_rule_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secret\_rule\_data module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secret_rule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secret\_rule\_data\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secret_rule_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secret\_rule\_data\_attributes\_match\_validation module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secret_rule_data_attributes_match_validation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secret\_rule\_data\_attributes\_match\_validation\_invalid\_http\_status\_code\_items module
+--------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secret_rule_data_attributes_match_validation_invalid_http_status_code_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secret\_rule\_data\_attributes\_match\_validation\_valid\_http\_status\_code\_items module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secret_rule_data_attributes_match_validation_valid_http_status_code_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secret\_rule\_data\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secret_rule_data_type
    :members:
    :show-inheritance:
 
