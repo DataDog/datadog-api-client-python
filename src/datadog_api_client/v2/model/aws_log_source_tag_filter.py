@@ -32,9 +32,13 @@ class AWSLogSourceTagFilter(ModelNormal):
     ):
         """
         AWS log source tag filter list. Defaults to ``[]``.
-        Array of log source to AWS resource tag mappings. Each mapping contains a log source and its associated AWS resource tags (in ``key:value`` format) used to filter logs submitted to Datadog.
-        Tag filters are applied for tags on the AWS resource emitting logs; tags associated with the log storage entity (such as a CloudWatch Log Group or S3 Bucket) are not considered.
-        For more information on resource tag filter syntax, `see AWS resource exclusion <https://docs.datadoghq.com/account_management/billing/aws/#aws-resource-exclusion>`_ in the AWS integration billing page.
+        Array of log source to AWS resource tag mappings. Each mapping contains a log source and its
+        associated AWS resource tags (in ``key:value`` format) used to filter logs submitted to Datadog.
+        Tag filters are applied for tags on the AWS resource emitting logs; tags associated with the
+        log storage entity (such as a CloudWatch Log Group or S3 Bucket) are not considered.
+        For more information on resource tag filter syntax,
+        `see AWS resource exclusion <https://docs.datadoghq.com/account_management/billing/aws/#aws-resource-exclusion>`_
+        in the AWS integration billing page.
 
         :param source: The AWS log source to which the tag filters defined in ``tags`` are applied.
         :type source: str, optional

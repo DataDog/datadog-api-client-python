@@ -324,7 +324,7 @@ class AWSIntegrationApi:
         self,
         body: AWSEventBridgeCreateRequest,
     ) -> AWSEventBridgeCreateResponse:
-        """Create an Amazon EventBridge source.
+        """Create an Amazon EventBridge source. **Deprecated**.
 
         Create an Amazon EventBridge source.
 
@@ -335,6 +335,7 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_aws_event_bridge_source is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_aws_event_bridge_source_endpoint.call_with_http_info(**kwargs)
 
     def create_aws_tag_filter(
@@ -398,7 +399,7 @@ class AWSIntegrationApi:
         self,
         body: AWSEventBridgeDeleteRequest,
     ) -> AWSEventBridgeDeleteResponse:
-        """Delete an Amazon EventBridge source.
+        """Delete an Amazon EventBridge source. **Deprecated**.
 
         Delete an Amazon EventBridge source.
 
@@ -409,6 +410,7 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("delete_aws_event_bridge_source is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_aws_event_bridge_source_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_tag_filter(
@@ -477,13 +479,14 @@ class AWSIntegrationApi:
     def list_aws_event_bridge_sources(
         self,
     ) -> AWSEventBridgeListResponse:
-        """Get all Amazon EventBridge sources.
+        """Get all Amazon EventBridge sources. **Deprecated**.
 
         Get all Amazon EventBridge sources.
 
         :rtype: AWSEventBridgeListResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_aws_event_bridge_sources is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_event_bridge_sources_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_tag_filters(

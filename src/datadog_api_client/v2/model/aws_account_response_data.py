@@ -50,7 +50,8 @@ class AWSAccountResponseData(ModelNormal):
         :type attributes: AWSAccountResponseAttributes, optional
 
         :param id: Unique Datadog ID of the AWS Account Integration Config.
-            To get the config ID for an account, use the `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_
+            To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_
             endpoint and query by AWS Account ID.
         :type id: str
 
