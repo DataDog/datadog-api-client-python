@@ -1726,6 +1726,146 @@ datadog\_api\_client.v2.model.aws\_cur\_configs\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_event\_bridge\_account\_configuration module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_account_configuration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_create\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_create\_request\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_create\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_create\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_create\_response\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_create_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_create\_response\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_create_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_create\_status module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_create_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_delete\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_delete_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_delete\_request\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_delete_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_delete\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_delete_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_delete\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_delete_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_delete\_response\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_delete_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_delete\_response\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_delete_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_delete\_status module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_delete_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_list\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_list\_response\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_list_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_list\_response\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_list_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_source module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_event\_bridge\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_event_bridge_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_integration module
 -----------------------------------------------------
 

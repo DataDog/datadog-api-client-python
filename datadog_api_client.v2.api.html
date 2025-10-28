@@ -903,9 +903,13 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_aws_account" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.create_aws_account()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_aws_event_bridge_source" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.create_aws_event_bridge_source()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_new_aws_external_id" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.create_new_aws_external_id()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.delete_aws_account" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.delete_aws_account()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.delete_aws_event_bridge_source" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.delete_aws_event_bridge_source()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.get_aws_account" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.get_aws_account()</span></code></a>
         </li>
@@ -916,6 +920,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.get_aws_integration_iam_permissions_standard" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.get_aws_integration_iam_permissions_standard()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.list_aws_accounts" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.list_aws_accounts()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.list_aws_event_bridge_sources" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.list_aws_event_bridge_sources()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.list_aws_namespaces" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSIntegrationApi.list_aws_namespaces()</span></code></a>
         </li>
@@ -3902,6 +3908,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_aws_event_bridge_source">
+<span class="sig-name descname"><span class="pre">create_aws_event_bridge_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_create_request.AWSEventBridgeCreateRequest" title="datadog_api_client.v2.model.aws_event_bridge_create_request.AWSEventBridgeCreateRequest"><span class="pre">AWSEventBridgeCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_create_response.AWSEventBridgeCreateResponse" title="datadog_api_client.v2.model.aws_event_bridge_create_response.AWSEventBridgeCreateResponse"><span class="pre">AWSEventBridgeCreateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_aws_event_bridge_source" title="Link to this definition">¶</a></dt>
+<dd><p>Create an Amazon EventBridge source.</p>
+<p>Create an Amazon EventBridge source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_create_request.AWSEventBridgeCreateRequest" title="datadog_api_client.v2.model.aws_event_bridge_create_request.AWSEventBridgeCreateRequest"><em>AWSEventBridgeCreateRequest</em></a>) – Create an Amazon EventBridge source for an AWS account with a given name and region.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_create_response.AWSEventBridgeCreateResponse" title="datadog_api_client.v2.model.aws_event_bridge_create_response.AWSEventBridgeCreateResponse">AWSEventBridgeCreateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_new_aws_external_id">
 <span class="sig-name descname"><span class="pre">create_new_aws_external_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_new_external_id_response.AWSNewExternalIDResponse" title="datadog_api_client.v2.model.aws_new_external_id_response.AWSNewExternalIDResponse"><span class="pre">AWSNewExternalIDResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_new_aws_external_id" title="Link to this definition">¶</a></dt>
 <dd><p>Generate a new external ID.</p>
@@ -3924,6 +3944,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.delete_aws_event_bridge_source">
+<span class="sig-name descname"><span class="pre">delete_aws_event_bridge_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_delete_request.AWSEventBridgeDeleteRequest" title="datadog_api_client.v2.model.aws_event_bridge_delete_request.AWSEventBridgeDeleteRequest"><span class="pre">AWSEventBridgeDeleteRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_delete_response.AWSEventBridgeDeleteResponse" title="datadog_api_client.v2.model.aws_event_bridge_delete_response.AWSEventBridgeDeleteResponse"><span class="pre">AWSEventBridgeDeleteResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.delete_aws_event_bridge_source" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an Amazon EventBridge source.</p>
+<p>Delete an Amazon EventBridge source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_delete_request.AWSEventBridgeDeleteRequest" title="datadog_api_client.v2.model.aws_event_bridge_delete_request.AWSEventBridgeDeleteRequest"><em>AWSEventBridgeDeleteRequest</em></a>) – Delete the Amazon EventBridge source with the given name, region, and associated AWS account.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_delete_response.AWSEventBridgeDeleteResponse" title="datadog_api_client.v2.model.aws_event_bridge_delete_response.AWSEventBridgeDeleteResponse">AWSEventBridgeDeleteResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -3983,10 +4017,22 @@ For more information, see the <a class="reference external" href="https://docs.d
 <p>Get a list of AWS Account Integration Configs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>aws_account_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional query parameter to filter accounts by AWS Account ID. If not provided, all accounts are returned.</p>
+<dd class="field-odd"><p><strong>aws_account_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Optional query parameter to filter accounts by AWS Account ID.
+If not provided, all accounts are returned.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_accounts_response.AWSAccountsResponse" title="datadog_api_client.v2.model.aws_accounts_response.AWSAccountsResponse">AWSAccountsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.list_aws_event_bridge_sources">
+<span class="sig-name descname"><span class="pre">list_aws_event_bridge_sources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_list_response.AWSEventBridgeListResponse" title="datadog_api_client.v2.model.aws_event_bridge_list_response.AWSEventBridgeListResponse"><span class="pre">AWSEventBridgeListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.list_aws_event_bridge_sources" title="Link to this definition">¶</a></dt>
+<dd><p>Get all Amazon EventBridge sources.</p>
+<p>Get all Amazon EventBridge sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.aws_event_bridge_list_response.AWSEventBridgeListResponse" title="datadog_api_client.v2.model.aws_event_bridge_list_response.AWSEventBridgeListResponse">AWSEventBridgeListResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
