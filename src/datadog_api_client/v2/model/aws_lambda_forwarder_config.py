@@ -46,8 +46,9 @@ class AWSLambdaForwarderConfig(ModelNormal):
         **kwargs,
     ):
         """
-        Log Autosubscription configuration for Datadog Forwarder Lambda functions. Automatically set up triggers for existing
-        and new logs for some services, ensuring no logs from new resources are missed and saving time spent on manual configuration.
+        Log Autosubscription configuration for Datadog Forwarder Lambda functions.
+        Automatically set up triggers for existing and new logs for some services,
+        ensuring no logs from new resources are missed and saving time spent on manual configuration.
 
         :param lambdas: List of Datadog Lambda Log Forwarder ARNs in your AWS account. Defaults to ``[]``.
         :type lambdas: [str], optional
@@ -55,8 +56,10 @@ class AWSLambdaForwarderConfig(ModelNormal):
         :param log_source_config: Log source configuration.
         :type log_source_config: AWSLambdaForwarderConfigLogSourceConfig, optional
 
-        :param sources: List of service IDs set to enable automatic log collection. Discover the list of available services with the
-            `Get list of AWS log ready services <https://docs.datadoghq.com/api/latest/aws-logs-integration/#get-list-of-aws-log-ready-services>`_ endpoint.
+        :param sources: List of service IDs set to enable automatic log collection.
+            Discover the list of available services with the
+            `Get list of AWS log ready services <https://docs.datadoghq.com/api/latest/aws-logs-integration/#get-list-of-aws-log-ready-services>`_
+            endpoint.
         :type sources: [str], optional
         """
         if lambdas is not unset:

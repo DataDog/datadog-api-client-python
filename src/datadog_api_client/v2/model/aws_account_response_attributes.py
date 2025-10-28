@@ -100,7 +100,8 @@ class AWSAccountResponseAttributes(ModelNormal):
         :type aws_account_id: str
 
         :param aws_partition: AWS partition your AWS account is scoped to. Defaults to ``aws``.
-            See `Partitions <https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/partitions.html>`_ in the AWS documentation for more information.
+            See `Partitions <https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/partitions.html>`_
+            in the AWS documentation for more information.
         :type aws_partition: AWSAccountPartition, optional
 
         :param aws_regions: AWS Regions to collect data from. Defaults to ``include_all``.

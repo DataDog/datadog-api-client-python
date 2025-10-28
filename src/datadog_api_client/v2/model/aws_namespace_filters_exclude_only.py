@@ -24,11 +24,15 @@ class AWSNamespaceFiltersExcludeOnly(ModelNormal):
 
     def __init__(self_, exclude_only: List[str], **kwargs):
         """
-        Exclude only these namespaces from metrics collection. Defaults to ``["AWS/SQS", "AWS/ElasticMapReduce", "AWS/Usage"]``.
-        ``AWS/SQS`` , ``AWS/ElasticMapReduce`` , and ``AWS/Usage`` are excluded by default to reduce your AWS CloudWatch costs from ``GetMetricData`` API calls.
+        Exclude only these namespaces from metrics collection.
+        Defaults to ``["AWS/SQS", "AWS/ElasticMapReduce", "AWS/Usage"]``.
+        ``AWS/SQS`` , ``AWS/ElasticMapReduce`` , and ``AWS/Usage`` are excluded by default
+        to reduce your AWS CloudWatch costs from ``GetMetricData`` API calls.
 
-        :param exclude_only: Exclude only these namespaces from metrics collection. Defaults to ``["AWS/SQS", "AWS/ElasticMapReduce", "AWS/Usage"]``.
-            ``AWS/SQS`` , ``AWS/ElasticMapReduce`` , and ``AWS/Usage`` are excluded by default to reduce your AWS CloudWatch costs from ``GetMetricData`` API calls.
+        :param exclude_only: Exclude only these namespaces from metrics collection.
+            Defaults to ``["AWS/SQS", "AWS/ElasticMapReduce", "AWS/Usage"]``.
+            ``AWS/SQS`` , ``AWS/ElasticMapReduce`` , and ``AWS/Usage`` are excluded by default
+            to reduce your AWS CloudWatch costs from ``GetMetricData`` API calls.
         :type exclude_only: [str]
         """
         super().__init__(kwargs)

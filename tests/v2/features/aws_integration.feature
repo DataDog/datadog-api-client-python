@@ -38,6 +38,27 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 409 Conflict
 
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Create an Amazon EventBridge source returns "Amazon EventBridge source created." response
+    Given new "CreateAWSEventBridgeSource" request
+    And body with value {"data": {"attributes": {"account_id": "123456789012", "create_event_bus": true, "event_generator_name": "app-alerts", "region": "us-east-1"}, "type": "event_bridge"}}
+    When the request is sent
+    Then the response status is 200 Amazon EventBridge source created.
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Create an Amazon EventBridge source returns "Bad Request" response
+    Given new "CreateAWSEventBridgeSource" request
+    And body with value {"data": {"attributes": {"account_id": "123456789012", "create_event_bus": true, "event_generator_name": "app-alerts", "region": "us-east-1"}, "type": "event_bridge"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Create an Amazon EventBridge source returns "Conflict" response
+    Given new "CreateAWSEventBridgeSource" request
+    And body with value {"data": {"attributes": {"account_id": "123456789012", "create_event_bus": true, "event_generator_name": "app-alerts", "region": "us-east-1"}, "type": "event_bridge"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
   @team:DataDog/aws-integrations
   Scenario: Delete an AWS integration returns "Bad Request" response
     Given new "DeleteAWSAccount" request
@@ -60,6 +81,20 @@ Feature: AWS Integration
     And request contains "aws_account_config_id" parameter with value "448169a8-251c-4344-abee-1c4edef39f7a"
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Delete an Amazon EventBridge source returns "Amazon EventBridge source deleted." response
+    Given new "DeleteAWSEventBridgeSource" request
+    And body with value {"data": {"attributes": {"account_id": "123456789012", "event_generator_name": "app-alerts-zyxw3210", "region": "us-east-1"}, "type": "event_bridge"}}
+    When the request is sent
+    Then the response status is 200 Amazon EventBridge source deleted.
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Delete an Amazon EventBridge source returns "Bad Request" response
+    Given new "DeleteAWSEventBridgeSource" request
+    And body with value {"data": {"attributes": {"account_id": "123456789012", "event_generator_name": "app-alerts-zyxw3210", "region": "us-east-1"}, "type": "event_bridge"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @team:DataDog/aws-integrations
   Scenario: Generate a new external ID returns "AWS External ID object" response
@@ -90,6 +125,18 @@ Feature: AWS Integration
     Given new "GetAWSIntegrationIAMPermissionsStandard" request
     When the request is sent
     Then the response status is 200 AWS integration standard IAM permissions.
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Get all Amazon EventBridge sources returns "Amazon EventBridge sources list." response
+    Given new "ListAWSEventBridgeSources" request
+    When the request is sent
+    Then the response status is 200 Amazon EventBridge sources list.
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Get all Amazon EventBridge sources returns "Bad Request" response
+    Given new "ListAWSEventBridgeSources" request
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @team:DataDog/aws-integrations
   Scenario: Get an AWS integration by config ID returns "AWS Account object" response

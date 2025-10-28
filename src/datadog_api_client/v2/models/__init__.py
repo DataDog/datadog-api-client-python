@@ -35,6 +35,30 @@ from datadog_api_client.v2.model.aws_auth_config_keys import AWSAuthConfigKeys
 from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
 from datadog_api_client.v2.model.aws_credentials import AWSCredentials
 from datadog_api_client.v2.model.aws_credentials_update import AWSCredentialsUpdate
+from datadog_api_client.v2.model.aws_event_bridge_account_configuration import AWSEventBridgeAccountConfiguration
+from datadog_api_client.v2.model.aws_event_bridge_create_request import AWSEventBridgeCreateRequest
+from datadog_api_client.v2.model.aws_event_bridge_create_request_attributes import AWSEventBridgeCreateRequestAttributes
+from datadog_api_client.v2.model.aws_event_bridge_create_request_data import AWSEventBridgeCreateRequestData
+from datadog_api_client.v2.model.aws_event_bridge_create_response import AWSEventBridgeCreateResponse
+from datadog_api_client.v2.model.aws_event_bridge_create_response_attributes import (
+    AWSEventBridgeCreateResponseAttributes,
+)
+from datadog_api_client.v2.model.aws_event_bridge_create_response_data import AWSEventBridgeCreateResponseData
+from datadog_api_client.v2.model.aws_event_bridge_create_status import AWSEventBridgeCreateStatus
+from datadog_api_client.v2.model.aws_event_bridge_delete_request import AWSEventBridgeDeleteRequest
+from datadog_api_client.v2.model.aws_event_bridge_delete_request_attributes import AWSEventBridgeDeleteRequestAttributes
+from datadog_api_client.v2.model.aws_event_bridge_delete_request_data import AWSEventBridgeDeleteRequestData
+from datadog_api_client.v2.model.aws_event_bridge_delete_response import AWSEventBridgeDeleteResponse
+from datadog_api_client.v2.model.aws_event_bridge_delete_response_attributes import (
+    AWSEventBridgeDeleteResponseAttributes,
+)
+from datadog_api_client.v2.model.aws_event_bridge_delete_response_data import AWSEventBridgeDeleteResponseData
+from datadog_api_client.v2.model.aws_event_bridge_delete_status import AWSEventBridgeDeleteStatus
+from datadog_api_client.v2.model.aws_event_bridge_list_response import AWSEventBridgeListResponse
+from datadog_api_client.v2.model.aws_event_bridge_list_response_attributes import AWSEventBridgeListResponseAttributes
+from datadog_api_client.v2.model.aws_event_bridge_list_response_data import AWSEventBridgeListResponseData
+from datadog_api_client.v2.model.aws_event_bridge_source import AWSEventBridgeSource
+from datadog_api_client.v2.model.aws_event_bridge_type import AWSEventBridgeType
 from datadog_api_client.v2.model.aws_integration import AWSIntegration
 from datadog_api_client.v2.model.aws_integration_iam_permissions_response import AWSIntegrationIamPermissionsResponse
 from datadog_api_client.v2.model.aws_integration_iam_permissions_response_attributes import (
@@ -4691,6 +4715,26 @@ __all__ = [
     "AWSAuthConfigRole",
     "AWSCredentials",
     "AWSCredentialsUpdate",
+    "AWSEventBridgeAccountConfiguration",
+    "AWSEventBridgeCreateRequest",
+    "AWSEventBridgeCreateRequestAttributes",
+    "AWSEventBridgeCreateRequestData",
+    "AWSEventBridgeCreateResponse",
+    "AWSEventBridgeCreateResponseAttributes",
+    "AWSEventBridgeCreateResponseData",
+    "AWSEventBridgeCreateStatus",
+    "AWSEventBridgeDeleteRequest",
+    "AWSEventBridgeDeleteRequestAttributes",
+    "AWSEventBridgeDeleteRequestData",
+    "AWSEventBridgeDeleteResponse",
+    "AWSEventBridgeDeleteResponseAttributes",
+    "AWSEventBridgeDeleteResponseData",
+    "AWSEventBridgeDeleteStatus",
+    "AWSEventBridgeListResponse",
+    "AWSEventBridgeListResponseAttributes",
+    "AWSEventBridgeListResponseData",
+    "AWSEventBridgeSource",
+    "AWSEventBridgeType",
     "AWSIntegration",
     "AWSIntegrationIamPermissionsResponse",
     "AWSIntegrationIamPermissionsResponseAttributes",

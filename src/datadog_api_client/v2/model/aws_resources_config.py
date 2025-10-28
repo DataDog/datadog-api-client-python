@@ -35,10 +35,13 @@ class AWSResourcesConfig(ModelNormal):
         """
         AWS Resources Collection config.
 
-        :param cloud_security_posture_management_collection: Enable Cloud Security Management to scan AWS resources for vulnerabilities, misconfigurations, identity risks, and compliance violations. Defaults to ``false``. Requires ``extended_collection`` to be set to ``true``.
+        :param cloud_security_posture_management_collection: Enable Cloud Security Management to scan AWS resources for vulnerabilities, misconfigurations,
+            identity risks, and compliance violations. Defaults to ``false``.
+            Requires ``extended_collection`` to be set to ``true``.
         :type cloud_security_posture_management_collection: bool, optional
 
-        :param extended_collection: Whether Datadog collects additional attributes and configuration information about the resources in your AWS account. Defaults to ``true``. Required for ``cloud_security_posture_management_collection``.
+        :param extended_collection: Whether Datadog collects additional attributes and configuration information about the resources
+            in your AWS account. Defaults to ``true``. Required for ``cloud_security_posture_management_collection``.
         :type extended_collection: bool, optional
         """
         if cloud_security_posture_management_collection is not unset:
