@@ -278,7 +278,7 @@ class AWSLogsIntegrationApi:
     ) -> List[AWSLogsListServicesResponse]:
         """Get list of AWS log ready services. **Deprecated**.
 
-        Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
+        **This endpoint is deprecated - use the V2 endpoint instead.** Get the list of current AWS services that Datadog offers automatic log collection. Use returned service IDs with the services parameter for the Enable an AWS service log collection API endpoint.
 
         :rtype: [AWSLogsListServicesResponse]
         """
