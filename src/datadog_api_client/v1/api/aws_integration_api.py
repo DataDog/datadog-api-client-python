@@ -305,7 +305,7 @@ class AWSIntegrationApi:
     ) -> AWSAccountCreateResponse:
         """Create an AWS integration. **Deprecated**.
 
-        " **This endpoint is deprecated - use the V2 endpoints instead.** Create a Datadog-Amazon Web Services integration.
+        **This endpoint is deprecated - use the V2 endpoints instead.** Create a Datadog-Amazon Web Services integration.
         Using the ``POST`` method updates your integration configuration
         by adding your new configuration to the existing one in your Datadog organization.
         A unique AWS Account ID for role based authentication.
@@ -326,7 +326,7 @@ class AWSIntegrationApi:
     ) -> AWSEventBridgeCreateResponse:
         """Create an Amazon EventBridge source. **Deprecated**.
 
-        Create an Amazon EventBridge source.
+        **This endpoint is deprecated - use the V2 endpoints instead.** Create an Amazon EventBridge source.
 
         :param body: Create an Amazon EventBridge source for an AWS account with a given name and region.
         :type body: AWSEventBridgeCreateRequest
@@ -401,7 +401,7 @@ class AWSIntegrationApi:
     ) -> AWSEventBridgeDeleteResponse:
         """Delete an Amazon EventBridge source. **Deprecated**.
 
-        Delete an Amazon EventBridge source.
+        **This endpoint is deprecated - use the V2 endpoints instead.** Delete an Amazon EventBridge source.
 
         :param body: Delete the Amazon EventBridge source with the given name, region, and associated AWS account.
         :type body: AWSEventBridgeDeleteRequest
@@ -481,7 +481,7 @@ class AWSIntegrationApi:
     ) -> AWSEventBridgeListResponse:
         """Get all Amazon EventBridge sources. **Deprecated**.
 
-        Get all Amazon EventBridge sources.
+        **This endpoint is deprecated - use the V2 endpoints instead.** Get all Amazon EventBridge sources.
 
         :rtype: AWSEventBridgeListResponse
         """
