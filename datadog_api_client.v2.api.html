@@ -6682,6 +6682,7 @@ paths are <code class="docutils literal notranslate"><span class="pre">created_b
 <dd><p>Post an event.</p>
 <p>This endpoint allows you to publish events.</p>
 <p><strong>Note:</strong> To utilize this endpoint with our client libraries, please ensure you are using the latest version released on or after July 1, 2025. Earlier versions do not support this functionality.</p>
+<p><strong>Important:</strong> Upgrade to the latest client library version to use the updated endpoint at <code class="docutils literal notranslate"><span class="pre">https://event-management-intake.{site}/api/v2/events</span></code>. Older client library versions of the Post an event (v2) API send requests to a deprecated endpoint ( <code class="docutils literal notranslate"><span class="pre">https://api.{site}/api/v2/events</span></code> ).</p>
 <p>✅ <strong>Only events with the change or alert category</strong> are in General Availability. For change events, see <a class="reference external" href="https://docs.datadoghq.com/change_tracking">Change Tracking</a> for more details.</p>
 <p>❌ For use cases involving other event categories, use the V1 endpoint or reach out to <a class="reference external" href="https://www.datadoghq.com/support/">support</a>.</p>
 <p>❌ Notifications are not yet supported for events sent to this endpoint. Use the V1 endpoint for notification functionality.</p>
