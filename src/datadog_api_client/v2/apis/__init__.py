@@ -20,6 +20,7 @@ from datadog_api_client.v2.api.case_management_type_api import CaseManagementTyp
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.api.cloud_network_monitoring_api import CloudNetworkMonitoringApi
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
+from datadog_api_client.v2.api.cohort_api import CohortApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.containers_api import ContainersApi
@@ -33,6 +34,7 @@ from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationApi
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
+from datadog_api_client.v2.api.funnel_api import FunnelApi
 from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi
 from datadog_api_client.v2.api.ip_allowlist_api import IPAllowlistApi
 from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
@@ -63,6 +65,7 @@ from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
+from datadog_api_client.v2.api.segments_api import SegmentsApi
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
@@ -77,6 +80,7 @@ from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
+from datadog_api_client.v2.api.user_flow_api import UserFlowApi
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomationApi
 
@@ -104,6 +108,7 @@ __all__ = [
     "CloudCostManagementApi",
     "CloudNetworkMonitoringApi",
     "CloudflareIntegrationApi",
+    "CohortApi",
     "ConfluentCloudApi",
     "ContainerImagesApi",
     "ContainersApi",
@@ -117,6 +122,7 @@ __all__ = [
     "EventsApi",
     "FastlyIntegrationApi",
     "FleetAutomationApi",
+    "FunnelApi",
     "GCPIntegrationApi",
     "IPAllowlistApi",
     "IncidentServicesApi",
@@ -147,6 +153,7 @@ __all__ = [
     "RumMetricsApi",
     "RumRetentionFiltersApi",
     "SecurityMonitoringApi",
+    "SegmentsApi",
     "SensitiveDataScannerApi",
     "ServiceAccountsApi",
     "ServiceDefinitionApi",
@@ -161,6 +168,7 @@ __all__ = [
     "TeamsApi",
     "TestOptimizationApi",
     "UsageMeteringApi",
+    "UserFlowApi",
     "UsersApi",
     "WorkflowAutomationApi",
 ]

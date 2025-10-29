@@ -8614,6 +8614,195 @@ datadog\_api\_client.v2.model.full\_custom\_framework\_data\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.funnel\_request module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_request\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_request\_data\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_request\_data\_attributes\_search module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_request_data_attributes_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_request\_data\_attributes\_search\_steps\_items module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_request_data_attributes_search_steps_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_request\_data\_attributes\_time module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_request_data_attributes_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_request\_data\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_response module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_response\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_response\_data\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_response\_data\_attributes\_funnel\_steps\_items module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_response_data_attributes_funnel_steps_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_response\_data\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_response\_elapsed\_time module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_response_elapsed_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request\_data\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request\_data\_attributes\_search module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request\_data\_attributes\_search\_steps\_items module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_search_steps_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request\_data\_attributes\_term\_search module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_term_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request\_data\_attributes\_time module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_request\_data\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_response\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_response\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_response\_data\_attributes\_actions\_items module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_response_data_attributes_actions_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_response\_data\_attributes\_views\_items module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_response_data_attributes_views_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.funnel\_suggestion\_response\_data\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.funnel_suggestion_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.gcp\_credentials module
 -----------------------------------------------------
 
@@ -9059,6 +9248,223 @@ datadog\_api\_client.v2.model.get\_app\_response\_data\_attributes module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.get_app_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_attributes\_definition module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_attributes_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_attributes\_definition\_audience\_filters module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_attributes\_definition\_audience\_filters\_accounts\_items module
+---------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters_accounts_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_attributes\_definition\_audience\_filters\_segments\_items module
+---------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters_segments_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_attributes\_definition\_audience\_filters\_users\_items module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters_users_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_attributes\_time module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_attributes_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_request\_data\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_response\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_response\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_response\_data\_attributes\_cohorts\_items module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_response_data_attributes_cohorts_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_response\_data\_attributes\_cohorts\_items\_values\_items module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_response_data_attributes_cohorts_items_values_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_response\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_attributes\_definition module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_attributes\_definition\_audience\_filters module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_attributes\_definition\_audience\_filters\_accounts\_items module
+----------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters_accounts_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_attributes\_definition\_audience\_filters\_segments\_items module
+----------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters_segments_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_attributes\_definition\_audience\_filters\_users\_items module
+-------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters_users_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_attributes\_time module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_attributes_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_request\_data\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_response\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_response\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_response\_data\_attributes\_users\_items module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_response_data_attributes_users_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_cohort\_users\_response\_data\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_cohort_users_response_data_type
    :members:
    :show-inheritance:
 
@@ -18610,6 +19016,146 @@ datadog\_api\_client.v2.model.saml\_assertion\_attributes\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sankey\_request module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_definition module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_sampling module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_sampling
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_search module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_search\_audience\_filters module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_search\_audience\_filters\_accounts\_items module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters_accounts_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_search\_audience\_filters\_segments\_items module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters_segments_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_search\_audience\_filters\_users\_items module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters_users_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_search\_occurrences module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_search_occurrences
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_attributes\_time module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_attributes_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_request\_data\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_response module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_response\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_response\_data\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_response\_data\_attributes\_links\_items module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_response_data_attributes_links_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_response\_data\_attributes\_nodes\_items module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_response_data_attributes_nodes_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_response\_data\_attributes\_nodes\_items\_aggregated\_nodes\_items module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_response_data_attributes_nodes_items_aggregated_nodes_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sankey\_response\_data\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sankey_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sbom module
 -----------------------------------------
 
@@ -20084,6 +20630,97 @@ datadog\_api\_client.v2.model.security\_trigger\_wrapper module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_trigger_wrapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment module
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_array module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes\_data\_query module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes_data_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes\_data\_query\_event\_platform\_items module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes_data_query_event_platform_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes\_data\_query\_reference\_table\_items module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes_data_query_reference_table_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes\_data\_query\_reference\_table\_items\_columns\_items module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes_data_query_reference_table_items_columns_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes\_data\_query\_reference\_table\_items\_join\_condition module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes_data_query_reference_table_items_join_condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes\_data\_query\_static\_items module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes_data_query_static_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_attributes\_data\_query\_user\_store\_items module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_attributes_data_query_user_store_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_source module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.segment\_data\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.segment_data_type
    :members:
    :show-inheritance:
 

@@ -137,6 +137,13 @@ datadog\_api\_client.v2.api.cloudflare\_integration\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.cohort\_api module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.cohort_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.confluent\_cloud\_api module
 --------------------------------------------------------
 
@@ -246,6 +253,13 @@ datadog\_api\_client.v2.api.fleet\_automation\_api module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.fleet_automation_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.funnel\_api module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.funnel_api
    :members:
    :show-inheritance:
 
@@ -459,6 +473,13 @@ datadog\_api\_client.v2.api.security\_monitoring\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.segments\_api module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.segments_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.sensitive\_data\_scanner\_api module
 ----------------------------------------------------------------
 
@@ -554,6 +575,13 @@ datadog\_api\_client.v2.api.usage\_metering\_api module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.usage_metering_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.user\_flow\_api module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.user_flow_api
    :members:
    :show-inheritance:
 
