@@ -39,7 +39,7 @@ class PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail(Mod
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        The definition of the GCP access details object.
 
         :param file_path: The relative file path from the GCS bucket root to the CSV file.
         :type file_path: str, optional

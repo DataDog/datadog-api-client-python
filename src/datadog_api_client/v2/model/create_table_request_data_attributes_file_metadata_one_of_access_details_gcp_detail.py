@@ -31,7 +31,7 @@ class CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail(Mo
         self_, file_path: str, gcp_bucket_name: str, gcp_project_id: str, gcp_service_account_email: str, **kwargs
     ):
         """
-        The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        The definition of the GCP access details object.
 
         :param file_path: The relative file path from the GCS bucket root to the CSV file.
         :type file_path: str

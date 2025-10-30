@@ -44,9 +44,9 @@ class TableRowResourceData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableRowResourceData`` object.
+        The definition of the table row resource data object.
 
-        :param attributes: The definition of ``TableRowResourceDataAttributes`` object.
+        :param attributes: The definition of the row attributes object.
         :type attributes: TableRowResourceDataAttributes, optional
 
         :param id: The ID of the row.

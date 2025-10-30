@@ -45,7 +45,7 @@ class TableRowResourceDataAttributes(ModelNormal):
 
     def __init__(self_, values: Union[Dict[str, Any], UnsetType] = unset, **kwargs):
         """
-        The definition of ``TableRowResourceDataAttributes`` object.
+        The definition of the row attributes object.
 
         :param values: The values of the row.
         :type values: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional

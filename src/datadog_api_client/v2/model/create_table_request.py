@@ -32,9 +32,9 @@ class CreateTableRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateTableRequestData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateTableRequest`` object.
+        The definition of the reference table request object.
 
-        :param data: The definition of ``CreateTableRequestData`` object.
+        :param data: The definition of the reference table request data object.
         :type data: CreateTableRequestData, optional
         """
         if data is not unset:

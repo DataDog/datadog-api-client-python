@@ -44,9 +44,9 @@ class PatchTableRequestData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestData`` object.
+        The definition of the patch table request data object.
 
-        :param attributes: The definition of ``PatchTableRequestDataAttributes`` object.
+        :param attributes: The definition of the reference table attributes object.
         :type attributes: PatchTableRequestDataAttributes, optional
 
         :param id: The ID of the reference table.

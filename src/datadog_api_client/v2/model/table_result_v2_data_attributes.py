@@ -85,7 +85,7 @@ class TableResultV2DataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2DataAttributes`` object.
+        The definition of the reference table attributes object.
 
         :param created_by: UUID of the user who created the reference table.
         :type created_by: str, optional
@@ -93,7 +93,7 @@ class TableResultV2DataAttributes(ModelNormal):
         :param description: The description of the reference table.
         :type description: str, optional
 
-        :param file_metadata: The definition of ``TableResultV2DataAttributesFileMetadata`` object.
+        :param file_metadata: The definition of the file metadata object.
         :type file_metadata: TableResultV2DataAttributesFileMetadata, optional
 
         :param last_updated_by: UUID of the user who last updated the reference table.
@@ -102,7 +102,7 @@ class TableResultV2DataAttributes(ModelNormal):
         :param row_count: The number of successfully processed rows in the reference table.
         :type row_count: int, optional
 
-        :param schema: The definition of ``TableResultV2DataAttributesSchema`` object.
+        :param schema: The definition of the schema object.
         :type schema: TableResultV2DataAttributesSchema, optional
 
         :param source: The source type for reference table data. Includes all possible source types that can appear in responses.

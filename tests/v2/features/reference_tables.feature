@@ -24,7 +24,7 @@ Feature: Reference Tables
   @generated @skip @team:DataDog/redapl-experiences
   Scenario: Create reference table upload returns "Bad Request" response
     Given new "CreateReferenceTableUpload" request
-    And body with value {"data": {"attributes": {"headers": [""], "part_count": 3, "part_size": 10000000, "table_name": ""}, "type": "upload"}}
+    And body with value {"data": {"attributes": {"headers": ["field_1", "field_2"], "part_count": 3, "part_size": 10000000, "table_name": ""}, "type": "upload"}}
     When the request is sent
     Then the response status is 400 Bad Request
 

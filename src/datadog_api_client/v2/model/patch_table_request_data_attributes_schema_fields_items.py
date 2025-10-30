@@ -32,7 +32,7 @@ class PatchTableRequestDataAttributesSchemaFieldsItems(ModelNormal):
 
     def __init__(self_, name: str, type: ReferenceTableSchemaFieldType, **kwargs):
         """
-        The definition of ``PatchTableRequestDataAttributesSchemaFieldsItems`` object.
+        The definition of a schema field object.
 
         :param name: The field name.
         :type name: str

@@ -36,7 +36,7 @@ class TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail(ModelNo
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        The definition of the AWS access details object.
 
         :param aws_account_id: The ID of the AWS account.
         :type aws_account_id: str, optional

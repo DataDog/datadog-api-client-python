@@ -39,7 +39,7 @@ class CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail(
         **kwargs,
     ):
         """
-        The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        The definition of the Azure access details object.
 
         :param azure_client_id: The Azure client ID.
         :type azure_client_id: str

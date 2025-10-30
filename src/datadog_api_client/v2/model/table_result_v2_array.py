@@ -30,7 +30,7 @@ class TableResultV2Array(ModelNormal):
 
     def __init__(self_, data: List[TableResultV2Data], **kwargs):
         """
-        The definition of ``TableResultV2Array`` object.
+        The definition of the table result array object.
 
         :param data: The reference tables.
         :type data: [TableResultV2Data]

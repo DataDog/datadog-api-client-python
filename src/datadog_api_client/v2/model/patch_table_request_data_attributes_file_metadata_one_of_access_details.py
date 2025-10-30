@@ -60,15 +60,15 @@ class PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails(ModelNormal)
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails`` object.
+        The definition of the access details object.
 
-        :param aws_detail: The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        :param aws_detail: The definition of the AWS access details object.
         :type aws_detail: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail, optional
 
-        :param azure_detail: The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        :param azure_detail: The definition of the Azure access details object.
         :type azure_detail: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail, optional
 
-        :param gcp_detail: The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        :param gcp_detail: The definition of the GCP access details object.
         :type gcp_detail: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail, optional
         """
         if aws_detail is not unset:

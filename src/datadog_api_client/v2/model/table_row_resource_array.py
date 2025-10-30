@@ -30,7 +30,7 @@ class TableRowResourceArray(ModelNormal):
 
     def __init__(self_, data: List[TableRowResourceData], **kwargs):
         """
-        The definition of ``TableRowResourceArray`` object.
+        The definition of the table row resource array object.
 
         :param data: The rows.
         :type data: [TableRowResourceData]

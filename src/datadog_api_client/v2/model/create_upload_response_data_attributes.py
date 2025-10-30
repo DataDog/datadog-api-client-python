@@ -26,7 +26,7 @@ class CreateUploadResponseDataAttributes(ModelNormal):
 
     def __init__(self_, part_urls: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateUploadResponseDataAttributes`` object.
+        The definition of the upload response attributes object.
 
         :param part_urls: The URLs of the parts in the upload.
         :type part_urls: [str], optional

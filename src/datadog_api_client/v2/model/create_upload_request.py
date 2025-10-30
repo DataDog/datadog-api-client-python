@@ -32,9 +32,9 @@ class CreateUploadRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateUploadRequestData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateUploadRequest`` object.
+        The definition of the upload request object.
 
-        :param data: The definition of ``CreateUploadRequestData`` object.
+        :param data: The definition of the upload request data object.
         :type data: CreateUploadRequestData, optional
         """
         if data is not unset:

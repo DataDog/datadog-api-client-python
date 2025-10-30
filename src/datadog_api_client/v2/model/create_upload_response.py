@@ -32,9 +32,9 @@ class CreateUploadResponse(ModelNormal):
 
     def __init__(self_, data: Union[CreateUploadResponseData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateUploadResponse`` object.
+        The definition of the upload response object.
 
-        :param data: The definition of ``CreateUploadResponseData`` object.
+        :param data: The definition of the upload response data object.
         :type data: CreateUploadResponseData, optional
         """
         if data is not unset:

@@ -13,9 +13,9 @@ from datadog_api_client.model_utils import (
 class TableResultV2DataAttributesFileMetadata(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``TableResultV2DataAttributesFileMetadata`` object.
+        The definition of the file metadata object.
 
-        :param access_details: The definition of `TableResultV2DataAttributesFileMetadataOneOfAccessDetails` object.
+        :param access_details: The definition of the access details object.
         :type access_details: TableResultV2DataAttributesFileMetadataOneOfAccessDetails, optional
 
         :param error_message: The error message returned from the sync.
