@@ -1,6 +1,6 @@
 @endpoint(reference-tables) @endpoint(reference-tables-v2)
 Feature: Reference Tables
-  Auto-generated tag Reference Tables
+  View and manage Reference Tables in your organization.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

@@ -23,7 +23,7 @@ from datadog_api_client.v2.model.create_upload_request import CreateUploadReques
 
 class ReferenceTablesApi:
     """
-    Auto-generated tag Reference Tables
+    View and manage Reference Tables in your organization.
     """
 
     def __init__(self, api_client=None):
