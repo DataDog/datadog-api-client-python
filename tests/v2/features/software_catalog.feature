@@ -144,3 +144,9 @@ Feature: Software Catalog
     And request contains "page[limit]" parameter with value 20
     When the request with pagination is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Preview catalog entities returns "Accepted" response
+    Given new "PreviewCatalogEntities" request
+    When the request is sent
+    Then the response status is 202 Accepted

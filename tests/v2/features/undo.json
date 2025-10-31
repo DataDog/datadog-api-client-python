@@ -751,6 +751,12 @@
       "type": "unsafe"
     }
   },
+  "PreviewCatalogEntities": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteCatalogEntity": {
     "tag": "Software Catalog",
     "undo": {

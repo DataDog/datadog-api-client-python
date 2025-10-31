@@ -21,6 +21,7 @@ from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
 from datadog_api_client.v2.model.entity_v3 import EntityV3
+from datadog_api_client.v2.model.entity_response_array import EntityResponseArray
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.kind_data import KindData
 from datadog_api_client.v2.model.upsert_catalog_kind_response import UpsertCatalogKindResponse
@@ -232,6 +233,22 @@ class SoftwareCatalogApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._preview_catalog_entities_endpoint = _Endpoint(
+            settings={
+                "response_type": (EntityResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/entity/preview",
+                "operation_id": "preview_catalog_entities",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -665,6 +682,16 @@ class SoftwareCatalogApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def preview_catalog_entities(
+        self,
+    ) -> EntityResponseArray:
+        """Preview catalog entities.
+
+        :rtype: EntityResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._preview_catalog_entities_endpoint.call_with_http_info(**kwargs)
 
     def upsert_catalog_entity(
         self,

@@ -1373,6 +1373,53 @@ from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_meta import EntityMeta
 from datadog_api_client.v2.model.entity_relationships import EntityRelationships
+from datadog_api_client.v2.model.entity_response_array import EntityResponseArray
+from datadog_api_client.v2.model.entity_response_data_attributes import EntityResponseDataAttributes
+from datadog_api_client.v2.model.entity_response_data_relationships import EntityResponseDataRelationships
+from datadog_api_client.v2.model.entity_response_data_relationships_incidents import (
+    EntityResponseDataRelationshipsIncidents,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_incidents_data_items import (
+    EntityResponseDataRelationshipsIncidentsDataItems,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_incidents_data_items_type import (
+    EntityResponseDataRelationshipsIncidentsDataItemsType,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_oncalls import (
+    EntityResponseDataRelationshipsOncalls,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_oncalls_data_items import (
+    EntityResponseDataRelationshipsOncallsDataItems,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_oncalls_data_items_type import (
+    EntityResponseDataRelationshipsOncallsDataItemsType,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_raw_schema import (
+    EntityResponseDataRelationshipsRawSchema,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_raw_schema_data import (
+    EntityResponseDataRelationshipsRawSchemaData,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_raw_schema_data_type import (
+    EntityResponseDataRelationshipsRawSchemaDataType,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_related_entities import (
+    EntityResponseDataRelationshipsRelatedEntities,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_related_entities_data_items import (
+    EntityResponseDataRelationshipsRelatedEntitiesDataItems,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_related_entities_data_items_type import (
+    EntityResponseDataRelationshipsRelatedEntitiesDataItemsType,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_schema import EntityResponseDataRelationshipsSchema
+from datadog_api_client.v2.model.entity_response_data_relationships_schema_data import (
+    EntityResponseDataRelationshipsSchemaData,
+)
+from datadog_api_client.v2.model.entity_response_data_relationships_schema_data_type import (
+    EntityResponseDataRelationshipsSchemaDataType,
+)
+from datadog_api_client.v2.model.entity_response_data_type import EntityResponseDataType
 from datadog_api_client.v2.model.entity_response_included_incident import EntityResponseIncludedIncident
 from datadog_api_client.v2.model.entity_response_included_incident_type import EntityResponseIncludedIncidentType
 from datadog_api_client.v2.model.entity_response_included_oncall import EntityResponseIncludedOncall
@@ -3337,6 +3384,7 @@ from datadog_api_client.v2.model.powerpack_response_links import PowerpackRespon
 from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTemplateVariable
 from datadog_api_client.v2.model.powerpacks_response_meta import PowerpacksResponseMeta
 from datadog_api_client.v2.model.powerpacks_response_meta_pagination import PowerpacksResponseMetaPagination
+from datadog_api_client.v2.model.preview_entity_response_data import PreviewEntityResponseData
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
 from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
@@ -5736,6 +5784,25 @@ __all__ = [
     "EntityData",
     "EntityMeta",
     "EntityRelationships",
+    "EntityResponseArray",
+    "EntityResponseDataAttributes",
+    "EntityResponseDataRelationships",
+    "EntityResponseDataRelationshipsIncidents",
+    "EntityResponseDataRelationshipsIncidentsDataItems",
+    "EntityResponseDataRelationshipsIncidentsDataItemsType",
+    "EntityResponseDataRelationshipsOncalls",
+    "EntityResponseDataRelationshipsOncallsDataItems",
+    "EntityResponseDataRelationshipsOncallsDataItemsType",
+    "EntityResponseDataRelationshipsRawSchema",
+    "EntityResponseDataRelationshipsRawSchemaData",
+    "EntityResponseDataRelationshipsRawSchemaDataType",
+    "EntityResponseDataRelationshipsRelatedEntities",
+    "EntityResponseDataRelationshipsRelatedEntitiesDataItems",
+    "EntityResponseDataRelationshipsRelatedEntitiesDataItemsType",
+    "EntityResponseDataRelationshipsSchema",
+    "EntityResponseDataRelationshipsSchemaData",
+    "EntityResponseDataRelationshipsSchemaDataType",
+    "EntityResponseDataType",
     "EntityResponseIncludedIncident",
     "EntityResponseIncludedIncidentType",
     "EntityResponseIncludedOncall",
@@ -7084,6 +7151,7 @@ __all__ = [
     "PowerpackTemplateVariable",
     "PowerpacksResponseMeta",
     "PowerpacksResponseMetaPagination",
+    "PreviewEntityResponseData",
     "ProcessSummariesMeta",
     "ProcessSummariesMetaPage",
     "ProcessSummariesResponse",
