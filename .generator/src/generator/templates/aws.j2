@@ -1,0 +1,263 @@
+{% include "api_info.j2" %}
+
+import base64
+import hashlib
+import hmac
+import json
+import os
+import platform
+from datetime import datetime
+from typing import Dict, List, Optional, Tuple
+from urllib.parse import quote
+from {{ package }}.version import __version__
+
+from {{ package }}.configuration import Configuration
+from {{ package }}.delegated_auth import DelegatedTokenProvider, DelegatedTokenConfig, DelegatedTokenCredentials, get_delegated_token
+from {{ package }}.exceptions import ApiValueError
+
+
+# AWS specific constants
+AWS_ACCESS_KEY_ID_NAME = "AWS_ACCESS_KEY_ID"
+AWS_SECRET_ACCESS_KEY_NAME = "AWS_SECRET_ACCESS_KEY"
+AWS_SESSION_TOKEN_NAME = "AWS_SESSION_TOKEN"
+
+AMZ_DATE_HEADER = "X-Amz-Date"
+AMZ_TOKEN_HEADER = "X-Amz-Security-Token"
+AMZ_DATE_FORMAT = "%Y%m%d"
+AMZ_DATE_TIME_FORMAT = "%Y%m%dT%H%M%SZ"
+DEFAULT_REGION = "us-east-1"
+DEFAULT_STS_HOST = "sts.amazonaws.com"
+REGIONAL_STS_HOST = "sts.{}.amazonaws.com"
+SERVICE = "sts"
+ALGORITHM = "AWS4-HMAC-SHA256"
+AWS4_REQUEST = "aws4_request"
+GET_CALLER_IDENTITY_BODY = "Action=GetCallerIdentity&Version=2011-06-15"
+
+# Common Headers
+ORG_ID_HEADER = "x-ddog-org-id"
+HOST_HEADER = "host"
+APPLICATION_FORM = "application/x-www-form-urlencoded; charset=utf-8"
+
+PROVIDER_AWS = "aws"
+
+
+class AWSCredentials:
+    """AWS credentials for authentication."""
+    
+    def __init__(self, access_key_id: str, secret_access_key: str, session_token: str):
+        self.access_key_id = access_key_id
+        self.secret_access_key = secret_access_key
+        self.session_token = session_token
+
+
+class SigningData:
+    """Data structure for AWS signing information."""
+    
+    def __init__(self, headers_encoded: str, body_encoded: str, url_encoded: str, method: str):
+        self.headers_encoded = headers_encoded
+        self.body_encoded = body_encoded
+        self.url_encoded = url_encoded
+        self.method = method
+
+
+class AWSAuth(DelegatedTokenProvider):
+    """AWS authentication provider for delegated tokens."""
+    
+    def __init__(self, aws_region: Optional[str] = None):
+        super().__init__()
+        self.aws_region = aws_region
+    
+    def authenticate(self, config: DelegatedTokenConfig, api_config: Configuration) -> DelegatedTokenCredentials:
+        """Authenticate using AWS credentials and return delegated token credentials.
+
+        :param config: Delegated token configuration
+        :param api_config: API client configuration with host and other settings
+        :return: DelegatedTokenCredentials object
+        :raises: ApiValueError if authentication fails
+        """
+        # Check org UUID first
+        if not config or not config.org_uuid:
+            raise ApiValueError("Missing org UUID in config")
+
+        # Get local AWS Credentials
+        creds = self.get_credentials()
+
+        # Use the credentials to generate the signing data
+        data = self.generate_aws_auth_data(config.org_uuid, creds)
+        
+        # Generate the auth string passed to the token endpoint
+        auth_string = f"{data.body_encoded}|{data.headers_encoded}|{data.method}|{data.url_encoded}"
+        
+        # Pass the api_config and self (provider) to get_delegated_token for REST client caching
+        auth_response = get_delegated_token(config.org_uuid, auth_string, api_config, self)
+        return auth_response
+    
+    def get_credentials(self) -> AWSCredentials:
+        """Get AWS credentials from environment variables.
+        
+        :return: AWSCredentials object
+        :raises: ApiValueError if credentials are missing
+        """
+        access_key = os.getenv(AWS_ACCESS_KEY_ID_NAME)
+        secret_key = os.getenv(AWS_SECRET_ACCESS_KEY_NAME)
+        session_token = os.getenv(AWS_SESSION_TOKEN_NAME)
+        
+        if not access_key or not secret_key or not session_token:
+            raise ApiValueError("Missing AWS credentials. Please set AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN environment variables.")
+        
+        return AWSCredentials(
+            access_key_id=access_key,
+            secret_access_key=secret_key,
+            session_token=session_token
+        )
+    
+    def _get_connection_parameters(self) -> Tuple[str, str, str]:
+        """Get connection parameters for AWS STS.
+        
+        :return: Tuple of (sts_full_url, region, host)
+        """
+        region = self.aws_region or DEFAULT_REGION
+        
+        if self.aws_region:
+            host = REGIONAL_STS_HOST.format(region)
+        else:
+            host = DEFAULT_STS_HOST
+        
+        sts_full_url = f"https://{host}"
+        return sts_full_url, region, host
+    
+    def generate_aws_auth_data(self, org_uuid: str, creds: AWSCredentials) -> SigningData:
+        """Generate AWS authentication data for signing.
+        
+        :param org_uuid: Organization UUID
+        :param creds: AWS credentials
+        :return: SigningData object
+        :raises: ApiValueError if generation fails
+        """
+        if not org_uuid:
+            raise ApiValueError("Missing org UUID")
+        
+        if not creds or not creds.access_key_id or not creds.secret_access_key or not creds.session_token:
+            raise ApiValueError("Missing AWS credentials")
+        
+        sts_full_url, region, host = self._get_connection_parameters()
+        
+        now = datetime.utcnow()
+        
+        request_body = GET_CALLER_IDENTITY_BODY
+        payload_hash = hashlib.sha256(request_body.encode('utf-8')).hexdigest()
+        
+        # Create the headers that factor into the signing algorithm
+        header_map = {
+            "Content-Length": [str(len(request_body))],
+            "Content-Type": [APPLICATION_FORM],
+            AMZ_DATE_HEADER: [now.strftime(AMZ_DATE_TIME_FORMAT)],
+            ORG_ID_HEADER: [org_uuid],
+            AMZ_TOKEN_HEADER: [creds.session_token],
+            HOST_HEADER: [host],
+        }
+        
+        # Create canonical headers
+        header_arr = []
+        signed_headers_arr = []
+        
+        for k, v in header_map.items():
+            lowered_header_name = k.lower()
+            header_arr.append(f"{lowered_header_name}:{','.join(v)}")
+            signed_headers_arr.append(lowered_header_name)
+        
+        header_arr.sort()
+        signed_headers_arr.sort()
+        signed_headers = ";".join(signed_headers_arr)
+        
+        canonical_request = "\n".join([
+            "POST",
+            "/",
+            "",  # No query string
+            "\n".join(header_arr) + "\n",
+            signed_headers,
+            payload_hash,
+        ])
+        
+        # Create the string to sign
+        hash_canonical_request = hashlib.sha256(canonical_request.encode('utf-8')).hexdigest()
+        credential_scope = "/".join([
+            now.strftime(AMZ_DATE_FORMAT),
+            region,
+            SERVICE,
+            AWS4_REQUEST,
+        ])
+        
+        string_to_sign = self._make_signature(
+            now,
+            credential_scope,
+            hash_canonical_request,
+            region,
+            SERVICE,
+            creds.secret_access_key,
+            ALGORITHM,
+        )
+        
+        # Create the authorization header
+        credential = f"{creds.access_key_id}/{credential_scope}"
+        auth_header = f"{ALGORITHM} Credential={credential}, SignedHeaders={signed_headers}, Signature={string_to_sign}"
+        
+        header_map["Authorization"] = [auth_header]
+        header_map["User-Agent"] = [self._get_user_agent()]
+        
+        headers_json = json.dumps(header_map, separators=(',', ':'))
+        
+        return SigningData(
+            headers_encoded=base64.b64encode(headers_json.encode('utf-8')).decode('utf-8'),
+            body_encoded=base64.b64encode(request_body.encode('utf-8')).decode('utf-8'),
+            method="POST",
+            url_encoded=base64.b64encode(sts_full_url.encode('utf-8')).decode('utf-8')
+        )
+    
+    def _make_signature(self, t: datetime, credential_scope: str, payload_hash: str, 
+                       region: str, service: str, secret_access_key: str, algorithm: str) -> str:
+        """Create AWS signature.
+        
+        :param t: Current datetime
+        :param credential_scope: Credential scope string
+        :param payload_hash: Hash of the canonical request
+        :param region: AWS region
+        :param service: AWS service name
+        :param secret_access_key: AWS secret access key
+        :param algorithm: Signing algorithm
+        :return: Signature string
+        """
+        # Create the string to sign
+        string_to_sign = "\n".join([
+            algorithm,
+            t.strftime(AMZ_DATE_TIME_FORMAT),
+            credential_scope,
+            payload_hash,
+        ])
+        
+        # Create the signing key
+        k_date = self._hmac256(t.strftime(AMZ_DATE_FORMAT), f"AWS4{secret_access_key}".encode('utf-8'))
+        k_region = self._hmac256(region, k_date)
+        k_service = self._hmac256(service, k_region)
+        k_signing = self._hmac256(AWS4_REQUEST, k_service)
+        
+        # Sign the string
+        signature = self._hmac256(string_to_sign, k_signing)
+        return signature.hex()
+    
+    def _hmac256(self, data: str, key: bytes) -> bytes:
+        """Create HMAC-SHA256 hash.
+        
+        :param data: Data to hash
+        :param key: Key for HMAC
+        :return: HMAC hash bytes
+        """
+        return hmac.new(key, data.encode('utf-8'), hashlib.sha256).digest()
+    
+    def _get_user_agent(self) -> str:
+        """Get user agent string.
+        
+        :return: User agent string
+        """
+        
+        return f"datadog-api-client-python/{__version__} (python {platform.python_version()}; os {platform.system()}; arch {platform.machine()})"
