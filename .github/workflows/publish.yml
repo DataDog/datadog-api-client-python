@@ -14,6 +14,9 @@ jobs:
   upload_release:
     name: Upload release
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    environment: secure_publish_environment
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -40,8 +43,12 @@ jobs:
           # Build a binary wheel and a source tarball
           python -m build --sdist --wheel --outdir dist/ .
 
-      - name: Publish a Python distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+      # Publish wheels to PyPI using Trusted Publishers.
+      # https://docs.pypi.org/trusted-publishers/using-a-publisher/
+      # This job needs to run from within the pypi-datadog-checks-base environment. PyPi
+      # validates the workflow file name, environment and repository the request is
+      # comming from to provide the valid JWT token.
+      - name: Release base package to PyPI
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
         with:
-          user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
+          skip-existing: true
