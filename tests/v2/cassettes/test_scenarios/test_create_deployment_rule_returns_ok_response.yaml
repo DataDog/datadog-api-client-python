@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service"},"type":"deployment_gate"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deployment_gates
+  response:
+    body:
+      string: '{"data":{"id":"58066a8e-44e7-4119-8ac6-a5ecc3b31c1b","type":"deployment_gate","attributes":{"created_at":"2025-10-28T14:51:13.477518Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service","updated_at":"2025-10-28T14:51:13.477518Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"dry_run":false,"name":"My deployment rule","options":{"excluded_resources":[]},"type":"faulty_deployment_detection"},"type":"deployment_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/58066a8e-44e7-4119-8ac6-a5ecc3b31c1b/rules
+  response:
+    body:
+      string: '{"data":{"id":"8330bf79-6906-4cea-85d5-a4da6767458e","type":"deployment_rule","attributes":{"created_at":"2025-10-28T14:51:13.852895Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"gate_id":"58066a8e-44e7-4119-8ac6-a5ecc3b31c1b","name":"My
+        deployment rule","options":{},"type":"faulty_deployment_detection","updated_at":"2025-10-28T14:51:13.852895Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/58066a8e-44e7-4119-8ac6-a5ecc3b31c1b/rules/8330bf79-6906-4cea-85d5-a4da6767458e
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/58066a8e-44e7-4119-8ac6-a5ecc3b31c1b
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
