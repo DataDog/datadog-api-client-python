@@ -1642,6 +1642,51 @@ from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
 from datadog_api_client.v2.model.full_custom_framework_data import FullCustomFrameworkData
 from datadog_api_client.v2.model.full_custom_framework_data_attributes import FullCustomFrameworkDataAttributes
+from datadog_api_client.v2.model.funnel_request import FunnelRequest
+from datadog_api_client.v2.model.funnel_request_data import FunnelRequestData
+from datadog_api_client.v2.model.funnel_request_data_attributes import FunnelRequestDataAttributes
+from datadog_api_client.v2.model.funnel_request_data_attributes_search import FunnelRequestDataAttributesSearch
+from datadog_api_client.v2.model.funnel_request_data_attributes_search_steps_items import (
+    FunnelRequestDataAttributesSearchStepsItems,
+)
+from datadog_api_client.v2.model.funnel_request_data_attributes_time import FunnelRequestDataAttributesTime
+from datadog_api_client.v2.model.funnel_request_data_type import FunnelRequestDataType
+from datadog_api_client.v2.model.funnel_response import FunnelResponse
+from datadog_api_client.v2.model.funnel_response_data import FunnelResponseData
+from datadog_api_client.v2.model.funnel_response_data_attributes import FunnelResponseDataAttributes
+from datadog_api_client.v2.model.funnel_response_data_attributes_funnel_steps_items import (
+    FunnelResponseDataAttributesFunnelStepsItems,
+)
+from datadog_api_client.v2.model.funnel_response_data_type import FunnelResponseDataType
+from datadog_api_client.v2.model.funnel_response_elapsed_time import FunnelResponseElapsedTime
+from datadog_api_client.v2.model.funnel_suggestion_request import FunnelSuggestionRequest
+from datadog_api_client.v2.model.funnel_suggestion_request_data import FunnelSuggestionRequestData
+from datadog_api_client.v2.model.funnel_suggestion_request_data_attributes import FunnelSuggestionRequestDataAttributes
+from datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_search import (
+    FunnelSuggestionRequestDataAttributesSearch,
+)
+from datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_search_steps_items import (
+    FunnelSuggestionRequestDataAttributesSearchStepsItems,
+)
+from datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_term_search import (
+    FunnelSuggestionRequestDataAttributesTermSearch,
+)
+from datadog_api_client.v2.model.funnel_suggestion_request_data_attributes_time import (
+    FunnelSuggestionRequestDataAttributesTime,
+)
+from datadog_api_client.v2.model.funnel_suggestion_request_data_type import FunnelSuggestionRequestDataType
+from datadog_api_client.v2.model.funnel_suggestion_response import FunnelSuggestionResponse
+from datadog_api_client.v2.model.funnel_suggestion_response_data import FunnelSuggestionResponseData
+from datadog_api_client.v2.model.funnel_suggestion_response_data_attributes import (
+    FunnelSuggestionResponseDataAttributes,
+)
+from datadog_api_client.v2.model.funnel_suggestion_response_data_attributes_actions_items import (
+    FunnelSuggestionResponseDataAttributesActionsItems,
+)
+from datadog_api_client.v2.model.funnel_suggestion_response_data_attributes_views_items import (
+    FunnelSuggestionResponseDataAttributesViewsItems,
+)
+from datadog_api_client.v2.model.funnel_suggestion_response_data_type import FunnelSuggestionResponseDataType
 from datadog_api_client.v2.model.gcp_credentials import GCPCredentials
 from datadog_api_client.v2.model.gcp_credentials_update import GCPCredentialsUpdate
 from datadog_api_client.v2.model.gcp_integration import GCPIntegration
@@ -1712,6 +1757,65 @@ from datadog_api_client.v2.model.get_app_key_registration_response import GetApp
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
 from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
 from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
+from datadog_api_client.v2.model.get_cohort_request import GetCohortRequest
+from datadog_api_client.v2.model.get_cohort_request_data import GetCohortRequestData
+from datadog_api_client.v2.model.get_cohort_request_data_attributes import GetCohortRequestDataAttributes
+from datadog_api_client.v2.model.get_cohort_request_data_attributes_definition import (
+    GetCohortRequestDataAttributesDefinition,
+)
+from datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters import (
+    GetCohortRequestDataAttributesDefinitionAudienceFilters,
+)
+from datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters_accounts_items import (
+    GetCohortRequestDataAttributesDefinitionAudienceFiltersAccountsItems,
+)
+from datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters_segments_items import (
+    GetCohortRequestDataAttributesDefinitionAudienceFiltersSegmentsItems,
+)
+from datadog_api_client.v2.model.get_cohort_request_data_attributes_definition_audience_filters_users_items import (
+    GetCohortRequestDataAttributesDefinitionAudienceFiltersUsersItems,
+)
+from datadog_api_client.v2.model.get_cohort_request_data_attributes_time import GetCohortRequestDataAttributesTime
+from datadog_api_client.v2.model.get_cohort_request_data_type import GetCohortRequestDataType
+from datadog_api_client.v2.model.get_cohort_response import GetCohortResponse
+from datadog_api_client.v2.model.get_cohort_response_data import GetCohortResponseData
+from datadog_api_client.v2.model.get_cohort_response_data_attributes import GetCohortResponseDataAttributes
+from datadog_api_client.v2.model.get_cohort_response_data_attributes_cohorts_items import (
+    GetCohortResponseDataAttributesCohortsItems,
+)
+from datadog_api_client.v2.model.get_cohort_response_data_attributes_cohorts_items_values_items import (
+    GetCohortResponseDataAttributesCohortsItemsValuesItems,
+)
+from datadog_api_client.v2.model.get_cohort_response_data_type import GetCohortResponseDataType
+from datadog_api_client.v2.model.get_cohort_users_request import GetCohortUsersRequest
+from datadog_api_client.v2.model.get_cohort_users_request_data import GetCohortUsersRequestData
+from datadog_api_client.v2.model.get_cohort_users_request_data_attributes import GetCohortUsersRequestDataAttributes
+from datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition import (
+    GetCohortUsersRequestDataAttributesDefinition,
+)
+from datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters import (
+    GetCohortUsersRequestDataAttributesDefinitionAudienceFilters,
+)
+from datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters_accounts_items import (
+    GetCohortUsersRequestDataAttributesDefinitionAudienceFiltersAccountsItems,
+)
+from datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters_segments_items import (
+    GetCohortUsersRequestDataAttributesDefinitionAudienceFiltersSegmentsItems,
+)
+from datadog_api_client.v2.model.get_cohort_users_request_data_attributes_definition_audience_filters_users_items import (
+    GetCohortUsersRequestDataAttributesDefinitionAudienceFiltersUsersItems,
+)
+from datadog_api_client.v2.model.get_cohort_users_request_data_attributes_time import (
+    GetCohortUsersRequestDataAttributesTime,
+)
+from datadog_api_client.v2.model.get_cohort_users_request_data_type import GetCohortUsersRequestDataType
+from datadog_api_client.v2.model.get_cohort_users_response import GetCohortUsersResponse
+from datadog_api_client.v2.model.get_cohort_users_response_data import GetCohortUsersResponseData
+from datadog_api_client.v2.model.get_cohort_users_response_data_attributes import GetCohortUsersResponseDataAttributes
+from datadog_api_client.v2.model.get_cohort_users_response_data_attributes_users_items import (
+    GetCohortUsersResponseDataAttributesUsersItems,
+)
+from datadog_api_client.v2.model.get_cohort_users_response_data_type import GetCohortUsersResponseDataType
 from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
 from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
 from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
@@ -3711,6 +3815,42 @@ from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
 from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
 from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
 from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
+from datadog_api_client.v2.model.sankey_request import SankeyRequest
+from datadog_api_client.v2.model.sankey_request_data import SankeyRequestData
+from datadog_api_client.v2.model.sankey_request_data_attributes import SankeyRequestDataAttributes
+from datadog_api_client.v2.model.sankey_request_data_attributes_definition import SankeyRequestDataAttributesDefinition
+from datadog_api_client.v2.model.sankey_request_data_attributes_sampling import SankeyRequestDataAttributesSampling
+from datadog_api_client.v2.model.sankey_request_data_attributes_search import SankeyRequestDataAttributesSearch
+from datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters import (
+    SankeyRequestDataAttributesSearchAudienceFilters,
+)
+from datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters_accounts_items import (
+    SankeyRequestDataAttributesSearchAudienceFiltersAccountsItems,
+)
+from datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters_segments_items import (
+    SankeyRequestDataAttributesSearchAudienceFiltersSegmentsItems,
+)
+from datadog_api_client.v2.model.sankey_request_data_attributes_search_audience_filters_users_items import (
+    SankeyRequestDataAttributesSearchAudienceFiltersUsersItems,
+)
+from datadog_api_client.v2.model.sankey_request_data_attributes_search_occurrences import (
+    SankeyRequestDataAttributesSearchOccurrences,
+)
+from datadog_api_client.v2.model.sankey_request_data_attributes_time import SankeyRequestDataAttributesTime
+from datadog_api_client.v2.model.sankey_request_data_type import SankeyRequestDataType
+from datadog_api_client.v2.model.sankey_response import SankeyResponse
+from datadog_api_client.v2.model.sankey_response_data import SankeyResponseData
+from datadog_api_client.v2.model.sankey_response_data_attributes import SankeyResponseDataAttributes
+from datadog_api_client.v2.model.sankey_response_data_attributes_links_items import (
+    SankeyResponseDataAttributesLinksItems,
+)
+from datadog_api_client.v2.model.sankey_response_data_attributes_nodes_items import (
+    SankeyResponseDataAttributesNodesItems,
+)
+from datadog_api_client.v2.model.sankey_response_data_attributes_nodes_items_aggregated_nodes_items import (
+    SankeyResponseDataAttributesNodesItemsAggregatedNodesItems,
+)
+from datadog_api_client.v2.model.sankey_response_data_type import SankeyResponseDataType
 from datadog_api_client.v2.model.sca_request import ScaRequest
 from datadog_api_client.v2.model.sca_request_data import ScaRequestData
 from datadog_api_client.v2.model.sca_request_data_attributes import ScaRequestDataAttributes
@@ -4039,6 +4179,31 @@ from datadog_api_client.v2.model.security_monitoring_triage_user import Security
 from datadog_api_client.v2.model.security_monitoring_user import SecurityMonitoringUser
 from datadog_api_client.v2.model.security_trigger import SecurityTrigger
 from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
+from datadog_api_client.v2.model.segment import Segment
+from datadog_api_client.v2.model.segment_array import SegmentArray
+from datadog_api_client.v2.model.segment_data import SegmentData
+from datadog_api_client.v2.model.segment_data_attributes import SegmentDataAttributes
+from datadog_api_client.v2.model.segment_data_attributes_data_query import SegmentDataAttributesDataQuery
+from datadog_api_client.v2.model.segment_data_attributes_data_query_event_platform_items import (
+    SegmentDataAttributesDataQueryEventPlatformItems,
+)
+from datadog_api_client.v2.model.segment_data_attributes_data_query_reference_table_items import (
+    SegmentDataAttributesDataQueryReferenceTableItems,
+)
+from datadog_api_client.v2.model.segment_data_attributes_data_query_reference_table_items_columns_items import (
+    SegmentDataAttributesDataQueryReferenceTableItemsColumnsItems,
+)
+from datadog_api_client.v2.model.segment_data_attributes_data_query_reference_table_items_join_condition import (
+    SegmentDataAttributesDataQueryReferenceTableItemsJoinCondition,
+)
+from datadog_api_client.v2.model.segment_data_attributes_data_query_static_items import (
+    SegmentDataAttributesDataQueryStaticItems,
+)
+from datadog_api_client.v2.model.segment_data_attributes_data_query_user_store_items import (
+    SegmentDataAttributesDataQueryUserStoreItems,
+)
+from datadog_api_client.v2.model.segment_data_source import SegmentDataSource
+from datadog_api_client.v2.model.segment_data_type import SegmentDataType
 from datadog_api_client.v2.model.selectors import Selectors
 from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
 from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
@@ -5961,6 +6126,33 @@ __all__ = [
     "FullApplicationKeyAttributes",
     "FullCustomFrameworkData",
     "FullCustomFrameworkDataAttributes",
+    "FunnelRequest",
+    "FunnelRequestData",
+    "FunnelRequestDataAttributes",
+    "FunnelRequestDataAttributesSearch",
+    "FunnelRequestDataAttributesSearchStepsItems",
+    "FunnelRequestDataAttributesTime",
+    "FunnelRequestDataType",
+    "FunnelResponse",
+    "FunnelResponseData",
+    "FunnelResponseDataAttributes",
+    "FunnelResponseDataAttributesFunnelStepsItems",
+    "FunnelResponseDataType",
+    "FunnelResponseElapsedTime",
+    "FunnelSuggestionRequest",
+    "FunnelSuggestionRequestData",
+    "FunnelSuggestionRequestDataAttributes",
+    "FunnelSuggestionRequestDataAttributesSearch",
+    "FunnelSuggestionRequestDataAttributesSearchStepsItems",
+    "FunnelSuggestionRequestDataAttributesTermSearch",
+    "FunnelSuggestionRequestDataAttributesTime",
+    "FunnelSuggestionRequestDataType",
+    "FunnelSuggestionResponse",
+    "FunnelSuggestionResponseData",
+    "FunnelSuggestionResponseDataAttributes",
+    "FunnelSuggestionResponseDataAttributesActionsItems",
+    "FunnelSuggestionResponseDataAttributesViewsItems",
+    "FunnelSuggestionResponseDataType",
     "GCPCredentials",
     "GCPCredentialsUpdate",
     "GCPIntegration",
@@ -6025,6 +6217,37 @@ __all__ = [
     "GetAppResponse",
     "GetAppResponseData",
     "GetAppResponseDataAttributes",
+    "GetCohortRequest",
+    "GetCohortRequestData",
+    "GetCohortRequestDataAttributes",
+    "GetCohortRequestDataAttributesDefinition",
+    "GetCohortRequestDataAttributesDefinitionAudienceFilters",
+    "GetCohortRequestDataAttributesDefinitionAudienceFiltersAccountsItems",
+    "GetCohortRequestDataAttributesDefinitionAudienceFiltersSegmentsItems",
+    "GetCohortRequestDataAttributesDefinitionAudienceFiltersUsersItems",
+    "GetCohortRequestDataAttributesTime",
+    "GetCohortRequestDataType",
+    "GetCohortResponse",
+    "GetCohortResponseData",
+    "GetCohortResponseDataAttributes",
+    "GetCohortResponseDataAttributesCohortsItems",
+    "GetCohortResponseDataAttributesCohortsItemsValuesItems",
+    "GetCohortResponseDataType",
+    "GetCohortUsersRequest",
+    "GetCohortUsersRequestData",
+    "GetCohortUsersRequestDataAttributes",
+    "GetCohortUsersRequestDataAttributesDefinition",
+    "GetCohortUsersRequestDataAttributesDefinitionAudienceFilters",
+    "GetCohortUsersRequestDataAttributesDefinitionAudienceFiltersAccountsItems",
+    "GetCohortUsersRequestDataAttributesDefinitionAudienceFiltersSegmentsItems",
+    "GetCohortUsersRequestDataAttributesDefinitionAudienceFiltersUsersItems",
+    "GetCohortUsersRequestDataAttributesTime",
+    "GetCohortUsersRequestDataType",
+    "GetCohortUsersResponse",
+    "GetCohortUsersResponseData",
+    "GetCohortUsersResponseDataAttributes",
+    "GetCohortUsersResponseDataAttributesUsersItems",
+    "GetCohortUsersResponseDataType",
     "GetCustomFrameworkResponse",
     "GetDataDeletionsResponseBody",
     "GetDeviceAttributes",
@@ -7412,6 +7635,26 @@ __all__ = [
     "SLOReportStatusGetResponse",
     "SLOReportStatusGetResponseAttributes",
     "SLOReportStatusGetResponseData",
+    "SankeyRequest",
+    "SankeyRequestData",
+    "SankeyRequestDataAttributes",
+    "SankeyRequestDataAttributesDefinition",
+    "SankeyRequestDataAttributesSampling",
+    "SankeyRequestDataAttributesSearch",
+    "SankeyRequestDataAttributesSearchAudienceFilters",
+    "SankeyRequestDataAttributesSearchAudienceFiltersAccountsItems",
+    "SankeyRequestDataAttributesSearchAudienceFiltersSegmentsItems",
+    "SankeyRequestDataAttributesSearchAudienceFiltersUsersItems",
+    "SankeyRequestDataAttributesSearchOccurrences",
+    "SankeyRequestDataAttributesTime",
+    "SankeyRequestDataType",
+    "SankeyResponse",
+    "SankeyResponseData",
+    "SankeyResponseDataAttributes",
+    "SankeyResponseDataAttributesLinksItems",
+    "SankeyResponseDataAttributesNodesItems",
+    "SankeyResponseDataAttributesNodesItemsAggregatedNodesItems",
+    "SankeyResponseDataType",
     "ScaRequest",
     "ScaRequestData",
     "ScaRequestDataAttributes",
@@ -7608,6 +7851,19 @@ __all__ = [
     "SecurityMonitoringUser",
     "SecurityTrigger",
     "SecurityTriggerWrapper",
+    "Segment",
+    "SegmentArray",
+    "SegmentData",
+    "SegmentDataAttributes",
+    "SegmentDataAttributesDataQuery",
+    "SegmentDataAttributesDataQueryEventPlatformItems",
+    "SegmentDataAttributesDataQueryReferenceTableItems",
+    "SegmentDataAttributesDataQueryReferenceTableItemsColumnsItems",
+    "SegmentDataAttributesDataQueryReferenceTableItemsJoinCondition",
+    "SegmentDataAttributesDataQueryStaticItems",
+    "SegmentDataAttributesDataQueryUserStoreItems",
+    "SegmentDataSource",
+    "SegmentDataType",
     "Selectors",
     "SelfServiceTriggerWrapper",
     "SendSlackMessageAction",

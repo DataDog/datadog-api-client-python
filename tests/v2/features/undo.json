@@ -3254,6 +3254,18 @@
       "type": "idempotent"
     }
   },
+  "GetRumCohort": {
+    "tag": "Cohort",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRumCohortUsers": {
+    "tag": "Cohort",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListRumMetrics": {
     "tag": "Rum Metrics",
     "undo": {
@@ -3299,6 +3311,42 @@
   },
   "SearchRUMEvents": {
     "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRumFunnel": {
+    "tag": "Funnel",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRumFunnelStepSuggestions": {
+    "tag": "Funnel",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRumSankey": {
+    "tag": "User Flow",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRumSegments": {
+    "tag": "Segments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRumSegment": {
+    "tag": "Segments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "InitializeRumSegments": {
+    "tag": "Segments",
     "undo": {
       "type": "safe"
     }
