@@ -36,7 +36,7 @@ class PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail(Mod
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        The definition of the AWS access details object.
 
         :param aws_account_id: The ID of the AWS account.
         :type aws_account_id: str, optional

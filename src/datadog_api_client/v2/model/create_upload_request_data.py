@@ -44,9 +44,9 @@ class CreateUploadRequestData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``CreateUploadRequestData`` object.
+        The definition of the upload request data object.
 
-        :param attributes: The definition of ``CreateUploadRequestDataAttributes`` object.
+        :param attributes: The definition of the upload attributes object.
         :type attributes: CreateUploadRequestDataAttributes, optional
 
         :param id: The ID of the upload.

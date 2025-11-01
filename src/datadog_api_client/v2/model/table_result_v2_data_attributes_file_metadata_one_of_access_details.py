@@ -58,15 +58,15 @@ class TableResultV2DataAttributesFileMetadataOneOfAccessDetails(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetails`` object.
+        The definition of the access details object.
 
-        :param aws_detail: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        :param aws_detail: The definition of the AWS access details object.
         :type aws_detail: TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail, optional
 
-        :param azure_detail: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        :param azure_detail: The definition of the Azure access details object.
         :type azure_detail: TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAzureDetail, optional
 
-        :param gcp_detail: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        :param gcp_detail: The definition of the GCP access details object.
         :type gcp_detail: TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail, optional
         """
         if aws_detail is not unset:

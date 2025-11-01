@@ -38,9 +38,9 @@ class PatchTableRequestDataAttributesSchema(ModelNormal):
         self_, fields: List[PatchTableRequestDataAttributesSchemaFieldsItems], primary_keys: List[str], **kwargs
     ):
         """
-        The definition of ``PatchTableRequestDataAttributesSchema`` object.
+        The definition of the schema object.
 
-        :param fields: The ``schema`` ``fields``.
+        :param fields: The schema fields.
         :type fields: [PatchTableRequestDataAttributesSchemaFieldsItems]
 
         :param primary_keys: List of field names that serve as primary keys for the table. Only one primary key is supported, and it is used as an ID to retrieve rows.

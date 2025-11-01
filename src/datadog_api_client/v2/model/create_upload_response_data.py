@@ -46,9 +46,9 @@ class CreateUploadResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``CreateUploadResponseData`` object.
+        The definition of the upload response data object.
 
-        :param attributes: The definition of ``CreateUploadResponseDataAttributes`` object.
+        :param attributes: The definition of the upload response attributes object.
         :type attributes: CreateUploadResponseDataAttributes, optional
 
         :param id: The ID of the upload.

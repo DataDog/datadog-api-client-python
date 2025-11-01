@@ -44,9 +44,9 @@ class TableResultV2Data(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2Data`` object.
+        The definition of the table result data object.
 
-        :param attributes: The definition of ``TableResultV2DataAttributes`` object.
+        :param attributes: The definition of the reference table attributes object.
         :type attributes: TableResultV2DataAttributes, optional
 
         :param id: The ID of the reference table.

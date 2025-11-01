@@ -60,15 +60,15 @@ class CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails(ModelNormal
         **kwargs,
     ):
         """
-        The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails`` object.
+        The definition of the access details object.
 
-        :param aws_detail: The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        :param aws_detail: The definition of the AWS access details object.
         :type aws_detail: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail, optional
 
-        :param azure_detail: The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        :param azure_detail: The definition of the Azure access details object.
         :type azure_detail: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail, optional
 
-        :param gcp_detail: The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        :param gcp_detail: The definition of the GCP access details object.
         :type gcp_detail: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail, optional
         """
         if aws_detail is not unset:

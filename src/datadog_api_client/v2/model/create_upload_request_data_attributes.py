@@ -36,9 +36,9 @@ class CreateUploadRequestDataAttributes(ModelNormal):
 
     def __init__(self_, headers: List[str], part_count: int, part_size: int, table_name: str, **kwargs):
         """
-        The definition of ``CreateUploadRequestDataAttributes`` object.
+        The definition of the upload attributes object.
 
-        :param headers: The headers of the file to upload.
+        :param headers: The headers of the CSV file to upload to be used as the schema fields, provided in the same order as the columns in the CSV file.
         :type headers: [str]
 
         :param part_count: The number of parts in the upload.

@@ -60,7 +60,7 @@ class TableResultV2DataAttributesFileMetadataCloudStorage(ModelNormal):
         """
         File metadata for reference tables created by cloud storage.
 
-        :param access_details: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetails`` object.
+        :param access_details: The definition of the access details object.
         :type access_details: TableResultV2DataAttributesFileMetadataOneOfAccessDetails, optional
 
         :param error_message: The error message returned from the sync.

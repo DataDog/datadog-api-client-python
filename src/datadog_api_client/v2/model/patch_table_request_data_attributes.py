@@ -69,15 +69,15 @@ class PatchTableRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestDataAttributes`` object.
+        The definition of the reference table attributes object.
 
         :param description: The description of the reference table.
         :type description: str, optional
 
-        :param file_metadata: The definition of ``PatchTableRequestDataAttributesFileMetadata`` object.
+        :param file_metadata: The definition of the file metadata object.
         :type file_metadata: PatchTableRequestDataAttributesFileMetadata, optional
 
-        :param schema: The definition of ``PatchTableRequestDataAttributesSchema`` object.
+        :param schema: The definition of the schema object.
         :type schema: PatchTableRequestDataAttributesSchema, optional
 
         :param sync_enabled: Whether this table is synced automatically.

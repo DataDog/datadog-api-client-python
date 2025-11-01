@@ -44,9 +44,9 @@ class CreateTableRequestData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``CreateTableRequestData`` object.
+        The definition of the reference table request data object.
 
-        :param attributes: The definition of ``CreateTableRequestDataAttributes`` object.
+        :param attributes: The definition of the reference table attributes object.
         :type attributes: CreateTableRequestDataAttributes, optional
 
         :param id: The ID of the reference table.

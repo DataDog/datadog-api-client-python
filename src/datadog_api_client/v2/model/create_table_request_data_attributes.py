@@ -74,15 +74,15 @@ class CreateTableRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``CreateTableRequestDataAttributes`` object.
+        The definition of the reference table attributes object.
 
         :param description: The description of the reference table.
         :type description: str, optional
 
-        :param file_metadata: The definition of ``CreateTableRequestDataAttributesFileMetadata`` object.
+        :param file_metadata: The definition of the file metadata object.
         :type file_metadata: CreateTableRequestDataAttributesFileMetadata, optional
 
-        :param schema: The definition of ``CreateTableRequestDataAttributesSchema`` object.
+        :param schema: The definition of the schema object.
         :type schema: CreateTableRequestDataAttributesSchema
 
         :param source: The source type for creating reference table data. Only these source types can be created through this API.

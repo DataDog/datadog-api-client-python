@@ -32,9 +32,9 @@ class TableResultV2(ModelNormal):
 
     def __init__(self_, data: Union[TableResultV2Data, UnsetType] = unset, **kwargs):
         """
-        The definition of ``TableResultV2`` object.
+        The definition of a reference table object.
 
-        :param data: The definition of ``TableResultV2Data`` object.
+        :param data: The definition of the table result data object.
         :type data: TableResultV2Data, optional
         """
         if data is not unset:
