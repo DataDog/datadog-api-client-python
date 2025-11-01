@@ -1853,6 +1853,11 @@ from datadog_api_client.v2.model.incident_attachments_response_included_item imp
 )
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
+from datadog_api_client.v2.model.incident_create_page_attributes import IncidentCreatePageAttributes
+from datadog_api_client.v2.model.incident_create_page_from_incident_data import IncidentCreatePageFromIncidentData
+from datadog_api_client.v2.model.incident_create_page_from_incident_request import IncidentCreatePageFromIncidentRequest
+from datadog_api_client.v2.model.incident_create_page_response import IncidentCreatePageResponse
+from datadog_api_client.v2.model.incident_create_page_response_data import IncidentCreatePageResponseData
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
 from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
@@ -1957,6 +1962,10 @@ from datadog_api_client.v2.model.incident_notification_template_update_attribute
 from datadog_api_client.v2.model.incident_notification_template_update_data import (
     IncidentNotificationTemplateUpdateData,
 )
+from datadog_api_client.v2.model.incident_page_id_type import IncidentPageIdType
+from datadog_api_client.v2.model.incident_page_target import IncidentPageTarget
+from datadog_api_client.v2.model.incident_page_target_type import IncidentPageTargetType
+from datadog_api_client.v2.model.incident_page_type import IncidentPageType
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_responders_type import IncidentRespondersType
@@ -6136,6 +6145,11 @@ __all__ = [
     "IncidentAttachmentsResponseIncludedItem",
     "IncidentCreateAttributes",
     "IncidentCreateData",
+    "IncidentCreatePageAttributes",
+    "IncidentCreatePageFromIncidentData",
+    "IncidentCreatePageFromIncidentRequest",
+    "IncidentCreatePageResponse",
+    "IncidentCreatePageResponseData",
     "IncidentCreateRelationships",
     "IncidentCreateRequest",
     "IncidentFieldAttributes",
@@ -6200,6 +6214,10 @@ __all__ = [
     "IncidentNotificationTemplateType",
     "IncidentNotificationTemplateUpdateAttributes",
     "IncidentNotificationTemplateUpdateData",
+    "IncidentPageIdType",
+    "IncidentPageTarget",
+    "IncidentPageTargetType",
+    "IncidentPageType",
     "IncidentPostmortemType",
     "IncidentRelatedObject",
     "IncidentRespondersType",
