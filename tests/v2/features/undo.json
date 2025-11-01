@@ -1380,6 +1380,34 @@
       "type": "safe"
     }
   },
+  "ListEventEmailAddresses": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetOnCallEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOnCallEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "SearchEvents": {
     "tag": "Events",
     "undo": {
