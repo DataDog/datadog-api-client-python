@@ -143,6 +143,10 @@ class Configuration:
     :type retry_backoff_factor: float
     :param max_retries: The maximum number of times a single request can be retried.
     :type max_retries: int
+    :param delegated_auth_provider: The delegated authentication provider (e.g., 'aws' for AWS).
+    :type delegated_auth_provider: str
+    :param delegated_auth_org_uuid: The organization UUID for delegated authentication.
+    :type delegated_auth_org_uuid: str
     """
 
     def __init__(
@@ -170,6 +174,8 @@ class Configuration:
         enable_retry=False,
         retry_backoff_factor=2,
         max_retries=3,
+        delegated_auth_provider=None,
+        delegated_auth_org_uuid=None,
     ):
         """Constructor."""
         self._base_path = "https://api.datadoghq.com" if host is None else host
@@ -354,6 +360,12 @@ class Configuration:
                 "v2.search_flaky_tests": False,
             }
         )
+
+        # Delegated token configuration
+        self.delegated_token_config = None
+        self.delegated_auth_provider = delegated_auth_provider
+        self.delegated_auth_org_uuid = delegated_auth_org_uuid
+        self._delegated_token_credentials = None
 
         # Load default values from environment
         if "DD_SITE" in os.environ:
