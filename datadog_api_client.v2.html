@@ -263,6 +263,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.ApiClient.select_header_content_type" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient.select_header_content_type()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.ApiClient.use_delegated_token_auth" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient.use_delegated_token_auth()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.ApiClient.user_agent" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient.user_agent</span></code></a>
         </li></ul>
             </nav>
@@ -362,12 +364,89 @@
     <li class="md-nav__item">
     
     
+      <a href="datadog_api_client.html#module-datadog_api_client.aws" class="md-nav__link">datadog_api_client.aws module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.aws.AWSAuth" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSAuth</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.aws.AWSCredentials" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSCredentials</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.aws.SigningData" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SigningData</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
       <a href="datadog_api_client.html#module-datadog_api_client.configuration" class="md-nav__link">datadog_api_client.configuration module</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
       <a href="datadog_api_client.html#datadog_api_client.configuration.Configuration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Configuration</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.delegated_auth" class="md-nav__link">datadog_api_client.delegated_auth module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.DelegatedTokenConfig" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DelegatedTokenConfig</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.DelegatedTokenCredentials" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DelegatedTokenCredentials</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.DelegatedTokenProvider" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DelegatedTokenProvider</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.get_delegated_token" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_delegated_token()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.get_delegated_token_url" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_delegated_token_url()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.parse_delegated_token_response" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">parse_delegated_token_response()</span></code></a>
       
     
     </li></ul>
@@ -776,6 +855,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.ApiClient.select_header_accept" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient.select_header_accept()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.ApiClient.select_header_content_type" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient.select_header_content_type()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.ApiClient.use_delegated_token_auth" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient.use_delegated_token_auth()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.ApiClient.user_agent" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient.user_agent</span></code></a>
         </li></ul>
@@ -16129,6 +16210,19 @@ value is a list of open file objects</p>
 </dd>
 </dl>
 </dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.ApiClient.use_delegated_token_auth">
+<span class="sig-name descname"><span class="pre">use_delegated_token_auth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.ApiClient.use_delegated_token_auth" title="Link to this definition">¶</a></dt>
+<dd><p>Use delegated token authentication if configured.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>headers</strong> – Header parameters dict to be updated.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p>ApiValueError if delegated token authentication fails</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="datadog_api_client.v2.ApiClient.user_agent">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user_agent</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#datadog_api_client.v2.ApiClient.user_agent" title="Link to this definition">¶</a></dt>
@@ -16194,7 +16288,7 @@ dict. None if unset.</p></li>
 </dd></dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="datadog_api_client.v2.Configuration">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discard_unknown_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disabled_client_side_validations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_operation_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_operation_variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl_ca_cert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_http_data_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preload_content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_input_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_return_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_property_naming</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_retry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry_backoff_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.Configuration" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discard_unknown_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disabled_client_side_validations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_operation_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_operation_variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl_ca_cert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_http_data_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preload_content</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_input_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_return_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_property_naming</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_retry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry_backoff_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delegated_auth_provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delegated_auth_org_uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.Configuration" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -16268,6 +16362,8 @@ On 429 if will use the returned headers to wait until the next requests, otherwi
 the backoff factor.</p></li>
 <li><p><strong>retry_backoff_factor</strong> (<em>float</em>) – Factor used to space out retried requests on backend errors.</p></li>
 <li><p><strong>max_retries</strong> (<em>int</em>) – The maximum number of times a single request can be retried.</p></li>
+<li><p><strong>delegated_auth_provider</strong> (<em>str</em>) – The delegated authentication provider (e.g., ‘aws’ for AWS).</p></li>
+<li><p><strong>delegated_auth_org_uuid</strong> (<em>str</em>) – The organization UUID for delegated authentication.</p></li>
 </ul>
 </dd>
 </dl>
