@@ -157,21 +157,21 @@ class ReferenceTablesApi:
                 "version": "v2",
             },
             params_map={
-                "limit": {
+                "page_limit": {
                     "validation": {
                         "inclusive_maximum": 100,
                         "inclusive_minimum": 1,
                     },
                     "openapi_types": (int,),
-                    "attribute": "limit",
+                    "attribute": "page[limit]",
                     "location": "query",
                 },
-                "offset": {
+                "page_offset": {
                     "validation": {
                         "inclusive_minimum": 0,
                     },
                     "openapi_types": (int,),
-                    "attribute": "offset",
+                    "attribute": "page[offset]",
                     "location": "query",
                 },
                 "sort": {
@@ -318,8 +318,8 @@ class ReferenceTablesApi:
     def list_tables(
         self,
         *,
-        limit: Union[int, UnsetType] = unset,
-        offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
         sort: Union[ReferenceTableSortType, UnsetType] = unset,
         filter_status: Union[str, UnsetType] = unset,
         filter_table_name_exact: Union[str, UnsetType] = unset,
@@ -329,10 +329,10 @@ class ReferenceTablesApi:
 
         List all reference tables in this organization.
 
-        :param limit: Number of tables to return.
-        :type limit: int, optional
-        :param offset: Number of tables to skip for pagination.
-        :type offset: int, optional
+        :param page_limit: Number of tables to return.
+        :type page_limit: int, optional
+        :param page_offset: Number of tables to skip for pagination.
+        :type page_offset: int, optional
         :param sort: Sort field and direction. Use field name for ascending, prefix with "-" for descending.
         :type sort: ReferenceTableSortType, optional
         :param filter_status: Filter by table status.
@@ -344,11 +344,11 @@ class ReferenceTablesApi:
         :rtype: TableResultV2Array
         """
         kwargs: Dict[str, Any] = {}
-        if limit is not unset:
-            kwargs["limit"] = limit
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
 
-        if offset is not unset:
-            kwargs["offset"] = offset
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
 
         if sort is not unset:
             kwargs["sort"] = sort

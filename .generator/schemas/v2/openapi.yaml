@@ -71031,7 +71031,7 @@ paths:
       - description: Number of tables to return.
         example: 15
         in: query
-        name: limit
+        name: page[limit]
         required: false
         schema:
           default: 15
@@ -71042,7 +71042,7 @@ paths:
       - description: Number of tables to skip for pagination.
         example: 0
         in: query
-        name: offset
+        name: page[offset]
         required: false
         schema:
           default: 0
