@@ -624,7 +624,7 @@ class UsageMeteringApi:
         :param filter_timestamp_start: Datetime in ISO-8601 format, UTC, precise to hour: [YYYY-MM-DDThh] for usage beginning at this hour.
         :type filter_timestamp_start: datetime
         :param filter_product_families: Comma separated list of product families to retrieve. Available families are ``all`` , ``analyzed_logs`` ,
-            ``application_security`` , ``audit_trail`` , ``serverless`` , ``ci_app`` , ``cloud_cost_management`` , ``cloud_siem`` ,
+            ``application_security`` , ``audit_trail`` , ``bits_ai`` , ``serverless`` , ``ci_app`` , ``cloud_cost_management`` , ``cloud_siem`` ,
             ``csm_container_enterprise`` , ``csm_host_enterprise`` , ``cspm`` , ``custom_events`` , ``cws`` , ``dbm`` , ``error_tracking`` ,
             ``fargate`` , ``infra_hosts`` , ``incident_management`` , ``indexed_logs`` , ``indexed_spans`` , ``ingested_spans`` , ``iot`` ,
             ``lambda_traced_invocations`` , ``llm_observability`` , ``logs`` , ``network_flows`` , ``network_hosts`` , ``network_monitoring`` ,
