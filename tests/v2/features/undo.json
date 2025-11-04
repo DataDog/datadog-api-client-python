@@ -2813,6 +2813,87 @@
       "type": "safe"
     }
   },
+  "GetAccountFacetInfo": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "QueryAccounts": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "QueryEventFilteredUsers": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetUserFacetInfo": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "QueryUsers": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetMapping": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateConnection": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "operationId": "DeleteConnection",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "<RESPONSE_PATH>"
+        },
+        {
+          "name": "entity",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "UpdateConnection": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteConnection": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListConnections": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "QueryScalarData": {
     "tag": "Metrics",
     "undo": {

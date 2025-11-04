@@ -937,6 +937,12 @@ from datadog_api_client.v2.model.create_apps_datastore_request_data_attributes_o
 )
 from datadog_api_client.v2.model.create_apps_datastore_response import CreateAppsDatastoreResponse
 from datadog_api_client.v2.model.create_apps_datastore_response_data import CreateAppsDatastoreResponseData
+from datadog_api_client.v2.model.create_connection_request import CreateConnectionRequest
+from datadog_api_client.v2.model.create_connection_request_data import CreateConnectionRequestData
+from datadog_api_client.v2.model.create_connection_request_data_attributes import CreateConnectionRequestDataAttributes
+from datadog_api_client.v2.model.create_connection_request_data_attributes_fields_items import (
+    CreateConnectionRequestDataAttributesFieldsItems,
+)
 from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
 from datadog_api_client.v2.model.create_custom_framework_response import CreateCustomFrameworkResponse
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
@@ -1608,6 +1614,25 @@ from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.events_sort_type import EventsSortType
 from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 from datadog_api_client.v2.model.events_warning import EventsWarning
+from datadog_api_client.v2.model.facet_info_request import FacetInfoRequest
+from datadog_api_client.v2.model.facet_info_request_data import FacetInfoRequestData
+from datadog_api_client.v2.model.facet_info_request_data_attributes import FacetInfoRequestDataAttributes
+from datadog_api_client.v2.model.facet_info_request_data_attributes_search import FacetInfoRequestDataAttributesSearch
+from datadog_api_client.v2.model.facet_info_request_data_attributes_term_search import (
+    FacetInfoRequestDataAttributesTermSearch,
+)
+from datadog_api_client.v2.model.facet_info_request_data_type import FacetInfoRequestDataType
+from datadog_api_client.v2.model.facet_info_response import FacetInfoResponse
+from datadog_api_client.v2.model.facet_info_response_data import FacetInfoResponseData
+from datadog_api_client.v2.model.facet_info_response_data_attributes import FacetInfoResponseDataAttributes
+from datadog_api_client.v2.model.facet_info_response_data_attributes_result import FacetInfoResponseDataAttributesResult
+from datadog_api_client.v2.model.facet_info_response_data_attributes_result_range import (
+    FacetInfoResponseDataAttributesResultRange,
+)
+from datadog_api_client.v2.model.facet_info_response_data_attributes_result_values_items import (
+    FacetInfoResponseDataAttributesResultValuesItems,
+)
+from datadog_api_client.v2.model.facet_info_response_data_type import FacetInfoResponseDataType
 from datadog_api_client.v2.model.fastly_api_key import FastlyAPIKey
 from datadog_api_client.v2.model.fastly_api_key_type import FastlyAPIKeyType
 from datadog_api_client.v2.model.fastly_api_key_update import FastlyAPIKeyUpdate
@@ -1768,6 +1793,13 @@ from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
 from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
+from datadog_api_client.v2.model.get_mapping_response import GetMappingResponse
+from datadog_api_client.v2.model.get_mapping_response_data import GetMappingResponseData
+from datadog_api_client.v2.model.get_mapping_response_data_attributes import GetMappingResponseDataAttributes
+from datadog_api_client.v2.model.get_mapping_response_data_attributes_attributes_items import (
+    GetMappingResponseDataAttributesAttributesItems,
+)
+from datadog_api_client.v2.model.get_mapping_response_data_type import GetMappingResponseDataType
 from datadog_api_client.v2.model.get_multiple_rulesets_request import GetMultipleRulesetsRequest
 from datadog_api_client.v2.model.get_multiple_rulesets_request_data import GetMultipleRulesetsRequestData
 from datadog_api_client.v2.model.get_multiple_rulesets_request_data_attributes import (
@@ -2235,6 +2267,16 @@ from datadog_api_client.v2.model.list_apps_response_data_items_relationships imp
 from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 from datadog_api_client.v2.model.list_apps_response_meta_page import ListAppsResponseMetaPage
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
+from datadog_api_client.v2.model.list_connections_response import ListConnectionsResponse
+from datadog_api_client.v2.model.list_connections_response_data import ListConnectionsResponseData
+from datadog_api_client.v2.model.list_connections_response_data_attributes import ListConnectionsResponseDataAttributes
+from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items import (
+    ListConnectionsResponseDataAttributesConnectionsItems,
+)
+from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items_join import (
+    ListConnectionsResponseDataAttributesConnectionsItemsJoin,
+)
+from datadog_api_client.v2.model.list_connections_response_data_type import ListConnectionsResponseDataType
 from datadog_api_client.v2.model.list_devices_response import ListDevicesResponse
 from datadog_api_client.v2.model.list_devices_response_metadata import ListDevicesResponseMetadata
 from datadog_api_client.v2.model.list_devices_response_metadata_page import ListDevicesResponseMetadataPage
@@ -3411,8 +3453,36 @@ from datadog_api_client.v2.model.put_apps_datastore_item_response_array import P
 from datadog_api_client.v2.model.put_apps_datastore_item_response_data import PutAppsDatastoreItemResponseData
 from datadog_api_client.v2.model.put_incident_notification_rule_request import PutIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.query import Query
+from datadog_api_client.v2.model.query_account_request import QueryAccountRequest
+from datadog_api_client.v2.model.query_account_request_data import QueryAccountRequestData
+from datadog_api_client.v2.model.query_account_request_data_attributes import QueryAccountRequestDataAttributes
+from datadog_api_client.v2.model.query_account_request_data_attributes_sort import QueryAccountRequestDataAttributesSort
+from datadog_api_client.v2.model.query_account_request_data_type import QueryAccountRequestDataType
+from datadog_api_client.v2.model.query_event_filtered_users_request import QueryEventFilteredUsersRequest
+from datadog_api_client.v2.model.query_event_filtered_users_request_data import QueryEventFilteredUsersRequestData
+from datadog_api_client.v2.model.query_event_filtered_users_request_data_attributes import (
+    QueryEventFilteredUsersRequestDataAttributes,
+)
+from datadog_api_client.v2.model.query_event_filtered_users_request_data_attributes_event_query import (
+    QueryEventFilteredUsersRequestDataAttributesEventQuery,
+)
+from datadog_api_client.v2.model.query_event_filtered_users_request_data_attributes_event_query_time_frame import (
+    QueryEventFilteredUsersRequestDataAttributesEventQueryTimeFrame,
+)
+from datadog_api_client.v2.model.query_event_filtered_users_request_data_type import (
+    QueryEventFilteredUsersRequestDataType,
+)
 from datadog_api_client.v2.model.query_formula import QueryFormula
+from datadog_api_client.v2.model.query_response import QueryResponse
+from datadog_api_client.v2.model.query_response_data import QueryResponseData
+from datadog_api_client.v2.model.query_response_data_attributes import QueryResponseDataAttributes
+from datadog_api_client.v2.model.query_response_data_type import QueryResponseDataType
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v2.model.query_users_request import QueryUsersRequest
+from datadog_api_client.v2.model.query_users_request_data import QueryUsersRequestData
+from datadog_api_client.v2.model.query_users_request_data_attributes import QueryUsersRequestDataAttributes
+from datadog_api_client.v2.model.query_users_request_data_attributes_sort import QueryUsersRequestDataAttributesSort
+from datadog_api_client.v2.model.query_users_request_data_type import QueryUsersRequestDataType
 from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
 from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries_point import (
@@ -4597,6 +4667,13 @@ from datadog_api_client.v2.model.update_apps_datastore_request_data import Updat
 from datadog_api_client.v2.model.update_apps_datastore_request_data_attributes import (
     UpdateAppsDatastoreRequestDataAttributes,
 )
+from datadog_api_client.v2.model.update_connection_request import UpdateConnectionRequest
+from datadog_api_client.v2.model.update_connection_request_data import UpdateConnectionRequestData
+from datadog_api_client.v2.model.update_connection_request_data_attributes import UpdateConnectionRequestDataAttributes
+from datadog_api_client.v2.model.update_connection_request_data_attributes_fields_to_update_items import (
+    UpdateConnectionRequestDataAttributesFieldsToUpdateItems,
+)
+from datadog_api_client.v2.model.update_connection_request_data_type import UpdateConnectionRequestDataType
 from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
 from datadog_api_client.v2.model.update_custom_framework_response import UpdateCustomFrameworkResponse
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
@@ -5482,6 +5559,10 @@ __all__ = [
     "CreateAppsDatastoreRequestDataAttributesOrgAccess",
     "CreateAppsDatastoreResponse",
     "CreateAppsDatastoreResponseData",
+    "CreateConnectionRequest",
+    "CreateConnectionRequestData",
+    "CreateConnectionRequestDataAttributes",
+    "CreateConnectionRequestDataAttributesFieldsItems",
     "CreateCustomFrameworkRequest",
     "CreateCustomFrameworkResponse",
     "CreateDataDeletionRequestBody",
@@ -5947,6 +6028,19 @@ __all__ = [
     "EventsSortType",
     "EventsTimeseriesQuery",
     "EventsWarning",
+    "FacetInfoRequest",
+    "FacetInfoRequestData",
+    "FacetInfoRequestDataAttributes",
+    "FacetInfoRequestDataAttributesSearch",
+    "FacetInfoRequestDataAttributesTermSearch",
+    "FacetInfoRequestDataType",
+    "FacetInfoResponse",
+    "FacetInfoResponseData",
+    "FacetInfoResponseDataAttributes",
+    "FacetInfoResponseDataAttributesResult",
+    "FacetInfoResponseDataAttributesResultRange",
+    "FacetInfoResponseDataAttributesResultValuesItems",
+    "FacetInfoResponseDataType",
     "FastlyAPIKey",
     "FastlyAPIKeyType",
     "FastlyAPIKeyUpdate",
@@ -6101,6 +6195,11 @@ __all__ = [
     "GetInterfacesData",
     "GetInterfacesResponse",
     "GetIssueIncludeQueryParameterItem",
+    "GetMappingResponse",
+    "GetMappingResponseData",
+    "GetMappingResponseDataAttributes",
+    "GetMappingResponseDataAttributesAttributesItems",
+    "GetMappingResponseDataType",
     "GetMultipleRulesetsRequest",
     "GetMultipleRulesetsRequestData",
     "GetMultipleRulesetsRequestDataAttributes",
@@ -6476,6 +6575,12 @@ __all__ = [
     "ListAppsResponseMeta",
     "ListAppsResponseMetaPage",
     "ListAssetsSBOMsResponse",
+    "ListConnectionsResponse",
+    "ListConnectionsResponseData",
+    "ListConnectionsResponseDataAttributes",
+    "ListConnectionsResponseDataAttributesConnectionsItems",
+    "ListConnectionsResponseDataAttributesConnectionsItemsJoin",
+    "ListConnectionsResponseDataType",
     "ListDevicesResponse",
     "ListDevicesResponseMetadata",
     "ListDevicesResponseMetadataPage",
@@ -7178,8 +7283,28 @@ __all__ = [
     "PutAppsDatastoreItemResponseData",
     "PutIncidentNotificationRuleRequest",
     "Query",
+    "QueryAccountRequest",
+    "QueryAccountRequestData",
+    "QueryAccountRequestDataAttributes",
+    "QueryAccountRequestDataAttributesSort",
+    "QueryAccountRequestDataType",
+    "QueryEventFilteredUsersRequest",
+    "QueryEventFilteredUsersRequestData",
+    "QueryEventFilteredUsersRequestDataAttributes",
+    "QueryEventFilteredUsersRequestDataAttributesEventQuery",
+    "QueryEventFilteredUsersRequestDataAttributesEventQueryTimeFrame",
+    "QueryEventFilteredUsersRequestDataType",
     "QueryFormula",
+    "QueryResponse",
+    "QueryResponseData",
+    "QueryResponseDataAttributes",
+    "QueryResponseDataType",
     "QuerySortOrder",
+    "QueryUsersRequest",
+    "QueryUsersRequestData",
+    "QueryUsersRequestDataAttributes",
+    "QueryUsersRequestDataAttributesSort",
+    "QueryUsersRequestDataType",
     "RUMAggregateBucketValue",
     "RUMAggregateBucketValueTimeseries",
     "RUMAggregateBucketValueTimeseriesPoint",
@@ -8078,6 +8203,11 @@ __all__ = [
     "UpdateAppsDatastoreRequest",
     "UpdateAppsDatastoreRequestData",
     "UpdateAppsDatastoreRequestDataAttributes",
+    "UpdateConnectionRequest",
+    "UpdateConnectionRequestData",
+    "UpdateConnectionRequestDataAttributes",
+    "UpdateConnectionRequestDataAttributesFieldsToUpdateItems",
+    "UpdateConnectionRequestDataType",
     "UpdateCustomFrameworkRequest",
     "UpdateCustomFrameworkResponse",
     "UpdateOpenAPIResponse",
