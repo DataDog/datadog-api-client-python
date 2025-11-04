@@ -60,6 +60,7 @@ from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
+from datadog_api_client.v2.api.rum_audience_management_api import RumAudienceManagementApi
 from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
@@ -144,6 +145,7 @@ __all__ = [
     "ReferenceTablesApi",
     "RestrictionPoliciesApi",
     "RolesApi",
+    "RumAudienceManagementApi",
     "RumMetricsApi",
     "RumRetentionFiltersApi",
     "SecurityMonitoringApi",
