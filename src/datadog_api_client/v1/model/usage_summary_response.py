@@ -42,6 +42,7 @@ class UsageSummaryResponse(ModelNormal):
             "azure_app_service_top99p_sum": (int,),
             "azure_host_top99p_sum": (int,),
             "billable_ingested_bytes_agg_sum": (int,),
+            "bits_ai_investigations_agg_sum": (int,),
             "browser_rum_lite_session_count_agg_sum": (int,),
             "browser_rum_replay_session_count_agg_sum": (int,),
             "browser_rum_units_agg_sum": (int,),
@@ -151,6 +152,7 @@ class UsageSummaryResponse(ModelNormal):
             "observability_pipelines_bytes_processed_agg_sum": (int,),
             "oci_host_agg_sum": (int,),
             "oci_host_top99p_sum": (int,),
+            "on_call_seat_hwm_sum": (int,),
             "online_archive_events_count_agg_sum": (int,),
             "opentelemetry_apm_host_top99p_sum": (int,),
             "opentelemetry_host_top99p_sum": (int,),
@@ -257,6 +259,7 @@ class UsageSummaryResponse(ModelNormal):
         "azure_app_service_top99p_sum": "azure_app_service_top99p_sum",
         "azure_host_top99p_sum": "azure_host_top99p_sum",
         "billable_ingested_bytes_agg_sum": "billable_ingested_bytes_agg_sum",
+        "bits_ai_investigations_agg_sum": "bits_ai_investigations_agg_sum",
         "browser_rum_lite_session_count_agg_sum": "browser_rum_lite_session_count_agg_sum",
         "browser_rum_replay_session_count_agg_sum": "browser_rum_replay_session_count_agg_sum",
         "browser_rum_units_agg_sum": "browser_rum_units_agg_sum",
@@ -366,6 +369,7 @@ class UsageSummaryResponse(ModelNormal):
         "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
         "oci_host_agg_sum": "oci_host_agg_sum",
         "oci_host_top99p_sum": "oci_host_top99p_sum",
+        "on_call_seat_hwm_sum": "on_call_seat_hwm_sum",
         "online_archive_events_count_agg_sum": "online_archive_events_count_agg_sum",
         "opentelemetry_apm_host_top99p_sum": "opentelemetry_apm_host_top99p_sum",
         "opentelemetry_host_top99p_sum": "opentelemetry_host_top99p_sum",
@@ -473,6 +477,7 @@ class UsageSummaryResponse(ModelNormal):
         azure_app_service_top99p_sum: Union[int, UnsetType] = unset,
         azure_host_top99p_sum: Union[int, UnsetType] = unset,
         billable_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
+        bits_ai_investigations_agg_sum: Union[int, UnsetType] = unset,
         browser_rum_lite_session_count_agg_sum: Union[int, UnsetType] = unset,
         browser_rum_replay_session_count_agg_sum: Union[int, UnsetType] = unset,
         browser_rum_units_agg_sum: Union[int, UnsetType] = unset,
@@ -582,6 +587,7 @@ class UsageSummaryResponse(ModelNormal):
         observability_pipelines_bytes_processed_agg_sum: Union[int, UnsetType] = unset,
         oci_host_agg_sum: Union[int, UnsetType] = unset,
         oci_host_top99p_sum: Union[int, UnsetType] = unset,
+        on_call_seat_hwm_sum: Union[int, UnsetType] = unset,
         online_archive_events_count_agg_sum: Union[int, UnsetType] = unset,
         opentelemetry_apm_host_top99p_sum: Union[int, UnsetType] = unset,
         opentelemetry_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -721,6 +727,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param billable_ingested_bytes_agg_sum: Shows the sum of all log bytes ingested over all hours in the current month for all organizations.
         :type billable_ingested_bytes_agg_sum: int, optional
+
+        :param bits_ai_investigations_agg_sum: Shows the sum of all Bits AI Investigations over all hours in the current month for all organizations.
+        :type bits_ai_investigations_agg_sum: int, optional
 
         :param browser_rum_lite_session_count_agg_sum: Shows the sum of all browser lite sessions over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type browser_rum_lite_session_count_agg_sum: int, optional
@@ -1049,6 +1058,9 @@ class UsageSummaryResponse(ModelNormal):
         :param oci_host_top99p_sum: Shows the 99th percentile of Oracle Cloud Infrastructure hosts over all hours in the current months for all organizations
         :type oci_host_top99p_sum: int, optional
 
+        :param on_call_seat_hwm_sum: Shows the sum of the high-water marks of On-Call seats over all hours in the current month for all organizations.
+        :type on_call_seat_hwm_sum: int, optional
+
         :param online_archive_events_count_agg_sum: Sum of all online archived events over all hours in the current month for all organizations.
         :type online_archive_events_count_agg_sum: int, optional
 
@@ -1342,6 +1354,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["azure_host_top99p_sum"] = azure_host_top99p_sum
         if billable_ingested_bytes_agg_sum is not unset:
             kwargs["billable_ingested_bytes_agg_sum"] = billable_ingested_bytes_agg_sum
+        if bits_ai_investigations_agg_sum is not unset:
+            kwargs["bits_ai_investigations_agg_sum"] = bits_ai_investigations_agg_sum
         if browser_rum_lite_session_count_agg_sum is not unset:
             kwargs["browser_rum_lite_session_count_agg_sum"] = browser_rum_lite_session_count_agg_sum
         if browser_rum_replay_session_count_agg_sum is not unset:
@@ -1576,6 +1590,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["oci_host_agg_sum"] = oci_host_agg_sum
         if oci_host_top99p_sum is not unset:
             kwargs["oci_host_top99p_sum"] = oci_host_top99p_sum
+        if on_call_seat_hwm_sum is not unset:
+            kwargs["on_call_seat_hwm_sum"] = on_call_seat_hwm_sum
         if online_archive_events_count_agg_sum is not unset:
             kwargs["online_archive_events_count_agg_sum"] = online_archive_events_count_agg_sum
         if opentelemetry_apm_host_top99p_sum is not unset:
