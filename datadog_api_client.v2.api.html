@@ -2232,6 +2232,34 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.rum_audience_management_api" class="md-nav__link">datadog_api_client.v2.api.rum_audience_management_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.create_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.create_connection()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.delete_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.delete_connection()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_account_facet_info" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.get_account_facet_info()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_mapping" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.get_mapping()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_user_facet_info" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.get_user_facet_info()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.list_connections" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.list_connections()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_accounts" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.query_accounts()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_event_filtered_users" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.query_event_filtered_users()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_users" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.query_users()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.update_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumAudienceManagementApi.update_connection()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.rum_metrics_api" class="md-nav__link">datadog_api_client.v2.api.rum_metrics_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.rum_metrics_api.RumMetricsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">RumMetricsApi</span></code></a><nav class="md-nav">
@@ -11086,6 +11114,143 @@ Sort order is <strong>descending</strong> if the field is prefixed by a negative
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_application_response.RUMApplicationResponse" title="datadog_api_client.v2.model.rum_application_response.RUMApplicationResponse">RUMApplicationResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.rum_audience_management_api">
+<span id="datadog-api-client-v2-api-rum-audience-management-api-module"></span><h2 id="module-datadog_api_client.v2.api.rum_audience_management_api">datadog_api_client.v2.api.rum_audience_management_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.rum_audience_management_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RumAudienceManagementApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Auto-generated tag Rum Audience Management</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.create_connection">
+<span class="sig-name descname"><span class="pre">create_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_connection_request.CreateConnectionRequest" title="datadog_api_client.v2.model.create_connection_request.CreateConnectionRequest"><span class="pre">CreateConnectionRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.create_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Create connection.</p>
+<p>Create a new data connection and its fields for an entity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>entity</strong> (<em>str</em>) – The entity for which to create the connection</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.delete_connection">
+<span class="sig-name descname"><span class="pre">delete_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.delete_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Delete connection.</p>
+<p>Delete an existing data connection for an entity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – The connection ID to delete</p></li>
+<li><p><strong>entity</strong> (<em>str</em>) – The entity for which to delete the connection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_account_facet_info">
+<span class="sig-name descname"><span class="pre">get_account_facet_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.facet_info_request.FacetInfoRequest" title="datadog_api_client.v2.model.facet_info_request.FacetInfoRequest"><span class="pre">FacetInfoRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.facet_info_response.FacetInfoResponse" title="datadog_api_client.v2.model.facet_info_response.FacetInfoResponse"><span class="pre">FacetInfoResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_account_facet_info" title="Link to this definition">¶</a></dt>
+<dd><p>Get account facet info.</p>
+<p>Get facet information for account attributes including possible values and counts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.facet_info_response.FacetInfoResponse" title="datadog_api_client.v2.model.facet_info_response.FacetInfoResponse">FacetInfoResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_mapping">
+<span class="sig-name descname"><span class="pre">get_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_mapping_response.GetMappingResponse" title="datadog_api_client.v2.model.get_mapping_response.GetMappingResponse"><span class="pre">GetMappingResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_mapping" title="Link to this definition">¶</a></dt>
+<dd><p>Get mapping.</p>
+<p>Get entity mapping configuration including all available attributes and their properties</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>entity</strong> (<em>str</em>) – The entity for which to get the mapping</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.get_mapping_response.GetMappingResponse" title="datadog_api_client.v2.model.get_mapping_response.GetMappingResponse">GetMappingResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_user_facet_info">
+<span class="sig-name descname"><span class="pre">get_user_facet_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.facet_info_request.FacetInfoRequest" title="datadog_api_client.v2.model.facet_info_request.FacetInfoRequest"><span class="pre">FacetInfoRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.facet_info_response.FacetInfoResponse" title="datadog_api_client.v2.model.facet_info_response.FacetInfoResponse"><span class="pre">FacetInfoResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.get_user_facet_info" title="Link to this definition">¶</a></dt>
+<dd><p>Get user facet info.</p>
+<p>Get facet information for user attributes including possible values and counts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.facet_info_response.FacetInfoResponse" title="datadog_api_client.v2.model.facet_info_response.FacetInfoResponse">FacetInfoResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.list_connections">
+<span class="sig-name descname"><span class="pre">list_connections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_connections_response.ListConnectionsResponse" title="datadog_api_client.v2.model.list_connections_response.ListConnectionsResponse"><span class="pre">ListConnectionsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.list_connections" title="Link to this definition">¶</a></dt>
+<dd><p>List connections.</p>
+<p>List all data connections for an entity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>entity</strong> (<em>str</em>) – The entity for which to list connections</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_connections_response.ListConnectionsResponse" title="datadog_api_client.v2.model.list_connections_response.ListConnectionsResponse">ListConnectionsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_accounts">
+<span class="sig-name descname"><span class="pre">query_accounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_account_request.QueryAccountRequest" title="datadog_api_client.v2.model.query_account_request.QueryAccountRequest"><span class="pre">QueryAccountRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_response.QueryResponse" title="datadog_api_client.v2.model.query_response.QueryResponse"><span class="pre">QueryResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_accounts" title="Link to this definition">¶</a></dt>
+<dd><p>Query accounts.</p>
+<p>Query accounts with flexible filtering by account properties</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_response.QueryResponse" title="datadog_api_client.v2.model.query_response.QueryResponse">QueryResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_event_filtered_users">
+<span class="sig-name descname"><span class="pre">query_event_filtered_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_event_filtered_users_request.QueryEventFilteredUsersRequest" title="datadog_api_client.v2.model.query_event_filtered_users_request.QueryEventFilteredUsersRequest"><span class="pre">QueryEventFilteredUsersRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_response.QueryResponse" title="datadog_api_client.v2.model.query_response.QueryResponse"><span class="pre">QueryResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_event_filtered_users" title="Link to this definition">¶</a></dt>
+<dd><p>Query event filtered users.</p>
+<p>Query users filtered by both user properties and event platform data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_response.QueryResponse" title="datadog_api_client.v2.model.query_response.QueryResponse">QueryResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_users">
+<span class="sig-name descname"><span class="pre">query_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_users_request.QueryUsersRequest" title="datadog_api_client.v2.model.query_users_request.QueryUsersRequest"><span class="pre">QueryUsersRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_response.QueryResponse" title="datadog_api_client.v2.model.query_response.QueryResponse"><span class="pre">QueryResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.query_users" title="Link to this definition">¶</a></dt>
+<dd><p>Query users.</p>
+<p>Query users with flexible filtering by user properties, with optional wildcard search</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.query_response.QueryResponse" title="datadog_api_client.v2.model.query_response.QueryResponse">QueryResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.update_connection">
+<span class="sig-name descname"><span class="pre">update_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_connection_request.UpdateConnectionRequest" title="datadog_api_client.v2.model.update_connection_request.UpdateConnectionRequest"><span class="pre">UpdateConnectionRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.rum_audience_management_api.RumAudienceManagementApi.update_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Update connection.</p>
+<p>Update an existing data connection by adding, updating, or deleting fields</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>entity</strong> (<em>str</em>) – The entity for which to update the connection</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
