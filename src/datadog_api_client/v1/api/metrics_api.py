@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -289,7 +290,9 @@ class MetricsApi:
         self,
         q: str,
     ) -> MetricSearchResponse:
-        """Search metrics.
+        """Search metrics. **Deprecated**.
+
+        **Note** : This endpoint is deprecated. Use ``/api/v2/metrics`` instead.
 
         Search for metrics from the last 24 hours in Datadog.
 
@@ -300,6 +303,7 @@ class MetricsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["q"] = q
 
+        warnings.warn("list_metrics is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_metrics_endpoint.call_with_http_info(**kwargs)
 
     def query_metrics(
