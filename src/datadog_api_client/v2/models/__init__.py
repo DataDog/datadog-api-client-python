@@ -1661,18 +1661,47 @@ from datadog_api_client.v2.model.flaky_tests_search_request_data_type import Fla
 from datadog_api_client.v2.model.flaky_tests_search_response import FlakyTestsSearchResponse
 from datadog_api_client.v2.model.flaky_tests_search_response_meta import FlakyTestsSearchResponseMeta
 from datadog_api_client.v2.model.flaky_tests_search_sort import FlakyTestsSearchSort
+from datadog_api_client.v2.model.fleet_agent_version import FleetAgentVersion
+from datadog_api_client.v2.model.fleet_agent_version_attributes import FleetAgentVersionAttributes
+from datadog_api_client.v2.model.fleet_agent_version_resource_type import FleetAgentVersionResourceType
+from datadog_api_client.v2.model.fleet_agent_versions_response import FleetAgentVersionsResponse
 from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
 from datadog_api_client.v2.model.fleet_deployment_attributes import FleetDeploymentAttributes
 from datadog_api_client.v2.model.fleet_deployment_configure_attributes import FleetDeploymentConfigureAttributes
 from datadog_api_client.v2.model.fleet_deployment_configure_create import FleetDeploymentConfigureCreate
 from datadog_api_client.v2.model.fleet_deployment_configure_create_request import FleetDeploymentConfigureCreateRequest
 from datadog_api_client.v2.model.fleet_deployment_file_op import FleetDeploymentFileOp
+from datadog_api_client.v2.model.fleet_deployment_host import FleetDeploymentHost
+from datadog_api_client.v2.model.fleet_deployment_host_package import FleetDeploymentHostPackage
+from datadog_api_client.v2.model.fleet_deployment_hosts_page import FleetDeploymentHostsPage
 from datadog_api_client.v2.model.fleet_deployment_operation import FleetDeploymentOperation
+from datadog_api_client.v2.model.fleet_deployment_package import FleetDeploymentPackage
+from datadog_api_client.v2.model.fleet_deployment_package_upgrade_attributes import (
+    FleetDeploymentPackageUpgradeAttributes,
+)
+from datadog_api_client.v2.model.fleet_deployment_package_upgrade_create import FleetDeploymentPackageUpgradeCreate
+from datadog_api_client.v2.model.fleet_deployment_package_upgrade_create_request import (
+    FleetDeploymentPackageUpgradeCreateRequest,
+)
 from datadog_api_client.v2.model.fleet_deployment_resource_type import FleetDeploymentResourceType
 from datadog_api_client.v2.model.fleet_deployment_response import FleetDeploymentResponse
+from datadog_api_client.v2.model.fleet_deployment_response_meta import FleetDeploymentResponseMeta
 from datadog_api_client.v2.model.fleet_deployments_page import FleetDeploymentsPage
 from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
 from datadog_api_client.v2.model.fleet_deployments_response_meta import FleetDeploymentsResponseMeta
+from datadog_api_client.v2.model.fleet_schedule import FleetSchedule
+from datadog_api_client.v2.model.fleet_schedule_attributes import FleetScheduleAttributes
+from datadog_api_client.v2.model.fleet_schedule_create import FleetScheduleCreate
+from datadog_api_client.v2.model.fleet_schedule_create_attributes import FleetScheduleCreateAttributes
+from datadog_api_client.v2.model.fleet_schedule_create_request import FleetScheduleCreateRequest
+from datadog_api_client.v2.model.fleet_schedule_patch import FleetSchedulePatch
+from datadog_api_client.v2.model.fleet_schedule_patch_attributes import FleetSchedulePatchAttributes
+from datadog_api_client.v2.model.fleet_schedule_patch_request import FleetSchedulePatchRequest
+from datadog_api_client.v2.model.fleet_schedule_recurrence_rule import FleetScheduleRecurrenceRule
+from datadog_api_client.v2.model.fleet_schedule_resource_type import FleetScheduleResourceType
+from datadog_api_client.v2.model.fleet_schedule_response import FleetScheduleResponse
+from datadog_api_client.v2.model.fleet_schedule_status import FleetScheduleStatus
+from datadog_api_client.v2.model.fleet_schedules_response import FleetSchedulesResponse
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.freshservice_api_key import FreshserviceAPIKey
@@ -6000,18 +6029,43 @@ __all__ = [
     "FlakyTestsSearchResponse",
     "FlakyTestsSearchResponseMeta",
     "FlakyTestsSearchSort",
+    "FleetAgentVersion",
+    "FleetAgentVersionAttributes",
+    "FleetAgentVersionResourceType",
+    "FleetAgentVersionsResponse",
     "FleetDeployment",
     "FleetDeploymentAttributes",
     "FleetDeploymentConfigureAttributes",
     "FleetDeploymentConfigureCreate",
     "FleetDeploymentConfigureCreateRequest",
     "FleetDeploymentFileOp",
+    "FleetDeploymentHost",
+    "FleetDeploymentHostPackage",
+    "FleetDeploymentHostsPage",
     "FleetDeploymentOperation",
+    "FleetDeploymentPackage",
+    "FleetDeploymentPackageUpgradeAttributes",
+    "FleetDeploymentPackageUpgradeCreate",
+    "FleetDeploymentPackageUpgradeCreateRequest",
     "FleetDeploymentResourceType",
     "FleetDeploymentResponse",
+    "FleetDeploymentResponseMeta",
     "FleetDeploymentsPage",
     "FleetDeploymentsResponse",
     "FleetDeploymentsResponseMeta",
+    "FleetSchedule",
+    "FleetScheduleAttributes",
+    "FleetScheduleCreate",
+    "FleetScheduleCreateAttributes",
+    "FleetScheduleCreateRequest",
+    "FleetSchedulePatch",
+    "FleetSchedulePatchAttributes",
+    "FleetSchedulePatchRequest",
+    "FleetScheduleRecurrenceRule",
+    "FleetScheduleResourceType",
+    "FleetScheduleResponse",
+    "FleetScheduleStatus",
+    "FleetSchedulesResponse",
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
     "FreshserviceAPIKey",

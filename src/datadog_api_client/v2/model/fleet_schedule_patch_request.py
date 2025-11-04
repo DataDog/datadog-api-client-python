@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.fleet_deployment_configure_create import FleetDeploymentConfigureCreate
+    from datadog_api_client.v2.model.fleet_schedule_patch import FleetSchedulePatch
 
 
-class FleetDeploymentConfigureCreateRequest(ModelNormal):
+class FleetSchedulePatchRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.fleet_deployment_configure_create import FleetDeploymentConfigureCreate
+        from datadog_api_client.v2.model.fleet_schedule_patch import FleetSchedulePatch
 
         return {
-            "data": (FleetDeploymentConfigureCreate,),
+            "data": (FleetSchedulePatch,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: FleetDeploymentConfigureCreate, **kwargs):
+    def __init__(self_, data: FleetSchedulePatch, **kwargs):
         """
-        Request payload for creating a new configuration deployment.
+        Request payload for partially updating a schedule.
 
-        :param data: Data for creating a new configuration deployment.
-        :type data: FleetDeploymentConfigureCreate
+        :param data: Data for partially updating a schedule.
+        :type data: FleetSchedulePatch
         """
         super().__init__(kwargs)
 

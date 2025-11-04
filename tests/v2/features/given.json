@@ -16,6 +16,32 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"deployment\",\n    \"attributes\": {\n      \"filter_query\": \"env:prod AND service:{{ unique_lower }}\",\n      \"target_packages\": [\n        {\n          \"name\": \"datadog-agent\",\n          \"version\": \"7.52.0\"\n        }\n      ]\n    }\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"package_deployment\" in the system",
+    "key": "package_deployment",
+    "tag": "Fleet Automation",
+    "operationId": "CreateFleetDeploymentUpgrade"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"schedule\",\n    \"attributes\": {\n      \"name\": \"Weekly {{ unique }} Updates\",\n      \"query\": \"env:prod AND service:{{ unique_lower }}\",\n      \"status\": \"active\",\n      \"version_to_latest\": 0,\n      \"rule\": {\n        \"days_of_week\": [\"Mon\"],\n        \"start_maintenance_window\": \"02:00\",\n        \"maintenance_window_duration\": 120,\n        \"timezone\": \"America/New_York\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"fleet_schedule\" in the system",
+    "key": "schedule",
+    "tag": "Fleet Automation",
+    "operationId": "CreateFleetSchedule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"datastores\",\n    \"attributes\": {\n      \"name\": \"Test Datastore\",\n      \"primary_column_name\": \"id\",\n      \"primary_key_generation_strategy\": \"none\",\n      \"description\": \"\",\n      \"org_access\": \"contributor\"\n    }\n  }\n}"
       }
     ],

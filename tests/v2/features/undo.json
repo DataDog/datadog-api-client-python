@@ -1,4 +1,10 @@
 {
+  "ListFleetAgentVersions": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListFleetDeployments": {
     "tag": "Fleet Automation",
     "undo": {
@@ -6,6 +12,19 @@
     }
   },
   "CreateFleetDeploymentConfigure": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "operationId": "CancelFleetDeployment",
+      "parameters": [
+        {
+          "name": "deployment_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateFleetDeploymentUpgrade": {
     "tag": "Fleet Automation",
     "undo": {
       "operationId": "CancelFleetDeployment",
@@ -28,6 +47,56 @@
     "tag": "Fleet Automation",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListFleetSchedules": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateFleetSchedule": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "operationId": "DeleteFleetSchedule",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteFleetSchedule": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetFleetSchedule": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateFleetSchedule": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "TriggerFleetSchedule": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "operationId": "CancelFleetDeployment",
+      "parameters": [
+        {
+          "name": "deployment_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "ListDatastores": {
