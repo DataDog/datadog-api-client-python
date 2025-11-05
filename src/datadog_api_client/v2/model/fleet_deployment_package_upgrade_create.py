@@ -12,18 +12,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.fleet_deployment_configure_attributes import FleetDeploymentConfigureAttributes
+    from datadog_api_client.v2.model.fleet_deployment_package_upgrade_attributes import (
+        FleetDeploymentPackageUpgradeAttributes,
+    )
     from datadog_api_client.v2.model.fleet_deployment_resource_type import FleetDeploymentResourceType
 
 
-class FleetDeploymentConfigureCreate(ModelNormal):
+class FleetDeploymentPackageUpgradeCreate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.fleet_deployment_configure_attributes import FleetDeploymentConfigureAttributes
+        from datadog_api_client.v2.model.fleet_deployment_package_upgrade_attributes import (
+            FleetDeploymentPackageUpgradeAttributes,
+        )
         from datadog_api_client.v2.model.fleet_deployment_resource_type import FleetDeploymentResourceType
 
         return {
-            "attributes": (FleetDeploymentConfigureAttributes,),
+            "attributes": (FleetDeploymentPackageUpgradeAttributes,),
             "type": (FleetDeploymentResourceType,),
         }
 
@@ -32,12 +36,14 @@ class FleetDeploymentConfigureCreate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: FleetDeploymentConfigureAttributes, type: FleetDeploymentResourceType, **kwargs):
+    def __init__(
+        self_, attributes: FleetDeploymentPackageUpgradeAttributes, type: FleetDeploymentResourceType, **kwargs
+    ):
         """
-        Data for creating a new configuration deployment.
+        Data for creating a new package upgrade deployment.
 
-        :param attributes: Attributes for creating a new configuration deployment.
-        :type attributes: FleetDeploymentConfigureAttributes
+        :param attributes: Attributes for creating a new package upgrade deployment.
+        :type attributes: FleetDeploymentPackageUpgradeAttributes
 
         :param type: The type of deployment resource.
         :type type: FleetDeploymentResourceType

@@ -1,5 +1,5 @@
 """
-Create a deployment returns "CREATED" response
+Create a configuration deployment returns "CREATED" response
 """
 
 from datadog_api_client import ApiClient, Configuration

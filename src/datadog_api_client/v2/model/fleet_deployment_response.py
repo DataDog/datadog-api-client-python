@@ -15,28 +15,42 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
+    from datadog_api_client.v2.model.fleet_deployment_response_meta import FleetDeploymentResponseMeta
 
 
 class FleetDeploymentResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
+        from datadog_api_client.v2.model.fleet_deployment_response_meta import FleetDeploymentResponseMeta
 
         return {
             "data": (FleetDeployment,),
+            "meta": (FleetDeploymentResponseMeta,),
         }
 
     attribute_map = {
         "data": "data",
+        "meta": "meta",
     }
 
-    def __init__(self_, data: Union[FleetDeployment, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        data: Union[FleetDeployment, UnsetType] = unset,
+        meta: Union[FleetDeploymentResponseMeta, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Response containing a single deployment.
 
         :param data: A deployment that defines automated configuration changes for a fleet of hosts.
         :type data: FleetDeployment, optional
+
+        :param meta: Metadata for a single deployment response, including pagination information for hosts.
+        :type meta: FleetDeploymentResponseMeta, optional
         """
         if data is not unset:
             kwargs["data"] = data
+        if meta is not unset:
+            kwargs["meta"] = meta
         super().__init__(kwargs)

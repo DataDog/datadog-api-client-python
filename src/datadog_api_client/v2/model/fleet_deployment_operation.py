@@ -72,8 +72,8 @@ class FleetDeploymentOperation(ModelNormal):
         :param patch: Patch data in JSON format to apply to the configuration file.
             When using ``merge-patch`` , this object is merged with the existing configuration,
             allowing you to add, update, or override specific fields without replacing the entire file.
-            The structure must match the target configuration file format (for example, YAML structure for Datadog Agent config).
-            Not applicable when using the ``delete`` operation.
+            The structure must match the target configuration file format (for example, YAML structure
+            for Datadog Agent config). Not applicable when using the ``delete`` operation.
         :type patch: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
         """
         if patch is not unset:
