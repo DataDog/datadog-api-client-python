@@ -1550,9 +1550,25 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_configure" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.create_fleet_deployment_configure()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_upgrade" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.create_fleet_deployment_upgrade()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.create_fleet_schedule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.delete_fleet_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.delete_fleet_schedule()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.get_fleet_deployment()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.get_fleet_schedule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_agent_versions" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.list_fleet_agent_versions()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_deployments" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.list_fleet_deployments()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_schedules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.list_fleet_schedules()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.trigger_fleet_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.trigger_fleet_schedule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.update_fleet_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.update_fleet_schedule()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -7050,16 +7066,32 @@ paths are <code class="docutils literal notranslate"><span class="pre">created_b
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">FleetAutomationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Manage automated deployments across your fleet of hosts.
-Use these endpoints to create, retrieve, and cancel deployments
-that apply configuration changes to multiple hosts at once.</p>
+<p>Manage automated deployments across your fleet of hosts.</p>
+<p>Fleet Automation provides two types of deployments:</p>
+<p>Configuration Deployments ( <code class="docutils literal notranslate"><span class="pre">/configure</span></code> ):</p>
+<ul class="simple">
+<li><p>Apply configuration file changes to target hosts</p></li>
+<li><p>Support merge-patch operations to update specific configuration fields</p></li>
+<li><p>Support delete operations to remove configuration files</p></li>
+<li><p>Useful for updating Datadog Agent settings, integration configs, and more</p></li>
+</ul>
+<p>Package Upgrade Deployments ( <code class="docutils literal notranslate"><span class="pre">/upgrade</span></code> ):</p>
+<ul class="simple">
+<li><p>Upgrade the Datadog Agent to specific versions</p></li>
+</ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.cancel_fleet_deployment">
 <span class="sig-name descname"><span class="pre">cancel_fleet_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.cancel_fleet_deployment" title="Link to this definition">¶</a></dt>
 <dd><p>Cancel a deployment.</p>
-<p>Cancel this deployment and stop all associated operations.
-If a workflow is currently running for this deployment, it is canceled immediately.
-Changes already applied to hosts are not rolled back.</p>
+<p>Cancel an active deployment and stop all pending operations.
+When you cancel a deployment:</p>
+<ul class="simple">
+<li><p>All pending operations on hosts that haven’t started yet are stopped</p></li>
+<li><p>Operations currently in progress on hosts may complete or be interrupted, depending on their current state</p></li>
+<li><p>Configuration changes or package upgrades already applied to hosts are not rolled back</p></li>
+</ul>
+<p>After cancellation, you can view the final state of the deployment using the GET endpoint to see which hosts
+were successfully updated before the cancellation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>deployment_id</strong> (<em>str</em>) – The unique identifier of the deployment to cancel.</p>
@@ -7072,9 +7104,18 @@ Changes already applied to hosts are not rolled back.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_configure">
 <span class="sig-name descname"><span class="pre">create_fleet_deployment_configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest" title="datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest"><span class="pre">FleetDeploymentConfigureCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_configure" title="Link to this definition">¶</a></dt>
-<dd><p>Create a deployment.</p>
+<dd><p>Create a configuration deployment.</p>
 <p>Create a new deployment to apply configuration changes
 to a fleet of hosts matching the specified filter query.</p>
+<p>This endpoint supports two types of configuration operations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">merge-patch</span></code> : Merges the provided patch data with the existing configuration file,
+creating the file if it doesn’t exist</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delete</span></code> : Removes the specified configuration file from the target hosts</p></li>
+</ul>
+<p>The deployment is created and started automatically. You can specify multiple configuration
+operations that will be executed in order on each target host. Use the filter query to target
+specific hosts using the Datadog query syntax.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest" title="datadog_api_client.v2.model.fleet_deployment_configure_create_request.FleetDeploymentConfigureCreateRequest"><em>FleetDeploymentConfigureCreateRequest</em></a>) – Request payload containing the deployment details.</p>
@@ -7085,16 +7126,145 @@ to a fleet of hosts matching the specified filter query.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment">
-<span class="sig-name descname"><span class="pre">get_fleet_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment" title="Link to this definition">¶</a></dt>
-<dd><p>Get a deployment by ID.</p>
-<p>Retrieve the details of a specific deployment using its unique identifier.</p>
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_upgrade">
+<span class="sig-name descname"><span class="pre">create_fleet_deployment_upgrade</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_package_upgrade_create_request.FleetDeploymentPackageUpgradeCreateRequest" title="datadog_api_client.v2.model.fleet_deployment_package_upgrade_create_request.FleetDeploymentPackageUpgradeCreateRequest"><span class="pre">FleetDeploymentPackageUpgradeCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_deployment_upgrade" title="Link to this definition">¶</a></dt>
+<dd><p>Upgrade hosts.</p>
+<p>Create and immediately start a new package upgrade
+on hosts matching the specified filter query.</p>
+<p>This endpoint allows you to upgrade the Datadog Agent to a specific version
+on hosts matching the specified filter query.</p>
+<p>The deployment is created and started automatically. The system will:</p>
+<ol class="arabic simple">
+<li><p>Identify all hosts matching the filter query</p></li>
+<li><p>Validate that the specified version is available</p></li>
+<li><p>Begin rolling out the package upgrade to the target hosts</p></li>
+</ol>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>deployment_id</strong> (<em>str</em>) – The unique identifier of the deployment to retrieve.</p>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_package_upgrade_create_request.FleetDeploymentPackageUpgradeCreateRequest" title="datadog_api_client.v2.model.fleet_deployment_package_upgrade_create_request.FleetDeploymentPackageUpgradeCreateRequest"><em>FleetDeploymentPackageUpgradeCreateRequest</em></a>) – Request payload containing the package upgrade details.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse">FleetDeploymentResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_schedule">
+<span class="sig-name descname"><span class="pre">create_fleet_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_create_request.FleetScheduleCreateRequest" title="datadog_api_client.v2.model.fleet_schedule_create_request.FleetScheduleCreateRequest"><span class="pre">FleetScheduleCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse" title="datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse"><span class="pre">FleetScheduleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.create_fleet_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Create a schedule.</p>
+<p>Create a new schedule for automated package upgrades.</p>
+<p>Schedules define when and how often to automatically deploy package upgrades to a fleet
+of hosts. Each schedule includes:</p>
+<ul class="simple">
+<li><p>A filter query to select target hosts</p></li>
+<li><p>A recurrence rule defining maintenance windows</p></li>
+<li><p>A version strategy (e.g., always latest, or N versions behind latest)</p></li>
+</ul>
+<p>When the schedule triggers during a maintenance window, it automatically creates a
+deployment that upgrades the Datadog Agent to the specified version on all matching hosts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_create_request.FleetScheduleCreateRequest" title="datadog_api_client.v2.model.fleet_schedule_create_request.FleetScheduleCreateRequest"><em>FleetScheduleCreateRequest</em></a>) – Request payload containing the schedule details.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse" title="datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse">FleetScheduleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.delete_fleet_schedule">
+<span class="sig-name descname"><span class="pre">delete_fleet_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.delete_fleet_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a schedule.</p>
+<p>Delete a schedule permanently.</p>
+<p>When you delete a schedule:</p>
+<ul class="simple">
+<li><p>The schedule is permanently removed and will no longer create deployments</p></li>
+<li><p>Any deployments already created by this schedule are not affected</p></li>
+<li><p>This action cannot be undone</p></li>
+</ul>
+<p>If you want to temporarily stop a schedule from creating deployments, consider
+updating its status to “inactive” instead of deleting it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The unique identifier of the schedule to delete.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment">
+<span class="sig-name descname"><span class="pre">get_fleet_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment" title="Link to this definition">¶</a></dt>
+<dd><p>Get a configuration deployment by ID.</p>
+<p>Retrieve detailed information about a specific deployment using its unique identifier.
+This endpoint returns comprehensive information about a deployment, including:</p>
+<ul class="simple">
+<li><p>Deployment metadata (ID, type, filter query)</p></li>
+<li><p>Total number of target hosts</p></li>
+<li><p>Current high-level status (pending, running, succeeded, failed)</p></li>
+<li><p>Estimated completion time</p></li>
+<li><p>Configuration operations that were or are being applied</p></li>
+<li><p>Detailed host list: A paginated array of hosts included in this deployment with individual
+host status, current package versions, and any errors</p></li>
+</ul>
+<p>The host list provides visibility into the per-host execution status, allowing you to:</p>
+<ul class="simple">
+<li><p>Monitor which hosts have completed successfully</p></li>
+<li><p>Identify hosts that are still in progress</p></li>
+<li><p>Investigate failures on specific hosts</p></li>
+<li><p>View current package versions installed on each host (including initial, target, and current
+versions for each package)</p></li>
+</ul>
+<p>Pagination: Use the <code class="docutils literal notranslate"><span class="pre">limit</span></code> and <code class="docutils literal notranslate"><span class="pre">page</span></code> query parameters to paginate through hosts. The response
+includes pagination metadata in the <code class="docutils literal notranslate"><span class="pre">meta.hosts</span></code> field with information about the current page,
+total pages, and total host count. The default page size is 50 hosts, with a maximum of 100.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>deployment_id</strong> (<em>str</em>) – The unique identifier of the deployment to retrieve.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of hosts to return per page. Default is 50, maximum is 100.</p></li>
+<li><p><strong>page</strong> (<em>int</em><em>, </em><em>optional</em>) – Page index for pagination (zero-based). Use this to retrieve subsequent pages of hosts.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse">FleetDeploymentResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_schedule">
+<span class="sig-name descname"><span class="pre">get_fleet_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse" title="datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse"><span class="pre">FleetScheduleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Get a schedule by ID.</p>
+<p>Retrieve detailed information about a specific schedule using its unique identifier.</p>
+<p>This endpoint returns comprehensive information about a schedule, including:</p>
+<ul class="simple">
+<li><p>Schedule metadata (ID, name, creation/update timestamps)</p></li>
+<li><p>Filter query for selecting target hosts</p></li>
+<li><p>Recurrence rule defining when deployments are triggered</p></li>
+<li><p>Version strategy for package upgrades</p></li>
+<li><p>Current status (active or inactive)</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The unique identifier of the schedule to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse" title="datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse">FleetScheduleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_agent_versions">
+<span class="sig-name descname"><span class="pre">list_fleet_agent_versions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_agent_versions_response.FleetAgentVersionsResponse" title="datadog_api_client.v2.model.fleet_agent_versions_response.FleetAgentVersionsResponse"><span class="pre">FleetAgentVersionsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_agent_versions" title="Link to this definition">¶</a></dt>
+<dd><p>List all available Agent versions.</p>
+<p>Retrieve a list of all available Datadog Agent versions.</p>
+<p>This endpoint returns the available Agent versions that can be deployed to your fleet.
+These versions are used when creating deployments or configuring schedules for
+automated Agent upgrades.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_agent_versions_response.FleetAgentVersionsResponse" title="datadog_api_client.v2.model.fleet_agent_versions_response.FleetAgentVersionsResponse">FleetAgentVersionsResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -7113,6 +7283,77 @@ Use the <code class="docutils literal notranslate"><span class="pre">page_size</
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployments_response.FleetDeploymentsResponse" title="datadog_api_client.v2.model.fleet_deployments_response.FleetDeploymentsResponse">FleetDeploymentsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_schedules">
+<span class="sig-name descname"><span class="pre">list_fleet_schedules</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedules_response.FleetSchedulesResponse" title="datadog_api_client.v2.model.fleet_schedules_response.FleetSchedulesResponse"><span class="pre">FleetSchedulesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_schedules" title="Link to this definition">¶</a></dt>
+<dd><p>List all schedules.</p>
+<p>Retrieve a list of all schedules for automated fleet deployments.</p>
+<p>Schedules allow you to automate package upgrades by defining maintenance windows
+and recurrence rules. Each schedule automatically creates deployments based on its
+configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedules_response.FleetSchedulesResponse" title="datadog_api_client.v2.model.fleet_schedules_response.FleetSchedulesResponse">FleetSchedulesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.trigger_fleet_schedule">
+<span class="sig-name descname"><span class="pre">trigger_fleet_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.trigger_fleet_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Trigger a schedule deployment.</p>
+<p>Manually trigger a schedule to immediately create and start a deployment.</p>
+<p>This endpoint allows you to manually initiate a deployment using the schedule’s
+configuration, without waiting for the next scheduled maintenance window. This is
+useful for:</p>
+<ul class="simple">
+<li><p>Testing a schedule before it runs automatically</p></li>
+<li><p>Performing an emergency update outside the regular maintenance window</p></li>
+<li><p>Creating an ad-hoc deployment with the same settings as a schedule</p></li>
+</ul>
+<p>The deployment is created immediately with:</p>
+<ul class="simple">
+<li><p>The same filter query as the schedule</p></li>
+<li><p>The package version determined by the schedule’s version strategy</p></li>
+<li><p>All matching hosts as targets</p></li>
+</ul>
+<p>The manually triggered deployment is independent of the schedule and does not
+affect the schedule’s normal recurrence pattern.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The unique identifier of the schedule to trigger.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse">FleetDeploymentResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.update_fleet_schedule">
+<span class="sig-name descname"><span class="pre">update_fleet_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_patch_request.FleetSchedulePatchRequest" title="datadog_api_client.v2.model.fleet_schedule_patch_request.FleetSchedulePatchRequest"><span class="pre">FleetSchedulePatchRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse" title="datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse"><span class="pre">FleetScheduleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.update_fleet_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Update a schedule.</p>
+<p>Partially update a schedule by providing only the fields you want to change.</p>
+<p>This endpoint allows you to modify specific attributes of a schedule without
+affecting other fields. Common use cases include:</p>
+<ul class="simple">
+<li><p>Changing the schedule status between active and inactive</p></li>
+<li><p>Updating the maintenance window times</p></li>
+<li><p>Modifying the filter query to target different hosts</p></li>
+<li><p>Adjusting the version strategy</p></li>
+</ul>
+<p>Only include the fields you want to update in the request body. All fields
+are optional in a PATCH request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – The unique identifier of the schedule to update.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_patch_request.FleetSchedulePatchRequest" title="datadog_api_client.v2.model.fleet_schedule_patch_request.FleetSchedulePatchRequest"><em>FleetSchedulePatchRequest</em></a>) – Request payload containing the fields to update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse" title="datadog_api_client.v2.model.fleet_schedule_response.FleetScheduleResponse">FleetScheduleResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
