@@ -22,8 +22,10 @@ class UsageSummaryDateOrg(ModelNormal):
             "agent_host_top99p": (int,),
             "apm_azure_app_service_host_top99p": (int,),
             "apm_devsecops_host_top99p": (int,),
+            "apm_enterprise_standalone_hosts_top99p": (int,),
             "apm_fargate_count_avg": (int,),
             "apm_host_top99p": (int,),
+            "apm_pro_standalone_hosts_top99p": (int,),
             "appsec_fargate_count_avg": (int,),
             "asm_serverless_sum": (int,),
             "audit_logs_lines_indexed_sum": (int,),
@@ -234,8 +236,10 @@ class UsageSummaryDateOrg(ModelNormal):
         "agent_host_top99p": "agent_host_top99p",
         "apm_azure_app_service_host_top99p": "apm_azure_app_service_host_top99p",
         "apm_devsecops_host_top99p": "apm_devsecops_host_top99p",
+        "apm_enterprise_standalone_hosts_top99p": "apm_enterprise_standalone_hosts_top99p",
         "apm_fargate_count_avg": "apm_fargate_count_avg",
         "apm_host_top99p": "apm_host_top99p",
+        "apm_pro_standalone_hosts_top99p": "apm_pro_standalone_hosts_top99p",
         "appsec_fargate_count_avg": "appsec_fargate_count_avg",
         "asm_serverless_sum": "asm_serverless_sum",
         "audit_logs_lines_indexed_sum": "audit_logs_lines_indexed_sum",
@@ -447,8 +451,10 @@ class UsageSummaryDateOrg(ModelNormal):
         agent_host_top99p: Union[int, UnsetType] = unset,
         apm_azure_app_service_host_top99p: Union[int, UnsetType] = unset,
         apm_devsecops_host_top99p: Union[int, UnsetType] = unset,
+        apm_enterprise_standalone_hosts_top99p: Union[int, UnsetType] = unset,
         apm_fargate_count_avg: Union[int, UnsetType] = unset,
         apm_host_top99p: Union[int, UnsetType] = unset,
+        apm_pro_standalone_hosts_top99p: Union[int, UnsetType] = unset,
         appsec_fargate_count_avg: Union[int, UnsetType] = unset,
         asm_serverless_sum: Union[int, UnsetType] = unset,
         audit_logs_lines_indexed_sum: Union[int, UnsetType] = unset,
@@ -671,11 +677,17 @@ class UsageSummaryDateOrg(ModelNormal):
         :param apm_devsecops_host_top99p: Shows the 99th percentile of all APM DevSecOps hosts over all hours in the current date for the given org.
         :type apm_devsecops_host_top99p: int, optional
 
+        :param apm_enterprise_standalone_hosts_top99p: Shows the 99th percentile of all distinct standalone Enterprise hosts over all hours in the current date for the given org.
+        :type apm_enterprise_standalone_hosts_top99p: int, optional
+
         :param apm_fargate_count_avg: Shows the average of all APM ECS Fargate tasks over all hours in the current month for the given org.
         :type apm_fargate_count_avg: int, optional
 
         :param apm_host_top99p: Shows the 99th percentile of all distinct APM hosts over all hours in the current date for the given org.
         :type apm_host_top99p: int, optional
+
+        :param apm_pro_standalone_hosts_top99p: Shows the 99th percentile of all distinct standalone Pro hosts over all hours in the current date for the given org.
+        :type apm_pro_standalone_hosts_top99p: int, optional
 
         :param appsec_fargate_count_avg: Shows the average of all Application Security Monitoring ECS Fargate tasks over all hours in the current month for the given org.
         :type appsec_fargate_count_avg: int, optional
@@ -1293,10 +1305,14 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["apm_azure_app_service_host_top99p"] = apm_azure_app_service_host_top99p
         if apm_devsecops_host_top99p is not unset:
             kwargs["apm_devsecops_host_top99p"] = apm_devsecops_host_top99p
+        if apm_enterprise_standalone_hosts_top99p is not unset:
+            kwargs["apm_enterprise_standalone_hosts_top99p"] = apm_enterprise_standalone_hosts_top99p
         if apm_fargate_count_avg is not unset:
             kwargs["apm_fargate_count_avg"] = apm_fargate_count_avg
         if apm_host_top99p is not unset:
             kwargs["apm_host_top99p"] = apm_host_top99p
+        if apm_pro_standalone_hosts_top99p is not unset:
+            kwargs["apm_pro_standalone_hosts_top99p"] = apm_pro_standalone_hosts_top99p
         if appsec_fargate_count_avg is not unset:
             kwargs["appsec_fargate_count_avg"] = appsec_fargate_count_avg
         if asm_serverless_sum is not unset:
