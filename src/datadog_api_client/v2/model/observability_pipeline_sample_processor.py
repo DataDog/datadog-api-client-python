@@ -33,6 +33,7 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -42,6 +43,7 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -54,8 +56,9 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         self_,
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineSampleProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
         percentage: Union[float, UnsetType] = unset,
         rate: Union[int, UnsetType] = unset,
         **kwargs,
@@ -63,14 +66,17 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         """
         The ``sample`` processor allows probabilistic sampling of logs at a fixed rate.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param percentage: The percentage of logs to sample.
         :type percentage: float, optional
@@ -81,6 +87,10 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``sample``.
         :type type: ObservabilityPipelineSampleProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
         if percentage is not unset:
             kwargs["percentage"] = percentage
         if rate is not unset:
@@ -89,5 +99,4 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
 
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type

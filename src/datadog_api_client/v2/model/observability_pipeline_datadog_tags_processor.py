@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -38,6 +40,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
         return {
             "action": (ObservabilityPipelineDatadogTagsProcessorAction,),
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -48,6 +51,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
     attribute_map = {
         "action": "action",
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -61,10 +65,11 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         action: ObservabilityPipelineDatadogTagsProcessorAction,
         id: str,
         include: str,
-        inputs: List[str],
         keys: List[str],
         mode: ObservabilityPipelineDatadogTagsProcessorMode,
         type: ObservabilityPipelineDatadogTagsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -73,14 +78,17 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         :param action: The action to take on tags with matching keys.
         :type action: ObservabilityPipelineDatadogTagsProcessorAction
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param keys: A list of tag keys.
         :type keys: [str]
@@ -91,12 +99,15 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``datadog_tags``.
         :type type: ObservabilityPipelineDatadogTagsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
         super().__init__(kwargs)
 
         self_.action = action
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.keys = keys
         self_.mode = mode
         self_.type = type
