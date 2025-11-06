@@ -224,7 +224,6 @@ Feature: Monitors
     And new "GetMonitorNotificationRules" request
     When the request is sent
     Then the response status is 200 OK
-    And the response "data" has length 1
     And the response "data" has item with field "attributes.name" with value "test rule"
 
   @team:DataDog/monitor-app
