@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -1848,7 +1849,7 @@ class IncidentsApi:
         *,
         include: Union[List[IncidentAttachmentRelatedObject], UnsetType] = unset,
     ) -> IncidentAttachmentUpdateResponse:
-        """Create, update, and delete incident attachments.
+        """Create, update, and delete incident attachments. **Deprecated**.
 
         The bulk update endpoint for creating, updating, and deleting attachments for a given incident.
 
@@ -1868,6 +1869,7 @@ class IncidentsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_incident_attachments is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_incident_attachments_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_integration(
