@@ -32,9 +32,9 @@ class PatchTableRequest(ModelNormal):
 
     def __init__(self_, data: Union[PatchTableRequestData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``PatchTableRequest`` object.
+        Request body for updating an existing reference table.
 
-        :param data: The definition of ``PatchTableRequestData`` object.
+        :param data: The data object containing the partial table definition updates.
         :type data: PatchTableRequestData, optional
         """
         if data is not unset:

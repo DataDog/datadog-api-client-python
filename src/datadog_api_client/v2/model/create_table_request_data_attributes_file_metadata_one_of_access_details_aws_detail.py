@@ -27,12 +27,12 @@ class CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail(Mo
 
     def __init__(self_, aws_account_id: str, aws_bucket_name: str, file_path: str, **kwargs):
         """
-        The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        Amazon Web Services S3 storage access configuration.
 
-        :param aws_account_id: The ID of the AWS account.
+        :param aws_account_id: AWS account ID where the S3 bucket is located.
         :type aws_account_id: str
 
-        :param aws_bucket_name: The name of the Amazon S3 bucket.
+        :param aws_bucket_name: S3 bucket containing the CSV file.
         :type aws_bucket_name: str
 
         :param file_path: The relative file path from the S3 bucket root to the CSV file.

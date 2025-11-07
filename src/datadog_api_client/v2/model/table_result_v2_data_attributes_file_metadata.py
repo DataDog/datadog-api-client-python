@@ -13,10 +13,10 @@ from datadog_api_client.model_utils import (
 class TableResultV2DataAttributesFileMetadata(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``TableResultV2DataAttributesFileMetadata`` object.
+        Metadata specifying where and how to access the reference table's data file.
 
-        :param access_details: The definition of `TableResultV2DataAttributesFileMetadataOneOfAccessDetails` object.
-        :type access_details: TableResultV2DataAttributesFileMetadataOneOfAccessDetails, optional
+        :param access_details: Cloud storage access configuration for the reference table data file.
+        :type access_details: TableResultV2DataAttributesFileMetadataOneOfAccessDetails
 
         :param error_message: The error message returned from the sync.
         :type error_message: str, optional
@@ -29,9 +29,6 @@ class TableResultV2DataAttributesFileMetadata(ModelComposed):
 
         :param sync_enabled: Whether this table is synced automatically.
         :type sync_enabled: bool, optional
-
-        :param upload_id: The upload ID that was used to create/update the table.
-        :type upload_id: str, optional
         """
         super().__init__(kwargs)
 

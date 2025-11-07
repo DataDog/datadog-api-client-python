@@ -50,7 +50,7 @@ class TableResultV2DataAttributesFileMetadataCloudStorage(ModelNormal):
 
     def __init__(
         self_,
-        access_details: Union[TableResultV2DataAttributesFileMetadataOneOfAccessDetails, UnsetType] = unset,
+        access_details: TableResultV2DataAttributesFileMetadataOneOfAccessDetails,
         error_message: Union[str, UnsetType] = unset,
         error_row_count: Union[int, UnsetType] = unset,
         error_type: Union[TableResultV2DataAttributesFileMetadataCloudStorageErrorType, UnsetType] = unset,
@@ -60,8 +60,8 @@ class TableResultV2DataAttributesFileMetadataCloudStorage(ModelNormal):
         """
         File metadata for reference tables created by cloud storage.
 
-        :param access_details: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetails`` object.
-        :type access_details: TableResultV2DataAttributesFileMetadataOneOfAccessDetails, optional
+        :param access_details: Cloud storage access configuration for the reference table data file.
+        :type access_details: TableResultV2DataAttributesFileMetadataOneOfAccessDetails
 
         :param error_message: The error message returned from the sync.
         :type error_message: str, optional
@@ -75,8 +75,6 @@ class TableResultV2DataAttributesFileMetadataCloudStorage(ModelNormal):
         :param sync_enabled: Whether this table is synced automatically.
         :type sync_enabled: bool, optional
         """
-        if access_details is not unset:
-            kwargs["access_details"] = access_details
         if error_message is not unset:
             kwargs["error_message"] = error_message
         if error_row_count is not unset:
@@ -86,3 +84,5 @@ class TableResultV2DataAttributesFileMetadataCloudStorage(ModelNormal):
         if sync_enabled is not unset:
             kwargs["sync_enabled"] = sync_enabled
         super().__init__(kwargs)
+
+        self_.access_details = access_details

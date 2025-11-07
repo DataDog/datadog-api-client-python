@@ -36,12 +36,12 @@ class PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail(Mod
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        Amazon Web Services S3 storage access configuration.
 
-        :param aws_account_id: The ID of the AWS account.
+        :param aws_account_id: AWS account ID where the S3 bucket is located.
         :type aws_account_id: str, optional
 
-        :param aws_bucket_name: The name of the AWS bucket.
+        :param aws_bucket_name: S3 bucket containing the CSV file.
         :type aws_bucket_name: str, optional
 
         :param file_path: The relative file path from the S3 bucket root to the CSV file.

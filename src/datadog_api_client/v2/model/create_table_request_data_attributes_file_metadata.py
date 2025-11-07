@@ -13,9 +13,9 @@ from datadog_api_client.model_utils import (
 class CreateTableRequestDataAttributesFileMetadata(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``CreateTableRequestDataAttributesFileMetadata`` object.
+        Metadata specifying where and how to access the reference table's data file.
 
-        :param access_details: The definition of `CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails` object.
+        :param access_details: Cloud storage access configuration for the reference table data file.
         :type access_details: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails
 
         :param sync_enabled: Whether this table is synced automatically.

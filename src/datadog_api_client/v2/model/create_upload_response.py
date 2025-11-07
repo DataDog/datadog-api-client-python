@@ -32,9 +32,9 @@ class CreateUploadResponse(ModelNormal):
 
     def __init__(self_, data: Union[CreateUploadResponseData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateUploadResponse`` object.
+        Information about the upload created containing the upload ID and pre-signed URLs to PUT chunks of the CSV file to.
 
-        :param data: The definition of ``CreateUploadResponseData`` object.
+        :param data: Upload ID and attributes of the created upload.
         :type data: CreateUploadResponseData, optional
         """
         if data is not unset:

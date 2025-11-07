@@ -58,15 +58,15 @@ class TableResultV2DataAttributesFileMetadataOneOfAccessDetails(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetails`` object.
+        Cloud storage access configuration for the reference table data file.
 
-        :param aws_detail: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        :param aws_detail: Amazon Web Services S3 storage access configuration.
         :type aws_detail: TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail, optional
 
-        :param azure_detail: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        :param azure_detail: Azure Blob Storage access configuration.
         :type azure_detail: TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAzureDetail, optional
 
-        :param gcp_detail: The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        :param gcp_detail: Google Cloud Platform storage access configuration.
         :type gcp_detail: TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail, optional
         """
         if aws_detail is not unset:

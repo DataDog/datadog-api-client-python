@@ -233,7 +233,12 @@ class ReferenceTablesApi:
     ) -> TableResultV2:
         """Create reference table.
 
-        Create a new reference table. You can provide data in two ways: 1) Call POST api/v2/reference-tables/upload first to get an upload ID, then PUT chunks of CSV data to each provided URL, and finally call this POST endpoint with the upload_id in file_metadata, OR 2) Provide access_details in file_metadata pointing to a CSV file in cloud storage (Amazon S3, Azure Blob Storage, or GCP Cloud Storage).
+        Creates a reference table. You can provide data in two ways:
+
+        #. Call POST /api/v2/reference-tables/upload to get an upload ID. Then, PUT the CSV data
+           (not the file itself) in chunks to each URL in the request body. Finally, call this
+           POST endpoint with ``upload_id`` in ``file_metadata``.
+        #. Provide ``access_details`` in ``file_metadata`` pointing to a CSV file in cloud storage.
 
         :type body: CreateTableRequest
         :rtype: TableResultV2
@@ -267,7 +272,7 @@ class ReferenceTablesApi:
 
         Delete a reference table by ID
 
-        :param id: The ID of the reference table to delete
+        :param id: Unique identifier of the reference table to delete
         :type id: str
         :rtype: None
         """
@@ -285,7 +290,7 @@ class ReferenceTablesApi:
 
         Get reference table rows by their primary key values.
 
-        :param id: The ID of the reference table
+        :param id: Unique identifier of the reference table to get rows from
         :type id: str
         :param row_id: List of row IDs (primary key values) to retrieve from the reference table.
         :type row_id: [str]
@@ -306,7 +311,7 @@ class ReferenceTablesApi:
 
         Get a reference table by ID
 
-        :param id: The ID of the reference table to retrieve
+        :param id: Unique identifier of the reference table to retrieve
         :type id: str
         :rtype: TableResultV2
         """
@@ -333,7 +338,7 @@ class ReferenceTablesApi:
         :type page_limit: int, optional
         :param page_offset: Number of tables to skip for pagination.
         :type page_offset: int, optional
-        :param sort: Sort field and direction. Use field name for ascending, prefix with "-" for descending.
+        :param sort: Sort field and direction for the list of reference tables. Use field name for ascending, prefix with "-" for descending.
         :type sort: ReferenceTableSortType, optional
         :param filter_status: Filter by table status.
         :type filter_status: str, optional
@@ -373,7 +378,7 @@ class ReferenceTablesApi:
 
         Update a reference table by ID. You can update the table's data, description, and tags. Note: The source type cannot be changed after table creation. For data updates: For existing tables of type `source:LOCAL_FILE`, call POST api/v2/reference-tables/uploads first to get an upload ID, then PUT chunks of CSV data to each provided URL, and finally call this PATCH endpoint with the upload_id in file_metadata. For existing tables with `source:` types of `S3 ``,`` GCS ``, or`` AZURE`, provide updated access_details in file_metadata pointing to a CSV file in the same type of cloud storage.
 
-        :param id: The ID of the reference table to update
+        :param id: Unique identifier of the reference table to update
         :type id: str
         :type body: PatchTableRequest
         :rtype: None

@@ -36,18 +36,18 @@ class CreateUploadRequestDataAttributes(ModelNormal):
 
     def __init__(self_, headers: List[str], part_count: int, part_size: int, table_name: str, **kwargs):
         """
-        The definition of ``CreateUploadRequestDataAttributes`` object.
+        Upload configuration specifying how data is uploaded by the user, and properties of the table to associate the upload with.
 
-        :param headers: The headers of the file to upload.
+        :param headers: The CSV file headers that define the schema fields, provided in the same order as the columns in the uploaded file.
         :type headers: [str]
 
-        :param part_count: The number of parts in the upload.
+        :param part_count: Number of parts to split the file into for multipart upload.
         :type part_count: int
 
-        :param part_size: The size of each part in the upload in bytes. For multipart uploads (part_count > 1), all parts except the last one must be at least 5,000,000 bytes. For single-part uploads (part_count = 1), any size is allowed.
+        :param part_size: The size of each part in the upload in bytes. All parts except the last one must be at least 5,000,000 bytes.
         :type part_size: int
 
-        :param table_name: The name of the reference table.
+        :param table_name: Name of the table to associate with this upload.
         :type table_name: str
         """
         super().__init__(kwargs)

@@ -60,15 +60,15 @@ class CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails(ModelNormal
         **kwargs,
     ):
         """
-        The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails`` object.
+        Cloud storage access configuration for the reference table data file.
 
-        :param aws_detail: The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        :param aws_detail: Amazon Web Services S3 storage access configuration.
         :type aws_detail: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail, optional
 
-        :param azure_detail: The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        :param azure_detail: Azure Blob Storage access configuration.
         :type azure_detail: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail, optional
 
-        :param gcp_detail: The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        :param gcp_detail: Google Cloud Platform storage access configuration.
         :type gcp_detail: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail, optional
         """
         if aws_detail is not unset:

@@ -20,19 +20,21 @@ if TYPE_CHECKING:
 
 class CreateTableRequestData(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.create_table_request_data_attributes import CreateTableRequestDataAttributes
         from datadog_api_client.v2.model.create_table_request_data_type import CreateTableRequestDataType
 
         return {
             "attributes": (CreateTableRequestDataAttributes,),
-            "id": (str,),
             "type": (CreateTableRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "id": "id",
         "type": "type",
     }
 
@@ -40,25 +42,19 @@ class CreateTableRequestData(ModelNormal):
         self_,
         type: CreateTableRequestDataType,
         attributes: Union[CreateTableRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``CreateTableRequestData`` object.
+        The data object containing the table definition.
 
-        :param attributes: The definition of ``CreateTableRequestDataAttributes`` object.
+        :param attributes: Attributes that define the reference table's configuration and properties.
         :type attributes: CreateTableRequestDataAttributes, optional
-
-        :param id: The ID of the reference table.
-        :type id: str, optional
 
         :param type: Reference table resource type.
         :type type: CreateTableRequestDataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.type = type

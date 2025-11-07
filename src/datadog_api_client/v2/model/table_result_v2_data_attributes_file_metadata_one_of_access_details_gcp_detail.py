@@ -39,18 +39,18 @@ class TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail(ModelNo
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2DataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        Google Cloud Platform storage access configuration.
 
         :param file_path: The relative file path from the GCS bucket root to the CSV file.
         :type file_path: str, optional
 
-        :param gcp_bucket_name: The name of the GCP bucket.
+        :param gcp_bucket_name: GCP bucket containing the CSV file.
         :type gcp_bucket_name: str, optional
 
-        :param gcp_project_id: The ID of the GCP project.
+        :param gcp_project_id: GCP project ID where the bucket is located.
         :type gcp_project_id: str, optional
 
-        :param gcp_service_account_email: The email of the GCP service account.
+        :param gcp_service_account_email: Service account email with read permissions for the GCS bucket.
         :type gcp_service_account_email: str, optional
         """
         if file_path is not unset:

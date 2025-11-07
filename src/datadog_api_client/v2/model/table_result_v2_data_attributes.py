@@ -85,15 +85,15 @@ class TableResultV2DataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2DataAttributes`` object.
+        Attributes that define the reference table's configuration and properties.
 
         :param created_by: UUID of the user who created the reference table.
         :type created_by: str, optional
 
-        :param description: The description of the reference table.
+        :param description: Optional text describing the purpose or contents of this reference table.
         :type description: str, optional
 
-        :param file_metadata: The definition of ``TableResultV2DataAttributesFileMetadata`` object.
+        :param file_metadata: Metadata specifying where and how to access the reference table's data file.
         :type file_metadata: TableResultV2DataAttributesFileMetadata, optional
 
         :param last_updated_by: UUID of the user who last updated the reference table.
@@ -102,22 +102,22 @@ class TableResultV2DataAttributes(ModelNormal):
         :param row_count: The number of successfully processed rows in the reference table.
         :type row_count: int, optional
 
-        :param schema: The definition of ``TableResultV2DataAttributesSchema`` object.
+        :param schema: Schema defining the structure and columns of the reference table.
         :type schema: TableResultV2DataAttributesSchema, optional
 
         :param source: The source type for reference table data. Includes all possible source types that can appear in responses.
         :type source: ReferenceTableSourceType, optional
 
-        :param status: The status of the reference table.
+        :param status: The processing status of the table.
         :type status: str, optional
 
-        :param table_name: The name of the reference table.
+        :param table_name: Unique name to identify this reference table. Used in enrichment processors and API calls.
         :type table_name: str, optional
 
-        :param tags: The tags of the reference table.
+        :param tags: Tags for organizing and filtering reference tables.
         :type tags: [str], optional
 
-        :param updated_at: The timestamp of the last update to the reference table in ISO 8601 format.
+        :param updated_at: When the reference table was last updated, in ISO 8601 format.
         :type updated_at: str, optional
         """
         if created_by is not unset:

@@ -32,7 +32,7 @@ class PatchTableRequestDataAttributesSchemaFieldsItems(ModelNormal):
 
     def __init__(self_, name: str, type: ReferenceTableSchemaFieldType, **kwargs):
         """
-        The definition of ``PatchTableRequestDataAttributesSchemaFieldsItems`` object.
+        A single field (column) in the reference table schema to be updated. Schema fields cannot be deleted or renamed.
 
         :param name: The field name.
         :type name: str

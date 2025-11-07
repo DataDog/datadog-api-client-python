@@ -20,6 +20,10 @@ if TYPE_CHECKING:
 
 class CreateUploadResponseData(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.create_upload_response_data_attributes import (
             CreateUploadResponseDataAttributes,
@@ -46,12 +50,12 @@ class CreateUploadResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``CreateUploadResponseData`` object.
+        Upload ID and attributes of the created upload.
 
-        :param attributes: The definition of ``CreateUploadResponseDataAttributes`` object.
+        :param attributes: Pre-signed URLs for uploading parts of the file.
         :type attributes: CreateUploadResponseDataAttributes, optional
 
-        :param id: The ID of the upload.
+        :param id: Unique identifier for this upload. Use this ID when creating the reference table.
         :type id: str, optional
 
         :param type: Upload resource type.

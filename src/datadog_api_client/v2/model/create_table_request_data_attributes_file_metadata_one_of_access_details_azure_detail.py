@@ -39,18 +39,18 @@ class CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail(
         **kwargs,
     ):
         """
-        The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        Azure Blob Storage access configuration.
 
-        :param azure_client_id: The Azure client ID.
+        :param azure_client_id: Azure service principal (application) client ID with permissions to read from the container.
         :type azure_client_id: str
 
-        :param azure_container_name: The name of the Azure container.
+        :param azure_container_name: Azure Blob Storage container containing the CSV file.
         :type azure_container_name: str
 
-        :param azure_storage_account_name: The name of the Azure storage account.
+        :param azure_storage_account_name: Azure storage account where the container is located.
         :type azure_storage_account_name: str
 
-        :param azure_tenant_id: The ID of the Azure tenant.
+        :param azure_tenant_id: Azure Active Directory tenant ID.
         :type azure_tenant_id: str
 
         :param file_path: The relative file path from the Azure container root to the CSV file.

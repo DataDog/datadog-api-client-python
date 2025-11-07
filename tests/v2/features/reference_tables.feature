@@ -24,7 +24,7 @@ Feature: Reference Tables
   @generated @skip @team:DataDog/redapl-experiences
   Scenario: Create reference table upload returns "Bad Request" response
     Given new "CreateReferenceTableUpload" request
-    And body with value {"data": {"attributes": {"headers": [""], "part_count": 3, "part_size": 10000000, "table_name": ""}, "type": "upload"}}
+    And body with value {"data": {"attributes": {"headers": ["field_1", "field_2"], "part_count": 3, "part_size": 10000000, "table_name": ""}, "type": "upload"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -108,7 +108,7 @@ Feature: Reference Tables
   Scenario: Update reference table returns "Bad Request" response
     Given new "UpdateReferenceTable" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "this is a cloud table generated via a cloud bucket sync", "file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "test-account-id", "aws_bucket_name": "test-bucket", "file_path": "test_rt.csv"}}, "sync_enabled": true}, "schema": {"fields": [{"name": "id", "type": "INT32"}, {"name": "name", "type": "STRING"}], "primary_keys": ["id"]}, "sync_enabled": false, "tags": ["test_tag"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "reference_table"}}
+    And body with value {"data": {"attributes": {"description": "this is a cloud table generated via a cloud bucket sync", "file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "test-account-id", "aws_bucket_name": "test-bucket", "file_path": "test_rt.csv"}}, "sync_enabled": true}, "schema": {"fields": [{"name": "id", "type": "INT32"}, {"name": "name", "type": "STRING"}], "primary_keys": ["id"]}, "sync_enabled": false, "tags": ["test_tag"]}, "type": "reference_table"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -116,6 +116,6 @@ Feature: Reference Tables
   Scenario: Update reference table returns "OK" response
     Given new "UpdateReferenceTable" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "this is a cloud table generated via a cloud bucket sync", "file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "test-account-id", "aws_bucket_name": "test-bucket", "file_path": "test_rt.csv"}}, "sync_enabled": true}, "schema": {"fields": [{"name": "id", "type": "INT32"}, {"name": "name", "type": "STRING"}], "primary_keys": ["id"]}, "sync_enabled": false, "tags": ["test_tag"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "reference_table"}}
+    And body with value {"data": {"attributes": {"description": "this is a cloud table generated via a cloud bucket sync", "file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "test-account-id", "aws_bucket_name": "test-bucket", "file_path": "test_rt.csv"}}, "sync_enabled": true}, "schema": {"fields": [{"name": "id", "type": "INT32"}, {"name": "name", "type": "STRING"}], "primary_keys": ["id"]}, "sync_enabled": false, "tags": ["test_tag"]}, "type": "reference_table"}}
     When the request is sent
     Then the response status is 200 OK

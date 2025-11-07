@@ -57,7 +57,6 @@ body = PatchTableRequest(
                 "test_tag",
             ],
         ),
-        id="00000000-0000-0000-0000-000000000000",
         type=PatchTableRequestDataType.REFERENCE_TABLE,
     ),
 )
