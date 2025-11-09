@@ -49,6 +49,8 @@ from datadog_api_client.v2.model.incident_impacts_response import IncidentImpact
 from datadog_api_client.v2.model.incident_impact_related_object import IncidentImpactRelatedObject
 from datadog_api_client.v2.model.incident_impact_response import IncidentImpactResponse
 from datadog_api_client.v2.model.incident_impact_create_request import IncidentImpactCreateRequest
+from datadog_api_client.v2.model.incident_create_page_response import IncidentCreatePageResponse
+from datadog_api_client.v2.model.incident_create_page_from_incident_request import IncidentCreatePageFromIncidentRequest
 from datadog_api_client.v2.model.incident_integration_metadata_list_response import (
     IncidentIntegrationMetadataListResponse,
 )
@@ -232,6 +234,32 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (IncidentTypeCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_page_from_incident_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentCreatePageResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/page",
+                "operation_id": "create_page_from_incident",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentCreatePageFromIncidentRequest,),
                     "location": "body",
                 },
             },
@@ -1205,6 +1233,28 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._create_incident_type_endpoint.call_with_http_info(**kwargs)
+
+    def create_page_from_incident(
+        self,
+        incident_id: str,
+        body: IncidentCreatePageFromIncidentRequest,
+    ) -> IncidentCreatePageResponse:
+        """Create a page from an incident.
+
+        Create a page from an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Page creation request payload.
+        :type body: IncidentCreatePageFromIncidentRequest
+        :rtype: IncidentCreatePageResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_page_from_incident_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident(
         self,
