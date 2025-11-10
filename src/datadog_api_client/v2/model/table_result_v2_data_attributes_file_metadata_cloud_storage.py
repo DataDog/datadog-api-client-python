@@ -24,6 +24,10 @@ if TYPE_CHECKING:
 
 class TableResultV2DataAttributesFileMetadataCloudStorage(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details import (
             TableResultV2DataAttributesFileMetadataOneOfAccessDetails,
