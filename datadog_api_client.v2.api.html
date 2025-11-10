@@ -10721,7 +10721,13 @@ This key is provided with each valid response from the API in <code class="docut
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table">
 <span class="sig-name descname"><span class="pre">create_reference_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_table_request.CreateTableRequest" title="datadog_api_client.v2.model.create_table_request.CreateTableRequest"><span class="pre">CreateTableRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2.TableResultV2" title="datadog_api_client.v2.model.table_result_v2.TableResultV2"><span class="pre">TableResultV2</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table" title="Link to this definition">¶</a></dt>
 <dd><p>Create reference table.</p>
-<p>Create a new reference table. You can provide data in two ways: 1) Call POST api/v2/reference-tables/upload first to get an upload ID, then PUT chunks of CSV data to each provided URL, and finally call this POST endpoint with the upload_id in file_metadata, OR 2) Provide access_details in file_metadata pointing to a CSV file in cloud storage (Amazon S3, Azure Blob Storage, or GCP Cloud Storage).</p>
+<p>Creates a reference table. You can provide data in two ways:</p>
+<ol class="arabic simple">
+<li><p>Call POST /api/v2/reference-tables/upload to get an upload ID. Then, PUT the CSV data
+(not the file itself) in chunks to each URL in the request body. Finally, call this
+POST endpoint with <code class="docutils literal notranslate"><span class="pre">upload_id</span></code> in <code class="docutils literal notranslate"><span class="pre">file_metadata</span></code>.</p></li>
+<li><p>Provide <code class="docutils literal notranslate"><span class="pre">access_details</span></code> in <code class="docutils literal notranslate"><span class="pre">file_metadata</span></code> pointing to a CSV file in cloud storage.</p></li>
+</ol>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2.TableResultV2" title="datadog_api_client.v2.model.table_result_v2.TableResultV2">TableResultV2</a></p>
@@ -10746,7 +10752,7 @@ This key is provided with each valid response from the API in <code class="docut
 <p>Delete a reference table by ID</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the reference table to delete</p>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Unique identifier of the reference table to delete</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -10761,7 +10767,7 @@ This key is provided with each valid response from the API in <code class="docut
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>id</strong> (<em>str</em>) – The ID of the reference table</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – Unique identifier of the reference table to get rows from</p></li>
 <li><p><strong>row_id</strong> (<em>[</em><em>str</em><em>]</em>) – List of row IDs (primary key values) to retrieve from the reference table.</p></li>
 </ul>
 </dd>
@@ -10777,7 +10783,7 @@ This key is provided with each valid response from the API in <code class="docut
 <p>Get a reference table by ID</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the reference table to retrieve</p>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Unique identifier of the reference table to retrieve</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2.TableResultV2" title="datadog_api_client.v2.model.table_result_v2.TableResultV2">TableResultV2</a></p>
@@ -10794,7 +10800,7 @@ This key is provided with each valid response from the API in <code class="docut
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>page_limit</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of tables to return.</p></li>
 <li><p><strong>page_offset</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of tables to skip for pagination.</p></li>
-<li><p><strong>sort</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType" title="datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType"><em>ReferenceTableSortType</em></a><em>, </em><em>optional</em>) – Sort field and direction. Use field name for ascending, prefix with “-” for descending.</p></li>
+<li><p><strong>sort</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType" title="datadog_api_client.v2.model.reference_table_sort_type.ReferenceTableSortType"><em>ReferenceTableSortType</em></a><em>, </em><em>optional</em>) – Sort field and direction for the list of reference tables. Use field name for ascending, prefix with “-” for descending.</p></li>
 <li><p><strong>filter_status</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by table status.</p></li>
 <li><p><strong>filter_table_name_exact</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by exact table name match.</p></li>
 <li><p><strong>filter_table_name_contains</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter by table name containing substring.</p></li>
@@ -10812,7 +10818,7 @@ This key is provided with each valid response from the API in <code class="docut
 <p>Update a reference table by ID. You can update the table’s data, description, and tags. Note: The source type cannot be changed after table creation. For data updates: For existing tables of type <cite>source:LOCAL_FILE</cite>, call POST api/v2/reference-tables/uploads first to get an upload ID, then PUT chunks of CSV data to each provided URL, and finally call this PATCH endpoint with the upload_id in file_metadata. For existing tables with <cite>source:</cite> types of <cite>S3 `</cite>,`` GCS <code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">or</span></code> AZURE`, provide updated access_details in file_metadata pointing to a CSV file in the same type of cloud storage.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the reference table to update</p>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Unique identifier of the reference table to update</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
