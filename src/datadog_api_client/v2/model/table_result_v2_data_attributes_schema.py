@@ -36,9 +36,9 @@ class TableResultV2DataAttributesSchema(ModelNormal):
 
     def __init__(self_, fields: List[TableResultV2DataAttributesSchemaFieldsItems], primary_keys: List[str], **kwargs):
         """
-        The definition of ``TableResultV2DataAttributesSchema`` object.
+        Schema defining the structure and columns of the reference table.
 
-        :param fields: The ``schema`` ``fields``.
+        :param fields: The schema fields.
         :type fields: [TableResultV2DataAttributesSchemaFieldsItems]
 
         :param primary_keys: List of field names that serve as primary keys for the table. Only one primary key is supported, and it is used as an ID to retrieve rows.

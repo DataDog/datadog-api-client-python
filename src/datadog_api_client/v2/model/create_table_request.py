@@ -32,9 +32,9 @@ class CreateTableRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateTableRequestData, UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateTableRequest`` object.
+        Request body for creating a new reference table from a local file or cloud storage.
 
-        :param data: The definition of ``CreateTableRequestData`` object.
+        :param data: The data object containing the table definition.
         :type data: CreateTableRequestData, optional
         """
         if data is not unset:

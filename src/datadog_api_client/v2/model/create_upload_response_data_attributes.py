@@ -26,9 +26,9 @@ class CreateUploadResponseDataAttributes(ModelNormal):
 
     def __init__(self_, part_urls: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        The definition of ``CreateUploadResponseDataAttributes`` object.
+        Pre-signed URLs for uploading parts of the file.
 
-        :param part_urls: The URLs of the parts in the upload.
+        :param part_urls: The pre-signed URLs for uploading parts. These URLs expire after 5 minutes.
         :type part_urls: [str], optional
         """
         if part_urls is not unset:

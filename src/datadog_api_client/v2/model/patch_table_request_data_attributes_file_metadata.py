@@ -13,9 +13,9 @@ from datadog_api_client.model_utils import (
 class PatchTableRequestDataAttributesFileMetadata(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The definition of ``PatchTableRequestDataAttributesFileMetadata`` object.
+        Metadata specifying where and how to access the reference table's data file.
 
-        :param access_details: The definition of `PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails` object.
+        :param access_details: Cloud storage access configuration for the reference table data file.
         :type access_details: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails, optional
 
         :param sync_enabled: Whether this table is synced automatically.

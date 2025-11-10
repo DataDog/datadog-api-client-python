@@ -38,12 +38,12 @@ class PatchTableRequestDataAttributesSchema(ModelNormal):
         self_, fields: List[PatchTableRequestDataAttributesSchemaFieldsItems], primary_keys: List[str], **kwargs
     ):
         """
-        The definition of ``PatchTableRequestDataAttributesSchema`` object.
+        Schema defining the updates to the structure and columns of the reference table. Schema fields cannot be deleted or renamed.
 
-        :param fields: The ``schema`` ``fields``.
+        :param fields: The schema fields.
         :type fields: [PatchTableRequestDataAttributesSchemaFieldsItems]
 
-        :param primary_keys: List of field names that serve as primary keys for the table. Only one primary key is supported, and it is used as an ID to retrieve rows.
+        :param primary_keys: List of field names that serve as primary keys for the table. Only one primary key is supported, and it is used as an ID to retrieve rows. Primary keys cannot be changed after table creation.
         :type primary_keys: [str]
         """
         super().__init__(kwargs)

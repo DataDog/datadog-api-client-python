@@ -20,19 +20,21 @@ if TYPE_CHECKING:
 
 class PatchTableRequestData(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.patch_table_request_data_attributes import PatchTableRequestDataAttributes
         from datadog_api_client.v2.model.patch_table_request_data_type import PatchTableRequestDataType
 
         return {
             "attributes": (PatchTableRequestDataAttributes,),
-            "id": (str,),
             "type": (PatchTableRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "id": "id",
         "type": "type",
     }
 
@@ -40,25 +42,19 @@ class PatchTableRequestData(ModelNormal):
         self_,
         type: PatchTableRequestDataType,
         attributes: Union[PatchTableRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestData`` object.
+        The data object containing the partial table definition updates.
 
-        :param attributes: The definition of ``PatchTableRequestDataAttributes`` object.
+        :param attributes: Attributes that define the updates to the reference table's configuration and properties.
         :type attributes: PatchTableRequestDataAttributes, optional
-
-        :param id: The ID of the reference table.
-        :type id: str, optional
 
         :param type: Reference table resource type.
         :type type: PatchTableRequestDataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.type = type

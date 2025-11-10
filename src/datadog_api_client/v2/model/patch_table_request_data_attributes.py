@@ -69,21 +69,21 @@ class PatchTableRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestDataAttributes`` object.
+        Attributes that define the updates to the reference table's configuration and properties.
 
-        :param description: The description of the reference table.
+        :param description: Optional text describing the purpose or contents of this reference table.
         :type description: str, optional
 
-        :param file_metadata: The definition of ``PatchTableRequestDataAttributesFileMetadata`` object.
+        :param file_metadata: Metadata specifying where and how to access the reference table's data file.
         :type file_metadata: PatchTableRequestDataAttributesFileMetadata, optional
 
-        :param schema: The definition of ``PatchTableRequestDataAttributesSchema`` object.
+        :param schema: Schema defining the updates to the structure and columns of the reference table. Schema fields cannot be deleted or renamed.
         :type schema: PatchTableRequestDataAttributesSchema, optional
 
         :param sync_enabled: Whether this table is synced automatically.
         :type sync_enabled: bool, optional
 
-        :param tags: The tags of the reference table.
+        :param tags: Tags for organizing and filtering reference tables.
         :type tags: [str], optional
         """
         if description is not unset:

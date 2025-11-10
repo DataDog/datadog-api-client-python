@@ -20,6 +20,10 @@ if TYPE_CHECKING:
 
 class TableRowResourceData(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
         from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
@@ -44,12 +48,12 @@ class TableRowResourceData(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableRowResourceData`` object.
+        The data object containing the row column names and values.
 
-        :param attributes: The definition of ``TableRowResourceDataAttributes`` object.
+        :param attributes: Column values for this row in the reference table.
         :type attributes: TableRowResourceDataAttributes, optional
 
-        :param id: The ID of the row.
+        :param id: Row identifier, corresponding to the primary key value.
         :type id: str, optional
 
         :param type: Row resource type.

@@ -47,7 +47,7 @@ class CreateTableRequestDataAttributesFileMetadataCloudStorage(ModelNormal):
         """
         Cloud storage file metadata for create requests. Both access_details and sync_enabled are required.
 
-        :param access_details: The definition of ``CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails`` object.
+        :param access_details: Cloud storage access configuration for the reference table data file.
         :type access_details: CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails
 
         :param sync_enabled: Whether this table is synced automatically.

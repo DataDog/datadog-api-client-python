@@ -20,6 +20,10 @@ if TYPE_CHECKING:
 
 class TableResultV2Data(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.table_result_v2_data_attributes import TableResultV2DataAttributes
         from datadog_api_client.v2.model.table_result_v2_data_type import TableResultV2DataType
@@ -44,12 +48,12 @@ class TableResultV2Data(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``TableResultV2Data`` object.
+        The data object containing the reference table configuration and state.
 
-        :param attributes: The definition of ``TableResultV2DataAttributes`` object.
+        :param attributes: Attributes that define the reference table's configuration and properties.
         :type attributes: TableResultV2DataAttributes, optional
 
-        :param id: The ID of the reference table.
+        :param id: Unique identifier for the reference table.
         :type id: str, optional
 
         :param type: Reference table resource type.

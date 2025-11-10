@@ -20,19 +20,21 @@ if TYPE_CHECKING:
 
 class CreateUploadRequestData(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.create_upload_request_data_attributes import CreateUploadRequestDataAttributes
         from datadog_api_client.v2.model.create_upload_request_data_type import CreateUploadRequestDataType
 
         return {
             "attributes": (CreateUploadRequestDataAttributes,),
-            "id": (str,),
             "type": (CreateUploadRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "id": "id",
         "type": "type",
     }
 
@@ -40,25 +42,19 @@ class CreateUploadRequestData(ModelNormal):
         self_,
         type: CreateUploadRequestDataType,
         attributes: Union[CreateUploadRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The definition of ``CreateUploadRequestData`` object.
+        Request data for creating an upload for a file to be ingested into a reference table.
 
-        :param attributes: The definition of ``CreateUploadRequestDataAttributes`` object.
+        :param attributes: Upload configuration specifying how data is uploaded by the user, and properties of the table to associate the upload with.
         :type attributes: CreateUploadRequestDataAttributes, optional
-
-        :param id: The ID of the upload.
-        :type id: str, optional
 
         :param type: Upload resource type.
         :type type: CreateUploadRequestDataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.type = type

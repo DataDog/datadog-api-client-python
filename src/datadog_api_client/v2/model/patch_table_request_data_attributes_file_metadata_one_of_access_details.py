@@ -60,15 +60,15 @@ class PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails(ModelNormal)
         **kwargs,
     ):
         """
-        The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails`` object.
+        Cloud storage access configuration for the reference table data file.
 
-        :param aws_detail: The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail`` object.
+        :param aws_detail: Amazon Web Services S3 storage access configuration.
         :type aws_detail: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail, optional
 
-        :param azure_detail: The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail`` object.
+        :param azure_detail: Azure Blob Storage access configuration.
         :type azure_detail: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail, optional
 
-        :param gcp_detail: The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail`` object.
+        :param gcp_detail: Google Cloud Platform storage access configuration.
         :type gcp_detail: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail, optional
         """
         if aws_detail is not unset:

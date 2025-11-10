@@ -49,7 +49,7 @@ class PatchTableRequestDataAttributesFileMetadataCloudStorage(ModelNormal):
         """
         Cloud storage file metadata for patch requests. Allows partial updates of access_details and sync_enabled.
 
-        :param access_details: The definition of ``PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails`` object.
+        :param access_details: Cloud storage access configuration for the reference table data file.
         :type access_details: PatchTableRequestDataAttributesFileMetadataOneOfAccessDetails, optional
 
         :param sync_enabled: Whether this table is synced automatically.
