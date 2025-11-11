@@ -32232,11 +32232,17 @@ components:
         recipients:
           $ref: '#/components/schemas/MonitorNotificationRuleRecipients'
         scope:
-          $ref: '#/components/schemas/MonitorNotificationRuleScope'
+          $ref: '#/components/schemas/MonitorNotificationRuleConditionScope'
       required:
       - scope
       - recipients
       type: object
+    MonitorNotificationRuleConditionScope:
+      description: The scope to which the monitor applied.
+      example: transition_type:alert
+      maxLength: 3000
+      minLength: 1
+      type: string
     MonitorNotificationRuleConditionalRecipients:
       description: Use conditional recipients to define different recipients for different
         situations.
@@ -32289,6 +32295,20 @@ components:
       description: Filter used to associate the notification rule with monitors.
       oneOf:
       - $ref: '#/components/schemas/MonitorNotificationRuleFilterTags'
+      - $ref: '#/components/schemas/MonitorNotificationRuleFilterScope'
+    MonitorNotificationRuleFilterScope:
+      additionalProperties: false
+      description: Filter monitors by scope. Monitors must match the scope evaluation.
+      properties:
+        scope:
+          description: The scope to which the monitor notification rule applies.
+          example: env:prod AND datacenter:us-east-1
+          maxLength: 3000
+          minLength: 1
+          type: string
+      required:
+      - scope
+      type: object
     MonitorNotificationRuleFilterTags:
       additionalProperties: false
       description: Filter monitors by tags. Monitors must match all tags.
@@ -32417,12 +32437,6 @@ components:
       description: An object related to a monitor notification rule.
       oneOf:
       - $ref: '#/components/schemas/User'
-    MonitorNotificationRuleScope:
-      description: The scope to which the monitor applied.
-      example: transition_type:alert
-      maxLength: 3000
-      minLength: 1
-      type: string
     MonitorNotificationRuleUpdateRequest:
       description: Request for updating a monitor notification rule.
       properties:
