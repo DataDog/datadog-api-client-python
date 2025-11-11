@@ -765,7 +765,11 @@
         </li>
         <li class="md-nav__item"><a href="#enable-requests-logging" class="md-nav__link">Enable requests logging</a>
         </li>
-        <li class="md-nav__item"><a href="#enable-retry" class="md-nav__link">Enable retry</a>
+        <li class="md-nav__item"><a href="#enable-retry" class="md-nav__link">Enable retry</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#custom-retry-policy" class="md-nav__link">Custom retry policy</a>
+        </li></ul>
+            </nav>
         </li>
         <li class="md-nav__item"><a href="#configure-proxy" class="md-nav__link">Configure proxy</a>
         </li>
@@ -888,6 +892,27 @@ on your configuration object:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">max_retries</span> <span class="o">=</span> <span class="mi">5</span>
 </pre></div>
 </div>
+<section id="custom-retry-policy">
+<h4 id="custom-retry-policy">Custom retry policy<a class="headerlink" href="#custom-retry-policy" title="Link to this heading">¶</a></h4>
+<p>You can provide a custom retry policy by passing a <code class="docutils literal notranslate"><span class="pre">urllib3.util.Retry</span></code> instance to the configuration.
+When a custom retry policy is provided, it takes precedence over the <code class="docutils literal notranslate"><span class="pre">enable_retry</span></code>, <code class="docutils literal notranslate"><span class="pre">retry_backoff_factor</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">max_retries</span></code> settings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configuration</span>
+
+<span class="c1"># Create a custom retry policy</span>
+<span class="n">custom_retry</span> <span class="o">=</span> <span class="n">urllib3</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">Retry</span><span class="p">(</span>
+    <span class="n">total</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">status_forcelist</span><span class="o">=</span><span class="p">[</span><span class="mi">429</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">],</span>
+    <span class="n">allowed_methods</span><span class="o">=</span><span class="p">[</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"PUT"</span><span class="p">,</span> <span class="s2">"DELETE"</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">retry_policy</span><span class="o">=</span><span class="n">custom_retry</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://urllib3.readthedocs.io/en/stable/reference/urllib3.util.html#urllib3.util.Retry">urllib3.util.Retry documentation</a> for more details.</p>
+</section>
 </section>
 <section id="configure-proxy">
 <h3 id="configure-proxy">Configure proxy<a class="headerlink" href="#configure-proxy" title="Link to this heading">¶</a></h3>
