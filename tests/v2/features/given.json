@@ -654,6 +654,19 @@
   {
     "parameters": [
       {
+        "name": "body",
+        "origin": "request",
+        "value": "{\n  \"data\": {\n    \"type\": \"logs_restriction_queries\",\n    \"attributes\": {\n      \"restriction_query\": \"env:staging\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"restriction_query\" in the system",
+    "key": "restriction_query",
+    "tag": "Logs Restriction Queries",
+    "operationId": "CreateRestrictionQuery"
+  },
+  {
+    "parameters": [
+      {
         "name": "metric_name",
         "value": "\"{{ unique_alnum }}\""
       },
