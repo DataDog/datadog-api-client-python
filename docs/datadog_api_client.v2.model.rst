@@ -12961,6 +12961,13 @@ datadog\_api\_client.v2.model.logs\_response\_metadata\_page module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.logs\_restriction\_queries\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_restriction_queries_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.logs\_sort module
 -----------------------------------------------
 
@@ -17984,6 +17991,125 @@ datadog\_api\_client.v2.model.restriction\_policy\_update\_request module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.restriction_policy_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_create\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_create\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_create\_payload module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_create_payload
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_list\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_relationships module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_response\_included\_item module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_response_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_role module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_role
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_role\_attribute module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_role_attribute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_roles\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_roles_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_update\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_update\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_update\_payload module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_update_payload
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_with\_relationships module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_with_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_with\_relationships\_response module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_with_relationships_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_without\_relationships module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_without_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.restriction\_query\_without\_relationships\_response module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.restriction_query_without_relationships_response
    :members:
    :show-inheritance:
 
