@@ -23,7 +23,7 @@ from datadog_api_client.exceptions import (
 logger = logging.getLogger(__name__)
 
 
-RETRY_AFTER_STATUS_CODES = frozenset([429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511, 512])
+RETRY_AFTER_STATUS_CODES = frozenset([408, 429, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511, 512])
 RETRY_ALLOWED_METHODS = frozenset(["GET", "PUT", "DELETE", "POST", "PATCH"])
 
 
