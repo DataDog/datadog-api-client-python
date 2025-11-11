@@ -142,6 +142,9 @@ class Configuration:
     :type retry_backoff_factor: float
     :param max_retries: The maximum number of times a single request can be retried.
     :type max_retries: int
+    :param retry_policy: Custom retry policy instance (e.g., urllib3.util.Retry). If provided, this overrides
+        the default retry behavior and the enable_retry, retry_backoff_factor, and max_retries settings.
+    :type retry_policy: urllib3.util.Retry
     :param delegated_auth_provider: The delegated authentication provider (e.g., 'aws' for AWS).
     :type delegated_auth_provider: str
     :param delegated_auth_org_uuid: The organization UUID for delegated authentication.
@@ -173,6 +176,7 @@ class Configuration:
         enable_retry=False,
         retry_backoff_factor=2,
         max_retries=3,
+        retry_policy=None,
         delegated_auth_provider=None,
         delegated_auth_org_uuid=None,
     ):
@@ -237,6 +241,7 @@ class Configuration:
         self.enable_retry = enable_retry
         self.retry_backoff_factor = retry_backoff_factor
         self.max_retries = max_retries
+        self.retry_policy = retry_policy
 
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations({

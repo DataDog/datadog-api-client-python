@@ -67,7 +67,9 @@ class RESTClientObject:
         if configuration.assert_hostname is not None:
             addition_pool_args["assert_hostname"] = configuration.assert_hostname
 
-        if configuration.enable_retry:
+        if configuration.retry_policy is not None:
+            addition_pool_args["retries"] = configuration.retry_policy
+        elif configuration.enable_retry:
             retries = ClientRetry(
                 total = configuration.max_retries,
                 backoff_factor = configuration.retry_backoff_factor,
