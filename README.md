@@ -99,6 +99,29 @@ The default max retry is `3`, you can change it with `max_retries`
     configuration.max_retries = 5
 ```
 
+#### Custom retry policy
+
+You can provide a custom retry policy by passing a `urllib3.util.Retry` instance to the configuration.
+When a custom retry policy is provided, it takes precedence over the `enable_retry`, `retry_backoff_factor`,
+and `max_retries` settings.
+
+```python
+import urllib3
+from datadog_api_client import Configuration
+
+# Create a custom retry policy
+custom_retry = urllib3.util.Retry(
+    total=5,
+    backoff_factor=2,
+    status_forcelist=[429, 500, 502, 503, 504],
+    allowed_methods=["GET", "POST", "PUT", "DELETE"]
+)
+
+configuration = Configuration(retry_policy=custom_retry)
+```
+
+See [urllib3.util.Retry documentation](https://urllib3.readthedocs.io/en/stable/reference/urllib3.util.html#urllib3.util.Retry) for more details.
+
 ### Configure proxy
 
 You can configure the client to use proxy by setting the `proxy` key on configuration object:
