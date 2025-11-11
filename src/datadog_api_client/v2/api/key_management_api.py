@@ -618,7 +618,8 @@ class KeyManagementApi:
     ) -> ApplicationKeyResponse:
         """Get one application key owned by current user.
 
-        Get an application key owned by current user
+        Get an application key owned by current user.
+        The ``key`` field is not returned for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
@@ -873,7 +874,8 @@ class KeyManagementApi:
     ) -> ApplicationKeyResponse:
         """Edit an application key owned by current user.
 
-        Edit an application key owned by current user
+        Edit an application key owned by current user.
+        The ``key`` field is not returned for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
         :param app_key_id: The ID of the application key.
         :type app_key_id: str
