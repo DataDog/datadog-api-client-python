@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -25,6 +25,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
             "rule_query": (str,),
             "start_date": (int,),
             "suppression_query": (str,),
+            "tags": ([str],),
         }
 
     attribute_map = {
@@ -36,6 +37,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         "rule_query": "rule_query",
         "start_date": "start_date",
         "suppression_query": "suppression_query",
+        "tags": "tags",
     }
 
     def __init__(
@@ -48,6 +50,7 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
         expiration_date: Union[int, UnsetType] = unset,
         start_date: Union[int, UnsetType] = unset,
         suppression_query: Union[str, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -76,6 +79,9 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
 
         :param suppression_query: The suppression query of the suppression rule. If a signal matches this query, it is suppressed and is not triggered. It uses the same syntax as the queries to search signals in the Signals Explorer.
         :type suppression_query: str, optional
+
+        :param tags: List of tags associated with the suppression rule.
+        :type tags: [str], optional
         """
         if data_exclusion_query is not unset:
             kwargs["data_exclusion_query"] = data_exclusion_query
@@ -87,6 +93,8 @@ class SecurityMonitoringSuppressionCreateAttributes(ModelNormal):
             kwargs["start_date"] = start_date
         if suppression_query is not unset:
             kwargs["suppression_query"] = suppression_query
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.enabled = enabled

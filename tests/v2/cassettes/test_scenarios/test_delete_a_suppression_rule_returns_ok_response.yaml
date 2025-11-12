@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","enabled":true,"name":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","rule_query":"source:cloudtrail","suppression_query":"env:test"},"type":"suppressions"}}'
+    body: '{"data":{"attributes":{"description":"Test-Delete_a_suppression_rule_returns_OK_response-1762518446","enabled":true,"name":"Test-Delete_a_suppression_rule_returns_OK_response-1762518446","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -10,12 +10,12 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"csf-zrg-af0","attributes":{"name":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","enabled":true,"description":"Test-Delete_a_suppression_rule_returns_OK_response-1715358879","rule_query":"source:cloudtrail","suppression_query":"env:test","data_exclusion_query":"","version":1,"creation_date":1715358880145,"update_date":1715358880145,"creator":{"name":null,"handle":"frog@datadoghq.com"},"updater":{"name":null,"handle":"frog@datadoghq.com"}},"type":"suppressions"}}
-
-        '
+      string: '{"data":{"id":"uea-lab-big","type":"suppressions","attributes":{"creation_date":1762518447002,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"data_exclusion_query":"","description":"Test-Delete_a_suppression_rule_returns_OK_response-1762518446","editable":true,"enabled":true,"name":"Test-Delete_a_suppression_rule_returns_OK_response-1762518446","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1762518447002,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"version":1}}}'
     headers:
       content-type:
-      - application/json
+      - application/vnd.api+json
     status:
       code: 200
       message: OK
@@ -25,13 +25,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/csf-zrg-af0
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/uea-lab-big
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - text/html; charset=utf-8
+    headers: {}
     status:
       code: 204
       message: No Content
@@ -41,12 +39,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/csf-zrg-af0
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/uea-lab-big
   response:
     body:
-      string: '{"errors":["not_found(Suppression with ID csf-zrg-af0 not found)"]}
-
-        '
+      string: '{"errors":["not_found(Suppression with ID uea-lab-big not found)"]}'
     headers:
       content-type:
       - application/json
