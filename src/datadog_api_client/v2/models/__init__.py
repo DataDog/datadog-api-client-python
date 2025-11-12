@@ -1375,6 +1375,13 @@ from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRe
 from datadog_api_client.v2.model.downtime_update_request_attributes import DowntimeUpdateRequestAttributes
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
 from datadog_api_client.v2.model.epss import EPSS
+from datadog_api_client.v2.model.email import Email
+from datadog_api_client.v2.model.email_attributes import EmailAttributes
+from datadog_api_client.v2.model.email_create_request import EmailCreateRequest
+from datadog_api_client.v2.model.email_data import EmailData
+from datadog_api_client.v2.model.email_format_type import EmailFormatType
+from datadog_api_client.v2.model.email_type import EmailType
+from datadog_api_client.v2.model.email_update_request import EmailUpdateRequest
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_meta import EntityMeta
@@ -5890,6 +5897,13 @@ __all__ = [
     "DowntimeUpdateRequestAttributes",
     "DowntimeUpdateRequestData",
     "EPSS",
+    "Email",
+    "EmailAttributes",
+    "EmailCreateRequest",
+    "EmailData",
+    "EmailFormatType",
+    "EmailType",
+    "EmailUpdateRequest",
     "EntityAttributes",
     "EntityData",
     "EntityMeta",

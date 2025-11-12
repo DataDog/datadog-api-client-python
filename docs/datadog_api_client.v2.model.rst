@@ -7039,6 +7039,55 @@ datadog\_api\_client.v2.model.downtime\_update\_request\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.email module
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.email
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.email\_attributes module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.email_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.email\_create\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.email_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.email\_data module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.email_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.email\_format\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.email_format_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.email\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.email_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.email\_update\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.email_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_attributes module
 -------------------------------------------------------
 

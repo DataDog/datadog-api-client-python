@@ -189,7 +189,7 @@ class ErrorTrackingApi:
 
         :param issue_id: The identifier of the issue.
         :type issue_id: str
-        :param include: Comma-separated list of relationship objects that should be included in the response. Possible values are ``assignee`` , ``case`` , and ``team_owners``.
+        :param include: Comma-separated list of relationship objects that should be included in the response.
         :type include: [GetIssueIncludeQueryParameterItem], optional
         :rtype: IssueResponse
         """
@@ -213,7 +213,7 @@ class ErrorTrackingApi:
 
         :param body: Search issues request payload.
         :type body: IssuesSearchRequest
-        :param include: Comma-separated list of relationship objects that should be included in the response. Possible values are ``issue`` , ``issue.assignee`` , ``issue.case`` , and ``issue.team_owners``.
+        :param include: Comma-separated list of relationship objects that should be included in the response.
         :type include: [SearchIssuesIncludeQueryParameterItem], optional
         :rtype: IssuesSearchResponse
         """

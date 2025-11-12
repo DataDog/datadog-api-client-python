@@ -2766,6 +2766,30 @@
       "type": "idempotent"
     }
   },
+  "CreateUserEmailNotificationChannel": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteUserEmailNotificationChannel": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUserEmailNotificationChannel": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateUserEmailNotificationChannel": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {

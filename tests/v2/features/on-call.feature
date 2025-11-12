@@ -44,6 +44,32 @@ Feature: On-Call
     Then the response status is 201 Created
 
   @team:DataDog/on-call
+  Scenario: Create an On-Call email for a user returns "Bad Request" response
+    Given new "CreateUserEmailNotificationChannel" request
+    And there is a valid "user" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And body with value {"data": {"attributes": {"active": true, "address": "", "alias": "", "formats": ["html"]}, "type": "emails"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/on-call
+  Scenario: Create an On-Call email for a user returns "Created" response
+    Given new "CreateUserEmailNotificationChannel" request
+    And there is a valid "user" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And body with value {"data": {"attributes": {"active": true, "address": "john.doe@datadoghq.com", "alias": "", "formats": ["html"]}, "type": "emails"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @team:DataDog/on-call
+  Scenario: Create an On-Call email for a user returns "Not Found" response
+    Given new "CreateUserEmailNotificationChannel" request
+    And request contains "user_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"attributes": {"active": true, "address": "john.doe@datadoghq.com", "alias": "", "formats": ["html"]}, "type": "emails"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/on-call
   Scenario: Delete On-Call escalation policy returns "No Content" response
     Given new "DeleteOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -74,6 +100,49 @@ Feature: On-Call
   Scenario: Delete On-Call schedule returns "Not Found" response
     Given new "DeleteOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/on-call
+  Scenario: Delete an On-Call email for a missing email returns "Not Found" response
+    Given new "DeleteUserEmailNotificationChannel" request
+    And there is a valid "user" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And request contains "email_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/on-call
+  Scenario: Delete an On-Call email for a missing user returns "Not Found" response
+    Given new "DeleteUserEmailNotificationChannel" request
+    And request contains "user_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And request contains "email_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Delete an On-Call email for a user returns "Bad Request" response
+    Given new "DeleteUserEmailNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "email_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/on-call
+  Scenario: Delete an On-Call email for a user returns "No Content" response
+    Given new "DeleteUserEmailNotificationChannel" request
+    And there is a valid "user" in the system
+    And there is a valid "oncall_email" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And request contains "email_id" parameter from "oncall_email.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Delete an On-Call email for a user returns "Not Found" response
+    Given new "DeleteUserEmailNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "email_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -123,6 +192,32 @@ Feature: On-Call
   Scenario: Get On-Call team routing rules returns "OK" response
     Given new "GetOnCallTeamRoutingRules" request
     And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Get an On-Call email for a user returns "Bad Request" response
+    Given new "GetUserEmailNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "email_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Get an On-Call email for a user returns "Not Found" response
+    Given new "GetUserEmailNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "email_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/on-call
+  Scenario: Get an On-Call email for a user returns "OK" response
+    Given new "GetUserEmailNotificationChannel" request
+    And there is a valid "user" in the system
+    And there is a valid "oncall_email" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And request contains "email_id" parameter from "oncall_email.data.id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -241,5 +336,34 @@ Feature: On-Call
     And there is a valid "dd_team" in the system
     And request contains "schedule_id" parameter from "schedule.data.id"
     And body with value {"data": { "id": "{{ schedule.data.id }}", "attributes": {"layers": [{"id": "{{ schedule.data.relationships.layers.data[0].id }}" , "effective_date": "{{ timeISO('now - 10d') }}", "end_date": "{{ timeISO('now + 10d') }}", "interval": {"seconds": 3600}, "members": [{"user": {"id": "{{user.data.id}}"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "{{ timeISO('now - 5d') }}"}], "name": "{{ unique }}", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "{{dd_team.data.id}}", "type": "teams"}]}}, "type": "schedules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Update an On-Call email for a user returns "Bad Request" response
+    Given new "UpdateUserEmailNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "email_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"active": true, "address": "john.doe@datadoghq.com", "alias": "", "formats": ["html"]}, "type": "emails"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Update an On-Call email for a user returns "Not Found" response
+    Given new "UpdateUserEmailNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "email_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"active": true, "address": "john.doe@datadoghq.com", "alias": "", "formats": ["html"]}, "type": "emails"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/on-call
+  Scenario: Update an On-Call email for a user returns "OK" response
+    Given new "UpdateUserEmailNotificationChannel" request
+    And there is a valid "user" in the system
+    And there is a valid "oncall_email" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And request contains "email_id" parameter from "oncall_email.data.id"
+    And body with value {"data": {"id": "{{oncall_email.data.id}}", "attributes": {"active": true, "address": "{{oncall_email.data.attributes.address}}", "alias": "{{ unique }}-alias", "formats": ["html"]}, "type": "emails"}}
     When the request is sent
     Then the response status is 200 OK

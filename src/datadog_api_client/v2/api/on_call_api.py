@@ -21,6 +21,9 @@ from datadog_api_client.v2.model.shift import Shift
 from datadog_api_client.v2.model.team_on_call_responders import TeamOnCallResponders
 from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
+from datadog_api_client.v2.model.email import Email
+from datadog_api_client.v2.model.email_create_request import EmailCreateRequest
+from datadog_api_client.v2.model.email_update_request import EmailUpdateRequest
 
 
 class OnCallApi:
@@ -84,6 +87,32 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._create_user_email_notification_channel_endpoint = _Endpoint(
+            settings={
+                "response_type": (Email,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/users/{user_id}/notification-channels/emails",
+                "operation_id": "create_user_email_notification_channel",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (EmailCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_on_call_escalation_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -121,6 +150,35 @@ class OnCallApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "schedule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_user_email_notification_channel_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/users/{user_id}/notification-channels/emails/{email_id}",
+                "operation_id": "delete_user_email_notification_channel",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+                "email_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "email_id",
                     "location": "path",
                 },
             },
@@ -275,6 +333,35 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._get_user_email_notification_channel_endpoint = _Endpoint(
+            settings={
+                "response_type": (Email,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/users/{user_id}/notification-channels/emails/{email_id}",
+                "operation_id": "get_user_email_notification_channel",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+                "email_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "email_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._set_on_call_team_routing_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamRoutingRules,),
@@ -368,6 +455,38 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._update_user_email_notification_channel_endpoint = _Endpoint(
+            settings={
+                "response_type": (Email,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/users/{user_id}/notification-channels/emails/{email_id}",
+                "operation_id": "update_user_email_notification_channel",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+                "email_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "email_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (EmailUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_on_call_escalation_policy(
         self,
         body: EscalationPolicyCreateRequest,
@@ -414,6 +533,27 @@ class OnCallApi:
 
         return self._create_on_call_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def create_user_email_notification_channel(
+        self,
+        user_id: str,
+        body: EmailCreateRequest,
+    ) -> Email:
+        """Create an On-Call email for a user.
+
+        Create a new email notification channel for an on-call user
+
+        :param user_id: The user ID
+        :type user_id: str
+        :type body: EmailCreateRequest
+        :rtype: Email
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        kwargs["body"] = body
+
+        return self._create_user_email_notification_channel_endpoint.call_with_http_info(**kwargs)
+
     def delete_on_call_escalation_policy(
         self,
         policy_id: str,
@@ -447,6 +587,28 @@ class OnCallApi:
         kwargs["schedule_id"] = schedule_id
 
         return self._delete_on_call_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_user_email_notification_channel(
+        self,
+        user_id: str,
+        email_id: str,
+    ) -> None:
+        """Delete an On-Call email for a user.
+
+        Delete an email notification channel for an on-call user
+
+        :param user_id: The user ID
+        :type user_id: str
+        :param email_id: The email ID
+        :type email_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        kwargs["email_id"] = email_id
+
+        return self._delete_user_email_notification_channel_endpoint.call_with_http_info(**kwargs)
 
     def get_on_call_escalation_policy(
         self,
@@ -574,6 +736,28 @@ class OnCallApi:
 
         return self._get_team_on_call_users_endpoint.call_with_http_info(**kwargs)
 
+    def get_user_email_notification_channel(
+        self,
+        user_id: str,
+        email_id: str,
+    ) -> Email:
+        """Get an On-Call email for a user.
+
+        Get an email notification channel for an on-call user
+
+        :param user_id: The user ID
+        :type user_id: str
+        :param email_id: The email ID
+        :type email_id: str
+        :rtype: Email
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        kwargs["email_id"] = email_id
+
+        return self._get_user_email_notification_channel_endpoint.call_with_http_info(**kwargs)
+
     def set_on_call_team_routing_rules(
         self,
         team_id: str,
@@ -657,3 +841,29 @@ class OnCallApi:
         kwargs["body"] = body
 
         return self._update_on_call_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def update_user_email_notification_channel(
+        self,
+        user_id: str,
+        email_id: str,
+        body: EmailUpdateRequest,
+    ) -> Email:
+        """Update an On-Call email for a user.
+
+        Update an email notification channel for an on-call user
+
+        :param user_id: The user ID
+        :type user_id: str
+        :param email_id: The email ID
+        :type email_id: str
+        :type body: EmailUpdateRequest
+        :rtype: Email
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        kwargs["email_id"] = email_id
+
+        kwargs["body"] = body
+
+        return self._update_user_email_notification_channel_endpoint.call_with_http_info(**kwargs)
