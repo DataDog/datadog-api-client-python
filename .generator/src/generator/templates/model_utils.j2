@@ -4,6 +4,7 @@ from contextlib import suppress
 from datetime import date, datetime
 from uuid import UUID
 import enum
+from functools import lru_cache
 import inspect
 import io
 import os
@@ -26,6 +27,24 @@ from {{ package }}.exceptions import (
 none_type = type(None)
 file_type = io.IOBase
 empty_dict = MappingProxyType({})  # type: ignore
+
+
+def _make_hashable(obj):
+    """Convert potentially unhashable objects to hashable representations for caching."""
+    if isinstance(obj, (list, tuple)):
+        return tuple(_make_hashable(item) for item in obj)
+    elif isinstance(obj, dict):
+        return tuple(sorted((_make_hashable(k), _make_hashable(v)) for k, v in obj.items()))
+    elif isinstance(obj, set):
+        return tuple(sorted(_make_hashable(item) for item in obj))
+    elif hasattr(obj, '__name__'):  # Classes and functions
+        return obj.__name__
+    else:
+        try:
+            hash(obj)
+            return obj
+        except TypeError:
+            return str(obj)
 
 
 class UnsetType(enum.Enum):
@@ -149,6 +168,7 @@ class OpenApiModel:
                 self._spec_property_naming,
                 self._check_type,
                 configuration=self._configuration,
+                request_cache=None,  # No cache available in model __setattr__
             )
             if isinstance(value, list):
                 for x in value:
@@ -873,7 +893,6 @@ def order_response_types(required_types):
         of list or dict with class information inside it.
     :rtype: list
     """
-
     def index_getter(class_or_instance):
         if isinstance(class_or_instance, list):
             return COERCION_INDEX_BY_TYPE[list]
@@ -890,7 +909,7 @@ def order_response_types(required_types):
         raise ApiValueError("Unsupported type: %s" % class_or_instance)
 
     sorted_types = sorted(required_types, key=index_getter)
-    return sorted_types
+    return tuple(sorted_types)
 
 
 def remove_uncoercible(required_types_classes, current_item, spec_property_naming, must_convert=True):
@@ -914,7 +933,11 @@ def remove_uncoercible(required_types_classes, current_item, spec_property_namin
     :rtype: list
     """
     current_type_simple = get_simple_class(current_item)
+    return list(_remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert))
 
+
+def _remove_uncoercible_impl(required_types_classes, current_type_simple, spec_property_naming, must_convert=True):
+    """Implementation of remove_uncoercible logic."""
     results_classes = []
     for required_type_class in required_types_classes:
         # convert our models to OpenApiModel
@@ -936,7 +959,7 @@ def remove_uncoercible(required_types_classes, current_item, spec_property_namin
             results_classes.append(required_type_class)
         elif class_pair in UPCONVERSION_TYPE_PAIRS:
             results_classes.append(required_type_class)
-    return results_classes
+    return tuple(results_classes)
 
 
 def get_possible_classes(cls, from_server_context):
@@ -948,7 +971,7 @@ def get_possible_classes(cls, from_server_context):
     return possible_classes
 
 
-def get_required_type_classes(required_types_mixed, spec_property_naming):
+def get_required_type_classes(required_types_mixed, spec_property_naming, request_cache=None):
     """Converts the tuple required_types into a tuple and a dict described below.
 
     :param required_types_mixed: Will contain either classes or instance of
@@ -968,6 +991,23 @@ def get_required_type_classes(required_types_mixed, spec_property_naming):
 
     :rtype: tuple
     """
+    # PERFORMANCE: Cache expensive type class computation within request
+    if request_cache is not None:
+        cache_key = ('get_required_type_classes', _make_hashable(required_types_mixed), spec_property_naming)
+        if cache_key in request_cache:
+            return request_cache[cache_key]
+    else:
+        cache_key = None
+    
+    result = _get_required_type_classes_impl(required_types_mixed, spec_property_naming)
+    
+    if cache_key and request_cache is not None:
+        request_cache[cache_key] = result
+    return result
+
+
+def _get_required_type_classes_impl(required_types_mixed, spec_property_naming):
+    """Implementation of get_required_type_classes without caching."""
     valid_classes = []
     child_req_types_by_current_type = {}
     for required_type in required_types_mixed:
@@ -1167,6 +1207,7 @@ def attempt_convert_item(
     key_type=False,
     must_convert=False,
     check_type=True,
+    request_cache=None,
 ):
     """
     :param input_value: The data to convert.
@@ -1265,7 +1306,7 @@ def is_valid_type(input_class_simple, valid_classes):
 
 
 def validate_and_convert_types(
-    input_value, required_types_mixed, path_to_item, spec_property_naming, check_type, configuration=None
+    input_value, required_types_mixed, path_to_item, spec_property_naming, check_type, configuration=None, request_cache=None
 ):
     """Raises a TypeError is there is a problem, otherwise returns value.
 
@@ -1287,19 +1328,34 @@ def validate_and_convert_types(
     :param configuration:: The configuration class to use when converting
         file_type items.
     :type configuration: Configuration
+    :param request_cache: Optional cache dict for storing validation results
+        within a single request to avoid redundant validations.
+    :type request_cache: dict
 
     :return: The correctly typed value.
 
     :raise: ApiTypeError
     """
-    results = get_required_type_classes(required_types_mixed, spec_property_naming)
+    # Per-request caching: Cache validation results within a single request
+    cache_key = None
+    if request_cache is not None:
+        try:
+            input_hash = _make_hashable(input_value)
+            cache_key = (input_hash, _make_hashable(required_types_mixed), tuple(path_to_item), spec_property_naming, check_type)
+            if cache_key in request_cache:
+                return request_cache[cache_key]
+        except (TypeError, AttributeError):
+            # If we can't create a cache key, proceed without caching
+            cache_key = None
+    
+    results = get_required_type_classes(required_types_mixed, spec_property_naming, request_cache)
     valid_classes, child_req_types_by_current_type = results
 
     input_class_simple = get_simple_class(input_value)
     valid_type = is_valid_type(input_class_simple, valid_classes)
     if not valid_type:
         # if input_value is not valid_type try to convert it
-        return attempt_convert_item(
+        result = attempt_convert_item(
             input_value,
             valid_classes,
             path_to_item,
@@ -1307,7 +1363,11 @@ def validate_and_convert_types(
             spec_property_naming,
             must_convert=True,
             check_type=check_type,
+            request_cache=request_cache,
         )
+        if cache_key and request_cache is not None:
+            request_cache[cache_key] = result
+        return result
 
     # input_value's type is in valid_classes
     if len(valid_classes) > 1 and configuration:
@@ -1316,22 +1376,30 @@ def validate_and_convert_types(
             valid_classes, input_value, spec_property_naming, must_convert=False
         )
         if valid_classes_coercible:
-            return attempt_convert_item(
+            result = attempt_convert_item(
                 input_value,
                 valid_classes_coercible,
                 path_to_item,
                 configuration,
                 spec_property_naming,
                 check_type=check_type,
+                request_cache=request_cache,
             )
+            if cache_key and request_cache is not None:
+                request_cache[cache_key] = result
+            return result
 
     if child_req_types_by_current_type == {}:
         # all types are of the required types and there are no more inner
         # variables left to look at
+        if cache_key and request_cache is not None:
+            request_cache[cache_key] = input_value
         return input_value
     inner_required_types = child_req_types_by_current_type.get(type(input_value))
     if inner_required_types is None:
         # for this type, there are not more inner variables left to look at
+        if cache_key and request_cache is not None:
+            request_cache[cache_key] = input_value
         return input_value
     if isinstance(input_value, list):
         if input_value == []:
@@ -1339,41 +1407,56 @@ def validate_and_convert_types(
             return input_value
         result = []
         for index, inner_value in enumerate(input_value):
-            inner_path = list(path_to_item)
-            inner_path.append(index)
+            path_to_item.append(index)
             try:
                 result.append(
                     validate_and_convert_types(
                         inner_value,
                         inner_required_types,
-                        inner_path,
+                        path_to_item,
                         spec_property_naming,
                         check_type,
                         configuration=configuration,
+                        request_cache=request_cache,
                     )
                 )
             except TypeError:
                 result.append(UnparsedObject(**inner_value))
+            finally:
+                # Restore path state
+                path_to_item.pop()
+        if cache_key and request_cache is not None:
+            request_cache[cache_key] = result
         return result
     elif isinstance(input_value, dict):
         if input_value == {}:
             # allow an empty dict
+            if cache_key and request_cache is not None:
+                request_cache[cache_key] = input_value
             return input_value
         result = {}
         for inner_key, inner_val in input_value.items():
-            inner_path = list(path_to_item)
-            inner_path.append(inner_key)
-            if get_simple_class(inner_key) != str:
-                raise get_type_error(inner_key, inner_path, valid_classes, key_type=True)
-            result[inner_key] = validate_and_convert_types(
-                inner_val,
-                inner_required_types,
-                inner_path,
-                spec_property_naming,
-                check_type,
-                configuration=configuration,
-            )
+            path_to_item.append(inner_key)
+            try:
+                if get_simple_class(inner_key) != str:
+                    raise get_type_error(inner_key, path_to_item, valid_classes, key_type=True)
+                result[inner_key] = validate_and_convert_types(
+                    inner_val,
+                    inner_required_types,
+                    path_to_item,
+                    spec_property_naming,
+                    check_type,
+                    configuration=configuration,
+                    request_cache=request_cache,
+                )
+            finally:
+                # Restore path state
+                path_to_item.pop()
+        if cache_key and request_cache is not None:
+            request_cache[cache_key] = result
         return result
+    if cache_key and request_cache is not None:
+        request_cache[cache_key] = input_value
     return input_value
 
 
@@ -1611,6 +1694,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         constant_kwargs.get("_spec_property_naming", False),
                         constant_kwargs.get("_check_type", True),
                         configuration=constant_kwargs.get("_configuration"),
+                        request_cache=None,  # No cache available in this context
                     )
                     oneof_instances.append(oneof_instance)
     if len(oneof_instances) != 1:

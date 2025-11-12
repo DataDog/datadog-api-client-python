@@ -52,6 +52,11 @@ class ApiClient:
 
         self.rest_client = self._build_rest_client()
         self.default_headers = {}
+
+        # Cache for validation performance optimization - persists across requests
+        # Simple size limiting to prevent memory leaks
+        self._validation_cache: Dict[str, Any] = {}
+        self._validation_cache_max_size = 1000  # Configurable limit
         if self.configuration.compress:
             self.default_headers["Accept-Encoding"] = "gzip"
         # Set default User-Agent.
@@ -194,8 +199,28 @@ class ApiClient:
 
         # store our data under the key of 'received_data' so users have some
         # context if they are deserializing a string and the data type is wrong
+
+        # Use ApiClient's validation cache for performance optimization across requests
+        request_cache = self._validation_cache if check_type else None
+
+        # Simple cache size limiting to prevent memory leaks
+        if request_cache is not None and len(request_cache) > self._validation_cache_max_size:
+            # Remove 25% of cache entries when full (keep most recent 75%)
+            items_to_keep = int(self._validation_cache_max_size * 0.75)
+            cache_items = list(request_cache.items())
+            request_cache.clear()
+            # Keep the most recently added items (simple FIFO)
+            for key, value in cache_items[-items_to_keep:]:
+                request_cache[key] = value
+
         deserialized_data = validate_and_convert_types(
-            received_data, response_type, ["received_data"], True, check_type, configuration=self.configuration
+            received_data,
+            response_type,
+            ["received_data"],
+            True,
+            check_type,
+            configuration=self.configuration,
+            request_cache=request_cache,
         )
         return deserialized_data
 
@@ -723,6 +748,7 @@ class Endpoint:
                 self.api_client.configuration.spec_property_naming,
                 self.api_client.configuration.check_input_type,
                 configuration=self.api_client.configuration,
+                request_cache=None,  # No cache available for input validation
             )
             kwargs[key] = fixed_val
 
