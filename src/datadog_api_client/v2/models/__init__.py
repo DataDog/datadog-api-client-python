@@ -869,10 +869,15 @@ from datadog_api_client.v2.model.confluent_resource_response_attributes import C
 from datadog_api_client.v2.model.confluent_resource_response_data import ConfluentResourceResponseData
 from datadog_api_client.v2.model.confluent_resource_type import ConfluentResourceType
 from datadog_api_client.v2.model.confluent_resources_response import ConfluentResourcesResponse
+from datadog_api_client.v2.model.connected_team_ref import ConnectedTeamRef
+from datadog_api_client.v2.model.connected_team_ref_data import ConnectedTeamRefData
+from datadog_api_client.v2.model.connected_team_ref_data_type import ConnectedTeamRefDataType
 from datadog_api_client.v2.model.connection import Connection
 from datadog_api_client.v2.model.connection_env import ConnectionEnv
 from datadog_api_client.v2.model.connection_env_env import ConnectionEnvEnv
 from datadog_api_client.v2.model.connection_group import ConnectionGroup
+from datadog_api_client.v2.model.connections_page_pagination import ConnectionsPagePagination
+from datadog_api_client.v2.model.connections_response_meta import ConnectionsResponseMeta
 from datadog_api_client.v2.model.container import Container
 from datadog_api_client.v2.model.container_attributes import ContainerAttributes
 from datadog_api_client.v2.model.container_group import ContainerGroup
@@ -4535,6 +4540,15 @@ from datadog_api_client.v2.model.tag_filter import TagFilter
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
+from datadog_api_client.v2.model.team_connection import TeamConnection
+from datadog_api_client.v2.model.team_connection_attributes import TeamConnectionAttributes
+from datadog_api_client.v2.model.team_connection_create_data import TeamConnectionCreateData
+from datadog_api_client.v2.model.team_connection_create_request import TeamConnectionCreateRequest
+from datadog_api_client.v2.model.team_connection_delete_request import TeamConnectionDeleteRequest
+from datadog_api_client.v2.model.team_connection_delete_request_data_item import TeamConnectionDeleteRequestDataItem
+from datadog_api_client.v2.model.team_connection_relationships import TeamConnectionRelationships
+from datadog_api_client.v2.model.team_connection_type import TeamConnectionType
+from datadog_api_client.v2.model.team_connections_response import TeamConnectionsResponse
 from datadog_api_client.v2.model.team_create import TeamCreate
 from datadog_api_client.v2.model.team_create_attributes import TeamCreateAttributes
 from datadog_api_client.v2.model.team_create_relationships import TeamCreateRelationships
@@ -4581,6 +4595,9 @@ from datadog_api_client.v2.model.team_permission_setting_update_request import T
 from datadog_api_client.v2.model.team_permission_setting_value import TeamPermissionSettingValue
 from datadog_api_client.v2.model.team_permission_setting_values import TeamPermissionSettingValues
 from datadog_api_client.v2.model.team_permission_settings_response import TeamPermissionSettingsResponse
+from datadog_api_client.v2.model.team_ref import TeamRef
+from datadog_api_client.v2.model.team_ref_data import TeamRefData
+from datadog_api_client.v2.model.team_ref_data_type import TeamRefDataType
 from datadog_api_client.v2.model.team_reference import TeamReference
 from datadog_api_client.v2.model.team_reference_attributes import TeamReferenceAttributes
 from datadog_api_client.v2.model.team_reference_type import TeamReferenceType
@@ -5526,10 +5543,15 @@ __all__ = [
     "ConfluentResourceResponseData",
     "ConfluentResourceType",
     "ConfluentResourcesResponse",
+    "ConnectedTeamRef",
+    "ConnectedTeamRefData",
+    "ConnectedTeamRefDataType",
     "Connection",
     "ConnectionEnv",
     "ConnectionEnvEnv",
     "ConnectionGroup",
+    "ConnectionsPagePagination",
+    "ConnectionsResponseMeta",
     "Container",
     "ContainerAttributes",
     "ContainerGroup",
@@ -8124,6 +8146,15 @@ __all__ = [
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",
+    "TeamConnection",
+    "TeamConnectionAttributes",
+    "TeamConnectionCreateData",
+    "TeamConnectionCreateRequest",
+    "TeamConnectionDeleteRequest",
+    "TeamConnectionDeleteRequestDataItem",
+    "TeamConnectionRelationships",
+    "TeamConnectionType",
+    "TeamConnectionsResponse",
     "TeamCreate",
     "TeamCreateAttributes",
     "TeamCreateRelationships",
@@ -8158,6 +8189,9 @@ __all__ = [
     "TeamPermissionSettingValue",
     "TeamPermissionSettingValues",
     "TeamPermissionSettingsResponse",
+    "TeamRef",
+    "TeamRefData",
+    "TeamRefDataType",
     "TeamReference",
     "TeamReferenceAttributes",
     "TeamReferenceType",
