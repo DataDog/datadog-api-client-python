@@ -270,6 +270,7 @@ class KeyManagementApi:
         """Create an application key.
 
         Create an application key with a given name.
+        This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
         :type body: ApplicationKey
         :rtype: ApplicationKeyResponse
@@ -303,6 +304,7 @@ class KeyManagementApi:
         """Delete an application key.
 
         Delete a given application key.
+        This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
         :param key: The specific APP key you are working with.
         :type key: str
@@ -337,6 +339,7 @@ class KeyManagementApi:
         """Get an application key.
 
         Get a given application key.
+        This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
         :param key: The specific APP key you are working with.
         :type key: str
@@ -365,6 +368,7 @@ class KeyManagementApi:
         """Get all application keys.
 
         Get all application keys available for your Datadog account.
+        This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
         :rtype: ApplicationKeyListResponse
         """
@@ -400,6 +404,7 @@ class KeyManagementApi:
         """Edit an application key.
 
         Edit an application key name.
+        This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
         :param key: The specific APP key you are working with.
         :type key: str
