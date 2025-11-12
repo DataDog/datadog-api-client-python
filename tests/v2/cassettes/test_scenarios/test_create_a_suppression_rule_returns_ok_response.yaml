@@ -1,9 +1,9 @@
 interactions:
 - request:
     body: '{"data":{"attributes":{"description":"This rule suppresses low-severity
-      signals in staging environments.","enabled":true,"expiration_date":1734535354000,"name":"Test-Create_a_suppression_rule_returns_OK_response-1732720954","rule_query":"type:log_detection
-      source:cloudtrail","start_date":1733584954000,"suppression_query":"env:staging
-      status:low"},"type":"suppressions"}}'
+      signals in staging environments.","enabled":true,"expiration_date":1764332845000,"name":"Test-Create_a_suppression_rule_returns_OK_response-1762518445","rule_query":"type:log_detection
+      source:cloudtrail","start_date":1763382445000,"suppression_query":"env:staging
+      status:low","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -13,10 +13,12 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"ejv-ksi-r4j","type":"suppressions","attributes":{"creation_date":1732720954868,"creator":{"handle":"frog@datadoghq.com","name":""},"data_exclusion_query":"","description":"This
-        rule suppresses low-severity signals in staging environments.","editable":true,"enabled":true,"expiration_date":1734535354000,"name":"Test-Create_a_suppression_rule_returns_OK_response-1732720954","rule_query":"type:log_detection
-        source:cloudtrail","start_date":1733584954000,"suppression_query":"env:staging
-        status:low","update_date":1732720954868,"updater":{"handle":"frog@datadoghq.com","name":""},"version":1}}}'
+      string: '{"data":{"id":"oxk-jlo-pc8","type":"suppressions","attributes":{"creation_date":1762518446390,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"data_exclusion_query":"","description":"This rule suppresses low-severity
+        signals in staging environments.","editable":true,"enabled":true,"expiration_date":1764332845000,"name":"Test-Create_a_suppression_rule_returns_OK_response-1762518445","rule_query":"type:log_detection
+        source:cloudtrail","start_date":1763382445000,"suppression_query":"env:staging
+        status:low","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1762518446390,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"version":1}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -29,7 +31,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/ejv-ksi-r4j
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/oxk-jlo-pc8
   response:
     body:
       string: ''

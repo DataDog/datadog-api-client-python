@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -40,6 +40,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
             "rule_query": (str,),
             "start_date": (int,),
             "suppression_query": (str,),
+            "tags": ([str],),
             "update_date": (int,),
             "updater": (SecurityMonitoringUser,),
             "version": (int,),
@@ -57,6 +58,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
         "rule_query": "rule_query",
         "start_date": "start_date",
         "suppression_query": "suppression_query",
+        "tags": "tags",
         "update_date": "update_date",
         "updater": "updater",
         "version": "version",
@@ -75,6 +77,7 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
         rule_query: Union[str, UnsetType] = unset,
         start_date: Union[int, UnsetType] = unset,
         suppression_query: Union[str, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         update_date: Union[int, UnsetType] = unset,
         updater: Union[SecurityMonitoringUser, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
@@ -116,6 +119,9 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
         :param suppression_query: The suppression query of the suppression rule. If a signal matches this query, it is suppressed and not triggered. Same syntax as the queries to search signals in the signal explorer.
         :type suppression_query: str, optional
 
+        :param tags: List of tags associated with the suppression rule.
+        :type tags: [str], optional
+
         :param update_date: A Unix millisecond timestamp given the update date of the suppression rule.
         :type update_date: int, optional
 
@@ -147,6 +153,8 @@ class SecurityMonitoringSuppressionAttributes(ModelNormal):
             kwargs["start_date"] = start_date
         if suppression_query is not unset:
             kwargs["suppression_query"] = suppression_query
+        if tags is not unset:
+            kwargs["tags"] = tags
         if update_date is not unset:
             kwargs["update_date"] = update_date
         if updater is not unset:
