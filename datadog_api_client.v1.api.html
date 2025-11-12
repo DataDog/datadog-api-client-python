@@ -2651,7 +2651,8 @@ application key for a user with the required permissions to interact with these 
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.key_management_api.KeyManagementApi.create_application_key">
 <span class="sig-name descname"><span class="pre">create_application_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key.ApplicationKey" title="datadog_api_client.v1.model.application_key.ApplicationKey"><span class="pre">ApplicationKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse" title="datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse"><span class="pre">ApplicationKeyResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.key_management_api.KeyManagementApi.create_application_key" title="Link to this definition">¶</a></dt>
 <dd><p>Create an application key.</p>
-<p>Create an application key with a given name.</p>
+<p>Create an application key with a given name.
+This endpoint is disabled for organizations in <a class="reference external" href="https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode">One-Time Read mode</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse" title="datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse">ApplicationKeyResponse</a></p>
@@ -2676,7 +2677,8 @@ application key for a user with the required permissions to interact with these 
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.key_management_api.KeyManagementApi.delete_application_key">
 <span class="sig-name descname"><span class="pre">delete_application_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse" title="datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse"><span class="pre">ApplicationKeyResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.key_management_api.KeyManagementApi.delete_application_key" title="Link to this definition">¶</a></dt>
 <dd><p>Delete an application key.</p>
-<p>Delete a given application key.</p>
+<p>Delete a given application key.
+This endpoint is disabled for organizations in <a class="reference external" href="https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode">One-Time Read mode</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – The specific APP key you are working with.</p>
@@ -2704,7 +2706,8 @@ application key for a user with the required permissions to interact with these 
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.key_management_api.KeyManagementApi.get_application_key">
 <span class="sig-name descname"><span class="pre">get_application_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse" title="datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse"><span class="pre">ApplicationKeyResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.key_management_api.KeyManagementApi.get_application_key" title="Link to this definition">¶</a></dt>
 <dd><p>Get an application key.</p>
-<p>Get a given application key.</p>
+<p>Get a given application key.
+This endpoint is disabled for organizations in <a class="reference external" href="https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode">One-Time Read mode</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – The specific APP key you are working with.</p>
@@ -2729,7 +2732,8 @@ application key for a user with the required permissions to interact with these 
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.key_management_api.KeyManagementApi.list_application_keys">
 <span class="sig-name descname"><span class="pre">list_application_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key_list_response.ApplicationKeyListResponse" title="datadog_api_client.v1.model.application_key_list_response.ApplicationKeyListResponse"><span class="pre">ApplicationKeyListResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.key_management_api.KeyManagementApi.list_application_keys" title="Link to this definition">¶</a></dt>
 <dd><p>Get all application keys.</p>
-<p>Get all application keys available for your Datadog account.</p>
+<p>Get all application keys available for your Datadog account.
+This endpoint is disabled for organizations in <a class="reference external" href="https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode">One-Time Read mode</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key_list_response.ApplicationKeyListResponse" title="datadog_api_client.v1.model.application_key_list_response.ApplicationKeyListResponse">ApplicationKeyListResponse</a></p>
@@ -2754,7 +2758,8 @@ application key for a user with the required permissions to interact with these 
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.key_management_api.KeyManagementApi.update_application_key">
 <span class="sig-name descname"><span class="pre">update_application_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key.ApplicationKey" title="datadog_api_client.v1.model.application_key.ApplicationKey"><span class="pre">ApplicationKey</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse" title="datadog_api_client.v1.model.application_key_response.ApplicationKeyResponse"><span class="pre">ApplicationKeyResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.key_management_api.KeyManagementApi.update_application_key" title="Link to this definition">¶</a></dt>
 <dd><p>Edit an application key.</p>
-<p>Edit an application key name.</p>
+<p>Edit an application key name.
+This endpoint is disabled for organizations in <a class="reference external" href="https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode">One-Time Read mode</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – The specific APP key you are working with.</p>
