@@ -4287,6 +4287,12 @@
       "type": "unsafe"
     }
   },
+  "GetTeamSync": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SyncTeams": {
     "tag": "Teams",
     "undo": {
