@@ -2223,6 +2223,27 @@ datadog\_api\_client.v1.model.monitor module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.monitor\_asset module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_asset
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_asset\_category module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_asset_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_asset\_resource\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_asset_resource_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.monitor\_device\_id module
 --------------------------------------------------------
 
