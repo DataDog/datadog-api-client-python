@@ -4268,6 +4268,25 @@
       "type": "unsafe"
     }
   },
+  "DeleteTeamConnections": {
+    "tag": "Team Connections",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListTeamConnections": {
+    "tag": "Team Connections",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTeamConnections": {
+    "tag": "Team Connections",
+    "undo": {
+      "operationId": "DeleteTeamConnections",
+      "type": "unsafe"
+    }
+  },
   "SyncTeams": {
     "tag": "Teams",
     "undo": {

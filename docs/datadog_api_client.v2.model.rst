@@ -4484,6 +4484,27 @@ datadog\_api\_client.v2.model.confluent\_resources\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.connected\_team\_ref module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connected_team_ref
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connected\_team\_ref\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connected_team_ref_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connected\_team\_ref\_data\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connected_team_ref_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.connection module
 -----------------------------------------------
 
@@ -4509,6 +4530,20 @@ datadog\_api\_client.v2.model.connection\_group module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.connection_group
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connections\_page\_pagination module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connections_page_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connections\_response\_meta module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connections_response_meta
    :members:
    :show-inheritance:
 
@@ -22628,6 +22663,69 @@ datadog\_api\_client.v2.model.team\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_connection module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connection\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connection\_create\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connection\_create\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connection\_delete\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection_delete_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connection\_delete\_request\_data\_item module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection_delete_request_data_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connection\_relationships module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connection\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connection_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_connections\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_connections_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_create module
 -------------------------------------------------
 
@@ -22863,6 +22961,27 @@ datadog\_api\_client.v2.model.team\_permission\_settings\_response module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.team_permission_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_ref module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_ref
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_ref\_data module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_ref_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_ref\_data\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_ref_data_type
    :members:
    :show-inheritance:
 

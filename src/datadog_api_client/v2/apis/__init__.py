@@ -75,6 +75,7 @@ from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.static_analysis_api import StaticAnalysisApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
+from datadog_api_client.v2.api.team_connections_api import TeamConnectionsApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
@@ -160,6 +161,7 @@ __all__ = [
     "SpansMetricsApi",
     "StaticAnalysisApi",
     "SyntheticsApi",
+    "TeamConnectionsApi",
     "TeamsApi",
     "TestOptimizationApi",
     "UsageMeteringApi",

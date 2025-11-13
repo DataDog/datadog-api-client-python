@@ -1142,6 +1142,13 @@
     "operationId": "CreateTeam"
   },
   {
+    "source": "data.data[0]",
+    "step": "there is a valid \"team_connection\" in the system",
+    "key": "team_connection",
+    "tag": "Team Connections",
+    "operationId": "CreateTeamConnections"
+  },
+  {
     "parameters": [
       {
         "name": "team_id",
