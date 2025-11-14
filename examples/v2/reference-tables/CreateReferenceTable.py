@@ -16,6 +16,12 @@ from datadog_api_client.v2.model.create_table_request_data_attributes_file_metad
 from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_aws_detail import (
     CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail,
 )
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_azure_detail import (
+    CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail,
+)
+from datadog_api_client.v2.model.create_table_request_data_attributes_file_metadata_one_of_access_details_gcp_detail import (
+    CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail,
+)
 from datadog_api_client.v2.model.create_table_request_data_attributes_schema import (
     CreateTableRequestDataAttributesSchema,
 )
@@ -29,36 +35,45 @@ from datadog_api_client.v2.model.reference_table_schema_field_type import Refere
 body = CreateTableRequest(
     data=CreateTableRequestData(
         attributes=CreateTableRequestDataAttributes(
-            description="this is a cloud table generated via a cloud bucket sync",
             file_metadata=CreateTableRequestDataAttributesFileMetadataCloudStorage(
                 access_details=CreateTableRequestDataAttributesFileMetadataOneOfAccessDetails(
                     aws_detail=CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAwsDetail(
-                        aws_account_id="test-account-id",
-                        aws_bucket_name="test-bucket",
-                        file_path="test_rt.csv",
+                        aws_account_id="123456789000",
+                        aws_bucket_name="example-data-bucket",
+                        file_path="reference-tables/users.csv",
+                    ),
+                    azure_detail=CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsAzureDetail(
+                        azure_client_id="aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb",
+                        azure_container_name="reference-data",
+                        azure_storage_account_name="examplestorageaccount",
+                        azure_tenant_id="cccccccc-4444-5555-6666-dddddddddddd",
+                        file_path="tables/users.csv",
+                    ),
+                    gcp_detail=CreateTableRequestDataAttributesFileMetadataOneOfAccessDetailsGcpDetail(
+                        file_path="data/reference_tables/users.csv",
+                        gcp_bucket_name="example-data-bucket",
+                        gcp_project_id="example-gcp-project-12345",
+                        gcp_service_account_email="example-service@example-gcp-project-12345.iam.gserviceaccount.com",
                     ),
                 ),
-                sync_enabled=True,
+                sync_enabled=False,
             ),
             schema=CreateTableRequestDataAttributesSchema(
                 fields=[
                     CreateTableRequestDataAttributesSchemaFieldsItems(
-                        name="name",
-                        type=ReferenceTableSchemaFieldType.STRING,
-                    ),
-                    CreateTableRequestDataAttributesSchemaFieldsItems(
-                        name="account_id",
+                        name="field_1",
                         type=ReferenceTableSchemaFieldType.STRING,
                     ),
                 ],
                 primary_keys=[
-                    "account_id",
+                    "field_1",
                 ],
             ),
-            source=ReferenceTableCreateSourceType.S3,
-            table_name="test_reference_table",
+            source=ReferenceTableCreateSourceType.LOCAL_FILE,
+            table_name="table_1",
             tags=[
-                "test_tag",
+                "tag_1",
+                "tag_2",
             ],
         ),
         type=CreateTableRequestDataType.REFERENCE_TABLE,

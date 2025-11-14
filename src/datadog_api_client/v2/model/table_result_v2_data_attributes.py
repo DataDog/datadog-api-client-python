@@ -19,12 +19,6 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.table_result_v2_data_attributes_schema import TableResultV2DataAttributesSchema
     from datadog_api_client.v2.model.reference_table_source_type import ReferenceTableSourceType
-    from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage import (
-        TableResultV2DataAttributesFileMetadataCloudStorage,
-    )
-    from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_local_file import (
-        TableResultV2DataAttributesFileMetadataLocalFile,
-    )
 
 
 class TableResultV2DataAttributes(ModelNormal):
@@ -68,12 +62,7 @@ class TableResultV2DataAttributes(ModelNormal):
         self_,
         created_by: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
-        file_metadata: Union[
-            TableResultV2DataAttributesFileMetadata,
-            TableResultV2DataAttributesFileMetadataCloudStorage,
-            TableResultV2DataAttributesFileMetadataLocalFile,
-            UnsetType,
-        ] = unset,
+        file_metadata: Union[TableResultV2DataAttributesFileMetadata, UnsetType] = unset,
         last_updated_by: Union[str, UnsetType] = unset,
         row_count: Union[int, UnsetType] = unset,
         schema: Union[TableResultV2DataAttributesSchema, UnsetType] = unset,
@@ -94,6 +83,16 @@ class TableResultV2DataAttributes(ModelNormal):
         :type description: str, optional
 
         :param file_metadata: Metadata specifying where and how to access the reference table's data file.
+
+            For cloud storage tables (S3/GCS/Azure):
+
+            * sync_enabled and access_details will always be present
+            * error fields (error_message, error_row_count, error_type) are present only when errors occur
+
+            For local file tables:
+
+            * error fields (error_message, error_row_count) are present only when errors occur
+            * sync_enabled, access_details are never present
         :type file_metadata: TableResultV2DataAttributesFileMetadata, optional
 
         :param last_updated_by: UUID of the user who last updated the reference table.

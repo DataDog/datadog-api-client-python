@@ -10,21 +10,21 @@ Feature: Reference Tables
   @generated @skip @team:DataDog/redapl-experiences
   Scenario: Create reference table returns "Bad Request" response
     Given new "CreateReferenceTable" request
-    And body with value {"data": {"attributes": {"description": "this is a cloud table generated via a cloud bucket sync", "file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "test-account-id", "aws_bucket_name": "test-bucket", "file_path": "test_rt.csv"}}, "sync_enabled": true}, "schema": {"fields": [{"name": "name", "type": "STRING"}, {"name": "account_id", "type": "STRING"}], "primary_keys": ["account_id"]}, "source": "S3", "table_name": "test_reference_table", "tags": ["test_tag"]}, "type": "reference_table"}}
+    And body with value {"data": {"attributes": {"file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "123456789000", "aws_bucket_name": "example-data-bucket", "file_path": "reference-tables/users.csv"}, "azure_detail": {"azure_client_id": "aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb", "azure_container_name": "reference-data", "azure_storage_account_name": "examplestorageaccount", "azure_tenant_id": "cccccccc-4444-5555-6666-dddddddddddd", "file_path": "tables/users.csv"}, "gcp_detail": {"file_path": "data/reference_tables/users.csv", "gcp_bucket_name": "example-data-bucket", "gcp_project_id": "example-gcp-project-12345", "gcp_service_account_email": "example-service@example-gcp-project-12345.iam.gserviceaccount.com"}}, "sync_enabled": false}, "schema": {"fields": [{"name": "field_1", "type": "STRING"}], "primary_keys": ["field_1"]}, "source": "LOCAL_FILE", "table_name": "table_1", "tags": ["tag_1", "tag_2"]}, "type": "reference_table"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/redapl-experiences
   Scenario: Create reference table returns "Created" response
     Given new "CreateReferenceTable" request
-    And body with value {"data": {"attributes": {"description": "this is a cloud table generated via a cloud bucket sync", "file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "test-account-id", "aws_bucket_name": "test-bucket", "file_path": "test_rt.csv"}}, "sync_enabled": true}, "schema": {"fields": [{"name": "name", "type": "STRING"}, {"name": "account_id", "type": "STRING"}], "primary_keys": ["account_id"]}, "source": "S3", "table_name": "test_reference_table", "tags": ["test_tag"]}, "type": "reference_table"}}
+    And body with value {"data": {"attributes": {"file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "123456789000", "aws_bucket_name": "example-data-bucket", "file_path": "reference-tables/users.csv"}, "azure_detail": {"azure_client_id": "aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb", "azure_container_name": "reference-data", "azure_storage_account_name": "examplestorageaccount", "azure_tenant_id": "cccccccc-4444-5555-6666-dddddddddddd", "file_path": "tables/users.csv"}, "gcp_detail": {"file_path": "data/reference_tables/users.csv", "gcp_bucket_name": "example-data-bucket", "gcp_project_id": "example-gcp-project-12345", "gcp_service_account_email": "example-service@example-gcp-project-12345.iam.gserviceaccount.com"}}, "sync_enabled": false}, "schema": {"fields": [{"name": "field_1", "type": "STRING"}], "primary_keys": ["field_1"]}, "source": "LOCAL_FILE", "table_name": "table_1", "tags": ["tag_1", "tag_2"]}, "type": "reference_table"}}
     When the request is sent
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/redapl-experiences
   Scenario: Create reference table upload returns "Bad Request" response
     Given new "CreateReferenceTableUpload" request
-    And body with value {"data": {"attributes": {"headers": ["field_1", "field_2"], "part_count": 3, "part_size": 10000000, "table_name": ""}, "type": "upload"}}
+    And body with value {"data": {"attributes": {"headers": ["product_id", "product_name", "price"], "part_count": 3, "part_size": 10000000, "table_name": "my_products_table"}, "type": "upload"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
