@@ -12,7 +12,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs
   response:
     body:
-      string: '{"data":{"id":"071b3516-4072-44d9-9288-d4adaa1db921","type":"historicalDetectionsJob"}}'
+      string: '{"data":{"id":"66896986-212c-4e6c-9890-14e5cfd0fc19","type":"historicalDetectionsJob"}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,17 +25,16 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs/071b3516-4072-44d9-9288-d4adaa1db921
+    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs/66896986-212c-4e6c-9890-14e5cfd0fc19
   response:
     body:
-      string: '{"data":{"id":"071b3516-4072-44d9-9288-d4adaa1db921","type":"historicalDetectionsJob","attributes":{"createdAt":"2025-10-24
-        14:24:02.057923+00","createdByHandle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","createdByName":"CI
-        Account","jobDefinition":{"from":1730387522611,"to":1730387532611,"index":"main","name":"Excessive
+      string: '{"data":{"id":"66896986-212c-4e6c-9890-14e5cfd0fc19","type":"historicalDetectionsJob","attributes":{"createdAt":"2025-11-11
+        21:36:52.581297+00","createdByHandle":"frog@datadoghq.com","createdByName":"frog","jobDefinition":{"from":1730387522611,"to":1730387532611,"index":"main","name":"Excessive
         number of failed attempts.","cases":[{"name":"Condition 1","status":"info","notifications":[],"condition":"a
         \u003e 1"}],"queries":[{"query":"source:non_existing_src_weekend","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"logs"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"message":"A
         large number of failed login attempts.","tags":[],"type":"log_detection"},"jobName":"Excessive
-        number of failed attempts.","jobStatus":"pending","modifiedAt":"2025-10-24
-        14:24:02.057923+00"}}}'
+        number of failed attempts.","jobStatus":"pending","modifiedAt":"2025-11-11
+        21:36:52.581297+00","signalOutput":false}}}'
     headers:
       content-type:
       - application/vnd.api+json

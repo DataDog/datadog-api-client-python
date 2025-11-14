@@ -31,6 +31,7 @@ class ThreatHuntingJobResponseAttributes(ModelNormal):
             "job_name": (str,),
             "job_status": (str,),
             "modified_at": (str,),
+            "signal_output": (bool,),
         }
 
     attribute_map = {
@@ -42,6 +43,7 @@ class ThreatHuntingJobResponseAttributes(ModelNormal):
         "job_name": "jobName",
         "job_status": "jobStatus",
         "modified_at": "modifiedAt",
+        "signal_output": "signalOutput",
     }
 
     def __init__(
@@ -54,6 +56,7 @@ class ThreatHuntingJobResponseAttributes(ModelNormal):
         job_name: Union[str, UnsetType] = unset,
         job_status: Union[str, UnsetType] = unset,
         modified_at: Union[str, UnsetType] = unset,
+        signal_output: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -82,6 +85,9 @@ class ThreatHuntingJobResponseAttributes(ModelNormal):
 
         :param modified_at: Last modification time of the job.
         :type modified_at: str, optional
+
+        :param signal_output: Whether the job outputs signals.
+        :type signal_output: bool, optional
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
@@ -99,4 +105,6 @@ class ThreatHuntingJobResponseAttributes(ModelNormal):
             kwargs["job_status"] = job_status
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
+        if signal_output is not unset:
+            kwargs["signal_output"] = signal_output
         super().__init__(kwargs)
