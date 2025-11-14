@@ -22537,24 +22537,10 @@ datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadat
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_cloud\_storage module
---------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_cloud\_storage\_error\_type module
 ---------------------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage_error_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.table\_result\_v2\_data\_attributes\_file\_metadata\_local\_file module
------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_local_file
    :members:
    :show-inheritance:
 
