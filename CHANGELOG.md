@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## 2.46.0/2025-11-14
+
+### Added
+* Allow providing a custom retry policy. [#2946](https://github.com/DataDog/datadog-api-client-python/pull/2946)
+* Add suppression tags [#2939](https://github.com/DataDog/datadog-api-client-python/pull/2939)
+* Add Team Connection API Documentation [#2936](https://github.com/DataDog/datadog-api-client-python/pull/2936)
+* Add new summary keys for new standalone billing dimensions [#2934](https://github.com/DataDog/datadog-api-client-python/pull/2934)
+* Add Bits AI Investigations and On-Call to  API specs [#2930](https://github.com/DataDog/datadog-api-client-python/pull/2930)
+* Add `PreviewCatalogEntities` [#2926](https://github.com/DataDog/datadog-api-client-python/pull/2926)
+* Dashboards - Add on_call_events datasources [#2923](https://github.com/DataDog/datadog-api-client-python/pull/2923)
+* Sync 'audience_management.yaml' files with backend [#2921](https://github.com/DataDog/datadog-api-client-python/pull/2921)
+* 📝 [LOGSAC-1298] Add logs-pipeline type to restriction policy OpenAPI spec [#2916](https://github.com/DataDog/datadog-api-client-python/pull/2916)
+* Security Monitoring - Update Signal Archive Reasons [#2914](https://github.com/DataDog/datadog-api-client-python/pull/2914)
+* Add endpoints for Software Composition Analysis [#2911](https://github.com/DataDog/datadog-api-client-python/pull/2911)
+* Add New Serverless Summary Entries to Api Spec [#2900](https://github.com/DataDog/datadog-api-client-python/pull/2900)
+
+### Fixed
+* Add 408s to retries to Python API Client [#2945](https://github.com/DataDog/datadog-api-client-python/pull/2945)
+
+### Deprecated
+* [api-spec] Mark PATCH /api/v2/incidents/incident_id/attachments endpoint as deprecated [#2937](https://github.com/DataDog/datadog-api-client-python/pull/2937)
+* [METEXP-2068] Deprecate api/v1/search Endpoint [#2931](https://github.com/DataDog/datadog-api-client-python/pull/2931)
+
+### Security
+* [SINT-4258] Use PyPI OIDC when releasing [#2925](https://github.com/DataDog/datadog-api-client-python/pull/2925)
+
+### Changed
+* Rename historical job API endpoints to threat hunting [#2912](https://github.com/DataDog/datadog-api-client-python/pull/2912)
+
 ## 2.45.0/2025-10-27
 
 ### Added
