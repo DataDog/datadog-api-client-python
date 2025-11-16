@@ -15,14 +15,17 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         """
         A processor for the pipeline.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the `input` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs should pass through the filter. Logs that match this query continue to downstream components; others are dropped.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the `input` for this component.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param type: The processor type. The value should always be `filter`.
         :type type: ObservabilityPipelineFilterProcessorType
@@ -58,7 +61,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :type fields: [ObservabilityPipelineFieldValue]
 
         :param metrics: Configuration for generating individual metrics.
-        :type metrics: [ObservabilityPipelineGeneratedMetric]
+        :type metrics: [ObservabilityPipelineGeneratedMetric], optional
 
         :param percentage: The percentage of logs to sample.
         :type percentage: float, optional
