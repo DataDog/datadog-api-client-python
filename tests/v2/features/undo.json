@@ -1310,6 +1310,72 @@
       "type": "idempotent"
     }
   },
+  "CreateDeploymentGate": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "operationId": "DeleteDeploymentGate",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateDeploymentRule": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "operationId": "DeleteDeploymentRule",
+      "parameters": [
+        {
+          "name": "gate_id",
+          "source": "data.attributes.gate_id"
+        },
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDeploymentRule": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDeploymentRule": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDeploymentRule": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteDeploymentGate": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDeploymentGate": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDeploymentGate": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetDomainAllowlist": {
     "tag": "Domain Allowlist",
     "undo": {

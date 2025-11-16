@@ -350,6 +350,34 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"deployment_gate\",\n    \"attributes\": {\n      \"service\": \"my-service\",\n      \"env\": \"production\",\n      \"identifier\": \"my-gate\",\n      \"dry_run\": false\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"deployment_gate\" in the system",
+    "key": "deployment_gate",
+    "tag": "Deployment Gates",
+    "operationId": "CreateDeploymentGate"
+  },
+  {
+    "parameters": [
+      {
+        "name": "gate_id",
+        "source": "deployment_gate.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"deployment_rule\",\n    \"attributes\": {\n      \"name\": \"My deployment rule\",\n      \"type\": \"faulty_deployment_detection\",\n      \"options\": {\n        \"excluded_resources\": []\n      },\n      \"dry_run\": false\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"deployment_rule\" in the system",
+    "key": "deployment_rule",
+    "tag": "Deployment Gates",
+    "operationId": "CreateDeploymentRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"message\": \"test message\",\n      \"monitor_identifier\": {\n        \"monitor_tags\": [\"cat:hat\"]\n      },\n      \"scope\": \"test:{{ unique_lower_alnum }}\",\n      \"schedule\": {\n        \"start\": null\n      }\n    },\n    \"type\": \"downtime\"\n  }\n}"
       }
     ],

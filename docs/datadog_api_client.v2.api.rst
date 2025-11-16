@@ -200,6 +200,13 @@ datadog\_api\_client.v2.api.datasets\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.deployment\_gates\_api module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.deployment_gates_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.domain\_allowlist\_api module
 ---------------------------------------------------------
 
