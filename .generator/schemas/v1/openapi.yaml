@@ -7255,6 +7255,13 @@ components:
     Monitor:
       description: Object describing a monitor.
       properties:
+        assets:
+          description: The list of monitor assets tied to a monitor which represents
+            key links for users to help take actions on monitor alerts (for example,
+            runbooks).
+          items:
+            $ref: '#/components/schemas/MonitorAsset'
+          type: array
         created:
           description: Timestamp of the monitor creation.
           format: date-time
@@ -7338,6 +7345,64 @@ components:
       - type
       - query
       type: object
+    MonitorAsset:
+      description: 'Represents key links tied to a monitor to help users take action
+        on alerts (runbooks, dashboards, Workflows).
+
+        This feature is in Preview and only available to users with the feature enabled.'
+      properties:
+        category:
+          $ref: '#/components/schemas/MonitorAssetCategory'
+        name:
+          description: Name for the monitor asset
+          example: Monitor Runbook
+          type: string
+        options:
+          description: Additional options that you can set on a monitor asset.
+          example:
+            hide_in_monitor_message: true
+          type: object
+        resource_key:
+          description: Represents the identifier of the internal datadog resource
+            that this asset represents. IDs in this field should be passed in as strings.
+          example: '12345'
+          type: string
+        resource_type:
+          $ref: '#/components/schemas/MonitorAssetResourceType'
+        template_variables:
+          description: Allows you to parameterize the URL for the monitor asset.
+          example:
+            env: prod
+            region: us-east-1
+          type: object
+        url:
+          description: Url link for the asset
+          example: https://app.datadoghq.com
+          type: string
+      required:
+      - name
+      - url
+      - category
+      type: object
+    MonitorAssetCategory:
+      description: Indicates the type of asset this entity represents on a monitor.
+      enum:
+      - dashboard
+      - workflow
+      - runbook
+      example: dashboard
+      type: string
+      x-enum-varnames:
+      - DASHBOARD
+      - WORKFLOW
+      - RUNBOOK
+    MonitorAssetResourceType:
+      description: Type of internal datadog resource associated with a monitor asset.
+      enum:
+      - notebook
+      type: string
+      x-enum-varnames:
+      - NOTEBOOK
     MonitorDeviceID:
       description: ID of the device the Synthetics monitor is running on. Same as
         `SyntheticsDeviceID`.
@@ -8452,6 +8517,14 @@ components:
     MonitorUpdateRequest:
       description: Object describing a monitor update request.
       properties:
+        assets:
+          description: The list of monitor assets tied to a monitor, which represents
+            key links for users to help take actions on monitor alerts (for example,
+            runbooks).
+          items:
+            $ref: '#/components/schemas/MonitorAsset'
+          nullable: true
+          type: array
         created:
           description: Timestamp of the monitor creation.
           format: date-time
@@ -31566,6 +31639,13 @@ paths:
           all current active downtimes for the monitor.
         in: query
         name: with_downtimes
+        required: false
+        schema:
+          type: boolean
+      - description: If this argument is set to `true`, then the returned data includes
+          all assets tied to this monitor.
+        in: query
+        name: with_assets
         required: false
         schema:
           type: boolean
