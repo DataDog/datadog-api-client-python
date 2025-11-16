@@ -128,6 +128,7 @@ class UsageSummaryResponse(ModelNormal):
             "gcp_host_top99p_sum": (int,),
             "heroku_host_top99p_sum": (int,),
             "incident_management_monthly_active_users_hwm_sum": (int,),
+            "incident_management_seats_hwm_sum": (int,),
             "indexed_events_count_agg_sum": (int,),
             "infra_host_top99p_sum": (int,),
             "ingested_events_bytes_agg_sum": (int,),
@@ -347,6 +348,7 @@ class UsageSummaryResponse(ModelNormal):
         "gcp_host_top99p_sum": "gcp_host_top99p_sum",
         "heroku_host_top99p_sum": "heroku_host_top99p_sum",
         "incident_management_monthly_active_users_hwm_sum": "incident_management_monthly_active_users_hwm_sum",
+        "incident_management_seats_hwm_sum": "incident_management_seats_hwm_sum",
         "indexed_events_count_agg_sum": "indexed_events_count_agg_sum",
         "infra_host_top99p_sum": "infra_host_top99p_sum",
         "ingested_events_bytes_agg_sum": "ingested_events_bytes_agg_sum",
@@ -567,6 +569,7 @@ class UsageSummaryResponse(ModelNormal):
         gcp_host_top99p_sum: Union[int, UnsetType] = unset,
         heroku_host_top99p_sum: Union[int, UnsetType] = unset,
         incident_management_monthly_active_users_hwm_sum: Union[int, UnsetType] = unset,
+        incident_management_seats_hwm_sum: Union[int, UnsetType] = unset,
         indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         infra_host_top99p_sum: Union[int, UnsetType] = unset,
         ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
@@ -991,6 +994,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param incident_management_monthly_active_users_hwm_sum: Shows sum of the high-water marks of incident management monthly active users in the current month for all organizations.
         :type incident_management_monthly_active_users_hwm_sum: int, optional
+
+        :param incident_management_seats_hwm_sum: Shows the sum of the high-water marks of Incident Management seats over all hours in the current month for all organizations.
+        :type incident_management_seats_hwm_sum: int, optional
 
         :param indexed_events_count_agg_sum: Shows the sum of all log events indexed over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type indexed_events_count_agg_sum: int, optional
@@ -1554,6 +1560,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs[
                 "incident_management_monthly_active_users_hwm_sum"
             ] = incident_management_monthly_active_users_hwm_sum
+        if incident_management_seats_hwm_sum is not unset:
+            kwargs["incident_management_seats_hwm_sum"] = incident_management_seats_hwm_sum
         if indexed_events_count_agg_sum is not unset:
             kwargs["indexed_events_count_agg_sum"] = indexed_events_count_agg_sum
         if infra_host_top99p_sum is not unset:
