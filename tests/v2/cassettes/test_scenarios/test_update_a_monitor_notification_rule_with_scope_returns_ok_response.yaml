@@ -1,0 +1,64 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"tags":["app:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520"]},"name":"test
+      rule","recipients":["slack-monitor-app"]},"type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
+  response:
+    body:
+      string: '{"data":{"type":"monitor-notification-rule","attributes":{"recipients":["slack-monitor-app"],"modified_at":"1970-01-01T00:00:00+00:00","created_at":"2025-11-11T21:28:40.540848+00:00","name":"test
+        rule","filter":{"tags":["app:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520"]}},"relationships":{"created_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}},"id":"827442a0-5d3e-408c-a930-7ac44775fff1"},"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2020-12-29T22:58:44.733921+00:00","modified_at":"2021-04-27T13:54:01.547888+00:00","email":"team-intg-tools-libs-spam@datadoghq.com","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro","title":null,"verified":true,"service_account":true,"disabled":false,"allowed_login_methods":[],"status":"Active","last_login_time":null}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"filter":{"scope":"test:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520"},"name":"updated
+      rule","recipients":["slack-test-channel"]},"id":"827442a0-5d3e-408c-a930-7ac44775fff1","type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/827442a0-5d3e-408c-a930-7ac44775fff1
+  response:
+    body:
+      string: '{"data":{"type":"monitor-notification-rule","attributes":{"filter":{"scope":"test:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520"},"recipients":["slack-test-channel"],"created_at":"2025-11-11T21:28:40.540848+00:00","name":"updated
+        rule","modified_at":"2025-11-11T21:28:40.815544+00:00"},"id":"827442a0-5d3e-408c-a930-7ac44775fff1","relationships":{"created_by":{"data":{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}},"included":[{"type":"users","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","attributes":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2020-12-29T22:58:44.733921+00:00","modified_at":"2021-04-27T13:54:01.547888+00:00","email":"team-intg-tools-libs-spam@datadoghq.com","icon":"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro","title":null,"verified":true,"service_account":true,"disabled":false,"allowed_login_methods":[],"status":"Active","last_login_time":null}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/827442a0-5d3e-408c-a930-7ac44775fff1
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

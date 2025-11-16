@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.monitor_notification_rule_filter import MonitorNotificationRuleFilter
     from datadog_api_client.v2.model.monitor_notification_rule_filter_tags import MonitorNotificationRuleFilterTags
+    from datadog_api_client.v2.model.monitor_notification_rule_filter_scope import MonitorNotificationRuleFilterScope
 
 
 class MonitorNotificationRuleResponseAttributes(ModelNormal):
@@ -63,7 +64,12 @@ class MonitorNotificationRuleResponseAttributes(ModelNormal):
         self_,
         conditional_recipients: Union[MonitorNotificationRuleConditionalRecipients, UnsetType] = unset,
         created: Union[datetime, UnsetType] = unset,
-        filter: Union[MonitorNotificationRuleFilter, MonitorNotificationRuleFilterTags, UnsetType] = unset,
+        filter: Union[
+            MonitorNotificationRuleFilter,
+            MonitorNotificationRuleFilterTags,
+            MonitorNotificationRuleFilterScope,
+            UnsetType,
+        ] = unset,
         modified: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         recipients: Union[List[str], UnsetType] = unset,

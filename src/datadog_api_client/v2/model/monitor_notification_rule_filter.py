@@ -17,6 +17,9 @@ class MonitorNotificationRuleFilter(ModelComposed):
 
         :param tags: A list of monitor tags.
         :type tags: [str]
+
+        :param scope: The scope to which the monitor notification rule applies.
+        :type scope: str
         """
         super().__init__(kwargs)
 
@@ -30,9 +33,13 @@ class MonitorNotificationRuleFilter(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.monitor_notification_rule_filter_tags import MonitorNotificationRuleFilterTags
+        from datadog_api_client.v2.model.monitor_notification_rule_filter_scope import (
+            MonitorNotificationRuleFilterScope,
+        )
 
         return {
             "oneOf": [
                 MonitorNotificationRuleFilterTags,
+                MonitorNotificationRuleFilterScope,
             ],
         }
