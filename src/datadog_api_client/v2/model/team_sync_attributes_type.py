@@ -14,16 +14,18 @@ from typing import ClassVar
 
 class TeamSyncAttributesType(ModelSimple):
     """
-    The type of synchronization operation. Only "link" is supported, which links existing teams by matching names.
+    The type of synchronization operation. "link" connects teams by matching names. "provision" creates new teams when no match is found.
 
-    :param value: If omitted defaults to "link". Must be one of ["link"].
+    :param value: Must be one of ["link", "provision"].
     :type value: str
     """
 
     allowed_values = {
         "link",
+        "provision",
     }
     LINK: ClassVar["TeamSyncAttributesType"]
+    PROVISION: ClassVar["TeamSyncAttributesType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class TeamSyncAttributesType(ModelSimple):
 
 
 TeamSyncAttributesType.LINK = TeamSyncAttributesType("link")
+TeamSyncAttributesType.PROVISION = TeamSyncAttributesType("provision")
