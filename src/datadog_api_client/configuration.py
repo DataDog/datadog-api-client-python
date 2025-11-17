@@ -372,6 +372,7 @@ class Configuration:
                 "v2.create_sca_resolve_vulnerable_symbols": False,
                 "v2.create_sca_result": False,
                 "v2.add_member_team": False,
+                "v2.get_team_sync": False,
                 "v2.list_member_teams": False,
                 "v2.remove_member_team": False,
                 "v2.sync_teams": False,
