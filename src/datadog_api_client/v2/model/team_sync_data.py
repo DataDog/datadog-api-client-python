@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -24,24 +26,33 @@ class TeamSyncData(ModelNormal):
 
         return {
             "attributes": (TeamSyncAttributes,),
+            "id": (str,),
             "type": (TeamSyncBulkType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
-    def __init__(self_, attributes: TeamSyncAttributes, type: TeamSyncBulkType, **kwargs):
+    def __init__(
+        self_, attributes: TeamSyncAttributes, type: TeamSyncBulkType, id: Union[str, UnsetType] = unset, **kwargs
+    ):
         """
-        Team sync data.
+        A configuration governing syncing between Datadog teams and teams from an external system.
 
         :param attributes: Team sync attributes.
         :type attributes: TeamSyncAttributes
 
+        :param id: The sync's identifier
+        :type id: str, optional
+
         :param type: Team sync bulk type.
         :type type: TeamSyncBulkType
         """
+        if id is not unset:
+            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.attributes = attributes

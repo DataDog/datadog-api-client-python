@@ -236,6 +236,22 @@ Feature: Teams
     And the response has 3 items
 
   @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team sync configurations returns "OK" response
+    Given operation "GetTeamSync" enabled
+    And new "GetTeamSync" request
+    And request contains "filter[source]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team sync configurations returns "Team sync configurations not found" response
+    Given operation "GetTeamSync" enabled
+    And new "GetTeamSync" request
+    And request contains "filter[source]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Team sync configurations not found
+
+  @generated @skip @team:DataDog/aaa-omg
   Scenario: Get user memberships returns "API error response." response
     Given new "GetUserMemberships" request
     And request contains "user_uuid" parameter from "REPLACE.ME"

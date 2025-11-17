@@ -21,6 +21,8 @@ from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
+from datadog_api_client.v2.model.team_sync_response import TeamSyncResponse
+from datadog_api_client.v2.model.team_sync_attributes_source import TeamSyncAttributesSource
 from datadog_api_client.v2.model.team_sync_request import TeamSyncRequest
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
@@ -360,6 +362,29 @@ class TeamsApi:
                     "openapi_types": (str,),
                     "attribute": "team_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_team_sync_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamSyncResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/sync",
+                "operation_id": "get_team_sync",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_source": {
+                    "required": True,
+                    "openapi_types": (TeamSyncAttributesSource,),
+                    "attribute": "filter[source]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -966,6 +991,24 @@ class TeamsApi:
 
         return self._get_team_permission_settings_endpoint.call_with_http_info(**kwargs)
 
+    def get_team_sync(
+        self,
+        filter_source: TeamSyncAttributesSource,
+    ) -> TeamSyncResponse:
+        """Get team sync configurations.
+
+        Get all team synchronization configurations.
+        Returns a list of configurations used for linking or provisioning teams with external sources like GitHub.
+
+        :param filter_source: Filter by the external source platform for team synchronization
+        :type filter_source: TeamSyncAttributesSource
+        :rtype: TeamSyncResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_source"] = filter_source
+
+        return self._get_team_sync_endpoint.call_with_http_info(**kwargs)
+
     def get_user_memberships(
         self,
         user_uuid: str,
@@ -1228,7 +1271,7 @@ class TeamsApi:
         `A GitHub organization must be connected to your Datadog account <https://docs.datadoghq.com/integrations/github/>`_ ,
         and the GitHub App integrated with Datadog must have the ``Members Read`` permission. Matching is performed by comparing the Datadog team handle to the GitHub team slug
         using a normalized exact match; case is ignored and spaces are removed. No modifications are made
-        to teams in GitHub. This will not create new Teams in Datadog.
+        to teams in GitHub. This only creates new teams in Datadog when type is set to ``provision``.
 
         :type body: TeamSyncRequest
         :rtype: None

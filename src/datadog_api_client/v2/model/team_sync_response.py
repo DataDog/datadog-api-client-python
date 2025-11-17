@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -15,26 +17,26 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_sync_data import TeamSyncData
 
 
-class TeamSyncRequest(ModelNormal):
+class TeamSyncResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.team_sync_data import TeamSyncData
 
         return {
-            "data": (TeamSyncData,),
+            "data": ([TeamSyncData],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: TeamSyncData, **kwargs):
+    def __init__(self_, data: Union[List[TeamSyncData], UnsetType] = unset, **kwargs):
         """
-        Team sync request.
+        Team sync configurations response.
 
-        :param data: A configuration governing syncing between Datadog teams and teams from an external system.
-        :type data: TeamSyncData
+        :param data: List of team sync configurations
+        :type data: [TeamSyncData], optional
         """
+        if data is not unset:
+            kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_.data = data
