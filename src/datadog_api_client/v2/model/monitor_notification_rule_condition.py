@@ -39,7 +39,7 @@ class MonitorNotificationRuleCondition(ModelNormal):
         """
         Conditions for ``conditional_recipients``.
 
-        :param recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'.
+        :param recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'. Cannot be used with ``conditional_recipients``.
         :type recipients: [str]
 
         :param scope: The scope to which the monitor applied.

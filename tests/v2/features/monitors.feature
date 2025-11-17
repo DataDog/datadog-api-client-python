@@ -52,6 +52,14 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "test rule"
 
+  @team:DataDog/monitor-app
+  Scenario: Create a monitor notification rule with scope returns "OK" response
+    Given new "CreateMonitorNotificationRule" request
+    And body with value {"data": {"attributes": {"filter": {"scope": "test:{{ unique_lower }}"}, "name": "test rule", "recipients": ["slack-test-channel", "jira-test"]}, "type": "monitor-notification-rule"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "test rule"
+
   @skip-validation @team:DataDog/monitor-app
   Scenario: Create a monitor user template returns "Bad Request" response
     Given new "CreateMonitorUserTemplate" request
@@ -268,6 +276,16 @@ Feature: Monitors
     And new "UpdateMonitorNotificationRule" request
     And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "updated rule", "conditional_recipients": {"conditions": [{"scope": "transition_type:is_alert", "recipients": ["slack-test-channel", "jira-test"]}]}}, "id": "{{ monitor_notification_rule.data.id }}", "type": "monitor-notification-rule"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "updated rule"
+
+  @team:DataDog/monitor-app
+  Scenario: Update a monitor notification rule with scope returns "OK" response
+    Given there is a valid "monitor_notification_rule" in the system
+    And new "UpdateMonitorNotificationRule" request
+    And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
+    And body with value {"data": {"attributes": {"filter": {"scope": "test:{{ unique_lower }}"}, "name": "updated rule", "recipients": ["slack-test-channel"]}, "id": "{{ monitor_notification_rule.data.id }}", "type": "monitor-notification-rule"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "updated rule"

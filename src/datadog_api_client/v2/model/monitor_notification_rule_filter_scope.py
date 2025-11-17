@@ -3,7 +3,6 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -11,11 +10,11 @@ from datadog_api_client.model_utils import (
 )
 
 
-class MonitorNotificationRuleFilterTags(ModelNormal):
+class MonitorNotificationRuleFilterScope(ModelNormal):
     validations = {
-        "tags": {
-            "max_items": 20,
-            "min_items": 1,
+        "scope": {
+            "max_length": 3000,
+            "min_length": 1,
         },
     }
 
@@ -26,20 +25,20 @@ class MonitorNotificationRuleFilterTags(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "tags": ([str],),
+            "scope": (str,),
         }
 
     attribute_map = {
-        "tags": "tags",
+        "scope": "scope",
     }
 
-    def __init__(self_, tags: List[str], **kwargs):
+    def __init__(self_, scope: str, **kwargs):
         """
-        Filter monitor notifications by tags. A monitor notification must match all tags.
+        Filter monitor notifications. A monitor notification must match the scope.
 
-        :param tags: A list of tags (key:value pairs), which can be used to filter monitor notifications on monitor and group tags.
-        :type tags: [str]
+        :param scope: A scope composed of one or several key:value pairs, which can be used to filter monitor notifications on monitor and group tags.
+        :type scope: str
         """
         super().__init__(kwargs)
 
-        self_.tags = tags
+        self_.scope = scope
