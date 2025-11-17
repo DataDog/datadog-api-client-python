@@ -2710,6 +2710,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_permission_settings" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team_permission_settings()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_sync" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team_sync()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_user_memberships" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_user_memberships()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.list_member_teams" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.list_member_teams()</span></code></a>
@@ -14387,6 +14389,21 @@ User IDs passed through the <code class="docutils literal notranslate"><span cla
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.get_team_sync">
+<span class="sig-name descname"><span class="pre">get_team_sync</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_sync_attributes_source.TeamSyncAttributesSource" title="datadog_api_client.v2.model.team_sync_attributes_source.TeamSyncAttributesSource"><span class="pre">TeamSyncAttributesSource</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_sync_response.TeamSyncResponse" title="datadog_api_client.v2.model.team_sync_response.TeamSyncResponse"><span class="pre">TeamSyncResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_sync" title="Link to this definition">¶</a></dt>
+<dd><p>Get team sync configurations.</p>
+<p>Get all team synchronization configurations.
+Returns a list of configurations used for linking or provisioning teams with external sources like GitHub.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filter_source</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_sync_attributes_source.TeamSyncAttributesSource" title="datadog_api_client.v2.model.team_sync_attributes_source.TeamSyncAttributesSource"><em>TeamSyncAttributesSource</em></a>) – Filter by the external source platform for team synchronization</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_sync_response.TeamSyncResponse" title="datadog_api_client.v2.model.team_sync_response.TeamSyncResponse">TeamSyncResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.get_user_memberships">
 <span class="sig-name descname"><span class="pre">get_user_memberships</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_uuid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.user_teams_response.UserTeamsResponse" title="datadog_api_client.v2.model.user_teams_response.UserTeamsResponse"><span class="pre">UserTeamsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_user_memberships" title="Link to this definition">¶</a></dt>
 <dd><p>Get user memberships.</p>
@@ -14518,7 +14535,7 @@ connected to your Datadog account, based on Datadog Team handle and GitHub Team 
 <p><a class="reference external" href="https://docs.datadoghq.com/integrations/github/">A GitHub organization must be connected to your Datadog account</a> ,
 and the GitHub App integrated with Datadog must have the <code class="docutils literal notranslate"><span class="pre">Members</span> <span class="pre">Read</span></code> permission. Matching is performed by comparing the Datadog team handle to the GitHub team slug
 using a normalized exact match; case is ignored and spaces are removed. No modifications are made
-to teams in GitHub. This will not create new Teams in Datadog.</p>
+to teams in GitHub. This only creates new teams in Datadog when type is set to <code class="docutils literal notranslate"><span class="pre">provision</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>

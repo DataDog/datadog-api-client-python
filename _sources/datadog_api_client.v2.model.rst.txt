@@ -23125,6 +23125,13 @@ datadog\_api\_client.v2.model.team\_sync\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_sync\_attributes\_frequency module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_attributes_frequency
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_sync\_attributes\_source module
 -------------------------------------------------------------------
 
@@ -23157,6 +23164,13 @@ datadog\_api\_client.v2.model.team\_sync\_request module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.team_sync_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_response
    :members:
    :show-inheritance:
 
