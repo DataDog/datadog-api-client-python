@@ -39,6 +39,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
             "name": (str,),
             "restrictions": ([TimeRestriction],),
             "rotation_start": (datetime,),
+            "time_zone": (str,),
         }
 
     attribute_map = {
@@ -49,6 +50,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
         "name": "name",
         "restrictions": "restrictions",
         "rotation_start": "rotation_start",
+        "time_zone": "time_zone",
     }
 
     def __init__(
@@ -60,6 +62,7 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
         rotation_start: datetime,
         end_date: Union[datetime, UnsetType] = unset,
         restrictions: Union[List[TimeRestriction], UnsetType] = unset,
+        time_zone: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -85,11 +88,16 @@ class ScheduleCreateRequestDataAttributesLayersItems(ModelNormal):
 
         :param rotation_start: The date/time when the rotation for this layer starts (in ISO 8601).
         :type rotation_start: datetime
+
+        :param time_zone: The time zone for this layer.
+        :type time_zone: str, optional
         """
         if end_date is not unset:
             kwargs["end_date"] = end_date
         if restrictions is not unset:
             kwargs["restrictions"] = restrictions
+        if time_zone is not unset:
+            kwargs["time_zone"] = time_zone
         super().__init__(kwargs)
 
         self_.effective_date = effective_date

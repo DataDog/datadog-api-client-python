@@ -32,6 +32,7 @@ class LayerAttributes(ModelNormal):
             "name": (str,),
             "restrictions": ([TimeRestriction],),
             "rotation_start": (datetime,),
+            "time_zone": (str,),
         }
 
     attribute_map = {
@@ -41,6 +42,7 @@ class LayerAttributes(ModelNormal):
         "name": "name",
         "restrictions": "restrictions",
         "rotation_start": "rotation_start",
+        "time_zone": "time_zone",
     }
 
     def __init__(
@@ -51,6 +53,7 @@ class LayerAttributes(ModelNormal):
         name: Union[str, UnsetType] = unset,
         restrictions: Union[List[TimeRestriction], UnsetType] = unset,
         rotation_start: Union[datetime, UnsetType] = unset,
+        time_zone: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -73,6 +76,9 @@ class LayerAttributes(ModelNormal):
 
         :param rotation_start: The date/time when the rotation starts (ISO 8601).
         :type rotation_start: datetime, optional
+
+        :param time_zone: The time zone for this layer.
+        :type time_zone: str, optional
         """
         if effective_date is not unset:
             kwargs["effective_date"] = effective_date
@@ -86,4 +92,6 @@ class LayerAttributes(ModelNormal):
             kwargs["restrictions"] = restrictions
         if rotation_start is not unset:
             kwargs["rotation_start"] = rotation_start
+        if time_zone is not unset:
+            kwargs["time_zone"] = time_zone
         super().__init__(kwargs)
