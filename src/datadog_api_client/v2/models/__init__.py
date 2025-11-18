@@ -959,6 +959,16 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_deployment_gate_params import CreateDeploymentGateParams
+from datadog_api_client.v2.model.create_deployment_gate_params_data import CreateDeploymentGateParamsData
+from datadog_api_client.v2.model.create_deployment_gate_params_data_attributes import (
+    CreateDeploymentGateParamsDataAttributes,
+)
+from datadog_api_client.v2.model.create_deployment_rule_params import CreateDeploymentRuleParams
+from datadog_api_client.v2.model.create_deployment_rule_params_data import CreateDeploymentRuleParamsData
+from datadog_api_client.v2.model.create_deployment_rule_params_data_attributes import (
+    CreateDeploymentRuleParamsDataAttributes,
+)
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
@@ -1314,9 +1324,37 @@ from datadog_api_client.v2.model.delete_custom_framework_response import DeleteC
 from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deployment import Deployment
 from datadog_api_client.v2.model.deployment_attributes import DeploymentAttributes
+from datadog_api_client.v2.model.deployment_gate_data_type import DeploymentGateDataType
+from datadog_api_client.v2.model.deployment_gate_response import DeploymentGateResponse
+from datadog_api_client.v2.model.deployment_gate_response_data import DeploymentGateResponseData
+from datadog_api_client.v2.model.deployment_gate_response_data_attributes import DeploymentGateResponseDataAttributes
+from datadog_api_client.v2.model.deployment_gate_response_data_attributes_created_by import (
+    DeploymentGateResponseDataAttributesCreatedBy,
+)
+from datadog_api_client.v2.model.deployment_gate_response_data_attributes_updated_by import (
+    DeploymentGateResponseDataAttributesUpdatedBy,
+)
 from datadog_api_client.v2.model.deployment_metadata import DeploymentMetadata
 from datadog_api_client.v2.model.deployment_relationship import DeploymentRelationship
 from datadog_api_client.v2.model.deployment_relationship_data import DeploymentRelationshipData
+from datadog_api_client.v2.model.deployment_rule_data_type import DeploymentRuleDataType
+from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
+    DeploymentRuleOptionsFaultyDeploymentDetection,
+)
+from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
+from datadog_api_client.v2.model.deployment_rule_response import DeploymentRuleResponse
+from datadog_api_client.v2.model.deployment_rule_response_data import DeploymentRuleResponseData
+from datadog_api_client.v2.model.deployment_rule_response_data_attributes import DeploymentRuleResponseDataAttributes
+from datadog_api_client.v2.model.deployment_rule_response_data_attributes_created_by import (
+    DeploymentRuleResponseDataAttributesCreatedBy,
+)
+from datadog_api_client.v2.model.deployment_rule_response_data_attributes_type import (
+    DeploymentRuleResponseDataAttributesType,
+)
+from datadog_api_client.v2.model.deployment_rule_response_data_attributes_updated_by import (
+    DeploymentRuleResponseDataAttributesUpdatedBy,
+)
+from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
 from datadog_api_client.v2.model.detailed_finding import DetailedFinding
 from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFindingAttributes
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
@@ -1903,6 +1941,9 @@ from datadog_api_client.v2.model.grey_noise_integration_update import GreyNoiseI
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
 from datadog_api_client.v2.model.http_body import HTTPBody
+from datadog_api_client.v2.model.httpcd_gates_bad_request_response import HTTPCDGatesBadRequestResponse
+from datadog_api_client.v2.model.httpcd_gates_not_found_response import HTTPCDGatesNotFoundResponse
+from datadog_api_client.v2.model.httpcd_rules_not_found_response import HTTPCDRulesNotFoundResponse
 from datadog_api_client.v2.model.httpci_app_error import HTTPCIAppError
 from datadog_api_client.v2.model.httpci_app_errors import HTTPCIAppErrors
 from datadog_api_client.v2.model.http_credentials import HTTPCredentials
@@ -4718,6 +4759,16 @@ from datadog_api_client.v2.model.update_connection_request_data_attributes_field
 from datadog_api_client.v2.model.update_connection_request_data_type import UpdateConnectionRequestDataType
 from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
 from datadog_api_client.v2.model.update_custom_framework_response import UpdateCustomFrameworkResponse
+from datadog_api_client.v2.model.update_deployment_gate_params import UpdateDeploymentGateParams
+from datadog_api_client.v2.model.update_deployment_gate_params_data import UpdateDeploymentGateParamsData
+from datadog_api_client.v2.model.update_deployment_gate_params_data_attributes import (
+    UpdateDeploymentGateParamsDataAttributes,
+)
+from datadog_api_client.v2.model.update_deployment_rule_params import UpdateDeploymentRuleParams
+from datadog_api_client.v2.model.update_deployment_rule_params_data import UpdateDeploymentRuleParamsData
+from datadog_api_client.v2.model.update_deployment_rule_params_data_attributes import (
+    UpdateDeploymentRuleParamsDataAttributes,
+)
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
@@ -5617,6 +5668,12 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateDeploymentGateParams",
+    "CreateDeploymentGateParamsData",
+    "CreateDeploymentGateParamsDataAttributes",
+    "CreateDeploymentRuleParams",
+    "CreateDeploymentRuleParamsData",
+    "CreateDeploymentRuleParamsDataAttributes",
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateNotificationRuleParameters",
@@ -5852,9 +5909,25 @@ __all__ = [
     "DependencyLocation",
     "Deployment",
     "DeploymentAttributes",
+    "DeploymentGateDataType",
+    "DeploymentGateResponse",
+    "DeploymentGateResponseData",
+    "DeploymentGateResponseDataAttributes",
+    "DeploymentGateResponseDataAttributesCreatedBy",
+    "DeploymentGateResponseDataAttributesUpdatedBy",
     "DeploymentMetadata",
     "DeploymentRelationship",
     "DeploymentRelationshipData",
+    "DeploymentRuleDataType",
+    "DeploymentRuleOptionsFaultyDeploymentDetection",
+    "DeploymentRuleOptionsMonitor",
+    "DeploymentRuleResponse",
+    "DeploymentRuleResponseData",
+    "DeploymentRuleResponseDataAttributes",
+    "DeploymentRuleResponseDataAttributesCreatedBy",
+    "DeploymentRuleResponseDataAttributesType",
+    "DeploymentRuleResponseDataAttributesUpdatedBy",
+    "DeploymentRulesOptions",
     "DetailedFinding",
     "DetailedFindingAttributes",
     "DetailedFindingType",
@@ -6319,6 +6392,9 @@ __all__ = [
     "GroupScalarColumn",
     "GroupTags",
     "HTTPBody",
+    "HTTPCDGatesBadRequestResponse",
+    "HTTPCDGatesNotFoundResponse",
+    "HTTPCDRulesNotFoundResponse",
     "HTTPCIAppError",
     "HTTPCIAppErrors",
     "HTTPCredentials",
@@ -8294,6 +8370,12 @@ __all__ = [
     "UpdateConnectionRequestDataType",
     "UpdateCustomFrameworkRequest",
     "UpdateCustomFrameworkResponse",
+    "UpdateDeploymentGateParams",
+    "UpdateDeploymentGateParamsData",
+    "UpdateDeploymentGateParamsDataAttributes",
+    "UpdateDeploymentRuleParams",
+    "UpdateDeploymentRuleParamsData",
+    "UpdateDeploymentRuleParamsDataAttributes",
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
