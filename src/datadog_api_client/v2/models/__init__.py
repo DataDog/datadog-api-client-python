@@ -4506,14 +4506,8 @@ from datadog_api_client.v2.model.table_result_v2_data_attributes import TableRes
 from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata import (
     TableResultV2DataAttributesFileMetadata,
 )
-from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage import (
-    TableResultV2DataAttributesFileMetadataCloudStorage,
-)
 from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_cloud_storage_error_type import (
     TableResultV2DataAttributesFileMetadataCloudStorageErrorType,
-)
-from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_local_file import (
-    TableResultV2DataAttributesFileMetadataLocalFile,
 )
 from datadog_api_client.v2.model.table_result_v2_data_attributes_file_metadata_one_of_access_details import (
     TableResultV2DataAttributesFileMetadataOneOfAccessDetails,
@@ -8130,9 +8124,7 @@ __all__ = [
     "TableResultV2Data",
     "TableResultV2DataAttributes",
     "TableResultV2DataAttributesFileMetadata",
-    "TableResultV2DataAttributesFileMetadataCloudStorage",
     "TableResultV2DataAttributesFileMetadataCloudStorageErrorType",
-    "TableResultV2DataAttributesFileMetadataLocalFile",
     "TableResultV2DataAttributesFileMetadataOneOfAccessDetails",
     "TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAwsDetail",
     "TableResultV2DataAttributesFileMetadataOneOfAccessDetailsAzureDetail",
