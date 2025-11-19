@@ -56,11 +56,11 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
 
     def __init__(
         self_,
-        auth: ObservabilityPipelineGcpAuth,
         customer_id: str,
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineGoogleChronicleDestinationType,
+        auth: Union[ObservabilityPipelineGcpAuth, UnsetType] = unset,
         encoding: Union[ObservabilityPipelineGoogleChronicleDestinationEncoding, UnsetType] = unset,
         log_type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -69,7 +69,7 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
         The ``google_chronicle`` destination sends logs to Google Chronicle.
 
         :param auth: GCP credentials used to authenticate with Google Cloud Storage.
-        :type auth: ObservabilityPipelineGcpAuth
+        :type auth: ObservabilityPipelineGcpAuth, optional
 
         :param customer_id: The Google Chronicle customer ID.
         :type customer_id: str
@@ -89,13 +89,14 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
         :param type: The destination type. The value should always be ``google_chronicle``.
         :type type: ObservabilityPipelineGoogleChronicleDestinationType
         """
+        if auth is not unset:
+            kwargs["auth"] = auth
         if encoding is not unset:
             kwargs["encoding"] = encoding
         if log_type is not unset:
             kwargs["log_type"] = log_type
         super().__init__(kwargs)
 
-        self_.auth = auth
         self_.customer_id = customer_id
         self_.id = id
         self_.inputs = inputs

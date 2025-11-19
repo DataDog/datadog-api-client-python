@@ -68,13 +68,13 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
 
     def __init__(
         self_,
-        acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl,
-        auth: ObservabilityPipelineGcpAuth,
         bucket: str,
         id: str,
         inputs: List[str],
         storage_class: ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
         type: ObservabilityPipelineGoogleCloudStorageDestinationType,
+        acl: Union[ObservabilityPipelineGoogleCloudStorageDestinationAcl, UnsetType] = unset,
+        auth: Union[ObservabilityPipelineGcpAuth, UnsetType] = unset,
         key_prefix: Union[str, UnsetType] = unset,
         metadata: Union[List[ObservabilityPipelineMetadataEntry], UnsetType] = unset,
         **kwargs,
@@ -84,10 +84,10 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         It requires a bucket name, GCP authentication, and metadata fields.
 
         :param acl: Access control list setting for objects written to the bucket.
-        :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl
+        :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl, optional
 
         :param auth: GCP credentials used to authenticate with Google Cloud Storage.
-        :type auth: ObservabilityPipelineGcpAuth
+        :type auth: ObservabilityPipelineGcpAuth, optional
 
         :param bucket: Name of the GCS bucket.
         :type bucket: str
@@ -110,14 +110,16 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         :param type: The destination type. Always ``google_cloud_storage``.
         :type type: ObservabilityPipelineGoogleCloudStorageDestinationType
         """
+        if acl is not unset:
+            kwargs["acl"] = acl
+        if auth is not unset:
+            kwargs["auth"] = auth
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
         if metadata is not unset:
             kwargs["metadata"] = metadata
         super().__init__(kwargs)
 
-        self_.acl = acl
-        self_.auth = auth
         self_.bucket = bucket
         self_.id = id
         self_.inputs = inputs
