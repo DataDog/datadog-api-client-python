@@ -1414,6 +1414,30 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.deployment_gates_api" class="md-nav__link">datadog_api_client.v2.api.deployment_gates_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.create_deployment_gate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.create_deployment_gate()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.create_deployment_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.create_deployment_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.delete_deployment_gate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.delete_deployment_gate()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.delete_deployment_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.delete_deployment_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_gate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.get_deployment_gate()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.get_deployment_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.update_deployment_gate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.update_deployment_gate()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.update_deployment_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.update_deployment_rule()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.domain_allowlist_api" class="md-nav__link">datadog_api_client.v2.api.domain_allowlist_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.domain_allowlist_api.DomainAllowlistApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DomainAllowlistApi</span></code></a><nav class="md-nav">
@@ -6383,6 +6407,133 @@ view certain types of telemetry (for example, logs, traces, metrics, and RUM dat
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle" title="datadog_api_client.v2.model.dataset_response_single.DatasetResponseSingle">DatasetResponseSingle</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.deployment_gates_api">
+<span id="datadog-api-client-v2-api-deployment-gates-api-module"></span><h2 id="module-datadog_api_client.v2.api.deployment_gates_api">datadog_api_client.v2.api.deployment_gates_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.deployment_gates_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DeploymentGatesApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manage Deployment Gates using this API to reduce the likelihood and impact of incidents caused by deployments. See the <a class="reference external" href="https://docs.datadoghq.com/deployment_gates/">Deployment Gates documentation</a> for more information.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.create_deployment_gate">
+<span class="sig-name descname"><span class="pre">create_deployment_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_deployment_gate_params.CreateDeploymentGateParams" title="datadog_api_client.v2.model.create_deployment_gate_params.CreateDeploymentGateParams"><span class="pre">CreateDeploymentGateParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse" title="datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse"><span class="pre">DeploymentGateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.create_deployment_gate" title="Link to this definition">¶</a></dt>
+<dd><p>Create deployment gate.</p>
+<p>Endpoint to create a deployment gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse" title="datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse">DeploymentGateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.create_deployment_rule">
+<span class="sig-name descname"><span class="pre">create_deployment_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gate_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_deployment_rule_params.CreateDeploymentRuleParams" title="datadog_api_client.v2.model.create_deployment_rule_params.CreateDeploymentRuleParams"><span class="pre">CreateDeploymentRuleParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse" title="datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse"><span class="pre">DeploymentRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.create_deployment_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Create deployment rule.</p>
+<p>Endpoint to create a deployment rule. A gate for the rule must already exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>gate_id</strong> (<em>str</em>) – The ID of the deployment gate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse" title="datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse">DeploymentRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.delete_deployment_gate">
+<span class="sig-name descname"><span class="pre">delete_deployment_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.delete_deployment_gate" title="Link to this definition">¶</a></dt>
+<dd><p>Delete deployment gate.</p>
+<p>Endpoint to delete a deployment gate. Rules associated with the gate are also deleted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the deployment gate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.delete_deployment_rule">
+<span class="sig-name descname"><span class="pre">delete_deployment_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gate_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.delete_deployment_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Delete deployment rule.</p>
+<p>Endpoint to delete a deployment rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gate_id</strong> (<em>str</em>) – The ID of the deployment gate.</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – The ID of the deployment rule.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_gate">
+<span class="sig-name descname"><span class="pre">get_deployment_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse" title="datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse"><span class="pre">DeploymentGateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_gate" title="Link to this definition">¶</a></dt>
+<dd><p>Get deployment gate.</p>
+<p>Endpoint to get a deployment gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the deployment gate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse" title="datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse">DeploymentGateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_rule">
+<span class="sig-name descname"><span class="pre">get_deployment_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gate_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse" title="datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse"><span class="pre">DeploymentRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Get deployment rule.</p>
+<p>Endpoint to get a deployment rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gate_id</strong> (<em>str</em>) – The ID of the deployment gate.</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – The ID of the deployment rule.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse" title="datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse">DeploymentRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.update_deployment_gate">
+<span class="sig-name descname"><span class="pre">update_deployment_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_deployment_gate_params.UpdateDeploymentGateParams" title="datadog_api_client.v2.model.update_deployment_gate_params.UpdateDeploymentGateParams"><span class="pre">UpdateDeploymentGateParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse" title="datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse"><span class="pre">DeploymentGateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.update_deployment_gate" title="Link to this definition">¶</a></dt>
+<dd><p>Update deployment gate.</p>
+<p>Endpoint to update a deployment gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID of the deployment gate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse" title="datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse">DeploymentGateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.update_deployment_rule">
+<span class="sig-name descname"><span class="pre">update_deployment_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gate_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_deployment_rule_params.UpdateDeploymentRuleParams" title="datadog_api_client.v2.model.update_deployment_rule_params.UpdateDeploymentRuleParams"><span class="pre">UpdateDeploymentRuleParams</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse" title="datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse"><span class="pre">DeploymentRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.update_deployment_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Update deployment rule.</p>
+<p>Endpoint to update a deployment rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gate_id</strong> (<em>str</em>) – The ID of the deployment gate.</p></li>
+<li><p><strong>id</strong> (<em>str</em>) – The ID of the deployment rule.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse" title="datadog_api_client.v2.model.deployment_rule_response.DeploymentRuleResponse">DeploymentRuleResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
