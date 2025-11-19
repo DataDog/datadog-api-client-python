@@ -120,6 +120,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "heroku_host_top99p": (int,),
             "id": (str,),
             "incident_management_monthly_active_users_hwm": (int,),
+            "incident_management_seats_hwm": (int,),
             "indexed_events_count_sum": (int,),
             "infra_host_top99p": (int,),
             "ingested_events_bytes_sum": (int,),
@@ -334,6 +335,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "heroku_host_top99p": "heroku_host_top99p",
         "id": "id",
         "incident_management_monthly_active_users_hwm": "incident_management_monthly_active_users_hwm",
+        "incident_management_seats_hwm": "incident_management_seats_hwm",
         "indexed_events_count_sum": "indexed_events_count_sum",
         "infra_host_top99p": "infra_host_top99p",
         "ingested_events_bytes_sum": "ingested_events_bytes_sum",
@@ -549,6 +551,7 @@ class UsageSummaryDateOrg(ModelNormal):
         heroku_host_top99p: Union[int, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         incident_management_monthly_active_users_hwm: Union[int, UnsetType] = unset,
+        incident_management_seats_hwm: Union[int, UnsetType] = unset,
         indexed_events_count_sum: Union[int, UnsetType] = unset,
         infra_host_top99p: Union[int, UnsetType] = unset,
         ingested_events_bytes_sum: Union[int, UnsetType] = unset,
@@ -970,6 +973,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param incident_management_monthly_active_users_hwm: Shows the high-water mark of incident management monthly active users over all hours in the current date for the given org.
         :type incident_management_monthly_active_users_hwm: int, optional
+
+        :param incident_management_seats_hwm: Shows the high-water mark of Incident Management seats over all hours on the current date for the given organization.
+        :type incident_management_seats_hwm: int, optional
 
         :param indexed_events_count_sum: Shows the sum of all log events indexed over all hours in the current date for the given org (To be deprecated on October 1st, 2024). **Deprecated**.
         :type indexed_events_count_sum: int, optional
@@ -1513,6 +1519,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["id"] = id
         if incident_management_monthly_active_users_hwm is not unset:
             kwargs["incident_management_monthly_active_users_hwm"] = incident_management_monthly_active_users_hwm
+        if incident_management_seats_hwm is not unset:
+            kwargs["incident_management_seats_hwm"] = incident_management_seats_hwm
         if indexed_events_count_sum is not unset:
             kwargs["indexed_events_count_sum"] = indexed_events_count_sum
         if infra_host_top99p is not unset:
