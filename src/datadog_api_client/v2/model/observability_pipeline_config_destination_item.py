@@ -44,7 +44,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :type tls: ObservabilityPipelineTls, optional
 
         :param acl: Access control list setting for objects written to the bucket.
-        :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl
+        :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl, optional
 
         :param metadata: Custom metadata to attach to each object uploaded to the GCS bucket.
         :type metadata: [ObservabilityPipelineMetadataEntry], optional
