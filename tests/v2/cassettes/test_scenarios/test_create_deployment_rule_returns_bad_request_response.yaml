@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service"},"type":"deployment_gate"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deployment_gates
+  response:
+    body:
+      string: '{"data":{"id":"c7d0bed9-01dc-45d5-88ad-242123881f81","type":"deployment_gate","attributes":{"created_at":"2025-10-28T14:51:13.006792Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service","updated_at":"2025-10-28T14:51:13.006792Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"dry_run":false,"name":"test","options":{"excluded_resources":[]},"type":"fdd"},"type":"deployment_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/c7d0bed9-01dc-45d5-88ad-242123881f81/rules
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"attribute
+        \"type\" must be one of \"monitor faulty_deployment_detection\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/c7d0bed9-01dc-45d5-88ad-242123881f81
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

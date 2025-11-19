@@ -5030,6 +5030,48 @@ datadog\_api\_client.v2.model.create\_data\_deletion\_response\_body module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_deployment\_gate\_params module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_deployment_gate_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_deployment\_gate\_params\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_deployment_gate_params_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_deployment\_gate\_params\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_deployment_gate_params_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_deployment\_rule\_params module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_deployment_rule_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_deployment\_rule\_params\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_deployment_rule_params_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_deployment\_rule\_params\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_deployment_rule_params_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_incident\_notification\_rule\_request module
 ----------------------------------------------------------------------------------
 
@@ -6521,6 +6563,48 @@ datadog\_api\_client.v2.model.deployment\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deployment\_gate\_data\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gate\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gate\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gate\_response\_data\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gate\_response\_data\_attributes\_created\_by module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_response_data_attributes_created_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gate\_response\_data\_attributes\_updated\_by module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_response_data_attributes_updated_by
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.deployment\_metadata module
 ---------------------------------------------------------
 
@@ -6539,6 +6623,76 @@ datadog\_api\_client.v2.model.deployment\_relationship\_data module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.deployment_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_data\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_options\_faulty\_deployment\_detection module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_options\_monitor module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_options_monitor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_response\_data\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_response\_data\_attributes\_created\_by module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_response_data_attributes_created_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_response\_data\_attributes\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_response_data_attributes_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rule\_response\_data\_attributes\_updated\_by module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_response_data_attributes_updated_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rules\_options module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rules_options
    :members:
    :show-inheritance:
 
@@ -10102,6 +10256,27 @@ datadog\_api\_client.v2.model.http\_token\_update module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.http_token_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.httpcd\_gates\_bad\_request\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.httpcd_gates_bad_request_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.httpcd\_gates\_not\_found\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.httpcd_gates_not_found_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.httpcd\_rules\_not\_found\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.httpcd_rules_not_found_response
    :members:
    :show-inheritance:
 
@@ -23724,6 +23899,48 @@ datadog\_api\_client.v2.model.update\_custom\_framework\_response module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_custom_framework_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_deployment\_gate\_params module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_deployment_gate_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_deployment\_gate\_params\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_deployment_gate_params_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_deployment\_gate\_params\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_deployment_gate_params_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_deployment\_rule\_params module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_deployment_rule_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_deployment\_rule\_params\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_deployment_rule_params_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_deployment\_rule\_params\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_deployment_rule_params_data_attributes
    :members:
    :show-inheritance:
 
