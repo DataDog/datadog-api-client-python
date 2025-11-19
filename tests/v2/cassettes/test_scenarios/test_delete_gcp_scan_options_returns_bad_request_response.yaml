@@ -8,8 +8,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/gcp/no
   response:
     body:
-      string: '{"errors":[{"title":"Generic Error","detail":"project_id ''no'' is
-        too short: must be at least 6 characters (current: 2)"}]}'
+      string: '{"errors":[{"title":"Generic Error","detail":"project id must be 6-30
+        characters, got 2"}]}'
     headers:
       content-type:
       - application/vnd.api+json
