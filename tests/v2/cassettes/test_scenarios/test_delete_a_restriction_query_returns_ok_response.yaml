@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"restriction_query":"env:sandbox"},"type":"logs_restriction_queries"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries
+  response:
+    body:
+      string: '{"data":{"type":"logs_restriction_queries","id":"2c373dc2-c4b3-11f0-8ca7-da7ad0900002","attributes":{"restriction_query":"env:sandbox","created_at":"2025-11-18T19:17:06.848316+00:00","modified_at":"2025-11-18T19:17:06.848316+00:00"}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries/2c373dc2-c4b3-11f0-8ca7-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries/2c373dc2-c4b3-11f0-8ca7-da7ad0900002
+  response:
+    body:
+      string: '{"errors":["Restriction query not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
