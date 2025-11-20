@@ -11892,8 +11892,14 @@ Returns RUM retention filter objects from the request body when the request is s
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule">
 <span class="sig-name descname"><span class="pre">convert_existing_security_monitoring_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse"><span class="pre">SecurityMonitoringRuleConvertResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" title="Link to this definition">¶</a></dt>
 <dd><p>Convert an existing rule from JSON to Terraform.</p>
-<p>Convert an existing rule from JSON to Terraform for datadog provider
-resource datadog_security_monitoring_rule.</p>
+<p>Convert an existing rule from JSON to Terraform for Datadog provider
+resource <code class="docutils literal notranslate"><span class="pre">datadog_security_monitoring_rule</span></code>. You can do so for the following rule types:</p>
+<ul class="simple">
+<li><p>App and API Protection</p></li>
+<li><p>Cloud SIEM (log detection and signal correlation)</p></li>
+<li><p>Workload Protection</p></li>
+</ul>
+<p>You can convert Cloud Security configuration rules using Terraform’s <a class="reference external" href="https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/cloud_configuration_rule">Datadog Cloud Configuration Rule resource</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>rule_id</strong> (<em>str</em>) – The ID of the rule.</p>
@@ -11918,8 +11924,14 @@ resource datadog_security_monitoring_rule.</p>
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform">
 <span class="sig-name descname"><span class="pre">convert_security_monitoring_rule_from_json_to_terraform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_payload.SecurityMonitoringRuleConvertPayload" title="datadog_api_client.v2.model.security_monitoring_rule_convert_payload.SecurityMonitoringRuleConvertPayload"><span class="pre">SecurityMonitoringRuleConvertPayload</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_standard_rule_payload.SecurityMonitoringStandardRulePayload" title="datadog_api_client.v2.model.security_monitoring_standard_rule_payload.SecurityMonitoringStandardRulePayload"><span class="pre">SecurityMonitoringStandardRulePayload</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_signal_rule_payload.SecurityMonitoringSignalRulePayload" title="datadog_api_client.v2.model.security_monitoring_signal_rule_payload.SecurityMonitoringSignalRulePayload"><span class="pre">SecurityMonitoringSignalRulePayload</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse"><span class="pre">SecurityMonitoringRuleConvertResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform" title="Link to this definition">¶</a></dt>
 <dd><p>Convert a rule from JSON to Terraform.</p>
-<p>Convert a rule that doesn’t (yet) exist from JSON to Terraform for datadog provider
-resource datadog_security_monitoring_rule.</p>
+<p>Convert a rule that doesn’t (yet) exist from JSON to Terraform for Datadog provider
+resource <code class="docutils literal notranslate"><span class="pre">datadog_security_monitoring_rule</span></code>. You can do so for the following rule types:</p>
+<ul class="simple">
+<li><p>App and API Protection</p></li>
+<li><p>Cloud SIEM (log detection and signal correlation)</p></li>
+<li><p>Workload Protection</p></li>
+</ul>
+<p>You can convert Cloud Security configuration rules using Terraform’s <a class="reference external" href="https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/cloud_configuration_rule">Datadog Cloud Configuration Rule resource</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse" title="datadog_api_client.v2.model.security_monitoring_rule_convert_response.SecurityMonitoringRuleConvertResponse">SecurityMonitoringRuleConvertResponse</a></p>
