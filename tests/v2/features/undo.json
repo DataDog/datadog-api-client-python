@@ -2829,7 +2829,18 @@
   "SetOnCallTeamRoutingRules": {
     "tag": "On-Call",
     "undo": {
-      "type": "idempotent"
+      "operationId": "SetOnCallTeamRoutingRules",
+      "parameters": [
+        {
+          "name": "team_id",
+          "source": "data.id"
+        },
+        {
+          "name": "body",
+          "template": "{\n  \"data\": {\n    \"type\": \"team_routing_rules\",\n    \"id\": \"{{ data.id }}\",\n    \"attributes\": {\n      \"rules\": []\n    }\n  }\n}"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "ListOrgConfigs": {
