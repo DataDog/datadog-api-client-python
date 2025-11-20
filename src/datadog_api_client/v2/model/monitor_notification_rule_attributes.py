@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.monitor_notification_rule_filter import MonitorNotificationRuleFilter
     from datadog_api_client.v2.model.monitor_notification_rule_filter_tags import MonitorNotificationRuleFilterTags
+    from datadog_api_client.v2.model.monitor_notification_rule_filter_scope import MonitorNotificationRuleFilterScope
 
 
 class MonitorNotificationRuleAttributes(ModelNormal):
@@ -62,14 +63,19 @@ class MonitorNotificationRuleAttributes(ModelNormal):
         self_,
         name: str,
         conditional_recipients: Union[MonitorNotificationRuleConditionalRecipients, UnsetType] = unset,
-        filter: Union[MonitorNotificationRuleFilter, MonitorNotificationRuleFilterTags, UnsetType] = unset,
+        filter: Union[
+            MonitorNotificationRuleFilter,
+            MonitorNotificationRuleFilterTags,
+            MonitorNotificationRuleFilterScope,
+            UnsetType,
+        ] = unset,
         recipients: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes of the monitor notification rule.
 
-        :param conditional_recipients: Use conditional recipients to define different recipients for different situations.
+        :param conditional_recipients: Use conditional recipients to define different recipients for different situations. Cannot be used with ``recipients``.
         :type conditional_recipients: MonitorNotificationRuleConditionalRecipients, optional
 
         :param filter: Filter used to associate the notification rule with monitors.
@@ -78,7 +84,7 @@ class MonitorNotificationRuleAttributes(ModelNormal):
         :param name: The name of the monitor notification rule.
         :type name: str
 
-        :param recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'.
+        :param recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'. Cannot be used with ``conditional_recipients``.
         :type recipients: [str], optional
         """
         if conditional_recipients is not unset:

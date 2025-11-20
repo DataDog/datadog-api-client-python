@@ -14298,6 +14298,13 @@ datadog\_api\_client.v2.model.monitor\_notification\_rule\_filter module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_filter\_scope module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_filter_scope
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.monitor\_notification\_rule\_filter\_tags module
 ------------------------------------------------------------------------------
 

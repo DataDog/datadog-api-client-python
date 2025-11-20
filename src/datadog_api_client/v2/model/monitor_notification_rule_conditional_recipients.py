@@ -50,12 +50,12 @@ class MonitorNotificationRuleConditionalRecipients(ModelNormal):
         **kwargs,
     ):
         """
-        Use conditional recipients to define different recipients for different situations.
+        Use conditional recipients to define different recipients for different situations. Cannot be used with ``recipients``.
 
         :param conditions: Conditions of the notification rule.
         :type conditions: [MonitorNotificationRuleCondition]
 
-        :param fallback_recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'.
+        :param fallback_recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'. Cannot be used with ``conditional_recipients``.
         :type fallback_recipients: [str], optional
         """
         if fallback_recipients is not unset:
