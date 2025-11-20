@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -25,6 +27,7 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "field": (str,),
             "id": (str,),
             "include": (str,),
@@ -33,6 +36,7 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "field": "field",
         "id": "id",
         "include": "include",
@@ -45,12 +49,16 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         field: str,
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineParseJSONProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``parse_json`` processor extracts JSON from a specified field and flattens it into the event. This is useful when logs contain embedded JSON as a string.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
 
         :param field: The name of the log field that contains a JSON string.
         :type field: str
@@ -61,16 +69,19 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param type: The processor type. The value should always be ``parse_json``.
         :type type: ObservabilityPipelineParseJSONProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
         super().__init__(kwargs)
 
         self_.field = field
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type

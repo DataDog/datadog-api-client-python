@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([ObservabilityPipelineRenameFieldsProcessorField],),
             "id": (str,),
             "include": (str,),
@@ -39,6 +42,7 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
@@ -51,12 +55,16 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         fields: List[ObservabilityPipelineRenameFieldsProcessorField],
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineRenameFieldsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``rename_fields`` processor changes field names.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
 
         :param fields: A list of rename rules specifying which fields to rename in the event, what to rename them to, and whether to preserve the original fields.
         :type fields: [ObservabilityPipelineRenameFieldsProcessorField]
@@ -67,16 +75,19 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param type: The processor type. The value should always be ``rename_fields``.
         :type type: ObservabilityPipelineRenameFieldsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
         super().__init__(kwargs)
 
         self_.fields = fields
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type

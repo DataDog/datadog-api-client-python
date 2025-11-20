@@ -34,6 +34,7 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
 
         return {
             "disable_library_rules": (bool,),
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -43,6 +44,7 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
 
     attribute_map = {
         "disable_library_rules": "disable_library_rules",
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -54,10 +56,11 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
         self_,
         id: str,
         include: str,
-        inputs: List[str],
         rules: List[ObservabilityPipelineParseGrokProcessorRule],
         type: ObservabilityPipelineParseGrokProcessorType,
         disable_library_rules: Union[bool, UnsetType] = unset,
+        enabled: Union[bool, UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -66,14 +69,17 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
         :param disable_library_rules: If set to ``true`` , disables the default Grok rules provided by Datadog.
         :type disable_library_rules: bool, optional
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
+
         :param id: A unique identifier for this processor.
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param rules: The list of Grok parsing rules. If multiple matching rules are provided, they are evaluated in order. The first successful match is applied.
         :type rules: [ObservabilityPipelineParseGrokProcessorRule]
@@ -83,10 +89,13 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
         """
         if disable_library_rules is not unset:
             kwargs["disable_library_rules"] = disable_library_rules
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
         super().__init__(kwargs)
 
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.rules = rules
         self_.type = type

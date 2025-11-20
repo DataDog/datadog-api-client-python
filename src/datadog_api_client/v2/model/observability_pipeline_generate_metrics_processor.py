@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -29,6 +31,7 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -37,6 +40,7 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -47,35 +51,44 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
     def __init__(
         self_,
         id: str,
-        include: str,
-        inputs: List[str],
-        metrics: List[ObservabilityPipelineGeneratedMetric],
         type: ObservabilityPipelineGenerateMetricsProcessorType,
+        enabled: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
+        metrics: Union[List[ObservabilityPipelineGeneratedMetric], UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``generate_datadog_metrics`` processor creates custom metrics from logs and sends them to Datadog.
         Metrics can be counters, gauges, or distributions and optionally grouped by log fields.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline.
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
-        :type include: str
+        :type include: str, optional
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this processor.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param metrics: Configuration for generating individual metrics.
-        :type metrics: [ObservabilityPipelineGeneratedMetric]
+        :type metrics: [ObservabilityPipelineGeneratedMetric], optional
 
         :param type: The processor type. Always ``generate_datadog_metrics``.
         :type type: ObservabilityPipelineGenerateMetricsProcessorType
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
+        if include is not unset:
+            kwargs["include"] = include
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
+        if metrics is not unset:
+            kwargs["metrics"] = metrics
         super().__init__(kwargs)
 
         self_.id = id
-        self_.include = include
-        self_.inputs = inputs
-        self_.metrics = metrics
         self_.type = type

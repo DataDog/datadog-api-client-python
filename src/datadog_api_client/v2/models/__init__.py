@@ -2819,9 +2819,13 @@ from datadog_api_client.v2.model.observability_pipeline_config import Observabil
 from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
     ObservabilityPipelineConfigDestinationItem,
 )
+from datadog_api_client.v2.model.observability_pipeline_config_processor_group import (
+    ObservabilityPipelineConfigProcessorGroup,
+)
 from datadog_api_client.v2.model.observability_pipeline_config_processor_item import (
     ObservabilityPipelineConfigProcessorItem,
 )
+from datadog_api_client.v2.model.observability_pipeline_config_processors import ObservabilityPipelineConfigProcessors
 from datadog_api_client.v2.model.observability_pipeline_config_source_item import ObservabilityPipelineConfigSourceItem
 from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
     ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
@@ -7066,7 +7070,9 @@ __all__ = [
     "ObservabilityPipelineAwsAuth",
     "ObservabilityPipelineConfig",
     "ObservabilityPipelineConfigDestinationItem",
+    "ObservabilityPipelineConfigProcessorGroup",
     "ObservabilityPipelineConfigProcessorItem",
+    "ObservabilityPipelineConfigProcessors",
     "ObservabilityPipelineConfigSourceItem",
     "ObservabilityPipelineCrowdStrikeNextGenSiemDestination",
     "ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression",

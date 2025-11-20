@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
             "inputs": ([str],),
@@ -39,6 +42,7 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
         "inputs": "inputs",
@@ -50,13 +54,17 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         self_,
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineAddEnvVarsProcessorType,
         variables: List[ObservabilityPipelineAddEnvVarsProcessorVariable],
+        enabled: Union[bool, UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``add_env_vars`` processor adds environment variable values to log events.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
 
         :param id: The unique identifier for this component. Used to reference this processor in the pipeline.
         :type id: str
@@ -64,8 +72,8 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the input for this processor.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param type: The processor type. The value should always be ``add_env_vars``.
         :type type: ObservabilityPipelineAddEnvVarsProcessorType
@@ -73,10 +81,13 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         :param variables: A list of environment variable mappings to apply to log fields.
         :type variables: [ObservabilityPipelineAddEnvVarsProcessorVariable]
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
         super().__init__(kwargs)
 
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type
         self_.variables = variables
