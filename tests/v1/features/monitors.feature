@@ -132,6 +132,18 @@ Feature: Monitors
     And the response "query" is equal to "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2"
 
   @team:DataDog/monitor-app
+  Scenario: Create a monitor with assets returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"assets": [{"category": "runbook", "name": "Monitor Runbook", "resource_key": "12345", "resource_type": "notebook", "url": "/notebooks/12345"}], "name": "{{ unique }}", "type": "metric alert", "query": "avg(current_1mo):avg:system.load.5{*} > 0.5", "message": "some message Notify: @hipchat-channel", "options":{"thresholds":{"critical":0.5}, "scheduling_options":{"evaluation_window":{"day_starts":"04:00", "month_starts":1}}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "assets[0].category" is equal to "runbook"
+    And the response "assets[0].name" is equal to "Monitor Runbook"
+    And the response "assets[0].resource_key" is equal to "12345"
+    And the response "assets[0].resource_type" is equal to "notebook"
+    And the response "assets[0].url" is equal to "/notebooks/12345"
+
+  @team:DataDog/monitor-app
   Scenario: Create an Error Tracking monitor returns "OK" response
     Given new "CreateMonitor" request
     And body from file "monitor_error_tracking_alert_payload.json"
@@ -169,7 +181,7 @@ Feature: Monitors
   Scenario: Edit a monitor returns "Bad Request" response
     Given new "UpdateMonitor" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
-    And body with value {"draft_status": "published", "options": {"evaluation_delay": null, "include_tags": true, "min_failure_duration": 0, "min_location_failed": 1, "new_group_delay": null, "new_host_delay": 300, "no_data_timeframe": null, "notification_preset_name": "show_all", "notify_audit": false, "notify_by": [], "on_missing_data": "default", "renotify_interval": null, "renotify_occurrences": null, "renotify_statuses": ["alert"], "scheduling_options": {"custom_schedule": {"recurrences": [{"rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", "start": "2023-08-31T16:30:00", "timezone": "Europe/Paris"}]}, "evaluation_window": {"day_starts": "04:00", "hour_starts": 0, "month_starts": 1, "timezone": "Europe/Paris"}}, "synthetics_check_id": null, "threshold_windows": {"recovery_window": null, "trigger_window": null}, "thresholds": {"critical_recovery": null, "ok": null, "unknown": null, "warning": null, "warning_recovery": null}, "timeout_h": null, "variables": [{"compute": {"aggregation": "avg", "interval": 60000, "metric": "@duration"}, "data_source": "rum", "group_by": [{"facet": "status", "limit": 10, "sort": {"aggregation": "avg", "order": "desc"}}], "indexes": ["days-3", "days-7"], "name": "query_errors", "search": {"query": "service:query"}}]}, "priority": null, "restricted_roles": [], "tags": [], "type": "query alert"}
+    And body with value {"assets": [{"category": "runbook", "name": "Monitor Runbook", "resource_key": "12345", "resource_type": "notebook", "url": "/notebooks/12345"}], "draft_status": "published", "options": {"evaluation_delay": null, "include_tags": true, "min_failure_duration": 0, "min_location_failed": 1, "new_group_delay": null, "new_host_delay": 300, "no_data_timeframe": null, "notification_preset_name": "show_all", "notify_audit": false, "notify_by": [], "on_missing_data": "default", "renotify_interval": null, "renotify_occurrences": null, "renotify_statuses": ["alert"], "scheduling_options": {"custom_schedule": {"recurrences": [{"rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", "start": "2023-08-31T16:30:00", "timezone": "Europe/Paris"}]}, "evaluation_window": {"day_starts": "04:00", "hour_starts": 0, "month_starts": 1, "timezone": "Europe/Paris"}}, "synthetics_check_id": null, "threshold_windows": {"recovery_window": null, "trigger_window": null}, "thresholds": {"critical_recovery": null, "ok": null, "unknown": null, "warning": null, "warning_recovery": null}, "timeout_h": null, "variables": [{"compute": {"aggregation": "avg", "interval": 60000, "metric": "@duration"}, "data_source": "rum", "group_by": [{"facet": "status", "limit": 10, "sort": {"aggregation": "avg", "order": "desc"}}], "indexes": ["days-3", "days-7"], "name": "query_errors", "search": {"query": "service:query"}}]}, "priority": null, "restricted_roles": [], "tags": [], "type": "query alert"}
     When the request is sent
     Then the response status is 400 Bad Request
 

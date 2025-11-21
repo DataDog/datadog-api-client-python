@@ -1,9 +1,9 @@
 interactions:
 - request:
-    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Check_if_a_monitor_can_be_deleted_returns_OK_response-1728578463","options":{"enable_logs_sample":true,"escalation_message":"the
+    body: '{"message":"some message Notify: @hipchat-channel","name":"Test-Check_if_a_monitor_can_be_deleted_returns_OK_response-1763748205","options":{"enable_logs_sample":true,"escalation_message":"the
       situation has escalated","evaluation_delay":700,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2,"warning":1},"timeout_h":24},"priority":3,"query":"logs(\"service:foo
       AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
-      > 2","tags":["test:testcheckifamonitorcanbedeletedreturnsokresponse1728578463","env:ci"],"type":"log
+      > 2","tags":["test:testcheckifamonitorcanbedeletedreturnsokresponse1763748205","env:ci"],"type":"log
       alert"}'
     headers:
       accept:
@@ -14,12 +14,12 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/monitor
   response:
     body:
-      string: '{"id":155845287,"org_id":321813,"type":"log alert","name":"Test-Check_if_a_monitor_can_be_deleted_returns_OK_response-1728578463","message":"some
-        message Notify: @hipchat-channel","tags":["test:testcheckifamonitorcanbedeletedreturnsokresponse1728578463","env:ci"],"query":"logs(\"service:foo
+      string: '{"id":238669218,"org_id":197728,"type":"log alert","name":"Test-Check_if_a_monitor_can_be_deleted_returns_OK_response-1763748205","message":"some
+        message Notify: @hipchat-channel","tags":["test:testcheckifamonitorcanbedeletedreturnsokresponse1763748205","env:ci"],"query":"logs(\"service:foo
         AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\")
         > 2","options":{"enable_logs_sample":true,"escalation_message":"the situation
-        has escalated","evaluation_delay":700,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2.0,"warning":1.0},"timeout_h":24,"groupby_simple_monitor":false,"silenced":{}},"multi":true,"created_at":1728578463000,"created":"2024-10-10T16:41:03.666877+00:00","modified":"2024-10-10T16:41:03.666877+00:00","deleted":null,"restricted_roles":null,"priority":3,"restriction_policy":null,"overall_state_modified":null,"overall_state":"No
-        Data","creator":{"name":null,"handle":"frog@datadoghq.com","email":"frog@datadoghq.com","id":1445416}}
+        has escalated","evaluation_delay":700,"include_tags":true,"locked":false,"new_host_delay":600,"no_data_timeframe":null,"notification_preset_name":"hide_handles","notify_audit":false,"notify_no_data":false,"on_missing_data":"show_and_notify_no_data","renotify_interval":60,"require_full_window":true,"thresholds":{"critical":2.0,"warning":1.0},"timeout_h":24,"groupby_simple_monitor":false,"silenced":{}},"multi":true,"created_at":1763748206000,"created":"2025-11-21T18:03:26.123200+00:00","modified":"2025-11-21T18:03:26.123200+00:00","deleted":null,"priority":3,"restricted_roles":null,"restriction_policy":null,"draft_status":"published","assets":[],"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"Kevin Pombo","handle":"kevin.pombo@datadoghq.com","email":"kevin.pombo@datadoghq.com","id":25712273}}
 
         '
     headers:
@@ -34,10 +34,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v1/monitor/can_delete?monitor_ids=155845287
+    uri: https://api.datadoghq.com/api/v1/monitor/can_delete?monitor_ids=238669218
   response:
     body:
-      string: '{"data":{"ok":[155845287]},"errors":null}
+      string: '{"data":{"ok":[238669218]},"errors":null}
 
         '
     headers:
@@ -52,10 +52,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/monitor/155845287
+    uri: https://api.datadoghq.com/api/v1/monitor/238669218
   response:
     body:
-      string: '{"deleted_monitor_id":155845287}
+      string: '{"deleted_monitor_id":238669218}
 
         '
     headers:
