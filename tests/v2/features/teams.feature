@@ -43,6 +43,20 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
 
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Create a team hierarchy link returns "CREATED" response
+    Given new "AddTeamHierarchyLink" request
+    And body with value {"data": {"relationships": {"parent_team": {"data": {"id": "692e8073-12c4-4c71-8408-5090bd44c9c8", "type": "team"}}, "sub_team": {"data": {"id": "692e8073-12c4-4c71-8408-5090bd44c9c8", "type": "team"}}}, "type": "team_hierarchy_links"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Create a team hierarchy link returns "Conflict" response
+    Given new "AddTeamHierarchyLink" request
+    And body with value {"data": {"relationships": {"parent_team": {"data": {"id": "692e8073-12c4-4c71-8408-5090bd44c9c8", "type": "team"}}, "sub_team": {"data": {"id": "692e8073-12c4-4c71-8408-5090bd44c9c8", "type": "team"}}}, "type": "team_hierarchy_links"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
   @team:DataDog/aaa-omg
   Scenario: Create a team link returns "API error response." response
     Given new "CreateTeamLink" request
@@ -95,6 +109,20 @@ Feature: Teams
     And the response "data.attributes.banner" is equal to 7
     And the response "data.attributes.visible_modules" is equal to ["m1","m2"]
     And the response "data.attributes.hidden_modules" is equal to ["m3"]
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get a team hierarchy link returns "API error response." response
+    Given new "GetTeamHierarchyLink" request
+    And request contains "link_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get a team hierarchy link returns "OK" response
+    Given new "GetTeamHierarchyLink" request
+    And request contains "link_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/aaa-omg
   Scenario: Get a team link returns "API error response." response
@@ -211,6 +239,18 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team hierarchy links returns "OK" response
+    Given new "GetTeamHierarchyLinks" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/aaa-omg @with-pagination
+  Scenario: Get team hierarchy links returns "OK" response with pagination
+    Given new "GetTeamHierarchyLinks" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @team:DataDog/aaa-omg
   Scenario: Get team memberships returns "API error response." response
     Given new "GetTeamMemberships" request
@@ -290,6 +330,20 @@ Feature: Teams
     And new "RemoveMemberTeam" request
     And request contains "super_team_id" parameter from "REPLACE.ME"
     And request contains "member_team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Remove a team hierarchy link returns "API error response." response
+    Given new "RemoveTeamHierarchyLink" request
+    And request contains "link_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Remove a team hierarchy link returns "No Content" response
+    Given new "RemoveTeamHierarchyLink" request
+    And request contains "link_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 

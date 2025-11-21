@@ -22922,6 +22922,104 @@ datadog\_api\_client.v2.model.team\_create\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_hierarchy\_link module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_create module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_create\_relationships module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_create_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_create\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_create\_team module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_create_team
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_create\_team\_relationship module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_create_team_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_relationships module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_team module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_team
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_team\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_team_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_team\_relationship module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_team_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_link\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_link_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_hierarchy\_links\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_hierarchy_links_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_included module
 ---------------------------------------------------
 
@@ -23395,6 +23493,27 @@ datadog\_api\_client.v2.model.teams\_field module
 -------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.teams_field
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_hierarchy\_links\_response\_links module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_hierarchy_links_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_hierarchy\_links\_response\_meta module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_hierarchy_links_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_hierarchy\_links\_response\_meta\_page module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_hierarchy_links_response_meta_page
    :members:
    :show-inheritance:
 

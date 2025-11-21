@@ -4345,6 +4345,37 @@
       "type": "unsafe"
     }
   },
+  "GetTeamHierarchyLinks": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AddTeamHierarchyLink": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "RemoveTeamHierarchyLink",
+      "parameters": [
+        {
+          "name": "link_id",
+          "source": "response"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RemoveTeamHierarchyLink": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamHierarchyLink": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTeamConnections": {
     "tag": "Team Connections",
     "undo": {
