@@ -135,6 +135,11 @@ class MonitorsApi:
                     "attribute": "with_downtimes",
                     "location": "query",
                 },
+                "with_assets": {
+                    "openapi_types": (bool,),
+                    "attribute": "with_assets",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -640,6 +645,7 @@ class MonitorsApi:
         *,
         group_states: Union[str, UnsetType] = unset,
         with_downtimes: Union[bool, UnsetType] = unset,
+        with_assets: Union[bool, UnsetType] = unset,
     ) -> Monitor:
         """Get a monitor's details.
 
@@ -651,6 +657,8 @@ class MonitorsApi:
         :type group_states: str, optional
         :param with_downtimes: If this argument is set to true, then the returned data includes all current active downtimes for the monitor.
         :type with_downtimes: bool, optional
+        :param with_assets: If this argument is set to ``true`` , the returned data includes all assets tied to this monitor.
+        :type with_assets: bool, optional
         :rtype: Monitor
         """
         kwargs: Dict[str, Any] = {}
@@ -661,6 +669,9 @@ class MonitorsApi:
 
         if with_downtimes is not unset:
             kwargs["with_downtimes"] = with_downtimes
+
+        if with_assets is not unset:
+            kwargs["with_assets"] = with_assets
 
         return self._get_monitor_endpoint.call_with_http_info(**kwargs)
 

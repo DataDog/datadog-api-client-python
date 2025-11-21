@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.monitor_asset import MonitorAsset
     from datadog_api_client.v1.model.creator import Creator
     from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
     from datadog_api_client.v1.model.monitor_options import MonitorOptions
@@ -27,6 +28,7 @@ if TYPE_CHECKING:
 class MonitorUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.monitor_asset import MonitorAsset
         from datadog_api_client.v1.model.creator import Creator
         from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
         from datadog_api_client.v1.model.monitor_options import MonitorOptions
@@ -35,6 +37,7 @@ class MonitorUpdateRequest(ModelNormal):
         from datadog_api_client.v1.model.monitor_type import MonitorType
 
         return {
+            "assets": ([MonitorAsset], none_type),
             "created": (datetime,),
             "creator": (Creator,),
             "deleted": (datetime, none_type),
@@ -55,6 +58,7 @@ class MonitorUpdateRequest(ModelNormal):
         }
 
     attribute_map = {
+        "assets": "assets",
         "created": "created",
         "creator": "creator",
         "deleted": "deleted",
@@ -86,6 +90,7 @@ class MonitorUpdateRequest(ModelNormal):
 
     def __init__(
         self_,
+        assets: Union[List[MonitorAsset], none_type, UnsetType] = unset,
         created: Union[datetime, UnsetType] = unset,
         creator: Union[Creator, UnsetType] = unset,
         deleted: Union[datetime, none_type, UnsetType] = unset,
@@ -107,6 +112,9 @@ class MonitorUpdateRequest(ModelNormal):
     ):
         """
         Object describing a monitor update request.
+
+        :param assets: The list of monitor assets tied to a monitor, which represents key links for users to take action on monitor alerts (for example, runbooks).
+        :type assets: [MonitorAsset], none_type, optional
 
         :param created: Timestamp of the monitor creation.
         :type created: datetime, optional
@@ -164,6 +172,8 @@ class MonitorUpdateRequest(ModelNormal):
         :param type: The type of the monitor. For more information about ``type`` , see the `monitor options <https://docs.datadoghq.com/monitors/guide/monitor_api_options/>`_ docs.
         :type type: MonitorType, optional
         """
+        if assets is not unset:
+            kwargs["assets"] = assets
         if created is not unset:
             kwargs["created"] = created
         if creator is not unset:
