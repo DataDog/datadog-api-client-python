@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"jira_issue_url":"https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"},"relationships":{"findings":{"data":[{"id":"OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI=","type":"findings"},{"id":"MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM=","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"jira_issues"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security/findings/jira_issues
+  response:
+    body:
+      string: '{"data":{"id":"9efb1118-ed9c-4b02-b13b-f3acf8415f7c","type":"cases","attributes":{"created_at":"2025-11-20T15:22:44.644286Z","creation_source":"CS_SECURITY_FINDING","description":"A
+        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/94762d2f0123331575cd81095e450f09?detection=static","resource_id":"OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI="},{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/13c7ffac3021be5d1bd4c5e07b575fca?detection=static","resource_id":"MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM="}],"jira_issue":{"status":"COMPLETED","result":{"issue_id":"2404808","issue_key":"CSMSEC-105476","issue_url":"https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476","account_id":"fdcffa62-24ab-4914-a195-a22bdc607030"}},"key":"CSMINV-463","modified_at":"2025-11-20T15:52:25.368628Z","priority":"NOT_DEFINED","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
+        title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"modified_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

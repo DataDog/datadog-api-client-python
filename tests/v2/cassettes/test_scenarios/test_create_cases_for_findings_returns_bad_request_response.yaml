@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":[{"attributes":{},"relationships":{"findings":{"data":[]},"project":{"data":{"id":"7f198869-c7ef-4afc-97cf-da5cdc13b5c3","type":"projects"}}},"type":"cases"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/cases
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"no finding
+        provided"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"data":[{"attributes":{},"relationships":{"case":{"data":{"id":"e469ceda-957a-4557-a607-9ff25032e9ca","type":"cases"}}},"type":"jira_issues"}],"included":[{"attributes":{"description":"A
+      description","title":"A title"},"id":"e469ceda-957a-4557-a607-9ff25032e9ca","relationships":{"findings":{"data":[{"id":"MzUxMDI4OWYyYWEyODRhYjQ0Zjg2YjY2ZTFmNjRjYzd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY=","type":"findings"},{"id":"ZjE2ZGI5YjdmYTQyYzhhMDQ3Nzc3YjM1NGQ2Y2NmZTd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY=","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"cases"},{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"},{"id":"MzUxMDI4OWYyYWEyODRhYjQ0Zjg2YjY2ZTFmNjRjYzd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY=","type":"findings"},{"id":"ZjE2ZGI5YjdmYTQyYzhhMDQ3Nzc3YjM1NGQ2Y2NmZTd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY=","type":"findings"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/jira_issues
+  response:
+    body:
+      string: '{"data":[{"id":"e469ceda-957a-4557-a607-9ff25032e9ca","type":"cases","attributes":{"created_at":"2025-11-21T14:49:32.034826Z","creation_source":"CS_SECURITY_FINDING","description":"A
+        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/f16db9b7fa42c8a047777b354d6ccfe7?detection=static","resource_id":"ZjE2ZGI5YjdmYTQyYzhhMDQ3Nzc3YjM1NGQ2Y2NmZTd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="},{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/3510289f2aa284ab44f86b66e1f64cc7?detection=static","resource_id":"MzUxMDI4OWYyYWEyODRhYjQ0Zjg2YjY2ZTFmNjRjYzd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="}],"jira_issue":{"status":"COMPLETED","result":{"issue_id":"2407744","issue_key":"CSMSEC-105481","issue_url":"https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105481","account_id":"fdcffa62-24ab-4914-a195-a22bdc607030"}},"key":"CSMINV-468","modified_at":"2025-11-21T14:49:33.306003Z","priority":"NOT_DEFINED","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
+        title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"id":"e469ceda-957a-4557-a607-9ff25032e9ca","relationships":{"findings":{"data":[{"id":"ZjE2ZGI5YjdmYTQyYzhhMDQ3Nzc3YjM1NGQ2Y2NmZTd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY=","type":"findings"}]}},"type":"cases"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/cases
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
