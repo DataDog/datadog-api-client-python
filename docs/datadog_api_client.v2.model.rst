@@ -6605,6 +6605,13 @@ datadog\_api\_client.v2.model.deployment\_gate\_response\_data\_attributes\_upda
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deployment\_gate\_rules\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_rules_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.deployment\_metadata module
 ---------------------------------------------------------
 
