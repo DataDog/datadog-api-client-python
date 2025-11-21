@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.fleet_agent_versions_response import FleetAgentVersionsResponse
+from datadog_api_client.v2.model.fleet_agent_info_response import FleetAgentInfoResponse
 from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
 from datadog_api_client.v2.model.fleet_deployment_response import FleetDeploymentResponse
 from datadog_api_client.v2.model.fleet_deployment_configure_create_request import FleetDeploymentConfigureCreateRequest
@@ -149,6 +150,29 @@ class FleetAutomationApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_fleet_agent_info_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetAgentInfoResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/fleet/agents/{agent_key}",
+                "operation_id": "get_fleet_agent_info",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "agent_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "agent_key",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -455,6 +479,29 @@ class FleetAutomationApi:
         kwargs["id"] = id
 
         return self._delete_fleet_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def get_fleet_agent_info(
+        self,
+        agent_key: str,
+    ) -> FleetAgentInfoResponse:
+        """Get detailed information about an agent.
+
+        Retrieve detailed information about a specific Datadog Agent.
+        This endpoint returns comprehensive information about an agent including:
+
+        * Agent details and metadata
+        * Configured integrations organized by status (working, warning, error, missing)
+        * Detected integrations
+        * Configuration files and layers
+
+        :param agent_key: The unique identifier (agent key) for the Datadog Agent.
+        :type agent_key: str
+        :rtype: FleetAgentInfoResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["agent_key"] = agent_key
+
+        return self._get_fleet_agent_info_endpoint.call_with_http_info(**kwargs)
 
     def get_fleet_deployment(
         self,

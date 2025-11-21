@@ -252,6 +252,7 @@ class Configuration:
                 "v2.create_fleet_deployment_upgrade": False,
                 "v2.create_fleet_schedule": False,
                 "v2.delete_fleet_schedule": False,
+                "v2.get_fleet_agent_info": False,
                 "v2.get_fleet_deployment": False,
                 "v2.get_fleet_schedule": False,
                 "v2.list_fleet_agent_versions": False,
