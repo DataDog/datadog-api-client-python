@@ -9,6 +9,8 @@ from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
+from datadog_api_client.v2.model.global_variable_response import GlobalVariableResponse
+from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
 
 
 class SyntheticsApi:
@@ -43,6 +45,32 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._patch_global_variable_endpoint = _Endpoint(
+            settings={
+                "response_type": (GlobalVariableResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/variables/{variable_id}/jsonpatch",
+                "operation_id": "patch_global_variable",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "variable_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "variable_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (GlobalVariableJsonPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._set_on_demand_concurrency_cap_endpoint = _Endpoint(
             settings={
                 "response_type": (OnDemandConcurrencyCapResponse,),
@@ -74,6 +102,36 @@ class SyntheticsApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_on_demand_concurrency_cap_endpoint.call_with_http_info(**kwargs)
+
+    def patch_global_variable(
+        self,
+        variable_id: str,
+        body: GlobalVariableJsonPatchRequest,
+    ) -> GlobalVariableResponse:
+        """Patch a global variable.
+
+        Patch a global variable using JSON Patch (RFC 6902).
+        This endpoint allows partial updates to a global variable by specifying only the fields to modify.
+
+        Common operations include:
+
+        * Replace field values: ``{"op": "replace", "path": "/name", "value": "new_name"}``
+        * Update nested values: ``{"op": "replace", "path": "/value/value", "value": "new_value"}``
+        * Add/update tags: ``{"op": "add", "path": "/tags/-", "value": "new_tag"}``
+        * Remove fields: ``{"op": "remove", "path": "/description"}``
+
+        :param variable_id: The ID of the global variable.
+        :type variable_id: str
+        :param body: JSON Patch document with operations to apply.
+        :type body: GlobalVariableJsonPatchRequest
+        :rtype: GlobalVariableResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["variable_id"] = variable_id
+
+        kwargs["body"] = body
+
+        return self._patch_global_variable_endpoint.call_with_http_info(**kwargs)
 
     def set_on_demand_concurrency_cap(
         self,
