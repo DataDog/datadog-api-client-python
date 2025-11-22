@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"restriction_query":"env:sandbox"},"type":"logs_restriction_queries"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries
+  response:
+    body:
+      string: '{"data":{"type":"logs_restriction_queries","id":"2cc39998-c4b3-11f0-8b4b-da7ad0900002","attributes":{"restriction_query":"env:sandbox","created_at":"2025-11-18T19:17:07.768188+00:00","modified_at":"2025-11-18T19:17:07.768188+00:00"}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries/2cc39998-c4b3-11f0-8b4b-da7ad0900002
+  response:
+    body:
+      string: '{"data":{"type":"logs_restriction_queries","id":"2cc39998-c4b3-11f0-8b4b-da7ad0900002","attributes":{"restriction_query":"env:sandbox","created_at":"2025-11-18T19:17:07.768188+00:00","modified_at":"2025-11-18T19:17:07.768188+00:00"},"relationships":{"roles":{"data":[]}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries/2cc39998-c4b3-11f0-8b4b-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
