@@ -20,8 +20,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_sli_spec import SLOSliSpec
     from datadog_api_client.v1.model.slo_threshold import SLOThreshold
     from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
-    from datadog_api_client.v1.model.slo_type import SLOType
     from datadog_api_client.v1.model.slo_time_slice_spec import SLOTimeSliceSpec
+    from datadog_api_client.v1.model.slo_count_spec import SLOCountSpec
 
 
 class SLOResponseData(ModelNormal):
@@ -32,7 +32,6 @@ class SLOResponseData(ModelNormal):
         from datadog_api_client.v1.model.slo_sli_spec import SLOSliSpec
         from datadog_api_client.v1.model.slo_threshold import SLOThreshold
         from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
-        from datadog_api_client.v1.model.slo_type import SLOType
 
         return {
             "configured_alert_ids": ([int],),
@@ -51,7 +50,6 @@ class SLOResponseData(ModelNormal):
             "target_threshold": (float,),
             "thresholds": ([SLOThreshold],),
             "timeframe": (SLOTimeframe,),
-            "type": (SLOType,),
             "warning_threshold": (float,),
         }
 
@@ -72,7 +70,6 @@ class SLOResponseData(ModelNormal):
         "target_threshold": "target_threshold",
         "thresholds": "thresholds",
         "timeframe": "timeframe",
-        "type": "type",
         "warning_threshold": "warning_threshold",
     }
     read_only_vars = {
@@ -95,12 +92,11 @@ class SLOResponseData(ModelNormal):
         monitor_tags: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
-        sli_specification: Union[SLOSliSpec, SLOTimeSliceSpec, UnsetType] = unset,
+        sli_specification: Union[SLOSliSpec, SLOTimeSliceSpec, SLOCountSpec, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         target_threshold: Union[float, UnsetType] = unset,
         thresholds: Union[List[SLOThreshold], UnsetType] = unset,
         timeframe: Union[SLOTimeframe, UnsetType] = unset,
-        type: Union[SLOType, UnsetType] = unset,
         warning_threshold: Union[float, UnsetType] = unset,
         **kwargs,
     ):
@@ -157,12 +153,12 @@ class SLOResponseData(ModelNormal):
         :param name: The name of the service level objective object.
         :type name: str, optional
 
-        :param query: A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
+        :param query: A metric-based SLO. Note that Datadog only allows the sum by aggregator
             to be used because this will sum up all request counts instead of averaging them, or taking the max or
             min of all of those requests.
         :type query: ServiceLevelObjectiveQuery, optional
 
-        :param sli_specification: A generic SLI specification. This is currently used for time-slice SLOs only.
+        :param sli_specification: A generic SLI specification. This is currently used for time-slice and count-based SLOs only.
         :type sli_specification: SLOSliSpec, optional
 
         :param tags: A list of tags associated with this service level objective.
@@ -181,9 +177,6 @@ class SLOResponseData(ModelNormal):
         :param timeframe: The SLO time window options. Note that "custom" is not a valid option for creating
             or updating SLOs. It is only used when querying SLO history over custom timeframes.
         :type timeframe: SLOTimeframe, optional
-
-        :param type: The type of the service level objective.
-        :type type: SLOType, optional
 
         :param warning_threshold: The optional warning threshold such that when the service level indicator is
             below this value for the given threshold, but above the target threshold, the
@@ -223,8 +216,6 @@ class SLOResponseData(ModelNormal):
             kwargs["thresholds"] = thresholds
         if timeframe is not unset:
             kwargs["timeframe"] = timeframe
-        if type is not unset:
-            kwargs["type"] = type
         if warning_threshold is not unset:
             kwargs["warning_threshold"] = warning_threshold
         super().__init__(kwargs)
