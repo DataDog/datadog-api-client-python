@@ -27,6 +27,7 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "group_by": ([str],),
             "id": (str,),
             "include": (str,),
@@ -37,6 +38,7 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "group_by": "group_by",
         "id": "id",
         "include": "include",
@@ -50,15 +52,19 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         self_,
         id: str,
         include: str,
-        inputs: List[str],
         threshold: int,
         type: ObservabilityPipelineThrottleProcessorType,
         window: float,
+        enabled: Union[bool, UnsetType] = unset,
         group_by: Union[List[str], UnsetType] = unset,
+        inputs: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``throttle`` processor limits the number of events that pass through over a given time window.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool, optional
 
         :param group_by: Optional list of fields used to group events before the threshold has been reached.
         :type group_by: [str], optional
@@ -69,8 +75,8 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the input for this processor.
-        :type inputs: [str]
+        :param inputs: A list of component IDs whose output is used as input for this processor. Required when used as a standalone processor, omit when used within a processor group.
+        :type inputs: [str], optional
 
         :param threshold: the number of events allowed in a given time window. Events sent after the threshold has been reached, are dropped.
         :type threshold: int
@@ -81,13 +87,16 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         :param window: The time window in seconds over which the threshold applies.
         :type window: float
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         if group_by is not unset:
             kwargs["group_by"] = group_by
+        if inputs is not unset:
+            kwargs["inputs"] = inputs
         super().__init__(kwargs)
 
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.threshold = threshold
         self_.type = type
         self_.window = window
