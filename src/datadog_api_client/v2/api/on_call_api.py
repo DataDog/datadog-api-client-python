@@ -527,7 +527,7 @@ class OnCallApi:
         include: Union[str, UnsetType] = unset,
         filter_at_ts: Union[str, UnsetType] = unset,
     ) -> Shift:
-        """Get the schedule on-call user.
+        """Get the scheduled on-call user.
 
         Retrieves the user who is on-call for the specified schedule at a given time.
 

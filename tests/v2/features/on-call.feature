@@ -153,26 +153,33 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
-  Scenario: Get the schedule on-call user returns "Bad Request" response
-    Given new "GetScheduleOnCallUser" request
-    And request contains "schedule_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/on-call
-  Scenario: Get the schedule on-call user returns "Not Found" response
-    Given new "GetScheduleOnCallUser" request
-    And request contains "schedule_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 Not Found
-
   @team:DataDog/on-call
   Scenario: Get the schedule on-call user returns "OK" response
     Given new "GetScheduleOnCallUser" request
     And there is a valid "user" in the system
     And there is a valid "schedule" in the system
     And request contains "schedule_id" parameter from "schedule.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Get the scheduled on-call user returns "Bad Request" response
+    Given new "GetScheduleOnCallUser" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Get the scheduled on-call user returns "Not Found" response
+    Given new "GetScheduleOnCallUser" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Get the scheduled on-call user returns "OK" response
+    Given new "GetScheduleOnCallUser" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
