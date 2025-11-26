@@ -27,20 +27,20 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "group_by": ([str],),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "threshold": (int,),
             "type": (ObservabilityPipelineThrottleProcessorType,),
             "window": (float,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "group_by": "group_by",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "threshold": "threshold",
         "type": "type",
         "window": "window",
@@ -48,9 +48,9 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
 
     def __init__(
         self_,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         threshold: int,
         type: ObservabilityPipelineThrottleProcessorType,
         window: float,
@@ -60,6 +60,9 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         """
         The ``throttle`` processor limits the number of events that pass through over a given time window.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
+
         :param group_by: Optional list of fields used to group events before the threshold has been reached.
         :type group_by: [str], optional
 
@@ -68,9 +71,6 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
-
-        :param inputs: A list of component IDs whose output is used as the input for this processor.
-        :type inputs: [str]
 
         :param threshold: the number of events allowed in a given time window. Events sent after the threshold has been reached, are dropped.
         :type threshold: int
@@ -85,9 +85,9 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
             kwargs["group_by"] = group_by
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.threshold = threshold
         self_.type = type
         self_.window = window

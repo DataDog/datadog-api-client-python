@@ -46,10 +46,10 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
         return {
             "drop_events": (bool,),
+            "enabled": (bool,),
             "id": (str,),
             "ignore_when_missing_partitions": (bool,),
             "include": (str,),
-            "inputs": ([str],),
             "limit": (ObservabilityPipelineQuotaProcessorLimit,),
             "name": (str,),
             "overflow_action": (ObservabilityPipelineQuotaProcessorOverflowAction,),
@@ -60,10 +60,10 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
     attribute_map = {
         "drop_events": "drop_events",
+        "enabled": "enabled",
         "id": "id",
         "ignore_when_missing_partitions": "ignore_when_missing_partitions",
         "include": "include",
-        "inputs": "inputs",
         "limit": "limit",
         "name": "name",
         "overflow_action": "overflow_action",
@@ -74,13 +74,13 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
     def __init__(
         self_,
-        drop_events: bool,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         limit: ObservabilityPipelineQuotaProcessorLimit,
         name: str,
         type: ObservabilityPipelineQuotaProcessorType,
+        drop_events: Union[bool, UnsetType] = unset,
         ignore_when_missing_partitions: Union[bool, UnsetType] = unset,
         overflow_action: Union[ObservabilityPipelineQuotaProcessorOverflowAction, UnsetType] = unset,
         overrides: Union[List[ObservabilityPipelineQuotaProcessorOverride], UnsetType] = unset,
@@ -91,7 +91,10 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         The Quota Processor measures logging traffic for logs that match a specified filter. When the configured daily quota is met, the processor can drop or alert.
 
         :param drop_events: If set to ``true`` , logs that matched the quota filter and sent after the quota has been met are dropped; only logs that did not match the filter query continue through the pipeline.
-        :type drop_events: bool
+        :type drop_events: bool, optional
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
@@ -101,9 +104,6 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
-
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
 
         :param limit: The maximum amount of data or number of events allowed before the quota is enforced. Can be specified in bytes or events.
         :type limit: ObservabilityPipelineQuotaProcessorLimit
@@ -127,6 +127,8 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``quota``.
         :type type: ObservabilityPipelineQuotaProcessorType
         """
+        if drop_events is not unset:
+            kwargs["drop_events"] = drop_events
         if ignore_when_missing_partitions is not unset:
             kwargs["ignore_when_missing_partitions"] = ignore_when_missing_partitions
         if overflow_action is not unset:
@@ -137,10 +139,9 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
             kwargs["partition_fields"] = partition_fields
         super().__init__(kwargs)
 
-        self_.drop_events = drop_events
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.limit = limit
         self_.name = name
         self_.type = type

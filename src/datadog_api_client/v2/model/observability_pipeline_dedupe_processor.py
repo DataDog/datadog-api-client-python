@@ -31,35 +31,38 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([str],),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "mode": (ObservabilityPipelineDedupeProcessorMode,),
             "type": (ObservabilityPipelineDedupeProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "mode": "mode",
         "type": "type",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         fields: List[str],
         id: str,
         include: str,
-        inputs: List[str],
         mode: ObservabilityPipelineDedupeProcessorMode,
         type: ObservabilityPipelineDedupeProcessorType,
         **kwargs,
     ):
         """
         The ``dedupe`` processor removes duplicate fields in log events.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
 
         :param fields: A list of log field paths to check for duplicates.
         :type fields: [str]
@@ -70,9 +73,6 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the input for this processor.
-        :type inputs: [str]
-
         :param mode: The deduplication mode to apply to the fields.
         :type mode: ObservabilityPipelineDedupeProcessorMode
 
@@ -81,9 +81,9 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.fields = fields
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.mode = mode
         self_.type = type

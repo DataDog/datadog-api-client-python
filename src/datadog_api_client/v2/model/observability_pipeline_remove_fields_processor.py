@@ -25,32 +25,35 @@ class ObservabilityPipelineRemoveFieldsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([str],),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "type": (ObservabilityPipelineRemoveFieldsProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "type": "type",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         fields: List[str],
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineRemoveFieldsProcessorType,
         **kwargs,
     ):
         """
         The ``remove_fields`` processor deletes specified fields from logs.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
 
         :param fields: A list of field names to be removed from each log event.
         :type fields: [str]
@@ -61,16 +64,13 @@ class ObservabilityPipelineRemoveFieldsProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: The ``PipelineRemoveFieldsProcessor`` ``inputs``.
-        :type inputs: [str]
-
         :param type: The processor type. The value should always be ``remove_fields``.
         :type type: ObservabilityPipelineRemoveFieldsProcessorType
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.fields = fields
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type

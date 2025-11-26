@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["filter-processor"],"type":"datadog_logs"}],"processors":[{"id":"filter-processor","include":"service:my-service","inputs":["datadog-agent-source"],"type":"filter"}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]},"name":"Main
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["my-processor-group"],"type":"datadog_logs"}],"processors":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]},"name":"Main
       Observability Pipeline"},"type":"pipelines"}}'
     headers:
       accept:
@@ -16,7 +16,7 @@ interactions:
         '
     headers:
       content-type:
-      - application/json
+      - application/vnd.api+json
     status:
       code: 200
       message: OK
