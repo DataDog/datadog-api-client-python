@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries/role/00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '{"errors":["Missing Role 00000000-0000-0000-0000-000000000000"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
