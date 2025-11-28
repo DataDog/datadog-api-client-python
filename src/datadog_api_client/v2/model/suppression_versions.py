@@ -15,53 +15,46 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
-    from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
-    from datadog_api_client.v2.model.security_monitoring_standard_rule_response import (
-        SecurityMonitoringStandardRuleResponse,
-    )
-    from datadog_api_client.v2.model.security_monitoring_signal_rule_response import (
-        SecurityMonitoringSignalRuleResponse,
+    from datadog_api_client.v2.model.security_monitoring_suppression_attributes import (
+        SecurityMonitoringSuppressionAttributes,
     )
 
 
-class RuleVersions(ModelNormal):
+class SuppressionVersions(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
-        from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+        from datadog_api_client.v2.model.security_monitoring_suppression_attributes import (
+            SecurityMonitoringSuppressionAttributes,
+        )
 
         return {
             "changes": ([VersionHistoryUpdate],),
-            "rule": (SecurityMonitoringRuleResponse,),
+            "suppression": (SecurityMonitoringSuppressionAttributes,),
         }
 
     attribute_map = {
         "changes": "changes",
-        "rule": "rule",
+        "suppression": "suppression",
     }
 
     def __init__(
         self_,
         changes: Union[List[VersionHistoryUpdate], UnsetType] = unset,
-        rule: Union[
-            SecurityMonitoringRuleResponse,
-            SecurityMonitoringStandardRuleResponse,
-            SecurityMonitoringSignalRuleResponse,
-            UnsetType,
-        ] = unset,
+        suppression: Union[SecurityMonitoringSuppressionAttributes, UnsetType] = unset,
         **kwargs,
     ):
         """
-        A rule version with a list of updates.
+        A suppression version with a list of updates.
 
         :param changes: A list of changes.
         :type changes: [VersionHistoryUpdate], optional
 
-        :param rule: Create a new rule.
-        :type rule: SecurityMonitoringRuleResponse, optional
+        :param suppression: The attributes of the suppression rule.
+        :type suppression: SecurityMonitoringSuppressionAttributes, optional
         """
         if changes is not unset:
             kwargs["changes"] = changes
-        if rule is not unset:
-            kwargs["rule"] = rule
+        if suppression is not unset:
+            kwargs["suppression"] = suppression
         super().__init__(kwargs)
