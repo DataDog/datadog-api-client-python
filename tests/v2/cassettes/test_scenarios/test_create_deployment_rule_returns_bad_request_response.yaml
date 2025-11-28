@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service"},"type":"deployment_gate"}}'
+    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate-testcreatedeploymentrulereturnsbadrequestresponse1764326919","service":"my-service"},"type":"deployment_gate"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/deployment_gates
   response:
     body:
-      string: '{"data":{"id":"c7d0bed9-01dc-45d5-88ad-242123881f81","type":"deployment_gate","attributes":{"created_at":"2025-10-28T14:51:13.006792Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service","updated_at":"2025-10-28T14:51:13.006792Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"64de7180-ffd3-417b-beb6-c6ea469b5b5f","type":"deployment_gate","attributes":{"created_at":"2025-11-28T10:48:39.863066Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate-testcreatedeploymentrulereturnsbadrequestresponse1764326919","service":"my-service","updated_at":"2025-11-28T10:48:39.863066Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -27,7 +27,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/deployment_gates/c7d0bed9-01dc-45d5-88ad-242123881f81/rules
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/64de7180-ffd3-417b-beb6-c6ea469b5b5f/rules
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Bad Request","detail":"attribute
@@ -44,7 +44,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/deployment_gates/c7d0bed9-01dc-45d5-88ad-242123881f81
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/64de7180-ffd3-417b-beb6-c6ea469b5b5f
   response:
     body:
       string: ''
