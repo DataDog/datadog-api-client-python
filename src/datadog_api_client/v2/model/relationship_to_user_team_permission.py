@@ -8,6 +8,7 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -40,7 +41,7 @@ class RelationshipToUserTeamPermission(ModelNormal):
 
     def __init__(
         self_,
-        data: Union[RelationshipToUserTeamPermissionData, UnsetType] = unset,
+        data: Union[RelationshipToUserTeamPermissionData, none_type, UnsetType] = unset,
         links: Union[TeamRelationshipsLinks, UnsetType] = unset,
         **kwargs,
     ):
@@ -48,7 +49,7 @@ class RelationshipToUserTeamPermission(ModelNormal):
         Relationship between a user team permission and a team
 
         :param data: Related user team permission data
-        :type data: RelationshipToUserTeamPermissionData, optional
+        :type data: RelationshipToUserTeamPermissionData, none_type, optional
 
         :param links: Links attributes.
         :type links: TeamRelationshipsLinks, optional

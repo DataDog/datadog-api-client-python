@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team-hierarchy-links/aaa11111-aa11-aa11-aaaa-aaaaaa111111
+  response:
+    body:
+      string: '{"errors":["Not Found: link with id aaa11111-aa11-aa11-aaaa-aaaaaa111111
+        not found"]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

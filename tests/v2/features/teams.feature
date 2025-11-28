@@ -44,6 +44,25 @@ Feature: Teams
     Then the response status is 200 Represents a user's association to a team
 
   @team:DataDog/aaa-omg
+  Scenario: Create a team hierarchy link returns "Conflict" response
+    Given new "AddTeamHierarchyLink" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And body with value {"data": {"relationships": {"parent_team": {"data": {"id": "{{team_hierarchy_link.data.relationships.parent_team.data.id}}", "type": "team"}}, "sub_team": {"data": {"id": "{{team_hierarchy_link.data.relationships.sub_team.data.id}}", "type": "team"}}}, "type": "team_hierarchy_links"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/aaa-omg
+  Scenario: Create a team hierarchy link returns "OK" response
+    Given new "AddTeamHierarchyLink" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And body with value {"data": {"relationships": {"parent_team": {"data": {"id": "{{dd_team.data.id}}", "type": "team"}}, "sub_team": {"data": {"id": "{{dd_team_2.data.id}}", "type": "team"}}}, "type": "team_hierarchy_links"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/aaa-omg
   Scenario: Create a team link returns "API error response." response
     Given new "CreateTeamLink" request
     And there is a valid "dd_team" in the system
@@ -95,6 +114,28 @@ Feature: Teams
     And the response "data.attributes.banner" is equal to 7
     And the response "data.attributes.visible_modules" is equal to ["m1","m2"]
     And the response "data.attributes.hidden_modules" is equal to ["m3"]
+
+  @team:DataDog/aaa-omg
+  Scenario: Get a team hierarchy link returns "API error response." response
+    Given new "GetTeamHierarchyLink" request
+    And request contains "link_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Get a team hierarchy link returns "OK" response
+    Given new "GetTeamHierarchyLink" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And request contains "link_id" parameter from "team_hierarchy_link.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ team_hierarchy_link.data.id }}"
+    And the response "data.relationships.parent_team.data.id" is equal to "{{ dd_team.data.id }}"
+    And the response "data.relationships.sub_team.data.id" is equal to "{{ dd_team_2.data.id }}"
+    And the response "included" has item with field "id" with value "{{ dd_team.data.id }}"
+    And the response "included" has item with field "id" with value "{{ dd_team_2.data.id }}"
 
   @team:DataDog/aaa-omg
   Scenario: Get a team link returns "API error response." response
@@ -212,6 +253,31 @@ Feature: Teams
     Then the response status is 200 OK
 
   @team:DataDog/aaa-omg
+  Scenario: Get team hierarchy links returns "OK" response
+    Given new "GetTeamHierarchyLinks" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And request contains "filter[parent_team]" parameter from "team_hierarchy_link.data.relationships.parent_team.data.id"
+    And request contains "filter[sub_team]" parameter from "team_hierarchy_link.data.relationships.sub_team.data.id"
+    And request contains "page[number]" parameter with value 0
+    And request contains "page[size]" parameter with value 100
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].id" is equal to "{{ team_hierarchy_link.data.id }}"
+    And the response "data[0].relationships.parent_team.data.id" is equal to "{{ dd_team.data.id }}"
+    And the response "data[0].relationships.sub_team.data.id" is equal to "{{ dd_team_2.data.id }}"
+    And the response "included" has item with field "id" with value "{{ dd_team.data.id }}"
+    And the response "included" has item with field "id" with value "{{ dd_team_2.data.id }}"
+
+  @generated @skip @team:DataDog/aaa-omg @with-pagination
+  Scenario: Get team hierarchy links returns "OK" response with pagination
+    Given new "GetTeamHierarchyLinks" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/aaa-omg
   Scenario: Get team memberships returns "API error response." response
     Given new "GetTeamMemberships" request
     And request contains "team_id" parameter with value "REPLACE.ME"
@@ -290,6 +356,23 @@ Feature: Teams
     And new "RemoveMemberTeam" request
     And request contains "super_team_id" parameter from "REPLACE.ME"
     And request contains "member_team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/aaa-omg
+  Scenario: Remove a team hierarchy link returns "API error response." response
+    Given new "RemoveTeamHierarchyLink" request
+    And request contains "link_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Remove a team hierarchy link returns "No Content" response
+    Given new "RemoveTeamHierarchyLink" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And request contains "link_id" parameter from "team_hierarchy_link.data.id"
     When the request is sent
     Then the response status is 204 No Content
 

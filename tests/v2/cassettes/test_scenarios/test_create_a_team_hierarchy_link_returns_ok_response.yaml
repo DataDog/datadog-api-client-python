@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-4d8084da4dfa4ed8","name":"test-name-4d8084da4dfa4ed8"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"d5b049f4-59f1-474d-ad98-5a7342a8961f","type":"team","attributes":{"avatar":null,"banner":11,"created_at":"2025-11-24T16:01:16.149673+00:00","description":null,"handle":"test-handle-4d8084da4dfa4ed8","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2025-11-24T16:01:16.149673+00:00","name":"test-name-4d8084da4dfa4ed8","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/d5b049f4-59f1-474d-ad98-5a7342a8961f/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/d5b049f4-59f1-474d-ad98-5a7342a8961f/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-2-4d8084da4dfa4ed8","name":"test-name-2-4d8084da4dfa4ed8"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"790428f6-10bc-427d-bf36-f53ca3c197e0","type":"team","attributes":{"avatar":null,"banner":4,"created_at":"2025-11-24T16:01:16.315013+00:00","description":null,"handle":"test-handle-2-4d8084da4dfa4ed8","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2025-11-24T16:01:16.315013+00:00","name":"test-name-2-4d8084da4dfa4ed8","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/790428f6-10bc-427d-bf36-f53ca3c197e0/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/790428f6-10bc-427d-bf36-f53ca3c197e0/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"relationships":{"parent_team":{"data":{"id":"d5b049f4-59f1-474d-ad98-5a7342a8961f","type":"team"}},"sub_team":{"data":{"id":"790428f6-10bc-427d-bf36-f53ca3c197e0","type":"team"}}},"type":"team_hierarchy_links"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team-hierarchy-links
+  response:
+    body:
+      string: '{"data":{"id":"6cf86539-2c6e-497e-8cef-0b285ff05514","type":"team_hierarchy_links","attributes":{"created_at":"2025-11-24T16:01:16.460042023Z","provisioned_by":""},"relationships":{"parent_team":{"data":{"id":"d5b049f4-59f1-474d-ad98-5a7342a8961f","type":"team"}},"sub_team":{"data":{"id":"790428f6-10bc-427d-bf36-f53ca3c197e0","type":"team"}}}},"included":[{"id":"d5b049f4-59f1-474d-ad98-5a7342a8961f","type":"team","attributes":{"avatar":null,"banner":11,"handle":"test-handle-4d8084da4dfa4ed8","is_managed":false,"is_open_membership":false,"link_count":0,"name":"test-name-4d8084da4dfa4ed8","summary":null,"user_count":0}},{"id":"790428f6-10bc-427d-bf36-f53ca3c197e0","type":"team","attributes":{"avatar":null,"banner":4,"handle":"test-handle-2-4d8084da4dfa4ed8","is_managed":false,"is_open_membership":false,"link_count":0,"name":"test-name-2-4d8084da4dfa4ed8","summary":null,"user_count":0}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team-hierarchy-links/6cf86539-2c6e-497e-8cef-0b285ff05514
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/790428f6-10bc-427d-bf36-f53ca3c197e0
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/d5b049f4-59f1-474d-ad98-5a7342a8961f
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

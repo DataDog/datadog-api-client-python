@@ -42,13 +42,14 @@ class TeamAttributes(ModelNormal):
             "created_at": (datetime,),
             "description": (str, none_type),
             "handle": (str,),
-            "hidden_modules": ([str],),
+            "hidden_modules": ([str], none_type),
+            "is_managed": (bool,),
             "link_count": (int,),
             "modified_at": (datetime,),
             "name": (str,),
             "summary": (str, none_type),
             "user_count": (int,),
-            "visible_modules": ([str],),
+            "visible_modules": ([str], none_type),
         }
 
     attribute_map = {
@@ -58,6 +59,7 @@ class TeamAttributes(ModelNormal):
         "description": "description",
         "handle": "handle",
         "hidden_modules": "hidden_modules",
+        "is_managed": "is_managed",
         "link_count": "link_count",
         "modified_at": "modified_at",
         "name": "name",
@@ -78,12 +80,13 @@ class TeamAttributes(ModelNormal):
         banner: Union[int, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, none_type, UnsetType] = unset,
-        hidden_modules: Union[List[str], UnsetType] = unset,
+        hidden_modules: Union[List[str], none_type, UnsetType] = unset,
+        is_managed: Union[bool, UnsetType] = unset,
         link_count: Union[int, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         summary: Union[str, none_type, UnsetType] = unset,
         user_count: Union[int, UnsetType] = unset,
-        visible_modules: Union[List[str], UnsetType] = unset,
+        visible_modules: Union[List[str], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -105,7 +108,10 @@ class TeamAttributes(ModelNormal):
         :type handle: str
 
         :param hidden_modules: Collection of hidden modules for the team
-        :type hidden_modules: [str], optional
+        :type hidden_modules: [str], none_type, optional
+
+        :param is_managed: Whether the team is managed from an external source
+        :type is_managed: bool, optional
 
         :param link_count: The number of links belonging to the team
         :type link_count: int, optional
@@ -123,7 +129,7 @@ class TeamAttributes(ModelNormal):
         :type user_count: int, optional
 
         :param visible_modules: Collection of visible modules for the team
-        :type visible_modules: [str], optional
+        :type visible_modules: [str], none_type, optional
         """
         if avatar is not unset:
             kwargs["avatar"] = avatar
@@ -135,6 +141,8 @@ class TeamAttributes(ModelNormal):
             kwargs["description"] = description
         if hidden_modules is not unset:
             kwargs["hidden_modules"] = hidden_modules
+        if is_managed is not unset:
+            kwargs["is_managed"] = is_managed
         if link_count is not unset:
             kwargs["link_count"] = link_count
         if modified_at is not unset:
