@@ -23,8 +23,8 @@ class CloudWorkloadSecurityAgentPolicyVersion(ModelNormal):
         }
 
     attribute_map = {
-        "date": "Date",
-        "name": "Name",
+        "date": "date",
+        "name": "name",
     }
 
     def __init__(self_, date: Union[str, none_type, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):

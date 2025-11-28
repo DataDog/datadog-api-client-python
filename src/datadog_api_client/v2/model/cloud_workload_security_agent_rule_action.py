@@ -73,7 +73,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
         :param filter: SECL expression used to target the container to apply the action on
         :type filter: str, optional
 
-        :param hash: An empty object indicating the hash action
+        :param hash: Hash file specified by the field attribute
         :type hash: CloudWorkloadSecurityAgentRuleActionHash, optional
 
         :param kill: Kill system call applied on the container matching the rule
