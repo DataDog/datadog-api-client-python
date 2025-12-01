@@ -4589,6 +4589,22 @@ from datadog_api_client.v2.model.team_create import TeamCreate
 from datadog_api_client.v2.model.team_create_attributes import TeamCreateAttributes
 from datadog_api_client.v2.model.team_create_relationships import TeamCreateRelationships
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
+from datadog_api_client.v2.model.team_hierarchy_link import TeamHierarchyLink
+from datadog_api_client.v2.model.team_hierarchy_link_attributes import TeamHierarchyLinkAttributes
+from datadog_api_client.v2.model.team_hierarchy_link_create import TeamHierarchyLinkCreate
+from datadog_api_client.v2.model.team_hierarchy_link_create_relationships import TeamHierarchyLinkCreateRelationships
+from datadog_api_client.v2.model.team_hierarchy_link_create_request import TeamHierarchyLinkCreateRequest
+from datadog_api_client.v2.model.team_hierarchy_link_create_team import TeamHierarchyLinkCreateTeam
+from datadog_api_client.v2.model.team_hierarchy_link_create_team_relationship import (
+    TeamHierarchyLinkCreateTeamRelationship,
+)
+from datadog_api_client.v2.model.team_hierarchy_link_relationships import TeamHierarchyLinkRelationships
+from datadog_api_client.v2.model.team_hierarchy_link_response import TeamHierarchyLinkResponse
+from datadog_api_client.v2.model.team_hierarchy_link_team import TeamHierarchyLinkTeam
+from datadog_api_client.v2.model.team_hierarchy_link_team_attributes import TeamHierarchyLinkTeamAttributes
+from datadog_api_client.v2.model.team_hierarchy_link_team_relationship import TeamHierarchyLinkTeamRelationship
+from datadog_api_client.v2.model.team_hierarchy_link_type import TeamHierarchyLinkType
+from datadog_api_client.v2.model.team_hierarchy_links_response import TeamHierarchyLinksResponse
 from datadog_api_client.v2.model.team_included import TeamIncluded
 from datadog_api_client.v2.model.team_link import TeamLink
 from datadog_api_client.v2.model.team_link_attributes import TeamLinkAttributes
@@ -4675,6 +4691,9 @@ from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttribu
 from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
 from datadog_api_client.v2.model.teams_field import TeamsField
+from datadog_api_client.v2.model.teams_hierarchy_links_response_links import TeamsHierarchyLinksResponseLinks
+from datadog_api_client.v2.model.teams_hierarchy_links_response_meta import TeamsHierarchyLinksResponseMeta
+from datadog_api_client.v2.model.teams_hierarchy_links_response_meta_page import TeamsHierarchyLinksResponseMetaPage
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
@@ -8231,6 +8250,20 @@ __all__ = [
     "TeamCreateAttributes",
     "TeamCreateRelationships",
     "TeamCreateRequest",
+    "TeamHierarchyLink",
+    "TeamHierarchyLinkAttributes",
+    "TeamHierarchyLinkCreate",
+    "TeamHierarchyLinkCreateRelationships",
+    "TeamHierarchyLinkCreateRequest",
+    "TeamHierarchyLinkCreateTeam",
+    "TeamHierarchyLinkCreateTeamRelationship",
+    "TeamHierarchyLinkRelationships",
+    "TeamHierarchyLinkResponse",
+    "TeamHierarchyLinkTeam",
+    "TeamHierarchyLinkTeamAttributes",
+    "TeamHierarchyLinkTeamRelationship",
+    "TeamHierarchyLinkType",
+    "TeamHierarchyLinksResponse",
     "TeamIncluded",
     "TeamLink",
     "TeamLinkAttributes",
@@ -8299,6 +8332,9 @@ __all__ = [
     "TeamUpdateRelationships",
     "TeamUpdateRequest",
     "TeamsField",
+    "TeamsHierarchyLinksResponseLinks",
+    "TeamsHierarchyLinksResponseMeta",
+    "TeamsHierarchyLinksResponseMetaPage",
     "TeamsResponse",
     "TeamsResponseLinks",
     "TeamsResponseMeta",

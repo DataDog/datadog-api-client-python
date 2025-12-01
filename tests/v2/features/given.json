@@ -1170,6 +1170,30 @@
     "operationId": "CreateTeam"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"test-handle-2-{{ unique_hash }}\",\n      \"name\": \"test-name-2-{{ unique_hash }}\"\n    },\n    \"type\": \"team\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"dd_team_2\" in the system",
+    "key": "dd_team_2",
+    "tag": "Teams",
+    "operationId": "CreateTeam"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n    \"data\": {\n        \"type\": \"team_hierarchy_links\",\n        \"relationships\": {\n            \"parent_team\": {\n                \"data\": {\n                    \"id\": \"{{ dd_team.data.id }}\",\n                    \"type\": \"team\"\n                }\n            },\n            \"sub_team\": {\n                \"data\": {\n                    \"id\": \"{{ dd_team_2.data.id }}\",\n                    \"type\": \"team\"\n                }\n            }\n        }\n    }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_hierarchy_link\" in the system",
+    "key": "team_hierarchy_link",
+    "tag": "Teams",
+    "operationId": "AddTeamHierarchyLink"
+  },
+  {
     "source": "data.data[0]",
     "step": "there is a valid \"team_connection\" in the system",
     "key": "team_connection",

@@ -12,19 +12,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.user_team_permission_type import UserTeamPermissionType
+    from datadog_api_client.v2.model.team_type import TeamType
 
 
-class RelationshipToUserTeamPermissionData(ModelNormal):
-    _nullable = True
-
+class TeamHierarchyLinkCreateTeam(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.user_team_permission_type import UserTeamPermissionType
+        from datadog_api_client.v2.model.team_type import TeamType
 
         return {
             "id": (str,),
-            "type": (UserTeamPermissionType,),
+            "type": (TeamType,),
         }
 
     attribute_map = {
@@ -32,15 +30,15 @@ class RelationshipToUserTeamPermissionData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: UserTeamPermissionType, **kwargs):
+    def __init__(self_, id: str, type: TeamType, **kwargs):
         """
-        Related user team permission data
+        This schema defines the attributes about each team that has to be provided when creating a team hierarchy link
 
-        :param id: The ID of the user team permission
+        :param id: The team's identifier
         :type id: str
 
-        :param type: User team permission type
-        :type type: UserTeamPermissionType
+        :param type: Team type
+        :type type: TeamType
         """
         super().__init__(kwargs)
 
