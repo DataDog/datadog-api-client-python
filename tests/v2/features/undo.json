@@ -2443,6 +2443,79 @@
       "type": "idempotent"
     }
   },
+  "ListRestrictionQueries": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "operationId": "DeleteRestrictionQuery",
+      "parameters": [
+        {
+          "name": "restriction_query_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetRoleRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListUserRestrictionQueries": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ReplaceRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RemoveRoleFromRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListRestrictionQueryRoles": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AddRoleToRestrictionQuery": {
+    "tag": "Logs Restriction Queries",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLogsGet": {
     "tag": "Logs",
     "undo": {
@@ -4343,6 +4416,37 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ListTeamHierarchyLinks": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AddTeamHierarchyLink": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "RemoveTeamHierarchyLink",
+      "parameters": [
+        {
+          "name": "link_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RemoveTeamHierarchyLink": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamHierarchyLink": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
     }
   },
   "DeleteTeamConnections": {

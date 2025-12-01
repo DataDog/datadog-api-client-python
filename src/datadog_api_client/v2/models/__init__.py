@@ -2458,6 +2458,7 @@ from datadog_api_client.v2.model.logs_query_filter import LogsQueryFilter
 from datadog_api_client.v2.model.logs_query_options import LogsQueryOptions
 from datadog_api_client.v2.model.logs_response_metadata import LogsResponseMetadata
 from datadog_api_client.v2.model.logs_response_metadata_page import LogsResponseMetadataPage
+from datadog_api_client.v2.model.logs_restriction_queries_type import LogsRestrictionQueriesType
 from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
@@ -3738,6 +3739,26 @@ from datadog_api_client.v2.model.restriction_policy_binding import RestrictionPo
 from datadog_api_client.v2.model.restriction_policy_response import RestrictionPolicyResponse
 from datadog_api_client.v2.model.restriction_policy_type import RestrictionPolicyType
 from datadog_api_client.v2.model.restriction_policy_update_request import RestrictionPolicyUpdateRequest
+from datadog_api_client.v2.model.restriction_query_attributes import RestrictionQueryAttributes
+from datadog_api_client.v2.model.restriction_query_create_attributes import RestrictionQueryCreateAttributes
+from datadog_api_client.v2.model.restriction_query_create_data import RestrictionQueryCreateData
+from datadog_api_client.v2.model.restriction_query_create_payload import RestrictionQueryCreatePayload
+from datadog_api_client.v2.model.restriction_query_list_response import RestrictionQueryListResponse
+from datadog_api_client.v2.model.restriction_query_response_included_item import RestrictionQueryResponseIncludedItem
+from datadog_api_client.v2.model.restriction_query_role import RestrictionQueryRole
+from datadog_api_client.v2.model.restriction_query_role_attribute import RestrictionQueryRoleAttribute
+from datadog_api_client.v2.model.restriction_query_roles_response import RestrictionQueryRolesResponse
+from datadog_api_client.v2.model.restriction_query_update_attributes import RestrictionQueryUpdateAttributes
+from datadog_api_client.v2.model.restriction_query_update_data import RestrictionQueryUpdateData
+from datadog_api_client.v2.model.restriction_query_update_payload import RestrictionQueryUpdatePayload
+from datadog_api_client.v2.model.restriction_query_with_relationships import RestrictionQueryWithRelationships
+from datadog_api_client.v2.model.restriction_query_with_relationships_response import (
+    RestrictionQueryWithRelationshipsResponse,
+)
+from datadog_api_client.v2.model.restriction_query_without_relationships import RestrictionQueryWithoutRelationships
+from datadog_api_client.v2.model.restriction_query_without_relationships_response import (
+    RestrictionQueryWithoutRelationshipsResponse,
+)
 from datadog_api_client.v2.model.retention_filter import RetentionFilter
 from datadog_api_client.v2.model.retention_filter_all import RetentionFilterAll
 from datadog_api_client.v2.model.retention_filter_all_attributes import RetentionFilterAllAttributes
@@ -4589,6 +4610,22 @@ from datadog_api_client.v2.model.team_create import TeamCreate
 from datadog_api_client.v2.model.team_create_attributes import TeamCreateAttributes
 from datadog_api_client.v2.model.team_create_relationships import TeamCreateRelationships
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
+from datadog_api_client.v2.model.team_hierarchy_link import TeamHierarchyLink
+from datadog_api_client.v2.model.team_hierarchy_link_attributes import TeamHierarchyLinkAttributes
+from datadog_api_client.v2.model.team_hierarchy_link_create import TeamHierarchyLinkCreate
+from datadog_api_client.v2.model.team_hierarchy_link_create_relationships import TeamHierarchyLinkCreateRelationships
+from datadog_api_client.v2.model.team_hierarchy_link_create_request import TeamHierarchyLinkCreateRequest
+from datadog_api_client.v2.model.team_hierarchy_link_create_team import TeamHierarchyLinkCreateTeam
+from datadog_api_client.v2.model.team_hierarchy_link_create_team_relationship import (
+    TeamHierarchyLinkCreateTeamRelationship,
+)
+from datadog_api_client.v2.model.team_hierarchy_link_relationships import TeamHierarchyLinkRelationships
+from datadog_api_client.v2.model.team_hierarchy_link_response import TeamHierarchyLinkResponse
+from datadog_api_client.v2.model.team_hierarchy_link_team import TeamHierarchyLinkTeam
+from datadog_api_client.v2.model.team_hierarchy_link_team_attributes import TeamHierarchyLinkTeamAttributes
+from datadog_api_client.v2.model.team_hierarchy_link_team_relationship import TeamHierarchyLinkTeamRelationship
+from datadog_api_client.v2.model.team_hierarchy_link_type import TeamHierarchyLinkType
+from datadog_api_client.v2.model.team_hierarchy_links_response import TeamHierarchyLinksResponse
 from datadog_api_client.v2.model.team_included import TeamIncluded
 from datadog_api_client.v2.model.team_link import TeamLink
 from datadog_api_client.v2.model.team_link_attributes import TeamLinkAttributes
@@ -4675,6 +4712,9 @@ from datadog_api_client.v2.model.team_update_attributes import TeamUpdateAttribu
 from datadog_api_client.v2.model.team_update_relationships import TeamUpdateRelationships
 from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
 from datadog_api_client.v2.model.teams_field import TeamsField
+from datadog_api_client.v2.model.teams_hierarchy_links_response_links import TeamsHierarchyLinksResponseLinks
+from datadog_api_client.v2.model.teams_hierarchy_links_response_meta import TeamsHierarchyLinksResponseMeta
+from datadog_api_client.v2.model.teams_hierarchy_links_response_meta_page import TeamsHierarchyLinksResponseMetaPage
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
@@ -6832,6 +6872,7 @@ __all__ = [
     "LogsQueryOptions",
     "LogsResponseMetadata",
     "LogsResponseMetadataPage",
+    "LogsRestrictionQueriesType",
     "LogsSort",
     "LogsSortOrder",
     "LogsStorageTier",
@@ -7604,6 +7645,22 @@ __all__ = [
     "RestrictionPolicyResponse",
     "RestrictionPolicyType",
     "RestrictionPolicyUpdateRequest",
+    "RestrictionQueryAttributes",
+    "RestrictionQueryCreateAttributes",
+    "RestrictionQueryCreateData",
+    "RestrictionQueryCreatePayload",
+    "RestrictionQueryListResponse",
+    "RestrictionQueryResponseIncludedItem",
+    "RestrictionQueryRole",
+    "RestrictionQueryRoleAttribute",
+    "RestrictionQueryRolesResponse",
+    "RestrictionQueryUpdateAttributes",
+    "RestrictionQueryUpdateData",
+    "RestrictionQueryUpdatePayload",
+    "RestrictionQueryWithRelationships",
+    "RestrictionQueryWithRelationshipsResponse",
+    "RestrictionQueryWithoutRelationships",
+    "RestrictionQueryWithoutRelationshipsResponse",
     "RetentionFilter",
     "RetentionFilterAll",
     "RetentionFilterAllAttributes",
@@ -8231,6 +8288,20 @@ __all__ = [
     "TeamCreateAttributes",
     "TeamCreateRelationships",
     "TeamCreateRequest",
+    "TeamHierarchyLink",
+    "TeamHierarchyLinkAttributes",
+    "TeamHierarchyLinkCreate",
+    "TeamHierarchyLinkCreateRelationships",
+    "TeamHierarchyLinkCreateRequest",
+    "TeamHierarchyLinkCreateTeam",
+    "TeamHierarchyLinkCreateTeamRelationship",
+    "TeamHierarchyLinkRelationships",
+    "TeamHierarchyLinkResponse",
+    "TeamHierarchyLinkTeam",
+    "TeamHierarchyLinkTeamAttributes",
+    "TeamHierarchyLinkTeamRelationship",
+    "TeamHierarchyLinkType",
+    "TeamHierarchyLinksResponse",
     "TeamIncluded",
     "TeamLink",
     "TeamLinkAttributes",
@@ -8299,6 +8370,9 @@ __all__ = [
     "TeamUpdateRelationships",
     "TeamUpdateRequest",
     "TeamsField",
+    "TeamsHierarchyLinksResponseLinks",
+    "TeamsHierarchyLinksResponseMeta",
+    "TeamsHierarchyLinksResponseMetaPage",
     "TeamsResponse",
     "TeamsResponseLinks",
     "TeamsResponseMeta",

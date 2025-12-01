@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/logs/config/restriction_queries
+  response:
+    body:
+      string: '{"data":[{"type":"logs_restriction_queries","id":"6358d012-be7e-11f0-8999-da7ad0900002","attributes":{"restriction_query":"env:production","created_at":"2025-11-10T21:44:09.039708+00:00","modified_at":"2025-11-10T21:44:09.164487+00:00"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

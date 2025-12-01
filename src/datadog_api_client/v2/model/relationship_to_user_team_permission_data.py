@@ -16,6 +16,8 @@ if TYPE_CHECKING:
 
 
 class RelationshipToUserTeamPermissionData(ModelNormal):
+    _nullable = True
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.user_team_permission_type import UserTeamPermissionType
