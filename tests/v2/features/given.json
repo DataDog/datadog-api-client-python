@@ -350,7 +350,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"deployment_gate\",\n    \"attributes\": {\n      \"service\": \"my-service\",\n      \"env\": \"production\",\n      \"identifier\": \"my-gate\",\n      \"dry_run\": false\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"deployment_gate\",\n    \"attributes\": {\n      \"service\": \"my-service\",\n      \"env\": \"production\",\n      \"identifier\": \"my-gate-{{ unique_lower_alnum }}\",\n      \"dry_run\": false\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"deployment_gate\" in the system",
