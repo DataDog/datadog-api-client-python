@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -21,6 +22,10 @@ from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_response import TeamResponse
 from datadog_api_client.v2.model.team_create_request import TeamCreateRequest
+from datadog_api_client.v2.model.team_hierarchy_links_response import TeamHierarchyLinksResponse
+from datadog_api_client.v2.model.team_hierarchy_link import TeamHierarchyLink
+from datadog_api_client.v2.model.team_hierarchy_link_response import TeamHierarchyLinkResponse
+from datadog_api_client.v2.model.team_hierarchy_link_create_request import TeamHierarchyLinkCreateRequest
 from datadog_api_client.v2.model.team_sync_response import TeamSyncResponse
 from datadog_api_client.v2.model.team_sync_attributes_source import TeamSyncAttributesSource
 from datadog_api_client.v2.model.team_sync_request import TeamSyncRequest
@@ -73,6 +78,26 @@ class TeamsApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._add_team_hierarchy_link_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamHierarchyLinkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team-hierarchy-links",
+                "operation_id": "add_team_hierarchy_link",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TeamHierarchyLinkCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -243,6 +268,29 @@ class TeamsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "team_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_team_hierarchy_link_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamHierarchyLinkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team-hierarchy-links/{link_id}",
+                "operation_id": "get_team_hierarchy_link",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "link_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "link_id",
                     "location": "path",
                 },
             },
@@ -455,6 +503,43 @@ class TeamsApi:
             api_client=api_client,
         )
 
+        self._list_team_hierarchy_links_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamHierarchyLinksResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team-hierarchy-links",
+                "operation_id": "list_team_hierarchy_links",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "filter_parent_team": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[parent_team]",
+                    "location": "query",
+                },
+                "filter_sub_team": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[sub_team]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_teams_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsResponse,),
@@ -529,6 +614,29 @@ class TeamsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "member_team_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._remove_team_hierarchy_link_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team-hierarchy-links/{link_id}",
+                "operation_id": "remove_team_hierarchy_link",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "link_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "link_id",
                     "location": "path",
                 },
             },
@@ -685,10 +793,12 @@ class TeamsApi:
         super_team_id: str,
         body: AddMemberTeamRequest,
     ) -> None:
-        """Add a member team.
+        """Add a member team. **Deprecated**.
 
         Add a member team.
         Adds the team given by the ``id`` in the body as a member team of the super team.
+
+        **Note** : This API is deprecated. For creating team hierarchy links, use the team hierarchy links API: ``POST /api/v2/team-hierarchy-links``.
 
         :param super_team_id: None
         :type super_team_id: str
@@ -700,7 +810,24 @@ class TeamsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("add_member_team is deprecated", DeprecationWarning, stacklevel=2)
         return self._add_member_team_endpoint.call_with_http_info(**kwargs)
+
+    def add_team_hierarchy_link(
+        self,
+        body: TeamHierarchyLinkCreateRequest,
+    ) -> TeamHierarchyLinkResponse:
+        """Create a team hierarchy link.
+
+        Create a new team hierarchy link between a parent team and a sub team.
+
+        :type body: TeamHierarchyLinkCreateRequest
+        :rtype: TeamHierarchyLinkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._add_team_hierarchy_link_endpoint.call_with_http_info(**kwargs)
 
     def create_team(
         self,
@@ -838,6 +965,23 @@ class TeamsApi:
         kwargs["team_id"] = team_id
 
         return self._get_team_endpoint.call_with_http_info(**kwargs)
+
+    def get_team_hierarchy_link(
+        self,
+        link_id: str,
+    ) -> TeamHierarchyLinkResponse:
+        """Get a team hierarchy link.
+
+        Get a single team hierarchy link for the given link_id.
+
+        :param link_id: The team hierarchy link's identifier
+        :type link_id: str
+        :rtype: TeamHierarchyLinkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["link_id"] = link_id
+
+        return self._get_team_hierarchy_link_endpoint.call_with_http_info(**kwargs)
 
     def get_team_link(
         self,
@@ -1034,9 +1178,12 @@ class TeamsApi:
         page_number: Union[int, UnsetType] = unset,
         fields_team: Union[List[TeamsField], UnsetType] = unset,
     ) -> TeamsResponse:
-        """Get all member teams.
+        """Get all member teams. **Deprecated**.
 
         Get all member teams.
+
+        **Note** : This API is deprecated. For team hierarchy relationships (parent-child
+        teams), use the team hierarchy links API: ``GET /api/v2/team-hierarchy-links``.
 
         :param super_team_id: None
         :type super_team_id: str
@@ -1060,6 +1207,7 @@ class TeamsApi:
         if fields_team is not unset:
             kwargs["fields_team"] = fields_team
 
+        warnings.warn("list_member_teams is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_member_teams_endpoint.call_with_http_info(**kwargs)
 
     def list_member_teams_with_pagination(
@@ -1100,6 +1248,92 @@ class TeamsApi:
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_member_teams_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_team_hierarchy_links(
+        self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        filter_parent_team: Union[str, UnsetType] = unset,
+        filter_sub_team: Union[str, UnsetType] = unset,
+    ) -> TeamHierarchyLinksResponse:
+        """Get team hierarchy links.
+
+        List all team hierarchy links that match the provided filters.
+
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param filter_parent_team: Filter by parent team ID
+        :type filter_parent_team: str, optional
+        :param filter_sub_team: Filter by sub team ID
+        :type filter_sub_team: str, optional
+        :rtype: TeamHierarchyLinksResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if filter_parent_team is not unset:
+            kwargs["filter_parent_team"] = filter_parent_team
+
+        if filter_sub_team is not unset:
+            kwargs["filter_sub_team"] = filter_sub_team
+
+        return self._list_team_hierarchy_links_endpoint.call_with_http_info(**kwargs)
+
+    def list_team_hierarchy_links_with_pagination(
+        self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        filter_parent_team: Union[str, UnsetType] = unset,
+        filter_sub_team: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[TeamHierarchyLink]:
+        """Get team hierarchy links.
+
+        Provide a paginated version of :meth:`list_team_hierarchy_links`, returning all items.
+
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param filter_parent_team: Filter by parent team ID
+        :type filter_parent_team: str, optional
+        :param filter_sub_team: Filter by sub team ID
+        :type filter_sub_team: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[TeamHierarchyLink]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if filter_parent_team is not unset:
+            kwargs["filter_parent_team"] = filter_parent_team
+
+        if filter_sub_team is not unset:
+            kwargs["filter_sub_team"] = filter_sub_team
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._list_team_hierarchy_links_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
         pagination = {
             "limit_value": local_page_size,
@@ -1238,9 +1472,11 @@ class TeamsApi:
         super_team_id: str,
         member_team_id: str,
     ) -> None:
-        """Remove a member team.
+        """Remove a member team. **Deprecated**.
 
         Remove a super team's member team identified by ``member_team_id``.
+
+        **Note** : This API is deprecated. For deleting team hierarchy links, use the team hierarchy links API: ``DELETE /api/v2/team-hierarchy-links/{link_id}``.
 
         :param super_team_id: None
         :type super_team_id: str
@@ -1253,7 +1489,25 @@ class TeamsApi:
 
         kwargs["member_team_id"] = member_team_id
 
+        warnings.warn("remove_member_team is deprecated", DeprecationWarning, stacklevel=2)
         return self._remove_member_team_endpoint.call_with_http_info(**kwargs)
+
+    def remove_team_hierarchy_link(
+        self,
+        link_id: str,
+    ) -> None:
+        """Remove a team hierarchy link.
+
+        Remove a team hierarchy link by the given link_id.
+
+        :param link_id: The team hierarchy link's identifier
+        :type link_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["link_id"] = link_id
+
+        return self._remove_team_hierarchy_link_endpoint.call_with_http_info(**kwargs)
 
     def sync_teams(
         self,
