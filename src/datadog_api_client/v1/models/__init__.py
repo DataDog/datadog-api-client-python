@@ -353,6 +353,9 @@ from datadog_api_client.v1.model.metrics_query_metadata import MetricsQueryMetad
 from datadog_api_client.v1.model.metrics_query_response import MetricsQueryResponse
 from datadog_api_client.v1.model.metrics_query_unit import MetricsQueryUnit
 from datadog_api_client.v1.model.monitor import Monitor
+from datadog_api_client.v1.model.monitor_asset import MonitorAsset
+from datadog_api_client.v1.model.monitor_asset_category import MonitorAssetCategory
+from datadog_api_client.v1.model.monitor_asset_resource_type import MonitorAssetResourceType
 from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
 from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
@@ -1435,6 +1438,9 @@ __all__ = [
     "MetricsQueryResponse",
     "MetricsQueryUnit",
     "Monitor",
+    "MonitorAsset",
+    "MonitorAssetCategory",
+    "MonitorAssetResourceType",
     "MonitorDeviceID",
     "MonitorDraftStatus",
     "MonitorFormulaAndFunctionCostAggregator",
