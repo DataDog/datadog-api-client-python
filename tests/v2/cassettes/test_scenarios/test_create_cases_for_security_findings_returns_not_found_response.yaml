@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":[{"attributes":{},"relationships":{"findings":{"data":[{"id":"ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=","type":"findings"}]},"project":{"data":{"id":"00000000-0000-0000-0000-000000000000","type":"projects"}}},"type":"cases"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/cases
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"project not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

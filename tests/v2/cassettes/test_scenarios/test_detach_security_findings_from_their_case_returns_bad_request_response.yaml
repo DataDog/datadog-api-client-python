@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"relationships":{"findings":{"data":[]}},"type":"cases"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/cases
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"no finding
+        provided"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

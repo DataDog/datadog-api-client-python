@@ -36,6 +36,13 @@ from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
 from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
+from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
+from datadog_api_client.v2.model.finding_case_response_array import FindingCaseResponseArray
+from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequestArray
+from datadog_api_client.v2.model.finding_case_response import FindingCaseResponse
+from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
+from datadog_api_client.v2.model.attach_jira_issue_request import AttachJiraIssueRequest
+from datadog_api_client.v2.model.create_jira_issue_request_array import CreateJiraIssueRequestArray
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponentLicenseType
@@ -121,6 +128,52 @@ class SecurityMonitoringApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._attach_case_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/cases/{case_id}",
+                "operation_id": "attach_case",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AttachCaseRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._attach_jira_issue_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/jira_issues",
+                "operation_id": "attach_jira_issue",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AttachJiraIssueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._cancel_threat_hunting_job_endpoint = _Endpoint(
             settings={
@@ -208,6 +261,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_cases_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/cases",
+                "operation_id": "create_cases",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateCaseRequestArray,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_custom_framework_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateCustomFrameworkResponse,),
@@ -221,6 +294,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateCustomFrameworkRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_jira_issues_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/jira_issues",
+                "operation_id": "create_jira_issues",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateJiraIssueRequestArray,),
                     "location": "body",
                 },
             },
@@ -492,6 +585,26 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._detach_case_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/cases",
+                "operation_id": "detach_case",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DetachCaseRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1850,7 +1963,7 @@ class SecurityMonitoringApi:
         self._mute_findings_endpoint = _Endpoint(
             settings={
                 "response_type": (BulkMuteFindingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/posture_management/findings",
                 "operation_id": "mute_findings",
                 "http_method": "PATCH",
@@ -2193,6 +2306,43 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+    def attach_case(
+        self,
+        case_id: str,
+        body: AttachCaseRequest,
+    ) -> FindingCaseResponse:
+        """Attach security findings to a case.
+
+        Attach security findings to a case. You can attach up to 50 security findings per case. Security findings that are already attached to another case will be detached from their previous case and attached to the specified case.
+
+        :param case_id: The unique identifier of the case to attach security findings to
+        :type case_id: str
+        :type body: AttachCaseRequest
+        :rtype: FindingCaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["body"] = body
+
+        return self._attach_case_endpoint.call_with_http_info(**kwargs)
+
+    def attach_jira_issue(
+        self,
+        body: AttachJiraIssueRequest,
+    ) -> FindingCaseResponse:
+        """Attach security findings to a Jira issue.
+
+        Attach security findings to a Jira issue by providing the Jira issue URL. You can attach up to 50 security findings per Jira issue. If the Jira issue is not linked to any case, this operation will create a case for the security findings and link the Jira issue to the newly created case. Security findings that are already attached to another Jira issue will be detached from their previous Jira issue and attached to the specified Jira issue.
+
+        :type body: AttachJiraIssueRequest
+        :rtype: FindingCaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
+
     def cancel_threat_hunting_job(
         self,
         job_id: str,
@@ -2277,6 +2427,22 @@ class SecurityMonitoringApi:
 
         return self._convert_security_monitoring_rule_from_json_to_terraform_endpoint.call_with_http_info(**kwargs)
 
+    def create_cases(
+        self,
+        body: CreateCaseRequestArray,
+    ) -> FindingCaseResponseArray:
+        """Create cases for security findings.
+
+        Create cases for security findings. You can create up to 50 cases per request and associate up to 50 security findings per case. Security findings that are already attached to another case will be detached from their previous case and attached to the newly created case.
+
+        :type body: CreateCaseRequestArray
+        :rtype: FindingCaseResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_cases_endpoint.call_with_http_info(**kwargs)
+
     def create_custom_framework(
         self,
         body: CreateCustomFrameworkRequest,
@@ -2292,6 +2458,22 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_custom_framework_endpoint.call_with_http_info(**kwargs)
+
+    def create_jira_issues(
+        self,
+        body: CreateJiraIssueRequestArray,
+    ) -> FindingCaseResponseArray:
+        """Create Jira issues for security findings.
+
+        Create Jira issues for security findings. This operation creates a case in Datadog and a Jira issue linked to that case for bidirectional sync between Datadog and Jira. You can create up to 50 Jira issues per request and associate up to 50 security findings per Jira issue. Security findings that are already attached to another Jira issue will be detached from their previous Jira issue and attached to the newly created Jira issue.
+
+        :type body: CreateJiraIssueRequestArray
+        :rtype: FindingCaseResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_jira_issues_endpoint.call_with_http_info(**kwargs)
 
     def create_security_filter(
         self,
@@ -2510,6 +2692,22 @@ class SecurityMonitoringApi:
         kwargs["id"] = id
 
         return self._delete_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def detach_case(
+        self,
+        body: DetachCaseRequest,
+    ) -> None:
+        """Detach security findings from their case.
+
+        Detach security findings from their case. This operation dissociates security findings from their associated cases without deleting the cases themselves. You can detach security findings from multiple different cases in a single request, with a limit of 50 security findings per request. Security findings that are not currently attached to any case will be ignored.
+
+        :type body: DetachCaseRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._detach_case_endpoint.call_with_http_info(**kwargs)
 
     def edit_security_monitoring_signal_assignee(
         self,

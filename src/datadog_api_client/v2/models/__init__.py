@@ -362,6 +362,15 @@ from datadog_api_client.v2.model.asset_operating_system import AssetOperatingSys
 from datadog_api_client.v2.model.asset_risks import AssetRisks
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.asset_version import AssetVersion
+from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
+from datadog_api_client.v2.model.attach_case_request_data import AttachCaseRequestData
+from datadog_api_client.v2.model.attach_case_request_data_relationships import AttachCaseRequestDataRelationships
+from datadog_api_client.v2.model.attach_jira_issue_request import AttachJiraIssueRequest
+from datadog_api_client.v2.model.attach_jira_issue_request_data import AttachJiraIssueRequestData
+from datadog_api_client.v2.model.attach_jira_issue_request_data_attributes import AttachJiraIssueRequestDataAttributes
+from datadog_api_client.v2.model.attach_jira_issue_request_data_relationships import (
+    AttachJiraIssueRequestDataRelationships,
+)
 from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
 from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
 from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
@@ -619,8 +628,13 @@ from datadog_api_client.v2.model.case_create import CaseCreate
 from datadog_api_client.v2.model.case_create_attributes import CaseCreateAttributes
 from datadog_api_client.v2.model.case_create_relationships import CaseCreateRelationships
 from datadog_api_client.v2.model.case_create_request import CaseCreateRequest
+from datadog_api_client.v2.model.case_data_type import CaseDataType
 from datadog_api_client.v2.model.case_empty import CaseEmpty
 from datadog_api_client.v2.model.case_empty_request import CaseEmptyRequest
+from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
+from datadog_api_client.v2.model.case_management_project import CaseManagementProject
+from datadog_api_client.v2.model.case_management_project_data import CaseManagementProjectData
+from datadog_api_client.v2.model.case_management_project_data_type import CaseManagementProjectDataType
 from datadog_api_client.v2.model.case_object_attributes import CaseObjectAttributes
 from datadog_api_client.v2.model.case_priority import CasePriority
 from datadog_api_client.v2.model.case_relationships import CaseRelationships
@@ -942,6 +956,10 @@ from datadog_api_client.v2.model.create_apps_datastore_request_data_attributes_o
 )
 from datadog_api_client.v2.model.create_apps_datastore_response import CreateAppsDatastoreResponse
 from datadog_api_client.v2.model.create_apps_datastore_response_data import CreateAppsDatastoreResponseData
+from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequestArray
+from datadog_api_client.v2.model.create_case_request_data import CreateCaseRequestData
+from datadog_api_client.v2.model.create_case_request_data_attributes import CreateCaseRequestDataAttributes
+from datadog_api_client.v2.model.create_case_request_data_relationships import CreateCaseRequestDataRelationships
 from datadog_api_client.v2.model.create_connection_request import CreateConnectionRequest
 from datadog_api_client.v2.model.create_connection_request_data import CreateConnectionRequestData
 from datadog_api_client.v2.model.create_connection_request_data_attributes import CreateConnectionRequestDataAttributes
@@ -972,6 +990,22 @@ from datadog_api_client.v2.model.create_deployment_rule_params_data_attributes i
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
+)
+from datadog_api_client.v2.model.create_jira_issue_request_array import CreateJiraIssueRequestArray
+from datadog_api_client.v2.model.create_jira_issue_request_array_included import CreateJiraIssueRequestArrayIncluded
+from datadog_api_client.v2.model.create_jira_issue_request_data import CreateJiraIssueRequestData
+from datadog_api_client.v2.model.create_jira_issue_request_data_attributes import CreateJiraIssueRequestDataAttributes
+from datadog_api_client.v2.model.create_jira_issue_request_data_attributes_fields import (
+    CreateJiraIssueRequestDataAttributesFields,
+)
+from datadog_api_client.v2.model.create_jira_issue_request_data_relationships import (
+    CreateJiraIssueRequestDataRelationships,
+)
+from datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case import (
+    CreateJiraIssueRequestDataRelationshipsCase,
+)
+from datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case_data import (
+    CreateJiraIssueRequestDataRelationshipsCaseData,
 )
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.create_notification_rule_parameters_data import CreateNotificationRuleParametersData
@@ -1355,6 +1389,9 @@ from datadog_api_client.v2.model.deployment_rule_response_data_attributes_update
     DeploymentRuleResponseDataAttributesUpdatedBy,
 )
 from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
+from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
+from datadog_api_client.v2.model.detach_case_request_data import DetachCaseRequestData
+from datadog_api_client.v2.model.detach_case_request_data_relationships import DetachCaseRequestDataRelationships
 from datadog_api_client.v2.model.detailed_finding import DetailedFinding
 from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFindingAttributes
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
@@ -1705,13 +1742,23 @@ from datadog_api_client.v2.model.fastly_services_response import FastlyServicesR
 from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.finding_attributes import FindingAttributes
+from datadog_api_client.v2.model.finding_case_response import FindingCaseResponse
+from datadog_api_client.v2.model.finding_case_response_array import FindingCaseResponseArray
+from datadog_api_client.v2.model.finding_case_response_data import FindingCaseResponseData
+from datadog_api_client.v2.model.finding_case_response_data_attributes import FindingCaseResponseDataAttributes
+from datadog_api_client.v2.model.finding_case_response_data_relationships import FindingCaseResponseDataRelationships
+from datadog_api_client.v2.model.finding_data import FindingData
+from datadog_api_client.v2.model.finding_data_type import FindingDataType
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
+from datadog_api_client.v2.model.finding_jira_issue import FindingJiraIssue
+from datadog_api_client.v2.model.finding_jira_issue_result import FindingJiraIssueResult
 from datadog_api_client.v2.model.finding_mute import FindingMute
 from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 from datadog_api_client.v2.model.finding_rule import FindingRule
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
 from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
+from datadog_api_client.v2.model.findings import Findings
 from datadog_api_client.v2.model.flaky_test import FlakyTest
 from datadog_api_client.v2.model.flaky_test_attributes import FlakyTestAttributes
 from datadog_api_client.v2.model.flaky_test_attributes_flaky_state import FlakyTestAttributesFlakyState
@@ -2293,6 +2340,7 @@ from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegratio
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
+from datadog_api_client.v2.model.jira_issues_data_type import JiraIssuesDataType
 from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.job_create_response_data import JobCreateResponseData
 from datadog_api_client.v2.model.job_definition import JobDefinition
@@ -5234,6 +5282,13 @@ __all__ = [
     "AssetRisks",
     "AssetType",
     "AssetVersion",
+    "AttachCaseRequest",
+    "AttachCaseRequestData",
+    "AttachCaseRequestDataRelationships",
+    "AttachJiraIssueRequest",
+    "AttachJiraIssueRequestData",
+    "AttachJiraIssueRequestDataAttributes",
+    "AttachJiraIssueRequestDataRelationships",
     "AuditLogsEvent",
     "AuditLogsEventAttributes",
     "AuditLogsEventType",
@@ -5457,8 +5512,13 @@ __all__ = [
     "CaseCreateAttributes",
     "CaseCreateRelationships",
     "CaseCreateRequest",
+    "CaseDataType",
     "CaseEmpty",
     "CaseEmptyRequest",
+    "CaseInsightsItems",
+    "CaseManagementProject",
+    "CaseManagementProjectData",
+    "CaseManagementProjectDataType",
     "CaseObjectAttributes",
     "CasePriority",
     "CaseRelationships",
@@ -5698,6 +5758,10 @@ __all__ = [
     "CreateAppsDatastoreRequestDataAttributesOrgAccess",
     "CreateAppsDatastoreResponse",
     "CreateAppsDatastoreResponseData",
+    "CreateCaseRequestArray",
+    "CreateCaseRequestData",
+    "CreateCaseRequestDataAttributes",
+    "CreateCaseRequestDataRelationships",
     "CreateConnectionRequest",
     "CreateConnectionRequestData",
     "CreateConnectionRequestDataAttributes",
@@ -5717,6 +5781,14 @@ __all__ = [
     "CreateDeploymentRuleParamsDataAttributes",
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
+    "CreateJiraIssueRequestArray",
+    "CreateJiraIssueRequestArrayIncluded",
+    "CreateJiraIssueRequestData",
+    "CreateJiraIssueRequestDataAttributes",
+    "CreateJiraIssueRequestDataAttributesFields",
+    "CreateJiraIssueRequestDataRelationships",
+    "CreateJiraIssueRequestDataRelationshipsCase",
+    "CreateJiraIssueRequestDataRelationshipsCaseData",
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
     "CreateNotificationRuleParametersDataAttributes",
@@ -5969,6 +6041,9 @@ __all__ = [
     "DeploymentRuleResponseDataAttributesType",
     "DeploymentRuleResponseDataAttributesUpdatedBy",
     "DeploymentRulesOptions",
+    "DetachCaseRequest",
+    "DetachCaseRequestData",
+    "DetachCaseRequestDataRelationships",
     "DetailedFinding",
     "DetailedFindingAttributes",
     "DetailedFindingType",
@@ -6231,13 +6306,23 @@ __all__ = [
     "FiltersPerProduct",
     "Finding",
     "FindingAttributes",
+    "FindingCaseResponse",
+    "FindingCaseResponseArray",
+    "FindingCaseResponseData",
+    "FindingCaseResponseDataAttributes",
+    "FindingCaseResponseDataRelationships",
+    "FindingData",
+    "FindingDataType",
     "FindingEvaluation",
+    "FindingJiraIssue",
+    "FindingJiraIssueResult",
     "FindingMute",
     "FindingMuteReason",
     "FindingRule",
     "FindingStatus",
     "FindingType",
     "FindingVulnerabilityType",
+    "Findings",
     "FlakyTest",
     "FlakyTestAttributes",
     "FlakyTestAttributesFlakyState",
@@ -6719,6 +6804,7 @@ __all__ = [
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
     "JiraIssueResult",
+    "JiraIssuesDataType",
     "JobCreateResponse",
     "JobCreateResponseData",
     "JobDefinition",

@@ -3670,6 +3670,50 @@
       "type": "safe"
     }
   },
+  "DetachCase": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateCases": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DetachCase",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\n  \"data\": {\n    \"type\": \"cases\",\n    \"id\": \"{{data[0].id}}\",\n    \"relationships\": {\n      \"findings\": {\n        \"data\": [\n          {\n              \"type\": \"findings\",\n              \"id\": \"{{data[0].attributes.insights[0].resource_id}}\"\n          }\n        ]\n      }\n    }\n  }\n}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "AttachCase": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AttachJiraIssue": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateJiraIssues": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DetachCase",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\n  \"data\": {\n    \"type\": \"cases\",\n    \"id\": \"{{data[0].id}}\",\n    \"relationships\": {\n      \"findings\": {\n        \"data\": [\n          {\n              \"type\": \"findings\",\n              \"id\": \"{{data[0].attributes.insights[0].resource_id}}\"\n          }\n        ]\n      }\n    }\n  }\n}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "ListAssetsSBOMs": {
     "tag": "Security Monitoring",
     "undo": {

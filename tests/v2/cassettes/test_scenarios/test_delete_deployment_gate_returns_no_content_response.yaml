@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate-testdeletedeploymentgatereturnsnocontentresponse1764326920","service":"my-service"},"type":"deployment_gate"}}'
+    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service"},"type":"deployment_gate"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/deployment_gates
   response:
     body:
-      string: '{"data":{"id":"86e38caf-0d2a-4e72-93ac-9850957d2c6b","type":"deployment_gate","attributes":{"created_at":"2025-11-28T10:48:40.909837Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate-testdeletedeploymentgatereturnsnocontentresponse1764326920","service":"my-service","updated_at":"2025-11-28T10:48:40.909837Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"0d6b54a5-70ad-4e9a-9ee4-f7d99f25a3d5","type":"deployment_gate","attributes":{"created_at":"2025-12-02T17:11:59.349857Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service","updated_at":"2025-12-02T17:11:59.349857Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/deployment_gates/86e38caf-0d2a-4e72-93ac-9850957d2c6b
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/0d6b54a5-70ad-4e9a-9ee4-f7d99f25a3d5
   response:
     body:
       string: ''
@@ -39,7 +39,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/deployment_gates/86e38caf-0d2a-4e72-93ac-9850957d2c6b
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/0d6b54a5-70ad-4e9a-9ee4-f7d99f25a3d5
   response:
     body:
       string: '{"errors":[{"status":"404","title":"Not Found","detail":"Gate does

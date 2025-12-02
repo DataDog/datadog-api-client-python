@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"id":"7d16945b-baf8-411e-ab2a-20fe43af1ea3","relationships":{"findings":{"data":[{"id":"ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=","type":"findings"},{"id":"MmUzMzZkODQ2YTI3NDU0OTk4NDk3NzhkOTY5YjU2Zjh-YWJjZGI1ODI4OTYzNWM3ZmUwZTBlOWRkYTRiMGUyOGQ=","type":"findings"}]}},"type":"cases"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security/findings/cases/7d16945b-baf8-411e-ab2a-20fe43af1ea3
+  response:
+    body:
+      string: '{"data":{"id":"7d16945b-baf8-411e-ab2a-20fe43af1ea3","type":"cases","attributes":{"created_at":"2025-11-19T13:54:23.634063Z","creation_source":"CS_SECURITY_FINDING","description":"A
+        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/dfa027f7c037b2f77159adc027fecb56?detection=static","resource_id":"ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="},{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/36d53183f8fefbbc2208878f3d2011f0?detection=static","resource_id":"MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU="},{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/2e336d846a2745499849778d969b56f8?detection=static","resource_id":"MmUzMzZkODQ2YTI3NDU0OTk4NDk3NzhkOTY5YjU2Zjh-YWJjZGI1ODI4OTYzNWM3ZmUwZTBlOWRkYTRiMGUyOGQ="}],"key":"CSMINV-459","modified_at":"2025-11-19T16:23:22.109092Z","priority":"NOT_DEFINED","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
+        title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"modified_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

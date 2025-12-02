@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":[{"attributes":{},"relationships":{"case":{"data":{"id":"6ed1d7c2-e1a3-4369-b92b-a38d3cc75cf3","type":"cases"}}},"type":"jira_issues"}],"included":[{"attributes":{"description":"A
+      description","title":"A title"},"id":"6ed1d7c2-e1a3-4369-b92b-a38d3cc75cf3","relationships":{"findings":{"data":[{"id":"YzM2MTFjYzcyNmY0Zjg4MTAxZmRlNjQ1MWU1ZGQwYzR-YzI5NzE5Y2Y4MzU4ZjliNzhkNjYxNTY0ODIzZDQ2YTM=","type":"findings"}]},"project":{"data":{"id":"00000000-0000-0000-0000-000000000000","type":"projects"}}},"type":"cases"},{"id":"00000000-0000-0000-0000-000000000000","type":"projects"},{"id":"YzM2MTFjYzcyNmY0Zjg4MTAxZmRlNjQ1MWU1ZGQwYzR-YzI5NzE5Y2Y4MzU4ZjliNzhkNjYxNTY0ODIzZDQ2YTM=","type":"findings"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/jira_issues
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"project not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
