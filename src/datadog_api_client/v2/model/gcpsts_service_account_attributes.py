@@ -31,11 +31,13 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "cloud_run_revision_filters": ([str],),
             "host_filters": ([str],),
             "is_cspm_enabled": (bool,),
+            "is_global_location_enabled": (bool,),
             "is_per_project_quota_enabled": (bool,),
             "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
             "metric_namespace_configs": ([GCPMetricNamespaceConfig],),
             "monitored_resource_configs": ([GCPMonitoredResourceConfig],),
+            "region_filter_configs": ([str],),
             "resource_collection_enabled": (bool,),
         }
 
@@ -46,11 +48,13 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "cloud_run_revision_filters": "cloud_run_revision_filters",
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
+        "is_global_location_enabled": "is_global_location_enabled",
         "is_per_project_quota_enabled": "is_per_project_quota_enabled",
         "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
         "metric_namespace_configs": "metric_namespace_configs",
         "monitored_resource_configs": "monitored_resource_configs",
+        "region_filter_configs": "region_filter_configs",
         "resource_collection_enabled": "resource_collection_enabled",
     }
 
@@ -62,11 +66,13 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         cloud_run_revision_filters: Union[List[str], UnsetType] = unset,
         host_filters: Union[List[str], UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
+        is_global_location_enabled: Union[bool, UnsetType] = unset,
         is_per_project_quota_enabled: Union[bool, UnsetType] = unset,
         is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
         metric_namespace_configs: Union[List[GCPMetricNamespaceConfig], UnsetType] = unset,
         monitored_resource_configs: Union[List[GCPMonitoredResourceConfig], UnsetType] = unset,
+        region_filter_configs: Union[List[str], UnsetType] = unset,
         resource_collection_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -95,6 +101,9 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
         :type is_cspm_enabled: bool, optional
 
+        :param is_global_location_enabled: When enabled, metrics, events, and resources where location is explicitly stated as “global” or where location information could not be deduced from GCP labels will be collected.
+        :type is_global_location_enabled: bool, optional
+
         :param is_per_project_quota_enabled: When enabled, Datadog applies the ``X-Goog-User-Project`` header, attributing Google Cloud billing and quota usage to the project being monitored rather than the default service account project.
         :type is_per_project_quota_enabled: bool, optional
 
@@ -109,6 +118,9 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
 
         :param monitored_resource_configs: Configurations for GCP monitored resources.
         :type monitored_resource_configs: [GCPMonitoredResourceConfig], optional
+
+        :param region_filter_configs: Filters to limit metric collection by GCP region. By default Datadog collects from all regions.
+        :type region_filter_configs: [str], optional
 
         :param resource_collection_enabled: When enabled, Datadog scans for all resources in your GCP environment.
         :type resource_collection_enabled: bool, optional
@@ -125,6 +137,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["host_filters"] = host_filters
         if is_cspm_enabled is not unset:
             kwargs["is_cspm_enabled"] = is_cspm_enabled
+        if is_global_location_enabled is not unset:
+            kwargs["is_global_location_enabled"] = is_global_location_enabled
         if is_per_project_quota_enabled is not unset:
             kwargs["is_per_project_quota_enabled"] = is_per_project_quota_enabled
         if is_resource_change_collection_enabled is not unset:
@@ -135,6 +149,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["metric_namespace_configs"] = metric_namespace_configs
         if monitored_resource_configs is not unset:
             kwargs["monitored_resource_configs"] = monitored_resource_configs
+        if region_filter_configs is not unset:
+            kwargs["region_filter_configs"] = region_filter_configs
         if resource_collection_enabled is not unset:
             kwargs["resource_collection_enabled"] = resource_collection_enabled
         super().__init__(kwargs)
