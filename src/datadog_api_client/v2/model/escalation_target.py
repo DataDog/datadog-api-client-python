@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class EscalationTarget(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Represents an escalation target, which can be a team, user, or schedule.
+        Represents an escalation target, which can be a team, user, schedule, or configured schedule target.
 
         :param id: Specifies the unique identifier of the team resource.
         :type id: str
@@ -35,11 +35,13 @@ class EscalationTarget(ModelComposed):
         from datadog_api_client.v2.model.team_target import TeamTarget
         from datadog_api_client.v2.model.user_target import UserTarget
         from datadog_api_client.v2.model.schedule_target import ScheduleTarget
+        from datadog_api_client.v2.model.configured_schedule_target import ConfiguredScheduleTarget
 
         return {
             "oneOf": [
                 TeamTarget,
                 UserTarget,
                 ScheduleTarget,
+                ConfiguredScheduleTarget,
             ],
         }

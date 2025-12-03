@@ -14,32 +14,40 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.escalation_policy_step_target_config import EscalationPolicyStepTargetConfig
     from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 
 
 class EscalationPolicyStepTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.escalation_policy_step_target_config import EscalationPolicyStepTargetConfig
         from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 
         return {
+            "config": (EscalationPolicyStepTargetConfig,),
             "id": (str,),
             "type": (EscalationPolicyStepTargetType,),
         }
 
     attribute_map = {
+        "config": "config",
         "id": "id",
         "type": "type",
     }
 
     def __init__(
         self_,
+        config: Union[EscalationPolicyStepTargetConfig, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         type: Union[EscalationPolicyStepTargetType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Defines a single escalation target within a step for an escalation policy creation request. Contains ``id`` and ``type``.
+        Defines a single escalation target within a step for an escalation policy creation request. Contains ``id`` , ``type`` , and optional ``config``.
+
+        :param config: Configuration for an escalation target, such as schedule position.
+        :type config: EscalationPolicyStepTargetConfig, optional
 
         :param id: Specifies the unique identifier for this target.
         :type id: str, optional
@@ -47,6 +55,8 @@ class EscalationPolicyStepTarget(ModelNormal):
         :param type: Specifies the type of escalation target (example ``users`` , ``schedules`` , or ``teams`` ).
         :type type: EscalationPolicyStepTargetType, optional
         """
+        if config is not unset:
+            kwargs["config"] = config
         if id is not unset:
             kwargs["id"] = id
         if type is not unset:

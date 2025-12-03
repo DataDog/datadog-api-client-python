@@ -15,17 +15,17 @@ class EscalationPolicyIncluded(ModelComposed):
         """
         Represents included related resources when retrieving an escalation policy, such as teams, steps, or targets.
 
-        :param attributes: Encapsulates the basic attributes of a Team reference, such as name, handle, and an optional avatar or description.
-        :type attributes: TeamReferenceAttributes, optional
+        :param attributes: Defines attributes for an escalation policy step, such as assignment strategy and escalation timeout.
+        :type attributes: EscalationPolicyStepAttributes, optional
 
-        :param id: The team's unique identifier.
+        :param id: Specifies the unique identifier of this escalation policy step.
         :type id: str, optional
-
-        :param type: Teams resource type.
-        :type type: TeamReferenceType
 
         :param relationships: Represents the relationship of an escalation policy step to its targets.
         :type relationships: EscalationPolicyStepRelationships, optional
+
+        :param type: Indicates that the resource is of type `steps`.
+        :type type: EscalationPolicyStepType
         """
         super().__init__(kwargs)
 
@@ -38,16 +38,18 @@ class EscalationPolicyIncluded(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.team_reference import TeamReference
         from datadog_api_client.v2.model.escalation_policy_step import EscalationPolicyStep
         from datadog_api_client.v2.model.escalation_policy_user import EscalationPolicyUser
         from datadog_api_client.v2.model.schedule_data import ScheduleData
+        from datadog_api_client.v2.model.configured_schedule import ConfiguredSchedule
+        from datadog_api_client.v2.model.team_reference import TeamReference
 
         return {
             "oneOf": [
-                TeamReference,
                 EscalationPolicyStep,
                 EscalationPolicyUser,
                 ScheduleData,
+                ConfiguredSchedule,
+                TeamReference,
             ],
         }

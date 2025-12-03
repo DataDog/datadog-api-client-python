@@ -14,6 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 class EscalationPolicyDataAttributes(ModelNormal):
+    validations = {
+        "name": {
+            "min_length": 1,
+        },
+        "retries": {
+            "inclusive_maximum": 10,
+            "inclusive_minimum": 0,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {

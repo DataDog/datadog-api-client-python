@@ -24,7 +24,12 @@ from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment im
     EscalationPolicyStepAttributesAssignment,
 )
 from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
+from datadog_api_client.v2.model.escalation_policy_step_target_config import EscalationPolicyStepTargetConfig
+from datadog_api_client.v2.model.escalation_policy_step_target_config_schedule import (
+    EscalationPolicyStepTargetConfigSchedule,
+)
 from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
+from datadog_api_client.v2.model.schedule_target_position import ScheduleTargetPosition
 
 # there is a valid "user" in the system
 USER_DATA_ID = environ["USER_DATA_ID"]
@@ -51,6 +56,15 @@ body = EscalationPolicyCreateRequest(
                             type=EscalationPolicyStepTargetType.USERS,
                         ),
                         EscalationPolicyStepTarget(
+                            id=SCHEDULE_DATA_ID,
+                            type=EscalationPolicyStepTargetType.SCHEDULES,
+                        ),
+                        EscalationPolicyStepTarget(
+                            config=EscalationPolicyStepTargetConfig(
+                                schedule=EscalationPolicyStepTargetConfigSchedule(
+                                    position=ScheduleTargetPosition.PREVIOUS,
+                                ),
+                            ),
                             id=SCHEDULE_DATA_ID,
                             type=EscalationPolicyStepTargetType.SCHEDULES,
                         ),
