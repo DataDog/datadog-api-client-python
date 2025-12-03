@@ -4,7 +4,7 @@ Create team connections returns "Created" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.team_connections_api import TeamConnectionsApi
+from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.model.connected_team_ref import ConnectedTeamRef
 from datadog_api_client.v2.model.connected_team_ref_data import ConnectedTeamRefData
 from datadog_api_client.v2.model.connected_team_ref_data_type import ConnectedTeamRefDataType
@@ -49,7 +49,7 @@ body = TeamConnectionCreateRequest(
 configuration = Configuration()
 configuration.unstable_operations["create_team_connections"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = TeamConnectionsApi(api_client)
+    api_instance = TeamsApi(api_client)
     response = api_instance.create_team_connections(body=body)
 
     print(response)
