@@ -4494,19 +4494,19 @@
     }
   },
   "DeleteTeamConnections": {
-    "tag": "Team Connections",
+    "tag": "Teams",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListTeamConnections": {
-    "tag": "Team Connections",
+    "tag": "Teams",
     "undo": {
       "type": "safe"
     }
   },
   "CreateTeamConnections": {
-    "tag": "Team Connections",
+    "tag": "Teams",
     "undo": {
       "operationId": "DeleteTeamConnections",
       "type": "unsafe"
