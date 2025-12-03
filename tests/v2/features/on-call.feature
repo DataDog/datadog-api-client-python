@@ -12,7 +12,7 @@ Feature: On-Call
   @generated @skip @team:DataDog/on-call
   Scenario: Create On-Call escalation policy returns "Bad Request" response
     Given new "CreateOnCallEscalationPolicy" request
-    And body with value {"data": {"attributes": {"name": "Escalation Policy 1", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}, {"id": "00000000-aba3-0000-0000-000000000000", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-abb1-0000-0000-000000000000", "type": "users"}]}]}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
+    And body with value {"data": {"attributes": {"name": "Escalation Policy 1", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"config": {"schedule": {"position": "previous"}}, "id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}, {"id": "00000000-aba3-0000-0000-000000000000", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-abb1-0000-0000-000000000000", "type": "users"}]}]}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -22,7 +22,7 @@ Feature: On-Call
     And there is a valid "user" in the system
     And there is a valid "schedule" in the system
     And there is a valid "dd_team" in the system
-    And body with value {"data": {"attributes": {"name": "{{ unique }}", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "{{ user.data.id }}", "type": "users"}, {"id": "{{ schedule.data.id }}", "type": "schedules"}, {"id": "{{ dd_team.data.id }}", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}]}, "relationships": {"teams": {"data": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}}, "type": "policies"}}
+    And body with value {"data": {"attributes": {"name": "{{ unique }}", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "{{ user.data.id }}", "type": "users"}, {"id": "{{ schedule.data.id }}", "type": "schedules"}, {"config": {"schedule": {"position": "previous"}}, "id": "{{ schedule.data.id }}", "type": "schedules"}, {"id": "{{ dd_team.data.id }}", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}]}, "relationships": {"teams": {"data": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}}, "type": "policies"}}
     And request contains "include" parameter with value "steps.targets"
     When the request is sent
     Then the response status is 201 Created

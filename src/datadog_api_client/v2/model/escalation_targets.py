@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_target import TeamTarget
     from datadog_api_client.v2.model.user_target import UserTarget
     from datadog_api_client.v2.model.schedule_target import ScheduleTarget
+    from datadog_api_client.v2.model.configured_schedule_target import ConfiguredScheduleTarget
 
 
 class EscalationTargets(ModelNormal):
@@ -35,7 +36,9 @@ class EscalationTargets(ModelNormal):
 
     def __init__(
         self_,
-        data: Union[List[Union[EscalationTarget, TeamTarget, UserTarget, ScheduleTarget]], UnsetType] = unset,
+        data: Union[
+            List[Union[EscalationTarget, TeamTarget, UserTarget, ScheduleTarget, ConfiguredScheduleTarget]], UnsetType
+        ] = unset,
         **kwargs,
     ):
         """

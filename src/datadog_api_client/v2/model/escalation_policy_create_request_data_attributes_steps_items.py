@@ -21,6 +21,13 @@ if TYPE_CHECKING:
 
 
 class EscalationPolicyCreateRequestDataAttributesStepsItems(ModelNormal):
+    validations = {
+        "escalate_after_seconds": {
+            "inclusive_maximum": 36000,
+            "inclusive_minimum": 60,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (

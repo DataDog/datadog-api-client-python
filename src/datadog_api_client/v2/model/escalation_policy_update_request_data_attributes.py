@@ -20,6 +20,20 @@ if TYPE_CHECKING:
 
 
 class EscalationPolicyUpdateRequestDataAttributes(ModelNormal):
+    validations = {
+        "name": {
+            "min_length": 1,
+        },
+        "retries": {
+            "inclusive_maximum": 10,
+            "inclusive_minimum": 0,
+        },
+        "steps": {
+            "max_items": 10,
+            "min_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.escalation_policy_update_request_data_attributes_steps_items import (

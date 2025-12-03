@@ -859,6 +859,14 @@ from datadog_api_client.v2.model.config_cat_integration_update import ConfigCatI
 from datadog_api_client.v2.model.config_cat_sdk_key import ConfigCatSDKKey
 from datadog_api_client.v2.model.config_cat_sdk_key_type import ConfigCatSDKKeyType
 from datadog_api_client.v2.model.config_cat_sdk_key_update import ConfigCatSDKKeyUpdate
+from datadog_api_client.v2.model.configured_schedule import ConfiguredSchedule
+from datadog_api_client.v2.model.configured_schedule_target import ConfiguredScheduleTarget
+from datadog_api_client.v2.model.configured_schedule_target_attributes import ConfiguredScheduleTargetAttributes
+from datadog_api_client.v2.model.configured_schedule_target_relationships import ConfiguredScheduleTargetRelationships
+from datadog_api_client.v2.model.configured_schedule_target_relationships_schedule import (
+    ConfiguredScheduleTargetRelationshipsSchedule,
+)
+from datadog_api_client.v2.model.configured_schedule_target_type import ConfiguredScheduleTargetType
 from datadog_api_client.v2.model.confluent_account_create_request import ConfluentAccountCreateRequest
 from datadog_api_client.v2.model.confluent_account_create_request_attributes import (
     ConfluentAccountCreateRequestAttributes,
@@ -1618,6 +1626,10 @@ from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment im
 )
 from datadog_api_client.v2.model.escalation_policy_step_relationships import EscalationPolicyStepRelationships
 from datadog_api_client.v2.model.escalation_policy_step_target import EscalationPolicyStepTarget
+from datadog_api_client.v2.model.escalation_policy_step_target_config import EscalationPolicyStepTargetConfig
+from datadog_api_client.v2.model.escalation_policy_step_target_config_schedule import (
+    EscalationPolicyStepTargetConfigSchedule,
+)
 from datadog_api_client.v2.model.escalation_policy_step_target_type import EscalationPolicyStepTargetType
 from datadog_api_client.v2.model.escalation_policy_step_type import EscalationPolicyStepType
 from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
@@ -4062,6 +4074,7 @@ from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_m
     ScheduleRequestDataAttributesLayersItemsMembersItemsUser,
 )
 from datadog_api_client.v2.model.schedule_target import ScheduleTarget
+from datadog_api_client.v2.model.schedule_target_position import ScheduleTargetPosition
 from datadog_api_client.v2.model.schedule_target_type import ScheduleTargetType
 from datadog_api_client.v2.model.schedule_trigger import ScheduleTrigger
 from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
@@ -5671,6 +5684,12 @@ __all__ = [
     "ConfigCatSDKKey",
     "ConfigCatSDKKeyType",
     "ConfigCatSDKKeyUpdate",
+    "ConfiguredSchedule",
+    "ConfiguredScheduleTarget",
+    "ConfiguredScheduleTargetAttributes",
+    "ConfiguredScheduleTargetRelationships",
+    "ConfiguredScheduleTargetRelationshipsSchedule",
+    "ConfiguredScheduleTargetType",
     "ConfluentAccountCreateRequest",
     "ConfluentAccountCreateRequestAttributes",
     "ConfluentAccountCreateRequestData",
@@ -6202,6 +6221,8 @@ __all__ = [
     "EscalationPolicyStepAttributesAssignment",
     "EscalationPolicyStepRelationships",
     "EscalationPolicyStepTarget",
+    "EscalationPolicyStepTargetConfig",
+    "EscalationPolicyStepTargetConfigSchedule",
     "EscalationPolicyStepTargetType",
     "EscalationPolicyStepType",
     "EscalationPolicyUpdateRequest",
@@ -7956,6 +7977,7 @@ __all__ = [
     "ScheduleRequestDataAttributesLayersItemsMembersItems",
     "ScheduleRequestDataAttributesLayersItemsMembersItemsUser",
     "ScheduleTarget",
+    "ScheduleTargetPosition",
     "ScheduleTargetType",
     "ScheduleTrigger",
     "ScheduleTriggerWrapper",

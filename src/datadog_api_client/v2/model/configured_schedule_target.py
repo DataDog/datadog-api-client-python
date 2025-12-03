@@ -12,17 +12,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.schedule_target_type import ScheduleTargetType
+    from datadog_api_client.v2.model.configured_schedule_target_type import ConfiguredScheduleTargetType
 
 
-class ScheduleTarget(ModelNormal):
+class ConfiguredScheduleTarget(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.schedule_target_type import ScheduleTargetType
+        from datadog_api_client.v2.model.configured_schedule_target_type import ConfiguredScheduleTargetType
 
         return {
             "id": (str,),
-            "type": (ScheduleTargetType,),
+            "type": (ConfiguredScheduleTargetType,),
         }
 
     attribute_map = {
@@ -30,15 +30,15 @@ class ScheduleTarget(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: ScheduleTargetType, **kwargs):
+    def __init__(self_, id: str, type: ConfiguredScheduleTargetType, **kwargs):
         """
-        Represents a schedule target for an escalation policy step, including its ID and resource type. This is a shortcut for a configured schedule target with position set to 'current'.
+        Relationship reference to a configured schedule target.
 
-        :param id: Specifies the unique identifier of the schedule resource.
+        :param id: Specifies the unique identifier of the configured schedule target.
         :type id: str
 
-        :param type: Indicates that the resource is of type ``schedules``.
-        :type type: ScheduleTargetType
+        :param type: Indicates that the resource is of type ``schedule_target``.
+        :type type: ConfiguredScheduleTargetType
         """
         super().__init__(kwargs)
 
