@@ -2372,6 +2372,10 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.attach_case()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_jira_issue" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.attach_jira_issue()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.cancel_threat_hunting_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.cancel_threat_hunting_job()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_existing_security_monitoring_rule()</span></code></a>
@@ -2380,7 +2384,11 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_security_monitoring_rule_from_json_to_terraform()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_cases" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_cases()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_custom_framework" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_custom_framework()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_jira_issues" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_jira_issues()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_security_filter()</span></code></a>
         </li>
@@ -2405,6 +2413,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_threat_hunting_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_threat_hunting_job()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_vulnerability_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_vulnerability_notification_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.detach_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.detach_case()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.edit_security_monitoring_signal_assignee" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.edit_security_monitoring_signal_assignee()</span></code></a>
         </li>
@@ -12095,6 +12105,31 @@ Returns RUM retention filter objects from the request body when the request is s
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Create and manage your security rules, signals, filters, and more. See the <a class="reference external" href="https://docs.datadoghq.com/security/">Datadog Security page</a> for more information.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_case">
+<span class="sig-name descname"><span class="pre">attach_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.attach_case_request.AttachCaseRequest" title="datadog_api_client.v2.model.attach_case_request.AttachCaseRequest"><span class="pre">AttachCaseRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response.FindingCaseResponse" title="datadog_api_client.v2.model.finding_case_response.FindingCaseResponse"><span class="pre">FindingCaseResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_case" title="Link to this definition">¶</a></dt>
+<dd><p>Attach security findings to a case.</p>
+<p>Attach security findings to a case. You can attach up to 50 security findings per case. Security findings that are already attached to another case will be detached from their previous case and attached to the specified case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>case_id</strong> (<em>str</em>) – The unique identifier of the case to attach security findings to</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response.FindingCaseResponse" title="datadog_api_client.v2.model.finding_case_response.FindingCaseResponse">FindingCaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_jira_issue">
+<span class="sig-name descname"><span class="pre">attach_jira_issue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.attach_jira_issue_request.AttachJiraIssueRequest" title="datadog_api_client.v2.model.attach_jira_issue_request.AttachJiraIssueRequest"><span class="pre">AttachJiraIssueRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response.FindingCaseResponse" title="datadog_api_client.v2.model.finding_case_response.FindingCaseResponse"><span class="pre">FindingCaseResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_jira_issue" title="Link to this definition">¶</a></dt>
+<dd><p>Attach security findings to a Jira issue.</p>
+<p>Attach security findings to a Jira issue by providing the Jira issue URL. You can attach up to 50 security findings per Jira issue. If the Jira issue is not linked to any case, this operation will create a case for the security findings and link the Jira issue to the newly created case. Security findings that are already attached to another Jira issue will be detached from their previous Jira issue and attached to the specified Jira issue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response.FindingCaseResponse" title="datadog_api_client.v2.model.finding_case_response.FindingCaseResponse">FindingCaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.cancel_threat_hunting_job">
 <span class="sig-name descname"><span class="pre">cancel_threat_hunting_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.cancel_threat_hunting_job" title="Link to this definition">¶</a></dt>
 <dd><p>Cancel a threat hunting job.</p>
@@ -12159,6 +12194,17 @@ resource <code class="docutils literal notranslate"><span class="pre">datadog_se
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_cases">
+<span class="sig-name descname"><span class="pre">create_cases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_case_request_array.CreateCaseRequestArray" title="datadog_api_client.v2.model.create_case_request_array.CreateCaseRequestArray"><span class="pre">CreateCaseRequestArray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray" title="datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray"><span class="pre">FindingCaseResponseArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_cases" title="Link to this definition">¶</a></dt>
+<dd><p>Create cases for security findings.</p>
+<p>Create cases for security findings. You can create up to 50 cases per request and associate up to 50 security findings per case. Security findings that are already attached to another case will be detached from their previous case and attached to the newly created case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray" title="datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray">FindingCaseResponseArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_custom_framework">
 <span class="sig-name descname"><span class="pre">create_custom_framework</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_custom_framework_request.CreateCustomFrameworkRequest" title="datadog_api_client.v2.model.create_custom_framework_request.CreateCustomFrameworkRequest"><span class="pre">CreateCustomFrameworkRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse" title="datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse"><span class="pre">CreateCustomFrameworkResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_custom_framework" title="Link to this definition">¶</a></dt>
 <dd><p>Create a custom framework.</p>
@@ -12166,6 +12212,17 @@ resource <code class="docutils literal notranslate"><span class="pre">datadog_se
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse" title="datadog_api_client.v2.model.create_custom_framework_response.CreateCustomFrameworkResponse">CreateCustomFrameworkResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_jira_issues">
+<span class="sig-name descname"><span class="pre">create_jira_issues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_jira_issue_request_array.CreateJiraIssueRequestArray" title="datadog_api_client.v2.model.create_jira_issue_request_array.CreateJiraIssueRequestArray"><span class="pre">CreateJiraIssueRequestArray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray" title="datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray"><span class="pre">FindingCaseResponseArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_jira_issues" title="Link to this definition">¶</a></dt>
+<dd><p>Create Jira issues for security findings.</p>
+<p>Create Jira issues for security findings. This operation creates a case in Datadog and a Jira issue linked to that case for bidirectional sync between Datadog and Jira. You can create up to 50 Jira issues per request and associate up to 50 security findings per Jira issue. Security findings that are already attached to another Jira issue will be detached from their previous Jira issue and attached to the newly created Jira issue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray" title="datadog_api_client.v2.model.finding_case_response_array.FindingCaseResponseArray">FindingCaseResponseArray</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -12338,6 +12395,17 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.detach_case">
+<span class="sig-name descname"><span class="pre">detach_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.detach_case_request.DetachCaseRequest" title="datadog_api_client.v2.model.detach_case_request.DetachCaseRequest"><span class="pre">DetachCaseRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.detach_case" title="Link to this definition">¶</a></dt>
+<dd><p>Detach security findings from their case.</p>
+<p>Detach security findings from their case. This operation dissociates security findings from their associated cases without deleting the cases themselves. You can detach security findings from multiple different cases in a single request, with a limit of 50 security findings per request. Security findings that are not currently attached to any case will be ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
