@@ -4428,6 +4428,48 @@ datadog\_api\_client.v2.model.config\_cat\_sdk\_key\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.configured\_schedule module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.configured_schedule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.configured\_schedule\_target module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.configured_schedule_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.configured\_schedule\_target\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.configured_schedule_target_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.configured\_schedule\_target\_relationships module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.configured_schedule_target_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.configured\_schedule\_target\_relationships\_schedule module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.configured_schedule_target_relationships_schedule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.configured\_schedule\_target\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.configured_schedule_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.confluent\_account\_create\_request module
 ------------------------------------------------------------------------
 
@@ -8149,6 +8191,20 @@ datadog\_api\_client.v2.model.escalation\_policy\_step\_target module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.escalation_policy_step_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step\_target\_config module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_target_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_step\_target\_config\_schedule module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_step_target_config_schedule
    :members:
    :show-inheritance:
 
@@ -20364,6 +20420,13 @@ datadog\_api\_client.v2.model.schedule\_target module
 -----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.schedule_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_target\_position module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_target_position
    :members:
    :show-inheritance:
 
