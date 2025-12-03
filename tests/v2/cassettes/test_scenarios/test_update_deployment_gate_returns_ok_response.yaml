@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate-testupdatedeploymentgatereturnsokresponse1764326923","service":"my-service"},"type":"deployment_gate"}}'
+    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service"},"type":"deployment_gate"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/deployment_gates
   response:
     body:
-      string: '{"data":{"id":"6080b4ee-0fa6-4370-aafa-adb5b71c2fab","type":"deployment_gate","attributes":{"created_at":"2025-11-28T10:48:43.844073Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate-testupdatedeploymentgatereturnsokresponse1764326923","service":"my-service","updated_at":"2025-11-28T10:48:43.844073Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"010e234b-b358-463e-a44d-6fbe29ec3f6b","type":"deployment_gate","attributes":{"created_at":"2025-12-02T17:12:02.374479Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service","updated_at":"2025-12-02T17:12:02.374479Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -27,11 +27,11 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/deployment_gates/6080b4ee-0fa6-4370-aafa-adb5b71c2fab
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/010e234b-b358-463e-a44d-6fbe29ec3f6b
   response:
     body:
-      string: '{"data":{"id":"6080b4ee-0fa6-4370-aafa-adb5b71c2fab","type":"deployment_gate","attributes":{"created_at":"2025-11-28T10:48:43.844073Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate-testupdatedeploymentgatereturnsokresponse1764326923","service":"my-service","updated_at":"2025-11-28T10:48:44.028502Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"010e234b-b358-463e-a44d-6fbe29ec3f6b","type":"deployment_gate","attributes":{"created_at":"2025-12-02T17:12:02.374479Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate","service":"my-service","updated_at":"2025-12-02T17:12:02.534024Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
     headers:
       content-type:
@@ -45,7 +45,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/deployment_gates/6080b4ee-0fa6-4370-aafa-adb5b71c2fab
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/010e234b-b358-463e-a44d-6fbe29ec3f6b
   response:
     body:
       string: ''

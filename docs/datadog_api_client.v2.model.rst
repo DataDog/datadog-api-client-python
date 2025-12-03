@@ -1222,6 +1222,55 @@ datadog\_api\_client.v2.model.asset\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.attach\_case\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_case_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_case\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_case_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_case\_request\_data\_relationships module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_case_request_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_jira\_issue\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_jira_issue_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_jira\_issue\_request\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_jira_issue_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_jira\_issue\_request\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_jira_issue_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_jira\_issue\_request\_data\_relationships module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_jira_issue_request_data_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.audit\_logs\_event module
 -------------------------------------------------------
 
@@ -2755,6 +2804,13 @@ datadog\_api\_client.v2.model.case\_create\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.case\_data\_type module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case\_empty module
 ------------------------------------------------
 
@@ -2766,6 +2822,34 @@ datadog\_api\_client.v2.model.case\_empty\_request module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.case_empty_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_insights\_items module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_insights_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_management\_project module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_management_project
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_management\_project\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_management_project_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_management\_project\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_management_project_data_type
    :members:
    :show-inheritance:
 
@@ -4953,6 +5037,34 @@ datadog\_api\_client.v2.model.create\_apps\_datastore\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_case\_request\_array module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_case_request_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_case\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_case_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_case\_request\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_case_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_case\_request\_data\_relationships module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_case_request_data_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_connection\_request module
 ----------------------------------------------------------------
 
@@ -5083,6 +5195,62 @@ datadog\_api\_client.v2.model.create\_incident\_notification\_template\_request 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_incident_notification_template_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_array module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_array\_included module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_array_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_attributes\_fields module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_attributes_fields
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships\_case module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships\_case\_data module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case_data
    :members:
    :show-inheritance:
 
@@ -6693,6 +6861,27 @@ datadog\_api\_client.v2.model.deployment\_rules\_options module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.deployment_rules_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.detach\_case\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.detach_case_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.detach\_case\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.detach_case_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.detach\_case\_request\_data\_relationships module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.detach_case_request_data_relationships
    :members:
    :show-inheritance:
 
@@ -8691,10 +8880,73 @@ datadog\_api\_client.v2.model.finding\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.finding\_case\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_case_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_case\_response\_array module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_case_response_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_case\_response\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_case_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_case\_response\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_case_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_case\_response\_data\_relationships module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_case_response_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_data module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_data\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.finding\_evaluation module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.finding_evaluation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_jira\_issue module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_jira_issue
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_jira\_issue\_result module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_jira_issue_result
    :members:
    :show-inheritance:
 
@@ -8737,6 +8989,13 @@ datadog\_api\_client.v2.model.finding\_vulnerability\_type module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.finding_vulnerability_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.findings module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.findings
    :members:
    :show-inheritance:
 
@@ -12076,6 +12335,13 @@ datadog\_api\_client.v2.model.jira\_issue\_result module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.jira_issue_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issues\_data\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issues_data_type
    :members:
    :show-inheritance:
 
