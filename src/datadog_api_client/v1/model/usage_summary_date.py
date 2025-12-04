@@ -948,7 +948,7 @@ class UsageSummaryDate(ModelNormal):
         :param heroku_host_top99p: Shows the 99th percentile of all Heroku dynos over all hours in the current date for all organizations.
         :type heroku_host_top99p: int, optional
 
-        :param incident_management_monthly_active_users_hwm: Shows the high-water mark of incident management monthly active users over all hours in the current date for all organizations.
+        :param incident_management_monthly_active_users_hwm: Shows the high-water mark of Incident Management monthly active users over all hours in the current date for all organizations.
         :type incident_management_monthly_active_users_hwm: int, optional
 
         :param incident_management_seats_hwm: Shows the high-water mark of Incident Management seats over all hours on the current date for all organizations.
