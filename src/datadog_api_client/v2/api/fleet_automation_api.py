@@ -12,6 +12,8 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.fleet_agent_versions_response import FleetAgentVersionsResponse
+from datadog_api_client.v2.model.fleet_agents_response import FleetAgentsResponse
+from datadog_api_client.v2.model.fleet_agent_info_response import FleetAgentInfoResponse
 from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
 from datadog_api_client.v2.model.fleet_deployment_response import FleetDeploymentResponse
 from datadog_api_client.v2.model.fleet_deployment_configure_create_request import FleetDeploymentConfigureCreateRequest
@@ -153,6 +155,29 @@ class FleetAutomationApi:
             api_client=api_client,
         )
 
+        self._get_fleet_agent_info_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetAgentInfoResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/fleet/agents/{agent_key}",
+                "operation_id": "get_fleet_agent_info",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "agent_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "agent_key",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_fleet_deployment_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentResponse,),
@@ -212,11 +237,65 @@ class FleetAutomationApi:
             api_client=api_client,
         )
 
+        self._list_fleet_agents_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetAgentsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/fleet/agents",
+                "operation_id": "list_fleet_agents",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_number",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_size",
+                    "location": "query",
+                },
+                "sort_attribute": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_attribute",
+                    "location": "query",
+                },
+                "sort_descending": {
+                    "openapi_types": (bool,),
+                    "attribute": "sort_descending",
+                    "location": "query",
+                },
+                "tags": {
+                    "openapi_types": (str,),
+                    "attribute": "tags",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_fleet_agent_versions_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetAgentVersionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/unstable/fleet/agents",
+                "endpoint_path": "/api/unstable/fleet/agent_versions",
                 "operation_id": "list_fleet_agent_versions",
                 "http_method": "GET",
                 "version": "v2",
@@ -456,6 +535,29 @@ class FleetAutomationApi:
 
         return self._delete_fleet_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def get_fleet_agent_info(
+        self,
+        agent_key: str,
+    ) -> FleetAgentInfoResponse:
+        """Get detailed information about an agent.
+
+        Retrieve detailed information about a specific Datadog Agent.
+        This endpoint returns comprehensive information about an agent including:
+
+        * Agent details and metadata
+        * Configured integrations organized by status (working, warning, error, missing)
+        * Detected integrations
+        * Configuration files and layers
+
+        :param agent_key: The unique identifier (agent key) for the Datadog Agent.
+        :type agent_key: str
+        :rtype: FleetAgentInfoResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["agent_key"] = agent_key
+
+        return self._get_fleet_agent_info_endpoint.call_with_http_info(**kwargs)
+
     def get_fleet_deployment(
         self,
         deployment_id: str,
@@ -531,6 +633,57 @@ class FleetAutomationApi:
         kwargs["id"] = id
 
         return self._get_fleet_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def list_fleet_agents(
+        self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        sort_attribute: Union[str, UnsetType] = unset,
+        sort_descending: Union[bool, UnsetType] = unset,
+        tags: Union[str, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+    ) -> FleetAgentsResponse:
+        """List all Datadog Agents.
+
+        Retrieve a paginated list of all Datadog Agents.
+        This endpoint returns a paginated list of all Datadog Agents with support for pagination, sorting, and filtering.
+        Use the ``page_number`` and ``page_size`` query parameters to paginate through results.
+
+        :param page_number: Page number for pagination (must be greater than 0).
+        :type page_number: int, optional
+        :param page_size: Number of results per page (must be greater than 0 and less than or equal to 100).
+        :type page_size: int, optional
+        :param sort_attribute: Attribute to sort by.
+        :type sort_attribute: str, optional
+        :param sort_descending: Sort order (true for descending, false for ascending).
+        :type sort_descending: bool, optional
+        :param tags: Comma-separated list of tags to filter agents.
+        :type tags: str, optional
+        :param filter: Filter string for narrowing down agent results.
+        :type filter: str, optional
+        :rtype: FleetAgentsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if sort_attribute is not unset:
+            kwargs["sort_attribute"] = sort_attribute
+
+        if sort_descending is not unset:
+            kwargs["sort_descending"] = sort_descending
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        return self._list_fleet_agents_endpoint.call_with_http_info(**kwargs)
 
     def list_fleet_agent_versions(
         self,

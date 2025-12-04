@@ -1788,10 +1788,23 @@ from datadog_api_client.v2.model.flaky_tests_search_request_data_type import Fla
 from datadog_api_client.v2.model.flaky_tests_search_response import FlakyTestsSearchResponse
 from datadog_api_client.v2.model.flaky_tests_search_response_meta import FlakyTestsSearchResponseMeta
 from datadog_api_client.v2.model.flaky_tests_search_sort import FlakyTestsSearchSort
+from datadog_api_client.v2.model.fleet_agent_attributes import FleetAgentAttributes
+from datadog_api_client.v2.model.fleet_agent_attributes_tags_items import FleetAgentAttributesTagsItems
+from datadog_api_client.v2.model.fleet_agent_info import FleetAgentInfo
+from datadog_api_client.v2.model.fleet_agent_info_attributes import FleetAgentInfoAttributes
+from datadog_api_client.v2.model.fleet_agent_info_details import FleetAgentInfoDetails
+from datadog_api_client.v2.model.fleet_agent_info_resource_type import FleetAgentInfoResourceType
+from datadog_api_client.v2.model.fleet_agent_info_response import FleetAgentInfoResponse
 from datadog_api_client.v2.model.fleet_agent_version import FleetAgentVersion
 from datadog_api_client.v2.model.fleet_agent_version_attributes import FleetAgentVersionAttributes
 from datadog_api_client.v2.model.fleet_agent_version_resource_type import FleetAgentVersionResourceType
 from datadog_api_client.v2.model.fleet_agent_versions_response import FleetAgentVersionsResponse
+from datadog_api_client.v2.model.fleet_agents_response import FleetAgentsResponse
+from datadog_api_client.v2.model.fleet_agents_response_data import FleetAgentsResponseData
+from datadog_api_client.v2.model.fleet_agents_response_data_attributes import FleetAgentsResponseDataAttributes
+from datadog_api_client.v2.model.fleet_agents_response_meta import FleetAgentsResponseMeta
+from datadog_api_client.v2.model.fleet_configuration_file import FleetConfigurationFile
+from datadog_api_client.v2.model.fleet_configuration_layer import FleetConfigurationLayer
 from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
 from datadog_api_client.v2.model.fleet_deployment_attributes import FleetDeploymentAttributes
 from datadog_api_client.v2.model.fleet_deployment_configure_attributes import FleetDeploymentConfigureAttributes
@@ -1816,6 +1829,10 @@ from datadog_api_client.v2.model.fleet_deployment_response_meta import FleetDepl
 from datadog_api_client.v2.model.fleet_deployments_page import FleetDeploymentsPage
 from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
 from datadog_api_client.v2.model.fleet_deployments_response_meta import FleetDeploymentsResponseMeta
+from datadog_api_client.v2.model.fleet_detected_integration import FleetDetectedIntegration
+from datadog_api_client.v2.model.fleet_integration_details import FleetIntegrationDetails
+from datadog_api_client.v2.model.fleet_integrations_by_status import FleetIntegrationsByStatus
+from datadog_api_client.v2.model.fleet_otel_collector import FleetOtelCollector
 from datadog_api_client.v2.model.fleet_schedule import FleetSchedule
 from datadog_api_client.v2.model.fleet_schedule_attributes import FleetScheduleAttributes
 from datadog_api_client.v2.model.fleet_schedule_create import FleetScheduleCreate
@@ -6361,10 +6378,23 @@ __all__ = [
     "FlakyTestsSearchResponse",
     "FlakyTestsSearchResponseMeta",
     "FlakyTestsSearchSort",
+    "FleetAgentAttributes",
+    "FleetAgentAttributesTagsItems",
+    "FleetAgentInfo",
+    "FleetAgentInfoAttributes",
+    "FleetAgentInfoDetails",
+    "FleetAgentInfoResourceType",
+    "FleetAgentInfoResponse",
     "FleetAgentVersion",
     "FleetAgentVersionAttributes",
     "FleetAgentVersionResourceType",
     "FleetAgentVersionsResponse",
+    "FleetAgentsResponse",
+    "FleetAgentsResponseData",
+    "FleetAgentsResponseDataAttributes",
+    "FleetAgentsResponseMeta",
+    "FleetConfigurationFile",
+    "FleetConfigurationLayer",
     "FleetDeployment",
     "FleetDeploymentAttributes",
     "FleetDeploymentConfigureAttributes",
@@ -6385,6 +6415,10 @@ __all__ = [
     "FleetDeploymentsPage",
     "FleetDeploymentsResponse",
     "FleetDeploymentsResponseMeta",
+    "FleetDetectedIntegration",
+    "FleetIntegrationDetails",
+    "FleetIntegrationsByStatus",
+    "FleetOtelCollector",
     "FleetSchedule",
     "FleetScheduleAttributes",
     "FleetScheduleCreate",
