@@ -971,7 +971,7 @@ class UsageSummaryDateOrg(ModelNormal):
         :param id: The organization id.
         :type id: str, optional
 
-        :param incident_management_monthly_active_users_hwm: Shows the high-water mark of incident management monthly active users over all hours in the current date for the given org.
+        :param incident_management_monthly_active_users_hwm: Shows the high-water mark of Incident Management monthly active users over all hours in the current date for the given org.
         :type incident_management_monthly_active_users_hwm: int, optional
 
         :param incident_management_seats_hwm: Shows the high-water mark of Incident Management seats over all hours on the current date for the given organization.

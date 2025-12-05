@@ -992,7 +992,7 @@ class UsageSummaryResponse(ModelNormal):
         :param heroku_host_top99p_sum: Shows the 99th percentile of all Heroku dynos over all hours in the current month for all organizations.
         :type heroku_host_top99p_sum: int, optional
 
-        :param incident_management_monthly_active_users_hwm_sum: Shows sum of the high-water marks of incident management monthly active users in the current month for all organizations.
+        :param incident_management_monthly_active_users_hwm_sum: Shows sum of the high-water marks of Incident Management monthly active users in the current month for all organizations.
         :type incident_management_monthly_active_users_hwm_sum: int, optional
 
         :param incident_management_seats_hwm_sum: Shows the sum of the high-water marks of Incident Management seats over all hours in the current month for all organizations.
