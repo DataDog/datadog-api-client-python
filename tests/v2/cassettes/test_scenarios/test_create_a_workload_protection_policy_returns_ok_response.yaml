@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"fwg-18e-cfb","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":7,"name":"my_agent_policy_2","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109655264,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"u3c-1jz-bqy","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:test"]],"monitoringRulesCount":7,"name":"my_agent_policy_2","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1764344210450,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -24,7 +24,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/fwg-18e-cfb
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/u3c-1jz-bqy
   response:
     body:
       string: ''

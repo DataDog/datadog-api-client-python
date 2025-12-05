@@ -10,13 +10,11 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/non-existent-policy-id
   response:
     body:
-      string: '{"errors":[{"title":"failed to update policy"}]}
-
-        '
+      string: '{"errors":[{"title":"Not Found"}]}'
     headers:
       content-type:
       - application/json
     status:
-      code: 400
-      message: Bad Request
+      code: 404
+      message: Not Found
 version: 1
