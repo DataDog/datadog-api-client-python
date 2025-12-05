@@ -31,13 +31,13 @@ Feature: Tags
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/core-index
-  Scenario: Get Tags returns "Not Found" response
+  Scenario: Get All Hosts Tags returns "Not Found" response
     Given new "ListHostTags" request
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/core-index
-  Scenario: Get Tags returns "OK" response
+  Scenario: Get All Hosts Tags returns "OK" response
     Given new "ListHostTags" request
     When the request is sent
     Then the response status is 200 OK

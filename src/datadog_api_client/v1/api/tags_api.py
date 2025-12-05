@@ -261,7 +261,7 @@ class TagsApi:
         *,
         source: Union[str, UnsetType] = unset,
     ) -> TagToHosts:
-        """Get Tags.
+        """Get All Hosts Tags.
 
         Return a mapping of tags to hosts for your whole infrastructure.
 
