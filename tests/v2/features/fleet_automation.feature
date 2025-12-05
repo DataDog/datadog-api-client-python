@@ -153,6 +153,51 @@ Feature: Fleet Automation
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/fleet-automation
+  Scenario: Get detailed information about an agent returns "Bad Request" response
+    Given operation "GetFleetAgentInfo" enabled
+    And new "GetFleetAgentInfo" request
+    And request contains "agent_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: Get detailed information about an agent returns "Not Found" response
+    Given operation "GetFleetAgentInfo" enabled
+    And new "GetFleetAgentInfo" request
+    And request contains "agent_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: Get detailed information about an agent returns "OK" response
+    Given operation "GetFleetAgentInfo" enabled
+    And new "GetFleetAgentInfo" request
+    And request contains "agent_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all Datadog Agents returns "Bad Request" response
+    Given operation "ListFleetAgents" enabled
+    And new "ListFleetAgents" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all Datadog Agents returns "Not Found" response
+    Given operation "ListFleetAgents" enabled
+    And new "ListFleetAgents" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all Datadog Agents returns "OK" response
+    Given operation "ListFleetAgents" enabled
+    And new "ListFleetAgents" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/fleet-automation
   Scenario: List all available Agent versions returns "Bad Request" response
     Given operation "ListFleetAgentVersions" enabled
     And new "ListFleetAgentVersions" request

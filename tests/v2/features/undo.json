@@ -5,6 +5,18 @@
       "type": "safe"
     }
   },
+  "ListFleetAgents": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetFleetAgentInfo": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListFleetDeployments": {
     "tag": "Fleet Automation",
     "undo": {
