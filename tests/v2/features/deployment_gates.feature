@@ -207,6 +207,23 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get rules for a deployment gate returns "Bad request." response
+    Given operation "GetDeploymentGateRules" enabled
+    And new "GetDeploymentGateRules" request
+    And request contains "gate_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad request.
+
+  @team:DataDog/ci-app-backend
+  Scenario: Get rules for a deployment gate returns "OK" response
+    Given there is a valid "deployment_gate" in the system
+    And operation "GetDeploymentGateRules" enabled
+    And new "GetDeploymentGateRules" request
+    And request contains "gate_id" parameter from "deployment_gate.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/ci-app-backend
   Scenario: Update deployment gate returns "Bad Request" response
     Given operation "UpdateDeploymentGate" enabled

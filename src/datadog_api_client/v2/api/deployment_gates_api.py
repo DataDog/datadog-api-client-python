@@ -9,6 +9,7 @@ from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.deployment_gate_response import DeploymentGateResponse
 from datadog_api_client.v2.model.create_deployment_gate_params import CreateDeploymentGateParams
+from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
 from datadog_api_client.v2.model.deployment_rule_response import DeploymentRuleResponse
 from datadog_api_client.v2.model.create_deployment_rule_params import CreateDeploymentRuleParams
 from datadog_api_client.v2.model.update_deployment_rule_params import UpdateDeploymentRuleParams
@@ -137,6 +138,29 @@ class DeploymentGatesApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_deployment_gate_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeploymentGateRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/deployment_gates/{gate_id}/rules",
+                "operation_id": "get_deployment_gate_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "gate_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "gate_id",
                     "location": "path",
                 },
             },
@@ -325,6 +349,23 @@ class DeploymentGatesApi:
         kwargs["id"] = id
 
         return self._get_deployment_gate_endpoint.call_with_http_info(**kwargs)
+
+    def get_deployment_gate_rules(
+        self,
+        gate_id: str,
+    ) -> DeploymentGateRulesResponse:
+        """Get rules for a deployment gate.
+
+        Endpoint to get rules for a deployment gate.
+
+        :param gate_id: The ID of the deployment gate.
+        :type gate_id: str
+        :rtype: DeploymentGateRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["gate_id"] = gate_id
+
+        return self._get_deployment_gate_rules_endpoint.call_with_http_info(**kwargs)
 
     def get_deployment_rule(
         self,

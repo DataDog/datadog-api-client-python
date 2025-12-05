@@ -1376,6 +1376,7 @@ from datadog_api_client.v2.model.deployment_gate_response_data_attributes_create
 from datadog_api_client.v2.model.deployment_gate_response_data_attributes_updated_by import (
     DeploymentGateResponseDataAttributesUpdatedBy,
 )
+from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
 from datadog_api_client.v2.model.deployment_metadata import DeploymentMetadata
 from datadog_api_client.v2.model.deployment_relationship import DeploymentRelationship
 from datadog_api_client.v2.model.deployment_relationship_data import DeploymentRelationshipData
@@ -6064,6 +6065,7 @@ __all__ = [
     "DeploymentGateResponseDataAttributes",
     "DeploymentGateResponseDataAttributesCreatedBy",
     "DeploymentGateResponseDataAttributesUpdatedBy",
+    "DeploymentGateRulesResponse",
     "DeploymentMetadata",
     "DeploymentRelationship",
     "DeploymentRelationshipData",
