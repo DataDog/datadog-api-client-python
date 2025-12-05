@@ -17,8 +17,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
         ObservabilityPipelineConfigDestinationItem,
     )
-    from datadog_api_client.v2.model.observability_pipeline_config_processor_item import (
-        ObservabilityPipelineConfigProcessorItem,
+    from datadog_api_client.v2.model.observability_pipeline_config_processor_group import (
+        ObservabilityPipelineConfigProcessorGroup,
     )
     from datadog_api_client.v2.model.observability_pipeline_config_source_item import (
         ObservabilityPipelineConfigSourceItem,
@@ -76,48 +76,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
         ObservabilityPipelineGooglePubSubDestination,
     )
-    from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
-    from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
-        ObservabilityPipelineParseJSONProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_quota_processor import ObservabilityPipelineQuotaProcessor
-    from datadog_api_client.v2.model.observability_pipeline_add_fields_processor import (
-        ObservabilityPipelineAddFieldsProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_remove_fields_processor import (
-        ObservabilityPipelineRemoveFieldsProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
-        ObservabilityPipelineRenameFieldsProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
-        ObservabilityPipelineGenerateMetricsProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_sample_processor import ObservabilityPipelineSampleProcessor
-    from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
-        ObservabilityPipelineParseGrokProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
-        ObservabilityPipelineSensitiveDataScannerProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
-        ObservabilityPipelineOcsfMapperProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
-        ObservabilityPipelineAddEnvVarsProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
-    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor import (
-        ObservabilityPipelineEnrichmentTableProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_reduce_processor import ObservabilityPipelineReduceProcessor
-    from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
-        ObservabilityPipelineThrottleProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_custom_processor import ObservabilityPipelineCustomProcessor
-    from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
-        ObservabilityPipelineDatadogTagsProcessor,
-    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
@@ -160,8 +118,8 @@ class ObservabilityPipelineConfig(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
             ObservabilityPipelineConfigDestinationItem,
         )
-        from datadog_api_client.v2.model.observability_pipeline_config_processor_item import (
-            ObservabilityPipelineConfigProcessorItem,
+        from datadog_api_client.v2.model.observability_pipeline_config_processor_group import (
+            ObservabilityPipelineConfigProcessorGroup,
         )
         from datadog_api_client.v2.model.observability_pipeline_config_source_item import (
             ObservabilityPipelineConfigSourceItem,
@@ -169,7 +127,7 @@ class ObservabilityPipelineConfig(ModelNormal):
 
         return {
             "destinations": ([ObservabilityPipelineConfigDestinationItem],),
-            "processors": ([ObservabilityPipelineConfigProcessorItem],),
+            "processors": ([ObservabilityPipelineConfigProcessorGroup],),
             "sources": ([ObservabilityPipelineConfigSourceItem],),
         }
 
@@ -226,32 +184,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSocketSource,
             ]
         ],
-        processors: Union[
-            List[
-                Union[
-                    ObservabilityPipelineConfigProcessorItem,
-                    ObservabilityPipelineFilterProcessor,
-                    ObservabilityPipelineParseJSONProcessor,
-                    ObservabilityPipelineQuotaProcessor,
-                    ObservabilityPipelineAddFieldsProcessor,
-                    ObservabilityPipelineRemoveFieldsProcessor,
-                    ObservabilityPipelineRenameFieldsProcessor,
-                    ObservabilityPipelineGenerateMetricsProcessor,
-                    ObservabilityPipelineSampleProcessor,
-                    ObservabilityPipelineParseGrokProcessor,
-                    ObservabilityPipelineSensitiveDataScannerProcessor,
-                    ObservabilityPipelineOcsfMapperProcessor,
-                    ObservabilityPipelineAddEnvVarsProcessor,
-                    ObservabilityPipelineDedupeProcessor,
-                    ObservabilityPipelineEnrichmentTableProcessor,
-                    ObservabilityPipelineReduceProcessor,
-                    ObservabilityPipelineThrottleProcessor,
-                    ObservabilityPipelineCustomProcessor,
-                    ObservabilityPipelineDatadogTagsProcessor,
-                ]
-            ],
-            UnsetType,
-        ] = unset,
+        processors: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -260,8 +193,8 @@ class ObservabilityPipelineConfig(ModelNormal):
         :param destinations: A list of destination components where processed logs are sent.
         :type destinations: [ObservabilityPipelineConfigDestinationItem]
 
-        :param processors: A list of processors that transform or enrich log data.
-        :type processors: [ObservabilityPipelineConfigProcessorItem], optional
+        :param processors: A list of processor groups that transform or enrich log data.
+        :type processors: [ObservabilityPipelineConfigProcessorGroup], optional
 
         :param sources: A list of configured data sources for the pipeline.
         :type sources: [ObservabilityPipelineConfigSourceItem]

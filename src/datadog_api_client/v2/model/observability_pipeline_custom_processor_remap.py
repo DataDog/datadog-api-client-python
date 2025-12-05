@@ -3,10 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -29,7 +32,15 @@ class ObservabilityPipelineCustomProcessorRemap(ModelNormal):
         "source": "source",
     }
 
-    def __init__(self_, drop_on_error: bool, enabled: bool, include: str, name: str, source: str, **kwargs):
+    def __init__(
+        self_,
+        drop_on_error: bool,
+        include: str,
+        name: str,
+        source: str,
+        enabled: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Defines a single VRL remap rule with its own filtering and transformation logic.
 
@@ -37,7 +48,7 @@ class ObservabilityPipelineCustomProcessorRemap(ModelNormal):
         :type drop_on_error: bool
 
         :param enabled: Whether this remap rule is enabled.
-        :type enabled: bool
+        :type enabled: bool, optional
 
         :param include: A Datadog search query used to filter events for this specific remap rule.
         :type include: str
@@ -48,10 +59,11 @@ class ObservabilityPipelineCustomProcessorRemap(ModelNormal):
         :param source: The VRL script source code that defines the processing logic.
         :type source: str
         """
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         super().__init__(kwargs)
 
         self_.drop_on_error = drop_on_error
-        self_.enabled = enabled
         self_.include = include
         self_.name = name
         self_.source = source

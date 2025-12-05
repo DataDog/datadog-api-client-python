@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -33,18 +33,18 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "percentage": (float,),
             "rate": (int,),
             "type": (ObservabilityPipelineSampleProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "percentage": "percentage",
         "rate": "rate",
         "type": "type",
@@ -52,9 +52,9 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
 
     def __init__(
         self_,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineSampleProcessorType,
         percentage: Union[float, UnsetType] = unset,
         rate: Union[int, UnsetType] = unset,
@@ -63,14 +63,14 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         """
         The ``sample`` processor allows probabilistic sampling of logs at a fixed rate.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
-
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
 
         :param percentage: The percentage of logs to sample.
         :type percentage: float, optional
@@ -87,7 +87,7 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
             kwargs["rate"] = rate
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type
