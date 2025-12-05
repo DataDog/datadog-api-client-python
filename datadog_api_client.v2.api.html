@@ -1580,11 +1580,15 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.delete_fleet_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.delete_fleet_schedule()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_agent_info" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.get_fleet_agent_info()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.get_fleet_deployment()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.get_fleet_schedule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_agent_versions" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.list_fleet_agent_versions()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_agents" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.list_fleet_agents()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_deployments" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">FleetAutomationApi.list_fleet_deployments()</span></code></a>
         </li>
@@ -7405,6 +7409,27 @@ updating its status to “inactive” instead of deleting it.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_agent_info">
+<span class="sig-name descname"><span class="pre">get_fleet_agent_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_agent_info_response.FleetAgentInfoResponse" title="datadog_api_client.v2.model.fleet_agent_info_response.FleetAgentInfoResponse"><span class="pre">FleetAgentInfoResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_agent_info" title="Link to this definition">¶</a></dt>
+<dd><p>Get detailed information about an agent.</p>
+<p>Retrieve detailed information about a specific Datadog Agent.
+This endpoint returns comprehensive information about an agent including:</p>
+<ul class="simple">
+<li><p>Agent details and metadata</p></li>
+<li><p>Configured integrations organized by status (working, warning, error, missing)</p></li>
+<li><p>Detected integrations</p></li>
+<li><p>Configuration files and layers</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>agent_key</strong> (<em>str</em>) – The unique identifier (agent key) for the Datadog Agent.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_agent_info_response.FleetAgentInfoResponse" title="datadog_api_client.v2.model.fleet_agent_info_response.FleetAgentInfoResponse">FleetAgentInfoResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment">
 <span class="sig-name descname"><span class="pre">get_fleet_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse" title="datadog_api_client.v2.model.fleet_deployment_response.FleetDeploymentResponse"><span class="pre">FleetDeploymentResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.get_fleet_deployment" title="Link to this definition">¶</a></dt>
 <dd><p>Get a configuration deployment by ID.</p>
@@ -7476,6 +7501,29 @@ automated Agent upgrades.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_agent_versions_response.FleetAgentVersionsResponse" title="datadog_api_client.v2.model.fleet_agent_versions_response.FleetAgentVersionsResponse">FleetAgentVersionsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_agents">
+<span class="sig-name descname"><span class="pre">list_fleet_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_descending</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_agents_response.FleetAgentsResponse" title="datadog_api_client.v2.model.fleet_agents_response.FleetAgentsResponse"><span class="pre">FleetAgentsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.fleet_automation_api.FleetAutomationApi.list_fleet_agents" title="Link to this definition">¶</a></dt>
+<dd><p>List all Datadog Agents.</p>
+<p>Retrieve a paginated list of all Datadog Agents.
+This endpoint returns a paginated list of all Datadog Agents with support for pagination, sorting, and filtering.
+Use the <code class="docutils literal notranslate"><span class="pre">page_number</span></code> and <code class="docutils literal notranslate"><span class="pre">page_size</span></code> query parameters to paginate through results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – Page number for pagination (must be greater than 0).</p></li>
+<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of results per page (must be greater than 0 and less than or equal to 100).</p></li>
+<li><p><strong>sort_attribute</strong> (<em>str</em><em>, </em><em>optional</em>) – Attribute to sort by.</p></li>
+<li><p><strong>sort_descending</strong> (<em>bool</em><em>, </em><em>optional</em>) – Sort order (true for descending, false for ascending).</p></li>
+<li><p><strong>tags</strong> (<em>str</em><em>, </em><em>optional</em>) – Comma-separated list of tags to filter agents.</p></li>
+<li><p><strong>filter</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter string for narrowing down agent results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.fleet_agents_response.FleetAgentsResponse" title="datadog_api_client.v2.model.fleet_agents_response.FleetAgentsResponse">FleetAgentsResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
