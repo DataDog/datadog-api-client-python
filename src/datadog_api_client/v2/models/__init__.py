@@ -1992,6 +1992,9 @@ from datadog_api_client.v2.model.get_rule_version_history_data import GetRuleVer
 from datadog_api_client.v2.model.get_rule_version_history_data_type import GetRuleVersionHistoryDataType
 from datadog_api_client.v2.model.get_rule_version_history_response import GetRuleVersionHistoryResponse
 from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
+from datadog_api_client.v2.model.get_suppression_version_history_data import GetSuppressionVersionHistoryData
+from datadog_api_client.v2.model.get_suppression_version_history_data_type import GetSuppressionVersionHistoryDataType
+from datadog_api_client.v2.model.get_suppression_version_history_response import GetSuppressionVersionHistoryResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
 from datadog_api_client.v2.model.github_webhook_trigger import GithubWebhookTrigger
@@ -3897,8 +3900,6 @@ from datadog_api_client.v2.model.rule_type import RuleType
 from datadog_api_client.v2.model.rule_types_items import RuleTypesItems
 from datadog_api_client.v2.model.rule_user import RuleUser
 from datadog_api_client.v2.model.rule_version_history import RuleVersionHistory
-from datadog_api_client.v2.model.rule_version_update import RuleVersionUpdate
-from datadog_api_client.v2.model.rule_version_update_type import RuleVersionUpdateType
 from datadog_api_client.v2.model.rule_versions import RuleVersions
 from datadog_api_client.v2.model.rules_validate_query_request import RulesValidateQueryRequest
 from datadog_api_client.v2.model.rules_validate_query_request_data import RulesValidateQueryRequestData
@@ -4640,6 +4641,8 @@ from datadog_api_client.v2.model.statsig_integration_update import StatsigIntegr
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
+from datadog_api_client.v2.model.suppression_version_history import SuppressionVersionHistory
+from datadog_api_client.v2.model.suppression_versions import SuppressionVersions
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
 from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
 from datadog_api_client.v2.model.table_result_v2_data import TableResultV2Data
@@ -5007,6 +5010,8 @@ from datadog_api_client.v2.model.v2_event_response import V2EventResponse
 from datadog_api_client.v2.model.validation_error import ValidationError
 from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMeta
 from datadog_api_client.v2.model.validation_response import ValidationResponse
+from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
+from datadog_api_client.v2.model.version_history_update_type import VersionHistoryUpdateType
 from datadog_api_client.v2.model.virus_total_api_key import VirusTotalAPIKey
 from datadog_api_client.v2.model.virus_total_api_key_type import VirusTotalAPIKeyType
 from datadog_api_client.v2.model.virus_total_api_key_update import VirusTotalAPIKeyUpdate
@@ -6548,6 +6553,9 @@ __all__ = [
     "GetRuleVersionHistoryDataType",
     "GetRuleVersionHistoryResponse",
     "GetSBOMResponse",
+    "GetSuppressionVersionHistoryData",
+    "GetSuppressionVersionHistoryDataType",
+    "GetSuppressionVersionHistoryResponse",
     "GetTeamMembershipsSort",
     "GetWorkflowResponse",
     "GithubWebhookTrigger",
@@ -7861,8 +7869,6 @@ __all__ = [
     "RuleTypesItems",
     "RuleUser",
     "RuleVersionHistory",
-    "RuleVersionUpdate",
-    "RuleVersionUpdateType",
     "RuleVersions",
     "RulesValidateQueryRequest",
     "RulesValidateQueryRequestData",
@@ -8396,6 +8402,8 @@ __all__ = [
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
+    "SuppressionVersionHistory",
+    "SuppressionVersions",
     "TableResultV2",
     "TableResultV2Array",
     "TableResultV2Data",
@@ -8689,6 +8697,8 @@ __all__ = [
     "ValidationError",
     "ValidationErrorMeta",
     "ValidationResponse",
+    "VersionHistoryUpdate",
+    "VersionHistoryUpdateType",
     "VirusTotalAPIKey",
     "VirusTotalAPIKeyType",
     "VirusTotalAPIKeyUpdate",

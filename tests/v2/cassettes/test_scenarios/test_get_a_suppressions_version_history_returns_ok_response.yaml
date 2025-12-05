@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","enabled":true,"name":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
+  response:
+    body:
+      string: '{"data":{"id":"456-piv-74h","type":"suppressions","attributes":{"creation_date":1764163986851,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"data_exclusion_query":"","description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","editable":true,"enabled":true,"name":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1764163986851,"updater":{"handle":"frog@datadoghq.com","name":"frog"},"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/456-piv-74h/version_history
+  response:
+    body:
+      string: '{"data":{"id":"456-piv-74h","type":"suppression_version_history","attributes":{"count":1,"data":{"1":{"suppression":{"id":"456-piv-74h","name":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","enabled":true,"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","rule_query":"source:cloudtrail","suppression_query":"env:test","data_exclusion_query":"","version":1,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"updater":{"handle":"frog@datadoghq.com","name":"frog"},"creation_date":1764163986851,"update_date":1764163986851,"editable":true,"tags":["source:cloudtrail","technique:T1110-brute-force"]},"changes":[]}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/456-piv-74h
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
