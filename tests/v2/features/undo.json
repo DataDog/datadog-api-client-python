@@ -3174,10 +3174,24 @@
       "type": "idempotent"
     }
   },
+  "DeleteRows": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetRowsByID": {
     "tag": "Reference Tables",
     "undo": {
       "type": "safe"
+    }
+  },
+  "UpsertRows": {
+    "tag": "Reference Tables",
+    "undo": {
+      "operationId": "DeleteRows",
+      "parameters": [],
+      "type": "unsafe"
     }
   },
   "CreateReferenceTableUpload": {
