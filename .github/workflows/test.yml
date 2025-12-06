@@ -40,9 +40,9 @@ jobs:
       github.event_name == 'schedule'
     uses: ./.github/workflows/reusable-python-test.yml
     with:
-      python-versions: '["3.8", "3.12"]'
+      python-versions: '["3.8", "3.14"]'
       platforms: '["ubuntu-22.04", "ubuntu-latest", "macos-latest"]'
-      matrix-exclude: '[{"platform": "macos-latest", "python-version": "3.8"}, {"platform": "ubuntu-latest", "python-version": "3.8"}, {"platform": "ubuntu-22.04", "python-version": "3.12"}]'
+      matrix-exclude: '[{"platform": "macos-latest", "python-version": "3.8"}, {"platform": "ubuntu-latest", "python-version": "3.8"}, {"platform": "ubuntu-22.04", "python-version": "3.14"}]'
     secrets:
       PIPELINE_GITHUB_APP_ID: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
       PIPELINE_GITHUB_APP_PRIVATE_KEY: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
@@ -56,7 +56,7 @@ jobs:
     uses: ./.github/workflows/reusable-examples.yml
     with:
       examples-script: './check-examples.sh'
-      python-version: '3.12'
+      python-version: '3.14'
 
   report:
     runs-on: ubuntu-latest
