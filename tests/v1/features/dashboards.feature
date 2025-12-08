@@ -329,6 +329,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].apm_stats_query.name" is equal to "cassandra.query"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with distribution widget with markers and num_buckets
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "distribution", "xaxis": { "scale": "linear", "min": "auto", "max": "auto", "include_zero": true, "num_buckets": 55 }, "yaxis": { "scale": "linear", "min": "auto", "max": "auto", "include_zero": true }, "markers": [{ "display_type": "percentile", "value": "50" }, { "display_type": "percentile", "value": "99" }, { "display_type": "percentile", "value": "90" }], "requests": [{ "response_format": "scalar", "queries": [{ "data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {service}", "aggregator": "avg" }] }] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.xaxis.num_buckets" is equal to 55
+    And the response "widgets[0].definition.markers" is equal to [{"display_type": "percentile", "value": "50"}, {"display_type": "percentile", "value": "99"}, {"display_type": "percentile", "value": "90"}]
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with event_stream list_stream widget
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered","title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns": [{"width": "auto","field": "timestamp"}],"query": {"data_source": "event_stream","query_string": "","event_size": "l"},"response_format": "event_list"}]}}]}
@@ -430,6 +439,16 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "heatmap"
     And the response "widgets[0].definition.requests[0].q" is equal to "avg:system.cpu.user{*} by {service}"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with heatmap widget with markers and num_buckets
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "heatmap", "xaxis": { "num_buckets": 75 }, "yaxis": { "scale": "linear", "min": "auto", "max": "auto", "include_zero": true, "num_buckets": 55 }, "markers": [{ "display_type": "percentile", "value": "50" }, { "display_type": "percentile", "value": "99" }], "requests": [{ "request_type": "histogram", "query": { "data_source": "metrics", "name": "query1", "query": "histogram:trace.servlet.request{*}"} }] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } }], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.xaxis.num_buckets" is equal to 75
+    And the response "widgets[0].definition.yaxis.num_buckets" is equal to 55
+    And the response "widgets[0].definition.markers" is equal to [{"display_type": "percentile", "value": "50"}, {"display_type": "percentile", "value": "99"}]
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with hostmap widget
