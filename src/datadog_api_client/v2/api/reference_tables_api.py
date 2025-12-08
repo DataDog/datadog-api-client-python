@@ -16,7 +16,9 @@ from datadog_api_client.v2.model.reference_table_sort_type import ReferenceTable
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
 from datadog_api_client.v2.model.create_table_request import CreateTableRequest
 from datadog_api_client.v2.model.patch_table_request import PatchTableRequest
+from datadog_api_client.v2.model.batch_delete_rows_request_array import BatchDeleteRowsRequestArray
 from datadog_api_client.v2.model.table_row_resource_array import TableRowResourceArray
+from datadog_api_client.v2.model.batch_upsert_rows_request_array import BatchUpsertRowsRequestArray
 from datadog_api_client.v2.model.create_upload_response import CreateUploadResponse
 from datadog_api_client.v2.model.create_upload_request import CreateUploadRequest
 
@@ -68,6 +70,32 @@ class ReferenceTablesApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_rows_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/reference-tables/tables/{id}/rows",
+                "operation_id": "delete_rows",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (BatchDeleteRowsRequestArray,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -227,6 +255,32 @@ class ReferenceTablesApi:
             api_client=api_client,
         )
 
+        self._upsert_rows_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/reference-tables/tables/{id}/rows",
+                "operation_id": "upsert_rows",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (BatchUpsertRowsRequestArray,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_reference_table(
         self,
         body: CreateTableRequest,
@@ -263,6 +317,27 @@ class ReferenceTablesApi:
         kwargs["body"] = body
 
         return self._create_reference_table_upload_endpoint.call_with_http_info(**kwargs)
+
+    def delete_rows(
+        self,
+        id: str,
+        body: BatchDeleteRowsRequestArray,
+    ) -> None:
+        """Delete rows.
+
+        Delete multiple rows from a Reference Table by their primary key values.
+
+        :param id: Unique identifier of the reference table to delete rows from
+        :type id: str
+        :type body: BatchDeleteRowsRequestArray
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._delete_rows_endpoint.call_with_http_info(**kwargs)
 
     def delete_table(
         self,
@@ -389,3 +464,24 @@ class ReferenceTablesApi:
         kwargs["body"] = body
 
         return self._update_reference_table_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_rows(
+        self,
+        id: str,
+        body: BatchUpsertRowsRequestArray,
+    ) -> None:
+        """Upsert rows.
+
+        Create or update rows in a Reference Table by their primary key values. If a row with the specified primary key exists, it is updated; otherwise, a new row is created.
+
+        :param id: Unique identifier of the reference table to upsert rows into
+        :type id: str
+        :type body: BatchUpsertRowsRequestArray
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._upsert_rows_endpoint.call_with_http_info(**kwargs)

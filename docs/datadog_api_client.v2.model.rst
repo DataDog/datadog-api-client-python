@@ -2510,6 +2510,41 @@ datadog\_api\_client.v2.model.azure\_uc\_configs\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.batch\_delete\_rows\_request\_array module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_delete_rows_request_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_delete\_rows\_request\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_delete_rows_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_upsert\_rows\_request\_array module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_upsert_rows_request_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_upsert\_rows\_request\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_upsert_rows_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_upsert\_rows\_request\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_upsert_rows_request_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.bill\_config module
 -------------------------------------------------
 
