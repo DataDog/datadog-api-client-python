@@ -2214,6 +2214,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.create_reference_table_upload" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.create_reference_table_upload()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_rows" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.delete_rows()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_table" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.delete_table()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.get_rows_by_id" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.get_rows_by_id()</span></code></a>
@@ -2223,6 +2225,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.list_tables" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.list_tables()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.update_reference_table" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.update_reference_table()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.upsert_rows" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi.upsert_rows()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -11187,6 +11191,20 @@ POST endpoint with <code class="docutils literal notranslate"><span class="pre">
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_rows">
+<span class="sig-name descname"><span class="pre">delete_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.batch_delete_rows_request_array.BatchDeleteRowsRequestArray" title="datadog_api_client.v2.model.batch_delete_rows_request_array.BatchDeleteRowsRequestArray"><span class="pre">BatchDeleteRowsRequestArray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_rows" title="Link to this definition">¶</a></dt>
+<dd><p>Delete rows.</p>
+<p>Delete multiple rows from a Reference Table by their primary key values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Unique identifier of the reference table to delete rows from</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_table">
 <span class="sig-name descname"><span class="pre">delete_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.delete_table" title="Link to this definition">¶</a></dt>
 <dd><p>Delete table.</p>
@@ -11260,6 +11278,20 @@ POST endpoint with <code class="docutils literal notranslate"><span class="pre">
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Unique identifier of the reference table to update</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.upsert_rows">
+<span class="sig-name descname"><span class="pre">upsert_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.batch_upsert_rows_request_array.BatchUpsertRowsRequestArray" title="datadog_api_client.v2.model.batch_upsert_rows_request_array.BatchUpsertRowsRequestArray"><span class="pre">BatchUpsertRowsRequestArray</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi.upsert_rows" title="Link to this definition">¶</a></dt>
+<dd><p>Upsert rows.</p>
+<p>Create or update rows in a Reference Table by their primary key values. If a row with the specified primary key exists, it is updated; otherwise, a new row is created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Unique identifier of the reference table to upsert rows into</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
