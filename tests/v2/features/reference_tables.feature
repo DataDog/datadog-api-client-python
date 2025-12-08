@@ -54,6 +54,30 @@ Feature: Reference Tables
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Delete rows returns "Bad Request" response
+    Given new "DeleteRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Delete rows returns "Not Found" response
+    Given new "DeleteRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Delete rows returns "Rows deleted successfully" response
+    Given new "DeleteRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 200 Rows deleted successfully
+
+  @generated @skip @team:DataDog/redapl-experiences
   Scenario: Delete table returns "Not Found" response
     Given new "DeleteTable" request
     And request contains "id" parameter from "REPLACE.ME"
@@ -119,3 +143,27 @@ Feature: Reference Tables
     And body with value {"data": {"attributes": {"description": "this is a cloud table generated via a cloud bucket sync", "file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "test-account-id", "aws_bucket_name": "test-bucket", "file_path": "test_rt.csv"}}, "sync_enabled": true}, "schema": {"fields": [{"name": "id", "type": "INT32"}, {"name": "name", "type": "STRING"}], "primary_keys": ["id"]}, "sync_enabled": false, "tags": ["test_tag"]}, "type": "reference_table"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Upsert rows returns "Bad Request" response
+    Given new "UpsertRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"values": {"example_key_value": "primary_key_value", "name": "row_name"}}, "id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Upsert rows returns "Not Found" response
+    Given new "UpsertRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"values": {"example_key_value": "primary_key_value", "name": "row_name"}}, "id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Upsert rows returns "Rows created or updated successfully" response
+    Given new "UpsertRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"values": {"example_key_value": "primary_key_value", "name": "row_name"}}, "id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 200 Rows created or updated successfully
