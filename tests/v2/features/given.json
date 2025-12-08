@@ -448,22 +448,6 @@
     "operationId": "CreateIncidentType"
   },
   {
-    "parameters": [
-      {
-        "name": "incident_id",
-        "source": "incident.data.id"
-      },
-      {
-        "name": "body",
-        "value": "{\n  \"data\": [\n    {\n      \"attributes\": {\n        \"attachment_type\": \"link\",\n        \"attachment\": {\n          \"documentUrl\": \"https://www.example.com/doc\",\n          \"title\": \"Important Doc\"\n        }\n      },\n      \"type\": \"incident_attachments\"\n    }\n  ]\n}"
-      }
-    ],
-    "step": "the \"incident\" has an \"incident_attachment\"",
-    "key": "incident_attachment",
-    "tag": "Incidents",
-    "operationId": "UpdateIncidentAttachments"
-  },
-  {
     "operationId": "CreateIncidentImpact",
     "parameters": [
       {

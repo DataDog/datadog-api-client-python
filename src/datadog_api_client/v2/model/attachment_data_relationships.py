@@ -14,28 +14,34 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+    from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user import (
+        AttachmentDataRelationshipsLastModifiedByUser,
+    )
 
 
-class IncidentAttachmentRelationships(ModelNormal):
+class AttachmentDataRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
+        from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user import (
+            AttachmentDataRelationshipsLastModifiedByUser,
+        )
 
         return {
-            "last_modified_by_user": (RelationshipToUser,),
+            "last_modified_by_user": (AttachmentDataRelationshipsLastModifiedByUser,),
         }
 
     attribute_map = {
         "last_modified_by_user": "last_modified_by_user",
     }
 
-    def __init__(self_, last_modified_by_user: Union[RelationshipToUser, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, last_modified_by_user: Union[AttachmentDataRelationshipsLastModifiedByUser, UnsetType] = unset, **kwargs
+    ):
         """
-        The incident attachment's relationships.
 
-        :param last_modified_by_user: Relationship to user.
-        :type last_modified_by_user: RelationshipToUser, optional
+
+        :param last_modified_by_user:
+        :type last_modified_by_user: AttachmentDataRelationshipsLastModifiedByUser, optional
         """
         if last_modified_by_user is not unset:
             kwargs["last_modified_by_user"] = last_modified_by_user
