@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## 2.47.0/2025-12-08
+
+### Added
+* On-Call Add positioned schedule policy target [#2976](https://github.com/DataDog/datadog-api-client-python/pull/2976)
+* Introduced new APIs to manage team hierarchy links [#2967](https://github.com/DataDog/datadog-api-client-python/pull/2967)
+* Add Row Update Endpoints to Reference Tables API spec [#2956](https://github.com/DataDog/datadog-api-client-python/pull/2956)
+* Add incident management seats  to spec [#2953](https://github.com/DataDog/datadog-api-client-python/pull/2953)
+* Support provisioning teams from external sources [#2952](https://github.com/DataDog/datadog-api-client-python/pull/2952)
+* security_monitoring - Add signalOutput field to ThreatHuntingJobResponseAttributes schema [#2950](https://github.com/DataDog/datadog-api-client-python/pull/2950)
+* Add filter.scope to Monitor Notification Rules [#2947](https://github.com/DataDog/datadog-api-client-python/pull/2947)
+* Allow providing a custom retry policy. [#2946](https://github.com/DataDog/datadog-api-client-python/pull/2946)
+* Add suppression tags [#2939](https://github.com/DataDog/datadog-api-client-python/pull/2939)
+* Add Team Connection API Documentation [#2936](https://github.com/DataDog/datadog-api-client-python/pull/2936)
+
+### Changed
+* Add Security Finding Ticketing endpoints [#2970](https://github.com/DataDog/datadog-api-client-python/pull/2970)
+* Flatten file_metadata response schema to avoid OneOf unmarshaling issues [#2955](https://github.com/DataDog/datadog-api-client-python/pull/2955)
+
+### Fixed
+* obs_pipelines: make google auth optional [#2961](https://github.com/DataDog/datadog-api-client-python/pull/2961)
+* Add 408s to retries to Python API Client [#2945](https://github.com/DataDog/datadog-api-client-python/pull/2945)
+
+### Deprecated
+* [api-spec] Mark PATCH /api/v2/incidents/incident_id/attachments endpoint as deprecated [#2937](https://github.com/DataDog/datadog-api-client-python/pull/2937)
+
 ## 2.46.0/2025-11-14
 
 ### Added
