@@ -29,6 +29,9 @@ class SLODataSourceQueryDefinition(ModelComposed):
 
         :param query: Metrics query definition.
         :type query: str
+
+        :param semantic_mode: Semantic mode for metrics queries. This determines how metrics from different sources are combined or displayed.
+        :type semantic_mode: FormulaAndFunctionMetricSemanticMode, optional
         """
         super().__init__(kwargs)
 
