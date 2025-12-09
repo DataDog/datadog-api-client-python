@@ -893,6 +893,13 @@ datadog\_api\_client.v1.model.formula\_and\_function\_metric\_query\_definition 
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.formula\_and\_function\_metric\_semantic\_mode module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_metric_semantic_mode
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.formula\_and\_function\_process\_query\_data\_source module
 -----------------------------------------------------------------------------------------
 
