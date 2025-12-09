@@ -16,6 +16,9 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
     from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
+    from datadog_api_client.v1.model.formula_and_function_metric_semantic_mode import (
+        FormulaAndFunctionMetricSemanticMode,
+    )
 
 
 class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
@@ -33,6 +36,9 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         from datadog_api_client.v1.model.formula_and_function_metric_data_source import (
             FormulaAndFunctionMetricDataSource,
         )
+        from datadog_api_client.v1.model.formula_and_function_metric_semantic_mode import (
+            FormulaAndFunctionMetricSemanticMode,
+        )
 
         return {
             "aggregator": (FormulaAndFunctionMetricAggregation,),
@@ -40,6 +46,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
             "data_source": (FormulaAndFunctionMetricDataSource,),
             "name": (str,),
             "query": (str,),
+            "semantic_mode": (FormulaAndFunctionMetricSemanticMode,),
         }
 
     attribute_map = {
@@ -48,6 +55,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         "data_source": "data_source",
         "name": "name",
         "query": "query",
+        "semantic_mode": "semantic_mode",
     }
 
     def __init__(
@@ -57,6 +65,7 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
         query: str,
         aggregator: Union[FormulaAndFunctionMetricAggregation, UnsetType] = unset,
         cross_org_uuids: Union[List[str], UnsetType] = unset,
+        semantic_mode: Union[FormulaAndFunctionMetricSemanticMode, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -76,11 +85,16 @@ class FormulaAndFunctionMetricQueryDefinition(ModelNormal):
 
         :param query: Metrics query definition.
         :type query: str
+
+        :param semantic_mode: Semantic mode for metrics queries. This determines how metrics from different sources are combined or displayed.
+        :type semantic_mode: FormulaAndFunctionMetricSemanticMode, optional
         """
         if aggregator is not unset:
             kwargs["aggregator"] = aggregator
         if cross_org_uuids is not unset:
             kwargs["cross_org_uuids"] = cross_org_uuids
+        if semantic_mode is not unset:
+            kwargs["semantic_mode"] = semantic_mode
         super().__init__(kwargs)
 
         self_.data_source = data_source

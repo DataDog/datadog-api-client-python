@@ -196,6 +196,30 @@ Feature: Dashboards
     And the response "widgets[0].definition.time.live_span" is equal to "week_to_date"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with a timeseries widget using formulas and functions metrics query with combined semantic_mode
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with combined semantic_mode", "widgets": [{"definition": {"type": "timeseries", "requests": [{"queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*}", "semantic_mode": "combined"}], "response_format": "timeseries", "formulas": [{"formula": "query1"}], "display_type": "line"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "timeseries"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "metrics"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "avg:system.cpu.user{*}"
+    And the response "widgets[0].definition.requests[0].queries[0].semantic_mode" is equal to "combined"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with a timeseries widget using formulas and functions metrics query with native semantic_mode
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with native semantic_mode", "widgets": [{"definition": {"type": "timeseries", "requests": [{"queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*}", "semantic_mode": "native"}], "response_format": "timeseries", "formulas": [{"formula": "query1"}], "display_type": "line"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "timeseries"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "metrics"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "avg:system.cpu.user{*}"
+    And the response "widgets[0].definition.requests[0].queries[0].semantic_mode" is equal to "native"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a toplist widget sorted by group
     Given new "CreateDashboard" request
     And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked","legend": "inline"},"scaling": "relative","palette": "dog_classic"},"type":"toplist","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","notify_list":[]}
