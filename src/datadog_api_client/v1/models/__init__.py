@@ -155,6 +155,7 @@ from datadog_api_client.v1.model.formula_and_function_metric_data_source import 
 from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
     FormulaAndFunctionMetricQueryDefinition,
 )
+from datadog_api_client.v1.model.formula_and_function_metric_semantic_mode import FormulaAndFunctionMetricSemanticMode
 from datadog_api_client.v1.model.formula_and_function_process_query_data_source import (
     FormulaAndFunctionProcessQueryDataSource,
 )
@@ -1248,6 +1249,7 @@ __all__ = [
     "FormulaAndFunctionMetricAggregation",
     "FormulaAndFunctionMetricDataSource",
     "FormulaAndFunctionMetricQueryDefinition",
+    "FormulaAndFunctionMetricSemanticMode",
     "FormulaAndFunctionProcessQueryDataSource",
     "FormulaAndFunctionProcessQueryDefinition",
     "FormulaAndFunctionQueryDefinition",
