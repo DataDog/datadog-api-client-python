@@ -1428,6 +1428,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_gate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.get_deployment_gate()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_gate_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.get_deployment_gate_rules()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.get_deployment_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.update_deployment_gate" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DeploymentGatesApi.update_deployment_gate()</span></code></a>
@@ -6536,6 +6538,20 @@ view certain types of telemetry (for example, logs, traces, metrics, and RUM dat
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse" title="datadog_api_client.v2.model.deployment_gate_response.DeploymentGateResponse">DeploymentGateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_gate_rules">
+<span class="sig-name descname"><span class="pre">get_deployment_gate_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gate_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_rules_response.DeploymentGateRulesResponse" title="datadog_api_client.v2.model.deployment_gate_rules_response.DeploymentGateRulesResponse"><span class="pre">DeploymentGateRulesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.deployment_gates_api.DeploymentGatesApi.get_deployment_gate_rules" title="Link to this definition">¶</a></dt>
+<dd><p>Get rules for a deployment gate.</p>
+<p>Endpoint to get rules for a deployment gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>gate_id</strong> (<em>str</em>) – The ID of the deployment gate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deployment_gate_rules_response.DeploymentGateRulesResponse" title="datadog_api_client.v2.model.deployment_gate_rules_response.DeploymentGateRulesResponse">DeploymentGateRulesResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

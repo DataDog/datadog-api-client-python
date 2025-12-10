@@ -6850,6 +6850,13 @@ datadog\_api\_client.v2.model.deployment\_gate\_response\_data\_attributes\_upda
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deployment\_gate\_rules\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gate_rules_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.deployment\_metadata module
 ---------------------------------------------------------
 
@@ -12930,6 +12937,27 @@ datadog\_api\_client.v2.model.list\_connections\_response\_data\_type module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_connections_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_deployment\_rule\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_deployment_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_deployment\_rules\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_deployment_rules_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_deployment\_rules\_response\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_deployment_rules_response_data_attributes
    :members:
    :show-inheritance:
 
