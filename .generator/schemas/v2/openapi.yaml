@@ -79838,6 +79838,9 @@ paths:
         permissions:
         - security_monitoring_findings_write
         - appsec_vm_write
+      x-unstable: '**Note**: This endpoint is in beta and is subject to change.
+
+        Please check the documentation regularly for updates.'
     post:
       description: Create Jira issues for security findings. This operation creates
         a case in Datadog and a Jira issue linked to that case for bidirectional sync
@@ -79878,6 +79881,9 @@ paths:
         permissions:
         - security_monitoring_findings_write
         - appsec_vm_write
+      x-unstable: '**Note**: This endpoint is in beta and is subject to change.
+
+        Please check the documentation regularly for updates.'
   /api/v2/security/sboms:
     get:
       description: 'Get a list of assets SBOMs for an organization.
