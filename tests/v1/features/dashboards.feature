@@ -72,6 +72,22 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].response_format" is equal to "event_list"
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "logs_stream"
 
+  @team:DataDog/dashboards-backend
+  Scenario: Create a geomap widget with conditional formats and text formats
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }}","description": "{{ unique }}","widgets":[{"definition":{"title":"Log Count by Service and Source","type":"geomap","requests":[{"response_format":"scalar","queries":[{"data_source":"rum","name":"query1","search":{"query":"@type:session"},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[]}],"conditional_formats":[{"comparator":">","value":1000,"palette":"white_on_green"}],"formulas":[{"formula":"query1"}],"sort":{"count":250,"order_by":[{"type":"formula","index":0,"order":"desc"}]}},{"response_format":"event_list","query":{"data_source":"logs_stream","query_string":"","indexes":[],"storage":"hot"},"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"}],"style":{"color_by":"status"},"text_formats":[{"match":{"type":"is","value":"error"},"palette":"white_on_red"}]}],"style":{"palette":"hostmap_blues","palette_flip":false},"view":{"focus":"NORTH_AMERICA"}},"layout":{"x":0,"y":0,"width":12,"height":6}}],"template_variables":[],"layout_type":"ordered","notify_list":[],"reflow_type":"fixed","tags":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "geomap"
+    And the response "widgets[0].definition.title" is equal to "Log Count by Service and Source"
+    And the response "widgets[0].definition.requests[0].conditional_formats[0].comparator" is equal to ">"
+    And the response "widgets[0].definition.requests[0].conditional_formats[0].palette" is equal to "white_on_green"
+    And the response "widgets[0].definition.requests[0].conditional_formats[0].value" is equal to 1000
+    And the response "widgets[0].definition.requests[1].text_formats[0].match.type" is equal to "is"
+    And the response "widgets[0].definition.requests[1].text_formats[0].match.value" is equal to "error"
+    And the response "widgets[0].definition.requests[1].text_formats[0].palette" is equal to "white_on_red"
+    And the response "widgets[0].definition.view.focus" is equal to "NORTH_AMERICA"
+
   @generated @skip @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard returns "Bad Request" response
     Given new "CreateDashboard" request

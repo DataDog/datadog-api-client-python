@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"description":"Test-Create_a_geomap_widget_with_conditional_formats_and_text_formats-1765190775","layout_type":"ordered","notify_list":[],"reflow_type":"fixed","tags":[],"template_variables":[],"title":"Test-Create_a_geomap_widget_with_conditional_formats_and_text_formats-1765190775","widgets":[{"definition":{"requests":[{"conditional_formats":[{"comparator":">","palette":"white_on_green","value":1000}],"formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"@type:session"}}],"response_format":"scalar","sort":{"count":250,"order_by":[{"index":0,"order":"desc","type":"formula"}]}},{"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"}],"query":{"data_source":"logs_stream","indexes":[],"query_string":"","storage":"hot"},"response_format":"event_list","style":{"color_by":"status"},"text_formats":[{"match":{"type":"is","value":"error"},"palette":"white_on_red"}]}],"style":{"palette":"hostmap_blues","palette_flip":false},"title":"Log
+      Count by Service and Source","type":"geomap","view":{"focus":"NORTH_AMERICA"}},"layout":{"height":6,"width":12,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"n2i-h6d-x6a","title":"Test-Create_a_geomap_widget_with_conditional_formats_and_text_formats-1765190775","description":"Test-Create_a_geomap_widget_with_conditional_formats_and_text_formats-1765190775","author_handle":"shishi.liu@datadoghq.com","author_name":"Shishi
+        Liu","layout_type":"ordered","url":"/dashboard/n2i-h6d-x6a/test-createageomapwidgetwithconditionalformatsandtextformats-1765190775","template_variables":[],"widgets":[{"definition":{"requests":[{"conditional_formats":[{"comparator":">","palette":"white_on_green","value":1000}],"formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"@type:session"}}],"response_format":"scalar","sort":{"count":250,"order_by":[{"index":0,"order":"desc","type":"formula"}]}},{"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"}],"query":{"data_source":"logs_stream","indexes":[],"query_string":"","storage":"hot"},"response_format":"event_list","style":{"color_by":"status"},"text_formats":[{"match":{"type":"is","value":"error"},"palette":"white_on_red"}]}],"style":{"palette":"hostmap_blues","palette_flip":false},"title":"Log
+        Count by Service and Source","type":"geomap","view":{"focus":"NORTH_AMERICA"}},"layout":{"height":6,"width":12,"x":0,"y":0},"id":4916490421180340}],"notify_list":[],"created_at":"2025-12-08T10:46:15.791396+00:00","modified_at":"2025-12-08T10:46:15.791396+00:00","reflow_type":"fixed","tags":[],"restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/n2i-h6d-x6a
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"n2i-h6d-x6a"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

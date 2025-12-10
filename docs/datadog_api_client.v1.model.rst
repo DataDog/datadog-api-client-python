@@ -1096,6 +1096,13 @@ datadog\_api\_client.v1.model.geomap\_widget\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.geomap\_widget\_request\_style module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.geomap_widget_request_style
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.graph\_snapshot module
 ----------------------------------------------------
 

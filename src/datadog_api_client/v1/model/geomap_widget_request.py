@@ -15,12 +15,15 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
+    from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
     from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
+    from datadog_api_client.v1.model.geomap_widget_request_style import GeomapWidgetRequestStyle
+    from datadog_api_client.v1.model.table_widget_text_format_rule import TableWidgetTextFormatRule
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
     )
@@ -48,15 +51,19 @@ class GeomapWidgetRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
+        from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
         from datadog_api_client.v1.model.widget_formula import WidgetFormula
         from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
         from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
         from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
         from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
+        from datadog_api_client.v1.model.geomap_widget_request_style import GeomapWidgetRequestStyle
+        from datadog_api_client.v1.model.table_widget_text_format_rule import TableWidgetTextFormatRule
 
         return {
             "columns": ([ListStreamColumn],),
+            "conditional_formats": ([WidgetConditionalFormat],),
             "formulas": ([WidgetFormula],),
             "log_query": (LogQueryDefinition,),
             "q": (str,),
@@ -66,10 +73,13 @@ class GeomapWidgetRequest(ModelNormal):
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
             "sort": (WidgetSortBy,),
+            "style": (GeomapWidgetRequestStyle,),
+            "text_formats": ([TableWidgetTextFormatRule],),
         }
 
     attribute_map = {
         "columns": "columns",
+        "conditional_formats": "conditional_formats",
         "formulas": "formulas",
         "log_query": "log_query",
         "q": "q",
@@ -79,11 +89,14 @@ class GeomapWidgetRequest(ModelNormal):
         "rum_query": "rum_query",
         "security_query": "security_query",
         "sort": "sort",
+        "style": "style",
+        "text_formats": "text_formats",
     }
 
     def __init__(
         self_,
         columns: Union[List[ListStreamColumn], UnsetType] = unset,
+        conditional_formats: Union[List[WidgetConditionalFormat], UnsetType] = unset,
         formulas: Union[List[WidgetFormula], UnsetType] = unset,
         log_query: Union[LogQueryDefinition, UnsetType] = unset,
         q: Union[str, UnsetType] = unset,
@@ -107,6 +120,8 @@ class GeomapWidgetRequest(ModelNormal):
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
         sort: Union[WidgetSortBy, UnsetType] = unset,
+        style: Union[GeomapWidgetRequestStyle, UnsetType] = unset,
+        text_formats: Union[List[TableWidgetTextFormatRule], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -114,6 +129,9 @@ class GeomapWidgetRequest(ModelNormal):
 
         :param columns: Widget columns.
         :type columns: [ListStreamColumn], optional
+
+        :param conditional_formats: Threshold (numeric) conditional formatting rules may be used by a regions layer.
+        :type conditional_formats: [WidgetConditionalFormat], optional
 
         :param formulas: List of formulas that operate on queries.
         :type formulas: [WidgetFormula], optional
@@ -141,9 +159,17 @@ class GeomapWidgetRequest(ModelNormal):
 
         :param sort: The controls for sorting the widget.
         :type sort: WidgetSortBy, optional
+
+        :param style: The style to apply to the request for points layer.
+        :type style: GeomapWidgetRequestStyle, optional
+
+        :param text_formats: Text formatting rules may be used by a points layer.
+        :type text_formats: [TableWidgetTextFormatRule], optional
         """
         if columns is not unset:
             kwargs["columns"] = columns
+        if conditional_formats is not unset:
+            kwargs["conditional_formats"] = conditional_formats
         if formulas is not unset:
             kwargs["formulas"] = formulas
         if log_query is not unset:
@@ -162,4 +188,8 @@ class GeomapWidgetRequest(ModelNormal):
             kwargs["security_query"] = security_query
         if sort is not unset:
             kwargs["sort"] = sort
+        if style is not unset:
+            kwargs["style"] = style
+        if text_formats is not unset:
+            kwargs["text_formats"] = text_formats
         super().__init__(kwargs)
