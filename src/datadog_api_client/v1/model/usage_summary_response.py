@@ -57,6 +57,7 @@ class UsageSummaryResponse(ModelNormal):
             "cloud_cost_management_azure_host_count_avg_sum": (int,),
             "cloud_cost_management_gcp_host_count_avg_sum": (int,),
             "cloud_cost_management_host_count_avg_sum": (int,),
+            "cloud_cost_management_oci_host_count_avg_sum": (int,),
             "cloud_siem_events_agg_sum": (int,),
             "code_analysis_sa_committers_hwm_sum": (int,),
             "code_analysis_sca_committers_hwm_sum": (int,),
@@ -104,6 +105,7 @@ class UsageSummaryResponse(ModelNormal):
             "eph_infra_host_opentelemetry_apm_agg_sum": (int,),
             "eph_infra_host_pro_agg_sum": (int,),
             "eph_infra_host_proplus_agg_sum": (int,),
+            "eph_infra_host_proxmox_agg_sum": (int,),
             "error_tracking_apm_error_events_agg_sum": (int,),
             "error_tracking_error_events_agg_sum": (int,),
             "error_tracking_events_agg_sum": (int,),
@@ -163,6 +165,8 @@ class UsageSummaryResponse(ModelNormal):
             "profiling_aas_count_top99p_sum": (int,),
             "profiling_container_agent_count_avg": (int,),
             "profiling_host_count_top99p_sum": (int,),
+            "proxmox_host_agg_sum": (int,),
+            "proxmox_host_top99p_sum": (int,),
             "published_app_hwm_sum": (int,),
             "rehydrated_indexed_events_agg_sum": (int,),
             "rehydrated_ingested_bytes_agg_sum": (int,),
@@ -277,6 +281,7 @@ class UsageSummaryResponse(ModelNormal):
         "cloud_cost_management_azure_host_count_avg_sum": "cloud_cost_management_azure_host_count_avg_sum",
         "cloud_cost_management_gcp_host_count_avg_sum": "cloud_cost_management_gcp_host_count_avg_sum",
         "cloud_cost_management_host_count_avg_sum": "cloud_cost_management_host_count_avg_sum",
+        "cloud_cost_management_oci_host_count_avg_sum": "cloud_cost_management_oci_host_count_avg_sum",
         "cloud_siem_events_agg_sum": "cloud_siem_events_agg_sum",
         "code_analysis_sa_committers_hwm_sum": "code_analysis_sa_committers_hwm_sum",
         "code_analysis_sca_committers_hwm_sum": "code_analysis_sca_committers_hwm_sum",
@@ -324,6 +329,7 @@ class UsageSummaryResponse(ModelNormal):
         "eph_infra_host_opentelemetry_apm_agg_sum": "eph_infra_host_opentelemetry_apm_agg_sum",
         "eph_infra_host_pro_agg_sum": "eph_infra_host_pro_agg_sum",
         "eph_infra_host_proplus_agg_sum": "eph_infra_host_proplus_agg_sum",
+        "eph_infra_host_proxmox_agg_sum": "eph_infra_host_proxmox_agg_sum",
         "error_tracking_apm_error_events_agg_sum": "error_tracking_apm_error_events_agg_sum",
         "error_tracking_error_events_agg_sum": "error_tracking_error_events_agg_sum",
         "error_tracking_events_agg_sum": "error_tracking_events_agg_sum",
@@ -383,6 +389,8 @@ class UsageSummaryResponse(ModelNormal):
         "profiling_aas_count_top99p_sum": "profiling_aas_count_top99p_sum",
         "profiling_container_agent_count_avg": "profiling_container_agent_count_avg",
         "profiling_host_count_top99p_sum": "profiling_host_count_top99p_sum",
+        "proxmox_host_agg_sum": "proxmox_host_agg_sum",
+        "proxmox_host_top99p_sum": "proxmox_host_top99p_sum",
         "published_app_hwm_sum": "published_app_hwm_sum",
         "rehydrated_indexed_events_agg_sum": "rehydrated_indexed_events_agg_sum",
         "rehydrated_ingested_bytes_agg_sum": "rehydrated_ingested_bytes_agg_sum",
@@ -498,6 +506,7 @@ class UsageSummaryResponse(ModelNormal):
         cloud_cost_management_azure_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_gcp_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_host_count_avg_sum: Union[int, UnsetType] = unset,
+        cloud_cost_management_oci_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_siem_events_agg_sum: Union[int, UnsetType] = unset,
         code_analysis_sa_committers_hwm_sum: Union[int, UnsetType] = unset,
         code_analysis_sca_committers_hwm_sum: Union[int, UnsetType] = unset,
@@ -545,6 +554,7 @@ class UsageSummaryResponse(ModelNormal):
         eph_infra_host_opentelemetry_apm_agg_sum: Union[int, UnsetType] = unset,
         eph_infra_host_pro_agg_sum: Union[int, UnsetType] = unset,
         eph_infra_host_proplus_agg_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_proxmox_agg_sum: Union[int, UnsetType] = unset,
         error_tracking_apm_error_events_agg_sum: Union[int, UnsetType] = unset,
         error_tracking_error_events_agg_sum: Union[int, UnsetType] = unset,
         error_tracking_events_agg_sum: Union[int, UnsetType] = unset,
@@ -604,6 +614,8 @@ class UsageSummaryResponse(ModelNormal):
         profiling_aas_count_top99p_sum: Union[int, UnsetType] = unset,
         profiling_container_agent_count_avg: Union[int, UnsetType] = unset,
         profiling_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        proxmox_host_agg_sum: Union[int, UnsetType] = unset,
+        proxmox_host_top99p_sum: Union[int, UnsetType] = unset,
         published_app_hwm_sum: Union[int, UnsetType] = unset,
         rehydrated_indexed_events_agg_sum: Union[int, UnsetType] = unset,
         rehydrated_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
@@ -782,6 +794,9 @@ class UsageSummaryResponse(ModelNormal):
         :param cloud_cost_management_host_count_avg_sum: Sum of the host count average for Cloud Cost Management for all cloud providers.
         :type cloud_cost_management_host_count_avg_sum: int, optional
 
+        :param cloud_cost_management_oci_host_count_avg_sum: Sum of the average host counts for Cloud Cost Management on OCI.
+        :type cloud_cost_management_oci_host_count_avg_sum: int, optional
+
         :param cloud_siem_events_agg_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current month for all organizations.
         :type cloud_siem_events_agg_sum: int, optional
 
@@ -922,6 +937,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param eph_infra_host_proplus_agg_sum: Shows the sum of all ephemeral infrastructure hosts for Pro Plus over all hours in the current month for all organizations.
         :type eph_infra_host_proplus_agg_sum: int, optional
+
+        :param eph_infra_host_proxmox_agg_sum: Sum of all ephemeral infrastructure hosts for Proxmox over all hours in the current month for all organizations.
+        :type eph_infra_host_proxmox_agg_sum: int, optional
 
         :param error_tracking_apm_error_events_agg_sum: Shows the sum of all Error Tracking APM error events over all hours in the current month for all organizations.
         :type error_tracking_apm_error_events_agg_sum: int, optional
@@ -1099,6 +1117,12 @@ class UsageSummaryResponse(ModelNormal):
 
         :param profiling_host_count_top99p_sum: Shows the 99th percentile of all profiled hosts over all hours in the current month for all organizations.
         :type profiling_host_count_top99p_sum: int, optional
+
+        :param proxmox_host_agg_sum: Sum of all Proxmox hosts over all hours in the current month for all organizations.
+        :type proxmox_host_agg_sum: int, optional
+
+        :param proxmox_host_top99p_sum: Sum of the 99th percentile of all Proxmox hosts over all hours in the current month for all organizations.
+        :type proxmox_host_top99p_sum: int, optional
 
         :param published_app_hwm_sum: Shows the high-water mark of all published applications over all hours in the current month for all organizations.
         :type published_app_hwm_sum: int, optional
@@ -1402,6 +1426,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cloud_cost_management_gcp_host_count_avg_sum"] = cloud_cost_management_gcp_host_count_avg_sum
         if cloud_cost_management_host_count_avg_sum is not unset:
             kwargs["cloud_cost_management_host_count_avg_sum"] = cloud_cost_management_host_count_avg_sum
+        if cloud_cost_management_oci_host_count_avg_sum is not unset:
+            kwargs["cloud_cost_management_oci_host_count_avg_sum"] = cloud_cost_management_oci_host_count_avg_sum
         if cloud_siem_events_agg_sum is not unset:
             kwargs["cloud_siem_events_agg_sum"] = cloud_siem_events_agg_sum
         if code_analysis_sa_committers_hwm_sum is not unset:
@@ -1500,6 +1526,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["eph_infra_host_pro_agg_sum"] = eph_infra_host_pro_agg_sum
         if eph_infra_host_proplus_agg_sum is not unset:
             kwargs["eph_infra_host_proplus_agg_sum"] = eph_infra_host_proplus_agg_sum
+        if eph_infra_host_proxmox_agg_sum is not unset:
+            kwargs["eph_infra_host_proxmox_agg_sum"] = eph_infra_host_proxmox_agg_sum
         if error_tracking_apm_error_events_agg_sum is not unset:
             kwargs["error_tracking_apm_error_events_agg_sum"] = error_tracking_apm_error_events_agg_sum
         if error_tracking_error_events_agg_sum is not unset:
@@ -1630,6 +1658,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["profiling_container_agent_count_avg"] = profiling_container_agent_count_avg
         if profiling_host_count_top99p_sum is not unset:
             kwargs["profiling_host_count_top99p_sum"] = profiling_host_count_top99p_sum
+        if proxmox_host_agg_sum is not unset:
+            kwargs["proxmox_host_agg_sum"] = proxmox_host_agg_sum
+        if proxmox_host_top99p_sum is not unset:
+            kwargs["proxmox_host_top99p_sum"] = proxmox_host_top99p_sum
         if published_app_hwm_sum is not unset:
             kwargs["published_app_hwm_sum"] = published_app_hwm_sum
         if rehydrated_indexed_events_agg_sum is not unset:
