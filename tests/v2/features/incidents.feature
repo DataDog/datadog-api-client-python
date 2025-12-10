@@ -21,6 +21,33 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a page from an incident returns "Bad Request" response
+    Given operation "CreatePageFromIncident" enabled
+    And new "CreatePageFromIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Page created for incident response", "services": ["web-service", "api-service"], "tags": ["urgent", "production"], "target": {"identifier": "team-handle", "type": "team_handle"}, "title": "Incident Response Page"}, "type": "page"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a page from an incident returns "Not Found" response
+    Given operation "CreatePageFromIncident" enabled
+    And new "CreatePageFromIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Page created for incident response", "services": ["web-service", "api-service"], "tags": ["urgent", "production"], "target": {"identifier": "team-handle", "type": "team_handle"}, "title": "Incident Response Page"}, "type": "page"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a page from an incident returns "OK" response
+    Given operation "CreatePageFromIncident" enabled
+    And new "CreatePageFromIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Page created for incident response", "services": ["web-service", "api-service"], "tags": ["urgent", "production"], "target": {"identifier": "team-handle", "type": "team_handle"}, "title": "Incident Response Page"}, "type": "page"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/incident-app
   Scenario: Create an incident attachment returns "OK" response
     Given operation "UpdateIncidentAttachments" enabled

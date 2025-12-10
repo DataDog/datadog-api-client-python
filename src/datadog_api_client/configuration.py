@@ -310,6 +310,7 @@ class Configuration:
                 "v2.create_incident_notification_template": False,
                 "v2.create_incident_todo": False,
                 "v2.create_incident_type": False,
+                "v2.create_page_from_incident": False,
                 "v2.delete_incident": False,
                 "v2.delete_incident_impact": False,
                 "v2.delete_incident_integration": False,
