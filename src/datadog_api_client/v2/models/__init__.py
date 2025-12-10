@@ -1381,6 +1381,7 @@ from datadog_api_client.v2.model.deployment_gate_response_data_attributes_create
 from datadog_api_client.v2.model.deployment_gate_response_data_attributes_updated_by import (
     DeploymentGateResponseDataAttributesUpdatedBy,
 )
+from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
 from datadog_api_client.v2.model.deployment_metadata import DeploymentMetadata
 from datadog_api_client.v2.model.deployment_relationship import DeploymentRelationship
 from datadog_api_client.v2.model.deployment_relationship_data import DeploymentRelationshipData
@@ -2434,6 +2435,11 @@ from datadog_api_client.v2.model.list_connections_response_data_attributes_conne
     ListConnectionsResponseDataAttributesConnectionsItemsJoin,
 )
 from datadog_api_client.v2.model.list_connections_response_data_type import ListConnectionsResponseDataType
+from datadog_api_client.v2.model.list_deployment_rule_response_data import ListDeploymentRuleResponseData
+from datadog_api_client.v2.model.list_deployment_rules_data_type import ListDeploymentRulesDataType
+from datadog_api_client.v2.model.list_deployment_rules_response_data_attributes import (
+    ListDeploymentRulesResponseDataAttributes,
+)
 from datadog_api_client.v2.model.list_devices_response import ListDevicesResponse
 from datadog_api_client.v2.model.list_devices_response_metadata import ListDevicesResponseMetadata
 from datadog_api_client.v2.model.list_devices_response_metadata_page import ListDevicesResponseMetadataPage
@@ -6074,6 +6080,7 @@ __all__ = [
     "DeploymentGateResponseDataAttributes",
     "DeploymentGateResponseDataAttributesCreatedBy",
     "DeploymentGateResponseDataAttributesUpdatedBy",
+    "DeploymentGateRulesResponse",
     "DeploymentMetadata",
     "DeploymentRelationship",
     "DeploymentRelationshipData",
@@ -6921,6 +6928,9 @@ __all__ = [
     "ListConnectionsResponseDataAttributesConnectionsItems",
     "ListConnectionsResponseDataAttributesConnectionsItemsJoin",
     "ListConnectionsResponseDataType",
+    "ListDeploymentRuleResponseData",
+    "ListDeploymentRulesDataType",
+    "ListDeploymentRulesResponseDataAttributes",
     "ListDevicesResponse",
     "ListDevicesResponseMetadata",
     "ListDevicesResponseMetadataPage",
