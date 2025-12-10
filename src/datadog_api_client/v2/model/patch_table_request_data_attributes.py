@@ -42,7 +42,6 @@ class PatchTableRequestDataAttributes(ModelNormal):
             "description": (str,),
             "file_metadata": (PatchTableRequestDataAttributesFileMetadata,),
             "schema": (PatchTableRequestDataAttributesSchema,),
-            "sync_enabled": (bool,),
             "tags": ([str],),
         }
 
@@ -50,7 +49,6 @@ class PatchTableRequestDataAttributes(ModelNormal):
         "description": "description",
         "file_metadata": "file_metadata",
         "schema": "schema",
-        "sync_enabled": "sync_enabled",
         "tags": "tags",
     }
 
@@ -64,7 +62,6 @@ class PatchTableRequestDataAttributes(ModelNormal):
             UnsetType,
         ] = unset,
         schema: Union[PatchTableRequestDataAttributesSchema, UnsetType] = unset,
-        sync_enabled: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -80,9 +77,6 @@ class PatchTableRequestDataAttributes(ModelNormal):
         :param schema: Schema defining the updates to the structure and columns of the reference table. Schema fields cannot be deleted or renamed.
         :type schema: PatchTableRequestDataAttributesSchema, optional
 
-        :param sync_enabled: Whether this table is synced automatically.
-        :type sync_enabled: bool, optional
-
         :param tags: Tags for organizing and filtering reference tables.
         :type tags: [str], optional
         """
@@ -92,8 +86,6 @@ class PatchTableRequestDataAttributes(ModelNormal):
             kwargs["file_metadata"] = file_metadata
         if schema is not unset:
             kwargs["schema"] = schema
-        if sync_enabled is not unset:
-            kwargs["sync_enabled"] = sync_enabled
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
