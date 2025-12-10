@@ -302,6 +302,7 @@ class Configuration:
                 "v2.delete_deployment_gate": False,
                 "v2.delete_deployment_rule": False,
                 "v2.get_deployment_gate": False,
+                "v2.get_deployment_gate_rules": False,
                 "v2.get_deployment_rule": False,
                 "v2.update_deployment_gate": False,
                 "v2.update_deployment_rule": False,

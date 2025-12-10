@@ -1335,6 +1335,12 @@
       "type": "unsafe"
     }
   },
+  "GetDeploymentGateRules": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateDeploymentRule": {
     "tag": "Deployment Gates",
     "undo": {
