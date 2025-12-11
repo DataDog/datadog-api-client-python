@@ -63,6 +63,7 @@ body = EventCreateRequestPayload(
             ),
             category=EventCategory.CHANGE,
             integration_id=EventPayloadIntegrationId.CUSTOM_EVENTS,
+            host="test-host",
             message="payment_processed feature flag has been enabled",
             tags=[
                 "env:api_client_test",

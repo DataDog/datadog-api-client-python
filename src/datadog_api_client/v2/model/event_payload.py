@@ -27,6 +27,10 @@ class EventPayload(ModelNormal):
             "max_length": 100,
             "min_length": 1,
         },
+        "host": {
+            "max_length": 255,
+            "min_length": 1,
+        },
         "message": {
             "max_length": 4000,
             "min_length": 1,
@@ -55,6 +59,7 @@ class EventPayload(ModelNormal):
             "aggregation_key": (str,),
             "attributes": (EventPayloadAttributes,),
             "category": (EventCategory,),
+            "host": (str,),
             "integration_id": (EventPayloadIntegrationId,),
             "message": (str,),
             "tags": ([str],),
@@ -66,6 +71,7 @@ class EventPayload(ModelNormal):
         "aggregation_key": "aggregation_key",
         "attributes": "attributes",
         "category": "category",
+        "host": "host",
         "integration_id": "integration_id",
         "message": "message",
         "tags": "tags",
@@ -79,6 +85,7 @@ class EventPayload(ModelNormal):
         category: EventCategory,
         title: str,
         aggregation_key: Union[str, UnsetType] = unset,
+        host: Union[str, UnsetType] = unset,
         integration_id: Union[EventPayloadIntegrationId, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -96,6 +103,9 @@ class EventPayload(ModelNormal):
 
         :param category: Event category identifying the type of event.
         :type category: EventCategory
+
+        :param host: Host name to associate with the event. Any tags associated with the host are also applied to this event. Limited to 255 characters.
+        :type host: str, optional
 
         :param integration_id: Integration ID sourced from integration manifests.
         :type integration_id: EventPayloadIntegrationId, optional
@@ -117,6 +127,8 @@ class EventPayload(ModelNormal):
         """
         if aggregation_key is not unset:
             kwargs["aggregation_key"] = aggregation_key
+        if host is not unset:
+            kwargs["host"] = host
         if integration_id is not unset:
             kwargs["integration_id"] = integration_id
         if message is not unset:
