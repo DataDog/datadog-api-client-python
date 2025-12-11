@@ -1798,6 +1798,13 @@ Feature: Security Monitoring
     Then the response status is 204 OK
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Validate a detection rule with detection method 'new_value' with enabled feature 'instantaneousBaseline' returns "OK" response
+    Given new "ValidateSecurityMonitoringRule" request
+    And body with value {"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"isEnabled":true,"message":"My security monitoring rule","name":"My security monitoring rule","options":{"evaluationWindow":0,"keepAlive":300,"maxSignalDuration":600,"detectionMethod":"new_value","newValueOptions":{"forgetAfter":7,"instantaneousBaseline":true,"learningDuration":1,"learningThreshold":0,"learningMethod":"duration"}},"queries":[{"query":"source:source_here","groupByFields":["@userIdentity.assumed_role"],"distinctFields":[],"metric":"name","metrics":["name"],"aggregation":"new_value","name":"","dataSource":"logs"}],"tags":["env:prod","team:security"],"type":"log_detection"}
+    When the request is sent
+    Then the response status is 204 OK
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Validate a detection rule with detection method 'sequence_detection' returns "OK" response
     Given new "ValidateSecurityMonitoringRule" request
     And body with value {"cases":[{"name":"","status":"info","notifications":[],"condition":"step_b > 0"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My security monitoring rule","name":"My security monitoring rule","options":{"evaluationWindow":0,"keepAlive":300,"maxSignalDuration":600,"detectionMethod":"sequence_detection","sequenceDetectionOptions":{"stepTransitions":[{"child":"step_b","evaluationWindow":900,"parent":"step_a"}],"steps":[{"condition":"a > 0","evaluationWindow":60,"name":"step_a"},{"condition":"b > 0","evaluationWindow":60,"name":"step_b"}]}},"queries":[{"query":"source:source_here","groupByFields":["@userIdentity.assumed_role"],"distinctFields":[],"aggregation":"count","name":""},{"query":"source:source_here2","groupByFields":[],"distinctFields":[],"aggregation":"count","name":""}],"tags":["env:prod","team:security"],"type":"log_detection"}
