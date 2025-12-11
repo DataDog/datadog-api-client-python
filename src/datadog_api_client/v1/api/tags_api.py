@@ -12,7 +12,8 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
-from datadog_api_client.v1.model.host_tags import HostTags
+from datadog_api_client.v1.model.host_tags_output import HostTagsOutput
+from datadog_api_client.v1.model.host_tags_input import HostTagsInput
 
 
 class TagsApi:
@@ -25,7 +26,7 @@ class TagsApi:
 
     The component of your infrastructure responsible for a tag is identified
     by a source. For example, some valid sources include nagios, hudson, jenkins,
-    users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc.
+    users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc. Find a complete list of source type names under `API Source Attributes <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
 
     Read more about tags on `Getting Started with Tags <https://docs.datadoghq.com/getting_started/tagging/>`_.
     """
@@ -37,7 +38,7 @@ class TagsApi:
 
         self._create_host_tags_endpoint = _Endpoint(
             settings={
-                "response_type": (HostTags,),
+                "response_type": (HostTagsOutput,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/tags/hosts/{host_name}",
                 "operation_id": "create_host_tags",
@@ -58,7 +59,7 @@ class TagsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (HostTags,),
+                    "openapi_types": (HostTagsInput,),
                     "location": "body",
                 },
             },
@@ -96,7 +97,7 @@ class TagsApi:
 
         self._get_host_tags_endpoint = _Endpoint(
             settings={
-                "response_type": (HostTags,),
+                "response_type": (HostTagsOutput,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/tags/hosts/{host_name}",
                 "operation_id": "get_host_tags",
@@ -146,7 +147,7 @@ class TagsApi:
 
         self._update_host_tags_endpoint = _Endpoint(
             settings={
-                "response_type": (HostTags,),
+                "response_type": (HostTagsOutput,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v1/tags/hosts/{host_name}",
                 "operation_id": "update_host_tags",
@@ -167,7 +168,7 @@ class TagsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (HostTags,),
+                    "openapi_types": (HostTagsInput,),
                     "location": "body",
                 },
             },
@@ -178,23 +179,22 @@ class TagsApi:
     def create_host_tags(
         self,
         host_name: str,
-        body: HostTags,
+        body: HostTagsInput,
         *,
         source: Union[str, UnsetType] = unset,
-    ) -> HostTags:
+    ) -> HostTagsOutput:
         """Add tags to a host.
 
         This endpoint allows you to add new tags to a host,
-        optionally specifying where these tags come from.
+        optionally specifying what source these tags come from.
 
-        :param host_name: This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.
+        :param host_name: Specified host name to add new tags
         :type host_name: str
         :param body: Update host tags request body.
-        :type body: HostTags
-        :param source: The source of the tags.
-            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
+        :type body: HostTagsInput
+        :param source: Source to filter. `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_. Use "user" source for custom-defined tags.
         :type source: str, optional
-        :rtype: HostTags
+        :rtype: HostTagsOutput
         """
         kwargs: Dict[str, Any] = {}
         kwargs["host_name"] = host_name
@@ -217,10 +217,9 @@ class TagsApi:
         This endpoint allows you to remove all user-assigned tags
         for a single host.
 
-        :param host_name: This endpoint allows you to remove all user-assigned tags for a single host.
+        :param host_name: Specified host name to delete tags
         :type host_name: str
-        :param source: The source of the tags (for example chef, puppet).
-            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_.
+        :param source: Source to filter. `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_. Use "user" source for custom-defined tags.
         :type source: str, optional
         :rtype: None
         """
@@ -237,16 +236,16 @@ class TagsApi:
         host_name: str,
         *,
         source: Union[str, UnsetType] = unset,
-    ) -> HostTags:
-        """Get host tags.
+    ) -> HostTagsOutput:
+        """Get Host Tags.
 
         Return the list of tags that apply to a given host.
 
-        :param host_name: When specified, filters list of tags to those tags with the specified source.
+        :param host_name: Specified host name to view tags
         :type host_name: str
-        :param source: Source to filter.
+        :param source: Source to filter. `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_. Use "user" source for custom-defined tags.
         :type source: str, optional
-        :rtype: HostTags
+        :rtype: HostTagsOutput
         """
         kwargs: Dict[str, Any] = {}
         kwargs["host_name"] = host_name
@@ -261,11 +260,11 @@ class TagsApi:
         *,
         source: Union[str, UnsetType] = unset,
     ) -> TagToHosts:
-        """Get Tags.
+        """Get All Host Tags.
 
-        Return a mapping of tags to hosts for your whole infrastructure.
+        Returns a mapping of tags to hosts. For each tag, the response returns a list of host names that contain this tag. There is a restriction of 10k host names from the org that can be attached to tags and returned.
 
-        :param source: When specified, filters host list to those tags with the specified source.
+        :param source: Source to filter. `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_. Use "user" source for custom-defined tags.
         :type source: str, optional
         :rtype: TagToHosts
         """
@@ -278,23 +277,22 @@ class TagsApi:
     def update_host_tags(
         self,
         host_name: str,
-        body: HostTags,
+        body: HostTagsInput,
         *,
         source: Union[str, UnsetType] = unset,
-    ) -> HostTags:
+    ) -> HostTagsOutput:
         """Update host tags.
 
         This endpoint allows you to update/replace all tags in
         an integration source with those supplied in the request.
 
-        :param host_name: This endpoint allows you to update/replace all in an integration source with those supplied in the request.
+        :param host_name: Specified host name to change tags
         :type host_name: str
         :param body: Add tags to host
-        :type body: HostTags
-        :param source: The source of the tags (for example chef, puppet).
-            `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_
+        :type body: HostTagsInput
+        :param source: Source to filter. `Complete list of source attribute values <https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value>`_. Use "user" source for custom-defined tags.
         :type source: str, optional
-        :rtype: HostTags
+        :rtype: HostTagsOutput
         """
         kwargs: Dict[str, Any] = {}
         kwargs["host_name"] = host_name

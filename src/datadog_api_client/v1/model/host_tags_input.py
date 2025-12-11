@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Dict, List, Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,24 +13,31 @@ from datadog_api_client.model_utils import (
 )
 
 
-class TagToHosts(ModelNormal):
+class HostTagsInput(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "tags": ({str: ([str],)},),
+            "host": (str,),
+            "tags": ([str],),
         }
 
     attribute_map = {
+        "host": "host",
         "tags": "tags",
     }
 
-    def __init__(self_, tags: Union[Dict[str, List[str]], UnsetType] = unset, **kwargs):
+    def __init__(self_, host: Union[str, UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        In this object, the key is the tag, and the value is a list of host names that are reporting that tag.
+        Set of tags to associate with your host.
 
-        :param tags: A mapping of tags to host names
-        :type tags: {str: ([str],)}, optional
+        :param host: Your host name.
+        :type host: str, optional
+
+        :param tags: A list of tags to apply to the host.
+        :type tags: [str], optional
         """
+        if host is not unset:
+            kwargs["host"] = host
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)

@@ -211,7 +211,8 @@ from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstall
 from datadog_api_client.v1.model.host_metrics import HostMetrics
 from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
 from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
-from datadog_api_client.v1.model.host_tags import HostTags
+from datadog_api_client.v1.model.host_tags_input import HostTagsInput
+from datadog_api_client.v1.model.host_tags_output import HostTagsOutput
 from datadog_api_client.v1.model.host_totals import HostTotals
 from datadog_api_client.v1.model.hourly_usage_attribution_body import HourlyUsageAttributionBody
 from datadog_api_client.v1.model.hourly_usage_attribution_metadata import HourlyUsageAttributionMetadata
@@ -1302,7 +1303,8 @@ __all__ = [
     "HostMetrics",
     "HostMuteResponse",
     "HostMuteSettings",
-    "HostTags",
+    "HostTagsInput",
+    "HostTagsOutput",
     "HostTotals",
     "HourlyUsageAttributionBody",
     "HourlyUsageAttributionMetadata",

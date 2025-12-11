@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class HostTags(ModelNormal):
+class HostTagsOutput(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
@@ -33,7 +33,7 @@ class HostTags(ModelNormal):
         :param host: Your host name.
         :type host: str, optional
 
-        :param tags: A list of tags to apply to the host.
+        :param tags: A list of tags attached to a given host.
         :type tags: [str], optional
         """
         if host is not unset:
