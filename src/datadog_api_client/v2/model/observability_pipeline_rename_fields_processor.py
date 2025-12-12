@@ -31,32 +31,35 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([ObservabilityPipelineRenameFieldsProcessorField],),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "type": (ObservabilityPipelineRenameFieldsProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "type": "type",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         fields: List[ObservabilityPipelineRenameFieldsProcessorField],
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineRenameFieldsProcessorType,
         **kwargs,
     ):
         """
         The ``rename_fields`` processor changes field names.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
 
         :param fields: A list of rename rules specifying which fields to rename in the event, what to rename them to, and whether to preserve the original fields.
         :type fields: [ObservabilityPipelineRenameFieldsProcessorField]
@@ -67,16 +70,13 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
-
         :param type: The processor type. The value should always be ``rename_fields``.
         :type type: ObservabilityPipelineRenameFieldsProcessorType
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.fields = fields
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type

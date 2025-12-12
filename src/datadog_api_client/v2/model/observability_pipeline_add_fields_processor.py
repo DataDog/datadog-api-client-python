@@ -27,32 +27,35 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "fields": ([ObservabilityPipelineFieldValue],),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "type": (ObservabilityPipelineAddFieldsProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "fields": "fields",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "type": "type",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         fields: List[ObservabilityPipelineFieldValue],
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineAddFieldsProcessorType,
         **kwargs,
     ):
         """
         The ``add_fields`` processor adds static key-value fields to logs.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
@@ -63,16 +66,13 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
-
         :param type: The processor type. The value should always be ``add_fields``.
         :type type: ObservabilityPipelineAddFieldsProcessorType
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.fields = fields
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type
