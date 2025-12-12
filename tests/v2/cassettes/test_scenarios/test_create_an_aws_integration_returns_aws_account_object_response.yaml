@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"access_key_id":"AKIAIOSFODNN7EXAMPLE","secret_access_key":"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"},"aws_account_id":"123456789012","aws_partition":"aws","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]},"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":true,"collect_custom_metrics":true,"enabled":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{}},"type":"account"}}'
+    body: '{"data":{"attributes":{"account_tags":["key:value"],"auth_config":{"access_key_id":"AKIAIOSFODNN7EXAMPLE","secret_access_key":"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"},"aws_account_id":"123456789012","aws_partition":"aws","ccm_config":{"data_export_configs":[{"bucket_name":"my-bucket","bucket_region":"us-east-1","report_name":"my-report","report_prefix":"reports","report_type":"CUR2.0"}]},"logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]},"sources":["s3"]}},"metrics_config":{"automute_enabled":true,"collect_cloudwatch_alarms":true,"collect_custom_metrics":true,"enabled":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}]},"resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{}},"type":"account"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/integration/aws/accounts
   response:
     body:
-      string: '{"data":{"id":"c80e30d5-b3f9-45b1-85fc-bad652af206b","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"access_key_id":"AKIAIOSFODNN7EXAMPLE"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_all":true},"created_at":"2025-08-06T17:41:41.445076718Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]}}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":true,"collect_cloudwatch_alarms":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"exclude_only":["AWS/SQS","AWS/ElasticMapReduce"]}},"modified_at":"2025-08-06T17:41:41.445076718Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":[]}}}}}'
+      string: '{"data":{"id":"a7d72fb6-ec59-4eca-a905-805dd599d061","type":"account","attributes":{"account_tags":["key:value"],"auth_config":{"access_key_id":"AKIAIOSFODNN7EXAMPLE"},"aws_account_id":"123456789012","aws_partition":"aws","aws_regions":{"include_all":true},"ccm_config":{"data_export_configs":[{"report_name":"my-report","report_prefix":"reports","report_type":"CUR2.0","bucket_name":"my-bucket","bucket_region":"us-east-1"}]},"created_at":"2025-12-10T17:32:37.014514664Z","logs_config":{"lambda_forwarder":{"lambdas":["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"],"sources":["s3"],"log_source_config":{"tag_filters":[{"source":"s3","tags":["test:test"]}]}}},"metrics_config":{"enabled":true,"automute_enabled":true,"collect_custom_metrics":true,"collect_cloudwatch_alarms":true,"tag_filters":[{"namespace":"AWS/EC2","tags":["key:value"]}],"namespace_filters":{"exclude_only":["AWS/SQS","AWS/ElasticMapReduce","AWS/Usage"]}},"modified_at":"2025-12-10T17:32:37.014514664Z","resources_config":{"cloud_security_posture_management_collection":false,"extended_collection":false},"traces_config":{"xray_services":{"include_only":[]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -23,7 +23,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/c80e30d5-b3f9-45b1-85fc-bad652af206b
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/a7d72fb6-ec59-4eca-a905-805dd599d061
   response:
     body:
       string: ''

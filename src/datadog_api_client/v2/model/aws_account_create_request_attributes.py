@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.aws_auth_config import AWSAuthConfig
     from datadog_api_client.v2.model.aws_account_partition import AWSAccountPartition
     from datadog_api_client.v2.model.aws_regions import AWSRegions
+    from datadog_api_client.v2.model.awsccm_config import AWSCCMConfig
     from datadog_api_client.v2.model.aws_logs_config import AWSLogsConfig
     from datadog_api_client.v2.model.aws_metrics_config import AWSMetricsConfig
     from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
@@ -34,6 +35,7 @@ class AWSAccountCreateRequestAttributes(ModelNormal):
         from datadog_api_client.v2.model.aws_auth_config import AWSAuthConfig
         from datadog_api_client.v2.model.aws_account_partition import AWSAccountPartition
         from datadog_api_client.v2.model.aws_regions import AWSRegions
+        from datadog_api_client.v2.model.awsccm_config import AWSCCMConfig
         from datadog_api_client.v2.model.aws_logs_config import AWSLogsConfig
         from datadog_api_client.v2.model.aws_metrics_config import AWSMetricsConfig
         from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
@@ -45,6 +47,7 @@ class AWSAccountCreateRequestAttributes(ModelNormal):
             "aws_account_id": (str,),
             "aws_partition": (AWSAccountPartition,),
             "aws_regions": (AWSRegions,),
+            "ccm_config": (AWSCCMConfig,),
             "logs_config": (AWSLogsConfig,),
             "metrics_config": (AWSMetricsConfig,),
             "resources_config": (AWSResourcesConfig,),
@@ -57,6 +60,7 @@ class AWSAccountCreateRequestAttributes(ModelNormal):
         "aws_account_id": "aws_account_id",
         "aws_partition": "aws_partition",
         "aws_regions": "aws_regions",
+        "ccm_config": "ccm_config",
         "logs_config": "logs_config",
         "metrics_config": "metrics_config",
         "resources_config": "resources_config",
@@ -70,6 +74,7 @@ class AWSAccountCreateRequestAttributes(ModelNormal):
         aws_partition: AWSAccountPartition,
         account_tags: Union[List[str], none_type, UnsetType] = unset,
         aws_regions: Union[AWSRegions, AWSRegionsIncludeAll, AWSRegionsIncludeOnly, UnsetType] = unset,
+        ccm_config: Union[AWSCCMConfig, UnsetType] = unset,
         logs_config: Union[AWSLogsConfig, UnsetType] = unset,
         metrics_config: Union[AWSMetricsConfig, UnsetType] = unset,
         resources_config: Union[AWSResourcesConfig, UnsetType] = unset,
@@ -96,6 +101,9 @@ class AWSAccountCreateRequestAttributes(ModelNormal):
         :param aws_regions: AWS Regions to collect data from. Defaults to ``include_all``.
         :type aws_regions: AWSRegions, optional
 
+        :param ccm_config: AWS Cloud Cost Management config.
+        :type ccm_config: AWSCCMConfig, optional
+
         :param logs_config: AWS Logs Collection config.
         :type logs_config: AWSLogsConfig, optional
 
@@ -112,6 +120,8 @@ class AWSAccountCreateRequestAttributes(ModelNormal):
             kwargs["account_tags"] = account_tags
         if aws_regions is not unset:
             kwargs["aws_regions"] = aws_regions
+        if ccm_config is not unset:
+            kwargs["ccm_config"] = ccm_config
         if logs_config is not unset:
             kwargs["logs_config"] = logs_config
         if metrics_config is not unset:

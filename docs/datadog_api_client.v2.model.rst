@@ -2279,6 +2279,13 @@ datadog\_api\_client.v2.model.aws\_traces\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.awsccm\_config module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.awsccm_config
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.azure\_credentials module
 -------------------------------------------------------
 
@@ -6448,6 +6455,13 @@ datadog\_api\_client.v2.model.data\_deletion\_response\_meta module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.data_deletion_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_export\_config module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_export_config
    :members:
    :show-inheritance:
 
