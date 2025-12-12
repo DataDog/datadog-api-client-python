@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: '{"cases":[{"name":"","notifications":[],"status":"info"}],"hasExtendedTitle":true,"isEnabled":true,"message":"My
+      security monitoring rule","name":"My security monitoring rule","options":{"detectionMethod":"new_value","evaluationWindow":0,"keepAlive":300,"maxSignalDuration":600,"newValueOptions":{"forgetAfter":7,"instantaneousBaseline":true,"learningDuration":1,"learningMethod":"duration","learningThreshold":0}},"queries":[{"aggregation":"new_value","dataSource":"logs","distinctFields":[],"groupByFields":["@userIdentity.assumed_role"],"metric":"name","metrics":["name"],"name":"","query":"source:source_here"}],"tags":["env:prod","team:security"],"type":"log_detection"}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/validation
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
