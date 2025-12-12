@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1760109641"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1765469355"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"cwy-qfn-4k8","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1760109641","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109642133,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"gar-bus-heu","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1765469355","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1765469355739,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"agent_version":"> 7.60","description":"My Agent
-      rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1760109641","policy_id":"cwy-qfn-4k8","product_tags":[]},"type":"agent_rule"}}'
+      rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":[],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1765469355","policy_id":"gar-bus-heu","product_tags":[]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -30,10 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"iua-dxr-uvh","type":"agent_rule","attributes":{"category":"Process
-        Activity","creationDate":1760109643225,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"chr-zcp-dek","type":"agent_rule","attributes":{"category":"Process
+        Activity","creationDate":1765469356535,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"monitoring":["cwy-qfn-4k8"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1760109641","product_tags":[],"updateDate":1760109643225,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["gar-bus-heu"],"name":"testcreateaworkloadprotectionagentrulereturnsokresponse1765469355","product_tags":[],"updateDate":1765469356535,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/iua-dxr-uvh
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/chr-zcp-dek
   response:
     body:
       string: ''
@@ -62,7 +62,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/cwy-qfn-4k8
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/gar-bus-heu
   response:
     body:
       string: ''

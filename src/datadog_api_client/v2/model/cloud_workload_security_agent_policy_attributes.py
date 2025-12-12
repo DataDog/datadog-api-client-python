@@ -58,6 +58,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
             "monitoring_rules_count": (int,),
             "name": (str,),
             "pinned": (bool,),
+            "policy_type": (str,),
             "policy_version": (str,),
             "priority": (int,),
             "rule_count": (int,),
@@ -78,6 +79,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         "monitoring_rules_count": "monitoringRulesCount",
         "name": "name",
         "pinned": "pinned",
+        "policy_type": "policyType",
         "policy_version": "policyVersion",
         "priority": "priority",
         "rule_count": "ruleCount",
@@ -99,6 +101,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         monitoring_rules_count: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         pinned: Union[bool, UnsetType] = unset,
+        policy_type: Union[str, UnsetType] = unset,
         policy_version: Union[str, UnsetType] = unset,
         priority: Union[int, UnsetType] = unset,
         rule_count: Union[int, UnsetType] = unset,
@@ -141,6 +144,9 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         :param pinned: Whether the policy is pinned
         :type pinned: bool, optional
 
+        :param policy_type: The type of the policy
+        :type policy_type: str, optional
+
         :param policy_version: The version of the policy
         :type policy_version: str, optional
 
@@ -182,6 +188,8 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
             kwargs["name"] = name
         if pinned is not unset:
             kwargs["pinned"] = pinned
+        if policy_type is not unset:
+            kwargs["policy_type"] = policy_type
         if policy_version is not unset:
             kwargs["policy_version"] = policy_version
         if priority is not unset:
