@@ -37,7 +37,7 @@ body = CloudWorkloadSecurityAgentRuleCreateRequest(
                 CloudWorkloadSecurityAgentRuleAction(
                     set=CloudWorkloadSecurityAgentRuleActionSet(
                         name="test_set",
-                        expression="open.file.path",
+                        expression="exec.file.path",
                         default_value="/dev/null",
                         scope="process",
                     ),

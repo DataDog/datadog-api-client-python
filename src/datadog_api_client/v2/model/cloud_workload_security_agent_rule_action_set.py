@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,9 +13,19 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_set_value import (
+        CloudWorkloadSecurityAgentRuleActionSetValue,
+    )
+
+
 class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_set_value import (
+            CloudWorkloadSecurityAgentRuleActionSetValue,
+        )
+
         return {
             "append": (bool,),
             "default_value": (str,),
@@ -26,7 +36,7 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
             "scope": (str,),
             "size": (int,),
             "ttl": (int,),
-            "value": (str,),
+            "value": (CloudWorkloadSecurityAgentRuleActionSetValue,),
         }
 
     attribute_map = {
@@ -53,7 +63,7 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         scope: Union[str, UnsetType] = unset,
         size: Union[int, UnsetType] = unset,
         ttl: Union[int, UnsetType] = unset,
-        value: Union[str, UnsetType] = unset,
+        value: Union[CloudWorkloadSecurityAgentRuleActionSetValue, str, int, bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -87,7 +97,7 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         :type ttl: int, optional
 
         :param value: The value of the set action
-        :type value: str, optional
+        :type value: CloudWorkloadSecurityAgentRuleActionSetValue, optional
         """
         if append is not unset:
             kwargs["append"] = append
