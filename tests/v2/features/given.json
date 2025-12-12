@@ -786,6 +786,22 @@
   {
     "parameters": [
       {
+        "name": "user_id",
+        "source": "user.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"config\": {\n        \"type\": \"email\",\n        \"address\": \"{{ user.data.attributes.email }}\",\n        \"formats\": [\n          \"html\"\n        ]\n      }\n    },\n    \"type\": \"notification_channels\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"oncall_email_notification_channel\" in the system",
+    "key": "oncall_email_notification_channel",
+    "tag": "On-Call",
+    "operationId": "CreateUserNotificationChannel"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "origin": "request",
         "value": "{\n  \"data\": {\n    \"type\": \"org_connection\",\n    \"relationships\": {\n      \"sink_org\": {\n        \"data\": {\n          \"type\": \"orgs\",\n          \"id\": \"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\"\n        }\n      }\n    },\n    \"attributes\": {\n      \"connection_types\": [\"logs\"]\n    }\n  }\n}"
