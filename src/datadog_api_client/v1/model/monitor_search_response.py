@@ -50,7 +50,7 @@ class MonitorSearchResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The response form a monitor search.
+        The response from a monitor search.
 
         :param counts: The counts of monitors per different criteria.
         :type counts: MonitorSearchResponseCounts, optional
