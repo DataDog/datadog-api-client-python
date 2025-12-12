@@ -29996,6 +29996,13 @@ components:
     Library:
       description: Vulnerability library.
       properties:
+        additional_names:
+          description: Related library/package names (children packages, affected
+            binaries path, etc.)
+          items:
+            example: linux-tools-common
+            type: string
+          type: array
         name:
           description: Vulnerability library name.
           example: linux-aws-5.15
@@ -57371,6 +57378,11 @@ components:
           type: array
         risks:
           $ref: '#/components/schemas/VulnerabilityRisks'
+        running_kernel:
+          description: "True if the vulnerability affects a package in a host\u2019s
+            running kernel, false if in a non-running kernel, and omit if not kernel-related."
+          example: true
+          type: boolean
         status:
           $ref: '#/components/schemas/VulnerabilityStatus'
         title:
@@ -57431,10 +57443,15 @@ components:
       - RubyGems
       - Go
       - Packagist
-      - Ddeb
+      - Deb
       - Rpm
       - Apk
       - Windows
+      - Generic
+      - MacOs
+      - Oci
+      - BottleRocket
+      - None
       type: string
       x-enum-varnames:
       - PYPI
@@ -57444,10 +57461,15 @@ components:
       - RUBY_GEMS
       - GO
       - PACKAGIST
-      - D_DEB
+      - DEB
       - RPM
       - APK
       - WINDOWS
+      - GENERIC
+      - MAC_OS
+      - OCI
+      - BOTTLE_ROCKET
+      - NONE
     VulnerabilityRelationships:
       description: Related entities object.
       properties:
@@ -57548,12 +57570,14 @@ components:
       - IAST
       - SCA
       - Infra
+      - SAST
       example: SCA
       type: string
       x-enum-varnames:
       - IAST
       - SCA
       - INFRA
+      - SAST
     VulnerabilityType:
       description: The vulnerability type.
       enum:
@@ -80311,6 +80335,10 @@ paths:
       summary: List assets SBOMs
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
@@ -80382,6 +80410,10 @@ paths:
       summary: Get SBOM
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
@@ -80496,6 +80528,10 @@ paths:
       summary: List scanned assets metadata
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
@@ -80924,6 +80960,14 @@ paths:
         required: false
         schema:
           type: string
+      - description: Filter whether the vulnerability affects a running kernel or
+          not (when the vulnerability is related to `Host` asset).
+        example: true
+        in: query
+        name: filter[running_kernel]
+        required: false
+        schema:
+          type: boolean
       - description: Filter by asset name. This field supports the usage of wildcards
           (*).
         example: datadog-agent
@@ -81067,6 +81111,10 @@ paths:
       summary: List vulnerabilities
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
@@ -81425,6 +81473,10 @@ paths:
       summary: List vulnerable assets
       tags:
       - Security Monitoring
+      x-permission:
+        operator: OR
+        permissions:
+        - appsec_vm_read
       x-unstable: '**Note**: This endpoint is a private preview.
 
         If you are interested in accessing this API, [fill out this form](https://forms.gle/kMYC1sDr6WDUBDsx9).'
