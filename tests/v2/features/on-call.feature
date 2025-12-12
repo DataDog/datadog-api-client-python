@@ -43,6 +43,33 @@ Feature: On-Call
     When the request is sent
     Then the response status is 201 Created
 
+  @generated @skip @team:DataDog/on-call
+  Scenario: Create an On-Call notification channel for a user returns "Bad Request" response
+    Given new "CreateUserNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"config": {"address": "foo@bar.com", "formats": ["html"], "type": "email"}}, "type": "notification_channels"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/on-call
+  Scenario: Create an On-Call notification channel for a user returns "Created" response
+    Given new "CreateUserNotificationChannel" request
+    And there is a valid "user" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And body with value {"data": {"attributes": {"config": {"address": "foo@bar.com", "formats": ["html"], "type": "email"}}, "type": "notification_channels"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.config.type" is equal to "email"
+    And the response "data.attributes.config.address" is equal to "foo@bar.com"
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Create an On-Call notification channel for a user returns "Not Found" response
+    Given new "CreateUserNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"config": {"address": "foo@bar.com", "formats": ["html"], "type": "email"}}, "type": "notification_channels"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/on-call
   Scenario: Delete On-Call escalation policy returns "No Content" response
     Given new "DeleteOnCallEscalationPolicy" request
@@ -74,6 +101,32 @@ Feature: On-Call
   Scenario: Delete On-Call schedule returns "Not Found" response
     Given new "DeleteOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Delete an On-Call notification channel for a user returns "Bad Request" response
+    Given new "DeleteUserNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "channel_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/on-call
+  Scenario: Delete an On-Call notification channel for a user returns "No Content" response
+    Given new "DeleteUserNotificationChannel" request
+    And there is a valid "user" in the system
+    And there is a valid "oncall_email_notification_channel" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And request contains "channel_id" parameter from "oncall_email_notification_channel.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Delete an On-Call notification channel for a user returns "Not Found" response
+    Given new "DeleteUserNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "channel_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -127,6 +180,34 @@ Feature: On-Call
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/on-call
+  Scenario: Get an On-Call notification channel for a user returns "Bad Request" response
+    Given new "GetUserNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "channel_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: Get an On-Call notification channel for a user returns "Not Found" response
+    Given new "GetUserNotificationChannel" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "channel_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/on-call
+  Scenario: Get an On-Call notification channel for a user returns "OK" response
+    Given new "GetUserNotificationChannel" request
+    And there is a valid "user" in the system
+    And there is a valid "oncall_email_notification_channel" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    And request contains "channel_id" parameter from "oncall_email_notification_channel.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.config.type" is equal to "email"
+    And the response "data.attributes.config.address" is equal to "{{ user.data.attributes.email }}"
+
+  @generated @skip @team:DataDog/on-call
   Scenario: Get scheduled on-call user returns "Bad Request" response
     Given new "GetScheduleOnCallUser" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
@@ -175,6 +256,32 @@ Feature: On-Call
     And request contains "include" parameter with value "responders,escalations.responders"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: List On-Call notification channels for a user returns "Bad Request" response
+    Given new "ListUserNotificationChannels" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/on-call
+  Scenario: List On-Call notification channels for a user returns "Not Found" response
+    Given new "ListUserNotificationChannels" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/on-call
+  Scenario: List On-Call notification channels for a user returns "OK" response
+    Given new "ListUserNotificationChannels" request
+    And there is a valid "user" in the system
+    And there is a valid "oncall_email_notification_channel" in the system
+    And request contains "user_id" parameter from "user.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.config.type" is equal to "email"
+    And the response "data[0].attributes.config.address" is equal to "{{ user.data.attributes.email }}"
 
   @skip-python @team:DataDog/on-call
   Scenario: Set On-Call team routing rules returns "OK" response
