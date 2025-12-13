@@ -1,4 +1,5 @@
 from datadog_api_client.v2.api.api_management_api import APIManagementApi
+from datadog_api_client.v2.api.apm_api import APMApi
 from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFiltersApi
 from datadog_api_client.v2.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v2.api.aws_logs_integration_api import AWSLogsIntegrationApi
@@ -86,6 +87,7 @@ from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomation
 
 __all__ = [
     "APIManagementApi",
+    "APMApi",
     "APMRetentionFiltersApi",
     "AWSIntegrationApi",
     "AWSLogsIntegrationApi",
