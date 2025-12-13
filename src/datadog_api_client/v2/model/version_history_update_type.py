@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RuleVersionUpdateType(ModelSimple):
+class VersionHistoryUpdateType(ModelSimple):
     """
     The type of change.
 
@@ -25,9 +25,9 @@ class RuleVersionUpdateType(ModelSimple):
         "update",
         "delete",
     }
-    CREATE: ClassVar["RuleVersionUpdateType"]
-    UPDATE: ClassVar["RuleVersionUpdateType"]
-    DELETE: ClassVar["RuleVersionUpdateType"]
+    CREATE: ClassVar["VersionHistoryUpdateType"]
+    UPDATE: ClassVar["VersionHistoryUpdateType"]
+    DELETE: ClassVar["VersionHistoryUpdateType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,6 +36,6 @@ class RuleVersionUpdateType(ModelSimple):
         }
 
 
-RuleVersionUpdateType.CREATE = RuleVersionUpdateType("create")
-RuleVersionUpdateType.UPDATE = RuleVersionUpdateType("update")
-RuleVersionUpdateType.DELETE = RuleVersionUpdateType("delete")
+VersionHistoryUpdateType.CREATE = VersionHistoryUpdateType("create")
+VersionHistoryUpdateType.UPDATE = VersionHistoryUpdateType("update")
+VersionHistoryUpdateType.DELETE = VersionHistoryUpdateType("delete")

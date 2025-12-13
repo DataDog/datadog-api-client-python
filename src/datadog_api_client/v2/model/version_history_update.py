@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rule_version_update_type import RuleVersionUpdateType
+    from datadog_api_client.v2.model.version_history_update_type import VersionHistoryUpdateType
 
 
-class RuleVersionUpdate(ModelNormal):
+class VersionHistoryUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rule_version_update_type import RuleVersionUpdateType
+        from datadog_api_client.v2.model.version_history_update_type import VersionHistoryUpdateType
 
         return {
             "change": (str,),
             "field": (str,),
-            "type": (RuleVersionUpdateType,),
+            "type": (VersionHistoryUpdateType,),
         }
 
     attribute_map = {
@@ -38,7 +38,7 @@ class RuleVersionUpdate(ModelNormal):
         self_,
         change: Union[str, UnsetType] = unset,
         field: Union[str, UnsetType] = unset,
-        type: Union[RuleVersionUpdateType, UnsetType] = unset,
+        type: Union[VersionHistoryUpdateType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -51,7 +51,7 @@ class RuleVersionUpdate(ModelNormal):
         :type field: str, optional
 
         :param type: The type of change.
-        :type type: RuleVersionUpdateType, optional
+        :type type: VersionHistoryUpdateType, optional
         """
         if change is not unset:
             kwargs["change"] = change
