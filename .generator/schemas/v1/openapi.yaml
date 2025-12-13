@@ -4179,7 +4179,7 @@ components:
           example: false
           type: boolean
       type: object
-    HostTags:
+    HostTagsInput:
       description: Set of tags to associate with your host.
       properties:
         host:
@@ -4188,6 +4188,21 @@ components:
           type: string
         tags:
           description: A list of tags to apply to the host.
+          items:
+            description: A given tag in a list.
+            example: environment:production
+            type: string
+          type: array
+      type: object
+    HostTagsOutput:
+      description: Set of tags to associate with your host.
+      properties:
+        host:
+          description: Your host name.
+          example: test.host
+          type: string
+        tags:
+          description: A list of tags attached to a given host.
           items:
             description: A given tag in a list.
             example: environment:production
@@ -18689,18 +18704,18 @@ components:
       - match
       type: object
     TagToHosts:
-      description: In this object, the key is the tag, the value is a list of host
-        names that are reporting that tag.
+      description: In this object, the key is the tag, and the value is a list of
+        host names that are reporting that tag.
       properties:
         tags:
           additionalProperties:
-            description: A list of additional properties for tags.
+            description: A list of host names which contain this tag
             items:
               description: A given tag in a list.
               example: test.metric.host
               type: string
             type: array
-          description: A list of tags to apply to the host.
+          description: A mapping of tags to host names
           type: object
       type: object
     TargetFormatType:
@@ -35712,11 +35727,13 @@ paths:
         - synthetics_global_variable_write
   /api/v1/tags/hosts:
     get:
-      description: Return a mapping of tags to hosts for your whole infrastructure.
+      description: Returns a mapping of tags to hosts. For each tag, the response
+        returns a list of host names that contain this tag. There is a restriction
+        of 10k host names from the org that can be attached to tags and returned.
       operationId: ListHostTags
       parameters:
-      - description: When specified, filters host list to those tags with the specified
-          source.
+      - description: Source to filter. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+          Use "user" source for custom-defined tags.
         in: query
         name: source
         required: false
@@ -35747,7 +35764,7 @@ paths:
       - apiKeyAuth: []
         appKeyAuth: []
       - AuthZ: []
-      summary: Get Tags
+      summary: Get All Host Tags
       tags:
       - Tags
       x-permission:
@@ -35760,16 +35777,14 @@ paths:
         for a single host.'
       operationId: DeleteHostTags
       parameters:
-      - description: This endpoint allows you to remove all user-assigned tags for
-          a single host.
+      - description: Specified host name to delete tags
         in: path
         name: host_name
         required: true
         schema:
           type: string
-      - description: 'The source of the tags (for example chef, puppet).
-
-          [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).'
+      - description: Source to filter. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+          Use "user" source for custom-defined tags.
         in: query
         name: source
         required: false
@@ -35799,14 +35814,14 @@ paths:
       description: Return the list of tags that apply to a given host.
       operationId: GetHostTags
       parameters:
-      - description: When specified, filters list of tags to those tags with the specified
-          source.
+      - description: Specified host name to view tags
         in: path
         name: host_name
         required: true
         schema:
           type: string
-      - description: Source to filter.
+      - description: Source to filter. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+          Use "user" source for custom-defined tags.
         in: query
         name: source
         required: false
@@ -35817,7 +35832,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HostTags'
+                $ref: '#/components/schemas/HostTagsOutput'
           description: OK
         '403':
           content:
@@ -35833,25 +35848,23 @@ paths:
           description: Not Found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
-      summary: Get host tags
+      summary: Get Host Tags
       tags:
       - Tags
     post:
       description: 'This endpoint allows you to add new tags to a host,
 
-        optionally specifying where these tags come from.'
+        optionally specifying what source these tags come from.'
       operationId: CreateHostTags
       parameters:
-      - description: This endpoint allows you to add new tags to a host, optionally
-          specifying where the tags came from.
+      - description: Specified host name to add new tags
         in: path
         name: host_name
         required: true
         schema:
           type: string
-      - description: 'The source of the tags.
-
-          [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).'
+      - description: Source to filter. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+          Use "user" source for custom-defined tags.
         example: chef
         in: query
         name: source
@@ -35862,7 +35875,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HostTags'
+              $ref: '#/components/schemas/HostTagsInput'
         description: Update host tags request body.
         required: true
       responses:
@@ -35870,7 +35883,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HostTags'
+                $ref: '#/components/schemas/HostTagsOutput'
           description: Created
         '403':
           content:
@@ -35896,16 +35909,14 @@ paths:
         an integration source with those supplied in the request.'
       operationId: UpdateHostTags
       parameters:
-      - description: This endpoint allows you to update/replace all in an integration
-          source with those supplied in the request.
+      - description: Specified host name to change tags
         in: path
         name: host_name
         required: true
         schema:
           type: string
-      - description: 'The source of the tags (for example chef, puppet).
-
-          [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value)'
+      - description: Source to filter. [Complete list of source attribute values](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
+          Use "user" source for custom-defined tags.
         in: query
         name: source
         required: false
@@ -35915,7 +35926,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HostTags'
+              $ref: '#/components/schemas/HostTagsInput'
         description: Add tags to host
         required: true
       responses:
@@ -35923,7 +35934,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HostTags'
+                $ref: '#/components/schemas/HostTagsOutput'
           description: OK
         '403':
           content:
@@ -38918,7 +38929,8 @@ tags:
 
     by a source. For example, some valid sources include nagios, hudson, jenkins,
 
-    users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc.
+    users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc. Find a complete
+    list of source type names under [API Source Attributes](https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value).
 
 
     Read more about tags on [Getting Started with Tags](https://docs.datadoghq.com/getting_started/tagging/).'

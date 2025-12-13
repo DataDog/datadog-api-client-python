@@ -4,9 +4,9 @@ Add tags to a host returns "Created" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.tags_api import TagsApi
-from datadog_api_client.v1.model.host_tags import HostTags
+from datadog_api_client.v1.model.host_tags_input import HostTagsInput
 
-body = HostTags(
+body = HostTagsInput(
     host="test.host",
     tags=[
         "environment:production",

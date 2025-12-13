@@ -1236,10 +1236,17 @@ datadog\_api\_client.v1.model.host\_mute\_settings module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.host\_tags module
------------------------------------------------
+datadog\_api\_client.v1.model.host\_tags\_input module
+------------------------------------------------------
 
-.. automodule:: datadog_api_client.v1.model.host_tags
+.. automodule:: datadog_api_client.v1.model.host_tags_input
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_tags\_output module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_tags_output
    :members:
    :show-inheritance:
 
