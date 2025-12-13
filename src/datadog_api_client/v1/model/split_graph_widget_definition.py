@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.split_config import SplitConfig
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.split_graph_widget_definition_type import SplitGraphWidgetDefinitionType
+    from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
     from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
     from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
     from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
@@ -67,6 +68,7 @@ class SplitGraphWidgetDefinition(ModelNormal):
         size: SplitGraphVizSize,
         source_widget_definition: Union[
             SplitGraphSourceWidgetDefinition,
+            BarChartWidgetDefinition,
             ChangeWidgetDefinition,
             GeomapWidgetDefinition,
             QueryValueWidgetDefinition,
