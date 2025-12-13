@@ -3,14 +3,17 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
-class IncidentAttachmentLinkAttributesAttachmentObject(ModelNormal):
+class PatchAttachmentRequestDataAttributesAttachment(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
@@ -23,17 +26,18 @@ class IncidentAttachmentLinkAttributesAttachmentObject(ModelNormal):
         "title": "title",
     }
 
-    def __init__(self_, document_url: str, title: str, **kwargs):
+    def __init__(self_, document_url: Union[str, UnsetType] = unset, title: Union[str, UnsetType] = unset, **kwargs):
         """
-        The link attachment.
 
-        :param document_url: The URL of this link attachment.
-        :type document_url: str
 
-        :param title: The title of this link attachment.
-        :type title: str
+        :param document_url:
+        :type document_url: str, optional
+
+        :param title:
+        :type title: str, optional
         """
+        if document_url is not unset:
+            kwargs["document_url"] = document_url
+        if title is not unset:
+            kwargs["title"] = title
         super().__init__(kwargs)
-
-        self_.document_url = document_url
-        self_.title = title

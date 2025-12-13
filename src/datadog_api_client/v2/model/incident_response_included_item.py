@@ -24,8 +24,8 @@ class IncidentResponseIncludedItem(ModelComposed):
         :param type: Users resource type.
         :type type: UsersType, optional
 
-        :param relationships: The incident attachment's relationships.
-        :type relationships: IncidentAttachmentRelationships
+        :param relationships:
+        :type relationships: AttachmentDataRelationships
         """
         super().__init__(kwargs)
 
@@ -39,11 +39,11 @@ class IncidentResponseIncludedItem(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.incident_user_data import IncidentUserData
-        from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
+        from datadog_api_client.v2.model.attachment_data import AttachmentData
 
         return {
             "oneOf": [
                 IncidentUserData,
-                IncidentAttachmentData,
+                AttachmentData,
             ],
         }
