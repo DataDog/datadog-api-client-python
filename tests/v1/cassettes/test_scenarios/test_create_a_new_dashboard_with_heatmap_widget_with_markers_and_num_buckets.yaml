@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_heatmap_widget_with_markers_and_num_buckets-1765201444","widgets":[{"definition":{"markers":[{"display_type":"percentile","value":"50"},{"display_type":"percentile","value":"99"}],"requests":[{"query":{"data_source":"metrics","name":"query1","query":"histogram:trace.servlet.request{*}"},"request_type":"histogram"}],"title":"","title_align":"left","title_size":"16","type":"heatmap","xaxis":{"num_buckets":75},"yaxis":{"include_zero":true,"max":"auto","min":"auto","num_buckets":55,"scale":"linear"}},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"47i-rsj-bdw","title":"Test-Create_a_new_dashboard_with_heatmap_widget_with_markers_and_num_buckets-1765201444","description":null,"author_handle":"shishi.liu@datadoghq.com","author_name":"Shishi
+        Liu","layout_type":"ordered","url":"/dashboard/47i-rsj-bdw/test-createanewdashboardwithheatmapwidgetwithmarkersandnumbuckets-1765201444","template_variables":null,"widgets":[{"definition":{"markers":[{"display_type":"percentile","value":"50"},{"display_type":"percentile","value":"99"}],"requests":[{"query":{"data_source":"metrics","name":"query1","query":"histogram:trace.servlet.request{*}"},"request_type":"histogram"}],"title":"","title_align":"left","title_size":"16","type":"heatmap","xaxis":{"num_buckets":75},"yaxis":{"include_zero":true,"max":"auto","min":"auto","num_buckets":55,"scale":"linear"}},"layout":{"height":4,"width":4,"x":0,"y":0},"id":5710247626201242}],"notify_list":null,"created_at":"2025-12-08T13:44:05.403199+00:00","modified_at":"2025-12-08T13:44:05.403199+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/47i-rsj-bdw
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"47i-rsj-bdw"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

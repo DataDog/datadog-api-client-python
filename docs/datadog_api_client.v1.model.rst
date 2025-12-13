@@ -1145,10 +1145,31 @@ datadog\_api\_client.v1.model.heat\_map\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.heat\_map\_widget\_definition\_yaxis module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.heat_map_widget_definition_yaxis
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.heat\_map\_widget\_request module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.heat_map_widget_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.heat\_map\_widget\_x\_axis module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.heat_map_widget_x_axis
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.heat\_map\_widget\_y\_axis module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.heat_map_widget_y_axis
    :members:
    :show-inheritance:
 
