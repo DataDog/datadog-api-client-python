@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -39,30 +39,30 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "file": (ObservabilityPipelineEnrichmentTableFile,),
             "geoip": (ObservabilityPipelineEnrichmentTableGeoIp,),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "target": (str,),
             "type": (ObservabilityPipelineEnrichmentTableProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "file": "file",
         "geoip": "geoip",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "target": "target",
         "type": "type",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         target: str,
         type: ObservabilityPipelineEnrichmentTableProcessorType,
         file: Union[ObservabilityPipelineEnrichmentTableFile, UnsetType] = unset,
@@ -71,6 +71,9 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
     ):
         """
         The ``enrichment_table`` processor enriches logs using a static CSV file or GeoIP database.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
 
         :param file: Defines a static enrichment table loaded from a CSV file.
         :type file: ObservabilityPipelineEnrichmentTableFile, optional
@@ -84,9 +87,6 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the input for this processor.
-        :type inputs: [str]
-
         :param target: Path where enrichment results should be stored in the log.
         :type target: str
 
@@ -99,8 +99,8 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
             kwargs["geoip"] = geoip
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.target = target
         self_.type = type

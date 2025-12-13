@@ -31,26 +31,26 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "rules": ([ObservabilityPipelineSensitiveDataScannerProcessorRule],),
             "type": (ObservabilityPipelineSensitiveDataScannerProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "rules": "rules",
         "type": "type",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         rules: List[ObservabilityPipelineSensitiveDataScannerProcessorRule],
         type: ObservabilityPipelineSensitiveDataScannerProcessorType,
         **kwargs,
@@ -58,14 +58,14 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         """
         The ``sensitive_data_scanner`` processor detects and optionally redacts sensitive data in log events.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
-
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
 
         :param rules: A list of rules for identifying and acting on sensitive data patterns.
         :type rules: [ObservabilityPipelineSensitiveDataScannerProcessorRule]
@@ -75,8 +75,8 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.rules = rules
         self_.type = type

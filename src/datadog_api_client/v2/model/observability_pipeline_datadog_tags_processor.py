@@ -38,9 +38,9 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
         return {
             "action": (ObservabilityPipelineDatadogTagsProcessorAction,),
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "keys": ([str],),
             "mode": (ObservabilityPipelineDatadogTagsProcessorMode,),
             "type": (ObservabilityPipelineDatadogTagsProcessorType,),
@@ -48,9 +48,9 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
     attribute_map = {
         "action": "action",
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "keys": "keys",
         "mode": "mode",
         "type": "type",
@@ -59,9 +59,9 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
     def __init__(
         self_,
         action: ObservabilityPipelineDatadogTagsProcessorAction,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         keys: List[str],
         mode: ObservabilityPipelineDatadogTagsProcessorMode,
         type: ObservabilityPipelineDatadogTagsProcessorType,
@@ -73,14 +73,14 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         :param action: The action to take on tags with matching keys.
         :type action: ObservabilityPipelineDatadogTagsProcessorAction
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
-
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
 
         :param keys: A list of tag keys.
         :type keys: [str]
@@ -94,9 +94,9 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         super().__init__(kwargs)
 
         self_.action = action
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.keys = keys
         self_.mode = mode
         self_.type = type

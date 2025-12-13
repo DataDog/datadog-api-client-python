@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -25,24 +25,25 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "type": (ObservabilityPipelineFilterProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "type": "type",
     }
 
-    def __init__(
-        self_, id: str, include: str, inputs: List[str], type: ObservabilityPipelineFilterProcessorType, **kwargs
-    ):
+    def __init__(self_, enabled: bool, id: str, include: str, type: ObservabilityPipelineFilterProcessorType, **kwargs):
         """
         The ``filter`` processor allows conditional processing of logs based on a Datadog search query. Logs that match the ``include`` query are passed through; others are discarded.
+
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
@@ -50,15 +51,12 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs should pass through the filter. Logs that match this query continue to downstream components; others are dropped.
         :type include: str
 
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
-        :type inputs: [str]
-
         :param type: The processor type. The value should always be ``filter``.
         :type type: ObservabilityPipelineFilterProcessorType
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type
