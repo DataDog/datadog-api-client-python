@@ -6801,6 +6801,55 @@ datadog\_api\_client.v2.model.delete\_custom\_framework\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deleted\_suite\_response\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_suite_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_suite\_response\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_suite_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_suites\_request\_delete module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_suites_request_delete
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_suites\_request\_delete\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_suites_request_delete_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_suites\_request\_delete\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_suites_request_delete_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_suites\_request\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_suites_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_suites\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_suites_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dependency\_location module
 ---------------------------------------------------------
 
@@ -23325,6 +23374,104 @@ datadog\_api\_client.v2.model.step\_display\_bounds module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.step_display_bounds
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suite\_create\_edit module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suite_create_edit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suite\_create\_edit\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suite_create_edit_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suite\_search\_response\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suite_search_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_options module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_response\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_search\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_search_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_search\_response\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_search_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_search\_response\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_search_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_test module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_test
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_test\_alerting\_criticality module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_test_alerting_criticality
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_suite\_types module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_suite_types
    :members:
    :show-inheritance:
 
