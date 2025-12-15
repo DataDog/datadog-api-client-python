@@ -38,13 +38,13 @@ class CaseInsightsItems(ModelNormal):
         """
         An insight of the case.
 
-        :param ref: The reference of the insight.
+        :param ref: Reference of the insight.
         :type ref: str, optional
 
-        :param resource_id: The unique identifier of the resource. For example, the unique identifier of a security finding.
+        :param resource_id: Unique identifier of the resource. For example, the unique identifier of a security finding.
         :type resource_id: str, optional
 
-        :param type: The type of the resource. For example, the type of a security finding is "SECURITY_FINDING".
+        :param type: Type of the resource. For example, the type of a security finding is "SECURITY_FINDING".
         :type type: str, optional
         """
         if ref is not unset:

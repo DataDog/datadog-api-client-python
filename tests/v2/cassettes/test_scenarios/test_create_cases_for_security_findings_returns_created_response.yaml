@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data":[{"attributes":{"description":"A description","title":"A title"},"relationships":{"findings":{"data":[{"id":"ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"cases"},{"attributes":{"description":"A
-      description","title":"A title"},"relationships":{"findings":{"data":[{"id":"MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU=","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"cases"}]}'
+    body: '{"data":[{"attributes":{"description":"A description","title":"A title"},"relationships":{"findings":{"data":[{"id":"YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE=","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"cases"},{"attributes":{"description":"A
+      description","title":"A title"},"relationships":{"findings":{"data":[{"id":"OGRlMDIwYzk4MjFmZTZiNTQwMzk2ZjUxNzg0MDc0NjR-MTk3Yjk4MDI4ZDQ4YzI2ZGZiMWJmMTNhNDEwZGZkYWI=","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"cases"}]}'
     headers:
       accept:
       - application/json
@@ -11,10 +11,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security/findings/cases
   response:
     body:
-      string: '{"data":[{"id":"7d16945b-baf8-411e-ab2a-20fe43af1ea3","type":"cases","attributes":{"created_at":"2025-11-19T13:54:23.634063Z","creation_source":"CS_SECURITY_FINDING","description":"A
-        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/dfa027f7c037b2f77159adc027fecb56?detection=static","resource_id":"ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="}],"key":"CSMINV-459","priority":"NOT_DEFINED","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
-        title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}},{"id":"601cab78-ef04-4bdf-901a-55533afbde0b","type":"cases","attributes":{"created_at":"2025-11-19T13:54:23.634552Z","creation_source":"CS_SECURITY_FINDING","description":"A
-        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/appsec/vm/library/vulnerability/36d53183f8fefbbc2208878f3d2011f0?detection=static","resource_id":"MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU="}],"key":"CSMINV-458","priority":"NOT_DEFINED","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
+      string: '{"data":[{"id":"a12c9894-ba42-408e-b4bf-b8944ca203c1","type":"cases","attributes":{"created_at":"2025-12-12T14:47:06.96093Z","creation_source":"CS_SECURITY_FINDING","description":"A
+        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/csm/vm?vulnerability=b7a4377d251cbe0a6747a184a96b8909","resource_id":"YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE="}],"key":"CSMINV-508","priority":"NOT_DEFINED","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
+        title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}},{"id":"72589c11-2e4c-4592-8ab6-dcdddd176236","type":"cases","attributes":{"created_at":"2025-12-12T14:47:06.960652Z","creation_source":"CS_SECURITY_FINDING","description":"A
+        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/csm/vm?vulnerability=8de020c9821fe6b540396f5178407464","resource_id":"OGRlMDIwYzk4MjFmZTZiNTQwMzk2ZjUxNzg0MDc0NjR-MTk3Yjk4MDI4ZDQ4YzI2ZGZiMWJmMTNhNDEwZGZkYWI="}],"key":"CSMINV-507","priority":"NOT_DEFINED","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
         title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}}]}'
     headers:
       content-type:
@@ -23,7 +23,7 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"id":"7d16945b-baf8-411e-ab2a-20fe43af1ea3","relationships":{"findings":{"data":[{"id":"ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=","type":"findings"}]}},"type":"cases"}}'
+    body: '{"data":{"relationships":{"findings":{"data":[{"id":"YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE=","type":"findings"}]}},"type":"cases"}}'
     headers:
       accept:
       - '*/*'

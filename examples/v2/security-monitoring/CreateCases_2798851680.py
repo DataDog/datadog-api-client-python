@@ -27,11 +27,11 @@ body = CreateCaseRequestArray(
                 findings=Findings(
                     data=[
                         FindingData(
-                            id="ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=",
+                            id="ZTd5LWNuYi1seWV-aS0wMjI2NGZjZjRmZWQ5ODMyMg==",
                             type=FindingDataType.FINDINGS,
                         ),
                         FindingData(
-                            id="MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU=",
+                            id="c2FuLXhyaS1kZnN-aS0wODM3MjVhMTM2MDExNzNkOQ==",
                             type=FindingDataType.FINDINGS,
                         ),
                     ],

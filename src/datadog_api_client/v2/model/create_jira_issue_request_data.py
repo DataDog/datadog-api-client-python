@@ -36,14 +36,12 @@ class CreateJiraIssueRequestData(ModelNormal):
 
         return {
             "attributes": (CreateJiraIssueRequestDataAttributes,),
-            "id": (str,),
             "relationships": (CreateJiraIssueRequestDataRelationships,),
             "type": (JiraIssuesDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "id": "id",
         "relationships": "relationships",
         "type": "type",
     }
@@ -52,7 +50,6 @@ class CreateJiraIssueRequestData(ModelNormal):
         self_,
         type: JiraIssuesDataType,
         attributes: Union[CreateJiraIssueRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         relationships: Union[CreateJiraIssueRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -62,9 +59,6 @@ class CreateJiraIssueRequestData(ModelNormal):
         :param attributes: Attributes of the Jira issue to create.
         :type attributes: CreateJiraIssueRequestDataAttributes, optional
 
-        :param id: The unique identifier of the Jira issue creation request.
-        :type id: str, optional
-
         :param relationships: Relationships of the Jira issue to create.
         :type relationships: CreateJiraIssueRequestDataRelationships, optional
 
@@ -73,8 +67,6 @@ class CreateJiraIssueRequestData(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)

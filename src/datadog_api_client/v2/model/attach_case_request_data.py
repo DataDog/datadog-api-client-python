@@ -48,7 +48,7 @@ class AttachCaseRequestData(ModelNormal):
         """
         Data of the case to attach security findings to.
 
-        :param id: The unique identifier of the case.
+        :param id: Unique identifier of the case.
         :type id: str
 
         :param relationships: Relationships of the case to attach security findings to.

@@ -47,16 +47,16 @@ class CreateCaseRequestDataAttributes(ModelNormal):
         """
         Attributes of the case to create.
 
-        :param assignee_id: The unique identifier of the user assigned to the case.
+        :param assignee_id: Unique identifier of the user assigned to the case.
         :type assignee_id: str, optional
 
-        :param description: The description of the case. If not provided, the description will be automatically generated.
+        :param description: Description of the case. If not provided, the description will be automatically generated.
         :type description: str, optional
 
         :param priority: Case priority
         :type priority: CasePriority, optional
 
-        :param title: The title of the case. If not provided, the title will be automatically generated.
+        :param title: Title of the case. If not provided, the title will be automatically generated.
         :type title: str, optional
         """
         if assignee_id is not unset:

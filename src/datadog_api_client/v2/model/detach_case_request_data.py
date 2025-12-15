@@ -27,29 +27,20 @@ class DetachCaseRequestData(ModelNormal):
         from datadog_api_client.v2.model.case_data_type import CaseDataType
 
         return {
-            "id": (str,),
             "relationships": (DetachCaseRequestDataRelationships,),
             "type": (CaseDataType,),
         }
 
     attribute_map = {
-        "id": "id",
         "relationships": "relationships",
         "type": "type",
     }
 
     def __init__(
-        self_,
-        type: CaseDataType,
-        id: Union[str, UnsetType] = unset,
-        relationships: Union[DetachCaseRequestDataRelationships, UnsetType] = unset,
-        **kwargs,
+        self_, type: CaseDataType, relationships: Union[DetachCaseRequestDataRelationships, UnsetType] = unset, **kwargs
     ):
         """
         Data for detaching security findings from their case.
-
-        :param id: The unique identifier of the detachment request.
-        :type id: str, optional
 
         :param relationships: Relationships detaching security findings from their case.
         :type relationships: DetachCaseRequestDataRelationships, optional
@@ -57,8 +48,6 @@ class DetachCaseRequestData(ModelNormal):
         :param type: Cases resource type.
         :type type: CaseDataType
         """
-        if id is not unset:
-            kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
