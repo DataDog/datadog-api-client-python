@@ -25,7 +25,7 @@ class AttachJiraIssueRequestDataAttributes(ModelNormal):
         """
         Attributes of the Jira issue to attach security findings to.
 
-        :param jira_issue_url: The URL of the Jira issue to attach security findings to.
+        :param jira_issue_url: URL of the Jira issue to attach security findings to.
         :type jira_issue_url: str
         """
         super().__init__(kwargs)

@@ -36,14 +36,12 @@ class AttachJiraIssueRequestData(ModelNormal):
 
         return {
             "attributes": (AttachJiraIssueRequestDataAttributes,),
-            "id": (str,),
             "relationships": (AttachJiraIssueRequestDataRelationships,),
             "type": (JiraIssuesDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "id": "id",
         "relationships": "relationships",
         "type": "type",
     }
@@ -52,7 +50,6 @@ class AttachJiraIssueRequestData(ModelNormal):
         self_,
         type: JiraIssuesDataType,
         attributes: Union[AttachJiraIssueRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         relationships: Union[AttachJiraIssueRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -62,9 +59,6 @@ class AttachJiraIssueRequestData(ModelNormal):
         :param attributes: Attributes of the Jira issue to attach security findings to.
         :type attributes: AttachJiraIssueRequestDataAttributes, optional
 
-        :param id: The unique identifier of the Jira issue attachment request.
-        :type id: str, optional
-
         :param relationships: Relationships of the Jira issue to attach security findings to.
         :type relationships: AttachJiraIssueRequestDataRelationships, optional
 
@@ -73,8 +67,6 @@ class AttachJiraIssueRequestData(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)

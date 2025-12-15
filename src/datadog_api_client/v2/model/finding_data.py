@@ -34,7 +34,7 @@ class FindingData(ModelNormal):
         """
 
 
-        :param id: The unique identifier of the security finding.
+        :param id: Unique identifier of the security finding.
         :type id: str
 
         :param type: Security findings resource type.

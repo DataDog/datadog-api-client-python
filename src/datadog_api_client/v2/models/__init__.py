@@ -1006,20 +1006,10 @@ from datadog_api_client.v2.model.create_incident_notification_template_request i
     CreateIncidentNotificationTemplateRequest,
 )
 from datadog_api_client.v2.model.create_jira_issue_request_array import CreateJiraIssueRequestArray
-from datadog_api_client.v2.model.create_jira_issue_request_array_included import CreateJiraIssueRequestArrayIncluded
 from datadog_api_client.v2.model.create_jira_issue_request_data import CreateJiraIssueRequestData
 from datadog_api_client.v2.model.create_jira_issue_request_data_attributes import CreateJiraIssueRequestDataAttributes
-from datadog_api_client.v2.model.create_jira_issue_request_data_attributes_fields import (
-    CreateJiraIssueRequestDataAttributesFields,
-)
 from datadog_api_client.v2.model.create_jira_issue_request_data_relationships import (
     CreateJiraIssueRequestDataRelationships,
-)
-from datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case import (
-    CreateJiraIssueRequestDataRelationshipsCase,
-)
-from datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case_data import (
-    CreateJiraIssueRequestDataRelationshipsCaseData,
 )
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.create_notification_rule_parameters_data import CreateNotificationRuleParametersData
@@ -5840,13 +5830,9 @@ __all__ = [
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateJiraIssueRequestArray",
-    "CreateJiraIssueRequestArrayIncluded",
     "CreateJiraIssueRequestData",
     "CreateJiraIssueRequestDataAttributes",
-    "CreateJiraIssueRequestDataAttributesFields",
     "CreateJiraIssueRequestDataRelationships",
-    "CreateJiraIssueRequestDataRelationshipsCase",
-    "CreateJiraIssueRequestDataRelationshipsCaseData",
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
     "CreateNotificationRuleParametersDataAttributes",

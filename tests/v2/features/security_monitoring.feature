@@ -258,75 +258,27 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"_{{ unique_hash }}\" {\n\tname = \"_{{ unique_hash }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\thas_optional_group_by_fields = false\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
 
-  @skip @team:DataDog/k9-investigation
-  Scenario: Create Jira issue for security finding returns "Created" response
-    Given new "CreateJiraIssues" request
-    And body with value {"data": [{"type": "jira_issues", "attributes": {}, "relationships": {"case": {"data": {"type": "cases", "id": "6a773295-8729-4034-aada-53b64cbe02e7"}}}}], "included": [{"type": "cases", "attributes": {"title": "A title", "description": "A description"}, "relationships": {"project": {"data": {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}}, "findings": {"data": [{"type": "findings", "id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="}]}}, "id": "6a773295-8729-4034-aada-53b64cbe02e7"}, {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}, {"type": "findings", "id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="}]}
-    When the request is sent
-    Then the response status is 201 Created
-    And the response "data" has length 1
-    And the response "data[0]" has field "id"
-    And the response "data[0].attributes.title" is equal to "A title"
-    And the response "data[0].attributes.description" is equal to "A description"
-    And the response "data[0].attributes.type" is equal to "SECURITY"
-    And the response "data[0].attributes.insights" has length 1
-    And the response "data[0].attributes.insights[0].resource_id" is equal to "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="
-    And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
-    And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
-
-  @skip @team:DataDog/k9-investigation
-  Scenario: Create Jira issue for security findings returns "Created" response
-    Given new "CreateJiraIssues" request
-    And body with value {"data": [{"type": "jira_issues", "attributes": {}, "relationships": {"case": {"data": {"type": "cases", "id": "e469ceda-957a-4557-a607-9ff25032e9ca"}}}}], "included": [{"type": "cases", "attributes": {"title": "A title", "description": "A description"}, "relationships": {"project": {"data": {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}}, "findings": {"data": [{"type": "findings", "id": "MzUxMDI4OWYyYWEyODRhYjQ0Zjg2YjY2ZTFmNjRjYzd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="}, {"type": "findings", "id": "ZjE2ZGI5YjdmYTQyYzhhMDQ3Nzc3YjM1NGQ2Y2NmZTd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="}]}}, "id": "e469ceda-957a-4557-a607-9ff25032e9ca"}, {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}, {"type": "findings", "id": "MzUxMDI4OWYyYWEyODRhYjQ0Zjg2YjY2ZTFmNjRjYzd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="}, {"type": "findings", "id": "ZjE2ZGI5YjdmYTQyYzhhMDQ3Nzc3YjM1NGQ2Y2NmZTd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="}]}
-    When the request is sent
-    Then the response status is 201 Created
-    And the response "data" has length 1
-    And the response "data[0]" has field "id"
-    And the response "data[0].attributes.title" is equal to "A title"
-    And the response "data[0].attributes.description" is equal to "A description"
-    And the response "data[0].attributes.type" is equal to "SECURITY"
-    And the response "data[0].attributes.insights" has length 2
-    And the response "data[0].attributes.insights[1].resource_id" is equal to "MzUxMDI4OWYyYWEyODRhYjQ0Zjg2YjY2ZTFmNjRjYzd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="
-    And the response "data[0].attributes.insights[1].type" is equal to "SECURITY_FINDING"
-    And the response "data[0].attributes.insights[0].resource_id" is equal to "ZjE2ZGI5YjdmYTQyYzhhMDQ3Nzc3YjM1NGQ2Y2NmZTd-NDU2OWQyNTk1MjM5OGI2NzJjMTVhYjhiODY1ZDcwZWY="
-    And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
-    And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
-
-  @skip @team:DataDog/k9-investigation
+  @generated @skip @team:DataDog/k9-investigation
   Scenario: Create Jira issues for security findings returns "Bad Request" response
-    Given new "CreateJiraIssues" request
-    And body with value {"data": [{"type": "jira_issues", "attributes": {}, "relationships": {"case": {"data": {"type": "cases", "id": "a7c38bab-ae98-4113-878c-c98799f914c2"}}}}], "included": [{"type": "cases", "relationships": {"project": {"data": {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}}, "findings": {"data": []}}, "id": "a7c38bab-ae98-4113-878c-c98799f914c2"}, {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}]}
+    Given operation "CreateJiraIssues" enabled
+    And new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Jira issue.", "fields": {"key1": "value", "key2": ["value"], "key3": {"key4": "value"}}, "priority": "NOT_DEFINED", "title": "A title for the Jira issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "jira_issues"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-investigation
+  @generated @skip @team:DataDog/k9-investigation
   Scenario: Create Jira issues for security findings returns "Created" response
-    Given new "CreateJiraIssues" request
-    And body with value {"data": [{"type": "jira_issues", "attributes":{}, "relationships": {"case": {"data": {"type": "cases", "id":"53e242c6-a7d6-46ad-9680-b8d14753f716"}}}}, {"type": "jira_issues", "attributes": {}, "relationships": {"case": {"data": {"type": "cases", "id": "195772b2-1f53-41d2-b81e-48c8e6c21d33"}}}}], "included":[{"type":"cases", "attributes":{"title":"A title", "description":"A description"}, "relationships":{"project":{"data":{"type":"projects", "id":"959a6f71-bac8-4027-b1d3-2264f569296f"}}, "findings": {"data": [{"type": "findings", "id": "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI="}]}}, "id": "53e242c6-a7d6-46ad-9680-b8d14753f716"}, {"type": "cases", "attributes": {"title": "A title", "description": "A description"}, "relationships": {"project": {"data": {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}}, "findings": {"data":[{"type": "findings", "id": "MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM="}]}}, "id": "195772b2-1f53-41d2-b81e-48c8e6c21d33"}, {"type": "projects", "id": "959a6f71-bac8-4027-b1d3-2264f569296f"}, {"type": "findings", "id": "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI="}, {"type": "findings", "id": "MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM="}]}
+    Given operation "CreateJiraIssues" enabled
+    And new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Jira issue.", "fields": {"key1": "value", "key2": ["value"], "key3": {"key4": "value"}}, "priority": "NOT_DEFINED", "title": "A title for the Jira issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "jira_issues"}]}
     When the request is sent
     Then the response status is 201 Created
-    And the response "data" has length 2
-    And the response "data[0]" has field "id"
-    And the response "data[0].attributes.title" is equal to "A title"
-    And the response "data[0].attributes.description" is equal to "A description"
-    And the response "data[0].attributes.type" is equal to "SECURITY"
-    And the response "data[0].attributes.insights" has length 1
-    And the response "data[0].attributes.insights[0].resource_id" is equal to "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI="
-    And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
-    And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
-    And the response "data[1]" has field "id"
-    And the response "data[1].attributes.title" is equal to "A title"
-    And the response "data[1].attributes.description" is equal to "A description"
-    And the response "data[1].attributes.type" is equal to "SECURITY"
-    And the response "data[1].attributes.insights" has length 1
-    And the response "data[1].attributes.insights[0].resource_id" is equal to "MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM="
-    And the response "data[1].attributes.insights[0].type" is equal to "SECURITY_FINDING"
-    And the response "data[1].attributes.jira_issue.status" is equal to "COMPLETED"
 
-  @skip @team:DataDog/k9-investigation
+  @generated @skip @team:DataDog/k9-investigation
   Scenario: Create Jira issues for security findings returns "Not Found" response
-    Given new "CreateJiraIssues" request
-    And body with value {"data": [{"type": "jira_issues", "attributes": {}, "relationships": {"case": {"data": {"type": "cases", "id": "6ed1d7c2-e1a3-4369-b92b-a38d3cc75cf3"}}}}], "included": [{"type": "cases", "attributes": {"title": "A title", "description": "A description"}, "relationships": {"project": {"data": {"type": "projects", "id": "00000000-0000-0000-0000-000000000000"}}, "findings": {"data": [{"type": "findings", "id": "YzM2MTFjYzcyNmY0Zjg4MTAxZmRlNjQ1MWU1ZGQwYzR-YzI5NzE5Y2Y4MzU4ZjliNzhkNjYxNTY0ODIzZDQ2YTM="}]}}, "id": "6ed1d7c2-e1a3-4369-b92b-a38d3cc75cf3"}, {"type": "projects", "id": "00000000-0000-0000-0000-000000000000"}, {"type": "findings", "id": "YzM2MTFjYzcyNmY0Zjg4MTAxZmRlNjQ1MWU1ZGQwYzR-YzI5NzE5Y2Y4MzU4ZjliNzhkNjYxNTY0ODIzZDQ2YTM="}]}
+    Given operation "CreateJiraIssues" enabled
+    And new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Jira issue.", "fields": {"key1": "value", "key2": ["value"], "key3": {"key4": "value"}}, "priority": "NOT_DEFINED", "title": "A title for the Jira issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "jira_issues"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -557,7 +509,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-investigation
   Scenario: Create case for security finding returns "Created" response
     Given new "CreateCases" request
-    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
+    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
     When the request is sent
     Then the response status is 201 Created
     And the response "data" has length 1
@@ -566,13 +518,13 @@ Feature: Security Monitoring
     And the response "data[0].attributes.description" is equal to "A description"
     And the response "data[0].attributes.type" is equal to "SECURITY"
     And the response "data[0].attributes.insights" has length 1
-    And the response "data[0].attributes.insights[0].resource_id" is equal to "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="
+    And the response "data[0].attributes.insights[0].resource_id" is equal to "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE="
     And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
 
   @team:DataDog/k9-investigation
   Scenario: Create case for security findings returns "Created" response
     Given new "CreateCases" request
-    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=", "type": "findings"}, {"id": "MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
+    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "ZTd5LWNuYi1seWV-aS0wMjI2NGZjZjRmZWQ5ODMyMg==", "type": "findings"}, {"id": "c2FuLXhyaS1kZnN-aS0wODM3MjVhMTM2MDExNzNkOQ==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
     When the request is sent
     Then the response status is 201 Created
     And the response "data" has length 1
@@ -581,9 +533,9 @@ Feature: Security Monitoring
     And the response "data[0].attributes.description" is equal to "A description"
     And the response "data[0].attributes.type" is equal to "SECURITY"
     And the response "data[0].attributes.insights" has length 2
-    And the response "data[0].attributes.insights[1].resource_id" is equal to "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="
+    And the response "data[0].attributes.insights[1].resource_id" is equal to "c2FuLXhyaS1kZnN-aS0wODM3MjVhMTM2MDExNzNkOQ=="
     And the response "data[0].attributes.insights[1].type" is equal to "SECURITY_FINDING"
-    And the response "data[0].attributes.insights[0].resource_id" is equal to "MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU="
+    And the response "data[0].attributes.insights[0].resource_id" is equal to "ZTd5LWNuYi1seWV-aS0wMjI2NGZjZjRmZWQ5ODMyMg=="
     And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
 
   @team:DataDog/k9-investigation
@@ -596,7 +548,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-investigation
   Scenario: Create cases for security findings returns "Created" response
     Given new "CreateCases" request
-    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}, {"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
+    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}, {"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "OGRlMDIwYzk4MjFmZTZiNTQwMzk2ZjUxNzg0MDc0NjR-MTk3Yjk4MDI4ZDQ4YzI2ZGZiMWJmMTNhNDEwZGZkYWI=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
     When the request is sent
     Then the response status is 201 Created
     And the response "data" has length 2
@@ -605,14 +557,14 @@ Feature: Security Monitoring
     And the response "data[0].attributes.description" is equal to "A description"
     And the response "data[0].attributes.type" is equal to "SECURITY"
     And the response "data[0].attributes.insights" has length 1
-    And the response "data[0].attributes.insights[0].resource_id" is equal to "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="
+    And the response "data[0].attributes.insights[0].resource_id" is equal to "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE="
     And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
     And the response "data[1]" has field "id"
     And the response "data[1].attributes.title" is equal to "A title"
     And the response "data[1].attributes.description" is equal to "A description"
     And the response "data[1].attributes.type" is equal to "SECURITY"
     And the response "data[1].attributes.insights" has length 1
-    And the response "data[1].attributes.insights[0].resource_id" is equal to "MzZkNTMxODNmOGZlZmJiYzIyMDg4NzhmM2QyMDExZjB-ZmY5NzUwNDQzYTE0MGIyNDM1MTg4YjkxZDNmMDU4OGU="
+    And the response "data[1].attributes.insights[0].resource_id" is equal to "OGRlMDIwYzk4MjFmZTZiNTQwMzk2ZjUxNzg0MDc0NjR-MTk3Yjk4MDI4ZDQ4YzI2ZGZiMWJmMTNhNDEwZGZkYWI="
     And the response "data[1].attributes.insights[0].type" is equal to "SECURITY_FINDING"
 
   @team:DataDog/k9-investigation

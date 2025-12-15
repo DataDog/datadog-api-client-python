@@ -3715,7 +3715,7 @@
       "parameters": [
         {
           "name": "body",
-          "template": "{\n  \"data\": {\n    \"type\": \"cases\",\n    \"id\": \"{{data[0].id}}\",\n    \"relationships\": {\n      \"findings\": {\n        \"data\": [\n          {\n              \"type\": \"findings\",\n              \"id\": \"{{data[0].attributes.insights[0].resource_id}}\"\n          }\n        ]\n      }\n    }\n  }\n}"
+          "template": "{\n  \"data\": {\n    \"type\": \"cases\",\n    \"relationships\": {\n      \"findings\": {\n        \"data\": [\n          {\n              \"type\": \"findings\",\n              \"id\": \"{{data[0].attributes.insights[0].resource_id}}\"\n          }\n        ]\n      }\n    }\n  }\n}"
         }
       ],
       "type": "unsafe"
@@ -3740,7 +3740,7 @@
       "parameters": [
         {
           "name": "body",
-          "template": "{\n  \"data\": {\n    \"type\": \"cases\",\n    \"id\": \"{{data[0].id}}\",\n    \"relationships\": {\n      \"findings\": {\n        \"data\": [\n          {\n              \"type\": \"findings\",\n              \"id\": \"{{data[0].attributes.insights[0].resource_id}}\"\n          }\n        ]\n      }\n    }\n  }\n}"
+          "template": "{\n  \"data\": {\n    \"type\": \"cases\",\n    \"relationships\": {\n      \"findings\": {\n        \"data\": [\n          {\n              \"type\": \"findings\",\n              \"id\": \"{{data[0].attributes.insights[0].resource_id}}\"\n          }\n        ]\n      }\n    }\n  }\n}"
         }
       ],
       "type": "unsafe"

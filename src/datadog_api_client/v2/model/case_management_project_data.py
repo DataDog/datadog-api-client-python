@@ -34,7 +34,7 @@ class CaseManagementProjectData(ModelNormal):
         """
 
 
-        :param id: The unique identifier of the case management project.
+        :param id: Unique identifier of the case management project.
         :type id: str
 
         :param type: Projects resource type.

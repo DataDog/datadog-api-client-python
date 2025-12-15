@@ -30,14 +30,12 @@ class CreateCaseRequestData(ModelNormal):
 
         return {
             "attributes": (CreateCaseRequestDataAttributes,),
-            "id": (str,),
             "relationships": (CreateCaseRequestDataRelationships,),
             "type": (CaseDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "id": "id",
         "relationships": "relationships",
         "type": "type",
     }
@@ -46,7 +44,6 @@ class CreateCaseRequestData(ModelNormal):
         self_,
         type: CaseDataType,
         attributes: Union[CreateCaseRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         relationships: Union[CreateCaseRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -56,9 +53,6 @@ class CreateCaseRequestData(ModelNormal):
         :param attributes: Attributes of the case to create.
         :type attributes: CreateCaseRequestDataAttributes, optional
 
-        :param id: The unique identifier of the case.
-        :type id: str, optional
-
         :param relationships: Relationships of the case to create.
         :type relationships: CreateCaseRequestDataRelationships, optional
 
@@ -67,8 +61,6 @@ class CreateCaseRequestData(ModelNormal):
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)

@@ -12,33 +12,37 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case import (
-        CreateJiraIssueRequestDataRelationshipsCase,
-    )
+    from datadog_api_client.v2.model.findings import Findings
+    from datadog_api_client.v2.model.case_management_project import CaseManagementProject
 
 
 class CreateJiraIssueRequestDataRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case import (
-            CreateJiraIssueRequestDataRelationshipsCase,
-        )
+        from datadog_api_client.v2.model.findings import Findings
+        from datadog_api_client.v2.model.case_management_project import CaseManagementProject
 
         return {
-            "case": (CreateJiraIssueRequestDataRelationshipsCase,),
+            "findings": (Findings,),
+            "project": (CaseManagementProject,),
         }
 
     attribute_map = {
-        "case": "case",
+        "findings": "findings",
+        "project": "project",
     }
 
-    def __init__(self_, case: CreateJiraIssueRequestDataRelationshipsCase, **kwargs):
+    def __init__(self_, findings: Findings, project: CaseManagementProject, **kwargs):
         """
         Relationships of the Jira issue to create.
 
-        :param case: Case linked to the Jira issue.
-        :type case: CreateJiraIssueRequestDataRelationshipsCase
+        :param findings: A list of security findings.
+        :type findings: Findings
+
+        :param project: Case management project.
+        :type project: CaseManagementProject
         """
         super().__init__(kwargs)
 
-        self_.case = case
+        self_.findings = findings
+        self_.project = project

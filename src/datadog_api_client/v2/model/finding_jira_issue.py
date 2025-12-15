@@ -44,13 +44,13 @@ class FindingJiraIssue(ModelNormal):
         """
         Jira issue associated with the case.
 
-        :param error_message: The error message if the Jira issue creation failed.
+        :param error_message: Error message if the Jira issue creation failed.
         :type error_message: str, optional
 
         :param result: Result of the Jira issue creation.
         :type result: FindingJiraIssueResult, optional
 
-        :param status: The status of the Jira issue creation. Can be "COMPLETED" if the Jira issue was created successfully, or "FAILED" if the Jira issue creation failed.
+        :param status: Status of the Jira issue creation. Can be "COMPLETED" if the Jira issue was created successfully, or "FAILED" if the Jira issue creation failed.
         :type status: str, optional
         """
         if error_message is not unset:

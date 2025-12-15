@@ -41,16 +41,16 @@ class FindingJiraIssueResult(ModelNormal):
         """
         Result of the Jira issue creation.
 
-        :param account_id: The account ID of the Jira issue.
+        :param account_id: Account ID of the Jira issue.
         :type account_id: str, optional
 
-        :param issue_id: The unique identifier of the Jira issue.
+        :param issue_id: Unique identifier of the Jira issue.
         :type issue_id: str, optional
 
-        :param issue_key: The key of the Jira issue.
+        :param issue_key: Key of the Jira issue.
         :type issue_key: str, optional
 
-        :param issue_url: The URL of the Jira issue.
+        :param issue_url: URL of the Jira issue.
         :type issue_url: str, optional
         """
         if account_id is not unset:

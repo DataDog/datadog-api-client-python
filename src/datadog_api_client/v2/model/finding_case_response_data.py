@@ -58,7 +58,7 @@ class FindingCaseResponseData(ModelNormal):
         :param attributes: Attributes of the case.
         :type attributes: FindingCaseResponseDataAttributes, optional
 
-        :param id: The unique identifier of the case.
+        :param id: Unique identifier of the case.
         :type id: str, optional
 
         :param relationships: Relationships of the case.
