@@ -31,26 +31,26 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "mappings": ([ObservabilityPipelineOcsfMapperProcessorMapping],),
             "type": (ObservabilityPipelineOcsfMapperProcessorType,),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "mappings": "mappings",
         "type": "type",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         mappings: List[ObservabilityPipelineOcsfMapperProcessorMapping],
         type: ObservabilityPipelineOcsfMapperProcessorType,
         **kwargs,
@@ -58,14 +58,14 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         """
         The ``ocsf_mapper`` processor transforms logs into the OCSF schema using a predefined mapping configuration.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline.
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
-
-        :param inputs: A list of component IDs whose output is used as the ``input`` for this processor.
-        :type inputs: [str]
 
         :param mappings: A list of mapping rules to convert events to the OCSF format.
         :type mappings: [ObservabilityPipelineOcsfMapperProcessorMapping]
@@ -75,8 +75,8 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.mappings = mappings
         self_.type = type

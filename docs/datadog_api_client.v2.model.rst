@@ -15348,6 +15348,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_config\_destination\_item
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_config\_processor\_group module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_config_processor_group
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_config\_processor\_item module
 -------------------------------------------------------------------------------------
 

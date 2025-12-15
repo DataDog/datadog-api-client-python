@@ -31,26 +31,26 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         )
 
         return {
+            "enabled": (bool,),
             "id": (str,),
             "include": (str,),
-            "inputs": ([str],),
             "type": (ObservabilityPipelineAddEnvVarsProcessorType,),
             "variables": ([ObservabilityPipelineAddEnvVarsProcessorVariable],),
         }
 
     attribute_map = {
+        "enabled": "enabled",
         "id": "id",
         "include": "include",
-        "inputs": "inputs",
         "type": "type",
         "variables": "variables",
     }
 
     def __init__(
         self_,
+        enabled: bool,
         id: str,
         include: str,
-        inputs: List[str],
         type: ObservabilityPipelineAddEnvVarsProcessorType,
         variables: List[ObservabilityPipelineAddEnvVarsProcessorVariable],
         **kwargs,
@@ -58,14 +58,14 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         """
         The ``add_env_vars`` processor adds environment variable values to log events.
 
+        :param enabled: Whether this processor is enabled.
+        :type enabled: bool
+
         :param id: The unique identifier for this component. Used to reference this processor in the pipeline.
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
-
-        :param inputs: A list of component IDs whose output is used as the input for this processor.
-        :type inputs: [str]
 
         :param type: The processor type. The value should always be ``add_env_vars``.
         :type type: ObservabilityPipelineAddEnvVarsProcessorType
@@ -75,8 +75,8 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         """
         super().__init__(kwargs)
 
+        self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.inputs = inputs
         self_.type = type
         self_.variables = variables

@@ -7,6 +7,9 @@ from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
+from datadog_api_client.v2.model.observability_pipeline_config_processor_group import (
+    ObservabilityPipelineConfigProcessorGroup,
+)
 from datadog_api_client.v2.model.observability_pipeline_data import ObservabilityPipelineData
 from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
 from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
@@ -37,19 +40,27 @@ body = ObservabilityPipeline(
                     ObservabilityPipelineDatadogLogsDestination(
                         id="updated-datadog-logs-destination-id",
                         inputs=[
-                            "filter-processor",
+                            "my-processor-group",
                         ],
                         type=ObservabilityPipelineDatadogLogsDestinationType.DATADOG_LOGS,
                     ),
                 ],
                 processors=[
-                    ObservabilityPipelineFilterProcessor(
-                        id="filter-processor",
+                    ObservabilityPipelineConfigProcessorGroup(
+                        enabled=True,
+                        id="my-processor-group",
                         include="service:my-service",
                         inputs=[
                             "datadog-agent-source",
                         ],
-                        type=ObservabilityPipelineFilterProcessorType.FILTER,
+                        processors=[
+                            ObservabilityPipelineFilterProcessor(
+                                enabled=True,
+                                id="filter-processor",
+                                include="status:error",
+                                type=ObservabilityPipelineFilterProcessorType.FILTER,
+                            ),
+                        ],
                     ),
                 ],
                 sources=[
