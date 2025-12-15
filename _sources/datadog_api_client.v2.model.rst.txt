@@ -5289,13 +5289,6 @@ datadog\_api\_client.v2.model.create\_jira\_issue\_request\_array module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.create\_jira\_issue\_request\_array\_included module
-----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_array_included
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data module
 -----------------------------------------------------------------------
 
@@ -5310,31 +5303,10 @@ datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_attributes mod
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_attributes\_fields module
--------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_attributes_fields
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships module
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships\_case module
---------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships\_case\_data module
---------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_relationships_case_data
    :members:
    :show-inheritance:
 
