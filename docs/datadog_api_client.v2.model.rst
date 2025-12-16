@@ -5268,13 +5268,6 @@ datadog\_api\_client.v2.model.create\_deployment\_rule\_params\_data\_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.create\_email\_notification\_channel\_config module
----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_email_notification_channel_config
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.create\_incident\_notification\_rule\_request module
 ----------------------------------------------------------------------------------
 
@@ -5314,27 +5307,6 @@ datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_jira_issue_request_data_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_notification\_channel\_attributes module
-------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_notification_channel_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_notification\_channel\_config module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_notification_channel_config
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_notification\_channel\_data module
-------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_notification_channel_data
    :members:
    :show-inheritance:
 
@@ -5433,13 +5405,6 @@ datadog\_api\_client.v2.model.create\_page\_response\_data\_type module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_page_response_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_phone\_notification\_channel\_config module
----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_phone_notification_channel_config
    :members:
    :show-inheritance:
 
@@ -5685,13 +5650,6 @@ datadog\_api\_client.v2.model.create\_upload\_response\_data\_type module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_upload_response_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_user\_notification\_channel\_request module
----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_user_notification_channel_request
    :members:
    :show-inheritance:
 
@@ -13087,13 +13045,6 @@ datadog\_api\_client.v2.model.list\_kind\_catalog\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.list\_notification\_channels\_response module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_notification_channels_response
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.list\_pipelines\_response module
 --------------------------------------------------------------
 
@@ -15121,90 +15072,6 @@ datadog\_api\_client.v2.model.notebook\_trigger\_wrapper module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.notebook_trigger_wrapper
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel module
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_attributes module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_config module
-------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_config
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_data module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_email\_config module
--------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_email_config
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_email\_config\_type module
--------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_email_config_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_email\_format\_type module
--------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_email_format_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_phone\_config module
--------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_phone_config
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_phone\_config\_type module
--------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_phone_config_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_push\_config module
-------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_push_config
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_push\_config\_type module
-------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_push_config_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notification\_channel\_type module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notification_channel_type
    :members:
    :show-inheritance:
 

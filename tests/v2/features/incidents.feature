@@ -806,16 +806,14 @@ Feature: Incidents
 
   @generated @skip @team:DataDog/incident-app
   Scenario: List an incident's impacts returns "Bad Request" response
-    Given operation "ListIncidentImpacts" enabled
-    And new "ListIncidentImpacts" request
+    Given new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/incident-app
   Scenario: List an incident's impacts returns "Not Found" response
-    Given operation "ListIncidentImpacts" enabled
-    And new "ListIncidentImpacts" request
+    Given new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found

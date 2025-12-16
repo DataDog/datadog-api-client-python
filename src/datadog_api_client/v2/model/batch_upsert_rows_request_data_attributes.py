@@ -3,15 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Dict, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
 
 
@@ -22,16 +18,8 @@ class BatchUpsertRowsRequestDataAttributes(ModelNormal):
             "values": (
                 {
                     str: (
-                        bool,
-                        date,
-                        datetime,
-                        dict,
-                        float,
-                        int,
-                        list,
                         str,
-                        UUID,
-                        none_type,
+                        int,
                     )
                 },
             ),
@@ -41,12 +29,12 @@ class BatchUpsertRowsRequestDataAttributes(ModelNormal):
         "values": "values",
     }
 
-    def __init__(self_, values: Dict[str, Any], **kwargs):
+    def __init__(self_, values: Dict[str, Union[str, int]], **kwargs):
         """
         Attributes containing row data values for row creation or update operations.
 
-        :param values: Key-value pairs representing row data, where keys are field names from the schema.
-        :type values: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}
+        :param values: Key-value pairs representing row data, where keys are schema field names and values match the corresponding column types.
+        :type values: {str: (str, int,)}
         """
         super().__init__(kwargs)
 
