@@ -2086,9 +2086,13 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.create_on_call_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.create_on_call_schedule()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.create_user_notification_channel" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.create_user_notification_channel()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.delete_on_call_escalation_policy" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.delete_on_call_escalation_policy()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.delete_on_call_schedule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.delete_on_call_schedule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.delete_user_notification_channel" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.delete_user_notification_channel()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.get_on_call_escalation_policy" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.get_on_call_escalation_policy()</span></code></a>
         </li>
@@ -2099,6 +2103,10 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.get_schedule_on_call_user" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.get_schedule_on_call_user()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.get_team_on_call_users" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.get_team_on_call_users()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.get_user_notification_channel" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.get_user_notification_channel()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.list_user_notification_channels" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.list_user_notification_channels()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.on_call_api.OnCallApi.set_on_call_team_routing_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OnCallApi.set_on_call_team_routing_rules()</span></code></a>
         </li>
@@ -10556,6 +10564,20 @@ directly through the Datadog API.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.on_call_api.OnCallApi.create_user_notification_channel">
+<span class="sig-name descname"><span class="pre">create_user_notification_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_user_notification_channel_request.CreateUserNotificationChannelRequest" title="datadog_api_client.v2.model.create_user_notification_channel_request.CreateUserNotificationChannelRequest"><span class="pre">CreateUserNotificationChannelRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_channel.NotificationChannel" title="datadog_api_client.v2.model.notification_channel.NotificationChannel"><span class="pre">NotificationChannel</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.on_call_api.OnCallApi.create_user_notification_channel" title="Link to this definition">¶</a></dt>
+<dd><p>Create an On-Call notification channel for a user.</p>
+<p>Create a new notification channel for a user. The authenticated user must be the target user or have the <code class="docutils literal notranslate"><span class="pre">on_call_admin</span></code> permission</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_id</strong> (<em>str</em>) – The user ID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_channel.NotificationChannel" title="datadog_api_client.v2.model.notification_channel.NotificationChannel">NotificationChannel</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.on_call_api.OnCallApi.delete_on_call_escalation_policy">
 <span class="sig-name descname"><span class="pre">delete_on_call_escalation_policy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">policy_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.on_call_api.OnCallApi.delete_on_call_escalation_policy" title="Link to this definition">¶</a></dt>
 <dd><p>Delete On-Call escalation policy.</p>
@@ -10577,6 +10599,23 @@ directly through the Datadog API.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>schedule_id</strong> (<em>str</em>) – The ID of the schedule</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.on_call_api.OnCallApi.delete_user_notification_channel">
+<span class="sig-name descname"><span class="pre">delete_user_notification_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.on_call_api.OnCallApi.delete_user_notification_channel" title="Link to this definition">¶</a></dt>
+<dd><p>Delete an On-Call notification channel for a user.</p>
+<p>Delete a notification channel for a user. The authenticated user must be the target user or have the <code class="docutils literal notranslate"><span class="pre">on_call_admin</span></code> permission</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> (<em>str</em>) – The user ID</p></li>
+<li><p><strong>channel_id</strong> (<em>str</em>) – The channel ID</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
@@ -10666,6 +10705,37 @@ directly through the Datadog API.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_on_call_responders.TeamOnCallResponders" title="datadog_api_client.v2.model.team_on_call_responders.TeamOnCallResponders">TeamOnCallResponders</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.on_call_api.OnCallApi.get_user_notification_channel">
+<span class="sig-name descname"><span class="pre">get_user_notification_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_channel.NotificationChannel" title="datadog_api_client.v2.model.notification_channel.NotificationChannel"><span class="pre">NotificationChannel</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.on_call_api.OnCallApi.get_user_notification_channel" title="Link to this definition">¶</a></dt>
+<dd><p>Get an On-Call notification channel for a user.</p>
+<p>Get a notification channel for a user. The authenticated user must be the target user or have the <code class="docutils literal notranslate"><span class="pre">on_call_admin</span></code> permission</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> (<em>str</em>) – The user ID</p></li>
+<li><p><strong>channel_id</strong> (<em>str</em>) – The channel ID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notification_channel.NotificationChannel" title="datadog_api_client.v2.model.notification_channel.NotificationChannel">NotificationChannel</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.on_call_api.OnCallApi.list_user_notification_channels">
+<span class="sig-name descname"><span class="pre">list_user_notification_channels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_notification_channels_response.ListNotificationChannelsResponse" title="datadog_api_client.v2.model.list_notification_channels_response.ListNotificationChannelsResponse"><span class="pre">ListNotificationChannelsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.on_call_api.OnCallApi.list_user_notification_channels" title="Link to this definition">¶</a></dt>
+<dd><p>List On-Call notification channels for a user.</p>
+<p>List the notification channels for a user. The authenticated user must be the target user or have the <code class="docutils literal notranslate"><span class="pre">on_call_admin</span></code> permission</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_id</strong> (<em>str</em>) – The user ID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.list_notification_channels_response.ListNotificationChannelsResponse" title="datadog_api_client.v2.model.list_notification_channels_response.ListNotificationChannelsResponse">ListNotificationChannelsResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
