@@ -2934,6 +2934,30 @@
       "type": "unsafe"
     }
   },
+  "ListUserNotificationChannels": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateUserNotificationChannel": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteUserNotificationChannel": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetUserNotificationChannel": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {

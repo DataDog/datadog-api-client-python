@@ -1001,6 +1001,7 @@ from datadog_api_client.v2.model.create_deployment_rule_params_data import Creat
 from datadog_api_client.v2.model.create_deployment_rule_params_data_attributes import (
     CreateDeploymentRuleParamsDataAttributes,
 )
+from datadog_api_client.v2.model.create_email_notification_channel_config import CreateEmailNotificationChannelConfig
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
@@ -1011,6 +1012,9 @@ from datadog_api_client.v2.model.create_jira_issue_request_data_attributes impor
 from datadog_api_client.v2.model.create_jira_issue_request_data_relationships import (
     CreateJiraIssueRequestDataRelationships,
 )
+from datadog_api_client.v2.model.create_notification_channel_attributes import CreateNotificationChannelAttributes
+from datadog_api_client.v2.model.create_notification_channel_config import CreateNotificationChannelConfig
+from datadog_api_client.v2.model.create_notification_channel_data import CreateNotificationChannelData
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.create_notification_rule_parameters_data import CreateNotificationRuleParametersData
 from datadog_api_client.v2.model.create_notification_rule_parameters_data_attributes import (
@@ -1027,6 +1031,7 @@ from datadog_api_client.v2.model.create_page_request_data_type import CreatePage
 from datadog_api_client.v2.model.create_page_response import CreatePageResponse
 from datadog_api_client.v2.model.create_page_response_data import CreatePageResponseData
 from datadog_api_client.v2.model.create_page_response_data_type import CreatePageResponseDataType
+from datadog_api_client.v2.model.create_phone_notification_channel_config import CreatePhoneNotificationChannelConfig
 from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 from datadog_api_client.v2.model.create_rule_request_data import CreateRuleRequestData
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
@@ -1092,6 +1097,7 @@ from datadog_api_client.v2.model.create_upload_response import CreateUploadRespo
 from datadog_api_client.v2.model.create_upload_response_data import CreateUploadResponseData
 from datadog_api_client.v2.model.create_upload_response_data_attributes import CreateUploadResponseDataAttributes
 from datadog_api_client.v2.model.create_upload_response_data_type import CreateUploadResponseDataType
+from datadog_api_client.v2.model.create_user_notification_channel_request import CreateUserNotificationChannelRequest
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
@@ -2446,6 +2452,7 @@ from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
+from datadog_api_client.v2.model.list_notification_channels_response import ListNotificationChannelsResponse
 from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
 from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
@@ -2830,6 +2837,18 @@ from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
 from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
+from datadog_api_client.v2.model.notification_channel import NotificationChannel
+from datadog_api_client.v2.model.notification_channel_attributes import NotificationChannelAttributes
+from datadog_api_client.v2.model.notification_channel_config import NotificationChannelConfig
+from datadog_api_client.v2.model.notification_channel_data import NotificationChannelData
+from datadog_api_client.v2.model.notification_channel_email_config import NotificationChannelEmailConfig
+from datadog_api_client.v2.model.notification_channel_email_config_type import NotificationChannelEmailConfigType
+from datadog_api_client.v2.model.notification_channel_email_format_type import NotificationChannelEmailFormatType
+from datadog_api_client.v2.model.notification_channel_phone_config import NotificationChannelPhoneConfig
+from datadog_api_client.v2.model.notification_channel_phone_config_type import NotificationChannelPhoneConfigType
+from datadog_api_client.v2.model.notification_channel_push_config import NotificationChannelPushConfig
+from datadog_api_client.v2.model.notification_channel_push_config_type import NotificationChannelPushConfigType
+from datadog_api_client.v2.model.notification_channel_type import NotificationChannelType
 from datadog_api_client.v2.model.notification_rule import NotificationRule
 from datadog_api_client.v2.model.notification_rule_attributes import NotificationRuleAttributes
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
@@ -5832,12 +5851,16 @@ __all__ = [
     "CreateDeploymentRuleParams",
     "CreateDeploymentRuleParamsData",
     "CreateDeploymentRuleParamsDataAttributes",
+    "CreateEmailNotificationChannelConfig",
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateJiraIssueRequestArray",
     "CreateJiraIssueRequestData",
     "CreateJiraIssueRequestDataAttributes",
     "CreateJiraIssueRequestDataRelationships",
+    "CreateNotificationChannelAttributes",
+    "CreateNotificationChannelConfig",
+    "CreateNotificationChannelData",
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
     "CreateNotificationRuleParametersDataAttributes",
@@ -5852,6 +5875,7 @@ __all__ = [
     "CreatePageResponse",
     "CreatePageResponseData",
     "CreatePageResponseDataType",
+    "CreatePhoneNotificationChannelConfig",
     "CreateRuleRequest",
     "CreateRuleRequestData",
     "CreateRuleResponse",
@@ -5887,6 +5911,7 @@ __all__ = [
     "CreateUploadResponseData",
     "CreateUploadResponseDataAttributes",
     "CreateUploadResponseDataType",
+    "CreateUserNotificationChannelRequest",
     "CreateWorkflowRequest",
     "CreateWorkflowResponse",
     "Creator",
@@ -6943,6 +6968,7 @@ __all__ = [
     "ListFindingsPage",
     "ListFindingsResponse",
     "ListKindCatalogResponse",
+    "ListNotificationChannelsResponse",
     "ListPipelinesResponse",
     "ListPipelinesResponseMeta",
     "ListPowerpacksResponse",
@@ -7233,6 +7259,18 @@ __all__ = [
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
     "NotebookTriggerWrapper",
+    "NotificationChannel",
+    "NotificationChannelAttributes",
+    "NotificationChannelConfig",
+    "NotificationChannelData",
+    "NotificationChannelEmailConfig",
+    "NotificationChannelEmailConfigType",
+    "NotificationChannelEmailFormatType",
+    "NotificationChannelPhoneConfig",
+    "NotificationChannelPhoneConfigType",
+    "NotificationChannelPushConfig",
+    "NotificationChannelPushConfigType",
+    "NotificationChannelType",
     "NotificationRule",
     "NotificationRuleAttributes",
     "NotificationRuleResponse",

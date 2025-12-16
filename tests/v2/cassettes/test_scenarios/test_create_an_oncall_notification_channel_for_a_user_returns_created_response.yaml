@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Create_an_On_Call_notification_channel_for_a_user_returns_Created_response-1765548332@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"5ba8ee87-4d71-458c-883d-a6016738f7ce","attributes":{"name":null,"handle":"test-create_an_on_call_notification_channel_for_a_user_returns_created_response-1765548332@datadoghq.com","created_at":"2025-12-12T14:05:32.704821+00:00","modified_at":"2025-12-12T14:05:32.704821+00:00","email":"test-create_an_on_call_notification_channel_for_a_user_returns_created_response-1765548332@datadoghq.com","icon":"https://secure.gravatar.com/avatar/01791216e0fc8e5e005271e285ad9760?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending","last_login_time":null},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"config":{"address":"foo@bar.com","formats":["html"],"type":"email"}},"type":"notification_channels"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/on-call/users/5ba8ee87-4d71-458c-883d-a6016738f7ce/notification-channels
+  response:
+    body:
+      string: '{"data":{"id":"f944f63a-2606-43c0-9c0b-10a34b9b214a","type":"notification_channels","attributes":{"active":true,"config":{"type":"email","address":"foo@bar.com","formats":["html"]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/5ba8ee87-4d71-458c-883d-a6016738f7ce
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
