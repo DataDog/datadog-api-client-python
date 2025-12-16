@@ -1360,6 +1360,13 @@ from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteApp
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
 from datadog_api_client.v2.model.delete_apps_response_data_items import DeleteAppsResponseDataItems
 from datadog_api_client.v2.model.delete_custom_framework_response import DeleteCustomFrameworkResponse
+from datadog_api_client.v2.model.deleted_suite_response_data import DeletedSuiteResponseData
+from datadog_api_client.v2.model.deleted_suite_response_data_attributes import DeletedSuiteResponseDataAttributes
+from datadog_api_client.v2.model.deleted_suites_request_delete import DeletedSuitesRequestDelete
+from datadog_api_client.v2.model.deleted_suites_request_delete_attributes import DeletedSuitesRequestDeleteAttributes
+from datadog_api_client.v2.model.deleted_suites_request_delete_request import DeletedSuitesRequestDeleteRequest
+from datadog_api_client.v2.model.deleted_suites_request_type import DeletedSuitesRequestType
+from datadog_api_client.v2.model.deleted_suites_response import DeletedSuitesResponse
 from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deployment import Deployment
 from datadog_api_client.v2.model.deployment_attributes import DeploymentAttributes
@@ -4646,6 +4653,24 @@ from datadog_api_client.v2.model.statsig_integration_update import StatsigIntegr
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
+from datadog_api_client.v2.model.suite_create_edit import SuiteCreateEdit
+from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEditRequest
+from datadog_api_client.v2.model.suite_search_response_type import SuiteSearchResponseType
+from datadog_api_client.v2.model.synthetics_suite import SyntheticsSuite
+from datadog_api_client.v2.model.synthetics_suite_options import SyntheticsSuiteOptions
+from datadog_api_client.v2.model.synthetics_suite_response import SyntheticsSuiteResponse
+from datadog_api_client.v2.model.synthetics_suite_response_data import SyntheticsSuiteResponseData
+from datadog_api_client.v2.model.synthetics_suite_search_response import SyntheticsSuiteSearchResponse
+from datadog_api_client.v2.model.synthetics_suite_search_response_data import SyntheticsSuiteSearchResponseData
+from datadog_api_client.v2.model.synthetics_suite_search_response_data_attributes import (
+    SyntheticsSuiteSearchResponseDataAttributes,
+)
+from datadog_api_client.v2.model.synthetics_suite_test import SyntheticsSuiteTest
+from datadog_api_client.v2.model.synthetics_suite_test_alerting_criticality import (
+    SyntheticsSuiteTestAlertingCriticality,
+)
+from datadog_api_client.v2.model.synthetics_suite_type import SyntheticsSuiteType
+from datadog_api_client.v2.model.synthetics_suite_types import SyntheticsSuiteTypes
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
 from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
 from datadog_api_client.v2.model.table_result_v2_data import TableResultV2Data
@@ -6064,6 +6089,13 @@ __all__ = [
     "DeleteAppsResponse",
     "DeleteAppsResponseDataItems",
     "DeleteCustomFrameworkResponse",
+    "DeletedSuiteResponseData",
+    "DeletedSuiteResponseDataAttributes",
+    "DeletedSuitesRequestDelete",
+    "DeletedSuitesRequestDeleteAttributes",
+    "DeletedSuitesRequestDeleteRequest",
+    "DeletedSuitesRequestType",
+    "DeletedSuitesResponse",
     "DependencyLocation",
     "Deployment",
     "DeploymentAttributes",
@@ -8410,6 +8442,20 @@ __all__ = [
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
+    "SuiteCreateEdit",
+    "SuiteCreateEditRequest",
+    "SuiteSearchResponseType",
+    "SyntheticsSuite",
+    "SyntheticsSuiteOptions",
+    "SyntheticsSuiteResponse",
+    "SyntheticsSuiteResponseData",
+    "SyntheticsSuiteSearchResponse",
+    "SyntheticsSuiteSearchResponseData",
+    "SyntheticsSuiteSearchResponseDataAttributes",
+    "SyntheticsSuiteTest",
+    "SyntheticsSuiteTestAlertingCriticality",
+    "SyntheticsSuiteType",
+    "SyntheticsSuiteTypes",
     "TableResultV2",
     "TableResultV2Array",
     "TableResultV2Data",
