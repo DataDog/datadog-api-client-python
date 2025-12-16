@@ -10385,6 +10385,27 @@ datadog\_api\_client.v2.model.get\_sbom\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.get\_suppression\_version\_history\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_suppression_version_history_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_suppression\_version\_history\_data\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_suppression_version_history_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_suppression\_version\_history\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_suppression_version_history_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.get\_team\_memberships\_sort module
 -----------------------------------------------------------------
 
@@ -19233,20 +19254,6 @@ datadog\_api\_client.v2.model.rule\_version\_history module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.rule\_version\_update module
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.rule_version_update
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.rule\_version\_update\_type module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.rule_version_update_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.rule\_versions module
 ---------------------------------------------------
 
@@ -23307,6 +23314,20 @@ datadog\_api\_client.v2.model.step\_display\_bounds module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.suppression\_version\_history module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suppression_version_history
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suppression\_versions module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suppression_versions
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.table\_result\_v2 module
 ------------------------------------------------------
 
@@ -25355,6 +25376,20 @@ datadog\_api\_client.v2.model.validation\_response module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.validation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.version\_history\_update module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.version_history_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.version\_history\_update\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.version_history_update_type
    :members:
    :show-inheritance:
 

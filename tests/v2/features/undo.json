@@ -3979,6 +3979,12 @@
       "type": "idempotent"
     }
   },
+  "GetSuppressionVersionHistory": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {

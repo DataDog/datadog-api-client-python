@@ -1021,6 +1021,21 @@ Feature: Security Monitoring
     And the response "data.attributes.suppression_query" is equal to "env:test"
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a suppression's version history returns "Not Found" response
+    Given new "GetSuppressionVersionHistory" request
+    And request contains "suppression_id" parameter with value "this-does-not-exist"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a suppression's version history returns "OK" response
+    Given new "GetSuppressionVersionHistory" request
+    And there is a valid "suppression" in the system
+    And request contains "suppression_id" parameter from "suppression.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
     When the request is sent
