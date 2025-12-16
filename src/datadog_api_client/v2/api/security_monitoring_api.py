@@ -1773,6 +1773,11 @@ class SecurityMonitoringApi:
                     "attribute": "filter[origin]",
                     "location": "query",
                 },
+                "filter_running_kernel": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[running_kernel]",
+                    "location": "query",
+                },
                 "filter_asset_name": {
                     "openapi_types": (str,),
                     "attribute": "filter[asset.name]",
@@ -2925,9 +2930,9 @@ class SecurityMonitoringApi:
     def get_secrets_rules(
         self,
     ) -> SecretRuleArray:
-        """Returns list of Secrets rules.
+        """Returns a list of Secrets rules.
 
-        Returns list of Secrets rules with ID, Pattern, Description, Priority, and SDS ID
+        Returns a list of Secrets rules with ID, Pattern, Description, Priority, and SDS ID.
 
         :rtype: SecretRuleArray
         """
@@ -3943,6 +3948,7 @@ class SecurityMonitoringApi:
         filter_fix_available: Union[bool, UnsetType] = unset,
         filter_repo_digests: Union[str, UnsetType] = unset,
         filter_origin: Union[str, UnsetType] = unset,
+        filter_running_kernel: Union[bool, UnsetType] = unset,
         filter_asset_name: Union[str, UnsetType] = unset,
         filter_asset_type: Union[AssetType, UnsetType] = unset,
         filter_asset_version_first: Union[str, UnsetType] = unset,
@@ -4105,6 +4111,8 @@ class SecurityMonitoringApi:
         :type filter_repo_digests: str, optional
         :param filter_origin: Filter by origin.
         :type filter_origin: str, optional
+        :param filter_running_kernel: Filter for whether the vulnerability affects a running kernel (for vulnerabilities related to a ``Host`` asset).
+        :type filter_running_kernel: bool, optional
         :param filter_asset_name: Filter by asset name. This field supports the usage of wildcards (*).
         :type filter_asset_name: str, optional
         :param filter_asset_type: Filter by asset type.
@@ -4218,6 +4226,9 @@ class SecurityMonitoringApi:
 
         if filter_origin is not unset:
             kwargs["filter_origin"] = filter_origin
+
+        if filter_running_kernel is not unset:
+            kwargs["filter_running_kernel"] = filter_running_kernel
 
         if filter_asset_name is not unset:
             kwargs["filter_asset_name"] = filter_asset_name

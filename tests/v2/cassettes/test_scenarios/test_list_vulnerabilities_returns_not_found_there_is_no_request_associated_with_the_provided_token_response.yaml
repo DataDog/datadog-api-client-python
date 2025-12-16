@@ -8,8 +8,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security/vulnerabilities?page%5Btoken%5D=unknown&page%5Bnumber%5D=1
   response:
     body:
-      string: '{"errors":[{"title":"Generic Error","detail":"rpc error: code = Internal
-        desc = no cached result set found for queryID: unknown"}]}'
+      string: '{"errors":[{"status":"404","title":"Unexpected internal error"}]}'
     headers:
       content-type:
       - application/vnd.api+json

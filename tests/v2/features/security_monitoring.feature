@@ -733,7 +733,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "GetSBOM" enabled
     And new "GetSBOM" request
@@ -742,7 +742,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: Get SBOM returns "Not found: asset not found" response
     Given operation "GetSBOM" enabled
     And new "GetSBOM" request
@@ -751,7 +751,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not found: asset not found
 
-  @skip @team:DataDog/asm-vm
+  @skip @team:DataDog/k9-cloud-vm
   Scenario: Get SBOM returns "OK" response
     Given operation "GetSBOM" enabled
     And new "GetSBOM" request
@@ -1134,14 +1134,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 The list of notification rules.
 
-  @generated @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListAssetsSBOMs" enabled
     And new "ListAssetsSBOMs" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Not found: There is no request associated with the provided token." response
     Given operation "ListAssetsSBOMs" enabled
     And new "ListAssetsSBOMs" request
@@ -1150,14 +1150,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not found: There is no request associated with the provided token.
 
-  @generated @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Not found: asset not found" response
     Given operation "ListAssetsSBOMs" enabled
     And new "ListAssetsSBOMs" request
     When the request is sent
     Then the response status is 404 Not found: asset not found
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "OK" response
     Given operation "ListAssetsSBOMs" enabled
     And new "ListAssetsSBOMs" request
@@ -1269,14 +1269,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/asm-vm
+  @skip @team:DataDog/k9-cloud-vm
   Scenario: List scanned assets metadata returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListScannedAssetsMetadata" enabled
     And new "ListScannedAssetsMetadata" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List scanned assets metadata returns "Not found: asset not found" response
     Given operation "ListScannedAssetsMetadata" enabled
     And new "ListScannedAssetsMetadata" request
@@ -1285,7 +1285,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not found: asset not found
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List scanned assets metadata returns "OK" response
     Given operation "ListScannedAssetsMetadata" enabled
     And new "ListScannedAssetsMetadata" request
@@ -1306,14 +1306,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListVulnerabilities" enabled
     And new "ListVulnerabilities" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List vulnerabilities returns "Not found: There is no request associated with the provided token." response
     Given operation "ListVulnerabilities" enabled
     And new "ListVulnerabilities" request
@@ -1322,7 +1322,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not found: There is no request associated with the provided token.
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List vulnerabilities returns "OK" response
     Given operation "ListVulnerabilities" enabled
     And new "ListVulnerabilities" request
@@ -1332,14 +1332,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List vulnerable assets returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListVulnerableAssets" enabled
     And new "ListVulnerableAssets" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List vulnerable assets returns "Not found: There is no request associated with the provided token." response
     Given operation "ListVulnerableAssets" enabled
     And new "ListVulnerableAssets" request
@@ -1348,7 +1348,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not found: There is no request associated with the provided token.
 
-  @team:DataDog/asm-vm
+  @team:DataDog/k9-cloud-vm
   Scenario: List vulnerable assets returns "OK" response
     Given operation "ListVulnerableAssets" enabled
     And new "ListVulnerableAssets" request
@@ -1482,14 +1482,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
-  @generated @skip @team:DataDog/asm-vm
-  Scenario: Returns list of Secrets rules returns "OK" response
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Returns a list of Secrets rules returns "OK" response
     Given operation "GetSecretsRules" enabled
     And new "GetSecretsRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/asm-vm
+  @generated @skip @team:DataDog/k9-vm-ast
   Scenario: Ruleset get multiple returns "OK" response
     Given operation "ListMultipleRulesets" enabled
     And new "ListMultipleRulesets" request
