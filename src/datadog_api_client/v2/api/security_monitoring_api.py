@@ -80,6 +80,7 @@ from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import 
 from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
     SecurityMonitoringSuppressionUpdateRequest,
 )
+from datadog_api_client.v2.model.get_suppression_version_history_response import GetSuppressionVersionHistoryResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
@@ -1111,6 +1112,39 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "rule_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_suppression_version_history_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetSuppressionVersionHistoryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions/{suppression_id}/version_history",
+                "operation_id": "get_suppression_version_history",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "suppression_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "suppression_id",
+                    "location": "path",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -3142,6 +3176,36 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._get_suppressions_affecting_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_suppression_version_history(
+        self,
+        suppression_id: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> GetSuppressionVersionHistoryResponse:
+        """Get a suppression's version history.
+
+        Get a suppression's version history.
+
+        :param suppression_id: The ID of the suppression rule
+        :type suppression_id: str
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: GetSuppressionVersionHistoryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suppression_id"] = suppression_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._get_suppression_version_history_endpoint.call_with_http_info(**kwargs)
 
     def get_threat_hunting_job(
         self,
