@@ -14,6 +14,7 @@ body = BatchUpsertRowsRequestArray(
         BatchUpsertRowsRequestData(
             attributes=BatchUpsertRowsRequestDataAttributes(
                 values=dict(
+                    age=25,
                     example_key_value="primary_key_value",
                     name="row_name",
                 ),
