@@ -32,9 +32,9 @@ class UsageIncidentManagementResponse(ModelNormal):
 
     def __init__(self_, usage: Union[List[UsageIncidentManagementHour], UnsetType] = unset, **kwargs):
         """
-        Response containing the incident management usage for each hour for a given organization.
+        Response containing the Incident Management usage for each hour for a given organization.
 
-        :param usage: Get hourly usage for incident management.
+        :param usage: Get hourly usage for Incident Management.
         :type usage: [UsageIncidentManagementHour], optional
         """
         if usage is not unset:
