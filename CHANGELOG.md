@@ -1,5 +1,57 @@
 # CHANGELOG
 
+## 2.48.0/2025-12-17
+
+### Changed
+* Mark Incident Impact Endpoints stable [#3016](https://github.com/DataDog/datadog-api-client-python/pull/3016)
+* Vulnerability Management - Update ListVulnerabilities endpoint query params and response schema [#3008](https://github.com/DataDog/datadog-api-client-python/pull/3008)
+* Update specs for AWS account updates and creation for CCM configs [#3001](https://github.com/DataDog/datadog-api-client-python/pull/3001)
+* add suppression version history [#2975](https://github.com/DataDog/datadog-api-client-python/pull/2975)
+* Add Security Finding Ticketing endpoints [#2970](https://github.com/DataDog/datadog-api-client-python/pull/2970)
+* Flatten file_metadata response schema to avoid OneOf unmarshaling issues [#2955](https://github.com/DataDog/datadog-api-client-python/pull/2955)
+* Add processors groups to Observability Pipelines [#2929](https://github.com/DataDog/datadog-api-client-python/pull/2929)
+
+### Added
+* Update security finding triage specs [#3009](https://github.com/DataDog/datadog-api-client-python/pull/3009)
+* Add routes for managing On-Call user notification channels [#3004](https://github.com/DataDog/datadog-api-client-python/pull/3004)
+* Add host field to Post an event V2 API [#3002](https://github.com/DataDog/datadog-api-client-python/pull/3002)
+* Add `GET /api/v2/apm/services` endpoint to public documentation [#2999](https://github.com/DataDog/datadog-api-client-python/pull/2999)
+* Dashboards - Add semantic_mode support to FormulaAndFunctionMetricQueryDefinition [#2993](https://github.com/DataDog/datadog-api-client-python/pull/2993)
+* Cloud SIEM - Add instantaneousBaseline feature parameter. [#2990](https://github.com/DataDog/datadog-api-client-python/pull/2990)
+* Add new fields to usage metering api spec [#2988](https://github.com/DataDog/datadog-api-client-python/pull/2988)
+* update geomap widget definition about `conditional_format` and `text_formats` and view focus [#2981](https://github.com/DataDog/datadog-api-client-python/pull/2981)
+* On-Call Add positioned schedule policy target [#2976](https://github.com/DataDog/datadog-api-client-python/pull/2976)
+* Introduced new APIs to manage team hierarchy links [#2967](https://github.com/DataDog/datadog-api-client-python/pull/2967)
+* Add new endpoint for listing rules for a gate [#2966](https://github.com/DataDog/datadog-api-client-python/pull/2966)
+* Add Row Update Endpoints to Reference Tables API spec [#2956](https://github.com/DataDog/datadog-api-client-python/pull/2956)
+* Add incident management seats  to spec [#2953](https://github.com/DataDog/datadog-api-client-python/pull/2953)
+* Support provisioning teams from external sources [#2952](https://github.com/DataDog/datadog-api-client-python/pull/2952)
+* security_monitoring - Add signalOutput field to ThreatHuntingJobResponseAttributes schema [#2950](https://github.com/DataDog/datadog-api-client-python/pull/2950)
+* Add filter.scope to Monitor Notification Rules [#2947](https://github.com/DataDog/datadog-api-client-python/pull/2947)
+* Allow providing a custom retry policy. [#2946](https://github.com/DataDog/datadog-api-client-python/pull/2946)
+* Add suppression tags [#2939](https://github.com/DataDog/datadog-api-client-python/pull/2939)
+* Add Team Connection API Documentation [#2936](https://github.com/DataDog/datadog-api-client-python/pull/2936)
+* Add Support for Monitor Assets [#2935](https://github.com/DataDog/datadog-api-client-python/pull/2935)
+* Add new summary keys for new standalone billing dimensions [#2934](https://github.com/DataDog/datadog-api-client-python/pull/2934)
+* Add Bits AI Investigations and On-Call to  API specs [#2930](https://github.com/DataDog/datadog-api-client-python/pull/2930)
+* Add `PreviewCatalogEntities` [#2926](https://github.com/DataDog/datadog-api-client-python/pull/2926)
+* Sync 'audience_management.yaml' files with backend [#2921](https://github.com/DataDog/datadog-api-client-python/pull/2921)
+* Add api specs for deployment gates [#2893](https://github.com/DataDog/datadog-api-client-python/pull/2893)
+* Add last_login_time to Users v2 API [#2881](https://github.com/DataDog/datadog-api-client-python/pull/2881)
+* [DELA-208] Adding delegated token authentication in python client [#2860](https://github.com/DataDog/datadog-api-client-python/pull/2860)
+
+### Removed
+* Tag security findings Jira endpoints as unstable [#2997](https://github.com/DataDog/datadog-api-client-python/pull/2997)
+
+### Fixed
+* Add field attribute to the Workload Protection hash action [#2972](https://github.com/DataDog/datadog-api-client-python/pull/2972)
+* obs_pipelines: make google auth optional [#2961](https://github.com/DataDog/datadog-api-client-python/pull/2961)
+* Add 408s to retries to Python API Client [#2945](https://github.com/DataDog/datadog-api-client-python/pull/2945)
+
+### Deprecated
+* [api-spec] Mark PATCH /api/v2/incidents/incident_id/attachments endpoint as deprecated [#2937](https://github.com/DataDog/datadog-api-client-python/pull/2937)
+* [METEXP-2068] Deprecate api/v1/search Endpoint [#2931](https://github.com/DataDog/datadog-api-client-python/pull/2931)
+
 ## 2.47.0/2025-12-08
 
 ### Added
