@@ -5,6 +5,7 @@ Update a RUM retention filter returns "Updated" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+from datadog_api_client.v2.model.rum_retention_filter_sample_rate import RumRetentionFilterSampleRate
 from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RumRetentionFilterUpdateAttributes
 from datadog_api_client.v2.model.rum_retention_filter_update_data import RumRetentionFilterUpdateData
@@ -18,7 +19,7 @@ body = RumRetentionFilterUpdateRequest(
             name="Test updating retention filter",
             event_type=RumRetentionFilterEventType.VIEW,
             query="view_query",
-            sample_rate=100,
+            sample_rate=RumRetentionFilterSampleRate(100.0),
             enabled=True,
         ),
     ),
