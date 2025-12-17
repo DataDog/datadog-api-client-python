@@ -63547,6 +63547,14 @@ paths:
       - $ref: '#/components/parameters/FilterByRelationType'
       - $ref: '#/components/parameters/FilterByExcludeSnapshot'
       - $ref: '#/components/parameters/Include'
+      - description: If true, includes discovered services from APM and USM that do
+          not have entity definitions.
+        in: query
+        name: includeDiscovered
+        required: false
+        schema:
+          default: false
+          type: boolean
       responses:
         '200':
           content:
@@ -63765,6 +63773,13 @@ paths:
       - $ref: '#/components/parameters/FilterRelationByFromRef'
       - $ref: '#/components/parameters/FilterRelationByToRef'
       - $ref: '#/components/parameters/RelationInclude'
+      - description: If true, includes relationships discovered by APM and USM.
+        in: query
+        name: includeDiscovered
+        required: false
+        schema:
+          default: false
+          type: boolean
       responses:
         '200':
           content:
