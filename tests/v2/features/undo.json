@@ -1746,6 +1746,13 @@
       "type": "idempotent"
     }
   },
+  "CreatePageFromIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListIncidentIntegrations": {
     "tag": "Incidents",
     "undo": {
