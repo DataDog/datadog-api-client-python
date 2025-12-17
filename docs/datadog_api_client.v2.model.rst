@@ -22551,6 +22551,41 @@ datadog\_api\_client.v2.model.service\_definitions\_list\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.service\_list module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_list
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_list\_data module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_list_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_list\_data\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_list_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_list\_data\_attributes\_metadata\_items module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_list_data_attributes_metadata_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_list\_data\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_list_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.service\_now\_basic\_auth module
 --------------------------------------------------------------
 

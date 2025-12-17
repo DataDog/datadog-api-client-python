@@ -4528,6 +4528,13 @@ from datadog_api_client.v2.model.service_definition_v2_slack_type import Service
 from datadog_api_client.v2.model.service_definition_v2_version import ServiceDefinitionV2Version
 from datadog_api_client.v2.model.service_definitions_create_request import ServiceDefinitionsCreateRequest
 from datadog_api_client.v2.model.service_definitions_list_response import ServiceDefinitionsListResponse
+from datadog_api_client.v2.model.service_list import ServiceList
+from datadog_api_client.v2.model.service_list_data import ServiceListData
+from datadog_api_client.v2.model.service_list_data_attributes import ServiceListDataAttributes
+from datadog_api_client.v2.model.service_list_data_attributes_metadata_items import (
+    ServiceListDataAttributesMetadataItems,
+)
+from datadog_api_client.v2.model.service_list_data_type import ServiceListDataType
 from datadog_api_client.v2.model.service_now_basic_auth import ServiceNowBasicAuth
 from datadog_api_client.v2.model.service_now_basic_auth_type import ServiceNowBasicAuthType
 from datadog_api_client.v2.model.service_now_basic_auth_update import ServiceNowBasicAuthUpdate
@@ -8332,6 +8339,11 @@ __all__ = [
     "ServiceDefinitionV2Version",
     "ServiceDefinitionsCreateRequest",
     "ServiceDefinitionsListResponse",
+    "ServiceList",
+    "ServiceListData",
+    "ServiceListDataAttributes",
+    "ServiceListDataAttributesMetadataItems",
+    "ServiceListDataType",
     "ServiceNowBasicAuth",
     "ServiceNowBasicAuthType",
     "ServiceNowBasicAuthUpdate",
