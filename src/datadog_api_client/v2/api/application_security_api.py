@@ -31,6 +31,14 @@ from datadog_api_client.v2.model.application_security_waf_exclusion_filter_creat
 from datadog_api_client.v2.model.application_security_waf_exclusion_filter_update_request import (
     ApplicationSecurityWafExclusionFilterUpdateRequest,
 )
+from datadog_api_client.v2.model.application_security_policy_list_response import ApplicationSecurityPolicyListResponse
+from datadog_api_client.v2.model.application_security_policy_response import ApplicationSecurityPolicyResponse
+from datadog_api_client.v2.model.application_security_policy_create_request import (
+    ApplicationSecurityPolicyCreateRequest,
+)
+from datadog_api_client.v2.model.application_security_policy_update_request import (
+    ApplicationSecurityPolicyUpdateRequest,
+)
 
 
 class ApplicationSecurityApi:
@@ -88,6 +96,26 @@ class ApplicationSecurityApi:
             api_client=api_client,
         )
 
+        self._create_application_security_waf_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (ApplicationSecurityPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies",
+                "operation_id": "create_application_security_waf_policy",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApplicationSecurityPolicyCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_application_security_waf_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -125,6 +153,29 @@ class ApplicationSecurityApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "exclusion_filter_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_application_security_waf_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies/{policy_id}",
+                "operation_id": "delete_application_security_waf_policy",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "policy_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "policy_id",
                     "location": "path",
                 },
             },
@@ -180,6 +231,29 @@ class ApplicationSecurityApi:
             api_client=api_client,
         )
 
+        self._get_application_security_waf_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (ApplicationSecurityPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies/{policy_id}",
+                "operation_id": "get_application_security_waf_policy",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "policy_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "policy_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_application_security_waf_custom_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafCustomRuleListResponse,),
@@ -202,6 +276,22 @@ class ApplicationSecurityApi:
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/exclusion_filters",
                 "operation_id": "list_application_security_waf_exclusion_filters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_application_security_waf_policies_endpoint = _Endpoint(
+            settings={
+                "response_type": (ApplicationSecurityPolicyListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies",
+                "operation_id": "list_application_security_waf_policies",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -264,6 +354,32 @@ class ApplicationSecurityApi:
             api_client=api_client,
         )
 
+        self._update_application_security_waf_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (ApplicationSecurityPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies/{policy_id}",
+                "operation_id": "update_application_security_waf_policy",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "policy_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "policy_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApplicationSecurityPolicyUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_application_security_waf_custom_rule(
         self,
         body: ApplicationSecurityWafCustomRuleCreateRequest,
@@ -301,6 +417,23 @@ class ApplicationSecurityApi:
 
         return self._create_application_security_waf_exclusion_filter_endpoint.call_with_http_info(**kwargs)
 
+    def create_application_security_waf_policy(
+        self,
+        body: ApplicationSecurityPolicyCreateRequest,
+    ) -> ApplicationSecurityPolicyResponse:
+        """Create a WAF Policy.
+
+        Create a new WAF policy.
+
+        :param body: The new WAF policy.
+        :type body: ApplicationSecurityPolicyCreateRequest
+        :rtype: ApplicationSecurityPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_application_security_waf_policy_endpoint.call_with_http_info(**kwargs)
+
     def delete_application_security_waf_custom_rule(
         self,
         custom_rule_id: str,
@@ -334,6 +467,23 @@ class ApplicationSecurityApi:
         kwargs["exclusion_filter_id"] = exclusion_filter_id
 
         return self._delete_application_security_waf_exclusion_filter_endpoint.call_with_http_info(**kwargs)
+
+    def delete_application_security_waf_policy(
+        self,
+        policy_id: str,
+    ) -> None:
+        """Delete a WAF Policy.
+
+        Delete a specific WAF policy.
+
+        :param policy_id: The ID of the policy.
+        :type policy_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["policy_id"] = policy_id
+
+        return self._delete_application_security_waf_policy_endpoint.call_with_http_info(**kwargs)
 
     def get_application_security_waf_custom_rule(
         self,
@@ -369,6 +519,23 @@ class ApplicationSecurityApi:
 
         return self._get_application_security_waf_exclusion_filter_endpoint.call_with_http_info(**kwargs)
 
+    def get_application_security_waf_policy(
+        self,
+        policy_id: str,
+    ) -> ApplicationSecurityPolicyResponse:
+        """Get a WAF Policy.
+
+        Retrieve a WAF policy by ID.
+
+        :param policy_id: The ID of the policy.
+        :type policy_id: str
+        :rtype: ApplicationSecurityPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["policy_id"] = policy_id
+
+        return self._get_application_security_waf_policy_endpoint.call_with_http_info(**kwargs)
+
     def list_application_security_waf_custom_rules(
         self,
     ) -> ApplicationSecurityWafCustomRuleListResponse:
@@ -392,6 +559,18 @@ class ApplicationSecurityApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_application_security_waf_exclusion_filters_endpoint.call_with_http_info(**kwargs)
+
+    def list_application_security_waf_policies(
+        self,
+    ) -> ApplicationSecurityPolicyListResponse:
+        """List all WAF policies.
+
+        Retrieve a list of WAF policies.
+
+        :rtype: ApplicationSecurityPolicyListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_application_security_waf_policies_endpoint.call_with_http_info(**kwargs)
 
     def update_application_security_waf_custom_rule(
         self,
@@ -438,3 +617,26 @@ class ApplicationSecurityApi:
         kwargs["body"] = body
 
         return self._update_application_security_waf_exclusion_filter_endpoint.call_with_http_info(**kwargs)
+
+    def update_application_security_waf_policy(
+        self,
+        policy_id: str,
+        body: ApplicationSecurityPolicyUpdateRequest,
+    ) -> ApplicationSecurityPolicyResponse:
+        """Update a WAF Policy.
+
+        Update a specific WAF policy.
+        Returns the Policy object when the request is successful.
+
+        :param policy_id: The ID of the policy.
+        :type policy_id: str
+        :param body: New WAF Policy.
+        :type body: ApplicationSecurityPolicyUpdateRequest
+        :rtype: ApplicationSecurityPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["policy_id"] = policy_id
+
+        kwargs["body"] = body
+
+        return self._update_application_security_waf_policy_endpoint.call_with_http_info(**kwargs)
