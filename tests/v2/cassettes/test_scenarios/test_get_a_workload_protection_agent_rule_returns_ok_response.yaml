@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testgetaworkloadprotectionagentrulereturnsokresponse1760109670"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testgetaworkloadprotectionagentrulereturnsokresponse1765469379"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"03k-bzr-nas","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testgetaworkloadprotectionagentrulereturnsokresponse1760109670","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109671322,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"yos-skc-lxw","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testgetaworkloadprotectionagentrulereturnsokresponse1765469379","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1765469379913,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -20,7 +20,7 @@ interactions:
       message: OK
 - request:
     body: '{"data":{"attributes":{"actions":[{"set":{"name":"test_set","scope":"process","value":"test_value"}},{"hash":{}}],"description":"My
-      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testgetaworkloadprotectionagentrulereturnsokresponse1760109670","policy_id":"03k-bzr-nas","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
+      Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","name":"testgetaworkloadprotectionagentrulereturnsokresponse1765469379","policy_id":"yos-skc-lxw","product_tags":["security:attack","technique:T1059"]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -30,10 +30,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"data":{"id":"ftd-agj-4eh","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process","inherited":false},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
-        Activity","creationDate":1760109672543,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"5dm-ng6-nh7","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
+        Activity","creationDate":1765469380630,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"monitoring":["03k-bzr-nas"],"name":"testgetaworkloadprotectionagentrulereturnsokresponse1760109670","product_tags":["security:attack","technique:T1059"],"updateDate":1760109672543,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["yos-skc-lxw"],"name":"testgetaworkloadprotectionagentrulereturnsokresponse1765469379","product_tags":["security:attack","technique:T1059"],"updateDate":1765469380630,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -46,13 +46,13 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/ftd-agj-4eh?policy_id=03k-bzr-nas
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/5dm-ng6-nh7?policy_id=yos-skc-lxw
   response:
     body:
-      string: '{"data":{"id":"ftd-agj-4eh","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process","inherited":false},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
-        Activity","creationDate":1760109672543,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
+      string: '{"data":{"id":"5dm-ng6-nh7","type":"agent_rule","attributes":{"actions":[{"set":{"name":"test_set","value":"test_value","scope":"process"},"disabled":false},{"hash":{},"disabled":false}],"category":"Process
+        Activity","creationDate":1765469380630,"creator":{"name":"frog","handle":"frog@datadoghq.com"},"defaultRule":false,"description":"My
         Agent rule","enabled":true,"expression":"exec.file.name == \"sh\"","filters":["os
-        == \"linux\""],"monitoring":["03k-bzr-nas"],"name":"testgetaworkloadprotectionagentrulereturnsokresponse1760109670","product_tags":["security:attack","technique:T1059"],"updateDate":1760109672543,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+        == \"linux\""],"monitoring":["yos-skc-lxw"],"name":"testgetaworkloadprotectionagentrulereturnsokresponse1765469379","product_tags":["security:attack","technique:T1059"],"updateDate":1765469380630,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -65,7 +65,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/ftd-agj-4eh
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules/5dm-ng6-nh7
   response:
     body:
       string: ''
@@ -81,7 +81,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/03k-bzr-nas
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/yos-skc-lxw
   response:
     body:
       string: ''

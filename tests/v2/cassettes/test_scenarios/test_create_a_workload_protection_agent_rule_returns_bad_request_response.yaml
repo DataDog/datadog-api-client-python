@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1760109639"},"type":"policy"}}'
+    body: '{"data":{"attributes":{"description":"My agent policy","enabled":true,"hostTags":["env:staging"],"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1765469352"},"type":"policy"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy
   response:
     body:
-      string: '{"data":{"id":"sr5-i0h-lty","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
-        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1760109639","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1760109639958,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
+      string: '{"data":{"id":"0w7-waz-oev","type":"policy","attributes":{"blockingRulesCount":0,"datadogManaged":false,"description":"My
+        agent policy","disabledRulesCount":1,"enabled":true,"hostTagsLists":[["env:staging"]],"monitoringRulesCount":7,"name":"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1765469352","pinned":false,"policyVersion":"1","ruleCount":8,"updateDate":1765469353329,"updater":{"name":"frog","handle":"frog@datadoghq.com"}}}}'
     headers:
       content-type:
       - application/json
@@ -19,7 +19,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name","filters":[],"name":"my_agent_rule","policy_id":"sr5-i0h-lty","product_tags":[]},"type":"agent_rule"}}'
+    body: '{"data":{"attributes":{"description":"My Agent rule","enabled":true,"expression":"exec.file.name","filters":[],"name":"my_agent_rule","policy_id":"0w7-waz-oev","product_tags":[]},"type":"agent_rule"}}'
     headers:
       accept:
       - application/json
@@ -29,8 +29,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/agent_rules
   response:
     body:
-      string: '{"errors":["input_validation_error(Field ''name'' is invalid: the name
-        ''my_agent_rule'' is already used by a custom rule)"]}'
+      string: '{"errors":["input_validation_error(Field ''expression'' is invalid:
+        rule `my_agent_rule` error: rule syntax error: bool expected: 1:1: exec.file.name\n^)"]}'
     headers:
       content-type:
       - application/json
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/sr5-i0h-lty
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/cws/policy/0w7-waz-oev
   response:
     body:
       string: ''

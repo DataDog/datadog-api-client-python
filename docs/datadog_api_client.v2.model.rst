@@ -4071,6 +4071,13 @@ datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_rule\_action\_se
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_rule\_action\_set\_value module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_set_value
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_rule\_attributes module
 ---------------------------------------------------------------------------------------
 

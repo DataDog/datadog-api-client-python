@@ -46,7 +46,9 @@ body = CloudWorkloadSecurityAgentRuleCreateRequest(
                     ),
                 ),
                 CloudWorkloadSecurityAgentRuleAction(
-                    hash=CloudWorkloadSecurityAgentRuleActionHash(),
+                    hash=CloudWorkloadSecurityAgentRuleActionHash(
+                        field="exec.file",
+                    ),
                 ),
             ],
         ),
