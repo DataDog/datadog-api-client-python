@@ -18,7 +18,6 @@ body = TeamConnectionDeleteRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["delete_team_connections"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     api_instance.delete_team_connections(body=body)

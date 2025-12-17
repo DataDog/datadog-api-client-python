@@ -125,8 +125,7 @@ Feature: Teams
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Create team connections returns "Conflict" response
-    Given operation "CreateTeamConnections" enabled
-    And new "CreateTeamConnections" request
+    Given new "CreateTeamConnections" request
     And body with value {"data": [{"attributes": {"managed_by": "github_sync", "source": "github"}, "relationships": {"connected_team": {"data": {"id": "@GitHubOrg/team-handle", "type": "github_team"}}, "team": {"data": {"id": "87654321-4321-8765-dcba-210987654321", "type": "team"}}}, "type": "team_connection"}]}
     When the request is sent
     Then the response status is 409 Conflict
@@ -155,16 +154,14 @@ Feature: Teams
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Delete team connections returns "No Content" response
-    Given operation "DeleteTeamConnections" enabled
-    And new "DeleteTeamConnections" request
+    Given new "DeleteTeamConnections" request
     And body with value {"data": [{"id": "12345678-1234-5678-9abc-123456789012", "type": "team_connection"}]}
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Delete team connections returns "Not Found" response
-    Given operation "DeleteTeamConnections" enabled
-    And new "DeleteTeamConnections" request
+    Given new "DeleteTeamConnections" request
     And body with value {"data": [{"id": "12345678-1234-5678-9abc-123456789012", "type": "team_connection"}]}
     When the request is sent
     Then the response status is 404 Not Found
@@ -357,16 +354,14 @@ Feature: Teams
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Get team sync configurations returns "OK" response
-    Given operation "GetTeamSync" enabled
-    And new "GetTeamSync" request
+    Given new "GetTeamSync" request
     And request contains "filter[source]" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Get team sync configurations returns "Team sync configurations not found" response
-    Given operation "GetTeamSync" enabled
-    And new "GetTeamSync" request
+    Given new "GetTeamSync" request
     And request contains "filter[source]" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Team sync configurations not found
@@ -389,30 +384,26 @@ Feature: Teams
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Link Teams with GitHub Teams returns "OK" response
-    Given operation "SyncTeams" enabled
-    And new "SyncTeams" request
+    Given new "SyncTeams" request
     And body with value {"data": {"attributes": {"source": "github", "type": "link"}, "type": "team_sync_bulk"}}
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: List team connections returns "Bad Request" response
-    Given operation "ListTeamConnections" enabled
-    And new "ListTeamConnections" request
+    Given new "ListTeamConnections" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: List team connections returns "OK" response
-    Given operation "ListTeamConnections" enabled
-    And new "ListTeamConnections" request
+    Given new "ListTeamConnections" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/aaa-omg @with-pagination
   Scenario: List team connections returns "OK" response with pagination
-    Given operation "ListTeamConnections" enabled
-    And new "ListTeamConnections" request
+    Given new "ListTeamConnections" request
     When the request with pagination is sent
     Then the response status is 200 OK
 
@@ -515,7 +506,6 @@ Feature: Teams
   @replay-only @team:DataDog/aaa-omg
   Scenario: Sync teams returns "OK" response
     Given new "SyncTeams" request
-    And operation "SyncTeams" enabled
     And body with value {"data": {"attributes": {"source": "github", "type": "link"}, "type": "team_sync_bulk"}}
     When the request is sent
     Then the response status is 200 OK
