@@ -21032,6 +21032,34 @@ datadog\_api\_client.v2.model.security\_monitoring\_reference\_table module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_anomaly\_detection\_options module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_anomaly\_detection\_options\_bucket\_duration module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_bucket_duration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_anomaly\_detection\_options\_detection\_tolerance module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_detection_tolerance
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_anomaly\_detection\_options\_learning\_duration module
+----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_learning_duration
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_case module
 ---------------------------------------------------------------------
 
