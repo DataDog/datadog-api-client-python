@@ -2464,6 +2464,7 @@ from datadog_api_client.v2.model.list_relation_catalog_response_links import Lis
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
+from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
 from datadog_api_client.v2.model.list_tags_response_data_attributes import ListTagsResponseDataAttributes
@@ -4167,6 +4168,20 @@ from datadog_api_client.v2.model.security_filter_update_attributes import Securi
 from datadog_api_client.v2.model.security_filter_update_data import SecurityFilterUpdateData
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
+from datadog_api_client.v2.model.security_findings_attributes import SecurityFindingsAttributes
+from datadog_api_client.v2.model.security_findings_data import SecurityFindingsData
+from datadog_api_client.v2.model.security_findings_data_type import SecurityFindingsDataType
+from datadog_api_client.v2.model.security_findings_links import SecurityFindingsLinks
+from datadog_api_client.v2.model.security_findings_meta import SecurityFindingsMeta
+from datadog_api_client.v2.model.security_findings_page import SecurityFindingsPage
+from datadog_api_client.v2.model.security_findings_search_request import SecurityFindingsSearchRequest
+from datadog_api_client.v2.model.security_findings_search_request_data import SecurityFindingsSearchRequestData
+from datadog_api_client.v2.model.security_findings_search_request_data_attributes import (
+    SecurityFindingsSearchRequestDataAttributes,
+)
+from datadog_api_client.v2.model.security_findings_search_request_page import SecurityFindingsSearchRequestPage
+from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
+from datadog_api_client.v2.model.security_findings_status import SecurityFindingsStatus
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
@@ -7000,6 +7015,7 @@ __all__ = [
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
+    "ListSecurityFindingsResponse",
     "ListTagsResponse",
     "ListTagsResponseData",
     "ListTagsResponseDataAttributes",
@@ -8129,6 +8145,18 @@ __all__ = [
     "SecurityFilterUpdateData",
     "SecurityFilterUpdateRequest",
     "SecurityFiltersResponse",
+    "SecurityFindingsAttributes",
+    "SecurityFindingsData",
+    "SecurityFindingsDataType",
+    "SecurityFindingsLinks",
+    "SecurityFindingsMeta",
+    "SecurityFindingsPage",
+    "SecurityFindingsSearchRequest",
+    "SecurityFindingsSearchRequestData",
+    "SecurityFindingsSearchRequestDataAttributes",
+    "SecurityFindingsSearchRequestPage",
+    "SecurityFindingsSort",
+    "SecurityFindingsStatus",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",

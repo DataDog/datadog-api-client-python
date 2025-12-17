@@ -1321,6 +1321,32 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
+  Scenario: List security findings returns "Bad Request" response
+    Given operation "ListSecurityFindings" enabled
+    And new "ListSecurityFindings" request
+    And request contains "page[cursor]" parameter with value "invalid_cursor"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
+  Scenario: List security findings returns "OK" response
+    Given operation "ListSecurityFindings" enabled
+    And new "ListSecurityFindings" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
+  Scenario: List security findings returns "OK" response with pagination
+    Given operation "ListSecurityFindings" enabled
+    And new "ListSecurityFindings" request
+    And request contains "page[limit]" parameter with value 5
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 5
+    And the response "meta.page" has field "after"
+    And the response "links" has field "next"
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: List threat hunting jobs returns "Bad Request" response
     Given operation "ListThreatHuntingJobs" enabled
@@ -1573,6 +1599,33 @@ Feature: Security Monitoring
     And body with value {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
+  Scenario: Search security findings returns "Bad Request" response
+    Given operation "SearchSecurityFindings" enabled
+    And new "SearchSecurityFindings" request
+    And body with value {"page": {"cursor": "invalid_cursor"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
+  Scenario: Search security findings returns "OK" response
+    Given operation "SearchSecurityFindings" enabled
+    And new "SearchSecurityFindings" request
+    And body with value {"data": {"attributes": {"filter": "@severity:(critical OR high)"}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform @with-pagination
+  Scenario: Search security findings returns "OK" response with pagination
+    Given operation "SearchSecurityFindings" enabled
+    And new "SearchSecurityFindings" request
+    And body with value {"data": {"attributes": {"filter": "@severity:(critical OR high)", "page": {"limit": 1}}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "meta.page" has field "after"
+    And the response "links" has field "next"
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Test a rule returns "Bad Request" response
