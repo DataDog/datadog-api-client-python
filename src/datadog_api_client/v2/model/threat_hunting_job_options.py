@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
+        SecurityMonitoringRuleAnomalyDetectionOptions,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
         SecurityMonitoringRuleDetectionMethod,
     )
@@ -41,6 +44,9 @@ if TYPE_CHECKING:
 class ThreatHuntingJobOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
+            SecurityMonitoringRuleAnomalyDetectionOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
             SecurityMonitoringRuleDetectionMethod,
         )
@@ -65,6 +71,7 @@ class ThreatHuntingJobOptions(ModelNormal):
         )
 
         return {
+            "anomaly_detection_options": (SecurityMonitoringRuleAnomalyDetectionOptions,),
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
             "evaluation_window": (SecurityMonitoringRuleEvaluationWindow,),
             "impossible_travel_options": (SecurityMonitoringRuleImpossibleTravelOptions,),
@@ -76,6 +83,7 @@ class ThreatHuntingJobOptions(ModelNormal):
         }
 
     attribute_map = {
+        "anomaly_detection_options": "anomalyDetectionOptions",
         "detection_method": "detectionMethod",
         "evaluation_window": "evaluationWindow",
         "impossible_travel_options": "impossibleTravelOptions",
@@ -88,6 +96,7 @@ class ThreatHuntingJobOptions(ModelNormal):
 
     def __init__(
         self_,
+        anomaly_detection_options: Union[SecurityMonitoringRuleAnomalyDetectionOptions, UnsetType] = unset,
         detection_method: Union[SecurityMonitoringRuleDetectionMethod, UnsetType] = unset,
         evaluation_window: Union[SecurityMonitoringRuleEvaluationWindow, UnsetType] = unset,
         impossible_travel_options: Union[SecurityMonitoringRuleImpossibleTravelOptions, UnsetType] = unset,
@@ -100,6 +109,9 @@ class ThreatHuntingJobOptions(ModelNormal):
     ):
         """
         Job options.
+
+        :param anomaly_detection_options: Options on anomaly detection method.
+        :type anomaly_detection_options: SecurityMonitoringRuleAnomalyDetectionOptions, optional
 
         :param detection_method: The detection method.
         :type detection_method: SecurityMonitoringRuleDetectionMethod, optional
@@ -128,6 +140,8 @@ class ThreatHuntingJobOptions(ModelNormal):
         :param third_party_rule_options: Options on third party detection method.
         :type third_party_rule_options: SecurityMonitoringRuleThirdPartyOptions, optional
         """
+        if anomaly_detection_options is not unset:
+            kwargs["anomaly_detection_options"] = anomaly_detection_options
         if detection_method is not unset:
             kwargs["detection_method"] = detection_method
         if evaluation_window is not unset:

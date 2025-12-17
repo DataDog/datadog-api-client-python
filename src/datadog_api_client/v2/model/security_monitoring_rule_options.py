@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
+        SecurityMonitoringRuleAnomalyDetectionOptions,
+    )
     from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
         CloudConfigurationComplianceRuleOptions,
     )
@@ -47,6 +50,9 @@ if TYPE_CHECKING:
 class SecurityMonitoringRuleOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
+            SecurityMonitoringRuleAnomalyDetectionOptions,
+        )
         from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
             CloudConfigurationComplianceRuleOptions,
         )
@@ -77,6 +83,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         )
 
         return {
+            "anomaly_detection_options": (SecurityMonitoringRuleAnomalyDetectionOptions,),
             "compliance_rule_options": (CloudConfigurationComplianceRuleOptions,),
             "decrease_criticality_based_on_env": (bool,),
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
@@ -91,6 +98,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         }
 
     attribute_map = {
+        "anomaly_detection_options": "anomalyDetectionOptions",
         "compliance_rule_options": "complianceRuleOptions",
         "decrease_criticality_based_on_env": "decreaseCriticalityBasedOnEnv",
         "detection_method": "detectionMethod",
@@ -106,6 +114,7 @@ class SecurityMonitoringRuleOptions(ModelNormal):
 
     def __init__(
         self_,
+        anomaly_detection_options: Union[SecurityMonitoringRuleAnomalyDetectionOptions, UnsetType] = unset,
         compliance_rule_options: Union[CloudConfigurationComplianceRuleOptions, UnsetType] = unset,
         decrease_criticality_based_on_env: Union[bool, UnsetType] = unset,
         detection_method: Union[SecurityMonitoringRuleDetectionMethod, UnsetType] = unset,
@@ -121,6 +130,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
     ):
         """
         Options.
+
+        :param anomaly_detection_options: Options on anomaly detection method.
+        :type anomaly_detection_options: SecurityMonitoringRuleAnomalyDetectionOptions, optional
 
         :param compliance_rule_options: Options for cloud_configuration rules.
             Fields ``resourceType`` and ``regoRule`` are mandatory when managing custom ``cloud_configuration`` rules.
@@ -161,6 +173,8 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param third_party_rule_options: Options on third party detection method.
         :type third_party_rule_options: SecurityMonitoringRuleThirdPartyOptions, optional
         """
+        if anomaly_detection_options is not unset:
+            kwargs["anomaly_detection_options"] = anomaly_detection_options
         if compliance_rule_options is not unset:
             kwargs["compliance_rule_options"] = compliance_rule_options
         if decrease_criticality_based_on_env is not unset:

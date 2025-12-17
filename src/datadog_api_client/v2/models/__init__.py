@@ -4171,6 +4171,18 @@ from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonit
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
+from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
+    SecurityMonitoringRuleAnomalyDetectionOptions,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_bucket_duration import (
+    SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_detection_tolerance import (
+    SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_learning_duration import (
+    SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
 from datadog_api_client.v2.model.security_monitoring_rule_case_action import SecurityMonitoringRuleCaseAction
 from datadog_api_client.v2.model.security_monitoring_rule_case_action_options import (
@@ -8121,6 +8133,10 @@ __all__ = [
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",
     "SecurityMonitoringReferenceTable",
+    "SecurityMonitoringRuleAnomalyDetectionOptions",
+    "SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration",
+    "SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance",
+    "SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration",
     "SecurityMonitoringRuleCase",
     "SecurityMonitoringRuleCaseAction",
     "SecurityMonitoringRuleCaseActionOptions",
