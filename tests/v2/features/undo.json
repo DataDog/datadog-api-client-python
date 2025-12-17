@@ -516,6 +516,12 @@
       "type": "idempotent"
     }
   },
+  "GetServiceList": {
+    "tag": "APM",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteApps": {
     "tag": "App Builder",
     "undo": {
