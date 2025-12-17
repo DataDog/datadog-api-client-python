@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"cases":[{"condition":"a > 0.995","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"An
+      anomaly detection rule","name":"Test-Create_a_detection_rule_with_detection_method_anomaly_detection_returns_OK_response-1765898340","options":{"anomalyDetectionOptions":{"bucketDuration":300,"detectionTolerance":3,"learningDuration":24,"learningPeriodBaseline":10},"detectionMethod":"anomaly_detection","evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","dataSource":"logs","distinctFields":[],"groupByFields":["@usr.email","@network.client.ip"],"hasOptionalGroupByFields":false,"name":"","query":"service:app
+      status:error"}],"tags":[],"type":"log_detection"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"name":"Test-Create_a_detection_rule_with_detection_method_anomaly_detection_returns_OK_response-1765898340","createdAt":1765898340611,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"service:app
+        status:error","groupByFields":["@usr.email","@network.client.ip"],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"logs"}],"options":{"evaluationWindow":1800,"detectionMethod":"anomaly_detection","maxSignalDuration":86400,"keepAlive":3600,"anomalyDetectionOptions":{"bucketDuration":300,"learningDuration":24,"detectionTolerance":3,"instantaneousBaseline":false,"instantaneousBaselineTimeoutMinutes":30,"learningPeriodBaseline":10}},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0.995"}],"message":"An anomaly detection rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"0vk-kph-3ri","blocking":false,"metadata":{"entities":null,"sources":null},"creationAuthorId":1445416,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"updater":{"handle":"","name":""}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/0vk-kph-3ri
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
