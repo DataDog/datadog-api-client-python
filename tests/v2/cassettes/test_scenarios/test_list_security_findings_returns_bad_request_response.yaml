@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/findings?page%5Bcursor%5D=invalid_cursor
+  response:
+    body:
+      string: '{"errors":[{"status":"400","detail":"Invalid filters"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

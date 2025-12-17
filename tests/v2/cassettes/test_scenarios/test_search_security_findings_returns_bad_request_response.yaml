@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"page":{"cursor":"invalid_cursor"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/search
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"document
+        is missing required top-level members; must have one of: \"data\", \"meta\",
+        \"errors\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
