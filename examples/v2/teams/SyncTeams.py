@@ -22,7 +22,6 @@ body = TeamSyncRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["sync_teams"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     api_instance.sync_teams(body=body)
