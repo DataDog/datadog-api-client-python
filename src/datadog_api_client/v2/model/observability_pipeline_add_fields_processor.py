@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -27,6 +29,7 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         )
 
         return {
+            "display_name": (str,),
             "enabled": (bool,),
             "fields": ([ObservabilityPipelineFieldValue],),
             "id": (str,),
@@ -35,6 +38,7 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "display_name": "display_name",
         "enabled": "enabled",
         "fields": "fields",
         "id": "id",
@@ -49,10 +53,14 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         id: str,
         include: str,
         type: ObservabilityPipelineAddFieldsProcessorType,
+        display_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``add_fields`` processor adds static key-value fields to logs.
+
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
 
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
@@ -69,6 +77,8 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``add_fields``.
         :type type: ObservabilityPipelineAddFieldsProcessorType
         """
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         super().__init__(kwargs)
 
         self_.enabled = enabled

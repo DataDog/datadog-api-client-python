@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -25,6 +27,7 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         )
 
         return {
+            "display_name": (str,),
             "enabled": (bool,),
             "id": (str,),
             "include": (str,),
@@ -32,15 +35,27 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "display_name": "display_name",
         "enabled": "enabled",
         "id": "id",
         "include": "include",
         "type": "type",
     }
 
-    def __init__(self_, enabled: bool, id: str, include: str, type: ObservabilityPipelineFilterProcessorType, **kwargs):
+    def __init__(
+        self_,
+        enabled: bool,
+        id: str,
+        include: str,
+        type: ObservabilityPipelineFilterProcessorType,
+        display_name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The ``filter`` processor allows conditional processing of logs based on a Datadog search query. Logs that match the ``include`` query are passed through; others are discarded.
+
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
 
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
@@ -54,6 +69,8 @@ class ObservabilityPipelineFilterProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``filter``.
         :type type: ObservabilityPipelineFilterProcessorType
         """
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         super().__init__(kwargs)
 
         self_.enabled = enabled

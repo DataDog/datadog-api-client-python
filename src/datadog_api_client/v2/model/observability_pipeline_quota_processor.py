@@ -45,6 +45,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         )
 
         return {
+            "display_name": (str,),
             "drop_events": (bool,),
             "enabled": (bool,),
             "id": (str,),
@@ -59,6 +60,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "display_name": "display_name",
         "drop_events": "drop_events",
         "enabled": "enabled",
         "id": "id",
@@ -80,6 +82,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         limit: ObservabilityPipelineQuotaProcessorLimit,
         name: str,
         type: ObservabilityPipelineQuotaProcessorType,
+        display_name: Union[str, UnsetType] = unset,
         drop_events: Union[bool, UnsetType] = unset,
         ignore_when_missing_partitions: Union[bool, UnsetType] = unset,
         overflow_action: Union[ObservabilityPipelineQuotaProcessorOverflowAction, UnsetType] = unset,
@@ -89,6 +92,9 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
     ):
         """
         The Quota Processor measures logging traffic for logs that match a specified filter. When the configured daily quota is met, the processor can drop or alert.
+
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
 
         :param drop_events: If set to ``true`` , logs that matched the quota filter and sent after the quota has been met are dropped; only logs that did not match the filter query continue through the pipeline.
         :type drop_events: bool, optional
@@ -127,6 +133,8 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``quota``.
         :type type: ObservabilityPipelineQuotaProcessorType
         """
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         if drop_events is not unset:
             kwargs["drop_events"] = drop_events
         if ignore_when_missing_partitions is not unset:

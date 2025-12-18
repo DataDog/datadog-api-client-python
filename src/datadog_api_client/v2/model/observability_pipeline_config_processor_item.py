@@ -15,6 +15,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         """
         A processor for the pipeline.
 
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
+
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
 

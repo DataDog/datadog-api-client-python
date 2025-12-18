@@ -33,6 +33,7 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         )
 
         return {
+            "display_name": (str,),
             "enabled": (bool,),
             "id": (str,),
             "include": (str,),
@@ -42,6 +43,7 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "display_name": "display_name",
         "enabled": "enabled",
         "id": "id",
         "include": "include",
@@ -56,12 +58,16 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         id: str,
         include: str,
         type: ObservabilityPipelineSampleProcessorType,
+        display_name: Union[str, UnsetType] = unset,
         percentage: Union[float, UnsetType] = unset,
         rate: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``sample`` processor allows probabilistic sampling of logs at a fixed rate.
+
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
 
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
@@ -81,6 +87,8 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``sample``.
         :type type: ObservabilityPipelineSampleProcessorType
         """
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         if percentage is not unset:
             kwargs["percentage"] = percentage
         if rate is not unset:
