@@ -199,6 +199,7 @@ from datadog_api_client.v1.model.http_log_item import HTTPLogItem
 from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
 from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
 from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
+from datadog_api_client.v1.model.heat_map_widget_x_axis import HeatMapWidgetXAxis
 from datadog_api_client.v1.model.host import Host
 from datadog_api_client.v1.model.host_list_response import HostListResponse
 from datadog_api_client.v1.model.host_map_request import HostMapRequest
@@ -1290,6 +1291,7 @@ __all__ = [
     "HeatMapWidgetDefinition",
     "HeatMapWidgetDefinitionType",
     "HeatMapWidgetRequest",
+    "HeatMapWidgetXAxis",
     "Host",
     "HostListResponse",
     "HostMapRequest",
