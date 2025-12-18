@@ -802,6 +802,22 @@
   {
     "parameters": [
       {
+        "name": "user_id",
+        "source": "user.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"notification_rules\",\n    \"attributes\": {\n      \"delay_minutes\": 0,\n      \"category\": \"high_urgency\"\n    },\n    \"relationships\": {\n      \"channel\": {\n        \"data\": {\n          \"id\": \"{{ oncall_email_notification_channel.data.id }}\",\n          \"type\": \"notification_channels\"\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"oncall_email_notification_rule\" in the system",
+    "key": "oncall_email_notification_rule",
+    "tag": "On-Call",
+    "operationId": "CreateUserNotificationRule"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "origin": "request",
         "value": "{\n  \"data\": {\n    \"type\": \"org_connection\",\n    \"relationships\": {\n      \"sink_org\": {\n        \"data\": {\n          \"type\": \"orgs\",\n          \"id\": \"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\"\n        }\n      }\n    },\n    \"attributes\": {\n      \"connection_types\": [\"logs\"]\n    }\n  }\n}"

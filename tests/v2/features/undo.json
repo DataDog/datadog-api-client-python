@@ -2964,6 +2964,36 @@
       "type": "safe"
     }
   },
+  "ListUserNotificationRules": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateUserNotificationRule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteUserNotificationRule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetUserNotificationRule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateUserNotificationRule": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {
