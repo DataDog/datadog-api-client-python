@@ -95,6 +95,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "lambda_traced_invocations_usage": (float,),
             "llm_observability_percentage": (float,),
             "llm_observability_usage": (float,),
+            "llm_spans_percentage": (float,),
+            "llm_spans_usage": (float,),
             "logs_indexed_15day_percentage": (float,),
             "logs_indexed_15day_usage": (float,),
             "logs_indexed_180day_percentage": (float,),
@@ -250,6 +252,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "lambda_traced_invocations_usage": "lambda_traced_invocations_usage",
         "llm_observability_percentage": "llm_observability_percentage",
         "llm_observability_usage": "llm_observability_usage",
+        "llm_spans_percentage": "llm_spans_percentage",
+        "llm_spans_usage": "llm_spans_usage",
         "logs_indexed_15day_percentage": "logs_indexed_15day_percentage",
         "logs_indexed_15day_usage": "logs_indexed_15day_usage",
         "logs_indexed_180day_percentage": "logs_indexed_180day_percentage",
@@ -406,6 +410,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         lambda_traced_invocations_usage: Union[float, UnsetType] = unset,
         llm_observability_percentage: Union[float, UnsetType] = unset,
         llm_observability_usage: Union[float, UnsetType] = unset,
+        llm_spans_percentage: Union[float, UnsetType] = unset,
+        llm_spans_usage: Union[float, UnsetType] = unset,
         logs_indexed_15day_percentage: Union[float, UnsetType] = unset,
         logs_indexed_15day_usage: Union[float, UnsetType] = unset,
         logs_indexed_180day_percentage: Union[float, UnsetType] = unset,
@@ -719,6 +725,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param llm_observability_usage: The LLM Observability usage by tag(s).
         :type llm_observability_usage: float, optional
+
+        :param llm_spans_percentage: The percentage of LLM Spans usage by tag(s).
+        :type llm_spans_percentage: float, optional
+
+        :param llm_spans_usage: The LLM Spans usage by tag(s).
+        :type llm_spans_usage: float, optional
 
         :param logs_indexed_15day_percentage: The percentage of Indexed Logs (15-day Retention) usage by tag(s).
         :type logs_indexed_15day_percentage: float, optional
@@ -1100,6 +1112,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["llm_observability_percentage"] = llm_observability_percentage
         if llm_observability_usage is not unset:
             kwargs["llm_observability_usage"] = llm_observability_usage
+        if llm_spans_percentage is not unset:
+            kwargs["llm_spans_percentage"] = llm_spans_percentage
+        if llm_spans_usage is not unset:
+            kwargs["llm_spans_usage"] = llm_spans_usage
         if logs_indexed_15day_percentage is not unset:
             kwargs["logs_indexed_15day_percentage"] = logs_indexed_15day_percentage
         if logs_indexed_15day_usage is not unset:
