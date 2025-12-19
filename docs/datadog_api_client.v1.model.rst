@@ -634,13 +634,6 @@ datadog\_api\_client.v1.model.distribution\_widget\_histogram\_request\_query mo
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.distribution\_widget\_histogram\_request\_type module
------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.distribution_widget_histogram_request_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v1.model.distribution\_widget\_request module
 ------------------------------------------------------------------
 
@@ -1149,6 +1142,13 @@ datadog\_api\_client.v1.model.heat\_map\_widget\_request module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.heat_map_widget_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.heat\_map\_widget\_x\_axis module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.heat_map_widget_x_axis
    :members:
    :show-inheritance:
 
@@ -6518,6 +6518,13 @@ datadog\_api\_client.v1.model.widget\_grouping module
 -----------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.widget_grouping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_histogram\_request\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_histogram_request_type
    :members:
    :show-inheritance:
 

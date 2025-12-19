@@ -90,9 +90,6 @@ from datadog_api_client.v1.model.distribution_widget_definition_type import Dist
 from datadog_api_client.v1.model.distribution_widget_histogram_request_query import (
     DistributionWidgetHistogramRequestQuery,
 )
-from datadog_api_client.v1.model.distribution_widget_histogram_request_type import (
-    DistributionWidgetHistogramRequestType,
-)
 from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
 from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
 from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
@@ -199,6 +196,7 @@ from datadog_api_client.v1.model.http_log_item import HTTPLogItem
 from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
 from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
 from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
+from datadog_api_client.v1.model.heat_map_widget_x_axis import HeatMapWidgetXAxis
 from datadog_api_client.v1.model.host import Host
 from datadog_api_client.v1.model.host_list_response import HostListResponse
 from datadog_api_client.v1.model.host_map_request import HostMapRequest
@@ -1084,6 +1082,7 @@ from datadog_api_client.v1.model.widget_formula_sort import WidgetFormulaSort
 from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 from datadog_api_client.v1.model.widget_group_sort import WidgetGroupSort
 from datadog_api_client.v1.model.widget_grouping import WidgetGrouping
+from datadog_api_client.v1.model.widget_histogram_request_type import WidgetHistogramRequestType
 from datadog_api_client.v1.model.widget_horizontal_align import WidgetHorizontalAlign
 from datadog_api_client.v1.model.widget_image_sizing import WidgetImageSizing
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
@@ -1213,7 +1212,6 @@ __all__ = [
     "DistributionWidgetDefinition",
     "DistributionWidgetDefinitionType",
     "DistributionWidgetHistogramRequestQuery",
-    "DistributionWidgetHistogramRequestType",
     "DistributionWidgetRequest",
     "DistributionWidgetXAxis",
     "DistributionWidgetYAxis",
@@ -1290,6 +1288,7 @@ __all__ = [
     "HeatMapWidgetDefinition",
     "HeatMapWidgetDefinitionType",
     "HeatMapWidgetRequest",
+    "HeatMapWidgetXAxis",
     "Host",
     "HostListResponse",
     "HostMapRequest",
@@ -2055,6 +2054,7 @@ __all__ = [
     "WidgetFormulaStyle",
     "WidgetGroupSort",
     "WidgetGrouping",
+    "WidgetHistogramRequestType",
     "WidgetHorizontalAlign",
     "WidgetImageSizing",
     "WidgetLayout",

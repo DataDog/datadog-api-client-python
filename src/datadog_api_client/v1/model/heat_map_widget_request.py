@@ -19,6 +19,10 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+    from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+        FormulaAndFunctionMetricQueryDefinition,
+    )
+    from datadog_api_client.v1.model.widget_histogram_request_type import WidgetHistogramRequestType
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
     from datadog_api_client.v1.model.widget_style import WidgetStyle
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
@@ -52,6 +56,10 @@ class HeatMapWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.widget_formula import WidgetFormula
         from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
+        from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
+            FormulaAndFunctionMetricQueryDefinition,
+        )
+        from datadog_api_client.v1.model.widget_histogram_request_type import WidgetHistogramRequestType
         from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
         from datadog_api_client.v1.model.widget_style import WidgetStyle
 
@@ -65,6 +73,8 @@ class HeatMapWidgetRequest(ModelNormal):
             "profile_metrics_query": (LogQueryDefinition,),
             "q": (str,),
             "queries": ([FormulaAndFunctionQueryDefinition],),
+            "query": (FormulaAndFunctionMetricQueryDefinition,),
+            "request_type": (WidgetHistogramRequestType,),
             "response_format": (FormulaAndFunctionResponseFormat,),
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
@@ -81,6 +91,8 @@ class HeatMapWidgetRequest(ModelNormal):
         "profile_metrics_query": "profile_metrics_query",
         "q": "q",
         "queries": "queries",
+        "query": "query",
+        "request_type": "request_type",
         "response_format": "response_format",
         "rum_query": "rum_query",
         "security_query": "security_query",
@@ -112,6 +124,8 @@ class HeatMapWidgetRequest(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        query: Union[FormulaAndFunctionMetricQueryDefinition, UnsetType] = unset,
+        request_type: Union[WidgetHistogramRequestType, UnsetType] = unset,
         response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
@@ -148,6 +162,12 @@ class HeatMapWidgetRequest(ModelNormal):
         :param queries: List of queries that can be returned directly or used in formulas.
         :type queries: [FormulaAndFunctionQueryDefinition], optional
 
+        :param query: A formula and functions metrics query.
+        :type query: FormulaAndFunctionMetricQueryDefinition, optional
+
+        :param request_type: Request type for the histogram request.
+        :type request_type: WidgetHistogramRequestType, optional
+
         :param response_format: Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
         :type response_format: FormulaAndFunctionResponseFormat, optional
 
@@ -178,6 +198,10 @@ class HeatMapWidgetRequest(ModelNormal):
             kwargs["q"] = q
         if queries is not unset:
             kwargs["queries"] = queries
+        if query is not unset:
+            kwargs["query"] = query
+        if request_type is not unset:
+            kwargs["request_type"] = request_type
         if response_format is not unset:
             kwargs["response_format"] = response_format
         if rum_query is not unset:
