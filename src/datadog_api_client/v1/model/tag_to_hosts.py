@@ -26,9 +26,9 @@ class TagToHosts(ModelNormal):
 
     def __init__(self_, tags: Union[Dict[str, List[str]], UnsetType] = unset, **kwargs):
         """
-        In this object, the key is the tag, the value is a list of host names that are reporting that tag.
+        In this object, the key is the tag, and the value is a list of host names that are reporting that tag.
 
-        :param tags: A list of tags to apply to the host.
+        :param tags: A mapping of tags to host names
         :type tags: {str: ([str],)}, optional
         """
         if tags is not unset:
