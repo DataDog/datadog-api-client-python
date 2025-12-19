@@ -1717,7 +1717,30 @@
       "type": "safe"
     }
   },
-  "UpdateIncidentAttachments": {
+  "CreateIncidentAttachment": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentAttachment",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "<RESPONSE_PATH>"
+        },
+        {
+          "name": "attachment_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentAttachment": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentAttachment": {
     "tag": "Incidents",
     "undo": {
       "type": "idempotent"

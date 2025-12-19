@@ -372,6 +372,22 @@ from datadog_api_client.v2.model.attach_jira_issue_request_data_attributes impor
 from datadog_api_client.v2.model.attach_jira_issue_request_data_relationships import (
     AttachJiraIssueRequestDataRelationships,
 )
+from datadog_api_client.v2.model.attachment import Attachment
+from datadog_api_client.v2.model.attachment_array import AttachmentArray
+from datadog_api_client.v2.model.attachment_data import AttachmentData
+from datadog_api_client.v2.model.attachment_data_attributes import AttachmentDataAttributes
+from datadog_api_client.v2.model.attachment_data_attributes_attachment import AttachmentDataAttributesAttachment
+from datadog_api_client.v2.model.attachment_data_attributes_attachment_type import (
+    AttachmentDataAttributesAttachmentType,
+)
+from datadog_api_client.v2.model.attachment_data_relationships import AttachmentDataRelationships
+from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user import (
+    AttachmentDataRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user_data import (
+    AttachmentDataRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.attachment_included import AttachmentIncluded
 from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
 from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
 from datadog_api_client.v2.model.audit_logs_event_type import AuditLogsEventType
@@ -973,6 +989,12 @@ from datadog_api_client.v2.model.create_apps_datastore_request_data_attributes_o
 )
 from datadog_api_client.v2.model.create_apps_datastore_response import CreateAppsDatastoreResponse
 from datadog_api_client.v2.model.create_apps_datastore_response_data import CreateAppsDatastoreResponseData
+from datadog_api_client.v2.model.create_attachment_request import CreateAttachmentRequest
+from datadog_api_client.v2.model.create_attachment_request_data import CreateAttachmentRequestData
+from datadog_api_client.v2.model.create_attachment_request_data_attributes import CreateAttachmentRequestDataAttributes
+from datadog_api_client.v2.model.create_attachment_request_data_attributes_attachment import (
+    CreateAttachmentRequestDataAttributesAttachment,
+)
 from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequestArray
 from datadog_api_client.v2.model.create_case_request_data import CreateCaseRequestData
 from datadog_api_client.v2.model.create_case_request_data_attributes import CreateCaseRequestDataAttributes
@@ -2065,32 +2087,7 @@ from datadog_api_client.v2.model.ip_allowlist_response import IPAllowlistRespons
 from datadog_api_client.v2.model.ip_allowlist_type import IPAllowlistType
 from datadog_api_client.v2.model.ip_allowlist_update_request import IPAllowlistUpdateRequest
 from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
-from datadog_api_client.v2.model.incident_attachment_attachment_type import IncidentAttachmentAttachmentType
-from datadog_api_client.v2.model.incident_attachment_attributes import IncidentAttachmentAttributes
-from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
-from datadog_api_client.v2.model.incident_attachment_link_attachment_type import IncidentAttachmentLinkAttachmentType
-from datadog_api_client.v2.model.incident_attachment_link_attributes import IncidentAttachmentLinkAttributes
-from datadog_api_client.v2.model.incident_attachment_link_attributes_attachment_object import (
-    IncidentAttachmentLinkAttributesAttachmentObject,
-)
-from datadog_api_client.v2.model.incident_attachment_postmortem_attachment_type import (
-    IncidentAttachmentPostmortemAttachmentType,
-)
-from datadog_api_client.v2.model.incident_attachment_postmortem_attributes import IncidentAttachmentPostmortemAttributes
-from datadog_api_client.v2.model.incident_attachment_related_object import IncidentAttachmentRelatedObject
-from datadog_api_client.v2.model.incident_attachment_relationships import IncidentAttachmentRelationships
 from datadog_api_client.v2.model.incident_attachment_type import IncidentAttachmentType
-from datadog_api_client.v2.model.incident_attachment_update_attributes import IncidentAttachmentUpdateAttributes
-from datadog_api_client.v2.model.incident_attachment_update_data import IncidentAttachmentUpdateData
-from datadog_api_client.v2.model.incident_attachment_update_request import IncidentAttachmentUpdateRequest
-from datadog_api_client.v2.model.incident_attachment_update_response import IncidentAttachmentUpdateResponse
-from datadog_api_client.v2.model.incident_attachments_postmortem_attributes_attachment_object import (
-    IncidentAttachmentsPostmortemAttributesAttachmentObject,
-)
-from datadog_api_client.v2.model.incident_attachments_response import IncidentAttachmentsResponse
-from datadog_api_client.v2.model.incident_attachments_response_included_item import (
-    IncidentAttachmentsResponseIncludedItem,
-)
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships
@@ -3556,6 +3553,12 @@ from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKey
 from datadog_api_client.v2.model.partial_application_key import PartialApplicationKey
 from datadog_api_client.v2.model.partial_application_key_attributes import PartialApplicationKeyAttributes
 from datadog_api_client.v2.model.partial_application_key_response import PartialApplicationKeyResponse
+from datadog_api_client.v2.model.patch_attachment_request import PatchAttachmentRequest
+from datadog_api_client.v2.model.patch_attachment_request_data import PatchAttachmentRequestData
+from datadog_api_client.v2.model.patch_attachment_request_data_attributes import PatchAttachmentRequestDataAttributes
+from datadog_api_client.v2.model.patch_attachment_request_data_attributes_attachment import (
+    PatchAttachmentRequestDataAttributesAttachment,
+)
 from datadog_api_client.v2.model.patch_incident_notification_template_request import (
     PatchIncidentNotificationTemplateRequest,
 )
@@ -5006,6 +5009,7 @@ from datadog_api_client.v2.model.usage_observability_pipelines_response import U
 from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
 from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
 from datadog_api_client.v2.model.user import User
+from datadog_api_client.v2.model.user140420082644000 import User140420082644000
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
@@ -5044,6 +5048,7 @@ from datadog_api_client.v2.model.user_team_update import UserTeamUpdate
 from datadog_api_client.v2.model.user_team_update_request import UserTeamUpdateRequest
 from datadog_api_client.v2.model.user_team_user_type import UserTeamUserType
 from datadog_api_client.v2.model.user_teams_response import UserTeamsResponse
+from datadog_api_client.v2.model.user_type import UserType
 from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
 from datadog_api_client.v2.model.user_update_data import UserUpdateData
 from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
@@ -5372,6 +5377,16 @@ __all__ = [
     "AttachJiraIssueRequestData",
     "AttachJiraIssueRequestDataAttributes",
     "AttachJiraIssueRequestDataRelationships",
+    "Attachment",
+    "AttachmentArray",
+    "AttachmentData",
+    "AttachmentDataAttributes",
+    "AttachmentDataAttributesAttachment",
+    "AttachmentDataAttributesAttachmentType",
+    "AttachmentDataRelationships",
+    "AttachmentDataRelationshipsLastModifiedByUser",
+    "AttachmentDataRelationshipsLastModifiedByUserData",
+    "AttachmentIncluded",
     "AuditLogsEvent",
     "AuditLogsEventAttributes",
     "AuditLogsEventType",
@@ -5853,6 +5868,10 @@ __all__ = [
     "CreateAppsDatastoreRequestDataAttributesOrgAccess",
     "CreateAppsDatastoreResponse",
     "CreateAppsDatastoreResponseData",
+    "CreateAttachmentRequest",
+    "CreateAttachmentRequestData",
+    "CreateAttachmentRequestDataAttributes",
+    "CreateAttachmentRequestDataAttributesAttachment",
     "CreateCaseRequestArray",
     "CreateCaseRequestData",
     "CreateCaseRequestDataAttributes",
@@ -6677,24 +6696,7 @@ __all__ = [
     "IPAllowlistType",
     "IPAllowlistUpdateRequest",
     "IdPMetadataFormData",
-    "IncidentAttachmentAttachmentType",
-    "IncidentAttachmentAttributes",
-    "IncidentAttachmentData",
-    "IncidentAttachmentLinkAttachmentType",
-    "IncidentAttachmentLinkAttributes",
-    "IncidentAttachmentLinkAttributesAttachmentObject",
-    "IncidentAttachmentPostmortemAttachmentType",
-    "IncidentAttachmentPostmortemAttributes",
-    "IncidentAttachmentRelatedObject",
-    "IncidentAttachmentRelationships",
     "IncidentAttachmentType",
-    "IncidentAttachmentUpdateAttributes",
-    "IncidentAttachmentUpdateData",
-    "IncidentAttachmentUpdateRequest",
-    "IncidentAttachmentUpdateResponse",
-    "IncidentAttachmentsPostmortemAttributesAttachmentObject",
-    "IncidentAttachmentsResponse",
-    "IncidentAttachmentsResponseIncludedItem",
     "IncidentCreateAttributes",
     "IncidentCreateData",
     "IncidentCreateRelationships",
@@ -7636,6 +7638,10 @@ __all__ = [
     "PartialApplicationKey",
     "PartialApplicationKeyAttributes",
     "PartialApplicationKeyResponse",
+    "PatchAttachmentRequest",
+    "PatchAttachmentRequestData",
+    "PatchAttachmentRequestDataAttributes",
+    "PatchAttachmentRequestDataAttributesAttachment",
     "PatchIncidentNotificationTemplateRequest",
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
@@ -8730,6 +8736,7 @@ __all__ = [
     "UsageTimeSeriesObject",
     "UsageTimeSeriesType",
     "User",
+    "User140420082644000",
     "UserAttributes",
     "UserAttributesStatus",
     "UserCreateAttributes",
@@ -8768,6 +8775,7 @@ __all__ = [
     "UserTeamUpdateRequest",
     "UserTeamUserType",
     "UserTeamsResponse",
+    "UserType",
     "UserUpdateAttributes",
     "UserUpdateData",
     "UserUpdateRequest",

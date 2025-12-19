@@ -1271,6 +1271,76 @@ datadog\_api\_client.v2.model.attach\_jira\_issue\_request\_data\_relationships 
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.attachment module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_array module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_data module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_data\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_data\_attributes\_attachment module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_data_attributes_attachment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_data\_attributes\_attachment\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_data_attributes_attachment_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_data\_relationships module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_data\_relationships\_last\_modified\_by\_user module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_data\_relationships\_last\_modified\_by\_user\_data module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attachment\_included module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attachment_included
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.audit\_logs\_event module
 -------------------------------------------------------
 
@@ -5125,6 +5195,34 @@ datadog\_api\_client.v2.model.create\_apps\_datastore\_response\_data module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_apps_datastore_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_attachment\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_attachment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_attachment\_request\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_attachment_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_attachment\_request\_data\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_attachment_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_attachment\_request\_data\_attributes\_attachment module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_attachment_request_data_attributes_attachment
    :members:
    :show-inheritance:
 
@@ -10833,129 +10931,10 @@ datadog\_api\_client.v2.model.idp\_metadata\_form\_data module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.incident\_attachment\_attachment\_type module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_attachment_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_attributes module
----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_data module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_link\_attachment\_type module
----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_link_attachment_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_link\_attributes module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_link_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_link\_attributes\_attachment\_object module
------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_link_attributes_attachment_object
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_postmortem\_attachment\_type module
----------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_postmortem_attachment_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_postmortem\_attributes module
----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_postmortem_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_related\_object module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_related_object
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_relationships module
-------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_relationships
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.incident\_attachment\_type module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_attachment_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_update\_attributes module
------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_update_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_update\_data module
------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_update_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_update\_request module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_update_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachment\_update\_response module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachment_update_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachments\_postmortem\_attributes\_attachment\_object module
-------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachments_postmortem_attributes_attachment_object
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachments\_response module
---------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachments_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_attachments\_response\_included\_item module
-------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_attachments_response_included_item
    :members:
    :show-inheritance:
 
@@ -17599,6 +17578,34 @@ datadog\_api\_client.v2.model.partial\_application\_key\_response module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.partial_application_key_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_attachment\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_attachment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_attachment\_request\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_attachment_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_attachment\_request\_data\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_attachment_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_attachment\_request\_data\_attributes\_attachment module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_attachment_request_data_attributes_attachment
    :members:
    :show-inheritance:
 
@@ -25225,6 +25232,13 @@ datadog\_api\_client.v2.model.user module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.user140420082644000 module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user140420082644000
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.user\_attributes module
 -----------------------------------------------------
 
@@ -25488,6 +25502,13 @@ datadog\_api\_client.v2.model.user\_teams\_response module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_teams_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_type module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_type
    :members:
    :show-inheritance:
 

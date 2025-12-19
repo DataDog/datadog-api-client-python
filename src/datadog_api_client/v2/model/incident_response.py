@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
     from datadog_api_client.v2.model.incident_response_included_item import IncidentResponseIncludedItem
     from datadog_api_client.v2.model.incident_user_data import IncidentUserData
-    from datadog_api_client.v2.model.incident_attachment_data import IncidentAttachmentData
+    from datadog_api_client.v2.model.attachment_data import AttachmentData
 
 
 class IncidentResponse(ModelNormal):
@@ -42,9 +42,7 @@ class IncidentResponse(ModelNormal):
     def __init__(
         self_,
         data: IncidentResponseData,
-        included: Union[
-            List[Union[IncidentResponseIncludedItem, IncidentUserData, IncidentAttachmentData]], UnsetType
-        ] = unset,
+        included: Union[List[Union[IncidentResponseIncludedItem, IncidentUserData, AttachmentData]], UnsetType] = unset,
         **kwargs,
     ):
         """

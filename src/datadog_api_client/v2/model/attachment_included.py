@@ -10,19 +10,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-class IncidentAttachmentUpdateAttributes(ModelComposed):
+class AttachmentIncluded(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Incident attachment attributes.
 
-        :param attachment: The postmortem attachment.
-        :type attachment: IncidentAttachmentsPostmortemAttributesAttachmentObject
 
-        :param attachment_type: The type of postmortem attachment attributes.
-        :type attachment_type: IncidentAttachmentPostmortemAttachmentType
+        :param attributes: Attributes of user object returned by the API.
+        :type attributes: UserAttributes, optional
 
-        :param modified: Timestamp when the incident attachment link was last modified.
-        :type modified: datetime, optional
+        :param id:
+        :type id: str, optional
+
+        :param type: Users resource type.
+        :type type: UserType
         """
         super().__init__(kwargs)
 
@@ -35,14 +35,10 @@ class IncidentAttachmentUpdateAttributes(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.incident_attachment_postmortem_attributes import (
-            IncidentAttachmentPostmortemAttributes,
-        )
-        from datadog_api_client.v2.model.incident_attachment_link_attributes import IncidentAttachmentLinkAttributes
+        from datadog_api_client.v2.model.user140420082644000 import User140420082644000
 
         return {
             "oneOf": [
-                IncidentAttachmentPostmortemAttributes,
-                IncidentAttachmentLinkAttributes,
+                User140420082644000,
             ],
         }

@@ -21,20 +21,6 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
-  Scenario: Create an incident attachment returns "OK" response
-    Given operation "UpdateIncidentAttachments" enabled
-    And there is a valid "incident" in the system
-    And new "UpdateIncidentAttachments" request
-    And request contains "incident_id" parameter from "incident.data.id"
-    And body with value {"data": [{"type": "incident_attachments", "attributes": {"attachment_type": "link", "attachment": {"documentUrl": "https://www.example.com/doc", "title": "{{unique}}"}}}]}
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data" has length 1
-    And the response "data[0].type" is equal to "incident_attachments"
-    And the response "data[0].attributes.attachment_type" is equal to "link"
-    And the response "data[0].attributes.attachment.documentUrl" is equal to "https://www.example.com/doc"
-
   @skip @team:DataDog/incident-app
   Scenario: Create an incident impact returns "Bad Request" response
     Given operation "CreateIncidentImpact" enabled
@@ -200,6 +186,24 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create incident attachment returns "Bad Request" response
+    Given operation "CreateIncidentAttachment" enabled
+    And new "CreateIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/123/Postmortem-IR-123", "title": "Postmortem-IR-123"}, "attachment_type": "postmortem"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_attachments"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create incident attachment returns "Created" response
+    Given operation "CreateIncidentAttachment" enabled
+    And new "CreateIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/123/Postmortem-IR-123", "title": "Postmortem-IR-123"}, "attachment_type": "postmortem"}, "id": "00000000-0000-0000-0000-000000000000", "type": "incident_attachments"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @team:Datadog/incident-app
   Scenario: Create incident notification rule returns "Bad Request" response
     Given operation "CreateIncidentNotificationRule" enabled
@@ -248,33 +252,6 @@ Feature: Incidents
     And body with value {"data": {"attributes": {"category": "alert", "content": "An incident has been declared. Please join the incident channel for updates.", "name": "Incident Alert Template", "subject": "Incident Alert"}, "relationships": {"incident_type": {"data": {"id": "00000000-1111-2222-3333-444444444444", "type": "incident_types"}}}, "type": "notification_templates"}}
     When the request is sent
     Then the response status is 404 Not Found
-
-  @generated @skip @team:DataDog/incident-app
-  Scenario: Create, update, and delete incident attachments returns "Bad Request" response
-    Given operation "UpdateIncidentAttachments" enabled
-    And new "UpdateIncidentAttachments" request
-    And request contains "incident_id" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/123", "title": "Postmortem IR-123"}, "attachment_type": "postmortem"}, "id": "00000000-abcd-0002-0000-000000000000", "type": "incident_attachments"}, {"attributes": {"attachment": {"documentUrl": "https://www.example.com/webstore-failure-runbook", "title": "Runbook for webstore service failures"}, "attachment_type": "link"}, "type": "incident_attachments"}, {"id": "00000000-abcd-0003-0000-000000000000", "type": "incident_attachments"}]}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/incident-app
-  Scenario: Create, update, and delete incident attachments returns "Not Found" response
-    Given operation "UpdateIncidentAttachments" enabled
-    And new "UpdateIncidentAttachments" request
-    And request contains "incident_id" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/123", "title": "Postmortem IR-123"}, "attachment_type": "postmortem"}, "id": "00000000-abcd-0002-0000-000000000000", "type": "incident_attachments"}, {"attributes": {"attachment": {"documentUrl": "https://www.example.com/webstore-failure-runbook", "title": "Runbook for webstore service failures"}, "attachment_type": "link"}, "type": "incident_attachments"}, {"id": "00000000-abcd-0003-0000-000000000000", "type": "incident_attachments"}]}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:DataDog/incident-app
-  Scenario: Create, update, and delete incident attachments returns "OK" response
-    Given operation "UpdateIncidentAttachments" enabled
-    And new "UpdateIncidentAttachments" request
-    And request contains "incident_id" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/123", "title": "Postmortem IR-123"}, "attachment_type": "postmortem"}, "id": "00000000-abcd-0002-0000-000000000000", "type": "incident_attachments"}, {"attributes": {"attachment": {"documentUrl": "https://www.example.com/webstore-failure-runbook", "title": "Runbook for webstore service failures"}, "attachment_type": "link"}, "type": "incident_attachments"}, {"id": "00000000-abcd-0003-0000-000000000000", "type": "incident_attachments"}]}
-    When the request is sent
-    Then the response status is 200 OK
 
   @generated @skip @team:Datadog/incident-app
   Scenario: Delete a notification template returns "Bad Request" response
@@ -452,6 +429,33 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete incident attachment returns "Bad Request" response
+    Given operation "DeleteIncidentAttachment" enabled
+    And new "DeleteIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "attachment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete incident attachment returns "No Content" response
+    Given operation "DeleteIncidentAttachment" enabled
+    And new "DeleteIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "attachment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete incident attachment returns "Not Found" response
+    Given operation "DeleteIncidentAttachment" enabled
+    And new "DeleteIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "attachment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:Datadog/incident-app
   Scenario: Delete incident notification rule returns "No Content" response
     Given there is a valid "incident_type" in the system
@@ -536,30 +540,6 @@ Feature: Incidents
     And the response "data[0].attributes.assignees" has length 2
     And the response "data[0].attributes.content" is equal to "Follow up with customer about the impact they saw."
 
-  @generated @skip @team:DataDog/incident-app
-  Scenario: Get a list of attachments returns "Bad Request" response
-    Given operation "ListIncidentAttachments" enabled
-    And new "ListIncidentAttachments" request
-    And request contains "incident_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/incident-app
-  Scenario: Get a list of attachments returns "Not Found" response
-    Given operation "ListIncidentAttachments" enabled
-    And new "ListIncidentAttachments" request
-    And request contains "incident_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:DataDog/incident-app
-  Scenario: Get a list of attachments returns "OK" response
-    Given operation "ListIncidentAttachments" enabled
-    And new "ListIncidentAttachments" request
-    And request contains "incident_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
   @generated @skip @team:Datadog/incident-app
   Scenario: Get a list of incident types returns "Bad Request" response
     Given operation "ListIncidentTypes" enabled
@@ -629,20 +609,6 @@ Feature: Incidents
     And request contains "id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
-
-  @team:DataDog/incident-app
-  Scenario: Get incident attachments returns "OK" response
-    Given operation "ListIncidentAttachments" enabled
-    And there is a valid "incident" in the system
-    And the "incident" has an "incident_attachment"
-    And new "ListIncidentAttachments" request
-    And request contains "incident_id" parameter from "incident.data.id"
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data" has length 1
-    And the response "data[0].type" is equal to "incident_attachments"
-    And the response "data[0].attributes.attachment_type" is equal to "link"
-    And the response "data[0].attributes.attachment.documentUrl" is equal to "https://www.example.com/doc"
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get incident integration metadata details returns "Bad Request" response
@@ -824,6 +790,22 @@ Feature: Incidents
     And operation "ListIncidentImpacts" enabled
     And new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "incident.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident attachments returns "Bad Request" response
+    Given operation "ListIncidentAttachments" enabled
+    And new "ListIncidentAttachments" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident attachments returns "OK" response
+    Given operation "ListIncidentAttachments" enabled
+    And new "ListIncidentAttachments" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1070,6 +1052,36 @@ Feature: Incidents
     And there is a valid "incident_type" in the system
     And request contains "incident_type_id" parameter from "incident_type.data.id"
     And body with value {"data": {"id": "{{incident_type.data.id}}", "attributes": {"name": "{{incident_type.data.attributes.name}}-updated"}, "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update incident attachment returns "Bad Request" response
+    Given operation "UpdateIncidentAttachment" enabled
+    And new "UpdateIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "attachment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/124/Postmortem-IR-124", "title": "Postmortem-IR-124"}}, "type": "incident_attachments"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update incident attachment returns "Not Found" response
+    Given operation "UpdateIncidentAttachment" enabled
+    And new "UpdateIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "attachment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/124/Postmortem-IR-124", "title": "Postmortem-IR-124"}}, "type": "incident_attachments"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update incident attachment returns "OK" response
+    Given operation "UpdateIncidentAttachment" enabled
+    And new "UpdateIncidentAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "attachment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"attachment": {"documentUrl": "https://app.datadoghq.com/notebook/124/Postmortem-IR-124", "title": "Postmortem-IR-124"}}, "type": "incident_attachments"}}
     When the request is sent
     Then the response status is 200 OK
 
