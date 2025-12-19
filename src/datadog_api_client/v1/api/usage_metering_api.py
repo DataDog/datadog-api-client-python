@@ -1280,6 +1280,9 @@ class UsageMeteringApi:
              cursor := response.metadata.pagination.next_record_id
            END
 
+        The following values have been **deprecated** :
+            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage`` , ``llm_observability_usage`` , ``llm_observability_percentage``.
+
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
         :param usage_type: Usage type to retrieve. The following values have been **deprecated** :
@@ -1446,7 +1449,7 @@ class UsageMeteringApi:
         :type start_month: datetime
         :param fields: Comma-separated list of usage types to return, or ``*`` for all usage types.
             The following values have been **deprecated** :
-            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage``.
+            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage`` , ``llm_observability_usage`` , ``llm_observability_percentage``.
         :type fields: MonthlyUsageAttributionSupportedMetrics
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage ending this month.
         :type end_month: datetime, optional
