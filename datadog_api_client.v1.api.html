@@ -5238,6 +5238,10 @@ Pseudo code example:</p>
 <span class="n">END</span>
 </pre></div>
 </div>
+<dl class="simple">
+<dt>The following values have been <strong>deprecated</strong> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">estimated_indexed_spans_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_indexed_spans_percentage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_ingested_spans_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_ingested_spans_percentage</span></code> , <code class="docutils literal notranslate"><span class="pre">llm_observability_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">llm_observability_percentage</span></code>.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -5341,7 +5345,7 @@ Pseudo code example:</p>
 Maximum of 15 months ago.</p></li>
 <li><p><strong>fields</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics.MonthlyUsageAttributionSupportedMetrics" title="datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics.MonthlyUsageAttributionSupportedMetrics"><em>MonthlyUsageAttributionSupportedMetrics</em></a>) – Comma-separated list of usage types to return, or <code class="docutils literal notranslate"><span class="pre">*</span></code> for all usage types.
 The following values have been <strong>deprecated</strong> :
-<code class="docutils literal notranslate"><span class="pre">estimated_indexed_spans_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_indexed_spans_percentage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_ingested_spans_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_ingested_spans_percentage</span></code>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">estimated_indexed_spans_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_indexed_spans_percentage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_ingested_spans_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">estimated_ingested_spans_percentage</span></code> , <code class="docutils literal notranslate"><span class="pre">llm_observability_usage</span></code> , <code class="docutils literal notranslate"><span class="pre">llm_observability_percentage</span></code>.</p></li>
 <li><p><strong>end_month</strong> (<em>datetime</em><em>, </em><em>optional</em>) – Datetime in ISO-8601 format, UTC, precise to month: <code class="docutils literal notranslate"><span class="pre">[YYYY-MM]</span></code> for usage ending this month.</p></li>
 <li><p><strong>sort_direction</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.usage_sort_direction.UsageSortDirection" title="datadog_api_client.v1.model.usage_sort_direction.UsageSortDirection"><em>UsageSortDirection</em></a><em>, </em><em>optional</em>) – The direction to sort by: <code class="docutils literal notranslate"><span class="pre">[desc,</span> <span class="pre">asc]</span></code>.</p></li>
 <li><p><strong>sort_name</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics.MonthlyUsageAttributionSupportedMetrics" title="datadog_api_client.v1.model.monthly_usage_attribution_supported_metrics.MonthlyUsageAttributionSupportedMetrics"><em>MonthlyUsageAttributionSupportedMetrics</em></a><em>, </em><em>optional</em>) – The field to sort by.
