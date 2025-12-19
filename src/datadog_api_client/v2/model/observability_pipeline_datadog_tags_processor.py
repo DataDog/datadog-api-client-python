@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -38,6 +40,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
         return {
             "action": (ObservabilityPipelineDatadogTagsProcessorAction,),
+            "display_name": (str,),
             "enabled": (bool,),
             "id": (str,),
             "include": (str,),
@@ -48,6 +51,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
     attribute_map = {
         "action": "action",
+        "display_name": "display_name",
         "enabled": "enabled",
         "id": "id",
         "include": "include",
@@ -65,6 +69,7 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         keys: List[str],
         mode: ObservabilityPipelineDatadogTagsProcessorMode,
         type: ObservabilityPipelineDatadogTagsProcessorType,
+        display_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -72,6 +77,9 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
 
         :param action: The action to take on tags with matching keys.
         :type action: ObservabilityPipelineDatadogTagsProcessorAction
+
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
 
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
@@ -91,6 +99,8 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``datadog_tags``.
         :type type: ObservabilityPipelineDatadogTagsProcessorType
         """
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         super().__init__(kwargs)
 
         self_.action = action

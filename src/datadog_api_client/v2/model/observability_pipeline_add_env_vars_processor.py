@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -31,6 +33,7 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         )
 
         return {
+            "display_name": (str,),
             "enabled": (bool,),
             "id": (str,),
             "include": (str,),
@@ -39,6 +42,7 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "display_name": "display_name",
         "enabled": "enabled",
         "id": "id",
         "include": "include",
@@ -53,10 +57,14 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         include: str,
         type: ObservabilityPipelineAddEnvVarsProcessorType,
         variables: List[ObservabilityPipelineAddEnvVarsProcessorVariable],
+        display_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``add_env_vars`` processor adds environment variable values to log events.
+
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
 
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
@@ -73,6 +81,8 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         :param variables: A list of environment variable mappings to apply to log fields.
         :type variables: [ObservabilityPipelineAddEnvVarsProcessorVariable]
         """
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         super().__init__(kwargs)
 
         self_.enabled = enabled

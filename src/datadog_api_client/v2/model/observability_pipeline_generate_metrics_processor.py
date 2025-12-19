@@ -31,6 +31,7 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         )
 
         return {
+            "display_name": (str,),
             "enabled": (bool,),
             "id": (str,),
             "include": (str,),
@@ -39,6 +40,7 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "display_name": "display_name",
         "enabled": "enabled",
         "id": "id",
         "include": "include",
@@ -51,6 +53,7 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         enabled: bool,
         id: str,
         type: ObservabilityPipelineGenerateMetricsProcessorType,
+        display_name: Union[str, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
         metrics: Union[List[ObservabilityPipelineGeneratedMetric], UnsetType] = unset,
         **kwargs,
@@ -58,6 +61,9 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         """
         The ``generate_datadog_metrics`` processor creates custom metrics from logs and sends them to Datadog.
         Metrics can be counters, gauges, or distributions and optionally grouped by log fields.
+
+        :param display_name: The display name for a component.
+        :type display_name: str, optional
 
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
@@ -74,6 +80,8 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         :param type: The processor type. Always ``generate_datadog_metrics``.
         :type type: ObservabilityPipelineGenerateMetricsProcessorType
         """
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         if include is not unset:
             kwargs["include"] = include
         if metrics is not unset:
