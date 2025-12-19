@@ -1,5 +1,5 @@
 """
-Get host tags returns "OK" response
+Get Host Tags returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
