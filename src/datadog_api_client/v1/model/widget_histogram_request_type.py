@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class DistributionWidgetHistogramRequestType(ModelSimple):
+class WidgetHistogramRequestType(ModelSimple):
     """
     Request type for the histogram request.
 
@@ -23,7 +23,7 @@ class DistributionWidgetHistogramRequestType(ModelSimple):
     allowed_values = {
         "histogram",
     }
-    HISTOGRAM: ClassVar["DistributionWidgetHistogramRequestType"]
+    HISTOGRAM: ClassVar["WidgetHistogramRequestType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class DistributionWidgetHistogramRequestType(ModelSimple):
         }
 
 
-DistributionWidgetHistogramRequestType.HISTOGRAM = DistributionWidgetHistogramRequestType("histogram")
+WidgetHistogramRequestType.HISTOGRAM = WidgetHistogramRequestType("histogram")

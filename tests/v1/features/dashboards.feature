@@ -369,6 +369,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].apm_stats_query.name" is equal to "cassandra.query"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with distribution widget with markers and num_buckets
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "distribution", "xaxis": { "scale": "linear", "min": "auto", "max": "auto", "include_zero": true, "num_buckets": 55 }, "yaxis": { "scale": "linear", "min": "auto", "max": "auto", "include_zero": true }, "markers": [{ "display_type": "percentile", "value": "50" }, { "display_type": "percentile", "value": "99" }, { "display_type": "percentile", "value": "90" }], "requests": [{ "response_format": "scalar", "queries": [{ "data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {service}", "aggregator": "avg" }] }] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.xaxis.num_buckets" is equal to 55
+    And the response "widgets[0].definition.markers" is equal to [{"display_type": "percentile", "value": "50"}, {"display_type": "percentile", "value": "99"}, {"display_type": "percentile", "value": "90"}]
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with event_stream list_stream widget
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered","title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns": [{"width": "auto","field": "timestamp"}],"query": {"data_source": "event_stream","query_string": "","event_size": "l"},"response_format": "event_list"}]}}]}
@@ -396,6 +405,20 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "event_timeline"
     And the response "widgets[0].definition.query" is equal to "status:error priority:all"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with formula and function distribution widget
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }}", "widgets": [{"layout": {"x": 0, "y": 0, "width": 47, "height": 15}, "definition": {"title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "distribution", "requests": [{"response_format": "scalar", "queries": [{"data_source": "logs", "name": "query1", "search": {"query": ""}, "indexes": ["*"], "compute": {"aggregation": "avg", "metric": "@duration"}, "group_by": [{"facet": "service", "limit": 1000, "sort": {"aggregation": "count", "order": "desc"}}], "storage": "hot"}]}]}}], "template_variables": [], "layout_type": "free", "notify_list": []}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "distribution"
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "logs"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].compute.aggregation" is equal to "avg"
+    And the response "widgets[0].definition.requests[0].queries[0].compute.metric" is equal to "@duration"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by[0].facet" is equal to "service"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with formula and function heatmap widget
@@ -470,6 +493,15 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "heatmap"
     And the response "widgets[0].definition.requests[0].q" is equal to "avg:system.cpu.user{*} by {service}"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with heatmap widget with markers and num_buckets
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "heatmap", "xaxis": { "num_buckets": 75 }, "yaxis": { "scale": "linear", "min": "auto", "max": "auto", "include_zero": true }, "markers": [{ "display_type": "percentile", "value": "50" }, { "display_type": "percentile", "value": "99" }], "requests": [{ "request_type": "histogram", "query": { "data_source": "metrics", "name": "query1", "query": "histogram:trace.servlet.request{*}"} }] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } }], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.xaxis.num_buckets" is equal to 75
+    And the response "widgets[0].definition.markers" is equal to [{"display_type": "percentile", "value": "50"}, {"display_type": "percentile", "value": "99"}]
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with hostmap widget
