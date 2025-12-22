@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class IncidentAttachmentPostmortemAttachmentType(ModelSimple):
+class UserType(ModelSimple):
     """
-    The type of postmortem attachment attributes.
+    Users resource type.
 
-    :param value: If omitted defaults to "postmortem". Must be one of ["postmortem"].
+    :param value: If omitted defaults to "users". Must be one of ["users"].
     :type value: str
     """
 
     allowed_values = {
-        "postmortem",
+        "users",
     }
-    POSTMORTEM: ClassVar["IncidentAttachmentPostmortemAttachmentType"]
+    USERS: ClassVar["UserType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class IncidentAttachmentPostmortemAttachmentType(ModelSimple):
         }
 
 
-IncidentAttachmentPostmortemAttachmentType.POSTMORTEM = IncidentAttachmentPostmortemAttachmentType("postmortem")
+UserType.USERS = UserType("users")
