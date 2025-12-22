@@ -1531,6 +1531,11 @@ class SecurityMonitoringApi:
                     "attribute": "page[number]",
                     "location": "query",
                 },
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -3793,6 +3798,7 @@ class SecurityMonitoringApi:
         *,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
     ) -> SecurityMonitoringListRulesResponse:
         """List rules.
 
@@ -3802,6 +3808,8 @@ class SecurityMonitoringApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
+        :param query: A search query to filter security rules. You can filter by attributes such as ``type`` , ``source`` , ``tags``.
+        :type query: str, optional
         :rtype: SecurityMonitoringListRulesResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -3810,6 +3818,9 @@ class SecurityMonitoringApi:
 
         if page_number is not unset:
             kwargs["page_number"] = page_number
+
+        if query is not unset:
+            kwargs["query"] = query
 
         return self._list_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
