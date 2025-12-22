@@ -2815,6 +2815,49 @@
       "type": "safe"
     }
   },
+  "ListPipelines": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "operationId": "DeletePipeline",
+      "parameters": [
+        {
+          "name": "pipeline_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ValidatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeletePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePipeline": {
+    "tag": "Observability Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateOnCallEscalationPolicy": {
     "tag": "On-Call",
     "undo": {
@@ -3386,49 +3429,6 @@
   },
   "UpdateCSMThreatsAgentPolicy": {
     "tag": "CSM Threats",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListPipelines": {
-    "tag": "Observability Pipelines",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreatePipeline": {
-    "tag": "Observability Pipelines",
-    "undo": {
-      "operationId": "DeletePipeline",
-      "parameters": [
-        {
-          "name": "pipeline_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "ValidatePipeline": {
-    "tag": "Observability Pipelines",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeletePipeline": {
-    "tag": "Observability Pipelines",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetPipeline": {
-    "tag": "Observability Pipelines",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdatePipeline": {
-    "tag": "Observability Pipelines",
     "undo": {
       "type": "idempotent"
     }
