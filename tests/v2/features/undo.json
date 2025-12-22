@@ -4705,6 +4705,47 @@
       "type": "idempotent"
     }
   },
+  "GetTeamNotificationRules": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTeamNotificationRule": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "DeleteTeamNotificationRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "<RESPONSE_PATH>"
+        },
+        {
+          "name": "team_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTeamNotificationRule": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamNotificationRule": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTeamNotificationRule": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetTeamPermissionSettings": {
     "tag": "Teams",
     "undo": {
