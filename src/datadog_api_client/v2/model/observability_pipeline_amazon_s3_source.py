@@ -59,6 +59,8 @@ class ObservabilityPipelineAmazonS3Source(ModelNormal):
         The ``amazon_s3`` source ingests logs from an Amazon S3 bucket.
         It supports AWS authentication and TLS encryption.
 
+        **Supported pipeline types:** logs
+
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
         :type auth: ObservabilityPipelineAwsAuth, optional

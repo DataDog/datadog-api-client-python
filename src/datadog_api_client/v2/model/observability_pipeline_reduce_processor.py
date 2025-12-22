@@ -66,6 +66,8 @@ class ObservabilityPipelineReduceProcessor(ModelNormal):
         """
         The ``reduce`` processor aggregates and merges logs based on matching keys and merge strategies.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
