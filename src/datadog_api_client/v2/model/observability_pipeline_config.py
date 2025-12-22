@@ -110,6 +110,9 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
     from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
+    from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
+        ObservabilityPipelineOpentelemetrySource,
+    )
 
 
 class ObservabilityPipelineConfig(ModelNormal):
@@ -182,6 +185,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineHttpClientSource,
                 ObservabilityPipelineLogstashSource,
                 ObservabilityPipelineSocketSource,
+                ObservabilityPipelineOpentelemetrySource,
             ]
         ],
         processors: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
