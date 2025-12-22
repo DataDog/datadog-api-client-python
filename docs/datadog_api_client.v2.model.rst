@@ -5366,6 +5366,20 @@ datadog\_api\_client.v2.model.create\_notification\_rule\_parameters\_data\_attr
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_on\_call\_notification\_rule\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_on_call_notification_rule_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_on\_call\_notification\_rule\_request\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_on_call_notification_rule_request_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_open\_api\_response module
 ----------------------------------------------------------------
 
@@ -13101,6 +13115,13 @@ datadog\_api\_client.v2.model.list\_notification\_channels\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_on\_call\_notification\_rules\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_on_call_notification_rules_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_pipelines\_response module
 --------------------------------------------------------------
 
@@ -16993,10 +17014,101 @@ datadog\_api\_client.v2.model.okta\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.on\_call\_notification\_rule module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_category module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_channel\_relationship module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_channel_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_channel\_relationship\_data module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_channel_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_channel\_settings module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_channel_settings
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_relationships module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_request\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rule\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_notification\_rules\_included module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_notification_rules_included
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.on\_call\_page\_target\_type module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.on_call_page_target_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_phone\_notification\_rule\_method module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_phone_notification_rule_method
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_phone\_notification\_rule\_settings module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_phone_notification_rule_settings
    :members:
    :show-inheritance:
 
@@ -24914,6 +25026,27 @@ datadog\_api\_client.v2.model.update\_deployment\_rule\_params\_data\_attributes
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_deployment_rule_params_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_on\_call\_notification\_rule\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_on_call_notification_rule_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_on\_call\_notification\_rule\_request\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_on_call_notification_rule_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_on\_call\_notification\_rule\_request\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_on_call_notification_rule_request_data
    :members:
    :show-inheritance:
 

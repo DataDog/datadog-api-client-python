@@ -1023,6 +1023,10 @@ from datadog_api_client.v2.model.create_notification_rule_parameters_data import
 from datadog_api_client.v2.model.create_notification_rule_parameters_data_attributes import (
     CreateNotificationRuleParametersDataAttributes,
 )
+from datadog_api_client.v2.model.create_on_call_notification_rule_request import CreateOnCallNotificationRuleRequest
+from datadog_api_client.v2.model.create_on_call_notification_rule_request_data import (
+    CreateOnCallNotificationRuleRequestData,
+)
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
@@ -2456,6 +2460,7 @@ from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.list_notification_channels_response import ListNotificationChannelsResponse
+from datadog_api_client.v2.model.list_on_call_notification_rules_response import ListOnCallNotificationRulesResponse
 from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
 from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
@@ -3467,7 +3472,26 @@ from datadog_api_client.v2.model.okta_credentials_update import OktaCredentialsU
 from datadog_api_client.v2.model.okta_integration import OktaIntegration
 from datadog_api_client.v2.model.okta_integration_type import OktaIntegrationType
 from datadog_api_client.v2.model.okta_integration_update import OktaIntegrationUpdate
+from datadog_api_client.v2.model.on_call_notification_rule import OnCallNotificationRule
+from datadog_api_client.v2.model.on_call_notification_rule_attributes import OnCallNotificationRuleAttributes
+from datadog_api_client.v2.model.on_call_notification_rule_category import OnCallNotificationRuleCategory
+from datadog_api_client.v2.model.on_call_notification_rule_channel_relationship import (
+    OnCallNotificationRuleChannelRelationship,
+)
+from datadog_api_client.v2.model.on_call_notification_rule_channel_relationship_data import (
+    OnCallNotificationRuleChannelRelationshipData,
+)
+from datadog_api_client.v2.model.on_call_notification_rule_channel_settings import OnCallNotificationRuleChannelSettings
+from datadog_api_client.v2.model.on_call_notification_rule_data import OnCallNotificationRuleData
+from datadog_api_client.v2.model.on_call_notification_rule_relationships import OnCallNotificationRuleRelationships
+from datadog_api_client.v2.model.on_call_notification_rule_request_attributes import (
+    OnCallNotificationRuleRequestAttributes,
+)
+from datadog_api_client.v2.model.on_call_notification_rule_type import OnCallNotificationRuleType
+from datadog_api_client.v2.model.on_call_notification_rules_included import OnCallNotificationRulesIncluded
 from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
+from datadog_api_client.v2.model.on_call_phone_notification_rule_method import OnCallPhoneNotificationRuleMethod
+from datadog_api_client.v2.model.on_call_phone_notification_rule_settings import OnCallPhoneNotificationRuleSettings
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
@@ -4938,6 +4962,13 @@ from datadog_api_client.v2.model.update_deployment_rule_params_data import Updat
 from datadog_api_client.v2.model.update_deployment_rule_params_data_attributes import (
     UpdateDeploymentRuleParamsDataAttributes,
 )
+from datadog_api_client.v2.model.update_on_call_notification_rule_request import UpdateOnCallNotificationRuleRequest
+from datadog_api_client.v2.model.update_on_call_notification_rule_request_attributes import (
+    UpdateOnCallNotificationRuleRequestAttributes,
+)
+from datadog_api_client.v2.model.update_on_call_notification_rule_request_data import (
+    UpdateOnCallNotificationRuleRequestData,
+)
 from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
 from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
@@ -5887,6 +5918,8 @@ __all__ = [
     "CreateNotificationRuleParameters",
     "CreateNotificationRuleParametersData",
     "CreateNotificationRuleParametersDataAttributes",
+    "CreateOnCallNotificationRuleRequest",
+    "CreateOnCallNotificationRuleRequestData",
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
@@ -6992,6 +7025,7 @@ __all__ = [
     "ListFindingsResponse",
     "ListKindCatalogResponse",
     "ListNotificationChannelsResponse",
+    "ListOnCallNotificationRulesResponse",
     "ListPipelinesResponse",
     "ListPipelinesResponseMeta",
     "ListPowerpacksResponse",
@@ -7549,7 +7583,20 @@ __all__ = [
     "OktaIntegration",
     "OktaIntegrationType",
     "OktaIntegrationUpdate",
+    "OnCallNotificationRule",
+    "OnCallNotificationRuleAttributes",
+    "OnCallNotificationRuleCategory",
+    "OnCallNotificationRuleChannelRelationship",
+    "OnCallNotificationRuleChannelRelationshipData",
+    "OnCallNotificationRuleChannelSettings",
+    "OnCallNotificationRuleData",
+    "OnCallNotificationRuleRelationships",
+    "OnCallNotificationRuleRequestAttributes",
+    "OnCallNotificationRuleType",
+    "OnCallNotificationRulesIncluded",
     "OnCallPageTargetType",
+    "OnCallPhoneNotificationRuleMethod",
+    "OnCallPhoneNotificationRuleSettings",
     "OnDemandConcurrencyCap",
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
@@ -8686,6 +8733,9 @@ __all__ = [
     "UpdateDeploymentRuleParams",
     "UpdateDeploymentRuleParamsData",
     "UpdateDeploymentRuleParamsDataAttributes",
+    "UpdateOnCallNotificationRuleRequest",
+    "UpdateOnCallNotificationRuleRequestAttributes",
+    "UpdateOnCallNotificationRuleRequestData",
     "UpdateOpenAPIResponse",
     "UpdateOpenAPIResponseAttributes",
     "UpdateOpenAPIResponseData",
