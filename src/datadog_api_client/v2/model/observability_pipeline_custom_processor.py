@@ -68,6 +68,8 @@ class ObservabilityPipelineCustomProcessor(ModelNormal):
         """
         The ``custom_processor`` processor transforms events using `Vector Remap Language (VRL) <https://vector.dev/docs/reference/vrl/>`_ scripts with advanced filtering capabilities.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

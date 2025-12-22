@@ -77,6 +77,8 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
         """
         The ``sumo_logic`` destination forwards logs to Sumo Logic.
 
+        **Supported pipeline types:** logs
+
         :param encoding: The output encoding format.
         :type encoding: ObservabilityPipelineSumoLogicDestinationEncoding, optional
 

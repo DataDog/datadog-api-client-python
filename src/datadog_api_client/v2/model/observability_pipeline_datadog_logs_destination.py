@@ -40,6 +40,8 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         """
         The ``datadog_logs`` destination forwards logs to Datadog Log Management.
 
+        **Supported pipeline types:** logs
+
         :param id: The unique identifier for this component.
         :type id: str
 

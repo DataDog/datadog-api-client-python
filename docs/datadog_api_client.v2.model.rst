@@ -15481,6 +15481,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_config\_destination\_item
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_config\_pipeline\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_config_pipeline_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_config\_processor\_group module
 --------------------------------------------------------------------------------------
 
@@ -15597,6 +15604,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_logs\_destinatio
 ----------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_metrics\_destination module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_metrics\_destination\_type module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination_type
    :members:
    :show-inheritance:
 
@@ -15936,6 +15957,48 @@ datadog\_api\_client.v2.model.observability\_pipeline\_google\_pub\_sub\_source\
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_client\_destination module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_client_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_client\_destination\_auth\_strategy module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_client_destination_auth_strategy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_client\_destination\_compression module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_client_destination_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_client\_destination\_compression\_algorithm module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_client_destination_compression_algorithm
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_client\_destination\_encoding module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_client_destination_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_client\_destination\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_client_destination_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_http\_client\_source module
 ----------------------------------------------------------------------------------
 
@@ -16024,6 +16087,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_metadata\_entry module
 -----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_metadata_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_metric\_tags\_processor module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_metric_tags_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_metric\_tags\_processor\_rule module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_metric\_tags\_processor\_rule\_action module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_rule_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_metric\_tags\_processor\_rule\_mode module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_rule_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_metric\_tags\_processor\_type module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_type
    :members:
    :show-inheritance:
 

@@ -63,6 +63,8 @@ class ObservabilityPipelineAddEnvVarsProcessor(ModelNormal):
         """
         The ``add_env_vars`` processor adds environment variable values to log events.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

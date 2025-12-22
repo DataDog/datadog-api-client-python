@@ -55,6 +55,8 @@ class ObservabilityPipelineSentinelOneDestination(ModelNormal):
         """
         The ``sentinel_one`` destination sends logs to SentinelOne.
 
+        **Supported pipeline types:** logs
+
         :param id: The unique identifier for this component.
         :type id: str
 

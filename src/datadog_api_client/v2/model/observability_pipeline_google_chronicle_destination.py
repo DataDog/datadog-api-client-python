@@ -68,6 +68,8 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
         """
         The ``google_chronicle`` destination sends logs to Google Chronicle.
 
+        **Supported pipeline types:** logs
+
         :param auth: GCP credentials used to authenticate with Google Cloud Storage.
         :type auth: ObservabilityPipelineGcpAuth, optional
 

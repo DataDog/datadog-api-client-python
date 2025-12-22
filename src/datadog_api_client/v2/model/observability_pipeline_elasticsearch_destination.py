@@ -60,6 +60,8 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
         """
         The ``elasticsearch`` destination writes logs to an Elasticsearch cluster.
 
+        **Supported pipeline types:** logs
+
         :param api_version: The Elasticsearch API version to use. Set to ``auto`` to auto-detect.
         :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
 
