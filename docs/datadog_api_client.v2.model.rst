@@ -15740,6 +15740,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_proces
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_reference\_table module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_reference_table
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_field\_value module
 --------------------------------------------------------------------------
 
