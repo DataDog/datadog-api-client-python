@@ -90,6 +90,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param geoip: Uses a GeoIP database to enrich logs based on an IP field.
         :type geoip: ObservabilityPipelineEnrichmentTableGeoIp, optional
 
+        :param reference_table: Uses a Datadog reference table to enrich logs.
+        :type reference_table: ObservabilityPipelineEnrichmentTableReferenceTable, optional
+
         :param target: Path where enrichment results should be stored in the log.
         :type target: str
 
