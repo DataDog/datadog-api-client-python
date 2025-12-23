@@ -28,12 +28,12 @@ class HostTags(ModelNormal):
 
     def __init__(self_, host: Union[str, UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        Set of tags to associate with your host.
+        Host name and an array of its tags
 
         :param host: Your host name.
         :type host: str, optional
 
-        :param tags: A list of tags to apply to the host.
+        :param tags: A list of tags associated with a host.
         :type tags: [str], optional
         """
         if host is not unset:
