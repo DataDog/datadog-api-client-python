@@ -24042,6 +24042,62 @@ datadog\_api\_client.v2.model.team\_links\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_notification\_rule module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_notification\_rule\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_notification\_rule\_attributes\_email module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rule_attributes_email
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_notification\_rule\_attributes\_ms\_teams module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rule_attributes_ms_teams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_notification\_rule\_attributes\_pagerduty module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rule_attributes_pagerduty
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_notification\_rule\_attributes\_slack module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rule_attributes_slack
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_notification\_rules\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rules_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_notification\_rules\_response\_meta module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_notification_rules_response_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_on\_call\_responders module
 ---------------------------------------------------------------
 

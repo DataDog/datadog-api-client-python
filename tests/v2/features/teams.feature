@@ -144,6 +144,22 @@ Feature: Teams
     And the response "data.data[0].relationships.connected_team.data.id" is equal to "@MyGitHubAccount/my-team-name"
     And the response "data.data[0].type" is equal to "team_connection"
 
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Create team notification rule returns "API error response." response
+    Given new "CreateTeamNotificationRule" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    And body with value {"attributes": {"email": {}, "ms_teams": {}, "pagerduty": {}, "slack": {}}, "id": "b8626d7e-cedd-11eb-abf5-da7ad0900001"}
+    When the request is sent
+    Then the response status is 409 API error response.
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Create team notification rule returns "OK" response
+    Given new "CreateTeamNotificationRule" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    And body with value {"attributes": {"email": {}, "ms_teams": {}, "pagerduty": {}, "slack": {}}, "id": "b8626d7e-cedd-11eb-abf5-da7ad0900001"}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/aaa-omg
   Scenario: Delete team connections returns "Bad Request" response
     Given operation "DeleteTeamConnections" enabled
@@ -165,6 +181,22 @@ Feature: Teams
     And body with value {"data": [{"id": "12345678-1234-5678-9abc-123456789012", "type": "team_connection"}]}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Delete team notification rule returns "API error response." response
+    Given new "DeleteTeamNotificationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Delete team notification rule returns "No Content" response
+    Given new "DeleteTeamNotificationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @team:DataDog/aaa-omg
   Scenario: Get a team hierarchy link returns "API error response." response
@@ -351,6 +383,36 @@ Feature: Teams
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team notification rule returns "API error response." response
+    Given new "GetTeamNotificationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team notification rule returns "OK" response
+    Given new "GetTeamNotificationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 201 OK
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team notification rules returns "API error response." response
+    Given new "GetTeamNotificationRules" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team notification rules returns "OK" response
+    Given new "GetTeamNotificationRules" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Get team sync configurations returns "OK" response
@@ -604,5 +666,23 @@ Feature: Teams
     And request contains "team_id" parameter from "dd_team.data.id"
     And request contains "action" parameter with value "manage_membership"
     And body with value {"data": {"attributes": {"value": "admins"}, "type": "team_permission_settings"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Update team notification rule returns "API error response." response
+    Given new "UpdateTeamNotificationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "team_id" parameter from "REPLACE.ME"
+    And body with value {"attributes": {"email": {}, "ms_teams": {}, "pagerduty": {}, "slack": {}}, "id": "b8626d7e-cedd-11eb-abf5-da7ad0900001"}
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Update team notification rule returns "OK" response
+    Given new "UpdateTeamNotificationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "team_id" parameter from "REPLACE.ME"
+    And body with value {"attributes": {"email": {}, "ms_teams": {}, "pagerduty": {}, "slack": {}}, "id": "b8626d7e-cedd-11eb-abf5-da7ad0900001"}
     When the request is sent
     Then the response status is 200 OK
