@@ -10,10 +10,10 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines
   response:
     body:
-      string: '{"data":{"id":"c28a5ad0-dc2c-11f0-bdee-da7ad0900002","type":"pipelines","attributes":{"name":"Main
+      string: '{"data":{"id":"575002c2-e007-11f0-9057-da7ad0900002","type":"pipelines","attributes":{"name":"Main
         Observability Pipeline","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["processor-group-0"],"type":"datadog_logs"}],"processors":[{"display_name":"My
         Processor Group","enabled":true,"id":"processor-group-0","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"display_name":"My
         Filter Processor","enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
@@ -34,7 +34,7 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/c28a5ad0-dc2c-11f0-bdee-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/575002c2-e007-11f0-9057-da7ad0900002
   response:
     body:
       string: '{"errors":[{"title":"Component with ID my-processor-group is an unknown
@@ -56,7 +56,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/c28a5ad0-dc2c-11f0-bdee-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/575002c2-e007-11f0-9057-da7ad0900002
   response:
     body:
       string: ''
