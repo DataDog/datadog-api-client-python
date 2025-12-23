@@ -75,6 +75,8 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         """
         The ``datadog_tags`` processor includes or excludes specific Datadog tags in your logs.
 
+        **Supported pipeline types:** logs
+
         :param action: The action to take on tags with matching keys.
         :type action: ObservabilityPipelineDatadogTagsProcessorAction
 

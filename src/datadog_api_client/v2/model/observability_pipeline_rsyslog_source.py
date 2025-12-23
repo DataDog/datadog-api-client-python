@@ -59,6 +59,8 @@ class ObservabilityPipelineRsyslogSource(ModelNormal):
         """
         The ``rsyslog`` source listens for logs over TCP or UDP from an ``rsyslog`` server using the syslog protocol.
 
+        **Supported pipeline types:** logs
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
         :type id: str
 
