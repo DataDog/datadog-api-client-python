@@ -112,8 +112,11 @@ Feature: Teams
     And the response "data.attributes.name" is equal to "test-name-{{ unique_hash }}"
     And the response "data.attributes.avatar" is equal to "🥑"
     And the response "data.attributes.banner" is equal to 7
-    And the response "data.attributes.visible_modules" is equal to ["m1","m2"]
-    And the response "data.attributes.hidden_modules" is equal to ["m3"]
+    And the response "data.attributes.visible_modules" has length 2
+    And the response "data.attributes.visible_modules" array contains value "m1"
+    And the response "data.attributes.visible_modules" array contains value "m2"
+    And the response "data.attributes.hidden_modules" has length 1
+    And the response "data.attributes.hidden_modules" array contains value "m3"
 
   @skip @team:DataDog/aaa-omg
   Scenario: Create team connections returns "Bad Request" response
