@@ -147,6 +147,25 @@ Feature: Teams
     And the response "data.data[0].relationships.connected_team.data.id" is equal to "@MyGitHubAccount/my-team-name"
     And the response "data.data[0].type" is equal to "team_connection"
 
+  @team:DataDog/aaa-omg
+  Scenario: Create team notification rule returns "API error response." response
+    Given new "CreateTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And there is a valid "team_notification_rule" in the system
+    And body with value {"data": {"type": "team_notification_rules", "attributes": {"email": {"enabled": true}, "slack": {"workspace": "Datadog", "channel": "aaa-omg-ops"}}}}
+    When the request is sent
+    Then the response status is 409 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Create team notification rule returns "OK" response
+    Given new "CreateTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And body with value {"data": {"type": "team_notification_rules", "attributes": {"email": {"enabled": true}, "slack": {"workspace": "Datadog", "channel": "aaa-omg-ops"}}}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @skip @team:DataDog/aaa-omg
   Scenario: Delete team connections returns "Bad Request" response
     Given operation "DeleteTeamConnections" enabled
@@ -168,6 +187,26 @@ Feature: Teams
     And body with value {"data": [{"id": "12345678-1234-5678-9abc-123456789012", "type": "team_connection"}]}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @team:DataDog/aaa-omg
+  Scenario: Delete team notification rule returns "API error response." response
+    Given new "DeleteTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "team_notification_rule" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "rule_id" parameter with value "3d031bb2-e1da-4d34-a670-1b5557b032c9"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Delete team notification rule returns "No Content" response
+    Given new "DeleteTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "team_notification_rule" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "rule_id" parameter from "team_notification_rule.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @team:DataDog/aaa-omg
   Scenario: Get a team hierarchy link returns "API error response." response
@@ -354,6 +393,43 @@ Feature: Teams
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @team:DataDog/aaa-omg
+  Scenario: Get team notification rule returns "API error response." response
+    Given new "GetTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "team_notification_rule" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "rule_id" parameter from "dd_team.data.id"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Get team notification rule returns "OK" response
+    Given new "GetTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "team_notification_rule" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "rule_id" parameter from "team_notification_rule.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get team notification rules returns "API error response." response
+    Given new "GetTeamNotificationRules" request
+    And request contains "team_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Get team notification rules returns "OK" response
+    Given new "GetTeamNotificationRules" request
+    And there is a valid "dd_team" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And there is a valid "team_notification_rule" in the system
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Get team sync configurations returns "OK" response
@@ -609,3 +685,27 @@ Feature: Teams
     And body with value {"data": {"attributes": {"value": "admins"}, "type": "team_permission_settings"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/aaa-omg
+  Scenario: Update team notification rule returns "API error response." response
+    Given new "UpdateTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "team_notification_rule" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "rule_id" parameter with value "3d031bb2-e1da-4d34-a670-1b5557b032c9"
+    And body with value {"data": {"type": "team_notification_rules", "id": "{{dd_team.data.id}}", "attributes": {"pagerduty": {"service_name": "Datadog-prod"}, "slack": {"workspace": "Datadog", "channel": "aaa-governance-ops"}}}}
+    When the request is sent
+    Then the response status is 409 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Update team notification rule returns "OK" response
+    Given new "UpdateTeamNotificationRule" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "team_notification_rule" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "rule_id" parameter from "team_notification_rule.data.id"
+    And body with value {"data": {"type": "team_notification_rules", "id": "{{team_notification_rule.data.id}}", "attributes": {"pagerduty": {"service_name": "Datadog-prod"}, "slack": {"workspace": "Datadog", "channel": "aaa-governance-ops"}}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.slack.channel" is equal to "aaa-governance-ops"
+    And the response "data.attributes.pagerduty.service_name" is equal to "Datadog-prod"

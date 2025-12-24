@@ -1,0 +1,68 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-903f29be232384f8","name":"test-name-903f29be232384f8"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"54fb1795-4bee-4e8f-9ccd-1aca53d24f8e","type":"team","attributes":{"avatar":null,"banner":14,"created_at":"2025-12-23T15:29:05.802966+00:00","description":null,"handle":"test-handle-903f29be232384f8","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2025-12-23T15:29:05.802966+00:00","name":"test-name-903f29be232384f8","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/54fb1795-4bee-4e8f-9ccd-1aca53d24f8e/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/54fb1795-4bee-4e8f-9ccd-1aca53d24f8e/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"email":{"enabled":true},"slack":{"channel":"aaa-omg-ops","workspace":"Datadog"}},"type":"team_notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team/54fb1795-4bee-4e8f-9ccd-1aca53d24f8e/notification-rules
+  response:
+    body:
+      string: '{"data":{"id":"51f01e40-e075-4c25-8878-9fd3f7800770","type":"team_notification_rules","attributes":{"email":{"enabled":true},"slack":{"workspace":"Datadog","channel":"aaa-omg-ops"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team/54fb1795-4bee-4e8f-9ccd-1aca53d24f8e/notification-rules/54fb1795-4bee-4e8f-9ccd-1aca53d24f8e
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"rule not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/54fb1795-4bee-4e8f-9ccd-1aca53d24f8e
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

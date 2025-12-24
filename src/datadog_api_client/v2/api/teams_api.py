@@ -44,6 +44,9 @@ from datadog_api_client.v2.model.user_team import UserTeam
 from datadog_api_client.v2.model.user_team_response import UserTeamResponse
 from datadog_api_client.v2.model.user_team_request import UserTeamRequest
 from datadog_api_client.v2.model.user_team_update_request import UserTeamUpdateRequest
+from datadog_api_client.v2.model.team_notification_rules_response import TeamNotificationRulesResponse
+from datadog_api_client.v2.model.team_notification_rule_response import TeamNotificationRuleResponse
+from datadog_api_client.v2.model.team_notification_rule_request import TeamNotificationRuleRequest
 from datadog_api_client.v2.model.team_permission_settings_response import TeamPermissionSettingsResponse
 from datadog_api_client.v2.model.team_permission_setting_response import TeamPermissionSettingResponse
 from datadog_api_client.v2.model.team_permission_setting_update_request import TeamPermissionSettingUpdateRequest
@@ -197,6 +200,32 @@ class TeamsApi:
             api_client=api_client,
         )
 
+        self._create_team_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/notification-rules",
+                "operation_id": "create_team_notification_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TeamNotificationRuleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_team_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -289,6 +318,35 @@ class TeamsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_team_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/notification-rules/{rule_id}",
+                "operation_id": "delete_team_notification_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
                     "location": "path",
                 },
             },
@@ -431,6 +489,58 @@ class TeamsApi:
                     "openapi_types": (str,),
                     "attribute": "filter[keyword]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_team_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/notification-rules/{rule_id}",
+                "operation_id": "get_team_notification_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_team_notification_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamNotificationRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/notification-rules",
+                "operation_id": "get_team_notification_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -851,6 +961,38 @@ class TeamsApi:
             api_client=api_client,
         )
 
+        self._update_team_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/notification-rules/{rule_id}",
+                "operation_id": "update_team_notification_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TeamNotificationRuleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_team_permission_setting_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamPermissionSettingResponse,),
@@ -1001,6 +1143,25 @@ class TeamsApi:
 
         return self._create_team_membership_endpoint.call_with_http_info(**kwargs)
 
+    def create_team_notification_rule(
+        self,
+        team_id: str,
+        body: TeamNotificationRuleRequest,
+    ) -> TeamNotificationRuleResponse:
+        """Create team notification rule.
+
+        :param team_id: None
+        :type team_id: str
+        :type body: TeamNotificationRuleRequest
+        :rtype: TeamNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        kwargs["body"] = body
+
+        return self._create_team_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def delete_team(
         self,
         team_id: str,
@@ -1079,6 +1240,26 @@ class TeamsApi:
         kwargs["user_id"] = user_id
 
         return self._delete_team_membership_endpoint.call_with_http_info(**kwargs)
+
+    def delete_team_notification_rule(
+        self,
+        team_id: str,
+        rule_id: str,
+    ) -> None:
+        """Delete team notification rule.
+
+        :param team_id: None
+        :type team_id: str
+        :param rule_id: None
+        :type rule_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        kwargs["rule_id"] = rule_id
+
+        return self._delete_team_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def get_team(
         self,
@@ -1248,6 +1429,41 @@ class TeamsApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def get_team_notification_rule(
+        self,
+        team_id: str,
+        rule_id: str,
+    ) -> TeamNotificationRuleResponse:
+        """Get team notification rule.
+
+        :param team_id: None
+        :type team_id: str
+        :param rule_id: None
+        :type rule_id: str
+        :rtype: TeamNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        kwargs["rule_id"] = rule_id
+
+        return self._get_team_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_team_notification_rules(
+        self,
+        team_id: str,
+    ) -> TeamNotificationRulesResponse:
+        """Get team notification rules.
+
+        :param team_id: None
+        :type team_id: str
+        :rtype: TeamNotificationRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        return self._get_team_notification_rules_endpoint.call_with_http_info(**kwargs)
 
     def get_team_permission_settings(
         self,
@@ -1851,6 +2067,30 @@ class TeamsApi:
         kwargs["body"] = body
 
         return self._update_team_membership_endpoint.call_with_http_info(**kwargs)
+
+    def update_team_notification_rule(
+        self,
+        team_id: str,
+        rule_id: str,
+        body: TeamNotificationRuleRequest,
+    ) -> TeamNotificationRuleResponse:
+        """Update team notification rule.
+
+        :param team_id: None
+        :type team_id: str
+        :param rule_id: None
+        :type rule_id: str
+        :type body: TeamNotificationRuleRequest
+        :rtype: TeamNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._update_team_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_team_permission_setting(
         self,

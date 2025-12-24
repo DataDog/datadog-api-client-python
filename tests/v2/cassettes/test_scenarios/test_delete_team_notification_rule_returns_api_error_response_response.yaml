@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-7ecc01265306da71","name":"test-name-7ecc01265306da71"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"9bd7798e-a955-48e0-9a36-13820e1ff74b","type":"team","attributes":{"avatar":null,"banner":2,"created_at":"2025-12-23T16:10:38.996803+00:00","description":null,"handle":"test-handle-7ecc01265306da71","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2025-12-23T16:10:38.996803+00:00","name":"test-name-7ecc01265306da71","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/9bd7798e-a955-48e0-9a36-13820e1ff74b/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/9bd7798e-a955-48e0-9a36-13820e1ff74b/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"email":{"enabled":true},"slack":{"channel":"aaa-omg-ops","workspace":"Datadog"}},"type":"team_notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team/9bd7798e-a955-48e0-9a36-13820e1ff74b/notification-rules
+  response:
+    body:
+      string: '{"data":{"id":"87b5e6e4-000d-4d9d-bb1c-bc62728a8ab8","type":"team_notification_rules","attributes":{"email":{"enabled":true},"slack":{"workspace":"Datadog","channel":"aaa-omg-ops"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/9bd7798e-a955-48e0-9a36-13820e1ff74b/notification-rules/3d031bb2-e1da-4d34-a670-1b5557b032c9
+  response:
+    body:
+      string: '{"errors":[{"status":"404","detail":"rule ID 3d031bb2-e1da-4d34-a670-1b5557b032c9
+        was not found in team ID 9bd7798e-a955-48e0-9a36-13820e1ff74b"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/9bd7798e-a955-48e0-9a36-13820e1ff74b
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
