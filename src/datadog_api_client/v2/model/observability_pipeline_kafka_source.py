@@ -74,6 +74,8 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         """
         The ``kafka`` source ingests data from Apache Kafka topics.
 
+        **Supported pipeline types:** logs
+
         :param group_id: Consumer group ID used by the Kafka client.
         :type group_id: str
 

@@ -20,7 +20,7 @@ Feature: Observability Pipelines
   Scenario: Create a new pipeline returns "Conflict" response
     Given operation "CreatePipeline" enabled
     And new "CreatePipeline" request
-    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}, {"enabled": true, "field": "message", "id": "json-processor", "include": "*", "type": "parse_json"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "pipeline_type": "logs", "processors": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}, {"enabled": true, "field": "message", "id": "json-processor", "include": "*", "type": "parse_json"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -115,7 +115,7 @@ Feature: Observability Pipelines
     Given operation "UpdatePipeline" enabled
     And new "UpdatePipeline" request
     And request contains "pipeline_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}, {"enabled": true, "field": "message", "id": "json-processor", "include": "*", "type": "parse_json"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "pipeline_type": "logs", "processors": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}, {"enabled": true, "field": "message", "id": "json-processor", "include": "*", "type": "parse_json"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
     When the request is sent
     Then the response status is 409 Conflict
 

@@ -64,6 +64,8 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         """
         The ``http_server`` source collects logs over HTTP POST from external services.
 
+        **Supported pipeline types:** logs
+
         :param auth_strategy: HTTP authentication method.
         :type auth_strategy: ObservabilityPipelineHttpServerSourceAuthStrategy
 
