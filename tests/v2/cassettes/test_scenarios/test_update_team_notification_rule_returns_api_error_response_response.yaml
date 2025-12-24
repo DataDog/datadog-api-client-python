@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-191ec67f8f79c1b1","name":"test-name-191ec67f8f79c1b1"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"30484b70-7506-41b9-b1c6-4fcf6c13e5e4","type":"team","attributes":{"avatar":null,"banner":2,"created_at":"2025-12-23T16:10:18.284603+00:00","description":null,"handle":"test-handle-191ec67f8f79c1b1","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2025-12-23T16:10:18.284603+00:00","name":"test-name-191ec67f8f79c1b1","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/30484b70-7506-41b9-b1c6-4fcf6c13e5e4/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/30484b70-7506-41b9-b1c6-4fcf6c13e5e4/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"email":{"enabled":true},"slack":{"channel":"aaa-omg-ops","workspace":"Datadog"}},"type":"team_notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team/30484b70-7506-41b9-b1c6-4fcf6c13e5e4/notification-rules
+  response:
+    body:
+      string: '{"data":{"id":"5b80babd-fa31-4ab5-b180-5e36af751704","type":"team_notification_rules","attributes":{"email":{"enabled":true},"slack":{"workspace":"Datadog","channel":"aaa-omg-ops"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"pagerduty":{"service_name":"Datadog-prod"},"slack":{"channel":"aaa-governance-ops","workspace":"Datadog"}},"id":"30484b70-7506-41b9-b1c6-4fcf6c13e5e4","type":"team_notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/team/30484b70-7506-41b9-b1c6-4fcf6c13e5e4/notification-rules/3d031bb2-e1da-4d34-a670-1b5557b032c9
+  response:
+    body:
+      string: '{"errors":[{"status":"409","title":"Conflict","detail":"rule id does
+        not match with team''s rule id"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/30484b70-7506-41b9-b1c6-4fcf6c13e5e4
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

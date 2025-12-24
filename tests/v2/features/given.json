@@ -1259,6 +1259,22 @@
   {
     "parameters": [
       {
+        "name": "team_id",
+        "source": "dd_team.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n    \"data\": {\n        \"type\": \"team_notification_rules\",\n        \"attributes\": {\n            \"email\": {\n                \"enabled\": true\n            },\n            \"slack\": {\n                \"workspace\": \"Datadog\",\n                \"channel\": \"aaa-omg-ops\"\n            }\n        }\n    }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_notification_rule\" in the system",
+    "key": "team_notification_rule",
+    "tag": "Teams",
+    "operationId": "CreateTeamNotificationRule"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"teams\"\n  }\n}"
       }

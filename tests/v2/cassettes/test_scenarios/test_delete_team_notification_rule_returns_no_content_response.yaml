@@ -1,0 +1,66 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-4f30392b8132329e","name":"test-name-4f30392b8132329e"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"204d172a-83e4-420c-a840-d914be2cd5ed","type":"team","attributes":{"avatar":null,"banner":4,"created_at":"2025-12-23T15:28:45.710450+00:00","description":null,"handle":"test-handle-4f30392b8132329e","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2025-12-23T15:28:45.710450+00:00","name":"test-name-4f30392b8132329e","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/204d172a-83e4-420c-a840-d914be2cd5ed/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/204d172a-83e4-420c-a840-d914be2cd5ed/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"email":{"enabled":true},"slack":{"channel":"aaa-omg-ops","workspace":"Datadog"}},"type":"team_notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team/204d172a-83e4-420c-a840-d914be2cd5ed/notification-rules
+  response:
+    body:
+      string: '{"data":{"id":"d4abbaab-11b3-41ea-a6e3-ed366522a39e","type":"team_notification_rules","attributes":{"email":{"enabled":true},"slack":{"workspace":"Datadog","channel":"aaa-omg-ops"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/204d172a-83e4-420c-a840-d914be2cd5ed/notification-rules/d4abbaab-11b3-41ea-a6e3-ed366522a39e
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/204d172a-83e4-420c-a840-d914be2cd5ed
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
