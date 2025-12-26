@@ -51,6 +51,12 @@ class SyntheticsAPIStep(ModelComposed):
 
         :param value: The time to wait in seconds. Minimum value: 0. Maximum value: 180.
         :type value: int
+
+        :param always_execute: A boolean set to always execute this step even if the previous step failed or was skipped.
+        :type always_execute: bool, optional
+
+        :param subtest_public_id: Public ID of the test to be played as part of a `playSubTest` step type.
+        :type subtest_public_id: str
         """
         super().__init__(kwargs)
 
@@ -65,10 +71,12 @@ class SyntheticsAPIStep(ModelComposed):
         # loading
         from datadog_api_client.v1.model.synthetics_api_test_step import SyntheticsAPITestStep
         from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
+        from datadog_api_client.v1.model.synthetics_api_subtest_step import SyntheticsAPISubtestStep
 
         return {
             "oneOf": [
                 SyntheticsAPITestStep,
                 SyntheticsAPIWaitStep,
+                SyntheticsAPISubtestStep,
             ],
         }
