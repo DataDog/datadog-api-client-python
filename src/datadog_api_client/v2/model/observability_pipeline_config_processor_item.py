@@ -64,10 +64,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :type metrics: [ObservabilityPipelineGeneratedMetric], optional
 
         :param percentage: The percentage of logs to sample.
-        :type percentage: float, optional
-
-        :param rate: Number of events to sample (1 in N).
-        :type rate: int, optional
+        :type percentage: float
 
         :param disable_library_rules: If set to `true`, disables the default Grok rules provided by Datadog.
         :type disable_library_rules: bool, optional
