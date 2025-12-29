@@ -4789,6 +4789,16 @@ from datadog_api_client.v2.model.team_link_create_request import TeamLinkCreateR
 from datadog_api_client.v2.model.team_link_response import TeamLinkResponse
 from datadog_api_client.v2.model.team_link_type import TeamLinkType
 from datadog_api_client.v2.model.team_links_response import TeamLinksResponse
+from datadog_api_client.v2.model.team_notification_rule import TeamNotificationRule
+from datadog_api_client.v2.model.team_notification_rule_attributes import TeamNotificationRuleAttributes
+from datadog_api_client.v2.model.team_notification_rule_attributes_email import TeamNotificationRuleAttributesEmail
+from datadog_api_client.v2.model.team_notification_rule_attributes_ms_teams import TeamNotificationRuleAttributesMsTeams
+from datadog_api_client.v2.model.team_notification_rule_attributes_pagerduty import (
+    TeamNotificationRuleAttributesPagerduty,
+)
+from datadog_api_client.v2.model.team_notification_rule_attributes_slack import TeamNotificationRuleAttributesSlack
+from datadog_api_client.v2.model.team_notification_rules_response import TeamNotificationRulesResponse
+from datadog_api_client.v2.model.team_notification_rules_response_meta import TeamNotificationRulesResponseMeta
 from datadog_api_client.v2.model.team_on_call_responders import TeamOnCallResponders
 from datadog_api_client.v2.model.team_on_call_responders_data import TeamOnCallRespondersData
 from datadog_api_client.v2.model.team_on_call_responders_data_relationships import TeamOnCallRespondersDataRelationships
@@ -8597,6 +8607,14 @@ __all__ = [
     "TeamLinkResponse",
     "TeamLinkType",
     "TeamLinksResponse",
+    "TeamNotificationRule",
+    "TeamNotificationRuleAttributes",
+    "TeamNotificationRuleAttributesEmail",
+    "TeamNotificationRuleAttributesMsTeams",
+    "TeamNotificationRuleAttributesPagerduty",
+    "TeamNotificationRuleAttributesSlack",
+    "TeamNotificationRulesResponse",
+    "TeamNotificationRulesResponseMeta",
     "TeamOnCallResponders",
     "TeamOnCallRespondersData",
     "TeamOnCallRespondersDataRelationships",
