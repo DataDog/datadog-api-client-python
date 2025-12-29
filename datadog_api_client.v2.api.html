@@ -2788,6 +2788,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.create_team_membership" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.create_team_membership()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.create_team_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.create_team_notification_rule()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.delete_team()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team_connections" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.delete_team_connections()</span></code></a>
@@ -2795,6 +2797,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team_link" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.delete_team_link()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team_membership" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.delete_team_membership()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.delete_team_notification_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team()</span></code></a>
         </li>
@@ -2807,6 +2811,10 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_memberships" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team_memberships()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_memberships_with_pagination" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team_memberships_with_pagination()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team_notification_rule()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_notification_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team_notification_rules()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_permission_settings" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.get_team_permission_settings()</span></code></a>
         </li>
@@ -2841,6 +2849,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.update_team_link" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.update_team_link()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.update_team_membership" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.update_team_membership()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.update_team_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.update_team_notification_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.teams_api.TeamsApi.update_team_permission_setting" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">TeamsApi.update_team_permission_setting()</span></code></a>
         </li></ul>
@@ -14985,6 +14995,19 @@ User IDs passed through the <code class="docutils literal notranslate"><span cla
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.create_team_notification_rule">
+<span class="sig-name descname"><span class="pre">create_team_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_request.TeamNotificationRuleRequest" title="datadog_api_client.v2.model.team_notification_rule_request.TeamNotificationRuleRequest"><span class="pre">TeamNotificationRuleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse" title="datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse"><span class="pre">TeamNotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.create_team_notification_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Create team notification rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>team_id</strong> (<em>str</em>) – None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse" title="datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse">TeamNotificationRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.delete_team">
 <span class="sig-name descname"><span class="pre">delete_team</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team" title="Link to this definition">¶</a></dt>
 <dd><p>Remove a team.</p>
@@ -15037,6 +15060,22 @@ User IDs passed through the <code class="docutils literal notranslate"><span cla
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>team_id</strong> (<em>str</em>) – None</p></li>
 <li><p><strong>user_id</strong> (<em>str</em>) – None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.delete_team_notification_rule">
+<span class="sig-name descname"><span class="pre">delete_team_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.delete_team_notification_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Delete team notification rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>team_id</strong> (<em>str</em>) – None</p></li>
+<li><p><strong>rule_id</strong> (<em>str</em>) – None</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -15143,6 +15182,35 @@ User IDs passed through the <code class="docutils literal notranslate"><span cla
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>collections.abc.Iterable[<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.user_team.UserTeam" title="datadog_api_client.v2.model.user_team.UserTeam">UserTeam</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.get_team_notification_rule">
+<span class="sig-name descname"><span class="pre">get_team_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse" title="datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse"><span class="pre">TeamNotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_notification_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Get team notification rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>team_id</strong> (<em>str</em>) – None</p></li>
+<li><p><strong>rule_id</strong> (<em>str</em>) – None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse" title="datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse">TeamNotificationRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.get_team_notification_rules">
+<span class="sig-name descname"><span class="pre">get_team_notification_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rules_response.TeamNotificationRulesResponse" title="datadog_api_client.v2.model.team_notification_rules_response.TeamNotificationRulesResponse"><span class="pre">TeamNotificationRulesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.get_team_notification_rules" title="Link to this definition">¶</a></dt>
+<dd><p>Get team notification rules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>team_id</strong> (<em>str</em>) – None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rules_response.TeamNotificationRulesResponse" title="datadog_api_client.v2.model.team_notification_rules_response.TeamNotificationRulesResponse">TeamNotificationRulesResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -15464,6 +15532,22 @@ If the <code class="docutils literal notranslate"><span class="pre">team_links</
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.user_team_response.UserTeamResponse" title="datadog_api_client.v2.model.user_team_response.UserTeamResponse">UserTeamResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.teams_api.TeamsApi.update_team_notification_rule">
+<span class="sig-name descname"><span class="pre">update_team_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_request.TeamNotificationRuleRequest" title="datadog_api_client.v2.model.team_notification_rule_request.TeamNotificationRuleRequest"><span class="pre">TeamNotificationRuleRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse" title="datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse"><span class="pre">TeamNotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.teams_api.TeamsApi.update_team_notification_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Update team notification rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>team_id</strong> (<em>str</em>) – None</p></li>
+<li><p><strong>rule_id</strong> (<em>str</em>) – None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse" title="datadog_api_client.v2.model.team_notification_rule_response.TeamNotificationRuleResponse">TeamNotificationRuleResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
