@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-72b192d95e937252","name":"test-name-72b192d95e937252"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"04eae0c8-e225-4f2c-97ec-39dab13dfc38","type":"team","attributes":{"avatar":null,"banner":13,"created_at":"2025-12-23T15:28:02.268616+00:00","description":null,"handle":"test-handle-72b192d95e937252","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2025-12-23T15:28:02.268616+00:00","name":"test-name-72b192d95e937252","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/04eae0c8-e225-4f2c-97ec-39dab13dfc38/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/04eae0c8-e225-4f2c-97ec-39dab13dfc38/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"email":{"enabled":true},"slack":{"channel":"aaa-omg-ops","workspace":"Datadog"}},"type":"team_notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team/04eae0c8-e225-4f2c-97ec-39dab13dfc38/notification-rules
+  response:
+    body:
+      string: '{"data":{"id":"bba76d10-a5c6-4cb5-ba1a-5a9145f2b364","type":"team_notification_rules","attributes":{"email":{"enabled":true},"slack":{"workspace":"Datadog","channel":"aaa-omg-ops"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/04eae0c8-e225-4f2c-97ec-39dab13dfc38
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
