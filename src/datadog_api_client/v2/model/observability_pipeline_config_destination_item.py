@@ -124,6 +124,30 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param topic: The Pub/Sub topic name to publish logs to.
         :type topic: str
+
+        :param headers_key: The field name to use for Kafka message headers.
+        :type headers_key: str, optional
+
+        :param key_field: The field name to use as the Kafka message key.
+        :type key_field: str, optional
+
+        :param librdkafka_options: Optional list of advanced Kafka producer configuration options, defined as key-value pairs.
+        :type librdkafka_options: [ObservabilityPipelineKafkaLibrdkafkaOption], optional
+
+        :param message_timeout_ms: Maximum time in milliseconds to wait for message delivery confirmation.
+        :type message_timeout_ms: int, optional
+
+        :param rate_limit_duration_secs: Duration in seconds for the rate limit window.
+        :type rate_limit_duration_secs: int, optional
+
+        :param rate_limit_num: Maximum number of messages allowed per rate limit duration.
+        :type rate_limit_num: int, optional
+
+        :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
+        :type sasl: ObservabilityPipelineKafkaSasl, optional
+
+        :param socket_timeout_ms: Socket timeout in milliseconds for network requests.
+        :type socket_timeout_ms: int, optional
         """
         super().__init__(kwargs)
 
@@ -138,6 +162,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         # loading
         from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
             ObservabilityPipelineDatadogLogsDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
+            ObservabilityPipelineCloudPremDestination,
         )
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
             ObservabilityPipelineAmazonS3Destination,
@@ -189,10 +216,14 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
             ObservabilityPipelineGooglePubSubDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_kafka_destination import (
+            ObservabilityPipelineKafkaDestination,
+        )
 
         return {
             "oneOf": [
                 ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineAmazonS3Destination,
                 ObservabilityPipelineGoogleCloudStorageDestination,
                 ObservabilityPipelineSplunkHecDestination,
@@ -211,5 +242,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
                 ObservabilityPipelineGooglePubSubDestination,
+                ObservabilityPipelineKafkaDestination,
             ],
         }

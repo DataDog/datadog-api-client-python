@@ -22,10 +22,10 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :type id: str
 
         :param librdkafka_options: Optional list of advanced Kafka client configuration options, defined as key-value pairs.
-        :type librdkafka_options: [ObservabilityPipelineKafkaSourceLibrdkafkaOption], optional
+        :type librdkafka_options: [ObservabilityPipelineKafkaLibrdkafkaOption], optional
 
         :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
-        :type sasl: ObservabilityPipelineKafkaSourceSasl, optional
+        :type sasl: ObservabilityPipelineKafkaSasl, optional
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional

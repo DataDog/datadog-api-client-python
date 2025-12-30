@@ -26,6 +26,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
         ObservabilityPipelineDatadogLogsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
+        ObservabilityPipelineCloudPremDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
         ObservabilityPipelineAmazonS3Destination,
     )
@@ -75,6 +78,9 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
         ObservabilityPipelineGooglePubSubDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_kafka_destination import (
+        ObservabilityPipelineKafkaDestination,
     )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
@@ -143,6 +149,7 @@ class ObservabilityPipelineConfig(ModelNormal):
             Union[
                 ObservabilityPipelineConfigDestinationItem,
                 ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineAmazonS3Destination,
                 ObservabilityPipelineGoogleCloudStorageDestination,
                 ObservabilityPipelineSplunkHecDestination,
@@ -161,6 +168,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
                 ObservabilityPipelineGooglePubSubDestination,
+                ObservabilityPipelineKafkaDestination,
             ]
         ],
         sources: List[
