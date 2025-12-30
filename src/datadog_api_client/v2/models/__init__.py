@@ -2886,6 +2886,12 @@ from datadog_api_client.v2.model.observability_pipeline_add_fields_processor imp
 from datadog_api_client.v2.model.observability_pipeline_add_fields_processor_type import (
     ObservabilityPipelineAddFieldsProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_add_hostname_processor import (
+    ObservabilityPipelineAddHostnameProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_add_hostname_processor_type import (
+    ObservabilityPipelineAddHostnameProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
     ObservabilityPipelineAmazonDataFirehoseSource,
 )
@@ -3179,6 +3185,12 @@ from datadog_api_client.v2.model.observability_pipeline_parse_json_processor imp
 from datadog_api_client.v2.model.observability_pipeline_parse_json_processor_type import (
     ObservabilityPipelineParseJSONProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_parse_xml_processor import (
+    ObservabilityPipelineParseXMLProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_xml_processor_type import (
+    ObservabilityPipelineParseXMLProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_pipeline_kafka_source_sasl_mechanism import (
     ObservabilityPipelinePipelineKafkaSourceSaslMechanism,
 )
@@ -3402,6 +3414,15 @@ from datadog_api_client.v2.model.observability_pipeline_socket_source_mode impor
 from datadog_api_client.v2.model.observability_pipeline_socket_source_type import ObservabilityPipelineSocketSourceType
 from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
 from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
+from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
+    ObservabilityPipelineSplitArrayProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_split_array_processor_array_config import (
+    ObservabilityPipelineSplitArrayProcessorArrayConfig,
+)
+from datadog_api_client.v2.model.observability_pipeline_split_array_processor_type import (
+    ObservabilityPipelineSplitArrayProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination import (
     ObservabilityPipelineSplunkHecDestination,
 )
@@ -7366,6 +7387,8 @@ __all__ = [
     "ObservabilityPipelineAddEnvVarsProcessorVariable",
     "ObservabilityPipelineAddFieldsProcessor",
     "ObservabilityPipelineAddFieldsProcessorType",
+    "ObservabilityPipelineAddHostnameProcessor",
+    "ObservabilityPipelineAddHostnameProcessorType",
     "ObservabilityPipelineAmazonDataFirehoseSource",
     "ObservabilityPipelineAmazonDataFirehoseSourceType",
     "ObservabilityPipelineAmazonOpenSearchDestination",
@@ -7479,6 +7502,8 @@ __all__ = [
     "ObservabilityPipelineParseGrokProcessorType",
     "ObservabilityPipelineParseJSONProcessor",
     "ObservabilityPipelineParseJSONProcessorType",
+    "ObservabilityPipelineParseXMLProcessor",
+    "ObservabilityPipelineParseXMLProcessorType",
     "ObservabilityPipelinePipelineKafkaSourceSaslMechanism",
     "ObservabilityPipelineQuotaProcessor",
     "ObservabilityPipelineQuotaProcessorLimit",
@@ -7560,6 +7585,9 @@ __all__ = [
     "ObservabilityPipelineSocketSourceType",
     "ObservabilityPipelineSpec",
     "ObservabilityPipelineSpecData",
+    "ObservabilityPipelineSplitArrayProcessor",
+    "ObservabilityPipelineSplitArrayProcessorArrayConfig",
+    "ObservabilityPipelineSplitArrayProcessorType",
     "ObservabilityPipelineSplunkHecDestination",
     "ObservabilityPipelineSplunkHecDestinationEncoding",
     "ObservabilityPipelineSplunkHecDestinationType",
