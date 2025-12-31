@@ -60,6 +60,8 @@ class ObservabilityPipelineAmazonOpenSearchDestination(ModelNormal):
         """
         The ``amazon_opensearch`` destination writes logs to Amazon OpenSearch.
 
+        **Supported pipeline types:** logs
+
         :param auth: Authentication settings for the Amazon OpenSearch destination.
             The ``strategy`` field determines whether basic or AWS-based authentication is used.
         :type auth: ObservabilityPipelineAmazonOpenSearchDestinationAuth

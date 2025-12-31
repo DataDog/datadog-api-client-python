@@ -62,6 +62,8 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
         The ``generate_datadog_metrics`` processor creates custom metrics from logs and sends them to Datadog.
         Metrics can be counters, gauges, or distributions and optionally grouped by log fields.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

@@ -71,6 +71,8 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         """
         The ``crowdstrike_next_gen_siem`` destination forwards logs to CrowdStrike Next Gen SIEM.
 
+        **Supported pipeline types:** logs
+
         :param compression: Compression configuration for log events.
         :type compression: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression, optional
 

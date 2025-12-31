@@ -20,6 +20,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_enrichment_table_geo_ip import (
         ObservabilityPipelineEnrichmentTableGeoIp,
     )
+    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_reference_table import (
+        ObservabilityPipelineEnrichmentTableReferenceTable,
+    )
     from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor_type import (
         ObservabilityPipelineEnrichmentTableProcessorType,
     )
@@ -34,6 +37,9 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_enrichment_table_geo_ip import (
             ObservabilityPipelineEnrichmentTableGeoIp,
         )
+        from datadog_api_client.v2.model.observability_pipeline_enrichment_table_reference_table import (
+            ObservabilityPipelineEnrichmentTableReferenceTable,
+        )
         from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor_type import (
             ObservabilityPipelineEnrichmentTableProcessorType,
         )
@@ -45,6 +51,7 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
             "geoip": (ObservabilityPipelineEnrichmentTableGeoIp,),
             "id": (str,),
             "include": (str,),
+            "reference_table": (ObservabilityPipelineEnrichmentTableReferenceTable,),
             "target": (str,),
             "type": (ObservabilityPipelineEnrichmentTableProcessorType,),
         }
@@ -56,6 +63,7 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         "geoip": "geoip",
         "id": "id",
         "include": "include",
+        "reference_table": "reference_table",
         "target": "target",
         "type": "type",
     }
@@ -70,10 +78,13 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         display_name: Union[str, UnsetType] = unset,
         file: Union[ObservabilityPipelineEnrichmentTableFile, UnsetType] = unset,
         geoip: Union[ObservabilityPipelineEnrichmentTableGeoIp, UnsetType] = unset,
+        reference_table: Union[ObservabilityPipelineEnrichmentTableReferenceTable, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The ``enrichment_table`` processor enriches logs using a static CSV file or GeoIP database.
+        The ``enrichment_table`` processor enriches logs using a static CSV file, GeoIP database, or reference table. Exactly one of ``file`` , ``geoip`` , or ``reference_table`` must be configured.
+
+        **Supported pipeline types:** logs
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
@@ -93,6 +104,9 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
+        :param reference_table: Uses a Datadog reference table to enrich logs.
+        :type reference_table: ObservabilityPipelineEnrichmentTableReferenceTable, optional
+
         :param target: Path where enrichment results should be stored in the log.
         :type target: str
 
@@ -105,6 +119,8 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
             kwargs["file"] = file
         if geoip is not unset:
             kwargs["geoip"] = geoip
+        if reference_table is not unset:
+            kwargs["reference_table"] = reference_table
         super().__init__(kwargs)
 
         self_.enabled = enabled

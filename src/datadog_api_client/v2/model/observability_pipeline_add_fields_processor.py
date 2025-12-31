@@ -59,6 +59,8 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         """
         The ``add_fields`` processor adds static key-value fields to logs.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
