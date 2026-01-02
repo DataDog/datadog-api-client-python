@@ -14,12 +14,10 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option import (
-        ObservabilityPipelineKafkaSourceLibrdkafkaOption,
+    from datadog_api_client.v2.model.observability_pipeline_kafka_librdkafka_option import (
+        ObservabilityPipelineKafkaLibrdkafkaOption,
     )
-    from datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl import (
-        ObservabilityPipelineKafkaSourceSasl,
-    )
+    from datadog_api_client.v2.model.observability_pipeline_kafka_sasl import ObservabilityPipelineKafkaSasl
     from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import (
         ObservabilityPipelineKafkaSourceType,
@@ -29,12 +27,10 @@ if TYPE_CHECKING:
 class ObservabilityPipelineKafkaSource(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option import (
-            ObservabilityPipelineKafkaSourceLibrdkafkaOption,
+        from datadog_api_client.v2.model.observability_pipeline_kafka_librdkafka_option import (
+            ObservabilityPipelineKafkaLibrdkafkaOption,
         )
-        from datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl import (
-            ObservabilityPipelineKafkaSourceSasl,
-        )
+        from datadog_api_client.v2.model.observability_pipeline_kafka_sasl import ObservabilityPipelineKafkaSasl
         from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
         from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import (
             ObservabilityPipelineKafkaSourceType,
@@ -43,8 +39,8 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         return {
             "group_id": (str,),
             "id": (str,),
-            "librdkafka_options": ([ObservabilityPipelineKafkaSourceLibrdkafkaOption],),
-            "sasl": (ObservabilityPipelineKafkaSourceSasl,),
+            "librdkafka_options": ([ObservabilityPipelineKafkaLibrdkafkaOption],),
+            "sasl": (ObservabilityPipelineKafkaSasl,),
             "tls": (ObservabilityPipelineTls,),
             "topics": ([str],),
             "type": (ObservabilityPipelineKafkaSourceType,),
@@ -66,8 +62,8 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         id: str,
         topics: List[str],
         type: ObservabilityPipelineKafkaSourceType,
-        librdkafka_options: Union[List[ObservabilityPipelineKafkaSourceLibrdkafkaOption], UnsetType] = unset,
-        sasl: Union[ObservabilityPipelineKafkaSourceSasl, UnsetType] = unset,
+        librdkafka_options: Union[List[ObservabilityPipelineKafkaLibrdkafkaOption], UnsetType] = unset,
+        sasl: Union[ObservabilityPipelineKafkaSasl, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -81,10 +77,10 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         :type id: str
 
         :param librdkafka_options: Optional list of advanced Kafka client configuration options, defined as key-value pairs.
-        :type librdkafka_options: [ObservabilityPipelineKafkaSourceLibrdkafkaOption], optional
+        :type librdkafka_options: [ObservabilityPipelineKafkaLibrdkafkaOption], optional
 
         :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
-        :type sasl: ObservabilityPipelineKafkaSourceSasl, optional
+        :type sasl: ObservabilityPipelineKafkaSasl, optional
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional

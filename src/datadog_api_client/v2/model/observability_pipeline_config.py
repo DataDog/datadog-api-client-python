@@ -26,6 +26,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
         ObservabilityPipelineDatadogLogsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
+        ObservabilityPipelineCloudPremDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
         ObservabilityPipelineAmazonS3Destination,
     )
@@ -76,6 +79,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
         ObservabilityPipelineGooglePubSubDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_kafka_destination import (
+        ObservabilityPipelineKafkaDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_kafka_source import ObservabilityPipelineKafkaSource
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
@@ -110,6 +116,9 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
     from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
+    from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
+        ObservabilityPipelineOpentelemetrySource,
+    )
 
 
 class ObservabilityPipelineConfig(ModelNormal):
@@ -127,13 +136,13 @@ class ObservabilityPipelineConfig(ModelNormal):
 
         return {
             "destinations": ([ObservabilityPipelineConfigDestinationItem],),
-            "processors": ([ObservabilityPipelineConfigProcessorGroup],),
+            "processor_groups": ([ObservabilityPipelineConfigProcessorGroup],),
             "sources": ([ObservabilityPipelineConfigSourceItem],),
         }
 
     attribute_map = {
         "destinations": "destinations",
-        "processors": "processors",
+        "processor_groups": "processor_groups",
         "sources": "sources",
     }
 
@@ -143,6 +152,7 @@ class ObservabilityPipelineConfig(ModelNormal):
             Union[
                 ObservabilityPipelineConfigDestinationItem,
                 ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineAmazonS3Destination,
                 ObservabilityPipelineGoogleCloudStorageDestination,
                 ObservabilityPipelineSplunkHecDestination,
@@ -161,6 +171,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
                 ObservabilityPipelineGooglePubSubDestination,
+                ObservabilityPipelineKafkaDestination,
             ]
         ],
         sources: List[
@@ -182,9 +193,10 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineHttpClientSource,
                 ObservabilityPipelineLogstashSource,
                 ObservabilityPipelineSocketSource,
+                ObservabilityPipelineOpentelemetrySource,
             ]
         ],
-        processors: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
+        processor_groups: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -193,14 +205,14 @@ class ObservabilityPipelineConfig(ModelNormal):
         :param destinations: A list of destination components where processed logs are sent.
         :type destinations: [ObservabilityPipelineConfigDestinationItem]
 
-        :param processors: A list of processor groups that transform or enrich log data.
-        :type processors: [ObservabilityPipelineConfigProcessorGroup], optional
+        :param processor_groups: A list of processor groups that transform or enrich log data.
+        :type processor_groups: [ObservabilityPipelineConfigProcessorGroup], optional
 
         :param sources: A list of configured data sources for the pipeline.
         :type sources: [ObservabilityPipelineConfigSourceItem]
         """
-        if processors is not unset:
-            kwargs["processors"] = processors
+        if processor_groups is not unset:
+            kwargs["processor_groups"] = processor_groups
         super().__init__(kwargs)
 
         self_.destinations = destinations

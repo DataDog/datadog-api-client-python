@@ -15369,6 +15369,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_add\_fields\_processor\_t
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_add\_hostname\_processor module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_add_hostname_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_add\_hostname\_processor\_type module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_add_hostname_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_data\_firehose\_source module
 --------------------------------------------------------------------------------------------
 
@@ -15464,6 +15478,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_aws\_auth module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_aws_auth
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_cloud\_prem\_destination module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_cloud\_prem\_destination\_type module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination_type
    :members:
    :show-inheritance:
 
@@ -15663,6 +15691,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destination\_data\_stream module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destination\_type module
 ----------------------------------------------------------------------------------------------
 
@@ -15737,6 +15772,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_proces
 ------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_reference\_table module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_reference_table
    :members:
    :show-inheritance:
 
@@ -15978,24 +16020,59 @@ datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_typ
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_destination module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_destination\_compression module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_destination_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_destination\_encoding module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_destination_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_destination\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_destination_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_librdkafka\_option module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_librdkafka_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_sasl module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_sasl
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_sasl\_mechanism module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_sasl_mechanism
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_source module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_source
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_source\_librdkafka\_option module
------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_source_librdkafka_option
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_source\_sasl module
----------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_kafka_source_sasl
    :members:
    :show-inheritance:
 
@@ -16104,6 +16181,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_open\_search\_destination
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_opentelemetry\_source module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_opentelemetry_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_opentelemetry\_source\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_opentelemetry_source_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor module
 ------------------------------------------------------------------------------------
 
@@ -16153,10 +16244,17 @@ datadog\_api\_client.v2.model.observability\_pipeline\_parse\_json\_processor\_t
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.observability\_pipeline\_pipeline\_kafka\_source\_sasl\_mechanism module
-------------------------------------------------------------------------------------------------------
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_xml\_processor module
+-----------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_pipeline_kafka_source_sasl_mechanism
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_xml_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_xml\_processor\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_xml_processor_type
    :members:
    :show-inheritance:
 
@@ -16717,6 +16815,27 @@ datadog\_api\_client.v2.model.observability\_pipeline\_spec\_data module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_spec_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_split\_array\_processor module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_split_array_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_split\_array\_processor\_array\_config module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_split_array_processor_array_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_split\_array\_processor\_type module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_split_array_processor_type
    :members:
    :show-inheritance:
 
