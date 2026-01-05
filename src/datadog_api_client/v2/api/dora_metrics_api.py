@@ -10,14 +10,12 @@ from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
-from datadog_api_client.v2.model.dora_deployments_list_response import DORADeploymentsListResponse
+from datadog_api_client.v2.model.dora_list_response import DORAListResponse
 from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
-from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
+from datadog_api_client.v2.model.dora_fetch_response import DORAFetchResponse
 from datadog_api_client.v2.model.dora_failure_response import DORAFailureResponse
 from datadog_api_client.v2.model.dora_failure_request import DORAFailureRequest
-from datadog_api_client.v2.model.dora_failures_list_response import DORAFailuresListResponse
 from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailuresRequest
-from datadog_api_client.v2.model.dora_failure_fetch_response import DORAFailureFetchResponse
 
 
 class DORAMetricsApi:
@@ -140,7 +138,7 @@ class DORAMetricsApi:
 
         self._get_dora_deployment_endpoint = _Endpoint(
             settings={
-                "response_type": (DORADeploymentFetchResponse,),
+                "response_type": (DORAFetchResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/dora/deployments/{deployment_id}",
                 "operation_id": "get_dora_deployment",
@@ -163,7 +161,7 @@ class DORAMetricsApi:
 
         self._get_dora_failure_endpoint = _Endpoint(
             settings={
-                "response_type": (DORAFailureFetchResponse,),
+                "response_type": (DORAFetchResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/dora/failures/{failure_id}",
                 "operation_id": "get_dora_failure",
@@ -186,7 +184,7 @@ class DORAMetricsApi:
 
         self._list_dora_deployments_endpoint = _Endpoint(
             settings={
-                "response_type": (DORADeploymentsListResponse,),
+                "response_type": (DORAListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/dora/deployments",
                 "operation_id": "list_dora_deployments",
@@ -206,7 +204,7 @@ class DORAMetricsApi:
 
         self._list_dora_failures_endpoint = _Endpoint(
             settings={
-                "response_type": (DORAFailuresListResponse,),
+                "response_type": (DORAListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/dora/failures",
                 "operation_id": "list_dora_failures",
@@ -328,14 +326,14 @@ class DORAMetricsApi:
     def get_dora_deployment(
         self,
         deployment_id: str,
-    ) -> DORADeploymentFetchResponse:
+    ) -> DORAFetchResponse:
         """Get a deployment event.
 
         Use this API endpoint to get a deployment event.
 
         :param deployment_id: The ID of the deployment event.
         :type deployment_id: str
-        :rtype: DORADeploymentFetchResponse
+        :rtype: DORAFetchResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["deployment_id"] = deployment_id
@@ -345,14 +343,14 @@ class DORAMetricsApi:
     def get_dora_failure(
         self,
         failure_id: str,
-    ) -> DORAFailureFetchResponse:
+    ) -> DORAFetchResponse:
         """Get a failure event.
 
         Use this API endpoint to get a failure event.
 
         :param failure_id: The ID of the failure event.
         :type failure_id: str
-        :rtype: DORAFailureFetchResponse
+        :rtype: DORAFetchResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["failure_id"] = failure_id
@@ -362,13 +360,13 @@ class DORAMetricsApi:
     def list_dora_deployments(
         self,
         body: DORAListDeploymentsRequest,
-    ) -> DORADeploymentsListResponse:
+    ) -> DORAListResponse:
         """Get a list of deployment events.
 
         Use this API endpoint to get a list of deployment events.
 
         :type body: DORAListDeploymentsRequest
-        :rtype: DORADeploymentsListResponse
+        :rtype: DORAListResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -378,13 +376,13 @@ class DORAMetricsApi:
     def list_dora_failures(
         self,
         body: DORAListFailuresRequest,
-    ) -> DORAFailuresListResponse:
+    ) -> DORAListResponse:
         """Get a list of failure events.
 
         Use this API endpoint to get a list of failure events.
 
         :type body: DORAListFailuresRequest
-        :rtype: DORAFailuresListResponse
+        :rtype: DORAListResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body

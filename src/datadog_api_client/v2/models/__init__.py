@@ -1305,27 +1305,21 @@ from datadog_api_client.v2.model.custom_framework_metadata import CustomFramewor
 from datadog_api_client.v2.model.custom_framework_requirement import CustomFrameworkRequirement
 from datadog_api_client.v2.model.custom_framework_type import CustomFrameworkType
 from datadog_api_client.v2.model.custom_framework_without_requirements import CustomFrameworkWithoutRequirements
-from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
-from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
-from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
 from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
 from datadog_api_client.v2.model.dora_deployment_response_data import DORADeploymentResponseData
 from datadog_api_client.v2.model.dora_deployment_type import DORADeploymentType
-from datadog_api_client.v2.model.dora_deployments_list_response import DORADeploymentsListResponse
-from datadog_api_client.v2.model.dora_failure_fetch_response import DORAFailureFetchResponse
+from datadog_api_client.v2.model.dora_event import DORAEvent
 from datadog_api_client.v2.model.dora_failure_request import DORAFailureRequest
 from datadog_api_client.v2.model.dora_failure_request_attributes import DORAFailureRequestAttributes
 from datadog_api_client.v2.model.dora_failure_request_data import DORAFailureRequestData
 from datadog_api_client.v2.model.dora_failure_response import DORAFailureResponse
 from datadog_api_client.v2.model.dora_failure_response_data import DORAFailureResponseData
 from datadog_api_client.v2.model.dora_failure_type import DORAFailureType
-from datadog_api_client.v2.model.dora_failures_list_response import DORAFailuresListResponse
+from datadog_api_client.v2.model.dora_fetch_response import DORAFetchResponse
 from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
-from datadog_api_client.v2.model.dora_incident_object import DORAIncidentObject
-from datadog_api_client.v2.model.dora_incident_object_attributes import DORAIncidentObjectAttributes
 from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
 from datadog_api_client.v2.model.dora_list_deployments_request_attributes import DORAListDeploymentsRequestAttributes
 from datadog_api_client.v2.model.dora_list_deployments_request_data import DORAListDeploymentsRequestData
@@ -1334,6 +1328,7 @@ from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailu
 from datadog_api_client.v2.model.dora_list_failures_request_attributes import DORAListFailuresRequestAttributes
 from datadog_api_client.v2.model.dora_list_failures_request_data import DORAListFailuresRequestData
 from datadog_api_client.v2.model.dora_list_failures_request_data_type import DORAListFailuresRequestDataType
+from datadog_api_client.v2.model.dora_list_response import DORAListResponse
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
@@ -6100,27 +6095,21 @@ __all__ = [
     "CustomFrameworkRequirement",
     "CustomFrameworkType",
     "CustomFrameworkWithoutRequirements",
-    "DORADeploymentFetchResponse",
-    "DORADeploymentObject",
-    "DORADeploymentObjectAttributes",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
     "DORADeploymentResponse",
     "DORADeploymentResponseData",
     "DORADeploymentType",
-    "DORADeploymentsListResponse",
-    "DORAFailureFetchResponse",
+    "DORAEvent",
     "DORAFailureRequest",
     "DORAFailureRequestAttributes",
     "DORAFailureRequestData",
     "DORAFailureResponse",
     "DORAFailureResponseData",
     "DORAFailureType",
-    "DORAFailuresListResponse",
+    "DORAFetchResponse",
     "DORAGitInfo",
-    "DORAIncidentObject",
-    "DORAIncidentObjectAttributes",
     "DORAListDeploymentsRequest",
     "DORAListDeploymentsRequestAttributes",
     "DORAListDeploymentsRequestData",
@@ -6129,6 +6118,7 @@ __all__ = [
     "DORAListFailuresRequestAttributes",
     "DORAListFailuresRequestData",
     "DORAListFailuresRequestDataType",
+    "DORAListResponse",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
     "DashboardListDeleteItemsRequest",
