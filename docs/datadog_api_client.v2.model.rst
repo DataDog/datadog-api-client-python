@@ -7214,27 +7214,6 @@ datadog\_api\_client.v2.model.domain\_allowlist\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.dora\_deployment\_fetch\_response module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.dora_deployment_fetch_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.dora\_deployment\_object module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.dora_deployment_object
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.dora\_deployment\_object\_attributes module
--------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.dora_deployment_object_attributes
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.dora\_deployment\_request module
 --------------------------------------------------------------
 
@@ -7277,17 +7256,10 @@ datadog\_api\_client.v2.model.dora\_deployment\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.dora\_deployments\_list\_response module
-----------------------------------------------------------------------
+datadog\_api\_client.v2.model.dora\_event module
+------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.dora_deployments_list_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.dora\_failure\_fetch\_response module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.dora_failure_fetch_response
+.. automodule:: datadog_api_client.v2.model.dora_event
    :members:
    :show-inheritance:
 
@@ -7333,10 +7305,10 @@ datadog\_api\_client.v2.model.dora\_failure\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.dora\_failures\_list\_response module
--------------------------------------------------------------------
+datadog\_api\_client.v2.model.dora\_fetch\_response module
+----------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.dora_failures_list_response
+.. automodule:: datadog_api_client.v2.model.dora_fetch_response
    :members:
    :show-inheritance:
 
@@ -7344,20 +7316,6 @@ datadog\_api\_client.v2.model.dora\_git\_info module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.dora_git_info
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.dora\_incident\_object module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.dora_incident_object
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.dora\_incident\_object\_attributes module
------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.dora_incident_object_attributes
    :members:
    :show-inheritance:
 
@@ -7414,6 +7372,13 @@ datadog\_api\_client.v2.model.dora\_list\_failures\_request\_data\_type module
 ------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.dora_list_failures_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_list\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_list_response
    :members:
    :show-inheritance:
 

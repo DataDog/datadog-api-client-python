@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.dora_incident_object import DORAIncidentObject
+    from datadog_api_client.v2.model.dora_event import DORAEvent
 
 
-class DORAFailuresListResponse(ModelNormal):
+class DORAFetchResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.dora_incident_object import DORAIncidentObject
+        from datadog_api_client.v2.model.dora_event import DORAEvent
 
         return {
-            "data": ([DORAIncidentObject],),
+            "data": (DORAEvent,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[DORAIncidentObject], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[DORAEvent, UnsetType] = unset, **kwargs):
         """
-        Response for the list failures endpoint.
+        Response for the DORA fetch endpoints.
 
-        :param data: The list of DORA incident events.
-        :type data: [DORAIncidentObject], optional
+        :param data: A DORA event.
+        :type data: DORAEvent, optional
         """
         if data is not unset:
             kwargs["data"] = data
