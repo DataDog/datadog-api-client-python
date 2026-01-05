@@ -59,6 +59,7 @@ from datadog_api_client.v2.api.org_connections_api import OrgConnectionsApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
+from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
@@ -147,6 +148,7 @@ __all__ = [
     "OrganizationsApi",
     "PowerpackApi",
     "ProcessesApi",
+    "ProductAnalyticsApi",
     "RUMApi",
     "ReferenceTablesApi",
     "RestrictionPoliciesApi",

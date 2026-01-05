@@ -3650,6 +3650,27 @@ from datadog_api_client.v2.model.process_summaries_response import ProcessSummar
 from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+from datadog_api_client.v2.model.product_analytics_server_side_event_error import ProductAnalyticsServerSideEventError
+from datadog_api_client.v2.model.product_analytics_server_side_event_errors import ProductAnalyticsServerSideEventErrors
+from datadog_api_client.v2.model.product_analytics_server_side_event_item import ProductAnalyticsServerSideEventItem
+from datadog_api_client.v2.model.product_analytics_server_side_event_item_account import (
+    ProductAnalyticsServerSideEventItemAccount,
+)
+from datadog_api_client.v2.model.product_analytics_server_side_event_item_application import (
+    ProductAnalyticsServerSideEventItemApplication,
+)
+from datadog_api_client.v2.model.product_analytics_server_side_event_item_event import (
+    ProductAnalyticsServerSideEventItemEvent,
+)
+from datadog_api_client.v2.model.product_analytics_server_side_event_item_session import (
+    ProductAnalyticsServerSideEventItemSession,
+)
+from datadog_api_client.v2.model.product_analytics_server_side_event_item_type import (
+    ProductAnalyticsServerSideEventItemType,
+)
+from datadog_api_client.v2.model.product_analytics_server_side_event_item_usr import (
+    ProductAnalyticsServerSideEventItemUsr,
+)
 from datadog_api_client.v2.model.project import Project
 from datadog_api_client.v2.model.project_attributes import ProjectAttributes
 from datadog_api_client.v2.model.project_create import ProjectCreate
@@ -7755,6 +7776,15 @@ __all__ = [
     "ProcessSummary",
     "ProcessSummaryAttributes",
     "ProcessSummaryType",
+    "ProductAnalyticsServerSideEventError",
+    "ProductAnalyticsServerSideEventErrors",
+    "ProductAnalyticsServerSideEventItem",
+    "ProductAnalyticsServerSideEventItemAccount",
+    "ProductAnalyticsServerSideEventItemApplication",
+    "ProductAnalyticsServerSideEventItemEvent",
+    "ProductAnalyticsServerSideEventItemSession",
+    "ProductAnalyticsServerSideEventItemType",
+    "ProductAnalyticsServerSideEventItemUsr",
     "Project",
     "ProjectAttributes",
     "ProjectCreate",

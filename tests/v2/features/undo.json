@@ -3133,6 +3133,12 @@
       "type": "safe"
     }
   },
+  "SubmitProductAnalyticsEvent": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetAccountFacetInfo": {
     "tag": "Rum Audience Management",
     "undo": {
