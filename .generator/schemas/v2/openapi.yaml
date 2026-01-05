@@ -38013,7 +38013,6 @@ components:
           type: array
       required:
       - name
-      - tags
       - pattern
       - scope
       - on_match
