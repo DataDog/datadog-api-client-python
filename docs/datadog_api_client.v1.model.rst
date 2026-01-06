@@ -767,6 +767,20 @@ datadog\_api\_client.v1.model.event\_timeline\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.events\_aggregation module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.events_aggregation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.events\_aggregation\_value module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.events_aggregation_value
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.formula\_and\_function\_apm\_dependency\_stat\_name module
 ----------------------------------------------------------------------------------------
 
@@ -3105,6 +3119,41 @@ datadog\_api\_client.v1.model.process\_query\_definition module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.product\_analytics\_audience\_account\_subquery module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_audience_account_subquery
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_audience\_filters module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_audience_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_audience\_occurrence\_filter module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_audience_occurrence_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_audience\_segment\_subquery module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_audience_segment_subquery
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_audience\_user\_subquery module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_audience_user_subquery
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.query\_sort\_order module
 -------------------------------------------------------
 
@@ -3172,6 +3221,111 @@ datadog\_api\_client.v1.model.run\_workflow\_widget\_input module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.run_workflow_widget_input
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_join\_keys module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_join_keys
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_network\_data\_source module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_network_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_network\_query module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_network_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_network\_query\_compute module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_network_query_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_network\_query\_mode module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_network_query_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_network\_query\_sort module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_network_query_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_network\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_network_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_network\_request\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_network_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_rum\_data\_source module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_rum_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_rum\_query module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_rum_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_rum\_query\_mode module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_rum_query_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_rum\_request module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_rum_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_widget\_definition module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_widget\_definition\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_widget_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.sankey\_widget\_request module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.sankey_widget_request
    :members:
    :show-inheritance:
 
