@@ -10,8 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"41de4d6f-9ed2-478f-b180-3a383c14dc64","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:46:42.111632Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"41de4d6f-9ed2-478f-b180-3a383c14dc64","key":"DDFC-82975","merge_status":"NOT_MERGED","priority":"P4","public_id":"83064","status":"OPEN","status_name":"Open","title":"My
-        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+      string: '{"data":{"id":"e48aba34-ea79-45c7-a425-56d5b09c9fc4","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-12-30T13:49:47.073795Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"e48aba34-ea79-45c7-a425-56d5b09c9fc4","key":"DDFC-98811","merge_status":"NOT_MERGED","priority":"P4","public_id":"99267","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"active":true,"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -24,11 +25,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/cases/41de4d6f-9ed2-478f-b180-3a383c14dc64/comment/23fca2aa-4967-4936-bdd7-9157d9e456d7
+    uri: https://api.datadoghq.com/api/v2/cases/e48aba34-ea79-45c7-a425-56d5b09c9fc4/comment/23fca2aa-4967-4936-bdd7-9157d9e456d7
   response:
     body:
-      string: '{"errors":[{"code":"resource_not_found","title":"timeline cell not
-        found"}]}'
+      string: '{"errors":[{"code":"resource_not_found","title":"failed to get timeline
+        cell: timeline cell not found"}]}'
     headers:
       content-type:
       - application/vnd.api+json

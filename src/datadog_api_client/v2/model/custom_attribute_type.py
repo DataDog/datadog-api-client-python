@@ -16,7 +16,7 @@ class CustomAttributeType(ModelSimple):
     """
     Custom attributes type
 
-    :param value: Must be one of ["URL", "TEXT", "NUMBER"].
+    :param value: Must be one of ["URL", "TEXT", "NUMBER", "SELECT"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class CustomAttributeType(ModelSimple):
         "URL",
         "TEXT",
         "NUMBER",
+        "SELECT",
     }
     URL: ClassVar["CustomAttributeType"]
     TEXT: ClassVar["CustomAttributeType"]
     NUMBER: ClassVar["CustomAttributeType"]
+    SELECT: ClassVar["CustomAttributeType"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class CustomAttributeType(ModelSimple):
 CustomAttributeType.URL = CustomAttributeType("URL")
 CustomAttributeType.TEXT = CustomAttributeType("TEXT")
 CustomAttributeType.NUMBER = CustomAttributeType("NUMBER")
+CustomAttributeType.SELECT = CustomAttributeType("SELECT")

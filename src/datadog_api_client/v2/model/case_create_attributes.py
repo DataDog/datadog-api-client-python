@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,15 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.custom_attribute_value import CustomAttributeValue
     from datadog_api_client.v2.model.case_priority import CasePriority
 
 
 class CaseCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.custom_attribute_value import CustomAttributeValue
         from datadog_api_client.v2.model.case_priority import CasePriority
 
         return {
+            "custom_attributes": ({str: (CustomAttributeValue,)},),
             "description": (str,),
             "priority": (CasePriority,),
             "title": (str,),
@@ -30,6 +33,7 @@ class CaseCreateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "custom_attributes": "custom_attributes",
         "description": "description",
         "priority": "priority",
         "title": "title",
@@ -40,12 +44,16 @@ class CaseCreateAttributes(ModelNormal):
         self_,
         title: str,
         type_id: str,
+        custom_attributes: Union[Dict[str, CustomAttributeValue], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         priority: Union[CasePriority, UnsetType] = unset,
         **kwargs,
     ):
         """
         Case creation attributes
+
+        :param custom_attributes: Case custom attributes
+        :type custom_attributes: {str: (CustomAttributeValue,)}, optional
 
         :param description: Description
         :type description: str, optional
@@ -59,6 +67,8 @@ class CaseCreateAttributes(ModelNormal):
         :param type_id: Case type UUID
         :type type_id: str
         """
+        if custom_attributes is not unset:
+            kwargs["custom_attributes"] = custom_attributes
         if description is not unset:
             kwargs["description"] = description
         if priority is not unset:

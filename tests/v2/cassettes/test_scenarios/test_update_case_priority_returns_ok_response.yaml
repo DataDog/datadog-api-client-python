@@ -10,8 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"d42afb74-0480-4535-bf4d-af0353d32c1c","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:47:02.764285Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"d42afb74-0480-4535-bf4d-af0353d32c1c","key":"DDFC-82986","merge_status":"NOT_MERGED","priority":"P4","public_id":"83075","status":"OPEN","status_name":"Open","title":"My
-        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+      string: '{"data":{"id":"511f7667-3d80-4498-8118-416211a1a131","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-12-30T13:49:49.67893Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"511f7667-3d80-4498-8118-416211a1a131","key":"DDFC-98822","merge_status":"NOT_MERGED","priority":"P4","public_id":"99278","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"active":true,"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -26,11 +27,12 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/d42afb74-0480-4535-bf4d-af0353d32c1c/priority
+    uri: https://api.datadoghq.com/api/v2/cases/511f7667-3d80-4498-8118-416211a1a131/priority
   response:
     body:
-      string: '{"data":{"id":"d42afb74-0480-4535-bf4d-af0353d32c1c","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:47:02.764285Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"d42afb74-0480-4535-bf4d-af0353d32c1c","key":"DDFC-82986","merge_status":"NOT_MERGED","modified_at":"2025-10-01T12:47:03.296015Z","priority":"P3","public_id":"83075","status":"OPEN","status_name":"Open","title":"My
-        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"modified_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+      string: '{"data":{"id":"511f7667-3d80-4498-8118-416211a1a131","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-12-30T13:49:49.67893Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"511f7667-3d80-4498-8118-416211a1a131","key":"DDFC-98822","merge_status":"NOT_MERGED","modified_at":"2025-12-30T13:49:49.835308Z","priority":"P3","public_id":"99278","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"modified_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"active":true,"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}}]}'
     headers:
       content-type:
       - application/vnd.api+json
