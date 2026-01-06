@@ -1305,21 +1305,27 @@ from datadog_api_client.v2.model.custom_framework_metadata import CustomFramewor
 from datadog_api_client.v2.model.custom_framework_requirement import CustomFrameworkRequirement
 from datadog_api_client.v2.model.custom_framework_type import CustomFrameworkType
 from datadog_api_client.v2.model.custom_framework_without_requirements import CustomFrameworkWithoutRequirements
+from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
+from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
+from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
 from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
 from datadog_api_client.v2.model.dora_deployment_response_data import DORADeploymentResponseData
 from datadog_api_client.v2.model.dora_deployment_type import DORADeploymentType
-from datadog_api_client.v2.model.dora_event import DORAEvent
+from datadog_api_client.v2.model.dora_deployments_list_response import DORADeploymentsListResponse
+from datadog_api_client.v2.model.dora_failure_fetch_response import DORAFailureFetchResponse
 from datadog_api_client.v2.model.dora_failure_request import DORAFailureRequest
 from datadog_api_client.v2.model.dora_failure_request_attributes import DORAFailureRequestAttributes
 from datadog_api_client.v2.model.dora_failure_request_data import DORAFailureRequestData
 from datadog_api_client.v2.model.dora_failure_response import DORAFailureResponse
 from datadog_api_client.v2.model.dora_failure_response_data import DORAFailureResponseData
 from datadog_api_client.v2.model.dora_failure_type import DORAFailureType
-from datadog_api_client.v2.model.dora_fetch_response import DORAFetchResponse
+from datadog_api_client.v2.model.dora_failures_list_response import DORAFailuresListResponse
 from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
+from datadog_api_client.v2.model.dora_incident_object import DORAIncidentObject
+from datadog_api_client.v2.model.dora_incident_object_attributes import DORAIncidentObjectAttributes
 from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
 from datadog_api_client.v2.model.dora_list_deployments_request_attributes import DORAListDeploymentsRequestAttributes
 from datadog_api_client.v2.model.dora_list_deployments_request_data import DORAListDeploymentsRequestData
@@ -1328,7 +1334,6 @@ from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailu
 from datadog_api_client.v2.model.dora_list_failures_request_attributes import DORAListFailuresRequestAttributes
 from datadog_api_client.v2.model.dora_list_failures_request_data import DORAListFailuresRequestData
 from datadog_api_client.v2.model.dora_list_failures_request_data_type import DORAListFailuresRequestDataType
-from datadog_api_client.v2.model.dora_list_response import DORAListResponse
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
 from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
@@ -2924,6 +2929,16 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_des
     ObservabilityPipelineAmazonSecurityLakeDestinationType,
 )
 from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
+from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+from datadog_api_client.v2.model.observability_pipeline_buffer_options_disk_type import (
+    ObservabilityPipelineBufferOptionsDiskType,
+)
+from datadog_api_client.v2.model.observability_pipeline_buffer_options_memory_type import (
+    ObservabilityPipelineBufferOptionsMemoryType,
+)
+from datadog_api_client.v2.model.observability_pipeline_buffer_options_when_full import (
+    ObservabilityPipelineBufferOptionsWhenFull,
+)
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
 from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
     ObservabilityPipelineConfigDestinationItem,
@@ -2990,6 +3005,9 @@ from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode im
 )
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_type import (
     ObservabilityPipelineDedupeProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+    ObservabilityPipelineDiskBufferOptions,
 )
 from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
     ObservabilityPipelineElasticsearchDestination,
@@ -3125,6 +3143,12 @@ from datadog_api_client.v2.model.observability_pipeline_kafka_source_type import
 from datadog_api_client.v2.model.observability_pipeline_logstash_source import ObservabilityPipelineLogstashSource
 from datadog_api_client.v2.model.observability_pipeline_logstash_source_type import (
     ObservabilityPipelineLogstashSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+    ObservabilityPipelineMemoryBufferOptions,
+)
+from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+    ObservabilityPipelineMemoryBufferSizeOptions,
 )
 from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
 from datadog_api_client.v2.model.observability_pipeline_metric_value import ObservabilityPipelineMetricValue
@@ -6095,21 +6119,27 @@ __all__ = [
     "CustomFrameworkRequirement",
     "CustomFrameworkType",
     "CustomFrameworkWithoutRequirements",
+    "DORADeploymentFetchResponse",
+    "DORADeploymentObject",
+    "DORADeploymentObjectAttributes",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
     "DORADeploymentResponse",
     "DORADeploymentResponseData",
     "DORADeploymentType",
-    "DORAEvent",
+    "DORADeploymentsListResponse",
+    "DORAFailureFetchResponse",
     "DORAFailureRequest",
     "DORAFailureRequestAttributes",
     "DORAFailureRequestData",
     "DORAFailureResponse",
     "DORAFailureResponseData",
     "DORAFailureType",
-    "DORAFetchResponse",
+    "DORAFailuresListResponse",
     "DORAGitInfo",
+    "DORAIncidentObject",
+    "DORAIncidentObjectAttributes",
     "DORAListDeploymentsRequest",
     "DORAListDeploymentsRequestAttributes",
     "DORAListDeploymentsRequestData",
@@ -6118,7 +6148,6 @@ __all__ = [
     "DORAListFailuresRequestAttributes",
     "DORAListFailuresRequestData",
     "DORAListFailuresRequestDataType",
-    "DORAListResponse",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
     "DashboardListDeleteItemsRequest",
@@ -7380,6 +7409,10 @@ __all__ = [
     "ObservabilityPipelineAmazonSecurityLakeDestination",
     "ObservabilityPipelineAmazonSecurityLakeDestinationType",
     "ObservabilityPipelineAwsAuth",
+    "ObservabilityPipelineBufferOptions",
+    "ObservabilityPipelineBufferOptionsDiskType",
+    "ObservabilityPipelineBufferOptionsMemoryType",
+    "ObservabilityPipelineBufferOptionsWhenFull",
     "ObservabilityPipelineConfig",
     "ObservabilityPipelineConfigDestinationItem",
     "ObservabilityPipelineConfigProcessorGroup",
@@ -7407,6 +7440,7 @@ __all__ = [
     "ObservabilityPipelineDedupeProcessor",
     "ObservabilityPipelineDedupeProcessorMode",
     "ObservabilityPipelineDedupeProcessorType",
+    "ObservabilityPipelineDiskBufferOptions",
     "ObservabilityPipelineElasticsearchDestination",
     "ObservabilityPipelineElasticsearchDestinationApiVersion",
     "ObservabilityPipelineElasticsearchDestinationType",
@@ -7460,6 +7494,8 @@ __all__ = [
     "ObservabilityPipelineKafkaSourceType",
     "ObservabilityPipelineLogstashSource",
     "ObservabilityPipelineLogstashSourceType",
+    "ObservabilityPipelineMemoryBufferOptions",
+    "ObservabilityPipelineMemoryBufferSizeOptions",
     "ObservabilityPipelineMetadataEntry",
     "ObservabilityPipelineMetricValue",
     "ObservabilityPipelineNewRelicDestination",

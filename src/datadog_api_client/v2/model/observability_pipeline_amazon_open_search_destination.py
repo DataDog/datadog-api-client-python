@@ -17,8 +17,18 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination_auth import (
         ObservabilityPipelineAmazonOpenSearchDestinationAuth,
     )
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination_type import (
         ObservabilityPipelineAmazonOpenSearchDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
 
 
@@ -28,12 +38,14 @@ class ObservabilityPipelineAmazonOpenSearchDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination_auth import (
             ObservabilityPipelineAmazonOpenSearchDestinationAuth,
         )
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination_type import (
             ObservabilityPipelineAmazonOpenSearchDestinationType,
         )
 
         return {
             "auth": (ObservabilityPipelineAmazonOpenSearchDestinationAuth,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "bulk_index": (str,),
             "id": (str,),
             "inputs": ([str],),
@@ -42,6 +54,7 @@ class ObservabilityPipelineAmazonOpenSearchDestination(ModelNormal):
 
     attribute_map = {
         "auth": "auth",
+        "buffer": "buffer",
         "bulk_index": "bulk_index",
         "id": "id",
         "inputs": "inputs",
@@ -54,6 +67,13 @@ class ObservabilityPipelineAmazonOpenSearchDestination(ModelNormal):
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineAmazonOpenSearchDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         bulk_index: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -63,6 +83,9 @@ class ObservabilityPipelineAmazonOpenSearchDestination(ModelNormal):
         :param auth: Authentication settings for the Amazon OpenSearch destination.
             The ``strategy`` field determines whether basic or AWS-based authentication is used.
         :type auth: ObservabilityPipelineAmazonOpenSearchDestinationAuth
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param bulk_index: The index to write logs to.
         :type bulk_index: str, optional
@@ -76,6 +99,8 @@ class ObservabilityPipelineAmazonOpenSearchDestination(ModelNormal):
         :param type: The destination type. The value should always be ``amazon_opensearch``.
         :type type: ObservabilityPipelineAmazonOpenSearchDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if bulk_index is not unset:
             kwargs["bulk_index"] = bulk_index
         super().__init__(kwargs)
