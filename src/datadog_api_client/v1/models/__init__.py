@@ -111,6 +111,8 @@ from datadog_api_client.v1.model.event_stream_widget_definition import EventStre
 from datadog_api_client.v1.model.event_stream_widget_definition_type import EventStreamWidgetDefinitionType
 from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
 from datadog_api_client.v1.model.event_timeline_widget_definition_type import EventTimelineWidgetDefinitionType
+from datadog_api_client.v1.model.events_aggregation import EventsAggregation
+from datadog_api_client.v1.model.events_aggregation_value import EventsAggregationValue
 from datadog_api_client.v1.model.formula_and_function_apm_dependency_stat_name import (
     FormulaAndFunctionApmDependencyStatName,
 )
@@ -511,6 +513,17 @@ from datadog_api_client.v1.model.powerpack_template_variables import PowerpackTe
 from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
 from datadog_api_client.v1.model.powerpack_widget_definition_type import PowerpackWidgetDefinitionType
 from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
+from datadog_api_client.v1.model.product_analytics_audience_account_subquery import (
+    ProductAnalyticsAudienceAccountSubquery,
+)
+from datadog_api_client.v1.model.product_analytics_audience_filters import ProductAnalyticsAudienceFilters
+from datadog_api_client.v1.model.product_analytics_audience_occurrence_filter import (
+    ProductAnalyticsAudienceOccurrenceFilter,
+)
+from datadog_api_client.v1.model.product_analytics_audience_segment_subquery import (
+    ProductAnalyticsAudienceSegmentSubquery,
+)
+from datadog_api_client.v1.model.product_analytics_audience_user_subquery import ProductAnalyticsAudienceUserSubquery
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
 from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
@@ -582,6 +595,21 @@ from datadog_api_client.v1.model.slo_type import SLOType
 from datadog_api_client.v1.model.slo_type_numeric import SLOTypeNumeric
 from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
 from datadog_api_client.v1.model.slo_widget_definition_type import SLOWidgetDefinitionType
+from datadog_api_client.v1.model.sankey_join_keys import SankeyJoinKeys
+from datadog_api_client.v1.model.sankey_network_data_source import SankeyNetworkDataSource
+from datadog_api_client.v1.model.sankey_network_query import SankeyNetworkQuery
+from datadog_api_client.v1.model.sankey_network_query_compute import SankeyNetworkQueryCompute
+from datadog_api_client.v1.model.sankey_network_query_mode import SankeyNetworkQueryMode
+from datadog_api_client.v1.model.sankey_network_query_sort import SankeyNetworkQuerySort
+from datadog_api_client.v1.model.sankey_network_request import SankeyNetworkRequest
+from datadog_api_client.v1.model.sankey_network_request_type import SankeyNetworkRequestType
+from datadog_api_client.v1.model.sankey_rum_data_source import SankeyRumDataSource
+from datadog_api_client.v1.model.sankey_rum_query import SankeyRumQuery
+from datadog_api_client.v1.model.sankey_rum_query_mode import SankeyRumQueryMode
+from datadog_api_client.v1.model.sankey_rum_request import SankeyRumRequest
+from datadog_api_client.v1.model.sankey_widget_definition import SankeyWidgetDefinition
+from datadog_api_client.v1.model.sankey_widget_definition_type import SankeyWidgetDefinitionType
+from datadog_api_client.v1.model.sankey_widget_request import SankeyWidgetRequest
 from datadog_api_client.v1.model.scatter_plot_request import ScatterPlotRequest
 from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
 from datadog_api_client.v1.model.scatter_plot_widget_definition_requests import ScatterPlotWidgetDefinitionRequests
@@ -1232,6 +1260,8 @@ __all__ = [
     "EventStreamWidgetDefinitionType",
     "EventTimelineWidgetDefinition",
     "EventTimelineWidgetDefinitionType",
+    "EventsAggregation",
+    "EventsAggregationValue",
     "FormulaAndFunctionApmDependencyStatName",
     "FormulaAndFunctionApmDependencyStatsDataSource",
     "FormulaAndFunctionApmDependencyStatsQueryDefinition",
@@ -1566,6 +1596,11 @@ __all__ = [
     "PowerpackWidgetDefinition",
     "PowerpackWidgetDefinitionType",
     "ProcessQueryDefinition",
+    "ProductAnalyticsAudienceAccountSubquery",
+    "ProductAnalyticsAudienceFilters",
+    "ProductAnalyticsAudienceOccurrenceFilter",
+    "ProductAnalyticsAudienceSegmentSubquery",
+    "ProductAnalyticsAudienceUserSubquery",
     "QuerySortOrder",
     "QueryValueWidgetDefinition",
     "QueryValueWidgetDefinitionType",
@@ -1635,6 +1670,21 @@ __all__ = [
     "SLOTypeNumeric",
     "SLOWidgetDefinition",
     "SLOWidgetDefinitionType",
+    "SankeyJoinKeys",
+    "SankeyNetworkDataSource",
+    "SankeyNetworkQuery",
+    "SankeyNetworkQueryCompute",
+    "SankeyNetworkQueryMode",
+    "SankeyNetworkQuerySort",
+    "SankeyNetworkRequest",
+    "SankeyNetworkRequestType",
+    "SankeyRumDataSource",
+    "SankeyRumQuery",
+    "SankeyRumQueryMode",
+    "SankeyRumRequest",
+    "SankeyWidgetDefinition",
+    "SankeyWidgetDefinitionType",
+    "SankeyWidgetRequest",
     "ScatterPlotRequest",
     "ScatterPlotWidgetDefinition",
     "ScatterPlotWidgetDefinitionRequests",

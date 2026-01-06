@@ -10,9 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/cases
   response:
     body:
-      string: '{"data":{"id":"21c1b181-cee4-4b72-bf96-38859d367da4","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-12-30T13:49:47.783537Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"21c1b181-cee4-4b72-bf96-38859d367da4","key":"DDFC-98814","merge_status":"NOT_MERGED","priority":"P4","public_id":"99270","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"My
-        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"active":true,"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"}}]}'
+      string: '{"data":{"id":"add421a8-61e3-416e-85ec-9db7440bc951","type":"case","attributes":{"attributes":{},"comment_count":0,"created_at":"2025-10-01T12:46:45.339926Z","creation_source":"MANUAL","custom_attributes":{},"description":"","insights":[],"internal_id":"add421a8-61e3-416e-85ec-9db7440bc951","key":"DDFC-82978","merge_status":"NOT_MERGED","priority":"P4","public_id":"83067","status":"OPEN","status_name":"Open","title":"My
+        new case","type":"STANDARD","type_id":"00000000-0000-0000-0000-000000000001"},"relationships":{"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project"}}}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -27,7 +26,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/cases/21c1b181-cee4-4b72-bf96-38859d367da4/unarchive
+    uri: https://api.datadoghq.com/api/v2/cases/add421a8-61e3-416e-85ec-9db7440bc951/unarchive
   response:
     body:
       string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
