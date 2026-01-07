@@ -431,6 +431,13 @@ datadog\_api\_client.v2.api.processes\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.product\_analytics\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.product_analytics_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.reference\_tables\_api module
 ---------------------------------------------------------
 

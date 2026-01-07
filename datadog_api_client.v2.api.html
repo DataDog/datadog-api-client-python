@@ -2240,6 +2240,16 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.product_analytics_api" class="md-nav__link">datadog_api_client.v2.api.product_analytics_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.product_analytics_api.ProductAnalyticsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ProductAnalyticsApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.product_analytics_api.ProductAnalyticsApi.submit_product_analytics_event" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ProductAnalyticsApi.submit_product_analytics_event()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.reference_tables_api" class="md-nav__link">datadog_api_client.v2.api.reference_tables_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.reference_tables_api.ReferenceTablesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ReferenceTablesApi</span></code></a><nav class="md-nav">
@@ -11407,6 +11417,59 @@ This key is provided with each valid response from the API in <code class="docut
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>collections.abc.Iterable[<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.process_summary.ProcessSummary" title="datadog_api_client.v2.model.process_summary.ProcessSummary">ProcessSummary</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.product_analytics_api">
+<span id="datadog-api-client-v2-api-product-analytics-api-module"></span><h2 id="module-datadog_api_client.v2.api.product_analytics_api">datadog_api_client.v2.api.product_analytics_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.product_analytics_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.product_analytics_api.ProductAnalyticsApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProductAnalyticsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.product_analytics_api.ProductAnalyticsApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Send server-side events to Product Analytics. Server-Side Events Ingestion allows you to collect custom events
+from any server-side source, and retains events for 15 months. Server-side events are helpful for understanding
+causes of a funnel drop-off which are external to the client-side (for example, payment processing error).
+See the <a class="reference external" href="https://docs.datadoghq.com/product_analytics/">Product Analytics page</a> for more information.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.product_analytics_api.ProductAnalyticsApi.submit_product_analytics_event">
+<span class="sig-name descname"><span class="pre">submit_product_analytics_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.product_analytics_server_side_event_item.ProductAnalyticsServerSideEventItem" title="datadog_api_client.v2.model.product_analytics_server_side_event_item.ProductAnalyticsServerSideEventItem"><span class="pre">ProductAnalyticsServerSideEventItem</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.product_analytics_api.ProductAnalyticsApi.submit_product_analytics_event" title="Link to this definition">¶</a></dt>
+<dd><p>Send server-side events.</p>
+<p>Send server-side events to Product Analytics. Server-side events are retained for 15 months.</p>
+<p>Server-Side events in Product Analytics are helpful for tracking events that occur on the server,
+as opposed to client-side events, which are captured by Real User Monitoring (RUM) SDKs.
+This allows for a more comprehensive view of the user journey by including actions that happen on the server.
+Typical examples could be <code class="docutils literal notranslate"><span class="pre">checkout.completed</span></code> or <code class="docutils literal notranslate"><span class="pre">payment.processed</span></code>.</p>
+<p>Ingested server-side events are integrated into Product Analytics to allow users to select and filter
+these events in the event picker, similar to how views or actions are handled.</p>
+<p><strong>Requirements:</strong></p>
+<ul class="simple">
+<li><p>At least one of <code class="docutils literal notranslate"><span class="pre">usr</span></code> , <code class="docutils literal notranslate"><span class="pre">account</span></code> , or <code class="docutils literal notranslate"><span class="pre">session</span></code> must be provided with a valid ID.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">application.id</span></code> must reference a Product Analytics-enabled application.</p></li>
+</ul>
+<p><strong>Custom Attributes:</strong>
+Any additional fields in the payload are flattened and searchable as facets.
+For example, a payload with <code class="docutils literal notranslate"><span class="pre">{"customer":</span> <span class="pre">{"tier":</span> <span class="pre">"premium"}}</span></code> is searchable with
+the syntax <code class="docutils literal notranslate"><span class="pre">@customer.tier:premium</span></code> in Datadog.</p>
+<p>The status codes answered by the HTTP API are:</p>
+<ul class="simple">
+<li><p>202: Accepted: The request has been accepted for processing</p></li>
+<li><p>400: Bad request (likely an issue in the payload formatting)</p></li>
+<li><p>401: Unauthorized (likely a missing API Key)</p></li>
+<li><p>403: Permission issue (likely using an invalid API Key)</p></li>
+<li><p>408: Request Timeout, request should be retried after some time</p></li>
+<li><p>413: Payload too large (batch is above 5MB uncompressed)</p></li>
+<li><p>429: Too Many Requests, request should be retried after some time</p></li>
+<li><p>500: Internal Server Error, the server encountered an unexpected condition that prevented it from fulfilling the request, request should be retried after some time</p></li>
+<li><p>503: Service Unavailable, the server is not ready to handle the request probably because it is overloaded, request should be retried after some time</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.product_analytics_server_side_event_item.ProductAnalyticsServerSideEventItem" title="datadog_api_client.v2.model.product_analytics_server_side_event_item.ProductAnalyticsServerSideEventItem"><em>ProductAnalyticsServerSideEventItem</em></a>) – Server-side event to send (JSON format).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>

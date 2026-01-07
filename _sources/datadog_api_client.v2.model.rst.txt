@@ -18050,6 +18050,69 @@ datadog\_api\_client.v2.model.process\_summary\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_error module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_errors module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_errors
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item\_account module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item_account
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item\_application module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item_application
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item\_event module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item_event
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item\_session module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item_session
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item\_usr module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item_usr
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.project module
 --------------------------------------------
 
