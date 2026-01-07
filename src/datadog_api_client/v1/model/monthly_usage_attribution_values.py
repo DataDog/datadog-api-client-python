@@ -31,6 +31,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "appsec_usage": (float,),
             "asm_serverless_traced_invocations_percentage": (float,),
             "asm_serverless_traced_invocations_usage": (float,),
+            "bits_ai_investigations_percentage": (float,),
+            "bits_ai_investigations_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
             "ci_pipeline_indexed_spans_percentage": (float,),
@@ -190,6 +192,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "appsec_usage": "appsec_usage",
         "asm_serverless_traced_invocations_percentage": "asm_serverless_traced_invocations_percentage",
         "asm_serverless_traced_invocations_usage": "asm_serverless_traced_invocations_usage",
+        "bits_ai_investigations_percentage": "bits_ai_investigations_percentage",
+        "bits_ai_investigations_usage": "bits_ai_investigations_usage",
         "browser_percentage": "browser_percentage",
         "browser_usage": "browser_usage",
         "ci_pipeline_indexed_spans_percentage": "ci_pipeline_indexed_spans_percentage",
@@ -350,6 +354,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         appsec_usage: Union[float, UnsetType] = unset,
         asm_serverless_traced_invocations_percentage: Union[float, UnsetType] = unset,
         asm_serverless_traced_invocations_usage: Union[float, UnsetType] = unset,
+        bits_ai_investigations_percentage: Union[float, UnsetType] = unset,
+        bits_ai_investigations_usage: Union[float, UnsetType] = unset,
         browser_percentage: Union[float, UnsetType] = unset,
         browser_usage: Union[float, UnsetType] = unset,
         ci_pipeline_indexed_spans_percentage: Union[float, UnsetType] = unset,
@@ -539,6 +545,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param asm_serverless_traced_invocations_usage: The Application Security Monitoring Serverless traced invocations usage by tag(s).
         :type asm_serverless_traced_invocations_usage: float, optional
+
+        :param bits_ai_investigations_percentage: The percentage of Bits AI ``SRE`` investigation usage by tag(s).
+        :type bits_ai_investigations_percentage: float, optional
+
+        :param bits_ai_investigations_usage: The Bits AI ``SRE`` investigation usage by tag(s).
+        :type bits_ai_investigations_usage: float, optional
 
         :param browser_percentage: The percentage of synthetic browser test usage by tag(s).
         :type browser_percentage: float, optional
@@ -994,6 +1006,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["asm_serverless_traced_invocations_percentage"] = asm_serverless_traced_invocations_percentage
         if asm_serverless_traced_invocations_usage is not unset:
             kwargs["asm_serverless_traced_invocations_usage"] = asm_serverless_traced_invocations_usage
+        if bits_ai_investigations_percentage is not unset:
+            kwargs["bits_ai_investigations_percentage"] = bits_ai_investigations_percentage
+        if bits_ai_investigations_usage is not unset:
+            kwargs["bits_ai_investigations_usage"] = bits_ai_investigations_usage
         if browser_percentage is not unset:
             kwargs["browser_percentage"] = browser_percentage
         if browser_usage is not unset:
