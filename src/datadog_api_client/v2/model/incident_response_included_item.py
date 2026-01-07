@@ -24,7 +24,7 @@ class IncidentResponseIncludedItem(ModelComposed):
         :param type: Users resource type.
         :type type: UsersType, optional
 
-        :param relationships:
+        :param relationships: The attachment's resource relationships.
         :type relationships: AttachmentDataRelationships
         """
         super().__init__(kwargs)
