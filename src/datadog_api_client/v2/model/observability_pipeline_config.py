@@ -127,13 +127,13 @@ class ObservabilityPipelineConfig(ModelNormal):
 
         return {
             "destinations": ([ObservabilityPipelineConfigDestinationItem],),
-            "processors": ([ObservabilityPipelineConfigProcessorGroup],),
+            "processor_groups": ([ObservabilityPipelineConfigProcessorGroup],),
             "sources": ([ObservabilityPipelineConfigSourceItem],),
         }
 
     attribute_map = {
         "destinations": "destinations",
-        "processors": "processors",
+        "processor_groups": "processor_groups",
         "sources": "sources",
     }
 
@@ -184,7 +184,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSocketSource,
             ]
         ],
-        processors: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
+        processor_groups: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -193,14 +193,14 @@ class ObservabilityPipelineConfig(ModelNormal):
         :param destinations: A list of destination components where processed logs are sent.
         :type destinations: [ObservabilityPipelineConfigDestinationItem]
 
-        :param processors: A list of processor groups that transform or enrich log data.
-        :type processors: [ObservabilityPipelineConfigProcessorGroup], optional
+        :param processor_groups: A list of processor groups that transform or enrich log data.
+        :type processor_groups: [ObservabilityPipelineConfigProcessorGroup], optional
 
         :param sources: A list of configured data sources for the pipeline.
         :type sources: [ObservabilityPipelineConfigSourceItem]
         """
-        if processors is not unset:
-            kwargs["processors"] = processors
+        if processor_groups is not unset:
+            kwargs["processor_groups"] = processor_groups
         super().__init__(kwargs)
 
         self_.destinations = destinations

@@ -45,7 +45,7 @@ body = ObservabilityPipeline(
                         type=ObservabilityPipelineDatadogLogsDestinationType.DATADOG_LOGS,
                     ),
                 ],
-                processors=[
+                processor_groups=[
                     ObservabilityPipelineConfigProcessorGroup(
                         enabled=True,
                         id="my-processor-group",
