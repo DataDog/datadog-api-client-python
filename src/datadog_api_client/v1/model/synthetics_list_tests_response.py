@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+    from datadog_api_client.v1.model.synthetics_test_details_without_steps import SyntheticsTestDetailsWithoutSteps
 
 
 class SyntheticsListTestsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+        from datadog_api_client.v1.model.synthetics_test_details_without_steps import SyntheticsTestDetailsWithoutSteps
 
         return {
-            "tests": ([SyntheticsTestDetails],),
+            "tests": ([SyntheticsTestDetailsWithoutSteps],),
         }
 
     attribute_map = {
         "tests": "tests",
     }
 
-    def __init__(self_, tests: Union[List[SyntheticsTestDetails], UnsetType] = unset, **kwargs):
+    def __init__(self_, tests: Union[List[SyntheticsTestDetailsWithoutSteps], UnsetType] = unset, **kwargs):
         """
         Object containing an array of Synthetic tests configuration.
 
         :param tests: Array of Synthetic tests configuration.
-        :type tests: [SyntheticsTestDetails], optional
+        :type tests: [SyntheticsTestDetailsWithoutSteps], optional
         """
         if tests is not unset:
             kwargs["tests"] = tests

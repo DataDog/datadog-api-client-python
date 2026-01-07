@@ -21,7 +21,7 @@ from datadog_api_client.v1.model.synthetics_private_location_creation_response i
 )
 from datadog_api_client.v1.model.synthetics_private_location import SyntheticsPrivateLocation
 from datadog_api_client.v1.model.synthetics_list_tests_response import SyntheticsListTestsResponse
-from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
+from datadog_api_client.v1.model.synthetics_test_details_without_steps import SyntheticsTestDetailsWithoutSteps
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_get_browser_test_latest_results_response import (
@@ -36,6 +36,7 @@ from datadog_api_client.v1.model.synthetics_trigger_body import SyntheticsTrigge
 from datadog_api_client.v1.model.synthetics_ci_test_body import SyntheticsCITestBody
 from datadog_api_client.v1.model.synthetics_test_uptime import SyntheticsTestUptime
 from datadog_api_client.v1.model.synthetics_fetch_uptimes_payload import SyntheticsFetchUptimesPayload
+from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_patch_test_body import SyntheticsPatchTestBody
 from datadog_api_client.v1.model.synthetics_get_api_test_latest_results_response import (
     SyntheticsGetAPITestLatestResultsResponse,
@@ -569,7 +570,7 @@ class SyntheticsApi:
 
         self._get_test_endpoint = _Endpoint(
             settings={
-                "response_type": (SyntheticsTestDetails,),
+                "response_type": (SyntheticsTestDetailsWithoutSteps,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/synthetics/tests/{public_id}",
                 "operation_id": "get_test",
@@ -1305,14 +1306,14 @@ class SyntheticsApi:
     def get_test(
         self,
         public_id: str,
-    ) -> SyntheticsTestDetails:
+    ) -> SyntheticsTestDetailsWithoutSteps:
         """Get a test configuration.
 
         Get the detailed configuration associated with a Synthetic test.
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
-        :rtype: SyntheticsTestDetails
+        :rtype: SyntheticsTestDetailsWithoutSteps
         """
         kwargs: Dict[str, Any] = {}
         kwargs["public_id"] = public_id
@@ -1374,7 +1375,7 @@ class SyntheticsApi:
         *,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
-    ) -> collections.abc.Iterable[SyntheticsTestDetails]:
+    ) -> collections.abc.Iterable[SyntheticsTestDetailsWithoutSteps]:
         """Get the list of all Synthetic tests.
 
         Provide a paginated version of :meth:`list_tests`, returning all items.
@@ -1385,7 +1386,7 @@ class SyntheticsApi:
         :type page_number: int, optional
 
         :return: A generator of paginated results.
-        :rtype: collections.abc.Iterable[SyntheticsTestDetails]
+        :rtype: collections.abc.Iterable[SyntheticsTestDetailsWithoutSteps]
         """
         kwargs: Dict[str, Any] = {}
         if page_size is not unset:

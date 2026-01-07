@@ -860,6 +860,7 @@ from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestCon
 from datadog_api_client.v1.model.synthetics_test_details import SyntheticsTestDetails
 from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
 from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
+from datadog_api_client.v1.model.synthetics_test_details_without_steps import SyntheticsTestDetailsWithoutSteps
 from datadog_api_client.v1.model.synthetics_test_execution_rule import SyntheticsTestExecutionRule
 from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
 from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
@@ -1855,6 +1856,7 @@ __all__ = [
     "SyntheticsTestDetails",
     "SyntheticsTestDetailsSubType",
     "SyntheticsTestDetailsType",
+    "SyntheticsTestDetailsWithoutSteps",
     "SyntheticsTestExecutionRule",
     "SyntheticsTestHeaders",
     "SyntheticsTestMetadata",
