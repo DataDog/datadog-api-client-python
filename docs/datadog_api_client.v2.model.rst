@@ -10686,6 +10686,55 @@ datadog\_api\_client.v2.model.gitlab\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.global\_variable\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_variable_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_variable\_json\_patch\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_variable_json_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_variable\_json\_patch\_request\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_variable_json_patch_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_variable\_json\_patch\_request\_data\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_variable_json_patch_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_variable\_json\_patch\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_variable_json_patch_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_variable\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_variable_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_variable\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_variable_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.google\_meet\_configuration\_reference module
 ---------------------------------------------------------------------------
 
@@ -12671,6 +12720,20 @@ datadog\_api\_client.v2.model.job\_definition\_from\_rule module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.job_definition_from_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.json\_patch\_operation module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.json_patch_operation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.json\_patch\_operation\_op module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.json_patch_operation_op
    :members:
    :show-inheritance:
 
@@ -23745,6 +23808,69 @@ datadog\_api\_client.v2.model.suppression\_versions module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.suppression_versions
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable\_options module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable\_parse\_test\_options module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable_parse_test_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable\_parse\_test\_options\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable_parse_test_options_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable\_parser\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable_parser_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable\_totp\_parameters module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable_totp_parameters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_global\_variable\_value module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_global_variable_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_variable\_parser module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_variable_parser
    :members:
    :show-inheritance:
 

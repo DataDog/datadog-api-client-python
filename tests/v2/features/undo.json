@@ -4528,6 +4528,12 @@
       "type": "safe"
     }
   },
+  "PatchGlobalVariable": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListTagPipelinesRulesets": {
     "tag": "Cloud Cost Management",
     "undo": {

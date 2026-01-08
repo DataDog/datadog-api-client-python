@@ -2045,6 +2045,15 @@ from datadog_api_client.v2.model.gitlab_credentials_update import GitlabCredenti
 from datadog_api_client.v2.model.gitlab_integration import GitlabIntegration
 from datadog_api_client.v2.model.gitlab_integration_type import GitlabIntegrationType
 from datadog_api_client.v2.model.gitlab_integration_update import GitlabIntegrationUpdate
+from datadog_api_client.v2.model.global_variable_data import GlobalVariableData
+from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
+from datadog_api_client.v2.model.global_variable_json_patch_request_data import GlobalVariableJsonPatchRequestData
+from datadog_api_client.v2.model.global_variable_json_patch_request_data_attributes import (
+    GlobalVariableJsonPatchRequestDataAttributes,
+)
+from datadog_api_client.v2.model.global_variable_json_patch_type import GlobalVariableJsonPatchType
+from datadog_api_client.v2.model.global_variable_response import GlobalVariableResponse
+from datadog_api_client.v2.model.global_variable_type import GlobalVariableType
 from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
 from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
 from datadog_api_client.v2.model.grey_noise_api_key import GreyNoiseAPIKey
@@ -2390,6 +2399,8 @@ from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.job_create_response_data import JobCreateResponseData
 from datadog_api_client.v2.model.job_definition import JobDefinition
 from datadog_api_client.v2.model.job_definition_from_rule import JobDefinitionFromRule
+from datadog_api_client.v2.model.json_patch_operation import JsonPatchOperation
+from datadog_api_client.v2.model.json_patch_operation_op import JsonPatchOperationOp
 from datadog_api_client.v2.model.kind_attributes import KindAttributes
 from datadog_api_client.v2.model.kind_data import KindData
 from datadog_api_client.v2.model.kind_metadata import KindMetadata
@@ -4743,6 +4754,21 @@ from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
 from datadog_api_client.v2.model.suppression_version_history import SuppressionVersionHistory
 from datadog_api_client.v2.model.suppression_versions import SuppressionVersions
+from datadog_api_client.v2.model.synthetics_global_variable import SyntheticsGlobalVariable
+from datadog_api_client.v2.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
+from datadog_api_client.v2.model.synthetics_global_variable_options import SyntheticsGlobalVariableOptions
+from datadog_api_client.v2.model.synthetics_global_variable_parse_test_options import (
+    SyntheticsGlobalVariableParseTestOptions,
+)
+from datadog_api_client.v2.model.synthetics_global_variable_parse_test_options_type import (
+    SyntheticsGlobalVariableParseTestOptionsType,
+)
+from datadog_api_client.v2.model.synthetics_global_variable_parser_type import SyntheticsGlobalVariableParserType
+from datadog_api_client.v2.model.synthetics_global_variable_totp_parameters import (
+    SyntheticsGlobalVariableTOTPParameters,
+)
+from datadog_api_client.v2.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+from datadog_api_client.v2.model.synthetics_variable_parser import SyntheticsVariableParser
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
 from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
 from datadog_api_client.v2.model.table_result_v2_data import TableResultV2Data
@@ -6723,6 +6749,13 @@ __all__ = [
     "GitlabIntegration",
     "GitlabIntegrationType",
     "GitlabIntegrationUpdate",
+    "GlobalVariableData",
+    "GlobalVariableJsonPatchRequest",
+    "GlobalVariableJsonPatchRequestData",
+    "GlobalVariableJsonPatchRequestDataAttributes",
+    "GlobalVariableJsonPatchType",
+    "GlobalVariableResponse",
+    "GlobalVariableType",
     "GoogleMeetConfigurationReference",
     "GoogleMeetConfigurationReferenceData",
     "GreyNoiseAPIKey",
@@ -7010,6 +7043,8 @@ __all__ = [
     "JobCreateResponseData",
     "JobDefinition",
     "JobDefinitionFromRule",
+    "JsonPatchOperation",
+    "JsonPatchOperationOp",
     "KindAttributes",
     "KindData",
     "KindMetadata",
@@ -8595,6 +8630,15 @@ __all__ = [
     "StepDisplayBounds",
     "SuppressionVersionHistory",
     "SuppressionVersions",
+    "SyntheticsGlobalVariable",
+    "SyntheticsGlobalVariableAttributes",
+    "SyntheticsGlobalVariableOptions",
+    "SyntheticsGlobalVariableParseTestOptions",
+    "SyntheticsGlobalVariableParseTestOptionsType",
+    "SyntheticsGlobalVariableParserType",
+    "SyntheticsGlobalVariableTOTPParameters",
+    "SyntheticsGlobalVariableValue",
+    "SyntheticsVariableParser",
     "TableResultV2",
     "TableResultV2Array",
     "TableResultV2Data",

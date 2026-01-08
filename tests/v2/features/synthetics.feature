@@ -20,6 +20,30 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Patch a global variable returns "Bad Request" response
+    Given new "PatchGlobalVariable" request
+    And request contains "variable_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"json_patch": [{"op": "add", "path": "/name"}]}, "type": "global_variables_json_patch"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Patch a global variable returns "Not Found" response
+    Given new "PatchGlobalVariable" request
+    And request contains "variable_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"json_patch": [{"op": "add", "path": "/name"}]}, "type": "global_variables_json_patch"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Patch a global variable returns "OK" response
+    Given new "PatchGlobalVariable" request
+    And request contains "variable_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"json_patch": [{"op": "add", "path": "/name"}]}, "type": "global_variables_json_patch"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/synthetics-managing
   Scenario: Save new value for on-demand concurrency cap returns "OK" response
     Given new "SetOnDemandConcurrencyCap" request
