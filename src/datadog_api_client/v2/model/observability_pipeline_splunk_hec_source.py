@@ -50,6 +50,8 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         """
         The ``splunk_hec`` source implements the Splunk HTTP Event Collector (HEC) API.
 
+        **Supported pipeline types:** logs
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
         :type id: str
 

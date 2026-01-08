@@ -17,18 +17,29 @@ class ObservabilityPipelineSensitiveDataScannerProcessorLibraryPatternOptions(Mo
     @cached_property
     def openapi_types(_):
         return {
+            "description": (str,),
             "id": (str,),
             "use_recommended_keywords": (bool,),
         }
 
     attribute_map = {
+        "description": "description",
         "id": "id",
         "use_recommended_keywords": "use_recommended_keywords",
     }
 
-    def __init__(self_, id: str, use_recommended_keywords: Union[bool, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        id: str,
+        description: Union[str, UnsetType] = unset,
+        use_recommended_keywords: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Options for selecting a predefined library pattern and enabling keyword support.
+
+        :param description: Human-readable description providing context about a sensitive data scanner rule
+        :type description: str, optional
 
         :param id: Identifier for a predefined pattern from the sensitive data scanner pattern library.
         :type id: str
@@ -36,6 +47,8 @@ class ObservabilityPipelineSensitiveDataScannerProcessorLibraryPatternOptions(Mo
         :param use_recommended_keywords: Whether to augment the pattern with recommended keywords (optional).
         :type use_recommended_keywords: bool, optional
         """
+        if description is not unset:
+            kwargs["description"] = description
         if use_recommended_keywords is not unset:
             kwargs["use_recommended_keywords"] = use_recommended_keywords
         super().__init__(kwargs)

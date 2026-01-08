@@ -90,6 +90,8 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         """
         The ``socket`` source ingests logs over TCP or UDP.
 
+        **Supported pipeline types:** logs
+
         :param framing: Framing method configuration for the socket source.
         :type framing: ObservabilityPipelineSocketSourceFraming
 
