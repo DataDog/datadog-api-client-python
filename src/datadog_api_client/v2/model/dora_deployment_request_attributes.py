@@ -75,7 +75,7 @@ class DORADeploymentRequestAttributes(ModelNormal):
         :param git: Git info for DORA Metrics events.
         :type git: DORAGitInfo, optional
 
-        :param id: Deployment ID.
+        :param id: Deployment ID. Must be 16-128 characters and contain only alphanumeric characters, hyphens, underscores, periods, and colons (a-z, A-Z, 0-9, -, _, ., :).
         :type id: str, optional
 
         :param service: Service name.
