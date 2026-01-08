@@ -52,7 +52,6 @@ body = PatchTableRequest(
                     "id",
                 ],
             ),
-            sync_enabled=False,
             tags=[
                 "test_tag",
             ],
