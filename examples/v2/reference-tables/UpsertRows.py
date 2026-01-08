@@ -13,10 +13,7 @@ body = BatchUpsertRowsRequestArray(
     data=[
         BatchUpsertRowsRequestData(
             attributes=BatchUpsertRowsRequestDataAttributes(
-                values=dict(
-                    example_key_value="primary_key_value",
-                    name="row_name",
-                ),
+                values=dict(),
             ),
             id="primary_key_value",
             type=TableRowResourceDataType.ROW,

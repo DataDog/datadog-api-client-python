@@ -2622,6 +2622,13 @@ datadog\_api\_client.v2.model.batch\_upsert\_rows\_request\_data\_attributes mod
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.batch\_upsert\_rows\_request\_data\_attributes\_value module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_upsert_rows_request_data_attributes_value
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.bill\_config module
 -------------------------------------------------
 
