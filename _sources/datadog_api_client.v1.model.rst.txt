@@ -5128,6 +5128,13 @@ datadog\_api\_client.v1.model.synthetics\_test\_details\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_test\_details\_without\_steps module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_test_details_without_steps
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_test\_execution\_rule module
 ----------------------------------------------------------------------
 
