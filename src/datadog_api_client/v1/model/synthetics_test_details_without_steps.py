@@ -18,19 +18,17 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.creator import Creator
     from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
     from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-    from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
     from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
     from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
 
 
-class SyntheticsTestDetails(ModelNormal):
+class SyntheticsTestDetailsWithoutSteps(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.synthetics_test_config import SyntheticsTestConfig
         from datadog_api_client.v1.model.creator import Creator
         from datadog_api_client.v1.model.synthetics_test_options import SyntheticsTestOptions
         from datadog_api_client.v1.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
-        from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
         from datadog_api_client.v1.model.synthetics_test_details_sub_type import SyntheticsTestDetailsSubType
         from datadog_api_client.v1.model.synthetics_test_details_type import SyntheticsTestDetailsType
 
@@ -44,7 +42,6 @@ class SyntheticsTestDetails(ModelNormal):
             "options": (SyntheticsTestOptions,),
             "public_id": (str,),
             "status": (SyntheticsTestPauseStatus,),
-            "steps": ([SyntheticsStep],),
             "subtype": (SyntheticsTestDetailsSubType,),
             "tags": ([str],),
             "type": (SyntheticsTestDetailsType,),
@@ -60,7 +57,6 @@ class SyntheticsTestDetails(ModelNormal):
         "options": "options",
         "public_id": "public_id",
         "status": "status",
-        "steps": "steps",
         "subtype": "subtype",
         "tags": "tags",
         "type": "type",
@@ -82,14 +78,13 @@ class SyntheticsTestDetails(ModelNormal):
         options: Union[SyntheticsTestOptions, UnsetType] = unset,
         public_id: Union[str, UnsetType] = unset,
         status: Union[SyntheticsTestPauseStatus, UnsetType] = unset,
-        steps: Union[List[SyntheticsStep], UnsetType] = unset,
         subtype: Union[SyntheticsTestDetailsSubType, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         type: Union[SyntheticsTestDetailsType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Object containing details about your Synthetic test.
+        Object containing details about your Synthetic test, without test steps.
 
         :param config: Configuration object for a Synthetic test.
         :type config: SyntheticsTestConfig, optional
@@ -119,9 +114,6 @@ class SyntheticsTestDetails(ModelNormal):
             Synthetic test.
         :type status: SyntheticsTestPauseStatus, optional
 
-        :param steps: The steps of the test if they exist.
-        :type steps: [SyntheticsStep], optional
-
         :param subtype: The subtype of the Synthetic API test, ``http`` , ``ssl`` , ``tcp`` ,
             ``dns`` , ``icmp`` , ``udp`` , ``websocket`` , ``grpc`` or ``multi``.
         :type subtype: SyntheticsTestDetailsSubType, optional
@@ -150,8 +142,6 @@ class SyntheticsTestDetails(ModelNormal):
             kwargs["public_id"] = public_id
         if status is not unset:
             kwargs["status"] = status
-        if steps is not unset:
-            kwargs["steps"] = steps
         if subtype is not unset:
             kwargs["subtype"] = subtype
         if tags is not unset:
