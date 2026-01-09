@@ -4484,6 +4484,12 @@
       "type": "safe"
     }
   },
+  "GetSPARecommendationsWithShard": {
+    "tag": "Spa",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "AggregateSpans": {
     "tag": "Spans",
     "undo": {
