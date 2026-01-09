@@ -8,9 +8,6 @@ from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
 from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
 from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
-from datadog_api_client.v1.model.distribution_widget_histogram_request_type import (
-    DistributionWidgetHistogramRequestType,
-)
 from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
 from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
 from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
@@ -26,6 +23,7 @@ from datadog_api_client.v1.model.formula_and_function_event_query_definition_sea
 )
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.widget import Widget
+from datadog_api_client.v1.model.widget_histogram_request_type import WidgetHistogramRequestType
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
@@ -69,7 +67,7 @@ body = Dashboard(
                             ],
                             group_by=[],
                         ),
-                        request_type=DistributionWidgetHistogramRequestType.HISTOGRAM,
+                        request_type=WidgetHistogramRequestType.HISTOGRAM,
                     ),
                 ],
             ),

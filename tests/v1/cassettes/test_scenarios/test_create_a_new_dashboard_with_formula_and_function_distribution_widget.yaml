@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_formula_and_function_distribution_widget-1765818232","widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"avg","metric":"@duration"},"data_source":"logs","group_by":[{"facet":"service","limit":1000,"sort":{"aggregation":"count","order":"desc"}}],"indexes":["*"],"name":"query1","search":{"query":""},"storage":"hot"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"distribution"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"ii3-z6t-p8x","title":"Test-Create_a_new_dashboard_with_formula_and_function_distribution_widget-1765818232","description":null,"author_handle":"shishi.liu@datadoghq.com","author_name":"Shishi
+        Liu","layout_type":"free","url":"/dashboard/ii3-z6t-p8x/test-createanewdashboardwithformulaandfunctiondistributionwidget-1765818232","template_variables":[],"widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"avg","metric":"@duration"},"data_source":"logs","group_by":[{"facet":"service","limit":1000,"sort":{"aggregation":"count","order":"desc"}}],"indexes":["*"],"name":"query1","search":{"query":""},"storage":"hot"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"distribution"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":1822470106302094}],"notify_list":[],"created_at":"2025-12-15T17:03:52.607823+00:00","modified_at":"2025-12-15T17:03:52.607823+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/ii3-z6t-p8x
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"ii3-z6t-p8x"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
