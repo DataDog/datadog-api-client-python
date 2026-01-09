@@ -1,0 +1,51 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"creation_author_id":367742,"creation_date":1758896636212,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":367742,"update_date":1758896636212,"version":1},"type":"critical_assets"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets
+  response:
+    body:
+      string: '{"data":{"id":"ddd704c3-8603-42d8-823c-2c101ef59207","type":"critical_assets","attributes":{"creation_author_id":1445416,"creation_date":1767380948181,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"enabled":true,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":1445416,"update_date":1767380948181,"updater":{"handle":"frog@datadoghq.com","name":"frog"},"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/ddd704c3-8603-42d8-823c-2c101ef59207
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/ddd704c3-8603-42d8-823c-2c101ef59207
+  response:
+    body:
+      string: '{"errors":["not_found(Critical asset with ID ddd704c3-8603-42d8-823c-2c101ef59207
+        not found)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

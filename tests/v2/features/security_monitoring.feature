@@ -293,6 +293,29 @@ Feature: Security Monitoring
     And the response "message" is equal to "ddd"
     And the response "options.complianceRuleOptions.resourceType" is equal to "gcp_compute_disk"
 
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a critical asset returns "Bad Request" response
+    Given new "CreateSecurityMonitoringCriticalAsset" request
+    And body with value {"data": {"type": "critical_assets", "attributes": {"query": "host:test"}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a critical asset returns "Conflict" response
+    Given new "CreateSecurityMonitoringCriticalAsset" request
+    And body with value {"data": {"attributes": {"enabled": true, "query": "security:monitoring", "rule_query": "type:(log_detection OR signal_correlation OR workload_security OR application_security) source:cloudtrail", "severity": "increase", "tags": ["team:database", "source:cloudtrail"]}, "type": "critical_assets"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @skip-validation @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a critical asset returns "OK" response
+    Given new "CreateSecurityMonitoringCriticalAsset" request
+    And body with value {"data": {"type": "critical_assets", "attributes": {"query": "host:{{ unique_lower_alnum }}", "rule_query": "type:(log_detection OR signal_correlation OR workload_security OR application_security) source:cloudtrail", "severity": "decrease", "tags": ["team:security", "env:test"]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "critical_assets"
+    And the response "data.attributes.severity" is equal to "decrease"
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Create a custom framework returns "Bad Request" response
     Given new "CreateCustomFramework" request
@@ -589,6 +612,21 @@ Feature: Security Monitoring
     Then the response status is 404 Not Found
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a critical asset returns "Not Found" response
+    Given new "DeleteSecurityMonitoringCriticalAsset" request
+    And request contains "critical_asset_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-validation @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a critical asset returns "OK" response
+    Given there is a valid "critical_asset" in the system
+    And new "DeleteSecurityMonitoringCriticalAsset" request
+    And request contains "critical_asset_id" parameter from "critical_asset.data.id"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a custom framework returns "Bad Request" response
     Given new "DeleteCustomFramework" request
     And request contains "handle" parameter with value "handle-does-not-exist"
@@ -783,6 +821,23 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud"
     And the response "id" has the same value as "cloud_configuration_rule.id"
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a critical asset returns "Not Found" response
+    Given new "GetSecurityMonitoringCriticalAsset" request
+    And request contains "critical_asset_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-validation @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a critical asset returns "OK" response
+    Given new "GetSecurityMonitoringCriticalAsset" request
+    And there is a valid "critical_asset" in the system
+    And request contains "critical_asset_id" parameter from "critical_asset.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.rule_query" has the same value as "critical_asset.data.attributes.rule_query"
+    And the response "data.attributes.severity" is equal to "medium"
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Get a custom framework returns "Bad Request" response
@@ -1050,6 +1105,12 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Get all critical assets returns "OK" response
+    Given new "ListSecurityMonitoringCriticalAssets" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Get all security filters returns "OK" response
     Given new "ListSecurityFilters" request
     When the request is sent
@@ -1060,6 +1121,21 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get all suppression rules returns "OK" response
     Given new "ListSecurityMonitoringSuppressions" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get critical assets affecting a specific rule returns "Not Found" response
+    Given new "GetCriticalAssetsAffectingRule" request
+    And request contains "rule_id" parameter with value "aaa-bbb-ccc-ddd"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Get critical assets affecting a specific rule returns "OK" response
+    Given new "GetCriticalAssetsAffectingRule" request
+    And there is a valid "security_rule" in the system
+    And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1677,6 +1753,43 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}_cloud_updated"
     And the response "id" has the same value as "cloud_configuration_rule.id"
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a critical asset returns "Bad Request" response
+    Given new "UpdateSecurityMonitoringCriticalAsset" request
+    And request contains "critical_asset_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"type": "critical_assets", "attributes": {"severity": "invalid_severity"}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a critical asset returns "Concurrent Modification" response
+    Given new "UpdateSecurityMonitoringCriticalAsset" request
+    And request contains "critical_asset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "query": "security:monitoring", "rule_query": "type:log_detection source:cloudtrail", "severity": "increase", "tags": ["technique:T1110-brute-force", "source:cloudtrail"], "version": 1}, "type": "critical_assets"}}
+    When the request is sent
+    Then the response status is 409 Concurrent Modification
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a critical asset returns "Not Found" response
+    Given new "UpdateSecurityMonitoringCriticalAsset" request
+    And request contains "critical_asset_id" parameter with value "00000000-0000-0000-0000-000000000001"
+    And body with value {"data": {"type": "critical_assets", "attributes": {"severity": "high"}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-validation @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a critical asset returns "OK" response
+    Given new "UpdateSecurityMonitoringCriticalAsset" request
+    And there is a valid "critical_asset" in the system
+    And request contains "critical_asset_id" parameter from "critical_asset.data.id"
+    And body with value {"data": {"type": "critical_assets", "attributes": {"enabled": false, "query": "no:alert", "rule_query": "type:(log_detection OR signal_correlation OR workload_security OR application_security) ruleId:djg-ktx-ipq", "severity": "decrease", "tags": ["env:production"], "version": 1}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "critical_assets"
+    And the response "data.attributes.severity" is equal to "decrease"
+    And the response "data.attributes.enabled" is equal to false
+    And the response "data.attributes.version" is equal to 2
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Update a custom framework returns "Bad Request" response
