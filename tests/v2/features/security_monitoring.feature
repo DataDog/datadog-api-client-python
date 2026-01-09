@@ -1323,23 +1323,20 @@ Feature: Security Monitoring
 
   @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
   Scenario: List security findings returns "Bad Request" response
-    Given operation "ListSecurityFindings" enabled
-    And new "ListSecurityFindings" request
+    Given new "ListSecurityFindings" request
     And request contains "page[cursor]" parameter with value "invalid_cursor"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
   Scenario: List security findings returns "OK" response
-    Given operation "ListSecurityFindings" enabled
-    And new "ListSecurityFindings" request
+    Given new "ListSecurityFindings" request
     When the request is sent
     Then the response status is 200 OK
 
   @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
   Scenario: List security findings returns "OK" response with pagination
-    Given operation "ListSecurityFindings" enabled
-    And new "ListSecurityFindings" request
+    Given new "ListSecurityFindings" request
     And request contains "page[limit]" parameter with value 5
     When the request is sent
     Then the response status is 200 OK
@@ -1602,24 +1599,21 @@ Feature: Security Monitoring
 
   @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
   Scenario: Search security findings returns "Bad Request" response
-    Given operation "SearchSecurityFindings" enabled
-    And new "SearchSecurityFindings" request
+    Given new "SearchSecurityFindings" request
     And body with value {"page": {"cursor": "invalid_cursor"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform
   Scenario: Search security findings returns "OK" response
-    Given operation "SearchSecurityFindings" enabled
-    And new "SearchSecurityFindings" request
+    Given new "SearchSecurityFindings" request
     And body with value {"data": {"attributes": {"filter": "@severity:(critical OR high)"}}}
     When the request is sent
     Then the response status is 200 OK
 
   @team:DataDog/cloud-security-posture-management @team:DataDog/k9-findings-platform @with-pagination
   Scenario: Search security findings returns "OK" response with pagination
-    Given operation "SearchSecurityFindings" enabled
-    And new "SearchSecurityFindings" request
+    Given new "SearchSecurityFindings" request
     And body with value {"data": {"attributes": {"filter": "@severity:(critical OR high)", "page": {"limit": 1}}}}
     When the request is sent
     Then the response status is 200 OK

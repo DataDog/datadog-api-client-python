@@ -3816,11 +3816,6 @@ class SecurityMonitoringApi:
 
         Get a list of security findings that match a search query.
 
-        This endpoint requires one of the following permissions:
-
-        * ``security_monitoring_findings_read``
-        * ``appsec_vm_read``
-
         **Query Syntax**
 
         This endpoint uses the logs query syntax. Findings attributes (living in the custom. namespace) are prefixed by @ when queried. Tags are queried without a prefix.
@@ -4723,11 +4718,6 @@ class SecurityMonitoringApi:
         """Search security findings.
 
         Get a list of security findings that match a search query.
-
-        This endpoint requires one of the following permissions:
-
-        * ``security_monitoring_findings_read``
-        * ``appsec_vm_read``
 
         **Query Syntax**
 
