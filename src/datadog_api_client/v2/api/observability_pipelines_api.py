@@ -31,7 +31,7 @@ class ObservabilityPipelinesApi:
             settings={
                 "response_type": (ObservabilityPipeline,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines",
+                "endpoint_path": "/api/v2/obs-pipelines/pipelines",
                 "operation_id": "create_pipeline",
                 "http_method": "POST",
                 "version": "v2",
@@ -51,7 +51,7 @@ class ObservabilityPipelinesApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines/{pipeline_id}",
+                "endpoint_path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}",
                 "operation_id": "delete_pipeline",
                 "http_method": "DELETE",
                 "version": "v2",
@@ -74,7 +74,7 @@ class ObservabilityPipelinesApi:
             settings={
                 "response_type": (ObservabilityPipeline,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines/{pipeline_id}",
+                "endpoint_path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}",
                 "operation_id": "get_pipeline",
                 "http_method": "GET",
                 "version": "v2",
@@ -97,7 +97,7 @@ class ObservabilityPipelinesApi:
             settings={
                 "response_type": (ListPipelinesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines",
+                "endpoint_path": "/api/v2/obs-pipelines/pipelines",
                 "operation_id": "list_pipelines",
                 "http_method": "GET",
                 "version": "v2",
@@ -124,7 +124,7 @@ class ObservabilityPipelinesApi:
             settings={
                 "response_type": (ObservabilityPipeline,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines/{pipeline_id}",
+                "endpoint_path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}",
                 "operation_id": "update_pipeline",
                 "http_method": "PUT",
                 "version": "v2",
@@ -150,7 +150,7 @@ class ObservabilityPipelinesApi:
             settings={
                 "response_type": (ValidationResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/remote_config/products/obs_pipelines/pipelines/validate",
+                "endpoint_path": "/api/v2/obs-pipelines/pipelines/validate",
                 "operation_id": "validate_pipeline",
                 "http_method": "POST",
                 "version": "v2",
