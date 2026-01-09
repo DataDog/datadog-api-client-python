@@ -63,10 +63,12 @@ class ObservabilityPipelineRenameFieldsProcessor(ModelNormal):
         """
         The ``rename_fields`` processor changes field names.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
-        :param enabled: Whether this processor is enabled.
+        :param enabled: Indicates whether the processor is enabled.
         :type enabled: bool
 
         :param fields: A list of rename rules specifying which fields to rename in the event, what to rename them to, and whether to preserve the original fields.

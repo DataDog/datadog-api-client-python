@@ -5,7 +5,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines?page%5Bsize%5D=0
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines?page%5Bsize%5D=0
   response:
     body:
       string: '{"errors":[{"title":"page[size] must be a number between 1 and 50"}]}

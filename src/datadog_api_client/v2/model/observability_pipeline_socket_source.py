@@ -90,10 +90,12 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         """
         The ``socket`` source ingests logs over TCP or UDP.
 
+        **Supported pipeline types:** logs
+
         :param framing: Framing method configuration for the socket source.
         :type framing: ObservabilityPipelineSocketSourceFraming
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param mode: Protocol used to receive logs.

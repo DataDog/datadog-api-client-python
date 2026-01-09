@@ -63,13 +63,15 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         """
         The ``sensitive_data_scanner`` processor detects and optionally redacts sensitive data in log events.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
-        :param enabled: Whether this processor is enabled.
+        :param enabled: Indicates whether the processor is enabled.
         :type enabled: bool
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.

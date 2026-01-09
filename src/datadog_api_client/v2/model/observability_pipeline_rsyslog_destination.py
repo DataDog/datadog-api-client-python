@@ -62,6 +62,8 @@ class ObservabilityPipelineRsyslogDestination(ModelNormal):
         """
         The ``rsyslog`` destination forwards logs to an external ``rsyslog`` server over TCP or UDP using the syslog protocol.
 
+        **Supported pipeline types:** logs
+
         :param id: The unique identifier for this component.
         :type id: str
 

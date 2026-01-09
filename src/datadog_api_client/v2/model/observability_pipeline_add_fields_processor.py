@@ -59,16 +59,18 @@ class ObservabilityPipelineAddFieldsProcessor(ModelNormal):
         """
         The ``add_fields`` processor adds static key-value fields to logs.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
-        :param enabled: Whether this processor is enabled.
+        :param enabled: Indicates whether the processor is enabled.
         :type enabled: bool
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.

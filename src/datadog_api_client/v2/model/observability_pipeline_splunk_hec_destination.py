@@ -66,6 +66,8 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         """
         The ``splunk_hec`` destination forwards logs to Splunk using the HTTP Event Collector (HEC).
 
+        **Supported pipeline types:** logs
+
         :param auto_extract_timestamp: If ``true`` , Splunk tries to extract timestamps from incoming log events.
             If ``false`` , Splunk assigns the time the event was received.
         :type auto_extract_timestamp: bool, optional
@@ -73,7 +75,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineSplunkHecDestinationEncoding, optional
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param index: Optional name of the Splunk index where logs are written.

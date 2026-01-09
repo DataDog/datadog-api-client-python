@@ -83,6 +83,8 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         The ``google_cloud_storage`` destination stores logs in a Google Cloud Storage (GCS) bucket.
         It requires a bucket name, GCP authentication, and metadata fields.
 
+        **Supported pipeline types:** logs
+
         :param acl: Access control list setting for objects written to the bucket.
         :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl, optional
 
