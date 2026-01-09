@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"name":"9093ba6f940b71ca","type":"component"}],"domain_prefix":"dd-integration-tests-9093ba6f940b71ca","enabled":true,"name":"[DD
+      Integration Tests] 9093ba6f940b71ca","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"57ce4c9b-d23a-4dc7-8da1-0a238984ec4d","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"8913f5c5-9e5b-4b59-883d-616974fad11b","name":"9093ba6f940b71ca","type":"component","status":"operational","position":0}],"created_at":"2026-01-09T18:43:26.571098Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"dd-integration-tests-9093ba6f940b71ca","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-09T18:43:26.571098Z","name":"[DD
+        Integration Tests] 9093ba6f940b71ca","page_url":"https://frog.datadoghq.com/status-pages/57ce4c9b-d23a-4dc7-8da1-0a238984ec4d/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"components_affected":[{"id":"8913f5c5-9e5b-4b59-883d-616974fad11b","status":"major_outage"}],"status":"investigating","title":"Test-Get_degradation_returns_OK_response-1767984206"},"type":"degradations"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/57ce4c9b-d23a-4dc7-8da1-0a238984ec4d/degradations
+  response:
+    body:
+      string: '{"data":{"id":"787494b1-ba32-4ebe-ace4-0940f49691c2","type":"degradations","attributes":{"components_affected":[{"id":"8913f5c5-9e5b-4b59-883d-616974fad11b","name":"9093ba6f940b71ca","status":"major_outage"}],"created_at":"2026-01-09T18:43:27.095612Z","description":"","modified_at":"2026-01-09T18:43:27.095612Z","status":"investigating","title":"Test-Get_degradation_returns_OK_response-1767984206","updates":[{"id":"516ee26d-c7c8-42d1-a0dc-d1cb175dc01e","created_at":"2026-01-09T18:43:27.095612Z","modified_at":"2026-01-09T18:43:27.095612Z","started_at":"0001-01-01T00:00:00Z","status":"investigating","description":"","components_affected":[{"id":"8913f5c5-9e5b-4b59-883d-616974fad11b","name":"9093ba6f940b71ca","status":"major_outage"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"57ce4c9b-d23a-4dc7-8da1-0a238984ec4d","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/statuspages/57ce4c9b-d23a-4dc7-8da1-0a238984ec4d/degradations/787494b1-ba32-4ebe-ace4-0940f49691c2
+  response:
+    body:
+      string: '{"data":{"id":"787494b1-ba32-4ebe-ace4-0940f49691c2","type":"degradations","attributes":{"components_affected":[{"id":"8913f5c5-9e5b-4b59-883d-616974fad11b","name":"9093ba6f940b71ca","status":"major_outage"}],"created_at":"2026-01-09T18:43:27.095612Z","description":"","modified_at":"2026-01-09T18:43:27.095612Z","status":"investigating","title":"Test-Get_degradation_returns_OK_response-1767984206","updates":[{"id":"516ee26d-c7c8-42d1-a0dc-d1cb175dc01e","created_at":"2026-01-09T18:43:27.095612Z","modified_at":"2026-01-09T18:43:27.095612Z","started_at":"0001-01-01T00:00:00Z","status":"investigating","description":"","components_affected":[{"id":"8913f5c5-9e5b-4b59-883d-616974fad11b","name":"9093ba6f940b71ca","status":"major_outage"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"57ce4c9b-d23a-4dc7-8da1-0a238984ec4d","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/57ce4c9b-d23a-4dc7-8da1-0a238984ec4d/degradations/787494b1-ba32-4ebe-ace4-0940f49691c2
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/57ce4c9b-d23a-4dc7-8da1-0a238984ec4d
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"name":"20bbb49e0cc5c753","type":"component"}],"domain_prefix":"dd-integration-tests-20bbb49e0cc5c753","enabled":true,"name":"[DD
+      Integration Tests] 20bbb49e0cc5c753","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"8960312c-f69e-472d-ba4d-809e15025a97","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"40cf7eb3-b9d4-4a6f-b185-a0cffd1a0f08","name":"20bbb49e0cc5c753","type":"component","status":"operational","position":0}],"created_at":"2026-01-09T18:43:24.232029Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"dd-integration-tests-20bbb49e0cc5c753","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-09T18:43:24.232029Z","name":"[DD
+        Integration Tests] 20bbb49e0cc5c753","page_url":"https://frog.datadoghq.com/status-pages/8960312c-f69e-472d-ba4d-809e15025a97/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/8960312c-f69e-472d-ba4d-809e15025a97
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/8960312c-f69e-472d-ba4d-809e15025a97
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"status page not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -4528,6 +4528,125 @@
       "type": "safe"
     }
   },
+  "ListStatusPages": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateStatusPage": {
+    "tag": "Status Pages",
+    "undo": {
+      "operationId": "DeleteStatusPage",
+      "parameters": [
+        {
+          "name": "page_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListDegradations": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteStatusPage": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetStatusPage": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateStatusPage": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListComponents": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateComponent": {
+    "tag": "Status Pages",
+    "undo": {
+      "operationId": "DeleteComponent",
+      "parameters": [
+        {
+          "name": "page_id",
+          "source": "data.relationships.status_page.data.id"
+        },
+        {
+          "name": "component_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteComponent": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetComponent": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateComponent": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateDegradation": {
+    "tag": "Status Pages",
+    "undo": {
+      "operationId": "DeleteDegradation",
+      "parameters": [
+        {
+          "name": "page_id",
+          "source": "data.relationships.status_page.data.id"
+        },
+        {
+          "name": "degradation_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDegradation": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDegradation": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDegradation": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetOnDemandConcurrencyCap": {
     "tag": "Synthetics",
     "undo": {

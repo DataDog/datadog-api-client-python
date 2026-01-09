@@ -1189,6 +1189,34 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"[DD Integration Tests] {{ unique_hash }}\",\n      \"domain_prefix\": \"dd-integration-tests-{{ unique_hash }}\",\n      \"components\": [{\"name\": \"{{ unique_hash }}\", \"type\": \"component\"}],\n      \"type\": \"internal\",\n      \"visualization_type\": \"bars_and_uptime_percentage\",\n      \"enabled\": true\n    },\n    \"type\": \"status_pages\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"status_page\" in the system",
+    "key": "status_page",
+    "tag": "Status Pages",
+    "operationId": "CreateStatusPage"
+  },
+  {
+    "parameters": [
+      {
+        "name": "page_id",
+        "source": "status_page.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"status\": \"investigating\",\n      \"components_affected\": [\n        {\n          \"id\": \"{{ status_page.data.attributes.components[0].id }}\",\n          \"status\": \"major_outage\"\n        }\n      ]\n    },\n    \"type\": \"degradations\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"degradation\" in the system",
+    "key": "degradation",
+    "tag": "Status Pages",
+    "operationId": "CreateDegradation"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"test-handle-{{ unique_hash }}\",\n      \"name\": \"test-name-{{ unique_hash }}\"\n    },\n    \"type\": \"team\"\n  }\n}"
       }
     ],
