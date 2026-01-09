@@ -3791,6 +3791,12 @@
       "type": "safe"
     }
   },
+  "ListSecurityFindings": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DetachCase": {
     "tag": "Security Monitoring",
     "undo": {
@@ -3833,6 +3839,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "SearchSecurityFindings": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListAssetsSBOMs": {
