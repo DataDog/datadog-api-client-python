@@ -3988,6 +3988,49 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityMonitoringCriticalAssets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityMonitoringCriticalAsset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityMonitoringCriticalAsset",
+      "parameters": [
+        {
+          "name": "critical_asset_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetCriticalAssetsAffectingRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteSecurityMonitoringCriticalAsset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityMonitoringCriticalAsset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityMonitoringCriticalAsset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSecurityFilters": {
     "tag": "Security Monitoring",
     "undo": {
