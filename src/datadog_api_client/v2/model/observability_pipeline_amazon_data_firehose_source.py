@@ -55,6 +55,8 @@ class ObservabilityPipelineAmazonDataFirehoseSource(ModelNormal):
         """
         The ``amazon_data_firehose`` source ingests logs from AWS Data Firehose.
 
+        **Supported pipeline types:** logs
+
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
         :type auth: ObservabilityPipelineAwsAuth, optional

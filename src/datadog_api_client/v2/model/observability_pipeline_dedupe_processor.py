@@ -66,6 +66,8 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         """
         The ``dedupe`` processor removes duplicate fields in log events.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

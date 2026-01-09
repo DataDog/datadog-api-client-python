@@ -75,6 +75,8 @@ class ObservabilityPipelineEnrichmentTableProcessor(ModelNormal):
         """
         The ``enrichment_table`` processor enriches logs using a static CSV file or GeoIP database.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

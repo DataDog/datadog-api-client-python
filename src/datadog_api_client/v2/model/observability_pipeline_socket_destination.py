@@ -94,6 +94,8 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         """
         The ``socket`` destination sends logs over TCP or UDP to a remote server.
 
+        **Supported pipeline types:** logs
+
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineSocketDestinationEncoding
 

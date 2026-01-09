@@ -70,6 +70,8 @@ class ObservabilityPipelineHttpClientSource(ModelNormal):
         """
         The ``http_client`` source scrapes logs from HTTP endpoints at regular intervals.
 
+        **Supported pipeline types:** logs
+
         :param auth_strategy: Optional authentication strategy for HTTP requests.
         :type auth_strategy: ObservabilityPipelineHttpClientSourceAuthStrategy, optional
 

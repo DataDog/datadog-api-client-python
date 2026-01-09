@@ -66,6 +66,8 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         """
         The ``sample`` processor allows probabilistic sampling of logs at a fixed rate.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

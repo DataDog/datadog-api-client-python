@@ -63,6 +63,8 @@ class ObservabilityPipelineSensitiveDataScannerProcessor(ModelNormal):
         """
         The ``sensitive_data_scanner`` processor detects and optionally redacts sensitive data in log events.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
