@@ -54,6 +54,8 @@ class MicrosoftSentinelDestination(ModelNormal):
         """
         The ``microsoft_sentinel`` destination forwards logs to Microsoft Sentinel.
 
+        **Supported pipeline types:** logs
+
         :param client_id: Azure AD client ID used for authentication.
         :type client_id: str
 

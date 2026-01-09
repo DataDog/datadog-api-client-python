@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_api_version import (
         ObservabilityPipelineElasticsearchDestinationApiVersion,
     )
+    from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream import (
+        ObservabilityPipelineElasticsearchDestinationDataStream,
+    )
     from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_type import (
         ObservabilityPipelineElasticsearchDestinationType,
     )
@@ -28,6 +31,9 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_api_version import (
             ObservabilityPipelineElasticsearchDestinationApiVersion,
         )
+        from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream import (
+            ObservabilityPipelineElasticsearchDestinationDataStream,
+        )
         from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_type import (
             ObservabilityPipelineElasticsearchDestinationType,
         )
@@ -35,6 +41,7 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
         return {
             "api_version": (ObservabilityPipelineElasticsearchDestinationApiVersion,),
             "bulk_index": (str,),
+            "data_stream": (ObservabilityPipelineElasticsearchDestinationDataStream,),
             "id": (str,),
             "inputs": ([str],),
             "type": (ObservabilityPipelineElasticsearchDestinationType,),
@@ -43,6 +50,7 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
     attribute_map = {
         "api_version": "api_version",
         "bulk_index": "bulk_index",
+        "data_stream": "data_stream",
         "id": "id",
         "inputs": "inputs",
         "type": "type",
@@ -55,16 +63,22 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
         type: ObservabilityPipelineElasticsearchDestinationType,
         api_version: Union[ObservabilityPipelineElasticsearchDestinationApiVersion, UnsetType] = unset,
         bulk_index: Union[str, UnsetType] = unset,
+        data_stream: Union[ObservabilityPipelineElasticsearchDestinationDataStream, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``elasticsearch`` destination writes logs to an Elasticsearch cluster.
+
+        **Supported pipeline types:** logs
 
         :param api_version: The Elasticsearch API version to use. Set to ``auto`` to auto-detect.
         :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
 
         :param bulk_index: The index to write logs to in Elasticsearch.
         :type bulk_index: str, optional
+
+        :param data_stream: Configuration options for writing to Elasticsearch Data Streams instead of a fixed index.
+        :type data_stream: ObservabilityPipelineElasticsearchDestinationDataStream, optional
 
         :param id: The unique identifier for this component.
         :type id: str
@@ -79,6 +93,8 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
             kwargs["api_version"] = api_version
         if bulk_index is not unset:
             kwargs["bulk_index"] = bulk_index
+        if data_stream is not unset:
+            kwargs["data_stream"] = data_stream
         super().__init__(kwargs)
 
         self_.id = id

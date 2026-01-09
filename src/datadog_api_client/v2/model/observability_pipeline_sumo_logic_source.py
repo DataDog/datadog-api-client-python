@@ -38,7 +38,9 @@ class ObservabilityPipelineSumoLogicSource(ModelNormal):
         """
         The ``sumo_logic`` source receives logs from Sumo Logic collectors.
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
+        **Supported pipeline types:** logs
+
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param type: The source type. The value should always be ``sumo_logic``.

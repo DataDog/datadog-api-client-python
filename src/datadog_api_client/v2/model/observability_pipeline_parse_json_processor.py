@@ -57,10 +57,12 @@ class ObservabilityPipelineParseJSONProcessor(ModelNormal):
         """
         The ``parse_json`` processor extracts JSON from a specified field and flattens it into the event. This is useful when logs contain embedded JSON as a string.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
-        :param enabled: Whether this processor is enabled.
+        :param enabled: Indicates whether the processor is enabled.
         :type enabled: bool
 
         :param field: The name of the log field that contains a JSON string.
