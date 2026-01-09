@@ -13255,6 +13255,13 @@ datadog\_api\_client.v2.model.list\_rules\_response\_links module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_security\_findings\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_security_findings_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_tags\_response module
 ---------------------------------------------------------
 
@@ -21281,6 +21288,90 @@ datadog\_api\_client.v2.model.security\_filters\_response module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_filters_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_data\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_links module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_meta module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_page module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_search\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_search_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_search\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_search_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_search\_request\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_search_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_search\_request\_page module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_search_request_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_sort module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_findings\_status module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_findings_status
    :members:
    :show-inheritance:
 
