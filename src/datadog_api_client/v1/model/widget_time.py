@@ -18,9 +18,6 @@ class WidgetTime(ModelComposed):
         :param hide_incomplete_cost_data: Whether to hide incomplete cost data in the widget.
         :type hide_incomplete_cost_data: bool, optional
 
-        :param live_span: The available timeframes depend on the widget you are using.
-        :type live_span: WidgetLiveSpan, optional
-
         :param type: Type "live" denotes a live span in the new format.
         :type type: WidgetNewLiveSpanType
 
@@ -35,6 +32,9 @@ class WidgetTime(ModelComposed):
 
         :param to: End time in seconds since epoch.
         :type to: int
+
+        :param live_span: The available timeframes depend on the widget you are using.
+        :type live_span: WidgetLiveSpan, optional
         """
         super().__init__(kwargs)
 
@@ -47,14 +47,14 @@ class WidgetTime(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
         from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
         from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+        from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 
         return {
             "oneOf": [
-                WidgetLegacyLiveSpan,
                 WidgetNewLiveSpan,
                 WidgetNewFixedSpan,
+                WidgetLegacyLiveSpan,
             ],
         }

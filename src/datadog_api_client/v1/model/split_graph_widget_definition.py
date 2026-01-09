@@ -28,9 +28,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
     from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
-    from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
     from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
     from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+    from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 
 
 class SplitGraphWidgetDefinition(ModelNormal):
@@ -80,7 +80,7 @@ class SplitGraphWidgetDefinition(ModelNormal):
         split_config: SplitConfig,
         type: SplitGraphWidgetDefinitionType,
         has_uniform_y_axes: Union[bool, UnsetType] = unset,
-        time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
+        time: Union[WidgetTime, WidgetNewLiveSpan, WidgetNewFixedSpan, WidgetLegacyLiveSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         **kwargs,
     ):
