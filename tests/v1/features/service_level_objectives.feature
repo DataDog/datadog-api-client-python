@@ -49,6 +49,23 @@ Feature: Service Level Objectives
     Then the response status is 200 OK
 
   @team:DataDog/slo-app
+  Scenario: Create a new metric SLO object using sli_specification returns "OK" response
+    Given new "CreateSLO" request
+    And body with value {"type":"metric","description":"Metric SLO using sli_specification","name":"{{ unique }}","sli_specification":{"count":{"good_events_formula":{"formula":"query1 - query2"},"total_events_formula":{"formula":"query1"},"queries":[{"data_source":"metrics","name":"query1","query":"sum:httpservice.hits{*}.as_count()"},{"data_source":"metrics","name":"query2","query":"sum:httpservice.errors{*}.as_count()"}]}},"tags":["env:prod","type:count"],"thresholds":[{"target":99.0,"target_display":"99.0","timeframe":"7d","warning":99.5,"warning_display":"99.5"}],"timeframe":"7d","target_threshold":99.0,"warning_threshold":99.5}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].timeframe" is equal to "7d"
+    And the response "data[0].target_threshold" is equal to 99.0
+    And the response "data[0].warning_threshold" is equal to 99.5
+    And the response "data[0]" has field "sli_specification"
+    And the response "data[0].sli_specification" has field "count"
+    And the response "data[0].sli_specification.count" has field "good_events_formula"
+    And the response "data[0].sli_specification.count" has field "total_events_formula"
+    And the response "data[0].sli_specification.count" has field "queries"
+    And the response "data[0].sli_specification.count.queries" has length 2
+    And the response "data[0]" has field "query"
+
+  @team:DataDog/slo-app
   Scenario: Create a time-slice SLO object returns "OK" response
     Given new "CreateSLO" request
     And body with value {"type":"time_slice","description":"string","name":"{{ unique }}","sli_specification":{"time_slice":{"query":{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"metrics","name":"query1","query":"trace.servlet.request{env:prod}"}]},"comparator":">","threshold":5}},"tags":["env:prod"],"thresholds":[{"target":97.0,"target_display":"97.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98}
