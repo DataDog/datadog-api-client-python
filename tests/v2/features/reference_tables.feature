@@ -148,7 +148,7 @@ Feature: Reference Tables
   Scenario: Upsert rows returns "Bad Request" response
     Given new "UpsertRows" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"values": {"example_key_value": "primary_key_value", "name": "row_name"}}, "id": "primary_key_value", "type": "row"}]}
+    And body with value {"data": [{"attributes": {"values": {}}, "id": "primary_key_value", "type": "row"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -156,7 +156,7 @@ Feature: Reference Tables
   Scenario: Upsert rows returns "Not Found" response
     Given new "UpsertRows" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"values": {"example_key_value": "primary_key_value", "name": "row_name"}}, "id": "primary_key_value", "type": "row"}]}
+    And body with value {"data": [{"attributes": {"values": {}}, "id": "primary_key_value", "type": "row"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -164,6 +164,6 @@ Feature: Reference Tables
   Scenario: Upsert rows returns "Rows created or updated successfully" response
     Given new "UpsertRows" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"values": {"example_key_value": "primary_key_value", "name": "row_name"}}, "id": "primary_key_value", "type": "row"}]}
+    And body with value {"data": [{"attributes": {"values": {}}, "id": "primary_key_value", "type": "row"}]}
     When the request is sent
     Then the response status is 200 Rows created or updated successfully

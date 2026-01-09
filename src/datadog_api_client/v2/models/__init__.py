@@ -501,6 +501,9 @@ from datadog_api_client.v2.model.batch_delete_rows_request_data import BatchDele
 from datadog_api_client.v2.model.batch_upsert_rows_request_array import BatchUpsertRowsRequestArray
 from datadog_api_client.v2.model.batch_upsert_rows_request_data import BatchUpsertRowsRequestData
 from datadog_api_client.v2.model.batch_upsert_rows_request_data_attributes import BatchUpsertRowsRequestDataAttributes
+from datadog_api_client.v2.model.batch_upsert_rows_request_data_attributes_value import (
+    BatchUpsertRowsRequestDataAttributesValue,
+)
 from datadog_api_client.v2.model.bill_config import BillConfig
 from datadog_api_client.v2.model.billing_dimensions_mapping_body_item import BillingDimensionsMappingBodyItem
 from datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes import (
@@ -5608,6 +5611,7 @@ __all__ = [
     "BatchUpsertRowsRequestArray",
     "BatchUpsertRowsRequestData",
     "BatchUpsertRowsRequestDataAttributes",
+    "BatchUpsertRowsRequestDataAttributesValue",
     "BillConfig",
     "BillingDimensionsMappingBodyItem",
     "BillingDimensionsMappingBodyItemAttributes",

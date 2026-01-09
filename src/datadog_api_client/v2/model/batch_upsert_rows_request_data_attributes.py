@@ -3,50 +3,41 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Dict, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.batch_upsert_rows_request_data_attributes_value import (
+        BatchUpsertRowsRequestDataAttributesValue,
+    )
 
 
 class BatchUpsertRowsRequestDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.batch_upsert_rows_request_data_attributes_value import (
+            BatchUpsertRowsRequestDataAttributesValue,
+        )
+
         return {
-            "values": (
-                {
-                    str: (
-                        bool,
-                        date,
-                        datetime,
-                        dict,
-                        float,
-                        int,
-                        list,
-                        str,
-                        UUID,
-                        none_type,
-                    )
-                },
-            ),
+            "values": ({str: (BatchUpsertRowsRequestDataAttributesValue,)},),
         }
 
     attribute_map = {
         "values": "values",
     }
 
-    def __init__(self_, values: Dict[str, Any], **kwargs):
+    def __init__(self_, values: Dict[str, Union[BatchUpsertRowsRequestDataAttributesValue, str, int]], **kwargs):
         """
         Attributes containing row data values for row creation or update operations.
 
-        :param values: Key-value pairs representing row data, where keys are field names from the schema.
-        :type values: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}
+        :param values: Key-value pairs representing row data, where keys are schema field names and values match the corresponding column types.
+        :type values: {str: (BatchUpsertRowsRequestDataAttributesValue,)}
         """
         super().__init__(kwargs)
 
