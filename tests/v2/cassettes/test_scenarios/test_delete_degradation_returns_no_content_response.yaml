@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"name":"6e0ac73a3aac14d9","type":"component"}],"domain_prefix":"dd-integration-tests-6e0ac73a3aac14d9","enabled":true,"name":"[DD
+      Integration Tests] 6e0ac73a3aac14d9","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"c2bb233a-5c1c-44cd-9805-45a7db97251e","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"ccf4aff5-a66c-4745-95cd-6913b8fe923b","name":"6e0ac73a3aac14d9","type":"component","status":"operational","position":0}],"created_at":"2026-01-09T15:10:34.337609Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"dd-integration-tests-6e0ac73a3aac14d9","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-09T15:10:34.337609Z","name":"[DD
+        Integration Tests] 6e0ac73a3aac14d9","page_url":"https://frog.datadoghq.com/status-pages/c2bb233a-5c1c-44cd-9805-45a7db97251e/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"components_affected":[{"id":"ccf4aff5-a66c-4745-95cd-6913b8fe923b","status":"major_outage"}],"status":"investigating","title":"Test-Delete_degradation_returns_No_Content_response-1767971434"},"type":"degradations"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/c2bb233a-5c1c-44cd-9805-45a7db97251e/degradations
+  response:
+    body:
+      string: '{"data":{"id":"4f486ca4-cc4f-4078-bd17-ae764a77788d","type":"degradations","attributes":{"components_affected":[{"id":"ccf4aff5-a66c-4745-95cd-6913b8fe923b","name":"6e0ac73a3aac14d9","status":"major_outage"}],"created_at":"2026-01-09T15:10:34.854568Z","description":"","modified_at":"2026-01-09T15:10:34.854568Z","status":"investigating","title":"Test-Delete_degradation_returns_No_Content_response-1767971434","updates":[{"id":"8c235e5d-20e2-465f-b4c5-8829c852aa64","created_at":"2026-01-09T15:10:34.854568Z","modified_at":"2026-01-09T15:10:34.854568Z","started_at":"0001-01-01T00:00:00Z","status":"investigating","description":"","components_affected":[{"id":"ccf4aff5-a66c-4745-95cd-6913b8fe923b","name":"6e0ac73a3aac14d9","status":"major_outage"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"c2bb233a-5c1c-44cd-9805-45a7db97251e","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/c2bb233a-5c1c-44cd-9805-45a7db97251e/degradations/4f486ca4-cc4f-4078-bd17-ae764a77788d
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/c2bb233a-5c1c-44cd-9805-45a7db97251e/degradations/4f486ca4-cc4f-4078-bd17-ae764a77788d
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"degradation not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/c2bb233a-5c1c-44cd-9805-45a7db97251e
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

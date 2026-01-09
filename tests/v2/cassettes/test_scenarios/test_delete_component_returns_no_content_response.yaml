@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"name":"c9c5ea54880643a9","type":"component"}],"domain_prefix":"dd-integration-tests-c9c5ea54880643a9","enabled":true,"name":"[DD
+      Integration Tests] c9c5ea54880643a9","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"4042dd87-6324-4c15-a7f0-a11726434782","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"5ddcb366-1172-4703-9f33-9375a24d0e98","name":"c9c5ea54880643a9","type":"component","status":"operational","position":0}],"created_at":"2026-01-09T15:10:33.076426Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"dd-integration-tests-c9c5ea54880643a9","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-09T15:10:33.076426Z","name":"[DD
+        Integration Tests] c9c5ea54880643a9","page_url":"https://frog.datadoghq.com/status-pages/4042dd87-6324-4c15-a7f0-a11726434782/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/4042dd87-6324-4c15-a7f0-a11726434782/components/5ddcb366-1172-4703-9f33-9375a24d0e98
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/4042dd87-6324-4c15-a7f0-a11726434782
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

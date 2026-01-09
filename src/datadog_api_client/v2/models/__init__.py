@@ -999,6 +999,24 @@ from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequ
 from datadog_api_client.v2.model.create_case_request_data import CreateCaseRequestData
 from datadog_api_client.v2.model.create_case_request_data_attributes import CreateCaseRequestDataAttributes
 from datadog_api_client.v2.model.create_case_request_data_relationships import CreateCaseRequestDataRelationships
+from datadog_api_client.v2.model.create_component_request import CreateComponentRequest
+from datadog_api_client.v2.model.create_component_request_data import CreateComponentRequestData
+from datadog_api_client.v2.model.create_component_request_data_attributes import CreateComponentRequestDataAttributes
+from datadog_api_client.v2.model.create_component_request_data_attributes_components_items import (
+    CreateComponentRequestDataAttributesComponentsItems,
+)
+from datadog_api_client.v2.model.create_component_request_data_attributes_type import (
+    CreateComponentRequestDataAttributesType,
+)
+from datadog_api_client.v2.model.create_component_request_data_relationships import (
+    CreateComponentRequestDataRelationships,
+)
+from datadog_api_client.v2.model.create_component_request_data_relationships_group import (
+    CreateComponentRequestDataRelationshipsGroup,
+)
+from datadog_api_client.v2.model.create_component_request_data_relationships_group_data import (
+    CreateComponentRequestDataRelationshipsGroupData,
+)
 from datadog_api_client.v2.model.create_connection_request import CreateConnectionRequest
 from datadog_api_client.v2.model.create_connection_request_data import CreateConnectionRequestData
 from datadog_api_client.v2.model.create_connection_request_data_attributes import CreateConnectionRequestDataAttributes
@@ -1016,6 +1034,17 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
     CreateDataDeletionRequestBodyDataType,
 )
 from datadog_api_client.v2.model.create_data_deletion_response_body import CreateDataDeletionResponseBody
+from datadog_api_client.v2.model.create_degradation_request import CreateDegradationRequest
+from datadog_api_client.v2.model.create_degradation_request_data import CreateDegradationRequestData
+from datadog_api_client.v2.model.create_degradation_request_data_attributes import (
+    CreateDegradationRequestDataAttributes,
+)
+from datadog_api_client.v2.model.create_degradation_request_data_attributes_components_affected_items import (
+    CreateDegradationRequestDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
+    CreateDegradationRequestDataAttributesStatus,
+)
 from datadog_api_client.v2.model.create_deployment_gate_params import CreateDeploymentGateParams
 from datadog_api_client.v2.model.create_deployment_gate_params_data import CreateDeploymentGateParamsData
 from datadog_api_client.v2.model.create_deployment_gate_params_data_attributes import (
@@ -1087,6 +1116,21 @@ from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_it
     CreateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems,
 )
 from datadog_api_client.v2.model.create_ruleset_request_data_type import CreateRulesetRequestDataType
+from datadog_api_client.v2.model.create_status_page_request import CreateStatusPageRequest
+from datadog_api_client.v2.model.create_status_page_request_data import CreateStatusPageRequestData
+from datadog_api_client.v2.model.create_status_page_request_data_attributes import CreateStatusPageRequestDataAttributes
+from datadog_api_client.v2.model.create_status_page_request_data_attributes_components_items import (
+    CreateStatusPageRequestDataAttributesComponentsItems,
+)
+from datadog_api_client.v2.model.create_status_page_request_data_attributes_components_items_components_items import (
+    CreateStatusPageRequestDataAttributesComponentsItemsComponentsItems,
+)
+from datadog_api_client.v2.model.create_status_page_request_data_attributes_type import (
+    CreateStatusPageRequestDataAttributesType,
+)
+from datadog_api_client.v2.model.create_status_page_request_data_attributes_visualization_type import (
+    CreateStatusPageRequestDataAttributesVisualizationType,
+)
 from datadog_api_client.v2.model.create_table_request import CreateTableRequest
 from datadog_api_client.v2.model.create_table_request_data import CreateTableRequestData
 from datadog_api_client.v2.model.create_table_request_data_attributes import CreateTableRequestDataAttributes
@@ -1385,6 +1429,37 @@ from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItems
 from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
 from datadog_api_client.v2.model.datastore_trigger import DatastoreTrigger
 from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
+from datadog_api_client.v2.model.degradation import Degradation
+from datadog_api_client.v2.model.degradation_array import DegradationArray
+from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
+from datadog_api_client.v2.model.degradation_data import DegradationData
+from datadog_api_client.v2.model.degradation_data_attributes import DegradationDataAttributes
+from datadog_api_client.v2.model.degradation_data_attributes_components_affected_items import (
+    DegradationDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.degradation_data_attributes_updates_items import DegradationDataAttributesUpdatesItems
+from datadog_api_client.v2.model.degradation_data_attributes_updates_items_components_affected_items import (
+    DegradationDataAttributesUpdatesItemsComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.degradation_data_relationships import DegradationDataRelationships
+from datadog_api_client.v2.model.degradation_data_relationships_created_by_user import (
+    DegradationDataRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.degradation_data_relationships_created_by_user_data import (
+    DegradationDataRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.degradation_data_relationships_last_modified_by_user import (
+    DegradationDataRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.degradation_data_relationships_last_modified_by_user_data import (
+    DegradationDataRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.degradation_data_relationships_status_page import (
+    DegradationDataRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.degradation_data_relationships_status_page_data import (
+    DegradationDataRelationshipsStatusPageData,
+)
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_datastore_item_request import DeleteAppsDatastoreItemRequest
@@ -3599,6 +3674,19 @@ from datadog_api_client.v2.model.patch_attachment_request_data_attributes import
 from datadog_api_client.v2.model.patch_attachment_request_data_attributes_attachment import (
     PatchAttachmentRequestDataAttributesAttachment,
 )
+from datadog_api_client.v2.model.patch_component_request import PatchComponentRequest
+from datadog_api_client.v2.model.patch_component_request_data import PatchComponentRequestData
+from datadog_api_client.v2.model.patch_component_request_data_attributes import PatchComponentRequestDataAttributes
+from datadog_api_client.v2.model.patch_degradation_request import PatchDegradationRequest
+from datadog_api_client.v2.model.patch_degradation_request_data import PatchDegradationRequestData
+from datadog_api_client.v2.model.patch_degradation_request_data_attributes import PatchDegradationRequestDataAttributes
+from datadog_api_client.v2.model.patch_degradation_request_data_attributes_components_affected_items import (
+    PatchDegradationRequestDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.patch_degradation_request_data_attributes_status import (
+    PatchDegradationRequestDataAttributesStatus,
+)
+from datadog_api_client.v2.model.patch_degradation_request_data_type import PatchDegradationRequestDataType
 from datadog_api_client.v2.model.patch_incident_notification_template_request import (
     PatchIncidentNotificationTemplateRequest,
 )
@@ -3607,6 +3695,9 @@ from datadog_api_client.v2.model.patch_notification_rule_parameters_data import 
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
     PatchNotificationRuleParametersDataAttributes,
 )
+from datadog_api_client.v2.model.patch_status_page_request import PatchStatusPageRequest
+from datadog_api_client.v2.model.patch_status_page_request_data import PatchStatusPageRequestData
+from datadog_api_client.v2.model.patch_status_page_request_data_attributes import PatchStatusPageRequestDataAttributes
 from datadog_api_client.v2.model.patch_table_request import PatchTableRequest
 from datadog_api_client.v2.model.patch_table_request_data import PatchTableRequestData
 from datadog_api_client.v2.model.patch_table_request_data_attributes import PatchTableRequestDataAttributes
@@ -4749,6 +4840,130 @@ from datadog_api_client.v2.model.statsig_credentials_update import StatsigCreden
 from datadog_api_client.v2.model.statsig_integration import StatsigIntegration
 from datadog_api_client.v2.model.statsig_integration_type import StatsigIntegrationType
 from datadog_api_client.v2.model.statsig_integration_update import StatsigIntegrationUpdate
+from datadog_api_client.v2.model.status_page import StatusPage
+from datadog_api_client.v2.model.status_page_array import StatusPageArray
+from datadog_api_client.v2.model.status_page_array_included import StatusPageArrayIncluded
+from datadog_api_client.v2.model.status_page_as_included import StatusPageAsIncluded
+from datadog_api_client.v2.model.status_page_as_included_attributes import StatusPageAsIncludedAttributes
+from datadog_api_client.v2.model.status_page_as_included_attributes_components_items import (
+    StatusPageAsIncludedAttributesComponentsItems,
+)
+from datadog_api_client.v2.model.status_page_as_included_attributes_components_items_components_items import (
+    StatusPageAsIncludedAttributesComponentsItemsComponentsItems,
+)
+from datadog_api_client.v2.model.status_page_as_included_relationships import StatusPageAsIncludedRelationships
+from datadog_api_client.v2.model.status_page_as_included_relationships_created_by_user import (
+    StatusPageAsIncludedRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.status_page_as_included_relationships_created_by_user_data import (
+    StatusPageAsIncludedRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.status_page_as_included_relationships_last_modified_by_user import (
+    StatusPageAsIncludedRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.status_page_as_included_relationships_last_modified_by_user_data import (
+    StatusPageAsIncludedRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.status_page_data import StatusPageData
+from datadog_api_client.v2.model.status_page_data_attributes import StatusPageDataAttributes
+from datadog_api_client.v2.model.status_page_data_attributes_components_items import (
+    StatusPageDataAttributesComponentsItems,
+)
+from datadog_api_client.v2.model.status_page_data_attributes_components_items_components_items import (
+    StatusPageDataAttributesComponentsItemsComponentsItems,
+)
+from datadog_api_client.v2.model.status_page_data_relationships import StatusPageDataRelationships
+from datadog_api_client.v2.model.status_page_data_relationships_created_by_user import (
+    StatusPageDataRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.status_page_data_relationships_created_by_user_data import (
+    StatusPageDataRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.status_page_data_relationships_last_modified_by_user import (
+    StatusPageDataRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.status_page_data_relationships_last_modified_by_user_data import (
+    StatusPageDataRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.status_page_data_type import StatusPageDataType
+from datadog_api_client.v2.model.status_pages_component import StatusPagesComponent
+from datadog_api_client.v2.model.status_pages_component_array import StatusPagesComponentArray
+from datadog_api_client.v2.model.status_pages_component_array_included import StatusPagesComponentArrayIncluded
+from datadog_api_client.v2.model.status_pages_component_data import StatusPagesComponentData
+from datadog_api_client.v2.model.status_pages_component_data_attributes import StatusPagesComponentDataAttributes
+from datadog_api_client.v2.model.status_pages_component_data_attributes_components_items import (
+    StatusPagesComponentDataAttributesComponentsItems,
+)
+from datadog_api_client.v2.model.status_pages_component_data_attributes_status import (
+    StatusPagesComponentDataAttributesStatus,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships import StatusPagesComponentDataRelationships
+from datadog_api_client.v2.model.status_pages_component_data_relationships_created_by_user import (
+    StatusPagesComponentDataRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships_created_by_user_data import (
+    StatusPagesComponentDataRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships_group import (
+    StatusPagesComponentDataRelationshipsGroup,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships_group_data import (
+    StatusPagesComponentDataRelationshipsGroupData,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships_last_modified_by_user import (
+    StatusPagesComponentDataRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships_last_modified_by_user_data import (
+    StatusPagesComponentDataRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships_status_page import (
+    StatusPagesComponentDataRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.status_pages_component_data_relationships_status_page_data import (
+    StatusPagesComponentDataRelationshipsStatusPageData,
+)
+from datadog_api_client.v2.model.status_pages_component_group import StatusPagesComponentGroup
+from datadog_api_client.v2.model.status_pages_component_group_attributes import StatusPagesComponentGroupAttributes
+from datadog_api_client.v2.model.status_pages_component_group_attributes_components_items import (
+    StatusPagesComponentGroupAttributesComponentsItems,
+)
+from datadog_api_client.v2.model.status_pages_component_group_attributes_components_items_status import (
+    StatusPagesComponentGroupAttributesComponentsItemsStatus,
+)
+from datadog_api_client.v2.model.status_pages_component_group_attributes_components_items_type import (
+    StatusPagesComponentGroupAttributesComponentsItemsType,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships import (
+    StatusPagesComponentGroupRelationships,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_created_by_user import (
+    StatusPagesComponentGroupRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_created_by_user_data import (
+    StatusPagesComponentGroupRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_group import (
+    StatusPagesComponentGroupRelationshipsGroup,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_group_data import (
+    StatusPagesComponentGroupRelationshipsGroupData,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_last_modified_by_user import (
+    StatusPagesComponentGroupRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_last_modified_by_user_data import (
+    StatusPagesComponentGroupRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_status_page import (
+    StatusPagesComponentGroupRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.status_pages_component_group_relationships_status_page_data import (
+    StatusPagesComponentGroupRelationshipsStatusPageData,
+)
+from datadog_api_client.v2.model.status_pages_component_group_type import StatusPagesComponentGroupType
+from datadog_api_client.v2.model.status_pages_user import StatusPagesUser
+from datadog_api_client.v2.model.status_pages_user_attributes import StatusPagesUserAttributes
+from datadog_api_client.v2.model.status_pages_user_type import StatusPagesUserType
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
@@ -5973,6 +6188,14 @@ __all__ = [
     "CreateCaseRequestData",
     "CreateCaseRequestDataAttributes",
     "CreateCaseRequestDataRelationships",
+    "CreateComponentRequest",
+    "CreateComponentRequestData",
+    "CreateComponentRequestDataAttributes",
+    "CreateComponentRequestDataAttributesComponentsItems",
+    "CreateComponentRequestDataAttributesType",
+    "CreateComponentRequestDataRelationships",
+    "CreateComponentRequestDataRelationshipsGroup",
+    "CreateComponentRequestDataRelationshipsGroupData",
     "CreateConnectionRequest",
     "CreateConnectionRequestData",
     "CreateConnectionRequestDataAttributes",
@@ -5984,6 +6207,11 @@ __all__ = [
     "CreateDataDeletionRequestBodyData",
     "CreateDataDeletionRequestBodyDataType",
     "CreateDataDeletionResponseBody",
+    "CreateDegradationRequest",
+    "CreateDegradationRequestData",
+    "CreateDegradationRequestDataAttributes",
+    "CreateDegradationRequestDataAttributesComponentsAffectedItems",
+    "CreateDegradationRequestDataAttributesStatus",
     "CreateDeploymentGateParams",
     "CreateDeploymentGateParamsData",
     "CreateDeploymentGateParamsDataAttributes",
@@ -6031,6 +6259,13 @@ __all__ = [
     "CreateRulesetRequestDataAttributesRulesItemsReferenceTable",
     "CreateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems",
     "CreateRulesetRequestDataType",
+    "CreateStatusPageRequest",
+    "CreateStatusPageRequestData",
+    "CreateStatusPageRequestDataAttributes",
+    "CreateStatusPageRequestDataAttributesComponentsItems",
+    "CreateStatusPageRequestDataAttributesComponentsItemsComponentsItems",
+    "CreateStatusPageRequestDataAttributesType",
+    "CreateStatusPageRequestDataAttributesVisualizationType",
     "CreateTableRequest",
     "CreateTableRequestData",
     "CreateTableRequestDataAttributes",
@@ -6227,6 +6462,21 @@ __all__ = [
     "DatastorePrimaryKeyGenerationStrategy",
     "DatastoreTrigger",
     "DatastoreTriggerWrapper",
+    "Degradation",
+    "DegradationArray",
+    "DegradationArrayIncluded",
+    "DegradationData",
+    "DegradationDataAttributes",
+    "DegradationDataAttributesComponentsAffectedItems",
+    "DegradationDataAttributesUpdatesItems",
+    "DegradationDataAttributesUpdatesItemsComponentsAffectedItems",
+    "DegradationDataRelationships",
+    "DegradationDataRelationshipsCreatedByUser",
+    "DegradationDataRelationshipsCreatedByUserData",
+    "DegradationDataRelationshipsLastModifiedByUser",
+    "DegradationDataRelationshipsLastModifiedByUserData",
+    "DegradationDataRelationshipsStatusPage",
+    "DegradationDataRelationshipsStatusPageData",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsDatastoreItemRequest",
@@ -7769,10 +8019,22 @@ __all__ = [
     "PatchAttachmentRequestData",
     "PatchAttachmentRequestDataAttributes",
     "PatchAttachmentRequestDataAttributesAttachment",
+    "PatchComponentRequest",
+    "PatchComponentRequestData",
+    "PatchComponentRequestDataAttributes",
+    "PatchDegradationRequest",
+    "PatchDegradationRequestData",
+    "PatchDegradationRequestDataAttributes",
+    "PatchDegradationRequestDataAttributesComponentsAffectedItems",
+    "PatchDegradationRequestDataAttributesStatus",
+    "PatchDegradationRequestDataType",
     "PatchIncidentNotificationTemplateRequest",
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
+    "PatchStatusPageRequest",
+    "PatchStatusPageRequestData",
+    "PatchStatusPageRequestDataAttributes",
     "PatchTableRequest",
     "PatchTableRequestData",
     "PatchTableRequestDataAttributes",
@@ -8625,6 +8887,62 @@ __all__ = [
     "StatsigIntegration",
     "StatsigIntegrationType",
     "StatsigIntegrationUpdate",
+    "StatusPage",
+    "StatusPageArray",
+    "StatusPageArrayIncluded",
+    "StatusPageAsIncluded",
+    "StatusPageAsIncludedAttributes",
+    "StatusPageAsIncludedAttributesComponentsItems",
+    "StatusPageAsIncludedAttributesComponentsItemsComponentsItems",
+    "StatusPageAsIncludedRelationships",
+    "StatusPageAsIncludedRelationshipsCreatedByUser",
+    "StatusPageAsIncludedRelationshipsCreatedByUserData",
+    "StatusPageAsIncludedRelationshipsLastModifiedByUser",
+    "StatusPageAsIncludedRelationshipsLastModifiedByUserData",
+    "StatusPageData",
+    "StatusPageDataAttributes",
+    "StatusPageDataAttributesComponentsItems",
+    "StatusPageDataAttributesComponentsItemsComponentsItems",
+    "StatusPageDataRelationships",
+    "StatusPageDataRelationshipsCreatedByUser",
+    "StatusPageDataRelationshipsCreatedByUserData",
+    "StatusPageDataRelationshipsLastModifiedByUser",
+    "StatusPageDataRelationshipsLastModifiedByUserData",
+    "StatusPageDataType",
+    "StatusPagesComponent",
+    "StatusPagesComponentArray",
+    "StatusPagesComponentArrayIncluded",
+    "StatusPagesComponentData",
+    "StatusPagesComponentDataAttributes",
+    "StatusPagesComponentDataAttributesComponentsItems",
+    "StatusPagesComponentDataAttributesStatus",
+    "StatusPagesComponentDataRelationships",
+    "StatusPagesComponentDataRelationshipsCreatedByUser",
+    "StatusPagesComponentDataRelationshipsCreatedByUserData",
+    "StatusPagesComponentDataRelationshipsGroup",
+    "StatusPagesComponentDataRelationshipsGroupData",
+    "StatusPagesComponentDataRelationshipsLastModifiedByUser",
+    "StatusPagesComponentDataRelationshipsLastModifiedByUserData",
+    "StatusPagesComponentDataRelationshipsStatusPage",
+    "StatusPagesComponentDataRelationshipsStatusPageData",
+    "StatusPagesComponentGroup",
+    "StatusPagesComponentGroupAttributes",
+    "StatusPagesComponentGroupAttributesComponentsItems",
+    "StatusPagesComponentGroupAttributesComponentsItemsStatus",
+    "StatusPagesComponentGroupAttributesComponentsItemsType",
+    "StatusPagesComponentGroupRelationships",
+    "StatusPagesComponentGroupRelationshipsCreatedByUser",
+    "StatusPagesComponentGroupRelationshipsCreatedByUserData",
+    "StatusPagesComponentGroupRelationshipsGroup",
+    "StatusPagesComponentGroupRelationshipsGroupData",
+    "StatusPagesComponentGroupRelationshipsLastModifiedByUser",
+    "StatusPagesComponentGroupRelationshipsLastModifiedByUserData",
+    "StatusPagesComponentGroupRelationshipsStatusPage",
+    "StatusPagesComponentGroupRelationshipsStatusPageData",
+    "StatusPagesComponentGroupType",
+    "StatusPagesUser",
+    "StatusPagesUserAttributes",
+    "StatusPagesUserType",
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
