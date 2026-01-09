@@ -15761,6 +15761,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destination\_data\_stream module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destination\_type module
 ----------------------------------------------------------------------------------------------
 

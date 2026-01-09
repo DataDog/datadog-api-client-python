@@ -3013,6 +3013,9 @@ from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destinatio
 from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_api_version import (
     ObservabilityPipelineElasticsearchDestinationApiVersion,
 )
+from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream import (
+    ObservabilityPipelineElasticsearchDestinationDataStream,
+)
 from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_type import (
     ObservabilityPipelineElasticsearchDestinationType,
 )
@@ -7475,6 +7478,7 @@ __all__ = [
     "ObservabilityPipelineDedupeProcessorType",
     "ObservabilityPipelineElasticsearchDestination",
     "ObservabilityPipelineElasticsearchDestinationApiVersion",
+    "ObservabilityPipelineElasticsearchDestinationDataStream",
     "ObservabilityPipelineElasticsearchDestinationType",
     "ObservabilityPipelineEnrichmentTableFile",
     "ObservabilityPipelineEnrichmentTableFileEncoding",
