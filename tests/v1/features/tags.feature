@@ -6,8 +6,11 @@ Feature: Tags
   tags to a particular host.  The component of your infrastructure
   responsible for a tag is identified by a source. For example, some valid
   sources include nagios, hudson, jenkins, users, feed, chef, puppet, git,
-  bitbucket, fabric, capistrano, etc.  Read more about tags on [Getting
-  Started with Tags](https://docs.datadoghq.com/getting_started/tagging/).
+  bitbucket, fabric, capistrano, etc. Find a complete list of source type
+  names under [API Source
+  Attributes](https://docs.datadoghq.com/integrations/faq/list-of-api-
+  source-attribute-value).  Read more about tags on [Getting Started with
+  Tags](https://docs.datadoghq.com/getting_started/tagging/).
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -31,26 +34,26 @@ Feature: Tags
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/core-index
-  Scenario: Get Tags returns "Not Found" response
+  Scenario: Get All Host Tags returns "Not Found" response
     Given new "ListHostTags" request
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/core-index
-  Scenario: Get Tags returns "OK" response
+  Scenario: Get All Host Tags returns "OK" response
     Given new "ListHostTags" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/core-index
-  Scenario: Get host tags returns "Not Found" response
+  Scenario: Get Host Tags returns "Not Found" response
     Given new "GetHostTags" request
     And request contains "host_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/core-index
-  Scenario: Get host tags returns "OK" response
+  Scenario: Get Host Tags returns "OK" response
     Given new "GetHostTags" request
     And request contains "host_name" parameter from "REPLACE.ME"
     When the request is sent
