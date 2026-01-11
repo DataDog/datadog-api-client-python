@@ -249,7 +249,7 @@ class FleetAutomationApi:
             params_map={
                 "page_number": {
                     "validation": {
-                        "inclusive_minimum": 1,
+                        "inclusive_minimum": 0,
                     },
                     "openapi_types": (int,),
                     "attribute": "page_number",
@@ -650,7 +650,7 @@ class FleetAutomationApi:
         This endpoint returns a paginated list of all Datadog Agents with support for pagination, sorting, and filtering.
         Use the ``page_number`` and ``page_size`` query parameters to paginate through results.
 
-        :param page_number: Page number for pagination (must be greater than 0).
+        :param page_number: Page number for pagination (starts at 0).
         :type page_number: int, optional
         :param page_size: Number of results per page (must be greater than 0 and less than or equal to 100).
         :type page_size: int, optional
