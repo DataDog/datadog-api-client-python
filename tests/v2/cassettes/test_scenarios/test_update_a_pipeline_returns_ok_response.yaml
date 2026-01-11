@@ -13,7 +13,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines
   response:
     body:
-      string: '{"data":{"id":"c40401e0-dc2c-11f0-bf6d-da7ad0900002","type":"pipelines","attributes":{"name":"Main
+      string: '{"data":{"id":"9ee260d0-eb06-11f0-b187-da7ad0900002","type":"pipelines","attributes":{"name":"Main
         Observability Pipeline","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["processor-group-0"],"type":"datadog_logs"}],"processors":[{"display_name":"My
         Processor Group","enabled":true,"id":"processor-group-0","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"display_name":"My
         Filter Processor","enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
@@ -34,10 +34,10 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/c40401e0-dc2c-11f0-bf6d-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/9ee260d0-eb06-11f0-b187-da7ad0900002
   response:
     body:
-      string: '{"data":{"id":"c40401e0-dc2c-11f0-bf6d-da7ad0900002","type":"pipelines","attributes":{"name":"Updated
+      string: '{"data":{"id":"9ee260d0-eb06-11f0-b187-da7ad0900002","type":"pipelines","attributes":{"name":"Updated
         Pipeline Name","config":{"destinations":[{"id":"updated-datadog-logs-destination-id","inputs":["my-processor-group"],"type":"datadog_logs"}],"processors":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
 
         '
@@ -53,7 +53,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/c40401e0-dc2c-11f0-bf6d-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/obs_pipelines/pipelines/9ee260d0-eb06-11f0-b187-da7ad0900002
   response:
     body:
       string: ''
