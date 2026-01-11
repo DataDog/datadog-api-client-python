@@ -56,6 +56,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
             "overflow_action": (ObservabilityPipelineQuotaProcessorOverflowAction,),
             "overrides": ([ObservabilityPipelineQuotaProcessorOverride],),
             "partition_fields": ([str],),
+            "too_many_buckets_action": (ObservabilityPipelineQuotaProcessorOverflowAction,),
             "type": (ObservabilityPipelineQuotaProcessorType,),
         }
 
@@ -71,6 +72,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         "overflow_action": "overflow_action",
         "overrides": "overrides",
         "partition_fields": "partition_fields",
+        "too_many_buckets_action": "too_many_buckets_action",
         "type": "type",
     }
 
@@ -88,6 +90,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         overflow_action: Union[ObservabilityPipelineQuotaProcessorOverflowAction, UnsetType] = unset,
         overrides: Union[List[ObservabilityPipelineQuotaProcessorOverride], UnsetType] = unset,
         partition_fields: Union[List[str], UnsetType] = unset,
+        too_many_buckets_action: Union[ObservabilityPipelineQuotaProcessorOverflowAction, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -96,7 +99,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
-        :param drop_events: If set to ``true`` , logs that matched the quota filter and sent after the quota has been met are dropped; only logs that did not match the filter query continue through the pipeline.
+        :param drop_events: If set to ``true`` , logs that match the quota filter and are sent after the quota is exceeded are dropped. Logs that do not match the filter continue through the pipeline. **Note** : You can set either ``drop_events`` or ``overflow_action`` , but not both.
         :type drop_events: bool, optional
 
         :param enabled: Whether this processor is enabled.
@@ -117,7 +120,7 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
         :param name: Name of the quota.
         :type name: str
 
-        :param overflow_action: The action to take when the quota is exceeded. Options:
+        :param overflow_action: The action to take when the quota or bucket limit is exceeded. Options:
 
             * ``drop`` : Drop the event.
             * ``no_action`` : Let the event pass through.
@@ -129,6 +132,13 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
 
         :param partition_fields: A list of fields used to segment log traffic for quota enforcement. Quotas are tracked independently by unique combinations of these field values.
         :type partition_fields: [str], optional
+
+        :param too_many_buckets_action: The action to take when the quota or bucket limit is exceeded. Options:
+
+            * ``drop`` : Drop the event.
+            * ``no_action`` : Let the event pass through.
+            * ``overflow_routing`` : Route to an overflow destination.
+        :type too_many_buckets_action: ObservabilityPipelineQuotaProcessorOverflowAction, optional
 
         :param type: The processor type. The value should always be ``quota``.
         :type type: ObservabilityPipelineQuotaProcessorType
@@ -145,6 +155,8 @@ class ObservabilityPipelineQuotaProcessor(ModelNormal):
             kwargs["overrides"] = overrides
         if partition_fields is not unset:
             kwargs["partition_fields"] = partition_fields
+        if too_many_buckets_action is not unset:
+            kwargs["too_many_buckets_action"] = too_many_buckets_action
         super().__init__(kwargs)
 
         self_.enabled = enabled
