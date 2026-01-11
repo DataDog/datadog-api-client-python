@@ -50,6 +50,8 @@ class AzureStorageDestination(ModelNormal):
         """
         The ``azure_storage`` destination forwards logs to an Azure Blob Storage container.
 
+        **Supported pipeline types:** logs
+
         :param blob_prefix: Optional prefix for blobs written to the container.
         :type blob_prefix: str, optional
 

@@ -15,18 +15,33 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         """
         A destination for the pipeline.
 
+        :param auth_strategy: HTTP authentication strategy.
+        :type auth_strategy: ObservabilityPipelineHttpClientDestinationAuthStrategy, optional
+
+        :param compression: Compression configuration for HTTP requests.
+        :type compression: ObservabilityPipelineHttpClientDestinationCompression, optional
+
+        :param encoding: Encoding format for log events.
+        :type encoding: ObservabilityPipelineHttpClientDestinationEncoding
+
         :param id: The unique identifier for this component.
         :type id: str
 
-        :param inputs: A list of component IDs whose output is used as the `input` for this component.
+        :param inputs: A list of component IDs whose output is used as the input for this component.
         :type inputs: [str]
 
-        :param type: The destination type. The value should always be `datadog_logs`.
-        :type type: ObservabilityPipelineDatadogLogsDestinationType
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
+        :type tls: ObservabilityPipelineTls, optional
 
-        :param auth: AWS authentication credentials used for accessing AWS services such as S3.
-            If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
-        :type auth: ObservabilityPipelineAwsAuth, optional
+        :param type: The destination type. The value should always be `http_client`.
+        :type type: ObservabilityPipelineHttpClientDestinationType
+
+        :param auth: Authentication settings for the Amazon OpenSearch destination.
+            The `strategy` field determines whether basic or AWS-based authentication is used.
+        :type auth: ObservabilityPipelineAmazonOpenSearchDestinationAuth
+
+        :param bulk_index: The index to write logs to.
+        :type bulk_index: str, optional
 
         :param bucket: S3 bucket name.
         :type bucket: str
@@ -40,8 +55,26 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param storage_class: S3 storage class.
         :type storage_class: ObservabilityPipelineAmazonS3DestinationStorageClass
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :param custom_source_name: Custom source name for the logs in Security Lake.
+        :type custom_source_name: str
+
+        :param blob_prefix: Optional prefix for blobs written to the container.
+        :type blob_prefix: str, optional
+
+        :param container_name: The name of the Azure Blob Storage container to store logs in.
+        :type container_name: str
+
+        :param api_version: The Elasticsearch API version to use. Set to `auto` to auto-detect.
+        :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
+
+        :param data_stream: Configuration options for writing to Elasticsearch Data Streams instead of a fixed index.
+        :type data_stream: ObservabilityPipelineElasticsearchDestinationDataStream, optional
+
+        :param customer_id: The Google Chronicle customer ID.
+        :type customer_id: str
+
+        :param log_type: The log type metadata associated with the Chronicle destination.
+        :type log_type: str, optional
 
         :param acl: Access control list setting for objects written to the bucket.
         :type acl: ObservabilityPipelineGoogleCloudStorageDestinationAcl, optional
@@ -49,12 +82,60 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param metadata: Custom metadata to attach to each object uploaded to the GCS bucket.
         :type metadata: [ObservabilityPipelineMetadataEntry], optional
 
+        :param project: The GCP project ID that owns the Pub/Sub topic.
+        :type project: str
+
+        :param topic: The Pub/Sub topic name to publish logs to.
+        :type topic: str
+
+        :param headers_key: The field name to use for Kafka message headers.
+        :type headers_key: str, optional
+
+        :param key_field: The field name to use as the Kafka message key.
+        :type key_field: str, optional
+
+        :param librdkafka_options: Optional list of advanced Kafka producer configuration options, defined as key-value pairs.
+        :type librdkafka_options: [ObservabilityPipelineKafkaLibrdkafkaOption], optional
+
+        :param message_timeout_ms: Maximum time in milliseconds to wait for message delivery confirmation.
+        :type message_timeout_ms: int, optional
+
+        :param rate_limit_duration_secs: Duration in seconds for the rate limit window.
+        :type rate_limit_duration_secs: int, optional
+
+        :param rate_limit_num: Maximum number of messages allowed per rate limit duration.
+        :type rate_limit_num: int, optional
+
+        :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
+        :type sasl: ObservabilityPipelineKafkaSasl, optional
+
+        :param socket_timeout_ms: Socket timeout in milliseconds for network requests.
+        :type socket_timeout_ms: int, optional
+
+        :param client_id: Azure AD client ID used for authentication.
+        :type client_id: str
+
+        :param dcr_immutable_id: The immutable ID of the Data Collection Rule (DCR).
+        :type dcr_immutable_id: str
+
+        :param table: The name of the Log Analytics table where logs are sent.
+        :type table: str
+
+        :param tenant_id: Azure AD tenant ID.
+        :type tenant_id: str
+
+        :param keepalive: Optional socket keepalive duration in milliseconds.
+        :type keepalive: int, optional
+
+        :param framing: Framing method configuration.
+        :type framing: ObservabilityPipelineSocketDestinationFraming
+
+        :param mode: Protocol used to send logs.
+        :type mode: ObservabilityPipelineSocketDestinationMode
+
         :param auto_extract_timestamp: If `true`, Splunk tries to extract timestamps from incoming log events.
             If `false`, Splunk assigns the time the event was received.
         :type auto_extract_timestamp: bool, optional
-
-        :param encoding: Encoding format for log events.
-        :type encoding: ObservabilityPipelineSplunkHecDestinationEncoding, optional
 
         :param index: Optional name of the Splunk index where logs are written.
         :type index: str, optional
@@ -73,57 +154,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param header_source_name: Optional override for the source name header.
         :type header_source_name: str, optional
-
-        :param api_version: The Elasticsearch API version to use. Set to `auto` to auto-detect.
-        :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
-
-        :param bulk_index: The index to write logs to in Elasticsearch.
-        :type bulk_index: str, optional
-
-        :param keepalive: Optional socket keepalive duration in milliseconds.
-        :type keepalive: int, optional
-
-        :param blob_prefix: Optional prefix for blobs written to the container.
-        :type blob_prefix: str, optional
-
-        :param container_name: The name of the Azure Blob Storage container to store logs in.
-        :type container_name: str
-
-        :param client_id: Azure AD client ID used for authentication.
-        :type client_id: str
-
-        :param dcr_immutable_id: The immutable ID of the Data Collection Rule (DCR).
-        :type dcr_immutable_id: str
-
-        :param table: The name of the Log Analytics table where logs are sent.
-        :type table: str
-
-        :param tenant_id: Azure AD tenant ID.
-        :type tenant_id: str
-
-        :param customer_id: The Google Chronicle customer ID.
-        :type customer_id: str
-
-        :param log_type: The log type metadata associated with the Chronicle destination.
-        :type log_type: str, optional
-
-        :param framing: Framing method configuration.
-        :type framing: ObservabilityPipelineSocketDestinationFraming
-
-        :param mode: Protocol used to send logs.
-        :type mode: ObservabilityPipelineSocketDestinationMode
-
-        :param custom_source_name: Custom source name for the logs in Security Lake.
-        :type custom_source_name: str
-
-        :param compression: Compression configuration for log events.
-        :type compression: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression, optional
-
-        :param project: The GCP project ID that owns the Pub/Sub topic.
-        :type project: str
-
-        :param topic: The Pub/Sub topic name to publish logs to.
-        :type topic: str
         """
         super().__init__(kwargs)
 
@@ -136,14 +166,58 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
-            ObservabilityPipelineDatadogLogsDestination,
+        from datadog_api_client.v2.model.observability_pipeline_http_client_destination import (
+            ObservabilityPipelineHttpClientDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination import (
+            ObservabilityPipelineAmazonOpenSearchDestination,
         )
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
             ObservabilityPipelineAmazonS3Destination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination import (
+            ObservabilityPipelineAmazonSecurityLakeDestination,
+        )
+        from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
+        from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
+            ObservabilityPipelineCloudPremDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
+            ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
+            ObservabilityPipelineDatadogLogsDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
+            ObservabilityPipelineElasticsearchDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
+            ObservabilityPipelineGoogleChronicleDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination import (
             ObservabilityPipelineGoogleCloudStorageDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
+            ObservabilityPipelineGooglePubSubDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_kafka_destination import (
+            ObservabilityPipelineKafkaDestination,
+        )
+        from datadog_api_client.v2.model.microsoft_sentinel_destination import MicrosoftSentinelDestination
+        from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
+            ObservabilityPipelineNewRelicDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_open_search_destination import (
+            ObservabilityPipelineOpenSearchDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination import (
+            ObservabilityPipelineRsyslogDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination import (
+            ObservabilityPipelineSentinelOneDestination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_socket_destination import (
+            ObservabilityPipelineSocketDestination,
         )
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination import (
             ObservabilityPipelineSplunkHecDestination,
@@ -151,65 +225,37 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_sumo_logic_destination import (
             ObservabilityPipelineSumoLogicDestination,
         )
-        from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
-            ObservabilityPipelineElasticsearchDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination import (
-            ObservabilityPipelineRsyslogDestination,
-        )
         from datadog_api_client.v2.model.observability_pipeline_syslog_ng_destination import (
             ObservabilityPipelineSyslogNgDestination,
         )
-        from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
-        from datadog_api_client.v2.model.microsoft_sentinel_destination import MicrosoftSentinelDestination
-        from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
-            ObservabilityPipelineGoogleChronicleDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
-            ObservabilityPipelineNewRelicDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_sentinel_one_destination import (
-            ObservabilityPipelineSentinelOneDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_open_search_destination import (
-            ObservabilityPipelineOpenSearchDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_destination import (
-            ObservabilityPipelineAmazonOpenSearchDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_socket_destination import (
-            ObservabilityPipelineSocketDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination import (
-            ObservabilityPipelineAmazonSecurityLakeDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
-            ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination import (
-            ObservabilityPipelineGooglePubSubDestination,
+        from datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination import (
+            ObservabilityPipelineDatadogMetricsDestination,
         )
 
         return {
             "oneOf": [
-                ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineHttpClientDestination,
+                ObservabilityPipelineAmazonOpenSearchDestination,
                 ObservabilityPipelineAmazonS3Destination,
+                ObservabilityPipelineAmazonSecurityLakeDestination,
+                AzureStorageDestination,
+                ObservabilityPipelineCloudPremDestination,
+                ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
+                ObservabilityPipelineDatadogLogsDestination,
+                ObservabilityPipelineElasticsearchDestination,
+                ObservabilityPipelineGoogleChronicleDestination,
                 ObservabilityPipelineGoogleCloudStorageDestination,
+                ObservabilityPipelineGooglePubSubDestination,
+                ObservabilityPipelineKafkaDestination,
+                MicrosoftSentinelDestination,
+                ObservabilityPipelineNewRelicDestination,
+                ObservabilityPipelineOpenSearchDestination,
+                ObservabilityPipelineRsyslogDestination,
+                ObservabilityPipelineSentinelOneDestination,
+                ObservabilityPipelineSocketDestination,
                 ObservabilityPipelineSplunkHecDestination,
                 ObservabilityPipelineSumoLogicDestination,
-                ObservabilityPipelineElasticsearchDestination,
-                ObservabilityPipelineRsyslogDestination,
                 ObservabilityPipelineSyslogNgDestination,
-                AzureStorageDestination,
-                MicrosoftSentinelDestination,
-                ObservabilityPipelineGoogleChronicleDestination,
-                ObservabilityPipelineNewRelicDestination,
-                ObservabilityPipelineSentinelOneDestination,
-                ObservabilityPipelineOpenSearchDestination,
-                ObservabilityPipelineAmazonOpenSearchDestination,
-                ObservabilityPipelineSocketDestination,
-                ObservabilityPipelineAmazonSecurityLakeDestination,
-                ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
-                ObservabilityPipelineGooglePubSubDestination,
+                ObservabilityPipelineDatadogMetricsDestination,
             ],
         }

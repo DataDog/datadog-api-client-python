@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class ObservabilityPipelineKafkaSourceLibrdkafkaOption(ModelNormal):
+class ObservabilityPipelineKafkaLibrdkafkaOption(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
@@ -25,7 +25,7 @@ class ObservabilityPipelineKafkaSourceLibrdkafkaOption(ModelNormal):
 
     def __init__(self_, name: str, value: str, **kwargs):
         """
-        Represents a key-value pair used to configure low-level ``librdkafka`` client options for Kafka sources, such as timeouts, buffer sizes, and security settings.
+        Represents a key-value pair used to configure low-level ``librdkafka`` client options for Kafka source and destination, such as timeouts, buffer sizes, and security settings.
 
         :param name: The name of the ``librdkafka`` configuration option to set.
         :type name: str

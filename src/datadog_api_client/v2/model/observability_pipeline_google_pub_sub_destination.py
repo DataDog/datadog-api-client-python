@@ -73,6 +73,8 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
         """
         The ``google_pubsub`` destination publishes logs to a Google Cloud Pub/Sub topic.
 
+        **Supported pipeline types:** logs
+
         :param auth: GCP credentials used to authenticate with Google Cloud Storage.
         :type auth: ObservabilityPipelineGcpAuth, optional
 

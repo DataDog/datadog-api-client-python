@@ -14,34 +14,32 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.observability_pipeline_pipeline_kafka_source_sasl_mechanism import (
-        ObservabilityPipelinePipelineKafkaSourceSaslMechanism,
+    from datadog_api_client.v2.model.observability_pipeline_kafka_sasl_mechanism import (
+        ObservabilityPipelineKafkaSaslMechanism,
     )
 
 
-class ObservabilityPipelineKafkaSourceSasl(ModelNormal):
+class ObservabilityPipelineKafkaSasl(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.observability_pipeline_pipeline_kafka_source_sasl_mechanism import (
-            ObservabilityPipelinePipelineKafkaSourceSaslMechanism,
+        from datadog_api_client.v2.model.observability_pipeline_kafka_sasl_mechanism import (
+            ObservabilityPipelineKafkaSaslMechanism,
         )
 
         return {
-            "mechanism": (ObservabilityPipelinePipelineKafkaSourceSaslMechanism,),
+            "mechanism": (ObservabilityPipelineKafkaSaslMechanism,),
         }
 
     attribute_map = {
         "mechanism": "mechanism",
     }
 
-    def __init__(
-        self_, mechanism: Union[ObservabilityPipelinePipelineKafkaSourceSaslMechanism, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, mechanism: Union[ObservabilityPipelineKafkaSaslMechanism, UnsetType] = unset, **kwargs):
         """
         Specifies the SASL mechanism for authenticating with a Kafka cluster.
 
         :param mechanism: SASL mechanism used for Kafka authentication.
-        :type mechanism: ObservabilityPipelinePipelineKafkaSourceSaslMechanism, optional
+        :type mechanism: ObservabilityPipelineKafkaSaslMechanism, optional
         """
         if mechanism is not unset:
             kwargs["mechanism"] = mechanism
