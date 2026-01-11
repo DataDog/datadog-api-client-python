@@ -1485,8 +1485,6 @@ components:
           $ref: '#/components/schemas/AWSAccountPartition'
         aws_regions:
           $ref: '#/components/schemas/AWSRegions'
-        ccm_config:
-          $ref: '#/components/schemas/AWSCCMConfig'
         logs_config:
           $ref: '#/components/schemas/AWSLogsConfig'
         metrics_config:
@@ -1552,8 +1550,6 @@ components:
           $ref: '#/components/schemas/AWSAccountPartition'
         aws_regions:
           $ref: '#/components/schemas/AWSRegions'
-        ccm_config:
-          $ref: '#/components/schemas/AWSCCMConfig'
         created_at:
           description: Timestamp of when the account integration was created.
           format: date-time
@@ -1627,8 +1623,6 @@ components:
           $ref: '#/components/schemas/AWSAccountPartition'
         aws_regions:
           $ref: '#/components/schemas/AWSRegions'
-        ccm_config:
-          $ref: '#/components/schemas/AWSCCMConfig'
         logs_config:
           $ref: '#/components/schemas/AWSLogsConfig'
         metrics_config:
@@ -1759,15 +1753,6 @@ components:
           type: string
       required:
       - role_name
-      type: object
-    AWSCCMConfig:
-      description: AWS Cloud Cost Management config.
-      properties:
-        data_export_configs:
-          description: List of data export configurations for Cost and Usage Reports.
-          items:
-            $ref: '#/components/schemas/DataExportConfig'
-          type: array
       type: object
     AWSCredentials:
       description: The definition of `AWSCredentials` object.
@@ -16812,30 +16797,6 @@ components:
         request_status:
           description: The status of the executed request.
           example: canceled
-          type: string
-      type: object
-    DataExportConfig:
-      description: AWS Cost and Usage Report data export configuration.
-      properties:
-        bucket_name:
-          description: Name of the S3 bucket where the Cost and Usage Report is stored.
-          example: billing
-          type: string
-        bucket_region:
-          description: AWS region of the S3 bucket.
-          example: us-east-1
-          type: string
-        report_name:
-          description: Name of the Cost and Usage Report.
-          example: cost-and-usage-report
-          type: string
-        report_prefix:
-          description: S3 prefix where the Cost and Usage Report is stored.
-          example: reports
-          type: string
-        report_type:
-          description: Type of the Cost and Usage Report.
-          example: CUR2.0
           type: string
       type: object
     DataRelationshipsTeams:
