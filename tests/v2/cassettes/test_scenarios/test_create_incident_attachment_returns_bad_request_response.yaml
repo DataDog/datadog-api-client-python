@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"attachment":{"documentUrl":"https://app.datadoghq.com/notebook/123/Postmortem-IR-123","title":"Postmortem-IR-123"},"attachment_type":"postmortem"},"type":"incident_attachments"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/incidents/00000000-0000-0000-0000-000000000000/attachments
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"incident not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

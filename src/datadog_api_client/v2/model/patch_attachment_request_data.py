@@ -48,12 +48,12 @@ class PatchAttachmentRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Attachment data for an update request.
 
-
-        :param attributes:
+        :param attributes: The attributes for updating an attachment.
         :type attributes: PatchAttachmentRequestDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the attachment.
         :type id: str, optional
 
         :param type: The incident attachment resource type.

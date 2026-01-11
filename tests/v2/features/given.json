@@ -448,6 +448,22 @@
     "operationId": "CreateIncidentType"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"incident_attachments\",\n    \"attributes\": {\n      \"attachment_type\": \"postmortem\",\n      \"attachment\": {\n        \"title\": \"{{ unique }}\",\n        \"documentUrl\": \"https://app.datadoghq.com/notebook/{{ unique_alnum }}/{{ unique }}\"\n      }\n    }\n  }\n}"
+      },
+      {
+        "name": "incident_id",
+        "source": "incident.data.id"
+      }
+    ],
+    "step": "there is a valid \"incident_attachment\" in the system",
+    "key": "incident_attachment",
+    "tag": "Incidents",
+    "operationId": "CreateIncidentAttachment"
+  },
+  {
     "operationId": "CreateIncidentImpact",
     "parameters": [
       {

@@ -32,9 +32,9 @@ class PatchAttachmentRequest(ModelNormal):
 
     def __init__(self_, data: Union[PatchAttachmentRequestData, UnsetType] = unset, **kwargs):
         """
+        Request to update an attachment.
 
-
-        :param data:
+        :param data: Attachment data for an update request.
         :type data: PatchAttachmentRequestData, optional
         """
         if data is not unset:

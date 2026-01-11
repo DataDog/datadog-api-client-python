@@ -28,12 +28,12 @@ class PatchAttachmentRequestDataAttributesAttachment(ModelNormal):
 
     def __init__(self_, document_url: Union[str, UnsetType] = unset, title: Union[str, UnsetType] = unset, **kwargs):
         """
+        The updated attachment object.
 
-
-        :param document_url:
+        :param document_url: The updated URL for the attachment.
         :type document_url: str, optional
 
-        :param title:
+        :param title: The updated title for the attachment.
         :type title: str, optional
         """
         if document_url is not unset:

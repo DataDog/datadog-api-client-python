@@ -49,15 +49,15 @@ class AttachmentDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        The attachment's attributes.
 
-
-        :param attachment:
+        :param attachment: The attachment object.
         :type attachment: AttachmentDataAttributesAttachment, optional
 
-        :param attachment_type:
+        :param attachment_type: The type of the attachment.
         :type attachment_type: AttachmentDataAttributesAttachmentType, optional
 
-        :param modified:
+        :param modified: Timestamp when the attachment was last modified.
         :type modified: datetime, optional
         """
         if attachment is not unset:
