@@ -348,6 +348,7 @@ from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strateg
     ArbitraryRuleResponseDataAttributesStrategyEvaluateGroupedByFiltersItems,
 )
 from datadog_api_client.v2.model.arbitrary_rule_response_data_type import ArbitraryRuleResponseDataType
+from datadog_api_client.v2.model.argument import Argument
 from datadog_api_client.v2.model.asana_access_token import AsanaAccessToken
 from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
 from datadog_api_client.v2.model.asana_access_token_update import AsanaAccessTokenUpdate
@@ -1308,6 +1309,30 @@ from datadog_api_client.v2.model.custom_framework_metadata import CustomFramewor
 from datadog_api_client.v2.model.custom_framework_requirement import CustomFrameworkRequirement
 from datadog_api_client.v2.model.custom_framework_type import CustomFrameworkType
 from datadog_api_client.v2.model.custom_framework_without_requirements import CustomFrameworkWithoutRequirements
+from datadog_api_client.v2.model.custom_rule import CustomRule
+from datadog_api_client.v2.model.custom_rule_data_type import CustomRuleDataType
+from datadog_api_client.v2.model.custom_rule_request import CustomRuleRequest
+from datadog_api_client.v2.model.custom_rule_request_data import CustomRuleRequestData
+from datadog_api_client.v2.model.custom_rule_request_data_attributes import CustomRuleRequestDataAttributes
+from datadog_api_client.v2.model.custom_rule_response import CustomRuleResponse
+from datadog_api_client.v2.model.custom_rule_response_data import CustomRuleResponseData
+from datadog_api_client.v2.model.custom_rule_revision import CustomRuleRevision
+from datadog_api_client.v2.model.custom_rule_revision_attributes import CustomRuleRevisionAttributes
+from datadog_api_client.v2.model.custom_rule_revision_attributes_category import CustomRuleRevisionAttributesCategory
+from datadog_api_client.v2.model.custom_rule_revision_attributes_severity import CustomRuleRevisionAttributesSeverity
+from datadog_api_client.v2.model.custom_rule_revision_data_type import CustomRuleRevisionDataType
+from datadog_api_client.v2.model.custom_rule_revision_request import CustomRuleRevisionRequest
+from datadog_api_client.v2.model.custom_rule_revision_request_data import CustomRuleRevisionRequestData
+from datadog_api_client.v2.model.custom_rule_revision_response import CustomRuleRevisionResponse
+from datadog_api_client.v2.model.custom_rule_revision_test import CustomRuleRevisionTest
+from datadog_api_client.v2.model.custom_rule_revisions_response import CustomRuleRevisionsResponse
+from datadog_api_client.v2.model.custom_ruleset import CustomRuleset
+from datadog_api_client.v2.model.custom_ruleset_attributes import CustomRulesetAttributes
+from datadog_api_client.v2.model.custom_ruleset_data_type import CustomRulesetDataType
+from datadog_api_client.v2.model.custom_ruleset_request import CustomRulesetRequest
+from datadog_api_client.v2.model.custom_ruleset_request_data import CustomRulesetRequestData
+from datadog_api_client.v2.model.custom_ruleset_request_data_attributes import CustomRulesetRequestDataAttributes
+from datadog_api_client.v2.model.custom_ruleset_response import CustomRulesetResponse
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
 from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
 from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
@@ -2409,6 +2434,7 @@ from datadog_api_client.v2.model.kind_data import KindData
 from datadog_api_client.v2.model.kind_metadata import KindMetadata
 from datadog_api_client.v2.model.kind_obj import KindObj
 from datadog_api_client.v2.model.kind_response_meta import KindResponseMeta
+from datadog_api_client.v2.model.language import Language
 from datadog_api_client.v2.model.launch_darkly_api_key import LaunchDarklyAPIKey
 from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
 from datadog_api_client.v2.model.launch_darkly_api_key_update import LaunchDarklyAPIKeyUpdate
@@ -3954,6 +3980,12 @@ from datadog_api_client.v2.model.retention_filters_response import RetentionFilt
 from datadog_api_client.v2.model.retry_strategy import RetryStrategy
 from datadog_api_client.v2.model.retry_strategy_kind import RetryStrategyKind
 from datadog_api_client.v2.model.retry_strategy_linear import RetryStrategyLinear
+from datadog_api_client.v2.model.revert_custom_rule_revision_data_type import RevertCustomRuleRevisionDataType
+from datadog_api_client.v2.model.revert_custom_rule_revision_request import RevertCustomRuleRevisionRequest
+from datadog_api_client.v2.model.revert_custom_rule_revision_request_data import RevertCustomRuleRevisionRequestData
+from datadog_api_client.v2.model.revert_custom_rule_revision_request_data_attributes import (
+    RevertCustomRuleRevisionRequestDataAttributes,
+)
 from datadog_api_client.v2.model.role import Role
 from datadog_api_client.v2.model.role_attributes import RoleAttributes
 from datadog_api_client.v2.model.role_clone import RoleClone
@@ -5470,6 +5502,7 @@ __all__ = [
     "ArbitraryRuleResponseDataAttributesStrategyBasedOnCostsItems",
     "ArbitraryRuleResponseDataAttributesStrategyEvaluateGroupedByFiltersItems",
     "ArbitraryRuleResponseDataType",
+    "Argument",
     "AsanaAccessToken",
     "AsanaAccessTokenType",
     "AsanaAccessTokenUpdate",
@@ -6166,6 +6199,30 @@ __all__ = [
     "CustomFrameworkRequirement",
     "CustomFrameworkType",
     "CustomFrameworkWithoutRequirements",
+    "CustomRule",
+    "CustomRuleDataType",
+    "CustomRuleRequest",
+    "CustomRuleRequestData",
+    "CustomRuleRequestDataAttributes",
+    "CustomRuleResponse",
+    "CustomRuleResponseData",
+    "CustomRuleRevision",
+    "CustomRuleRevisionAttributes",
+    "CustomRuleRevisionAttributesCategory",
+    "CustomRuleRevisionAttributesSeverity",
+    "CustomRuleRevisionDataType",
+    "CustomRuleRevisionRequest",
+    "CustomRuleRevisionRequestData",
+    "CustomRuleRevisionResponse",
+    "CustomRuleRevisionTest",
+    "CustomRuleRevisionsResponse",
+    "CustomRuleset",
+    "CustomRulesetAttributes",
+    "CustomRulesetDataType",
+    "CustomRulesetRequest",
+    "CustomRulesetRequestData",
+    "CustomRulesetRequestDataAttributes",
+    "CustomRulesetResponse",
     "DORADeploymentFetchResponse",
     "DORADeploymentObject",
     "DORADeploymentObjectAttributes",
@@ -7069,6 +7126,7 @@ __all__ = [
     "KindMetadata",
     "KindObj",
     "KindResponseMeta",
+    "Language",
     "LaunchDarklyAPIKey",
     "LaunchDarklyAPIKeyType",
     "LaunchDarklyAPIKeyUpdate",
@@ -8066,6 +8124,10 @@ __all__ = [
     "RetryStrategy",
     "RetryStrategyKind",
     "RetryStrategyLinear",
+    "RevertCustomRuleRevisionDataType",
+    "RevertCustomRuleRevisionRequest",
+    "RevertCustomRuleRevisionRequestData",
+    "RevertCustomRuleRevisionRequestDataAttributes",
     "Role",
     "RoleAttributes",
     "RoleClone",
