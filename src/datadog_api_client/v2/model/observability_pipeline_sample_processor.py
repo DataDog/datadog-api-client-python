@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -21,8 +21,8 @@ if TYPE_CHECKING:
 
 class ObservabilityPipelineSampleProcessor(ModelNormal):
     validations = {
-        "rate": {
-            "inclusive_minimum": 1,
+        "group_by": {
+            "min_items": 1,
         },
     }
 
@@ -35,20 +35,20 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         return {
             "display_name": (str,),
             "enabled": (bool,),
+            "group_by": ([str],),
             "id": (str,),
             "include": (str,),
             "percentage": (float,),
-            "rate": (int,),
             "type": (ObservabilityPipelineSampleProcessorType,),
         }
 
     attribute_map = {
         "display_name": "display_name",
         "enabled": "enabled",
+        "group_by": "group_by",
         "id": "id",
         "include": "include",
         "percentage": "percentage",
-        "rate": "rate",
         "type": "type",
     }
 
@@ -57,20 +57,25 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         enabled: bool,
         id: str,
         include: str,
+        percentage: float,
         type: ObservabilityPipelineSampleProcessorType,
         display_name: Union[str, UnsetType] = unset,
-        percentage: Union[float, UnsetType] = unset,
-        rate: Union[int, UnsetType] = unset,
+        group_by: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``sample`` processor allows probabilistic sampling of logs at a fixed rate.
+
+        **Supported pipeline types:** logs
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
         :param enabled: Whether this processor is enabled.
         :type enabled: bool
+
+        :param group_by: Optional list of fields to group events by. Each group is sampled independently.
+        :type group_by: [str], optional
 
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
         :type id: str
@@ -79,23 +84,19 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         :type include: str
 
         :param percentage: The percentage of logs to sample.
-        :type percentage: float, optional
-
-        :param rate: Number of events to sample (1 in N).
-        :type rate: int, optional
+        :type percentage: float
 
         :param type: The processor type. The value should always be ``sample``.
         :type type: ObservabilityPipelineSampleProcessorType
         """
         if display_name is not unset:
             kwargs["display_name"] = display_name
-        if percentage is not unset:
-            kwargs["percentage"] = percentage
-        if rate is not unset:
-            kwargs["rate"] = rate
+        if group_by is not unset:
+            kwargs["group_by"] = group_by
         super().__init__(kwargs)
 
         self_.enabled = enabled
         self_.id = id
         self_.include = include
+        self_.percentage = percentage
         self_.type = type

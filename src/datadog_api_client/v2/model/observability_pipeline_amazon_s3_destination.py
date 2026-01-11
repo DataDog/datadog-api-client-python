@@ -76,6 +76,8 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
         """
         The ``amazon_s3`` destination sends your logs in Datadog-rehydratable format to an Amazon S3 bucket for archiving.
 
+        **Supported pipeline types:** logs
+
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
         :type auth: ObservabilityPipelineAwsAuth, optional

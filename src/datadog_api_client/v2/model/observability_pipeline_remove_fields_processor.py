@@ -57,6 +57,8 @@ class ObservabilityPipelineRemoveFieldsProcessor(ModelNormal):
         """
         The ``remove_fields`` processor deletes specified fields from logs.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

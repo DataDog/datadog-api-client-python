@@ -16,14 +16,16 @@ class ObservabilityPipelineHttpClientSourceAuthStrategy(ModelSimple):
     """
     Optional authentication strategy for HTTP requests.
 
-    :param value: Must be one of ["basic", "bearer"].
+    :param value: Must be one of ["none", "basic", "bearer"].
     :type value: str
     """
 
     allowed_values = {
+        "none",
         "basic",
         "bearer",
     }
+    NONE: ClassVar["ObservabilityPipelineHttpClientSourceAuthStrategy"]
     BASIC: ClassVar["ObservabilityPipelineHttpClientSourceAuthStrategy"]
     BEARER: ClassVar["ObservabilityPipelineHttpClientSourceAuthStrategy"]
 
@@ -34,5 +36,6 @@ class ObservabilityPipelineHttpClientSourceAuthStrategy(ModelSimple):
         }
 
 
+ObservabilityPipelineHttpClientSourceAuthStrategy.NONE = ObservabilityPipelineHttpClientSourceAuthStrategy("none")
 ObservabilityPipelineHttpClientSourceAuthStrategy.BASIC = ObservabilityPipelineHttpClientSourceAuthStrategy("basic")
 ObservabilityPipelineHttpClientSourceAuthStrategy.BEARER = ObservabilityPipelineHttpClientSourceAuthStrategy("bearer")
