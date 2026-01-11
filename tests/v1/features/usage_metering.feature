@@ -125,6 +125,20 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/revenue-query
+  Scenario: Get hourly usage for Incident Management returns "Bad Request" response
+    Given new "GetIncidentManagement" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/revenue-query
+  Scenario: Get hourly usage for Incident Management returns "OK" response
+    Given new "GetIncidentManagement" request
+    And request contains "start_hr" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/revenue-query
   Scenario: Get hourly usage for IoT returns "Bad Request" response
     Given new "GetUsageInternetOfThings" request
