@@ -16,7 +16,7 @@ class MonitorType(ModelSimple):
     """
     The type of the monitor. For more information about `type`, see the [monitor options](https://docs.datadoghq.com/monitors/guide/monitor_api_options/) docs.
 
-    :param value: Must be one of ["composite", "event alert", "log alert", "metric alert", "process alert", "query alert", "rum alert", "service check", "synthetics alert", "trace-analytics alert", "slo alert", "event-v2 alert", "audit alert", "ci-pipelines alert", "ci-tests alert", "error-tracking alert", "database-monitoring alert", "network-performance alert", "cost alert"].
+    :param value: Must be one of ["composite", "event alert", "log alert", "metric alert", "process alert", "query alert", "rum alert", "service check", "synthetics alert", "trace-analytics alert", "slo alert", "event-v2 alert", "audit alert", "ci-pipelines alert", "ci-tests alert", "error-tracking alert", "database-monitoring alert", "network-performance alert", "cost alert", "data-quality alert"].
     :type value: str
     """
 
@@ -40,6 +40,7 @@ class MonitorType(ModelSimple):
         "database-monitoring alert",
         "network-performance alert",
         "cost alert",
+        "data-quality alert",
     }
     COMPOSITE: ClassVar["MonitorType"]
     EVENT_ALERT: ClassVar["MonitorType"]
@@ -60,6 +61,7 @@ class MonitorType(ModelSimple):
     DATABASE_MONITORING_ALERT: ClassVar["MonitorType"]
     NETWORK_PERFORMANCE_ALERT: ClassVar["MonitorType"]
     COST_ALERT: ClassVar["MonitorType"]
+    DATA_QUALITY_ALERT: ClassVar["MonitorType"]
 
     @cached_property
     def openapi_types(_):
@@ -87,3 +89,4 @@ MonitorType.ERROR_TRACKING_ALERT = MonitorType("error-tracking alert")
 MonitorType.DATABASE_MONITORING_ALERT = MonitorType("database-monitoring alert")
 MonitorType.NETWORK_PERFORMANCE_ALERT = MonitorType("network-performance alert")
 MonitorType.COST_ALERT = MonitorType("cost alert")
+MonitorType.DATA_QUALITY_ALERT = MonitorType("data-quality alert")

@@ -2293,6 +2293,34 @@ datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_cost\_query\_defi
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_data\_quality\_data\_source module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_data_quality_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_data\_quality\_model\_type\_override module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model_type_override
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_data\_quality\_monitor\_options module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_data_quality_monitor_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_data\_quality\_query\_definition module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_event\_aggregation module
 ----------------------------------------------------------------------------------------
 

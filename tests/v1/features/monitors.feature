@@ -43,6 +43,15 @@ Feature: Monitors
     Then the response status is 200 OK
 
   @team:DataDog/monitor-app
+  Scenario: Create a Data Quality monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}", "type": "data-quality alert", "query": "formula(\"query1\").last(\"5m\") > 100", "message": "Data quality alert triggered", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "priority": 3, "options": {"thresholds": {"critical": 100}, "variables": [{"name": "query1", "data_source": "data_quality_metrics", "measure": "row_count", "filter": "search for column where `database:production AND table:users`", "group_by": ["entity_id"]}]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "data-quality alert"
+
+  @team:DataDog/monitor-app
   Scenario: Create a RUM formula and functions monitor returns "OK" response
     Given new "CreateMonitor" request
     And body with value {"name": "{{ unique }}","type": "rum alert","query": "formula(\"query2 / query1 * 100\").last(\"15m\") >= 0.8","message": "some message Notify: @hipchat-channel", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options":{"thresholds":{"critical":0.8},"variables":[{"data_source": "rum","name": "query2","search": {"query": ""},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []}, {"data_source": "rum","name": "query1","search": {"query": "status:error"},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []}]}}
