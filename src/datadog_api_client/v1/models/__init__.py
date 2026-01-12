@@ -369,6 +369,18 @@ from datadog_api_client.v1.model.monitor_formula_and_function_cost_data_source i
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition import (
     MonitorFormulaAndFunctionCostQueryDefinition,
 )
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_data_source import (
+    MonitorFormulaAndFunctionDataQualityDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model_type_override import (
+    MonitorFormulaAndFunctionDataQualityModelTypeOverride,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_monitor_options import (
+    MonitorFormulaAndFunctionDataQualityMonitorOptions,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition import (
+    MonitorFormulaAndFunctionDataQualityQueryDefinition,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation import (
     MonitorFormulaAndFunctionEventAggregation,
 )
@@ -1451,6 +1463,10 @@ __all__ = [
     "MonitorFormulaAndFunctionCostAggregator",
     "MonitorFormulaAndFunctionCostDataSource",
     "MonitorFormulaAndFunctionCostQueryDefinition",
+    "MonitorFormulaAndFunctionDataQualityDataSource",
+    "MonitorFormulaAndFunctionDataQualityModelTypeOverride",
+    "MonitorFormulaAndFunctionDataQualityMonitorOptions",
+    "MonitorFormulaAndFunctionDataQualityQueryDefinition",
     "MonitorFormulaAndFunctionEventAggregation",
     "MonitorFormulaAndFunctionEventQueryDefinition",
     "MonitorFormulaAndFunctionEventQueryDefinitionCompute",

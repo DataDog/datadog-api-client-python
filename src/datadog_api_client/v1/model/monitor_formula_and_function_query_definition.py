@@ -38,6 +38,25 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
 
         :param query: The monitor query.
         :type query: str
+
+        :param filter: Filter expression used to match on data entities. Uses Aastra query syntax.
+        :type filter: str
+
+        :param measure: The data quality measure to query. Common values include:
+            `bytes`, `cardinality`, `custom`, `freshness`, `max`, `mean`, `min`,
+            `nullness`, `percent_negative`, `percent_zero`, `row_count`, `stddev`,
+            `sum`, `uniqueness`. Additional values may be supported.
+        :type measure: str
+
+        :param monitor_options: Monitor configuration options for data quality queries.
+        :type monitor_options: MonitorFormulaAndFunctionDataQualityMonitorOptions, optional
+
+        :param schema_version: Schema version for the data quality query.
+        :type schema_version: str, optional
+
+        :param scope: Optional scoping expression to further filter metrics. Uses metrics filter syntax.
+            This is useful when an entity has been configured to emit metrics with additional tags.
+        :type scope: str, optional
         """
         super().__init__(kwargs)
 
@@ -56,10 +75,14 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition import (
             MonitorFormulaAndFunctionCostQueryDefinition,
         )
+        from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition import (
+            MonitorFormulaAndFunctionDataQualityQueryDefinition,
+        )
 
         return {
             "oneOf": [
                 MonitorFormulaAndFunctionEventQueryDefinition,
                 MonitorFormulaAndFunctionCostQueryDefinition,
+                MonitorFormulaAndFunctionDataQualityQueryDefinition,
             ],
         }
