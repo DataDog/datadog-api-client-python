@@ -48,9 +48,11 @@ class ObservabilityPipelineDatadogAgentSource(ModelNormal):
         **kwargs,
     ):
         """
-        The ``datadog_agent`` source collects logs from the Datadog Agent.
+        The ``datadog_agent`` source collects logs/metrics from the Datadog Agent.
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
+        **Supported pipeline types:** logs, metrics
+
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.

@@ -70,13 +70,15 @@ class ObservabilityPipelineHttpClientSource(ModelNormal):
         """
         The ``http_client`` source scrapes logs from HTTP endpoints at regular intervals.
 
+        **Supported pipeline types:** logs
+
         :param auth_strategy: Optional authentication strategy for HTTP requests.
         :type auth_strategy: ObservabilityPipelineHttpClientSourceAuthStrategy, optional
 
         :param decoding: The decoding format used to interpret incoming logs.
         :type decoding: ObservabilityPipelineDecoding
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param scrape_interval_secs: The interval (in seconds) between HTTP scrape requests.

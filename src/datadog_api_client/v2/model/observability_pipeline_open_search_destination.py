@@ -51,6 +51,8 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         """
         The ``opensearch`` destination writes logs to an OpenSearch cluster.
 
+        **Supported pipeline types:** logs
+
         :param bulk_index: The index to write logs to.
         :type bulk_index: str, optional
 
