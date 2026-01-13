@@ -66,6 +66,8 @@ class ObservabilityPipelineGooglePubSubSource(ModelNormal):
         """
         The ``google_pubsub`` source ingests logs from a Google Cloud Pub/Sub subscription.
 
+        **Supported pipeline types:** logs
+
         :param auth: GCP credentials used to authenticate with Google Cloud Storage.
         :type auth: ObservabilityPipelineGcpAuth, optional
 
