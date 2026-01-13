@@ -2946,6 +2946,9 @@ from datadog_api_client.v2.model.observability_pipeline_config import Observabil
 from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
     ObservabilityPipelineConfigDestinationItem,
 )
+from datadog_api_client.v2.model.observability_pipeline_config_pipeline_type import (
+    ObservabilityPipelineConfigPipelineType,
+)
 from datadog_api_client.v2.model.observability_pipeline_config_processor_group import (
     ObservabilityPipelineConfigProcessorGroup,
 )
@@ -2988,6 +2991,12 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination
 )
 from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
     ObservabilityPipelineDatadogLogsDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination import (
+    ObservabilityPipelineDatadogMetricsDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination_type import (
+    ObservabilityPipelineDatadogMetricsDestinationType,
 )
 from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
     ObservabilityPipelineDatadogTagsProcessor,
@@ -3120,6 +3129,24 @@ from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source im
 from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_source_type import (
     ObservabilityPipelineGooglePubSubSourceType,
 )
+from datadog_api_client.v2.model.observability_pipeline_http_client_destination import (
+    ObservabilityPipelineHttpClientDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_destination_auth_strategy import (
+    ObservabilityPipelineHttpClientDestinationAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_destination_compression import (
+    ObservabilityPipelineHttpClientDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_destination_compression_algorithm import (
+    ObservabilityPipelineHttpClientDestinationCompressionAlgorithm,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_destination_encoding import (
+    ObservabilityPipelineHttpClientDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_client_destination_type import (
+    ObservabilityPipelineHttpClientDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_http_client_source import ObservabilityPipelineHttpClientSource
 from datadog_api_client.v2.model.observability_pipeline_http_client_source_auth_strategy import (
     ObservabilityPipelineHttpClientSourceAuthStrategy,
@@ -3145,6 +3172,21 @@ from datadog_api_client.v2.model.observability_pipeline_logstash_source_type imp
     ObservabilityPipelineLogstashSourceType,
 )
 from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
+from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor import (
+    ObservabilityPipelineMetricTagsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_rule import (
+    ObservabilityPipelineMetricTagsProcessorRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_rule_action import (
+    ObservabilityPipelineMetricTagsProcessorRuleAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_rule_mode import (
+    ObservabilityPipelineMetricTagsProcessorRuleMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_type import (
+    ObservabilityPipelineMetricTagsProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_metric_value import ObservabilityPipelineMetricValue
 from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
     ObservabilityPipelineNewRelicDestination,
@@ -7464,6 +7506,7 @@ __all__ = [
     "ObservabilityPipelineAwsAuth",
     "ObservabilityPipelineConfig",
     "ObservabilityPipelineConfigDestinationItem",
+    "ObservabilityPipelineConfigPipelineType",
     "ObservabilityPipelineConfigProcessorGroup",
     "ObservabilityPipelineConfigProcessorItem",
     "ObservabilityPipelineConfigSourceItem",
@@ -7481,6 +7524,8 @@ __all__ = [
     "ObservabilityPipelineDatadogAgentSourceType",
     "ObservabilityPipelineDatadogLogsDestination",
     "ObservabilityPipelineDatadogLogsDestinationType",
+    "ObservabilityPipelineDatadogMetricsDestination",
+    "ObservabilityPipelineDatadogMetricsDestinationType",
     "ObservabilityPipelineDatadogTagsProcessor",
     "ObservabilityPipelineDatadogTagsProcessorAction",
     "ObservabilityPipelineDatadogTagsProcessorMode",
@@ -7530,6 +7575,12 @@ __all__ = [
     "ObservabilityPipelineGooglePubSubDestinationType",
     "ObservabilityPipelineGooglePubSubSource",
     "ObservabilityPipelineGooglePubSubSourceType",
+    "ObservabilityPipelineHttpClientDestination",
+    "ObservabilityPipelineHttpClientDestinationAuthStrategy",
+    "ObservabilityPipelineHttpClientDestinationCompression",
+    "ObservabilityPipelineHttpClientDestinationCompressionAlgorithm",
+    "ObservabilityPipelineHttpClientDestinationEncoding",
+    "ObservabilityPipelineHttpClientDestinationType",
     "ObservabilityPipelineHttpClientSource",
     "ObservabilityPipelineHttpClientSourceAuthStrategy",
     "ObservabilityPipelineHttpClientSourceType",
@@ -7543,6 +7594,11 @@ __all__ = [
     "ObservabilityPipelineLogstashSource",
     "ObservabilityPipelineLogstashSourceType",
     "ObservabilityPipelineMetadataEntry",
+    "ObservabilityPipelineMetricTagsProcessor",
+    "ObservabilityPipelineMetricTagsProcessorRule",
+    "ObservabilityPipelineMetricTagsProcessorRuleAction",
+    "ObservabilityPipelineMetricTagsProcessorRuleMode",
+    "ObservabilityPipelineMetricTagsProcessorType",
     "ObservabilityPipelineMetricValue",
     "ObservabilityPipelineNewRelicDestination",
     "ObservabilityPipelineNewRelicDestinationRegion",

@@ -63,6 +63,8 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         """
         The ``ocsf_mapper`` processor transforms logs into the OCSF schema using a predefined mapping configuration.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 

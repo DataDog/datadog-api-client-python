@@ -51,6 +51,8 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
         The ``splunk_tcp`` source receives logs from a Splunk Universal Forwarder over TCP.
         TLS is supported for secure transmission.
 
+        **Supported pipeline types:** logs
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (e.g., as input to downstream components).
         :type id: str
 
