@@ -14,12 +14,6 @@ from datadog_api_client.model_utils import (
 
 
 class HeatMapWidgetXAxis(ModelNormal):
-    validations = {
-        "num_buckets": {
-            "inclusive_minimum": 1,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
         return {
