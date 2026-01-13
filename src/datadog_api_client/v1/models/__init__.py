@@ -676,6 +676,8 @@ from datadog_api_client.v1.model.sunburst_widget_legend_table import SunburstWid
 from datadog_api_client.v1.model.sunburst_widget_legend_table_type import SunburstWidgetLegendTableType
 from datadog_api_client.v1.model.sunburst_widget_request import SunburstWidgetRequest
 from datadog_api_client.v1.model.synthetics_api_step import SyntheticsAPIStep
+from datadog_api_client.v1.model.synthetics_api_subtest_step import SyntheticsAPISubtestStep
+from datadog_api_client.v1.model.synthetics_api_subtest_step_subtype import SyntheticsAPISubtestStepSubtype
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_api_test_config import SyntheticsAPITestConfig
 from datadog_api_client.v1.model.synthetics_api_test_result_data import SyntheticsAPITestResultData
@@ -1725,6 +1727,8 @@ __all__ = [
     "SunburstWidgetLegendTableType",
     "SunburstWidgetRequest",
     "SyntheticsAPIStep",
+    "SyntheticsAPISubtestStep",
+    "SyntheticsAPISubtestStepSubtype",
     "SyntheticsAPITest",
     "SyntheticsAPITestConfig",
     "SyntheticsAPITestResultData",

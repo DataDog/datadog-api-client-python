@@ -169,6 +169,14 @@ Feature: Synthetics
     And the response "config.steps[5].request.basicAuth.type" is equal to "oauth-client"
     And the response "config.steps[6].request.basicAuth.type" is equal to "oauth-rop"
 
+  @team:DataDog/synthetics-managing
+  Scenario: Create a multistep test with subtest returns "OK" response
+    Given there is a valid "synthetics_api_test" in the system
+    And new "CreateSyntheticsAPITest" request
+    And body from file "synthetics_api_test_multi_step_with_subtest.json"
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/synthetics-managing
   Scenario: Create a private location returns "OK" response
     Given there is a valid "role" in the system
