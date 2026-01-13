@@ -2725,6 +2725,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.spa_api.SpaApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SpaApi</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SpaApi.get_spa_recommendations()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations_with_shard" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SpaApi.get_spa_recommendations_with_shard()</span></code></a>
         </li></ul>
             </nav>
         </li></ul>
@@ -14789,14 +14791,32 @@ and improve communication with internal and external users.</p>
 <p>SPA (Spark Pod Autosizing) API. Provides resource recommendations and cost insights to help optimize Spark job configurations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations">
-<span class="sig-name descname"><span class="pre">get_spa_recommendations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shard</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.recommendation_document.RecommendationDocument" title="datadog_api_client.v2.model.recommendation_document.RecommendationDocument"><span class="pre">RecommendationDocument</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_spa_recommendations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.recommendation_document.RecommendationDocument" title="datadog_api_client.v2.model.recommendation_document.RecommendationDocument"><span class="pre">RecommendationDocument</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations" title="Link to this definition">¶</a></dt>
 <dd><p>Get SPA Recommendations.</p>
-<p>Retrieve resource recommendations for a Spark job. The caller (Spark Gateway or DJM UI) provides a service name and shard identifier, and SPA returns structured recommendations for driver and executor resources.</p>
+<p>This endpoint is currently experimental and restricted to Datadog internal use only. Retrieve resource recommendations for a Spark job. The caller (Spark Gateway or DJM UI) provides a service name and SPA returns structured recommendations for driver and executor resources. The version with a shard should be preferred, where possible, as it gives more accurate results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service</strong> (<em>str</em>) – The service name for a spark job.</p></li>
+<li><p><strong>bypass_cache</strong> (<em>str</em><em>, </em><em>optional</em>) – The recommendation service should not use its metrics cache.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.recommendation_document.RecommendationDocument" title="datadog_api_client.v2.model.recommendation_document.RecommendationDocument">RecommendationDocument</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations_with_shard">
+<span class="sig-name descname"><span class="pre">get_spa_recommendations_with_shard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shard</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.recommendation_document.RecommendationDocument" title="datadog_api_client.v2.model.recommendation_document.RecommendationDocument"><span class="pre">RecommendationDocument</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.spa_api.SpaApi.get_spa_recommendations_with_shard" title="Link to this definition">¶</a></dt>
+<dd><p>Get SPA Recommendations with a shard parameter.</p>
+<p>This endpoint is currently experimental and restricted to Datadog internal use only. Retrieve resource recommendations for a Spark job. The caller (Spark Gateway or DJM UI) provides a service name and shard identifier, and SPA returns structured recommendations for driver and executor resources.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shard</strong> (<em>str</em>) – The shard tag for a spark job, which differentiates jobs within the same service that have different resource needs</p></li>
 <li><p><strong>service</strong> (<em>str</em>) – The service name for a spark job</p></li>
+<li><p><strong>bypass_cache</strong> (<em>str</em><em>, </em><em>optional</em>) – The recommendation service should not use its metrics cache.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
