@@ -1,65 +1,61 @@
 """
-Create a distribution widget using a histogram request containing a formulas and functions metrics query
+Create a new dashboard with heatmap widget with markers and num_buckets
 """
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
-from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
-from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
-from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
-from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
-from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
 from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
 from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
     FormulaAndFunctionMetricQueryDefinition,
 )
+from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
+from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
+from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
+from datadog_api_client.v1.model.heat_map_widget_x_axis import HeatMapWidgetXAxis
 from datadog_api_client.v1.model.widget import Widget
-from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
+from datadog_api_client.v1.model.widget_axis import WidgetAxis
 from datadog_api_client.v1.model.widget_histogram_request_type import WidgetHistogramRequestType
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
-from datadog_api_client.v1.model.widget_style import WidgetStyle
+from datadog_api_client.v1.model.widget_marker import WidgetMarker
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
 body = Dashboard(
     title="Example-Dashboard",
     widgets=[
         Widget(
-            definition=DistributionWidgetDefinition(
-                title="Metrics HOP",
+            definition=HeatMapWidgetDefinition(
+                title="",
                 title_size="16",
                 title_align=WidgetTextAlign.LEFT,
-                show_legend=False,
-                type=DistributionWidgetDefinitionType.DISTRIBUTION,
-                custom_links=[
-                    WidgetCustomLink(
-                        label="Example",
-                        link="https://example.org/",
+                type=HeatMapWidgetDefinitionType.HEATMAP,
+                xaxis=HeatMapWidgetXAxis(
+                    num_buckets=75,
+                ),
+                yaxis=WidgetAxis(
+                    scale="linear",
+                    min="auto",
+                    max="auto",
+                    include_zero=True,
+                ),
+                markers=[
+                    WidgetMarker(
+                        display_type="percentile",
+                        value="50",
+                    ),
+                    WidgetMarker(
+                        display_type="percentile",
+                        value="99",
                     ),
                 ],
-                xaxis=DistributionWidgetXAxis(
-                    max="auto",
-                    include_zero=True,
-                    scale="linear",
-                    min="auto",
-                ),
-                yaxis=DistributionWidgetYAxis(
-                    max="auto",
-                    include_zero=True,
-                    scale="linear",
-                    min="auto",
-                ),
                 requests=[
-                    DistributionWidgetRequest(
+                    HeatMapWidgetRequest(
+                        request_type=WidgetHistogramRequestType.HISTOGRAM,
                         query=FormulaAndFunctionMetricQueryDefinition(
-                            query="histogram:trace.Load{*}",
                             data_source=FormulaAndFunctionMetricDataSource.METRICS,
                             name="query1",
-                        ),
-                        request_type=WidgetHistogramRequestType.HISTOGRAM,
-                        style=WidgetStyle(
-                            palette="dog_classic",
+                            query="histogram:trace.servlet.request{*}",
                         ),
                     ),
                 ],
@@ -68,7 +64,7 @@ body = Dashboard(
                 x=0,
                 y=0,
                 width=4,
-                height=2,
+                height=4,
             ),
         ),
     ],

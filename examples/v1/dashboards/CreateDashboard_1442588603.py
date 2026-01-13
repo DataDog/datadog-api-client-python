@@ -8,9 +8,6 @@ from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
 from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
 from datadog_api_client.v1.model.distribution_widget_definition_type import DistributionWidgetDefinitionType
-from datadog_api_client.v1.model.distribution_widget_histogram_request_type import (
-    DistributionWidgetHistogramRequestType,
-)
 from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
 from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
 from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
@@ -24,6 +21,7 @@ from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_d
     FormulaAndFunctionApmResourceStatsQueryDefinition,
 )
 from datadog_api_client.v1.model.widget import Widget
+from datadog_api_client.v1.model.widget_histogram_request_type import WidgetHistogramRequestType
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_style import WidgetStyle
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
@@ -66,7 +64,7 @@ body = Dashboard(
                             primary_tag_name="datacenter",
                             operation_name="universal.http.client",
                         ),
-                        request_type=DistributionWidgetHistogramRequestType.HISTOGRAM,
+                        request_type=WidgetHistogramRequestType.HISTOGRAM,
                         style=WidgetStyle(
                             palette="dog_classic",
                         ),

@@ -14,12 +14,19 @@ from datadog_api_client.model_utils import (
 
 
 class DistributionWidgetXAxis(ModelNormal):
+    validations = {
+        "num_buckets": {
+            "inclusive_minimum": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
             "include_zero": (bool,),
             "max": (str,),
             "min": (str,),
+            "num_buckets": (int,),
             "scale": (str,),
         }
 
@@ -27,6 +34,7 @@ class DistributionWidgetXAxis(ModelNormal):
         "include_zero": "include_zero",
         "max": "max",
         "min": "min",
+        "num_buckets": "num_buckets",
         "scale": "scale",
     }
 
@@ -35,6 +43,7 @@ class DistributionWidgetXAxis(ModelNormal):
         include_zero: Union[bool, UnsetType] = unset,
         max: Union[str, UnsetType] = unset,
         min: Union[str, UnsetType] = unset,
+        num_buckets: Union[int, UnsetType] = unset,
         scale: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -50,6 +59,9 @@ class DistributionWidgetXAxis(ModelNormal):
         :param min: Specifies minimum value to show on the x-axis. It takes a number, percentile (p90 === 90th percentile), or auto for default behavior.
         :type min: str, optional
 
+        :param num_buckets: Number of value buckets to target, also known as the resolution of the value bins.
+        :type num_buckets: int, optional
+
         :param scale: Specifies the scale type. Possible values are ``linear``.
         :type scale: str, optional
         """
@@ -59,6 +71,8 @@ class DistributionWidgetXAxis(ModelNormal):
             kwargs["max"] = max
         if min is not unset:
             kwargs["min"] = min
+        if num_buckets is not unset:
+            kwargs["num_buckets"] = num_buckets
         if scale is not unset:
             kwargs["scale"] = scale
         super().__init__(kwargs)

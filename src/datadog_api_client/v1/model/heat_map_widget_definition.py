@@ -16,10 +16,12 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.widget_event import WidgetEvent
+    from datadog_api_client.v1.model.widget_marker import WidgetMarker
     from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
+    from datadog_api_client.v1.model.heat_map_widget_x_axis import HeatMapWidgetXAxis
     from datadog_api_client.v1.model.widget_axis import WidgetAxis
     from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
     from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
@@ -38,16 +40,19 @@ class HeatMapWidgetDefinition(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
         from datadog_api_client.v1.model.widget_event import WidgetEvent
+        from datadog_api_client.v1.model.widget_marker import WidgetMarker
         from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
         from datadog_api_client.v1.model.widget_time import WidgetTime
         from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
         from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
+        from datadog_api_client.v1.model.heat_map_widget_x_axis import HeatMapWidgetXAxis
         from datadog_api_client.v1.model.widget_axis import WidgetAxis
 
         return {
             "custom_links": ([WidgetCustomLink],),
             "events": ([WidgetEvent],),
             "legend_size": (str,),
+            "markers": ([WidgetMarker],),
             "requests": ([HeatMapWidgetRequest],),
             "show_legend": (bool,),
             "time": (WidgetTime,),
@@ -55,6 +60,7 @@ class HeatMapWidgetDefinition(ModelNormal):
             "title_align": (WidgetTextAlign,),
             "title_size": (str,),
             "type": (HeatMapWidgetDefinitionType,),
+            "xaxis": (HeatMapWidgetXAxis,),
             "yaxis": (WidgetAxis,),
         }
 
@@ -62,6 +68,7 @@ class HeatMapWidgetDefinition(ModelNormal):
         "custom_links": "custom_links",
         "events": "events",
         "legend_size": "legend_size",
+        "markers": "markers",
         "requests": "requests",
         "show_legend": "show_legend",
         "time": "time",
@@ -69,6 +76,7 @@ class HeatMapWidgetDefinition(ModelNormal):
         "title_align": "title_align",
         "title_size": "title_size",
         "type": "type",
+        "xaxis": "xaxis",
         "yaxis": "yaxis",
     }
 
@@ -79,11 +87,13 @@ class HeatMapWidgetDefinition(ModelNormal):
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
         events: Union[List[WidgetEvent], UnsetType] = unset,
         legend_size: Union[str, UnsetType] = unset,
+        markers: Union[List[WidgetMarker], UnsetType] = unset,
         show_legend: Union[bool, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
+        xaxis: Union[HeatMapWidgetXAxis, UnsetType] = unset,
         yaxis: Union[WidgetAxis, UnsetType] = unset,
         **kwargs,
     ):
@@ -98,6 +108,9 @@ class HeatMapWidgetDefinition(ModelNormal):
 
         :param legend_size: Available legend sizes for a widget. Should be one of "0", "2", "4", "8", "16", or "auto".
         :type legend_size: str, optional
+
+        :param markers: List of markers.
+        :type markers: [WidgetMarker], optional
 
         :param requests: List of widget types.
         :type requests: [HeatMapWidgetRequest]
@@ -120,6 +133,9 @@ class HeatMapWidgetDefinition(ModelNormal):
         :param type: Type of the heat map widget.
         :type type: HeatMapWidgetDefinitionType
 
+        :param xaxis: X Axis controls for the heat map widget.
+        :type xaxis: HeatMapWidgetXAxis, optional
+
         :param yaxis: Axis controls for the widget.
         :type yaxis: WidgetAxis, optional
         """
@@ -129,6 +145,8 @@ class HeatMapWidgetDefinition(ModelNormal):
             kwargs["events"] = events
         if legend_size is not unset:
             kwargs["legend_size"] = legend_size
+        if markers is not unset:
+            kwargs["markers"] = markers
         if show_legend is not unset:
             kwargs["show_legend"] = show_legend
         if time is not unset:
@@ -139,6 +157,8 @@ class HeatMapWidgetDefinition(ModelNormal):
             kwargs["title_align"] = title_align
         if title_size is not unset:
             kwargs["title_size"] = title_size
+        if xaxis is not unset:
+            kwargs["xaxis"] = xaxis
         if yaxis is not unset:
             kwargs["yaxis"] = yaxis
         super().__init__(kwargs)
