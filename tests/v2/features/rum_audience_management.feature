@@ -7,7 +7,7 @@ Feature: Rum Audience Management
     And a valid "appKeyAuth" key in the system
     And an instance of "RumAudienceManagement" API
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Create connection returns "Connection created successfully" response
     Given operation "CreateConnection" enabled
     And new "CreateConnection" request
@@ -16,7 +16,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 201 Connection created successfully
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Delete connection returns "Connection deleted successfully" response
     Given operation "DeleteConnection" enabled
     And new "DeleteConnection" request
@@ -25,7 +25,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 204 Connection deleted successfully
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Get account facet info returns "Successful response with facet information" response
     Given operation "GetAccountFacetInfo" enabled
     And new "GetAccountFacetInfo" request
@@ -33,7 +33,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 200 Successful response with facet information
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Get mapping returns "Successful response with entity mapping configuration" response
     Given operation "GetMapping" enabled
     And new "GetMapping" request
@@ -41,7 +41,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 200 Successful response with entity mapping configuration
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Get user facet info returns "Successful response with facet information" response
     Given operation "GetUserFacetInfo" enabled
     And new "GetUserFacetInfo" request
@@ -49,7 +49,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 200 Successful response with facet information
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: List connections returns "Successful response with list of connections" response
     Given operation "ListConnections" enabled
     And new "ListConnections" request
@@ -57,7 +57,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 200 Successful response with list of connections
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Query accounts returns "Successful response with account data" response
     Given operation "QueryAccounts" enabled
     And new "QueryAccounts" request
@@ -65,7 +65,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 200 Successful response with account data
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Query event filtered users returns "Successful response with filtered user data" response
     Given operation "QueryEventFilteredUsers" enabled
     And new "QueryEventFilteredUsers" request
@@ -73,7 +73,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 200 Successful response with filtered user data
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Query users returns "Successful response with user data" response
     Given operation "QueryUsers" enabled
     And new "QueryUsers" request
@@ -81,7 +81,7 @@ Feature: Rum Audience Management
     When the request is sent
     Then the response status is 200 Successful response with user data
 
-  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/pana-ingestion
+  @generated @skip @team:DataDog/audience-management-backend @team:DataDog/product-analytics-ingestion
   Scenario: Update connection returns "Connection updated successfully" response
     Given operation "UpdateConnection" enabled
     And new "UpdateConnection" request
