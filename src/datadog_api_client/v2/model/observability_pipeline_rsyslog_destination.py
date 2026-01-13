@@ -14,9 +14,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination_type import (
         ObservabilityPipelineRsyslogDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
 
 
@@ -29,12 +39,14 @@ class ObservabilityPipelineRsyslogDestination(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
         from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination_type import (
             ObservabilityPipelineRsyslogDestinationType,
         )
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "id": (str,),
             "inputs": ([str],),
             "keepalive": (int,),
@@ -43,6 +55,7 @@ class ObservabilityPipelineRsyslogDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "id": "id",
         "inputs": "inputs",
         "keepalive": "keepalive",
@@ -55,12 +68,22 @@ class ObservabilityPipelineRsyslogDestination(ModelNormal):
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineRsyslogDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         keepalive: Union[int, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``rsyslog`` destination forwards logs to an external ``rsyslog`` server over TCP or UDP using the syslog protocol.
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param id: The unique identifier for this component.
         :type id: str
@@ -77,6 +100,8 @@ class ObservabilityPipelineRsyslogDestination(ModelNormal):
         :param type: The destination type. The value should always be ``rsyslog``.
         :type type: ObservabilityPipelineRsyslogDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if keepalive is not unset:
             kwargs["keepalive"] = keepalive
         if tls is not unset:

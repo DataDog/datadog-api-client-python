@@ -15,9 +15,19 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination_type import (
         ObservabilityPipelineAmazonSecurityLakeDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
 
 
@@ -25,6 +35,7 @@ class ObservabilityPipelineAmazonSecurityLakeDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
         from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination_type import (
             ObservabilityPipelineAmazonSecurityLakeDestinationType,
@@ -33,6 +44,7 @@ class ObservabilityPipelineAmazonSecurityLakeDestination(ModelNormal):
         return {
             "auth": (ObservabilityPipelineAwsAuth,),
             "bucket": (str,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "custom_source_name": (str,),
             "id": (str,),
             "inputs": ([str],),
@@ -44,6 +56,7 @@ class ObservabilityPipelineAmazonSecurityLakeDestination(ModelNormal):
     attribute_map = {
         "auth": "auth",
         "bucket": "bucket",
+        "buffer": "buffer",
         "custom_source_name": "custom_source_name",
         "id": "id",
         "inputs": "inputs",
@@ -61,6 +74,13 @@ class ObservabilityPipelineAmazonSecurityLakeDestination(ModelNormal):
         region: str,
         type: ObservabilityPipelineAmazonSecurityLakeDestinationType,
         auth: Union[ObservabilityPipelineAwsAuth, UnsetType] = unset,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -73,6 +93,9 @@ class ObservabilityPipelineAmazonSecurityLakeDestination(ModelNormal):
 
         :param bucket: Name of the Amazon S3 bucket in Security Lake (3-63 characters).
         :type bucket: str
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param custom_source_name: Custom source name for the logs in Security Lake.
         :type custom_source_name: str
@@ -94,6 +117,8 @@ class ObservabilityPipelineAmazonSecurityLakeDestination(ModelNormal):
         """
         if auth is not unset:
             kwargs["auth"] = auth
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)
