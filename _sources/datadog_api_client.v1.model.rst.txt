@@ -4134,6 +4134,20 @@ datadog\_api\_client.v1.model.synthetics\_api\_step module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_api\_subtest\_step module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_api_subtest_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_api\_subtest\_step\_subtype module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_api_subtest_step_subtype
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_api\_test module
 ----------------------------------------------------------
 
