@@ -731,6 +731,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n   \"data\":{\n      \"attributes\":{\n         \"config\":{\n            \"destinations\":[\n               {\n                  \"id\":\"datadog-logs-destination\",\n                  \"inputs\":[\n                     \"processor-group-0\"\n                  ],\n                  \"type\":\"datadog_logs\"\n               }\n            ],\n            \"processor_groups\":[\n               {\n                  \"id\":\"processor-group-0\",\n                  \"include\":\"service:my-service\",\n                  \"display_name\": \"My Processor Group\",\n                  \"inputs\":[\n                     \"datadog-agent-source\"\n                  ],\n                  \"enabled\": true,\n                  \"processors\": [\n                    {\n                      \"id\": \"filter-processor\",\n                      \"type\": \"filter\",\n                      \"include\": \"status:error\",\n                      \"display_name\": \"My Filter Processor\",\n                      \"enabled\": true\n                    }\n                  ]\n               }\n            ],\n            \"sources\":[\n               {\n                  \"id\":\"datadog-agent-source\",\n                  \"type\":\"datadog_agent\"\n               }\n            ]\n         },\n         \"name\":\"Main Observability Pipeline\"\n      },\n      \"type\":\"pipelines\"\n   }\n}"
+      }
+    ],
+    "step": "there is a valid \"pipeline\" in the system",
+    "key": "pipeline",
+    "tag": "Observability Pipelines",
+    "operationId": "CreatePipeline"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"resolve_page_on_policy_end\": true,\n      \"retries\": 2,\n      \"steps\": [\n        {\n          \"assignment\": \"default\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\",\n              \"config\": {\n                \"schedule\": {\n                  \"position\": \"previous\"\n                }\n              }\n            },\n            {\n              \"id\": \"{{ user.data.id }}\",\n              \"type\": \"users\"\n            }\n          ]\n        },\n        {\n          \"assignment\": \"round-robin\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            }\n          ]\n        }\n      ]\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"{{ dd_team.data.id }}\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"policies\"\n  }\n}"
       }
     ],
@@ -878,18 +890,6 @@
     "key": "policy",
     "tag": "CSM Threats",
     "operationId": "CreateCSMThreatsAgentPolicy"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n   \"data\":{\n      \"attributes\":{\n         \"config\":{\n            \"destinations\":[\n               {\n                  \"id\":\"datadog-logs-destination\",\n                  \"inputs\":[\n                     \"processor-group-0\"\n                  ],\n                  \"type\":\"datadog_logs\"\n               }\n            ],\n            \"processors\":[\n               {\n                  \"id\":\"processor-group-0\",\n                  \"include\":\"service:my-service\",\n                  \"display_name\": \"My Processor Group\",\n                  \"inputs\":[\n                     \"datadog-agent-source\"\n                  ],\n                  \"enabled\": true,\n                  \"processors\": [\n                    {\n                      \"id\": \"filter-processor\",\n                      \"type\": \"filter\",\n                      \"include\": \"status:error\",\n                      \"display_name\": \"My Filter Processor\",\n                      \"enabled\": true\n                    }\n                  ]\n               }\n            ],\n            \"sources\":[\n               {\n                  \"id\":\"datadog-agent-source\",\n                  \"type\":\"datadog_agent\"\n               }\n            ]\n         },\n         \"name\":\"Main Observability Pipeline\"\n      },\n      \"type\":\"pipelines\"\n   }\n}"
-      }
-    ],
-    "step": "there is a valid \"pipeline\" in the system",
-    "key": "pipeline",
-    "tag": "Observability Pipelines",
-    "operationId": "CreatePipeline"
   },
   {
     "parameters": [

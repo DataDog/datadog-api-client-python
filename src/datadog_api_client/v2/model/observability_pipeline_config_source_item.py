@@ -22,10 +22,10 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :type id: str
 
         :param librdkafka_options: Optional list of advanced Kafka client configuration options, defined as key-value pairs.
-        :type librdkafka_options: [ObservabilityPipelineKafkaSourceLibrdkafkaOption], optional
+        :type librdkafka_options: [ObservabilityPipelineKafkaLibrdkafkaOption], optional
 
         :param sasl: Specifies the SASL mechanism for authenticating with a Kafka cluster.
-        :type sasl: ObservabilityPipelineKafkaSourceSasl, optional
+        :type sasl: ObservabilityPipelineKafkaSasl, optional
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
@@ -66,6 +66,12 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param framing: Framing method configuration for the socket source.
         :type framing: ObservabilityPipelineSocketSourceFraming
+
+        :param grpc_address_key: Environment variable name containing the gRPC server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
+        :type grpc_address_key: str, optional
+
+        :param http_address_key: Environment variable name containing the HTTP server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
+        :type http_address_key: str, optional
         """
         super().__init__(kwargs)
 
@@ -118,6 +124,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
             ObservabilityPipelineLogstashSource,
         )
         from datadog_api_client.v2.model.observability_pipeline_socket_source import ObservabilityPipelineSocketSource
+        from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
+            ObservabilityPipelineOpentelemetrySource,
+        )
 
         return {
             "oneOf": [
@@ -137,5 +146,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
                 ObservabilityPipelineHttpClientSource,
                 ObservabilityPipelineLogstashSource,
                 ObservabilityPipelineSocketSource,
+                ObservabilityPipelineOpentelemetrySource,
             ],
         }
