@@ -80,6 +80,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param bulk_index: The index to write logs to in Elasticsearch.
         :type bulk_index: str, optional
 
+        :param data_stream: Configuration options for writing to Elasticsearch Data Streams instead of a fixed index.
+        :type data_stream: ObservabilityPipelineElasticsearchDestinationDataStream, optional
+
         :param keepalive: Optional socket keepalive duration in milliseconds.
         :type keepalive: int, optional
 
