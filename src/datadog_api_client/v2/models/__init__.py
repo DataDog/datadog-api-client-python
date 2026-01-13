@@ -3048,6 +3048,9 @@ from datadog_api_client.v2.model.observability_pipeline_enrichment_table_process
 from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor_type import (
     ObservabilityPipelineEnrichmentTableProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_reference_table import (
+    ObservabilityPipelineEnrichmentTableReferenceTable,
+)
 from datadog_api_client.v2.model.observability_pipeline_field_value import ObservabilityPipelineFieldValue
 from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
 from datadog_api_client.v2.model.observability_pipeline_filter_processor_type import (
@@ -7502,6 +7505,7 @@ __all__ = [
     "ObservabilityPipelineEnrichmentTableGeoIp",
     "ObservabilityPipelineEnrichmentTableProcessor",
     "ObservabilityPipelineEnrichmentTableProcessorType",
+    "ObservabilityPipelineEnrichmentTableReferenceTable",
     "ObservabilityPipelineFieldValue",
     "ObservabilityPipelineFilterProcessor",
     "ObservabilityPipelineFilterProcessorType",
