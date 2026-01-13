@@ -5090,21 +5090,20 @@ all metrics sent by the host. Refer to hosts by name
 tags to a particular host.</p>
 <p>The component of your infrastructure responsible for a tag is identified
 by a source. For example, some valid sources include nagios, hudson, jenkins,
-users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc.</p>
+users, feed, chef, puppet, git, bitbucket, fabric, capistrano, etc. Find a complete list of source type names under <a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">API Source Attributes</a>.</p>
 <p>Read more about tags on <a class="reference external" href="https://docs.datadoghq.com/getting_started/tagging/">Getting Started with Tags</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.tags_api.TagsApi.create_host_tags">
 <span class="sig-name descname"><span class="pre">create_host_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.host_tags.HostTags" title="datadog_api_client.v1.model.host_tags.HostTags"><span class="pre">HostTags</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.host_tags.HostTags" title="datadog_api_client.v1.model.host_tags.HostTags"><span class="pre">HostTags</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.tags_api.TagsApi.create_host_tags" title="Link to this definition">¶</a></dt>
 <dd><p>Add tags to a host.</p>
 <p>This endpoint allows you to add new tags to a host,
-optionally specifying where these tags come from.</p>
+optionally specifying what source these tags come from. If tags already exist, appends new tags to the tag list. If no source is specified, defaults to “user”.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>host_name</strong> (<em>str</em>) – This endpoint allows you to add new tags to a host, optionally specifying where the tags came from.</p></li>
+<li><p><strong>host_name</strong> (<em>str</em>) – Specified host name to add new tags</p></li>
 <li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.host_tags.HostTags" title="datadog_api_client.v1.model.host_tags.HostTags"><em>HostTags</em></a>) – Update host tags request body.</p></li>
-<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – The source of the tags.
-<a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a>.</p></li>
+<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – Source to add tags. <a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a>. Use “user” source for custom-defined tags. If no source is specified, defaults to “user”.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -5116,14 +5115,13 @@ optionally specifying where these tags come from.</p>
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.tags_api.TagsApi.delete_host_tags">
 <span class="sig-name descname"><span class="pre">delete_host_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v1.api.tags_api.TagsApi.delete_host_tags" title="Link to this definition">¶</a></dt>
 <dd><p>Remove host tags.</p>
-<p>This endpoint allows you to remove all user-assigned tags
-for a single host.</p>
+<p>This endpoint allows you to remove all tags
+for a single host. If no source is specified, only deletes from the source “User”.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>host_name</strong> (<em>str</em>) – This endpoint allows you to remove all user-assigned tags for a single host.</p></li>
-<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The source of the tags (for example chef, puppet).
-<a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a>.</p>
+<li><p><strong>host_name</strong> (<em>str</em>) – Specified host name to delete tags</p></li>
+<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Source of the tags to be deleted. <a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a>. Use “user” source for custom-defined tags.</p>
 </p></li>
 </ul>
 </dd>
@@ -5135,13 +5133,14 @@ for a single host.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.tags_api.TagsApi.get_host_tags">
 <span class="sig-name descname"><span class="pre">get_host_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.host_tags.HostTags" title="datadog_api_client.v1.model.host_tags.HostTags"><span class="pre">HostTags</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.tags_api.TagsApi.get_host_tags" title="Link to this definition">¶</a></dt>
-<dd><p>Get host tags.</p>
+<dd><p>Get Host Tags.</p>
 <p>Return the list of tags that apply to a given host.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>host_name</strong> (<em>str</em>) – When specified, filters list of tags to those tags with the specified source.</p></li>
-<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – Source to filter.</p></li>
+<li><p><strong>host_name</strong> (<em>str</em>) – Name of the host to retrieve tags for</p></li>
+<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Source to filter. <a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a>. Use “user” source for custom-defined tags.</p>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -5152,11 +5151,12 @@ for a single host.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.tags_api.TagsApi.list_host_tags">
 <span class="sig-name descname"><span class="pre">list_host_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.tag_to_hosts.TagToHosts" title="datadog_api_client.v1.model.tag_to_hosts.TagToHosts"><span class="pre">TagToHosts</span></a></span></span><a class="headerlink" href="#datadog_api_client.v1.api.tags_api.TagsApi.list_host_tags" title="Link to this definition">¶</a></dt>
-<dd><p>Get Tags.</p>
-<p>Return a mapping of tags to hosts for your whole infrastructure.</p>
+<dd><p>Get All Host Tags.</p>
+<p>Returns a mapping of tags to hosts. For each tag, the response returns a list of host names that contain this tag. There is a restriction of 10k total host names from the org that can be attached to tags and returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – When specified, filters host list to those tags with the specified source.</p>
+<dd class="field-odd"><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Source to filter. <a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a>. Use “user” source for custom-defined tags.</p>
+</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.tag_to_hosts.TagToHosts" title="datadog_api_client.v1.model.tag_to_hosts.TagToHosts">TagToHosts</a></p>
@@ -5172,10 +5172,9 @@ an integration source with those supplied in the request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>host_name</strong> (<em>str</em>) – This endpoint allows you to update/replace all in an integration source with those supplied in the request.</p></li>
+<li><p><strong>host_name</strong> (<em>str</em>) – Specified host name to change tags</p></li>
 <li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.host_tags.HostTags" title="datadog_api_client.v1.model.host_tags.HostTags"><em>HostTags</em></a>) – Add tags to host</p></li>
-<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The source of the tags (for example chef, puppet).
-<a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a></p>
+<li><p><strong>source</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Source to update tags. <a class="reference external" href="https://docs.datadoghq.com/integrations/faq/list-of-api-source-attribute-value">Complete list of source attribute values</a>. Use “user” source for custom-defined tags. If no source specified, defaults to “user”.</p>
 </p></li>
 </ul>
 </dd>
