@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -21,18 +23,29 @@ class RecommendationAttributes(ModelNormal):
         from datadog_api_client.v2.model.component_recommendation import ComponentRecommendation
 
         return {
+            "confidence_level": (float,),
             "driver": (ComponentRecommendation,),
             "executor": (ComponentRecommendation,),
         }
 
     attribute_map = {
+        "confidence_level": "confidence_level",
         "driver": "driver",
         "executor": "executor",
     }
 
-    def __init__(self_, driver: ComponentRecommendation, executor: ComponentRecommendation, **kwargs):
+    def __init__(
+        self_,
+        driver: ComponentRecommendation,
+        executor: ComponentRecommendation,
+        confidence_level: Union[float, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Attributes of the SPA Recommendation resource. Contains recommendations for both driver and executor components.
+
+        :param confidence_level:
+        :type confidence_level: float, optional
 
         :param driver: Resource recommendation for a single Spark component (driver or executor). Contains estimation data used to patch Spark job specs.
         :type driver: ComponentRecommendation
@@ -40,6 +53,8 @@ class RecommendationAttributes(ModelNormal):
         :param executor: Resource recommendation for a single Spark component (driver or executor). Contains estimation data used to patch Spark job specs.
         :type executor: ComponentRecommendation
         """
+        if confidence_level is not unset:
+            kwargs["confidence_level"] = confidence_level
         super().__init__(kwargs)
 
         self_.driver = driver
