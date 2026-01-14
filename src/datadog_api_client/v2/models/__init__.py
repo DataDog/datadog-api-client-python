@@ -4338,6 +4338,38 @@ from datadog_api_client.v2.model.security_findings_search_request_data_attribute
 from datadog_api_client.v2.model.security_findings_search_request_page import SecurityFindingsSearchRequestPage
 from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
 from datadog_api_client.v2.model.security_findings_status import SecurityFindingsStatus
+from datadog_api_client.v2.model.security_monitoring_critical_asset import SecurityMonitoringCriticalAsset
+from datadog_api_client.v2.model.security_monitoring_critical_asset_attributes import (
+    SecurityMonitoringCriticalAssetAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_create_attributes import (
+    SecurityMonitoringCriticalAssetCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_create_data import (
+    SecurityMonitoringCriticalAssetCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_create_request import (
+    SecurityMonitoringCriticalAssetCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_response import (
+    SecurityMonitoringCriticalAssetResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_severity import (
+    SecurityMonitoringCriticalAssetSeverity,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_type import SecurityMonitoringCriticalAssetType
+from datadog_api_client.v2.model.security_monitoring_critical_asset_update_attributes import (
+    SecurityMonitoringCriticalAssetUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_update_data import (
+    SecurityMonitoringCriticalAssetUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_asset_update_request import (
+    SecurityMonitoringCriticalAssetUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_critical_assets_response import (
+    SecurityMonitoringCriticalAssetsResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
@@ -8421,6 +8453,18 @@ __all__ = [
     "SecurityFindingsSearchRequestPage",
     "SecurityFindingsSort",
     "SecurityFindingsStatus",
+    "SecurityMonitoringCriticalAsset",
+    "SecurityMonitoringCriticalAssetAttributes",
+    "SecurityMonitoringCriticalAssetCreateAttributes",
+    "SecurityMonitoringCriticalAssetCreateData",
+    "SecurityMonitoringCriticalAssetCreateRequest",
+    "SecurityMonitoringCriticalAssetResponse",
+    "SecurityMonitoringCriticalAssetSeverity",
+    "SecurityMonitoringCriticalAssetType",
+    "SecurityMonitoringCriticalAssetUpdateAttributes",
+    "SecurityMonitoringCriticalAssetUpdateData",
+    "SecurityMonitoringCriticalAssetUpdateRequest",
+    "SecurityMonitoringCriticalAssetsResponse",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",

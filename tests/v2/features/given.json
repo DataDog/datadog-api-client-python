@@ -1011,6 +1011,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"critical_assets\",\n    \"attributes\": {\n      \"query\":\"security:monitoring\",\n      \"severity\":\"medium\",\n      \"rule_query\":\"source:k9\",\n      \"tags\":[\"team:security\"]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"critical_asset\" in the system",
+    "key": "critical_asset",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityMonitoringCriticalAsset"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"security_filters\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"service:{{ unique_alnum }}\",\n      \"exclusion_filters\":[\n        {\n          \"name\": \"Exclude logs from staging\",\n          \"query\": \"source:staging\"\n        }\n     ],\n      \"filtered_data_type\":\"logs\",\n      \"is_enabled\": true\n     }\n  }\n}"
       }
     ],

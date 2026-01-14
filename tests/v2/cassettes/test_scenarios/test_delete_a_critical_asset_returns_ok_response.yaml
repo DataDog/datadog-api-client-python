@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"]},"type":"critical_assets"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets
+  response:
+    body:
+      string: '{"data":{"id":"f340fbe7-ed28-466e-924e-7e23475dd405","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1768246895425,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":2320499,"update_date":1768246895425,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/f340fbe7-ed28-466e-924e-7e23475dd405
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/f340fbe7-ed28-466e-924e-7e23475dd405
+  response:
+    body:
+      string: '{"errors":["not_found(Critical asset with ID f340fbe7-ed28-466e-924e-7e23475dd405
+        not found)"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

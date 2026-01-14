@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"]},"type":"critical_assets"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets
+  response:
+    body:
+      string: '{"data":{"id":"8fb467ae-b5c8-4bb1-822d-7648fe10a912","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1768246897503,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":2320499,"update_date":1768246897503,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"query":"no:alert","rule_query":"type:(log_detection
+      OR signal_correlation OR workload_security OR application_security) ruleId:djg-ktx-ipq","severity":"decrease","tags":["env:production"],"version":1},"type":"critical_assets"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/8fb467ae-b5c8-4bb1-822d-7648fe10a912
+  response:
+    body:
+      string: '{"data":{"id":"8fb467ae-b5c8-4bb1-822d-7648fe10a912","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1768246897503,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":false,"query":"no:alert","rule_query":"type:(log_detection
+        OR signal_correlation OR workload_security OR application_security) ruleId:djg-ktx-ipq","severity":"decrease","tags":["env:production"],"update_author_id":2320499,"update_date":1768246897863,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"version":2}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/8fb467ae-b5c8-4bb1-822d-7648fe10a912
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
