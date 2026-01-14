@@ -213,8 +213,6 @@ class EventsApi:
 
         ❌ For use cases involving other event categories, use the V1 endpoint or reach out to `support <https://www.datadoghq.com/support/>`_.
 
-        ❌ Notifications are not yet supported for events sent to this endpoint. Use the V1 endpoint for notification functionality.
-
         :param body: Event creation request payload.
         :type body: EventCreateRequestPayload
         :rtype: EventCreateResponsePayload
