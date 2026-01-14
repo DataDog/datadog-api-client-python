@@ -13,16 +13,16 @@ from datadog_api_client.model_utils import (
 class AttachmentIncluded(ModelComposed):
     def __init__(self, **kwargs):
         """
-
+        Objects related to an attachment.
 
         :param attributes: Attributes of user object returned by the API.
-        :type attributes: UserAttributes, optional
+        :type attributes: IncidentUserAttributes, optional
 
-        :param id:
+        :param id: ID of the user.
         :type id: str, optional
 
         :param type: Users resource type.
-        :type type: UserType
+        :type type: UsersType, optional
         """
         super().__init__(kwargs)
 
@@ -35,10 +35,10 @@ class AttachmentIncluded(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.user140420082644000 import User140420082644000
+        from datadog_api_client.v2.model.incident_user_data import IncidentUserData
 
         return {
             "oneOf": [
-                User140420082644000,
+                IncidentUserData,
             ],
         }

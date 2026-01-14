@@ -49,12 +49,12 @@ class CreateAttachmentRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        The attributes for creating an attachment.
 
-
-        :param attachment:
+        :param attachment: The attachment object for creating an attachment.
         :type attachment: CreateAttachmentRequestDataAttributesAttachment, optional
 
-        :param attachment_type:
+        :param attachment_type: The type of the attachment.
         :type attachment_type: AttachmentDataAttributesAttachmentType, optional
         """
         if attachment is not unset:
