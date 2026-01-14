@@ -1,0 +1,73 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"status-page-789a0331b83650e4","enabled":true,"name":"A
+      Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"df0612f3-4ee3-4627-b8a6-a34b3043e31d","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"9dd5c0f9-5bcb-4694-a8be-4f9b70b63c7e","name":"Application","type":"group","position":0,"components":[{"id":"da61bfdd-4282-49e1-bf83-d3df9f0b2e1c","name":"Login","type":"component","status":"operational","position":0},{"id":"b7ad28fd-a485-452c-81f6-2a72b5e22135","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-14T18:34:18.052972Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"status-page-789a0331b83650e4","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-14T18:34:18.052972Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/df0612f3-4ee3-4627-b8a6-a34b3043e31d/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"components_affected":[{"id":"da61bfdd-4282-49e1-bf83-d3df9f0b2e1c","status":"major_outage"}],"description":"Our
+      API is experiencing elevated latency. We are investigating the issue.","status":"investigating","title":"Elevated
+      API Latency"},"type":"degradations"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/df0612f3-4ee3-4627-b8a6-a34b3043e31d/degradations
+  response:
+    body:
+      string: '{"data":{"id":"56a84290-5371-4d6e-b106-b1d5cc52ed79","type":"degradations","attributes":{"components_affected":[{"id":"da61bfdd-4282-49e1-bf83-d3df9f0b2e1c","name":"Login","status":"major_outage"}],"created_at":"2026-01-14T18:34:18.643353Z","description":"Our
+        API is experiencing elevated latency. We are investigating the issue.","modified_at":"2026-01-14T18:34:18.643353Z","status":"investigating","title":"Elevated
+        API Latency","updates":[{"id":"1c212f1c-fa94-4f8e-b94e-051e24057d52","created_at":"2026-01-14T18:34:18.643353Z","modified_at":"2026-01-14T18:34:18.643353Z","status":"investigating","description":"Our
+        API is experiencing elevated latency. We are investigating the issue.","components_affected":[{"id":"da61bfdd-4282-49e1-bf83-d3df9f0b2e1c","name":"Login","status":"major_outage"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"df0612f3-4ee3-4627-b8a6-a34b3043e31d","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/df0612f3-4ee3-4627-b8a6-a34b3043e31d/degradations/56a84290-5371-4d6e-b106-b1d5cc52ed79
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/df0612f3-4ee3-4627-b8a6-a34b3043e31d
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
