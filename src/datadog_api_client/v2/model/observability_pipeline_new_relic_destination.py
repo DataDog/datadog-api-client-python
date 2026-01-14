@@ -55,6 +55,8 @@ class ObservabilityPipelineNewRelicDestination(ModelNormal):
         """
         The ``new_relic`` destination sends logs to the New Relic platform.
 
+        **Supported pipeline types:** logs
+
         :param id: The unique identifier for this component.
         :type id: str
 

@@ -63,10 +63,12 @@ class ObservabilityPipelineThrottleProcessor(ModelNormal):
         """
         The ``throttle`` processor limits the number of events that pass through over a given time window.
 
+        **Supported pipeline types:** logs
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
-        :param enabled: Whether this processor is enabled.
+        :param enabled: Indicates whether the processor is enabled.
         :type enabled: bool
 
         :param group_by: Optional list of fields used to group events before the threshold has been reached.

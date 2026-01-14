@@ -18,46 +18,58 @@ if TYPE_CHECKING:
         ObservabilityPipelineConfigProcessorItem,
     )
     from datadog_api_client.v2.model.observability_pipeline_filter_processor import ObservabilityPipelineFilterProcessor
-    from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
-        ObservabilityPipelineParseJSONProcessor,
+    from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
+        ObservabilityPipelineAddEnvVarsProcessor,
     )
-    from datadog_api_client.v2.model.observability_pipeline_quota_processor import ObservabilityPipelineQuotaProcessor
     from datadog_api_client.v2.model.observability_pipeline_add_fields_processor import (
         ObservabilityPipelineAddFieldsProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_add_hostname_processor import (
+        ObservabilityPipelineAddHostnameProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_custom_processor import ObservabilityPipelineCustomProcessor
+    from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
+        ObservabilityPipelineDatadogTagsProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
+    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor import (
+        ObservabilityPipelineEnrichmentTableProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
+        ObservabilityPipelineGenerateMetricsProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
+        ObservabilityPipelineOcsfMapperProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
+        ObservabilityPipelineParseGrokProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_parse_json_processor import (
+        ObservabilityPipelineParseJSONProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_parse_xml_processor import (
+        ObservabilityPipelineParseXMLProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_quota_processor import ObservabilityPipelineQuotaProcessor
+    from datadog_api_client.v2.model.observability_pipeline_reduce_processor import ObservabilityPipelineReduceProcessor
     from datadog_api_client.v2.model.observability_pipeline_remove_fields_processor import (
         ObservabilityPipelineRemoveFieldsProcessor,
     )
     from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
         ObservabilityPipelineRenameFieldsProcessor,
     )
-    from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
-        ObservabilityPipelineGenerateMetricsProcessor,
-    )
     from datadog_api_client.v2.model.observability_pipeline_sample_processor import ObservabilityPipelineSampleProcessor
-    from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
-        ObservabilityPipelineParseGrokProcessor,
-    )
     from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
         ObservabilityPipelineSensitiveDataScannerProcessor,
     )
-    from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
-        ObservabilityPipelineOcsfMapperProcessor,
+    from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
+        ObservabilityPipelineSplitArrayProcessor,
     )
-    from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
-        ObservabilityPipelineAddEnvVarsProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
-    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_processor import (
-        ObservabilityPipelineEnrichmentTableProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_reduce_processor import ObservabilityPipelineReduceProcessor
     from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
         ObservabilityPipelineThrottleProcessor,
     )
-    from datadog_api_client.v2.model.observability_pipeline_custom_processor import ObservabilityPipelineCustomProcessor
-    from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
-        ObservabilityPipelineDatadogTagsProcessor,
+    from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor import (
+        ObservabilityPipelineMetricTagsProcessor,
     )
 
 
@@ -96,23 +108,27 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
             Union[
                 ObservabilityPipelineConfigProcessorItem,
                 ObservabilityPipelineFilterProcessor,
-                ObservabilityPipelineParseJSONProcessor,
-                ObservabilityPipelineQuotaProcessor,
-                ObservabilityPipelineAddFieldsProcessor,
-                ObservabilityPipelineRemoveFieldsProcessor,
-                ObservabilityPipelineRenameFieldsProcessor,
-                ObservabilityPipelineGenerateMetricsProcessor,
-                ObservabilityPipelineSampleProcessor,
-                ObservabilityPipelineParseGrokProcessor,
-                ObservabilityPipelineSensitiveDataScannerProcessor,
-                ObservabilityPipelineOcsfMapperProcessor,
                 ObservabilityPipelineAddEnvVarsProcessor,
-                ObservabilityPipelineDedupeProcessor,
-                ObservabilityPipelineEnrichmentTableProcessor,
-                ObservabilityPipelineReduceProcessor,
-                ObservabilityPipelineThrottleProcessor,
+                ObservabilityPipelineAddFieldsProcessor,
+                ObservabilityPipelineAddHostnameProcessor,
                 ObservabilityPipelineCustomProcessor,
                 ObservabilityPipelineDatadogTagsProcessor,
+                ObservabilityPipelineDedupeProcessor,
+                ObservabilityPipelineEnrichmentTableProcessor,
+                ObservabilityPipelineGenerateMetricsProcessor,
+                ObservabilityPipelineOcsfMapperProcessor,
+                ObservabilityPipelineParseGrokProcessor,
+                ObservabilityPipelineParseJSONProcessor,
+                ObservabilityPipelineParseXMLProcessor,
+                ObservabilityPipelineQuotaProcessor,
+                ObservabilityPipelineReduceProcessor,
+                ObservabilityPipelineRemoveFieldsProcessor,
+                ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineSampleProcessor,
+                ObservabilityPipelineSensitiveDataScannerProcessor,
+                ObservabilityPipelineSplitArrayProcessor,
+                ObservabilityPipelineThrottleProcessor,
+                ObservabilityPipelineMetricTagsProcessor,
             ]
         ],
         display_name: Union[str, UnsetType] = unset,

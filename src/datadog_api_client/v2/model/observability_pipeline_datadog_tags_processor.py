@@ -75,16 +75,18 @@ class ObservabilityPipelineDatadogTagsProcessor(ModelNormal):
         """
         The ``datadog_tags`` processor includes or excludes specific Datadog tags in your logs.
 
+        **Supported pipeline types:** logs
+
         :param action: The action to take on tags with matching keys.
         :type action: ObservabilityPipelineDatadogTagsProcessorAction
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
-        :param enabled: Whether this processor is enabled.
+        :param enabled: Indicates whether the processor is enabled.
         :type enabled: bool
 
-        :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline (for example, as the ``input`` to downstream components).
+        :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
         :param include: A Datadog search query used to determine which logs this processor targets.
