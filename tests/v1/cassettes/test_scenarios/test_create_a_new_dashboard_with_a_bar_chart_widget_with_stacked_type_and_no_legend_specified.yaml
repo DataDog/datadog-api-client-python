@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_a_bar_chart_widget_with_stacked_type_and_no_legend_specified-1765833935","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+      by {service}"}],"response_format":"scalar","sort":{"count":10,"order_by":[{"name":"service","order":"asc","type":"group"}]}}],"style":{"display":{"type":"stacked"},"palette":"dog_classic","scaling":"relative"},"time":{},"title":"","title_align":"left","title_size":"16","type":"bar_chart"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"6yv-ayr-nyv","title":"Test-Create_a_new_dashboard_with_a_bar_chart_widget_with_stacked_type_and_no_legend_specified-1765833935","description":"","author_handle":"jessica.sylvester@datadoghq.com","author_name":"Jessica
+        Sylvester","layout_type":"free","url":"/dashboard/6yv-ayr-nyv/test-createanewdashboardwithabarchartwidgetwithstackedtypeandnolegendspecified-1","template_variables":[],"widgets":[{"definition":{"requests":[{"formulas":[{"formula":"query1"}],"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}
+        by {service}"}],"response_format":"scalar","sort":{"count":10,"order_by":[{"name":"service","order":"asc","type":"group"}]}}],"style":{"display":{"type":"stacked"},"palette":"dog_classic","scaling":"relative"},"time":{},"title":"","title_align":"left","title_size":"16","type":"bar_chart"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":747608743840054}],"notify_list":[],"created_at":"2025-12-15T21:25:35.211465+00:00","modified_at":"2025-12-15T21:25:35.211465+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/6yv-ayr-nyv
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"6yv-ayr-nyv"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -48,11 +48,11 @@ class WidgetDefinition(ModelComposed):
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
-        :param requests: Array of one request object to display in the widget.
+        :param requests: List of bar chart widget requests.
+        :type requests: [BarChartWidgetRequest]
 
-            See the dedicated [Request JSON schema documentation](https://docs.datadoghq.com/dashboards/graphing_json/request_json)
-             to learn how to build the `REQUEST_SCHEMA`.
-        :type requests: [ChangeWidgetRequest]
+        :param style: Style customization for a bar chart widget.
+        :type style: BarChartWidgetStyle, optional
 
         :param check: Name of the check to use in the widget.
         :type check: str
@@ -101,9 +101,6 @@ class WidgetDefinition(ModelComposed):
 
         :param text: Text to display.
         :type text: str
-
-        :param style: The style to apply to the widget.
-        :type style: GeomapWidgetDefinitionStyle
 
         :param view: The view of the world that the map should render.
         :type view: GeomapWidgetDefinitionView
@@ -354,6 +351,7 @@ class WidgetDefinition(ModelComposed):
         # loading
         from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
         from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
+        from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
         from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
         from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
         from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
@@ -391,6 +389,7 @@ class WidgetDefinition(ModelComposed):
             "oneOf": [
                 AlertGraphWidgetDefinition,
                 AlertValueWidgetDefinition,
+                BarChartWidgetDefinition,
                 ChangeWidgetDefinition,
                 CheckStatusWidgetDefinition,
                 DistributionWidgetDefinition,
