@@ -1,5 +1,66 @@
 # CHANGELOG
 
+## 2.50.0/2026-01-15
+
+### Added
+* Add subtest for synthetics multistep tests [#3078](https://github.com/DataDog/datadog-api-client-python/pull/3078)
+* feat - Add data-quality alert monitor type support [#3076](https://github.com/DataDog/datadog-api-client-python/pull/3076)
+* Add a new end point that allows the SPA recommendation to be called without the shard parameter [#3069](https://github.com/DataDog/datadog-api-client-python/pull/3069)
+* Add Critical Assets specs to security_monitoring feature [#3065](https://github.com/DataDog/datadog-api-client-python/pull/3065)
+* Add new Observability Pipelines components [#3060](https://github.com/DataDog/datadog-api-client-python/pull/3060)
+* Specify accepted types for UpsertRows values [#3053](https://github.com/DataDog/datadog-api-client-python/pull/3053)
+* Add new bits_ai usage attribution type to Usage Attribution Public API Documentation [#3052](https://github.com/DataDog/datadog-api-client-python/pull/3052)
+* Add Product Analytics Server-Side Events API endpoint [#3047](https://github.com/DataDog/datadog-api-client-python/pull/3047)
+* Update /api/v2/cases endpoint to add custom attributes support [#3045](https://github.com/DataDog/datadog-api-client-python/pull/3045)
+* Add subtest for synthetics multistep tests [#3042](https://github.com/DataDog/datadog-api-client-python/pull/3042)
+* Documentation for team notifications API [#3041](https://github.com/DataDog/datadog-api-client-python/pull/3041)
+* Add `query` param in rules list endpoint [#3034](https://github.com/DataDog/datadog-api-client-python/pull/3034)
+* [RQ-7160] Add llm_spans and deprecate llm_observability [#3026](https://github.com/DataDog/datadog-api-client-python/pull/3026)
+* Add display_name to Observability Pipeline processors [#3024](https://github.com/DataDog/datadog-api-client-python/pull/3024)
+* Add a new includeDiscovered query parameter to Software Catalog APIs [#3021](https://github.com/DataDog/datadog-api-client-python/pull/3021)
+* Add Security Findings Public API beta endpoints [#3020](https://github.com/DataDog/datadog-api-client-python/pull/3020)
+* Add routes for managing On-Call user notification rules [#3019](https://github.com/DataDog/datadog-api-client-python/pull/3019)
+* Add anomaly detection options to security monitoring rules [#3017](https://github.com/DataDog/datadog-api-client-python/pull/3017)
+* Remove preview/unstable tags from GitHub team sync and connections endpoints [#3015](https://github.com/DataDog/datadog-api-client-python/pull/3015)
+* Added spec for flex_stored_logs [#3010](https://github.com/DataDog/datadog-api-client-python/pull/3010)
+* Update security finding triage specs [#3009](https://github.com/DataDog/datadog-api-client-python/pull/3009)
+* Add routes for managing On-Call user notification channels [#3004](https://github.com/DataDog/datadog-api-client-python/pull/3004)
+* Add host field to Post an event V2 API [#3002](https://github.com/DataDog/datadog-api-client-python/pull/3002)
+* Add `GET /api/v2/apm/services` endpoint to public documentation [#2999](https://github.com/DataDog/datadog-api-client-python/pull/2999)
+* Dashboards - Add semantic_mode support to FormulaAndFunctionMetricQueryDefinition [#2993](https://github.com/DataDog/datadog-api-client-python/pull/2993)
+* Add bar chart widget to Dashboards API [#2992](https://github.com/DataDog/datadog-api-client-python/pull/2992)
+* Update distribution and heatmap's `markers` ,`num_buckets` properties and allowed request/query [#2991](https://github.com/DataDog/datadog-api-client-python/pull/2991)
+* Cloud SIEM - Add instantaneousBaseline feature parameter. [#2990](https://github.com/DataDog/datadog-api-client-python/pull/2990)
+* Add new fields to usage metering api spec [#2988](https://github.com/DataDog/datadog-api-client-python/pull/2988)
+* Add region_filter_configs and is_global_location_enabled to v2 GCP API [#2983](https://github.com/DataDog/datadog-api-client-python/pull/2983)
+* update geomap widget definition about `conditional_format` and `text_formats` and view focus [#2981](https://github.com/DataDog/datadog-api-client-python/pull/2981)
+* On-Call Add positioned schedule policy target [#2976](https://github.com/DataDog/datadog-api-client-python/pull/2976)
+* Add documentation for synthetics global variable jsonpatch endpoint [#2968](https://github.com/DataDog/datadog-api-client-python/pull/2968)
+* Add new endpoint for listing rules for a gate [#2966](https://github.com/DataDog/datadog-api-client-python/pull/2966)
+* Add Row Update Endpoints to Reference Tables API spec [#2956](https://github.com/DataDog/datadog-api-client-python/pull/2956)
+* Add Support for Monitor Assets [#2935](https://github.com/DataDog/datadog-api-client-python/pull/2935)
+
+### Deprecated
+* Update docs for Security Finding API endpoints [#3074](https://github.com/DataDog/datadog-api-client-python/pull/3074)
+
+### Removed
+* Revert - Update specs for AWS account updates and creation for CCM configs [#3063](https://github.com/DataDog/datadog-api-client-python/pull/3063)
+* Tag security findings Jira endpoints as unstable [#2997](https://github.com/DataDog/datadog-api-client-python/pull/2997)
+
+### Changed
+* Remove steps from certain expected synthetics api response [#3051](https://github.com/DataDog/datadog-api-client-python/pull/3051)
+* Mark Incident Impact Endpoints stable [#3016](https://github.com/DataDog/datadog-api-client-python/pull/3016)
+* Vulnerability Management - Update ListVulnerabilities endpoint query params and response schema [#3008](https://github.com/DataDog/datadog-api-client-python/pull/3008)
+* Update specs for AWS account updates and creation for CCM configs [#3001](https://github.com/DataDog/datadog-api-client-python/pull/3001)
+* Add documentation for GET, POST, PATCH, and DELETE api/v2/incidents/incident_id/attachments endpoints [#2995](https://github.com/DataDog/datadog-api-client-python/pull/2995)
+* add suppression version history [#2975](https://github.com/DataDog/datadog-api-client-python/pull/2975)
+* Add Security Finding Ticketing endpoints [#2970](https://github.com/DataDog/datadog-api-client-python/pull/2970)
+* Add processors groups to Observability Pipelines [#2929](https://github.com/DataDog/datadog-api-client-python/pull/2929)
+
+### Fixed
+* Add field attribute to the Workload Protection hash action [#2972](https://github.com/DataDog/datadog-api-client-python/pull/2972)
+* remove duplicate sync_enabled field for PATCH Reference Tables request schema [#2963](https://github.com/DataDog/datadog-api-client-python/pull/2963)
+
 ## 2.49.0/2026-01-08
 
 ### Added
