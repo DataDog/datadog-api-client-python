@@ -1993,6 +1993,53 @@
       "type": "idempotent"
     }
   },
+  "GetSpaceByDisplayName": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOrganizationHandles": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "operationId": "DeleteOrganizationHandle",
+      "parameters": [
+        {
+          "name": "handle_id",
+          "source": "data.id"
+        },
+        {
+          "name": "organization_binding_id",
+          "value": "\"e54cb570-c674-529c-769d-84b312288ed7\""
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetChannelByName": {
     "tag": "Microsoft Teams Integration",
     "undo": {

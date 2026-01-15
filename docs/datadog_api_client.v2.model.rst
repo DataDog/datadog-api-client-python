@@ -10728,6 +10728,111 @@ datadog\_api\_client.v2.model.global\_variable\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.google\_chat\_app\_named\_space\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_app_named_space_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_app\_named\_space\_response\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_app_named_space_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_app\_named\_space\_response\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_app_named_space_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_app\_named\_space\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_app_named_space_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_create\_organization\_handle\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_create_organization_handle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_create\_organization\_handle\_request\_attributes module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_create_organization_handle_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_create\_organization\_handle\_request\_data module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_create_organization_handle_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_handle\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_handle_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_handle\_response\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_handle_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_handle\_response\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_handle_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_handle\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_handle_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_handles\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_handles_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_update\_organization\_handle\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_update_organization_handle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_update\_organization\_handle\_request\_attributes module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_update_organization_handle_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_update\_organization\_handle\_request\_data module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_update_organization_handle_request_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.google\_meet\_configuration\_reference module
 ---------------------------------------------------------------------------
 
