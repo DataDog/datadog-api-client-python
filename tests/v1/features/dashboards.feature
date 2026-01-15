@@ -106,6 +106,19 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].profile_metrics_query.compute.facet" is equal to "@prof_core_cpu_cores"
     And the response "widgets[0].definition.requests[0].profile_metrics_query.compute.aggregation" is equal to "sum"
 
+  @skip-terraform-config @skip-typescript @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with a bar_chart widget with stacked type and no legend specified
+    Given new "CreateDashboard" request
+    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked"},"scaling": "relative","palette": "dog_classic"},"type":"bar_chart","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","notify_list":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "bar_chart"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "asc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "group"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].name" is equal to "service"
+    And the response "widgets[0].definition.style.display.type" is equal to "stacked"
+    And the response "widgets[0].definition.style.display" does not have field "legend"
+
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a change widget using formulas and functions slo query
     Given there is a valid "slo" in the system
@@ -335,6 +348,28 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "list_stream"
     And the response "widgets[0].definition.requests[0].columns[0].width" is equal to "auto"
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "apm_issue_stream"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with bar_chart widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/bar_chart_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "bar_chart"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "desc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "formula"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with bar_chart widget sorted by group
+    Given new "CreateDashboard" request
+    And body with value {"title":"{{ unique }}","description":"","widgets":[{"layout":{"x":0,"y":0,"width":47,"height":15},"definition":{"title":"","title_size":"16","title_align":"left","time":{},"style":{"display": {"type": "stacked","legend": "inline"},"scaling": "relative","palette": "dog_classic"},"type":"bar_chart","requests":[{"queries":[{"data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*} by {service}","aggregator":"avg"}],"formulas":[{"formula":"query1"}],"sort":{"count":10,"order_by":[{"type":"group","name":"service","order":"asc"}]},"response_format":"scalar"}]}}],"template_variables":[],"layout_type":"free","notify_list":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "bar_chart"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].order" is equal to "asc"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].type" is equal to "group"
+    And the response "widgets[0].definition.requests[0].sort.order_by[0].name" is equal to "service"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with check_status widget

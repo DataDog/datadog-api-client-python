@@ -319,6 +319,83 @@ datadog\_api\_client.v1.model.azure\_account\_list\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.bar\_chart\_widget\_definition module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_definition\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_display module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_display
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_flat module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_flat
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_flat\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_flat_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_legend module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_legend
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_scaling module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_scaling
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_stacked module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_stacked
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_stacked\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_stacked_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.bar\_chart\_widget\_style module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.bar_chart_widget_style
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.cancel\_downtimes\_by\_scope\_request module
 --------------------------------------------------------------------------
 

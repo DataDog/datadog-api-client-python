@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_layout import WidgetLayout
     from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraphWidgetDefinition
     from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
+    from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
     from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
     from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
     from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
@@ -76,6 +77,7 @@ class Widget(ModelNormal):
             WidgetDefinition,
             AlertGraphWidgetDefinition,
             AlertValueWidgetDefinition,
+            BarChartWidgetDefinition,
             ChangeWidgetDefinition,
             CheckStatusWidgetDefinition,
             DistributionWidgetDefinition,

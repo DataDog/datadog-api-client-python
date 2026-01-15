@@ -43,6 +43,17 @@ from datadog_api_client.v1.model.application_key_response import ApplicationKeyR
 from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
 from datadog_api_client.v1.model.azure_account import AzureAccount
 from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
+from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
+from datadog_api_client.v1.model.bar_chart_widget_definition_type import BarChartWidgetDefinitionType
+from datadog_api_client.v1.model.bar_chart_widget_display import BarChartWidgetDisplay
+from datadog_api_client.v1.model.bar_chart_widget_flat import BarChartWidgetFlat
+from datadog_api_client.v1.model.bar_chart_widget_flat_type import BarChartWidgetFlatType
+from datadog_api_client.v1.model.bar_chart_widget_legend import BarChartWidgetLegend
+from datadog_api_client.v1.model.bar_chart_widget_request import BarChartWidgetRequest
+from datadog_api_client.v1.model.bar_chart_widget_scaling import BarChartWidgetScaling
+from datadog_api_client.v1.model.bar_chart_widget_stacked import BarChartWidgetStacked
+from datadog_api_client.v1.model.bar_chart_widget_stacked_type import BarChartWidgetStackedType
+from datadog_api_client.v1.model.bar_chart_widget_style import BarChartWidgetStyle
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
 from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
 from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
@@ -1182,6 +1193,17 @@ __all__ = [
     "AuthenticationValidationResponse",
     "AzureAccount",
     "AzureAccountListResponse",
+    "BarChartWidgetDefinition",
+    "BarChartWidgetDefinitionType",
+    "BarChartWidgetDisplay",
+    "BarChartWidgetFlat",
+    "BarChartWidgetFlatType",
+    "BarChartWidgetLegend",
+    "BarChartWidgetRequest",
+    "BarChartWidgetScaling",
+    "BarChartWidgetStacked",
+    "BarChartWidgetStackedType",
+    "BarChartWidgetStyle",
     "CancelDowntimesByScopeRequest",
     "CanceledDowntimesIds",
     "ChangeWidgetDefinition",
