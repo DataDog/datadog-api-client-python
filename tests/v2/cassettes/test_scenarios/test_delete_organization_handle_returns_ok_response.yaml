@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Delete_organization_handle_returns_OK_response-1768440800","space_resource_name":"spaces/AAQA-zFIks8"},"type":"google-chat-organization-handle"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles
+  response:
+    body:
+      string: '{"data":{"id":"a898bd94-283d-4801-bc1c-dbd4776dd6a8","type":"google-chat-organization-handle","attributes":{"name":"Test-Delete_organization_handle_returns_OK_response-1768440800","space_display_name":"api-test-space","space_resource_name":"spaces/AAQA-zFIks8"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/a898bd94-283d-4801-bc1c-dbd4776dd6a8
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/google-chat/organizations/%7Borganization_binding_id%7D/organization-handles/a898bd94-283d-4801-bc1c-dbd4776dd6a8
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Invalid Parameter","detail":"invalid
+        parameter \"google_chat_organization_binding_id\" in \"path\"; expected type
+        \"uuid\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

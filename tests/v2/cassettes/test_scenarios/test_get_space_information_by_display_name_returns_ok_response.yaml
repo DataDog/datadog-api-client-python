@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/integration/google-chat/organizations/app/named-spaces/datadog.ninja/api-test-space
+  response:
+    body:
+      string: '{"data":{"id":"d57f39c4-f22b-6da0-108c-23bdb9c460a3","type":"google-chat-app-named-space","attributes":{"display_name":"api-test-space","organization_binding_id":"e54cb570-c674-529c-769d-84b312288ed7","resource_name":"spaces/AAQA-zFIks8","space_uri":"https://chat.google.com/room/AAQA-zFIks8?cls=11"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
