@@ -311,6 +311,7 @@ class Configuration:
                 "v2.create_incident_integration": False,
                 "v2.create_incident_notification_rule": False,
                 "v2.create_incident_notification_template": False,
+                "v2.create_incident_postmortem_attachment": False,
                 "v2.create_incident_todo": False,
                 "v2.create_incident_type": False,
                 "v2.delete_incident": False,

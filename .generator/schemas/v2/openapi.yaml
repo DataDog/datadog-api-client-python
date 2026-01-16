@@ -41880,6 +41880,83 @@ components:
       type: string
       x-enum-varnames:
       - PERMISSIONS
+    PostmortemAttachmentRequest:
+      properties:
+        data:
+          $ref: '#/components/schemas/PostmortemAttachmentRequestData'
+      required:
+      - data
+      type: object
+    PostmortemAttachmentRequestAttributes:
+      description: Postmortem attachment attributes
+      properties:
+        cells:
+          description: The cells of the postmortem
+          items:
+            $ref: '#/components/schemas/PostmortemCell'
+          type: array
+        content:
+          description: The content of the postmortem
+          example: '# Incident Report - IR-123
+
+            [...]'
+          type: string
+        postmortem_template_id:
+          description: The ID of the postmortem template
+          example: 93645509-874e-45c4-adfa-623bfeaead89-123
+          type: string
+        title:
+          description: The title of the postmortem
+          example: Postmortem-IR-123
+          type: string
+      type: object
+    PostmortemAttachmentRequestData:
+      description: Postmortem attachment data
+      properties:
+        attributes:
+          $ref: '#/components/schemas/PostmortemAttachmentRequestAttributes'
+        type:
+          $ref: '#/components/schemas/IncidentAttachmentType'
+      required:
+      - type
+      - attributes
+      type: object
+    PostmortemCell:
+      description: A cell in the postmortem
+      properties:
+        attributes:
+          $ref: '#/components/schemas/PostmortemCellAttributes'
+        id:
+          description: The unique identifier of the cell
+          example: cell-1
+          type: string
+        type:
+          $ref: '#/components/schemas/PostmortemCellType'
+      type: object
+    PostmortemCellAttributes:
+      description: Attributes of a postmortem cell
+      properties:
+        definition:
+          $ref: '#/components/schemas/PostmortemCellDefinition'
+      type: object
+    PostmortemCellDefinition:
+      description: Definition of a postmortem cell
+      properties:
+        content:
+          description: The content of the cell in markdown format
+          example: '## Incident Summary
+
+            This incident was caused by...'
+          type: string
+      type: object
+    PostmortemCellType:
+      description: The postmortem cell resource type.
+      enum:
+      - markdown
+      example: markdown
+      type: string
+      x-enum-varnames:
+      - MARKDOWN
     Powerpack:
       description: Powerpacks are templated groups of dashboard widgets you can save
         from an existing dashboard and turn into reusable packs in the widget tray.
@@ -71684,6 +71761,46 @@ paths:
         permissions:
         - incident_write
       x-unstable: '**Note**: This endpoint is in Preview.
+
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
+  /api/v2/incidents/{incident_id}/attachments/postmortems:
+    post:
+      description: Create a postmortem attachment for an incident.
+      operationId: CreateIncidentPostmortemAttachment
+      parameters:
+      - description: The ID of the incident
+        in: path
+        name: incident_id
+        required: true
+        schema:
+          example: 00000000-0000-0000-0000-000000000000
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostmortemAttachmentRequest'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attachment'
+          description: Created
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JSONAPIErrorResponse'
+          description: Bad Request
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Create postmortem attachment
+      tags:
+      - Incidents
+      x-unstable: '**Note**: This endpoint is in public beta and it''s subject to
+        change.
 
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).'
   /api/v2/incidents/{incident_id}/attachments/{attachment_id}:

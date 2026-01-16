@@ -1734,6 +1734,14 @@
       "type": "unsafe"
     }
   },
+  "CreateIncidentPostmortemAttachment": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "DeleteIncidentAttachment": {
     "tag": "Incidents",
     "undo": {
