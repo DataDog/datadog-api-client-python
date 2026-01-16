@@ -117,7 +117,7 @@ class IssueCaseAttributes(ModelNormal):
         :param priority: Case priority
         :type priority: CasePriority, optional
 
-        :param status: Case status
+        :param status: Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
         :type status: CaseStatus, optional
 
         :param title: Title of the case.
