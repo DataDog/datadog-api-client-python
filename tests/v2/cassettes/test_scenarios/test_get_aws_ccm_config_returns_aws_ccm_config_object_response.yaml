@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://frog.datadoghq.com/api/v2/integration/aws/accounts/873c7e78-8915-4c7a-a3a7-33a57adf54f4/ccm_config
+  response:
+    body:
+      string: '{"data":{"id":"873c7e78-8915-4c7a-a3a7-33a57adf54f4","type":"ccm_config","attributes":{"data_export_configs":[{"report_name":"cost-and-usage-report","report_prefix":"reports","report_type":"CUR2.0","bucket_name":"billing","bucket_region":"us-east-1"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

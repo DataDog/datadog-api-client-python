@@ -1,0 +1,16 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://frog.datadoghq.com/api/v2/integration/aws/accounts/873c7e78-8915-4c7a-a3a7-33a57adf54f4/ccm_config
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
