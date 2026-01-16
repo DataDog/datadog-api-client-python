@@ -44,9 +44,9 @@ class MetricAllTags(ModelNormal):
         **kwargs,
     ):
         """
-        Object for a single metric's indexed tags.
+        Object for a single metric's indexed and ingested tags.
 
-        :param attributes: Object containing the definition of a metric's tags.
+        :param attributes: Object containing the definition of a metric's indexed and ingested tags.
         :type attributes: MetricAllTagsAttributes, optional
 
         :param id: The metric name for this resource.
