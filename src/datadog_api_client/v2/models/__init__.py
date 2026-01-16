@@ -33,6 +33,14 @@ from datadog_api_client.v2.model.aws_assume_role_update import AWSAssumeRoleUpda
 from datadog_api_client.v2.model.aws_auth_config import AWSAuthConfig
 from datadog_api_client.v2.model.aws_auth_config_keys import AWSAuthConfigKeys
 from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
+from datadog_api_client.v2.model.aws_ccm_config import AWSCcmConfig
+from datadog_api_client.v2.model.aws_ccm_config_request import AWSCcmConfigRequest
+from datadog_api_client.v2.model.aws_ccm_config_request_attributes import AWSCcmConfigRequestAttributes
+from datadog_api_client.v2.model.aws_ccm_config_request_data import AWSCcmConfigRequestData
+from datadog_api_client.v2.model.aws_ccm_config_response import AWSCcmConfigResponse
+from datadog_api_client.v2.model.aws_ccm_config_response_attributes import AWSCcmConfigResponseAttributes
+from datadog_api_client.v2.model.aws_ccm_config_response_data import AWSCcmConfigResponseData
+from datadog_api_client.v2.model.aws_ccm_config_type import AWSCcmConfigType
 from datadog_api_client.v2.model.aws_credentials import AWSCredentials
 from datadog_api_client.v2.model.aws_credentials_update import AWSCredentialsUpdate
 from datadog_api_client.v2.model.aws_event_bridge_account_configuration import AWSEventBridgeAccountConfiguration
@@ -1351,6 +1359,7 @@ from datadog_api_client.v2.model.dashboard_type import DashboardType
 from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
+from datadog_api_client.v2.model.data_export_config import DataExportConfig
 from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
 from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
@@ -5392,6 +5401,14 @@ __all__ = [
     "AWSAuthConfig",
     "AWSAuthConfigKeys",
     "AWSAuthConfigRole",
+    "AWSCcmConfig",
+    "AWSCcmConfigRequest",
+    "AWSCcmConfigRequestAttributes",
+    "AWSCcmConfigRequestData",
+    "AWSCcmConfigResponse",
+    "AWSCcmConfigResponseAttributes",
+    "AWSCcmConfigResponseData",
+    "AWSCcmConfigType",
     "AWSCredentials",
     "AWSCredentialsUpdate",
     "AWSEventBridgeAccountConfiguration",
@@ -6330,6 +6347,7 @@ __all__ = [
     "DataDeletionResponseItem",
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
+    "DataExportConfig",
     "DataRelationshipsTeams",
     "DataRelationshipsTeamsDataItems",
     "DataRelationshipsTeamsDataItemsType",

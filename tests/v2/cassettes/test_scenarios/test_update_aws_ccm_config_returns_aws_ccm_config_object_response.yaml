@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"ccm_config":{"data_export_configs":[{"bucket_name":"billing-updated","bucket_region":"us-west-2","report_name":"cost-report-updated","report_prefix":"reports-updated","report_type":"CUR2.0"}]}},"type":"ccm_config"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://frog.datadoghq.com/api/v2/integration/aws/accounts/873c7e78-8915-4c7a-a3a7-33a57adf54f4/ccm_config
+  response:
+    body:
+      string: '{"data":{"id":"873c7e78-8915-4c7a-a3a7-33a57adf54f4","type":"ccm_config","attributes":{"data_export_configs":[{"report_name":"cost-report-updated","report_prefix":"reports-updated","report_type":"CUR2.0","bucket_name":"billing-updated","bucket_region":"us-west-2"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

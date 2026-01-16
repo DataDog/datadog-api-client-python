@@ -10,6 +10,34 @@ Feature: AWS Integration
     And an instance of "AWSIntegration" API
 
   @team:DataDog/aws-integrations
+  Scenario: Create AWS CCM config returns "AWS CCM Config object" response
+    Given new "CreateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "873c7e78-8915-4c7a-a3a7-33a57adf54f4"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 200 AWS CCM Config object
+
+  @team:DataDog/aws-integrations
+  Scenario: Create AWS CCM config returns "Conflict" response
+    Given new "CreateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "873c7e78-8915-4c7a-a3a7-33a57adf54f4"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    And new "CreateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "873c7e78-8915-4c7a-a3a7-33a57adf54f4"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    And the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/aws-integrations
+  Scenario: Create AWS CCM config returns "Not Found" response
+    Given new "CreateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/aws-integrations
   Scenario: Create an AWS account returns "AWS Account object" response
     Given new "CreateAWSAccount" request
     And body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"role_name": "DatadogIntegrationRole"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
@@ -60,6 +88,20 @@ Feature: AWS Integration
     Then the response status is 409 Conflict
 
   @team:DataDog/aws-integrations
+  Scenario: Delete AWS CCM config returns "No Content" response
+    Given new "DeleteAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "873c7e78-8915-4c7a-a3a7-33a57adf54f4"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/aws-integrations
+  Scenario: Delete AWS CCM config returns "Not Found" response
+    Given new "DeleteAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/aws-integrations
   Scenario: Delete an AWS integration returns "Bad Request" response
     Given new "DeleteAWSAccount" request
     And request contains "aws_account_config_id" parameter with value "not-a-uuid"
@@ -107,6 +149,20 @@ Feature: AWS Integration
     Given new "CreateNewAWSExternalID" request
     When the request is sent
     Then the response status is 200 AWS External ID object
+
+  @team:DataDog/aws-integrations
+  Scenario: Get AWS CCM config returns "AWS CCM Config object" response
+    Given new "GetAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "873c7e78-8915-4c7a-a3a7-33a57adf54f4"
+    When the request is sent
+    Then the response status is 200 AWS CCM Config object
+
+  @team:DataDog/aws-integrations
+  Scenario: Get AWS CCM config returns "Not Found" response
+    Given new "GetAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/aws-integrations
   Scenario: Get AWS integration IAM permissions returns "AWS IAM Permissions object" response
@@ -189,6 +245,22 @@ Feature: AWS Integration
     Given new "ListAWSNamespaces" request
     When the request is sent
     Then the response status is 200 AWS Namespaces List object
+
+  @team:DataDog/aws-integrations
+  Scenario: Update AWS CCM config returns "AWS CCM Config object" response
+    Given new "UpdateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "873c7e78-8915-4c7a-a3a7-33a57adf54f4"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing-updated", "bucket_region": "us-west-2", "report_name": "cost-report-updated", "report_prefix": "reports-updated", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 200 AWS CCM Config object
+
+  @team:DataDog/aws-integrations
+  Scenario: Update AWS CCM config returns "Not Found" response
+    Given new "UpdateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @team:DataDog/aws-integrations
   Scenario: Update an AWS integration returns "AWS Account object" response
