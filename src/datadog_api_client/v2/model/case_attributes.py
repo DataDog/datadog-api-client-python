@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.case_priority import CasePriority
     from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
     from datadog_api_client.v2.model.case_status import CaseStatus
+    from datadog_api_client.v2.model.case_status_group import CaseStatusGroup
     from datadog_api_client.v2.model.case_type import CaseType
 
 
@@ -34,6 +35,7 @@ class CaseAttributes(ModelNormal):
         from datadog_api_client.v2.model.case_priority import CasePriority
         from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
         from datadog_api_client.v2.model.case_status import CaseStatus
+        from datadog_api_client.v2.model.case_status_group import CaseStatusGroup
         from datadog_api_client.v2.model.case_type import CaseType
 
         return {
@@ -49,6 +51,8 @@ class CaseAttributes(ModelNormal):
             "priority": (CasePriority,),
             "service_now_ticket": (ServiceNowTicket,),
             "status": (CaseStatus,),
+            "status_group": (CaseStatusGroup,),
+            "status_name": (str,),
             "title": (str,),
             "type": (CaseType,),
             "type_id": (str,),
@@ -67,6 +71,8 @@ class CaseAttributes(ModelNormal):
         "priority": "priority",
         "service_now_ticket": "service_now_ticket",
         "status": "status",
+        "status_group": "status_group",
+        "status_name": "status_name",
         "title": "title",
         "type": "type",
         "type_id": "type_id",
@@ -94,6 +100,8 @@ class CaseAttributes(ModelNormal):
         priority: Union[CasePriority, UnsetType] = unset,
         service_now_ticket: Union[ServiceNowTicket, none_type, UnsetType] = unset,
         status: Union[CaseStatus, UnsetType] = unset,
+        status_group: Union[CaseStatusGroup, UnsetType] = unset,
+        status_name: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         type: Union[CaseType, UnsetType] = unset,
         type_id: Union[str, UnsetType] = unset,
@@ -135,8 +143,14 @@ class CaseAttributes(ModelNormal):
         :param service_now_ticket: ServiceNow ticket attached to case
         :type service_now_ticket: ServiceNowTicket, none_type, optional
 
-        :param status: Case status
+        :param status: Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
         :type status: CaseStatus, optional
+
+        :param status_group: Status group of the case.
+        :type status_group: CaseStatusGroup, optional
+
+        :param status_name: Status of the case. Must be one of the existing statuses for the case's type.
+        :type status_name: str, optional
 
         :param title: Title
         :type title: str, optional
@@ -171,6 +185,10 @@ class CaseAttributes(ModelNormal):
             kwargs["service_now_ticket"] = service_now_ticket
         if status is not unset:
             kwargs["status"] = status
+        if status_group is not unset:
+            kwargs["status_group"] = status_group
+        if status_name is not unset:
+            kwargs["status_name"] = status_name
         if title is not unset:
             kwargs["title"] = title
         if type is not unset:
