@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"status-page-af0603c6bb50c13f","enabled":true,"name":"A
+      Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"19846f06-cd73-44f5-aed1-73dbaa31d58d","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"b2c0e2dd-69e3-4e5a-b8d3-45a26d9428f7","name":"Application","type":"group","position":0,"components":[{"id":"0e309a2e-7cac-47d2-90c9-0301ed7e55e7","name":"Login","type":"component","status":"operational","position":0},{"id":"b0d0261c-d58d-438b-98aa-1828a0aaac36","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-14T18:34:30.242647Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"status-page-af0603c6bb50c13f","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-14T18:34:30.242647Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/19846f06-cd73-44f5-aed1-73dbaa31d58d/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"components_affected":[{"id":"0e309a2e-7cac-47d2-90c9-0301ed7e55e7","status":"major_outage"}],"description":"Our
+      API is experiencing elevated latency. We are investigating the issue.","status":"investigating","title":"Elevated
+      API Latency"},"type":"degradations"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/19846f06-cd73-44f5-aed1-73dbaa31d58d/degradations
+  response:
+    body:
+      string: '{"data":{"id":"3679c370-8e6c-4779-89ca-2952c68800ac","type":"degradations","attributes":{"components_affected":[{"id":"0e309a2e-7cac-47d2-90c9-0301ed7e55e7","name":"Login","status":"major_outage"}],"created_at":"2026-01-14T18:34:30.903058Z","description":"Our
+        API is experiencing elevated latency. We are investigating the issue.","modified_at":"2026-01-14T18:34:30.903058Z","status":"investigating","title":"Elevated
+        API Latency","updates":[{"id":"214cdbcb-f1e3-48fb-a8bc-7211fdb02922","created_at":"2026-01-14T18:34:30.903058Z","modified_at":"2026-01-14T18:34:30.903058Z","status":"investigating","description":"Our
+        API is experiencing elevated latency. We are investigating the issue.","components_affected":[{"id":"0e309a2e-7cac-47d2-90c9-0301ed7e55e7","name":"Login","status":"major_outage"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"19846f06-cd73-44f5-aed1-73dbaa31d58d","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/statuspages/degradations
+  response:
+    body:
+      string: '{"data":[{"id":"3679c370-8e6c-4779-89ca-2952c68800ac","type":"degradations","attributes":{"components_affected":[{"id":"0e309a2e-7cac-47d2-90c9-0301ed7e55e7","name":"Login","status":"major_outage"}],"created_at":"2026-01-14T18:34:30.903058Z","description":"Our
+        API is experiencing elevated latency. We are investigating the issue.","modified_at":"2026-01-14T18:34:30.903058Z","status":"investigating","title":"Elevated
+        API Latency","updates":[{"id":"214cdbcb-f1e3-48fb-a8bc-7211fdb02922","created_at":"2026-01-14T18:34:30.903058Z","modified_at":"2026-01-14T18:34:30.903058Z","status":"investigating","description":"Our
+        API is experiencing elevated latency. We are investigating the issue.","components_affected":[{"id":"0e309a2e-7cac-47d2-90c9-0301ed7e55e7","name":"Login","status":"major_outage"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"19846f06-cd73-44f5-aed1-73dbaa31d58d","type":"status_pages"}}}}],"meta":{"page":{"type":"offset_limit","offset":0,"limit":50,"total":1,"first_offset":0,"prev_offset":null,"next_offset":null,"last_offset":0}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/19846f06-cd73-44f5-aed1-73dbaa31d58d/degradations/3679c370-8e6c-4779-89ca-2952c68800ac
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/19846f06-cd73-44f5-aed1-73dbaa31d58d
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
