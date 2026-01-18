@@ -47,15 +47,15 @@ class AttachmentData(ModelNormal):
         **kwargs,
     ):
         """
+        Attachment data from a response.
 
-
-        :param attributes:
+        :param attributes: The attachment's attributes.
         :type attributes: AttachmentDataAttributes
 
-        :param id:
+        :param id: The unique identifier of the attachment.
         :type id: str
 
-        :param relationships:
+        :param relationships: The attachment's resource relationships.
         :type relationships: AttachmentDataRelationships
 
         :param type: The incident attachment resource type.

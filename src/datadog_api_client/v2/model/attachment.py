@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.attachment_data import AttachmentData
     from datadog_api_client.v2.model.attachment_included import AttachmentIncluded
-    from datadog_api_client.v2.model.user140420082644000 import User140420082644000
+    from datadog_api_client.v2.model.incident_user_data import IncidentUserData
 
 
 class Attachment(ModelNormal):
@@ -38,13 +38,13 @@ class Attachment(ModelNormal):
     def __init__(
         self_,
         data: Union[AttachmentData, UnsetType] = unset,
-        included: Union[List[Union[AttachmentIncluded, User140420082644000]], UnsetType] = unset,
+        included: Union[List[Union[AttachmentIncluded, IncidentUserData]], UnsetType] = unset,
         **kwargs,
     ):
         """
+        An attachment response containing the attachment data and related objects.
 
-
-        :param data:
+        :param data: Attachment data from a response.
         :type data: AttachmentData, optional
 
         :param included:

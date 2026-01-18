@@ -36,9 +36,9 @@ class PatchAttachmentRequestDataAttributes(ModelNormal):
 
     def __init__(self_, attachment: Union[PatchAttachmentRequestDataAttributesAttachment, UnsetType] = unset, **kwargs):
         """
+        The attributes for updating an attachment.
 
-
-        :param attachment:
+        :param attachment: The updated attachment object.
         :type attachment: PatchAttachmentRequestDataAttributesAttachment, optional
         """
         if attachment is not unset:

@@ -48,9 +48,9 @@ class CreateAttachmentRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Attachment data for a create request.
 
-
-        :param attributes:
+        :param attributes: The attributes for creating an attachment.
         :type attributes: CreateAttachmentRequestDataAttributes, optional
 
         :param id:

@@ -14,35 +14,43 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user import (
-        AttachmentDataRelationshipsLastModifiedByUser,
-    )
+    from datadog_api_client.v2.model.relationship_to_incident import RelationshipToIncident
+    from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 
 
 class AttachmentDataRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user import (
-            AttachmentDataRelationshipsLastModifiedByUser,
-        )
+        from datadog_api_client.v2.model.relationship_to_incident import RelationshipToIncident
+        from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
 
         return {
-            "last_modified_by_user": (AttachmentDataRelationshipsLastModifiedByUser,),
+            "incident": (RelationshipToIncident,),
+            "last_modified_by_user": (RelationshipToUser,),
         }
 
     attribute_map = {
+        "incident": "incident",
         "last_modified_by_user": "last_modified_by_user",
     }
 
     def __init__(
-        self_, last_modified_by_user: Union[AttachmentDataRelationshipsLastModifiedByUser, UnsetType] = unset, **kwargs
+        self_,
+        incident: Union[RelationshipToIncident, UnsetType] = unset,
+        last_modified_by_user: Union[RelationshipToUser, UnsetType] = unset,
+        **kwargs,
     ):
         """
+        The attachment's resource relationships.
 
+        :param incident: Relationship to incident.
+        :type incident: RelationshipToIncident, optional
 
-        :param last_modified_by_user:
-        :type last_modified_by_user: AttachmentDataRelationshipsLastModifiedByUser, optional
+        :param last_modified_by_user: Relationship to user.
+        :type last_modified_by_user: RelationshipToUser, optional
         """
+        if incident is not unset:
+            kwargs["incident"] = incident
         if last_modified_by_user is not unset:
             kwargs["last_modified_by_user"] = last_modified_by_user
         super().__init__(kwargs)

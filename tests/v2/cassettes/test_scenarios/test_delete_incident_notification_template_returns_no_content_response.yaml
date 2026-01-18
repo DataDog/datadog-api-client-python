@@ -12,10 +12,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/incidents/config/types
   response:
     body:
-      string: '{"data":{"id":"d067e172-1ce4-4b59-ae6e-3f867e98c81e","type":"incident_types","attributes":{"createdAt":"2025-09-05T02:19:08.514411675Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
+      string: '{"data":{"id":"ad88f200-3458-404f-9abb-bffa66b60a1f","type":"incident_types","attributes":{"createdAt":"2026-01-07T15:19:27.781010323Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
         incidents that harm (or have the potential to) the confidentiality, integrity,
-        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2025-09-05T02:19:08.514411774Z","name":"Security
-        Incident","prefix":"IR"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"google_meet_configuration":{"data":null},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"microsoft_teams_configuration":{"data":null},"zoom_configuration":{"data":null}}}}'
+        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2026-01-07T15:19:27.781010405Z","name":"Security
+        Incident","prefix":"IR"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"google_chat_configuration":{"data":null},"google_meet_configuration":{"data":null},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"microsoft_teams_configuration":{"data":null},"zoom_configuration":{"data":null}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -24,8 +24,8 @@ interactions:
       message: Created
 - request:
     body: '{"data":{"attributes":{"category":"alert","content":"Test notification
-      template","name":"Test Template Test-Delete_incident_notification_template_returns_No_Content_response-1757038748","subject":"Test
-      Subject"},"relationships":{"incident_type":{"data":{"id":"d067e172-1ce4-4b59-ae6e-3f867e98c81e","type":"incident_types"}}},"type":"notification_templates"}}'
+      template","name":"Test Template Test-Delete_incident_notification_template_returns_No_Content_response-1767799167","subject":"Test
+      Subject"},"relationships":{"incident_type":{"data":{"id":"ad88f200-3458-404f-9abb-bffa66b60a1f","type":"incident_types"}}},"type":"notification_templates"}}'
     headers:
       accept:
       - application/json
@@ -35,10 +35,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates
   response:
     body:
-      string: '{"data":{"id":"15bb5f88-fdc8-45be-9b38-348cb42d421e","type":"notification_templates","attributes":{"category":"alert","content":"Test
-        notification template","created":"2025-09-05T02:19:08.730505Z","modified":"2025-09-05T02:19:08.730505Z","name":"Test
-        Template Test-Delete_incident_notification_template_returns_No_Content_response-1757038748","subject":"Test
-        Subject"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident_type":{"data":{"id":"d067e172-1ce4-4b59-ae6e-3f867e98c81e","type":"incident_types"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"da77f8c4-51d1-49c5-bef3-41bd242e50a9","type":"notification_templates","attributes":{"category":"alert","content":"Test
+        notification template","created":"2026-01-07T15:19:28.026094Z","modified":"2026-01-07T15:19:28.026094Z","name":"Test
+        Template Test-Delete_incident_notification_template_returns_No_Content_response-1767799167","subject":"Test
+        Subject"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident_type":{"data":{"id":"ad88f200-3458-404f-9abb-bffa66b60a1f","type":"incident_types"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -51,7 +51,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/15bb5f88-fdc8-45be-9b38-348cb42d421e
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/da77f8c4-51d1-49c5-bef3-41bd242e50a9
   response:
     body:
       string: ''
@@ -65,7 +65,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/15bb5f88-fdc8-45be-9b38-348cb42d421e
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-templates/da77f8c4-51d1-49c5-bef3-41bd242e50a9
   response:
     body:
       string: '{"errors":[{"status":"404","title":"Not Found"}]}'
@@ -81,7 +81,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/types/d067e172-1ce4-4b59-ae6e-3f867e98c81e
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/ad88f200-3458-404f-9abb-bffa66b60a1f
   response:
     body:
       string: ''
