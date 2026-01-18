@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Get_integration_account_returns_OK_response-1768522914","secrets":{"api_key_token":"test_secret_token_value"},"settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}},"type":"Account"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/web-integrations/twilio/accounts
+  response:
+    body:
+      string: '{"data":{"id":"945d4bbe-d24e-4530-a4db-3dc27329e5e8","type":"Account","attributes":{"name":"Test-Get_integration_account_returns_OK_response-1768522914","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/web-integrations/twilio/accounts/945d4bbe-d24e-4530-a4db-3dc27329e5e8
+  response:
+    body:
+      string: '{"data":{"id":"945d4bbe-d24e-4530-a4db-3dc27329e5e8","type":"Account","attributes":{"name":"Test-Get_integration_account_returns_OK_response-1768522914","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
