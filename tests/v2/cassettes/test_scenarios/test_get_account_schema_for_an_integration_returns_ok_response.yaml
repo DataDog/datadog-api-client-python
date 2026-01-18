@@ -1,0 +1,33 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/web-integrations/twilio/accounts/schema
+  response:
+    body:
+      string: '{"$schema":"http://json-schema.org/draft-07/schema#","additionalProperties":false,"properties":{"secrets":{"additionalProperties":false,"properties":{"api_key_token":{"additionalProperties":false,"description":"Twilio
+        API Key Secret (token) corresponding to the API Key SID. Keep this secure
+        as it provides authentication access.","minLength":1,"type":"string"}},"required":["api_key_token"],"type":"object"},"settings":{"additionalProperties":false,"properties":{"account_sid":{"additionalProperties":false,"description":"Twilio
+        Account SID that uniquely identifies your Twilio account. Found in Twilio
+        Console \u003e Account Info.","minLength":1,"type":"string"},"alerts":{"additionalProperties":false,"description":"Enable
+        collection of Twilio Alerts logs to monitor account alerts and notifications","type":"boolean"},"api_key":{"additionalProperties":false,"description":"Twilio
+        API Key SID for authentication. Create from Twilio Console \u003e Account
+        \u003e API Keys \u0026 Tokens.","minLength":1,"type":"string"},"call_summaries":{"additionalProperties":false,"description":"Enable
+        collection of Twilio Voice call summaries to track voice call performance
+        and metadata","type":"boolean"},"ccm_enabled":{"additionalProperties":false,"description":"Enable
+        Cloud Cost Management to monitor Twilio usage costs and identify optimization
+        opportunities","type":"boolean"},"censor_logs":{"additionalProperties":false,"description":"Enable
+        censoring of sensitive data in logs. When true, phone numbers in the ''to''
+        field and SMS message bodies are censored for privacy.","type":"boolean"},"events":{"additionalProperties":false,"description":"Enable
+        collection of Twilio Events logs to monitor account-level events and activities","type":"boolean"},"messages":{"additionalProperties":false,"description":"Enable
+        collection of Twilio Messages logs to track SMS and messaging activity","type":"boolean"}},"required":["api_key","account_sid","events","messages","alerts","call_summaries","ccm_enabled","censor_logs"],"type":"object"}},"required":["settings","secrets"],"type":"object"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

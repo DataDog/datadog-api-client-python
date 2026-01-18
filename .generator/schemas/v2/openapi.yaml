@@ -1265,6 +1265,67 @@ components:
             $ref: '#/components/schemas/JSONAPIErrorResponse'
       description: The server cannot process the request because it contains invalid
         data.
+    WebIntegrationAccountSchemaBadRequestResponse:
+      content:
+        application/json:
+          examples:
+            invalid_integration_name:
+              summary: Invalid integration name format
+              value:
+                errors:
+                - detail: Invalid integration name format
+                  status: '400'
+                  title: Bad Request
+          schema:
+            $ref: '#/components/schemas/APIErrorResponse'
+      description: '**Bad Request**: The integration name format is invalid.'
+    WebIntegrationAccountSchemaForbiddenResponse:
+      content:
+        application/json:
+          examples:
+            integration_not_allowed:
+              summary: Integration not allowed
+              value:
+                errors:
+                - detail: The API is currently disabled for this integration
+                  status: '403'
+                  title: Integration Not Allowed
+          schema:
+            $ref: '#/components/schemas/APIErrorResponse'
+      description: '**Forbidden**: The integration is not enabled for API access.'
+    WebIntegrationAccountSchemaNotFoundResponse:
+      content:
+        application/json:
+          examples:
+            schema_not_found:
+              summary: Schema not found for integration
+              value:
+                errors:
+                - detail: 'Schema not found for integration: twilio'
+                  status: '404'
+                  title: Not Found
+          schema:
+            $ref: '#/components/schemas/APIErrorResponse'
+      description: '**Not Found**: The integration does not exist or has no schema
+        available.'
+    WebIntegrationAccountSchemaTooManyRequestsResponse:
+      content:
+        application/json:
+          examples:
+            rate_limit_exceeded:
+              summary: Rate limit exceeded
+              value:
+                errors:
+                - detail: Rate limit exceeded. Please retry after 60 seconds.
+                  status: '429'
+                  title: Too Many Requests
+          schema:
+            $ref: '#/components/schemas/APIErrorResponse'
+      description: '**Too Many Requests**: Rate limit exceeded.
+
+        This endpoint has a rate limit of 100 requests per organization every 60 seconds.
+
+        Please wait and retry after the rate limit window expires.'
   schemas:
     APIErrorResponse:
       description: API error response.
@@ -60359,6 +60420,316 @@ components:
       - X_CONTENT_TYPE_HEADER_MISSING
       - X_PATH_INJECTION
       - XSS
+    WebIntegrationAccountAttributes:
+      description: Attributes for a web integration account.
+      properties:
+        name:
+          description: The name of the account.
+          example: My Production Account
+          type: string
+        settings:
+          additionalProperties: {}
+          description: 'Integration-specific settings for the account. The structure
+            and required fields vary by integration type.
+
+            Use the schema endpoint to retrieve the specific requirements for each
+            integration.'
+          example:
+            account_sid: ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            alerts: false
+            api_key: SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            call_summaries: true
+            ccm_enabled: true
+            censor_logs: true
+            events: true
+            messages: true
+          type: object
+      required:
+      - name
+      - settings
+      type: object
+    WebIntegrationAccountCreateRequest:
+      description: Payload for creating a web integration account.
+      properties:
+        data:
+          $ref: '#/components/schemas/WebIntegrationAccountCreateRequestData'
+      required:
+      - data
+      type: object
+    WebIntegrationAccountCreateRequestAttributes:
+      description: Attributes for creating a web integration account.
+      properties:
+        name:
+          description: The name of the account.
+          example: My Production Account
+          type: string
+        secrets:
+          additionalProperties: {}
+          description: 'Sensitive credentials for the account. The structure and required
+            fields vary by integration type.
+
+            These values are write-only and never returned in responses. Use the schema
+            endpoint to determine
+
+            which secret fields are required for your specific integration.'
+          example:
+            api_key_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+          type: object
+        settings:
+          additionalProperties: {}
+          description: 'Integration-specific settings for the account. The structure
+            and required fields vary by integration type.
+
+            Use the schema endpoint (GET /api/v2/web-integrations/{integration_name}/accounts/schema)
+            to retrieve
+
+            the specific requirements for your integration before creating an account.'
+          example:
+            account_sid: ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            alerts: true
+            api_key: SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            call_summaries: true
+            ccm_enabled: true
+            censor_logs: true
+            events: true
+            messages: true
+          type: object
+      required:
+      - name
+      - settings
+      - secrets
+      type: object
+    WebIntegrationAccountCreateRequestData:
+      description: Data object for creating a web integration account.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/WebIntegrationAccountCreateRequestAttributes'
+        type:
+          $ref: '#/components/schemas/WebIntegrationAccountType'
+      required:
+      - type
+      - attributes
+      type: object
+    WebIntegrationAccountResponse:
+      description: Response containing a single web integration account.
+      properties:
+        data:
+          $ref: '#/components/schemas/WebIntegrationAccountResponseData'
+        integration_name:
+          description: The name of the integration.
+          example: twilio
+          type: string
+      type: object
+    WebIntegrationAccountResponseData:
+      description: Data object for a web integration account response.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/WebIntegrationAccountAttributes'
+        id:
+          description: The unique identifier for the account.
+          example: abc123def456
+          type: string
+        type:
+          $ref: '#/components/schemas/WebIntegrationAccountType'
+      required:
+      - id
+      - type
+      - attributes
+      type: object
+    WebIntegrationAccountSchemaResponse:
+      additionalProperties: {}
+      description: 'Response containing the JSON schema for an integration''s account
+        configuration.
+
+        This schema defines the required and optional fields for both settings and
+        secrets,
+
+        including field types, validation rules, and descriptions.
+
+
+        The response is a standard [JSON Schema (draft-07)](https://json-schema.org/draft-07/schema#)
+        document describing the account
+
+        configuration structure. Since this is a dynamic JSON Schema, the exact properties
+
+        will vary by integration.'
+      example:
+        $schema: http://json-schema.org/draft-07/schema#
+        properties:
+          secrets:
+            $ref: '#/components/schemas/WebIntegrationAccountSchemaResponseExampleSecrets'
+          settings:
+            $ref: '#/components/schemas/WebIntegrationAccountSchemaResponseExampleSettings'
+        required:
+        - settings
+        - secrets
+        type: object
+      properties:
+        $schema:
+          description: The JSON Schema version URI.
+          example: http://json-schema.org/draft-07/schema#
+          type: string
+        properties:
+          additionalProperties: {}
+          description: 'The schema properties definition containing `settings` and
+            `secrets` objects.
+
+            Each property includes type information, validation rules, and descriptions.'
+          type: object
+        required:
+          description: List of required top-level properties.
+          example:
+          - settings
+          - secrets
+          items:
+            type: string
+          type: array
+        type:
+          description: The root type of the schema (always "object").
+          example: object
+          type: string
+      type: object
+    WebIntegrationAccountSchemaResponseExampleSecrets:
+      additionalProperties: false
+      properties:
+        api_key_token:
+          description: Twilio API Key Secret (token) corresponding to the API Key
+            SID. Keep this secure as it provides authentication access.
+          example: L
+          minLength: 1
+          type: string
+      required:
+      - api_key_token
+      type: object
+    WebIntegrationAccountSchemaResponseExampleSettings:
+      additionalProperties: false
+      properties:
+        account_sid:
+          description: Twilio Account SID that uniquely identifies your Twilio account.
+            Found in Twilio Console > Account Info.
+          example: L
+          minLength: 1
+          type: string
+        alerts:
+          description: Enable collection of Twilio Alerts logs to monitor account
+            alerts and notifications.
+          example: false
+          type: boolean
+        api_key:
+          description: Twilio API Key SID for authentication. Create from Twilio Console
+            > Account > API Keys & Tokens.
+          example: L
+          minLength: 1
+          type: string
+        call_summaries:
+          description: Enable collection of Twilio Voice call summaries to track voice
+            call performance and metadata.
+          example: false
+          type: boolean
+        ccm_enabled:
+          description: Enable Cloud Cost Management to monitor Twilio usage costs
+            and identify optimization opportunities.
+          example: false
+          type: boolean
+        censor_logs:
+          description: Enable censoring of sensitive data in logs. When true, phone
+            numbers and SMS message bodies are censored for privacy.
+          example: false
+          type: boolean
+        events:
+          description: Enable collection of Twilio Events logs to monitor account-level
+            events and activities.
+          example: false
+          type: boolean
+        messages:
+          description: Enable collection of Twilio Messages logs to track SMS and
+            messaging activity.
+          example: false
+          type: boolean
+      required:
+      - api_key
+      - account_sid
+      - events
+      - messages
+      - alerts
+      - call_summaries
+      - ccm_enabled
+      - censor_logs
+      type: object
+    WebIntegrationAccountType:
+      default: Account
+      description: The JSON:API type for web integration accounts.
+      enum:
+      - Account
+      example: Account
+      type: string
+      x-enum-varnames:
+      - ACCOUNT
+    WebIntegrationAccountUpdateRequest:
+      description: Payload for updating a web integration account.
+      properties:
+        data:
+          $ref: '#/components/schemas/WebIntegrationAccountUpdateRequestData'
+      required:
+      - data
+      type: object
+    WebIntegrationAccountUpdateRequestAttributes:
+      description: 'Attributes for updating a web integration account. All fields
+        are optional -
+
+        only provide the fields you want to update. Partial updates are supported,
+
+        allowing you to modify specific settings or secrets without providing all
+        fields.'
+      properties:
+        name:
+          description: The name of the account.
+          example: My Production Account (Updated)
+          type: string
+        secrets:
+          additionalProperties: {}
+          description: 'Sensitive credentials to update. Only the secrets provided
+            will be updated.
+
+            These values are write-only and never returned in responses.'
+          example:
+            api_key_token: new_secret_token_value
+          type: object
+        settings:
+          additionalProperties: {}
+          description: 'Integration-specific settings to update. Only the fields provided
+            will be updated.
+
+            The structure varies by integration type. Refer to the integration''s
+            schema for available fields.'
+          example:
+            ccm_enabled: true
+            events: true
+            messages: false
+          type: object
+      type: object
+    WebIntegrationAccountUpdateRequestData:
+      description: Data object for updating a web integration account.
+      properties:
+        attributes:
+          $ref: '#/components/schemas/WebIntegrationAccountUpdateRequestAttributes'
+        type:
+          $ref: '#/components/schemas/WebIntegrationAccountType'
+      required:
+      - type
+      type: object
+    WebIntegrationAccountsResponse:
+      description: Response containing a list of web integration accounts.
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/WebIntegrationAccountResponseData'
+          type: array
+        integration_name:
+          description: The name of the integration.
+          example: twilio
+          type: string
+      type: object
     Weekday:
       description: A day of the week.
       enum:
@@ -91826,6 +92197,280 @@ paths:
         operator: OR
         permissions:
         - teams_read
+  /api/v2/web-integrations/{integration_name}/accounts:
+    get:
+      description: Retrieve all configured accounts for a specific integration within
+        your organization.
+      operationId: ListWebIntegrationAccounts
+      parameters:
+      - description: The name of the integration.
+        example: twilio
+        in: path
+        name: integration_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebIntegrationAccountsResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: List integration accounts
+      tags:
+      - Web Integrations
+      x-permission:
+        operator: OR
+        permissions:
+        - integrations_read
+    post:
+      description: 'Create a new account for a specific integration. The account configuration
+        must conform
+
+        to the schema defined for the integration, which can be retrieved using the
+        schema endpoint.
+
+
+        Note: Returns 403 Forbidden if the integration is not enabled for API access
+        or if the user
+
+        lacks the required permissions to manage integrations.'
+      operationId: CreateWebIntegrationAccount
+      parameters:
+      - description: The name of the integration.
+        example: twilio
+        in: path
+        name: integration_name
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebIntegrationAccountCreateRequest'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebIntegrationAccountResponse'
+          description: Created
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntityResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Create integration account
+      tags:
+      - Web Integrations
+      x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - manage_integrations
+  /api/v2/web-integrations/{integration_name}/accounts/schema:
+    get:
+      description: 'Get the JSON schema that defines the structure and validation
+        rules for account configuration
+
+        of a specific integration. This schema describes the required and optional
+        fields for both
+
+        settings and secrets when creating or updating an account.'
+      operationId: GetWebIntegrationAccountSchema
+      parameters:
+      - description: The name of the integration.
+        example: twilio
+        in: path
+        name: integration_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebIntegrationAccountSchemaResponse'
+          description: '**OK**: The JSON schema for the integration''s account configuration.'
+        '400':
+          $ref: '#/components/responses/WebIntegrationAccountSchemaBadRequestResponse'
+        '403':
+          $ref: '#/components/responses/WebIntegrationAccountSchemaForbiddenResponse'
+        '404':
+          $ref: '#/components/responses/WebIntegrationAccountSchemaNotFoundResponse'
+        '429':
+          $ref: '#/components/responses/WebIntegrationAccountSchemaTooManyRequestsResponse'
+      summary: Get account schema for an integration
+      tags:
+      - Web Integrations
+      x-permission:
+        operator: OR
+        permissions:
+        - integrations_read
+  /api/v2/web-integrations/{integration_name}/accounts/{account_id}:
+    delete:
+      description: 'Delete a specific account by its ID for a given integration. This
+        will remove the
+
+        account configuration and stop any data collection associated with it.
+
+
+        Note: Returns 403 Forbidden if the integration is not enabled for API access
+        or if the user
+
+        lacks the required permissions to manage this specific account.'
+      operationId: DeleteWebIntegrationAccount
+      parameters:
+      - description: The name of the integration.
+        example: twilio
+        in: path
+        name: integration_name
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier of the account.
+        example: abc123def456
+        in: path
+        name: account_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Delete integration account
+      tags:
+      - Web Integrations
+      x-permission:
+        operator: OR
+        permissions:
+        - manage_integrations
+    get:
+      description: 'Retrieve a specific account by its ID for a given integration.
+        The response includes
+
+        the account name and settings, but excludes sensitive secret values.'
+      operationId: GetWebIntegrationAccount
+      parameters:
+      - description: The name of the integration.
+        example: twilio
+        in: path
+        name: integration_name
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier of the account.
+        example: abc123def456
+        in: path
+        name: account_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebIntegrationAccountResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Get integration account
+      tags:
+      - Web Integrations
+      x-permission:
+        operator: OR
+        permissions:
+        - integrations_read
+    patch:
+      description: 'Update an existing account for a specific integration. You can
+        update the name, settings,
+
+        and/or secrets. Only the fields provided in the request will be updated.
+
+
+        Note: Returns 403 Forbidden if the integration is not enabled for API access
+        or if the user
+
+        lacks the required permissions to manage this specific account.'
+      operationId: UpdateWebIntegrationAccount
+      parameters:
+      - description: The name of the integration.
+        example: twilio
+        in: path
+        name: integration_name
+        required: true
+        schema:
+          type: string
+      - description: The unique identifier of the account.
+        example: abc123def456
+        in: path
+        name: account_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebIntegrationAccountUpdateRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebIntegrationAccountResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/ForbiddenResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundResponse'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntityResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Update integration account
+      tags:
+      - Web Integrations
+      x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - manage_integrations
   /api/v2/workflows:
     post:
       description: Create a new workflow, returning the workflow ID. This API requires
@@ -92785,6 +93430,14 @@ tags:
   externalDocs:
     url: https://docs.datadoghq.com/account_management/users
   name: Users
+- description: "Configure and manage third-party web integrations with Datadog. This
+    API provides a unified\ninterface for managing integration accounts across various
+    external services.\n\nEach integration has its own unique schema that defines
+    the required settings and secrets.\nBefore creating or updating an account, use
+    the schema endpoint to retrieve the specific\nrequirements, field types, validation
+    rules, and available configuration options for your\nintegration.\n\nSupported
+    Integrations:\n  - twilio\n  - snowflake-web\n  - databricks"
+  name: Web Integrations
 - description: Datadog Workflow Automation allows you to automate your end-to-end
     processes by connecting Datadog with the rest of your tech stack. Build workflows
     to auto-remediate your alerts, streamline your incident and security processes,
