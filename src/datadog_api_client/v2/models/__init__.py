@@ -2391,10 +2391,35 @@ from datadog_api_client.v2.model.item_api_payload_meta_schema_field import ItemA
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
+from datadog_api_client.v2.model.jira_account_attributes import JiraAccountAttributes
+from datadog_api_client.v2.model.jira_account_data import JiraAccountData
+from datadog_api_client.v2.model.jira_account_relationship import JiraAccountRelationship
+from datadog_api_client.v2.model.jira_account_type import JiraAccountType
+from datadog_api_client.v2.model.jira_accounts_meta import JiraAccountsMeta
+from datadog_api_client.v2.model.jira_accounts_response import JiraAccountsResponse
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
+from datadog_api_client.v2.model.jira_issue_template_create_request import JiraIssueTemplateCreateRequest
+from datadog_api_client.v2.model.jira_issue_template_create_request_attributes import (
+    JiraIssueTemplateCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.jira_issue_template_create_request_attributes_jira_account import (
+    JiraIssueTemplateCreateRequestAttributesJiraAccount,
+)
+from datadog_api_client.v2.model.jira_issue_template_create_request_data import JiraIssueTemplateCreateRequestData
+from datadog_api_client.v2.model.jira_issue_template_data import JiraIssueTemplateData
+from datadog_api_client.v2.model.jira_issue_template_data_attributes import JiraIssueTemplateDataAttributes
+from datadog_api_client.v2.model.jira_issue_template_data_relationships import JiraIssueTemplateDataRelationships
+from datadog_api_client.v2.model.jira_issue_template_response import JiraIssueTemplateResponse
+from datadog_api_client.v2.model.jira_issue_template_type import JiraIssueTemplateType
+from datadog_api_client.v2.model.jira_issue_template_update_request import JiraIssueTemplateUpdateRequest
+from datadog_api_client.v2.model.jira_issue_template_update_request_attributes import (
+    JiraIssueTemplateUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.jira_issue_template_update_request_data import JiraIssueTemplateUpdateRequestData
+from datadog_api_client.v2.model.jira_issue_templates_response import JiraIssueTemplatesResponse
 from datadog_api_client.v2.model.jira_issues_data_type import JiraIssuesDataType
 from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.job_create_response_data import JobCreateResponseData
@@ -7179,10 +7204,29 @@ __all__ = [
     "JSONAPIErrorItem",
     "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
+    "JiraAccountAttributes",
+    "JiraAccountData",
+    "JiraAccountRelationship",
+    "JiraAccountType",
+    "JiraAccountsMeta",
+    "JiraAccountsResponse",
     "JiraIntegrationMetadata",
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
     "JiraIssueResult",
+    "JiraIssueTemplateCreateRequest",
+    "JiraIssueTemplateCreateRequestAttributes",
+    "JiraIssueTemplateCreateRequestAttributesJiraAccount",
+    "JiraIssueTemplateCreateRequestData",
+    "JiraIssueTemplateData",
+    "JiraIssueTemplateDataAttributes",
+    "JiraIssueTemplateDataRelationships",
+    "JiraIssueTemplateResponse",
+    "JiraIssueTemplateType",
+    "JiraIssueTemplateUpdateRequest",
+    "JiraIssueTemplateUpdateRequestAttributes",
+    "JiraIssueTemplateUpdateRequestData",
+    "JiraIssueTemplatesResponse",
     "JiraIssuesDataType",
     "JobCreateResponse",
     "JobCreateResponseData",

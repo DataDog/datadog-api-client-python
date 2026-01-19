@@ -298,6 +298,13 @@ datadog\_api\_client.v2.api.ip\_allowlist\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.jira\_integration\_api module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.jira_integration_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.key\_management\_api module
 -------------------------------------------------------
 
