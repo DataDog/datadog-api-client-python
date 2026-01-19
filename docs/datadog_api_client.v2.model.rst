@@ -18183,6 +18183,55 @@ datadog\_api\_client.v2.model.permissions\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.postmortem\_attachment\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_attachment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_attachment\_request\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_attachment_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_attachment\_request\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_attachment_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_cell module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_cell
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_cell\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_cell_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_cell\_definition module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_cell_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_cell\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_cell_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.powerpack module
 ----------------------------------------------
 

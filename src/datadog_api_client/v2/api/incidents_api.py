@@ -46,6 +46,7 @@ from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRe
 from datadog_api_client.v2.model.attachment_array import AttachmentArray
 from datadog_api_client.v2.model.attachment import Attachment
 from datadog_api_client.v2.model.create_attachment_request import CreateAttachmentRequest
+from datadog_api_client.v2.model.postmortem_attachment_request import PostmortemAttachmentRequest
 from datadog_api_client.v2.model.patch_attachment_request import PatchAttachmentRequest
 from datadog_api_client.v2.model.incident_impacts_response import IncidentImpactsResponse
 from datadog_api_client.v2.model.incident_impact_related_object import IncidentImpactRelatedObject
@@ -219,6 +220,32 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateIncidentNotificationTemplateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_postmortem_attachment_endpoint = _Endpoint(
+            settings={
+                "response_type": (Attachment,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/attachments/postmortems",
+                "operation_id": "create_incident_postmortem_attachment",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PostmortemAttachmentRequest,),
                     "location": "body",
                 },
             },
@@ -1281,6 +1308,27 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._create_incident_notification_template_endpoint.call_with_http_info(**kwargs)
+
+    def create_incident_postmortem_attachment(
+        self,
+        incident_id: str,
+        body: PostmortemAttachmentRequest,
+    ) -> Attachment:
+        """Create postmortem attachment.
+
+        Create a postmortem attachment for an incident.
+
+        :param incident_id: The ID of the incident
+        :type incident_id: str
+        :type body: PostmortemAttachmentRequest
+        :rtype: Attachment
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_incident_postmortem_attachment_endpoint.call_with_http_info(**kwargs)
 
     def create_incident_todo(
         self,

@@ -3733,6 +3733,13 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.postmortem_attachment_request import PostmortemAttachmentRequest
+from datadog_api_client.v2.model.postmortem_attachment_request_attributes import PostmortemAttachmentRequestAttributes
+from datadog_api_client.v2.model.postmortem_attachment_request_data import PostmortemAttachmentRequestData
+from datadog_api_client.v2.model.postmortem_cell import PostmortemCell
+from datadog_api_client.v2.model.postmortem_cell_attributes import PostmortemCellAttributes
+from datadog_api_client.v2.model.postmortem_cell_definition import PostmortemCellDefinition
+from datadog_api_client.v2.model.postmortem_cell_type import PostmortemCellType
 from datadog_api_client.v2.model.powerpack import Powerpack
 from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
 from datadog_api_client.v2.model.powerpack_data import PowerpackData
@@ -7960,6 +7967,13 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "PostmortemAttachmentRequest",
+    "PostmortemAttachmentRequestAttributes",
+    "PostmortemAttachmentRequestData",
+    "PostmortemCell",
+    "PostmortemCellAttributes",
+    "PostmortemCellDefinition",
+    "PostmortemCellType",
     "Powerpack",
     "PowerpackAttributes",
     "PowerpackData",
