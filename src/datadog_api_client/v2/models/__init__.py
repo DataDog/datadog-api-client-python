@@ -4380,6 +4380,9 @@ from datadog_api_client.v2.model.security_monitoring_critical_assets_response im
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response import (
+    SecurityMonitoringPaginatedSuppressionsResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
 from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
     SecurityMonitoringRuleAnomalyDetectionOptions,
@@ -4563,6 +4566,7 @@ from datadog_api_client.v2.model.security_monitoring_suppression_create_request 
     SecurityMonitoringSuppressionCreateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_suppression_response import SecurityMonitoringSuppressionResponse
+from datadog_api_client.v2.model.security_monitoring_suppression_sort import SecurityMonitoringSuppressionSort
 from datadog_api_client.v2.model.security_monitoring_suppression_type import SecurityMonitoringSuppressionType
 from datadog_api_client.v2.model.security_monitoring_suppression_update_attributes import (
     SecurityMonitoringSuppressionUpdateAttributes,
@@ -4572,6 +4576,10 @@ from datadog_api_client.v2.model.security_monitoring_suppression_update_data imp
 )
 from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
     SecurityMonitoringSuppressionUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_suppressions_meta import SecurityMonitoringSuppressionsMeta
+from datadog_api_client.v2.model.security_monitoring_suppressions_page_meta import (
+    SecurityMonitoringSuppressionsPageMeta,
 )
 from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
 from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
@@ -8482,6 +8490,7 @@ __all__ = [
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",
+    "SecurityMonitoringPaginatedSuppressionsResponse",
     "SecurityMonitoringReferenceTable",
     "SecurityMonitoringRuleAnomalyDetectionOptions",
     "SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration",
@@ -8573,10 +8582,13 @@ __all__ = [
     "SecurityMonitoringSuppressionCreateData",
     "SecurityMonitoringSuppressionCreateRequest",
     "SecurityMonitoringSuppressionResponse",
+    "SecurityMonitoringSuppressionSort",
     "SecurityMonitoringSuppressionType",
     "SecurityMonitoringSuppressionUpdateAttributes",
     "SecurityMonitoringSuppressionUpdateData",
     "SecurityMonitoringSuppressionUpdateRequest",
+    "SecurityMonitoringSuppressionsMeta",
+    "SecurityMonitoringSuppressionsPageMeta",
     "SecurityMonitoringSuppressionsResponse",
     "SecurityMonitoringThirdPartyRootQuery",
     "SecurityMonitoringThirdPartyRuleCase",
