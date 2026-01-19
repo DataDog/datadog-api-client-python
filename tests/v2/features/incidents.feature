@@ -253,6 +253,24 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create postmortem attachment returns "Bad Request" response
+    Given operation "CreateIncidentPostmortemAttachment" enabled
+    And new "CreateIncidentPostmortemAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cells": [{"attributes": {"definition": {"content": "## Incident Summary\nThis incident was caused by..."}}, "id": "cell-1", "type": "markdown"}], "content": "# Incident Report - IR-123\n[...]", "postmortem_template_id": "93645509-874e-45c4-adfa-623bfeaead89-123", "title": "Postmortem-IR-123"}, "type": "incident_attachments"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create postmortem attachment returns "Created" response
+    Given operation "CreateIncidentPostmortemAttachment" enabled
+    And new "CreateIncidentPostmortemAttachment" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cells": [{"attributes": {"definition": {"content": "## Incident Summary\nThis incident was caused by..."}}, "id": "cell-1", "type": "markdown"}], "content": "# Incident Report - IR-123\n[...]", "postmortem_template_id": "93645509-874e-45c4-adfa-623bfeaead89-123", "title": "Postmortem-IR-123"}, "type": "incident_attachments"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @generated @skip @team:Datadog/incident-app
   Scenario: Delete a notification template returns "Bad Request" response
     Given operation "DeleteIncidentNotificationTemplate" enabled
