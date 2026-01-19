@@ -1035,23 +1035,11 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression {{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"{{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"suppression\" in the system",
     "key": "suppression",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringSuppression"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression2 {{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"suppression2\" in the system",
-    "key": "suppression2",
     "tag": "Security Monitoring",
     "operationId": "CreateSecurityMonitoringSuppression"
   },
@@ -1332,6 +1320,22 @@
     "key": "user",
     "tag": "Users",
     "operationId": "CreateUser"
+  },
+  {
+    "parameters": [
+      {
+        "name": "integration_name",
+        "value": "\"twilio\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"Account\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"settings\": {\n        \"api_key\": \"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"account_sid\": \"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"events\": true,\n        \"messages\": true,\n        \"alerts\": true,\n        \"call_summaries\": true,\n        \"ccm_enabled\": true,\n        \"censor_logs\": true\n      },\n      \"secrets\": {\n        \"api_key_token\": \"test_secret_token_value\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"web_integration_account\" in the system",
+    "key": "web_integration_account",
+    "tag": "Web Integrations",
+    "operationId": "CreateWebIntegrationAccount"
   },
   {
     "parameters": [

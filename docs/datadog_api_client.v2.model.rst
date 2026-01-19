@@ -21739,13 +21739,6 @@ datadog\_api\_client.v2.model.security\_monitoring\_list\_rules\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.security\_monitoring\_paginated\_suppressions\_response module
---------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.security\_monitoring\_reference\_table module
 ---------------------------------------------------------------------------
 
@@ -22383,13 +22376,6 @@ datadog\_api\_client.v2.model.security\_monitoring\_suppression\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.security\_monitoring\_suppression\_sort module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_sort
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.security\_monitoring\_suppression\_type module
 ----------------------------------------------------------------------------
 
@@ -22415,20 +22401,6 @@ datadog\_api\_client.v2.model.security\_monitoring\_suppression\_update\_request
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_suppression_update_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.security\_monitoring\_suppressions\_meta module
------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_suppressions_meta
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.security\_monitoring\_suppressions\_page\_meta module
------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.security_monitoring_suppressions_page_meta
    :members:
    :show-inheritance:
 
@@ -26678,6 +26650,118 @@ datadog\_api\_client.v2.model.vulnerability\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.vulnerability_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_create\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_create\_request\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_create\_request\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_response\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_schema\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_schema_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_schema\_response\_properties module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_schema_response_properties
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_schema\_response\_secrets\_object module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_schema_response_secrets_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_schema\_response\_settings\_field module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_schema_response_settings_field
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_schema\_response\_settings\_object module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_schema_response_settings_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_update\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_update\_request\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_account\_update\_request\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_account_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.web\_integration\_accounts\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.web_integration_accounts_response
    :members:
    :show-inheritance:
 

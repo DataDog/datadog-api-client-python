@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-List_integration_accounts_returns_OK_response-1768522915","secrets":{"api_key_token":"test_secret_token_value"},"settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}},"type":"Account"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/web-integrations/twilio/accounts
+  response:
+    body:
+      string: '{"data":{"id":"a491e2ce-8537-4015-8552-d76b23f9c2a2","type":"Account","attributes":{"name":"Test-List_integration_accounts_returns_OK_response-1768522915","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/web-integrations/twilio/accounts
+  response:
+    body:
+      string: '{"data":[{"id":"cea19da0-127c-46bd-af1f-dab6524dc139","type":"Account","attributes":{"name":"Test-Create_integration_account_returns_Created_response-1768495642","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}},{"id":"07527a04-9eab-4528-8d55-072bb4cbfdfd","type":"Account","attributes":{"name":"Test-Get_integration_account_returns_OK_response-1768495644","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}},{"id":"efa743ed-c968-49df-97ce-f078b8f6a871","type":"Account","attributes":{"name":"Test-List_integration_accounts_returns_OK_response-1768495645","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}},{"id":"4fe972b3-5a53-414f-9304-0a683f403f46","type":"Account","attributes":{"name":"Test-Update_integration_account_returns_OK_response-1768495646-updated","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":false,"censor_logs":true,"events":false,"messages":false}}},{"id":"591eebe4-998f-49f0-b5db-a6b76e3ff392","type":"Account","attributes":{"name":"Test-Create_integration_account_returns_Created_response-1768522912","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}},{"id":"945d4bbe-d24e-4530-a4db-3dc27329e5e8","type":"Account","attributes":{"name":"Test-Get_integration_account_returns_OK_response-1768522914","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}},{"id":"a491e2ce-8537-4015-8552-d76b23f9c2a2","type":"Account","attributes":{"name":"Test-List_integration_accounts_returns_OK_response-1768522915","settings":{"account_sid":"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","alerts":true,"api_key":"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","call_summaries":true,"ccm_enabled":true,"censor_logs":true,"events":true,"messages":true}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
