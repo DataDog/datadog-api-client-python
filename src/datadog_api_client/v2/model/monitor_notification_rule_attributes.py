@@ -78,7 +78,7 @@ class MonitorNotificationRuleAttributes(ModelNormal):
         :param conditional_recipients: Use conditional recipients to define different recipients for different situations. Cannot be used with ``recipients``.
         :type conditional_recipients: MonitorNotificationRuleConditionalRecipients, optional
 
-        :param filter: Filter used to associate the notification rule with monitors.
+        :param filter: Specifies the matching criteria for monitor notifications.
         :type filter: MonitorNotificationRuleFilter, optional
 
         :param name: The name of the monitor notification rule.
