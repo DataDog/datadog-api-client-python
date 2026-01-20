@@ -1035,23 +1035,11 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression {{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"{{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"suppression\" in the system",
     "key": "suppression",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringSuppression"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression2 {{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"suppression2\" in the system",
-    "key": "suppression2",
     "tag": "Security Monitoring",
     "operationId": "CreateSecurityMonitoringSuppression"
   },

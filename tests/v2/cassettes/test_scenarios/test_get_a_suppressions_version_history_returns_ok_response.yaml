@@ -1,7 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","enabled":true,"name":"suppression
-      Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
+    body: '{"data":{"attributes":{"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","enabled":true,"name":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -11,10 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"sro-unv-k08","type":"suppressions","attributes":{"creation_date":1768411745430,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"data_exclusion_query":"","description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","editable":true,"enabled":true,"name":"suppression
-        Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1768411745430,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"version":1}}}'
+      string: '{"data":{"id":"456-piv-74h","type":"suppressions","attributes":{"creation_date":1764163986851,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"data_exclusion_query":"","description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","editable":true,"enabled":true,"name":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1764163986851,"updater":{"handle":"frog@datadoghq.com","name":"frog"},"version":1}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -27,13 +23,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/sro-unv-k08/version_history
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/456-piv-74h/version_history
   response:
     body:
-      string: '{"data":{"id":"sro-unv-k08","type":"suppression_version_history","attributes":{"count":1,"data":{"1":{"suppression":{"id":"sro-unv-k08","name":"suppression
-        Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","enabled":true,"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","data_exclusion_query":"","version":1,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"creation_date":1768411745430,"update_date":1768411745430,"editable":true,"tags":["source:cloudtrail","technique:T1110-brute-force"]},"changes":[]}}}}}'
+      string: '{"data":{"id":"456-piv-74h","type":"suppression_version_history","attributes":{"count":1,"data":{"1":{"suppression":{"id":"456-piv-74h","name":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","enabled":true,"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1764163986","rule_query":"source:cloudtrail","suppression_query":"env:test","data_exclusion_query":"","version":1,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"updater":{"handle":"frog@datadoghq.com","name":"frog"},"creation_date":1764163986851,"update_date":1764163986851,"editable":true,"tags":["source:cloudtrail","technique:T1110-brute-force"]},"changes":[]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -46,7 +39,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/sro-unv-k08
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/456-piv-74h
   response:
     body:
       string: ''
