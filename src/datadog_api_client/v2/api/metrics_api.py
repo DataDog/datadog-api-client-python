@@ -399,6 +399,40 @@ class MetricsApi:
                     "attribute": "metric_name",
                     "location": "path",
                 },
+                "window_seconds": {
+                    "openapi_types": (int,),
+                    "attribute": "window[seconds]",
+                    "location": "query",
+                },
+                "filter_tags": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[tags]",
+                    "location": "query",
+                },
+                "filter_match": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[match]",
+                    "location": "query",
+                },
+                "filter_include_tag_values": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_tag_values]",
+                    "location": "query",
+                },
+                "filter_allow_partial": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[allow_partial]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -903,17 +937,60 @@ class MetricsApi:
     def list_tags_by_metric_name(
         self,
         metric_name: str,
+        *,
+        window_seconds: Union[int, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        filter_match: Union[str, UnsetType] = unset,
+        filter_include_tag_values: Union[bool, UnsetType] = unset,
+        filter_allow_partial: Union[bool, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
     ) -> MetricAllTagsResponse:
         """List tags by metric name.
 
-        View indexed tag key-value pairs for a given metric name over the previous hour.
+        View indexed and ingested tags for a given metric name.
+        Results are filtered by the ``window[seconds]`` parameter, which defaults to 14400 (4 hours).
 
         :param metric_name: The name of the metric.
         :type metric_name: str
+        :param window_seconds: The number of seconds of look back (from now) to query for tag data.
+            Default value is 14400 (4 hours), minimum value is 14400 (4 hours).
+        :type window_seconds: int, optional
+        :param filter_tags: Filter results to tags from data points that have the specified tags.
+            For example, ``filter[tags]=env:staging,host:123`` returns tags only from data points with both ``env:staging`` and ``host:123``.
+        :type filter_tags: str, optional
+        :param filter_match: Filter returned tags to those matching a substring.
+            For example, ``filter[match]=env`` returns tags like ``env:prod`` , ``environment:staging`` , etc.
+        :type filter_match: str, optional
+        :param filter_include_tag_values: Whether to include tag values in the response.
+            Defaults to true.
+        :type filter_include_tag_values: bool, optional
+        :param filter_allow_partial: Whether to allow partial results.
+            Defaults to false.
+        :type filter_allow_partial: bool, optional
+        :param page_limit: Maximum number of results to return.
+        :type page_limit: int, optional
         :rtype: MetricAllTagsResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
+
+        if window_seconds is not unset:
+            kwargs["window_seconds"] = window_seconds
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if filter_match is not unset:
+            kwargs["filter_match"] = filter_match
+
+        if filter_include_tag_values is not unset:
+            kwargs["filter_include_tag_values"] = filter_include_tag_values
+
+        if filter_allow_partial is not unset:
+            kwargs["filter_allow_partial"] = filter_allow_partial
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
 
         return self._list_tags_by_metric_name_endpoint.call_with_http_info(**kwargs)
 
