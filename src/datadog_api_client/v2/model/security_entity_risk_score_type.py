@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class SyntheticsSuiteTypes(ModelSimple):
+class SecurityEntityRiskScoreType(ModelSimple):
     """
-    Type for the Synthetics suites responses, `suites`.
+    Resource type
 
-    :param value: If omitted defaults to "suites". Must be one of ["suites"].
+    :param value: If omitted defaults to "security_entity_risk_score". Must be one of ["security_entity_risk_score"].
     :type value: str
     """
 
     allowed_values = {
-        "suites",
+        "security_entity_risk_score",
     }
-    SUITES: ClassVar["SyntheticsSuiteTypes"]
+    SECURITY_ENTITY_RISK_SCORE: ClassVar["SecurityEntityRiskScoreType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class SyntheticsSuiteTypes(ModelSimple):
         }
 
 
-SyntheticsSuiteTypes.SUITES = SyntheticsSuiteTypes("suites")
+SecurityEntityRiskScoreType.SECURITY_ENTITY_RISK_SCORE = SecurityEntityRiskScoreType("security_entity_risk_score")

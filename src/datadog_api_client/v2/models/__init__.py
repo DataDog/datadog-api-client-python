@@ -1401,13 +1401,6 @@ from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteApp
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
 from datadog_api_client.v2.model.delete_apps_response_data_items import DeleteAppsResponseDataItems
 from datadog_api_client.v2.model.delete_custom_framework_response import DeleteCustomFrameworkResponse
-from datadog_api_client.v2.model.deleted_suite_response_data import DeletedSuiteResponseData
-from datadog_api_client.v2.model.deleted_suite_response_data_attributes import DeletedSuiteResponseDataAttributes
-from datadog_api_client.v2.model.deleted_suites_request_delete import DeletedSuitesRequestDelete
-from datadog_api_client.v2.model.deleted_suites_request_delete_attributes import DeletedSuitesRequestDeleteAttributes
-from datadog_api_client.v2.model.deleted_suites_request_delete_request import DeletedSuitesRequestDeleteRequest
-from datadog_api_client.v2.model.deleted_suites_request_type import DeletedSuitesRequestType
-from datadog_api_client.v2.model.deleted_suites_response import DeletedSuitesResponse
 from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deployment import Deployment
 from datadog_api_client.v2.model.deployment_attributes import DeploymentAttributes
@@ -4348,6 +4341,16 @@ from datadog_api_client.v2.model.secret_rule_data_attributes_match_validation_va
     SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems,
 )
 from datadog_api_client.v2.model.secret_rule_data_type import SecretRuleDataType
+from datadog_api_client.v2.model.security_entity_config_risks import SecurityEntityConfigRisks
+from datadog_api_client.v2.model.security_entity_metadata import SecurityEntityMetadata
+from datadog_api_client.v2.model.security_entity_risk_score import SecurityEntityRiskScore
+from datadog_api_client.v2.model.security_entity_risk_score_attributes import SecurityEntityRiskScoreAttributes
+from datadog_api_client.v2.model.security_entity_risk_score_attributes_severity import (
+    SecurityEntityRiskScoreAttributesSeverity,
+)
+from datadog_api_client.v2.model.security_entity_risk_score_type import SecurityEntityRiskScoreType
+from datadog_api_client.v2.model.security_entity_risk_scores_meta import SecurityEntityRiskScoresMeta
+from datadog_api_client.v2.model.security_entity_risk_scores_response import SecurityEntityRiskScoresResponse
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
@@ -4412,6 +4415,9 @@ from datadog_api_client.v2.model.security_monitoring_critical_assets_response im
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response import (
+    SecurityMonitoringPaginatedSuppressionsResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
 from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
     SecurityMonitoringRuleAnomalyDetectionOptions,
@@ -4595,6 +4601,7 @@ from datadog_api_client.v2.model.security_monitoring_suppression_create_request 
     SecurityMonitoringSuppressionCreateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_suppression_response import SecurityMonitoringSuppressionResponse
+from datadog_api_client.v2.model.security_monitoring_suppression_sort import SecurityMonitoringSuppressionSort
 from datadog_api_client.v2.model.security_monitoring_suppression_type import SecurityMonitoringSuppressionType
 from datadog_api_client.v2.model.security_monitoring_suppression_update_attributes import (
     SecurityMonitoringSuppressionUpdateAttributes,
@@ -4604,6 +4611,10 @@ from datadog_api_client.v2.model.security_monitoring_suppression_update_data imp
 )
 from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
     SecurityMonitoringSuppressionUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_suppressions_meta import SecurityMonitoringSuppressionsMeta
+from datadog_api_client.v2.model.security_monitoring_suppressions_page_meta import (
+    SecurityMonitoringSuppressionsPageMeta,
 )
 from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
 from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
@@ -4930,9 +4941,6 @@ from datadog_api_client.v2.model.statsig_integration_update import StatsigIntegr
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
-from datadog_api_client.v2.model.suite_create_edit import SuiteCreateEdit
-from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEditRequest
-from datadog_api_client.v2.model.suite_search_response_type import SuiteSearchResponseType
 from datadog_api_client.v2.model.suppression_version_history import SuppressionVersionHistory
 from datadog_api_client.v2.model.suppression_versions import SuppressionVersions
 from datadog_api_client.v2.model.synthetics_global_variable import SyntheticsGlobalVariable
@@ -4949,21 +4957,6 @@ from datadog_api_client.v2.model.synthetics_global_variable_totp_parameters impo
     SyntheticsGlobalVariableTOTPParameters,
 )
 from datadog_api_client.v2.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
-from datadog_api_client.v2.model.synthetics_suite import SyntheticsSuite
-from datadog_api_client.v2.model.synthetics_suite_options import SyntheticsSuiteOptions
-from datadog_api_client.v2.model.synthetics_suite_response import SyntheticsSuiteResponse
-from datadog_api_client.v2.model.synthetics_suite_response_data import SyntheticsSuiteResponseData
-from datadog_api_client.v2.model.synthetics_suite_search_response import SyntheticsSuiteSearchResponse
-from datadog_api_client.v2.model.synthetics_suite_search_response_data import SyntheticsSuiteSearchResponseData
-from datadog_api_client.v2.model.synthetics_suite_search_response_data_attributes import (
-    SyntheticsSuiteSearchResponseDataAttributes,
-)
-from datadog_api_client.v2.model.synthetics_suite_test import SyntheticsSuiteTest
-from datadog_api_client.v2.model.synthetics_suite_test_alerting_criticality import (
-    SyntheticsSuiteTestAlertingCriticality,
-)
-from datadog_api_client.v2.model.synthetics_suite_type import SyntheticsSuiteType
-from datadog_api_client.v2.model.synthetics_suite_types import SyntheticsSuiteTypes
 from datadog_api_client.v2.model.synthetics_variable_parser import SyntheticsVariableParser
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
 from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
@@ -6435,13 +6428,6 @@ __all__ = [
     "DeleteAppsResponse",
     "DeleteAppsResponseDataItems",
     "DeleteCustomFrameworkResponse",
-    "DeletedSuiteResponseData",
-    "DeletedSuiteResponseDataAttributes",
-    "DeletedSuitesRequestDelete",
-    "DeletedSuitesRequestDeleteAttributes",
-    "DeletedSuitesRequestDeleteRequest",
-    "DeletedSuitesRequestType",
-    "DeletedSuitesResponse",
     "DependencyLocation",
     "Deployment",
     "DeploymentAttributes",
@@ -8516,6 +8502,14 @@ __all__ = [
     "SecretRuleDataAttributesMatchValidationInvalidHttpStatusCodeItems",
     "SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems",
     "SecretRuleDataType",
+    "SecurityEntityConfigRisks",
+    "SecurityEntityMetadata",
+    "SecurityEntityRiskScore",
+    "SecurityEntityRiskScoreAttributes",
+    "SecurityEntityRiskScoreAttributesSeverity",
+    "SecurityEntityRiskScoreType",
+    "SecurityEntityRiskScoresMeta",
+    "SecurityEntityRiskScoresResponse",
     "SecurityFilter",
     "SecurityFilterAttributes",
     "SecurityFilterCreateAttributes",
@@ -8558,6 +8552,7 @@ __all__ = [
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",
+    "SecurityMonitoringPaginatedSuppressionsResponse",
     "SecurityMonitoringReferenceTable",
     "SecurityMonitoringRuleAnomalyDetectionOptions",
     "SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration",
@@ -8649,10 +8644,13 @@ __all__ = [
     "SecurityMonitoringSuppressionCreateData",
     "SecurityMonitoringSuppressionCreateRequest",
     "SecurityMonitoringSuppressionResponse",
+    "SecurityMonitoringSuppressionSort",
     "SecurityMonitoringSuppressionType",
     "SecurityMonitoringSuppressionUpdateAttributes",
     "SecurityMonitoringSuppressionUpdateData",
     "SecurityMonitoringSuppressionUpdateRequest",
+    "SecurityMonitoringSuppressionsMeta",
+    "SecurityMonitoringSuppressionsPageMeta",
     "SecurityMonitoringSuppressionsResponse",
     "SecurityMonitoringThirdPartyRootQuery",
     "SecurityMonitoringThirdPartyRuleCase",
@@ -8912,9 +8910,6 @@ __all__ = [
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
-    "SuiteCreateEdit",
-    "SuiteCreateEditRequest",
-    "SuiteSearchResponseType",
     "SuppressionVersionHistory",
     "SuppressionVersions",
     "SyntheticsGlobalVariable",
@@ -8925,17 +8920,6 @@ __all__ = [
     "SyntheticsGlobalVariableParserType",
     "SyntheticsGlobalVariableTOTPParameters",
     "SyntheticsGlobalVariableValue",
-    "SyntheticsSuite",
-    "SyntheticsSuiteOptions",
-    "SyntheticsSuiteResponse",
-    "SyntheticsSuiteResponseData",
-    "SyntheticsSuiteSearchResponse",
-    "SyntheticsSuiteSearchResponseData",
-    "SyntheticsSuiteSearchResponseDataAttributes",
-    "SyntheticsSuiteTest",
-    "SyntheticsSuiteTestAlertingCriticality",
-    "SyntheticsSuiteType",
-    "SyntheticsSuiteTypes",
     "SyntheticsVariableParser",
     "TableResultV2",
     "TableResultV2Array",
