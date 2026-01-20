@@ -3,23 +3,37 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_route import (
+        ObservabilityPipelineDatadogLogsDestinationRoute,
+    )
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
         ObservabilityPipelineDatadogLogsDestinationType,
     )
 
 
 class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
+    validations = {
+        "routes": {
+            "max_items": 100,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_route import (
+            ObservabilityPipelineDatadogLogsDestinationRoute,
+        )
         from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
             ObservabilityPipelineDatadogLogsDestinationType,
         )
@@ -27,16 +41,25 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         return {
             "id": (str,),
             "inputs": ([str],),
+            "routes": ([ObservabilityPipelineDatadogLogsDestinationRoute],),
             "type": (ObservabilityPipelineDatadogLogsDestinationType,),
         }
 
     attribute_map = {
         "id": "id",
         "inputs": "inputs",
+        "routes": "routes",
         "type": "type",
     }
 
-    def __init__(self_, id: str, inputs: List[str], type: ObservabilityPipelineDatadogLogsDestinationType, **kwargs):
+    def __init__(
+        self_,
+        id: str,
+        inputs: List[str],
+        type: ObservabilityPipelineDatadogLogsDestinationType,
+        routes: Union[List[ObservabilityPipelineDatadogLogsDestinationRoute], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The ``datadog_logs`` destination forwards logs to Datadog Log Management.
 
@@ -48,9 +71,14 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
 
+        :param routes: A list of routing rules that forward matching logs to Datadog using dedicated API keys.
+        :type routes: [ObservabilityPipelineDatadogLogsDestinationRoute], optional
+
         :param type: The destination type. The value should always be ``datadog_logs``.
         :type type: ObservabilityPipelineDatadogLogsDestinationType
         """
+        if routes is not unset:
+            kwargs["routes"] = routes
         super().__init__(kwargs)
 
         self_.id = id
