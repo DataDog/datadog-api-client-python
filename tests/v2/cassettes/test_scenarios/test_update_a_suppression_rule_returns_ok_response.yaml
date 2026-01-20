@@ -1,6 +1,7 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"Test-Update_a_suppression_rule_returns_OK_response-1762518448","enabled":true,"name":"Test-Update_a_suppression_rule_returns_OK_response-1762518448","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
+    body: '{"data":{"attributes":{"description":"Test-Update_a_suppression_rule_returns_OK_response-1768411745","enabled":true,"name":"suppression
+      Test-Update_a_suppression_rule_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"uqt-hh6-qbq","type":"suppressions","attributes":{"creation_date":1762518448839,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"data_exclusion_query":"","description":"Test-Update_a_suppression_rule_returns_OK_response-1762518448","editable":true,"enabled":true,"name":"Test-Update_a_suppression_rule_returns_OK_response-1762518448","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1762518448839,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"ucv-bpf-4bc","type":"suppressions","attributes":{"creation_date":1768411745950,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"data_exclusion_query":"","description":"Test-Update_a_suppression_rule_returns_OK_response-1768411745","editable":true,"enabled":true,"name":"suppression
+        Test-Update_a_suppression_rule_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1768411745950,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account"},"version":1}}}'
     headers:
       content-type:
@@ -27,12 +29,13 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/uqt-hh6-qbq
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/ucv-bpf-4bc
   response:
     body:
-      string: '{"data":{"id":"uqt-hh6-qbq","type":"suppressions","attributes":{"creation_date":1762518448839,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"data_exclusion_query":"","description":"Test-Update_a_suppression_rule_returns_OK_response-1762518448","editable":true,"enabled":true,"name":"Test-Update_a_suppression_rule_returns_OK_response-1762518448","rule_query":"source:cloudtrail","suppression_query":"env:staging
-        status:low","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1762518449150,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"ucv-bpf-4bc","type":"suppressions","attributes":{"creation_date":1768411745950,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"data_exclusion_query":"","description":"Test-Update_a_suppression_rule_returns_OK_response-1768411745","editable":true,"enabled":true,"name":"suppression
+        Test-Update_a_suppression_rule_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:staging
+        status:low","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1768411746111,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account"},"version":2}}}'
     headers:
       content-type:
@@ -46,7 +49,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/uqt-hh6-qbq
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/ucv-bpf-4bc
   response:
     body:
       string: ''

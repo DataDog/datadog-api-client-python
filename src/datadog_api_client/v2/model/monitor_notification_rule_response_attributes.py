@@ -84,7 +84,7 @@ class MonitorNotificationRuleResponseAttributes(ModelNormal):
         :param created: Creation time of the monitor notification rule.
         :type created: datetime, optional
 
-        :param filter: Filter used to associate the notification rule with monitors.
+        :param filter: Specifies the matching criteria for monitor notifications.
         :type filter: MonitorNotificationRuleFilter, optional
 
         :param modified: Time the monitor notification rule was last modified.
