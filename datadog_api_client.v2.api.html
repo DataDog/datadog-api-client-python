@@ -1772,6 +1772,28 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.jira_integration_api" class="md-nav__link">datadog_api_client.v2.api.jira_integration_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.create_jira_issue_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi.create_jira_issue_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.delete_jira_account" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi.delete_jira_account()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.delete_jira_issue_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi.delete_jira_issue_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.get_jira_issue_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi.get_jira_issue_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.list_jira_accounts" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi.list_jira_accounts()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.list_jira_issue_templates" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi.list_jira_issue_templates()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.update_jira_issue_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">JiraIntegrationApi.update_jira_issue_template()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.key_management_api" class="md-nav__link">datadog_api_client.v2.api.key_management_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.key_management_api.KeyManagementApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">KeyManagementApi</span></code></a><nav class="md-nav">
@@ -8719,6 +8741,104 @@ contacting Datadog support, or see the <a class="reference external" href="https
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.ip_allowlist_response.IPAllowlistResponse" title="datadog_api_client.v2.model.ip_allowlist_response.IPAllowlistResponse">IPAllowlistResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.jira_integration_api">
+<span id="datadog-api-client-v2-api-jira-integration-api-module"></span><h2 id="module-datadog_api_client.v2.api.jira_integration_api">datadog_api_client.v2.api.jira_integration_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.jira_integration_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">JiraIntegrationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manage your Jira Integration. Atlassian Jira is a project management and issue tracking tool for teams to coordinate work and handle tasks efficiently.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.create_jira_issue_template">
+<span class="sig-name descname"><span class="pre">create_jira_issue_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_create_request.JiraIssueTemplateCreateRequest" title="datadog_api_client.v2.model.jira_issue_template_create_request.JiraIssueTemplateCreateRequest"><span class="pre">JiraIssueTemplateCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse" title="datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse"><span class="pre">JiraIssueTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.create_jira_issue_template" title="Link to this definition">¶</a></dt>
+<dd><p>Create Jira issue template.</p>
+<p>Create a new Jira issue template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse" title="datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse">JiraIssueTemplateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.delete_jira_account">
+<span class="sig-name descname"><span class="pre">delete_jira_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.delete_jira_account" title="Link to this definition">¶</a></dt>
+<dd><p>Delete Jira account.</p>
+<p>Delete a Jira account by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_id</strong> (<em>UUID</em>) – The ID of the Jira account to delete</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.delete_jira_issue_template">
+<span class="sig-name descname"><span class="pre">delete_jira_issue_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">issue_template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.delete_jira_issue_template" title="Link to this definition">¶</a></dt>
+<dd><p>Delete Jira issue template.</p>
+<p>Delete a Jira issue template by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>issue_template_id</strong> (<em>UUID</em>) – The ID of the Jira issue template to delete</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.get_jira_issue_template">
+<span class="sig-name descname"><span class="pre">get_jira_issue_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">issue_template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse" title="datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse"><span class="pre">JiraIssueTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.get_jira_issue_template" title="Link to this definition">¶</a></dt>
+<dd><p>Get Jira issue template.</p>
+<p>Get a Jira issue template by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>issue_template_id</strong> (<em>UUID</em>) – The ID of the Jira issue template to retrieve</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse" title="datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse">JiraIssueTemplateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.list_jira_accounts">
+<span class="sig-name descname"><span class="pre">list_jira_accounts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_accounts_response.JiraAccountsResponse" title="datadog_api_client.v2.model.jira_accounts_response.JiraAccountsResponse"><span class="pre">JiraAccountsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.list_jira_accounts" title="Link to this definition">¶</a></dt>
+<dd><p>List Jira accounts.</p>
+<p>Get all Jira accounts for the organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_accounts_response.JiraAccountsResponse" title="datadog_api_client.v2.model.jira_accounts_response.JiraAccountsResponse">JiraAccountsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.list_jira_issue_templates">
+<span class="sig-name descname"><span class="pre">list_jira_issue_templates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_templates_response.JiraIssueTemplatesResponse" title="datadog_api_client.v2.model.jira_issue_templates_response.JiraIssueTemplatesResponse"><span class="pre">JiraIssueTemplatesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.list_jira_issue_templates" title="Link to this definition">¶</a></dt>
+<dd><p>List Jira issue templates.</p>
+<p>Get all Jira issue templates for the organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_templates_response.JiraIssueTemplatesResponse" title="datadog_api_client.v2.model.jira_issue_templates_response.JiraIssueTemplatesResponse">JiraIssueTemplatesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.update_jira_issue_template">
+<span class="sig-name descname"><span class="pre">update_jira_issue_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">issue_template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_update_request.JiraIssueTemplateUpdateRequest" title="datadog_api_client.v2.model.jira_issue_template_update_request.JiraIssueTemplateUpdateRequest"><span class="pre">JiraIssueTemplateUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse" title="datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse"><span class="pre">JiraIssueTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.jira_integration_api.JiraIntegrationApi.update_jira_issue_template" title="Link to this definition">¶</a></dt>
+<dd><p>Update Jira issue template.</p>
+<p>Update a Jira issue template by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>issue_template_id</strong> (<em>UUID</em>) – The ID of the Jira issue template to update</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse" title="datadog_api_client.v2.model.jira_issue_template_response.JiraIssueTemplateResponse">JiraIssueTemplateResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
