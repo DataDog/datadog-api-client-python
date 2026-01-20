@@ -10966,7 +10966,7 @@ directly through the Datadog API.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>schedule_id</strong> (<em>str</em>) – The ID of the schedule.</p></li>
 <li><p><strong>include</strong> (<em>str</em><em>, </em><em>optional</em>) – Specifies related resources to include in the response as a comma-separated list. Allowed value: <code class="docutils literal notranslate"><span class="pre">user</span></code>.</p></li>
-<li><p><strong>filter_at_ts</strong> (<em>str</em><em>, </em><em>optional</em>) – Retrieves the on-call user at the given timestamp (ISO-8601). Defaults to the current time if omitted.”</p></li>
+<li><p><strong>filter_at_ts</strong> (<em>str</em><em>, </em><em>optional</em>) – Retrieves the on-call user at the given timestamp in RFC3339 format (for example, <code class="docutils literal notranslate"><span class="pre">2025-05-07T02:53:01Z</span></code> or <code class="docutils literal notranslate"><span class="pre">2025-05-07T02:53:01+00:00</span></code> ). When using timezone offsets with <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span></code> , ensure proper URL encoding ( <code class="docutils literal notranslate"><span class="pre">+</span></code> should be encoded as <code class="docutils literal notranslate"><span class="pre">%2B</span></code> ). Defaults to the current time if omitted.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
