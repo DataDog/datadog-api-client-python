@@ -3,38 +3,34 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.suite_create_edit import SuiteCreateEdit
-
-
-class SuiteCreateEditRequest(ModelNormal):
+class SecurityMonitoringRuleLivetailResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.suite_create_edit import SuiteCreateEdit
-
         return {
-            "data": (SuiteCreateEdit,),
+            "query": (str,),
         }
 
     attribute_map = {
-        "data": "data",
+        "query": "query",
     }
 
-    def __init__(self_, data: SuiteCreateEdit, **kwargs):
+    def __init__(self_, query: Union[str, UnsetType] = unset, **kwargs):
         """
+        Response containing the modified query with applied filters.
 
-
-        :param data:
-        :type data: SuiteCreateEdit
+        :param query: The modified query with all filters applied.
+        :type query: str, optional
         """
+        if query is not unset:
+            kwargs["query"] = query
         super().__init__(kwargs)
-
-        self_.data = data

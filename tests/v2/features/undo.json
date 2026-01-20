@@ -4186,6 +4186,12 @@
       "type": "safe"
     }
   },
+  "PreviewSecurityMonitoringRuleQuery": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {
@@ -4644,43 +4650,6 @@
     "tag": "Synthetics",
     "undo": {
       "type": "safe"
-    }
-  },
-  "CreateSyntheticsSuite": {
-    "tag": "Synthetics",
-    "undo": {
-      "operationId": "DeleteSyntheticsSuites",
-      "parameters": [
-        {
-          "name": "body",
-          "template": "{\"data\": {\"type\": \"delete_suites_request\", \"attributes\": {\"public_ids\": [\"{{ data.attributes.public_id }}\"]}}}"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteSyntheticsSuites": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "SearchSuites": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetSyntheticsSuite": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "EditSyntheticsSuite": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "PatchGlobalVariable": {

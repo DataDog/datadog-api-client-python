@@ -80,11 +80,15 @@ from datadog_api_client.v2.model.security_filters_response import SecurityFilter
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
-from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
+from datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response import (
+    SecurityMonitoringPaginatedSuppressionsResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_suppression_sort import SecurityMonitoringSuppressionSort
 from datadog_api_client.v2.model.security_monitoring_suppression_response import SecurityMonitoringSuppressionResponse
 from datadog_api_client.v2.model.security_monitoring_suppression_create_request import (
     SecurityMonitoringSuppressionCreateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_create_payload import (
     SecurityMonitoringStandardRuleCreatePayload,
@@ -97,6 +101,10 @@ from datadog_api_client.v2.model.security_monitoring_suppression_update_request 
     SecurityMonitoringSuppressionUpdateRequest,
 )
 from datadog_api_client.v2.model.get_suppression_version_history_response import GetSuppressionVersionHistoryResponse
+from datadog_api_client.v2.model.security_monitoring_rule_livetail_response import (
+    SecurityMonitoringRuleLivetailResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_livetail_request import SecurityMonitoringRuleLivetailRequest
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
@@ -1763,7 +1771,7 @@ class SecurityMonitoringApi:
 
         self._list_security_monitoring_suppressions_endpoint = _Endpoint(
             settings={
-                "response_type": (SecurityMonitoringSuppressionsResponse,),
+                "response_type": (SecurityMonitoringPaginatedSuppressionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/suppressions",
                 "operation_id": "list_security_monitoring_suppressions",
@@ -1774,6 +1782,21 @@ class SecurityMonitoringApi:
                 "query": {
                     "openapi_types": (str,),
                     "attribute": "query",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (SecurityMonitoringSuppressionSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
                     "location": "query",
                 },
             },
@@ -2237,6 +2260,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (PatchNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._preview_security_monitoring_rule_query_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleLivetailResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/livetail",
+                "operation_id": "preview_security_monitoring_rule_query",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleLivetailRequest,),
                     "location": "body",
                 },
             },
@@ -4335,18 +4378,36 @@ class SecurityMonitoringApi:
         self,
         *,
         query: Union[str, UnsetType] = unset,
-    ) -> SecurityMonitoringSuppressionsResponse:
+        sort: Union[SecurityMonitoringSuppressionSort, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> SecurityMonitoringPaginatedSuppressionsResponse:
         """Get all suppression rules.
 
         Get the list of all suppression rules.
 
         :param query: Query string.
         :type query: str, optional
-        :rtype: SecurityMonitoringSuppressionsResponse
+        :param sort: Attribute used to sort the list of suppression rules. Prefix with ``-`` to sort in descending order.
+        :type sort: SecurityMonitoringSuppressionSort, optional
+        :param page_size: Size for a given page. Use ``-1`` to return all items.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: SecurityMonitoringPaginatedSuppressionsResponse
         """
         kwargs: Dict[str, Any] = {}
         if query is not unset:
             kwargs["query"] = query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
 
         return self._list_security_monitoring_suppressions_endpoint.call_with_http_info(**kwargs)
 
@@ -4941,6 +5002,23 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def preview_security_monitoring_rule_query(
+        self,
+        body: SecurityMonitoringRuleLivetailRequest,
+    ) -> SecurityMonitoringRuleLivetailResponse:
+        """Preview a rule query with applied filters.
+
+        Preview a security monitoring rule query with security filters, group by fields, and distinct fields applied.
+        This endpoint is used in the rule editor to show how the query will be transformed after applying additional filters.
+
+        :type body: SecurityMonitoringRuleLivetailRequest
+        :rtype: SecurityMonitoringRuleLivetailResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._preview_security_monitoring_rule_query_endpoint.call_with_http_info(**kwargs)
 
     def run_threat_hunting_job(
         self,
