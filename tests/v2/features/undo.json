@@ -2001,6 +2001,55 @@
       "type": "idempotent"
     }
   },
+  "ListJiraAccounts": {
+    "tag": "Jira Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteJiraAccount": {
+    "tag": "Jira Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListJiraIssueTemplates": {
+    "tag": "Jira Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateJiraIssueTemplate": {
+    "tag": "Jira Integration",
+    "undo": {
+      "operationId": "DeleteJiraIssueTemplate",
+      "parameters": [
+        {
+          "name": "issue_template_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteJiraIssueTemplate": {
+    "tag": "Jira Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetJiraIssueTemplate": {
+    "tag": "Jira Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateJiraIssueTemplate": {
+    "tag": "Jira Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetChannelByName": {
     "tag": "Microsoft Teams Integration",
     "undo": {
