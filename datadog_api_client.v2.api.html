@@ -2820,9 +2820,19 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.create_synthetics_suite" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.create_synthetics_suite()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.delete_synthetics_suites" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.delete_synthetics_suites()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.edit_synthetics_suite" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.edit_synthetics_suite()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.get_on_demand_concurrency_cap" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_on_demand_concurrency_cap()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.get_synthetics_suite" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.get_synthetics_suite()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.patch_global_variable" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.patch_global_variable()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.search_suites" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.search_suites()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.set_on_demand_concurrency_cap" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SyntheticsApi.set_on_demand_concurrency_cap()</span></code></a>
         </li></ul>
@@ -13754,20 +13764,15 @@ security signals.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_monitoring_suppressions">
-<span class="sig-name descname"><span class="pre">list_security_monitoring_suppressions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_suppression_sort.SecurityMonitoringSuppressionSort" title="datadog_api_client.v2.model.security_monitoring_suppression_sort.SecurityMonitoringSuppressionSort"><span class="pre">SecurityMonitoringSuppressionSort</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response.SecurityMonitoringPaginatedSuppressionsResponse" title="datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response.SecurityMonitoringPaginatedSuppressionsResponse"><span class="pre">SecurityMonitoringPaginatedSuppressionsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_monitoring_suppressions" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">list_security_monitoring_suppressions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_suppressions_response.SecurityMonitoringSuppressionsResponse" title="datadog_api_client.v2.model.security_monitoring_suppressions_response.SecurityMonitoringSuppressionsResponse"><span class="pre">SecurityMonitoringSuppressionsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.list_security_monitoring_suppressions" title="Link to this definition">¶</a></dt>
 <dd><p>Get all suppression rules.</p>
 <p>Get the list of all suppression rules.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>query</strong> (<em>str</em><em>, </em><em>optional</em>) – Query string.</p></li>
-<li><p><strong>sort</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_suppression_sort.SecurityMonitoringSuppressionSort" title="datadog_api_client.v2.model.security_monitoring_suppression_sort.SecurityMonitoringSuppressionSort"><em>SecurityMonitoringSuppressionSort</em></a><em>, </em><em>optional</em>) – Attribute used to sort the list of suppression rules. Prefix with <code class="docutils literal notranslate"><span class="pre">-</span></code> to sort in descending order.</p></li>
-<li><p><strong>page_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Size for a given page. Use <code class="docutils literal notranslate"><span class="pre">-1</span></code> to return all items.</p></li>
-<li><p><strong>page_number</strong> (<em>int</em><em>, </em><em>optional</em>) – Specific page number to return.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>query</strong> (<em>str</em><em>, </em><em>optional</em>) – Query string.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response.SecurityMonitoringPaginatedSuppressionsResponse" title="datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response.SecurityMonitoringPaginatedSuppressionsResponse">SecurityMonitoringPaginatedSuppressionsResponse</a></p>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_suppressions_response.SecurityMonitoringSuppressionsResponse" title="datadog_api_client.v2.model.security_monitoring_suppressions_response.SecurityMonitoringSuppressionsResponse">SecurityMonitoringSuppressionsResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -15284,6 +15289,42 @@ and <a class="reference external" href="https://docs.datadoghq.com/synthetics/br
 manage both test types programmatically.</p>
 <p>For more information about Synthetics, see the <a class="reference external" href="https://docs.datadoghq.com/synthetics/">Synthetics overview</a>.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.synthetics_api.SyntheticsApi.create_synthetics_suite">
+<span class="sig-name descname"><span class="pre">create_synthetics_suite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.suite_create_edit_request.SuiteCreateEditRequest" title="datadog_api_client.v2.model.suite_create_edit_request.SuiteCreateEditRequest"><span class="pre">SuiteCreateEditRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse" title="datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse"><span class="pre">SyntheticsSuiteResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.create_synthetics_suite" title="Link to this definition">¶</a></dt>
+<dd><p>Synthetics: Create a test suite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse" title="datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse">SyntheticsSuiteResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.synthetics_api.SyntheticsApi.delete_synthetics_suites">
+<span class="sig-name descname"><span class="pre">delete_synthetics_suites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deleted_suites_request_delete_request.DeletedSuitesRequestDeleteRequest" title="datadog_api_client.v2.model.deleted_suites_request_delete_request.DeletedSuitesRequestDeleteRequest"><span class="pre">DeletedSuitesRequestDeleteRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deleted_suites_response.DeletedSuitesResponse" title="datadog_api_client.v2.model.deleted_suites_response.DeletedSuitesResponse"><span class="pre">DeletedSuitesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.delete_synthetics_suites" title="Link to this definition">¶</a></dt>
+<dd><p>Synthetics: Bulk delete suites.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.deleted_suites_response.DeletedSuitesResponse" title="datadog_api_client.v2.model.deleted_suites_response.DeletedSuitesResponse">DeletedSuitesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.synthetics_api.SyntheticsApi.edit_synthetics_suite">
+<span class="sig-name descname"><span class="pre">edit_synthetics_suite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.suite_create_edit_request.SuiteCreateEditRequest" title="datadog_api_client.v2.model.suite_create_edit_request.SuiteCreateEditRequest"><span class="pre">SuiteCreateEditRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse" title="datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse"><span class="pre">SyntheticsSuiteResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.edit_synthetics_suite" title="Link to this definition">¶</a></dt>
+<dd><p>Synthetics: Edit a test suite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>public_id</strong> (<em>str</em>) – The public ID of the suite to edit.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.suite_create_edit_request.SuiteCreateEditRequest" title="datadog_api_client.v2.model.suite_create_edit_request.SuiteCreateEditRequest"><em>SuiteCreateEditRequest</em></a>) – New suite details to be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse" title="datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse">SyntheticsSuiteResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.synthetics_api.SyntheticsApi.get_on_demand_concurrency_cap">
 <span class="sig-name descname"><span class="pre">get_on_demand_concurrency_cap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.on_demand_concurrency_cap_response.OnDemandConcurrencyCapResponse" title="datadog_api_client.v2.model.on_demand_concurrency_cap_response.OnDemandConcurrencyCapResponse"><span class="pre">OnDemandConcurrencyCapResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.get_on_demand_concurrency_cap" title="Link to this definition">¶</a></dt>
 <dd><p>Get the on-demand concurrency cap.</p>
@@ -15291,6 +15332,19 @@ manage both test types programmatically.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.on_demand_concurrency_cap_response.OnDemandConcurrencyCapResponse" title="datadog_api_client.v2.model.on_demand_concurrency_cap_response.OnDemandConcurrencyCapResponse">OnDemandConcurrencyCapResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.synthetics_api.SyntheticsApi.get_synthetics_suite">
+<span class="sig-name descname"><span class="pre">get_synthetics_suite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse" title="datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse"><span class="pre">SyntheticsSuiteResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.get_synthetics_suite" title="Link to this definition">¶</a></dt>
+<dd><p>Synthetics: Get a suite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>public_id</strong> (<em>str</em>) – The public ID of the suite to get details from.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse" title="datadog_api_client.v2.model.synthetics_suite_response.SyntheticsSuiteResponse">SyntheticsSuiteResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -15316,6 +15370,26 @@ This endpoint allows partial updates to a global variable by specifying only the
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.global_variable_response.GlobalVariableResponse" title="datadog_api_client.v2.model.global_variable_response.GlobalVariableResponse">GlobalVariableResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.synthetics_api.SyntheticsApi.search_suites">
+<span class="sig-name descname"><span class="pre">search_suites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">facets_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_search_response.SyntheticsSuiteSearchResponse" title="datadog_api_client.v2.model.synthetics_suite_search_response.SyntheticsSuiteSearchResponse"><span class="pre">SyntheticsSuiteSearchResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.search_suites" title="Link to this definition">¶</a></dt>
+<dd><p>Search Synthetics suites.</p>
+<p>Search for Synthetics suites.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em><em>, </em><em>optional</em>) – The search query.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – The sort order for the results (e.g., <code class="docutils literal notranslate"><span class="pre">name,asc</span></code> or <code class="docutils literal notranslate"><span class="pre">name,desc</span></code> ).</p></li>
+<li><p><strong>facets_only</strong> (<em>bool</em><em>, </em><em>optional</em>) – If true, return only facets instead of full test details.</p></li>
+<li><p><strong>start</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset from which to start returning results.</p></li>
+<li><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of results to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.synthetics_suite_search_response.SyntheticsSuiteSearchResponse" title="datadog_api_client.v2.model.synthetics_suite_search_response.SyntheticsSuiteSearchResponse">SyntheticsSuiteSearchResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
