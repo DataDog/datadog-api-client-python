@@ -64,6 +64,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param container_name: The name of the Azure Blob Storage container to store logs in.
         :type container_name: str
 
+        :param routes: A list of routing rules that forward matching logs to Datadog using dedicated API keys.
+        :type routes: [ObservabilityPipelineDatadogLogsDestinationRoute], optional
+
         :param api_version: The Elasticsearch API version to use. Set to `auto` to auto-detect.
         :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
 

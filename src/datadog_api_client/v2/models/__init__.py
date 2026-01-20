@@ -3026,6 +3026,9 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source_typ
 from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
     ObservabilityPipelineDatadogLogsDestination,
 )
+from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_route import (
+    ObservabilityPipelineDatadogLogsDestinationRoute,
+)
 from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
     ObservabilityPipelineDatadogLogsDestinationType,
 )
@@ -7667,6 +7670,7 @@ __all__ = [
     "ObservabilityPipelineDatadogAgentSource",
     "ObservabilityPipelineDatadogAgentSourceType",
     "ObservabilityPipelineDatadogLogsDestination",
+    "ObservabilityPipelineDatadogLogsDestinationRoute",
     "ObservabilityPipelineDatadogLogsDestinationType",
     "ObservabilityPipelineDatadogMetricsDestination",
     "ObservabilityPipelineDatadogMetricsDestinationType",

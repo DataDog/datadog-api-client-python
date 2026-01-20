@@ -15859,6 +15859,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_logs\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_logs\_destination\_route module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_route
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_logs\_destination\_type module
 ----------------------------------------------------------------------------------------------
 
