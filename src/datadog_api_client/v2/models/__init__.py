@@ -4434,6 +4434,16 @@ from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_opti
 from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_learning_duration import (
     SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_attributes import (
+    SecurityMonitoringRuleBulkExportAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_data import SecurityMonitoringRuleBulkExportData
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_data_type import (
+    SecurityMonitoringRuleBulkExportDataType,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_payload import (
+    SecurityMonitoringRuleBulkExportPayload,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_case import SecurityMonitoringRuleCase
 from datadog_api_client.v2.model.security_monitoring_rule_case_action import SecurityMonitoringRuleCaseAction
 from datadog_api_client.v2.model.security_monitoring_rule_case_action_options import (
@@ -8562,6 +8572,10 @@ __all__ = [
     "SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration",
     "SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance",
     "SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration",
+    "SecurityMonitoringRuleBulkExportAttributes",
+    "SecurityMonitoringRuleBulkExportData",
+    "SecurityMonitoringRuleBulkExportDataType",
+    "SecurityMonitoringRuleBulkExportPayload",
     "SecurityMonitoringRuleCase",
     "SecurityMonitoringRuleCaseAction",
     "SecurityMonitoringRuleCaseActionOptions",

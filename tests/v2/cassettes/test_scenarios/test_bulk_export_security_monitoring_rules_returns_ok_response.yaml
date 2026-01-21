@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule","name":"Test-Bulk_export_security_monitoring_rules_returns_OK_response-1768902892","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[],"type":"log_detection"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"name":"Test-Bulk_export_security_monitoring_rules_returns_OK_response-1768902892","createdAt":1768902892769,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"logs"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"ldv-a2n-sgu","blocking":false,"metadata":{"entities":null,"sources":null},"creationAuthorId":1445416,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"updater":{"handle":"","name":""}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"ruleIds":["ldv-a2n-sgu"]},"type":"security_monitoring_rules_bulk_export"}}'
+    headers:
+      accept:
+      - application/zip, application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/bulk_export
+  response:
+    body:
+      string: UEsDBBQACAAIANpONFwAAAAAAAAAAAAAAABOAAkAVGVzdC1CdWxrX2V4cG9ydF9zZWN1cml0eV9tb25pdG9yaW5nX3J1bGVzX3JldHVybnNfT0tfcmVzcG9uc2UtMTc2ODkwMjg5Mi5qc29uVVQFAAHsUG9pVJHPbhMxEMZfJfrOrrS0KCQ+QUXhgFAPrcQBqtWwnjijOvbiGZdEUd4d7Spt6c32+Kf5/hyRacfwuGe1i+uWHnvej6Varzy0KnbodyWLlSo59rUl1r6ytZq1v/3WV9axZOWLdx+Wq3V3uVpfwkH0JtPvxAHeamOHP42rsML/PM7nAzw+GqvNczjEWtp4ffginML07cFhS3o7mpRM6evb6YaSskMQNcmD/Q9RjJUjTRg8htKywT1bhEMgo7vS6jDdU4mK04NDmfco/BH8RKnN/A/JofyFX3edQ2DjYXr9zrYtAR62razbkgIcdrS/k5gpfW71vHu1fD9xj8zjpyRPDH+17LqTw0B6DuJVlRpZU3hI3pRJbzHZyEBnVZOxoeQgZ1u0+NW67ooX3ax+x6oUnztcTB3BwSi+BnmzN86Bw71Y4pcA7TCeY+hf/MFhI8m4zvDpXwAAAP//UEsHCNCj/51ZAQAAHwIAAFBLAQIUABQACAAIANpONFzQo/+dWQEAAB8CAABOAAkAAAAAAAAAAAAAAAAAAABUZXN0LUJ1bGtfZXhwb3J0X3NlY3VyaXR5X21vbml0b3JpbmdfcnVsZXNfcmV0dXJuc19PS19yZXNwb25zZS0xNzY4OTAyODkyLmpzb25VVAUAAexQb2lQSwUGAAAAAAEAAQCFAAAA3gEAAAAA
+    headers:
+      content-type:
+      - application/zip
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/ldv-a2n-sgu
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
