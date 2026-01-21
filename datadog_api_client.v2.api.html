@@ -1644,6 +1644,18 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.high_availability_multi_region_api" class="md-nav__link">datadog_api_client.v2.api.high_availability_multi_region_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">HighAvailabilityMultiRegionApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi.create_hamr_org_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">HighAvailabilityMultiRegionApi.create_hamr_org_connection()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi.get_hamr_org_connection" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">HighAvailabilityMultiRegionApi.get_hamr_org_connection()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.incident_services_api" class="md-nav__link">datadog_api_client.v2.api.incident_services_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.incident_services_api.IncidentServicesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">IncidentServicesApi</span></code></a><nav class="md-nav">
@@ -7894,6 +7906,43 @@ through the Datadog API. Read more about the <a class="reference external" href=
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.gcpsts_service_account_response.GCPSTSServiceAccountResponse" title="datadog_api_client.v2.model.gcpsts_service_account_response.GCPSTSServiceAccountResponse">GCPSTSServiceAccountResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.high_availability_multi_region_api">
+<span id="datadog-api-client-v2-api-high-availability-multi-region-api-module"></span><h2 id="module-datadog_api_client.v2.api.high_availability_multi_region_api">datadog_api_client.v2.api.high_availability_multi_region_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.high_availability_multi_region_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">HighAvailabilityMultiRegionApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Configure High Availability Multi-Region (HAMR) connections between Datadog organizations.
+HAMR provides disaster recovery capabilities by maintaining synchronized data between primary
+and secondary organizations across different datacenters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi.create_hamr_org_connection">
+<span class="sig-name descname"><span class="pre">create_hamr_org_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.hamr_org_connection_request.HamrOrgConnectionRequest" title="datadog_api_client.v2.model.hamr_org_connection_request.HamrOrgConnectionRequest"><span class="pre">HamrOrgConnectionRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse" title="datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse"><span class="pre">HamrOrgConnectionResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi.create_hamr_org_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Create or update HAMR organization connection.</p>
+<p>Create or update the High Availability Multi-Region (HAMR) organization connection.
+This endpoint allows you to configure the HAMR connection between the authenticated organization
+and a target organization, including setting the connection status (ONBOARDING, PASSIVE, FAILOVER, ACTIVE, RECOVERY)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse" title="datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse">HamrOrgConnectionResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi.get_hamr_org_connection">
+<span class="sig-name descname"><span class="pre">get_hamr_org_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse" title="datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse"><span class="pre">HamrOrgConnectionResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.high_availability_multi_region_api.HighAvailabilityMultiRegionApi.get_hamr_org_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Get HAMR organization connection.</p>
+<p>Retrieve the High Availability Multi-Region (HAMR) organization connection details for the authenticated organization.
+This endpoint returns information about the HAMR connection configuration, including the target organization,
+datacenter, status, and whether this is the primary or secondary organization in the HAMR relationship.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse" title="datadog_api_client.v2.model.hamr_org_connection_response.HamrOrgConnectionResponse">HamrOrgConnectionResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
