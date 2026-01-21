@@ -1557,6 +1557,20 @@
       "type": "safe"
     }
   },
+  "GetHamrOrgConnection": {
+    "tag": "High Availability MultiRegion",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateHamrOrgConnection": {
+    "tag": "High Availability MultiRegion",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListIncidents": {
     "tag": "Incidents",
     "undo": {

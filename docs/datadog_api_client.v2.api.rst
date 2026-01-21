@@ -277,6 +277,13 @@ datadog\_api\_client.v2.api.gcp\_integration\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.high\_availability\_multi\_region\_api module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.high_availability_multi_region_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.incident\_services\_api module
 ----------------------------------------------------------
 

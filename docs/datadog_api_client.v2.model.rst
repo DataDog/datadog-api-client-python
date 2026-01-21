@@ -10861,6 +10861,62 @@ datadog\_api\_client.v2.model.group\_tags module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.hamr\_org\_connection\_attributes\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.hamr\_org\_connection\_attributes\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.hamr\_org\_connection\_data\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.hamr\_org\_connection\_data\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.hamr\_org\_connection\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.hamr\_org\_connection\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.hamr\_org\_connection\_status module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.hamr\_org\_connection\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.hamr_org_connection_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.hourly\_usage module
 --------------------------------------------------
 
