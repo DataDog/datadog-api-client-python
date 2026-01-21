@@ -21,7 +21,7 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
     validations = {
         "sample_rate": {
             "inclusive_maximum": 100,
-            "inclusive_minimum": 0,
+            "inclusive_minimum": 0.1,
         },
     }
 
@@ -34,7 +34,7 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
             "event_type": (RumRetentionFilterEventType,),
             "name": (str,),
             "query": (str,),
-            "sample_rate": (int,),
+            "sample_rate": (float,),
         }
 
     attribute_map = {
@@ -49,7 +49,7 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
         self_,
         event_type: RumRetentionFilterEventType,
         name: str,
-        sample_rate: int,
+        sample_rate: float,
         enabled: Union[bool, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         **kwargs,
@@ -69,8 +69,8 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
         :param query: The query string for a RUM retention filter.
         :type query: str, optional
 
-        :param sample_rate: The sample rate for a RUM retention filter, between 0 and 100.
-        :type sample_rate: int
+        :param sample_rate: The sample rate for a RUM retention filter, between 0.1 and 100.
+        :type sample_rate: float
         """
         if enabled is not unset:
             kwargs["enabled"] = enabled
