@@ -83,6 +83,28 @@ Feature: Security Monitoring
     And the response "data.attributes.insights" has item with field "resource_id" with value "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="
     And the response "data.attributes.insights" has item with field "resource_id" with value "MmUzMzZkODQ2YTI3NDU0OTk4NDk3NzhkOTY5YjU2Zjh-YWJjZGI1ODI4OTYzNWM3ZmUwZTBlOWRkYTRiMGUyOGQ="
 
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Bulk export security monitoring rules returns "Bad Request" response
+    Given new "BulkExportSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": []}, "type": "security_monitoring_rules_bulk_export"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Bulk export security monitoring rules returns "Not Found" response
+    Given new "BulkExportSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["non-existent-rule-id"]}, "type": "security_monitoring_rules_bulk_export"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Bulk export security monitoring rules returns "OK" response
+    Given there is a valid "security_rule" in the system
+    And new "BulkExportSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["{{ security_rule.id }}"]}, "type": "security_monitoring_rules_bulk_export"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Cancel a historical job returns "Bad Request" response
     Given operation "CancelThreatHuntingJob" enabled

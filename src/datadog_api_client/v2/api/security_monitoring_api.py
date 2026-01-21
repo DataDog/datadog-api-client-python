@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
+    file_type,
     UnsetType,
     unset,
 )
@@ -103,6 +104,9 @@ from datadog_api_client.v2.model.security_monitoring_suppression_update_request 
 from datadog_api_client.v2.model.get_suppression_version_history_response import GetSuppressionVersionHistoryResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_payload import (
+    SecurityMonitoringRuleBulkExportPayload,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
@@ -193,6 +197,26 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._bulk_export_security_monitoring_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (file_type,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/bulk_export",
+                "operation_id": "bulk_export_security_monitoring_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleBulkExportPayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/zip", "application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -2621,6 +2645,24 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
+
+    def bulk_export_security_monitoring_rules(
+        self,
+        body: SecurityMonitoringRuleBulkExportPayload,
+    ) -> file_type:
+        """Bulk export security monitoring rules.
+
+        Export a list of security monitoring rules as a ZIP file containing JSON rule definitions.
+        The endpoint accepts a list of rule IDs and returns a ZIP archive where each rule is
+        saved as a separate JSON file named after the rule.
+
+        :type body: SecurityMonitoringRuleBulkExportPayload
+        :rtype: file_type
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._bulk_export_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
     def cancel_threat_hunting_job(
         self,

@@ -4211,6 +4211,12 @@
       "type": "unsafe"
     }
   },
+  "BulkExportSecurityMonitoringRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ConvertSecurityMonitoringRuleFromJSONToTerraform": {
     "tag": "Security Monitoring",
     "undo": {
