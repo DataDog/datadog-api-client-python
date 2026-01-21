@@ -32,6 +32,10 @@ body = LogsIndexUpdateRequest(
     ),
     num_flex_logs_retention_days=360,
     num_retention_days=15,
+    tags=[
+        "team:backend",
+        "env:production",
+    ],
 )
 
 configuration = Configuration()
