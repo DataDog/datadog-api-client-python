@@ -1145,7 +1145,7 @@ Feature: Security Monitoring
     And request contains "query" parameter with value "id:{{ suppression.data.id }} OR id:{{ suppression2.data.id }}"
     When the request is sent
     Then the response status is 200 OK
-    And the response "data[0].attributes.name" is equal to "suppression {{ unique }}"
+    And the response "data[0].attributes.name" is equal to "suppression {{ unique_hash }}"
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Get all suppression rules returns "OK" response with sort descending
@@ -1156,7 +1156,7 @@ Feature: Security Monitoring
     And request contains "query" parameter with value "id:{{ suppression.data.id }} OR id:{{ suppression2.data.id }}"
     When the request is sent
     Then the response status is 200 OK
-    And the response "data[0].attributes.name" is equal to "suppression2 {{ unique }}"
+    And the response "data[0].attributes.name" is equal to "suppression2 {{ unique_hash }}"
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get critical assets affecting a specific rule returns "Not Found" response

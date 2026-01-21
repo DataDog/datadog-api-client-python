@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","enabled":true,"name":"suppression
-      Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
+    body: '{"data":{"attributes":{"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1769009705","enabled":true,"name":"suppression
+      ee42c68404916b9e","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
   response:
     body:
-      string: '{"data":{"id":"sro-unv-k08","type":"suppressions","attributes":{"creation_date":1768411745430,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"data_exclusion_query":"","description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","editable":true,"enabled":true,"name":"suppression
-        Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1768411745430,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"joc-mpc-lbz","type":"suppressions","attributes":{"creation_date":1769009705785,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"data_exclusion_query":"","description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1769009705","editable":true,"enabled":true,"name":"suppression
+        ee42c68404916b9e","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1769009705785,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account"},"version":1}}}'
     headers:
       content-type:
@@ -27,13 +27,13 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/sro-unv-k08/version_history
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/joc-mpc-lbz/version_history
   response:
     body:
-      string: '{"data":{"id":"sro-unv-k08","type":"suppression_version_history","attributes":{"count":1,"data":{"1":{"suppression":{"id":"sro-unv-k08","name":"suppression
-        Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","enabled":true,"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1768411745","rule_query":"source:cloudtrail","suppression_query":"env:test","data_exclusion_query":"","version":1,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"joc-mpc-lbz","type":"suppression_version_history","attributes":{"count":1,"data":{"1":{"suppression":{"id":"joc-mpc-lbz","name":"suppression
+        ee42c68404916b9e","enabled":true,"description":"Test-Get_a_suppression_s_version_history_returns_OK_response-1769009705","rule_query":"source:cloudtrail","suppression_query":"env:test","data_exclusion_query":"","version":1,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account"},"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"creation_date":1768411745430,"update_date":1768411745430,"editable":true,"tags":["source:cloudtrail","technique:T1110-brute-force"]},"changes":[]}}}}}'
+        Account"},"creation_date":1769009705785,"update_date":1769009705785,"editable":true,"tags":["source:cloudtrail","technique:T1110-brute-force"]},"changes":[]}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/sro-unv-k08
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/joc-mpc-lbz
   response:
     body:
       string: ''
