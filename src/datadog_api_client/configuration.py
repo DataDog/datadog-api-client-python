@@ -306,6 +306,8 @@ class Configuration:
                 "v2.get_deployment_rule": False,
                 "v2.update_deployment_gate": False,
                 "v2.update_deployment_rule": False,
+                "v2.create_hamr_org_connection": False,
+                "v2.get_hamr_org_connection": False,
                 "v2.create_incident": False,
                 "v2.create_incident_attachment": False,
                 "v2.create_incident_integration": False,

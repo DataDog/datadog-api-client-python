@@ -2096,6 +2096,14 @@ from datadog_api_client.v2.model.http_token_auth import HTTPTokenAuth
 from datadog_api_client.v2.model.http_token_auth_type import HTTPTokenAuthType
 from datadog_api_client.v2.model.http_token_auth_update import HTTPTokenAuthUpdate
 from datadog_api_client.v2.model.http_token_update import HTTPTokenUpdate
+from datadog_api_client.v2.model.hamr_org_connection_attributes_request import HamrOrgConnectionAttributesRequest
+from datadog_api_client.v2.model.hamr_org_connection_attributes_response import HamrOrgConnectionAttributesResponse
+from datadog_api_client.v2.model.hamr_org_connection_data_request import HamrOrgConnectionDataRequest
+from datadog_api_client.v2.model.hamr_org_connection_data_response import HamrOrgConnectionDataResponse
+from datadog_api_client.v2.model.hamr_org_connection_request import HamrOrgConnectionRequest
+from datadog_api_client.v2.model.hamr_org_connection_response import HamrOrgConnectionResponse
+from datadog_api_client.v2.model.hamr_org_connection_status import HamrOrgConnectionStatus
+from datadog_api_client.v2.model.hamr_org_connection_type import HamrOrgConnectionType
 from datadog_api_client.v2.model.hourly_usage import HourlyUsage
 from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
 from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
@@ -7023,6 +7031,14 @@ __all__ = [
     "HTTPTokenAuthType",
     "HTTPTokenAuthUpdate",
     "HTTPTokenUpdate",
+    "HamrOrgConnectionAttributesRequest",
+    "HamrOrgConnectionAttributesResponse",
+    "HamrOrgConnectionDataRequest",
+    "HamrOrgConnectionDataResponse",
+    "HamrOrgConnectionRequest",
+    "HamrOrgConnectionResponse",
+    "HamrOrgConnectionStatus",
+    "HamrOrgConnectionType",
     "HourlyUsage",
     "HourlyUsageAttributes",
     "HourlyUsageMeasurement",
