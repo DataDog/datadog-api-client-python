@@ -4458,6 +4458,10 @@ from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_opti
     SecurityMonitoringRuleImpossibleTravelOptions,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import SecurityMonitoringRuleKeepAlive
+from datadog_api_client.v2.model.security_monitoring_rule_livetail_request import SecurityMonitoringRuleLivetailRequest
+from datadog_api_client.v2.model.security_monitoring_rule_livetail_response import (
+    SecurityMonitoringRuleLivetailResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
     SecurityMonitoringRuleMaxSignalDuration,
 )
@@ -8576,6 +8580,8 @@ __all__ = [
     "SecurityMonitoringRuleHardcodedEvaluatorType",
     "SecurityMonitoringRuleImpossibleTravelOptions",
     "SecurityMonitoringRuleKeepAlive",
+    "SecurityMonitoringRuleLivetailRequest",
+    "SecurityMonitoringRuleLivetailResponse",
     "SecurityMonitoringRuleMaxSignalDuration",
     "SecurityMonitoringRuleNewValueOptions",
     "SecurityMonitoringRuleNewValueOptionsForgetAfter",

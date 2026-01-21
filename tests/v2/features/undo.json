@@ -4192,6 +4192,12 @@
       "type": "safe"
     }
   },
+  "PreviewSecurityMonitoringRuleQuery": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {

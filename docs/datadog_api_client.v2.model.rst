@@ -22075,6 +22075,20 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_keep\_alive module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_livetail\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_livetail_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_livetail\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_livetail_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_max\_signal\_duration module
 --------------------------------------------------------------------------------------
 

@@ -101,6 +101,10 @@ from datadog_api_client.v2.model.security_monitoring_suppression_update_request 
     SecurityMonitoringSuppressionUpdateRequest,
 )
 from datadog_api_client.v2.model.get_suppression_version_history_response import GetSuppressionVersionHistoryResponse
+from datadog_api_client.v2.model.security_monitoring_rule_livetail_response import (
+    SecurityMonitoringRuleLivetailResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_livetail_request import SecurityMonitoringRuleLivetailRequest
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
@@ -2256,6 +2260,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (PatchNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._preview_security_monitoring_rule_query_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleLivetailResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/livetail",
+                "operation_id": "preview_security_monitoring_rule_query",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleLivetailRequest,),
                     "location": "body",
                 },
             },
@@ -4978,6 +5002,23 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def preview_security_monitoring_rule_query(
+        self,
+        body: SecurityMonitoringRuleLivetailRequest,
+    ) -> SecurityMonitoringRuleLivetailResponse:
+        """Preview a rule query with applied filters.
+
+        Preview a security monitoring rule query with security filters, group by fields, and distinct fields applied.
+        This endpoint is used in the rule editor to show how the query will be transformed after applying additional filters.
+
+        :type body: SecurityMonitoringRuleLivetailRequest
+        :rtype: SecurityMonitoringRuleLivetailResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._preview_security_monitoring_rule_query_endpoint.call_with_http_info(**kwargs)
 
     def run_threat_hunting_job(
         self,

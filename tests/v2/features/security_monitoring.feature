@@ -1644,6 +1644,20 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Preview a rule query with applied filters returns "Bad Request" response
+    Given new "PreviewSecurityMonitoringRuleQuery" request
+    And body with value {"query":"","queryIndex":0,"filters":[],"type":"log_detection","detectionMethod":"threshold","dataSource":"logs","groupByFields":[],"distinctFields":[]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-security-platform
+  Scenario: Preview a rule query with applied filters returns "OK" response
+    Given new "PreviewSecurityMonitoringRuleQuery" request
+    And body with value {"query":"source:cloudtrail","queryIndex":0,"filters":[],"type":"log_detection","detectionMethod":"threshold","dataSource":"logs","groupByFields":[],"distinctFields":[]}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-vm-ast
   Scenario: Returns a list of Secrets rules returns "OK" response
     Given operation "GetSecretsRules" enabled
