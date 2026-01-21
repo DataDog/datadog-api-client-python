@@ -1738,11 +1738,11 @@
       "parameters": [
         {
           "name": "incident_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "data.relationships.incident.data.id"
         },
         {
           "name": "attachment_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "data.id"
         }
       ],
       "type": "unsafe"

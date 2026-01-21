@@ -32,9 +32,9 @@ class CreateAttachmentRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateAttachmentRequestData, UnsetType] = unset, **kwargs):
         """
+        Create request for an attachment.
 
-
-        :param data:
+        :param data: Attachment data for a create request.
         :type data: CreateAttachmentRequestData, optional
         """
         if data is not unset:

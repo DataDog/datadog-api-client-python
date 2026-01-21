@@ -380,12 +380,6 @@ from datadog_api_client.v2.model.attachment_data_attributes_attachment_type impo
     AttachmentDataAttributesAttachmentType,
 )
 from datadog_api_client.v2.model.attachment_data_relationships import AttachmentDataRelationships
-from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user import (
-    AttachmentDataRelationshipsLastModifiedByUser,
-)
-from datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user_data import (
-    AttachmentDataRelationshipsLastModifiedByUserData,
-)
 from datadog_api_client.v2.model.attachment_included import AttachmentIncluded
 from datadog_api_client.v2.model.audit_logs_event import AuditLogsEvent
 from datadog_api_client.v2.model.audit_logs_event_attributes import AuditLogsEventAttributes
@@ -5559,7 +5553,6 @@ from datadog_api_client.v2.model.usage_observability_pipelines_response import U
 from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
 from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
 from datadog_api_client.v2.model.user import User
-from datadog_api_client.v2.model.user140420082644000 import User140420082644000
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
@@ -5598,7 +5591,6 @@ from datadog_api_client.v2.model.user_team_update import UserTeamUpdate
 from datadog_api_client.v2.model.user_team_update_request import UserTeamUpdateRequest
 from datadog_api_client.v2.model.user_team_user_type import UserTeamUserType
 from datadog_api_client.v2.model.user_teams_response import UserTeamsResponse
-from datadog_api_client.v2.model.user_type import UserType
 from datadog_api_client.v2.model.user_update_attributes import UserUpdateAttributes
 from datadog_api_client.v2.model.user_update_data import UserUpdateData
 from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
@@ -5933,8 +5925,6 @@ __all__ = [
     "AttachmentDataAttributesAttachment",
     "AttachmentDataAttributesAttachmentType",
     "AttachmentDataRelationships",
-    "AttachmentDataRelationshipsLastModifiedByUser",
-    "AttachmentDataRelationshipsLastModifiedByUserData",
     "AttachmentIncluded",
     "AuditLogsEvent",
     "AuditLogsEventAttributes",
@@ -9582,7 +9572,6 @@ __all__ = [
     "UsageTimeSeriesObject",
     "UsageTimeSeriesType",
     "User",
-    "User140420082644000",
     "UserAttributes",
     "UserAttributesStatus",
     "UserCreateAttributes",
@@ -9621,7 +9610,6 @@ __all__ = [
     "UserTeamUpdateRequest",
     "UserTeamUserType",
     "UserTeamsResponse",
-    "UserType",
     "UserUpdateAttributes",
     "UserUpdateData",
     "UserUpdateRequest",

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class AttachmentDataAttributesAttachmentType(ModelSimple):
     """
-
+    The type of the attachment.
 
     :param value: Must be one of ["postmortem", "link"].
     :type value: str
