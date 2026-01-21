@@ -1213,6 +1213,34 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"A Status Page\",\n      \"domain_prefix\": \"status-page-{{ unique_hash }}\",\n      \"components\": [{\"name\": \"Application\", \"type\": \"group\", \"components\":[{\"name\": \"Login\", \"type\": \"component\", \"position\": 0},{\"name\": \"Settings\", \"type\": \"component\", \"position\": 1}]}],\n      \"type\": \"internal\",\n      \"visualization_type\": \"bars_and_uptime_percentage\",\n      \"enabled\": true\n    },\n    \"type\": \"status_pages\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"status_page\" in the system",
+    "key": "status_page",
+    "tag": "Status Pages",
+    "operationId": "CreateStatusPage"
+  },
+  {
+    "parameters": [
+      {
+        "name": "page_id",
+        "value": "\"{{ status_page.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"Elevated API Latency\",\n      \"description\": \"Our API is experiencing elevated latency. We are investigating the issue.\",\n      \"status\": \"investigating\",\n      \"components_affected\": [\n        {\n          \"id\": \"{{ status_page.data.attributes.components[0].components[0].id }}\",\n          \"status\": \"major_outage\"\n        }\n      ]\n    },\n    \"type\": \"degradations\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"degradation\" in the system",
+    "key": "degradation",
+    "tag": "Status Pages",
+    "operationId": "CreateDegradation"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"test-handle-{{ unique_hash }}\",\n      \"name\": \"test-name-{{ unique_hash }}\"\n    },\n    \"type\": \"team\"\n  }\n}"
       }
     ],
