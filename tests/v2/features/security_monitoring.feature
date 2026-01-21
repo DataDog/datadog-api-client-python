@@ -1124,40 +1124,6 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform
-  Scenario: Get all suppression rules returns "OK" response with pagination
-    Given new "ListSecurityMonitoringSuppressions" request
-    And there is a valid "suppression" in the system
-    And there is a valid "suppression2" in the system
-    And request contains "page[size]" parameter with value 1
-    And request contains "page[number]" parameter with value 0
-    And request contains "query" parameter with value "id:{{ suppression.data.id }} OR id:{{ suppression2.data.id }}"
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data" has length 1
-
-  @team:DataDog/k9-cloud-security-platform
-  Scenario: Get all suppression rules returns "OK" response with sort ascending
-    Given new "ListSecurityMonitoringSuppressions" request
-    And there is a valid "suppression" in the system
-    And there is a valid "suppression2" in the system
-    And request contains "sort" parameter with value "name"
-    And request contains "query" parameter with value "id:{{ suppression.data.id }} OR id:{{ suppression2.data.id }}"
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data[0].attributes.name" is equal to "suppression {{ unique }}"
-
-  @team:DataDog/k9-cloud-security-platform
-  Scenario: Get all suppression rules returns "OK" response with sort descending
-    Given new "ListSecurityMonitoringSuppressions" request
-    And there is a valid "suppression" in the system
-    And there is a valid "suppression2" in the system
-    And request contains "sort" parameter with value "-name"
-    And request contains "query" parameter with value "id:{{ suppression.data.id }} OR id:{{ suppression2.data.id }}"
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data[0].attributes.name" is equal to "suppression2 {{ unique }}"
-
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get critical assets affecting a specific rule returns "Not Found" response
     Given new "GetCriticalAssetsAffectingRule" request

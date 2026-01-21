@@ -4418,9 +4418,6 @@ from datadog_api_client.v2.model.security_monitoring_critical_assets_response im
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
-from datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response import (
-    SecurityMonitoringPaginatedSuppressionsResponse,
-)
 from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
 from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
     SecurityMonitoringRuleAnomalyDetectionOptions,
@@ -4604,7 +4601,6 @@ from datadog_api_client.v2.model.security_monitoring_suppression_create_request 
     SecurityMonitoringSuppressionCreateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_suppression_response import SecurityMonitoringSuppressionResponse
-from datadog_api_client.v2.model.security_monitoring_suppression_sort import SecurityMonitoringSuppressionSort
 from datadog_api_client.v2.model.security_monitoring_suppression_type import SecurityMonitoringSuppressionType
 from datadog_api_client.v2.model.security_monitoring_suppression_update_attributes import (
     SecurityMonitoringSuppressionUpdateAttributes,
@@ -4614,10 +4610,6 @@ from datadog_api_client.v2.model.security_monitoring_suppression_update_data imp
 )
 from datadog_api_client.v2.model.security_monitoring_suppression_update_request import (
     SecurityMonitoringSuppressionUpdateRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_suppressions_meta import SecurityMonitoringSuppressionsMeta
-from datadog_api_client.v2.model.security_monitoring_suppressions_page_meta import (
-    SecurityMonitoringSuppressionsPageMeta,
 )
 from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
 from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
@@ -5376,6 +5368,38 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
+from datadog_api_client.v2.model.web_integration_account_attributes import WebIntegrationAccountAttributes
+from datadog_api_client.v2.model.web_integration_account_create_request import WebIntegrationAccountCreateRequest
+from datadog_api_client.v2.model.web_integration_account_create_request_attributes import (
+    WebIntegrationAccountCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.web_integration_account_create_request_data import (
+    WebIntegrationAccountCreateRequestData,
+)
+from datadog_api_client.v2.model.web_integration_account_response import WebIntegrationAccountResponse
+from datadog_api_client.v2.model.web_integration_account_response_data import WebIntegrationAccountResponseData
+from datadog_api_client.v2.model.web_integration_account_schema_response import WebIntegrationAccountSchemaResponse
+from datadog_api_client.v2.model.web_integration_account_schema_response_properties import (
+    WebIntegrationAccountSchemaResponseProperties,
+)
+from datadog_api_client.v2.model.web_integration_account_schema_response_secrets_object import (
+    WebIntegrationAccountSchemaResponseSecretsObject,
+)
+from datadog_api_client.v2.model.web_integration_account_schema_response_settings_field import (
+    WebIntegrationAccountSchemaResponseSettingsField,
+)
+from datadog_api_client.v2.model.web_integration_account_schema_response_settings_object import (
+    WebIntegrationAccountSchemaResponseSettingsObject,
+)
+from datadog_api_client.v2.model.web_integration_account_type import WebIntegrationAccountType
+from datadog_api_client.v2.model.web_integration_account_update_request import WebIntegrationAccountUpdateRequest
+from datadog_api_client.v2.model.web_integration_account_update_request_attributes import (
+    WebIntegrationAccountUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.web_integration_account_update_request_data import (
+    WebIntegrationAccountUpdateRequestData,
+)
+from datadog_api_client.v2.model.web_integration_accounts_response import WebIntegrationAccountsResponse
 from datadog_api_client.v2.model.weekday import Weekday
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
 from datadog_api_client.v2.model.workflow_data import WorkflowData
@@ -8556,7 +8580,6 @@ __all__ = [
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",
-    "SecurityMonitoringPaginatedSuppressionsResponse",
     "SecurityMonitoringReferenceTable",
     "SecurityMonitoringRuleAnomalyDetectionOptions",
     "SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration",
@@ -8648,13 +8671,10 @@ __all__ = [
     "SecurityMonitoringSuppressionCreateData",
     "SecurityMonitoringSuppressionCreateRequest",
     "SecurityMonitoringSuppressionResponse",
-    "SecurityMonitoringSuppressionSort",
     "SecurityMonitoringSuppressionType",
     "SecurityMonitoringSuppressionUpdateAttributes",
     "SecurityMonitoringSuppressionUpdateData",
     "SecurityMonitoringSuppressionUpdateRequest",
-    "SecurityMonitoringSuppressionsMeta",
-    "SecurityMonitoringSuppressionsPageMeta",
     "SecurityMonitoringSuppressionsResponse",
     "SecurityMonitoringThirdPartyRootQuery",
     "SecurityMonitoringThirdPartyRuleCase",
@@ -9260,6 +9280,22 @@ __all__ = [
     "VulnerabilityStatus",
     "VulnerabilityTool",
     "VulnerabilityType",
+    "WebIntegrationAccountAttributes",
+    "WebIntegrationAccountCreateRequest",
+    "WebIntegrationAccountCreateRequestAttributes",
+    "WebIntegrationAccountCreateRequestData",
+    "WebIntegrationAccountResponse",
+    "WebIntegrationAccountResponseData",
+    "WebIntegrationAccountSchemaResponse",
+    "WebIntegrationAccountSchemaResponseProperties",
+    "WebIntegrationAccountSchemaResponseSecretsObject",
+    "WebIntegrationAccountSchemaResponseSettingsField",
+    "WebIntegrationAccountSchemaResponseSettingsObject",
+    "WebIntegrationAccountType",
+    "WebIntegrationAccountUpdateRequest",
+    "WebIntegrationAccountUpdateRequestAttributes",
+    "WebIntegrationAccountUpdateRequestData",
+    "WebIntegrationAccountsResponse",
     "Weekday",
     "WidgetLiveSpan",
     "WorkflowData",
