@@ -2462,6 +2462,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_jira_issue" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.attach_jira_issue()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.bulk_export_security_monitoring_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.bulk_export_security_monitoring_rules()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.cancel_threat_hunting_job" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.cancel_threat_hunting_job()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.convert_existing_security_monitoring_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.convert_existing_security_monitoring_rule()</span></code></a>
@@ -12745,6 +12747,19 @@ You can attach up to 50 security findings per Jira issue. If the Jira issue is n
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response.FindingCaseResponse" title="datadog_api_client.v2.model.finding_case_response.FindingCaseResponse">FindingCaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.bulk_export_security_monitoring_rules">
+<span class="sig-name descname"><span class="pre">bulk_export_security_monitoring_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_rule_bulk_export_payload.SecurityMonitoringRuleBulkExportPayload" title="datadog_api_client.v2.model.security_monitoring_rule_bulk_export_payload.SecurityMonitoringRuleBulkExportPayload"><span class="pre">SecurityMonitoringRuleBulkExportPayload</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">IOBase</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.bulk_export_security_monitoring_rules" title="Link to this definition">¶</a></dt>
+<dd><p>Bulk export security monitoring rules.</p>
+<p>Export a list of security monitoring rules as a ZIP file containing JSON rule definitions.
+The endpoint accepts a list of rule IDs and returns a ZIP archive where each rule is
+saved as a separate JSON file named after the rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>file_type</p>
 </dd>
 </dl>
 </dd></dl>
