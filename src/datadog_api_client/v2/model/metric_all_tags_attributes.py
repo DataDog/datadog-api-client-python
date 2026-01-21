@@ -17,20 +17,29 @@ class MetricAllTagsAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "ingested_tags": ([str],),
             "tags": ([str],),
         }
 
     attribute_map = {
+        "ingested_tags": "ingested_tags",
         "tags": "tags",
     }
 
-    def __init__(self_, tags: Union[List[str], UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, ingested_tags: Union[List[str], UnsetType] = unset, tags: Union[List[str], UnsetType] = unset, **kwargs
+    ):
         """
-        Object containing the definition of a metric's tags.
+        Object containing the definition of a metric's indexed and ingested tags.
 
-        :param tags: List of indexed tag value pairs.
+        :param ingested_tags: List of ingested tags that are not indexed.
+        :type ingested_tags: [str], optional
+
+        :param tags: List of indexed tags.
         :type tags: [str], optional
         """
+        if ingested_tags is not unset:
+            kwargs["ingested_tags"] = ingested_tags
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)

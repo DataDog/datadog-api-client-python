@@ -32,9 +32,9 @@ class MetricAllTagsResponse(ModelNormal):
 
     def __init__(self_, data: Union[MetricAllTags, UnsetType] = unset, **kwargs):
         """
-        Response object that includes a single metric's indexed tags.
+        Response object that includes a single metric's indexed and ingested tags.
 
-        :param data: Object for a single metric's indexed tags.
+        :param data: Object for a single metric's indexed and ingested tags.
         :type data: MetricAllTags, optional
         """
         if data is not unset:
