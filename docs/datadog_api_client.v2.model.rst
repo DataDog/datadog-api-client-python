@@ -21585,6 +21585,62 @@ datadog\_api\_client.v2.model.secret\_rule\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_entity\_config\_risks module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_config_risks
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_entity\_metadata module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_entity\_risk\_score module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_risk_score
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_entity\_risk\_score\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_risk_score_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_entity\_risk\_score\_attributes\_severity module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_risk_score_attributes_severity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_entity\_risk\_score\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_risk_score_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_entity\_risk\_scores\_meta module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_risk_scores_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_entity\_risk\_scores\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_risk_scores_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_filter module
 -----------------------------------------------------
 

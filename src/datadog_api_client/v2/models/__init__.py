@@ -4344,6 +4344,16 @@ from datadog_api_client.v2.model.secret_rule_data_attributes_match_validation_va
     SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems,
 )
 from datadog_api_client.v2.model.secret_rule_data_type import SecretRuleDataType
+from datadog_api_client.v2.model.security_entity_config_risks import SecurityEntityConfigRisks
+from datadog_api_client.v2.model.security_entity_metadata import SecurityEntityMetadata
+from datadog_api_client.v2.model.security_entity_risk_score import SecurityEntityRiskScore
+from datadog_api_client.v2.model.security_entity_risk_score_attributes import SecurityEntityRiskScoreAttributes
+from datadog_api_client.v2.model.security_entity_risk_score_attributes_severity import (
+    SecurityEntityRiskScoreAttributesSeverity,
+)
+from datadog_api_client.v2.model.security_entity_risk_score_type import SecurityEntityRiskScoreType
+from datadog_api_client.v2.model.security_entity_risk_scores_meta import SecurityEntityRiskScoresMeta
+from datadog_api_client.v2.model.security_entity_risk_scores_response import SecurityEntityRiskScoresResponse
 from datadog_api_client.v2.model.security_filter import SecurityFilter
 from datadog_api_client.v2.model.security_filter_attributes import SecurityFilterAttributes
 from datadog_api_client.v2.model.security_filter_create_attributes import SecurityFilterCreateAttributes
@@ -8496,6 +8506,14 @@ __all__ = [
     "SecretRuleDataAttributesMatchValidationInvalidHttpStatusCodeItems",
     "SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems",
     "SecretRuleDataType",
+    "SecurityEntityConfigRisks",
+    "SecurityEntityMetadata",
+    "SecurityEntityRiskScore",
+    "SecurityEntityRiskScoreAttributes",
+    "SecurityEntityRiskScoreAttributesSeverity",
+    "SecurityEntityRiskScoreType",
+    "SecurityEntityRiskScoresMeta",
+    "SecurityEntityRiskScoresResponse",
     "SecurityFilter",
     "SecurityFilterAttributes",
     "SecurityFilterCreateAttributes",
