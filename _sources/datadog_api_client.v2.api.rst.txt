@@ -585,6 +585,13 @@ datadog\_api\_client.v2.api.static\_analysis\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.status\_pages\_api module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.status_pages_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.synthetics\_api module
 --------------------------------------------------
 
