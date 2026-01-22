@@ -5,10 +5,14 @@ Create or update a budget returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
-from datadog_api_client.v2.model.budget_entry import BudgetEntry
 from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
 from datadog_api_client.v2.model.budget_with_entries_data import BudgetWithEntriesData
-from datadog_api_client.v2.model.tag_filter import TagFilter
+from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items import (
+    BudgetWithEntriesDataAttributesEntriesItems,
+)
+from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
+    BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
+)
 
 body = BudgetWithEntries(
     data=BudgetWithEntriesData(
@@ -17,14 +21,9 @@ body = BudgetWithEntries(
             created_by="00000000-0a0a-0a0a-aaa0-00000000000a",
             end_month=202502,
             entries=[
-                BudgetEntry(
-                    amount=500.0,
-                    month=202501,
+                BudgetWithEntriesDataAttributesEntriesItems(
                     tag_filters=[
-                        TagFilter(
-                            tag_key="service",
-                            tag_value="ec2",
-                        ),
+                        BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems(),
                     ],
                 ),
             ],
@@ -37,6 +36,7 @@ body = BudgetWithEntries(
             updated_by="00000000-0a0a-0a0a-aaa0-00000000000a",
         ),
         id="00000000-0a0a-0a0a-aaa0-00000000000a",
+        type="",
     ),
 )
 

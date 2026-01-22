@@ -518,9 +518,24 @@ from datadog_api_client.v2.model.billing_dimensions_mapping_response import Bill
 from datadog_api_client.v2.model.budget import Budget
 from datadog_api_client.v2.model.budget_array import BudgetArray
 from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
-from datadog_api_client.v2.model.budget_entry import BudgetEntry
+from datadog_api_client.v2.model.budget_validation_request import BudgetValidationRequest
+from datadog_api_client.v2.model.budget_validation_request_data import BudgetValidationRequestData
+from datadog_api_client.v2.model.budget_validation_response import BudgetValidationResponse
+from datadog_api_client.v2.model.budget_validation_response_data import BudgetValidationResponseData
+from datadog_api_client.v2.model.budget_validation_response_data_attributes import (
+    BudgetValidationResponseDataAttributes,
+)
+from datadog_api_client.v2.model.budget_validation_response_data_type import BudgetValidationResponseDataType
 from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
 from datadog_api_client.v2.model.budget_with_entries_data import BudgetWithEntriesData
+from datadog_api_client.v2.model.budget_with_entries_data_attributes import BudgetWithEntriesDataAttributes
+from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items import (
+    BudgetWithEntriesDataAttributesEntriesItems,
+)
+from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
+    BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
+)
+from datadog_api_client.v2.model.budget_with_entries_data_type import BudgetWithEntriesDataType
 from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request import BulkDeleteAppsDatastoreItemsRequest
 from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data import (
     BulkDeleteAppsDatastoreItemsRequestData,
@@ -5253,7 +5268,6 @@ from datadog_api_client.v2.model.table_row_resource_array import TableRowResourc
 from datadog_api_client.v2.model.table_row_resource_data import TableRowResourceData
 from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
 from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
-from datadog_api_client.v2.model.tag_filter import TagFilter
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -6055,9 +6069,18 @@ __all__ = [
     "Budget",
     "BudgetArray",
     "BudgetAttributes",
-    "BudgetEntry",
+    "BudgetValidationRequest",
+    "BudgetValidationRequestData",
+    "BudgetValidationResponse",
+    "BudgetValidationResponseData",
+    "BudgetValidationResponseDataAttributes",
+    "BudgetValidationResponseDataType",
     "BudgetWithEntries",
     "BudgetWithEntriesData",
+    "BudgetWithEntriesDataAttributes",
+    "BudgetWithEntriesDataAttributesEntriesItems",
+    "BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems",
+    "BudgetWithEntriesDataType",
     "BulkDeleteAppsDatastoreItemsRequest",
     "BulkDeleteAppsDatastoreItemsRequestData",
     "BulkDeleteAppsDatastoreItemsRequestDataAttributes",
@@ -9342,7 +9365,6 @@ __all__ = [
     "TableRowResourceData",
     "TableRowResourceDataAttributes",
     "TableRowResourceDataType",
-    "TagFilter",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",

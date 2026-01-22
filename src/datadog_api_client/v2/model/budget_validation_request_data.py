@@ -14,18 +14,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
+    from datadog_api_client.v2.model.budget_with_entries_data_attributes import BudgetWithEntriesDataAttributes
+    from datadog_api_client.v2.model.budget_with_entries_data_type import BudgetWithEntriesDataType
 
 
-class Budget(ModelNormal):
+class BudgetValidationRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
+        from datadog_api_client.v2.model.budget_with_entries_data_attributes import BudgetWithEntriesDataAttributes
+        from datadog_api_client.v2.model.budget_with_entries_data_type import BudgetWithEntriesDataType
 
         return {
-            "attributes": (BudgetAttributes,),
+            "attributes": (BudgetWithEntriesDataAttributes,),
             "id": (str,),
-            "type": (str,),
+            "type": (BudgetWithEntriesDataType,),
         }
 
     attribute_map = {
@@ -36,22 +38,22 @@ class Budget(ModelNormal):
 
     def __init__(
         self_,
-        type: str,
-        attributes: Union[BudgetAttributes, UnsetType] = unset,
+        type: BudgetWithEntriesDataType,
+        attributes: Union[BudgetWithEntriesDataAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        A budget.
 
-        :param attributes: The attributes of a budget.
-        :type attributes: BudgetAttributes, optional
 
-        :param id: The id of the budget.
+        :param attributes:
+        :type attributes: BudgetWithEntriesDataAttributes, optional
+
+        :param id:
         :type id: str, optional
 
-        :param type: The type of the object, must be ``budget``.
-        :type type: str
+        :param type: Budget resource type.
+        :type type: BudgetWithEntriesDataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
