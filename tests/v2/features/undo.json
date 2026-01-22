@@ -1091,6 +1091,18 @@
       "type": "unsafe"
     }
   },
+  "ValidateCsvBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ValidateBudget": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteBudget": {
     "tag": "Cloud Cost Management",
     "undo": {
