@@ -1051,7 +1051,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression {{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression {{ unique_hash }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"suppression\" in the system",
@@ -1063,7 +1063,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression2 {{ unique }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"type\": \"suppressions\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"name\": \"suppression2 {{ unique_hash }}\",\n      \"description\": \"{{ unique }}\",\n      \"rule_query\": \"source:cloudtrail\",\n      \"suppression_query\": \"env:test\",\n      \"tags\": [\"technique:T1110-brute-force\", \"source:cloudtrail\"]\n    }\n  }\n}"
       }
     ],
     "step": "there is a valid \"suppression2\" in the system",
@@ -1229,7 +1229,7 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"A Status Page\",\n      \"domain_prefix\": \"status-page-{{ unique_hash }}\",\n      \"components\": [{\"name\": \"Application\", \"type\": \"group\", \"components\":[{\"name\": \"Login\", \"type\": \"component\", \"position\": 0},{\"name\": \"Settings\", \"type\": \"component\", \"position\": 1}]}],\n      \"type\": \"internal\",\n      \"visualization_type\": \"bars_and_uptime_percentage\",\n      \"enabled\": true\n    },\n    \"type\": \"status_pages\"\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"A Status Page\",\n      \"domain_prefix\": \"{{ unique_hash }}\",\n      \"components\": [{\"name\": \"Application\", \"type\": \"group\", \"components\":[{\"name\": \"Login\", \"type\": \"component\", \"position\": 0},{\"name\": \"Settings\", \"type\": \"component\", \"position\": 1}]}],\n      \"type\": \"internal\",\n      \"visualization_type\": \"bars_and_uptime_percentage\",\n      \"enabled\": true\n    },\n    \"type\": \"status_pages\"\n  }\n}"
       }
     ],
     "step": "there is a valid \"status_page\" in the system",

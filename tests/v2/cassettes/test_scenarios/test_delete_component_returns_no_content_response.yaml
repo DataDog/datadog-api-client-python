@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"status-page-0d2d7c9c3a7223ad","enabled":true,"name":"A
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"52506f44627e27d9","enabled":true,"name":"A
       Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
     headers:
       accept:
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/statuspages
   response:
     body:
-      string: '{"data":{"id":"a2a7be87-a517-45c5-9fde-71d0a2bdeb79","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"21dd43f5-3fe0-40be-a8e8-2d6b9d7e3c5a","name":"Application","type":"group","position":0,"components":[{"id":"159fd76a-661a-4b01-a4f3-b993ddde6efb","name":"Login","type":"component","status":"operational","position":0},{"id":"4c7b8f87-564a-4372-837e-e8aea00b2a47","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-14T18:34:20.819798Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"status-page-0d2d7c9c3a7223ad","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-14T18:34:20.819798Z","name":"A
-        Status Page","page_url":"https://frog.datadoghq.com/status-pages/a2a7be87-a517-45c5-9fde-71d0a2bdeb79/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"e4365564-6c49-4a14-b9c2-736c038a62a9","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"be6cbe05-c28b-4cd1-be92-0323c2399a6c","name":"Application","type":"group","position":0,"components":[{"id":"da518ded-9db2-4cba-919e-0ad04d208561","name":"Login","type":"component","status":"operational","position":0},{"id":"06e4ed67-1231-409e-a0b1-da84785d64a0","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-21T21:23:39.487738Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"52506f44627e27d9","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-21T21:23:39.487738Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/e4365564-6c49-4a14-b9c2-736c038a62a9/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/statuspages/a2a7be87-a517-45c5-9fde-71d0a2bdeb79/components/21dd43f5-3fe0-40be-a8e8-2d6b9d7e3c5a
+    uri: https://api.datadoghq.com/api/v2/statuspages/e4365564-6c49-4a14-b9c2-736c038a62a9/components/be6cbe05-c28b-4cd1-be92-0323c2399a6c
   response:
     body:
       string: ''
@@ -39,7 +39,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/statuspages/a2a7be87-a517-45c5-9fde-71d0a2bdeb79
+    uri: https://api.datadoghq.com/api/v2/statuspages/e4365564-6c49-4a14-b9c2-736c038a62a9
   response:
     body:
       string: ''
