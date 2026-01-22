@@ -3077,6 +3077,13 @@ datadog\_api\_client.v2.model.case\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.case\_status\_group module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_status_group
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case\_trigger module
 --------------------------------------------------
 

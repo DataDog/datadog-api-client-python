@@ -681,6 +681,7 @@ from datadog_api_client.v2.model.case_resource_type import CaseResourceType
 from datadog_api_client.v2.model.case_response import CaseResponse
 from datadog_api_client.v2.model.case_sortable_field import CaseSortableField
 from datadog_api_client.v2.model.case_status import CaseStatus
+from datadog_api_client.v2.model.case_status_group import CaseStatusGroup
 from datadog_api_client.v2.model.case_trigger import CaseTrigger
 from datadog_api_client.v2.model.case_trigger_wrapper import CaseTriggerWrapper
 from datadog_api_client.v2.model.case_type import CaseType
@@ -6202,6 +6203,7 @@ __all__ = [
     "CaseResponse",
     "CaseSortableField",
     "CaseStatus",
+    "CaseStatusGroup",
     "CaseTrigger",
     "CaseTriggerWrapper",
     "CaseType",
