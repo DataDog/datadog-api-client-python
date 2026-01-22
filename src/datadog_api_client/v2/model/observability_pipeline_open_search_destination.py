@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_open_search_destination_data_stream import (
+        ObservabilityPipelineOpenSearchDestinationDataStream,
+    )
     from datadog_api_client.v2.model.observability_pipeline_open_search_destination_type import (
         ObservabilityPipelineOpenSearchDestinationType,
     )
@@ -22,12 +25,16 @@ if TYPE_CHECKING:
 class ObservabilityPipelineOpenSearchDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_open_search_destination_data_stream import (
+            ObservabilityPipelineOpenSearchDestinationDataStream,
+        )
         from datadog_api_client.v2.model.observability_pipeline_open_search_destination_type import (
             ObservabilityPipelineOpenSearchDestinationType,
         )
 
         return {
             "bulk_index": (str,),
+            "data_stream": (ObservabilityPipelineOpenSearchDestinationDataStream,),
             "id": (str,),
             "inputs": ([str],),
             "type": (ObservabilityPipelineOpenSearchDestinationType,),
@@ -35,6 +42,7 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
 
     attribute_map = {
         "bulk_index": "bulk_index",
+        "data_stream": "data_stream",
         "id": "id",
         "inputs": "inputs",
         "type": "type",
@@ -46,6 +54,7 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         inputs: List[str],
         type: ObservabilityPipelineOpenSearchDestinationType,
         bulk_index: Union[str, UnsetType] = unset,
+        data_stream: Union[ObservabilityPipelineOpenSearchDestinationDataStream, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,6 +64,9 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
 
         :param bulk_index: The index to write logs to.
         :type bulk_index: str, optional
+
+        :param data_stream: Configuration options for writing to OpenSearch Data Streams instead of a fixed index.
+        :type data_stream: ObservabilityPipelineOpenSearchDestinationDataStream, optional
 
         :param id: The unique identifier for this component.
         :type id: str
@@ -67,6 +79,8 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         """
         if bulk_index is not unset:
             kwargs["bulk_index"] = bulk_index
+        if data_stream is not unset:
+            kwargs["data_stream"] = data_stream
         super().__init__(kwargs)
 
         self_.id = id

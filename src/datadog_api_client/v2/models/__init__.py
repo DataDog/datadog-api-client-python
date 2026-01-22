@@ -3373,6 +3373,9 @@ from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_library imp
 from datadog_api_client.v2.model.observability_pipeline_open_search_destination import (
     ObservabilityPipelineOpenSearchDestination,
 )
+from datadog_api_client.v2.model.observability_pipeline_open_search_destination_data_stream import (
+    ObservabilityPipelineOpenSearchDestinationDataStream,
+)
 from datadog_api_client.v2.model.observability_pipeline_open_search_destination_type import (
     ObservabilityPipelineOpenSearchDestinationType,
 )
@@ -8109,6 +8112,7 @@ __all__ = [
     "ObservabilityPipelineOcsfMapperProcessorType",
     "ObservabilityPipelineOcsfMappingLibrary",
     "ObservabilityPipelineOpenSearchDestination",
+    "ObservabilityPipelineOpenSearchDestinationDataStream",
     "ObservabilityPipelineOpenSearchDestinationType",
     "ObservabilityPipelineOpentelemetrySource",
     "ObservabilityPipelineOpentelemetrySourceType",
