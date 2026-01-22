@@ -31,6 +31,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
     from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
     from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
+    from datadog_api_client.v2.model.on_call_trigger_wrapper import OnCallTriggerWrapper
     from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
     from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
     from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
@@ -92,6 +93,7 @@ class Spec(ModelNormal):
                     IncidentTriggerWrapper,
                     MonitorTriggerWrapper,
                     NotebookTriggerWrapper,
+                    OnCallTriggerWrapper,
                     ScheduleTriggerWrapper,
                     SecurityTriggerWrapper,
                     SelfServiceTriggerWrapper,
