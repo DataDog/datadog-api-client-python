@@ -168,7 +168,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         :param no_screenshot: A boolean set to not take a screenshot for the step.
         :type no_screenshot: bool, optional
 
-        :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
+        :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access. This field is deprecated. Use the restriction policies API to manage permissions. **Deprecated**.
         :type restricted_roles: SyntheticsRestrictedRoles, optional
 
         :param retry: Object describing the retry strategy to apply to a Synthetic test.
