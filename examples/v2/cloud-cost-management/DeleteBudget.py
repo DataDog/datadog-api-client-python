@@ -1,5 +1,5 @@
 """
-Delete a budget returns "No Content" response
+Delete budget returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration

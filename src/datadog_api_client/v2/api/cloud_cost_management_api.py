@@ -25,6 +25,9 @@ from datadog_api_client.v2.model.azure_uc_config_post_request import AzureUCConf
 from datadog_api_client.v2.model.uc_config_pair import UCConfigPair
 from datadog_api_client.v2.model.azure_uc_config_patch_request import AzureUCConfigPatchRequest
 from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
+from datadog_api_client.v2.model.validation_response import ValidationResponse
+from datadog_api_client.v2.model.budget_validation_response import BudgetValidationResponse
+from datadog_api_client.v2.model.budget_validation_request import BudgetValidationRequest
 from datadog_api_client.v2.model.budget_array import BudgetArray
 from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCostsFileListResponse
 from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
@@ -157,7 +160,7 @@ class CloudCostManagementApi:
         self._delete_budget_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cost/budget/{budget_id}",
                 "operation_id": "delete_budget",
                 "http_method": "DELETE",
@@ -317,8 +320,8 @@ class CloudCostManagementApi:
 
         self._get_budget_endpoint = _Endpoint(
             settings={
-                "response_type": (BudgetWithEntries,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "response_type": (BudgetValidationRequest,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cost/budget/{budget_id}",
                 "operation_id": "get_budget",
                 "http_method": "GET",
@@ -479,7 +482,7 @@ class CloudCostManagementApi:
         self._list_budgets_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cost/budgets",
                 "operation_id": "list_budgets",
                 "http_method": "GET",
@@ -803,7 +806,7 @@ class CloudCostManagementApi:
         self._upsert_budget_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetWithEntries,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cost/budget",
                 "operation_id": "upsert_budget",
                 "http_method": "PUT",
@@ -817,6 +820,42 @@ class CloudCostManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._validate_budget_endpoint = _Endpoint(
+            settings={
+                "response_type": (BudgetValidationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/budget/validate",
+                "operation_id": "validate_budget",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (BudgetValidationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._validate_csv_budget_endpoint = _Endpoint(
+            settings={
+                "response_type": (ValidationResponse,),
+                "auth": [],
+                "endpoint_path": "/api/v2/cost/budget/csv/validate",
+                "operation_id": "validate_csv_budget",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -938,9 +977,9 @@ class CloudCostManagementApi:
         self,
         budget_id: str,
     ) -> None:
-        """Delete a budget.
+        """Delete budget.
 
-        Delete a budget.
+        Delete a budget
 
         :param budget_id: Budget id.
         :type budget_id: str
@@ -1056,14 +1095,14 @@ class CloudCostManagementApi:
     def get_budget(
         self,
         budget_id: str,
-    ) -> BudgetWithEntries:
-        """Get a budget.
+    ) -> BudgetValidationRequest:
+        """Get budget.
 
-        Get a budget.
+        Get a budget
 
         :param budget_id: Budget id.
         :type budget_id: str
-        :rtype: BudgetWithEntries
+        :rtype: BudgetValidationRequest
         """
         kwargs: Dict[str, Any] = {}
         kwargs["budget_id"] = budget_id
@@ -1470,6 +1509,32 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._upsert_budget_endpoint.call_with_http_info(**kwargs)
+
+    def validate_budget(
+        self,
+        body: BudgetValidationRequest,
+    ) -> BudgetValidationResponse:
+        """Validate budget.
+
+        Validate a budget configuration without creating or modifying it
+
+        :type body: BudgetValidationRequest
+        :rtype: BudgetValidationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._validate_budget_endpoint.call_with_http_info(**kwargs)
+
+    def validate_csv_budget(
+        self,
+    ) -> ValidationResponse:
+        """Validate CSV budget.
+
+        :rtype: ValidationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._validate_csv_budget_endpoint.call_with_http_info(**kwargs)
 
     def validate_query(
         self,

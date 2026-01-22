@@ -14,18 +14,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tag_filter import TagFilter
+    from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
+        BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
+    )
 
 
-class BudgetEntry(ModelNormal):
+class BudgetWithEntriesDataAttributesEntriesItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tag_filter import TagFilter
+        from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
+            BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
+        )
 
         return {
             "amount": (float,),
             "month": (int,),
-            "tag_filters": ([TagFilter],),
+            "tag_filters": ([BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems],),
         }
 
     attribute_map = {
@@ -38,20 +42,20 @@ class BudgetEntry(ModelNormal):
         self_,
         amount: Union[float, UnsetType] = unset,
         month: Union[int, UnsetType] = unset,
-        tag_filters: Union[List[TagFilter], UnsetType] = unset,
+        tag_filters: Union[List[BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems], UnsetType] = unset,
         **kwargs,
     ):
         """
-        The entry of a budget.
 
-        :param amount: The ``amount`` of the budget entry.
+
+        :param amount:
         :type amount: float, optional
 
-        :param month: The ``month`` of the budget entry.
+        :param month:
         :type month: int, optional
 
-        :param tag_filters: The ``tag_filters`` of the budget entry.
-        :type tag_filters: [TagFilter], optional
+        :param tag_filters:
+        :type tag_filters: [BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems], optional
         """
         if amount is not unset:
             kwargs["amount"] = amount

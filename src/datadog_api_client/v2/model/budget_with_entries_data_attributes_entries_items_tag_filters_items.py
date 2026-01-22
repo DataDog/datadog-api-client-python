@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class TagFilter(ModelNormal):
+class BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
@@ -28,12 +28,12 @@ class TagFilter(ModelNormal):
 
     def __init__(self_, tag_key: Union[str, UnsetType] = unset, tag_value: Union[str, UnsetType] = unset, **kwargs):
         """
-        Tag filter for the budget's entries.
 
-        :param tag_key: The key of the tag.
+
+        :param tag_key:
         :type tag_key: str, optional
 
-        :param tag_value: The value of the tag.
+        :param tag_value:
         :type tag_value: str, optional
         """
         if tag_key is not unset:

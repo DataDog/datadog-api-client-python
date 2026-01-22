@@ -70,21 +70,21 @@ Feature: Cloud Cost Management
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or update a budget returns "Bad Request" response
     Given new "UpsertBudget" request
-    And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"amount": 500, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a"}}
+    And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or update a budget returns "Not Found" response
     Given new "UpsertBudget" request
-    And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"amount": 500, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a"}}
+    And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or update a budget returns "OK" response
     Given new "UpsertBudget" request
-    And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"amount": 500, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a"}}
+    And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -189,7 +189,7 @@ Feature: Cloud Cost Management
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-cost-management
-  Scenario: Delete a budget returns "No Content" response
+  Scenario: Delete budget returns "No Content" response
     Given new "DeleteBudget" request
     And request contains "budget_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -241,26 +241,12 @@ Feature: Cloud Cost Management
     And the response "data.type" is equal to "gcp_uc_config"
     And the response "data.attributes.account_id" is equal to "123456_ABCDEF_123ABC"
 
-  @generated @skip @team:DataDog/cloud-cost-management
-  Scenario: Get a budget returns "Bad Request" response
-    Given new "GetBudget" request
-    And request contains "budget_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
   @team:DataDog/cloud-cost-management
   Scenario: Get a budget returns "Not Found" response
     Given new "GetBudget" request
     And request contains "budget_id" parameter with value "9d055d22-0a0a-0a0a-aaa0-00000000000a"
     When the request is sent
     Then the response status is 404 Not Found
-
-  @generated @skip @team:DataDog/cloud-cost-management
-  Scenario: Get a budget returns "OK" response
-    Given new "GetBudget" request
-    And request contains "budget_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Get a tag pipeline ruleset returns "OK" response
@@ -270,6 +256,13 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data.type" is equal to "ruleset"
     And the response "data.attributes.name" is equal to "EVP Cost Tags"
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get budget returns "OK" response
+    Given new "GetBudget" request
+    And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Get cost AWS CUR config returns "OK" response
@@ -475,6 +468,19 @@ Feature: Cloud Cost Management
     And body with value [{"BilledCost": 100.5, "BillingCurrency": "USD", "ChargeDescription": "Monthly usage charge for my service", "ChargePeriodEnd": "2023-02-28", "ChargePeriodStart": "2023-02-01"}]
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Validate CSV budget returns "OK" response
+    Given new "ValidateCsvBudget" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Validate budget returns "OK" response
+    Given new "ValidateBudget" request
+    And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"amount": 500, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}, {"amount": 500, "month": 202502, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "1", "type": "budget"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Validate query returns "OK" response

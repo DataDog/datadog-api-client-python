@@ -19,7 +19,7 @@ if TYPE_CHECKING:
     )
 
 
-class BudgetAttributes(ModelNormal):
+class BudgetWithEntriesDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items import (
@@ -70,39 +70,39 @@ class BudgetAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The attributes of a budget.
 
-        :param created_at: The timestamp when the budget was created.
+
+        :param created_at:
         :type created_at: int, optional
 
-        :param created_by: The id of the user that created the budget.
+        :param created_by:
         :type created_by: str, optional
 
-        :param end_month: The month when the budget ends.
+        :param end_month:
         :type end_month: int, optional
 
         :param entries:
         :type entries: [BudgetWithEntriesDataAttributesEntriesItems], optional
 
-        :param metrics_query: The cost query used to track against the budget.
+        :param metrics_query:
         :type metrics_query: str, optional
 
-        :param name: The name of the budget.
+        :param name:
         :type name: str, optional
 
-        :param org_id: The id of the org the budget belongs to.
+        :param org_id:
         :type org_id: int, optional
 
-        :param start_month: The month when the budget starts.
+        :param start_month:
         :type start_month: int, optional
 
-        :param total_amount: The sum of all budget entries' amounts.
+        :param total_amount:
         :type total_amount: float, optional
 
-        :param updated_at: The timestamp when the budget was last updated.
+        :param updated_at:
         :type updated_at: int, optional
 
-        :param updated_by: The id of the user that created the budget.
+        :param updated_by:
         :type updated_by: str, optional
         """
         if created_at is not unset:
