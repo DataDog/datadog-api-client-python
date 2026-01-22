@@ -34,7 +34,7 @@ class SyntheticsGlobalVariableAttributes(ModelNormal):
         """
         Attributes of the global variable.
 
-        :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access.
+        :param restricted_roles: A list of role identifiers that can be pulled from the Roles API, for restricting read and write access. This field is deprecated. Use the restriction policies API to manage permissions. **Deprecated**.
         :type restricted_roles: SyntheticsRestrictedRoles, optional
         """
         if restricted_roles is not unset:
