@@ -1320,20 +1320,6 @@ datadog\_api\_client.v2.model.attachment\_data\_relationships module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.attachment\_data\_relationships\_last\_modified\_by\_user module
-----------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.attachment\_data\_relationships\_last\_modified\_by\_user\_data module
-----------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.attachment_data_relationships_last_modified_by_user_data
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.attachment\_included module
 ---------------------------------------------------------
 
@@ -27437,13 +27423,6 @@ datadog\_api\_client.v2.model.user module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.user140420082644000 module
---------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.user140420082644000
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.user\_attributes module
 -----------------------------------------------------
 
@@ -27707,13 +27686,6 @@ datadog\_api\_client.v2.model.user\_teams\_response module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_teams_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.user\_type module
------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.user_type
    :members:
    :show-inheritance:
 
