@@ -9,11 +9,8 @@ from typing import Any, Dict, List, Union
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
-    date,
-    datetime,
     set_attribute_from_path,
     get_attribute_from_path,
-    none_type,
     UnsetType,
     unset,
     UUID,
@@ -340,18 +337,7 @@ class IncidentsApi:
                 },
                 "attachment_id": {
                     "required": True,
-                    "openapi_types": (
-                        bool,
-                        date,
-                        datetime,
-                        dict,
-                        float,
-                        int,
-                        list,
-                        str,
-                        UUID,
-                        none_type,
-                    ),
+                    "openapi_types": (str,),
                     "attribute": "attachment_id",
                     "location": "path",
                 },
@@ -999,18 +985,7 @@ class IncidentsApi:
                 },
                 "attachment_id": {
                     "required": True,
-                    "openapi_types": (
-                        bool,
-                        date,
-                        datetime,
-                        dict,
-                        float,
-                        int,
-                        list,
-                        str,
-                        UUID,
-                        none_type,
-                    ),
+                    "openapi_types": (str,),
                     "attribute": "attachment_id",
                     "location": "path",
                 },
@@ -1389,14 +1364,14 @@ class IncidentsApi:
     def delete_incident_attachment(
         self,
         incident_id: str,
-        attachment_id: Any,
+        attachment_id: str,
     ) -> None:
         """Delete incident attachment.
 
         :param incident_id: The UUID of the incident.
         :type incident_id: str
         :param attachment_id: The ID of the attachment.
-        :type attachment_id: bool, date, datetime, dict, float, int, list, str, UUID, none_type
+        :type attachment_id: str
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
@@ -2027,7 +2002,7 @@ class IncidentsApi:
     def update_incident_attachment(
         self,
         incident_id: str,
-        attachment_id: Any,
+        attachment_id: str,
         body: PatchAttachmentRequest,
         *,
         include: Union[str, UnsetType] = unset,
@@ -2037,7 +2012,7 @@ class IncidentsApi:
         :param incident_id: The UUID of the incident.
         :type incident_id: str
         :param attachment_id: The ID of the attachment.
-        :type attachment_id: bool, date, datetime, dict, float, int, list, str, UUID, none_type
+        :type attachment_id: str
         :type body: PatchAttachmentRequest
         :param include: Resource to include in the response. Supported value: ``last_modified_by_user``.
         :type include: str, optional

@@ -28,12 +28,12 @@ class AttachmentDataAttributesAttachment(ModelNormal):
 
     def __init__(self_, document_url: Union[str, UnsetType] = unset, title: Union[str, UnsetType] = unset, **kwargs):
         """
+        The attachment object.
 
-
-        :param document_url:
+        :param document_url: The URL of the attachment.
         :type document_url: str, optional
 
-        :param title:
+        :param title: The title of the attachment.
         :type title: str, optional
         """
         if document_url is not unset:
