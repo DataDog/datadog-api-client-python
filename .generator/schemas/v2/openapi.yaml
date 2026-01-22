@@ -38711,12 +38711,14 @@ components:
       - none
       - basic
       - bearer
+      - custom
       example: basic
       type: string
       x-enum-varnames:
       - NONE
       - BASIC
       - BEARER
+      - CUSTOM
     ObservabilityPipelineHttpClientSourceType:
       default: http_client
       description: The source type. The value should always be `http_client`.
@@ -39279,6 +39281,8 @@ components:
           description: The index to write logs to.
           example: logs-index
           type: string
+        data_stream:
+          $ref: '#/components/schemas/ObservabilityPipelineOpenSearchDestinationDataStream'
         id:
           description: The unique identifier for this component.
           example: opensearch-destination
@@ -39300,6 +39304,23 @@ components:
       type: object
       x-pipeline-types:
       - logs
+    ObservabilityPipelineOpenSearchDestinationDataStream:
+      description: Configuration options for writing to OpenSearch Data Streams instead
+        of a fixed index.
+      properties:
+        dataset:
+          description: The data stream dataset for your logs. This groups logs by
+            their source or application.
+          type: string
+        dtype:
+          description: The data stream type for your logs. This determines how logs
+            are categorized within the data stream.
+          type: string
+        namespace:
+          description: The data stream namespace for your logs. This separates logs
+            into different environments or domains.
+          type: string
+      type: object
     ObservabilityPipelineOpenSearchDestinationType:
       default: opensearch
       description: The destination type. The value should always be `opensearch`.
