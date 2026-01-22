@@ -1138,6 +1138,7 @@ from datadog_api_client.v1.model.widget_sort import WidgetSort
 from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
 from datadog_api_client.v1.model.widget_sort_order_by import WidgetSortOrderBy
 from datadog_api_client.v1.model.widget_style import WidgetStyle
+from datadog_api_client.v1.model.widget_style_order_by import WidgetStyleOrderBy
 from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
@@ -2128,6 +2129,7 @@ __all__ = [
     "WidgetSortBy",
     "WidgetSortOrderBy",
     "WidgetStyle",
+    "WidgetStyleOrderBy",
     "WidgetSummaryType",
     "WidgetTextAlign",
     "WidgetTickEdge",

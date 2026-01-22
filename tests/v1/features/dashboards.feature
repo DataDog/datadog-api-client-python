@@ -947,6 +947,24 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].q" is equal to "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with timeseries widget using order_by tags
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with order_by tags","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "avg:system.cpu.user{*} by {host}","style": {"palette": "dog_classic","order_by": "tags"},"display_type": "line"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].style.order_by" is equal to "tags"
+    And the response "widgets[0].definition.requests[0].style.palette" is equal to "dog_classic"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with timeseries widget using order_by values
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with order_by values","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "avg:system.cpu.user{*} by {host}","style": {"palette": "warm","order_by": "values"},"display_type": "line"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].style.order_by" is equal to "values"
+    And the response "widgets[0].definition.requests[0].style.palette" is equal to "warm"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with timeseries widget with custom_unit
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/timeseries_widget_with_custom_unit.json"
@@ -957,6 +975,16 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit_scale.unit_name" is equal to "apdex"
     And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit.type" is equal to "canonical_unit"
     And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit.unit_name" is equal to "fraction"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with timeseries widget without order_by for backward compatibility
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} without order_by","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "avg:system.cpu.user{*} by {host}","style": {"palette": "dog_classic","line_type": "solid","line_width": "normal"},"display_type": "line"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].style.palette" is equal to "dog_classic"
+    And the response "widgets[0].definition.requests[0].style.line_type" is equal to "solid"
+    And the response "widgets[0].definition.requests[0].style.line_width" is equal to "normal"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with toplist widget

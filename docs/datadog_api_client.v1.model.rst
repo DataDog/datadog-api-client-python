@@ -6857,6 +6857,13 @@ datadog\_api\_client.v1.model.widget\_style module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.widget\_style\_order\_by module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_style_order_by
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.widget\_summary\_type module
 ----------------------------------------------------------
 
