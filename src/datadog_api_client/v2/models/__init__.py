@@ -5484,6 +5484,17 @@ from datadog_api_client.v2.model.update_deployment_rule_params_data import Updat
 from datadog_api_client.v2.model.update_deployment_rule_params_data_attributes import (
     UpdateDeploymentRuleParamsDataAttributes,
 )
+from datadog_api_client.v2.model.update_flaky_tests_request import UpdateFlakyTestsRequest
+from datadog_api_client.v2.model.update_flaky_tests_request_attributes import UpdateFlakyTestsRequestAttributes
+from datadog_api_client.v2.model.update_flaky_tests_request_data import UpdateFlakyTestsRequestData
+from datadog_api_client.v2.model.update_flaky_tests_request_data_type import UpdateFlakyTestsRequestDataType
+from datadog_api_client.v2.model.update_flaky_tests_request_test import UpdateFlakyTestsRequestTest
+from datadog_api_client.v2.model.update_flaky_tests_request_test_new_state import UpdateFlakyTestsRequestTestNewState
+from datadog_api_client.v2.model.update_flaky_tests_response import UpdateFlakyTestsResponse
+from datadog_api_client.v2.model.update_flaky_tests_response_attributes import UpdateFlakyTestsResponseAttributes
+from datadog_api_client.v2.model.update_flaky_tests_response_data import UpdateFlakyTestsResponseData
+from datadog_api_client.v2.model.update_flaky_tests_response_data_type import UpdateFlakyTestsResponseDataType
+from datadog_api_client.v2.model.update_flaky_tests_response_result import UpdateFlakyTestsResponseResult
 from datadog_api_client.v2.model.update_on_call_notification_rule_request import UpdateOnCallNotificationRuleRequest
 from datadog_api_client.v2.model.update_on_call_notification_rule_request_attributes import (
     UpdateOnCallNotificationRuleRequestAttributes,
@@ -9535,6 +9546,17 @@ __all__ = [
     "UpdateDeploymentRuleParams",
     "UpdateDeploymentRuleParamsData",
     "UpdateDeploymentRuleParamsDataAttributes",
+    "UpdateFlakyTestsRequest",
+    "UpdateFlakyTestsRequestAttributes",
+    "UpdateFlakyTestsRequestData",
+    "UpdateFlakyTestsRequestDataType",
+    "UpdateFlakyTestsRequestTest",
+    "UpdateFlakyTestsRequestTestNewState",
+    "UpdateFlakyTestsResponse",
+    "UpdateFlakyTestsResponseAttributes",
+    "UpdateFlakyTestsResponseData",
+    "UpdateFlakyTestsResponseDataType",
+    "UpdateFlakyTestsResponseResult",
     "UpdateOnCallNotificationRuleRequest",
     "UpdateOnCallNotificationRuleRequestAttributes",
     "UpdateOnCallNotificationRuleRequestData",

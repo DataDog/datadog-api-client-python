@@ -5149,6 +5149,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateFlakyTests": {
+    "tag": "Test Optimization",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "SearchFlakyTests": {
     "tag": "Test Optimization",
     "undo": {
