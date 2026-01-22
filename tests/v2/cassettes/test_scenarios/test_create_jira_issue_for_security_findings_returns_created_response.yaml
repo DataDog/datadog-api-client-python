@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":[{"attributes":{"description":"A description","title":"A title"},"relationships":{"findings":{"data":[{"id":"a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA==","type":"findings"},{"id":"eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ==","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"jira_issues"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/jira_issues
+  response:
+    body:
+      string: '{"data":[{"id":"527aa591-d40e-4445-be80-9d012ba8397e","type":"cases","attributes":{"created_at":"2026-01-02T17:21:34.65318Z","creation_source":"CS_SECURITY_FINDING","description":"A
+        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/compliance?panels=cpfinding%7Cevent%7CruleId%3Akvh-scm-xyu%7CresourceId%3Ai-05f90f00a848687e8\u0026query=%40finding_id%3Aa3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA%3D%3D","resource_id":"a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA=="},{"type":"SECURITY_FINDING","ref":"/security/compliance?panels=cpfinding%7Cevent%7CruleId%3Ayk0-blt-afn%7CresourceId%3Ai-024ea8035de550b0a\u0026query=%40finding_id%3AeWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ%3D%3D","resource_id":"eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ=="}],"jira_issue":{"status":"COMPLETED","result":{"issue_id":"2523579","issue_key":"CSMSEC-105849","issue_url":"https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105849","account_id":"fdcffa62-24ab-4914-a195-a22bdc607030"}},"key":"CSMINV-523","modified_at":"2026-01-02T17:21:35.836445Z","priority":"P3","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
+        title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"relationships":{"findings":{"data":[{"id":"a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA==","type":"findings"}]}},"type":"cases"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/cases
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

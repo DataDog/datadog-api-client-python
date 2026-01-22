@@ -69,7 +69,7 @@ class CreateJiraIssueRequestDataAttributes(ModelNormal):
         """
         Attributes of the Jira issue to create.
 
-        :param assignee_id: Unique identifier of the user assigned to the Jira issue.
+        :param assignee_id: Unique identifier of the Datadog user assigned to the Jira issue.
         :type assignee_id: str, optional
 
         :param description: Description of the Jira issue. If not provided, the description will be automatically generated.

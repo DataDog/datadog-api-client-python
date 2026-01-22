@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":[{"attributes":{"description":"A description","title":"A title"},"relationships":{"findings":{"data":[{"id":"YmNlZmJhYTcyMDU5ZDk0ZDhiNjRmNGI0NDk4MDdiNzN-MDJlMjg0NzNmYzJiODY2MzJkNjU0OTI4NmVhZTUyY2U=","type":"findings"}]},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}},"type":"jira_issues"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/jira_issues
+  response:
+    body:
+      string: '{"data":[{"id":"b5b9ee39-29f8-4b84-a878-28e597e2a33f","type":"cases","attributes":{"created_at":"2026-01-02T17:04:10.514692Z","creation_source":"CS_SECURITY_FINDING","description":"A
+        description","insights":[{"type":"SECURITY_FINDING","ref":"/security/csm/vm?query=%40workflow.integrations.cases.id%3A%2A\u0026vulnerability=bcefbaa72059d94d8b64f4b449807b73","resource_id":"YmNlZmJhYTcyMDU5ZDk0ZDhiNjRmNGI0NDk4MDdiNzN-MDJlMjg0NzNmYzJiODY2MzJkNjU0OTI4NmVhZTUyY2U="}],"jira_issue":{"status":"COMPLETED","result":{"issue_id":"2523546","issue_key":"CSMSEC-105847","issue_url":"https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105847","account_id":"fdcffa62-24ab-4914-a195-a22bdc607030"}},"key":"CSMINV-521","modified_at":"2026-01-02T17:04:11.504549Z","priority":"P4","status":"OPEN","status_group":"SG_OPEN","status_name":"Open","title":"A
+        title","type":"SECURITY"},"relationships":{"created_by":{"data":{"id":"dc09afab-6ae7-11ef-92b1-828dac1b0195","type":"users"}},"project":{"data":{"id":"959a6f71-bac8-4027-b1d3-2264f569296f","type":"projects"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"relationships":{"findings":{"data":[{"id":"YmNlZmJhYTcyMDU5ZDk0ZDhiNjRmNGI0NDk4MDdiNzN-MDJlMjg0NzNmYzJiODY2MzJkNjU0OTI4NmVhZTUyY2U=","type":"findings"}]}},"type":"cases"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/cases
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
