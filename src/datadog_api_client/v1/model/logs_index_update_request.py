@@ -42,6 +42,7 @@ class LogsIndexUpdateRequest(ModelNormal):
             "filter": (LogsFilter,),
             "num_flex_logs_retention_days": (int,),
             "num_retention_days": (int,),
+            "tags": ([str],),
         }
 
     attribute_map = {
@@ -53,6 +54,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         "filter": "filter",
         "num_flex_logs_retention_days": "num_flex_logs_retention_days",
         "num_retention_days": "num_retention_days",
+        "tags": "tags",
     }
 
     def __init__(
@@ -65,6 +67,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
         num_flex_logs_retention_days: Union[int, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -105,6 +108,9 @@ class LogsIndexUpdateRequest(ModelNormal):
 
             **Note** : Changing this value affects all logs already in this index. It may also affect billing.
         :type num_retention_days: int, optional
+
+        :param tags: A list of tags associated with the index. Tags must be in ``key:value`` format.
+        :type tags: [str], optional
         """
         if daily_limit is not unset:
             kwargs["daily_limit"] = daily_limit
@@ -120,6 +126,8 @@ class LogsIndexUpdateRequest(ModelNormal):
             kwargs["num_flex_logs_retention_days"] = num_flex_logs_retention_days
         if num_retention_days is not unset:
             kwargs["num_retention_days"] = num_retention_days
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.filter = filter

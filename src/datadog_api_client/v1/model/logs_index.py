@@ -43,6 +43,7 @@ class LogsIndex(ModelNormal):
             "name": (str,),
             "num_flex_logs_retention_days": (int,),
             "num_retention_days": (int,),
+            "tags": ([str],),
         }
 
     attribute_map = {
@@ -55,6 +56,7 @@ class LogsIndex(ModelNormal):
         "name": "name",
         "num_flex_logs_retention_days": "num_flex_logs_retention_days",
         "num_retention_days": "num_retention_days",
+        "tags": "tags",
     }
     read_only_vars = {
         "is_rate_limited",
@@ -71,6 +73,7 @@ class LogsIndex(ModelNormal):
         is_rate_limited: Union[bool, UnsetType] = unset,
         num_flex_logs_retention_days: Union[int, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -109,6 +112,9 @@ class LogsIndex(ModelNormal):
         :param num_retention_days: The number of days logs are stored in Standard Tier before aging into the Flex Tier or being deleted from the index.
             The available values depend on retention plans specified in your organization's contract/subscriptions.
         :type num_retention_days: int, optional
+
+        :param tags: A list of tags associated with the index. Tags must be in ``key:value`` format.
+        :type tags: [str], optional
         """
         if daily_limit is not unset:
             kwargs["daily_limit"] = daily_limit
@@ -124,6 +130,8 @@ class LogsIndex(ModelNormal):
             kwargs["num_flex_logs_retention_days"] = num_flex_logs_retention_days
         if num_retention_days is not unset:
             kwargs["num_retention_days"] = num_retention_days
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.filter = filter
