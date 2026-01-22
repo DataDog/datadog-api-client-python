@@ -27031,6 +27031,83 @@ datadog\_api\_client.v2.model.update\_deployment\_rule\_params\_data\_attributes
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_flaky\_tests\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_request\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_request\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_request\_test module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_request_test
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_request\_test\_new\_state module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_request_test_new_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_response\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_response\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_response\_data\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_flaky\_tests\_response\_result module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_flaky_tests_response_result
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_on\_call\_notification\_rule\_request module
 ----------------------------------------------------------------------------------
 
