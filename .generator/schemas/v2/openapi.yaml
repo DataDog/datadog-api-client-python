@@ -66768,7 +66768,6 @@ paths:
         operator: OR
         permissions:
         - apm_retention_filter_read
-        - apm_pipelines_read
     post:
       description: 'Create a retention filter to index spans in your organization.
 
@@ -66808,7 +66807,6 @@ paths:
         operator: OR
         permissions:
         - apm_retention_filter_write
-        - apm_pipelines_write
   /api/v2/apm/config/retention-filters-execution-order:
     put:
       description: Re-order the execution order of retention filters.
@@ -66837,7 +66835,6 @@ paths:
         operator: OR
         permissions:
         - apm_retention_filter_write
-        - apm_pipelines_write
   /api/v2/apm/config/retention-filters/{filter_id}:
     delete:
       description: 'Delete a specific retention filter from your organization.
@@ -66864,7 +66861,6 @@ paths:
         operator: OR
         permissions:
         - apm_retention_filter_write
-        - apm_pipelines_write
     get:
       description: Get an APM retention filter.
       operationId: GetApmRetentionFilter
@@ -66890,7 +66886,6 @@ paths:
         operator: OR
         permissions:
         - apm_retention_filter_read
-        - apm_pipelines_read
     put:
       description: 'Update a retention filter from your organization.
 
@@ -66930,7 +66925,6 @@ paths:
         operator: OR
         permissions:
         - apm_retention_filter_write
-        - apm_pipelines_write
   /api/v2/apm/services:
     get:
       operationId: GetServiceList
