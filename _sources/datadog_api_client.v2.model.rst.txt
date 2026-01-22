@@ -16909,6 +16909,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_open\_search\_destination
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_open\_search\_destination\_data\_stream module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_open_search_destination_data_stream
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_open\_search\_destination\_type module
 ---------------------------------------------------------------------------------------------
 
