@@ -2685,10 +2685,45 @@ datadog\_api\_client.v2.model.budget\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.budget\_entry module
---------------------------------------------------
+datadog\_api\_client.v2.model.budget\_validation\_request module
+----------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.budget_entry
+.. automodule:: datadog_api_client.v2.model.budget_validation_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_validation\_request\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_validation_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_validation\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_validation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_validation\_response\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_validation_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_validation\_response\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_validation_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_validation\_response\_data\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_validation_response_data_type
    :members:
    :show-inheritance:
 
@@ -2703,6 +2738,34 @@ datadog\_api\_client.v2.model.budget\_with\_entries\_data module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.budget_with_entries_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_with\_entries\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_with_entries_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_with\_entries\_data\_attributes\_entries\_items module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_with\_entries\_data\_attributes\_entries\_items\_tag\_filters\_items module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_with\_entries\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_with_entries_data_type
    :members:
    :show-inheritance:
 
@@ -25621,13 +25684,6 @@ datadog\_api\_client.v2.model.table\_row\_resource\_data\_type module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.table_row_resource_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.tag\_filter module
-------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.tag_filter
    :members:
    :show-inheritance:
 
