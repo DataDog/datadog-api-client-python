@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_timeseries_widget_without_order_by_for_backward_compatibility-1768952415
+      without order_by","widgets":[{"definition":{"requests":[{"display_type":"line","q":"avg:system.cpu.user{*}
+      by {host}","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"6bg-rgq-fxc","title":"Test-Create_a_new_dashboard_with_timeseries_widget_without_order_by_for_backward_compatibility-1768952415
+        without order_by","description":null,"author_handle":"frog@datadoghq.com","author_name":"frog","layout_type":"ordered","url":"/dashboard/6bg-rgq-fxc/test-createanewdashboardwithtimeserieswidgetwithoutorderbyforbackwardcompatibili","template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"line","q":"avg:system.cpu.user{*}
+        by {host}","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"type":"timeseries"},"id":2503785343641105}],"notify_list":null,"created_at":"2026-01-20T23:40:15.937647+00:00","modified_at":"2026-01-20T23:40:15.937647+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/6bg-rgq-fxc
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"6bg-rgq-fxc"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

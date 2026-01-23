@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_timeseries_widget_using_order_by_values-1768952390
+      with order_by values","widgets":[{"definition":{"requests":[{"display_type":"line","q":"avg:system.cpu.user{*}
+      by {host}","style":{"order_by":"values","palette":"warm"}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"5ee-dqv-ruw","title":"Test-Create_a_new_dashboard_with_timeseries_widget_using_order_by_values-1768952390
+        with order_by values","description":null,"author_handle":"frog@datadoghq.com","author_name":"frog","layout_type":"ordered","url":"/dashboard/5ee-dqv-ruw/test-createanewdashboardwithtimeserieswidgetusingorderbyvalues-1768952390-with-o","template_variables":null,"widgets":[{"definition":{"requests":[{"display_type":"line","q":"avg:system.cpu.user{*}
+        by {host}","style":{"order_by":"values","palette":"warm"}}],"type":"timeseries"},"id":8314193502199768}],"notify_list":null,"created_at":"2026-01-20T23:39:51.018015+00:00","modified_at":"2026-01-20T23:39:51.018015+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/5ee-dqv-ruw
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"5ee-dqv-ruw"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
