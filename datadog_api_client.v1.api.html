@@ -3273,6 +3273,7 @@ notifies your team when a defined threshold has exceeded.</p>
 <li><p>database-monitoring: <code class="docutils literal notranslate"><span class="pre">database-monitoring</span> <span class="pre">alert</span></code></p></li>
 <li><p>network-performance: <code class="docutils literal notranslate"><span class="pre">network-performance</span> <span class="pre">alert</span></code></p></li>
 <li><p>cloud cost: <code class="docutils literal notranslate"><span class="pre">cost</span> <span class="pre">alert</span></code></p></li>
+<li><p>network-path: <code class="docutils literal notranslate"><span class="pre">network-path</span> <span class="pre">alert</span></code></p></li>
 </ul>
 <p><strong>Notes</strong> :</p>
 <ul class="simple">
@@ -3461,6 +3462,17 @@ It is only available via the API and isn’t visible or editable in the Datadog 
 <li><p>for <code class="docutils literal notranslate"><span class="pre">forecast</span></code> supports <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
 </ul>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> an integer or decimal number used to set the threshold.</p></li>
+</ul>
+<p><strong>Network Path Alert Query</strong></p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">network-path(query).index(index_name).rollup(rollup_method[,</span> <span class="pre">measure]).last(time_window)</span> <span class="pre">operator</span> <span class="pre">#</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">query</span></code> The search query - following the <a class="reference external" href="https://docs.datadoghq.com/logs/search_syntax/">Log search syntax</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index_name</span></code> The data type to monitor on - supports <code class="docutils literal notranslate"><span class="pre">netpath-path</span></code> and <code class="docutils literal notranslate"><span class="pre">netpath-hop</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rollup_method</span></code> The stats roll-up method - supports <code class="docutils literal notranslate"><span class="pre">count</span></code> , <code class="docutils literal notranslate"><span class="pre">avg</span></code> , and <code class="docutils literal notranslate"><span class="pre">cardinality</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">measure</span></code> For <code class="docutils literal notranslate"><span class="pre">avg</span></code> and cardinality <code class="docutils literal notranslate"><span class="pre">rollup_method</span></code> - specify the measure or the facet name you want to use.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_window</span></code> #m (between 1 and 2880), #h (between 1 and 48).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operator</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> , <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> , <code class="docutils literal notranslate"><span class="pre">==</span></code> , or <code class="docutils literal notranslate"><span class="pre">!=</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> an integer or decimal number used to set the threshold.</p></li>
 </ul>
 <dl class="field-list simple">
