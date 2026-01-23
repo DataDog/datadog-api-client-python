@@ -443,16 +443,25 @@ def request_body_from_file(context, path, package_name):
 
 
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
-def request_parameter(context, name, path):
+def request_parameter(context, name, path, path_parameters):
     """Set request parameter."""
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = json.dumps(glom(context, path))
+    value = json.dumps(glom(context, path))
+    param_name = escape_reserved_keyword(snake_case(name))
+    context["api_request"]["kwargs"][param_name] = value
+    # Store in path_parameters for undo operations
+    path_parameters[name] = value
+    path_parameters[param_name] = value
 
 
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
-def request_parameter_with_value(context, name, value):
+def request_parameter_with_value(context, name, value, path_parameters):
     """Set request parameter."""
     tpl = Template(value).render(**context)
-    context["api_request"]["kwargs"][escape_reserved_keyword(snake_case(name))] = tpl
+    param_name = escape_reserved_keyword(snake_case(name))
+    context["api_request"]["kwargs"][param_name] = tpl
+    # Store in path_parameters for undo operations
+    path_parameters[name] = tpl
+    path_parameters[param_name] = tpl
 
 
 def assert_no_unparsed(data):
@@ -554,7 +563,13 @@ def extract_parameters(kwargs, data, parameter):
 
 
 @pytest.fixture
-def undo(package_name, undo_operations, client):
+def path_parameters():
+    """Store path parameters for undo operations."""
+    return {}
+
+
+@pytest.fixture
+def undo(package_name, undo_operations, client, path_parameters):
     """Clean after operation."""
 
     def cleanup(api, version, operation_id, response, request, client=client):
@@ -582,10 +597,21 @@ def undo(package_name, undo_operations, client):
         kwargs = {}
         parameters = operation.get("parameters", [])
         for parameter in parameters:
-            if "origin" not in parameter or parameter["origin"] == "response":
-                extract_parameters(kwargs, response, parameter)
-            elif parameter["origin"] == "request":
+            origin = parameter.get("origin", "response")
+            if origin == "path":
+                # Extract from path parameters
+                if "source" in parameter:
+                    param_name = parameter["source"]
+                    if param_name in path_parameters:
+                        kwargs[parameter["name"]] = path_parameters[param_name]
+                    else:
+                        warnings.warn(f"Path parameter '{param_name}' not found")
+                else:
+                    warnings.warn(f"Path origin requires 'source' field")
+            elif origin == "request":
                 extract_parameters(kwargs, request, parameter)
+            else:  # response or default
+                extract_parameters(kwargs, response, parameter)
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
 
