@@ -2740,6 +2740,32 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.service_now_integration_api" class="md-nav__link">datadog_api_client.v2.api.service_now_integration_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.create_service_now_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.create_service_now_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.delete_service_now_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.delete_service_now_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.get_service_now_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.get_service_now_template()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_assignment_groups" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.list_service_now_assignment_groups()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_business_services" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.list_service_now_business_services()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_instances" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.list_service_now_instances()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_templates" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.list_service_now_templates()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_users" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.list_service_now_users()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.update_service_now_template" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceNowIntegrationApi.update_service_now_template()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.service_scorecards_api" class="md-nav__link">datadog_api_client.v2.api.service_scorecards_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.service_scorecards_api.ServiceScorecardsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceScorecardsApi</span></code></a><nav class="md-nav">
@@ -14914,6 +14940,132 @@ and improve communication with internal and external users.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.slo_report_status_get_response.SLOReportStatusGetResponse" title="datadog_api_client.v2.model.slo_report_status_get_response.SLOReportStatusGetResponse">SLOReportStatusGetResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.service_now_integration_api">
+<span id="datadog-api-client-v2-api-service-now-integration-api-module"></span><h2 id="module-datadog_api_client.v2.api.service_now_integration_api">datadog_api_client.v2.api.service_now_integration_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.service_now_integration_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ServiceNowIntegrationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Manage your ServiceNow Integration. ServiceNow is a cloud-based platform that helps organizations manage digital workflows for enterprise operations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.create_service_now_template">
+<span class="sig-name descname"><span class="pre">create_service_now_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_create_request.ServiceNowTemplateCreateRequest" title="datadog_api_client.v2.model.service_now_template_create_request.ServiceNowTemplateCreateRequest"><span class="pre">ServiceNowTemplateCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse" title="datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse"><span class="pre">ServiceNowTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.create_service_now_template" title="Link to this definition">¶</a></dt>
+<dd><p>Create ServiceNow template.</p>
+<p>Create a new ServiceNow template.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse" title="datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse">ServiceNowTemplateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.delete_service_now_template">
+<span class="sig-name descname"><span class="pre">delete_service_now_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.delete_service_now_template" title="Link to this definition">¶</a></dt>
+<dd><p>Delete ServiceNow template.</p>
+<p>Delete a ServiceNow template by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>template_id</strong> (<em>UUID</em>) – The ID of the ServiceNow template to delete</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.get_service_now_template">
+<span class="sig-name descname"><span class="pre">get_service_now_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse" title="datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse"><span class="pre">ServiceNowTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.get_service_now_template" title="Link to this definition">¶</a></dt>
+<dd><p>Get ServiceNow template.</p>
+<p>Get a ServiceNow template by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>template_id</strong> (<em>UUID</em>) – The ID of the ServiceNow template to retrieve</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse" title="datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse">ServiceNowTemplateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_assignment_groups">
+<span class="sig-name descname"><span class="pre">list_service_now_assignment_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_assignment_groups_response.ServiceNowAssignmentGroupsResponse" title="datadog_api_client.v2.model.service_now_assignment_groups_response.ServiceNowAssignmentGroupsResponse"><span class="pre">ServiceNowAssignmentGroupsResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_assignment_groups" title="Link to this definition">¶</a></dt>
+<dd><p>List ServiceNow assignment groups.</p>
+<p>Get all assignment groups for a ServiceNow instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>instance_id</strong> (<em>UUID</em>) – The ID of the ServiceNow instance</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_assignment_groups_response.ServiceNowAssignmentGroupsResponse" title="datadog_api_client.v2.model.service_now_assignment_groups_response.ServiceNowAssignmentGroupsResponse">ServiceNowAssignmentGroupsResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_business_services">
+<span class="sig-name descname"><span class="pre">list_service_now_business_services</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_business_services_response.ServiceNowBusinessServicesResponse" title="datadog_api_client.v2.model.service_now_business_services_response.ServiceNowBusinessServicesResponse"><span class="pre">ServiceNowBusinessServicesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_business_services" title="Link to this definition">¶</a></dt>
+<dd><p>List ServiceNow business services.</p>
+<p>Get all business services for a ServiceNow instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>instance_id</strong> (<em>UUID</em>) – The ID of the ServiceNow instance</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_business_services_response.ServiceNowBusinessServicesResponse" title="datadog_api_client.v2.model.service_now_business_services_response.ServiceNowBusinessServicesResponse">ServiceNowBusinessServicesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_instances">
+<span class="sig-name descname"><span class="pre">list_service_now_instances</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_instances_response.ServiceNowInstancesResponse" title="datadog_api_client.v2.model.service_now_instances_response.ServiceNowInstancesResponse"><span class="pre">ServiceNowInstancesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_instances" title="Link to this definition">¶</a></dt>
+<dd><p>List ServiceNow instances.</p>
+<p>Get all ServiceNow instances for the organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_instances_response.ServiceNowInstancesResponse" title="datadog_api_client.v2.model.service_now_instances_response.ServiceNowInstancesResponse">ServiceNowInstancesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_templates">
+<span class="sig-name descname"><span class="pre">list_service_now_templates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_templates_response.ServiceNowTemplatesResponse" title="datadog_api_client.v2.model.service_now_templates_response.ServiceNowTemplatesResponse"><span class="pre">ServiceNowTemplatesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_templates" title="Link to this definition">¶</a></dt>
+<dd><p>List ServiceNow templates.</p>
+<p>Get all ServiceNow templates for the organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_templates_response.ServiceNowTemplatesResponse" title="datadog_api_client.v2.model.service_now_templates_response.ServiceNowTemplatesResponse">ServiceNowTemplatesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_users">
+<span class="sig-name descname"><span class="pre">list_service_now_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_users_response.ServiceNowUsersResponse" title="datadog_api_client.v2.model.service_now_users_response.ServiceNowUsersResponse"><span class="pre">ServiceNowUsersResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.list_service_now_users" title="Link to this definition">¶</a></dt>
+<dd><p>List ServiceNow users.</p>
+<p>Get all users for a ServiceNow instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>instance_id</strong> (<em>UUID</em>) – The ID of the ServiceNow instance</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_users_response.ServiceNowUsersResponse" title="datadog_api_client.v2.model.service_now_users_response.ServiceNowUsersResponse">ServiceNowUsersResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.update_service_now_template">
+<span class="sig-name descname"><span class="pre">update_service_now_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UUID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_update_request.ServiceNowTemplateUpdateRequest" title="datadog_api_client.v2.model.service_now_template_update_request.ServiceNowTemplateUpdateRequest"><span class="pre">ServiceNowTemplateUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse" title="datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse"><span class="pre">ServiceNowTemplateResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.service_now_integration_api.ServiceNowIntegrationApi.update_service_now_template" title="Link to this definition">¶</a></dt>
+<dd><p>Update ServiceNow template.</p>
+<p>Update a ServiceNow template by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>template_id</strong> (<em>UUID</em>) – The ID of the ServiceNow template to update</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse" title="datadog_api_client.v2.model.service_now_template_response.ServiceNowTemplateResponse">ServiceNowTemplateResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
