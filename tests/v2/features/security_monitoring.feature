@@ -9,7 +9,7 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
-  @skip @team:DataDog/k9-investigation
+  @team:DataDog/k9-investigation
   Scenario: Attach security finding to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
     And body with value {"data": {"attributes": {"jira_issue_url": "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"}, "relationships": {"findings": {"data": [{"id": "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}}
@@ -30,21 +30,21 @@ Feature: Security Monitoring
     And the response "data.attributes.status_group" is equal to "SG_OPEN"
     And the response "data.attributes.insights" has item with field "resource_id" with value "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="
 
-  @skip @team:DataDog/k9-investigation
+  @team:DataDog/k9-investigation
   Scenario: Attach security findings to a Jira issue returns "Bad Request" response
     Given new "AttachJiraIssue" request
     And body with value {"data": {"attributes": {"jira_issue_url": "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"}, "relationships": {"findings": {"data": []}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-investigation
+  @team:DataDog/k9-investigation
   Scenario: Attach security findings to a Jira issue returns "Not Found" response
     Given new "AttachJiraIssue" request
     And body with value {"data": {"attributes": {"jira_issue_url": "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"}, "relationships": {"findings": {"data": [{"id": "wrong-finding-id", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-investigation
+  @team:DataDog/k9-investigation
   Scenario: Attach security findings to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
     And body with value {"data": {"attributes": {"jira_issue_url": "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"}, "relationships": {"findings": {"data": [{"id": "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI=", "type": "findings"}, {"id": "MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}}
@@ -280,27 +280,75 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"_{{ unique_hash }}\" {\n\tname = \"_{{ unique_hash }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\thas_optional_group_by_fields = false\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
 
-  @generated @skip @team:DataDog/k9-investigation
+  @team:DataDog/k9-investigation
+  Scenario: Create Jira issue for security finding returns "Created" response
+    Given new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "YmNlZmJhYTcyMDU5ZDk0ZDhiNjRmNGI0NDk4MDdiNzN-MDJlMjg0NzNmYzJiODY2MzJkNjU0OTI4NmVhZTUyY2U=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}]}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data" has length 1
+    And the response "data[0]" has field "id"
+    And the response "data[0].attributes.title" is equal to "A title"
+    And the response "data[0].attributes.description" is equal to "A description"
+    And the response "data[0].attributes.type" is equal to "SECURITY"
+    And the response "data[0].attributes.insights" has length 1
+    And the response "data[0].attributes.insights[0].resource_id" is equal to "YmNlZmJhYTcyMDU5ZDk0ZDhiNjRmNGI0NDk4MDdiNzN-MDJlMjg0NzNmYzJiODY2MzJkNjU0OTI4NmVhZTUyY2U="
+    And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
+    And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
+
+  @team:DataDog/k9-investigation
+  Scenario: Create Jira issue for security findings returns "Created" response
+    Given new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA==", "type": "findings"}, {"id": "eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}]}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data" has length 1
+    And the response "data[0]" has field "id"
+    And the response "data[0].attributes.title" is equal to "A title"
+    And the response "data[0].attributes.description" is equal to "A description"
+    And the response "data[0].attributes.type" is equal to "SECURITY"
+    And the response "data[0].attributes.insights" has length 2
+    And the response "data[0].attributes.insights[1].resource_id" is equal to "eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ=="
+    And the response "data[0].attributes.insights[1].type" is equal to "SECURITY_FINDING"
+    And the response "data[0].attributes.insights[0].resource_id" is equal to "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA=="
+    And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
+    And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
+
+  @team:DataDog/k9-investigation
   Scenario: Create Jira issues for security findings returns "Bad Request" response
-    Given operation "CreateJiraIssues" enabled
-    And new "CreateJiraIssues" request
-    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Jira issue.", "fields": {"key1": "value", "key2": ["value"], "key3": {"key4": "value"}}, "priority": "NOT_DEFINED", "title": "A title for the Jira issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "jira_issues"}]}
+    Given new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {}, "relationships": {"findings": {"data": []}, "project": {"data": {"id": "7f198869-c7ef-4afc-97cf-da5cdc13b5c3", "type": "projects"}}}, "type": "jira_issues"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-investigation
+  @team:DataDog/k9-investigation
   Scenario: Create Jira issues for security findings returns "Created" response
-    Given operation "CreateJiraIssues" enabled
-    And new "CreateJiraIssues" request
-    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Jira issue.", "fields": {"key1": "value", "key2": ["value"], "key3": {"key4": "value"}}, "priority": "NOT_DEFINED", "title": "A title for the Jira issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "jira_issues"}]}
+    Given new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}, {"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}]}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data" has length 2
+    And the response "data[0]" has field "id"
+    And the response "data[0].attributes.title" is equal to "A title"
+    And the response "data[0].attributes.description" is equal to "A description"
+    And the response "data[0].attributes.type" is equal to "SECURITY"
+    And the response "data[0].attributes.insights" has length 1
+    And the response "data[0].attributes.insights[0].resource_id" is equal to "eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ=="
+    And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
+    And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
+    And the response "data[1]" has field "id"
+    And the response "data[1].attributes.title" is equal to "A title"
+    And the response "data[1].attributes.description" is equal to "A description"
+    And the response "data[1].attributes.type" is equal to "SECURITY"
+    And the response "data[1].attributes.insights" has length 1
+    And the response "data[1].attributes.insights[0].resource_id" is equal to "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA=="
+    And the response "data[1].attributes.insights[0].type" is equal to "SECURITY_FINDING"
+    And the response "data[1].attributes.jira_issue.status" is equal to "COMPLETED"
 
-  @generated @skip @team:DataDog/k9-investigation
+  @team:DataDog/k9-investigation
   Scenario: Create Jira issues for security findings returns "Not Found" response
-    Given operation "CreateJiraIssues" enabled
-    And new "CreateJiraIssues" request
-    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Jira issue.", "fields": {"key1": "value", "key2": ["value"], "key3": {"key4": "value"}}, "priority": "NOT_DEFINED", "title": "A title for the Jira issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "jira_issues"}]}
+    Given new "CreateJiraIssues" request
+    And body with value {"data": [{"attributes": {}, "relationships": {"findings": {"data": [{"id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=", "type": "findings"}]}, "project": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "projects"}}}, "type": "jira_issues"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
