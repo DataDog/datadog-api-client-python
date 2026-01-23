@@ -33,7 +33,7 @@ Feature: Status Pages
   @team:DataDog/incident-app
   Scenario: Create status page returns "Created" response
     Given new "CreateStatusPage" request
-    And body with value {"data": {"attributes": {"name": "A Status Page", "domain_prefix": "status-page-{{ unique_hash }}", "components":[{"name": "Login", "type": "component", "position": 0},{"name": "Settings", "type": "component", "position": 1}], "enabled": true, "type": "internal", "visualization_type": "bars_and_uptime_percentage"}, "type": "status_pages"}}
+    And body with value {"data": {"attributes": {"name": "A Status Page", "domain_prefix": "{{ unique_hash }}", "components":[{"name": "Login", "type": "component", "position": 0},{"name": "Settings", "type": "component", "position": 1}], "enabled": true, "type": "internal", "visualization_type": "bars_and_uptime_percentage"}, "type": "status_pages"}}
     When the request is sent
     Then the response status is 201 Created
 

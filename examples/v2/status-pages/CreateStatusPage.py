@@ -25,7 +25,7 @@ body = CreateStatusPageRequest(
     data=CreateStatusPageRequestData(
         attributes=CreateStatusPageRequestDataAttributes(
             name="A Status Page",
-            domain_prefix="status-page-5e2fd69be33e79aa",
+            domain_prefix="5e2fd69be33e79aa",
             components=[
                 CreateStatusPageRequestDataAttributesComponentsItems(
                     name="Login",

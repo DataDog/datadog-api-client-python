@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"status-page-473ecd94e34d0b23","enabled":true,"name":"A
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"a292a726f79d8dd3","enabled":true,"name":"A
       Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
     headers:
       accept:
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/statuspages
   response:
     body:
-      string: '{"data":{"id":"259141bd-d78b-4c24-9529-b8f9c4f881ed","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"1913d8c1-711f-41b9-9dcc-96820c18f1c4","name":"Application","type":"group","position":0,"components":[{"id":"b564dd30-d03c-41b7-9012-fed1bcf04e6c","name":"Login","type":"component","status":"operational","position":0},{"id":"f1db5443-7982-436a-85b1-f83f055aa298","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-14T18:34:31.824982Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"status-page-473ecd94e34d0b23","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-14T18:34:31.824982Z","name":"A
-        Status Page","page_url":"https://frog.datadoghq.com/status-pages/259141bd-d78b-4c24-9529-b8f9c4f881ed/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"2fb5cefa-a43b-4974-b439-96cef54df054","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"82aa9ec5-5394-4138-8d6c-475ed209b03d","name":"Application","type":"group","position":0,"components":[{"id":"5e7fc960-39ed-4522-aa38-187f41ace1fd","name":"Login","type":"component","status":"operational","position":0},{"id":"eda28835-e8a6-44a1-87f7-8da14819152b","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-21T21:23:49.763982Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"a292a726f79d8dd3","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-21T21:23:49.763982Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/2fb5cefa-a43b-4974-b439-96cef54df054/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -28,8 +28,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/statuspages
   response:
     body:
-      string: '{"data":[{"id":"259141bd-d78b-4c24-9529-b8f9c4f881ed","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"1913d8c1-711f-41b9-9dcc-96820c18f1c4","name":"Application","type":"group","position":0,"components":[{"id":"b564dd30-d03c-41b7-9012-fed1bcf04e6c","name":"Login","type":"component","status":"operational","position":0},{"id":"f1db5443-7982-436a-85b1-f83f055aa298","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-14T18:34:31.824982Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"status-page-473ecd94e34d0b23","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-14T18:34:31.824982Z","name":"A
-        Status Page","page_url":"https://frog.datadoghq.com/status-pages/259141bd-d78b-4c24-9529-b8f9c4f881ed/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}],"meta":{"page":{"type":"offset_limit","offset":0,"limit":50,"total":null,"first_offset":0,"prev_offset":null,"next_offset":50,"last_offset":null}}}'
+      string: '{"data":[{"id":"2fb5cefa-a43b-4974-b439-96cef54df054","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"82aa9ec5-5394-4138-8d6c-475ed209b03d","name":"Application","type":"group","position":0,"components":[{"id":"5e7fc960-39ed-4522-aa38-187f41ace1fd","name":"Login","type":"component","status":"operational","position":0},{"id":"eda28835-e8a6-44a1-87f7-8da14819152b","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-01-21T21:23:49.763982Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"a292a726f79d8dd3","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-01-21T21:23:49.763982Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/2fb5cefa-a43b-4974-b439-96cef54df054/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}],"meta":{"page":{"type":"offset_limit","offset":0,"limit":50,"total":null,"first_offset":0,"prev_offset":null,"next_offset":50,"last_offset":null}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -42,7 +42,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/statuspages/259141bd-d78b-4c24-9529-b8f9c4f881ed
+    uri: https://api.datadoghq.com/api/v2/statuspages/2fb5cefa-a43b-4974-b439-96cef54df054
   response:
     body:
       string: ''
