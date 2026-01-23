@@ -28,6 +28,7 @@ class CaseCreateAttributes(ModelNormal):
             "custom_attributes": ({str: (CustomAttributeValue,)},),
             "description": (str,),
             "priority": (CasePriority,),
+            "status_name": (str,),
             "title": (str,),
             "type_id": (str,),
         }
@@ -36,6 +37,7 @@ class CaseCreateAttributes(ModelNormal):
         "custom_attributes": "custom_attributes",
         "description": "description",
         "priority": "priority",
+        "status_name": "status_name",
         "title": "title",
         "type_id": "type_id",
     }
@@ -47,6 +49,7 @@ class CaseCreateAttributes(ModelNormal):
         custom_attributes: Union[Dict[str, CustomAttributeValue], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         priority: Union[CasePriority, UnsetType] = unset,
+        status_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -61,6 +64,9 @@ class CaseCreateAttributes(ModelNormal):
         :param priority: Case priority
         :type priority: CasePriority, optional
 
+        :param status_name: Status of the case. Must be one of the existing statuses for the case's type.
+        :type status_name: str, optional
+
         :param title: Title
         :type title: str
 
@@ -73,6 +79,8 @@ class CaseCreateAttributes(ModelNormal):
             kwargs["description"] = description
         if priority is not unset:
             kwargs["priority"] = priority
+        if status_name is not unset:
+            kwargs["status_name"] = status_name
         super().__init__(kwargs)
 
         self_.title = title

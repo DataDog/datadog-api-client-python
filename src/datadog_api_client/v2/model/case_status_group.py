@@ -12,22 +12,22 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class CaseStatus(ModelSimple):
+class CaseStatusGroup(ModelSimple):
     """
-    Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use `status_name` instead.
+    Status group of the case.
 
-    :param value: Must be one of ["OPEN", "IN_PROGRESS", "CLOSED"].
+    :param value: Must be one of ["SG_OPEN", "SG_IN_PROGRESS", "SG_CLOSED"].
     :type value: str
     """
 
     allowed_values = {
-        "OPEN",
-        "IN_PROGRESS",
-        "CLOSED",
+        "SG_OPEN",
+        "SG_IN_PROGRESS",
+        "SG_CLOSED",
     }
-    OPEN: ClassVar["CaseStatus"]
-    IN_PROGRESS: ClassVar["CaseStatus"]
-    CLOSED: ClassVar["CaseStatus"]
+    SG_OPEN: ClassVar["CaseStatusGroup"]
+    SG_IN_PROGRESS: ClassVar["CaseStatusGroup"]
+    SG_CLOSED: ClassVar["CaseStatusGroup"]
 
     @cached_property
     def openapi_types(_):
@@ -36,6 +36,6 @@ class CaseStatus(ModelSimple):
         }
 
 
-CaseStatus.OPEN = CaseStatus("OPEN")
-CaseStatus.IN_PROGRESS = CaseStatus("IN_PROGRESS")
-CaseStatus.CLOSED = CaseStatus("CLOSED")
+CaseStatusGroup.SG_OPEN = CaseStatusGroup("SG_OPEN")
+CaseStatusGroup.SG_IN_PROGRESS = CaseStatusGroup("SG_IN_PROGRESS")
+CaseStatusGroup.SG_CLOSED = CaseStatusGroup("SG_CLOSED")
