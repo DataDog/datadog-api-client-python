@@ -4658,6 +4658,68 @@
       "type": "safe"
     }
   },
+  "DeleteCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateCustomRule": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteCustomRule": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCustomRule": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCustomRuleRevisions": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCustomRuleRevision": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RevertCustomRuleRevision": {
+    "tag": "Static Analysis",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetCustomRuleRevision": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListMultipleRulesets": {
     "tag": "Security Monitoring",
     "undo": {
