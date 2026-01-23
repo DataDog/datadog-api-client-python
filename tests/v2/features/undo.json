@@ -2231,6 +2231,67 @@
       "type": "idempotent"
     }
   },
+  "ListServiceNowAssignmentGroups": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListServiceNowBusinessServices": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListServiceNowTemplates": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateServiceNowTemplate": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "operationId": "DeleteServiceNowTemplate",
+      "parameters": [
+        {
+          "name": "template_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteServiceNowTemplate": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetServiceNowTemplate": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateServiceNowTemplate": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListServiceNowInstances": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListServiceNowUsers": {
+    "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCloudflareAccounts": {
     "tag": "Cloudflare Integration",
     "undo": {
