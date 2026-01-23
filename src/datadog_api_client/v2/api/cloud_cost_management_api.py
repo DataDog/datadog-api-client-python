@@ -320,7 +320,7 @@ class CloudCostManagementApi:
 
         self._get_budget_endpoint = _Endpoint(
             settings={
-                "response_type": (BudgetValidationRequest,),
+                "response_type": (BudgetWithEntries,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/cost/budget/{budget_id}",
                 "operation_id": "get_budget",
@@ -1095,14 +1095,14 @@ class CloudCostManagementApi:
     def get_budget(
         self,
         budget_id: str,
-    ) -> BudgetValidationRequest:
+    ) -> BudgetWithEntries:
         """Get budget.
 
         Get a budget
 
         :param budget_id: Budget id.
         :type budget_id: str
-        :rtype: BudgetValidationRequest
+        :rtype: BudgetWithEntries
         """
         kwargs: Dict[str, Any] = {}
         kwargs["budget_id"] = budget_id
