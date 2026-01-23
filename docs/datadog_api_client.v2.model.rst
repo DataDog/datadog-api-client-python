@@ -1124,6 +1124,13 @@ datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.argument module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.argument
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.asana\_access\_token module
 ---------------------------------------------------------
 
@@ -6665,6 +6672,181 @@ datadog\_api\_client.v2.model.custom\_framework\_without\_requirements module
 -----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.custom_framework_without_requirements
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_data\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_request\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_response\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_attributes\_category module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_attributes_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_attributes\_severity module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_attributes_severity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_data\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_input\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_input_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_request\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revision\_test module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revision_test
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_rule\_revisions\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_rule_revisions_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_ruleset module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_ruleset
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_ruleset\_attributes module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_ruleset_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_ruleset\_data\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_ruleset_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_ruleset\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_ruleset_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_ruleset\_request\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_ruleset_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_ruleset\_request\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_ruleset_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_ruleset\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_ruleset_response
    :members:
    :show-inheritance:
 
@@ -13315,6 +13497,13 @@ datadog\_api\_client.v2.model.kind\_response\_meta module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.kind_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.language module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.language
    :members:
    :show-inheritance:
 
@@ -20287,6 +20476,34 @@ datadog\_api\_client.v2.model.retry\_strategy\_linear module
 ------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.retry_strategy_linear
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.revert\_custom\_rule\_revision\_data\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.revert_custom_rule_revision_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.revert\_custom\_rule\_revision\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.revert_custom_rule_revision_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.revert\_custom\_rule\_revision\_request\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.revert_custom_rule_revision_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.revert\_custom\_rule\_revision\_request\_data\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.revert_custom_rule_revision_request_data_attributes
    :members:
    :show-inheritance:
 
