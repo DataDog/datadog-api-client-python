@@ -1602,6 +1602,44 @@
       "type": "unsafe"
     }
   },
+  "DeleteGlobalIncidentHandle": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListGlobalIncidentHandles": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGlobalIncidentHandle": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteGlobalIncidentHandle",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "UpdateGlobalIncidentHandle": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGlobalIncidentSettings": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGlobalIncidentSettings": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentNotificationRules": {
     "tag": "Incidents",
     "undo": {

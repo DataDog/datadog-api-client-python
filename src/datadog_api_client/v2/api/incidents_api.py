@@ -20,6 +20,11 @@ from datadog_api_client.v2.model.incident_related_object import IncidentRelatedO
 from datadog_api_client.v2.model.incident_response_data import IncidentResponseData
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
+from datadog_api_client.v2.model.incident_handles_response import IncidentHandlesResponse
+from datadog_api_client.v2.model.incident_handle_response import IncidentHandleResponse
+from datadog_api_client.v2.model.incident_handle_request import IncidentHandleRequest
+from datadog_api_client.v2.model.global_incident_settings_response import GlobalIncidentSettingsResponse
+from datadog_api_client.v2.model.global_incident_settings_request import GlobalIncidentSettingsRequest
 from datadog_api_client.v2.model.incident_notification_rule_array import IncidentNotificationRuleArray
 from datadog_api_client.v2.model.incident_notification_rule import IncidentNotificationRule
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
@@ -74,6 +79,31 @@ class IncidentsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_global_incident_handle_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentHandleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/global/incident-handles",
+                "operation_id": "create_global_incident_handle",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentHandleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_incident_endpoint = _Endpoint(
             settings={
@@ -296,6 +326,22 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_global_incident_handle_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/global/incident-handles",
+                "operation_id": "delete_global_incident_handle",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_incident_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -514,6 +560,22 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._get_global_incident_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": (GlobalIncidentSettingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/global/settings",
+                "operation_id": "get_global_incident_settings",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_incident_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentResponse,),
@@ -672,6 +734,28 @@ class IncidentsApi:
                     "openapi_types": (str,),
                     "attribute": "incident_type_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_global_incident_handles_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentHandlesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/global/incident-handles",
+                "operation_id": "list_global_incident_handles",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -935,6 +1019,51 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_global_incident_handle_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentHandleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/global/incident-handles",
+                "operation_id": "update_global_incident_handle",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentHandleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_global_incident_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": (GlobalIncidentSettingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/global/settings",
+                "operation_id": "update_global_incident_settings",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (GlobalIncidentSettingsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_incident_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentResponse,),
@@ -1156,6 +1285,29 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+    def create_global_incident_handle(
+        self,
+        body: IncidentHandleRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentHandleResponse:
+        """Create global incident handle.
+
+        Create a new global incident handle.
+
+        :type body: IncidentHandleRequest
+        :param include: Comma-separated list of related resources to include in the response
+        :type include: str, optional
+        :rtype: IncidentHandleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_global_incident_handle_endpoint.call_with_http_info(**kwargs)
+
     def create_incident(
         self,
         body: IncidentCreateRequest,
@@ -1344,6 +1496,18 @@ class IncidentsApi:
 
         return self._create_incident_type_endpoint.call_with_http_info(**kwargs)
 
+    def delete_global_incident_handle(
+        self,
+    ) -> None:
+        """Delete global incident handle.
+
+        Delete a global incident handle.
+
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._delete_global_incident_handle_endpoint.call_with_http_info(**kwargs)
+
     def delete_incident(
         self,
         incident_id: str,
@@ -1512,6 +1676,18 @@ class IncidentsApi:
 
         return self._delete_incident_type_endpoint.call_with_http_info(**kwargs)
 
+    def get_global_incident_settings(
+        self,
+    ) -> GlobalIncidentSettingsResponse:
+        """Get global incident settings.
+
+        Retrieve global incident settings for the organization.
+
+        :rtype: GlobalIncidentSettingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_global_incident_settings_endpoint.call_with_http_info(**kwargs)
+
     def get_incident(
         self,
         incident_id: str,
@@ -1644,6 +1820,25 @@ class IncidentsApi:
         kwargs["incident_type_id"] = incident_type_id
 
         return self._get_incident_type_endpoint.call_with_http_info(**kwargs)
+
+    def list_global_incident_handles(
+        self,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentHandlesResponse:
+        """List global incident handles.
+
+        Retrieve a list of global incident handles.
+
+        :param include: Comma-separated list of related resources to include in the response
+        :type include: str, optional
+        :rtype: IncidentHandlesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_global_incident_handles_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_attachments(
         self,
@@ -1969,6 +2164,45 @@ class IncidentsApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def update_global_incident_handle(
+        self,
+        body: IncidentHandleRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentHandleResponse:
+        """Update global incident handle.
+
+        Update an existing global incident handle.
+
+        :type body: IncidentHandleRequest
+        :param include: Comma-separated list of related resources to include in the response
+        :type include: str, optional
+        :rtype: IncidentHandleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_global_incident_handle_endpoint.call_with_http_info(**kwargs)
+
+    def update_global_incident_settings(
+        self,
+        body: GlobalIncidentSettingsRequest,
+    ) -> GlobalIncidentSettingsResponse:
+        """Update global incident settings.
+
+        Update global incident settings for the organization.
+
+        :type body: GlobalIncidentSettingsRequest
+        :rtype: GlobalIncidentSettingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_global_incident_settings_endpoint.call_with_http_info(**kwargs)
 
     def update_incident(
         self,

@@ -186,6 +186,22 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create global incident handle returns "Bad Request" response
+    Given operation "CreateGlobalIncidentHandle" enabled
+    And new "CreateGlobalIncidentHandle" request
+    And body with value {"data": {"attributes": {"fields": {"severity": ["SEV-1"]}, "name": "@incident-sev-1"}, "id": "b2494081-cdf0-4205-b366-4e1dd4fdf0bf", "relationships": {"commander_user": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}, "incident_type": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}}, "type": "incidents_handles"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create global incident handle returns "Created" response
+    Given operation "CreateGlobalIncidentHandle" enabled
+    And new "CreateGlobalIncidentHandle" request
+    And body with value {"data": {"attributes": {"fields": {"severity": ["SEV-1"]}, "name": "@incident-sev-1"}, "id": "b2494081-cdf0-4205-b366-4e1dd4fdf0bf", "relationships": {"commander_user": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}, "incident_type": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}}, "type": "incidents_handles"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @skip @team:DataDog/incident-app
   Scenario: Create incident attachment returns "Bad Request" response
     Given operation "CreateIncidentAttachment" enabled
@@ -450,6 +466,20 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete global incident handle returns "Bad Request" response
+    Given operation "DeleteGlobalIncidentHandle" enabled
+    And new "DeleteGlobalIncidentHandle" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete global incident handle returns "No Content" response
+    Given operation "DeleteGlobalIncidentHandle" enabled
+    And new "DeleteGlobalIncidentHandle" request
+    When the request is sent
+    Then the response status is 204 No Content
+
   @skip @team:DataDog/incident-app
   Scenario: Delete incident attachment returns "Bad Request" response
     Given operation "DeleteIncidentAttachment" enabled
@@ -634,6 +664,20 @@ Feature: Incidents
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Get global incident settings returns "Bad Request" response
+    Given operation "GetGlobalIncidentSettings" enabled
+    And new "GetGlobalIncidentSettings" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get global incident settings returns "OK" response
+    Given operation "GetGlobalIncidentSettings" enabled
+    And new "GetGlobalIncidentSettings" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get incident integration metadata details returns "Bad Request" response
     Given operation "GetIncidentIntegration" enabled
     And new "GetIncidentIntegration" request
@@ -813,6 +857,20 @@ Feature: Incidents
     And operation "ListIncidentImpacts" enabled
     And new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "incident.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List global incident handles returns "Bad Request" response
+    Given operation "ListGlobalIncidentHandles" enabled
+    And new "ListGlobalIncidentHandles" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List global incident handles returns "OK" response
+    Given operation "ListGlobalIncidentHandles" enabled
+    And new "ListGlobalIncidentHandles" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -1078,6 +1136,38 @@ Feature: Incidents
     And there is a valid "incident_type" in the system
     And request contains "incident_type_id" parameter from "incident_type.data.id"
     And body with value {"data": {"id": "{{incident_type.data.id}}", "attributes": {"name": "{{incident_type.data.attributes.name}}-updated"}, "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update global incident handle returns "Bad Request" response
+    Given operation "UpdateGlobalIncidentHandle" enabled
+    And new "UpdateGlobalIncidentHandle" request
+    And body with value {"data": {"attributes": {"fields": {"severity": ["SEV-1"]}, "name": "@incident-sev-1"}, "id": "b2494081-cdf0-4205-b366-4e1dd4fdf0bf", "relationships": {"commander_user": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}, "incident_type": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}}, "type": "incidents_handles"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update global incident handle returns "OK" response
+    Given operation "UpdateGlobalIncidentHandle" enabled
+    And new "UpdateGlobalIncidentHandle" request
+    And body with value {"data": {"attributes": {"fields": {"severity": ["SEV-1"]}, "name": "@incident-sev-1"}, "id": "b2494081-cdf0-4205-b366-4e1dd4fdf0bf", "relationships": {"commander_user": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}, "incident_type": {"data": {"id": "f7b538b1-ed7c-4e84-82de-fdf84a539d40", "type": "incident_types"}}}, "type": "incidents_handles"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update global incident settings returns "Bad Request" response
+    Given operation "UpdateGlobalIncidentSettings" enabled
+    And new "UpdateGlobalIncidentSettings" request
+    And body with value {"data": {"attributes": {"analytics_dashboard_id": "abc-123-def"}, "type": "incidents_global_settings"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update global incident settings returns "OK" response
+    Given operation "UpdateGlobalIncidentSettings" enabled
+    And new "UpdateGlobalIncidentSettings" request
+    And body with value {"data": {"attributes": {"analytics_dashboard_id": "abc-123-def"}, "type": "incidents_global_settings"}}
     When the request is sent
     Then the response status is 200 OK
 

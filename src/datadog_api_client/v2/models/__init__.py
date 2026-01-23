@@ -2164,6 +2164,17 @@ from datadog_api_client.v2.model.gitlab_credentials_update import GitlabCredenti
 from datadog_api_client.v2.model.gitlab_integration import GitlabIntegration
 from datadog_api_client.v2.model.gitlab_integration_type import GitlabIntegrationType
 from datadog_api_client.v2.model.gitlab_integration_update import GitlabIntegrationUpdate
+from datadog_api_client.v2.model.global_incident_settings_attributes_request import (
+    GlobalIncidentSettingsAttributesRequest,
+)
+from datadog_api_client.v2.model.global_incident_settings_attributes_response import (
+    GlobalIncidentSettingsAttributesResponse,
+)
+from datadog_api_client.v2.model.global_incident_settings_data_request import GlobalIncidentSettingsDataRequest
+from datadog_api_client.v2.model.global_incident_settings_data_response import GlobalIncidentSettingsDataResponse
+from datadog_api_client.v2.model.global_incident_settings_request import GlobalIncidentSettingsRequest
+from datadog_api_client.v2.model.global_incident_settings_response import GlobalIncidentSettingsResponse
+from datadog_api_client.v2.model.global_incident_settings_type import GlobalIncidentSettingsType
 from datadog_api_client.v2.model.global_variable_data import GlobalVariableData
 from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
 from datadog_api_client.v2.model.global_variable_json_patch_request_data import GlobalVariableJsonPatchRequestData
@@ -2244,6 +2255,20 @@ from datadog_api_client.v2.model.incident_field_attributes_single_value_type imp
     IncidentFieldAttributesSingleValueType,
 )
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
+from datadog_api_client.v2.model.incident_handle_attributes_fields import IncidentHandleAttributesFields
+from datadog_api_client.v2.model.incident_handle_attributes_request import IncidentHandleAttributesRequest
+from datadog_api_client.v2.model.incident_handle_attributes_response import IncidentHandleAttributesResponse
+from datadog_api_client.v2.model.incident_handle_data_request import IncidentHandleDataRequest
+from datadog_api_client.v2.model.incident_handle_data_response import IncidentHandleDataResponse
+from datadog_api_client.v2.model.incident_handle_included_item_response import IncidentHandleIncludedItemResponse
+from datadog_api_client.v2.model.incident_handle_relationship import IncidentHandleRelationship
+from datadog_api_client.v2.model.incident_handle_relationship_data import IncidentHandleRelationshipData
+from datadog_api_client.v2.model.incident_handle_relationships import IncidentHandleRelationships
+from datadog_api_client.v2.model.incident_handle_relationships_request import IncidentHandleRelationshipsRequest
+from datadog_api_client.v2.model.incident_handle_request import IncidentHandleRequest
+from datadog_api_client.v2.model.incident_handle_response import IncidentHandleResponse
+from datadog_api_client.v2.model.incident_handle_type import IncidentHandleType
+from datadog_api_client.v2.model.incident_handles_response import IncidentHandlesResponse
 from datadog_api_client.v2.model.incident_impact_attributes import IncidentImpactAttributes
 from datadog_api_client.v2.model.incident_impact_create_attributes import IncidentImpactCreateAttributes
 from datadog_api_client.v2.model.incident_impact_create_data import IncidentImpactCreateData
@@ -7331,6 +7356,13 @@ __all__ = [
     "GitlabIntegration",
     "GitlabIntegrationType",
     "GitlabIntegrationUpdate",
+    "GlobalIncidentSettingsAttributesRequest",
+    "GlobalIncidentSettingsAttributesResponse",
+    "GlobalIncidentSettingsDataRequest",
+    "GlobalIncidentSettingsDataResponse",
+    "GlobalIncidentSettingsRequest",
+    "GlobalIncidentSettingsResponse",
+    "GlobalIncidentSettingsType",
     "GlobalVariableData",
     "GlobalVariableJsonPatchRequest",
     "GlobalVariableJsonPatchRequestData",
@@ -7407,6 +7439,20 @@ __all__ = [
     "IncidentFieldAttributesSingleValue",
     "IncidentFieldAttributesSingleValueType",
     "IncidentFieldAttributesValueType",
+    "IncidentHandleAttributesFields",
+    "IncidentHandleAttributesRequest",
+    "IncidentHandleAttributesResponse",
+    "IncidentHandleDataRequest",
+    "IncidentHandleDataResponse",
+    "IncidentHandleIncludedItemResponse",
+    "IncidentHandleRelationship",
+    "IncidentHandleRelationshipData",
+    "IncidentHandleRelationships",
+    "IncidentHandleRelationshipsRequest",
+    "IncidentHandleRequest",
+    "IncidentHandleResponse",
+    "IncidentHandleType",
+    "IncidentHandlesResponse",
     "IncidentImpactAttributes",
     "IncidentImpactCreateAttributes",
     "IncidentImpactCreateData",
