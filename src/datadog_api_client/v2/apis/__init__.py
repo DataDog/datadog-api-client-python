@@ -76,6 +76,7 @@ from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
+from datadog_api_client.v2.api.service_now_integration_api import ServiceNowIntegrationApi
 from datadog_api_client.v2.api.software_catalog_api import SoftwareCatalogApi
 from datadog_api_client.v2.api.spa_api import SpaApi
 from datadog_api_client.v2.api.spans_api import SpansApi
@@ -169,6 +170,7 @@ __all__ = [
     "ServiceDefinitionApi",
     "ServiceLevelObjectivesApi",
     "ServiceScorecardsApi",
+    "ServiceNowIntegrationApi",
     "SoftwareCatalogApi",
     "SpaApi",
     "SpansApi",

@@ -4993,16 +4993,47 @@ from datadog_api_client.v2.model.service_list_data_attributes_metadata_items imp
     ServiceListDataAttributesMetadataItems,
 )
 from datadog_api_client.v2.model.service_list_data_type import ServiceListDataType
+from datadog_api_client.v2.model.service_now_assignment_group_attributes import ServiceNowAssignmentGroupAttributes
+from datadog_api_client.v2.model.service_now_assignment_group_data import ServiceNowAssignmentGroupData
+from datadog_api_client.v2.model.service_now_assignment_group_type import ServiceNowAssignmentGroupType
+from datadog_api_client.v2.model.service_now_assignment_groups_response import ServiceNowAssignmentGroupsResponse
 from datadog_api_client.v2.model.service_now_basic_auth import ServiceNowBasicAuth
 from datadog_api_client.v2.model.service_now_basic_auth_type import ServiceNowBasicAuthType
 from datadog_api_client.v2.model.service_now_basic_auth_update import ServiceNowBasicAuthUpdate
+from datadog_api_client.v2.model.service_now_business_service_attributes import ServiceNowBusinessServiceAttributes
+from datadog_api_client.v2.model.service_now_business_service_data import ServiceNowBusinessServiceData
+from datadog_api_client.v2.model.service_now_business_service_type import ServiceNowBusinessServiceType
+from datadog_api_client.v2.model.service_now_business_services_response import ServiceNowBusinessServicesResponse
 from datadog_api_client.v2.model.service_now_credentials import ServiceNowCredentials
 from datadog_api_client.v2.model.service_now_credentials_update import ServiceNowCredentialsUpdate
+from datadog_api_client.v2.model.service_now_instance_attributes import ServiceNowInstanceAttributes
+from datadog_api_client.v2.model.service_now_instance_data import ServiceNowInstanceData
+from datadog_api_client.v2.model.service_now_instance_type import ServiceNowInstanceType
+from datadog_api_client.v2.model.service_now_instances_response import ServiceNowInstancesResponse
 from datadog_api_client.v2.model.service_now_integration import ServiceNowIntegration
 from datadog_api_client.v2.model.service_now_integration_type import ServiceNowIntegrationType
 from datadog_api_client.v2.model.service_now_integration_update import ServiceNowIntegrationUpdate
+from datadog_api_client.v2.model.service_now_template_attributes import ServiceNowTemplateAttributes
+from datadog_api_client.v2.model.service_now_template_create_request import ServiceNowTemplateCreateRequest
+from datadog_api_client.v2.model.service_now_template_create_request_attributes import (
+    ServiceNowTemplateCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.service_now_template_create_request_data import ServiceNowTemplateCreateRequestData
+from datadog_api_client.v2.model.service_now_template_data import ServiceNowTemplateData
+from datadog_api_client.v2.model.service_now_template_response import ServiceNowTemplateResponse
+from datadog_api_client.v2.model.service_now_template_type import ServiceNowTemplateType
+from datadog_api_client.v2.model.service_now_template_update_request import ServiceNowTemplateUpdateRequest
+from datadog_api_client.v2.model.service_now_template_update_request_attributes import (
+    ServiceNowTemplateUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.service_now_template_update_request_data import ServiceNowTemplateUpdateRequestData
+from datadog_api_client.v2.model.service_now_templates_response import ServiceNowTemplatesResponse
 from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
+from datadog_api_client.v2.model.service_now_user_attributes import ServiceNowUserAttributes
+from datadog_api_client.v2.model.service_now_user_data import ServiceNowUserData
+from datadog_api_client.v2.model.service_now_user_type import ServiceNowUserType
+from datadog_api_client.v2.model.service_now_users_response import ServiceNowUsersResponse
 from datadog_api_client.v2.model.shift import Shift
 from datadog_api_client.v2.model.shift_data import ShiftData
 from datadog_api_client.v2.model.shift_data_attributes import ShiftDataAttributes
@@ -9259,16 +9290,43 @@ __all__ = [
     "ServiceListDataAttributes",
     "ServiceListDataAttributesMetadataItems",
     "ServiceListDataType",
+    "ServiceNowAssignmentGroupAttributes",
+    "ServiceNowAssignmentGroupData",
+    "ServiceNowAssignmentGroupType",
+    "ServiceNowAssignmentGroupsResponse",
     "ServiceNowBasicAuth",
     "ServiceNowBasicAuthType",
     "ServiceNowBasicAuthUpdate",
+    "ServiceNowBusinessServiceAttributes",
+    "ServiceNowBusinessServiceData",
+    "ServiceNowBusinessServiceType",
+    "ServiceNowBusinessServicesResponse",
     "ServiceNowCredentials",
     "ServiceNowCredentialsUpdate",
+    "ServiceNowInstanceAttributes",
+    "ServiceNowInstanceData",
+    "ServiceNowInstanceType",
+    "ServiceNowInstancesResponse",
     "ServiceNowIntegration",
     "ServiceNowIntegrationType",
     "ServiceNowIntegrationUpdate",
+    "ServiceNowTemplateAttributes",
+    "ServiceNowTemplateCreateRequest",
+    "ServiceNowTemplateCreateRequestAttributes",
+    "ServiceNowTemplateCreateRequestData",
+    "ServiceNowTemplateData",
+    "ServiceNowTemplateResponse",
+    "ServiceNowTemplateType",
+    "ServiceNowTemplateUpdateRequest",
+    "ServiceNowTemplateUpdateRequestAttributes",
+    "ServiceNowTemplateUpdateRequestData",
+    "ServiceNowTemplatesResponse",
     "ServiceNowTicket",
     "ServiceNowTicketResult",
+    "ServiceNowUserAttributes",
+    "ServiceNowUserData",
+    "ServiceNowUserType",
+    "ServiceNowUsersResponse",
     "Shift",
     "ShiftData",
     "ShiftDataAttributes",

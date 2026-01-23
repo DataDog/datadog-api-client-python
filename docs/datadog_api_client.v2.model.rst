@@ -24448,6 +24448,34 @@ datadog\_api\_client.v2.model.service\_list\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.service\_now\_assignment\_group\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_assignment_group_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_assignment\_group\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_assignment_group_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_assignment\_group\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_assignment_group_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_assignment\_groups\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_assignment_groups_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.service\_now\_basic\_auth module
 --------------------------------------------------------------
 
@@ -24469,6 +24497,34 @@ datadog\_api\_client.v2.model.service\_now\_basic\_auth\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.service\_now\_business\_service\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_business_service_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_business\_service\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_business_service_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_business\_service\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_business_service_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_business\_services\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_business_services_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.service\_now\_credentials module
 --------------------------------------------------------------
 
@@ -24480,6 +24536,34 @@ datadog\_api\_client.v2.model.service\_now\_credentials\_update module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_now_credentials_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_instance\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_instance_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_instance\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_instance_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_instance\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_instance_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_instances\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_instances_response
    :members:
    :show-inheritance:
 
@@ -24504,6 +24588,83 @@ datadog\_api\_client.v2.model.service\_now\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.service\_now\_template\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_create\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_create\_request\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_create\_request\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_update\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_update\_request\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_template\_update\_request\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_template_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_templates\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_templates_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.service\_now\_ticket module
 ---------------------------------------------------------
 
@@ -24515,6 +24676,34 @@ datadog\_api\_client.v2.model.service\_now\_ticket\_result module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_now_ticket_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_user\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_user\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_user\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_user_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_now\_users\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_now_users_response
    :members:
    :show-inheritance:
 
