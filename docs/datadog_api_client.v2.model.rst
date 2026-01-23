@@ -11211,6 +11211,55 @@ datadog\_api\_client.v2.model.gitlab\_integration\_update module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.global\_incident\_settings\_attributes\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_incident_settings_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_incident\_settings\_attributes\_response module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_incident_settings_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_incident\_settings\_data\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_incident_settings_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_incident\_settings\_data\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_incident_settings_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_incident\_settings\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_incident_settings_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_incident\_settings\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_incident_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_incident\_settings\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_incident_settings_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.global\_variable\_data module
 -----------------------------------------------------------
 
@@ -11677,6 +11726,104 @@ datadog\_api\_client.v2.model.incident\_field\_attributes\_value\_type module
 -----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_field_attributes_value_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_attributes\_fields module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_attributes_fields
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_attributes\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_attributes\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_data\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_data\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_included\_item\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_included_item_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_relationship module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_relationship\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_relationships module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_relationships\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_relationships_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handle\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handle_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_handles\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_handles_response
    :members:
    :show-inheritance:
 
