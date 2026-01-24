@@ -3,13 +3,18 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.slo_report_post_response import SLOReportPostResponse
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
 from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
+from datadog_api_client.v2.model.slo_status_response import SloStatusResponse
 
 
 class ServiceLevelObjectivesApi:
@@ -93,6 +98,46 @@ class ServiceLevelObjectivesApi:
             api_client=api_client,
         )
 
+        self._get_slo_status_endpoint = _Endpoint(
+            settings={
+                "response_type": (SloStatusResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/slo/{slo_id}/status",
+                "operation_id": "get_slo_status",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "slo_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slo_id",
+                    "location": "path",
+                },
+                "from_ts": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "from_ts",
+                    "location": "query",
+                },
+                "to_ts": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "to_ts",
+                    "location": "query",
+                },
+                "disable_corrections": {
+                    "openapi_types": (bool,),
+                    "attribute": "disable_corrections",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
     def create_slo_report_job(
         self,
         body: SloReportCreateRequest,
@@ -147,3 +192,39 @@ class ServiceLevelObjectivesApi:
         kwargs["report_id"] = report_id
 
         return self._get_slo_report_job_status_endpoint.call_with_http_info(**kwargs)
+
+    def get_slo_status(
+        self,
+        slo_id: str,
+        from_ts: int,
+        to_ts: int,
+        *,
+        disable_corrections: Union[bool, UnsetType] = unset,
+    ) -> SloStatusResponse:
+        """Get SLO status.
+
+        Get the status of a Service Level Objective (SLO) for a given time period.
+
+        This endpoint returns the current SLI value, error budget remaining, and other status information for the specified SLO.
+
+        :param slo_id: The ID of the SLO.
+        :type slo_id: str
+        :param from_ts: The starting timestamp for the SLO status query in epoch seconds.
+        :type from_ts: int
+        :param to_ts: The ending timestamp for the SLO status query in epoch seconds.
+        :type to_ts: int
+        :param disable_corrections: Whether to exclude correction windows from the SLO status calculation. Defaults to false.
+        :type disable_corrections: bool, optional
+        :rtype: SloStatusResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["slo_id"] = slo_id
+
+        kwargs["from_ts"] = from_ts
+
+        kwargs["to_ts"] = to_ts
+
+        if disable_corrections is not unset:
+            kwargs["disable_corrections"] = disable_corrections
+
+        return self._get_slo_status_endpoint.call_with_http_info(**kwargs)

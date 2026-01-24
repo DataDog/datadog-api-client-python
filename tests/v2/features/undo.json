@@ -4715,6 +4715,12 @@
       "type": "safe"
     }
   },
+  "GetSloStatus": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSPARecommendations": {
     "tag": "Spa",
     "undo": {
