@@ -23,7 +23,7 @@ Feature: Sensitive Data Scanner
     And new "CreateScanningGroup" request
     And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_group","attributes":{"name":"{{ unique }}","is_enabled":false,"product_list":["logs"],"filter":{"query":"*"}},"relationships":{"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"{{ configuration.data.id }}"}},"rules":{"data":[]}}}}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 201 OK
     And the response "data.type" is equal to "sensitive_data_scanner_group"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
@@ -43,7 +43,7 @@ Feature: Sensitive Data Scanner
     And new "CreateScanningRule" request
     And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern", "namespaces": ["admin"], "excluded_namespaces": ["admin.name"], "text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true,"priority":1,"included_keyword_configuration":{"keywords":["credit card"],"character_count":35}},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 201 OK
     And the response "data.type" is equal to "sensitive_data_scanner_rule"
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.attributes.pattern" is equal to "pattern"
@@ -57,7 +57,7 @@ Feature: Sensitive Data Scanner
     And new "CreateScanningRule" request
     And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"replacement_string","replacement_string":"REDACTED","should_save_match":true},"tags":["sensitive_data:true"],"is_enabled":true,"priority":1},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 201 OK
     And the response "data.type" is equal to "sensitive_data_scanner_rule"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
@@ -154,6 +154,7 @@ Feature: Sensitive Data Scanner
   Scenario: Reorder Groups returns "OK" response
     Given a valid "configuration" in the system
     And there is a valid "scanning_group" in the system
+    And a valid "configuration" in the system
     And new "ReorderScanningGroups" request
     And body with value {"data": {"relationships": {"groups": {"data": [{"type": "sensitive_data_scanner_group", "id": "{{ group.data.id }}"}]}}, "type": "sensitive_data_scanner_configuration", "id": "{{ configuration.data.id }}"}, "meta": {}}
     When the request is sent
@@ -192,7 +193,7 @@ Feature: Sensitive Data Scanner
     And the "scanning_group" has a "scanning_rule"
     And new "UpdateScanningRule" request
     And request contains "rule_id" parameter from "rule.data.id"
-    And body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
+    And body with value {"meta":{},"data":{"attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
