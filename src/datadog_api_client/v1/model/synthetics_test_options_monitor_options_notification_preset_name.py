@@ -16,7 +16,7 @@ class SyntheticsTestOptionsMonitorOptionsNotificationPresetName(ModelSimple):
     """
     The name of the preset for the notification for the monitor.
 
-    :param value: Must be one of ["show_all", "hide_all", "hide_query", "hide_handles", "hide_query_and_handles", "show_only_snapshot", "hide_handles_and_footer"].
+    :param value: Must be one of ["show_all", "hide_all", "hide_query", "hide_handles"].
     :type value: str
     """
 
@@ -25,17 +25,11 @@ class SyntheticsTestOptionsMonitorOptionsNotificationPresetName(ModelSimple):
         "hide_all",
         "hide_query",
         "hide_handles",
-        "hide_query_and_handles",
-        "show_only_snapshot",
-        "hide_handles_and_footer",
     }
     SHOW_ALL: ClassVar["SyntheticsTestOptionsMonitorOptionsNotificationPresetName"]
     HIDE_ALL: ClassVar["SyntheticsTestOptionsMonitorOptionsNotificationPresetName"]
     HIDE_QUERY: ClassVar["SyntheticsTestOptionsMonitorOptionsNotificationPresetName"]
     HIDE_HANDLES: ClassVar["SyntheticsTestOptionsMonitorOptionsNotificationPresetName"]
-    HIDE_QUERY_AND_HANDLES: ClassVar["SyntheticsTestOptionsMonitorOptionsNotificationPresetName"]
-    SHOW_ONLY_SNAPSHOT: ClassVar["SyntheticsTestOptionsMonitorOptionsNotificationPresetName"]
-    HIDE_HANDLES_AND_FOOTER: ClassVar["SyntheticsTestOptionsMonitorOptionsNotificationPresetName"]
 
     @cached_property
     def openapi_types(_):
@@ -55,13 +49,4 @@ SyntheticsTestOptionsMonitorOptionsNotificationPresetName.HIDE_QUERY = (
 )
 SyntheticsTestOptionsMonitorOptionsNotificationPresetName.HIDE_HANDLES = (
     SyntheticsTestOptionsMonitorOptionsNotificationPresetName("hide_handles")
-)
-SyntheticsTestOptionsMonitorOptionsNotificationPresetName.HIDE_QUERY_AND_HANDLES = (
-    SyntheticsTestOptionsMonitorOptionsNotificationPresetName("hide_query_and_handles")
-)
-SyntheticsTestOptionsMonitorOptionsNotificationPresetName.SHOW_ONLY_SNAPSHOT = (
-    SyntheticsTestOptionsMonitorOptionsNotificationPresetName("show_only_snapshot")
-)
-SyntheticsTestOptionsMonitorOptionsNotificationPresetName.HIDE_HANDLES_AND_FOOTER = (
-    SyntheticsTestOptionsMonitorOptionsNotificationPresetName("hide_handles_and_footer")
 )
