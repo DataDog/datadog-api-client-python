@@ -18295,6 +18295,20 @@ datadog\_api\_client.v2.model.on\_call\_phone\_notification\_rule\_settings modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.on\_call\_trigger module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_trigger
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_call\_trigger\_wrapper module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_call_trigger_wrapper
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.on\_demand\_concurrency\_cap module
 -----------------------------------------------------------------
 
