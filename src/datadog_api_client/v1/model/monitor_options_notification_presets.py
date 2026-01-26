@@ -16,7 +16,7 @@ class MonitorOptionsNotificationPresets(ModelSimple):
     """
     Toggles the display of additional content sent in the monitor notification.
 
-    :param value: If omitted defaults to "show_all". Must be one of ["show_all", "hide_query", "hide_handles", "hide_all"].
+    :param value: If omitted defaults to "show_all". Must be one of ["show_all", "hide_query", "hide_handles", "hide_all", "hide_query_and_handles", "show_only_snapshot", "hide_handles_and_footer"].
     :type value: str
     """
 
@@ -25,11 +25,17 @@ class MonitorOptionsNotificationPresets(ModelSimple):
         "hide_query",
         "hide_handles",
         "hide_all",
+        "hide_query_and_handles",
+        "show_only_snapshot",
+        "hide_handles_and_footer",
     }
     SHOW_ALL: ClassVar["MonitorOptionsNotificationPresets"]
     HIDE_QUERY: ClassVar["MonitorOptionsNotificationPresets"]
     HIDE_HANDLES: ClassVar["MonitorOptionsNotificationPresets"]
     HIDE_ALL: ClassVar["MonitorOptionsNotificationPresets"]
+    HIDE_QUERY_AND_HANDLES: ClassVar["MonitorOptionsNotificationPresets"]
+    SHOW_ONLY_SNAPSHOT: ClassVar["MonitorOptionsNotificationPresets"]
+    HIDE_HANDLES_AND_FOOTER: ClassVar["MonitorOptionsNotificationPresets"]
 
     @cached_property
     def openapi_types(_):
@@ -42,3 +48,6 @@ MonitorOptionsNotificationPresets.SHOW_ALL = MonitorOptionsNotificationPresets("
 MonitorOptionsNotificationPresets.HIDE_QUERY = MonitorOptionsNotificationPresets("hide_query")
 MonitorOptionsNotificationPresets.HIDE_HANDLES = MonitorOptionsNotificationPresets("hide_handles")
 MonitorOptionsNotificationPresets.HIDE_ALL = MonitorOptionsNotificationPresets("hide_all")
+MonitorOptionsNotificationPresets.HIDE_QUERY_AND_HANDLES = MonitorOptionsNotificationPresets("hide_query_and_handles")
+MonitorOptionsNotificationPresets.SHOW_ONLY_SNAPSHOT = MonitorOptionsNotificationPresets("show_only_snapshot")
+MonitorOptionsNotificationPresets.HIDE_HANDLES_AND_FOOTER = MonitorOptionsNotificationPresets("hide_handles_and_footer")
