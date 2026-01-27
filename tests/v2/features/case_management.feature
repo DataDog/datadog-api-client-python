@@ -10,6 +10,33 @@ Feature: Case Management
     And a valid "appKeyAuth" key in the system
     And an instance of "CaseManagement" API
 
+  @generated @skip @team:DataDog/case-management
+  Scenario: Add user as watcher returns "Bad Request" response
+    Given operation "WatchCase" enabled
+    And new "WatchCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Add user as watcher returns "Created" response
+    Given operation "WatchCase" enabled
+    And new "WatchCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Add user as watcher returns "Not Found" response
+    Given operation "WatchCase" enabled
+    And new "WatchCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/case-management
   Scenario: Archive case returns "Bad Request" response
     Given new "ArchiveCase" request
@@ -203,6 +230,30 @@ Feature: Case Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get case watchers returns "Bad Request" response
+    Given operation "ListCaseWatchers" enabled
+    And new "ListCaseWatchers" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get case watchers returns "Not Found" response
+    Given operation "ListCaseWatchers" enabled
+    And new "ListCaseWatchers" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get case watchers returns "OK" response
+    Given operation "ListCaseWatchers" enabled
+    And new "ListCaseWatchers" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/case-management
   Scenario: Get the details of a case returns "Bad Request" response
     Given new "GetCase" request
@@ -260,6 +311,33 @@ Feature: Case Management
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove user as watcher returns "Bad Request" response
+    Given operation "UnwatchCase" enabled
+    And new "UnwatchCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove user as watcher returns "No Content" response
+    Given operation "UnwatchCase" enabled
+    And new "UnwatchCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove user as watcher returns "Not Found" response
+    Given operation "UnwatchCase" enabled
+    And new "UnwatchCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Search cases returns "Bad Request" response

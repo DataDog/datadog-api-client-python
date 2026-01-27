@@ -32,6 +32,7 @@ from datadog_api_client.v2.model.case_update_description_request import CaseUpda
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
 from datadog_api_client.v2.model.case_update_title_request import CaseUpdateTitleRequest
+from datadog_api_client.v2.model.watchers_response import WatchersResponse
 
 
 class CaseManagementApi:
@@ -305,6 +306,29 @@ class CaseManagementApi:
             api_client=api_client,
         )
 
+        self._list_case_watchers_endpoint = _Endpoint(
+            settings={
+                "response_type": (WatchersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/watchers",
+                "operation_id": "list_case_watchers",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._search_cases_endpoint = _Endpoint(
             settings={
                 "response_type": (CasesResponse,),
@@ -396,6 +420,35 @@ class CaseManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._unwatch_case_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/watchers/{user_id}",
+                "operation_id": "unwatch_case",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -558,6 +611,35 @@ class CaseManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._watch_case_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cases/{case_id}/watchers/{user_id}",
+                "operation_id": "watch_case",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "case_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "case_id",
+                    "location": "path",
+                },
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -768,6 +850,23 @@ class CaseManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._get_projects_endpoint.call_with_http_info(**kwargs)
 
+    def list_case_watchers(
+        self,
+        case_id: str,
+    ) -> WatchersResponse:
+        """Get case watchers.
+
+        Get all users watching a case
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :rtype: WatchersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        return self._list_case_watchers_endpoint.call_with_http_info(**kwargs)
+
     def search_cases(
         self,
         *,
@@ -910,6 +1009,28 @@ class CaseManagementApi:
 
         return self._unassign_case_endpoint.call_with_http_info(**kwargs)
 
+    def unwatch_case(
+        self,
+        case_id: str,
+        user_id: str,
+    ) -> None:
+        """Remove user as watcher.
+
+        Remove a user from the watchers list for a case
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param user_id: User UUID
+        :type user_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["user_id"] = user_id
+
+        return self._unwatch_case_endpoint.call_with_http_info(**kwargs)
+
     def update_attributes(
         self,
         case_id: str,
@@ -1046,3 +1167,25 @@ class CaseManagementApi:
         kwargs["body"] = body
 
         return self._update_status_endpoint.call_with_http_info(**kwargs)
+
+    def watch_case(
+        self,
+        case_id: str,
+        user_id: str,
+    ) -> None:
+        """Add user as watcher.
+
+        Add a user as a watcher for a case
+
+        :param case_id: Case's UUID or key
+        :type case_id: str
+        :param user_id: User UUID
+        :type user_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["case_id"] = case_id
+
+        kwargs["user_id"] = user_id
+
+        return self._watch_case_endpoint.call_with_http_info(**kwargs)

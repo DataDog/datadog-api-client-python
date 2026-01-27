@@ -5749,6 +5749,11 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
+from datadog_api_client.v2.model.watcher import Watcher
+from datadog_api_client.v2.model.watcher_relationships import WatcherRelationships
+from datadog_api_client.v2.model.watcher_resource_type import WatcherResourceType
+from datadog_api_client.v2.model.watcher_user_relationship import WatcherUserRelationship
+from datadog_api_client.v2.model.watchers_response import WatchersResponse
 from datadog_api_client.v2.model.weekday import Weekday
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
 from datadog_api_client.v2.model.workflow_data import WorkflowData
@@ -9870,6 +9875,11 @@ __all__ = [
     "VulnerabilityStatus",
     "VulnerabilityTool",
     "VulnerabilityType",
+    "Watcher",
+    "WatcherRelationships",
+    "WatcherResourceType",
+    "WatcherUserRelationship",
+    "WatchersResponse",
     "Weekday",
     "WidgetLiveSpan",
     "WorkflowData",
