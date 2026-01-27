@@ -48,6 +48,8 @@ class UsageSummaryResponse(ModelNormal):
             "browser_rum_lite_session_count_agg_sum": (int,),
             "browser_rum_replay_session_count_agg_sum": (int,),
             "browser_rum_units_agg_sum": (int,),
+            "ccm_spend_monitored_ent_last_sum": (int,),
+            "ccm_spend_monitored_pro_last_sum": (int,),
             "ci_pipeline_indexed_spans_agg_sum": (int,),
             "ci_test_indexed_spans_agg_sum": (int,),
             "ci_visibility_itr_committers_hwm_sum": (int,),
@@ -272,6 +274,8 @@ class UsageSummaryResponse(ModelNormal):
         "browser_rum_lite_session_count_agg_sum": "browser_rum_lite_session_count_agg_sum",
         "browser_rum_replay_session_count_agg_sum": "browser_rum_replay_session_count_agg_sum",
         "browser_rum_units_agg_sum": "browser_rum_units_agg_sum",
+        "ccm_spend_monitored_ent_last_sum": "ccm_spend_monitored_ent_last_sum",
+        "ccm_spend_monitored_pro_last_sum": "ccm_spend_monitored_pro_last_sum",
         "ci_pipeline_indexed_spans_agg_sum": "ci_pipeline_indexed_spans_agg_sum",
         "ci_test_indexed_spans_agg_sum": "ci_test_indexed_spans_agg_sum",
         "ci_visibility_itr_committers_hwm_sum": "ci_visibility_itr_committers_hwm_sum",
@@ -497,6 +501,8 @@ class UsageSummaryResponse(ModelNormal):
         browser_rum_lite_session_count_agg_sum: Union[int, UnsetType] = unset,
         browser_rum_replay_session_count_agg_sum: Union[int, UnsetType] = unset,
         browser_rum_units_agg_sum: Union[int, UnsetType] = unset,
+        ccm_spend_monitored_ent_last_sum: Union[int, UnsetType] = unset,
+        ccm_spend_monitored_pro_last_sum: Union[int, UnsetType] = unset,
         ci_pipeline_indexed_spans_agg_sum: Union[int, UnsetType] = unset,
         ci_test_indexed_spans_agg_sum: Union[int, UnsetType] = unset,
         ci_visibility_itr_committers_hwm_sum: Union[int, UnsetType] = unset,
@@ -766,6 +772,12 @@ class UsageSummaryResponse(ModelNormal):
 
         :param browser_rum_units_agg_sum: Shows the sum of all browser RUM units over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type browser_rum_units_agg_sum: int, optional
+
+        :param ccm_spend_monitored_ent_last_sum: Shows the sum of the last value of the amount of cloud spend monitored for Enterprise in the current month for all organizations.
+        :type ccm_spend_monitored_ent_last_sum: int, optional
+
+        :param ccm_spend_monitored_pro_last_sum: Shows the sum of the last value of the amount of cloud spend monitored for Pro in the current month for all organizations.
+        :type ccm_spend_monitored_pro_last_sum: int, optional
 
         :param ci_pipeline_indexed_spans_agg_sum: Shows the sum of all CI pipeline indexed spans over all hours in the current month for all organizations.
         :type ci_pipeline_indexed_spans_agg_sum: int, optional
@@ -1408,6 +1420,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["browser_rum_replay_session_count_agg_sum"] = browser_rum_replay_session_count_agg_sum
         if browser_rum_units_agg_sum is not unset:
             kwargs["browser_rum_units_agg_sum"] = browser_rum_units_agg_sum
+        if ccm_spend_monitored_ent_last_sum is not unset:
+            kwargs["ccm_spend_monitored_ent_last_sum"] = ccm_spend_monitored_ent_last_sum
+        if ccm_spend_monitored_pro_last_sum is not unset:
+            kwargs["ccm_spend_monitored_pro_last_sum"] = ccm_spend_monitored_pro_last_sum
         if ci_pipeline_indexed_spans_agg_sum is not unset:
             kwargs["ci_pipeline_indexed_spans_agg_sum"] = ci_pipeline_indexed_spans_agg_sum
         if ci_test_indexed_spans_agg_sum is not unset:
