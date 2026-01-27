@@ -819,6 +819,26 @@
       "type": "idempotent"
     }
   },
+  "ListCaseWatchers": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UnwatchCase": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "WatchCase": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListCatalogEntity": {
     "tag": "Software Catalog",
     "undo": {

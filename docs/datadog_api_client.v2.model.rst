@@ -28536,6 +28536,41 @@ datadog\_api\_client.v2.model.vulnerability\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.watcher module
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watcher\_relationships module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watcher\_resource\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watcher\_user\_relationship module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher_user_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watchers\_response module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watchers_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.weekday module
 --------------------------------------------
 
