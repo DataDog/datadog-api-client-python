@@ -79,6 +79,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "estimated_ingested_spans_usage": (float,),
             "fargate_percentage": (float,),
             "fargate_usage": (float,),
+            "flex_logs_starter_percentage": (float,),
+            "flex_logs_starter_usage": (float,),
             "flex_stored_logs_percentage": (float,),
             "flex_stored_logs_usage": (float,),
             "functions_percentage": (float,),
@@ -240,6 +242,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "estimated_ingested_spans_usage": "estimated_ingested_spans_usage",
         "fargate_percentage": "fargate_percentage",
         "fargate_usage": "fargate_usage",
+        "flex_logs_starter_percentage": "flex_logs_starter_percentage",
+        "flex_logs_starter_usage": "flex_logs_starter_usage",
         "flex_stored_logs_percentage": "flex_stored_logs_percentage",
         "flex_stored_logs_usage": "flex_stored_logs_usage",
         "functions_percentage": "functions_percentage",
@@ -402,6 +406,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         estimated_ingested_spans_usage: Union[float, UnsetType] = unset,
         fargate_percentage: Union[float, UnsetType] = unset,
         fargate_usage: Union[float, UnsetType] = unset,
+        flex_logs_starter_percentage: Union[float, UnsetType] = unset,
+        flex_logs_starter_usage: Union[float, UnsetType] = unset,
         flex_stored_logs_percentage: Union[float, UnsetType] = unset,
         flex_stored_logs_usage: Union[float, UnsetType] = unset,
         functions_percentage: Union[float, UnsetType] = unset,
@@ -689,6 +695,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param fargate_usage: The Fargate usage by tags.
         :type fargate_usage: float, optional
+
+        :param flex_logs_starter_percentage: The percentage of Flex Logs Starter usage by tags.
+        :type flex_logs_starter_percentage: float, optional
+
+        :param flex_logs_starter_usage: The Flex Logs Starter usage by tags.
+        :type flex_logs_starter_usage: float, optional
 
         :param flex_stored_logs_percentage: The percentage of Flex Stored Logs usage by tags.
         :type flex_stored_logs_percentage: float, optional
@@ -1102,6 +1114,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["fargate_percentage"] = fargate_percentage
         if fargate_usage is not unset:
             kwargs["fargate_usage"] = fargate_usage
+        if flex_logs_starter_percentage is not unset:
+            kwargs["flex_logs_starter_percentage"] = flex_logs_starter_percentage
+        if flex_logs_starter_usage is not unset:
+            kwargs["flex_logs_starter_usage"] = flex_logs_starter_usage
         if flex_stored_logs_percentage is not unset:
             kwargs["flex_stored_logs_percentage"] = flex_stored_logs_percentage
         if flex_stored_logs_usage is not unset:
