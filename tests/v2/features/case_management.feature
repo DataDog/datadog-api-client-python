@@ -10,6 +10,30 @@ Feature: Case Management
     And a valid "appKeyAuth" key in the system
     And an instance of "CaseManagement" API
 
+  @generated @skip @team:DataDog/case-management
+  Scenario: Add project to favorites returns "Bad Request" response
+    Given operation "FavoriteProject" enabled
+    And new "FavoriteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Add project to favorites returns "No Content" response
+    Given operation "FavoriteProject" enabled
+    And new "FavoriteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Add project to favorites returns "Not Found" response
+    Given operation "FavoriteProject" enabled
+    And new "FavoriteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/case-management
   Scenario: Archive case returns "Bad Request" response
     Given new "ArchiveCase" request
@@ -248,6 +272,20 @@ Feature: Case Management
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/case-management
+  Scenario: Get user's project favorites returns "Bad Request" response
+    Given operation "ListUserProjectFavorites" enabled
+    And new "ListUserProjectFavorites" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get user's project favorites returns "OK" response
+    Given operation "ListUserProjectFavorites" enabled
+    And new "ListUserProjectFavorites" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/case-management
   Scenario: Remove a project returns "API error response" response
     Given new "DeleteProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -260,6 +298,30 @@ Feature: Case Management
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove project from favorites returns "Bad Request" response
+    Given operation "UnfavoriteProject" enabled
+    And new "UnfavoriteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove project from favorites returns "No Content" response
+    Given operation "UnfavoriteProject" enabled
+    And new "UnfavoriteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove project from favorites returns "Not Found" response
+    Given operation "UnfavoriteProject" enabled
+    And new "UnfavoriteProject" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Search cases returns "Bad Request" response

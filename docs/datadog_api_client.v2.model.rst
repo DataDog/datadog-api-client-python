@@ -19464,6 +19464,41 @@ datadog\_api\_client.v2.model.project\_create\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.project\_favorite module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_favorite
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.project\_favorite\_relationships module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_favorite_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.project\_favorite\_resource\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_favorite_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.project\_favorite\_user\_relationship module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_favorite_user_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.project\_favorites\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.project_favorites_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.project\_relationship module
 ----------------------------------------------------------
 

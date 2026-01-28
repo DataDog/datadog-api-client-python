@@ -32,6 +32,7 @@ from datadog_api_client.v2.model.case_update_description_request import CaseUpda
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
 from datadog_api_client.v2.model.case_update_title_request import CaseUpdateTitleRequest
+from datadog_api_client.v2.model.project_favorites_response import ProjectFavoritesResponse
 
 
 class CaseManagementApi:
@@ -243,6 +244,29 @@ class CaseManagementApi:
             api_client=api_client,
         )
 
+        self._favorite_project_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/projects/{project_id}/favorites",
+                "operation_id": "favorite_project",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_case_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseResponse,),
@@ -295,6 +319,22 @@ class CaseManagementApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/projects",
                 "operation_id": "get_projects",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_user_project_favorites_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProjectFavoritesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/projects/favorites",
+                "operation_id": "list_user_project_favorites",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -396,6 +436,29 @@ class CaseManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._unfavorite_project_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/projects/{project_id}/favorites",
+                "operation_id": "unfavorite_project",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -722,6 +785,23 @@ class CaseManagementApi:
 
         return self._delete_project_endpoint.call_with_http_info(**kwargs)
 
+    def favorite_project(
+        self,
+        project_id: str,
+    ) -> None:
+        """Add project to favorites.
+
+        Add a project to the current user's favorites
+
+        :param project_id: Project UUID
+        :type project_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        return self._favorite_project_endpoint.call_with_http_info(**kwargs)
+
     def get_case(
         self,
         case_id: str,
@@ -767,6 +847,18 @@ class CaseManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_projects_endpoint.call_with_http_info(**kwargs)
+
+    def list_user_project_favorites(
+        self,
+    ) -> ProjectFavoritesResponse:
+        """Get user's project favorites.
+
+        Get all projects marked as favorite by the current user
+
+        :rtype: ProjectFavoritesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_user_project_favorites_endpoint.call_with_http_info(**kwargs)
 
     def search_cases(
         self,
@@ -909,6 +1001,23 @@ class CaseManagementApi:
         kwargs["body"] = body
 
         return self._unassign_case_endpoint.call_with_http_info(**kwargs)
+
+    def unfavorite_project(
+        self,
+        project_id: str,
+    ) -> None:
+        """Remove project from favorites.
+
+        Remove a project from the current user's favorites
+
+        :param project_id: Project UUID
+        :type project_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        return self._unfavorite_project_endpoint.call_with_http_info(**kwargs)
 
     def update_attributes(
         self,
