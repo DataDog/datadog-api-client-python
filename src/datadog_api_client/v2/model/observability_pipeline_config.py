@@ -152,6 +152,7 @@ class ObservabilityPipelineConfig(ModelNormal):
             "processor_groups": ([ObservabilityPipelineConfigProcessorGroup],),
             "processors": ([ObservabilityPipelineConfigProcessorGroup],),
             "sources": ([ObservabilityPipelineConfigSourceItem],),
+            "use_legacy_search_syntax": (bool,),
         }
 
     attribute_map = {
@@ -160,6 +161,7 @@ class ObservabilityPipelineConfig(ModelNormal):
         "processor_groups": "processor_groups",
         "processors": "processors",
         "sources": "sources",
+        "use_legacy_search_syntax": "use_legacy_search_syntax",
     }
 
     def __init__(
@@ -217,6 +219,7 @@ class ObservabilityPipelineConfig(ModelNormal):
         pipeline_type: Union[ObservabilityPipelineConfigPipelineType, UnsetType] = unset,
         processor_groups: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
         processors: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
+        use_legacy_search_syntax: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -238,6 +241,12 @@ class ObservabilityPipelineConfig(ModelNormal):
 
         :param sources: A list of configured data sources for the pipeline.
         :type sources: [ObservabilityPipelineConfigSourceItem]
+
+        :param use_legacy_search_syntax: Set to ``true`` to continue using the legacy search syntax while migrating filter queries. After migrating all queries to the new syntax, set to ``false``.
+            The legacy syntax is deprecated and will eventually be removed.
+            Requires Observability Pipelines Worker 2.11 or later.
+            See `Upgrade Your Filter Queries to the New Search Syntax <https://docs.datadoghq.com/observability_pipelines/guide/upgrade_your_filter_queries_to_the_new_search_syntax/>`_ for more information.
+        :type use_legacy_search_syntax: bool, optional
         """
         if pipeline_type is not unset:
             kwargs["pipeline_type"] = pipeline_type
@@ -245,6 +254,8 @@ class ObservabilityPipelineConfig(ModelNormal):
             kwargs["processor_groups"] = processor_groups
         if processors is not unset:
             kwargs["processors"] = processors
+        if use_legacy_search_syntax is not unset:
+            kwargs["use_legacy_search_syntax"] = use_legacy_search_syntax
         super().__init__(kwargs)
 
         self_.destinations = destinations
