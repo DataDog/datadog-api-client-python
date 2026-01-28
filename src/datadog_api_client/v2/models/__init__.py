@@ -3988,6 +3988,11 @@ from datadog_api_client.v2.model.project_attributes import ProjectAttributes
 from datadog_api_client.v2.model.project_create import ProjectCreate
 from datadog_api_client.v2.model.project_create_attributes import ProjectCreateAttributes
 from datadog_api_client.v2.model.project_create_request import ProjectCreateRequest
+from datadog_api_client.v2.model.project_favorite import ProjectFavorite
+from datadog_api_client.v2.model.project_favorite_relationships import ProjectFavoriteRelationships
+from datadog_api_client.v2.model.project_favorite_resource_type import ProjectFavoriteResourceType
+from datadog_api_client.v2.model.project_favorite_user_relationship import ProjectFavoriteUserRelationship
+from datadog_api_client.v2.model.project_favorites_response import ProjectFavoritesResponse
 from datadog_api_client.v2.model.project_relationship import ProjectRelationship
 from datadog_api_client.v2.model.project_relationship_data import ProjectRelationshipData
 from datadog_api_client.v2.model.project_relationships import ProjectRelationships
@@ -8569,6 +8574,11 @@ __all__ = [
     "ProjectCreate",
     "ProjectCreateAttributes",
     "ProjectCreateRequest",
+    "ProjectFavorite",
+    "ProjectFavoriteRelationships",
+    "ProjectFavoriteResourceType",
+    "ProjectFavoriteUserRelationship",
+    "ProjectFavoritesResponse",
     "ProjectRelationship",
     "ProjectRelationshipData",
     "ProjectRelationships",

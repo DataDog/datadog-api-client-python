@@ -3445,6 +3445,26 @@
       "type": "safe"
     }
   },
+  "ListUserProjectFavorites": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UnfavoriteProject": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "FavoriteProject": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "QueryScalarData": {
     "tag": "Metrics",
     "undo": {
