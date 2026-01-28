@@ -48,8 +48,8 @@ class CreateComponentRequestData(ModelNormal):
 
     def __init__(
         self_,
+        attributes: CreateComponentRequestDataAttributes,
         type: StatusPagesComponentGroupType,
-        attributes: Union[CreateComponentRequestDataAttributes, UnsetType] = unset,
         relationships: Union[CreateComponentRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -57,7 +57,7 @@ class CreateComponentRequestData(ModelNormal):
 
 
         :param attributes: The supported attributes for creating a component.
-        :type attributes: CreateComponentRequestDataAttributes, optional
+        :type attributes: CreateComponentRequestDataAttributes
 
         :param relationships: The supported relationships for creating a component.
         :type relationships: CreateComponentRequestDataRelationships, optional
@@ -65,10 +65,9 @@ class CreateComponentRequestData(ModelNormal):
         :param type: Components resource type.
         :type type: StatusPagesComponentGroupType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
+        self_.attributes = attributes
         self_.type = type
