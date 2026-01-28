@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Updated Project Name Test-Update_a_project_returns_OK_response-1769604677"},"type":"project"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/cases/projects/d4bbe1af-f36e-42f1-87c1-493ca35c320e
+  response:
+    body:
+      string: '{"data":{"id":"d4bbe1af-f36e-42f1-87c1-493ca35c320e","type":"project","attributes":{"key":"DDFC","name":"Updated
+        Project Name Test-Update_a_project_returns_OK_response-1769604677","restricted":false,"settings":{"notification":{"enabled":true,"destinations":[1],"notify_on_case_assignment":true,"notify_on_case_unassignment":true,"notify_on_case_closed":true,"notify_on_case_priority_change":true,"notify_on_case_comment":true,"notify_on_case_comment_mention":true,"notify_on_case_status_change":true}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

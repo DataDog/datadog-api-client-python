@@ -693,6 +693,47 @@
       "type": "safe"
     }
   },
+  "UpdateProject": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetProjectNotificationRules": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateProjectNotificationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "DeleteProjectNotificationRule",
+      "parameters": [
+        {
+          "name": "project_id",
+          "source": "path.project_id"
+        },
+        {
+          "name": "notification_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteProjectNotificationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateProjectNotificationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetAllCaseTypes": {
     "tag": "Case Management Type",
     "undo": {
