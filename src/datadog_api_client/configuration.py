@@ -266,6 +266,7 @@ class Configuration:
                 "v2.get_open_api": False,
                 "v2.list_apis": False,
                 "v2.update_open_api": False,
+                "v2.list_aws_cloud_auth_persona_mappings": False,
                 "v2.cancel_threat_hunting_job": False,
                 "v2.convert_job_result_to_signal": False,
                 "v2.delete_threat_hunting_job": False,
