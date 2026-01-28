@@ -445,9 +445,9 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path, path_parameters):
     """Set request parameter."""
-    value = json.dumps(glom(context, path))
+    value = glom(context, path)
     param_name = escape_reserved_keyword(snake_case(name))
-    context["api_request"]["kwargs"][param_name] = value
+    context["api_request"]["kwargs"][param_name] = json.dumps(value)
     # Store in path_parameters for undo operations
     path_parameters[name] = value
     path_parameters[param_name] = value
