@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
     UUID,
 )
 
@@ -40,28 +38,22 @@ class PatchComponentRequestData(ModelNormal):
     }
 
     def __init__(
-        self_,
-        type: StatusPagesComponentGroupType,
-        attributes: Union[PatchComponentRequestDataAttributes, UnsetType] = unset,
-        id: Union[UUID, UnsetType] = unset,
-        **kwargs,
+        self_, attributes: PatchComponentRequestDataAttributes, id: UUID, type: StatusPagesComponentGroupType, **kwargs
     ):
         """
 
 
         :param attributes: The supported attributes for updating a component.
-        :type attributes: PatchComponentRequestDataAttributes, optional
+        :type attributes: PatchComponentRequestDataAttributes
 
         :param id: The ID of the component.
-        :type id: UUID, optional
+        :type id: UUID
 
         :param type: Components resource type.
         :type type: StatusPagesComponentGroupType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
+        self_.attributes = attributes
+        self_.id = id
         self_.type = type

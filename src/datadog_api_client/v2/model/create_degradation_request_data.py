@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -39,22 +37,18 @@ class CreateDegradationRequestData(ModelNormal):
     }
 
     def __init__(
-        self_,
-        type: PatchDegradationRequestDataType,
-        attributes: Union[CreateDegradationRequestDataAttributes, UnsetType] = unset,
-        **kwargs,
+        self_, attributes: CreateDegradationRequestDataAttributes, type: PatchDegradationRequestDataType, **kwargs
     ):
         """
 
 
         :param attributes: The supported attributes for creating a degradation.
-        :type attributes: CreateDegradationRequestDataAttributes, optional
+        :type attributes: CreateDegradationRequestDataAttributes
 
         :param type: Degradations resource type.
         :type type: PatchDegradationRequestDataType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
         super().__init__(kwargs)
 
+        self_.attributes = attributes
         self_.type = type

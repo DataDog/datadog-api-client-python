@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -38,23 +36,17 @@ class CreateStatusPageRequestData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        type: StatusPageDataType,
-        attributes: Union[CreateStatusPageRequestDataAttributes, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, attributes: CreateStatusPageRequestDataAttributes, type: StatusPageDataType, **kwargs):
         """
 
 
         :param attributes: The supported attributes for creating a status page.
-        :type attributes: CreateStatusPageRequestDataAttributes, optional
+        :type attributes: CreateStatusPageRequestDataAttributes
 
         :param type: Status pages resource type.
         :type type: StatusPageDataType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
         super().__init__(kwargs)
 
+        self_.attributes = attributes
         self_.type = type
