@@ -123,6 +123,13 @@ datadog\_api\_client.v2.api.ci\_visibility\_tests\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.cloud\_authentication\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.cloud_authentication_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.cloud\_cost\_management\_api module
 ---------------------------------------------------------------
 
