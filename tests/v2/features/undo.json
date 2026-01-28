@@ -5180,7 +5180,8 @@
       "parameters": [
         {
           "name": "team_id",
-          "source": "data.attributes.team_id"
+          "origin": "path",
+          "source": "team_id"
         },
         {
           "name": "link_id",
