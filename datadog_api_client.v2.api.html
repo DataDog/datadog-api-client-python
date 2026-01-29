@@ -1042,15 +1042,21 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_project()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_project_notification_rule()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_case_comment" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.delete_case_comment()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_case_custom_attribute" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.delete_case_custom_attribute()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_project" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.delete_project()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_project_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.delete_project_notification_rule()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.get_case()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_project" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.get_project()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_project_notification_rules" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.get_project_notification_rules()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_projects" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.get_projects()</span></code></a>
         </li>
@@ -1071,6 +1077,10 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_case_title" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_case_title()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_priority" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_priority()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_project" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_project()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_project_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_project_notification_rule()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_status" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_status()</span></code></a>
         </li></ul>
@@ -4653,6 +4663,23 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project_notification_rule">
+<span class="sig-name descname"><span class="pre">create_project_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rule_create_request.CaseNotificationRuleCreateRequest" title="datadog_api_client.v2.model.case_notification_rule_create_request.CaseNotificationRuleCreateRequest"><span class="pre">CaseNotificationRuleCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rule_response.CaseNotificationRuleResponse" title="datadog_api_client.v2.model.case_notification_rule_response.CaseNotificationRuleResponse"><span class="pre">CaseNotificationRuleResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project_notification_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Create a notification rule.</p>
+<p>Create a notification rule for a project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_id</strong> (<em>str</em>) – Project UUID</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rule_create_request.CaseNotificationRuleCreateRequest" title="datadog_api_client.v2.model.case_notification_rule_create_request.CaseNotificationRuleCreateRequest"><em>CaseNotificationRuleCreateRequest</em></a>) – Notification rule payload</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rule_response.CaseNotificationRuleResponse" title="datadog_api_client.v2.model.case_notification_rule_response.CaseNotificationRuleResponse">CaseNotificationRuleResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_case_comment">
 <span class="sig-name descname"><span class="pre">delete_case_comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_case_comment" title="Link to this definition">¶</a></dt>
 <dd><p>Delete case comment.</p>
@@ -4701,6 +4728,23 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_project_notification_rule">
+<span class="sig-name descname"><span class="pre">delete_project_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notification_rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.delete_project_notification_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a notification rule.</p>
+<p>Delete a notification rule using the notification rule’s <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_id</strong> (<em>str</em>) – Project UUID</p></li>
+<li><p><strong>notification_rule_id</strong> (<em>str</em>) – Notification Rule UUID</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_case">
 <span class="sig-name descname"><span class="pre">get_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse"><span class="pre">CaseResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_case" title="Link to this definition">¶</a></dt>
 <dd><p>Get the details of a case.</p>
@@ -4725,6 +4769,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_response.ProjectResponse" title="datadog_api_client.v2.model.project_response.ProjectResponse">ProjectResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_project_notification_rules">
+<span class="sig-name descname"><span class="pre">get_project_notification_rules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rules_response.CaseNotificationRulesResponse" title="datadog_api_client.v2.model.case_notification_rules_response.CaseNotificationRulesResponse"><span class="pre">CaseNotificationRulesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_project_notification_rules" title="Link to this definition">¶</a></dt>
+<dd><p>Get notification rules.</p>
+<p>Get all notification rules for a project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>project_id</strong> (<em>str</em>) – Project UUID</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rules_response.CaseNotificationRulesResponse" title="datadog_api_client.v2.model.case_notification_rules_response.CaseNotificationRulesResponse">CaseNotificationRulesResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -4899,6 +4957,41 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse">CaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_project">
+<span class="sig-name descname"><span class="pre">update_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_update_request.ProjectUpdateRequest" title="datadog_api_client.v2.model.project_update_request.ProjectUpdateRequest"><span class="pre">ProjectUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_response.ProjectResponse" title="datadog_api_client.v2.model.project_response.ProjectResponse"><span class="pre">ProjectResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_project" title="Link to this definition">¶</a></dt>
+<dd><p>Update a project.</p>
+<p>Update a project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_id</strong> (<em>str</em>) – Project UUID</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_update_request.ProjectUpdateRequest" title="datadog_api_client.v2.model.project_update_request.ProjectUpdateRequest"><em>ProjectUpdateRequest</em></a>) – Project payload</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_response.ProjectResponse" title="datadog_api_client.v2.model.project_response.ProjectResponse">ProjectResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_project_notification_rule">
+<span class="sig-name descname"><span class="pre">update_project_notification_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notification_rule_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rule_update_request.CaseNotificationRuleUpdateRequest" title="datadog_api_client.v2.model.case_notification_rule_update_request.CaseNotificationRuleUpdateRequest"><span class="pre">CaseNotificationRuleUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_project_notification_rule" title="Link to this definition">¶</a></dt>
+<dd><p>Update a notification rule.</p>
+<p>Update a notification rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>project_id</strong> (<em>str</em>) – Project UUID</p></li>
+<li><p><strong>notification_rule_id</strong> (<em>str</em>) – Notification Rule UUID</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_notification_rule_update_request.CaseNotificationRuleUpdateRequest" title="datadog_api_client.v2.model.case_notification_rule_update_request.CaseNotificationRuleUpdateRequest"><em>CaseNotificationRuleUpdateRequest</em></a>) – Notification rule payload</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
