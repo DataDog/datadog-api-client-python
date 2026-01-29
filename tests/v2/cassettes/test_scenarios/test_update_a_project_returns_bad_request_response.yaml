@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"type":"invalid_type"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/cases/projects/d4bbe1af-f36e-42f1-87c1-493ca35c320e
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
+        \"invalid_type\" expected one of \"project\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
