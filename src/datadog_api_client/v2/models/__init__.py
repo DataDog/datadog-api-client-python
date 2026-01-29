@@ -156,6 +156,9 @@ from datadog_api_client.v2.model.anthropic_credentials_update import AnthropicCr
 from datadog_api_client.v2.model.anthropic_integration import AnthropicIntegration
 from datadog_api_client.v2.model.anthropic_integration_type import AnthropicIntegrationType
 from datadog_api_client.v2.model.anthropic_integration_update import AnthropicIntegrationUpdate
+from datadog_api_client.v2.model.any_value import AnyValue
+from datadog_api_client.v2.model.any_value_item import AnyValueItem
+from datadog_api_client.v2.model.any_value_object import AnyValueObject
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 from datadog_api_client.v2.model.app_builder_event import AppBuilderEvent
 from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventName
@@ -417,6 +420,8 @@ from datadog_api_client.v2.model.authn_mapping_update_request import AuthNMappin
 from datadog_api_client.v2.model.authn_mappings_response import AuthNMappingsResponse
 from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
+from datadog_api_client.v2.model.auto_close_inactive_cases import AutoCloseInactiveCases
+from datadog_api_client.v2.model.auto_transition_assigned_cases import AutoTransitionAssignedCases
 from datadog_api_client.v2.model.aws_cur_config import AwsCURConfig
 from datadog_api_client.v2.model.aws_cur_config_attributes import AwsCURConfigAttributes
 from datadog_api_client.v2.model.aws_cur_config_patch_data import AwsCURConfigPatchData
@@ -669,6 +674,20 @@ from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
 from datadog_api_client.v2.model.case_management_project import CaseManagementProject
 from datadog_api_client.v2.model.case_management_project_data import CaseManagementProjectData
 from datadog_api_client.v2.model.case_management_project_data_type import CaseManagementProjectDataType
+from datadog_api_client.v2.model.case_notification_rule import CaseNotificationRule
+from datadog_api_client.v2.model.case_notification_rule_attributes import CaseNotificationRuleAttributes
+from datadog_api_client.v2.model.case_notification_rule_create import CaseNotificationRuleCreate
+from datadog_api_client.v2.model.case_notification_rule_create_attributes import CaseNotificationRuleCreateAttributes
+from datadog_api_client.v2.model.case_notification_rule_create_request import CaseNotificationRuleCreateRequest
+from datadog_api_client.v2.model.case_notification_rule_recipient import CaseNotificationRuleRecipient
+from datadog_api_client.v2.model.case_notification_rule_recipient_data import CaseNotificationRuleRecipientData
+from datadog_api_client.v2.model.case_notification_rule_resource_type import CaseNotificationRuleResourceType
+from datadog_api_client.v2.model.case_notification_rule_response import CaseNotificationRuleResponse
+from datadog_api_client.v2.model.case_notification_rule_trigger import CaseNotificationRuleTrigger
+from datadog_api_client.v2.model.case_notification_rule_trigger_data import CaseNotificationRuleTriggerData
+from datadog_api_client.v2.model.case_notification_rule_update import CaseNotificationRuleUpdate
+from datadog_api_client.v2.model.case_notification_rule_update_request import CaseNotificationRuleUpdateRequest
+from datadog_api_client.v2.model.case_notification_rules_response import CaseNotificationRulesResponse
 from datadog_api_client.v2.model.case_object_attributes import CaseObjectAttributes
 from datadog_api_client.v2.model.case_priority import CasePriority
 from datadog_api_client.v2.model.case_relationships import CaseRelationships
@@ -2472,6 +2491,35 @@ from datadog_api_client.v2.model.input_schema import InputSchema
 from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParameters
 from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.integration_incident import IntegrationIncident
+from datadog_api_client.v2.model.integration_incident_field_mappings_items import IntegrationIncidentFieldMappingsItems
+from datadog_api_client.v2.model.integration_incident_severity_config import IntegrationIncidentSeverityConfig
+from datadog_api_client.v2.model.integration_jira import IntegrationJira
+from datadog_api_client.v2.model.integration_jira_auto_creation import IntegrationJiraAutoCreation
+from datadog_api_client.v2.model.integration_jira_metadata import IntegrationJiraMetadata
+from datadog_api_client.v2.model.integration_jira_sync import IntegrationJiraSync
+from datadog_api_client.v2.model.integration_jira_sync_due_date import IntegrationJiraSyncDueDate
+from datadog_api_client.v2.model.integration_jira_sync_properties import IntegrationJiraSyncProperties
+from datadog_api_client.v2.model.integration_jira_sync_properties_custom_fields_additional_properties import (
+    IntegrationJiraSyncPropertiesCustomFieldsAdditionalProperties,
+)
+from datadog_api_client.v2.model.integration_monitor import IntegrationMonitor
+from datadog_api_client.v2.model.integration_on_call import IntegrationOnCall
+from datadog_api_client.v2.model.integration_on_call_escalation_queries_items import (
+    IntegrationOnCallEscalationQueriesItems,
+)
+from datadog_api_client.v2.model.integration_on_call_escalation_queries_items_target import (
+    IntegrationOnCallEscalationQueriesItemsTarget,
+)
+from datadog_api_client.v2.model.integration_service_now import IntegrationServiceNow
+from datadog_api_client.v2.model.integration_service_now_auto_creation import IntegrationServiceNowAutoCreation
+from datadog_api_client.v2.model.integration_service_now_sync_config import IntegrationServiceNowSyncConfig
+from datadog_api_client.v2.model.integration_service_now_sync_config139772721534496 import (
+    IntegrationServiceNowSyncConfig139772721534496,
+)
+from datadog_api_client.v2.model.integration_service_now_sync_config_priority import (
+    IntegrationServiceNowSyncConfigPriority,
+)
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
 from datadog_api_client.v2.model.issue import Issue
@@ -3985,14 +4033,22 @@ from datadog_api_client.v2.model.product_analytics_server_side_event_item_usr im
 )
 from datadog_api_client.v2.model.project import Project
 from datadog_api_client.v2.model.project_attributes import ProjectAttributes
+from datadog_api_client.v2.model.project_columns_config import ProjectColumnsConfig
+from datadog_api_client.v2.model.project_columns_config_columns_items import ProjectColumnsConfigColumnsItems
+from datadog_api_client.v2.model.project_columns_config_columns_items_sort import ProjectColumnsConfigColumnsItemsSort
 from datadog_api_client.v2.model.project_create import ProjectCreate
 from datadog_api_client.v2.model.project_create_attributes import ProjectCreateAttributes
 from datadog_api_client.v2.model.project_create_request import ProjectCreateRequest
+from datadog_api_client.v2.model.project_notification_settings import ProjectNotificationSettings
 from datadog_api_client.v2.model.project_relationship import ProjectRelationship
 from datadog_api_client.v2.model.project_relationship_data import ProjectRelationshipData
 from datadog_api_client.v2.model.project_relationships import ProjectRelationships
 from datadog_api_client.v2.model.project_resource_type import ProjectResourceType
 from datadog_api_client.v2.model.project_response import ProjectResponse
+from datadog_api_client.v2.model.project_settings import ProjectSettings
+from datadog_api_client.v2.model.project_update import ProjectUpdate
+from datadog_api_client.v2.model.project_update_attributes import ProjectUpdateAttributes
+from datadog_api_client.v2.model.project_update_request import ProjectUpdateRequest
 from datadog_api_client.v2.model.projected_cost import ProjectedCost
 from datadog_api_client.v2.model.projected_cost_attributes import ProjectedCostAttributes
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
@@ -5296,6 +5352,8 @@ from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEdi
 from datadog_api_client.v2.model.suite_search_response_type import SuiteSearchResponseType
 from datadog_api_client.v2.model.suppression_version_history import SuppressionVersionHistory
 from datadog_api_client.v2.model.suppression_versions import SuppressionVersions
+from datadog_api_client.v2.model.sync_property import SyncProperty
+from datadog_api_client.v2.model.sync_property_with_mapping import SyncPropertyWithMapping
 from datadog_api_client.v2.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v2.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
 from datadog_api_client.v2.model.synthetics_global_variable_options import SyntheticsGlobalVariableOptions
@@ -5927,6 +5985,9 @@ __all__ = [
     "AnthropicIntegration",
     "AnthropicIntegrationType",
     "AnthropicIntegrationUpdate",
+    "AnyValue",
+    "AnyValueItem",
+    "AnyValueObject",
     "ApmRetentionFilterType",
     "AppBuilderEvent",
     "AppBuilderEventName",
@@ -6082,6 +6143,8 @@ __all__ = [
     "AuthNMappingsResponse",
     "AuthNMappingsSort",
     "AuthNMappingsType",
+    "AutoCloseInactiveCases",
+    "AutoTransitionAssignedCases",
     "AwsCURConfig",
     "AwsCURConfigAttributes",
     "AwsCURConfigPatchData",
@@ -6292,6 +6355,20 @@ __all__ = [
     "CaseManagementProject",
     "CaseManagementProjectData",
     "CaseManagementProjectDataType",
+    "CaseNotificationRule",
+    "CaseNotificationRuleAttributes",
+    "CaseNotificationRuleCreate",
+    "CaseNotificationRuleCreateAttributes",
+    "CaseNotificationRuleCreateRequest",
+    "CaseNotificationRuleRecipient",
+    "CaseNotificationRuleRecipientData",
+    "CaseNotificationRuleResourceType",
+    "CaseNotificationRuleResponse",
+    "CaseNotificationRuleTrigger",
+    "CaseNotificationRuleTriggerData",
+    "CaseNotificationRuleUpdate",
+    "CaseNotificationRuleUpdateRequest",
+    "CaseNotificationRulesResponse",
     "CaseObjectAttributes",
     "CasePriority",
     "CaseRelationships",
@@ -7639,6 +7716,25 @@ __all__ = [
     "InputSchemaParameters",
     "InputSchemaParametersType",
     "IntakePayloadAccepted",
+    "IntegrationIncident",
+    "IntegrationIncidentFieldMappingsItems",
+    "IntegrationIncidentSeverityConfig",
+    "IntegrationJira",
+    "IntegrationJiraAutoCreation",
+    "IntegrationJiraMetadata",
+    "IntegrationJiraSync",
+    "IntegrationJiraSyncDueDate",
+    "IntegrationJiraSyncProperties",
+    "IntegrationJiraSyncPropertiesCustomFieldsAdditionalProperties",
+    "IntegrationMonitor",
+    "IntegrationOnCall",
+    "IntegrationOnCallEscalationQueriesItems",
+    "IntegrationOnCallEscalationQueriesItemsTarget",
+    "IntegrationServiceNow",
+    "IntegrationServiceNowAutoCreation",
+    "IntegrationServiceNowSyncConfig",
+    "IntegrationServiceNowSyncConfig139772721534496",
+    "IntegrationServiceNowSyncConfigPriority",
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
     "Issue",
@@ -8566,14 +8662,22 @@ __all__ = [
     "ProductAnalyticsServerSideEventItemUsr",
     "Project",
     "ProjectAttributes",
+    "ProjectColumnsConfig",
+    "ProjectColumnsConfigColumnsItems",
+    "ProjectColumnsConfigColumnsItemsSort",
     "ProjectCreate",
     "ProjectCreateAttributes",
     "ProjectCreateRequest",
+    "ProjectNotificationSettings",
     "ProjectRelationship",
     "ProjectRelationshipData",
     "ProjectRelationships",
     "ProjectResourceType",
     "ProjectResponse",
+    "ProjectSettings",
+    "ProjectUpdate",
+    "ProjectUpdateAttributes",
+    "ProjectUpdateRequest",
     "ProjectedCost",
     "ProjectedCostAttributes",
     "ProjectedCostResponse",
@@ -9507,6 +9611,8 @@ __all__ = [
     "SuiteSearchResponseType",
     "SuppressionVersionHistory",
     "SuppressionVersions",
+    "SyncProperty",
+    "SyncPropertyWithMapping",
     "SyntheticsGlobalVariable",
     "SyntheticsGlobalVariableAttributes",
     "SyntheticsGlobalVariableOptions",

@@ -12,6 +12,7 @@ from datadog_api_client.v2.model.project_resource_type import ProjectResourceTyp
 body = ProjectCreateRequest(
     data=ProjectCreate(
         attributes=ProjectCreateAttributes(
+            enabled_custom_case_types=[],
             key="SEC",
             name="Security Investigation",
         ),

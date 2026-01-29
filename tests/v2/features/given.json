@@ -194,6 +194,36 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"project\",\n    \"attributes\": {\n      \"key\": \"TST\",\n      \"name\": \"Test Project {{ unique }}\"\n    }\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"project\" in the system",
+    "key": "project",
+    "tag": "Case Management",
+    "operationId": "CreateProject"
+  },
+  {
+    "parameters": [
+      {
+        "name": "project_id",
+        "value": "d4bbe1af-f36e-42f1-87c1-493ca35c320e"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"notification_rule\",\n    \"attributes\": {\n      \"is_enabled\": true,\n      \"triggers\": [{\"type\": \"CASE_CREATED\", \"data\": {}}],\n      \"recipients\": [{\"type\": \"EMAIL\", \"data\": {\"email\": \"test-{{ unique }}@example.com\"}}]\n    }\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"case_notification_rule\" in the system",
+    "key": "case_notification_rule",
+    "tag": "Case Management",
+    "operationId": "CreateProjectNotificationRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"case_type\",\n    \"attributes\": {\n      \"description\": \"Worldwide case type\",\n      \"emoji\": \"\ud83c\udf0d\",\n      \"name\": \"World\"\n    }\n  }\n}"
       }
     ],

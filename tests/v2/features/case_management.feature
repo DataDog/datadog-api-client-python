@@ -117,25 +117,65 @@ Feature: Case Management
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
+  Scenario: Create a notification rule returns "Bad Request" response
+    Given new "CreateProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"is_enabled": true, "recipients": [{"data": {}, "type": "EMAIL"}], "triggers": [{"data": {}, "type": "CASE_CREATED"}]}, "type": "notification_rule"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create a notification rule returns "CREATED" response
+    Given new "CreateProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"is_enabled": true, "recipients": [{"data": {}, "type": "EMAIL"}], "triggers": [{"data": {}, "type": "CASE_CREATED"}]}, "type": "notification_rule"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create a notification rule returns "Not Found" response
+    Given new "CreateProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"is_enabled": true, "recipients": [{"data": {}, "type": "EMAIL"}], "triggers": [{"data": {}, "type": "CASE_CREATED"}]}, "type": "notification_rule"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
   Scenario: Create a project returns "Bad Request" response
     Given new "CreateProject" request
-    And body with value {"data": {"attributes": {"key": "SEC", "name": "Security Investigation"}, "type": "project"}}
+    And body with value {"data": {"attributes": {"enabled_custom_case_types": [], "key": "SEC", "name": "Security Investigation"}, "type": "project"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a project returns "CREATED" response
     Given new "CreateProject" request
-    And body with value {"data": {"attributes": {"key": "SEC", "name": "Security Investigation"}, "type": "project"}}
+    And body with value {"data": {"attributes": {"enabled_custom_case_types": [], "key": "SEC", "name": "Security Investigation"}, "type": "project"}}
     When the request is sent
     Then the response status is 201 CREATED
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a project returns "Not Found" response
     Given new "CreateProject" request
-    And body with value {"data": {"attributes": {"key": "SEC", "name": "Security Investigation"}, "type": "project"}}
+    And body with value {"data": {"attributes": {"enabled_custom_case_types": [], "key": "SEC", "name": "Security Investigation"}, "type": "project"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Delete a notification rule returns "API error response" response
+    Given new "DeleteProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Delete a notification rule returns "No Content" response
+    Given new "DeleteProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @skip @team:DataDog/case-management
   Scenario: Delete case comment returns "Bad Request" response
@@ -200,6 +240,27 @@ Feature: Case Management
   @generated @skip @team:DataDog/case-management
   Scenario: Get all projects returns "OK" response
     Given new "GetProjects" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get notification rules returns "Bad Request" response
+    Given new "GetProjectNotificationRules" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get notification rules returns "Not Found" response
+    Given new "GetProjectNotificationRules" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Get notification rules returns "OK" response
+    Given new "GetProjectNotificationRules" request
+    And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -336,6 +397,59 @@ Feature: Case Management
     And body with value {"data": {"type": "case"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Update a notification rule returns "Bad Request" response
+    Given new "UpdateProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"recipients": [{"data": {}, "type": "EMAIL"}], "triggers": [{"data": {}, "type": "CASE_CREATED"}]}, "type": "notification_rule"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Update a notification rule returns "No Content" response
+    Given new "UpdateProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"recipients": [{"data": {}, "type": "EMAIL"}], "triggers": [{"data": {}, "type": "CASE_CREATED"}]}, "type": "notification_rule"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Update a notification rule returns "Not Found" response
+    Given new "UpdateProjectNotificationRule" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"recipients": [{"data": {}, "type": "EMAIL"}], "triggers": [{"data": {}, "type": "CASE_CREATED"}]}, "type": "notification_rule"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/case-management
+  Scenario: Update a project returns "Bad Request" response
+    Given new "UpdateProject" request
+    And request contains "project_id" parameter with value "d4bbe1af-f36e-42f1-87c1-493ca35c320e"
+    And body with value {"data": {"type": "invalid_type"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/case-management
+  Scenario: Update a project returns "Not Found" response
+    Given new "UpdateProject" request
+    And request contains "project_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
+    And body with value {"data": {"type": "project", "attributes": {"name": "Updated Project Name"}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/case-management
+  Scenario: Update a project returns "OK" response
+    Given new "UpdateProject" request
+    And request contains "project_id" parameter with value "d4bbe1af-f36e-42f1-87c1-493ca35c320e"
+    And body with value {"data": {"type": "project", "attributes": {"name": "Updated Project Name {{ unique }}"}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has field "id"
+    And the response "data.attributes.name" is equal to "Updated Project Name {{ unique }}"
 
   @skip @team:DataDog/case-management
   Scenario: Update case attributes returns "Bad Request" response
