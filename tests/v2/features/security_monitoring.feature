@@ -408,6 +408,22 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a dataset returns "Bad Request" response
+    Given operation "CreateSecurityMonitoringDataset" enabled
+    And new "CreateSecurityMonitoringDataset" request
+    And body with value {"data": {"attributes": {"definition": {"columns": [{"column": "message", "type": "string"}], "data_source": "logs", "indexes": ["k9"], "name": "my_dataset"}, "description": "A dataset for monitoring authentication events"}, "type": "security_monitoring_dataset"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a dataset returns "Created" response
+    Given operation "CreateSecurityMonitoringDataset" enabled
+    And new "CreateSecurityMonitoringDataset" request
+    And body with value {"data": {"attributes": {"definition": {"columns": [{"column": "message", "type": "string"}], "data_source": "logs", "indexes": ["k9"], "name": "my_dataset"}, "description": "A dataset for monitoring authentication events"}, "type": "security_monitoring_dataset"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringRule" request
@@ -713,6 +729,30 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a dataset returns "Bad Request" response
+    Given operation "DeleteSecurityMonitoringDataset" enabled
+    And new "DeleteSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a dataset returns "No Content" response
+    Given operation "DeleteSecurityMonitoringDataset" enabled
+    And new "DeleteSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Delete a dataset returns "Not Found" response
+    Given operation "DeleteSecurityMonitoringDataset" enabled
+    And new "DeleteSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
@@ -920,6 +960,57 @@ Feature: Security Monitoring
     And new "GetCustomFramework" request
     And request contains "handle" parameter with value "create-framework-new"
     And request contains "version" parameter with value "10"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a dataset by version returns "Bad Request" response
+    Given operation "GetSecurityMonitoringDatasetByVersion" enabled
+    And new "GetSecurityMonitoringDatasetByVersion" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a dataset by version returns "Not Found" response
+    Given operation "GetSecurityMonitoringDatasetByVersion" enabled
+    And new "GetSecurityMonitoringDatasetByVersion" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a dataset by version returns "OK" response
+    Given operation "GetSecurityMonitoringDatasetByVersion" enabled
+    And new "GetSecurityMonitoringDatasetByVersion" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a dataset returns "Bad Request" response
+    Given operation "GetSecurityMonitoringDataset" enabled
+    And new "GetSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a dataset returns "Not Found" response
+    Given operation "GetSecurityMonitoringDataset" enabled
+    And new "GetSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get a dataset returns "OK" response
+    Given operation "GetSecurityMonitoringDataset" enabled
+    And new "GetSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1240,6 +1331,46 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get dataset dependencies returns "Bad Request" response
+    Given operation "BatchGetSecurityMonitoringDatasetDependencies" enabled
+    And new "BatchGetSecurityMonitoringDatasetDependencies" request
+    And body with value {"data": {"attributes": {"datasetIds": ["dataset-1"]}, "type": "security_monitoring_dataset_dependencies"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get dataset dependencies returns "OK" response
+    Given operation "BatchGetSecurityMonitoringDatasetDependencies" enabled
+    And new "BatchGetSecurityMonitoringDatasetDependencies" request
+    And body with value {"data": {"attributes": {"datasetIds": ["dataset-1"]}, "type": "security_monitoring_dataset_dependencies"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get dataset history returns "Bad Request" response
+    Given operation "GetSecurityMonitoringDatasetHistory" enabled
+    And new "GetSecurityMonitoringDatasetHistory" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get dataset history returns "Not Found" response
+    Given operation "GetSecurityMonitoringDatasetHistory" enabled
+    And new "GetSecurityMonitoringDatasetHistory" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get dataset history returns "OK" response
+    Given operation "GetSecurityMonitoringDatasetHistory" enabled
+    And new "GetSecurityMonitoringDatasetHistory" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Get details of a signal-based notification rule returns "Bad Request" response
     Given new "GetSignalNotificationRule" request
@@ -1339,6 +1470,27 @@ Feature: Security Monitoring
     And new "GetVulnerabilityNotificationRules" request
     When the request is sent
     Then the response status is 200 The list of notification rules.
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List all datasets returns "Bad Request" response
+    Given operation "ListSecurityMonitoringDatasets" enabled
+    And new "ListSecurityMonitoringDatasets" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List all datasets returns "Not Found" response
+    Given operation "ListSecurityMonitoringDatasets" enabled
+    And new "ListSecurityMonitoringDatasets" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: List all datasets returns "OK" response
+    Given operation "ListSecurityMonitoringDatasets" enabled
+    And new "ListSecurityMonitoringDatasets" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
@@ -1906,6 +2058,42 @@ Feature: Security Monitoring
     And body with value {"data":{"type":"custom_framework","attributes":{"name":"name","handle":"create-framework-new","version":"10","icon_url":"test-url","requirements":[{"name":"requirement","controls":[{"name":"control","rules_id":["def-000-be9"]}]}]}}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a dataset returns "Bad Request" response
+    Given operation "UpdateSecurityMonitoringDataset" enabled
+    And new "UpdateSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"definition": {"columns": [{"column": "message", "type": "string"}], "data_source": "logs", "indexes": ["k9"], "name": "my_dataset"}, "description": "Updated dataset description", "version": 1}, "type": "security_monitoring_dataset"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a dataset returns "Conflict" response
+    Given operation "UpdateSecurityMonitoringDataset" enabled
+    And new "UpdateSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"definition": {"columns": [{"column": "message", "type": "string"}], "data_source": "logs", "indexes": ["k9"], "name": "my_dataset"}, "description": "Updated dataset description", "version": 1}, "type": "security_monitoring_dataset"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a dataset returns "No Content" response
+    Given operation "UpdateSecurityMonitoringDataset" enabled
+    And new "UpdateSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"definition": {"columns": [{"column": "message", "type": "string"}], "data_source": "logs", "indexes": ["k9"], "name": "my_dataset"}, "description": "Updated dataset description", "version": 1}, "type": "security_monitoring_dataset"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update a dataset returns "Not Found" response
+    Given operation "UpdateSecurityMonitoringDataset" enabled
+    And new "UpdateSecurityMonitoringDataset" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"definition": {"columns": [{"column": "message", "type": "string"}], "data_source": "logs", "indexes": ["k9"], "name": "my_dataset"}, "description": "Updated dataset description", "version": 1}, "type": "security_monitoring_dataset"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Update a security filter returns "Bad Request" response

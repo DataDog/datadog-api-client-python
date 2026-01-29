@@ -4594,6 +4594,71 @@ from datadog_api_client.v2.model.security_monitoring_critical_asset_update_reque
 from datadog_api_client.v2.model.security_monitoring_critical_assets_response import (
     SecurityMonitoringCriticalAssetsResponse,
 )
+from datadog_api_client.v2.model.security_monitoring_dataset_attributes_response import (
+    SecurityMonitoringDatasetAttributesResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_create_attributes_request import (
+    SecurityMonitoringDatasetCreateAttributesRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_create_data_request import (
+    SecurityMonitoringDatasetCreateDataRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_create_data_response import (
+    SecurityMonitoringDatasetCreateDataResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_create_request import (
+    SecurityMonitoringDatasetCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_create_response import (
+    SecurityMonitoringDatasetCreateResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_data_response import SecurityMonitoringDatasetDataResponse
+from datadog_api_client.v2.model.security_monitoring_dataset_definition import SecurityMonitoringDatasetDefinition
+from datadog_api_client.v2.model.security_monitoring_dataset_definition_column import (
+    SecurityMonitoringDatasetDefinitionColumn,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_definition_column_type import (
+    SecurityMonitoringDatasetDefinitionColumnType,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_attributes_request import (
+    SecurityMonitoringDatasetDependenciesAttributesRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_data_request import (
+    SecurityMonitoringDatasetDependenciesDataRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request import (
+    SecurityMonitoringDatasetDependenciesRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_response import (
+    SecurityMonitoringDatasetDependenciesResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_type import (
+    SecurityMonitoringDatasetDependenciesType,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_dependency_attributes_response import (
+    SecurityMonitoringDatasetDependencyAttributesResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_dependency_data_response import (
+    SecurityMonitoringDatasetDependencyDataResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_list_meta import SecurityMonitoringDatasetListMeta
+from datadog_api_client.v2.model.security_monitoring_dataset_response import SecurityMonitoringDatasetResponse
+from datadog_api_client.v2.model.security_monitoring_dataset_type import SecurityMonitoringDatasetType
+from datadog_api_client.v2.model.security_monitoring_dataset_update_attributes_request import (
+    SecurityMonitoringDatasetUpdateAttributesRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_update_data_request import (
+    SecurityMonitoringDatasetUpdateDataRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_dataset_update_request import (
+    SecurityMonitoringDatasetUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_datasets_history_response import (
+    SecurityMonitoringDatasetsHistoryResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_datasets_list_response import (
+    SecurityMonitoringDatasetsListResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
@@ -9051,6 +9116,31 @@ __all__ = [
     "SecurityMonitoringCriticalAssetUpdateData",
     "SecurityMonitoringCriticalAssetUpdateRequest",
     "SecurityMonitoringCriticalAssetsResponse",
+    "SecurityMonitoringDatasetAttributesResponse",
+    "SecurityMonitoringDatasetCreateAttributesRequest",
+    "SecurityMonitoringDatasetCreateDataRequest",
+    "SecurityMonitoringDatasetCreateDataResponse",
+    "SecurityMonitoringDatasetCreateRequest",
+    "SecurityMonitoringDatasetCreateResponse",
+    "SecurityMonitoringDatasetDataResponse",
+    "SecurityMonitoringDatasetDefinition",
+    "SecurityMonitoringDatasetDefinitionColumn",
+    "SecurityMonitoringDatasetDefinitionColumnType",
+    "SecurityMonitoringDatasetDependenciesAttributesRequest",
+    "SecurityMonitoringDatasetDependenciesDataRequest",
+    "SecurityMonitoringDatasetDependenciesRequest",
+    "SecurityMonitoringDatasetDependenciesResponse",
+    "SecurityMonitoringDatasetDependenciesType",
+    "SecurityMonitoringDatasetDependencyAttributesResponse",
+    "SecurityMonitoringDatasetDependencyDataResponse",
+    "SecurityMonitoringDatasetListMeta",
+    "SecurityMonitoringDatasetResponse",
+    "SecurityMonitoringDatasetType",
+    "SecurityMonitoringDatasetUpdateAttributesRequest",
+    "SecurityMonitoringDatasetUpdateDataRequest",
+    "SecurityMonitoringDatasetUpdateRequest",
+    "SecurityMonitoringDatasetsHistoryResponse",
+    "SecurityMonitoringDatasetsListResponse",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringListRulesResponse",
