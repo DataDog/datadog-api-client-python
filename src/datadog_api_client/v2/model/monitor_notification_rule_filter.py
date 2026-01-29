@@ -13,12 +13,12 @@ from datadog_api_client.model_utils import (
 class MonitorNotificationRuleFilter(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Filter used to associate the notification rule with monitors.
+        Specifies the matching criteria for monitor notifications.
 
-        :param tags: A list of tags (key:value pairs), which can be used to filter monitor notifications on monitor and group tags.
+        :param tags: A list of tag key:value pairs (e.g. `team:product`). All tags must match (AND semantics).
         :type tags: [str]
 
-        :param scope: A scope composed of one or several key:value pairs, which can be used to filter monitor notifications on monitor and group tags.
+        :param scope: A scope expression composed by key:value pairs (e.g. `service:foo`) with boolean operators (AND, OR, NOT) and parentheses for grouping.
         :type scope: str
         """
         super().__init__(kwargs)
