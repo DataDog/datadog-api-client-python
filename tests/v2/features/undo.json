@@ -1714,6 +1714,43 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentConfigRules": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentConfigRule": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentConfigRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentConfigRule": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentConfigRule": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentConfigRule": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentTypes": {
     "tag": "Incidents",
     "undo": {

@@ -2374,6 +2374,14 @@ from datadog_api_client.v2.model.incident_response_included_item import Incident
 from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
 from datadog_api_client.v2.model.incident_response_meta_pagination import IncidentResponseMetaPagination
 from datadog_api_client.v2.model.incident_response_relationships import IncidentResponseRelationships
+from datadog_api_client.v2.model.incident_rule_attributes_request import IncidentRuleAttributesRequest
+from datadog_api_client.v2.model.incident_rule_attributes_response import IncidentRuleAttributesResponse
+from datadog_api_client.v2.model.incident_rule_data_request import IncidentRuleDataRequest
+from datadog_api_client.v2.model.incident_rule_data_response import IncidentRuleDataResponse
+from datadog_api_client.v2.model.incident_rule_request import IncidentRuleRequest
+from datadog_api_client.v2.model.incident_rule_response import IncidentRuleResponse
+from datadog_api_client.v2.model.incident_rule_type import IncidentRuleType
+from datadog_api_client.v2.model.incident_rules_response import IncidentRulesResponse
 from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
 from datadog_api_client.v2.model.incident_search_response_attributes import IncidentSearchResponseAttributes
 from datadog_api_client.v2.model.incident_search_response_data import IncidentSearchResponseData
@@ -7553,6 +7561,14 @@ __all__ = [
     "IncidentResponseMeta",
     "IncidentResponseMetaPagination",
     "IncidentResponseRelationships",
+    "IncidentRuleAttributesRequest",
+    "IncidentRuleAttributesResponse",
+    "IncidentRuleDataRequest",
+    "IncidentRuleDataResponse",
+    "IncidentRuleRequest",
+    "IncidentRuleResponse",
+    "IncidentRuleType",
+    "IncidentRulesResponse",
     "IncidentSearchResponse",
     "IncidentSearchResponseAttributes",
     "IncidentSearchResponseData",
