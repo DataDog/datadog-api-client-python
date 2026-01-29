@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"finished_at":1769678752000000000,"git":{"commit_sha":"66adc9350f2cc9b250b69abddab733dd55e1a588","repository_url":"https://github.com/organization/example-repository"},"id":"bf100f167795c925","service":"shopist","started_at":1769675152000000000,"version":"v1.12.07"}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/dora/deployment
+  response:
+    body:
+      string: '{"data":{"id":"bf100f167795c925","type":"dora_deployment"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"change_failure":true,"remediation":{"id":"eG42zNIkVjM","type":"wrong_type"}},"id":"bf100f167795c925","type":"dora_deployment_patch_request"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/dora/deployments/bf100f167795c925
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"attribute
+        \"type\" must be one of \"rollback rollforward\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"finished_at":1769678752000000000,"git":{"commit_sha":"66adc9350f2cc9b250b69abddab733dd55e1a588","repository_url":"https://github.com/organization/example-repository"},"id":"08a3dbc57bb781a5","service":"shopist","started_at":1769675152000000000,"version":"v1.12.07"}}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/dora/deployment
+  response:
+    body:
+      string: '{"data":{"id":"08a3dbc57bb781a5","type":"dora_deployment"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"change_failure":true,"remediation":{"id":"eG42zNIkVjM","type":"rollback"}},"id":"08a3dbc57bb781a5","type":"dora_deployment_patch_request"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/dora/deployments/08a3dbc57bb781a5
+  response:
+    body:
+      string: '{"data":null}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 202
+      message: Accepted
+version: 1

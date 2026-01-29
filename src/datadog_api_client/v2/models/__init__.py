@@ -1390,6 +1390,12 @@ from datadog_api_client.v2.model.custom_ruleset_response import CustomRulesetRes
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
 from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
 from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
+from datadog_api_client.v2.model.dora_deployment_patch_remediation import DORADeploymentPatchRemediation
+from datadog_api_client.v2.model.dora_deployment_patch_remediation_type import DORADeploymentPatchRemediationType
+from datadog_api_client.v2.model.dora_deployment_patch_request import DORADeploymentPatchRequest
+from datadog_api_client.v2.model.dora_deployment_patch_request_attributes import DORADeploymentPatchRequestAttributes
+from datadog_api_client.v2.model.dora_deployment_patch_request_data import DORADeploymentPatchRequestData
+from datadog_api_client.v2.model.dora_deployment_patch_request_data_type import DORADeploymentPatchRequestDataType
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
@@ -6769,6 +6775,12 @@ __all__ = [
     "DORADeploymentFetchResponse",
     "DORADeploymentObject",
     "DORADeploymentObjectAttributes",
+    "DORADeploymentPatchRemediation",
+    "DORADeploymentPatchRemediationType",
+    "DORADeploymentPatchRequest",
+    "DORADeploymentPatchRequestAttributes",
+    "DORADeploymentPatchRequestData",
+    "DORADeploymentPatchRequestDataType",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
