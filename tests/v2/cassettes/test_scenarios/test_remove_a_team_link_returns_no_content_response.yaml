@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"handle":"test-handle-174fbe08316e4419","name":"test-name-174fbe08316e4419"},"type":"team"}}'
+    body: '{"data":{"attributes":{"handle":"test-handle-5e7e3d924d3cf03e","name":"test-name-5e7e3d924d3cf03e"},"type":"team"}}'
     headers:
       accept:
       - application/json
@@ -10,27 +10,25 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/team
   response:
     body:
-      string: '{"data":{"type":"team","id":"3174aa4c-405b-11ee-9d78-da7ad0900002","attributes":{"name":"test-name-174fbe08316e4419","handle":"test-handle-174fbe08316e4419","summary":null,"description":null,"avatar":null,"banner":null,"visible_modules":[],"hidden_modules":[],"created_at":"2023-08-21T19:44:51.098613+00:00","modified_at":"2023-08-21T19:44:51.098619+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/3174aa4c-405b-11ee-9d78-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/3174aa4c-405b-11ee-9d78-da7ad0900002/permission-settings"}}}}}
-
-        '
+      string: '{"data":{"id":"59e1efcf-eb13-4a2b-8fcf-64590d56007f","type":"team","attributes":{"avatar":null,"banner":7,"created_at":"2026-01-23T11:00:15.837894+00:00","description":null,"handle":"test-handle-5e7e3d924d3cf03e","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2026-01-23T11:00:15.837894+00:00","name":"test-name-5e7e3d924d3cf03e","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/59e1efcf-eb13-4a2b-8fcf-64590d56007f/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/59e1efcf-eb13-4a2b-8fcf-64590d56007f/permission-settings"}}}}}'
     headers:
       content-type:
-      - application/json
+      - application/vnd.api+json
     status:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"label":"Test-Remove_a_team_link_returns_No_Content_response-1692647090","position":0,"url":"https://example.com"},"type":"team_links"}}'
+    body: '{"data":{"attributes":{"label":"Test-Remove_a_team_link_returns_No_Content_response-1769166015","position":0,"url":"https://example.com"},"type":"team_links"}}'
     headers:
       accept:
       - application/json
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/team/3174aa4c-405b-11ee-9d78-da7ad0900002/links
+    uri: https://api.datadoghq.com/api/v2/team/59e1efcf-eb13-4a2b-8fcf-64590d56007f/links
   response:
     body:
-      string: '{"data":{"type":"team_links","id":"3194a5c2-405b-11ee-b009-da7ad0900002","attributes":{"team_id":"3174aa4c-405b-11ee-9d78-da7ad0900002","label":"Test-Remove_a_team_link_returns_No_Content_response-1692647090","url":"https://example.com","position":0}}}
+      string: '{"data":{"type":"team_links","id":"b2fba45e-f84a-11f0-9d5d-da7ad0900002","attributes":{"team_id":"59e1efcf-eb13-4a2b-8fcf-64590d56007f","label":"Test-Remove_a_team_link_returns_No_Content_response-1769166015","url":"https://example.com","position":0}}}
 
         '
     headers:
@@ -45,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/3174aa4c-405b-11ee-9d78-da7ad0900002/links/3194a5c2-405b-11ee-b009-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/59e1efcf-eb13-4a2b-8fcf-64590d56007f/links/b2fba45e-f84a-11f0-9d5d-da7ad0900002
   response:
     body:
       string: ''
@@ -59,10 +57,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/3174aa4c-405b-11ee-9d78-da7ad0900002/links/3194a5c2-405b-11ee-b009-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/59e1efcf-eb13-4a2b-8fcf-64590d56007f/links/b2fba45e-f84a-11f0-9d5d-da7ad0900002
   response:
     body:
-      string: '{"errors":["Link for ID 3194a5c2-405b-11ee-b009-da7ad0900002 not found"]}'
+      string: '{"errors":["Link for ID b2fba45e-f84a-11f0-9d5d-da7ad0900002 not found"]}'
     headers:
       content-type:
       - application/json
@@ -75,7 +73,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/team/3174aa4c-405b-11ee-9d78-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/team/59e1efcf-eb13-4a2b-8fcf-64590d56007f
   response:
     body:
       string: ''
