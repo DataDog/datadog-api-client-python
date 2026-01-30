@@ -176,6 +176,7 @@ class RestrictionPoliciesApi:
         * On-Call Escalation Policies: ``on-call-escalation-policy``
         * On-Call Team Routing Rules: ``on-call-team-routing-rules``
         * Logs Pipelines: ``logs-pipeline``
+        * Case Management Projects: ``case-management-project``
 
         **Supported relations for resources**
 
@@ -230,6 +231,8 @@ class RestrictionPoliciesApi:
              - ``viewer`` , ``editor``
            * - Logs Pipelines
              - ``viewer`` , ``processors_editor`` , ``editor``
+           * - Case Management Projects
+             - ``viewer`` , ``contributor`` , ``manager``
 
 
         :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline``.
