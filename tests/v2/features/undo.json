@@ -1489,6 +1489,12 @@
       "type": "safe"
     }
   },
+  "PatchDORADeployment": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateDORAFailure": {
     "tag": "DORA Metrics",
     "undo": {

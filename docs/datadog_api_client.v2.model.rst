@@ -7893,6 +7893,48 @@ datadog\_api\_client.v2.model.dora\_deployment\_object\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dora\_deployment\_patch\_remediation module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_patch_remediation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_deployment\_patch\_remediation\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_patch_remediation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_deployment\_patch\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_deployment\_patch\_request\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_patch_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_deployment\_patch\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_patch_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dora\_deployment\_patch\_request\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_deployment_patch_request_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dora\_deployment\_request module
 --------------------------------------------------------------
 

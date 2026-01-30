@@ -13,6 +13,7 @@ from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRe
 from datadog_api_client.v2.model.dora_deployments_list_response import DORADeploymentsListResponse
 from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
+from datadog_api_client.v2.model.dora_deployment_patch_request import DORADeploymentPatchRequest
 from datadog_api_client.v2.model.dora_failure_response import DORAFailureResponse
 from datadog_api_client.v2.model.dora_failure_request import DORAFailureRequest
 from datadog_api_client.v2.model.dora_failures_list_response import DORAFailuresListResponse
@@ -224,6 +225,32 @@ class DORAMetricsApi:
             api_client=api_client,
         )
 
+        self._patch_dora_deployment_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/dora/deployments/{deployment_id}",
+                "operation_id": "patch_dora_deployment",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "deployment_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "deployment_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (DORADeploymentPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_dora_deployment(
         self,
         body: DORADeploymentRequest,
@@ -390,3 +417,24 @@ class DORAMetricsApi:
         kwargs["body"] = body
 
         return self._list_dora_failures_endpoint.call_with_http_info(**kwargs)
+
+    def patch_dora_deployment(
+        self,
+        deployment_id: str,
+        body: DORADeploymentPatchRequest,
+    ) -> None:
+        """Patch a deployment event.
+
+        Use this API endpoint to patch a deployment event.
+
+        :param deployment_id: The ID of the deployment event.
+        :type deployment_id: str
+        :type body: DORADeploymentPatchRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["deployment_id"] = deployment_id
+
+        kwargs["body"] = body
+
+        return self._patch_dora_deployment_endpoint.call_with_http_info(**kwargs)
