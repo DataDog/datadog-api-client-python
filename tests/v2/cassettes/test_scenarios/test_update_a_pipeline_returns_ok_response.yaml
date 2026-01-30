@@ -13,7 +13,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines
   response:
     body:
-      string: '{"data":{"id":"dbc8f316-ed71-11f0-99cc-da7ad0900002","type":"pipelines","attributes":{"name":"Main
+      string: '{"data":{"id":"119a3e5a-fdf8-11f0-8d92-da7ad0900002","type":"pipelines","attributes":{"name":"Main
         Observability Pipeline","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["processor-group-0"],"type":"datadog_logs"}],"processor_groups":[{"display_name":"My
         Processor Group","enabled":true,"id":"processor-group-0","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"display_name":"My
         Filter Processor","enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"processors":[{"display_name":"My
@@ -36,10 +36,10 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/dbc8f316-ed71-11f0-99cc-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/119a3e5a-fdf8-11f0-8d92-da7ad0900002
   response:
     body:
-      string: '{"data":{"id":"dbc8f316-ed71-11f0-99cc-da7ad0900002","type":"pipelines","attributes":{"name":"Updated
+      string: '{"data":{"id":"119a3e5a-fdf8-11f0-8d92-da7ad0900002","type":"pipelines","attributes":{"name":"Updated
         Pipeline Name","config":{"destinations":[{"id":"updated-datadog-logs-destination-id","inputs":["my-processor-group"],"type":"datadog_logs"}],"processor_groups":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"processors":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
 
         '
@@ -55,7 +55,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/dbc8f316-ed71-11f0-99cc-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/119a3e5a-fdf8-11f0-8d92-da7ad0900002
   response:
     body:
       string: ''

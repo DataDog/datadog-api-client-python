@@ -10,7 +10,6 @@ from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityP
 PIPELINE_DATA_ID = environ["PIPELINE_DATA_ID"]
 
 configuration = Configuration()
-configuration.unstable_operations["delete_pipeline"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ObservabilityPipelinesApi(api_client)
     api_instance.delete_pipeline(
