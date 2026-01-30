@@ -16,7 +16,7 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
     """
     The rule type.
 
-    :param value: Must be one of ["api_security", "application_security", "log_detection", "workload_security"].
+    :param value: Must be one of ["api_security", "application_security", "log_detection", "workload_activity", "workload_security"].
     :type value: str
     """
 
@@ -24,11 +24,13 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
         "api_security",
         "application_security",
         "log_detection",
+        "workload_activity",
         "workload_security",
     }
     API_SECURITY: ClassVar["SecurityMonitoringRuleTypeCreate"]
     APPLICATION_SECURITY: ClassVar["SecurityMonitoringRuleTypeCreate"]
     LOG_DETECTION: ClassVar["SecurityMonitoringRuleTypeCreate"]
+    WORKLOAD_ACTIVITY: ClassVar["SecurityMonitoringRuleTypeCreate"]
     WORKLOAD_SECURITY: ClassVar["SecurityMonitoringRuleTypeCreate"]
 
     @cached_property
@@ -41,4 +43,5 @@ class SecurityMonitoringRuleTypeCreate(ModelSimple):
 SecurityMonitoringRuleTypeCreate.API_SECURITY = SecurityMonitoringRuleTypeCreate("api_security")
 SecurityMonitoringRuleTypeCreate.APPLICATION_SECURITY = SecurityMonitoringRuleTypeCreate("application_security")
 SecurityMonitoringRuleTypeCreate.LOG_DETECTION = SecurityMonitoringRuleTypeCreate("log_detection")
+SecurityMonitoringRuleTypeCreate.WORKLOAD_ACTIVITY = SecurityMonitoringRuleTypeCreate("workload_activity")
 SecurityMonitoringRuleTypeCreate.WORKLOAD_SECURITY = SecurityMonitoringRuleTypeCreate("workload_security")

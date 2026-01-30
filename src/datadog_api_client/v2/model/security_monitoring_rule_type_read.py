@@ -16,7 +16,7 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
     """
     The rule type.
 
-    :param value: Must be one of ["log_detection", "infrastructure_configuration", "workload_security", "cloud_configuration", "application_security", "api_security"].
+    :param value: Must be one of ["log_detection", "infrastructure_configuration", "workload_security", "cloud_configuration", "application_security", "api_security", "workload_activity"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
         "cloud_configuration",
         "application_security",
         "api_security",
+        "workload_activity",
     }
     LOG_DETECTION: ClassVar["SecurityMonitoringRuleTypeRead"]
     INFRASTRUCTURE_CONFIGURATION: ClassVar["SecurityMonitoringRuleTypeRead"]
@@ -34,6 +35,7 @@ class SecurityMonitoringRuleTypeRead(ModelSimple):
     CLOUD_CONFIGURATION: ClassVar["SecurityMonitoringRuleTypeRead"]
     APPLICATION_SECURITY: ClassVar["SecurityMonitoringRuleTypeRead"]
     API_SECURITY: ClassVar["SecurityMonitoringRuleTypeRead"]
+    WORKLOAD_ACTIVITY: ClassVar["SecurityMonitoringRuleTypeRead"]
 
     @cached_property
     def openapi_types(_):
@@ -50,3 +52,4 @@ SecurityMonitoringRuleTypeRead.WORKLOAD_SECURITY = SecurityMonitoringRuleTypeRea
 SecurityMonitoringRuleTypeRead.CLOUD_CONFIGURATION = SecurityMonitoringRuleTypeRead("cloud_configuration")
 SecurityMonitoringRuleTypeRead.APPLICATION_SECURITY = SecurityMonitoringRuleTypeRead("application_security")
 SecurityMonitoringRuleTypeRead.API_SECURITY = SecurityMonitoringRuleTypeRead("api_security")
+SecurityMonitoringRuleTypeRead.WORKLOAD_ACTIVITY = SecurityMonitoringRuleTypeRead("workload_activity")
