@@ -83957,8 +83957,6 @@ paths:
         operator: OR
         permissions:
         - observability_pipelines_read
-      x-unstable: '**Note**: This endpoint is in Preview. Fill out this [form](https://www.datadoghq.com/product-preview/observability-pipelines-api-and-terraform-support/)
-        to request access.'
     post:
       description: Create a new pipeline.
       operationId: CreatePipeline
@@ -83990,8 +83988,6 @@ paths:
         operator: OR
         permissions:
         - observability_pipelines_deploy
-      x-unstable: '**Note**: This endpoint is in Preview. Fill out this [form](https://www.datadoghq.com/product-preview/observability-pipelines-api-and-terraform-support/)
-        to request access.'
   /api/v2/obs-pipelines/pipelines/validate:
     post:
       description: 'Validates a pipeline configuration without creating or updating
@@ -84025,8 +84021,6 @@ paths:
         operator: OR
         permissions:
         - observability_pipelines_read
-      x-unstable: '**Note**: This endpoint is in Preview. Fill out this [form](https://www.datadoghq.com/product-preview/observability-pipelines-api-and-terraform-support/)
-        to request access.'
   /api/v2/obs-pipelines/pipelines/{pipeline_id}:
     delete:
       description: Delete a pipeline.
@@ -84068,8 +84062,6 @@ paths:
         operator: OR
         permissions:
         - observability_pipelines_delete
-      x-unstable: '**Note**: This endpoint is in Preview. Fill out this [form](https://www.datadoghq.com/product-preview/observability-pipelines-api-and-terraform-support/)
-        to request access.'
     get:
       description: Get a specific pipeline by its ID.
       operationId: GetPipeline
@@ -84102,8 +84094,6 @@ paths:
         operator: OR
         permissions:
         - observability_pipelines_read
-      x-unstable: '**Note**: This endpoint is in Preview. Fill out this [form](https://www.datadoghq.com/product-preview/observability-pipelines-api-and-terraform-support/)
-        to request access.'
     put:
       description: Update a pipeline.
       operationId: UpdatePipeline
@@ -84144,8 +84134,6 @@ paths:
         operator: OR
         permissions:
         - observability_pipelines_deploy
-      x-unstable: '**Note**: This endpoint is in Preview. Fill out this [form](https://www.datadoghq.com/product-preview/observability-pipelines-api-and-terraform-support/)
-        to request access.'
   /api/v2/on-call/escalation-policies:
     post:
       description: Create a new On-Call escalation policy

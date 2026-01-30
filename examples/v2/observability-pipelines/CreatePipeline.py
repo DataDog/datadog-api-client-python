@@ -73,7 +73,6 @@ body = ObservabilityPipelineSpec(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_pipeline"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ObservabilityPipelinesApi(api_client)
     response = api_instance.create_pipeline(body=body)

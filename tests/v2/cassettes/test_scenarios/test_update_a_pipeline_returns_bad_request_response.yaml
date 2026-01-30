@@ -13,7 +13,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines
   response:
     body:
-      string: '{"data":{"id":"da187384-ed71-11f0-bd90-da7ad0900002","type":"pipelines","attributes":{"name":"Main
+      string: '{"data":{"id":"0ff44776-fdf8-11f0-8d90-da7ad0900002","type":"pipelines","attributes":{"name":"Main
         Observability Pipeline","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["processor-group-0"],"type":"datadog_logs"}],"processor_groups":[{"display_name":"My
         Processor Group","enabled":true,"id":"processor-group-0","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"display_name":"My
         Filter Processor","enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"processors":[{"display_name":"My
@@ -36,7 +36,7 @@ interactions:
       content-type:
       - application/json
     method: PUT
-    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/da187384-ed71-11f0-bd90-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/0ff44776-fdf8-11f0-8d90-da7ad0900002
   response:
     body:
       string: '{"errors":[{"title":"Component with ID my-processor-group is an unknown
@@ -58,7 +58,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/da187384-ed71-11f0-bd90-da7ad0900002
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/0ff44776-fdf8-11f0-8d90-da7ad0900002
   response:
     body:
       string: ''
