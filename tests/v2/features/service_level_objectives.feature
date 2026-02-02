@@ -79,3 +79,33 @@ Feature: Service Level Objectives
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "report_id"
+
+  @generated @skip @team:DataDog/slo-app
+  Scenario: Get SLO status returns "Bad Request" response
+    Given operation "GetSloStatus" enabled
+    And new "GetSloStatus" request
+    And request contains "slo_id" parameter from "REPLACE.ME"
+    And request contains "from_ts" parameter from "REPLACE.ME"
+    And request contains "to_ts" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/slo-app
+  Scenario: Get SLO status returns "Not Found" response
+    Given operation "GetSloStatus" enabled
+    And new "GetSloStatus" request
+    And request contains "slo_id" parameter from "REPLACE.ME"
+    And request contains "from_ts" parameter from "REPLACE.ME"
+    And request contains "to_ts" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/slo-app
+  Scenario: Get SLO status returns "OK" response
+    Given operation "GetSloStatus" enabled
+    And new "GetSloStatus" request
+    And request contains "slo_id" parameter from "REPLACE.ME"
+    And request contains "from_ts" parameter from "REPLACE.ME"
+    And request contains "to_ts" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
