@@ -20087,6 +20087,13 @@ datadog\_api\_client.v2.model.query\_users\_request\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.raw\_error\_budget\_remaining module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.raw_error_budget_remaining
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.readiness\_gate module
 ----------------------------------------------------
 
@@ -25313,6 +25320,34 @@ datadog\_api\_client.v2.model.slo\_report\_status\_get\_response\_data module
 -----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slo_report_status_get_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slo\_status\_data module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_status_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slo\_status\_data\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_status_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slo\_status\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_status_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slo\_status\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_status_type
    :members:
    :show-inheritance:
 
