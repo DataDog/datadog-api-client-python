@@ -4,6 +4,13 @@ datadog\_api\_client.v2.model package
 Submodules
 ----------
 
+datadog\_api\_client.v2.model.accept\_recommended\_entities\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.accept_recommended_entities_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.account\_filtering\_config module
 ---------------------------------------------------------------
 
@@ -11827,6 +11834,62 @@ datadog\_api\_client.v2.model.httpci\_app\_errors module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.idp\_config\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.idp\_config\_data module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.idp\_config\_request module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.idp\_config\_request\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.idp\_config\_request\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.idp\_config\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.idp\_config\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.idp\_config\_value\_item module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.idp_config_value_item
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.idp\_metadata\_form\_data module
 --------------------------------------------------------------
 
@@ -20133,6 +20196,20 @@ datadog\_api\_client.v2.model.recommendation\_type module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.recommendation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommended\_entity\_id module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommended_entity_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommended\_entity\_with\_schema module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommended_entity_with_schema
    :members:
    :show-inheritance:
 
