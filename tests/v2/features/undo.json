@@ -3344,6 +3344,12 @@
       "type": "safe"
     }
   },
+  "EvaluatePolicyResult": {
+    "tag": "Policy Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListFindings": {
     "tag": "Security Monitoring",
     "undo": {
@@ -5056,6 +5062,49 @@
   },
   "PatchGlobalVariable": {
     "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListTagPolicies": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "operationId": "DeleteTagPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagPolicyScore": {
+    "tag": "Tag Policies",
     "undo": {
       "type": "safe"
     }

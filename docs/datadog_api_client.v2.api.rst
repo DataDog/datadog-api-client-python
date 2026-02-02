@@ -438,6 +438,13 @@ datadog\_api\_client.v2.api.organizations\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.policy\_management\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.policy_management_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.powerpack\_api module
 -------------------------------------------------
 
@@ -603,6 +610,13 @@ datadog\_api\_client.v2.api.synthetics\_api module
 --------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.synthetics_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.tag\_policies\_api module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.tag_policies_api
    :members:
    :show-inheritance:
 

@@ -60,6 +60,7 @@ from datadog_api_client.v2.api.on_call_paging_api import OnCallPagingApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.org_connections_api import OrgConnectionsApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
+from datadog_api_client.v2.api.policy_management_api import PolicyManagementApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
@@ -84,6 +85,7 @@ from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.static_analysis_api import StaticAnalysisApi
 from datadog_api_client.v2.api.status_pages_api import StatusPagesApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
+from datadog_api_client.v2.api.tag_policies_api import TagPoliciesApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
@@ -154,6 +156,7 @@ __all__ = [
     "OpsgenieIntegrationApi",
     "OrgConnectionsApi",
     "OrganizationsApi",
+    "PolicyManagementApi",
     "PowerpackApi",
     "ProcessesApi",
     "ProductAnalyticsApi",
@@ -178,6 +181,7 @@ __all__ = [
     "StaticAnalysisApi",
     "StatusPagesApi",
     "SyntheticsApi",
+    "TagPoliciesApi",
     "TeamsApi",
     "TestOptimizationApi",
     "UsageMeteringApi",

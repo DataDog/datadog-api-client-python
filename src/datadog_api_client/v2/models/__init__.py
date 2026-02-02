@@ -3988,6 +3988,10 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.policy_result_attributes_response import PolicyResultAttributesResponse
+from datadog_api_client.v2.model.policy_result_data_response import PolicyResultDataResponse
+from datadog_api_client.v2.model.policy_result_response import PolicyResultResponse
+from datadog_api_client.v2.model.policy_result_type import PolicyResultType
 from datadog_api_client.v2.model.postmortem_attachment_request import PostmortemAttachmentRequest
 from datadog_api_client.v2.model.postmortem_attachment_request_attributes import PostmortemAttachmentRequestAttributes
 from datadog_api_client.v2.model.postmortem_attachment_request_data import PostmortemAttachmentRequestData
@@ -5426,6 +5430,21 @@ from datadog_api_client.v2.model.table_row_resource_array import TableRowResourc
 from datadog_api_client.v2.model.table_row_resource_data import TableRowResourceData
 from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
 from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
+from datadog_api_client.v2.model.tag_policies_response import TagPoliciesResponse
+from datadog_api_client.v2.model.tag_policy_attributes_request import TagPolicyAttributesRequest
+from datadog_api_client.v2.model.tag_policy_attributes_response import TagPolicyAttributesResponse
+from datadog_api_client.v2.model.tag_policy_attributes_update_request import TagPolicyAttributesUpdateRequest
+from datadog_api_client.v2.model.tag_policy_create_request import TagPolicyCreateRequest
+from datadog_api_client.v2.model.tag_policy_data_request import TagPolicyDataRequest
+from datadog_api_client.v2.model.tag_policy_data_response import TagPolicyDataResponse
+from datadog_api_client.v2.model.tag_policy_data_update_request import TagPolicyDataUpdateRequest
+from datadog_api_client.v2.model.tag_policy_response import TagPolicyResponse
+from datadog_api_client.v2.model.tag_policy_score_attributes_response import TagPolicyScoreAttributesResponse
+from datadog_api_client.v2.model.tag_policy_score_data_response import TagPolicyScoreDataResponse
+from datadog_api_client.v2.model.tag_policy_score_response import TagPolicyScoreResponse
+from datadog_api_client.v2.model.tag_policy_score_type import TagPolicyScoreType
+from datadog_api_client.v2.model.tag_policy_type import TagPolicyType
+from datadog_api_client.v2.model.tag_policy_update_request import TagPolicyUpdateRequest
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -8640,6 +8659,10 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "PolicyResultAttributesResponse",
+    "PolicyResultDataResponse",
+    "PolicyResultResponse",
+    "PolicyResultType",
     "PostmortemAttachmentRequest",
     "PostmortemAttachmentRequestAttributes",
     "PostmortemAttachmentRequestData",
@@ -9672,6 +9695,21 @@ __all__ = [
     "TableRowResourceData",
     "TableRowResourceDataAttributes",
     "TableRowResourceDataType",
+    "TagPoliciesResponse",
+    "TagPolicyAttributesRequest",
+    "TagPolicyAttributesResponse",
+    "TagPolicyAttributesUpdateRequest",
+    "TagPolicyCreateRequest",
+    "TagPolicyDataRequest",
+    "TagPolicyDataResponse",
+    "TagPolicyDataUpdateRequest",
+    "TagPolicyResponse",
+    "TagPolicyScoreAttributesResponse",
+    "TagPolicyScoreDataResponse",
+    "TagPolicyScoreResponse",
+    "TagPolicyScoreType",
+    "TagPolicyType",
+    "TagPolicyUpdateRequest",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",
