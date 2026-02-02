@@ -879,6 +879,12 @@
       "type": "unsafe"
     }
   },
+  "ConvertCatalogEntities": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "PreviewCatalogEntities": {
     "tag": "Software Catalog",
     "undo": {
@@ -914,6 +920,24 @@
     "tag": "Software Catalog",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "AcceptRecommendedEntities": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeclineRecommendedEntities": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "TriggerRecommendedEntities": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListCatalogRelation": {
@@ -1627,6 +1651,18 @@
     "undo": {
       "operationId": "TODO",
       "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetIDPConfigValue": {
+    "tag": "Software Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertIDPConfigValue": {
+    "tag": "Software Catalog",
+    "undo": {
       "type": "unsafe"
     }
   },
