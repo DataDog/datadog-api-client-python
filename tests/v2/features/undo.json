@@ -5509,6 +5509,12 @@
       "type": "safe"
     }
   },
+  "ExecuteWorkflowFromTemplate": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateWorkflow": {
     "tag": "Workflow Automation",
     "undo": {
@@ -5540,6 +5546,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateWorkflowFavorite": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListWorkflowInstances": {
     "tag": "Workflow Automation",
     "undo": {
@@ -5559,6 +5571,12 @@
     }
   },
   "CancelWorkflowInstance": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ExecuteWorkflowFromWebhook": {
     "tag": "Workflow Automation",
     "undo": {
       "type": "safe"
