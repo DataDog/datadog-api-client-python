@@ -4149,6 +4149,7 @@ from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEvent
 from datadog_api_client.v2.model.rum_sort import RUMSort
 from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
+from datadog_api_client.v2.model.raw_error_budget_remaining import RawErrorBudgetRemaining
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
 from datadog_api_client.v2.model.recommendation_attributes import RecommendationAttributes
@@ -5138,6 +5139,10 @@ from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrappe
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
 from datadog_api_client.v2.model.slo_report_create_request_attributes import SloReportCreateRequestAttributes
 from datadog_api_client.v2.model.slo_report_create_request_data import SloReportCreateRequestData
+from datadog_api_client.v2.model.slo_status_data import SloStatusData
+from datadog_api_client.v2.model.slo_status_data_attributes import SloStatusDataAttributes
+from datadog_api_client.v2.model.slo_status_response import SloStatusResponse
+from datadog_api_client.v2.model.slo_status_type import SloStatusType
 from datadog_api_client.v2.model.software_catalog_trigger_wrapper import SoftwareCatalogTriggerWrapper
 from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.span import Span
@@ -8774,6 +8779,7 @@ __all__ = [
     "RUMSort",
     "RUMSortOrder",
     "RUMWarning",
+    "RawErrorBudgetRemaining",
     "ReadinessGate",
     "ReadinessGateThresholdType",
     "RecommendationAttributes",
@@ -9473,6 +9479,10 @@ __all__ = [
     "SloReportCreateRequest",
     "SloReportCreateRequestAttributes",
     "SloReportCreateRequestData",
+    "SloStatusData",
+    "SloStatusDataAttributes",
+    "SloStatusResponse",
+    "SloStatusType",
     "SoftwareCatalogTriggerWrapper",
     "SortDirection",
     "Span",
