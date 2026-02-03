@@ -2241,6 +2241,49 @@
       "type": "idempotent"
     }
   },
+  "ListTenancyProducts": {
+    "tag": "OCI Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetTenancyConfigs": {
+    "tag": "OCI Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTenancyConfig": {
+    "tag": "OCI Integration",
+    "undo": {
+      "operationId": "DeleteTenancyConfig",
+      "parameters": [
+        {
+          "name": "tenancy_ocid",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTenancyConfig": {
+    "tag": "OCI Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTenancyConfig": {
+    "tag": "OCI Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTenancyConfig": {
+    "tag": "OCI Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOpsgenieServices": {
     "tag": "Opsgenie Integration",
     "undo": {
