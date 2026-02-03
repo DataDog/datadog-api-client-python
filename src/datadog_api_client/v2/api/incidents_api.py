@@ -1445,6 +1445,10 @@ class IncidentsApi:
 
         Create a postmortem attachment for an incident.
 
+        The endpoint accepts markdown for notebooks created in Confluence or Google Docs.
+        Postmortems created from notebooks need to be formatted using frontend notebook cells,
+        in addition to markdown format.
+
         :param incident_id: The ID of the incident
         :type incident_id: str
         :type body: PostmortemAttachmentRequest
