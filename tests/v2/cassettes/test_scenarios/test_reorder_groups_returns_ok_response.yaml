@@ -8,12 +8,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
   response:
     body:
-      string: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","attributes":{},"type":"sensitive_data_scanner_configuration","relationships":{"groups":{"data":[]}}},"meta":{"version":274826,"count_limit":100,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true,"has_multi_pass_enabled":true,"has_cascading_enabled":false,"is_configuration_superseded":false,"is_float_sampling_rate_enabled":false,"min_sampling_rate":10.0}}
-
-        '
+      string: '{"data":{"attributes":{},"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","relationships":{"groups":{"data":[]}},"type":"sensitive_data_scanner_configuration"},"meta":{"count_limit":500,"group_count_limit":20,"has_cascading_enabled":false,"has_highlight_enabled":true,"has_multi_pass_enabled":true,"is_configuration_superseded":false,"is_float_sampling_rate_enabled":false,"is_pci_compliant":false,"min_sampling_rate":10,"rule_count_limit":500,"version":278007}}'
     headers:
       content-type:
-      - application/json
+      - application/vnd.api+json
     status:
       code: 200
       message: OK
@@ -28,17 +26,31 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups
   response:
     body:
-      string: '{"data":{"id":"24716cf9-9589-41fe-bc85-7df26a9483a9","attributes":{"name":"my-test-group","is_enabled":false,"filter":{"query":"*"},"product_list":["logs"],"samplings":[{"product":"logs","rate":100.0}]},"type":"sensitive_data_scanner_group","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},"meta":{"version":274827}}
-
-        '
+      string: '{"data":{"id":"a796feff-a0cc-4a9f-8c61-16c4d5e44964","type":"sensitive_data_scanner_group","attributes":{"description":"","filter":{"query":"*"},"is_enabled":false,"name":"my-test-group","product_list":["logs"],"samplings":[{"product":"logs","rate":100}]},"relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}}},"meta":{"version":278008}}'
     headers:
       content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
       - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
+  response:
+    body:
+      string: '{"data":{"attributes":{},"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","relationships":{"groups":{"data":[{"id":"a796feff-a0cc-4a9f-8c61-16c4d5e44964","type":"sensitive_data_scanner_group"}]}},"type":"sensitive_data_scanner_configuration"},"included":[{"attributes":{"description":"","filter":{"query":"*"},"is_enabled":false,"name":"my-test-group","product_list":["logs"],"samplings":[{"product":"logs","rate":100}]},"id":"a796feff-a0cc-4a9f-8c61-16c4d5e44964","relationships":{"configuration":{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","type":"sensitive_data_scanner_configuration"}},"rules":{"data":[]}},"type":"sensitive_data_scanner_group"}],"meta":{"count_limit":500,"group_count_limit":20,"has_cascading_enabled":false,"has_highlight_enabled":true,"has_multi_pass_enabled":true,"is_configuration_superseded":false,"is_float_sampling_rate_enabled":false,"is_pci_compliant":false,"min_sampling_rate":10,"rule_count_limit":500,"version":278008}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
     status:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","relationships":{"groups":{"data":[{"id":"24716cf9-9589-41fe-bc85-7df26a9483a9","type":"sensitive_data_scanner_group"}]}},"type":"sensitive_data_scanner_configuration"},"meta":{}}'
+    body: '{"data":{"id":"7957915c634d4dcb581fa154157f5ad9c2947f50be632fb5599862069f4d2d87","relationships":{"groups":{"data":[{"id":"a796feff-a0cc-4a9f-8c61-16c4d5e44964","type":"sensitive_data_scanner_group"}]}},"type":"sensitive_data_scanner_configuration"},"meta":{}}'
     headers:
       accept:
       - application/json
@@ -48,12 +60,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config
   response:
     body:
-      string: '{"meta":{"version":274828,"count_limit":100,"group_count_limit":20,"is_pci_compliant":false,"has_highlight_enabled":true,"has_multi_pass_enabled":false,"has_cascading_enabled":false,"is_configuration_superseded":false,"is_float_sampling_rate_enabled":false,"min_sampling_rate":0.0}}
-
-        '
+      string: '{"meta":{"count_limit":500,"group_count_limit":20,"has_cascading_enabled":false,"has_highlight_enabled":true,"has_multi_pass_enabled":false,"is_configuration_superseded":false,"is_float_sampling_rate_enabled":false,"is_pci_compliant":false,"min_sampling_rate":0,"rule_count_limit":0,"version":278009}}'
     headers:
       content-type:
-      - application/json
+      - application/vnd.api+json
     status:
       code: 200
       message: OK
@@ -65,15 +75,13 @@ interactions:
       content-type:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/24716cf9-9589-41fe-bc85-7df26a9483a9
+    uri: https://api.datadoghq.com/api/v2/sensitive-data-scanner/config/groups/a796feff-a0cc-4a9f-8c61-16c4d5e44964
   response:
     body:
-      string: '{"meta":{"version":274829}}
-
-        '
+      string: '{"meta":{"version":278010}}'
     headers:
       content-type:
-      - application/json
+      - application/vnd.api+json
     status:
       code: 200
       message: OK
