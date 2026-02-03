@@ -3988,6 +3988,16 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.playlist import Playlist
+from datadog_api_client.v2.model.playlist_array import PlaylistArray
+from datadog_api_client.v2.model.playlist_data import PlaylistData
+from datadog_api_client.v2.model.playlist_data_attributes import PlaylistDataAttributes
+from datadog_api_client.v2.model.playlist_data_attributes_created_by import PlaylistDataAttributesCreatedBy
+from datadog_api_client.v2.model.playlist_data_type import PlaylistDataType
+from datadog_api_client.v2.model.playlists_session import PlaylistsSession
+from datadog_api_client.v2.model.playlists_session_array import PlaylistsSessionArray
+from datadog_api_client.v2.model.playlists_session_data import PlaylistsSessionData
+from datadog_api_client.v2.model.playlists_session_data_attributes import PlaylistsSessionDataAttributes
 from datadog_api_client.v2.model.postmortem_attachment_request import PostmortemAttachmentRequest
 from datadog_api_client.v2.model.postmortem_attachment_request_attributes import PostmortemAttachmentRequestAttributes
 from datadog_api_client.v2.model.postmortem_attachment_request_data import PostmortemAttachmentRequestData
@@ -5099,6 +5109,8 @@ from datadog_api_client.v2.model.service_now_user_attributes import ServiceNowUs
 from datadog_api_client.v2.model.service_now_user_data import ServiceNowUserData
 from datadog_api_client.v2.model.service_now_user_type import ServiceNowUserType
 from datadog_api_client.v2.model.service_now_users_response import ServiceNowUsersResponse
+from datadog_api_client.v2.model.session_id_array import SessionIdArray
+from datadog_api_client.v2.model.session_id_data import SessionIdData
 from datadog_api_client.v2.model.shift import Shift
 from datadog_api_client.v2.model.shift_data import ShiftData
 from datadog_api_client.v2.model.shift_data_attributes import ShiftDataAttributes
@@ -5143,6 +5155,17 @@ from datadog_api_client.v2.model.slo_status_data import SloStatusData
 from datadog_api_client.v2.model.slo_status_data_attributes import SloStatusDataAttributes
 from datadog_api_client.v2.model.slo_status_response import SloStatusResponse
 from datadog_api_client.v2.model.slo_status_type import SloStatusType
+from datadog_api_client.v2.model.snapshot import Snapshot
+from datadog_api_client.v2.model.snapshot_array import SnapshotArray
+from datadog_api_client.v2.model.snapshot_create_request import SnapshotCreateRequest
+from datadog_api_client.v2.model.snapshot_create_request_data import SnapshotCreateRequestData
+from datadog_api_client.v2.model.snapshot_create_request_data_attributes import SnapshotCreateRequestDataAttributes
+from datadog_api_client.v2.model.snapshot_data import SnapshotData
+from datadog_api_client.v2.model.snapshot_data_attributes import SnapshotDataAttributes
+from datadog_api_client.v2.model.snapshot_update_request import SnapshotUpdateRequest
+from datadog_api_client.v2.model.snapshot_update_request_data import SnapshotUpdateRequestData
+from datadog_api_client.v2.model.snapshot_update_request_data_attributes import SnapshotUpdateRequestDataAttributes
+from datadog_api_client.v2.model.snapshot_update_request_data_type import SnapshotUpdateRequestDataType
 from datadog_api_client.v2.model.software_catalog_trigger_wrapper import SoftwareCatalogTriggerWrapper
 from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.span import Span
@@ -5795,6 +5818,12 @@ from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMet
 from datadog_api_client.v2.model.validation_response import ValidationResponse
 from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
 from datadog_api_client.v2.model.version_history_update_type import VersionHistoryUpdateType
+from datadog_api_client.v2.model.viewership_history_session_array import ViewershipHistorySessionArray
+from datadog_api_client.v2.model.viewership_history_session_data import ViewershipHistorySessionData
+from datadog_api_client.v2.model.viewership_history_session_data_attributes import (
+    ViewershipHistorySessionDataAttributes,
+)
+from datadog_api_client.v2.model.viewership_history_session_data_type import ViewershipHistorySessionDataType
 from datadog_api_client.v2.model.virus_total_api_key import VirusTotalAPIKey
 from datadog_api_client.v2.model.virus_total_api_key_type import VirusTotalAPIKeyType
 from datadog_api_client.v2.model.virus_total_api_key_update import VirusTotalAPIKeyUpdate
@@ -5818,6 +5847,14 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
+from datadog_api_client.v2.model.watch import Watch
+from datadog_api_client.v2.model.watch_data import WatchData
+from datadog_api_client.v2.model.watch_data_attributes import WatchDataAttributes
+from datadog_api_client.v2.model.watch_data_type import WatchDataType
+from datadog_api_client.v2.model.watcher_array import WatcherArray
+from datadog_api_client.v2.model.watcher_data import WatcherData
+from datadog_api_client.v2.model.watcher_data_attributes import WatcherDataAttributes
+from datadog_api_client.v2.model.watcher_data_type import WatcherDataType
 from datadog_api_client.v2.model.weekday import Weekday
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
 from datadog_api_client.v2.model.workflow_data import WorkflowData
@@ -8640,6 +8677,16 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "Playlist",
+    "PlaylistArray",
+    "PlaylistData",
+    "PlaylistDataAttributes",
+    "PlaylistDataAttributesCreatedBy",
+    "PlaylistDataType",
+    "PlaylistsSession",
+    "PlaylistsSessionArray",
+    "PlaylistsSessionData",
+    "PlaylistsSessionDataAttributes",
     "PostmortemAttachmentRequest",
     "PostmortemAttachmentRequestAttributes",
     "PostmortemAttachmentRequestData",
@@ -9453,6 +9500,8 @@ __all__ = [
     "ServiceNowUserData",
     "ServiceNowUserType",
     "ServiceNowUsersResponse",
+    "SessionIdArray",
+    "SessionIdData",
     "Shift",
     "ShiftData",
     "ShiftDataAttributes",
@@ -9483,6 +9532,17 @@ __all__ = [
     "SloStatusDataAttributes",
     "SloStatusResponse",
     "SloStatusType",
+    "Snapshot",
+    "SnapshotArray",
+    "SnapshotCreateRequest",
+    "SnapshotCreateRequestData",
+    "SnapshotCreateRequestDataAttributes",
+    "SnapshotData",
+    "SnapshotDataAttributes",
+    "SnapshotUpdateRequest",
+    "SnapshotUpdateRequestData",
+    "SnapshotUpdateRequestDataAttributes",
+    "SnapshotUpdateRequestDataType",
     "SoftwareCatalogTriggerWrapper",
     "SortDirection",
     "Span",
@@ -9975,6 +10035,10 @@ __all__ = [
     "ValidationResponse",
     "VersionHistoryUpdate",
     "VersionHistoryUpdateType",
+    "ViewershipHistorySessionArray",
+    "ViewershipHistorySessionData",
+    "ViewershipHistorySessionDataAttributes",
+    "ViewershipHistorySessionDataType",
     "VirusTotalAPIKey",
     "VirusTotalAPIKeyType",
     "VirusTotalAPIKeyUpdate",
@@ -9998,6 +10062,14 @@ __all__ = [
     "VulnerabilityStatus",
     "VulnerabilityTool",
     "VulnerabilityType",
+    "Watch",
+    "WatchData",
+    "WatchDataAttributes",
+    "WatchDataType",
+    "WatcherArray",
+    "WatcherData",
+    "WatcherDataAttributes",
+    "WatcherDataType",
     "Weekday",
     "WidgetLiveSpan",
     "WorkflowData",

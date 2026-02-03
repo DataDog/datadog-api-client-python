@@ -19478,6 +19478,76 @@ datadog\_api\_client.v2.model.permissions\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.playlist module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlist
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlist\_array module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlist_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlist\_data module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlist_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlist\_data\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlist_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlist\_data\_attributes\_created\_by module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlist_data_attributes_created_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlist\_data\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlist_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlists\_session module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlists_session
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlists\_session\_array module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlists_session_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlists\_session\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlists_session_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.playlists\_session\_data\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.playlists_session_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.postmortem\_attachment\_request module
 --------------------------------------------------------------------
 
@@ -25092,6 +25162,20 @@ datadog\_api\_client.v2.model.service\_now\_users\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.session\_id\_array module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.session_id_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.session\_id\_data module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.session_id_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.shift module
 ------------------------------------------
 
@@ -25348,6 +25432,83 @@ datadog\_api\_client.v2.model.slo\_status\_type module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slo_status_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_array module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_create\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_create\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_create\_request\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_create_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_data module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_data\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_update\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_update\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_update\_request\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_update_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.snapshot\_update\_request\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.snapshot_update_request_data_type
    :members:
    :show-inheritance:
 
@@ -28788,6 +28949,34 @@ datadog\_api\_client.v2.model.version\_history\_update\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.viewership\_history\_session\_array module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.viewership_history_session_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.viewership\_history\_session\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.viewership_history_session_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.viewership\_history\_session\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.viewership_history_session_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.viewership\_history\_session\_data\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.viewership_history_session_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.virus\_total\_api\_key module
 -----------------------------------------------------------
 
@@ -28946,6 +29135,62 @@ datadog\_api\_client.v2.model.vulnerability\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.vulnerability_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watch module
+------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watch
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watch\_data module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watch_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watch\_data\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watch_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watch\_data\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watch_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watcher\_array module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watcher\_data module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watcher\_data\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.watcher\_data\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.watcher_data_type
    :members:
    :show-inheritance:
 
