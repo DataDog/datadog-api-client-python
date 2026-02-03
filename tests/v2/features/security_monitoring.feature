@@ -579,6 +579,30 @@ Feature: Security Monitoring
     And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
   @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a security signal investigation returns "Bad Request" response
+    Given operation "CreateSignalInvestigation" enabled
+    And new "CreateSignalInvestigation" request
+    And body with value {"data": {"attributes": {"deployment": "live", "signal_id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA"}, "type": "investigation_signal"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a security signal investigation returns "Not Found" response
+    Given operation "CreateSignalInvestigation" enabled
+    And new "CreateSignalInvestigation" request
+    And body with value {"data": {"attributes": {"deployment": "live", "signal_id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA"}, "type": "investigation_signal"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a security signal investigation returns "OK" response
+    Given operation "CreateSignalInvestigation" enabled
+    And new "CreateSignalInvestigation" request
+    And body with value {"data": {"attributes": {"deployment": "live", "signal_id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA"}, "type": "investigation_signal"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Create a suppression rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringSuppression" request
     And body with value {"data": {"attributes": {"data_exclusion_query": "source:cloudtrail account_id:12345", "description": "This rule suppresses low-severity signals in staging environments.", "enabled": true, "expiration_date": 1703187336000, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "start_date": 1703187336000, "suppression_query": "env:staging status:low", "tags": ["technique:T1110-brute-force", "source:cloudtrail"]}, "type": "suppressions"}}
@@ -1283,6 +1307,30 @@ Feature: Security Monitoring
     And request contains "id" parameter from "valid_vulnerability_notification_rule.data.id"
     When the request is sent
     Then the response status is 200 Notification rule details.
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get investigation feedback returns "Bad Request" response
+    Given operation "GetInvestigationFeedback" enabled
+    And new "GetInvestigationFeedback" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get investigation feedback returns "Not Found" response
+    Given operation "GetInvestigationFeedback" enabled
+    And new "GetInvestigationFeedback" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get investigation feedback returns "OK" response
+    Given operation "GetInvestigationFeedback" enabled
+    And new "GetInvestigationFeedback" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @skip-go @skip-java @skip-ruby @team:DataDog/k9-cloud-security-platform
   Scenario: Get rule version history returns "OK" response
@@ -2006,6 +2054,30 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}-Updated"
     And the response "id" has the same value as "security_rule.id"
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update investigation feedback returns "Bad Request" response
+    Given operation "UpdateInvestigationFeedback" enabled
+    And new "UpdateInvestigationFeedback" request
+    And body with value {"data": {"attributes": {"feedback": "positive", "feedback_content": [{"id": "section-1", "metrics": [{"placeholder": "Enter your feedback here", "prompt": "How helpful was this investigation?", "response": "Very helpful", "type": "sentiment"}], "title": "Investigation Quality"}], "incomplete": false, "rating": "positive", "signal_id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA", "type": "metrics"}, "type": "investigation_feedback"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update investigation feedback returns "Not Found" response
+    Given operation "UpdateInvestigationFeedback" enabled
+    And new "UpdateInvestigationFeedback" request
+    And body with value {"data": {"attributes": {"feedback": "positive", "feedback_content": [{"id": "section-1", "metrics": [{"placeholder": "Enter your feedback here", "prompt": "How helpful was this investigation?", "response": "Very helpful", "type": "sentiment"}], "title": "Investigation Quality"}], "incomplete": false, "rating": "positive", "signal_id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA", "type": "metrics"}, "type": "investigation_feedback"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Update investigation feedback returns "OK" response
+    Given operation "UpdateInvestigationFeedback" enabled
+    And new "UpdateInvestigationFeedback" request
+    And body with value {"data": {"attributes": {"feedback": "positive", "feedback_content": [{"id": "section-1", "metrics": [{"placeholder": "Enter your feedback here", "prompt": "How helpful was this investigation?", "response": "Very helpful", "type": "sentiment"}], "title": "Investigation Quality"}], "incomplete": false, "rating": "positive", "signal_id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA", "type": "metrics"}, "type": "investigation_feedback"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/k9-cloud-security-platform
   Scenario: Update resource filters returns "Bad Request" response

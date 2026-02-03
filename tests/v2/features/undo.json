@@ -4579,6 +4579,24 @@
       "type": "safe"
     }
   },
+  "CreateSignalInvestigation": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateInvestigationFeedback": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetInvestigationFeedback": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SearchSecurityMonitoringSignals": {
     "tag": "Security Monitoring",
     "undo": {

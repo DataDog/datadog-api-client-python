@@ -4790,6 +4790,66 @@ from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_dat
 from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request import (
     SecurityMonitoringSignalIncidentsUpdateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_metric import (
+    SecurityMonitoringSignalInvestigationFeedbackMetric,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_request import (
+    SecurityMonitoringSignalInvestigationFeedbackRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_request_attributes import (
+    SecurityMonitoringSignalInvestigationFeedbackRequestAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_request_data import (
+    SecurityMonitoringSignalInvestigationFeedbackRequestData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_response import (
+    SecurityMonitoringSignalInvestigationFeedbackResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_response_attributes import (
+    SecurityMonitoringSignalInvestigationFeedbackResponseAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_response_data import (
+    SecurityMonitoringSignalInvestigationFeedbackResponseData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_section import (
+    SecurityMonitoringSignalInvestigationFeedbackSection,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_type import (
+    SecurityMonitoringSignalInvestigationFeedbackType,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_request import (
+    SecurityMonitoringSignalInvestigationRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_request_attributes import (
+    SecurityMonitoringSignalInvestigationRequestAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_request_data import (
+    SecurityMonitoringSignalInvestigationRequestData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_response import (
+    SecurityMonitoringSignalInvestigationResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_response_attributes import (
+    SecurityMonitoringSignalInvestigationResponseAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_response_data import (
+    SecurityMonitoringSignalInvestigationResponseData,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_state import (
+    SecurityMonitoringSignalInvestigationState,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_step import (
+    SecurityMonitoringSignalInvestigationStep,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_step_output import (
+    SecurityMonitoringSignalInvestigationStepOutput,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_step_output_verdict import (
+    SecurityMonitoringSignalInvestigationStepOutputVerdict,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_type import (
+    SecurityMonitoringSignalInvestigationType,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter import (
     SecurityMonitoringSignalListRequestFilter,
@@ -9283,6 +9343,26 @@ __all__ = [
     "SecurityMonitoringSignalIncidentsUpdateAttributes",
     "SecurityMonitoringSignalIncidentsUpdateData",
     "SecurityMonitoringSignalIncidentsUpdateRequest",
+    "SecurityMonitoringSignalInvestigationFeedbackMetric",
+    "SecurityMonitoringSignalInvestigationFeedbackRequest",
+    "SecurityMonitoringSignalInvestigationFeedbackRequestAttributes",
+    "SecurityMonitoringSignalInvestigationFeedbackRequestData",
+    "SecurityMonitoringSignalInvestigationFeedbackResponse",
+    "SecurityMonitoringSignalInvestigationFeedbackResponseAttributes",
+    "SecurityMonitoringSignalInvestigationFeedbackResponseData",
+    "SecurityMonitoringSignalInvestigationFeedbackSection",
+    "SecurityMonitoringSignalInvestigationFeedbackType",
+    "SecurityMonitoringSignalInvestigationRequest",
+    "SecurityMonitoringSignalInvestigationRequestAttributes",
+    "SecurityMonitoringSignalInvestigationRequestData",
+    "SecurityMonitoringSignalInvestigationResponse",
+    "SecurityMonitoringSignalInvestigationResponseAttributes",
+    "SecurityMonitoringSignalInvestigationResponseData",
+    "SecurityMonitoringSignalInvestigationState",
+    "SecurityMonitoringSignalInvestigationStep",
+    "SecurityMonitoringSignalInvestigationStepOutput",
+    "SecurityMonitoringSignalInvestigationStepOutputVerdict",
+    "SecurityMonitoringSignalInvestigationType",
     "SecurityMonitoringSignalListRequest",
     "SecurityMonitoringSignalListRequestFilter",
     "SecurityMonitoringSignalListRequestPage",
