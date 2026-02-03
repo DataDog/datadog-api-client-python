@@ -396,6 +396,13 @@ datadog\_api\_client.v2.api.observability\_pipelines\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.oci\_integration\_api module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.oci_integration_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.okta\_integration\_api module
 ---------------------------------------------------------
 

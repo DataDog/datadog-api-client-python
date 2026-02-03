@@ -6087,6 +6087,55 @@ datadog\_api\_client.v2.model.create\_table\_request\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data\_attributes\_auth\_credentials module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data_attributes_auth_credentials
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data\_attributes\_logs\_config module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data_attributes_logs_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data\_attributes\_metrics\_config module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data_attributes_metrics_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_data\_attributes\_regions\_config module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_data_attributes_regions_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_tenancy\_config\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_tenancy_config_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_upload\_request module
 ------------------------------------------------------------
 
@@ -27647,6 +27696,90 @@ datadog\_api\_client.v2.model.teams\_response\_meta\_pagination module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.tenancy\_config module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data\_attributes\_logs\_config module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data_attributes_logs_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data\_attributes\_metrics\_config module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data_attributes_metrics_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_data\_attributes\_regions\_config module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_data_attributes_regions_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_config\_list module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_config_list
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_products\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_products_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_products\_data\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_products_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_products\_data\_attributes\_products\_items module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_products_data_attributes_products_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_products\_data\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_products_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tenancy\_products\_list module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tenancy_products_list
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.threat\_hunting\_job\_data\_type module
 ---------------------------------------------------------------------
 
@@ -28449,6 +28582,62 @@ datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_type module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_attributes\_auth\_credentials module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_attributes_auth_credentials
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_attributes\_logs\_config module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_attributes_logs_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_attributes\_metrics\_config module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_attributes_metrics_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_attributes\_regions\_config module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_attributes_regions_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_tenancy\_config\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_tenancy_config_request
    :members:
    :show-inheritance:
 

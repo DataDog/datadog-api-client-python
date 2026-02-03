@@ -1194,6 +1194,21 @@ from datadog_api_client.v2.model.create_table_request_data_attributes_schema_fie
     CreateTableRequestDataAttributesSchemaFieldsItems,
 )
 from datadog_api_client.v2.model.create_table_request_data_type import CreateTableRequestDataType
+from datadog_api_client.v2.model.create_tenancy_config_data import CreateTenancyConfigData
+from datadog_api_client.v2.model.create_tenancy_config_data_attributes import CreateTenancyConfigDataAttributes
+from datadog_api_client.v2.model.create_tenancy_config_data_attributes_auth_credentials import (
+    CreateTenancyConfigDataAttributesAuthCredentials,
+)
+from datadog_api_client.v2.model.create_tenancy_config_data_attributes_logs_config import (
+    CreateTenancyConfigDataAttributesLogsConfig,
+)
+from datadog_api_client.v2.model.create_tenancy_config_data_attributes_metrics_config import (
+    CreateTenancyConfigDataAttributesMetricsConfig,
+)
+from datadog_api_client.v2.model.create_tenancy_config_data_attributes_regions_config import (
+    CreateTenancyConfigDataAttributesRegionsConfig,
+)
+from datadog_api_client.v2.model.create_tenancy_config_request import CreateTenancyConfigRequest
 from datadog_api_client.v2.model.create_upload_request import CreateUploadRequest
 from datadog_api_client.v2.model.create_upload_request_data import CreateUploadRequestData
 from datadog_api_client.v2.model.create_upload_request_data_attributes import CreateUploadRequestDataAttributes
@@ -5588,6 +5603,24 @@ from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
+from datadog_api_client.v2.model.tenancy_config import TenancyConfig
+from datadog_api_client.v2.model.tenancy_config_data import TenancyConfigData
+from datadog_api_client.v2.model.tenancy_config_data_attributes import TenancyConfigDataAttributes
+from datadog_api_client.v2.model.tenancy_config_data_attributes_logs_config import TenancyConfigDataAttributesLogsConfig
+from datadog_api_client.v2.model.tenancy_config_data_attributes_metrics_config import (
+    TenancyConfigDataAttributesMetricsConfig,
+)
+from datadog_api_client.v2.model.tenancy_config_data_attributes_regions_config import (
+    TenancyConfigDataAttributesRegionsConfig,
+)
+from datadog_api_client.v2.model.tenancy_config_list import TenancyConfigList
+from datadog_api_client.v2.model.tenancy_products_data import TenancyProductsData
+from datadog_api_client.v2.model.tenancy_products_data_attributes import TenancyProductsDataAttributes
+from datadog_api_client.v2.model.tenancy_products_data_attributes_products_items import (
+    TenancyProductsDataAttributesProductsItems,
+)
+from datadog_api_client.v2.model.tenancy_products_data_type import TenancyProductsDataType
+from datadog_api_client.v2.model.tenancy_products_list import TenancyProductsList
 from datadog_api_client.v2.model.threat_hunting_job_data_type import ThreatHuntingJobDataType
 from datadog_api_client.v2.model.threat_hunting_job_list_meta import ThreatHuntingJobListMeta
 from datadog_api_client.v2.model.threat_hunting_job_options import ThreatHuntingJobOptions
@@ -5743,6 +5776,22 @@ from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_it
     UpdateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems,
 )
 from datadog_api_client.v2.model.update_ruleset_request_data_type import UpdateRulesetRequestDataType
+from datadog_api_client.v2.model.update_tenancy_config_data import UpdateTenancyConfigData
+from datadog_api_client.v2.model.update_tenancy_config_data_attributes import UpdateTenancyConfigDataAttributes
+from datadog_api_client.v2.model.update_tenancy_config_data_attributes_auth_credentials import (
+    UpdateTenancyConfigDataAttributesAuthCredentials,
+)
+from datadog_api_client.v2.model.update_tenancy_config_data_attributes_logs_config import (
+    UpdateTenancyConfigDataAttributesLogsConfig,
+)
+from datadog_api_client.v2.model.update_tenancy_config_data_attributes_metrics_config import (
+    UpdateTenancyConfigDataAttributesMetricsConfig,
+)
+from datadog_api_client.v2.model.update_tenancy_config_data_attributes_regions_config import (
+    UpdateTenancyConfigDataAttributesRegionsConfig,
+)
+from datadog_api_client.v2.model.update_tenancy_config_data_type import UpdateTenancyConfigDataType
+from datadog_api_client.v2.model.update_tenancy_config_request import UpdateTenancyConfigRequest
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
@@ -6763,6 +6812,13 @@ __all__ = [
     "CreateTableRequestDataAttributesSchema",
     "CreateTableRequestDataAttributesSchemaFieldsItems",
     "CreateTableRequestDataType",
+    "CreateTenancyConfigData",
+    "CreateTenancyConfigDataAttributes",
+    "CreateTenancyConfigDataAttributesAuthCredentials",
+    "CreateTenancyConfigDataAttributesLogsConfig",
+    "CreateTenancyConfigDataAttributesMetricsConfig",
+    "CreateTenancyConfigDataAttributesRegionsConfig",
+    "CreateTenancyConfigRequest",
     "CreateUploadRequest",
     "CreateUploadRequestData",
     "CreateUploadRequestDataAttributes",
@@ -9849,6 +9905,18 @@ __all__ = [
     "TeamsResponseLinks",
     "TeamsResponseMeta",
     "TeamsResponseMetaPagination",
+    "TenancyConfig",
+    "TenancyConfigData",
+    "TenancyConfigDataAttributes",
+    "TenancyConfigDataAttributesLogsConfig",
+    "TenancyConfigDataAttributesMetricsConfig",
+    "TenancyConfigDataAttributesRegionsConfig",
+    "TenancyConfigList",
+    "TenancyProductsData",
+    "TenancyProductsDataAttributes",
+    "TenancyProductsDataAttributesProductsItems",
+    "TenancyProductsDataType",
+    "TenancyProductsList",
     "ThreatHuntingJobDataType",
     "ThreatHuntingJobListMeta",
     "ThreatHuntingJobOptions",
@@ -9964,6 +10032,14 @@ __all__ = [
     "UpdateRulesetRequestDataAttributesRulesItemsReferenceTable",
     "UpdateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems",
     "UpdateRulesetRequestDataType",
+    "UpdateTenancyConfigData",
+    "UpdateTenancyConfigDataAttributes",
+    "UpdateTenancyConfigDataAttributesAuthCredentials",
+    "UpdateTenancyConfigDataAttributesLogsConfig",
+    "UpdateTenancyConfigDataAttributesMetricsConfig",
+    "UpdateTenancyConfigDataAttributesRegionsConfig",
+    "UpdateTenancyConfigDataType",
+    "UpdateTenancyConfigRequest",
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
     "UpsertCatalogEntityRequest",

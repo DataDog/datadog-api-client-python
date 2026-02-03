@@ -353,6 +353,8 @@ class Configuration:
                 "v2.list_jira_accounts": False,
                 "v2.list_jira_issue_templates": False,
                 "v2.update_jira_issue_template": False,
+                "v2.create_tenancy_config": False,
+                "v2.get_tenancy_configs": False,
                 "v2.create_service_now_template": False,
                 "v2.delete_service_now_template": False,
                 "v2.get_service_now_template": False,
