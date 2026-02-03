@@ -120,6 +120,18 @@ from datadog_api_client.v2.model.get_rule_version_history_response import GetRul
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_response import (
+    SecurityMonitoringSignalInvestigationResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_request import (
+    SecurityMonitoringSignalInvestigationRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_request import (
+    SecurityMonitoringSignalInvestigationFeedbackRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_feedback_response import (
+    SecurityMonitoringSignalInvestigationFeedbackResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 from datadog_api_client.v2.model.security_monitoring_signal_response import SecurityMonitoringSignalResponse
 from datadog_api_client.v2.model.security_monitoring_signal_triage_update_response import (
@@ -439,6 +451,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (SecurityMonitoringSuppressionCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_signal_investigation_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalInvestigationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/investigation",
+                "operation_id": "create_signal_investigation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalInvestigationRequest,),
                     "location": "body",
                 },
             },
@@ -849,6 +881,29 @@ class SecurityMonitoringApi:
                     "openapi_types": (int,),
                     "attribute": "snapshot_timestamp",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_investigation_feedback_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalInvestigationFeedbackResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/investigation/feedback/{signal_id}",
+                "operation_id": "get_investigation_feedback",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -2443,6 +2498,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._update_investigation_feedback_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/investigation/feedback",
+                "operation_id": "update_investigation_feedback",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalInvestigationFeedbackRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_resource_evaluation_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateResourceEvaluationFiltersResponse,),
@@ -2873,6 +2948,22 @@ class SecurityMonitoringApi:
 
         return self._create_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
 
+    def create_signal_investigation(
+        self,
+        body: SecurityMonitoringSignalInvestigationRequest,
+    ) -> SecurityMonitoringSignalInvestigationResponse:
+        """Create a security signal investigation.
+
+        Create an investigation for a security signal using AI-powered analysis.
+
+        :type body: SecurityMonitoringSignalInvestigationRequest
+        :rtype: SecurityMonitoringSignalInvestigationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_signal_investigation_endpoint.call_with_http_info(**kwargs)
+
     def create_signal_notification_rule(
         self,
         body: CreateNotificationRuleParameters,
@@ -3195,6 +3286,23 @@ class SecurityMonitoringApi:
             kwargs["snapshot_timestamp"] = snapshot_timestamp
 
         return self._get_finding_endpoint.call_with_http_info(**kwargs)
+
+    def get_investigation_feedback(
+        self,
+        signal_id: str,
+    ) -> SecurityMonitoringSignalInvestigationFeedbackResponse:
+        """Get investigation feedback.
+
+        Retrieve feedback for a security signal investigation.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :rtype: SecurityMonitoringSignalInvestigationFeedbackResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        return self._get_investigation_feedback_endpoint.call_with_http_info(**kwargs)
 
     def get_resource_evaluation_filters(
         self,
@@ -5219,6 +5327,22 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_custom_framework_endpoint.call_with_http_info(**kwargs)
+
+    def update_investigation_feedback(
+        self,
+        body: SecurityMonitoringSignalInvestigationFeedbackRequest,
+    ) -> None:
+        """Update investigation feedback.
+
+        Provide feedback on a security signal investigation.
+
+        :type body: SecurityMonitoringSignalInvestigationFeedbackRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_investigation_feedback_endpoint.call_with_http_info(**kwargs)
 
     def update_resource_evaluation_filters(
         self,
