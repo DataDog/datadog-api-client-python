@@ -2148,6 +2148,26 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.oci_integration_api" class="md-nav__link">datadog_api_client.v2.api.oci_integration_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OCIIntegrationApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.create_tenancy_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OCIIntegrationApi.create_tenancy_config()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.delete_tenancy_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OCIIntegrationApi.delete_tenancy_config()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.get_tenancy_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OCIIntegrationApi.get_tenancy_config()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.get_tenancy_configs" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OCIIntegrationApi.get_tenancy_configs()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.list_tenancy_products" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OCIIntegrationApi.list_tenancy_products()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.update_tenancy_config" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OCIIntegrationApi.update_tenancy_config()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.okta_integration_api" class="md-nav__link">datadog_api_client.v2.api.okta_integration_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.okta_integration_api.OktaIntegrationApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OktaIntegrationApi</span></code></a><nav class="md-nav">
@@ -11202,6 +11222,93 @@ Returns a list of validation errors, if any.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.validation_response.ValidationResponse" title="datadog_api_client.v2.model.validation_response.ValidationResponse">ValidationResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.oci_integration_api">
+<span id="datadog-api-client-v2-api-oci-integration-api-module"></span><h2 id="module-datadog_api_client.v2.api.oci_integration_api">datadog_api_client.v2.api.oci_integration_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.oci_integration_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OCIIntegrationApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Auto-generated tag OCI Integration</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.create_tenancy_config">
+<span class="sig-name descname"><span class="pre">create_tenancy_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_tenancy_config_request.CreateTenancyConfigRequest" title="datadog_api_client.v2.model.create_tenancy_config_request.CreateTenancyConfigRequest"><span class="pre">CreateTenancyConfigRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config.TenancyConfig" title="datadog_api_client.v2.model.tenancy_config.TenancyConfig"><span class="pre">TenancyConfig</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.create_tenancy_config" title="Link to this definition">¶</a></dt>
+<dd><p>Create tenancy config.</p>
+<p>Create a new tenancy config to establish monitoring and data collection from your OCI environment. Requires OCI authentication credentials and tenancy details. Warning: Datadog recommends interacting with this endpoint only through the Datadog web UI to ensure all necessary OCI resources have been created and configured properly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config.TenancyConfig" title="datadog_api_client.v2.model.tenancy_config.TenancyConfig">TenancyConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.delete_tenancy_config">
+<span class="sig-name descname"><span class="pre">delete_tenancy_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenancy_ocid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.delete_tenancy_config" title="Link to this definition">¶</a></dt>
+<dd><p>Delete tenancy config.</p>
+<p>Delete an existing tenancy config. This will stop all data collection from the specified OCI tenancy and remove the stored configuration. This operation cannot be undone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tenancy_ocid</strong> (<em>str</em>) – The OCID of the tenancy config to delete.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.get_tenancy_config">
+<span class="sig-name descname"><span class="pre">get_tenancy_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenancy_ocid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config.TenancyConfig" title="datadog_api_client.v2.model.tenancy_config.TenancyConfig"><span class="pre">TenancyConfig</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.get_tenancy_config" title="Link to this definition">¶</a></dt>
+<dd><p>Get tenancy config.</p>
+<p>Get a single tenancy config object by its OCID. Returns detailed configuration including authentication credentials, enabled services, region settings, and collection preferences.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tenancy_ocid</strong> (<em>str</em>) – The OCID of the tenancy config to retrieve.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config.TenancyConfig" title="datadog_api_client.v2.model.tenancy_config.TenancyConfig">TenancyConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.get_tenancy_configs">
+<span class="sig-name descname"><span class="pre">get_tenancy_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config_list.TenancyConfigList" title="datadog_api_client.v2.model.tenancy_config_list.TenancyConfigList"><span class="pre">TenancyConfigList</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.get_tenancy_configs" title="Link to this definition">¶</a></dt>
+<dd><p>Get tenancy configs.</p>
+<p>Get a list of all configured OCI tenancy integrations. Returns basic information about each tenancy including authentication credentials, region settings, and collection preferences for metrics, logs, and resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config_list.TenancyConfigList" title="datadog_api_client.v2.model.tenancy_config_list.TenancyConfigList">TenancyConfigList</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.list_tenancy_products">
+<span class="sig-name descname"><span class="pre">list_tenancy_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product_keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_products_list.TenancyProductsList" title="datadog_api_client.v2.model.tenancy_products_list.TenancyProductsList"><span class="pre">TenancyProductsList</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.list_tenancy_products" title="Link to this definition">¶</a></dt>
+<dd><p>List tenancy products.</p>
+<p>Lists the products for a given tenancy. Returns the enabled/disabled status of Datadog products (such as Cloud Security Posture Management) for specific OCI tenancies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>product_keys</strong> (<em>str</em>) – Comma-separated list of product keys to filter by.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_products_list.TenancyProductsList" title="datadog_api_client.v2.model.tenancy_products_list.TenancyProductsList">TenancyProductsList</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.update_tenancy_config">
+<span class="sig-name descname"><span class="pre">update_tenancy_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenancy_ocid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_tenancy_config_request.UpdateTenancyConfigRequest" title="datadog_api_client.v2.model.update_tenancy_config_request.UpdateTenancyConfigRequest"><span class="pre">UpdateTenancyConfigRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config.TenancyConfig" title="datadog_api_client.v2.model.tenancy_config.TenancyConfig"><span class="pre">TenancyConfig</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.oci_integration_api.OCIIntegrationApi.update_tenancy_config" title="Link to this definition">¶</a></dt>
+<dd><p>Update tenancy config.</p>
+<p>Update an existing tenancy config. You can modify authentication credentials, enable/disable collection types, update service filters, and change region settings. Warning: We recommend using the Datadog web UI to avoid unintended update effects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tenancy_ocid</strong> (<em>str</em>) – The OCID of the tenancy config to update.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.tenancy_config.TenancyConfig" title="datadog_api_client.v2.model.tenancy_config.TenancyConfig">TenancyConfig</a></p>
 </dd>
 </dl>
 </dd></dl>
