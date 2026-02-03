@@ -501,6 +501,34 @@ datadog\_api\_client.v2.api.rum\_metrics\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.rum\_replay\_heatmaps\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_replay_heatmaps_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.rum\_replay\_playlists\_api module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_replay_playlists_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.rum\_replay\_sessions\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_replay_sessions_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.rum\_replay\_viewership\_api module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_replay_viewership_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
 ---------------------------------------------------------------
 

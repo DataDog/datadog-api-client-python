@@ -69,6 +69,10 @@ from datadog_api_client.v2.api.restriction_policies_api import RestrictionPolici
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.rum_audience_management_api import RumAudienceManagementApi
 from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
+from datadog_api_client.v2.api.rum_replay_heatmaps_api import RumReplayHeatmapsApi
+from datadog_api_client.v2.api.rum_replay_playlists_api import RumReplayPlaylistsApi
+from datadog_api_client.v2.api.rum_replay_sessions_api import RumReplaySessionsApi
+from datadog_api_client.v2.api.rum_replay_viewership_api import RumReplayViewershipApi
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
@@ -163,6 +167,10 @@ __all__ = [
     "RolesApi",
     "RumAudienceManagementApi",
     "RumMetricsApi",
+    "RumReplayHeatmapsApi",
+    "RumReplayPlaylistsApi",
+    "RumReplaySessionsApi",
+    "RumReplayViewershipApi",
     "RumRetentionFiltersApi",
     "SecurityMonitoringApi",
     "SensitiveDataScannerApi",

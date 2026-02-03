@@ -3721,6 +3721,37 @@
       "type": "idempotent"
     }
   },
+  "ListReplayHeatmapSnapshots": {
+    "tag": "Rum Replay Heatmaps",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateReplayHeatmapSnapshot": {
+    "tag": "Rum Replay Heatmaps",
+    "undo": {
+      "operationId": "DeleteReplayHeatmapSnapshot",
+      "parameters": [
+        {
+          "name": "snapshot_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteReplayHeatmapSnapshot": {
+    "tag": "Rum Replay Heatmaps",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateReplayHeatmapSnapshot": {
+    "tag": "Rum Replay Heatmaps",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteRestrictionPolicy": {
     "tag": "Restriction Policies",
     "undo": {
@@ -3955,6 +3986,105 @@
   },
   "SearchRUMEvents": {
     "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRumReplayPlaylists": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRumReplayPlaylist": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "operationId": "DeleteRumReplayPlaylist",
+      "parameters": [
+        {
+          "name": "playlist_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteRumReplayPlaylist": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRumReplayPlaylist": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRumReplayPlaylist": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "BulkRemoveRumReplayPlaylistSessions": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListRumReplayPlaylistSessions": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RemoveRumReplaySessionFromPlaylist": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AddRumReplaySessionToPlaylist": {
+    "tag": "Rum Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSegments": {
+    "tag": "Rum Replay Sessions",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRumReplaySessionWatchers": {
+    "tag": "Rum Replay Viewership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteRumReplaySessionWatch": {
+    "tag": "Rum Replay Viewership",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateRumReplaySessionWatch": {
+    "tag": "Rum Replay Viewership",
+    "undo": {
+      "operationId": "DeleteRumReplaySessionWatch",
+      "parameters": [
+        {
+          "name": "session_id",
+          "origin": "path",
+          "source": "session_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListRumReplayViewershipHistorySessions": {
+    "tag": "Rum Replay Viewership",
     "undo": {
       "type": "safe"
     }
