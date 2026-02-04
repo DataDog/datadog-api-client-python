@@ -4537,6 +4537,24 @@
       "type": "safe"
     }
   },
+  "GetContentPacksStates": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ActivateContentPack": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeactivateContentPack": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {

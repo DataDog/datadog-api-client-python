@@ -102,6 +102,9 @@ from datadog_api_client.v2.model.security_monitoring_suppression_update_request 
     SecurityMonitoringSuppressionUpdateRequest,
 )
 from datadog_api_client.v2.model.get_suppression_version_history_response import GetSuppressionVersionHistoryResponse
+from datadog_api_client.v2.model.security_monitoring_content_pack_states_response import (
+    SecurityMonitoringContentPackStatesResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_payload import (
@@ -153,6 +156,29 @@ class SecurityMonitoringApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._activate_content_pack_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/content_packs/{content_pack_id}/activate",
+                "operation_id": "activate_content_pack",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "content_pack_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "content_pack_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
 
         self._attach_case_endpoint = _Endpoint(
             settings={
@@ -486,6 +512,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._deactivate_content_pack_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/content_packs/{content_pack_id}/deactivate",
+                "operation_id": "deactivate_content_pack",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "content_pack_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "content_pack_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_custom_framework_endpoint = _Endpoint(
             settings={
                 "response_type": (DeleteCustomFrameworkResponse,),
@@ -771,6 +820,22 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_content_packs_states_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringContentPackStatesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/content_packs/states",
+                "operation_id": "get_content_packs_states",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -2607,6 +2672,25 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+    def activate_content_pack(
+        self,
+        content_pack_id: str,
+    ) -> None:
+        """Activate content pack.
+
+        Activate a security monitoring content pack. This operation configures the necessary
+        log filters or security filters depending on the pricing model and updates the content
+        pack activation state.
+
+        :param content_pack_id: The ID of the content pack to activate.
+        :type content_pack_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["content_pack_id"] = content_pack_id
+
+        return self._activate_content_pack_endpoint.call_with_http_info(**kwargs)
+
     def attach_case(
         self,
         case_id: str,
@@ -2909,6 +2993,24 @@ class SecurityMonitoringApi:
 
         return self._create_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
 
+    def deactivate_content_pack(
+        self,
+        content_pack_id: str,
+    ) -> None:
+        """Deactivate content pack.
+
+        Deactivate a security monitoring content pack. This operation removes the content pack's
+        configuration from log filters or security filters and updates the content pack activation state.
+
+        :param content_pack_id: The ID of the content pack to deactivate.
+        :type content_pack_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["content_pack_id"] = content_pack_id
+
+        return self._deactivate_content_pack_endpoint.call_with_http_info(**kwargs)
+
     def delete_custom_framework(
         self,
         handle: str,
@@ -3132,6 +3234,20 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
+
+    def get_content_packs_states(
+        self,
+    ) -> SecurityMonitoringContentPackStatesResponse:
+        """Get content pack states.
+
+        Get the activation and configuration states for all security monitoring content packs.
+        This endpoint returns status information about each content pack including activation state,
+        integration status, and log collection status.
+
+        :rtype: SecurityMonitoringContentPackStatesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_content_packs_states_endpoint.call_with_http_info(**kwargs)
 
     def get_critical_assets_affecting_rule(
         self,
