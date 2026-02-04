@@ -9,6 +9,22 @@ Feature: Security Monitoring
     And a valid "appKeyAuth" key in the system
     And an instance of "SecurityMonitoring" API
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Activate content pack returns "Accepted" response
+    Given operation "ActivateContentPack" enabled
+    And new "ActivateContentPack" request
+    And request contains "content_pack_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Activate content pack returns "Not Found" response
+    Given operation "ActivateContentPack" enabled
+    And new "ActivateContentPack" request
+    And request contains "content_pack_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/k9-investigation
   Scenario: Attach security finding to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
@@ -681,6 +697,22 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Deactivate content pack returns "Accepted" response
+    Given operation "DeactivateContentPack" enabled
+    And new "DeactivateContentPack" request
+    And request contains "content_pack_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Deactivate content pack returns "Not Found" response
+    Given operation "DeactivateContentPack" enabled
+    And new "DeactivateContentPack" request
+    And request contains "content_pack_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Delete a critical asset returns "Not Found" response
     Given new "DeleteSecurityMonitoringCriticalAsset" request
@@ -1224,6 +1256,20 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.name" is equal to "suppression2 {{ unique_hash }}"
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get content pack states returns "Not Found" response
+    Given operation "GetContentPacksStates" enabled
+    And new "GetContentPacksStates" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Get content pack states returns "OK" response
+    Given operation "GetContentPacksStates" enabled
+    And new "GetContentPacksStates" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Get critical assets affecting a specific rule returns "Not Found" response

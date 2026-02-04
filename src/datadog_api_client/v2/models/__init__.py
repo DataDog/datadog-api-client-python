@@ -4650,6 +4650,31 @@ from datadog_api_client.v2.model.security_findings_search_request_data_attribute
 from datadog_api_client.v2.model.security_findings_search_request_page import SecurityFindingsSearchRequestPage
 from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
 from datadog_api_client.v2.model.security_findings_status import SecurityFindingsStatus
+from datadog_api_client.v2.model.security_monitoring_content_pack_activation import (
+    SecurityMonitoringContentPackActivation,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_integration_status import (
+    SecurityMonitoringContentPackIntegrationStatus,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_state_attributes import (
+    SecurityMonitoringContentPackStateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_state_data import (
+    SecurityMonitoringContentPackStateData,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_state_meta import (
+    SecurityMonitoringContentPackStateMeta,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_state_type import (
+    SecurityMonitoringContentPackStateType,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_states_response import (
+    SecurityMonitoringContentPackStatesResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_status import SecurityMonitoringContentPackStatus
+from datadog_api_client.v2.model.security_monitoring_content_pack_timestamp_bucket import (
+    SecurityMonitoringContentPackTimestampBucket,
+)
 from datadog_api_client.v2.model.security_monitoring_critical_asset import SecurityMonitoringCriticalAsset
 from datadog_api_client.v2.model.security_monitoring_critical_asset_attributes import (
     SecurityMonitoringCriticalAssetAttributes,
@@ -4782,6 +4807,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_type_read import Secur
 from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
+from datadog_api_client.v2.model.security_monitoring_sku import SecurityMonitoringSKU
 from datadog_api_client.v2.model.security_monitoring_scheduling_options import SecurityMonitoringSchedulingOptions
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import SecurityMonitoringSignalArchiveReason
@@ -9264,6 +9290,15 @@ __all__ = [
     "SecurityFindingsSearchRequestPage",
     "SecurityFindingsSort",
     "SecurityFindingsStatus",
+    "SecurityMonitoringContentPackActivation",
+    "SecurityMonitoringContentPackIntegrationStatus",
+    "SecurityMonitoringContentPackStateAttributes",
+    "SecurityMonitoringContentPackStateData",
+    "SecurityMonitoringContentPackStateMeta",
+    "SecurityMonitoringContentPackStateType",
+    "SecurityMonitoringContentPackStatesResponse",
+    "SecurityMonitoringContentPackStatus",
+    "SecurityMonitoringContentPackTimestampBucket",
     "SecurityMonitoringCriticalAsset",
     "SecurityMonitoringCriticalAssetAttributes",
     "SecurityMonitoringCriticalAssetCreateAttributes",
@@ -9328,6 +9363,7 @@ __all__ = [
     "SecurityMonitoringRuleTypeTest",
     "SecurityMonitoringRuleUpdatePayload",
     "SecurityMonitoringRuleValidatePayload",
+    "SecurityMonitoringSKU",
     "SecurityMonitoringSchedulingOptions",
     "SecurityMonitoringSignal",
     "SecurityMonitoringSignalArchiveReason",
