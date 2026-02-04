@@ -1319,6 +1319,12 @@
       "type": "safe"
     }
   },
+  "SearchDashboards": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetAllDatasets": {
     "tag": "Datasets",
     "undo": {
@@ -3106,6 +3112,12 @@
   },
   "GetAggregatedDns": {
     "tag": "Cloud Network Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchNotebooks": {
+    "tag": "Notebooks",
     "undo": {
       "type": "safe"
     }

@@ -1466,6 +1466,17 @@ from datadog_api_client.v2.model.dashboard_list_item_response import DashboardLi
 from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
+from datadog_api_client.v2.model.dashboard_search_aggregation_bucket_key import DashboardSearchAggregationBucketKey
+from datadog_api_client.v2.model.dashboard_search_aggregation_bucket_multi_key import (
+    DashboardSearchAggregationBucketMultiKey,
+)
+from datadog_api_client.v2.model.dashboard_search_aggregations import DashboardSearchAggregations
+from datadog_api_client.v2.model.dashboard_search_attributes import DashboardSearchAttributes
+from datadog_api_client.v2.model.dashboard_search_metadata import DashboardSearchMetadata
+from datadog_api_client.v2.model.dashboard_search_response import DashboardSearchResponse
+from datadog_api_client.v2.model.dashboard_search_response_meta import DashboardSearchResponseMeta
+from datadog_api_client.v2.model.dashboard_search_result_data import DashboardSearchResultData
+from datadog_api_client.v2.model.dashboard_search_user import DashboardSearchUser
 from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
 from datadog_api_client.v2.model.dashboard_type import DashboardType
 from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
@@ -3105,6 +3116,18 @@ from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
+from datadog_api_client.v2.model.notebook_search_aggregation_bucket_key import NotebookSearchAggregationBucketKey
+from datadog_api_client.v2.model.notebook_search_aggregation_bucket_multi_key import (
+    NotebookSearchAggregationBucketMultiKey,
+)
+from datadog_api_client.v2.model.notebook_search_aggregations import NotebookSearchAggregations
+from datadog_api_client.v2.model.notebook_search_attributes import NotebookSearchAttributes
+from datadog_api_client.v2.model.notebook_search_highlight import NotebookSearchHighlight
+from datadog_api_client.v2.model.notebook_search_metadata import NotebookSearchMetadata
+from datadog_api_client.v2.model.notebook_search_response import NotebookSearchResponse
+from datadog_api_client.v2.model.notebook_search_response_meta import NotebookSearchResponseMeta
+from datadog_api_client.v2.model.notebook_search_result_data import NotebookSearchResultData
+from datadog_api_client.v2.model.notebook_search_user import NotebookSearchUser
 from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
 from datadog_api_client.v2.model.notification_channel import NotificationChannel
 from datadog_api_client.v2.model.notification_channel_attributes import NotificationChannelAttributes
@@ -7018,6 +7041,15 @@ __all__ = [
     "DashboardListItems",
     "DashboardListUpdateItemsRequest",
     "DashboardListUpdateItemsResponse",
+    "DashboardSearchAggregationBucketKey",
+    "DashboardSearchAggregationBucketMultiKey",
+    "DashboardSearchAggregations",
+    "DashboardSearchAttributes",
+    "DashboardSearchMetadata",
+    "DashboardSearchResponse",
+    "DashboardSearchResponseMeta",
+    "DashboardSearchResultData",
+    "DashboardSearchUser",
     "DashboardTriggerWrapper",
     "DashboardType",
     "DataDeletionResponseItem",
@@ -8319,6 +8351,16 @@ __all__ = [
     "MonthlyCostAttributionMeta",
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
+    "NotebookSearchAggregationBucketKey",
+    "NotebookSearchAggregationBucketMultiKey",
+    "NotebookSearchAggregations",
+    "NotebookSearchAttributes",
+    "NotebookSearchHighlight",
+    "NotebookSearchMetadata",
+    "NotebookSearchResponse",
+    "NotebookSearchResponseMeta",
+    "NotebookSearchResultData",
+    "NotebookSearchUser",
     "NotebookTriggerWrapper",
     "NotificationChannel",
     "NotificationChannelAttributes",

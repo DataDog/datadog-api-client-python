@@ -7116,6 +7116,69 @@ datadog\_api\_client.v2.model.dashboard\_list\_update\_items\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dashboard\_search\_aggregation\_bucket\_key module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_aggregation_bucket_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_aggregation\_bucket\_multi\_key module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_aggregation_bucket_multi_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_aggregations module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_aggregations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_metadata module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_response\_meta module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_result\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_result_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_search\_user module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_search_user
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dashboard\_trigger\_wrapper module
 ----------------------------------------------------------------
 
@@ -16451,6 +16514,76 @@ datadog\_api\_client.v2.model.ms\_teams\_integration\_metadata\_teams\_item modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_aggregation\_bucket\_key module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_aggregation_bucket_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_aggregation\_bucket\_multi\_key module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_aggregation_bucket_multi_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_aggregations module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_aggregations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_highlight module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_highlight
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_metadata module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_response\_meta module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_result\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_result_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notebook\_search\_user module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notebook_search_user
    :members:
    :show-inheritance:
 

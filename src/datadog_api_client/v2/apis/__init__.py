@@ -26,6 +26,7 @@ from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.containers_api import ContainersApi
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
+from datadog_api_client.v2.api.dashboards_api import DashboardsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
@@ -53,6 +54,7 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftTeamsIntegrationApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
+from datadog_api_client.v2.api.notebooks_api import NotebooksApi
 from datadog_api_client.v2.api.oci_integration_api import OCIIntegrationApi
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
@@ -125,6 +127,7 @@ __all__ = [
     "ContainersApi",
     "DORAMetricsApi",
     "DashboardListsApi",
+    "DashboardsApi",
     "DataDeletionApi",
     "DatasetsApi",
     "DeploymentGatesApi",
@@ -152,6 +155,7 @@ __all__ = [
     "MicrosoftTeamsIntegrationApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
+    "NotebooksApi",
     "OCIIntegrationApi",
     "ObservabilityPipelinesApi",
     "OktaIntegrationApi",
