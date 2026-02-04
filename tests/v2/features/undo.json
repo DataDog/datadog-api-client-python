@@ -3332,6 +3332,28 @@
       "type": "safe"
     }
   },
+  "CreateOnPremManagementServiceEnrollment": {
+    "tag": "On Prem Management Service",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetOnPremManagementServiceEnrollment": {
+    "tag": "On Prem Management Service",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RegisterOnPremManagementServiceToken": {
+    "tag": "On Prem Management Service",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {

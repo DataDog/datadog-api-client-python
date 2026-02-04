@@ -18694,6 +18694,160 @@ datadog\_api\_client.v2.model.on\_demand\_concurrency\_cap\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_create\_enrollment\_request module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_create_enrollment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_create\_enrollment\_response module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_create\_enrollment\_response\_attributes module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_create\_enrollment\_response\_data module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_create\_enrollment\_response\_type module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_enrollment\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_enrollment_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_enrollment\_attributes\_runner\_modes\_items module
+----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_enrollment_attributes_runner_modes_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_enrollment\_data\_request module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_enrollment_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_enrollment\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_enrollment_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_get\_enrollment\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_get\_enrollment\_response\_attributes module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_get\_enrollment\_response\_attributes\_status module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_attributes_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_get\_enrollment\_response\_data module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_get\_enrollment\_response\_type module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_data\_request module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_request module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_response\_attributes module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_response\_data module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_response\_type module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.on\_prem\_management\_service\_register\_token\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.on_prem_management_service_register_token_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.open\_ai\_credentials module
 ----------------------------------------------------------
 
