@@ -2586,6 +2586,8 @@
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi</span></code></a><nav class="md-nav">
               <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.activate_content_pack" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.activate_content_pack()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.attach_case()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_jira_issue" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.attach_jira_issue()</span></code></a>
@@ -2618,6 +2620,8 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.create_vulnerability_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.create_vulnerability_notification_rule()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.deactivate_content_pack" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.deactivate_content_pack()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_custom_framework" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_custom_framework()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_security_filter" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.delete_security_filter()</span></code></a>
@@ -2641,6 +2645,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.edit_security_monitoring_signal_incidents" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.edit_security_monitoring_signal_incidents()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.edit_security_monitoring_signal_state" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.edit_security_monitoring_signal_state()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_content_packs_states" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_content_packs_states()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_critical_assets_affecting_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi.get_critical_assets_affecting_rule()</span></code></a>
         </li>
@@ -13589,6 +13595,22 @@ Returns RUM retention filter objects from the request body when the request is s
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Create and manage your security rules, signals, filters, and more. See the <a class="reference external" href="https://docs.datadoghq.com/security/">Datadog Security page</a> for more information.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.activate_content_pack">
+<span class="sig-name descname"><span class="pre">activate_content_pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_pack_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.activate_content_pack" title="Link to this definition">¶</a></dt>
+<dd><p>Activate content pack.</p>
+<p>Activate a security monitoring content pack. This operation configures the necessary
+log filters or security filters depending on the pricing model and updates the content
+pack activation state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content_pack_id</strong> (<em>str</em>) – The ID of the content pack to activate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_case">
 <span class="sig-name descname"><span class="pre">attach_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.attach_case_request.AttachCaseRequest" title="datadog_api_client.v2.model.attach_case_request.AttachCaseRequest"><span class="pre">AttachCaseRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.finding_case_response.FindingCaseResponse" title="datadog_api_client.v2.model.finding_case_response.FindingCaseResponse"><span class="pre">FindingCaseResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.attach_case" title="Link to this definition">¶</a></dt>
 <dd><p>Attach security findings to a case.</p>
@@ -13813,6 +13835,21 @@ the rule name, the selectors, the notification targets, and the rule enabled sta
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.deactivate_content_pack">
+<span class="sig-name descname"><span class="pre">deactivate_content_pack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content_pack_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.deactivate_content_pack" title="Link to this definition">¶</a></dt>
+<dd><p>Deactivate content pack.</p>
+<p>Deactivate a security monitoring content pack. This operation removes the content pack’s
+configuration from log filters or security filters and updates the content pack activation state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content_pack_id</strong> (<em>str</em>) – The ID of the content pack to deactivate.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_custom_framework">
 <span class="sig-name descname"><span class="pre">delete_custom_framework</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.delete_custom_framework_response.DeleteCustomFrameworkResponse" title="datadog_api_client.v2.model.delete_custom_framework_response.DeleteCustomFrameworkResponse"><span class="pre">DeleteCustomFrameworkResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.delete_custom_framework" title="Link to this definition">¶</a></dt>
 <dd><p>Delete a custom framework.</p>
@@ -13987,6 +14024,19 @@ This operation dissociates security findings from their associated cases without
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_signal_triage_update_response.SecurityMonitoringSignalTriageUpdateResponse" title="datadog_api_client.v2.model.security_monitoring_signal_triage_update_response.SecurityMonitoringSignalTriageUpdateResponse">SecurityMonitoringSignalTriageUpdateResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_content_packs_states">
+<span class="sig-name descname"><span class="pre">get_content_packs_states</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_content_pack_states_response.SecurityMonitoringContentPackStatesResponse" title="datadog_api_client.v2.model.security_monitoring_content_pack_states_response.SecurityMonitoringContentPackStatesResponse"><span class="pre">SecurityMonitoringContentPackStatesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi.get_content_packs_states" title="Link to this definition">¶</a></dt>
+<dd><p>Get content pack states.</p>
+<p>Get the activation and configuration states for all security monitoring content packs.
+This endpoint returns status information about each content pack including activation state,
+integration status, and log collection status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.security_monitoring_content_pack_states_response.SecurityMonitoringContentPackStatesResponse" title="datadog_api_client.v2.model.security_monitoring_content_pack_states_response.SecurityMonitoringContentPackStatesResponse">SecurityMonitoringContentPackStatesResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

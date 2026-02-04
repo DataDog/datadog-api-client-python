@@ -23195,6 +23195,69 @@ datadog\_api\_client.v2.model.security\_findings\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_activation module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_activation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_integration\_status module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_integration_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_state\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_state_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_state\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_state_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_state\_meta module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_state_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_state\_type module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_state_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_states\_response module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_states_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_status module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_timestamp\_bucket module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_timestamp_bucket
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_critical\_asset module
 --------------------------------------------------------------------------
 
@@ -23885,6 +23948,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_signals\_sort module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signals_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_sku module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_sku
    :members:
    :show-inheritance:
 
