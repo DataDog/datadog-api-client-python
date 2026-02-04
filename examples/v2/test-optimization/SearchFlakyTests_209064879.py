@@ -1,5 +1,5 @@
 """
-Search flaky tests returns "OK" response with pagination
+Search flaky tests returns "OK" response with history
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -18,12 +18,11 @@ body = FlakyTestsSearchRequest(
             filter=FlakyTestsSearchFilter(
                 query='flaky_test_state:active @git.repository.id_v2:"github.com/datadog/shopist"',
             ),
-            include_history=True,
             page=FlakyTestsSearchPageOptions(
-                cursor="eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==",
-                limit=25,
+                limit=10,
             ),
-            sort=FlakyTestsSearchSort.FAILURE_RATE_ASCENDING,
+            sort=FlakyTestsSearchSort.FQN_ASCENDING,
+            include_history=True,
         ),
         type=FlakyTestsSearchRequestDataType.SEARCH_FLAKY_TESTS_REQUEST,
     ),
@@ -33,6 +32,6 @@ configuration = Configuration()
 configuration.unstable_operations["search_flaky_tests"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)
-    items = api_instance.search_flaky_tests_with_pagination(body=body)
-    for item in items:
-        print(item)
+    response = api_instance.search_flaky_tests(body=body)
+
+    print(response)
