@@ -18,25 +18,52 @@ from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEdi
 from datadog_api_client.v2.model.deleted_suites_response import DeletedSuitesResponse
 from datadog_api_client.v2.model.deleted_suites_request_delete_request import DeletedSuitesRequestDeleteRequest
 from datadog_api_client.v2.model.synthetics_suite_search_response import SyntheticsSuiteSearchResponse
+from datadog_api_client.v2.model.deleted_tests_response import DeletedTestsResponse
+from datadog_api_client.v2.model.deleted_tests_request_delete_request import DeletedTestsRequestDeleteRequest
+from datadog_api_client.v2.model.synthetics_network_test_response import SyntheticsNetworkTestResponse
+from datadog_api_client.v2.model.synthetics_network_test_edit_request import SyntheticsNetworkTestEditRequest
 from datadog_api_client.v2.model.global_variable_response import GlobalVariableResponse
 from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
 
 
 class SyntheticsApi:
     """
-    Datadog Synthetics uses simulated user requests and browser rendering to help you ensure uptime,
-    identify regional issues, and track your application performance. Datadog Synthetics tests come in
-    two different flavors, `API tests <https://docs.datadoghq.com/synthetics/api_tests/>`_
-    and `browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_. You can use Datadog’s API to
-    manage both test types programmatically.
+    Synthetic tests use simulated requests and actions so you can monitor the availability and performance of systems and applications. Datadog supports the following types of synthetic tests:
 
-    For more information about Synthetics, see the `Synthetics overview <https://docs.datadoghq.com/synthetics/>`_.
+    * `API tests <https://docs.datadoghq.com/synthetics/api_tests/>`_
+    * `Browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_
+    * `Network Path tests <https://docs.datadoghq.com/synthetics/network_path_tests/>`_
+    * `Mobile Application tests <https://docs.datadoghq.com/synthetics/mobile_app_testing>`_
+
+    You can use the Datadog API to create, manage, and organize tests and test suites programmatically.
+
+    For more information, see the `Synthetic Monitoring documentation <https://docs.datadoghq.com/synthetics/>`_.
     """
 
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_synthetics_network_test_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsNetworkTestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/network",
+                "operation_id": "create_synthetics_network_test",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsNetworkTestEditRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_synthetics_suite_endpoint = _Endpoint(
             settings={
@@ -71,6 +98,26 @@ class SyntheticsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (DeletedSuitesRequestDeleteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_synthetics_tests_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeletedTestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/bulk-delete",
+                "operation_id": "delete_synthetics_tests",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DeletedTestsRequestDeleteRequest,),
                     "location": "body",
                 },
             },
@@ -114,6 +161,29 @@ class SyntheticsApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_synthetics_network_test_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsNetworkTestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/network/{public_id}",
+                "operation_id": "get_synthetics_network_test",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -231,6 +301,46 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._update_synthetics_network_test_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsNetworkTestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/network/{public_id}",
+                "operation_id": "update_synthetics_network_test",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsNetworkTestEditRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+    def create_synthetics_network_test(
+        self,
+        body: SyntheticsNetworkTestEditRequest,
+    ) -> SyntheticsNetworkTestResponse:
+        """Synthetics: Create a Network Path test.
+
+        :type body: SyntheticsNetworkTestEditRequest
+        :rtype: SyntheticsNetworkTestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_synthetics_network_test_endpoint.call_with_http_info(**kwargs)
+
     def create_synthetics_suite(
         self,
         body: SuiteCreateEditRequest,
@@ -258,6 +368,20 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._delete_synthetics_suites_endpoint.call_with_http_info(**kwargs)
+
+    def delete_synthetics_tests(
+        self,
+        body: DeletedTestsRequestDeleteRequest,
+    ) -> DeletedTestsResponse:
+        """Synthetics: Bulk delete tests.
+
+        :type body: DeletedTestsRequestDeleteRequest
+        :rtype: DeletedTestsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._delete_synthetics_tests_endpoint.call_with_http_info(**kwargs)
 
     def edit_synthetics_suite(
         self,
@@ -290,6 +414,21 @@ class SyntheticsApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_on_demand_concurrency_cap_endpoint.call_with_http_info(**kwargs)
+
+    def get_synthetics_network_test(
+        self,
+        public_id: str,
+    ) -> SyntheticsNetworkTestResponse:
+        """Synthetics: Get a Network Path test.
+
+        :param public_id: The public ID of the Network Path test to get details from.
+        :type public_id: str
+        :rtype: SyntheticsNetworkTestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        return self._get_synthetics_network_test_endpoint.call_with_http_info(**kwargs)
 
     def get_synthetics_suite(
         self,
@@ -395,3 +534,23 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._set_on_demand_concurrency_cap_endpoint.call_with_http_info(**kwargs)
+
+    def update_synthetics_network_test(
+        self,
+        public_id: str,
+        body: SyntheticsNetworkTestEditRequest,
+    ) -> SyntheticsNetworkTestResponse:
+        """Synthetics: Edit a Network Path test.
+
+        :param public_id: The public ID of the Network Path test to edit.
+        :type public_id: str
+        :param body: New Network Path test details to be saved.
+        :type body: SyntheticsNetworkTestEditRequest
+        :rtype: SyntheticsNetworkTestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._update_synthetics_network_test_endpoint.call_with_http_info(**kwargs)

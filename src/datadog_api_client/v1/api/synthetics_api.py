@@ -52,11 +52,14 @@ from datadog_api_client.v1.model.synthetics_global_variable_request import Synth
 
 class SyntheticsApi:
     """
-    Datadog Synthetic Monitoring uses simulated user requests and browser rendering to help you ensure uptime,
-    identify regional issues, and track your application performance. Synthetic tests come in
-    two different flavors, `API tests <https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest>`_
-    and `browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_. You can use Datadog's API to
-    manage both test types programmatically.
+    Synthetic tests use simulated requests and actions so you can monitor the availability and performance of systems and applications. Datadog supports the following types of synthetic tests:
+
+    * `API tests <https://docs.datadoghq.com/synthetics/api_tests/>`_
+    * `Browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_
+    * `Network Path tests <https://docs.datadoghq.com/synthetics/network_path_tests/>`_
+    * `Mobile Application tests <https://docs.datadoghq.com/synthetics/mobile_app_testing>`_
+
+    You can use the Datadog API to create, manage, and organize tests and test suites programmatically.
 
     For more information, see the `Synthetic Monitoring documentation <https://docs.datadoghq.com/synthetics/>`_.
     """
