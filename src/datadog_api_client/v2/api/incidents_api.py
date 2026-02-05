@@ -37,6 +37,9 @@ from datadog_api_client.v2.model.create_incident_notification_template_request i
 from datadog_api_client.v2.model.patch_incident_notification_template_request import (
     PatchIncidentNotificationTemplateRequest,
 )
+from datadog_api_client.v2.model.incident_rules_response import IncidentRulesResponse
+from datadog_api_client.v2.model.incident_rule_response import IncidentRuleResponse
+from datadog_api_client.v2.model.incident_rule_request import IncidentRuleRequest
 from datadog_api_client.v2.model.incident_type_list_response import IncidentTypeListResponse
 from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
 from datadog_api_client.v2.model.incident_type_create_request import IncidentTypeCreateRequest
@@ -149,6 +152,26 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateAttachmentRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_config_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/rules",
+                "operation_id": "create_incident_config_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentRuleRequest,),
                     "location": "body",
                 },
             },
@@ -394,6 +417,29 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_incident_config_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/rules/{rule_id}",
+                "operation_id": "delete_incident_config_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_incident_impact_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -605,6 +651,29 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._get_incident_config_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/rules/{rule_id}",
+                "operation_id": "get_incident_config_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_incident_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentIntegrationMetadataResponse,),
@@ -791,6 +860,22 @@ class IncidentsApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_config_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/rules",
+                "operation_id": "list_incident_config_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1133,6 +1218,32 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_config_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/incidents/config/rules/{rule_id}",
+                "operation_id": "update_incident_config_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentRuleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_incident_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentIntegrationMetadataResponse,),
@@ -1353,6 +1464,22 @@ class IncidentsApi:
 
         return self._create_incident_attachment_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_config_rule(
+        self,
+        body: IncidentRuleRequest,
+    ) -> IncidentRuleResponse:
+        """Create incident rule.
+
+        Create a new incident rule for the organization.
+
+        :type body: IncidentRuleRequest
+        :rtype: IncidentRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_incident_config_rule_endpoint.call_with_http_info(**kwargs)
+
     def create_incident_impact(
         self,
         incident_id: str,
@@ -1549,6 +1676,23 @@ class IncidentsApi:
 
         return self._delete_incident_attachment_endpoint.call_with_http_info(**kwargs)
 
+    def delete_incident_config_rule(
+        self,
+        rule_id: str,
+    ) -> None:
+        """Delete incident rule.
+
+        Delete an incident rule.
+
+        :param rule_id: The ID of the incident rule.
+        :type rule_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._delete_incident_config_rule_endpoint.call_with_http_info(**kwargs)
+
     def delete_incident_impact(
         self,
         incident_id: str,
@@ -1716,6 +1860,23 @@ class IncidentsApi:
 
         return self._get_incident_endpoint.call_with_http_info(**kwargs)
 
+    def get_incident_config_rule(
+        self,
+        rule_id: str,
+    ) -> IncidentRuleResponse:
+        """Get incident rule.
+
+        Retrieve details of a specific incident rule.
+
+        :param rule_id: The ID of the incident rule.
+        :type rule_id: str
+        :rtype: IncidentRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._get_incident_config_rule_endpoint.call_with_http_info(**kwargs)
+
     def get_incident_integration(
         self,
         incident_id: str,
@@ -1873,6 +2034,18 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._list_incident_attachments_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_config_rules(
+        self,
+    ) -> IncidentRulesResponse:
+        """List incident rules.
+
+        Retrieve a list of all incident rules for the organization.
+
+        :rtype: IncidentRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_incident_config_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_impacts(
         self,
@@ -2267,6 +2440,27 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_attachment_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_config_rule(
+        self,
+        rule_id: str,
+        body: IncidentRuleRequest,
+    ) -> IncidentRuleResponse:
+        """Update incident rule.
+
+        Update an existing incident rule.
+
+        :param rule_id: The ID of the incident rule.
+        :type rule_id: str
+        :type body: IncidentRuleRequest
+        :rtype: IncidentRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._update_incident_config_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_integration(
         self,

@@ -12520,6 +12520,62 @@ datadog\_api\_client.v2.model.incident\_response\_relationships module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_rule\_attributes\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rule_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_rule\_attributes\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rule_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_rule\_data\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rule_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_rule\_data\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rule_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_rule\_request module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rule_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_rule\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_rule\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_rules\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_rules_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_search\_response module
 ---------------------------------------------------------------
 

@@ -273,6 +273,22 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Create incident rule returns "Bad Request" response
+    Given operation "CreateIncidentConfigRule" enabled
+    And new "CreateIncidentConfigRule" request
+    And body with value {"data": {"attributes": {"name": "High Severity Rule"}, "type": "incident_rule"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create incident rule returns "Created" response
+    Given operation "CreateIncidentConfigRule" enabled
+    And new "CreateIncidentConfigRule" request
+    And body with value {"data": {"attributes": {"name": "High Severity Rule"}, "type": "incident_rule"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Create postmortem attachment returns "Bad Request" response
     Given operation "CreateIncidentPostmortemAttachment" enabled
     And new "CreateIncidentPostmortemAttachment" request
@@ -538,6 +554,30 @@ Feature: Incidents
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Delete incident rule returns "Bad Request" response
+    Given operation "DeleteIncidentConfigRule" enabled
+    And new "DeleteIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete incident rule returns "No Content" response
+    Given operation "DeleteIncidentConfigRule" enabled
+    And new "DeleteIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete incident rule returns "Not Found" response
+    Given operation "DeleteIncidentConfigRule" enabled
+    And new "DeleteIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -756,6 +796,30 @@ Feature: Incidents
     And the response "data" has field "attributes"
     And the response "data" has field "relationships"
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident rule returns "Bad Request" response
+    Given operation "GetIncidentConfigRule" enabled
+    And new "GetIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident rule returns "Not Found" response
+    Given operation "GetIncidentConfigRule" enabled
+    And new "GetIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident rule returns "OK" response
+    Given operation "GetIncidentConfigRule" enabled
+    And new "GetIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:Datadog/incident-app
   Scenario: Get incident todo details returns "Bad Request" response
     Given operation "GetIncidentTodo" enabled
@@ -939,6 +1003,20 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 0
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident rules returns "Bad Request" response
+    Given operation "ListIncidentConfigRules" enabled
+    And new "ListIncidentConfigRules" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident rules returns "OK" response
+    Given operation "ListIncidentConfigRules" enabled
+    And new "ListIncidentConfigRules" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/incident-app
   Scenario: Remove commander from an incident returns "OK" response
@@ -1270,3 +1348,30 @@ Feature: Incidents
     And the response "data.id" has the same value as "notification_template.data.id"
     And the response "data.attributes.name" has the same value as "unique"
     And the response "data.attributes.category" is equal to "update"
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update incident rule returns "Bad Request" response
+    Given operation "UpdateIncidentConfigRule" enabled
+    And new "UpdateIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "High Severity Rule"}, "type": "incident_rule"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update incident rule returns "Not Found" response
+    Given operation "UpdateIncidentConfigRule" enabled
+    And new "UpdateIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "High Severity Rule"}, "type": "incident_rule"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update incident rule returns "OK" response
+    Given operation "UpdateIncidentConfigRule" enabled
+    And new "UpdateIncidentConfigRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "High Severity Rule"}, "type": "incident_rule"}}
+    When the request is sent
+    Then the response status is 200 OK
