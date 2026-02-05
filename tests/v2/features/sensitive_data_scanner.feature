@@ -201,7 +201,7 @@ Feature: Sensitive Data Scanner
   Scenario: Update Scanning Rule returns "Not Found" response
     Given new "UpdateScanningRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"excluded_namespaces": ["admin.name"], "included_keyword_configuration": {"character_count": 30, "keywords": ["credit card", "cc"]}, "namespaces": ["admin"], "tags": [], "text_replacement": {"type": "none"}}, "relationships": {"group": {"data": {"type": "sensitive_data_scanner_group"}}, "standard_pattern": {"data": {"type": "sensitive_data_scanner_standard_pattern"}}}, "type": "sensitive_data_scanner_rule"}, "meta": {"version": 0}}
+    And body with value {"data": {"attributes": {"excluded_namespaces": ["admin.name"], "included_keyword_configuration": {"character_count": 30, "keywords": ["email", "address", "login"]}, "namespaces": ["admin"], "suppressions": {"ends_with": ["@example.com", "another.example.com"], "exact_match": ["admin@example.com", "user@example.com"], "starts_with": ["admin", "user"]}, "tags": [], "text_replacement": {"type": "none"}}, "relationships": {"group": {"data": {"type": "sensitive_data_scanner_group"}}, "standard_pattern": {"data": {"type": "sensitive_data_scanner_standard_pattern"}}}, "type": "sensitive_data_scanner_rule"}, "meta": {"version": 0}}
     When the request is sent
     Then the response status is 404 Not Found
 
