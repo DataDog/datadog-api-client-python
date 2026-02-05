@@ -366,6 +366,12 @@ from datadog_api_client.v2.model.asset_operating_system import AssetOperatingSys
 from datadog_api_client.v2.model.asset_risks import AssetRisks
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.asset_version import AssetVersion
+from datadog_api_client.v2.model.assign_seats_user_request import AssignSeatsUserRequest
+from datadog_api_client.v2.model.assign_seats_user_request_data import AssignSeatsUserRequestData
+from datadog_api_client.v2.model.assign_seats_user_request_data_attributes import AssignSeatsUserRequestDataAttributes
+from datadog_api_client.v2.model.assign_seats_user_response import AssignSeatsUserResponse
+from datadog_api_client.v2.model.assign_seats_user_response_data import AssignSeatsUserResponseData
+from datadog_api_client.v2.model.assign_seats_user_response_data_attributes import AssignSeatsUserResponseDataAttributes
 from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
 from datadog_api_client.v2.model.attach_case_request_data import AttachCaseRequestData
 from datadog_api_client.v2.model.attach_case_request_data_relationships import AttachCaseRequestDataRelationships
@@ -4598,6 +4604,12 @@ from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAtt
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
+from datadog_api_client.v2.model.seat_assignments_data_type import SeatAssignmentsDataType
+from datadog_api_client.v2.model.seat_user_data import SeatUserData
+from datadog_api_client.v2.model.seat_user_data_array import SeatUserDataArray
+from datadog_api_client.v2.model.seat_user_data_attributes import SeatUserDataAttributes
+from datadog_api_client.v2.model.seat_user_data_type import SeatUserDataType
+from datadog_api_client.v2.model.seat_user_meta import SeatUserMeta
 from datadog_api_client.v2.model.secret_rule_array import SecretRuleArray
 from datadog_api_client.v2.model.secret_rule_data import SecretRuleData
 from datadog_api_client.v2.model.secret_rule_data_attributes import SecretRuleDataAttributes
@@ -5693,6 +5705,11 @@ from datadog_api_client.v2.model.uc_config_pair_data_attributes_configs_items im
     UCConfigPairDataAttributesConfigsItems,
 )
 from datadog_api_client.v2.model.uc_config_pair_data_type import UCConfigPairDataType
+from datadog_api_client.v2.model.unassign_seats_user_request import UnassignSeatsUserRequest
+from datadog_api_client.v2.model.unassign_seats_user_request_data import UnassignSeatsUserRequestData
+from datadog_api_client.v2.model.unassign_seats_user_request_data_attributes import (
+    UnassignSeatsUserRequestDataAttributes,
+)
 from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
 from datadog_api_client.v2.model.update_action_connection_request import UpdateActionConnectionRequest
@@ -6216,6 +6233,12 @@ __all__ = [
     "AssetRisks",
     "AssetType",
     "AssetVersion",
+    "AssignSeatsUserRequest",
+    "AssignSeatsUserRequestData",
+    "AssignSeatsUserRequestDataAttributes",
+    "AssignSeatsUserResponse",
+    "AssignSeatsUserResponseData",
+    "AssignSeatsUserResponseDataAttributes",
     "AttachCaseRequest",
     "AttachCaseRequestData",
     "AttachCaseRequestDataRelationships",
@@ -9248,6 +9271,12 @@ __all__ = [
     "ScheduleUserType",
     "ScorecardType",
     "SearchIssuesIncludeQueryParameterItem",
+    "SeatAssignmentsDataType",
+    "SeatUserData",
+    "SeatUserDataArray",
+    "SeatUserDataAttributes",
+    "SeatUserDataType",
+    "SeatUserMeta",
     "SecretRuleArray",
     "SecretRuleData",
     "SecretRuleDataAttributes",
@@ -9997,6 +10026,9 @@ __all__ = [
     "UCConfigPairDataAttributes",
     "UCConfigPairDataAttributesConfigsItems",
     "UCConfigPairDataType",
+    "UnassignSeatsUserRequest",
+    "UnassignSeatsUserRequestData",
+    "UnassignSeatsUserRequestDataAttributes",
     "Unit",
     "UnpublishAppResponse",
     "UpdateActionConnectionRequest",
