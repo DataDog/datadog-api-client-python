@@ -290,6 +290,22 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 Created
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create postmortem template returns "Bad Request" response
+    Given operation "CreateIncidentPostmortemTemplate" enabled
+    And new "CreateIncidentPostmortemTemplate" request
+    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create postmortem template returns "Created" response
+    Given operation "CreateIncidentPostmortemTemplate" enabled
+    And new "CreateIncidentPostmortemTemplate" request
+    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @generated @skip @team:Datadog/incident-app
   Scenario: Delete a notification template returns "Bad Request" response
     Given operation "DeleteIncidentNotificationTemplate" enabled
@@ -536,6 +552,30 @@ Feature: Incidents
     And request contains "id" parameter from "notification_template.data.id"
     When the request is sent
     Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete postmortem template returns "Bad Request" response
+    Given operation "DeleteIncidentPostmortemTemplate" enabled
+    And new "DeleteIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete postmortem template returns "No Content" response
+    Given operation "DeleteIncidentPostmortemTemplate" enabled
+    And new "DeleteIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete postmortem template returns "Not Found" response
+    Given operation "DeleteIncidentPostmortemTemplate" enabled
+    And new "DeleteIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
@@ -812,6 +852,30 @@ Feature: Incidents
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Get postmortem template returns "Bad Request" response
+    Given operation "GetIncidentPostmortemTemplate" enabled
+    And new "GetIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get postmortem template returns "Not Found" response
+    Given operation "GetIncidentPostmortemTemplate" enabled
+    And new "GetIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get postmortem template returns "OK" response
+    Given operation "GetIncidentPostmortemTemplate" enabled
+    And new "GetIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -939,6 +1003,20 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 0
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List postmortem templates returns "Bad Request" response
+    Given operation "ListIncidentPostmortemTemplates" enabled
+    And new "ListIncidentPostmortemTemplates" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List postmortem templates returns "OK" response
+    Given operation "ListIncidentPostmortemTemplates" enabled
+    And new "ListIncidentPostmortemTemplates" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/incident-app
   Scenario: Remove commander from an incident returns "OK" response
@@ -1270,3 +1348,30 @@ Feature: Incidents
     And the response "data.id" has the same value as "notification_template.data.id"
     And the response "data.attributes.name" has the same value as "unique"
     And the response "data.attributes.category" is equal to "update"
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update postmortem template returns "Bad Request" response
+    Given operation "UpdateIncidentPostmortemTemplate" enabled
+    And new "UpdateIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update postmortem template returns "Not Found" response
+    Given operation "UpdateIncidentPostmortemTemplate" enabled
+    And new "UpdateIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update postmortem template returns "OK" response
+    Given operation "UpdateIncidentPostmortemTemplate" enabled
+    And new "UpdateIncidentPostmortemTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    When the request is sent
+    Then the response status is 200 OK
