@@ -40,6 +40,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
             The `strategy` field determines whether basic or AWS-based authentication is used.
         :type auth: ObservabilityPipelineAmazonOpenSearchDestinationAuth
 
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
+
         :param bulk_index: The index to write logs to.
         :type bulk_index: str, optional
 

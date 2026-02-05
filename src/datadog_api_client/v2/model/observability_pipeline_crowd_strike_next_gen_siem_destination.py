@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_compression import (
         ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression,
     )
@@ -24,11 +25,21 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_type import (
         ObservabilityPipelineCrowdStrikeNextGenSiemDestinationType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
+    )
 
 
 class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination_compression import (
             ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression,
         )
@@ -41,6 +52,7 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         )
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "compression": (ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression,),
             "encoding": (ObservabilityPipelineCrowdStrikeNextGenSiemDestinationEncoding,),
             "id": (str,),
@@ -50,6 +62,7 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "compression": "compression",
         "encoding": "encoding",
         "id": "id",
@@ -64,6 +77,13 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         compression: Union[ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
@@ -72,6 +92,9 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         The ``crowdstrike_next_gen_siem`` destination forwards logs to CrowdStrike Next Gen SIEM.
 
         **Supported pipeline types:** logs
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param compression: Compression configuration for log events.
         :type compression: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression, optional
@@ -91,6 +114,8 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         :param type: The destination type. The value should always be ``crowdstrike_next_gen_siem``.
         :type type: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if compression is not unset:
             kwargs["compression"] = compression
         if tls is not unset:

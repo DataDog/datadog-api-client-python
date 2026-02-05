@@ -3,24 +3,38 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.microsoft_sentinel_destination_type import MicrosoftSentinelDestinationType
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
+    )
 
 
 class MicrosoftSentinelDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.microsoft_sentinel_destination_type import MicrosoftSentinelDestinationType
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "client_id": (str,),
             "dcr_immutable_id": (str,),
             "id": (str,),
@@ -31,6 +45,7 @@ class MicrosoftSentinelDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "client_id": "client_id",
         "dcr_immutable_id": "dcr_immutable_id",
         "id": "id",
@@ -49,12 +64,22 @@ class MicrosoftSentinelDestination(ModelNormal):
         table: str,
         tenant_id: str,
         type: MicrosoftSentinelDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         **kwargs,
     ):
         """
         The ``microsoft_sentinel`` destination forwards logs to Microsoft Sentinel.
 
         **Supported pipeline types:** logs
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param client_id: Azure AD client ID used for authentication.
         :type client_id: str
@@ -77,6 +102,8 @@ class MicrosoftSentinelDestination(ModelNormal):
         :param type: The destination type. The value should always be ``microsoft_sentinel``.
         :type type: MicrosoftSentinelDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         super().__init__(kwargs)
 
         self_.client_id = client_id

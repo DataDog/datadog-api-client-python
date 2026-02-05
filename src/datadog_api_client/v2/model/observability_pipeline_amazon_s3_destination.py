@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_storage_class import (
         ObservabilityPipelineAmazonS3DestinationStorageClass,
     )
@@ -22,12 +23,22 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_type import (
         ObservabilityPipelineAmazonS3DestinationType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
+    )
 
 
 class ObservabilityPipelineAmazonS3Destination(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_storage_class import (
             ObservabilityPipelineAmazonS3DestinationStorageClass,
         )
@@ -39,6 +50,7 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
         return {
             "auth": (ObservabilityPipelineAwsAuth,),
             "bucket": (str,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "id": (str,),
             "inputs": ([str],),
             "key_prefix": (str,),
@@ -51,6 +63,7 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
     attribute_map = {
         "auth": "auth",
         "bucket": "bucket",
+        "buffer": "buffer",
         "id": "id",
         "inputs": "inputs",
         "key_prefix": "key_prefix",
@@ -69,6 +82,13 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
         storage_class: ObservabilityPipelineAmazonS3DestinationStorageClass,
         type: ObservabilityPipelineAmazonS3DestinationType,
         auth: Union[ObservabilityPipelineAwsAuth, UnsetType] = unset,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         key_prefix: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
@@ -84,6 +104,9 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
 
         :param bucket: S3 bucket name.
         :type bucket: str
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param id: Unique identifier for the destination component.
         :type id: str
@@ -108,6 +131,8 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
         """
         if auth is not unset:
             kwargs["auth"] = auth
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
         if tls is not unset:

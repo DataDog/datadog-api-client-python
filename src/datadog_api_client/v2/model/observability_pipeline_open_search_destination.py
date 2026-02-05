@@ -14,17 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_open_search_destination_data_stream import (
         ObservabilityPipelineOpenSearchDestinationDataStream,
     )
     from datadog_api_client.v2.model.observability_pipeline_open_search_destination_type import (
         ObservabilityPipelineOpenSearchDestinationType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
+    )
 
 
 class ObservabilityPipelineOpenSearchDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_open_search_destination_data_stream import (
             ObservabilityPipelineOpenSearchDestinationDataStream,
         )
@@ -33,6 +44,7 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         )
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "bulk_index": (str,),
             "data_stream": (ObservabilityPipelineOpenSearchDestinationDataStream,),
             "id": (str,),
@@ -41,6 +53,7 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "bulk_index": "bulk_index",
         "data_stream": "data_stream",
         "id": "id",
@@ -53,6 +66,13 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineOpenSearchDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         bulk_index: Union[str, UnsetType] = unset,
         data_stream: Union[ObservabilityPipelineOpenSearchDestinationDataStream, UnsetType] = unset,
         **kwargs,
@@ -61,6 +81,9 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         The ``opensearch`` destination writes logs to an OpenSearch cluster.
 
         **Supported pipeline types:** logs
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param bulk_index: The index to write logs to.
         :type bulk_index: str, optional
@@ -77,6 +100,8 @@ class ObservabilityPipelineOpenSearchDestination(ModelNormal):
         :param type: The destination type. The value should always be ``opensearch``.
         :type type: ObservabilityPipelineOpenSearchDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if bulk_index is not unset:
             kwargs["bulk_index"] = bulk_index
         if data_stream is not unset:

@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_socket_destination_encoding import (
         ObservabilityPipelineSocketDestinationEncoding,
     )
@@ -26,6 +27,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_socket_destination_type import (
         ObservabilityPipelineSocketDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
     from datadog_api_client.v2.model.observability_pipeline_socket_destination_framing_newline_delimited import (
         ObservabilityPipelineSocketDestinationFramingNewlineDelimited,
@@ -41,6 +51,7 @@ if TYPE_CHECKING:
 class ObservabilityPipelineSocketDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_socket_destination_encoding import (
             ObservabilityPipelineSocketDestinationEncoding,
         )
@@ -56,6 +67,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         )
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineSocketDestinationEncoding,),
             "framing": (ObservabilityPipelineSocketDestinationFraming,),
             "id": (str,),
@@ -66,6 +78,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "encoding": "encoding",
         "framing": "framing",
         "id": "id",
@@ -88,6 +101,13 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         inputs: List[str],
         mode: ObservabilityPipelineSocketDestinationMode,
         type: ObservabilityPipelineSocketDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -95,6 +115,9 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         The ``socket`` destination sends logs over TCP or UDP to a remote server.
 
         **Supported pipeline types:** logs
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineSocketDestinationEncoding
@@ -117,6 +140,8 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         :param type: The destination type. The value should always be ``socket``.
         :type type: ObservabilityPipelineSocketDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)
