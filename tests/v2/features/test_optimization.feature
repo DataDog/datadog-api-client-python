@@ -13,7 +13,7 @@ Feature: Test Optimization
   Scenario: Search flaky tests returns "Bad Request" response
     Given operation "SearchFlakyTests" enabled
     And new "SearchFlakyTests" request
-    And body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
+    And body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "include_history": true, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -29,7 +29,7 @@ Feature: Test Optimization
   Scenario: Search flaky tests returns "OK" response
     Given operation "SearchFlakyTests" enabled
     And new "SearchFlakyTests" request
-    And body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
+    And body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "include_history": true, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -41,11 +41,23 @@ Feature: Test Optimization
     When the request with pagination is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/ci-app-backend
+  Scenario: Search flaky tests returns "OK" response with history
+    Given operation "SearchFlakyTests" enabled
+    And new "SearchFlakyTests" request
+    And body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "page": {"limit": 10}, "sort": "fqn", "include_history": true}, "type": "search_flaky_tests_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].attributes" has field "history"
+    And the response "data[0].attributes.history[0]" has field "status"
+    And the response "data[0].attributes.history[0]" has field "commit_sha"
+    And the response "data[0].attributes.history[0]" has field "timestamp"
+
   @generated @skip @team:DataDog/ci-app-backend @with-pagination
   Scenario: Search flaky tests returns "OK" response with pagination
     Given operation "SearchFlakyTests" enabled
     And new "SearchFlakyTests" request
-    And body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
+    And body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "include_history": true, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
     When the request with pagination is sent
     Then the response status is 200 OK
 
