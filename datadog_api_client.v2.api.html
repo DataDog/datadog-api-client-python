@@ -17749,6 +17749,18 @@ If the <code class="docutils literal notranslate"><span class="pre">team_links</
 <span class="sig-name descname"><span class="pre">search_flaky_tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.flaky_tests_search_request.FlakyTestsSearchRequest" title="datadog_api_client.v2.model.flaky_tests_search_request.FlakyTestsSearchRequest"><span class="pre">FlakyTestsSearchRequest</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.flaky_tests_search_response.FlakyTestsSearchResponse" title="datadog_api_client.v2.model.flaky_tests_search_response.FlakyTestsSearchResponse"><span class="pre">FlakyTestsSearchResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.test_optimization_api.TestOptimizationApi.search_flaky_tests" title="Link to this definition">¶</a></dt>
 <dd><p>Search flaky tests.</p>
 <p>List endpoint returning flaky tests from Flaky Test Management. Results are paginated.</p>
+<p>The response includes comprehensive test information including:</p>
+<ul class="simple">
+<li><p>Test identification and metadata (module, suite, name)</p></li>
+<li><p>Flaky state and categorization</p></li>
+<li><p>First and last flake occurrences (timestamp, branch, commit SHA)</p></li>
+<li><p>Test execution statistics from the last 7 days (failure rate)</p></li>
+<li><p>Pipeline impact metrics (failed pipelines count, total lost time)</p></li>
+<li><p>Complete status change history (optional, ordered from most recent to oldest)</p></li>
+</ul>
+<p>Set <code class="docutils literal notranslate"><span class="pre">include_history</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> in the request to receive the status change history for each test.
+History is disabled by default for better performance.</p>
+<p>Results support filtering by various facets including service, environment, repository, branch, and test state.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.flaky_tests_search_response.FlakyTestsSearchResponse" title="datadog_api_client.v2.model.flaky_tests_search_response.FlakyTestsSearchResponse">FlakyTestsSearchResponse</a></p>
