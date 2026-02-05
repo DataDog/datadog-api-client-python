@@ -24686,6 +24686,13 @@ datadog\_api\_client.v2.model.sensitive\_data\_scanner\_standard\_patterns\_resp
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sensitive\_data\_scanner\_suppressions module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sensitive_data_scanner_suppressions
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sensitive\_data\_scanner\_text\_replacement module
 --------------------------------------------------------------------------------
 
