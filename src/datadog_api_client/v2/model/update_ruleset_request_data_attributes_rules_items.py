@@ -15,9 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping import (
-        UpdateRulesetRequestDataAttributesRulesItemsMapping,
-    )
+    from datadog_api_client.v2.model.data_attributes_rules_items_mapping import DataAttributesRulesItemsMapping
     from datadog_api_client.v2.model.ruleset_item_metadata import RulesetItemMetadata
     from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query import (
         UpdateRulesetRequestDataAttributesRulesItemsQuery,
@@ -30,9 +28,7 @@ if TYPE_CHECKING:
 class UpdateRulesetRequestDataAttributesRulesItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping import (
-            UpdateRulesetRequestDataAttributesRulesItemsMapping,
-        )
+        from datadog_api_client.v2.model.data_attributes_rules_items_mapping import DataAttributesRulesItemsMapping
         from datadog_api_client.v2.model.ruleset_item_metadata import RulesetItemMetadata
         from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query import (
             UpdateRulesetRequestDataAttributesRulesItemsQuery,
@@ -43,7 +39,7 @@ class UpdateRulesetRequestDataAttributesRulesItems(ModelNormal):
 
         return {
             "enabled": (bool,),
-            "mapping": (UpdateRulesetRequestDataAttributesRulesItemsMapping,),
+            "mapping": (DataAttributesRulesItemsMapping,),
             "metadata": (RulesetItemMetadata,),
             "name": (str,),
             "query": (UpdateRulesetRequestDataAttributesRulesItemsQuery,),
@@ -63,7 +59,7 @@ class UpdateRulesetRequestDataAttributesRulesItems(ModelNormal):
         self_,
         enabled: bool,
         name: str,
-        mapping: Union[UpdateRulesetRequestDataAttributesRulesItemsMapping, none_type, UnsetType] = unset,
+        mapping: Union[DataAttributesRulesItemsMapping, none_type, UnsetType] = unset,
         metadata: Union[RulesetItemMetadata, none_type, UnsetType] = unset,
         query: Union[UpdateRulesetRequestDataAttributesRulesItemsQuery, none_type, UnsetType] = unset,
         reference_table: Union[
@@ -77,8 +73,8 @@ class UpdateRulesetRequestDataAttributesRulesItems(ModelNormal):
         :param enabled: The ``items`` ``enabled``.
         :type enabled: bool
 
-        :param mapping: The definition of ``UpdateRulesetRequestDataAttributesRulesItemsMapping`` object.
-        :type mapping: UpdateRulesetRequestDataAttributesRulesItemsMapping, none_type, optional
+        :param mapping: The definition of ``DataAttributesRulesItemsMapping`` object.
+        :type mapping: DataAttributesRulesItemsMapping, none_type, optional
 
         :param metadata: The ``items`` ``metadata``.
         :type metadata: RulesetItemMetadata, none_type, optional
