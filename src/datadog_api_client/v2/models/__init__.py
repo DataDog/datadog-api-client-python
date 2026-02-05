@@ -5065,6 +5065,7 @@ from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_respon
 from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response_item import (
     SensitiveDataScannerStandardPatternsResponseItem,
 )
+from datadog_api_client.v2.model.sensitive_data_scanner_suppressions import SensitiveDataScannerSuppressions
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type import (
     SensitiveDataScannerTextReplacementType,
@@ -9530,6 +9531,7 @@ __all__ = [
     "SensitiveDataScannerStandardPatternsResponse",
     "SensitiveDataScannerStandardPatternsResponseData",
     "SensitiveDataScannerStandardPatternsResponseItem",
+    "SensitiveDataScannerSuppressions",
     "SensitiveDataScannerTextReplacement",
     "SensitiveDataScannerTextReplacementType",
     "ServiceAccountCreateAttributes",
