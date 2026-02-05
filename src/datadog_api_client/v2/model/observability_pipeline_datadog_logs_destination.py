@@ -14,11 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_route import (
         ObservabilityPipelineDatadogLogsDestinationRoute,
     )
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
         ObservabilityPipelineDatadogLogsDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
 
 
@@ -31,6 +41,7 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_route import (
             ObservabilityPipelineDatadogLogsDestinationRoute,
         )
@@ -39,6 +50,7 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         )
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "id": (str,),
             "inputs": ([str],),
             "routes": ([ObservabilityPipelineDatadogLogsDestinationRoute],),
@@ -46,6 +58,7 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "id": "id",
         "inputs": "inputs",
         "routes": "routes",
@@ -57,6 +70,13 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineDatadogLogsDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         routes: Union[List[ObservabilityPipelineDatadogLogsDestinationRoute], UnsetType] = unset,
         **kwargs,
     ):
@@ -64,6 +84,9 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         The ``datadog_logs`` destination forwards logs to Datadog Log Management.
 
         **Supported pipeline types:** logs
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param id: The unique identifier for this component.
         :type id: str
@@ -77,6 +100,8 @@ class ObservabilityPipelineDatadogLogsDestination(ModelNormal):
         :param type: The destination type. The value should always be ``datadog_logs``.
         :type type: ObservabilityPipelineDatadogLogsDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if routes is not unset:
             kwargs["routes"] = routes
         super().__init__(kwargs)

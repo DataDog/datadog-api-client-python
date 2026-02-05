@@ -16811,6 +16811,34 @@ datadog\_api\_client.v2.model.observability\_pipeline\_aws\_auth module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_buffer\_options module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_buffer_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_buffer\_options\_disk\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_buffer_options_disk_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_buffer\_options\_memory\_type module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_buffer_options_memory_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_buffer\_options\_when\_full module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_buffer_options_when_full
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_cloud\_prem\_destination module
 --------------------------------------------------------------------------------------
 
@@ -17039,6 +17067,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_dedupe\_processor\_type m
 -------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_dedupe_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_disk\_buffer\_options module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_disk_buffer_options
    :members:
    :show-inheritance:
 
@@ -17494,6 +17529,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_logstash\_source\_type mo
 ------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_logstash_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_memory\_buffer\_options module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_memory_buffer_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_memory\_buffer\_size\_options module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options
    :members:
    :show-inheritance:
 

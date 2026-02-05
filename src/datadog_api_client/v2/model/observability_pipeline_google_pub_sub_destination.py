@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination_encoding import (
         ObservabilityPipelineGooglePubSubDestinationEncoding,
     )
@@ -22,12 +23,22 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination_type import (
         ObservabilityPipelineGooglePubSubDestinationType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
+    )
 
 
 class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_google_pub_sub_destination_encoding import (
             ObservabilityPipelineGooglePubSubDestinationEncoding,
         )
@@ -38,6 +49,7 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
 
         return {
             "auth": (ObservabilityPipelineGcpAuth,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineGooglePubSubDestinationEncoding,),
             "id": (str,),
             "inputs": ([str],),
@@ -49,6 +61,7 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
 
     attribute_map = {
         "auth": "auth",
+        "buffer": "buffer",
         "encoding": "encoding",
         "id": "id",
         "inputs": "inputs",
@@ -67,6 +80,13 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
         topic: str,
         type: ObservabilityPipelineGooglePubSubDestinationType,
         auth: Union[ObservabilityPipelineGcpAuth, UnsetType] = unset,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -77,6 +97,9 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
 
         :param auth: GCP credentials used to authenticate with Google Cloud Storage.
         :type auth: ObservabilityPipelineGcpAuth, optional
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineGooglePubSubDestinationEncoding
@@ -101,6 +124,8 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
         """
         if auth is not unset:
             kwargs["auth"] = auth
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)
