@@ -1761,6 +1761,43 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentPostmortemTemplates": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentPostmortemTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentPostmortemTemplate",
+      "parameters": [
+        {
+          "name": "template_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentPostmortemTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentPostmortemTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentPostmortemTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentTypes": {
     "tag": "Incidents",
     "undo": {

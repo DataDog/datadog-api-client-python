@@ -4020,6 +4020,14 @@ from datadog_api_client.v2.model.postmortem_cell import PostmortemCell
 from datadog_api_client.v2.model.postmortem_cell_attributes import PostmortemCellAttributes
 from datadog_api_client.v2.model.postmortem_cell_definition import PostmortemCellDefinition
 from datadog_api_client.v2.model.postmortem_cell_type import PostmortemCellType
+from datadog_api_client.v2.model.postmortem_template_attributes_request import PostmortemTemplateAttributesRequest
+from datadog_api_client.v2.model.postmortem_template_attributes_response import PostmortemTemplateAttributesResponse
+from datadog_api_client.v2.model.postmortem_template_data_request import PostmortemTemplateDataRequest
+from datadog_api_client.v2.model.postmortem_template_data_response import PostmortemTemplateDataResponse
+from datadog_api_client.v2.model.postmortem_template_request import PostmortemTemplateRequest
+from datadog_api_client.v2.model.postmortem_template_response import PostmortemTemplateResponse
+from datadog_api_client.v2.model.postmortem_template_type import PostmortemTemplateType
+from datadog_api_client.v2.model.postmortem_templates_response import PostmortemTemplatesResponse
 from datadog_api_client.v2.model.powerpack import Powerpack
 from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
 from datadog_api_client.v2.model.powerpack_data import PowerpackData
@@ -8776,6 +8784,14 @@ __all__ = [
     "PostmortemCellAttributes",
     "PostmortemCellDefinition",
     "PostmortemCellType",
+    "PostmortemTemplateAttributesRequest",
+    "PostmortemTemplateAttributesResponse",
+    "PostmortemTemplateDataRequest",
+    "PostmortemTemplateDataResponse",
+    "PostmortemTemplateRequest",
+    "PostmortemTemplateResponse",
+    "PostmortemTemplateType",
+    "PostmortemTemplatesResponse",
     "Powerpack",
     "PowerpackAttributes",
     "PowerpackData",

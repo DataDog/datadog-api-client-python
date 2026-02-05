@@ -19646,6 +19646,62 @@ datadog\_api\_client.v2.model.postmortem\_cell\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.postmortem\_template\_attributes\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_attributes\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_data\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_data\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_templates\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_templates_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.powerpack module
 ----------------------------------------------
 
