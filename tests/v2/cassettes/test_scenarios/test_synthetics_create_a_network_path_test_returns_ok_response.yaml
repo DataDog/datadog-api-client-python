@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"assertions":[{"operator":"lessThan","property":"avg","target":500,"type":"latency"}],"request":{"e2e_queries":50,"host":"example.com","max_ttl":30,"port":443,"tcp_method":"prefer_sack","traceroute_queries":3}},"locations":["aws:us-east-1","agent:my-agent-name"],"message":"Network
+      Path test notification","name":"Example Network Path test","options":{"tick_every":60},"status":"live","subtype":"tcp","tags":["env:production"],"type":"network"},"type":"network"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/synthetics/tests/network
+  response:
+    body:
+      string: '{"data":{"type":"network_test","attributes":{"public_id":"iab-wcx-mhp","name":"Example
+        Network Path test","locations":["aws:us-east-1","agent:my-agent-name"],"subtype":"tcp","status":"live","options":{"tick_every":60},"config":{"assertions":[{"operator":"lessThan","property":"avg","target":500,"type":"latency"}],"request":{"max_ttl":30,"tcp_method":"prefer_sack","host":"example.com","traceroute_queries":3,"e2e_queries":50,"port":443}},"type":"network","tags":["env:production"],"message":"Network
+        Path test notification"},"id":"iab-wcx-mhp"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"public_ids":["iab-wcx-mhp"]},"type":"delete_tests_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/synthetics/tests/bulk-delete
+  response:
+    body:
+      string: '{"data":[{"type":"delete_tests","attributes":{"deleted_at":"2026-02-02T10:35:25.382918+00:00","public_id":"iab-wcx-mhp"},"id":"iab-wcx-mhp"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
