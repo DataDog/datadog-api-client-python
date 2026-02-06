@@ -12,6 +12,7 @@ from datadog_api_client.v1.model.formula_and_function_metric_query_definition im
     FormulaAndFunctionMetricQueryDefinition,
 )
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
@@ -24,7 +25,6 @@ from datadog_api_client.v1.model.widget_formula_style import WidgetFormulaStyle
 from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
-from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 body = Dashboard(
     title="Example-Dashboard with formula style",
@@ -62,7 +62,7 @@ body = Dashboard(
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat.TIMESERIES,
-                        style=WidgetRequestStyle(
+                        style=TimeseriesRequestStyle(
                             palette="dog_classic",
                             line_type=WidgetLineType.SOLID,
                             line_width=WidgetLineWidth.NORMAL,
