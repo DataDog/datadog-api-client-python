@@ -11,6 +11,7 @@ from datadog_api_client.v1.model.formula_and_function_metric_query_definition im
     FormulaAndFunctionMetricQueryDefinition,
 )
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
@@ -18,7 +19,6 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
-from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
@@ -49,7 +49,7 @@ body = Dashboard(
                                 query="avg:system.cpu.user{*}",
                             ),
                         ],
-                        style=WidgetRequestStyle(
+                        style=TimeseriesRequestStyle(
                             palette="purple",
                             line_type=WidgetLineType.SOLID,
                             line_width=WidgetLineWidth.NORMAL,
