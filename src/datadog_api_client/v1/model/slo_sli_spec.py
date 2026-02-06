@@ -13,11 +13,15 @@ from datadog_api_client.model_utils import (
 class SLOSliSpec(ModelComposed):
     def __init__(self, **kwargs):
         """
-        A generic SLI specification. This is currently used for time-slice SLOs only.
+        A generic SLI specification. This is used for time-slice and count-based (metric) SLOs only.
 
         :param time_slice: The time-slice condition, composed of 3 parts: 1. the metric timeseries query, 2. the comparator,
             and 3. the threshold. Optionally, a fourth part, the query interval, can be provided.
         :type time_slice: SLOTimeSliceCondition
+
+        :param count: A count-based (metric) SLI specification, composed of three parts: the good events formula, the total events formula,
+            and the underlying queries.
+        :type count: SLOCountDefinition
         """
         super().__init__(kwargs)
 
@@ -31,9 +35,11 @@ class SLOSliSpec(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v1.model.slo_time_slice_spec import SLOTimeSliceSpec
+        from datadog_api_client.v1.model.slo_count_spec import SLOCountSpec
 
         return {
             "oneOf": [
                 SLOTimeSliceSpec,
+                SLOCountSpec,
             ],
         }
