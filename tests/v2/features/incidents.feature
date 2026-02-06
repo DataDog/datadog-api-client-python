@@ -21,6 +21,33 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create a timestamp override for an incident returns "Bad Request" response
+    Given operation "CreateIncidentTimestampOverride" enabled
+    And new "CreateIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"timestamp_type": "created", "timestamp_value": "2024-12-29T10:00:00Z"}, "type": "incidents_timestamp_overrides"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create a timestamp override for an incident returns "Created" response
+    Given operation "CreateIncidentTimestampOverride" enabled
+    And new "CreateIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"timestamp_type": "created", "timestamp_value": "2024-12-29T10:00:00Z"}, "type": "incidents_timestamp_overrides"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Create a timestamp override for an incident returns "Not Found" response
+    Given operation "CreateIncidentTimestampOverride" enabled
+    And new "CreateIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"timestamp_type": "created", "timestamp_value": "2024-12-29T10:00:00Z"}, "type": "incidents_timestamp_overrides"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @skip @team:DataDog/incident-app
   Scenario: Create an incident impact returns "Bad Request" response
     Given operation "CreateIncidentImpact" enabled
@@ -327,6 +354,24 @@ Feature: Incidents
     Given operation "DeleteIncidentNotificationTemplate" enabled
     And new "DeleteIncidentNotificationTemplate" request
     And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete a timestamp override for an incident returns "No Content" response
+    Given operation "DeleteIncidentTimestampOverride" enabled
+    And new "DeleteIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timestamp_override_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Delete a timestamp override for an incident returns "Not Found" response
+    Given operation "DeleteIncidentTimestampOverride" enabled
+    And new "DeleteIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timestamp_override_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1018,6 +1063,22 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:Datadog/incident-app
+  Scenario: List timestamp overrides for an incident returns "Not Found" response
+    Given operation "ListIncidentTimestampOverrides" enabled
+    And new "ListIncidentTimestampOverrides" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: List timestamp overrides for an incident returns "OK" response
+    Given operation "ListIncidentTimestampOverrides" enabled
+    And new "ListIncidentTimestampOverrides" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/incident-app
   Scenario: Remove commander from an incident returns "OK" response
     Given operation "UpdateIncident" enabled
@@ -1065,6 +1126,36 @@ Feature: Incidents
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update a timestamp override for an incident returns "Bad Request" response
+    Given operation "UpdateIncidentTimestampOverride" enabled
+    And new "UpdateIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timestamp_override_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"timestamp_value": "2024-12-29T11:00:00Z"}, "type": "incidents_timestamp_overrides"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update a timestamp override for an incident returns "Not Found" response
+    Given operation "UpdateIncidentTimestampOverride" enabled
+    And new "UpdateIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timestamp_override_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"timestamp_value": "2024-12-29T11:00:00Z"}, "type": "incidents_timestamp_overrides"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Update a timestamp override for an incident returns "OK" response
+    Given operation "UpdateIncidentTimestampOverride" enabled
+    And new "UpdateIncidentTimestampOverride" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timestamp_override_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"timestamp_value": "2024-12-29T11:00:00Z"}, "type": "incidents_timestamp_overrides"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Update an existing incident integration metadata returns "Bad Request" response
