@@ -939,6 +939,31 @@
       "type": "safe"
     }
   },
+  "RevokeClientToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateClientToken": {
+    "tag": "Key Management",
+    "undo": {
+      "operationId": "RevokeClientToken",
+      "parameters": [
+        {
+          "name": "hash",
+          "source": "data.hash"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "UpdateClientToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "QueryMetrics": {
     "tag": "Metrics",
     "undo": {

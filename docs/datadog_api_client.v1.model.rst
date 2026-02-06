@@ -473,6 +473,34 @@ datadog\_api\_client.v1.model.check\_status\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.client\_token module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.client_token
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.client\_token\_create\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.client_token_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.client\_token\_revoke\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.client_token_revoke_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.client\_token\_update\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.client_token_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.content\_encoding module
 ------------------------------------------------------
 
