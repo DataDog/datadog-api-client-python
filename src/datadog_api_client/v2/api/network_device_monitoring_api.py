@@ -221,11 +221,11 @@ class NetworkDeviceMonitoringApi:
 
         Get the list of devices.
 
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 500. Defaults to 50.
         :type page_size: int, optional
-        :param page_number: Specific page number to return.
+        :param page_number: Specific page number to return. Defaults to 0.
         :type page_number: int, optional
-        :param sort: The field to sort the devices by.
+        :param sort: The field to sort the devices by. Defaults to ``name``.
         :type sort: str, optional
         :param filter_tag: Filter devices by tag.
         :type filter_tag: str, optional
@@ -258,11 +258,11 @@ class NetworkDeviceMonitoringApi:
 
         Provide a paginated version of :meth:`list_devices`, returning all items.
 
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Size for a given page. The maximum allowed value is 500. Defaults to 50.
         :type page_size: int, optional
-        :param page_number: Specific page number to return.
+        :param page_number: Specific page number to return. Defaults to 0.
         :type page_number: int, optional
-        :param sort: The field to sort the devices by.
+        :param sort: The field to sort the devices by. Defaults to ``name``.
         :type sort: str, optional
         :param filter_tag: Filter devices by tag.
         :type filter_tag: str, optional
@@ -283,7 +283,7 @@ class NetworkDeviceMonitoringApi:
         if filter_tag is not unset:
             kwargs["filter_tag"] = filter_tag
 
-        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 50)
         endpoint = self._list_devices_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
         pagination = {
