@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.flaky_test_attributes_flaky_state import FlakyTestAttributesFlakyState
-    from datadog_api_client.v2.model.flaky_test_history import FlakyTestHistory
     from datadog_api_client.v2.model.flaky_test_pipeline_stats import FlakyTestPipelineStats
     from datadog_api_client.v2.model.flaky_test_run_metadata import FlakyTestRunMetadata
     from datadog_api_client.v2.model.flaky_test_stats import FlakyTestStats
@@ -26,7 +25,6 @@ class FlakyTestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.flaky_test_attributes_flaky_state import FlakyTestAttributesFlakyState
-        from datadog_api_client.v2.model.flaky_test_history import FlakyTestHistory
         from datadog_api_client.v2.model.flaky_test_pipeline_stats import FlakyTestPipelineStats
         from datadog_api_client.v2.model.flaky_test_run_metadata import FlakyTestRunMetadata
         from datadog_api_client.v2.model.flaky_test_stats import FlakyTestStats
@@ -40,7 +38,6 @@ class FlakyTestAttributes(ModelNormal):
             "first_flaked_ts": (int,),
             "flaky_category": (str, none_type),
             "flaky_state": (FlakyTestAttributesFlakyState,),
-            "history": ([FlakyTestHistory],),
             "last_flaked_branch": (str,),
             "last_flaked_sha": (str,),
             "last_flaked_ts": (int,),
@@ -62,7 +59,6 @@ class FlakyTestAttributes(ModelNormal):
         "first_flaked_ts": "first_flaked_ts",
         "flaky_category": "flaky_category",
         "flaky_state": "flaky_state",
-        "history": "history",
         "last_flaked_branch": "last_flaked_branch",
         "last_flaked_sha": "last_flaked_sha",
         "last_flaked_ts": "last_flaked_ts",
@@ -85,7 +81,6 @@ class FlakyTestAttributes(ModelNormal):
         first_flaked_ts: Union[int, UnsetType] = unset,
         flaky_category: Union[str, none_type, UnsetType] = unset,
         flaky_state: Union[FlakyTestAttributesFlakyState, UnsetType] = unset,
-        history: Union[List[FlakyTestHistory], UnsetType] = unset,
         last_flaked_branch: Union[str, UnsetType] = unset,
         last_flaked_sha: Union[str, UnsetType] = unset,
         last_flaked_ts: Union[int, UnsetType] = unset,
@@ -127,10 +122,6 @@ class FlakyTestAttributes(ModelNormal):
 
         :param flaky_state: The current state of the flaky test.
         :type flaky_state: FlakyTestAttributesFlakyState, optional
-
-        :param history: Chronological history of status changes for this flaky test, ordered from most recent to oldest.
-            Includes state transitions like new -> quarantined -> fixed, along with the associated commit SHA when available.
-        :type history: [FlakyTestHistory], optional
 
         :param last_flaked_branch: The branch name where the test exhibited flakiness for the last time.
         :type last_flaked_branch: str, optional
@@ -187,8 +178,6 @@ class FlakyTestAttributes(ModelNormal):
             kwargs["flaky_category"] = flaky_category
         if flaky_state is not unset:
             kwargs["flaky_state"] = flaky_state
-        if history is not unset:
-            kwargs["history"] = history
         if last_flaked_branch is not unset:
             kwargs["last_flaked_branch"] = last_flaked_branch
         if last_flaked_sha is not unset:

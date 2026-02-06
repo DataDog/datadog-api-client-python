@@ -10049,13 +10049,6 @@ datadog\_api\_client.v2.model.flaky\_test\_attributes\_flaky\_state module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.flaky\_test\_history module
----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.flaky_test_history
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.flaky\_test\_pipeline\_stats module
 -----------------------------------------------------------------
 
