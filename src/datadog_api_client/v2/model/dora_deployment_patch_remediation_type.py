@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class DORADeploymentPatchRemediationType(ModelSimple):
     """
-    The type of remediation action taken.
+    The type of remediation action taken. Required when the id field is provided.
 
     :param value: Must be one of ["rollback", "rollforward"].
     :type value: str
