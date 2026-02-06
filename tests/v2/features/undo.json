@@ -202,6 +202,12 @@
       "type": "idempotent"
     }
   },
+  "ListActionConnections": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateActionConnection": {
     "tag": "Action Connection",
     "undo": {
@@ -213,6 +219,18 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ListConnectionGroups": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateConnectionGroup": {
+    "tag": "Action Connection",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "DeleteActionConnection": {
