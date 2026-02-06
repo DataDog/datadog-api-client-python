@@ -442,6 +442,9 @@ class Configuration:
                 "v2.update_incident_team": False,
                 "v2.search_flaky_tests": False,
                 "v2.update_flaky_tests": False,
+                "v2.execute_workflow_from_template": False,
+                "v2.execute_workflow_from_webhook": False,
+                "v2.update_workflow_favorite": False,
             }
         )
 
