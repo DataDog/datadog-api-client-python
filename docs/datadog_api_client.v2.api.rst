@@ -193,6 +193,13 @@ datadog\_api\_client.v2.api.dashboard\_lists\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.dashboards\_api module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.dashboards_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.data\_deletion\_api module
 ------------------------------------------------------
 
@@ -386,6 +393,13 @@ datadog\_api\_client.v2.api.network\_device\_monitoring\_api module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.network_device_monitoring_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.notebooks\_api module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.notebooks_api
    :members:
    :show-inheritance:
 
