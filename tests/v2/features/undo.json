@@ -1616,6 +1616,80 @@
       "type": "safe"
     }
   },
+  "ListForms": {
+    "tag": "Forms",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateAndPublishForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "PublishForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "SubmitForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "UpsertFormVersion": {
+    "tag": "Forms",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "UpsertAndPublishFormVersion": {
+    "tag": "Forms",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "GetHamrOrgConnection": {
     "tag": "High Availability MultiRegion",
     "undo": {
