@@ -25,7 +25,7 @@ class ServiceLevelObjectiveQuery(ModelNormal):
 
     def __init__(self_, denominator: str, numerator: str, **kwargs):
         """
-        A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
+        A count-based (metric) SLO query. This field is superseded by ``sli_specification`` but is retained for backwards compatibility. Note that Datadog only allows the sum by aggregator
         to be used because this will sum up all request counts instead of averaging them, or taking the max or
         min of all of those requests.
 
