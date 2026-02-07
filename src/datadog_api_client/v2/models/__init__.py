@@ -2471,6 +2471,23 @@ from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attribut
 from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content import (
     IncidentTimelineCellMarkdownCreateAttributesContent,
 )
+from datadog_api_client.v2.model.incident_timestamp_override_attributes import IncidentTimestampOverrideAttributes
+from datadog_api_client.v2.model.incident_timestamp_override_create_attributes import (
+    IncidentTimestampOverrideCreateAttributes,
+)
+from datadog_api_client.v2.model.incident_timestamp_override_create_data import IncidentTimestampOverrideCreateData
+from datadog_api_client.v2.model.incident_timestamp_override_create_request import (
+    IncidentTimestampOverrideCreateRequest,
+)
+from datadog_api_client.v2.model.incident_timestamp_override_data import IncidentTimestampOverrideData
+from datadog_api_client.v2.model.incident_timestamp_override_patch_attributes import (
+    IncidentTimestampOverridePatchAttributes,
+)
+from datadog_api_client.v2.model.incident_timestamp_override_patch_data import IncidentTimestampOverridePatchData
+from datadog_api_client.v2.model.incident_timestamp_override_patch_request import IncidentTimestampOverridePatchRequest
+from datadog_api_client.v2.model.incident_timestamp_override_relationships import IncidentTimestampOverrideRelationships
+from datadog_api_client.v2.model.incident_timestamp_override_response import IncidentTimestampOverrideResponse
+from datadog_api_client.v2.model.incident_timestamp_overrides_response import IncidentTimestampOverridesResponse
 from datadog_api_client.v2.model.incident_todo_anonymous_assignee import IncidentTodoAnonymousAssignee
 from datadog_api_client.v2.model.incident_todo_anonymous_assignee_source import IncidentTodoAnonymousAssigneeSource
 from datadog_api_client.v2.model.incident_todo_assignee import IncidentTodoAssignee
@@ -2508,6 +2525,7 @@ from datadog_api_client.v2.model.incident_user_attributes import IncidentUserAtt
 from datadog_api_client.v2.model.incident_user_data import IncidentUserData
 from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
+from datadog_api_client.v2.model.incidents_timestamp_overrides_type import IncidentsTimestampOverridesType
 from datadog_api_client.v2.model.include_type import IncludeType
 from datadog_api_client.v2.model.input_schema import InputSchema
 from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParameters
@@ -5711,6 +5729,9 @@ from datadog_api_client.v2.model.timeseries_response_series_list import Timeseri
 from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResponseTimes
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
+from datadog_api_client.v2.model.timestamp_override_user_relationship import TimestampOverrideUserRelationship
+from datadog_api_client.v2.model.timestamp_override_user_relationship_data import TimestampOverrideUserRelationshipData
+from datadog_api_client.v2.model.timestamp_type import TimestampType
 from datadog_api_client.v2.model.token_type import TokenType
 from datadog_api_client.v2.model.trigger import Trigger
 from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
@@ -5874,6 +5895,8 @@ from datadog_api_client.v2.model.user_attributes_status import UserAttributesSta
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
 from datadog_api_client.v2.model.user_create_data import UserCreateData
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
+from datadog_api_client.v2.model.user_included import UserIncluded
+from datadog_api_client.v2.model.user_included_attributes import UserIncludedAttributes
 from datadog_api_client.v2.model.user_invitation_data import UserInvitationData
 from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
 from datadog_api_client.v2.model.user_invitation_relationships import UserInvitationRelationships
@@ -7840,6 +7863,17 @@ __all__ = [
     "IncidentTimelineCellMarkdownContentType",
     "IncidentTimelineCellMarkdownCreateAttributes",
     "IncidentTimelineCellMarkdownCreateAttributesContent",
+    "IncidentTimestampOverrideAttributes",
+    "IncidentTimestampOverrideCreateAttributes",
+    "IncidentTimestampOverrideCreateData",
+    "IncidentTimestampOverrideCreateRequest",
+    "IncidentTimestampOverrideData",
+    "IncidentTimestampOverridePatchAttributes",
+    "IncidentTimestampOverridePatchData",
+    "IncidentTimestampOverridePatchRequest",
+    "IncidentTimestampOverrideRelationships",
+    "IncidentTimestampOverrideResponse",
+    "IncidentTimestampOverridesResponse",
     "IncidentTodoAnonymousAssignee",
     "IncidentTodoAnonymousAssigneeSource",
     "IncidentTodoAssignee",
@@ -7877,6 +7911,7 @@ __all__ = [
     "IncidentUserData",
     "IncidentUserDefinedFieldType",
     "IncidentsResponse",
+    "IncidentsTimestampOverridesType",
     "IncludeType",
     "InputSchema",
     "InputSchemaParameters",
@@ -10034,6 +10069,9 @@ __all__ = [
     "TimeseriesResponseTimes",
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
+    "TimestampOverrideUserRelationship",
+    "TimestampOverrideUserRelationshipData",
+    "TimestampType",
     "TokenType",
     "Trigger",
     "TriggerRateLimit",
@@ -10145,6 +10183,8 @@ __all__ = [
     "UserCreateAttributes",
     "UserCreateData",
     "UserCreateRequest",
+    "UserIncluded",
+    "UserIncludedAttributes",
     "UserInvitationData",
     "UserInvitationDataAttributes",
     "UserInvitationRelationships",

@@ -2013,6 +2013,30 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentTimestampOverrides": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentTimestampOverride": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentTimestampOverride": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentTimestampOverride": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAWSAccounts": {
     "tag": "AWS Integration",
     "undo": {
