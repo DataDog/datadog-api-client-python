@@ -2513,6 +2513,21 @@ from datadog_api_client.v2.model.input_schema import InputSchema
 from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParameters
 from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.integration_assignment_data_attributes_request import (
+    IntegrationAssignmentDataAttributesRequest,
+)
+from datadog_api_client.v2.model.integration_assignment_data_attributes_request_action import (
+    IntegrationAssignmentDataAttributesRequestAction,
+)
+from datadog_api_client.v2.model.integration_assignment_data_attributes_request_assignment import (
+    IntegrationAssignmentDataAttributesRequestAssignment,
+)
+from datadog_api_client.v2.model.integration_assignment_data_attributes_request_type import (
+    IntegrationAssignmentDataAttributesRequestType,
+)
+from datadog_api_client.v2.model.integration_assignment_data_request import IntegrationAssignmentDataRequest
+from datadog_api_client.v2.model.integration_assignment_request import IntegrationAssignmentRequest
+from datadog_api_client.v2.model.integration_assignment_type import IntegrationAssignmentType
 from datadog_api_client.v2.model.integration_incident import IntegrationIncident
 from datadog_api_client.v2.model.integration_incident_field_mappings_items import IntegrationIncidentFieldMappingsItems
 from datadog_api_client.v2.model.integration_incident_severity_config import IntegrationIncidentSeverityConfig
@@ -2621,6 +2636,14 @@ from datadog_api_client.v2.model.jira_accounts_response import JiraAccountsRespo
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
+from datadog_api_client.v2.model.jira_issue_custom_fields import JiraIssueCustomFields
+from datadog_api_client.v2.model.jira_issue_data_attributes_request import JiraIssueDataAttributesRequest
+from datadog_api_client.v2.model.jira_issue_data_attributes_request_mode import JiraIssueDataAttributesRequestMode
+from datadog_api_client.v2.model.jira_issue_data_meta import JiraIssueDataMeta
+from datadog_api_client.v2.model.jira_issue_data_request import JiraIssueDataRequest
+from datadog_api_client.v2.model.jira_issue_finding import JiraIssueFinding
+from datadog_api_client.v2.model.jira_issue_finding_id import JiraIssueFindingId
+from datadog_api_client.v2.model.jira_issue_request import JiraIssueRequest
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
 from datadog_api_client.v2.model.jira_issue_template_create_request import JiraIssueTemplateCreateRequest
 from datadog_api_client.v2.model.jira_issue_template_create_request_attributes import (
@@ -2641,7 +2664,14 @@ from datadog_api_client.v2.model.jira_issue_template_update_request_attributes i
 )
 from datadog_api_client.v2.model.jira_issue_template_update_request_data import JiraIssueTemplateUpdateRequestData
 from datadog_api_client.v2.model.jira_issue_templates_response import JiraIssueTemplatesResponse
+from datadog_api_client.v2.model.jira_issue_type import JiraIssueType
 from datadog_api_client.v2.model.jira_issues_data_type import JiraIssuesDataType
+from datadog_api_client.v2.model.jira_issues_metadata_data_attributes_response import (
+    JiraIssuesMetadataDataAttributesResponse,
+)
+from datadog_api_client.v2.model.jira_issues_metadata_data_response import JiraIssuesMetadataDataResponse
+from datadog_api_client.v2.model.jira_issues_metadata_response import JiraIssuesMetadataResponse
+from datadog_api_client.v2.model.jira_issues_metadata_type import JiraIssuesMetadataType
 from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.job_create_response_data import JobCreateResponseData
 from datadog_api_client.v2.model.job_definition import JobDefinition
@@ -7882,6 +7912,13 @@ __all__ = [
     "InputSchemaParameters",
     "InputSchemaParametersType",
     "IntakePayloadAccepted",
+    "IntegrationAssignmentDataAttributesRequest",
+    "IntegrationAssignmentDataAttributesRequestAction",
+    "IntegrationAssignmentDataAttributesRequestAssignment",
+    "IntegrationAssignmentDataAttributesRequestType",
+    "IntegrationAssignmentDataRequest",
+    "IntegrationAssignmentRequest",
+    "IntegrationAssignmentType",
     "IntegrationIncident",
     "IntegrationIncidentFieldMappingsItems",
     "IntegrationIncidentSeverityConfig",
@@ -7974,6 +8011,14 @@ __all__ = [
     "JiraIntegrationMetadata",
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
+    "JiraIssueCustomFields",
+    "JiraIssueDataAttributesRequest",
+    "JiraIssueDataAttributesRequestMode",
+    "JiraIssueDataMeta",
+    "JiraIssueDataRequest",
+    "JiraIssueFinding",
+    "JiraIssueFindingId",
+    "JiraIssueRequest",
     "JiraIssueResult",
     "JiraIssueTemplateCreateRequest",
     "JiraIssueTemplateCreateRequestAttributes",
@@ -7988,7 +8033,12 @@ __all__ = [
     "JiraIssueTemplateUpdateRequestAttributes",
     "JiraIssueTemplateUpdateRequestData",
     "JiraIssueTemplatesResponse",
+    "JiraIssueType",
     "JiraIssuesDataType",
+    "JiraIssuesMetadataDataAttributesResponse",
+    "JiraIssuesMetadataDataResponse",
+    "JiraIssuesMetadataResponse",
+    "JiraIssuesMetadataType",
     "JobCreateResponse",
     "JobCreateResponseData",
     "JobDefinition",
