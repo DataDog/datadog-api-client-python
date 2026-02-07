@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_reference_table_field_pairs_items import (
         UpdateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems,
     )
+    from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import (
+        DataAttributesRulesItemsIfTagExists,
+    )
 
 
 class UpdateRulesetRequestDataAttributesRulesItemsReferenceTable(ModelNormal):
@@ -27,11 +30,15 @@ class UpdateRulesetRequestDataAttributesRulesItemsReferenceTable(ModelNormal):
         from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_reference_table_field_pairs_items import (
             UpdateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems,
         )
+        from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import (
+            DataAttributesRulesItemsIfTagExists,
+        )
 
         return {
             "case_insensitivity": (bool,),
             "field_pairs": ([UpdateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems],),
             "if_not_exists": (bool,),
+            "if_tag_exists": (DataAttributesRulesItemsIfTagExists,),
             "source_keys": ([str],),
             "table_name": (str,),
         }
@@ -40,6 +47,7 @@ class UpdateRulesetRequestDataAttributesRulesItemsReferenceTable(ModelNormal):
         "case_insensitivity": "case_insensitivity",
         "field_pairs": "field_pairs",
         "if_not_exists": "if_not_exists",
+        "if_tag_exists": "if_tag_exists",
         "source_keys": "source_keys",
         "table_name": "table_name",
     }
@@ -51,6 +59,7 @@ class UpdateRulesetRequestDataAttributesRulesItemsReferenceTable(ModelNormal):
         table_name: str,
         case_insensitivity: Union[bool, UnsetType] = unset,
         if_not_exists: Union[bool, UnsetType] = unset,
+        if_tag_exists: Union[DataAttributesRulesItemsIfTagExists, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -62,8 +71,11 @@ class UpdateRulesetRequestDataAttributesRulesItemsReferenceTable(ModelNormal):
         :param field_pairs: The ``reference_table`` ``field_pairs``.
         :type field_pairs: [UpdateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems]
 
-        :param if_not_exists: The ``reference_table`` ``if_not_exists``.
+        :param if_not_exists: Deprecated. Use ``if_tag_exists`` instead. The ``reference_table`` ``if_not_exists``. **Deprecated**.
         :type if_not_exists: bool, optional
+
+        :param if_tag_exists: The behavior when the tag already exists.
+        :type if_tag_exists: DataAttributesRulesItemsIfTagExists, optional
 
         :param source_keys: The ``reference_table`` ``source_keys``.
         :type source_keys: [str]
@@ -75,6 +87,8 @@ class UpdateRulesetRequestDataAttributesRulesItemsReferenceTable(ModelNormal):
             kwargs["case_insensitivity"] = case_insensitivity
         if if_not_exists is not unset:
             kwargs["if_not_exists"] = if_not_exists
+        if if_tag_exists is not unset:
+            kwargs["if_tag_exists"] = if_tag_exists
         super().__init__(kwargs)
 
         self_.field_pairs = field_pairs

@@ -97,6 +97,15 @@ Feature: Cloud Cost Management
     And the response "data.type" is equal to "ruleset"
     And the response "data.attributes.name" is equal to "New Ruleset"
 
+  @replay-only @team:DataDog/cloud-cost-management
+  Scenario: Create tag pipeline ruleset with if_tag_exists returns "OK" response
+    Given new "CreateTagPipelinesRuleset" request
+    And body with value {"data": {"attributes": {"enabled": true, "rules": [{"enabled": true, "mapping": null, "name": "Add Cost Center Tag", "query": {"addition": {"key": "cost_center", "value": "engineering"}, "case_insensitivity": false, "if_tag_exists": "replace", "query": "account_id:\"123456789\" AND service:\"web-api\""}, "reference_table": null}]}, "id": "New Ruleset", "type": "create_ruleset"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "ruleset"
+    And the response "data.attributes.name" is equal to "New Ruleset"
+
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Delete Cloud Cost Management AWS CUR config returns "Bad Request" response
     Given new "DeleteCostAWSCURConfig" request
@@ -444,6 +453,14 @@ Feature: Cloud Cost Management
     Given new "UpdateTagPipelinesRuleset" request
     And request contains "ruleset_id" parameter with value "ee10c3ff-312f-464c-b4f6-46adaa6d00a1"
     And body with value {"data": {"attributes": {"enabled": true, "last_version": 3611102, "rules": [{"enabled": true, "mapping": {"destination_key": "team_owner", "if_not_exists": true, "source_keys": ["account_name", "account_id"]}, "name": "Account Name Mapping", "query": null, "reference_table": null}]}, "id": "New Ruleset", "type": "update_ruleset"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @replay-only @team:DataDog/cloud-cost-management
+  Scenario: Update tag pipeline ruleset with if_tag_exists returns "OK" response
+    Given new "UpdateTagPipelinesRuleset" request
+    And request contains "ruleset_id" parameter with value "ee10c3ff-312f-464c-b4f6-46adaa6d00a1"
+    And body with value {"data": {"attributes": {"enabled": true, "last_version": 3611102, "rules": [{"enabled": true, "mapping": {"destination_key": "team_owner", "if_tag_exists": "replace", "source_keys": ["account_name", "account_id"]}, "name": "Account Name Mapping", "query": null, "reference_table": null}]}, "id": "New Ruleset", "type": "update_ruleset"}}
     When the request is sent
     Then the response status is 200 OK
 
