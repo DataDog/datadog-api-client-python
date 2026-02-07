@@ -836,6 +836,56 @@
       "type": "idempotent"
     }
   },
+  "LinkIncident": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "UnlinkJiraIssue": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "LinkJiraIssueToCase": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateCaseJiraIssue": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "CreateCaseNotebook": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "MoveCaseToProject": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateCaseServiceNowTicket": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "UpdateStatus": {
     "tag": "Case Management",
     "undo": {
