@@ -65,6 +65,10 @@ from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDe
 from datadog_api_client.v1.model.check_can_delete_slo_response_data import CheckCanDeleteSLOResponseData
 from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+from datadog_api_client.v1.model.client_token import ClientToken
+from datadog_api_client.v1.model.client_token_create_request import ClientTokenCreateRequest
+from datadog_api_client.v1.model.client_token_revoke_request import ClientTokenRevokeRequest
+from datadog_api_client.v1.model.client_token_update_request import ClientTokenUpdateRequest
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.dashboard import Dashboard
@@ -1216,6 +1220,10 @@ __all__ = [
     "CheckCanDeleteSLOResponseData",
     "CheckStatusWidgetDefinition",
     "CheckStatusWidgetDefinitionType",
+    "ClientToken",
+    "ClientTokenCreateRequest",
+    "ClientTokenRevokeRequest",
+    "ClientTokenUpdateRequest",
     "ContentEncoding",
     "Creator",
     "Dashboard",
