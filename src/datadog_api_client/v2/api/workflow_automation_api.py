@@ -10,17 +10,23 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     UnsetType,
     unset,
+    UUID,
 )
+from datadog_api_client.v2.model.workflow_headless_execution_response import WorkflowHeadlessExecutionResponse
+from datadog_api_client.v2.model.workflow_headless_execution_request import WorkflowHeadlessExecutionRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
+from datadog_api_client.v2.model.workflow_favorite_request import WorkflowFavoriteRequest
 from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
 from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
 from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
 from datadog_api_client.v2.model.worklflow_get_instance_response import WorklflowGetInstanceResponse
 from datadog_api_client.v2.model.worklflow_cancel_instance_response import WorklflowCancelInstanceResponse
+from datadog_api_client.v2.model.workflow_webhook_execution_response import WorkflowWebhookExecutionResponse
+from datadog_api_client.v2.model.workflow_webhook_payload import WorkflowWebhookPayload
 
 
 class WorkflowAutomationApi:
@@ -128,6 +134,76 @@ class WorkflowAutomationApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._execute_workflow_from_template_endpoint = _Endpoint(
+            settings={
+                "response_type": (WorkflowHeadlessExecutionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflow_headless/{parent_id}/instances",
+                "operation_id": "execute_workflow_from_template",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "parent_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "parent_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (WorkflowHeadlessExecutionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._execute_workflow_from_webhook_endpoint = _Endpoint(
+            settings={
+                "response_type": (WorkflowWebhookExecutionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflows/{workflow_id}/webhook",
+                "operation_id": "execute_workflow_from_webhook",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "workflow_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "workflow_id",
+                    "location": "path",
+                },
+                "org_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "orgId",
+                    "location": "query",
+                },
+                "x_hub_signature_256": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "X-Hub-Signature-256",
+                    "location": "header",
+                },
+                "user_agent": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "User-Agent",
+                    "location": "header",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (WorkflowWebhookPayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -242,6 +318,32 @@ class WorkflowAutomationApi:
             api_client=api_client,
         )
 
+        self._update_workflow_favorite_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflows/{workflow_id}/favorite",
+                "operation_id": "update_workflow_favorite",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "workflow_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "workflow_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (WorkflowFavoriteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def cancel_workflow_instance(
         self,
         workflow_id: str,
@@ -317,6 +419,78 @@ class WorkflowAutomationApi:
         kwargs["workflow_id"] = workflow_id
 
         return self._delete_workflow_endpoint.call_with_http_info(**kwargs)
+
+    def execute_workflow_from_template(
+        self,
+        parent_id: str,
+        body: WorkflowHeadlessExecutionRequest,
+    ) -> WorkflowHeadlessExecutionResponse:
+        """Execute a workflow from a template.
+
+        Execute a headless workflow instance from a template. This endpoint creates and executes
+        a workflow instance based on a template configuration.
+
+        **Note** : This endpoint is in public beta and is subject to change.
+        If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+
+        :param parent_id: The ID of the parent workflow
+        :type parent_id: str
+        :type body: WorkflowHeadlessExecutionRequest
+        :rtype: WorkflowHeadlessExecutionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["parent_id"] = parent_id
+
+        kwargs["body"] = body
+
+        return self._execute_workflow_from_template_endpoint.call_with_http_info(**kwargs)
+
+    def execute_workflow_from_webhook(
+        self,
+        workflow_id: str,
+        org_id: UUID,
+        x_hub_signature_256: str,
+        user_agent: str,
+        body: WorkflowWebhookPayload,
+    ) -> WorkflowWebhookExecutionResponse:
+        """Execute a workflow from a webhook.
+
+        Execute a workflow triggered by a GitHub webhook. This endpoint validates the GitHub webhook signature
+        and the GitHub user agent before executing the workflow.
+
+        This endpoint requires:
+
+        * Valid GitHub webhook signature in the X-Hub-Signature-256 header
+        * GitHub user agent in the User-Agent header
+        * Valid organization ID in the orgId query parameter
+        * Valid workflow ID in the path
+
+        **Note** : This endpoint is in public beta and is subject to change.
+        If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+
+        :param workflow_id: The ID of the workflow.
+        :type workflow_id: str
+        :param org_id: The organization ID
+        :type org_id: UUID
+        :param x_hub_signature_256: GitHub webhook signature for payload validation
+        :type x_hub_signature_256: str
+        :param user_agent: Must start with "GitHub-Hookshot/"
+        :type user_agent: str
+        :type body: WorkflowWebhookPayload
+        :rtype: WorkflowWebhookExecutionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["workflow_id"] = workflow_id
+
+        kwargs["org_id"] = org_id
+
+        kwargs["x_hub_signature_256"] = x_hub_signature_256
+
+        kwargs["user_agent"] = user_agent
+
+        kwargs["body"] = body
+
+        return self._execute_workflow_from_webhook_endpoint.call_with_http_info(**kwargs)
 
     def get_workflow(
         self,
@@ -407,3 +581,27 @@ class WorkflowAutomationApi:
         kwargs["body"] = body
 
         return self._update_workflow_endpoint.call_with_http_info(**kwargs)
+
+    def update_workflow_favorite(
+        self,
+        workflow_id: str,
+        body: WorkflowFavoriteRequest,
+    ) -> None:
+        """Update workflow favorite status.
+
+        Mark a workflow as favorite or unfavorite for the authenticated user.
+
+        **Note** : This endpoint is in public beta and is subject to change.
+        If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+
+        :param workflow_id: The ID of the workflow.
+        :type workflow_id: str
+        :type body: WorkflowFavoriteRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["workflow_id"] = workflow_id
+
+        kwargs["body"] = body
+
+        return self._update_workflow_favorite_endpoint.call_with_http_info(**kwargs)

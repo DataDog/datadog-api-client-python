@@ -5967,6 +5967,24 @@ from datadog_api_client.v2.model.workflow_data_relationships import WorkflowData
 from datadog_api_client.v2.model.workflow_data_type import WorkflowDataType
 from datadog_api_client.v2.model.workflow_data_update import WorkflowDataUpdate
 from datadog_api_client.v2.model.workflow_data_update_attributes import WorkflowDataUpdateAttributes
+from datadog_api_client.v2.model.workflow_favorite_request import WorkflowFavoriteRequest
+from datadog_api_client.v2.model.workflow_favorite_request_attributes import WorkflowFavoriteRequestAttributes
+from datadog_api_client.v2.model.workflow_favorite_request_data import WorkflowFavoriteRequestData
+from datadog_api_client.v2.model.workflow_favorite_request_type import WorkflowFavoriteRequestType
+from datadog_api_client.v2.model.workflow_headless_execution_config import WorkflowHeadlessExecutionConfig
+from datadog_api_client.v2.model.workflow_headless_execution_connection import WorkflowHeadlessExecutionConnection
+from datadog_api_client.v2.model.workflow_headless_execution_request import WorkflowHeadlessExecutionRequest
+from datadog_api_client.v2.model.workflow_headless_execution_request_attributes import (
+    WorkflowHeadlessExecutionRequestAttributes,
+)
+from datadog_api_client.v2.model.workflow_headless_execution_request_data import WorkflowHeadlessExecutionRequestData
+from datadog_api_client.v2.model.workflow_headless_execution_request_type import WorkflowHeadlessExecutionRequestType
+from datadog_api_client.v2.model.workflow_headless_execution_response import WorkflowHeadlessExecutionResponse
+from datadog_api_client.v2.model.workflow_headless_execution_response_attributes import (
+    WorkflowHeadlessExecutionResponseAttributes,
+)
+from datadog_api_client.v2.model.workflow_headless_execution_response_data import WorkflowHeadlessExecutionResponseData
+from datadog_api_client.v2.model.workflow_headless_execution_response_type import WorkflowHeadlessExecutionResponseType
 from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
 from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
 from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
@@ -5979,6 +5997,13 @@ from datadog_api_client.v2.model.workflow_trigger_wrapper import WorkflowTrigger
 from datadog_api_client.v2.model.workflow_user_relationship import WorkflowUserRelationship
 from datadog_api_client.v2.model.workflow_user_relationship_data import WorkflowUserRelationshipData
 from datadog_api_client.v2.model.workflow_user_relationship_type import WorkflowUserRelationshipType
+from datadog_api_client.v2.model.workflow_webhook_execution_response import WorkflowWebhookExecutionResponse
+from datadog_api_client.v2.model.workflow_webhook_execution_response_attributes import (
+    WorkflowWebhookExecutionResponseAttributes,
+)
+from datadog_api_client.v2.model.workflow_webhook_execution_response_data import WorkflowWebhookExecutionResponseData
+from datadog_api_client.v2.model.workflow_webhook_execution_response_type import WorkflowWebhookExecutionResponseType
+from datadog_api_client.v2.model.workflow_webhook_payload import WorkflowWebhookPayload
 from datadog_api_client.v2.model.worklflow_cancel_instance_response import WorklflowCancelInstanceResponse
 from datadog_api_client.v2.model.worklflow_cancel_instance_response_data import WorklflowCancelInstanceResponseData
 from datadog_api_client.v2.model.worklflow_get_instance_response import WorklflowGetInstanceResponse
@@ -10236,6 +10261,20 @@ __all__ = [
     "WorkflowDataType",
     "WorkflowDataUpdate",
     "WorkflowDataUpdateAttributes",
+    "WorkflowFavoriteRequest",
+    "WorkflowFavoriteRequestAttributes",
+    "WorkflowFavoriteRequestData",
+    "WorkflowFavoriteRequestType",
+    "WorkflowHeadlessExecutionConfig",
+    "WorkflowHeadlessExecutionConnection",
+    "WorkflowHeadlessExecutionRequest",
+    "WorkflowHeadlessExecutionRequestAttributes",
+    "WorkflowHeadlessExecutionRequestData",
+    "WorkflowHeadlessExecutionRequestType",
+    "WorkflowHeadlessExecutionResponse",
+    "WorkflowHeadlessExecutionResponseAttributes",
+    "WorkflowHeadlessExecutionResponseData",
+    "WorkflowHeadlessExecutionResponseType",
     "WorkflowInstanceCreateMeta",
     "WorkflowInstanceCreateRequest",
     "WorkflowInstanceCreateResponse",
@@ -10248,6 +10287,11 @@ __all__ = [
     "WorkflowUserRelationship",
     "WorkflowUserRelationshipData",
     "WorkflowUserRelationshipType",
+    "WorkflowWebhookExecutionResponse",
+    "WorkflowWebhookExecutionResponseAttributes",
+    "WorkflowWebhookExecutionResponseData",
+    "WorkflowWebhookExecutionResponseType",
+    "WorkflowWebhookPayload",
     "WorklflowCancelInstanceResponse",
     "WorklflowCancelInstanceResponseData",
     "WorklflowGetInstanceResponse",

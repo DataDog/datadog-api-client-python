@@ -29628,6 +29628,104 @@ datadog\_api\_client.v2.model.workflow\_data\_update\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.workflow\_favorite\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_favorite_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_favorite\_request\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_favorite_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_favorite\_request\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_favorite_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_favorite\_request\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_favorite_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_config module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_connection module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_connection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_request\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_request\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_request\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_response\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_response\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_headless\_execution\_response\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_headless_execution_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.workflow\_instance\_create\_meta module
 ---------------------------------------------------------------------
 
@@ -29709,6 +29807,41 @@ datadog\_api\_client.v2.model.workflow\_user\_relationship\_type module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.workflow_user_relationship_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_webhook\_execution\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_webhook_execution_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_webhook\_execution\_response\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_webhook_execution_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_webhook\_execution\_response\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_webhook_execution_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_webhook\_execution\_response\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_webhook_execution_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_webhook\_payload module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_webhook_payload
    :members:
    :show-inheritance:
 
