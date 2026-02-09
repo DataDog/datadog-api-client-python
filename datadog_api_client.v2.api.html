@@ -1040,6 +1040,12 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_case()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_jira_issue" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_case_jira_issue()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_notebook" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_case_notebook()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_service_now_ticket" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_case_service_now_ticket()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_project()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project_notification_rule" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.create_project_notification_rule()</span></code></a>
@@ -1060,6 +1066,12 @@
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.get_projects" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.get_projects()</span></code></a>
         </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.link_incident" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.link_incident()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.link_jira_issue_to_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.link_jira_issue_to_case()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.move_case_to_project" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.move_case_to_project()</span></code></a>
+        </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.search_cases" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.search_cases()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.search_cases_with_pagination" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.search_cases_with_pagination()</span></code></a>
@@ -1067,6 +1079,8 @@
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.unarchive_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.unarchive_case()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.unassign_case" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.unassign_case()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.unlink_jira_issue" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.unlink_jira_issue()</span></code></a>
         </li>
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.update_attributes" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CaseManagementApi.update_attributes()</span></code></a>
         </li>
@@ -4757,6 +4771,57 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_jira_issue">
+<span class="sig-name descname"><span class="pre">create_case_jira_issue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_create_request.JiraIssueCreateRequest" title="datadog_api_client.v2.model.jira_issue_create_request.JiraIssueCreateRequest"><span class="pre">JiraIssueCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_jira_issue" title="Link to this definition">¶</a></dt>
+<dd><p>Create Jira issue for case.</p>
+<p>Create a new Jira issue and link it to a case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_create_request.JiraIssueCreateRequest" title="datadog_api_client.v2.model.jira_issue_create_request.JiraIssueCreateRequest"><em>JiraIssueCreateRequest</em></a>) – Jira issue creation request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_notebook">
+<span class="sig-name descname"><span class="pre">create_case_notebook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notebook_create_request.NotebookCreateRequest" title="datadog_api_client.v2.model.notebook_create_request.NotebookCreateRequest"><span class="pre">NotebookCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_notebook" title="Link to this definition">¶</a></dt>
+<dd><p>Create investigation notebook for case.</p>
+<p>Create a new investigation notebook and link it to a case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.notebook_create_request.NotebookCreateRequest" title="datadog_api_client.v2.model.notebook_create_request.NotebookCreateRequest"><em>NotebookCreateRequest</em></a>) – Notebook creation request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_service_now_ticket">
+<span class="sig-name descname"><span class="pre">create_case_service_now_ticket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_ticket_create_request.ServiceNowTicketCreateRequest" title="datadog_api_client.v2.model.service_now_ticket_create_request.ServiceNowTicketCreateRequest"><span class="pre">ServiceNowTicketCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_case_service_now_ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Create ServiceNow ticket for case.</p>
+<p>Create a new ServiceNow incident ticket and link it to a case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.service_now_ticket_create_request.ServiceNowTicketCreateRequest" title="datadog_api_client.v2.model.service_now_ticket_create_request.ServiceNowTicketCreateRequest"><em>ServiceNowTicketCreateRequest</em></a>) – ServiceNow ticket creation request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project">
 <span class="sig-name descname"><span class="pre">create_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_create_request.ProjectCreateRequest" title="datadog_api_client.v2.model.project_create_request.ProjectCreateRequest"><span class="pre">ProjectCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_response.ProjectResponse" title="datadog_api_client.v2.model.project_response.ProjectResponse"><span class="pre">ProjectResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.create_project" title="Link to this definition">¶</a></dt>
 <dd><p>Create a project.</p>
@@ -4906,6 +4971,57 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dl>
 </dd></dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.link_incident">
+<span class="sig-name descname"><span class="pre">link_incident</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.relationship_to_incident_request.RelationshipToIncidentRequest" title="datadog_api_client.v2.model.relationship_to_incident_request.RelationshipToIncidentRequest"><span class="pre">RelationshipToIncidentRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse"><span class="pre">CaseResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.link_incident" title="Link to this definition">¶</a></dt>
+<dd><p>Link incident to case.</p>
+<p>Link an incident to a case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.relationship_to_incident_request.RelationshipToIncidentRequest" title="datadog_api_client.v2.model.relationship_to_incident_request.RelationshipToIncidentRequest"><em>RelationshipToIncidentRequest</em></a>) – Incident link request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse">CaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.link_jira_issue_to_case">
+<span class="sig-name descname"><span class="pre">link_jira_issue_to_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_link_request.JiraIssueLinkRequest" title="datadog_api_client.v2.model.jira_issue_link_request.JiraIssueLinkRequest"><span class="pre">JiraIssueLinkRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.link_jira_issue_to_case" title="Link to this definition">¶</a></dt>
+<dd><p>Link existing Jira issue to case.</p>
+<p>Link an existing Jira issue to a case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.jira_issue_link_request.JiraIssueLinkRequest" title="datadog_api_client.v2.model.jira_issue_link_request.JiraIssueLinkRequest"><em>JiraIssueLinkRequest</em></a>) – Jira issue link request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.move_case_to_project">
+<span class="sig-name descname"><span class="pre">move_case_to_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_relationship.ProjectRelationship" title="datadog_api_client.v2.model.project_relationship.ProjectRelationship"><span class="pre">ProjectRelationship</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse"><span class="pre">CaseResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.move_case_to_project" title="Link to this definition">¶</a></dt>
+<dd><p>Update case project.</p>
+<p>Update the project associated with a case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.project_relationship.ProjectRelationship" title="datadog_api_client.v2.model.project_relationship.ProjectRelationship"><em>ProjectRelationship</em></a>) – Project update request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse">CaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.search_cases">
 <span class="sig-name descname"><span class="pre">search_cases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_sortable_field.CaseSortableField" title="datadog_api_client.v2.model.case_sortable_field.CaseSortableField"><span class="pre">CaseSortableField</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_asc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.cases_response.CasesResponse" title="datadog_api_client.v2.model.cases_response.CasesResponse"><span class="pre">CasesResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.search_cases" title="Link to this definition">¶</a></dt>
 <dd><p>Search cases.</p>
@@ -4979,6 +5095,20 @@ For more information, see the <a class="reference external" href="https://docs.d
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_response.CaseResponse" title="datadog_api_client.v2.model.case_response.CaseResponse">CaseResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.case_management_api.CaseManagementApi.unlink_jira_issue">
+<span class="sig-name descname"><span class="pre">unlink_jira_issue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">case_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.case_management_api.CaseManagementApi.unlink_jira_issue" title="Link to this definition">¶</a></dt>
+<dd><p>Remove Jira issue link from case.</p>
+<p>Remove the link between a Jira issue and a case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>case_id</strong> (<em>str</em>) – Case’s UUID or key</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
