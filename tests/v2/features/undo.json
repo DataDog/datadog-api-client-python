@@ -836,56 +836,6 @@
       "type": "idempotent"
     }
   },
-  "LinkIncident": {
-    "tag": "Case Management",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
-  "UnlinkJiraIssue": {
-    "tag": "Case Management",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "LinkJiraIssueToCase": {
-    "tag": "Case Management",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateCaseJiraIssue": {
-    "tag": "Case Management",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
-  "CreateCaseNotebook": {
-    "tag": "Case Management",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
-  "MoveCaseToProject": {
-    "tag": "Case Management",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateCaseServiceNowTicket": {
-    "tag": "Case Management",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
   "UpdateStatus": {
     "tag": "Case Management",
     "undo": {
@@ -4272,6 +4222,31 @@
     "tag": "Service Scorecards",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "UnassignSeatsUserV2": {
+    "tag": "Seats",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSeatsUsersV2": {
+    "tag": "Seats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AssignSeatsUserV2": {
+    "tag": "Seats",
+    "undo": {
+      "operationId": "UnassignSeatsUserV2",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"data\": {\"type\": \"seat-assignments\", \"attributes\": {\"product_code\": \"{{ data.attributes.product_code }}\", \"user_uuids\": {{ data.attributes.assigned_ids }}}}}"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "ListEntityRiskScores": {
