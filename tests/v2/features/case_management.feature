@@ -90,6 +90,60 @@ Feature: Case Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create Jira issue for case returns "Accepted" response
+    Given operation "CreateCaseJiraIssue" enabled
+    And new "CreateCaseJiraIssue" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create Jira issue for case returns "Bad Request" response
+    Given operation "CreateCaseJiraIssue" enabled
+    And new "CreateCaseJiraIssue" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create Jira issue for case returns "Not Found" response
+    Given operation "CreateCaseJiraIssue" enabled
+    And new "CreateCaseJiraIssue" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create ServiceNow ticket for case returns "Accepted" response
+    Given operation "CreateCaseServiceNowTicket" enabled
+    And new "CreateCaseServiceNowTicket" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create ServiceNow ticket for case returns "Bad Request" response
+    Given operation "CreateCaseServiceNowTicket" enabled
+    And new "CreateCaseServiceNowTicket" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create ServiceNow ticket for case returns "Not Found" response
+    Given operation "CreateCaseServiceNowTicket" enabled
+    And new "CreateCaseServiceNowTicket" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/case-management
   Scenario: Create a case returns "Bad Request" response
     Given new "CreateCase" request
@@ -158,6 +212,33 @@ Feature: Case Management
   Scenario: Create a project returns "Not Found" response
     Given new "CreateProject" request
     And body with value {"data": {"attributes": {"enabled_custom_case_types": [], "key": "SEC", "name": "Security Investigation"}, "type": "project"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create investigation notebook for case returns "Bad Request" response
+    Given operation "CreateCaseNotebook" enabled
+    And new "CreateCaseNotebook" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"type": "notebook"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create investigation notebook for case returns "No Content" response
+    Given operation "CreateCaseNotebook" enabled
+    And new "CreateCaseNotebook" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"type": "notebook"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Create investigation notebook for case returns "Not Found" response
+    Given operation "CreateCaseNotebook" enabled
+    And new "CreateCaseNotebook" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"type": "notebook"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -307,6 +388,93 @@ Feature: Case Management
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Link existing Jira issue to case returns "Bad Request" response
+    Given operation "LinkJiraIssueToCase" enabled
+    And new "LinkJiraIssueToCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Link existing Jira issue to case returns "Conflict" response
+    Given operation "LinkJiraIssueToCase" enabled
+    And new "LinkJiraIssueToCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Link existing Jira issue to case returns "No Content" response
+    Given operation "LinkJiraIssueToCase" enabled
+    And new "LinkJiraIssueToCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Link existing Jira issue to case returns "Not Found" response
+    Given operation "LinkJiraIssueToCase" enabled
+    And new "LinkJiraIssueToCase" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Link incident to case returns "Bad Request" response
+    Given operation "LinkIncident" enabled
+    And new "LinkIncident" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Link incident to case returns "Created" response
+    Given operation "LinkIncident" enabled
+    And new "LinkIncident" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Link incident to case returns "Not Found" response
+    Given operation "LinkIncident" enabled
+    And new "LinkIncident" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove Jira issue link from case returns "Bad Request" response
+    Given operation "UnlinkJiraIssue" enabled
+    And new "UnlinkJiraIssue" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove Jira issue link from case returns "No Content" response
+    Given operation "UnlinkJiraIssue" enabled
+    And new "UnlinkJiraIssue" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Remove Jira issue link from case returns "Not Found" response
+    Given operation "UnlinkJiraIssue" enabled
+    And new "UnlinkJiraIssue" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Remove a project returns "API error response" response
@@ -563,6 +731,33 @@ Feature: Case Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.priority" is equal to "P3"
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Update case project returns "Bad Request" response
+    Given operation "MoveCaseToProject" enabled
+    And new "MoveCaseToProject" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Update case project returns "Not Found" response
+    Given operation "MoveCaseToProject" enabled
+    And new "MoveCaseToProject" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/case-management
+  Scenario: Update case project returns "OK" response
+    Given operation "MoveCaseToProject" enabled
+    And new "MoveCaseToProject" request
+    And request contains "case_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/case-management
   Scenario: Update case status returns "Bad Request" response
