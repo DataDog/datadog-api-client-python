@@ -1,0 +1,93 @@
+"""
+Create a pipeline with dedupe processor with cache returns "OK" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
+from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
+from datadog_api_client.v2.model.observability_pipeline_config_processor_group import (
+    ObservabilityPipelineConfigProcessorGroup,
+)
+from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
+from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
+    ObservabilityPipelineDatadogAgentSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source_type import (
+    ObservabilityPipelineDatadogAgentSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
+    ObservabilityPipelineDatadogLogsDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
+    ObservabilityPipelineDatadogLogsDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_cache import (
+    ObservabilityPipelineDedupeProcessorCache,
+)
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode import (
+    ObservabilityPipelineDedupeProcessorMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_type import (
+    ObservabilityPipelineDedupeProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
+from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
+
+body = ObservabilityPipelineSpec(
+    data=ObservabilityPipelineSpecData(
+        attributes=ObservabilityPipelineDataAttributes(
+            config=ObservabilityPipelineConfig(
+                destinations=[
+                    ObservabilityPipelineDatadogLogsDestination(
+                        id="datadog-logs-destination",
+                        inputs=[
+                            "my-processor-group",
+                        ],
+                        type=ObservabilityPipelineDatadogLogsDestinationType.DATADOG_LOGS,
+                    ),
+                ],
+                processor_groups=[
+                    ObservabilityPipelineConfigProcessorGroup(
+                        enabled=True,
+                        id="my-processor-group",
+                        include="service:my-service",
+                        inputs=[
+                            "datadog-agent-source",
+                        ],
+                        processors=[
+                            ObservabilityPipelineDedupeProcessor(
+                                enabled=True,
+                                id="dedupe-processor",
+                                include="service:my-service",
+                                type=ObservabilityPipelineDedupeProcessorType.DEDUPE,
+                                fields=[
+                                    "message",
+                                ],
+                                mode=ObservabilityPipelineDedupeProcessorMode.MATCH,
+                                cache=ObservabilityPipelineDedupeProcessorCache(
+                                    num_events=5000,
+                                ),
+                            ),
+                        ],
+                    ),
+                ],
+                sources=[
+                    ObservabilityPipelineDatadogAgentSource(
+                        id="datadog-agent-source",
+                        type=ObservabilityPipelineDatadogAgentSourceType.DATADOG_AGENT,
+                    ),
+                ],
+            ),
+            name="Pipeline with Dedupe Cache",
+        ),
+        type="pipelines",
+    ),
+)
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = ObservabilityPipelinesApi(api_client)
+    response = api_instance.create_pipeline(body=body)
+
+    print(response)

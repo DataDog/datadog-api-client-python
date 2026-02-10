@@ -48,6 +48,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param mode: The processing mode.
         :type mode: ObservabilityPipelineDatadogTagsProcessorMode
 
+        :param cache: Configuration for the cache used to detect duplicates.
+        :type cache: ObservabilityPipelineDedupeProcessorCache, optional
+
         :param file: Defines a static enrichment table loaded from a CSV file.
         :type file: ObservabilityPipelineEnrichmentTableFile, optional
 

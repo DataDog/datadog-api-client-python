@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_cache import (
+        ObservabilityPipelineDedupeProcessorCache,
+    )
     from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode import (
         ObservabilityPipelineDedupeProcessorMode,
     )
@@ -25,6 +28,9 @@ if TYPE_CHECKING:
 class ObservabilityPipelineDedupeProcessor(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_cache import (
+            ObservabilityPipelineDedupeProcessorCache,
+        )
         from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode import (
             ObservabilityPipelineDedupeProcessorMode,
         )
@@ -33,6 +39,7 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         )
 
         return {
+            "cache": (ObservabilityPipelineDedupeProcessorCache,),
             "display_name": (str,),
             "enabled": (bool,),
             "fields": ([str],),
@@ -43,6 +50,7 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "cache": "cache",
         "display_name": "display_name",
         "enabled": "enabled",
         "fields": "fields",
@@ -60,6 +68,7 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         include: str,
         mode: ObservabilityPipelineDedupeProcessorMode,
         type: ObservabilityPipelineDedupeProcessorType,
+        cache: Union[ObservabilityPipelineDedupeProcessorCache, UnsetType] = unset,
         display_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -67,6 +76,9 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         The ``dedupe`` processor removes duplicate fields in log events.
 
         **Supported pipeline types:** logs
+
+        :param cache: Configuration for the cache used to detect duplicates.
+        :type cache: ObservabilityPipelineDedupeProcessorCache, optional
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
@@ -89,6 +101,8 @@ class ObservabilityPipelineDedupeProcessor(ModelNormal):
         :param type: The processor type. The value should always be ``dedupe``.
         :type type: ObservabilityPipelineDedupeProcessorType
         """
+        if cache is not unset:
+            kwargs["cache"] = cache
         if display_name is not unset:
             kwargs["display_name"] = display_name
         super().__init__(kwargs)

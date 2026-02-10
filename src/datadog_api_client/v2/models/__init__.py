@@ -3296,6 +3296,9 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_t
 )
 from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
+from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_cache import (
+    ObservabilityPipelineDedupeProcessorCache,
+)
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_mode import (
     ObservabilityPipelineDedupeProcessorMode,
 )
@@ -8464,6 +8467,7 @@ __all__ = [
     "ObservabilityPipelineDatadogTagsProcessorType",
     "ObservabilityPipelineDecoding",
     "ObservabilityPipelineDedupeProcessor",
+    "ObservabilityPipelineDedupeProcessorCache",
     "ObservabilityPipelineDedupeProcessorMode",
     "ObservabilityPipelineDedupeProcessorType",
     "ObservabilityPipelineDiskBufferOptions",
