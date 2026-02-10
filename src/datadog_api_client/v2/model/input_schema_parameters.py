@@ -27,6 +27,19 @@ class InputSchemaParameters(ModelNormal):
         from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 
         return {
+            "allow_extra_values": (bool,),
+            "allowed_values": (
+                bool,
+                date,
+                datetime,
+                dict,
+                float,
+                int,
+                list,
+                str,
+                UUID,
+                none_type,
+            ),
             "default_value": (
                 bool,
                 date,
@@ -46,6 +59,8 @@ class InputSchemaParameters(ModelNormal):
         }
 
     attribute_map = {
+        "allow_extra_values": "allowExtraValues",
+        "allowed_values": "allowedValues",
         "default_value": "defaultValue",
         "description": "description",
         "label": "label",
@@ -57,6 +72,8 @@ class InputSchemaParameters(ModelNormal):
         self_,
         name: str,
         type: InputSchemaParametersType,
+        allow_extra_values: Union[bool, UnsetType] = unset,
+        allowed_values: Union[Any, UnsetType] = unset,
         default_value: Union[Any, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         label: Union[str, UnsetType] = unset,
@@ -64,6 +81,12 @@ class InputSchemaParameters(ModelNormal):
     ):
         """
         The definition of ``InputSchemaParameters`` object.
+
+        :param allow_extra_values: The ``InputSchemaParameters`` ``allowExtraValues``.
+        :type allow_extra_values: bool, optional
+
+        :param allowed_values: The ``InputSchemaParameters`` ``allowedValues``.
+        :type allowed_values: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
         :param default_value: The ``InputSchemaParameters`` ``defaultValue``.
         :type default_value: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
@@ -80,6 +103,10 @@ class InputSchemaParameters(ModelNormal):
         :param type: The definition of ``InputSchemaParametersType`` object.
         :type type: InputSchemaParametersType
         """
+        if allow_extra_values is not unset:
+            kwargs["allow_extra_values"] = allow_extra_values
+        if allowed_values is not unset:
+            kwargs["allowed_values"] = allowed_values
         if default_value is not unset:
             kwargs["default_value"] = default_value
         if description is not unset:
