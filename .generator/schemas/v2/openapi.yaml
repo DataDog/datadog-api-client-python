@@ -40869,6 +40869,8 @@ components:
           type: integer
         type:
           $ref: '#/components/schemas/ObservabilityPipelineBufferOptionsMemoryType'
+        when_full:
+          $ref: '#/components/schemas/ObservabilityPipelineBufferOptionsWhenFull'
       type: object
     ObservabilityPipelineMemoryBufferSizeOptions:
       description: Options for configuring a memory buffer by queue length.
@@ -40880,6 +40882,8 @@ components:
           type: integer
         type:
           $ref: '#/components/schemas/ObservabilityPipelineBufferOptionsMemoryType'
+        when_full:
+          $ref: '#/components/schemas/ObservabilityPipelineBufferOptionsWhenFull'
       type: object
     ObservabilityPipelineMetadataEntry:
       description: A custom metadata entry.
