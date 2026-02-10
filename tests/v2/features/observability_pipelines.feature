@@ -35,6 +35,24 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.processor_groups" has length 1
     And the response "data.attributes.config.destinations" has length 1
 
+  @team:DataDog/observability-pipelines
+  Scenario: Create a pipeline with dedupe processor with cache returns "OK" response
+    Given new "CreatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "dedupe-processor", "include": "service:my-service", "type": "dedupe", "fields": ["message"], "mode": "match", "cache": {"num_events": 5000}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Dedupe Cache"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 201 OK
+    And the response "data.attributes.config.processor_groups[0].processors[0].type" is equal to "dedupe"
+    And the response "data.attributes.config.processor_groups[0].processors[0].cache.num_events" is equal to 5000
+
+  @team:DataDog/observability-pipelines
+  Scenario: Create a pipeline with dedupe processor without cache returns "OK" response
+    Given new "CreatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "dedupe-processor", "include": "service:my-service", "type": "dedupe", "fields": ["message"], "mode": "match"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Dedupe No Cache"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 201 OK
+    And the response "data.attributes.config.processor_groups[0].processors[0].type" is equal to "dedupe"
+    And the response "data.attributes.config.processor_groups[0].processors[0].fields[0]" is equal to "message"
+
   @generated @skip @team:DataDog/observability-pipelines
   Scenario: Delete a pipeline returns "Conflict" response
     Given new "DeletePipeline" request

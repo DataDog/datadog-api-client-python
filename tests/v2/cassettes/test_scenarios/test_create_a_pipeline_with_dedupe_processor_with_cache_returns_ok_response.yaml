@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["my-processor-group"],"type":"datadog_logs"}],"processor_groups":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"cache":{"num_events":5000},"enabled":true,"fields":["message"],"id":"dedupe-processor","include":"service:my-service","mode":"match","type":"dedupe"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]},"name":"Pipeline
+      with Dedupe Cache"},"type":"pipelines"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines
+  response:
+    body:
+      string: '{"data":{"id":"31a750dc-059d-11f1-a2a8-da7ad0900002","type":"pipelines","attributes":{"name":"Pipeline
+        with Dedupe Cache","config":{"destinations":[{"id":"datadog-logs-destination","inputs":["my-processor-group"],"type":"datadog_logs"}],"processor_groups":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"cache":{"num_events":5000},"enabled":true,"fields":["message"],"id":"dedupe-processor","include":"service:my-service","mode":"match","type":"dedupe"}]}],"processors":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"cache":{"num_events":5000},"enabled":true,"fields":["message"],"id":"dedupe-processor","include":"service:my-service","mode":"match","type":"dedupe"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]}}}}
+
+        '
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/31a750dc-059d-11f1-a2a8-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

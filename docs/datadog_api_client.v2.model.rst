@@ -17147,6 +17147,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_dedupe\_processor module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_dedupe\_processor\_cache module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_dedupe_processor_cache
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_dedupe\_processor\_mode module
 -------------------------------------------------------------------------------------
 
