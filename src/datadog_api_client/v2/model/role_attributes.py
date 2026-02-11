@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -21,6 +21,7 @@ class RoleAttributes(ModelNormal):
             "created_at": (datetime,),
             "modified_at": (datetime,),
             "name": (str,),
+            "receives_permissions_from": ([str],),
             "user_count": (int,),
         }
 
@@ -28,6 +29,7 @@ class RoleAttributes(ModelNormal):
         "created_at": "created_at",
         "modified_at": "modified_at",
         "name": "name",
+        "receives_permissions_from": "receives_permissions_from",
         "user_count": "user_count",
     }
     read_only_vars = {
@@ -41,6 +43,7 @@ class RoleAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        receives_permissions_from: Union[List[str], UnsetType] = unset,
         user_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -56,6 +59,11 @@ class RoleAttributes(ModelNormal):
         :param name: The name of the role. The name is neither unique nor a stable identifier of the role.
         :type name: str, optional
 
+        :param receives_permissions_from: Managed role from which this role automatically receives new permissions as Datadog introduces new products and features.
+            Specify one of the following managed roles: "Datadog Admin Role", "Datadog Standard Role", or "Datadog Read Only Role".
+            If not specified or set to an empty array, the role does not automatically receive permissions from any managed role.
+        :type receives_permissions_from: [str], optional
+
         :param user_count: Number of users with that role.
         :type user_count: int, optional
         """
@@ -65,6 +73,8 @@ class RoleAttributes(ModelNormal):
             kwargs["modified_at"] = modified_at
         if name is not unset:
             kwargs["name"] = name
+        if receives_permissions_from is not unset:
+            kwargs["receives_permissions_from"] = receives_permissions_from
         if user_count is not unset:
             kwargs["user_count"] = user_count
         super().__init__(kwargs)
