@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"product_code":"incident_response","user_uuids":[]},"type":"seat-assignments"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/seats/users
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"user_uuids is required
+        and must not be empty"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 422
+      message: Unprocessable Entity
+version: 1

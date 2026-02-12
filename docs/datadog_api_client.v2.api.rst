@@ -543,6 +543,13 @@ datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.seats\_api module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.seats_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.security\_monitoring\_api module
 ------------------------------------------------------------
 
