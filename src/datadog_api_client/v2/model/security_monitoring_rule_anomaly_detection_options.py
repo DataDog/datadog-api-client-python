@@ -47,6 +47,7 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
         return {
             "bucket_duration": (SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration,),
             "detection_tolerance": (SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance,),
+            "instantaneous_baseline": (bool,),
             "learning_duration": (SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration,),
             "learning_period_baseline": (int,),
         }
@@ -54,6 +55,7 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
     attribute_map = {
         "bucket_duration": "bucketDuration",
         "detection_tolerance": "detectionTolerance",
+        "instantaneous_baseline": "instantaneousBaseline",
         "learning_duration": "learningDuration",
         "learning_period_baseline": "learningPeriodBaseline",
     }
@@ -62,6 +64,7 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
         self_,
         bucket_duration: Union[SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration, UnsetType] = unset,
         detection_tolerance: Union[SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance, UnsetType] = unset,
+        instantaneous_baseline: Union[bool, UnsetType] = unset,
         learning_duration: Union[SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration, UnsetType] = unset,
         learning_period_baseline: Union[int, UnsetType] = unset,
         **kwargs,
@@ -77,6 +80,9 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
             Higher values require higher deviations before triggering a signal.
         :type detection_tolerance: SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance, optional
 
+        :param instantaneous_baseline: When set to true, Datadog uses previous values that fall within the defined learning window to construct the baseline, enabling the system to establish an accurate baseline more rapidly rather than relying solely on gradual learning over time.
+        :type instantaneous_baseline: bool, optional
+
         :param learning_duration: Learning duration in hours. Anomaly detection waits for at least this amount of historical data before it starts evaluating.
         :type learning_duration: SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration, optional
 
@@ -87,6 +93,8 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
             kwargs["bucket_duration"] = bucket_duration
         if detection_tolerance is not unset:
             kwargs["detection_tolerance"] = detection_tolerance
+        if instantaneous_baseline is not unset:
+            kwargs["instantaneous_baseline"] = instantaneous_baseline
         if learning_duration is not unset:
             kwargs["learning_duration"] = learning_duration
         if learning_period_baseline is not unset:

@@ -457,6 +457,17 @@ Feature: Security Monitoring
     And the response "options.anomalyDetectionOptions.detectionTolerance" is equal to 3
 
   @team:DataDog/k9-cloud-security-platform
+  Scenario: Create a detection rule with detection method 'anomaly_detection' with enabled feature 'instantaneousBaseline' returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"name":"{{ unique }}","type":"log_detection","isEnabled":true,"queries":[{"aggregation":"count","dataSource":"logs","distinctFields":[],"groupByFields":["@usr.email","@network.client.ip"],"hasOptionalGroupByFields":false,"name":"","query":"service:app status:error"}],"cases":[{"name":"","status":"info","notifications":[],"condition":"a > 0.995"}],"message":"An anomaly detection rule","options":{"detectionMethod":"anomaly_detection","evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400,"anomalyDetectionOptions":{"bucketDuration":300,"learningDuration":24,"detectionTolerance":3,"instantaneousBaseline":true}},"tags":[],"filters":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "log_detection"
+    And the response "options.detectionMethod" is equal to "anomaly_detection"
+    And the response "options.anomalyDetectionOptions.instantaneousBaseline" is equal to true
+
+  @team:DataDog/k9-cloud-security-platform
   Scenario: Create a detection rule with detection method 'sequence_detection' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}","type":"log_detection","isEnabled":true,"queries":[{"aggregation":"count","dataSource":"logs","distinctFields":[],"groupByFields":[],"hasOptionalGroupByFields":false,"name":"","query":"service:logs-rule-reducer source:paul test2"},{"aggregation":"count","dataSource":"logs","distinctFields":[],"groupByFields":[],"hasOptionalGroupByFields":false,"name":"","query":"service:logs-rule-reducer source:paul test1"}],"cases":[{"name":"","status":"info","notifications":[],"condition":"step_b > 0"}],"message":"Logs and signals asdf","options":{"detectionMethod":"sequence_detection","evaluationWindow":0,"keepAlive":300,"maxSignalDuration":600,"sequenceDetectionOptions":{"stepTransitions":[{"child":"step_b","evaluationWindow":900,"parent":"step_a"}],"steps":[{"condition":"a > 0","evaluationWindow":60,"name":"step_a"},{"condition":"b > 0","evaluationWindow":60,"name":"step_b"}]}},"tags":[]}
