@@ -97,6 +97,34 @@ Feature: Action Connection
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/action-platform
+  Scenario: List action connections returns "Bad Request" response
+    Given operation "ListActionConnections" enabled
+    And new "ListActionConnections" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/action-platform
+  Scenario: List action connections returns "OK" response
+    Given operation "ListActionConnections" enabled
+    And new "ListActionConnections" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/action-platform
+  Scenario: List connection groups returns "Bad Request" response
+    Given operation "ListConnectionGroups" enabled
+    And new "ListConnectionGroups" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/action-platform
+  Scenario: List connection groups returns "OK" response
+    Given operation "ListConnectionGroups" enabled
+    And new "ListConnectionGroups" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/workflow-automation-dev
   Scenario: Register a new App Key returns "Bad request" response
     Given new "RegisterAppKey" request
@@ -131,6 +159,33 @@ Feature: Action Connection
     And request contains "app_key_id" parameter with value "57cc69ae-9214-4ecc-8df8-43ecc1d92d99"
     When the request is sent
     Then the response status is 404 Not found
+
+  @generated @skip @team:DataDog/action-platform
+  Scenario: Update a connection group returns "Bad Request" response
+    Given operation "UpdateConnectionGroup" enabled
+    And new "UpdateConnectionGroup" request
+    And request contains "connection_group_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"connections": [], "description": "An updated test connection group for AWS integrations", "name": "My Connection Group Updated", "tag_keys": []}, "type": "connection_group"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/action-platform
+  Scenario: Update a connection group returns "Not Found" response
+    Given operation "UpdateConnectionGroup" enabled
+    And new "UpdateConnectionGroup" request
+    And request contains "connection_group_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"connections": [], "description": "An updated test connection group for AWS integrations", "name": "My Connection Group Updated", "tag_keys": []}, "type": "connection_group"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/action-platform
+  Scenario: Update a connection group returns "OK" response
+    Given operation "UpdateConnectionGroup" enabled
+    And new "UpdateConnectionGroup" request
+    And request contains "connection_group_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"connections": [], "description": "An updated test connection group for AWS integrations", "name": "My Connection Group Updated", "tag_keys": []}, "type": "connection_group"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/workflow-automation-dev
   Scenario: Update an existing Action Connection returns "Bad Request" response

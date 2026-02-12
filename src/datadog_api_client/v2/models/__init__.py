@@ -952,9 +952,17 @@ from datadog_api_client.v2.model.connected_team_ref import ConnectedTeamRef
 from datadog_api_client.v2.model.connected_team_ref_data import ConnectedTeamRefData
 from datadog_api_client.v2.model.connected_team_ref_data_type import ConnectedTeamRefDataType
 from datadog_api_client.v2.model.connection import Connection
+from datadog_api_client.v2.model.connection_data_attributes_response import ConnectionDataAttributesResponse
+from datadog_api_client.v2.model.connection_data_response import ConnectionDataResponse
 from datadog_api_client.v2.model.connection_env import ConnectionEnv
 from datadog_api_client.v2.model.connection_env_env import ConnectionEnvEnv
 from datadog_api_client.v2.model.connection_group import ConnectionGroup
+from datadog_api_client.v2.model.connection_group_data_attributes_request import ConnectionGroupDataAttributesRequest
+from datadog_api_client.v2.model.connection_group_data_attributes_response import ConnectionGroupDataAttributesResponse
+from datadog_api_client.v2.model.connection_group_data_request import ConnectionGroupDataRequest
+from datadog_api_client.v2.model.connection_group_data_response import ConnectionGroupDataResponse
+from datadog_api_client.v2.model.connection_group_relationships import ConnectionGroupRelationships
+from datadog_api_client.v2.model.connection_group_type import ConnectionGroupType
 from datadog_api_client.v2.model.connections_page_pagination import ConnectionsPagePagination
 from datadog_api_client.v2.model.connections_response_meta import ConnectionsResponseMeta
 from datadog_api_client.v2.model.container import Container
@@ -1220,6 +1228,9 @@ from datadog_api_client.v2.model.create_upload_response_data_type import CreateU
 from datadog_api_client.v2.model.create_user_notification_channel_request import CreateUserNotificationChannelRequest
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
+from datadog_api_client.v2.model.created_by import CreatedBy
+from datadog_api_client.v2.model.created_by_relationship import CreatedByRelationship
+from datadog_api_client.v2.model.created_by_relationship_data import CreatedByRelationshipData
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.csm_agent_data import CsmAgentData
 from datadog_api_client.v2.model.csm_agents_attributes import CsmAgentsAttributes
@@ -2515,6 +2526,7 @@ from datadog_api_client.v2.model.input_schema import InputSchema
 from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParameters
 from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.integration_counts import IntegrationCounts
 from datadog_api_client.v2.model.integration_incident import IntegrationIncident
 from datadog_api_client.v2.model.integration_incident_field_mappings_items import IntegrationIncidentFieldMappingsItems
 from datadog_api_client.v2.model.integration_incident_severity_config import IntegrationIncidentSeverityConfig
@@ -2691,6 +2703,8 @@ from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
 from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
 from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
+from datadog_api_client.v2.model.list_action_connections_response import ListActionConnectionsResponse
+from datadog_api_client.v2.model.list_action_connections_response_meta import ListActionConnectionsResponseMeta
 from datadog_api_client.v2.model.list_app_key_registrations_response import ListAppKeyRegistrationsResponse
 from datadog_api_client.v2.model.list_app_key_registrations_response_meta import ListAppKeyRegistrationsResponseMeta
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
@@ -2703,6 +2717,8 @@ from datadog_api_client.v2.model.list_apps_response_data_items_relationships imp
 from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 from datadog_api_client.v2.model.list_apps_response_meta_page import ListAppsResponseMetaPage
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
+from datadog_api_client.v2.model.list_connection_groups_response import ListConnectionGroupsResponse
+from datadog_api_client.v2.model.list_connection_groups_response_meta import ListConnectionGroupsResponseMeta
 from datadog_api_client.v2.model.list_connections_response import ListConnectionsResponse
 from datadog_api_client.v2.model.list_connections_response_data import ListConnectionsResponseData
 from datadog_api_client.v2.model.list_connections_response_data_attributes import ListConnectionsResponseDataAttributes
@@ -4078,6 +4094,7 @@ from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTem
 from datadog_api_client.v2.model.powerpacks_response_meta import PowerpacksResponseMeta
 from datadog_api_client.v2.model.powerpacks_response_meta_pagination import PowerpacksResponseMetaPagination
 from datadog_api_client.v2.model.preview_entity_response_data import PreviewEntityResponseData
+from datadog_api_client.v2.model.private_actions_runner import PrivateActionsRunner
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
 from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
@@ -5768,6 +5785,8 @@ from datadog_api_client.v2.model.update_apps_datastore_request_data import Updat
 from datadog_api_client.v2.model.update_apps_datastore_request_data_attributes import (
     UpdateAppsDatastoreRequestDataAttributes,
 )
+from datadog_api_client.v2.model.update_connection_group_request import UpdateConnectionGroupRequest
+from datadog_api_client.v2.model.update_connection_group_response import UpdateConnectionGroupResponse
 from datadog_api_client.v2.model.update_connection_request import UpdateConnectionRequest
 from datadog_api_client.v2.model.update_connection_request_data import UpdateConnectionRequestData
 from datadog_api_client.v2.model.update_connection_request_data_attributes import UpdateConnectionRequestDataAttributes
@@ -6725,9 +6744,17 @@ __all__ = [
     "ConnectedTeamRefData",
     "ConnectedTeamRefDataType",
     "Connection",
+    "ConnectionDataAttributesResponse",
+    "ConnectionDataResponse",
     "ConnectionEnv",
     "ConnectionEnvEnv",
     "ConnectionGroup",
+    "ConnectionGroupDataAttributesRequest",
+    "ConnectionGroupDataAttributesResponse",
+    "ConnectionGroupDataRequest",
+    "ConnectionGroupDataResponse",
+    "ConnectionGroupRelationships",
+    "ConnectionGroupType",
     "ConnectionsPagePagination",
     "ConnectionsResponseMeta",
     "Container",
@@ -6905,6 +6932,9 @@ __all__ = [
     "CreateUserNotificationChannelRequest",
     "CreateWorkflowRequest",
     "CreateWorkflowResponse",
+    "CreatedBy",
+    "CreatedByRelationship",
+    "CreatedByRelationshipData",
     "Creator",
     "CsmAgentData",
     "CsmAgentsAttributes",
@@ -7904,6 +7934,7 @@ __all__ = [
     "InputSchemaParameters",
     "InputSchemaParametersType",
     "IntakePayloadAccepted",
+    "IntegrationCounts",
     "IntegrationIncident",
     "IntegrationIncidentFieldMappingsItems",
     "IntegrationIncidentSeverityConfig",
@@ -8056,6 +8087,8 @@ __all__ = [
     "ListAPIsResponseDataAttributes",
     "ListAPIsResponseMeta",
     "ListAPIsResponseMetaPagination",
+    "ListActionConnectionsResponse",
+    "ListActionConnectionsResponseMeta",
     "ListAppKeyRegistrationsResponse",
     "ListAppKeyRegistrationsResponseMeta",
     "ListApplicationKeysResponse",
@@ -8066,6 +8099,8 @@ __all__ = [
     "ListAppsResponseMeta",
     "ListAppsResponseMetaPage",
     "ListAssetsSBOMsResponse",
+    "ListConnectionGroupsResponse",
+    "ListConnectionGroupsResponseMeta",
     "ListConnectionsResponse",
     "ListConnectionsResponseData",
     "ListConnectionsResponseDataAttributes",
@@ -8869,6 +8904,7 @@ __all__ = [
     "PowerpacksResponseMeta",
     "PowerpacksResponseMetaPagination",
     "PreviewEntityResponseData",
+    "PrivateActionsRunner",
     "ProcessSummariesMeta",
     "ProcessSummariesMetaPage",
     "ProcessSummariesResponse",
@@ -10099,6 +10135,8 @@ __all__ = [
     "UpdateAppsDatastoreRequest",
     "UpdateAppsDatastoreRequestData",
     "UpdateAppsDatastoreRequestDataAttributes",
+    "UpdateConnectionGroupRequest",
+    "UpdateConnectionGroupResponse",
     "UpdateConnectionRequest",
     "UpdateConnectionRequestData",
     "UpdateConnectionRequestDataAttributes",

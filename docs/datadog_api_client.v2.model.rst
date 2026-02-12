@@ -4953,6 +4953,20 @@ datadog\_api\_client.v2.model.connection module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.connection\_data\_attributes\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connection\_data\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_data_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.connection\_env module
 ----------------------------------------------------
 
@@ -4971,6 +4985,48 @@ datadog\_api\_client.v2.model.connection\_group module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.connection_group
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connection\_group\_data\_attributes\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_group_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connection\_group\_data\_attributes\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_group_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connection\_group\_data\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_group_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connection\_group\_data\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_group_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connection\_group\_relationships module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_group_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.connection\_group\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.connection_group_type
    :members:
    :show-inheritance:
 
@@ -6210,6 +6266,27 @@ datadog\_api\_client.v2.model.create\_workflow\_response module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_workflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.created\_by module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.created_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.created\_by\_relationship module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.created_by_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.created\_by\_relationship\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.created_by_relationship_data
    :members:
    :show-inheritance:
 
@@ -13143,6 +13220,13 @@ datadog\_api\_client.v2.model.intake\_payload\_accepted module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.integration\_counts module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_counts
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.integration\_incident module
 ----------------------------------------------------------
 
@@ -14235,6 +14319,20 @@ datadog\_api\_client.v2.model.links module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_action\_connections\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_action_connections_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_action\_connections\_response\_meta module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_action_connections_response_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_apis\_response module
 ---------------------------------------------------------
 
@@ -14337,6 +14435,20 @@ datadog\_api\_client.v2.model.list\_assets\_sbo\_ms\_response module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_assets_sbo_ms_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_connection\_groups\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_connection_groups_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_connection\_groups\_response\_meta module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_connection_groups_response_meta
    :members:
    :show-inheritance:
 
@@ -19951,6 +20063,13 @@ datadog\_api\_client.v2.model.preview\_entity\_response\_data module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.preview_entity_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.private\_actions\_runner module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.private_actions_runner
    :members:
    :show-inheritance:
 
@@ -28526,6 +28645,20 @@ datadog\_api\_client.v2.model.update\_apps\_datastore\_request\_data\_attributes
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_apps_datastore_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_connection\_group\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_connection_group_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_connection\_group\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_connection_group_response
    :members:
    :show-inheritance:
 
