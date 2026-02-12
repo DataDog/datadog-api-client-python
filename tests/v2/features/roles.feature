@@ -6,7 +6,9 @@ Feature: Roles
   account assets can be granted to roles in the Datadog application without
   using this API. For example, granting read access on a specific log index
   to a role can be done in Datadog from the [Pipelines
-  page](https://app.datadoghq.com/logs/pipelines).
+  page](https://app.datadoghq.com/logs/pipelines).  Roles can also be
+  managed in bulk through the Datadog UI, which provides the capability to
+  assign a single permission to multiple roles simultaneously.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -64,7 +66,7 @@ Feature: Roles
   Scenario: Create a new role by cloning an existing role returns "Not found" response
     Given new "CloneRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "cloned-role"}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": "cloned-role", "receives_permissions_from": []}, "type": "roles"}}
     When the request is sent
     Then the response status is 404 Not found
 
@@ -81,14 +83,14 @@ Feature: Roles
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request
-    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": "developers", "receives_permissions_from": []}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: Create role returns "OK" response
     Given new "CreateRole" request
-    And body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"name": "developers", "receives_permissions_from": []}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -335,6 +337,6 @@ Feature: Roles
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
+    And body with value {"data": {"attributes": {"receives_permissions_from": []}, "id": "00000000-0000-1111-0000-000000000000", "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

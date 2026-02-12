@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -21,12 +21,14 @@ class RoleCreateAttributes(ModelNormal):
             "created_at": (datetime,),
             "modified_at": (datetime,),
             "name": (str,),
+            "receives_permissions_from": ([str],),
         }
 
     attribute_map = {
         "created_at": "created_at",
         "modified_at": "modified_at",
         "name": "name",
+        "receives_permissions_from": "receives_permissions_from",
     }
     read_only_vars = {
         "created_at",
@@ -38,6 +40,7 @@ class RoleCreateAttributes(ModelNormal):
         name: str,
         created_at: Union[datetime, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
+        receives_permissions_from: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -51,11 +54,18 @@ class RoleCreateAttributes(ModelNormal):
 
         :param name: Name of the role.
         :type name: str
+
+        :param receives_permissions_from: Managed role from which this role automatically receives new permissions as Datadog introduces new products and features.
+            Specify one of the following managed roles: "Datadog Admin Role", "Datadog Standard Role", or "Datadog Read Only Role".
+            If not specified or set to an empty array, the role does not automatically receive permissions from any managed role.
+        :type receives_permissions_from: [str], optional
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
+        if receives_permissions_from is not unset:
+            kwargs["receives_permissions_from"] = receives_permissions_from
         super().__init__(kwargs)
 
         self_.name = name
