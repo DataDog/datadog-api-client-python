@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_buffer_options_memory_type import (
         ObservabilityPipelineBufferOptionsMemoryType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options_when_full import (
+        ObservabilityPipelineBufferOptionsWhenFull,
+    )
 
 
 class ObservabilityPipelineMemoryBufferSizeOptions(ModelNormal):
@@ -25,21 +28,27 @@ class ObservabilityPipelineMemoryBufferSizeOptions(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_buffer_options_memory_type import (
             ObservabilityPipelineBufferOptionsMemoryType,
         )
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options_when_full import (
+            ObservabilityPipelineBufferOptionsWhenFull,
+        )
 
         return {
             "max_events": (int,),
             "type": (ObservabilityPipelineBufferOptionsMemoryType,),
+            "when_full": (ObservabilityPipelineBufferOptionsWhenFull,),
         }
 
     attribute_map = {
         "max_events": "max_events",
         "type": "type",
+        "when_full": "when_full",
     }
 
     def __init__(
         self_,
         max_events: Union[int, UnsetType] = unset,
         type: Union[ObservabilityPipelineBufferOptionsMemoryType, UnsetType] = unset,
+        when_full: Union[ObservabilityPipelineBufferOptionsWhenFull, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -50,9 +59,14 @@ class ObservabilityPipelineMemoryBufferSizeOptions(ModelNormal):
 
         :param type: The type of the buffer that will be configured, a memory buffer.
         :type type: ObservabilityPipelineBufferOptionsMemoryType, optional
+
+        :param when_full: Behavior when the buffer is full (block and stop accepting new events, or drop new events)
+        :type when_full: ObservabilityPipelineBufferOptionsWhenFull, optional
         """
         if max_events is not unset:
             kwargs["max_events"] = max_events
         if type is not unset:
             kwargs["type"] = type
+        if when_full is not unset:
+            kwargs["when_full"] = when_full
         super().__init__(kwargs)
