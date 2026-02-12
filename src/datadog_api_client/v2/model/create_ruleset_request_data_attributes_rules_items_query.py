@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query_addition import (
         CreateRulesetRequestDataAttributesRulesItemsQueryAddition,
     )
+    from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import (
+        DataAttributesRulesItemsIfTagExists,
+    )
 
 
 class CreateRulesetRequestDataAttributesRulesItemsQuery(ModelNormal):
@@ -28,11 +31,15 @@ class CreateRulesetRequestDataAttributesRulesItemsQuery(ModelNormal):
         from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query_addition import (
             CreateRulesetRequestDataAttributesRulesItemsQueryAddition,
         )
+        from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import (
+            DataAttributesRulesItemsIfTagExists,
+        )
 
         return {
             "addition": (CreateRulesetRequestDataAttributesRulesItemsQueryAddition,),
             "case_insensitivity": (bool,),
             "if_not_exists": (bool,),
+            "if_tag_exists": (DataAttributesRulesItemsIfTagExists,),
             "query": (str,),
         }
 
@@ -40,15 +47,17 @@ class CreateRulesetRequestDataAttributesRulesItemsQuery(ModelNormal):
         "addition": "addition",
         "case_insensitivity": "case_insensitivity",
         "if_not_exists": "if_not_exists",
+        "if_tag_exists": "if_tag_exists",
         "query": "query",
     }
 
     def __init__(
         self_,
         addition: Union[CreateRulesetRequestDataAttributesRulesItemsQueryAddition, none_type],
-        if_not_exists: bool,
         query: str,
         case_insensitivity: Union[bool, UnsetType] = unset,
+        if_not_exists: Union[bool, UnsetType] = unset,
+        if_tag_exists: Union[DataAttributesRulesItemsIfTagExists, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -60,16 +69,22 @@ class CreateRulesetRequestDataAttributesRulesItemsQuery(ModelNormal):
         :param case_insensitivity: The ``query`` ``case_insensitivity``.
         :type case_insensitivity: bool, optional
 
-        :param if_not_exists: The ``query`` ``if_not_exists``.
-        :type if_not_exists: bool
+        :param if_not_exists: Deprecated. Use ``if_tag_exists`` instead. The ``query`` ``if_not_exists``. **Deprecated**.
+        :type if_not_exists: bool, optional
+
+        :param if_tag_exists: The behavior when the tag already exists.
+        :type if_tag_exists: DataAttributesRulesItemsIfTagExists, optional
 
         :param query: The ``query`` ``query``.
         :type query: str
         """
         if case_insensitivity is not unset:
             kwargs["case_insensitivity"] = case_insensitivity
+        if if_not_exists is not unset:
+            kwargs["if_not_exists"] = if_not_exists
+        if if_tag_exists is not unset:
+            kwargs["if_tag_exists"] = if_tag_exists
         super().__init__(kwargs)
 
         self_.addition = addition
-        self_.if_not_exists = if_not_exists
         self_.query = query

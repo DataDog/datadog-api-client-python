@@ -1,9 +1,10 @@
 """
-Update tag pipeline ruleset returns "OK" response
+Update tag pipeline ruleset with if_tag_exists returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
+from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import DataAttributesRulesItemsIfTagExists
 from datadog_api_client.v2.model.data_attributes_rules_items_mapping import DataAttributesRulesItemsMapping
 from datadog_api_client.v2.model.update_ruleset_request import UpdateRulesetRequest
 from datadog_api_client.v2.model.update_ruleset_request_data import UpdateRulesetRequestData
@@ -23,7 +24,7 @@ body = UpdateRulesetRequest(
                     enabled=True,
                     mapping=DataAttributesRulesItemsMapping(
                         destination_key="team_owner",
-                        if_not_exists=True,
+                        if_tag_exists=DataAttributesRulesItemsIfTagExists.REPLACE,
                         source_keys=[
                             "account_name",
                             "account_id",

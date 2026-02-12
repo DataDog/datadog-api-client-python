@@ -3784,6 +3784,20 @@ datadog\_api\_client.v1.model.slo\_correction\_update\_request\_attributes modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.slo\_count\_definition module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_count_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.slo\_count\_spec module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_count_spec
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.slo\_creator module
 -------------------------------------------------
 
