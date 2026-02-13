@@ -46,7 +46,7 @@ class ObservabilityPipelineMemoryBufferSizeOptions(ModelNormal):
 
     def __init__(
         self_,
-        max_events: Union[int, UnsetType] = unset,
+        max_events: int,
         type: Union[ObservabilityPipelineBufferOptionsMemoryType, UnsetType] = unset,
         when_full: Union[ObservabilityPipelineBufferOptionsWhenFull, UnsetType] = unset,
         **kwargs,
@@ -55,7 +55,7 @@ class ObservabilityPipelineMemoryBufferSizeOptions(ModelNormal):
         Options for configuring a memory buffer by queue length.
 
         :param max_events: Maximum events for the memory buffer.
-        :type max_events: int, optional
+        :type max_events: int
 
         :param type: The type of the buffer that will be configured, a memory buffer.
         :type type: ObservabilityPipelineBufferOptionsMemoryType, optional
@@ -63,10 +63,10 @@ class ObservabilityPipelineMemoryBufferSizeOptions(ModelNormal):
         :param when_full: Behavior when the buffer is full (block and stop accepting new events, or drop new events)
         :type when_full: ObservabilityPipelineBufferOptionsWhenFull, optional
         """
-        if max_events is not unset:
-            kwargs["max_events"] = max_events
         if type is not unset:
             kwargs["type"] = type
         if when_full is not unset:
             kwargs["when_full"] = when_full
         super().__init__(kwargs)
+
+        self_.max_events = max_events
