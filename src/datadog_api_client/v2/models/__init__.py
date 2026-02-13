@@ -1132,9 +1132,6 @@ from datadog_api_client.v2.model.create_ruleset_request_data_attributes import C
 from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items import (
     CreateRulesetRequestDataAttributesRulesItems,
 )
-from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping import (
-    CreateRulesetRequestDataAttributesRulesItemsMapping,
-)
 from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query import (
     CreateRulesetRequestDataAttributesRulesItemsQuery,
 )
@@ -1468,6 +1465,8 @@ from datadog_api_client.v2.model.dashboard_list_update_items_request import Dash
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
 from datadog_api_client.v2.model.dashboard_type import DashboardType
+from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import DataAttributesRulesItemsIfTagExists
+from datadog_api_client.v2.model.data_attributes_rules_items_mapping import DataAttributesRulesItemsMapping
 from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
@@ -4452,9 +4451,6 @@ from datadog_api_client.v2.model.ruleset_resp_data_attributes import RulesetResp
 from datadog_api_client.v2.model.ruleset_resp_data_attributes_created import RulesetRespDataAttributesCreated
 from datadog_api_client.v2.model.ruleset_resp_data_attributes_modified import RulesetRespDataAttributesModified
 from datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items import RulesetRespDataAttributesRulesItems
-from datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping import (
-    RulesetRespDataAttributesRulesItemsMapping,
-)
 from datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query import (
     RulesetRespDataAttributesRulesItemsQuery,
 )
@@ -5835,9 +5831,6 @@ from datadog_api_client.v2.model.update_ruleset_request_data_attributes import U
 from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items import (
     UpdateRulesetRequestDataAttributesRulesItems,
 )
-from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping import (
-    UpdateRulesetRequestDataAttributesRulesItemsMapping,
-)
 from datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query import (
     UpdateRulesetRequestDataAttributesRulesItemsQuery,
 )
@@ -6861,7 +6854,6 @@ __all__ = [
     "CreateRulesetRequestData",
     "CreateRulesetRequestDataAttributes",
     "CreateRulesetRequestDataAttributesRulesItems",
-    "CreateRulesetRequestDataAttributesRulesItemsMapping",
     "CreateRulesetRequestDataAttributesRulesItemsQuery",
     "CreateRulesetRequestDataAttributesRulesItemsQueryAddition",
     "CreateRulesetRequestDataAttributesRulesItemsReferenceTable",
@@ -7069,6 +7061,8 @@ __all__ = [
     "DashboardListUpdateItemsResponse",
     "DashboardTriggerWrapper",
     "DashboardType",
+    "DataAttributesRulesItemsIfTagExists",
+    "DataAttributesRulesItemsMapping",
     "DataDeletionResponseItem",
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
@@ -9181,7 +9175,6 @@ __all__ = [
     "RulesetRespDataAttributesCreated",
     "RulesetRespDataAttributesModified",
     "RulesetRespDataAttributesRulesItems",
-    "RulesetRespDataAttributesRulesItemsMapping",
     "RulesetRespDataAttributesRulesItemsQuery",
     "RulesetRespDataAttributesRulesItemsQueryAddition",
     "RulesetRespDataAttributesRulesItemsReferenceTable",
@@ -10146,7 +10139,6 @@ __all__ = [
     "UpdateRulesetRequestData",
     "UpdateRulesetRequestDataAttributes",
     "UpdateRulesetRequestDataAttributesRulesItems",
-    "UpdateRulesetRequestDataAttributesRulesItemsMapping",
     "UpdateRulesetRequestDataAttributesRulesItemsQuery",
     "UpdateRulesetRequestDataAttributesRulesItemsQueryAddition",
     "UpdateRulesetRequestDataAttributesRulesItemsReferenceTable",

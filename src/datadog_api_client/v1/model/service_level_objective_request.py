@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_timeframe import SLOTimeframe
     from datadog_api_client.v1.model.slo_type import SLOType
     from datadog_api_client.v1.model.slo_time_slice_spec import SLOTimeSliceSpec
+    from datadog_api_client.v1.model.slo_count_spec import SLOCountSpec
 
 
 class ServiceLevelObjectiveRequest(ModelNormal):
@@ -71,7 +72,7 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         groups: Union[List[str], UnsetType] = unset,
         monitor_ids: Union[List[int], UnsetType] = unset,
         query: Union[ServiceLevelObjectiveQuery, UnsetType] = unset,
-        sli_specification: Union[SLOSliSpec, SLOTimeSliceSpec, UnsetType] = unset,
+        sli_specification: Union[SLOSliSpec, SLOTimeSliceSpec, SLOCountSpec, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         target_threshold: Union[float, UnsetType] = unset,
         timeframe: Union[SLOTimeframe, UnsetType] = unset,
@@ -102,12 +103,12 @@ class ServiceLevelObjectiveRequest(ModelNormal):
         :param name: The name of the service level objective object.
         :type name: str
 
-        :param query: A metric-based SLO. **Required if type is metric**. Note that Datadog only allows the sum by aggregator
+        :param query: A count-based (metric) SLO query. This field is superseded by ``sli_specification`` but is retained for backwards compatibility. Note that Datadog only allows the sum by aggregator
             to be used because this will sum up all request counts instead of averaging them, or taking the max or
             min of all of those requests.
         :type query: ServiceLevelObjectiveQuery, optional
 
-        :param sli_specification: A generic SLI specification. This is currently used for time-slice SLOs only.
+        :param sli_specification: A generic SLI specification. This is used for time-slice and count-based (metric) SLOs only.
         :type sli_specification: SLOSliSpec, optional
 
         :param tags: A list of tags associated with this service level objective.

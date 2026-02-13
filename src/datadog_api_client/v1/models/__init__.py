@@ -561,6 +561,8 @@ from datadog_api_client.v1.model.slo_correction_type import SLOCorrectionType
 from datadog_api_client.v1.model.slo_correction_update_data import SLOCorrectionUpdateData
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
 from datadog_api_client.v1.model.slo_correction_update_request_attributes import SLOCorrectionUpdateRequestAttributes
+from datadog_api_client.v1.model.slo_count_definition import SLOCountDefinition
+from datadog_api_client.v1.model.slo_count_spec import SLOCountSpec
 from datadog_api_client.v1.model.slo_creator import SLOCreator
 from datadog_api_client.v1.model.slo_data_source_query_definition import SLODataSourceQueryDefinition
 from datadog_api_client.v1.model.slo_delete_response import SLODeleteResponse
@@ -1634,6 +1636,8 @@ __all__ = [
     "SLOCorrectionUpdateData",
     "SLOCorrectionUpdateRequest",
     "SLOCorrectionUpdateRequestAttributes",
+    "SLOCountDefinition",
+    "SLOCountSpec",
     "SLOCreator",
     "SLODataSourceQueryDefinition",
     "SLODeleteResponse",
