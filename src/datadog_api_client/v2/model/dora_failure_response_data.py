@@ -34,12 +34,12 @@ class DORAFailureResponseData(ModelNormal):
 
     def __init__(self_, id: str, type: Union[DORAFailureType, UnsetType] = unset, **kwargs):
         """
-        Response after receiving a DORA failure event.
+        Response after receiving a DORA incident event.
 
-        :param id: The ID of the received DORA failure event.
+        :param id: The ID of the received DORA incident event.
         :type id: str
 
-        :param type: JSON:API type for DORA failure events.
+        :param type: JSON:API type for DORA incident events.
         :type type: DORAFailureType, optional
         """
         if type is not unset:
