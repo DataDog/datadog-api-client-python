@@ -1,0 +1,26 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["my-processor-group"],"type":"datadog_logs"}],"processor_groups":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"enabled":true,"id":"ocsf-mapper-processor","include":"service:my-service","mappings":[{"include":"source:custom","mapping":{"mapping":[{"dest":"time","source":"timestamp"}],"metadata":{"class":"Invalid
+      Class","profiles":["container"],"version":"1.3.0"},"version":0}}],"type":"ocsf_mapper"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]},"name":"OCSF
+      Invalid Mapper Pipeline"},"type":"pipelines"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/validate
+  response:
+    body:
+      string: '{"errors":[{"title":"Schema version must be a positive integer","meta":{"field":"mappings.0.version","id":"ocsf-mapper-processor","message":"Schema
+        version must be a positive integer"}},{"title":"Invalid custom mapping class","meta":{"field":"mappings.0.metadata.class","id":"ocsf-mapper-processor","message":"Invalid
+        custom mapping class"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
