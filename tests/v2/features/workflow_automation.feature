@@ -66,6 +66,69 @@ Feature: Workflow Automation
     When the request is sent
     Then the response status is 204 Successfully deleted a workflow.
 
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Execute a workflow from a template returns "Bad Request" response
+    Given operation "ExecuteWorkflowFromTemplate" enabled
+    And new "ExecuteWorkflowFromTemplate" request
+    And request contains "parent_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"config": {"connections": [{"connection_id": "11111111-1111-1111-1111-111111111111", "label": "INTEGRATION_DATADOG"}], "inputs": {}}, "template_id": "template-789"}, "id": "1234", "type": "workflow_headless_execution_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Execute a workflow from a template returns "Not Found" response
+    Given operation "ExecuteWorkflowFromTemplate" enabled
+    And new "ExecuteWorkflowFromTemplate" request
+    And request contains "parent_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"config": {"connections": [{"connection_id": "11111111-1111-1111-1111-111111111111", "label": "INTEGRATION_DATADOG"}], "inputs": {}}, "template_id": "template-789"}, "id": "1234", "type": "workflow_headless_execution_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Execute a workflow from a template returns "OK" response
+    Given operation "ExecuteWorkflowFromTemplate" enabled
+    And new "ExecuteWorkflowFromTemplate" request
+    And request contains "parent_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"config": {"connections": [{"connection_id": "11111111-1111-1111-1111-111111111111", "label": "INTEGRATION_DATADOG"}], "inputs": {}}, "template_id": "template-789"}, "id": "1234", "type": "workflow_headless_execution_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Execute a workflow from a webhook returns "Bad Request" response
+    Given operation "ExecuteWorkflowFromWebhook" enabled
+    And new "ExecuteWorkflowFromWebhook" request
+    And request contains "workflow_id" parameter from "REPLACE.ME"
+    And request contains "orgId" parameter from "REPLACE.ME"
+    And request contains "X-Hub-Signature-256" parameter from "REPLACE.ME"
+    And request contains "User-Agent" parameter from "REPLACE.ME"
+    And body with value {"foo": "bar"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Execute a workflow from a webhook returns "Not Found" response
+    Given operation "ExecuteWorkflowFromWebhook" enabled
+    And new "ExecuteWorkflowFromWebhook" request
+    And request contains "workflow_id" parameter from "REPLACE.ME"
+    And request contains "orgId" parameter from "REPLACE.ME"
+    And request contains "X-Hub-Signature-256" parameter from "REPLACE.ME"
+    And request contains "User-Agent" parameter from "REPLACE.ME"
+    And body with value {"foo": "bar"}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Execute a workflow from a webhook returns "OK" response
+    Given operation "ExecuteWorkflowFromWebhook" enabled
+    And new "ExecuteWorkflowFromWebhook" request
+    And request contains "workflow_id" parameter from "REPLACE.ME"
+    And request contains "orgId" parameter from "REPLACE.ME"
+    And request contains "X-Hub-Signature-256" parameter from "REPLACE.ME"
+    And request contains "User-Agent" parameter from "REPLACE.ME"
+    And body with value {"foo": "bar"}
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/workflow-automation-dev
   Scenario: Execute a workflow returns "Bad Request" response
     Given new "CreateWorkflowInstance" request
@@ -167,3 +230,30 @@ Feature: Workflow Automation
     And body with value {"data": {"attributes": {"description": "A sample workflow.", "name": "Example Workflow", "published": true, "spec": {"connectionEnvs": [{"connections": [{"connectionId": "11111111-1111-1111-1111-111111111111", "label": "INTEGRATION_DATADOG"}], "env": "default"}], "inputSchema": {"parameters": [{"defaultValue": "default", "name": "input", "type": "STRING"}]}, "outputSchema": {"parameters": [{"name": "output", "type": "ARRAY_OBJECT", "value": "outputValue"}]}, "steps": [{"actionId": "com.datadoghq.dd.monitor.listMonitors", "connectionLabel": "INTEGRATION_DATADOG", "name": "Step1", "outboundEdges": [{"branchName": "main", "nextStepName": "Step2"}], "parameters": [{"name": "tags", "value": "service:monitoring"}]}, {"actionId": "com.datadoghq.core.noop", "name": "Step2"}], "triggers": [{"monitorTrigger": {"rateLimit": {"count": 1, "interval": "3600s"}}, "startStepNames": ["Step1"]}, {"startStepNames": ["Step1"], "githubWebhookTrigger": {}}]}, "tags": ["team:infra", "service:monitoring", "foo:bar"]}, "id": "22222222-2222-2222-2222-222222222222", "type": "workflows"}}
     When the request is sent
     Then the response status is 200 Successfully updated a workflow.
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Update workflow favorite status returns "Bad Request" response
+    Given operation "UpdateWorkflowFavorite" enabled
+    And new "UpdateWorkflowFavorite" request
+    And request contains "workflow_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"favorite": true}, "type": "workflow_favorite_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Update workflow favorite status returns "No Content" response
+    Given operation "UpdateWorkflowFavorite" enabled
+    And new "UpdateWorkflowFavorite" request
+    And request contains "workflow_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"favorite": true}, "type": "workflow_favorite_request"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: Update workflow favorite status returns "Not Found" response
+    Given operation "UpdateWorkflowFavorite" enabled
+    And new "UpdateWorkflowFavorite" request
+    And request contains "workflow_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"favorite": true}, "type": "workflow_favorite_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
