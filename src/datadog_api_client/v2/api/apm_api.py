@@ -29,7 +29,14 @@ class APMApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "filter_env": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[env]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -38,10 +45,15 @@ class APMApi:
 
     def get_service_list(
         self,
+        filter_env: str,
     ) -> ServiceList:
         """Get service list.
 
+        :param filter_env: Filter services by environment. Can be set to ``*`` to return all services across all environments.
+        :type filter_env: str
         :rtype: ServiceList
         """
         kwargs: Dict[str, Any] = {}
+        kwargs["filter_env"] = filter_env
+
         return self._get_service_list_endpoint.call_with_http_info(**kwargs)
