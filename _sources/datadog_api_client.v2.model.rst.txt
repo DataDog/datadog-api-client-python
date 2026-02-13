@@ -5905,13 +5905,6 @@ datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items\_mapping module
-------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.create\_ruleset\_request\_data\_attributes\_rules\_items\_query module
 ----------------------------------------------------------------------------------------------------
 
@@ -7127,6 +7120,20 @@ datadog\_api\_client.v2.model.dashboard\_type module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.dashboard_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_attributes\_rules\_items\_if\_tag\_exists module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_attributes\_rules\_items\_mapping module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_attributes_rules_items_mapping
    :members:
    :show-inheritance:
 
@@ -21774,13 +21781,6 @@ datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items modu
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items\_mapping module
--------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.ruleset\_resp\_data\_attributes\_rules\_items\_query module
 -----------------------------------------------------------------------------------------
 
@@ -28855,13 +28855,6 @@ datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\
 ---------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.update\_ruleset\_request\_data\_attributes\_rules\_items\_mapping module
-------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping
    :members:
    :show-inheritance:
 

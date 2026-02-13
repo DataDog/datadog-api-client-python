@@ -994,6 +994,8 @@
 </li>
         <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.patch_table_request_data_attributes_file_metadata_local_file.PatchTableRequestDataAttributesFileMetadataLocalFile.additional_properties_type">(PatchTableRequestDataAttributesFileMetadataLocalFile attribute)</a>
 </li>
+        <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.slo_count_spec.SLOCountSpec.additional_properties_type">(SLOCountSpec attribute)</a>
+</li>
         <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.slo_time_slice_spec.SLOTimeSliceSpec.additional_properties_type">(SLOTimeSliceSpec attribute)</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.table_result_v2_data.TableResultV2Data.additional_properties_type">(TableResultV2Data attribute)</a>
@@ -2837,10 +2839,10 @@
 </li>
       <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.aws_integration_api.AWSIntegrationApi.create_aws_event_bridge_source">create_aws_event_bridge_source() (AWSIntegrationApi method)</a>, <a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.aws_integration_api.AWSIntegrationApi.create_aws_event_bridge_source">[1]</a>
 </li>
-      <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.create_aws_lambda_arn">create_aws_lambda_arn() (AWSLogsIntegrationApi method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="datadog_api_client.v1.api.html#datadog_api_client.v1.api.aws_logs_integration_api.AWSLogsIntegrationApi.create_aws_lambda_arn">create_aws_lambda_arn() (AWSLogsIntegrationApi method)</a>
+</li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.create_aws_on_demand_task">create_aws_on_demand_task() (AgentlessScanningApi method)</a>
 </li>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.agentless_scanning_api.AgentlessScanningApi.create_aws_scan_options">create_aws_scan_options() (AgentlessScanningApi method)</a>
@@ -3311,8 +3313,6 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items.CreateRulesetRequestDataAttributesRulesItems">CreateRulesetRequestDataAttributesRulesItems (class in datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items)</a>
 </li>
-      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping.CreateRulesetRequestDataAttributesRulesItemsMapping">CreateRulesetRequestDataAttributesRulesItemsMapping (class in datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping)</a>
-</li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query.CreateRulesetRequestDataAttributesRulesItemsQuery">CreateRulesetRequestDataAttributesRulesItemsQuery (class in datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query_addition.CreateRulesetRequestDataAttributesRulesItemsQueryAddition">CreateRulesetRequestDataAttributesRulesItemsQueryAddition (class in datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query_addition)</a>
@@ -3732,6 +3732,10 @@
 </li>
       </ul></li>
       <li><a href="datadog_api_client.html#datadog_api_client.model_utils.data_to_dict">data_to_dict() (in module datadog_api_client.model_utils)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists.DataAttributesRulesItemsIfTagExists">DataAttributesRulesItemsIfTagExists (class in datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists)</a>
+</li>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.data_attributes_rules_items_mapping.DataAttributesRulesItemsMapping">DataAttributesRulesItemsMapping (class in datadog_api_client.v2.model.data_attributes_rules_items_mapping)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.database_monitoring_trigger_wrapper.DatabaseMonitoringTriggerWrapper">DatabaseMonitoringTriggerWrapper (class in datadog_api_client.v2.model.database_monitoring_trigger_wrapper)</a>
 </li>
@@ -7815,6 +7819,20 @@
 
       <ul>
         <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_correction_update_request_attributes">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v1.model.slo_count_definition
+
+      <ul>
+        <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_count_definition">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v1.model.slo_count_spec
+
+      <ul>
+        <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_count_spec">module</a>
 </li>
       </ul></li>
       <li>
@@ -17548,13 +17566,6 @@
 </li>
       </ul></li>
       <li>
-    datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping
-
-      <ul>
-        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping">module</a>
-</li>
-      </ul></li>
-      <li>
     datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query
 
       <ul>
@@ -18770,6 +18781,20 @@
 
       <ul>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.dashboard_type">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists">module</a>
+</li>
+      </ul></li>
+      <li>
+    datadog_api_client.v2.model.data_attributes_rules_items_mapping
+
+      <ul>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.data_attributes_rules_items_mapping">module</a>
 </li>
       </ul></li>
       <li>
@@ -23189,6 +23214,8 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.google_meet_configuration_reference">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     datadog_api_client.v2.model.google_meet_configuration_reference_data
 
@@ -23210,8 +23237,6 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.grey_noise_api_key_type">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     datadog_api_client.v2.model.grey_noise_api_key_update
 
@@ -33419,13 +33444,6 @@
 </li>
       </ul></li>
       <li>
-    datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping
-
-      <ul>
-        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping">module</a>
-</li>
-      </ul></li>
-      <li>
     datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query
 
       <ul>
@@ -40503,13 +40521,6 @@
 </li>
       </ul></li>
       <li>
-    datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping
-
-      <ul>
-        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping">module</a>
-</li>
-      </ul></li>
-      <li>
     datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query
 
       <ul>
@@ -47302,6 +47313,10 @@
 </li>
         <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_correction_update_request_attributes">datadog_api_client.v1.model.slo_correction_update_request_attributes</a>
 </li>
+        <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_count_definition">datadog_api_client.v1.model.slo_count_definition</a>
+</li>
+        <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_count_spec">datadog_api_client.v1.model.slo_count_spec</a>
+</li>
         <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_creator">datadog_api_client.v1.model.slo_creator</a>
 </li>
         <li><a href="datadog_api_client.v1.model.html#module-datadog_api_client.v1.model.slo_data_source_query_definition">datadog_api_client.v1.model.slo_data_source_query_definition</a>
@@ -50082,8 +50097,6 @@
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items">datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items</a>
 </li>
-        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping">datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_mapping</a>
-</li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query">datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query_addition">datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_items_query_addition</a>
@@ -50431,6 +50444,10 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.dashboard_trigger_wrapper">datadog_api_client.v2.model.dashboard_trigger_wrapper</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.dashboard_type">datadog_api_client.v2.model.dashboard_type</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists">datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists</a>
+</li>
+        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.data_attributes_rules_items_mapping">datadog_api_client.v2.model.data_attributes_rules_items_mapping</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.data_deletion_response_item">datadog_api_client.v2.model.data_deletion_response_item</a>
 </li>
@@ -54616,8 +54633,6 @@
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items">datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items</a>
 </li>
-        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping">datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping</a>
-</li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query">datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query_addition">datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query_addition</a>
@@ -56639,8 +56654,6 @@
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.update_ruleset_request_data_attributes">datadog_api_client.v2.model.update_ruleset_request_data_attributes</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items">datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items</a>
-</li>
-        <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping">datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping</a>
 </li>
         <li><a href="datadog_api_client.v2.model.html#module-datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query">datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query</a>
 </li>
@@ -58921,10 +58934,10 @@
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.role_attributes.RoleAttributes">RoleAttributes (class in datadog_api_client.v2.model.role_attributes)</a>
 </li>
-      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.role_clone.RoleClone">RoleClone (class in datadog_api_client.v2.model.role_clone)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.role_clone.RoleClone">RoleClone (class in datadog_api_client.v2.model.role_clone)</a>
+</li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.role_clone_attributes.RoleCloneAttributes">RoleCloneAttributes (class in datadog_api_client.v2.model.role_clone_attributes)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.role_clone_request.RoleCloneRequest">RoleCloneRequest (class in datadog_api_client.v2.model.role_clone_request)</a>
@@ -59006,8 +59019,6 @@
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.ruleset_resp_data_attributes_modified.RulesetRespDataAttributesModified">RulesetRespDataAttributesModified (class in datadog_api_client.v2.model.ruleset_resp_data_attributes_modified)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items.RulesetRespDataAttributesRulesItems">RulesetRespDataAttributesRulesItems (class in datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items)</a>
-</li>
-      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping.RulesetRespDataAttributesRulesItemsMapping">RulesetRespDataAttributesRulesItemsMapping (class in datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_mapping)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query.RulesetRespDataAttributesRulesItemsQuery">RulesetRespDataAttributesRulesItemsQuery (class in datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_query)</a>
 </li>
@@ -60303,10 +60314,10 @@
 </li>
       <li><a href="datadog_api_client.html#datadog_api_client.model_utils.set_attribute_from_path">set_attribute_from_path() (in module datadog_api_client.model_utils)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.on_call_api.OnCallApi.set_on_call_team_routing_rules">set_on_call_team_routing_rules() (OnCallApi method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="datadog_api_client.v2.api.html#datadog_api_client.v2.api.synthetics_api.SyntheticsApi.set_on_demand_concurrency_cap">set_on_demand_concurrency_cap() (SyntheticsApi method)</a>
 </li>
       <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.shared_dashboard.SharedDashboard">SharedDashboard (class in datadog_api_client.v1.model.shared_dashboard)</a>
@@ -60432,6 +60443,10 @@
       <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.slo_correction_update_request.SLOCorrectionUpdateRequest">SLOCorrectionUpdateRequest (class in datadog_api_client.v1.model.slo_correction_update_request)</a>
 </li>
       <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.slo_correction_update_request_attributes.SLOCorrectionUpdateRequestAttributes">SLOCorrectionUpdateRequestAttributes (class in datadog_api_client.v1.model.slo_correction_update_request_attributes)</a>
+</li>
+      <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.slo_count_definition.SLOCountDefinition">SLOCountDefinition (class in datadog_api_client.v1.model.slo_count_definition)</a>
+</li>
+      <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.slo_count_spec.SLOCountSpec">SLOCountSpec (class in datadog_api_client.v1.model.slo_count_spec)</a>
 </li>
       <li><a href="datadog_api_client.v1.model.html#datadog_api_client.v1.model.slo_creator.SLOCreator">SLOCreator (class in datadog_api_client.v1.model.slo_creator)</a>
 </li>
@@ -62320,8 +62335,6 @@
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_ruleset_request_data_attributes.UpdateRulesetRequestDataAttributes">UpdateRulesetRequestDataAttributes (class in datadog_api_client.v2.model.update_ruleset_request_data_attributes)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items.UpdateRulesetRequestDataAttributesRulesItems">UpdateRulesetRequestDataAttributesRulesItems (class in datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items)</a>
-</li>
-      <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping.UpdateRulesetRequestDataAttributesRulesItemsMapping">UpdateRulesetRequestDataAttributesRulesItemsMapping (class in datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_mapping)</a>
 </li>
       <li><a href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query.UpdateRulesetRequestDataAttributesRulesItemsQuery">UpdateRulesetRequestDataAttributesRulesItemsQuery (class in datadog_api_client.v2.model.update_ruleset_request_data_attributes_rules_items_query)</a>
 </li>
