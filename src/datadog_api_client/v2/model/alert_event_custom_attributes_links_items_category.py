@@ -16,7 +16,7 @@ class AlertEventCustomAttributesLinksItemsCategory(ModelSimple):
     """
     The category of the link.
 
-    :param value: Must be one of ["runbook", "documentation", "dashboard"].
+    :param value: Must be one of ["runbook", "documentation", "dashboard", "resource"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class AlertEventCustomAttributesLinksItemsCategory(ModelSimple):
         "runbook",
         "documentation",
         "dashboard",
+        "resource",
     }
     RUNBOOK: ClassVar["AlertEventCustomAttributesLinksItemsCategory"]
     DOCUMENTATION: ClassVar["AlertEventCustomAttributesLinksItemsCategory"]
     DASHBOARD: ClassVar["AlertEventCustomAttributesLinksItemsCategory"]
+    RESOURCE: ClassVar["AlertEventCustomAttributesLinksItemsCategory"]
 
     @cached_property
     def openapi_types(_):
@@ -41,3 +43,4 @@ AlertEventCustomAttributesLinksItemsCategory.DOCUMENTATION = AlertEventCustomAtt
     "documentation"
 )
 AlertEventCustomAttributesLinksItemsCategory.DASHBOARD = AlertEventCustomAttributesLinksItemsCategory("dashboard")
+AlertEventCustomAttributesLinksItemsCategory.RESOURCE = AlertEventCustomAttributesLinksItemsCategory("resource")

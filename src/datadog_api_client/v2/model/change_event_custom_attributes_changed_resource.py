@@ -49,7 +49,7 @@ class ChangeEventCustomAttributesChangedResource(ModelNormal):
         """
         A uniquely identified resource.
 
-        :param name: The name of the resource that was changed. Limited to 128 characters.
+        :param name: The name of the resource that was changed. Limited to 128 characters. Must contain at least one non-whitespace character.
         :type name: str
 
         :param type: The type of the resource that was changed.
