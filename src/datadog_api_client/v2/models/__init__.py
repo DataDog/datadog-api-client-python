@@ -515,6 +515,12 @@ from datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes
     BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus,
 )
 from datadog_api_client.v2.model.billing_dimensions_mapping_response import BillingDimensionsMappingResponse
+from datadog_api_client.v2.model.branch_coverage_summary_request import BranchCoverageSummaryRequest
+from datadog_api_client.v2.model.branch_coverage_summary_request_attributes import (
+    BranchCoverageSummaryRequestAttributes,
+)
+from datadog_api_client.v2.model.branch_coverage_summary_request_data import BranchCoverageSummaryRequestData
+from datadog_api_client.v2.model.branch_coverage_summary_request_type import BranchCoverageSummaryRequestType
 from datadog_api_client.v2.model.budget import Budget
 from datadog_api_client.v2.model.budget_array import BudgetArray
 from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
@@ -896,6 +902,12 @@ from datadog_api_client.v2.model.cloudflare_integration import CloudflareIntegra
 from datadog_api_client.v2.model.cloudflare_integration_type import CloudflareIntegrationType
 from datadog_api_client.v2.model.cloudflare_integration_update import CloudflareIntegrationUpdate
 from datadog_api_client.v2.model.code_location import CodeLocation
+from datadog_api_client.v2.model.commit_coverage_summary_request import CommitCoverageSummaryRequest
+from datadog_api_client.v2.model.commit_coverage_summary_request_attributes import (
+    CommitCoverageSummaryRequestAttributes,
+)
+from datadog_api_client.v2.model.commit_coverage_summary_request_data import CommitCoverageSummaryRequestData
+from datadog_api_client.v2.model.commit_coverage_summary_request_type import CommitCoverageSummaryRequestType
 from datadog_api_client.v2.model.completion_condition import CompletionCondition
 from datadog_api_client.v2.model.completion_condition_operator import CompletionConditionOperator
 from datadog_api_client.v2.model.completion_gate import CompletionGate
@@ -1003,6 +1015,12 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.coverage_summary_attributes import CoverageSummaryAttributes
+from datadog_api_client.v2.model.coverage_summary_codeowner_stats import CoverageSummaryCodeownerStats
+from datadog_api_client.v2.model.coverage_summary_data import CoverageSummaryData
+from datadog_api_client.v2.model.coverage_summary_response import CoverageSummaryResponse
+from datadog_api_client.v2.model.coverage_summary_service_stats import CoverageSummaryServiceStats
+from datadog_api_client.v2.model.coverage_summary_type import CoverageSummaryType
 from datadog_api_client.v2.model.cpu import Cpu
 from datadog_api_client.v2.model.create_action_connection_request import CreateActionConnectionRequest
 from datadog_api_client.v2.model.create_action_connection_response import CreateActionConnectionResponse
@@ -6391,6 +6409,10 @@ __all__ = [
     "BillingDimensionsMappingBodyItemAttributesEndpointsItems",
     "BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus",
     "BillingDimensionsMappingResponse",
+    "BranchCoverageSummaryRequest",
+    "BranchCoverageSummaryRequestAttributes",
+    "BranchCoverageSummaryRequestData",
+    "BranchCoverageSummaryRequestType",
     "Budget",
     "BudgetArray",
     "BudgetAttributes",
@@ -6668,6 +6690,10 @@ __all__ = [
     "CloudflareIntegrationType",
     "CloudflareIntegrationUpdate",
     "CodeLocation",
+    "CommitCoverageSummaryRequest",
+    "CommitCoverageSummaryRequestAttributes",
+    "CommitCoverageSummaryRequestData",
+    "CommitCoverageSummaryRequestType",
     "CompletionCondition",
     "CompletionConditionOperator",
     "CompletionGate",
@@ -6767,6 +6793,12 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CoverageSummaryAttributes",
+    "CoverageSummaryCodeownerStats",
+    "CoverageSummaryData",
+    "CoverageSummaryResponse",
+    "CoverageSummaryServiceStats",
+    "CoverageSummaryType",
     "Cpu",
     "CreateActionConnectionRequest",
     "CreateActionConnectionResponse",

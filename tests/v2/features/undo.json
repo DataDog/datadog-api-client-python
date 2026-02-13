@@ -1061,6 +1061,18 @@
       "type": "idempotent"
     }
   },
+  "GetCodeCoverageBranchSummary": {
+    "tag": "Code Coverage",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCodeCoverageCommitSummary": {
+    "tag": "Code Coverage",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListContainerImages": {
     "tag": "Container Images",
     "undo": {

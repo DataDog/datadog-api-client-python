@@ -2692,6 +2692,34 @@ datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.branch\_coverage\_summary\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.branch_coverage_summary_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.branch\_coverage\_summary\_request\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.branch_coverage_summary_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.branch\_coverage\_summary\_request\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.branch_coverage_summary_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.branch\_coverage\_summary\_request\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.branch_coverage_summary_request_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.budget module
 -------------------------------------------
 
@@ -4603,6 +4631,34 @@ datadog\_api\_client.v2.model.code\_location module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.commit\_coverage\_summary\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commit_coverage_summary_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commit\_coverage\_summary\_request\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commit_coverage_summary_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commit\_coverage\_summary\_request\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commit_coverage_summary_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commit\_coverage\_summary\_request\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commit_coverage_summary_request_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.completion\_condition module
 ----------------------------------------------------------
 
@@ -5293,6 +5349,48 @@ datadog\_api\_client.v2.model.cost\_by\_org\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cost_by_org_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.coverage\_summary\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.coverage_summary_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.coverage\_summary\_codeowner\_stats module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.coverage_summary_codeowner_stats
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.coverage\_summary\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.coverage_summary_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.coverage\_summary\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.coverage_summary_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.coverage\_summary\_service\_stats module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.coverage_summary_service_stats
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.coverage\_summary\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.coverage_summary_type
    :members:
    :show-inheritance:
 
