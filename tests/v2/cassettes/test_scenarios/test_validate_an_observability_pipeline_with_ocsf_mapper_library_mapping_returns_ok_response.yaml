@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["my-processor-group"],"type":"datadog_logs"}],"processor_groups":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["datadog-agent-source"],"processors":[{"enabled":true,"id":"ocsf-mapper-processor","include":"service:my-service","mappings":[{"include":"source:cloudtrail","mapping":"CloudTrail
+      Account Change"}],"type":"ocsf_mapper"}]}],"sources":[{"id":"datadog-agent-source","type":"datadog_agent"}]},"name":"OCSF
+      Mapper Pipeline"},"type":"pipelines"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/validate
+  response:
+    body:
+      string: '{"errors":[]}
+
+        '
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
