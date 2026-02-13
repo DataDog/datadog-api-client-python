@@ -5625,6 +5625,13 @@ datadog\_api\_client.v1.model.timeseries\_background\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.timeseries\_request\_style module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.timeseries_request_style
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.timeseries\_widget\_definition module
 -------------------------------------------------------------------
 
