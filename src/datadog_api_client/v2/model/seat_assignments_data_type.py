@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class IncidentResourceType(ModelSimple):
+class SeatAssignmentsDataType(ModelSimple):
     """
-    Incident resource type
+    Seat assignments resource type.
 
-    :param value: If omitted defaults to "incidents". Must be one of ["incidents"].
+    :param value: If omitted defaults to "seat-assignments". Must be one of ["seat-assignments"].
     :type value: str
     """
 
     allowed_values = {
-        "incidents",
+        "seat-assignments",
     }
-    INCIDENTS: ClassVar["IncidentResourceType"]
+    SEAT_ASSIGNMENTS: ClassVar["SeatAssignmentsDataType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class IncidentResourceType(ModelSimple):
         }
 
 
-IncidentResourceType.INCIDENTS = IncidentResourceType("incidents")
+SeatAssignmentsDataType.SEAT_ASSIGNMENTS = SeatAssignmentsDataType("seat-assignments")

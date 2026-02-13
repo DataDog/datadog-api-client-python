@@ -35,12 +35,6 @@ from datadog_api_client.v2.model.case_comment_request import CaseCommentRequest
 from datadog_api_client.v2.model.case_update_custom_attribute_request import CaseUpdateCustomAttributeRequest
 from datadog_api_client.v2.model.case_update_description_request import CaseUpdateDescriptionRequest
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
-from datadog_api_client.v2.model.relationship_to_incident_request import RelationshipToIncidentRequest
-from datadog_api_client.v2.model.jira_issue_link_request import JiraIssueLinkRequest
-from datadog_api_client.v2.model.jira_issue_create_request import JiraIssueCreateRequest
-from datadog_api_client.v2.model.notebook_create_request import NotebookCreateRequest
-from datadog_api_client.v2.model.project_relationship import ProjectRelationship
-from datadog_api_client.v2.model.service_now_ticket_create_request import ServiceNowTicketCreateRequest
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
 from datadog_api_client.v2.model.case_update_title_request import CaseUpdateTitleRequest
 
@@ -150,84 +144,6 @@ class CaseManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._create_case_jira_issue_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/{case_id}/relationships/jira_issues",
-                "operation_id": "create_case_jira_issue",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "case_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (JiraIssueCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._create_case_notebook_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/{case_id}/relationships/notebook",
-                "operation_id": "create_case_notebook",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "case_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (NotebookCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._create_case_service_now_ticket_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/{case_id}/relationships/servicenow_tickets",
-                "operation_id": "create_case_service_now_ticket",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "case_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (ServiceNowTicketCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -472,84 +388,6 @@ class CaseManagementApi:
             api_client=api_client,
         )
 
-        self._link_incident_endpoint = _Endpoint(
-            settings={
-                "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/{case_id}/relationships/incidents",
-                "operation_id": "link_incident",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "case_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (RelationshipToIncidentRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._link_jira_issue_to_case_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/{case_id}/relationships/jira_issues",
-                "operation_id": "link_jira_issue_to_case",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "case_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (JiraIssueLinkRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._move_case_to_project_endpoint = _Endpoint(
-            settings={
-                "response_type": (CaseResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/{case_id}/relationships/project",
-                "operation_id": "move_case_to_project",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "case_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (ProjectRelationship,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._search_cases_endpoint = _Endpoint(
             settings={
                 "response_type": (CasesResponse,),
@@ -641,29 +479,6 @@ class CaseManagementApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._unlink_jira_issue_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/{case_id}/relationships/jira_issues",
-                "operation_id": "unlink_jira_issue",
-                "http_method": "DELETE",
-                "version": "v2",
-            },
-            params_map={
-                "case_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
-            },
             api_client=api_client,
         )
 
@@ -970,72 +785,6 @@ class CaseManagementApi:
 
         return self._create_case_endpoint.call_with_http_info(**kwargs)
 
-    def create_case_jira_issue(
-        self,
-        case_id: str,
-        body: JiraIssueCreateRequest,
-    ) -> None:
-        """Create Jira issue for case.
-
-        Create a new Jira issue and link it to a case
-
-        :param case_id: Case's UUID or key
-        :type case_id: str
-        :param body: Jira issue creation request
-        :type body: JiraIssueCreateRequest
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_id"] = case_id
-
-        kwargs["body"] = body
-
-        return self._create_case_jira_issue_endpoint.call_with_http_info(**kwargs)
-
-    def create_case_notebook(
-        self,
-        case_id: str,
-        body: NotebookCreateRequest,
-    ) -> None:
-        """Create investigation notebook for case.
-
-        Create a new investigation notebook and link it to a case
-
-        :param case_id: Case's UUID or key
-        :type case_id: str
-        :param body: Notebook creation request
-        :type body: NotebookCreateRequest
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_id"] = case_id
-
-        kwargs["body"] = body
-
-        return self._create_case_notebook_endpoint.call_with_http_info(**kwargs)
-
-    def create_case_service_now_ticket(
-        self,
-        case_id: str,
-        body: ServiceNowTicketCreateRequest,
-    ) -> None:
-        """Create ServiceNow ticket for case.
-
-        Create a new ServiceNow incident ticket and link it to a case
-
-        :param case_id: Case's UUID or key
-        :type case_id: str
-        :param body: ServiceNow ticket creation request
-        :type body: ServiceNowTicketCreateRequest
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_id"] = case_id
-
-        kwargs["body"] = body
-
-        return self._create_case_service_now_ticket_endpoint.call_with_http_info(**kwargs)
-
     def create_project(
         self,
         body: ProjectCreateRequest,
@@ -1221,72 +970,6 @@ class CaseManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._get_projects_endpoint.call_with_http_info(**kwargs)
 
-    def link_incident(
-        self,
-        case_id: str,
-        body: RelationshipToIncidentRequest,
-    ) -> CaseResponse:
-        """Link incident to case.
-
-        Link an incident to a case
-
-        :param case_id: Case's UUID or key
-        :type case_id: str
-        :param body: Incident link request
-        :type body: RelationshipToIncidentRequest
-        :rtype: CaseResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_id"] = case_id
-
-        kwargs["body"] = body
-
-        return self._link_incident_endpoint.call_with_http_info(**kwargs)
-
-    def link_jira_issue_to_case(
-        self,
-        case_id: str,
-        body: JiraIssueLinkRequest,
-    ) -> None:
-        """Link existing Jira issue to case.
-
-        Link an existing Jira issue to a case
-
-        :param case_id: Case's UUID or key
-        :type case_id: str
-        :param body: Jira issue link request
-        :type body: JiraIssueLinkRequest
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_id"] = case_id
-
-        kwargs["body"] = body
-
-        return self._link_jira_issue_to_case_endpoint.call_with_http_info(**kwargs)
-
-    def move_case_to_project(
-        self,
-        case_id: str,
-        body: ProjectRelationship,
-    ) -> CaseResponse:
-        """Update case project.
-
-        Update the project associated with a case
-
-        :param case_id: Case's UUID or key
-        :type case_id: str
-        :param body: Project update request
-        :type body: ProjectRelationship
-        :rtype: CaseResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_id"] = case_id
-
-        kwargs["body"] = body
-
-        return self._move_case_to_project_endpoint.call_with_http_info(**kwargs)
-
     def search_cases(
         self,
         *,
@@ -1428,23 +1111,6 @@ class CaseManagementApi:
         kwargs["body"] = body
 
         return self._unassign_case_endpoint.call_with_http_info(**kwargs)
-
-    def unlink_jira_issue(
-        self,
-        case_id: str,
-    ) -> None:
-        """Remove Jira issue link from case.
-
-        Remove the link between a Jira issue and a case
-
-        :param case_id: Case's UUID or key
-        :type case_id: str
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_id"] = case_id
-
-        return self._unlink_jira_issue_endpoint.call_with_http_info(**kwargs)
 
     def update_attributes(
         self,
