@@ -13,6 +13,10 @@ from datadog_api_client.v1.model.api_key import ApiKey
 from datadog_api_client.v1.model.application_key_list_response import ApplicationKeyListResponse
 from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse
 from datadog_api_client.v1.model.application_key import ApplicationKey
+from datadog_api_client.v1.model.client_token_revoke_request import ClientTokenRevokeRequest
+from datadog_api_client.v1.model.client_token import ClientToken
+from datadog_api_client.v1.model.client_token_create_request import ClientTokenCreateRequest
+from datadog_api_client.v1.model.client_token_update_request import ClientTokenUpdateRequest
 
 
 class KeyManagementApi:
@@ -64,6 +68,26 @@ class KeyManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (ApplicationKey,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_client_token_endpoint = _Endpoint(
+            settings={
+                "response_type": (ClientToken,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/public_api_key",
+                "operation_id": "create_client_token",
+                "http_method": "POST",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ClientTokenCreateRequest,),
                     "location": "body",
                 },
             },
@@ -195,6 +219,26 @@ class KeyManagementApi:
             api_client=api_client,
         )
 
+        self._revoke_client_token_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/public_api_key",
+                "operation_id": "revoke_client_token",
+                "http_method": "DELETE",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ClientTokenRevokeRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApiKeyResponse,),
@@ -247,6 +291,26 @@ class KeyManagementApi:
             api_client=api_client,
         )
 
+        self._update_client_token_endpoint = _Endpoint(
+            settings={
+                "response_type": (ClientToken,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v1/public_api_key",
+                "operation_id": "update_client_token",
+                "http_method": "PUT",
+                "version": "v1",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ClientTokenUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_api_key(
         self,
         body: ApiKey,
@@ -279,6 +343,23 @@ class KeyManagementApi:
         kwargs["body"] = body
 
         return self._create_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def create_client_token(
+        self,
+        body: ClientTokenCreateRequest,
+    ) -> ClientToken:
+        """Create client token.
+
+        Create a new client token (public API key) to submit data from your browser or mobile
+        applications to Datadog.
+
+        :type body: ClientTokenCreateRequest
+        :rtype: ClientToken
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_client_token_endpoint.call_with_http_info(**kwargs)
 
     def delete_api_key(
         self,
@@ -375,6 +456,23 @@ class KeyManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
 
+    def revoke_client_token(
+        self,
+        body: ClientTokenRevokeRequest,
+    ) -> None:
+        """Revoke client token.
+
+        Revoke a client token (public API key). Once revoked, the token can no longer be used
+        to submit data to Datadog.
+
+        :type body: ClientTokenRevokeRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._revoke_client_token_endpoint.call_with_http_info(**kwargs)
+
     def update_api_key(
         self,
         key: str,
@@ -417,3 +515,19 @@ class KeyManagementApi:
         kwargs["body"] = body
 
         return self._update_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def update_client_token(
+        self,
+        body: ClientTokenUpdateRequest,
+    ) -> ClientToken:
+        """Update client token.
+
+        Update the name and/or origin URLs of an existing client token (public API key).
+
+        :type body: ClientTokenUpdateRequest
+        :rtype: ClientToken
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_client_token_endpoint.call_with_http_info(**kwargs)
