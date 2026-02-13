@@ -264,6 +264,7 @@ class DORAMetricsApi:
         * Deployment Frequency
         * Change Lead Time
         * Change Failure Rate
+        * Failed Deployment Recovery Time
 
         :type body: DORADeploymentRequest
         :rtype: DORADeploymentResponse
@@ -277,14 +278,11 @@ class DORAMetricsApi:
         self,
         body: DORAFailureRequest,
     ) -> DORAFailureResponse:
-        """Send a failure event.
+        """Send an incident event.
 
-        Use this API endpoint to provide failure data.
-
-        This is necessary for:
-
-        * Change Failure Rate
-        * Time to Restore
+        Use this API endpoint to provide incident data for DORA Metrics.
+        Note that change failure rate and failed deployment recovery time are computed from change failures detected on deployments, not from incident events sent through this endpoint.
+        Tracking incidents gives a side-by-side view of how failed deployments translate into real-world incidents, including their severity and frequency.
 
         :type body: DORAFailureRequest
         :rtype: DORAFailureResponse
@@ -298,16 +296,12 @@ class DORAMetricsApi:
         self,
         body: DORAFailureRequest,
     ) -> DORAFailureResponse:
-        """Send an incident event. **Deprecated**.
+        """Send an incident event (legacy). **Deprecated**.
 
         **Note** : This endpoint is deprecated. Please use ``/api/v2/dora/failure`` instead.
 
-        Use this API endpoint to provide failure data.
-
-        This is necessary for:
-
-        * Change Failure Rate
-        * Time to Restore
+        Use this API endpoint to provide incident data.
+        Tracking incidents gives a side-by-side view of how failed deployments translate into real-world incidents.
 
         :type body: DORAFailureRequest
         :rtype: DORAFailureResponse
@@ -339,11 +333,11 @@ class DORAMetricsApi:
         self,
         failure_id: str,
     ) -> None:
-        """Delete a failure event.
+        """Delete an incident event.
 
-        Use this API endpoint to delete a failure event.
+        Use this API endpoint to delete an incident event.
 
-        :param failure_id: The ID of the failure event to delete.
+        :param failure_id: The ID of the incident event to delete.
         :type failure_id: str
         :rtype: None
         """
@@ -373,11 +367,11 @@ class DORAMetricsApi:
         self,
         failure_id: str,
     ) -> DORAFailureFetchResponse:
-        """Get a failure event.
+        """Get an incident event.
 
-        Use this API endpoint to get a failure event.
+        Use this API endpoint to get an incident event.
 
-        :param failure_id: The ID of the failure event.
+        :param failure_id: The ID of the incident event.
         :type failure_id: str
         :rtype: DORAFailureFetchResponse
         """
@@ -406,9 +400,9 @@ class DORAMetricsApi:
         self,
         body: DORAListFailuresRequest,
     ) -> DORAFailuresListResponse:
-        """Get a list of failure events.
+        """Get a list of incident events.
 
-        Use this API endpoint to get a list of failure events.
+        Use this API endpoint to get a list of incident events.
 
         :type body: DORAListFailuresRequest
         :rtype: DORAFailuresListResponse
@@ -425,7 +419,7 @@ class DORAMetricsApi:
     ) -> None:
         """Patch a deployment event.
 
-        Use this API endpoint to patch a deployment event.
+        Update a deployment's change failure status. Use this to mark a deployment as a change failure or back to stable. You can optionally include remediation details to enable failed deployment recovery time calculation.
 
         :param deployment_id: The ID of the deployment event.
         :type deployment_id: str

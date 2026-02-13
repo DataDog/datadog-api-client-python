@@ -52,7 +52,7 @@ class DORAIncidentObject(ModelNormal):
         :param id: The ID of the incident event.
         :type id: str, optional
 
-        :param type: JSON:API type for DORA failure events.
+        :param type: JSON:API type for DORA incident events.
         :type type: DORAFailureType, optional
         """
         if attributes is not unset:

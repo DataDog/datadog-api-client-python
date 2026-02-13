@@ -32,7 +32,7 @@ class DORAFailureFetchResponse(ModelNormal):
 
     def __init__(self_, data: Union[DORAIncidentObject, UnsetType] = unset, **kwargs):
         """
-        Response for fetching a single failure event.
+        Response for fetching a single incident event.
 
         :param data: A DORA incident event.
         :type data: DORAIncidentObject, optional
