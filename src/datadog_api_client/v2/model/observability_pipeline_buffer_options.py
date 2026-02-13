@@ -16,7 +16,7 @@ class ObservabilityPipelineBufferOptions(ModelComposed):
         Configuration for buffer settings on destination components.
 
         :param max_size: Maximum size of the disk buffer.
-        :type max_size: int, optional
+        :type max_size: int
 
         :param type: The type of the buffer that will be configured, a disk buffer.
         :type type: ObservabilityPipelineBufferOptionsDiskType, optional
@@ -25,7 +25,7 @@ class ObservabilityPipelineBufferOptions(ModelComposed):
         :type when_full: ObservabilityPipelineBufferOptionsWhenFull, optional
 
         :param max_events: Maximum events for the memory buffer.
-        :type max_events: int, optional
+        :type max_events: int
         """
         super().__init__(kwargs)
 
