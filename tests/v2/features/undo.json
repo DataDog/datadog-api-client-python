@@ -2696,6 +2696,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateLoginOrgConfigMaxSessionDuration": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {
@@ -3417,6 +3423,12 @@
     "tag": "On-Call",
     "undo": {
       "type": "safe"
+    }
+  },
+  "UpdateOrgSamlConfigurations": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListOrgConfigs": {
