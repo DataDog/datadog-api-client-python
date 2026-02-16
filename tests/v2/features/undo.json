@@ -178,6 +178,14 @@
       "type": "idempotent"
     }
   },
+  "CreateCustomAgentConversation": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListAppKeyRegistrations": {
     "tag": "Action Connection",
     "undo": {
@@ -5797,6 +5805,54 @@
     "tag": "Teams",
     "undo": {
       "type": "safe"
+    }
+  },
+  "CreateDataTransformation": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "CreateDataTransformationDescription": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "CreateWorkflowDescription": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "CreatePickAction": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "CreatePickRemediationFromInvestigation": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "CreateWorkflowScaffoldAgenticStream": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
     }
   },
   "CreateWorkflow": {

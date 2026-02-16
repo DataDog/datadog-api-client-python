@@ -108,6 +108,7 @@ from datadog_api_client.v2.model.action_connection_data_type import ActionConnec
 from datadog_api_client.v2.model.action_connection_data_update import ActionConnectionDataUpdate
 from datadog_api_client.v2.model.action_connection_integration import ActionConnectionIntegration
 from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
+from datadog_api_client.v2.model.action_match import ActionMatch
 from datadog_api_client.v2.model.action_query import ActionQuery
 from datadog_api_client.v2.model.action_query_condition import ActionQueryCondition
 from datadog_api_client.v2.model.action_query_debounce_in_ms import ActionQueryDebounceInMs
@@ -131,6 +132,7 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
+from datadog_api_client.v2.model.agentic_event import AgenticEvent
 from datadog_api_client.v2.model.alert_event_attributes import AlertEventAttributes
 from datadog_api_client.v2.model.alert_event_attributes_links_item import AlertEventAttributesLinksItem
 from datadog_api_client.v2.model.alert_event_attributes_links_item_category import AlertEventAttributesLinksItemCategory
@@ -762,6 +764,10 @@ from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resourc
 )
 from datadog_api_client.v2.model.change_event_trigger_wrapper import ChangeEventTriggerWrapper
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
+from datadog_api_client.v2.model.chat_history_item import ChatHistoryItem
+from datadog_api_client.v2.model.chat_history_item_role import ChatHistoryItemRole
+from datadog_api_client.v2.model.chat_message import ChatMessage
+from datadog_api_client.v2.model.chat_message_role import ChatMessageRole
 from datadog_api_client.v2.model.circle_ciapi_key import CircleCIAPIKey
 from datadog_api_client.v2.model.circle_ciapi_key_type import CircleCIAPIKeyType
 from datadog_api_client.v2.model.circle_ciapi_key_update import CircleCIAPIKeyUpdate
@@ -778,6 +784,7 @@ from datadog_api_client.v2.model.clickup_credentials_update import ClickupCreden
 from datadog_api_client.v2.model.clickup_integration import ClickupIntegration
 from datadog_api_client.v2.model.clickup_integration_type import ClickupIntegrationType
 from datadog_api_client.v2.model.clickup_integration_update import ClickupIntegrationUpdate
+from datadog_api_client.v2.model.client_type import ClientType
 from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
@@ -1261,6 +1268,8 @@ from datadog_api_client.v2.model.csm_serverless_coverage_analysis_attributes imp
 )
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_data import CsmServerlessCoverageAnalysisData
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_response import CsmServerlessCoverageAnalysisResponse
+from datadog_api_client.v2.model.custom_agent_conversation_request import CustomAgentConversationRequest
+from datadog_api_client.v2.model.custom_agent_conversation_stream_response import CustomAgentConversationStreamResponse
 from datadog_api_client.v2.model.custom_attribute_config import CustomAttributeConfig
 from datadog_api_client.v2.model.custom_attribute_config_attributes_create import CustomAttributeConfigAttributesCreate
 from datadog_api_client.v2.model.custom_attribute_config_create import CustomAttributeConfigCreate
@@ -1495,6 +1504,12 @@ from datadog_api_client.v2.model.data_scalar_column import DataScalarColumn
 from datadog_api_client.v2.model.data_transform import DataTransform
 from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
 from datadog_api_client.v2.model.data_transform_type import DataTransformType
+from datadog_api_client.v2.model.data_transformation_context import DataTransformationContext
+from datadog_api_client.v2.model.data_transformation_description_request import DataTransformationDescriptionRequest
+from datadog_api_client.v2.model.data_transformation_description_response import DataTransformationDescriptionResponse
+from datadog_api_client.v2.model.data_transformation_language import DataTransformationLanguage
+from datadog_api_client.v2.model.data_transformation_request import DataTransformationRequest
+from datadog_api_client.v2.model.data_transformation_stream_response import DataTransformationStreamResponse
 from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
 from datadog_api_client.v2.model.datadog_api_key import DatadogAPIKey
 from datadog_api_client.v2.model.datadog_api_key_type import DatadogAPIKeyType
@@ -4055,6 +4070,14 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.pick_action_request import PickActionRequest
+from datadog_api_client.v2.model.pick_action_response import PickActionResponse
+from datadog_api_client.v2.model.pick_remediation_from_investigation_request import (
+    PickRemediationFromInvestigationRequest,
+)
+from datadog_api_client.v2.model.pick_remediation_from_investigation_response import (
+    PickRemediationFromInvestigationResponse,
+)
 from datadog_api_client.v2.model.playlist import Playlist
 from datadog_api_client.v2.model.playlist_array import PlaylistArray
 from datadog_api_client.v2.model.playlist_data import PlaylistData
@@ -5343,6 +5366,7 @@ from datadog_api_client.v2.model.split_credentials_update import SplitCredential
 from datadog_api_client.v2.model.split_integration import SplitIntegration
 from datadog_api_client.v2.model.split_integration_type import SplitIntegrationType
 from datadog_api_client.v2.model.split_integration_update import SplitIntegrationUpdate
+from datadog_api_client.v2.model.stability_level import StabilityLevel
 from datadog_api_client.v2.model.state import State
 from datadog_api_client.v2.model.state_variable import StateVariable
 from datadog_api_client.v2.model.state_variable_properties import StateVariableProperties
@@ -5485,6 +5509,7 @@ from datadog_api_client.v2.model.status_pages_user_type import StatusPagesUserTy
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
+from datadog_api_client.v2.model.stream_event_v1 import StreamEventV1
 from datadog_api_client.v2.model.suite_create_edit import SuiteCreateEdit
 from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEditRequest
 from datadog_api_client.v2.model.suite_search_response_type import SuiteSearchResponseType
@@ -5902,9 +5927,11 @@ from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesTy
 from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
+from datadog_api_client.v2.model.user_context import UserContext
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
 from datadog_api_client.v2.model.user_create_data import UserCreateData
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
+from datadog_api_client.v2.model.user_info import UserInfo
 from datadog_api_client.v2.model.user_invitation_data import UserInvitationData
 from datadog_api_client.v2.model.user_invitation_data_attributes import UserInvitationDataAttributes
 from datadog_api_client.v2.model.user_invitation_relationships import UserInvitationRelationships
@@ -5998,6 +6025,8 @@ from datadog_api_client.v2.model.workflow_data_relationships import WorkflowData
 from datadog_api_client.v2.model.workflow_data_type import WorkflowDataType
 from datadog_api_client.v2.model.workflow_data_update import WorkflowDataUpdate
 from datadog_api_client.v2.model.workflow_data_update_attributes import WorkflowDataUpdateAttributes
+from datadog_api_client.v2.model.workflow_description_request import WorkflowDescriptionRequest
+from datadog_api_client.v2.model.workflow_description_response import WorkflowDescriptionResponse
 from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
 from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
 from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
@@ -6006,6 +6035,8 @@ from datadog_api_client.v2.model.workflow_instance_list_item import WorkflowInst
 from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
 from datadog_api_client.v2.model.workflow_list_instances_response_meta import WorkflowListInstancesResponseMeta
 from datadog_api_client.v2.model.workflow_list_instances_response_meta_page import WorkflowListInstancesResponseMetaPage
+from datadog_api_client.v2.model.workflow_scaffold_agentic_stream_request import WorkflowScaffoldAgenticStreamRequest
+from datadog_api_client.v2.model.workflow_scaffold_agentic_stream_response import WorkflowScaffoldAgenticStreamResponse
 from datadog_api_client.v2.model.workflow_trigger_wrapper import WorkflowTriggerWrapper
 from datadog_api_client.v2.model.workflow_user_relationship import WorkflowUserRelationship
 from datadog_api_client.v2.model.workflow_user_relationship_data import WorkflowUserRelationshipData
@@ -6122,6 +6153,7 @@ __all__ = [
     "ActionConnectionDataUpdate",
     "ActionConnectionIntegration",
     "ActionConnectionIntegrationUpdate",
+    "ActionMatch",
     "ActionQuery",
     "ActionQueryCondition",
     "ActionQueryDebounceInMs",
@@ -6145,6 +6177,7 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "AddMemberTeamRequest",
     "Advisory",
+    "AgenticEvent",
     "AlertEventAttributes",
     "AlertEventAttributesLinksItem",
     "AlertEventAttributesLinksItemCategory",
@@ -6610,6 +6643,10 @@ __all__ = [
     "ChangeEventCustomAttributesImpactedResourcesItemsType",
     "ChangeEventTriggerWrapper",
     "ChargebackBreakdown",
+    "ChatHistoryItem",
+    "ChatHistoryItemRole",
+    "ChatMessage",
+    "ChatMessageRole",
     "CircleCIAPIKey",
     "CircleCIAPIKeyType",
     "CircleCIAPIKeyUpdate",
@@ -6626,6 +6663,7 @@ __all__ = [
     "ClickupIntegration",
     "ClickupIntegrationType",
     "ClickupIntegrationUpdate",
+    "ClientType",
     "CloudAssetType",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
@@ -6943,6 +6981,8 @@ __all__ = [
     "CsmServerlessCoverageAnalysisAttributes",
     "CsmServerlessCoverageAnalysisData",
     "CsmServerlessCoverageAnalysisResponse",
+    "CustomAgentConversationRequest",
+    "CustomAgentConversationStreamResponse",
     "CustomAttributeConfig",
     "CustomAttributeConfigAttributesCreate",
     "CustomAttributeConfigCreate",
@@ -7105,6 +7145,12 @@ __all__ = [
     "DataTransform",
     "DataTransformProperties",
     "DataTransformType",
+    "DataTransformationContext",
+    "DataTransformationDescriptionRequest",
+    "DataTransformationDescriptionResponse",
+    "DataTransformationLanguage",
+    "DataTransformationRequest",
+    "DataTransformationStreamResponse",
     "DatabaseMonitoringTriggerWrapper",
     "DatadogAPIKey",
     "DatadogAPIKeyType",
@@ -8855,6 +8901,10 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "PickActionRequest",
+    "PickActionResponse",
+    "PickRemediationFromInvestigationRequest",
+    "PickRemediationFromInvestigationResponse",
     "Playlist",
     "PlaylistArray",
     "PlaylistData",
@@ -9815,6 +9865,7 @@ __all__ = [
     "SplitIntegration",
     "SplitIntegrationType",
     "SplitIntegrationUpdate",
+    "StabilityLevel",
     "State",
     "StateVariable",
     "StateVariableProperties",
@@ -9889,6 +9940,7 @@ __all__ = [
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
+    "StreamEventV1",
     "SuiteCreateEdit",
     "SuiteCreateEditRequest",
     "SuiteSearchResponseType",
@@ -10204,9 +10256,11 @@ __all__ = [
     "User",
     "UserAttributes",
     "UserAttributesStatus",
+    "UserContext",
     "UserCreateAttributes",
     "UserCreateData",
     "UserCreateRequest",
+    "UserInfo",
     "UserInvitationData",
     "UserInvitationDataAttributes",
     "UserInvitationRelationships",
@@ -10298,6 +10352,8 @@ __all__ = [
     "WorkflowDataType",
     "WorkflowDataUpdate",
     "WorkflowDataUpdateAttributes",
+    "WorkflowDescriptionRequest",
+    "WorkflowDescriptionResponse",
     "WorkflowInstanceCreateMeta",
     "WorkflowInstanceCreateRequest",
     "WorkflowInstanceCreateResponse",
@@ -10306,6 +10362,8 @@ __all__ = [
     "WorkflowListInstancesResponse",
     "WorkflowListInstancesResponseMeta",
     "WorkflowListInstancesResponseMetaPage",
+    "WorkflowScaffoldAgenticStreamRequest",
+    "WorkflowScaffoldAgenticStreamResponse",
     "WorkflowTriggerWrapper",
     "WorkflowUserRelationship",
     "WorkflowUserRelationshipData",

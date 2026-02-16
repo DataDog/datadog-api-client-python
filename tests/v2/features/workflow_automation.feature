@@ -51,6 +51,33 @@ Feature: Workflow Automation
     When the request is sent
     Then the response status is 201 Successfully created a workflow.
 
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Create a custom agent conversation returns "Bad Request" response
+    Given operation "CreateCustomAgentConversation" enabled
+    And new "CreateCustomAgentConversation" request
+    And request contains "custom_agent_id" parameter from "REPLACE.ME"
+    And body with value {"conversationId": "550e8400-e29b-41d4-a716-446655440000", "userPrompt": "What is the weather like today?"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Create a custom agent conversation returns "Not Found" response
+    Given operation "CreateCustomAgentConversation" enabled
+    And new "CreateCustomAgentConversation" request
+    And request contains "custom_agent_id" parameter from "REPLACE.ME"
+    And body with value {"conversationId": "550e8400-e29b-41d4-a716-446655440000", "userPrompt": "What is the weather like today?"}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Create a custom agent conversation returns "OK" response
+    Given operation "CreateCustomAgentConversation" enabled
+    And new "CreateCustomAgentConversation" request
+    And request contains "custom_agent_id" parameter from "REPLACE.ME"
+    And body with value {"conversationId": "550e8400-e29b-41d4-a716-446655440000", "userPrompt": "What is the weather like today?"}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/workflow-automation-dev
   Scenario: Delete an existing Workflow returns "Not found" response
     Given new "DeleteWorkflow" request
@@ -81,6 +108,70 @@ Feature: Workflow Automation
     And body with value { "meta": { "payload": { "input": "value" } } }
     When the request is sent
     Then the response status is 200 Created
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate data transformation code returns "Bad Request" response
+    Given operation "CreateDataTransformation" enabled
+    And new "CreateDataTransformation" request
+    And body with value {"chatHistory": [{"content": "Please add error handling", "role": "user"}], "context": {"contextVariables": "{ \"timestamp\": 1234567890 }", "currentScript": "return data.timestamp;"}, "language": "javascript", "stream": true, "userPrompt": "Convert timestamp to ISO format"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate data transformation code returns "OK" response
+    Given operation "CreateDataTransformation" enabled
+    And new "CreateDataTransformation" request
+    And body with value {"chatHistory": [{"content": "Please add error handling", "role": "user"}], "context": {"contextVariables": "{ \"timestamp\": 1234567890 }", "currentScript": "return data.timestamp;"}, "language": "javascript", "stream": true, "userPrompt": "Convert timestamp to ISO format"}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate data transformation description returns "Bad Request" response
+    Given operation "CreateDataTransformationDescription" enabled
+    And new "CreateDataTransformationDescription" request
+    And body with value {"actionId": "com.datadoghq.transform.timestamp", "script": "return new Date(data.timestamp).toISOString();"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate data transformation description returns "OK" response
+    Given operation "CreateDataTransformationDescription" enabled
+    And new "CreateDataTransformationDescription" request
+    And body with value {"actionId": "com.datadoghq.transform.timestamp", "script": "return new Date(data.timestamp).toISOString();"}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate workflow description returns "Bad Request" response
+    Given operation "CreateWorkflowDescription" enabled
+    And new "CreateWorkflowDescription" request
+    And body with value {"name": "Alert Response Workflow", "spec": {"steps": [{"actionId": "com.datadoghq.slack.send_message", "name": "Send notification"}]}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate workflow description returns "OK" response
+    Given operation "CreateWorkflowDescription" enabled
+    And new "CreateWorkflowDescription" request
+    And body with value {"name": "Alert Response Workflow", "spec": {"steps": [{"actionId": "com.datadoghq.slack.send_message", "name": "Send notification"}]}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate workflow scaffold with agentic stream returns "Bad Request" response
+    Given operation "CreateWorkflowScaffoldAgenticStream" enabled
+    And new "CreateWorkflowScaffoldAgenticStream" request
+    And body with value {"chatHistory": [{"chatId": "chat-456", "content": "Add error handling to the workflow", "id": "msg-123", "role": "user", "userUuid": "550e8400-e29b-41d4-a716-446655440000"}], "previousAction": "created_initial_scaffold", "userContext": {"userInfo": {"orgName": "Acme Corp", "userEmail": "john.doe@example.com", "userName": "John Doe", "userUUID": "550e8400-e29b-41d4-a716-446655440000"}}, "userPrompt": "Create a workflow to restart a service when CPU is high"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Generate workflow scaffold with agentic stream returns "OK" response
+    Given operation "CreateWorkflowScaffoldAgenticStream" enabled
+    And new "CreateWorkflowScaffoldAgenticStream" request
+    And body with value {"chatHistory": [{"chatId": "chat-456", "content": "Add error handling to the workflow", "id": "msg-123", "role": "user", "userUuid": "550e8400-e29b-41d4-a716-446655440000"}], "previousAction": "created_initial_scaffold", "userContext": {"userInfo": {"orgName": "Acme Corp", "userEmail": "john.doe@example.com", "userName": "John Doe", "userUUID": "550e8400-e29b-41d4-a716-446655440000"}}, "userPrompt": "Create a workflow to restart a service when CPU is high"}
+    When the request is sent
+    Then the response status is 200 OK
 
   @replay-only @team:DataDog/workflow-automation-dev
   Scenario: Get a workflow instance returns "Bad Request" response
@@ -139,6 +230,38 @@ Feature: Workflow Automation
   Scenario: List workflow instances returns "OK" response
     Given new "ListWorkflowInstances" request
     And request contains "workflow_id" parameter with value "ccf73164-1998-4785-a7a3-8d06c7e5f558"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Pick relevant actions returns "Bad Request" response
+    Given operation "CreatePickAction" enabled
+    And new "CreatePickAction" request
+    And body with value {"client": "workflows", "number_of_relevant_actions": 5, "stability": "STABLE", "user_prompt": "Send a Slack message"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Pick relevant actions returns "OK" response
+    Given operation "CreatePickAction" enabled
+    And new "CreatePickAction" request
+    And body with value {"client": "workflows", "number_of_relevant_actions": 5, "stability": "STABLE", "user_prompt": "Send a Slack message"}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Pick remediation actions from investigation returns "Bad Request" response
+    Given operation "CreatePickRemediationFromInvestigation" enabled
+    And new "CreatePickRemediationFromInvestigation" request
+    And body with value {"client": "workflows", "integrations": ["aws", "datadog"], "investigation": "High CPU usage detected on prod-server-01", "number_of_keyword_variants": 2, "number_of_relevant_actions": 5, "stability": "STABLE"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/workflow-automation-backend
+  Scenario: Pick remediation actions from investigation returns "OK" response
+    Given operation "CreatePickRemediationFromInvestigation" enabled
+    And new "CreatePickRemediationFromInvestigation" request
+    And body with value {"client": "workflows", "integrations": ["aws", "datadog"], "investigation": "High CPU usage detected on prod-server-01", "number_of_keyword_variants": 2, "number_of_relevant_actions": 5, "stability": "STABLE"}
     When the request is sent
     Then the response status is 200 OK
 

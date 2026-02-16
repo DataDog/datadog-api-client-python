@@ -10,7 +10,26 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     UnsetType,
     unset,
+    UUID,
 )
+from datadog_api_client.v2.model.custom_agent_conversation_stream_response import CustomAgentConversationStreamResponse
+from datadog_api_client.v2.model.custom_agent_conversation_request import CustomAgentConversationRequest
+from datadog_api_client.v2.model.data_transformation_stream_response import DataTransformationStreamResponse
+from datadog_api_client.v2.model.data_transformation_request import DataTransformationRequest
+from datadog_api_client.v2.model.data_transformation_description_response import DataTransformationDescriptionResponse
+from datadog_api_client.v2.model.data_transformation_description_request import DataTransformationDescriptionRequest
+from datadog_api_client.v2.model.workflow_description_response import WorkflowDescriptionResponse
+from datadog_api_client.v2.model.workflow_description_request import WorkflowDescriptionRequest
+from datadog_api_client.v2.model.pick_action_response import PickActionResponse
+from datadog_api_client.v2.model.pick_action_request import PickActionRequest
+from datadog_api_client.v2.model.pick_remediation_from_investigation_response import (
+    PickRemediationFromInvestigationResponse,
+)
+from datadog_api_client.v2.model.pick_remediation_from_investigation_request import (
+    PickRemediationFromInvestigationRequest,
+)
+from datadog_api_client.v2.model.workflow_scaffold_agentic_stream_response import WorkflowScaffoldAgenticStreamResponse
+from datadog_api_client.v2.model.workflow_scaffold_agentic_stream_request import WorkflowScaffoldAgenticStreamRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
@@ -62,6 +81,112 @@ class WorkflowAutomationApi:
             api_client=api_client,
         )
 
+        self._create_custom_agent_conversation_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomAgentConversationStreamResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/actions/agents/{custom_agent_id}/conversation",
+                "operation_id": "create_custom_agent_conversation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "custom_agent_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "custom_agent_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CustomAgentConversationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["text/event-stream", "application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_data_transformation_endpoint = _Endpoint(
+            settings={
+                "response_type": (DataTransformationStreamResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflow_generation/data_transformation",
+                "operation_id": "create_data_transformation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DataTransformationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["text/event-stream", "application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_data_transformation_description_endpoint = _Endpoint(
+            settings={
+                "response_type": (DataTransformationDescriptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflow_generation/data_transformation/description",
+                "operation_id": "create_data_transformation_description",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DataTransformationDescriptionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_pick_action_endpoint = _Endpoint(
+            settings={
+                "response_type": (PickActionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflow_generation/pick_action",
+                "operation_id": "create_pick_action",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (PickActionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_pick_remediation_from_investigation_endpoint = _Endpoint(
+            settings={
+                "response_type": (PickRemediationFromInvestigationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflow_generation/pick_remediation_from_investigation",
+                "operation_id": "create_pick_remediation_from_investigation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (PickRemediationFromInvestigationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_workflow_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateWorkflowResponse,),
@@ -75,6 +200,26 @@ class WorkflowAutomationApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateWorkflowRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_workflow_description_endpoint = _Endpoint(
+            settings={
+                "response_type": (WorkflowDescriptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflow_generation/description",
+                "operation_id": "create_workflow_description",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (WorkflowDescriptionRequest,),
                     "location": "body",
                 },
             },
@@ -105,6 +250,26 @@ class WorkflowAutomationApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_workflow_scaffold_agentic_stream_endpoint = _Endpoint(
+            settings={
+                "response_type": (WorkflowScaffoldAgenticStreamResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflow_generation/scaffold_agentic_stream",
+                "operation_id": "create_workflow_scaffold_agentic_stream",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (WorkflowScaffoldAgenticStreamRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["text/event-stream", "application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -264,6 +429,91 @@ class WorkflowAutomationApi:
 
         return self._cancel_workflow_instance_endpoint.call_with_http_info(**kwargs)
 
+    def create_custom_agent_conversation(
+        self,
+        custom_agent_id: UUID,
+        body: CustomAgentConversationRequest,
+    ) -> CustomAgentConversationStreamResponse:
+        """Create a custom agent conversation.
+
+        Initiates or continues a conversation with a custom agent. Supports streaming responses.
+
+        :param custom_agent_id: The ID of the custom agent.
+        :type custom_agent_id: UUID
+        :type body: CustomAgentConversationRequest
+        :rtype: CustomAgentConversationStreamResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["custom_agent_id"] = custom_agent_id
+
+        kwargs["body"] = body
+
+        return self._create_custom_agent_conversation_endpoint.call_with_http_info(**kwargs)
+
+    def create_data_transformation(
+        self,
+        body: DataTransformationRequest,
+    ) -> DataTransformationStreamResponse:
+        """Generate data transformation code.
+
+        Generates data transformation code (JavaScript or Python) based on user prompt and context.
+
+        :type body: DataTransformationRequest
+        :rtype: DataTransformationStreamResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_data_transformation_endpoint.call_with_http_info(**kwargs)
+
+    def create_data_transformation_description(
+        self,
+        body: DataTransformationDescriptionRequest,
+    ) -> DataTransformationDescriptionResponse:
+        """Generate data transformation description.
+
+        Generates a summary and detailed description for data transformation code.
+
+        :type body: DataTransformationDescriptionRequest
+        :rtype: DataTransformationDescriptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_data_transformation_description_endpoint.call_with_http_info(**kwargs)
+
+    def create_pick_action(
+        self,
+        body: PickActionRequest,
+    ) -> PickActionResponse:
+        """Pick relevant actions.
+
+        Finds similar actions based on a user prompt using vector search.
+
+        :type body: PickActionRequest
+        :rtype: PickActionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_pick_action_endpoint.call_with_http_info(**kwargs)
+
+    def create_pick_remediation_from_investigation(
+        self,
+        body: PickRemediationFromInvestigationRequest,
+    ) -> PickRemediationFromInvestigationResponse:
+        """Pick remediation actions from investigation.
+
+        Generates keywords from an investigation and finds relevant remediation actions.
+
+        :type body: PickRemediationFromInvestigationRequest
+        :rtype: PickRemediationFromInvestigationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_pick_remediation_from_investigation_endpoint.call_with_http_info(**kwargs)
+
     def create_workflow(
         self,
         body: CreateWorkflowRequest,
@@ -279,6 +529,22 @@ class WorkflowAutomationApi:
         kwargs["body"] = body
 
         return self._create_workflow_endpoint.call_with_http_info(**kwargs)
+
+    def create_workflow_description(
+        self,
+        body: WorkflowDescriptionRequest,
+    ) -> WorkflowDescriptionResponse:
+        """Generate workflow description.
+
+        Generates a description and summary for a workflow based on its specification.
+
+        :type body: WorkflowDescriptionRequest
+        :rtype: WorkflowDescriptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_workflow_description_endpoint.call_with_http_info(**kwargs)
 
     def create_workflow_instance(
         self,
@@ -300,6 +566,22 @@ class WorkflowAutomationApi:
         kwargs["body"] = body
 
         return self._create_workflow_instance_endpoint.call_with_http_info(**kwargs)
+
+    def create_workflow_scaffold_agentic_stream(
+        self,
+        body: WorkflowScaffoldAgenticStreamRequest,
+    ) -> WorkflowScaffoldAgenticStreamResponse:
+        """Generate workflow scaffold with agentic stream.
+
+        Generates or updates a workflow scaffold using agentic streaming based on user prompts.
+
+        :type body: WorkflowScaffoldAgenticStreamRequest
+        :rtype: WorkflowScaffoldAgenticStreamResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_workflow_scaffold_agentic_stream_endpoint.call_with_http_info(**kwargs)
 
     def delete_workflow(
         self,
