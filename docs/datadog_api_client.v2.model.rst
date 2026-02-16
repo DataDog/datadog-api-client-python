@@ -7137,6 +7137,97 @@ datadog\_api\_client.v2.model.cvss module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cyclone\_dx\_advisory module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_advisory
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_affect module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_affect
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_asset\_component module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_asset_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_component module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_component\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_component_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_metadata module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_rating module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_rating
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_reference module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_reference\_source module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_reference_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_tool\_component module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_tool_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_tools module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_tools
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dxbom module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dxbom
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dashboard\_list\_add\_items\_request module
 -------------------------------------------------------------------------
 
@@ -23419,6 +23510,13 @@ datadog\_api\_client.v2.model.security\_filters\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_finding\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_finding_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_findings\_attributes module
 -------------------------------------------------------------------
 
@@ -28239,6 +28337,13 @@ datadog\_api\_client.v2.model.threat\_hunting\_job\_response\_data module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.threat_hunting_job_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.threat\_intel\_indicator\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.threat_intel_indicator_type
    :members:
    :show-inheritance:
 
