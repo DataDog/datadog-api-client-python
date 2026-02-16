@@ -1576,10 +1576,6 @@ from datadog_api_client.v2.model.deployment_metadata import DeploymentMetadata
 from datadog_api_client.v2.model.deployment_relationship import DeploymentRelationship
 from datadog_api_client.v2.model.deployment_relationship_data import DeploymentRelationshipData
 from datadog_api_client.v2.model.deployment_rule_data_type import DeploymentRuleDataType
-from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
-    DeploymentRuleOptionsFaultyDeploymentDetection,
-)
-from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
 from datadog_api_client.v2.model.deployment_rule_response import DeploymentRuleResponse
 from datadog_api_client.v2.model.deployment_rule_response_data import DeploymentRuleResponseData
 from datadog_api_client.v2.model.deployment_rule_response_data_attributes import DeploymentRuleResponseDataAttributes
@@ -1592,7 +1588,6 @@ from datadog_api_client.v2.model.deployment_rule_response_data_attributes_type i
 from datadog_api_client.v2.model.deployment_rule_response_data_attributes_updated_by import (
     DeploymentRuleResponseDataAttributesUpdatedBy,
 )
-from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
 from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
 from datadog_api_client.v2.model.detach_case_request_data import DetachCaseRequestData
 from datadog_api_client.v2.model.detach_case_request_data_relationships import DetachCaseRequestDataRelationships
@@ -7150,15 +7145,12 @@ __all__ = [
     "DeploymentRelationship",
     "DeploymentRelationshipData",
     "DeploymentRuleDataType",
-    "DeploymentRuleOptionsFaultyDeploymentDetection",
-    "DeploymentRuleOptionsMonitor",
     "DeploymentRuleResponse",
     "DeploymentRuleResponseData",
     "DeploymentRuleResponseDataAttributes",
     "DeploymentRuleResponseDataAttributesCreatedBy",
     "DeploymentRuleResponseDataAttributesType",
     "DeploymentRuleResponseDataAttributesUpdatedBy",
-    "DeploymentRulesOptions",
     "DetachCaseRequest",
     "DetachCaseRequestData",
     "DetachCaseRequestDataRelationships",

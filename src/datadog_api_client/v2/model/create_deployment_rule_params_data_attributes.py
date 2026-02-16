@@ -3,33 +3,38 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Any, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
+    none_type,
     unset,
     UnsetType,
+    UUID,
 )
-
-
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
-    from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
-        DeploymentRuleOptionsFaultyDeploymentDetection,
-    )
-    from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
 
 
 class CreateDeploymentRuleParamsDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
-
         return {
             "dry_run": (bool,),
             "name": (str,),
-            "options": (DeploymentRulesOptions,),
+            "options": (
+                bool,
+                date,
+                datetime,
+                dict,
+                float,
+                int,
+                list,
+                str,
+                UUID,
+                none_type,
+            ),
             "type": (str,),
         }
 
@@ -40,16 +45,7 @@ class CreateDeploymentRuleParamsDataAttributes(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        name: str,
-        options: Union[
-            DeploymentRulesOptions, DeploymentRuleOptionsFaultyDeploymentDetection, DeploymentRuleOptionsMonitor
-        ],
-        type: str,
-        dry_run: Union[bool, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, name: str, options: Any, type: str, dry_run: Union[bool, UnsetType] = unset, **kwargs):
         """
         Parameters for creating a deployment rule.
 
@@ -59,8 +55,8 @@ class CreateDeploymentRuleParamsDataAttributes(ModelNormal):
         :param name: The name of the deployment rule.
         :type name: str
 
-        :param options: Options for deployment rule response representing either faulty deployment detection or monitor options.
-        :type options: DeploymentRulesOptions
+        :param options: Options for deployment rule response representing either faulty deployment detection or monitor options. The actual type is determined by the parent's 'type' field.
+        :type options: bool, date, datetime, dict, float, int, list, str, UUID, none_type
 
         :param type: The type of the deployment rule (faulty_deployment_detection or monitor).
         :type type: str
