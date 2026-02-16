@@ -295,6 +295,8 @@ class Configuration:
                 "v2.mute_findings": False,
                 "v2.run_threat_hunting_job": False,
                 "v2.search_security_monitoring_histsignals": False,
+                "v2.get_code_coverage_branch_summary": False,
+                "v2.get_code_coverage_commit_summary": False,
                 "v2.create_dataset": False,
                 "v2.delete_dataset": False,
                 "v2.get_all_datasets": False,

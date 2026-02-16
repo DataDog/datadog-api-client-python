@@ -21,6 +21,7 @@ from datadog_api_client.v2.api.case_management_type_api import CaseManagementTyp
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.api.cloud_network_monitoring_api import CloudNetworkMonitoringApi
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
+from datadog_api_client.v2.api.code_coverage_api import CodeCoverageApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.containers_api import ContainersApi
@@ -120,6 +121,7 @@ __all__ = [
     "CloudCostManagementApi",
     "CloudNetworkMonitoringApi",
     "CloudflareIntegrationApi",
+    "CodeCoverageApi",
     "ConfluentCloudApi",
     "ContainerImagesApi",
     "ContainersApi",
