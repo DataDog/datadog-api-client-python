@@ -37,6 +37,7 @@ from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationApi
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
+from datadog_api_client.v2.api.forms_api import FormsApi
 from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi
 from datadog_api_client.v2.api.high_availability_multi_region_api import HighAvailabilityMultiRegionApi
 from datadog_api_client.v2.api.ip_allowlist_api import IPAllowlistApi
@@ -137,6 +138,7 @@ __all__ = [
     "EventsApi",
     "FastlyIntegrationApi",
     "FleetAutomationApi",
+    "FormsApi",
     "GCPIntegrationApi",
     "HighAvailabilityMultiRegionApi",
     "IPAllowlistApi",

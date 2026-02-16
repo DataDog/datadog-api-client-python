@@ -10630,6 +10630,251 @@ datadog\_api\_client.v2.model.fleet\_schedules\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.form\_create\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_data\_attributes\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_data\_attributes\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_data\_request module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_data\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_datastore\_config module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_datastore_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_publication module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_publication
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_publication\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_publication_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_publication\_data\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_publication_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_publication\_data\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_publication_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_publication\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_publication_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_publication\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_publication_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_publication\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_publication_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_response module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_submission\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_submission_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_submission\_data\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_submission_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_submission\_data\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_submission_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_submission\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_submission_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_submission\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_submission_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_submission\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_submission_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_type module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_update\_attributes module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_update\_attributes\_form\_update module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_update_attributes_form_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_update\_data\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_update_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_update\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_data\_attributes\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_data\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_data\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_state module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_version\_upsert\_params module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_upsert_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.forms\_list\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.forms_list_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.formula\_limit module
 ---------------------------------------------------
 

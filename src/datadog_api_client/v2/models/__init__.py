@@ -2061,6 +2061,42 @@ from datadog_api_client.v2.model.fleet_schedule_resource_type import FleetSchedu
 from datadog_api_client.v2.model.fleet_schedule_response import FleetScheduleResponse
 from datadog_api_client.v2.model.fleet_schedule_status import FleetScheduleStatus
 from datadog_api_client.v2.model.fleet_schedules_response import FleetSchedulesResponse
+from datadog_api_client.v2.model.form_create_request import FormCreateRequest
+from datadog_api_client.v2.model.form_data_attributes_request import FormDataAttributesRequest
+from datadog_api_client.v2.model.form_data_attributes_response import FormDataAttributesResponse
+from datadog_api_client.v2.model.form_data_request import FormDataRequest
+from datadog_api_client.v2.model.form_data_response import FormDataResponse
+from datadog_api_client.v2.model.form_datastore_config import FormDatastoreConfig
+from datadog_api_client.v2.model.form_publication import FormPublication
+from datadog_api_client.v2.model.form_publication_attributes import FormPublicationAttributes
+from datadog_api_client.v2.model.form_publication_data_request import FormPublicationDataRequest
+from datadog_api_client.v2.model.form_publication_data_response import FormPublicationDataResponse
+from datadog_api_client.v2.model.form_publication_request import FormPublicationRequest
+from datadog_api_client.v2.model.form_publication_response import FormPublicationResponse
+from datadog_api_client.v2.model.form_publication_type import FormPublicationType
+from datadog_api_client.v2.model.form_response import FormResponse
+from datadog_api_client.v2.model.form_submission_attributes import FormSubmissionAttributes
+from datadog_api_client.v2.model.form_submission_data_request import FormSubmissionDataRequest
+from datadog_api_client.v2.model.form_submission_data_response import FormSubmissionDataResponse
+from datadog_api_client.v2.model.form_submission_request import FormSubmissionRequest
+from datadog_api_client.v2.model.form_submission_response import FormSubmissionResponse
+from datadog_api_client.v2.model.form_submission_type import FormSubmissionType
+from datadog_api_client.v2.model.form_type import FormType
+from datadog_api_client.v2.model.form_update_attributes import FormUpdateAttributes
+from datadog_api_client.v2.model.form_update_attributes_form_update import FormUpdateAttributesFormUpdate
+from datadog_api_client.v2.model.form_update_data_request import FormUpdateDataRequest
+from datadog_api_client.v2.model.form_update_request import FormUpdateRequest
+from datadog_api_client.v2.model.form_version import FormVersion
+from datadog_api_client.v2.model.form_version_attributes import FormVersionAttributes
+from datadog_api_client.v2.model.form_version_data_attributes_response import FormVersionDataAttributesResponse
+from datadog_api_client.v2.model.form_version_data_request import FormVersionDataRequest
+from datadog_api_client.v2.model.form_version_data_response import FormVersionDataResponse
+from datadog_api_client.v2.model.form_version_request import FormVersionRequest
+from datadog_api_client.v2.model.form_version_response import FormVersionResponse
+from datadog_api_client.v2.model.form_version_state import FormVersionState
+from datadog_api_client.v2.model.form_version_type import FormVersionType
+from datadog_api_client.v2.model.form_version_upsert_params import FormVersionUpsertParams
+from datadog_api_client.v2.model.forms_list_response import FormsListResponse
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.freshservice_api_key import FreshserviceAPIKey
@@ -7547,6 +7583,42 @@ __all__ = [
     "FleetScheduleResponse",
     "FleetScheduleStatus",
     "FleetSchedulesResponse",
+    "FormCreateRequest",
+    "FormDataAttributesRequest",
+    "FormDataAttributesResponse",
+    "FormDataRequest",
+    "FormDataResponse",
+    "FormDatastoreConfig",
+    "FormPublication",
+    "FormPublicationAttributes",
+    "FormPublicationDataRequest",
+    "FormPublicationDataResponse",
+    "FormPublicationRequest",
+    "FormPublicationResponse",
+    "FormPublicationType",
+    "FormResponse",
+    "FormSubmissionAttributes",
+    "FormSubmissionDataRequest",
+    "FormSubmissionDataResponse",
+    "FormSubmissionRequest",
+    "FormSubmissionResponse",
+    "FormSubmissionType",
+    "FormType",
+    "FormUpdateAttributes",
+    "FormUpdateAttributesFormUpdate",
+    "FormUpdateDataRequest",
+    "FormUpdateRequest",
+    "FormVersion",
+    "FormVersionAttributes",
+    "FormVersionDataAttributesResponse",
+    "FormVersionDataRequest",
+    "FormVersionDataResponse",
+    "FormVersionRequest",
+    "FormVersionResponse",
+    "FormVersionState",
+    "FormVersionType",
+    "FormVersionUpsertParams",
+    "FormsListResponse",
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
     "FreshserviceAPIKey",
