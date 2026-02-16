@@ -366,6 +366,12 @@ from datadog_api_client.v2.model.asset_operating_system import AssetOperatingSys
 from datadog_api_client.v2.model.asset_risks import AssetRisks
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.asset_version import AssetVersion
+from datadog_api_client.v2.model.assign_seats_user_request import AssignSeatsUserRequest
+from datadog_api_client.v2.model.assign_seats_user_request_data import AssignSeatsUserRequestData
+from datadog_api_client.v2.model.assign_seats_user_request_data_attributes import AssignSeatsUserRequestDataAttributes
+from datadog_api_client.v2.model.assign_seats_user_response import AssignSeatsUserResponse
+from datadog_api_client.v2.model.assign_seats_user_response_data import AssignSeatsUserResponseData
+from datadog_api_client.v2.model.assign_seats_user_response_data_attributes import AssignSeatsUserResponseDataAttributes
 from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
 from datadog_api_client.v2.model.attach_case_request_data import AttachCaseRequestData
 from datadog_api_client.v2.model.attach_case_request_data_relationships import AttachCaseRequestDataRelationships
@@ -2424,8 +2430,6 @@ from datadog_api_client.v2.model.incident_notification_template_update_data impo
 )
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
-from datadog_api_client.v2.model.incident_relationship_data import IncidentRelationshipData
-from datadog_api_client.v2.model.incident_resource_type import IncidentResourceType
 from datadog_api_client.v2.model.incident_responders_type import IncidentRespondersType
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_response_attributes import IncidentResponseAttributes
@@ -2640,13 +2644,6 @@ from datadog_api_client.v2.model.jira_accounts_response import JiraAccountsRespo
 from datadog_api_client.v2.model.jira_integration_metadata import JiraIntegrationMetadata
 from datadog_api_client.v2.model.jira_integration_metadata_issues_item import JiraIntegrationMetadataIssuesItem
 from datadog_api_client.v2.model.jira_issue import JiraIssue
-from datadog_api_client.v2.model.jira_issue_create_attributes import JiraIssueCreateAttributes
-from datadog_api_client.v2.model.jira_issue_create_data import JiraIssueCreateData
-from datadog_api_client.v2.model.jira_issue_create_request import JiraIssueCreateRequest
-from datadog_api_client.v2.model.jira_issue_link_attributes import JiraIssueLinkAttributes
-from datadog_api_client.v2.model.jira_issue_link_data import JiraIssueLinkData
-from datadog_api_client.v2.model.jira_issue_link_request import JiraIssueLinkRequest
-from datadog_api_client.v2.model.jira_issue_resource_type import JiraIssueResourceType
 from datadog_api_client.v2.model.jira_issue_result import JiraIssueResult
 from datadog_api_client.v2.model.jira_issue_template_create_request import JiraIssueTemplateCreateRequest
 from datadog_api_client.v2.model.jira_issue_template_create_request_attributes import (
@@ -3132,9 +3129,6 @@ from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
-from datadog_api_client.v2.model.notebook_create_data import NotebookCreateData
-from datadog_api_client.v2.model.notebook_create_request import NotebookCreateRequest
-from datadog_api_client.v2.model.notebook_resource_type import NotebookResourceType
 from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
 from datadog_api_client.v2.model.notification_channel import NotificationChannel
 from datadog_api_client.v2.model.notification_channel_attributes import NotificationChannelAttributes
@@ -4277,7 +4271,6 @@ from datadog_api_client.v2.model.relationship_to_incident_notification_template_
 )
 from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import RelationshipToIncidentPostmortemData
-from datadog_api_client.v2.model.relationship_to_incident_request import RelationshipToIncidentRequest
 from datadog_api_client.v2.model.relationship_to_incident_responder_data import RelationshipToIncidentResponderData
 from datadog_api_client.v2.model.relationship_to_incident_responders import RelationshipToIncidentResponders
 from datadog_api_client.v2.model.relationship_to_incident_type import RelationshipToIncidentType
@@ -4656,6 +4649,12 @@ from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAtt
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
+from datadog_api_client.v2.model.seat_assignments_data_type import SeatAssignmentsDataType
+from datadog_api_client.v2.model.seat_user_data import SeatUserData
+from datadog_api_client.v2.model.seat_user_data_array import SeatUserDataArray
+from datadog_api_client.v2.model.seat_user_data_attributes import SeatUserDataAttributes
+from datadog_api_client.v2.model.seat_user_data_type import SeatUserDataType
+from datadog_api_client.v2.model.seat_user_meta import SeatUserMeta
 from datadog_api_client.v2.model.secret_rule_array import SecretRuleArray
 from datadog_api_client.v2.model.secret_rule_data import SecretRuleData
 from datadog_api_client.v2.model.secret_rule_data_attributes import SecretRuleDataAttributes
@@ -5204,10 +5203,6 @@ from datadog_api_client.v2.model.service_now_template_update_request_attributes 
 from datadog_api_client.v2.model.service_now_template_update_request_data import ServiceNowTemplateUpdateRequestData
 from datadog_api_client.v2.model.service_now_templates_response import ServiceNowTemplatesResponse
 from datadog_api_client.v2.model.service_now_ticket import ServiceNowTicket
-from datadog_api_client.v2.model.service_now_ticket_create_attributes import ServiceNowTicketCreateAttributes
-from datadog_api_client.v2.model.service_now_ticket_create_data import ServiceNowTicketCreateData
-from datadog_api_client.v2.model.service_now_ticket_create_request import ServiceNowTicketCreateRequest
-from datadog_api_client.v2.model.service_now_ticket_resource_type import ServiceNowTicketResourceType
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
 from datadog_api_client.v2.model.service_now_user_attributes import ServiceNowUserAttributes
 from datadog_api_client.v2.model.service_now_user_data import ServiceNowUserData
@@ -5756,6 +5751,11 @@ from datadog_api_client.v2.model.uc_config_pair_data_attributes_configs_items im
     UCConfigPairDataAttributesConfigsItems,
 )
 from datadog_api_client.v2.model.uc_config_pair_data_type import UCConfigPairDataType
+from datadog_api_client.v2.model.unassign_seats_user_request import UnassignSeatsUserRequest
+from datadog_api_client.v2.model.unassign_seats_user_request_data import UnassignSeatsUserRequestData
+from datadog_api_client.v2.model.unassign_seats_user_request_data_attributes import (
+    UnassignSeatsUserRequestDataAttributes,
+)
 from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
 from datadog_api_client.v2.model.update_action_connection_request import UpdateActionConnectionRequest
@@ -6276,6 +6276,12 @@ __all__ = [
     "AssetRisks",
     "AssetType",
     "AssetVersion",
+    "AssignSeatsUserRequest",
+    "AssignSeatsUserRequestData",
+    "AssignSeatsUserRequestDataAttributes",
+    "AssignSeatsUserResponse",
+    "AssignSeatsUserResponseData",
+    "AssignSeatsUserResponseDataAttributes",
     "AttachCaseRequest",
     "AttachCaseRequestData",
     "AttachCaseRequestDataRelationships",
@@ -7834,8 +7840,6 @@ __all__ = [
     "IncidentNotificationTemplateUpdateData",
     "IncidentPostmortemType",
     "IncidentRelatedObject",
-    "IncidentRelationshipData",
-    "IncidentResourceType",
     "IncidentRespondersType",
     "IncidentResponse",
     "IncidentResponseAttributes",
@@ -8022,13 +8026,6 @@ __all__ = [
     "JiraIntegrationMetadata",
     "JiraIntegrationMetadataIssuesItem",
     "JiraIssue",
-    "JiraIssueCreateAttributes",
-    "JiraIssueCreateData",
-    "JiraIssueCreateRequest",
-    "JiraIssueLinkAttributes",
-    "JiraIssueLinkData",
-    "JiraIssueLinkRequest",
-    "JiraIssueResourceType",
     "JiraIssueResult",
     "JiraIssueTemplateCreateRequest",
     "JiraIssueTemplateCreateRequestAttributes",
@@ -8404,9 +8401,6 @@ __all__ = [
     "MonthlyCostAttributionMeta",
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
-    "NotebookCreateData",
-    "NotebookCreateRequest",
-    "NotebookResourceType",
     "NotebookTriggerWrapper",
     "NotificationChannel",
     "NotificationChannelAttributes",
@@ -9047,7 +9041,6 @@ __all__ = [
     "RelationshipToIncidentNotificationTemplateData",
     "RelationshipToIncidentPostmortem",
     "RelationshipToIncidentPostmortemData",
-    "RelationshipToIncidentRequest",
     "RelationshipToIncidentResponderData",
     "RelationshipToIncidentResponders",
     "RelationshipToIncidentType",
@@ -9352,6 +9345,12 @@ __all__ = [
     "ScheduleUserType",
     "ScorecardType",
     "SearchIssuesIncludeQueryParameterItem",
+    "SeatAssignmentsDataType",
+    "SeatUserData",
+    "SeatUserDataArray",
+    "SeatUserDataAttributes",
+    "SeatUserDataType",
+    "SeatUserMeta",
     "SecretRuleArray",
     "SecretRuleData",
     "SecretRuleDataAttributes",
@@ -9692,10 +9691,6 @@ __all__ = [
     "ServiceNowTemplateUpdateRequestData",
     "ServiceNowTemplatesResponse",
     "ServiceNowTicket",
-    "ServiceNowTicketCreateAttributes",
-    "ServiceNowTicketCreateData",
-    "ServiceNowTicketCreateRequest",
-    "ServiceNowTicketResourceType",
     "ServiceNowTicketResult",
     "ServiceNowUserAttributes",
     "ServiceNowUserData",
@@ -10106,6 +10101,9 @@ __all__ = [
     "UCConfigPairDataAttributes",
     "UCConfigPairDataAttributesConfigsItems",
     "UCConfigPairDataType",
+    "UnassignSeatsUserRequest",
+    "UnassignSeatsUserRequestData",
+    "UnassignSeatsUserRequestDataAttributes",
     "Unit",
     "UnpublishAppResponse",
     "UpdateActionConnectionRequest",

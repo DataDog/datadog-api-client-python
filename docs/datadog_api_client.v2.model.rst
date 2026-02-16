@@ -1250,6 +1250,48 @@ datadog\_api\_client.v2.model.asset\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.assign\_seats\_user\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.assign_seats_user_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.assign\_seats\_user\_request\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.assign_seats_user_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.assign\_seats\_user\_request\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.assign_seats_user_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.assign\_seats\_user\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.assign_seats_user_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.assign\_seats\_user\_response\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.assign_seats_user_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.assign\_seats\_user\_response\_data\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.assign_seats_user_response_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.attach\_case\_request module
 ----------------------------------------------------------
 
@@ -12576,20 +12618,6 @@ datadog\_api\_client.v2.model.incident\_related\_object module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.incident\_relationship\_data module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_relationship_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.incident\_resource\_type module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.incident_resource_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.incident\_responders\_type module
 ---------------------------------------------------------------
 
@@ -13931,55 +13959,6 @@ datadog\_api\_client.v2.model.jira\_issue module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.jira_issue
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.jira\_issue\_create\_attributes module
---------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.jira_issue_create_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.jira\_issue\_create\_data module
---------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.jira_issue_create_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.jira\_issue\_create\_request module
------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.jira_issue_create_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.jira\_issue\_link\_attributes module
-------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.jira_issue_link_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.jira\_issue\_link\_data module
-------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.jira_issue_link_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.jira\_issue\_link\_request module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.jira_issue_link_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.jira\_issue\_resource\_type module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.jira_issue_resource_type
    :members:
    :show-inheritance:
 
@@ -16626,27 +16605,6 @@ datadog\_api\_client.v2.model.ms\_teams\_integration\_metadata\_teams\_item modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notebook\_create\_data module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notebook_create_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notebook\_create\_request module
---------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notebook_create_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notebook\_resource\_type module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notebook_resource_type
    :members:
    :show-inheritance:
 
@@ -20759,13 +20717,6 @@ datadog\_api\_client.v2.model.relationship\_to\_incident\_postmortem\_data modul
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.relationship\_to\_incident\_request module
-------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.relationship_to_incident_request
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.relationship\_to\_incident\_responder\_data module
 --------------------------------------------------------------------------------
 
@@ -23209,6 +23160,48 @@ datadog\_api\_client.v2.model.search\_issues\_include\_query\_parameter\_item mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.seat\_assignments\_data\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.seat_assignments_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.seat\_user\_data module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.seat_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.seat\_user\_data\_array module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.seat_user_data_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.seat\_user\_data\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.seat_user_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.seat\_user\_data\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.seat_user_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.seat\_user\_meta module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.seat_user_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.secret\_rule\_array module
 --------------------------------------------------------
 
@@ -25558,34 +25551,6 @@ datadog\_api\_client.v2.model.service\_now\_ticket module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_now_ticket
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.service\_now\_ticket\_create\_attributes module
------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_now_ticket_create_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.service\_now\_ticket\_create\_data module
------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_now_ticket_create_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.service\_now\_ticket\_create\_request module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_now_ticket_create_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.service\_now\_ticket\_resource\_type module
--------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.service_now_ticket_resource_type
    :members:
    :show-inheritance:
 
@@ -28498,6 +28463,27 @@ datadog\_api\_client.v2.model.uc\_config\_pair\_data\_type module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.uc_config_pair_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.unassign\_seats\_user\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.unassign_seats_user_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.unassign\_seats\_user\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.unassign_seats_user_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.unassign\_seats\_user\_request\_data\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.unassign_seats_user_request_data_attributes
    :members:
    :show-inheritance:
 
