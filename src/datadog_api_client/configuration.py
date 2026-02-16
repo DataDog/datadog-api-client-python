@@ -379,6 +379,8 @@ class Configuration:
                 "v2.list_service_now_templates": False,
                 "v2.list_service_now_users": False,
                 "v2.update_service_now_template": False,
+                "v2.update_login_org_config_max_session_duration": False,
+                "v2.update_org_saml_configurations": False,
                 "v2.add_role_to_restriction_query": False,
                 "v2.create_restriction_query": False,
                 "v2.delete_restriction_query": False,
