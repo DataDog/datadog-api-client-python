@@ -25,6 +25,30 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Assign or un-assign Jira issues to security findings returns "Accepted" response
+    Given operation "AssignIntegrationIssues" enabled
+    And new "AssignIntegrationIssues" request
+    And body with value {"data": {"attributes": {"action": "assign", "assignment": {"jira": {"https://jira.example.com/browse/SEC-123": ["MDBjMzdhYzgyNGZkZGJiZmY0OGNmYjNiMWQ2ODY0YmR-OTc0YjMzNjM1Y2UyODA2YTEyNWQxYmNkZjhmODllNzg="]}}, "type": "findings"}, "id": "some_id", "type": "issue_assignment"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Assign or un-assign Jira issues to security findings returns "Bad Request" response
+    Given operation "AssignIntegrationIssues" enabled
+    And new "AssignIntegrationIssues" request
+    And body with value {"data": {"attributes": {"action": "assign", "assignment": {"jira": {"https://jira.example.com/browse/SEC-123": ["MDBjMzdhYzgyNGZkZGJiZmY0OGNmYjNiMWQ2ODY0YmR-OTc0YjMzNjM1Y2UyODA2YTEyNWQxYmNkZjhmODllNzg="]}}, "type": "findings"}, "id": "some_id", "type": "issue_assignment"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Assign or un-assign Jira issues to security findings returns "Not Found" response
+    Given operation "AssignIntegrationIssues" enabled
+    And new "AssignIntegrationIssues" request
+    And body with value {"data": {"attributes": {"action": "assign", "assignment": {"jira": {"https://jira.example.com/browse/SEC-123": ["MDBjMzdhYzgyNGZkZGJiZmY0OGNmYjNiMWQ2ODY0YmR-OTc0YjMzNjM1Y2UyODA2YTEyNWQxYmNkZjhmODllNzg="]}}, "type": "findings"}, "id": "some_id", "type": "issue_assignment"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/k9-investigation
   Scenario: Attach security finding to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
@@ -329,6 +353,14 @@ Feature: Security Monitoring
     And the response "data[0].attributes.insights[0].resource_id" is equal to "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA=="
     And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
     And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Create Jira issues for security findings returns "Accepted" response
+    Given operation "CreateJiraIssue" enabled
+    And new "CreateJiraIssue" request
+    And body with value {"data": {"attributes": {"account_id": "f7ccdf99-0e22-4378-bdf9-03fde5379fea", "fields": {"customfield_10000": "Custom field value"}, "issue_type": "story", "issuetype_id": "1235", "mode": "single", "project_id": "1234", "project_key": "SEC"}, "id": "ID", "meta": {"findings": [{"description": "Description", "ids": [{"discovered": 123213123, "id": "afa-afa-hze", "resource": "Resource", "tags": "akjasd:asdsad"}], "impacted": 1, "references": "", "remediation": "Remediation", "severity": "critical", "title": "Title", "type": "ciem"}], "vulnerabilities": [{"description": "Description", "ids": [{"discovered": 123213123, "id": "afa-afa-hze", "resource": "Resource", "tags": "akjasd:asdsad"}], "impacted": 1, "references": "", "remediation": "Remediation", "severity": "critical", "title": "Title", "type": "ciem"}]}, "type": "jira_issue"}}
+    When the request is sent
+    Then the response status is 202 Accepted
 
   @team:DataDog/k9-investigation
   Scenario: Create Jira issues for security findings returns "Bad Request" response
@@ -897,6 +929,30 @@ Feature: Security Monitoring
     And body with value {"data": {"relationships": {"findings": {"data": [{"id": "wrong-finding-id", "type": "findings"}]}}, "type": "cases"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Get Jira issue metadata returns "Bad Request" response
+    Given operation "GetJiraIssueMetadata" enabled
+    And new "GetJiraIssueMetadata" request
+    And request contains "url" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Get Jira issue metadata returns "Not Found" response
+    Given operation "GetJiraIssueMetadata" enabled
+    And new "GetJiraIssueMetadata" request
+    And request contains "url" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Get Jira issue metadata returns "OK" response
+    Given operation "GetJiraIssueMetadata" enabled
+    And new "GetJiraIssueMetadata" request
+    And request contains "url" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response

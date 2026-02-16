@@ -13150,6 +13150,55 @@ datadog\_api\_client.v2.model.intake\_payload\_accepted module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.integration\_assignment\_data\_attributes\_request module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_assignment_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_assignment\_data\_attributes\_request\_action module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_assignment_data_attributes_request_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_assignment\_data\_attributes\_request\_assignment module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_assignment_data_attributes_request_assignment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_assignment\_data\_attributes\_request\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_assignment_data_attributes_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_assignment\_data\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_assignment_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_assignment\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_assignment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_assignment\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_assignment_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.integration\_incident module
 ----------------------------------------------------------
 
@@ -13857,6 +13906,55 @@ datadog\_api\_client.v2.model.jira\_issue\_create\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.jira\_issue\_custom\_fields module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_custom_fields
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issue\_data\_attributes\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issue\_data\_attributes\_request\_mode module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_data_attributes_request_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issue\_data\_meta module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_data_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issue\_data\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issue\_finding module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_finding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issue\_finding\_id module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_finding_id
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.jira\_issue\_link\_attributes module
 ------------------------------------------------------------------
 
@@ -13875,6 +13973,13 @@ datadog\_api\_client.v2.model.jira\_issue\_link\_request module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.jira_issue_link_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issue\_request module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_request
    :members:
    :show-inheritance:
 
@@ -13983,10 +14088,45 @@ datadog\_api\_client.v2.model.jira\_issue\_templates\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.jira\_issue\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issue_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.jira\_issues\_data\_type module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.jira_issues_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issues\_metadata\_data\_attributes\_response module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issues_metadata_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issues\_metadata\_data\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issues_metadata_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issues\_metadata\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issues_metadata_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jira\_issues\_metadata\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jira_issues_metadata_type
    :members:
    :show-inheritance:
 

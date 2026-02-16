@@ -22,6 +22,8 @@ from datadog_api_client.v2.model.delete_custom_framework_response import DeleteC
 from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
 from datadog_api_client.v2.model.update_custom_framework_response import UpdateCustomFrameworkResponse
 from datadog_api_client.v2.model.update_custom_framework_request import UpdateCustomFrameworkRequest
+from datadog_api_client.v2.model.integration_assignment_request import IntegrationAssignmentRequest
+from datadog_api_client.v2.model.jira_issue_request import JiraIssueRequest
 from datadog_api_client.v2.model.get_resource_evaluation_filters_response import GetResourceEvaluationFiltersResponse
 from datadog_api_client.v2.model.update_resource_evaluation_filters_response import (
     UpdateResourceEvaluationFiltersResponse,
@@ -47,6 +49,7 @@ from datadog_api_client.v2.model.finding_case_response import FindingCaseRespons
 from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
 from datadog_api_client.v2.model.attach_jira_issue_request import AttachJiraIssueRequest
 from datadog_api_client.v2.model.create_jira_issue_request_array import CreateJiraIssueRequestArray
+from datadog_api_client.v2.model.jira_issues_metadata_response import JiraIssuesMetadataResponse
 from datadog_api_client.v2.model.security_findings_search_request import SecurityFindingsSearchRequest
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
@@ -177,6 +180,26 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._assign_integration_issues_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/integrations/assign",
+                "operation_id": "assign_integration_issues",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IntegrationAssignmentRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -369,6 +392,26 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_jira_issue_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cloud_security_management/jira_issues",
+                "operation_id": "create_jira_issue",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (JiraIssueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -913,6 +956,29 @@ class SecurityMonitoringApi:
                     },
                     "openapi_types": (int,),
                     "attribute": "snapshot_timestamp",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_jira_issue_metadata_endpoint = _Endpoint(
+            settings={
+                "response_type": (JiraIssuesMetadataResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/jira_issues/metadata",
+                "operation_id": "get_jira_issue_metadata",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "url": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "url",
                     "location": "query",
                 },
             },
@@ -2691,6 +2757,23 @@ class SecurityMonitoringApi:
 
         return self._activate_content_pack_endpoint.call_with_http_info(**kwargs)
 
+    def assign_integration_issues(
+        self,
+        body: IntegrationAssignmentRequest,
+    ) -> None:
+        """Assign or un-assign Jira issues to security findings.
+
+        Assign or un-assign Jira issues to security findings or vulnerabilities.
+        This endpoint allows you to associate existing Jira issues with security findings or vulnerabilities, or remove such associations.
+
+        :type body: IntegrationAssignmentRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._assign_integration_issues_endpoint.call_with_http_info(**kwargs)
+
     def attach_case(
         self,
         case_id: str,
@@ -2864,6 +2947,23 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_custom_framework_endpoint.call_with_http_info(**kwargs)
+
+    def create_jira_issue(
+        self,
+        body: JiraIssueRequest,
+    ) -> None:
+        """Create Jira issues for security findings.
+
+        Create Jira issues for security findings or vulnerabilities.
+        This endpoint creates new Jira issues based on the provided security findings or vulnerability information. The operation is asynchronous and returns immediately with a 202 Accepted status.
+
+        :type body: JiraIssueRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_jira_issue_endpoint.call_with_http_info(**kwargs)
 
     def create_jira_issues(
         self,
@@ -3311,6 +3411,24 @@ class SecurityMonitoringApi:
             kwargs["snapshot_timestamp"] = snapshot_timestamp
 
         return self._get_finding_endpoint.call_with_http_info(**kwargs)
+
+    def get_jira_issue_metadata(
+        self,
+        url: str,
+    ) -> JiraIssuesMetadataResponse:
+        """Get Jira issue metadata.
+
+        Retrieve metadata for a Jira issue.
+        This endpoint returns metadata about a Jira issue, including account ID, issue type ID, and project ID, based on the provided Jira issue URL.
+
+        :param url: The Jira issue URL.
+        :type url: str
+        :rtype: JiraIssuesMetadataResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["url"] = url
+
+        return self._get_jira_issue_metadata_endpoint.call_with_http_info(**kwargs)
 
     def get_resource_evaluation_filters(
         self,

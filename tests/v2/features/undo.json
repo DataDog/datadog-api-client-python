@@ -1049,6 +1049,22 @@
       "type": "idempotent"
     }
   },
+  "AssignIntegrationIssues": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "CreateJiraIssue": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "GetResourceEvaluationFilters": {
     "tag": "Security Monitoring",
     "undo": {
@@ -4334,6 +4350,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "GetJiraIssueMetadata": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "SearchSecurityFindings": {
