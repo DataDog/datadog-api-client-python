@@ -9,5 +9,6 @@ Feature: APM
     And a valid "appKeyAuth" key in the system
     And an instance of "APM" API
     And new "GetServiceList" request
+    And request contains "filter[env]" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
