@@ -4482,6 +4482,9 @@ from datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_refere
     RulesetRespDataAttributesRulesItemsReferenceTableFieldPairsItems,
 )
 from datadog_api_client.v2.model.ruleset_resp_data_type import RulesetRespDataType
+from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
+from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
+from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -9212,6 +9215,9 @@ __all__ = [
     "RulesetRespDataAttributesRulesItemsReferenceTable",
     "RulesetRespDataAttributesRulesItemsReferenceTableFieldPairsItems",
     "RulesetRespDataType",
+    "RumCrossProductSampling",
+    "RumCrossProductSamplingCreate",
+    "RumCrossProductSamplingUpdate",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",

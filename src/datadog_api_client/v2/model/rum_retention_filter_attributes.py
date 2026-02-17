@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
     from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
 
 
@@ -27,9 +28,11 @@ class RumRetentionFilterAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
         from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
 
         return {
+            "cross_product_sampling": (RumCrossProductSampling,),
             "enabled": (bool,),
             "event_type": (RumRetentionFilterEventType,),
             "name": (str,),
@@ -38,6 +41,7 @@ class RumRetentionFilterAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "cross_product_sampling": "cross_product_sampling",
         "enabled": "enabled",
         "event_type": "event_type",
         "name": "name",
@@ -47,6 +51,7 @@ class RumRetentionFilterAttributes(ModelNormal):
 
     def __init__(
         self_,
+        cross_product_sampling: Union[RumCrossProductSampling, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         event_type: Union[RumRetentionFilterEventType, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -56,6 +61,11 @@ class RumRetentionFilterAttributes(ModelNormal):
     ):
         """
         The object describing attributes of a RUM retention filter.
+
+        :param cross_product_sampling: Configuration for additional APM trace data retention for sessions that match this retention filter.
+            When a session matches the filter and is retained (based on ``sample_rate`` ), you can configure
+            the percentage of retained sessions with ingested traces whose traces are indexed.
+        :type cross_product_sampling: RumCrossProductSampling, optional
 
         :param enabled: Whether the retention filter is enabled.
         :type enabled: bool, optional
@@ -72,6 +82,8 @@ class RumRetentionFilterAttributes(ModelNormal):
         :param sample_rate: The sample rate for a RUM retention filter, between 0.1 and 100.
         :type sample_rate: float, optional
         """
+        if cross_product_sampling is not unset:
+            kwargs["cross_product_sampling"] = cross_product_sampling
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if event_type is not unset:
