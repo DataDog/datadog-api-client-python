@@ -16,7 +16,7 @@ class SecurityMonitoringSuppressionSort(ModelSimple):
     """
     The sort parameters used for querying suppression rules.
 
-    :param value: Must be one of ["name", "start_date", "expiration_date", "update_date", "enabled", "-name", "-start_date", "-expiration_date", "-update_date", "-enabled"].
+    :param value: Must be one of ["name", "start_date", "expiration_date", "update_date", "enabled", "-name", "-start_date", "-expiration_date", "-update_date", "-creation_date", "-enabled"].
     :type value: str
     """
 
@@ -30,6 +30,7 @@ class SecurityMonitoringSuppressionSort(ModelSimple):
         "-start_date",
         "-expiration_date",
         "-update_date",
+        "-creation_date",
         "-enabled",
     }
     NAME: ClassVar["SecurityMonitoringSuppressionSort"]
@@ -41,6 +42,7 @@ class SecurityMonitoringSuppressionSort(ModelSimple):
     START_DATE_DESCENDING: ClassVar["SecurityMonitoringSuppressionSort"]
     EXPIRATION_DATE_DESCENDING: ClassVar["SecurityMonitoringSuppressionSort"]
     UPDATE_DATE_DESCENDING: ClassVar["SecurityMonitoringSuppressionSort"]
+    CREATION_DATE_DESCENDING: ClassVar["SecurityMonitoringSuppressionSort"]
     ENABLED_DESCENDING: ClassVar["SecurityMonitoringSuppressionSort"]
 
     @cached_property
@@ -59,4 +61,5 @@ SecurityMonitoringSuppressionSort.NAME_DESCENDING = SecurityMonitoringSuppressio
 SecurityMonitoringSuppressionSort.START_DATE_DESCENDING = SecurityMonitoringSuppressionSort("-start_date")
 SecurityMonitoringSuppressionSort.EXPIRATION_DATE_DESCENDING = SecurityMonitoringSuppressionSort("-expiration_date")
 SecurityMonitoringSuppressionSort.UPDATE_DATE_DESCENDING = SecurityMonitoringSuppressionSort("-update_date")
+SecurityMonitoringSuppressionSort.CREATION_DATE_DESCENDING = SecurityMonitoringSuppressionSort("-creation_date")
 SecurityMonitoringSuppressionSort.ENABLED_DESCENDING = SecurityMonitoringSuppressionSort("-enabled")
