@@ -14578,6 +14578,20 @@ datadog\_api\_client.v2.model.list\_findings\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_interface\_tags\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_interface_tags_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_interface\_tags\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_interface_tags_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_kind\_catalog\_response module
 ------------------------------------------------------------------
 

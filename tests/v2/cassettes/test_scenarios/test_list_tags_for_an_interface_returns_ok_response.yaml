@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/ndm/tags/interfaces/example%3A1.2.3.4%3A1
+  response:
+    body:
+      string: '{"data":{"id":"example:1.2.3.4:1","type":"tags","attributes":{"tags":["tag:test","tag:testbis"]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

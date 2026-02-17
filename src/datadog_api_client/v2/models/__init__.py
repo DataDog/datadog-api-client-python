@@ -2745,6 +2745,8 @@ from datadog_api_client.v2.model.list_entity_catalog_response_links import ListE
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.list_interface_tags_response import ListInterfaceTagsResponse
+from datadog_api_client.v2.model.list_interface_tags_response_data import ListInterfaceTagsResponseData
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.list_notification_channels_response import ListNotificationChannelsResponse
 from datadog_api_client.v2.model.list_on_call_notification_rules_response import ListOnCallNotificationRulesResponse
@@ -8111,6 +8113,8 @@ __all__ = [
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
+    "ListInterfaceTagsResponse",
+    "ListInterfaceTagsResponseData",
     "ListKindCatalogResponse",
     "ListNotificationChannelsResponse",
     "ListOnCallNotificationRulesResponse",
