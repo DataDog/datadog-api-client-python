@@ -1897,6 +1897,19 @@
       "type": "idempotent"
     }
   },
+  "ImportIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncident",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "SearchIncidents": {
     "tag": "Incidents",
     "undo": {
