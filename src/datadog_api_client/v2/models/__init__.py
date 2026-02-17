@@ -4856,6 +4856,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_sequence_detection_ste
     SecurityMonitoringRuleSequenceDetectionStepTransition,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_severity import SecurityMonitoringRuleSeverity
+from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
 from datadog_api_client.v2.model.security_monitoring_rule_test_payload import SecurityMonitoringRuleTestPayload
 from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
 from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
@@ -9462,6 +9463,7 @@ __all__ = [
     "SecurityMonitoringRuleSequenceDetectionStep",
     "SecurityMonitoringRuleSequenceDetectionStepTransition",
     "SecurityMonitoringRuleSeverity",
+    "SecurityMonitoringRuleSort",
     "SecurityMonitoringRuleTestPayload",
     "SecurityMonitoringRuleTestRequest",
     "SecurityMonitoringRuleTestResponse",

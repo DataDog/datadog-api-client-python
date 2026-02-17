@@ -23965,6 +23965,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_severity module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_sort module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_sort
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_test\_payload module
 ------------------------------------------------------------------------------
 
