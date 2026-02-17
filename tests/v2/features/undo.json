@@ -3197,6 +3197,18 @@
       "type": "idempotent"
     }
   },
+  "ListInterfaceUserTags": {
+    "tag": "Network Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateInterfaceUserTags": {
+    "tag": "Network Device Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetAggregatedConnections": {
     "tag": "Cloud Network Monitoring",
     "undo": {

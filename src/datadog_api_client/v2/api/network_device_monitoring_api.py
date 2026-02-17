@@ -19,6 +19,7 @@ from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
+from datadog_api_client.v2.model.list_interface_tags_response import ListInterfaceTagsResponse
 
 
 class NetworkDeviceMonitoringApi:
@@ -142,6 +143,29 @@ class NetworkDeviceMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_interface_user_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListInterfaceTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/ndm/tags/interfaces/{interface_id}",
+                "operation_id": "list_interface_user_tags",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "interface_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "interface_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._update_device_user_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (ListTagsResponse,),
@@ -161,6 +185,32 @@ class NetworkDeviceMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (ListTagsResponse,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_interface_user_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListInterfaceTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/ndm/tags/interfaces/{interface_id}",
+                "operation_id": "update_interface_user_tags",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "interface_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "interface_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ListInterfaceTagsResponse,),
                     "location": "body",
                 },
             },
@@ -312,6 +362,23 @@ class NetworkDeviceMonitoringApi:
 
         return self._list_device_user_tags_endpoint.call_with_http_info(**kwargs)
 
+    def list_interface_user_tags(
+        self,
+        interface_id: str,
+    ) -> ListInterfaceTagsResponse:
+        """List tags for an interface.
+
+        Returns the tags associated with the specified interface.
+
+        :param interface_id: The ID of the interface for which to retrieve tags.
+        :type interface_id: str
+        :rtype: ListInterfaceTagsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["interface_id"] = interface_id
+
+        return self._list_interface_user_tags_endpoint.call_with_http_info(**kwargs)
+
     def update_device_user_tags(
         self,
         device_id: str,
@@ -332,3 +399,24 @@ class NetworkDeviceMonitoringApi:
         kwargs["body"] = body
 
         return self._update_device_user_tags_endpoint.call_with_http_info(**kwargs)
+
+    def update_interface_user_tags(
+        self,
+        interface_id: str,
+        body: ListInterfaceTagsResponse,
+    ) -> ListInterfaceTagsResponse:
+        """Update the tags for an interface.
+
+        Updates the tags associated with the specified interface.
+
+        :param interface_id: The ID of the interface for which to update tags.
+        :type interface_id: str
+        :type body: ListInterfaceTagsResponse
+        :rtype: ListInterfaceTagsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["interface_id"] = interface_id
+
+        kwargs["body"] = body
+
+        return self._update_interface_user_tags_endpoint.call_with_http_info(**kwargs)

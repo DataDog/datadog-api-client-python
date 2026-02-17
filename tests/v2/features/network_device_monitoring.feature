@@ -125,6 +125,24 @@ Feature: Network Device Monitoring
     And the response "data.attributes.tags[1]" is equal to "tag:testbis"
 
   @replay-only @team:DataDog/network-device-monitoring
+  Scenario: List tags for an interface returns "Not Found" response
+    Given new "ListInterfaceUserTags" request
+    And request contains "interface_id" parameter with value "unknown_interface_id"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/network-device-monitoring
+  Scenario: List tags for an interface returns "OK" response
+    Given new "ListInterfaceUserTags" request
+    And request contains "interface_id" parameter with value "example:1.2.3.4:1"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "example:1.2.3.4:1"
+    And the response "data.type" is equal to "tags"
+    And the response "data.attributes.tags[0]" is equal to "tag:test"
+    And the response "data.attributes.tags[1]" is equal to "tag:testbis"
+
+  @replay-only @team:DataDog/network-device-monitoring
   Scenario: Update the tags for a device returns "Not Found" response
     Given new "UpdateDeviceUserTags" request
     And request contains "device_id" parameter with value "unknown_device_id"
@@ -140,6 +158,26 @@ Feature: Network Device Monitoring
     When the request is sent
     Then the response status is 200 OK
     And the response "data.id" is equal to "default_device"
+    And the response "data.type" is equal to "tags"
+    And the response "data.attributes.tags[0]" is equal to "tag:test"
+    And the response "data.attributes.tags[1]" is equal to "tag:testbis"
+
+  @replay-only @team:DataDog/network-device-monitoring
+  Scenario: Update the tags for an interface returns "Not Found" response
+    Given new "UpdateInterfaceUserTags" request
+    And request contains "interface_id" parameter with value "unknown_interface_id"
+    And body with value {"data": {"attributes": {"tags": ["tag:test", "tag:testbis"]}, "id": "unknown_interface_id", "type":"tags"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/network-device-monitoring
+  Scenario: Update the tags for an interface returns "OK" response
+    Given new "UpdateInterfaceUserTags" request
+    And request contains "interface_id" parameter with value "example:1.2.3.4:1"
+    And body with value {"data": {"attributes": {"tags": ["tag:test", "tag:testbis"]}, "id": "example:1.2.3.4:1", "type":"tags"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "example:1.2.3.4:1"
     And the response "data.type" is equal to "tags"
     And the response "data.attributes.tags[0]" is equal to "tag:test"
     And the response "data.attributes.tags[1]" is equal to "tag:testbis"
