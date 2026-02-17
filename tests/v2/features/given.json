@@ -1345,6 +1345,10 @@
   {
     "parameters": [
       {
+        "name": "team_id",
+        "source": "dd_team.data.id"
+      },
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"role\": \"admin\"\n    },\n    \"relationships\": {\n      \"user\": {\n        \"data\": {\n          \"id\": \"{{user.data.id}}\",\n          \"type\": \"users\"\n        }\n      }\n    },\n    \"type\": \"team_memberships\"\n  }\n}"
       }

@@ -638,33 +638,41 @@ Feature: Teams
     And the response "data.attributes.hidden_modules" is equal to ["m3"]
     And the response "data.attributes.visible_modules" is equal to ["m1", "m2"]
 
-  @generated @skip @team:DataDog/aaa-omg
-  Scenario: Update a user's membership attributes on a team returns "API error response." response
-    Given new "UpdateTeamMembership" request
-    And request contains "team_id" parameter from "REPLACE.ME"
-    And request contains "user_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"role": "admin"}, "type": "team_memberships"}}
-    When the request is sent
-    Then the response status is 404 API error response.
-
-  @generated @skip @team:DataDog/aaa-omg
-  Scenario: Update a user's membership attributes on a team returns "Represents a user's association to a team" response
-    Given new "UpdateTeamMembership" request
-    And request contains "team_id" parameter from "REPLACE.ME"
-    And request contains "user_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"role": "admin"}, "type": "team_memberships"}}
-    When the request is sent
-    Then the response status is 200 Represents a user's association to a team
-
   @team:DataDog/aaa-omg
-  Scenario: Update a user's role on a team returns "API error response." response
+  Scenario: Update a user's membership attributes on a team returns "API error response." response
     Given new "UpdateTeamMembership" request
     And there is a valid "dd_team" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
-    And request contains "user_id" parameter with value "REPLACE.ME"
+    And request contains "user_id" parameter with value "00000000-0000-dead-beef-000000000000"
     And body with value {"data": {"attributes": {"role": "admin"}, "type": "team_memberships"}}
     When the request is sent
     Then the response status is 404 API error response.
+
+  @team:DataDog/aaa-omg
+  Scenario: Update a user's membership attributes on a team returns "OK" response
+    Given new "UpdateTeamMembership" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "user_id" parameter from "user.data.id"
+    And body with value {"data": {"attributes": {"role": "admin"}, "type": "team_memberships"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.role" is equal to "admin"
+    And the response "data.relationships.user.data.id" is equal to "{{ user.data.id }}"
+
+  @team:DataDog/aaa-omg
+  Scenario: Update a user's membership attributes on a team with invalid role returns "API error response." response
+    Given new "UpdateTeamMembership" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "user_id" parameter from "user.data.id"
+    And body with value {"data": {"attributes": {"role": "member"}, "type": "team_memberships"}}
+    When the request is sent
+    Then the response status is 400 API error response.
 
   @team:DataDog/aaa-omg
   Scenario: Update permission setting for team returns "API error response." response
