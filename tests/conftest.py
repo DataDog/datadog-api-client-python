@@ -459,9 +459,9 @@ def request_parameter_with_value(context, name, value, path_parameters):
     tpl = Template(value).render(**context)
     param_name = escape_reserved_keyword(snake_case(name))
     context["api_request"]["kwargs"][param_name] = tpl
-    # Store in path_parameters for undo operations
-    path_parameters[name] = tpl
-    path_parameters[param_name] = tpl
+    # Store in path_parameters for undo operations (deserialize to strip JSON encoding)
+    path_parameters[name] = json.loads(tpl)
+    path_parameters[param_name] = json.loads(tpl)
 
 
 def assert_no_unparsed(data):
