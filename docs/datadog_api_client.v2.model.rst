@@ -17861,6 +17861,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_ocsf\_mapper\_processor\_
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_ocsf\_mapping\_custom module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_ocsf\_mapping\_custom\_field\_mapping module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_field_mapping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_ocsf\_mapping\_custom\_lookup module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_lookup
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_ocsf\_mapping\_custom\_lookup\_table\_entry module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_lookup_table_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_ocsf\_mapping\_custom\_metadata module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_metadata
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_ocsf\_mapping\_library module
 ------------------------------------------------------------------------------------
 

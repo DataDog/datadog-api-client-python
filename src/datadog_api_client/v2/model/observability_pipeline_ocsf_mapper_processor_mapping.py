@@ -15,6 +15,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_mapping_mapping import (
         ObservabilityPipelineOcsfMapperProcessorMappingMapping,
     )
+    from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom import (
+        ObservabilityPipelineOcsfMappingCustom,
+    )
 
 
 class ObservabilityPipelineOcsfMapperProcessorMapping(ModelNormal):
@@ -35,7 +38,12 @@ class ObservabilityPipelineOcsfMapperProcessorMapping(ModelNormal):
     }
 
     def __init__(
-        self_, include: str, mapping: Union[ObservabilityPipelineOcsfMapperProcessorMappingMapping, str], **kwargs
+        self_,
+        include: str,
+        mapping: Union[
+            ObservabilityPipelineOcsfMapperProcessorMappingMapping, str, ObservabilityPipelineOcsfMappingCustom
+        ],
+        **kwargs,
     ):
         """
         Defines how specific events are transformed to OCSF using a mapping configuration.
