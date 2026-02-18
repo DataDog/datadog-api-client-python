@@ -4298,6 +4298,31 @@
       "type": "idempotent"
     }
   },
+  "UnassignSeatsUser": {
+    "tag": "Seats",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSeatsUsers": {
+    "tag": "Seats",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AssignSeatsUser": {
+    "tag": "Seats",
+    "undo": {
+      "operationId": "UnassignSeatsUser",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"data\": {\"type\": \"seat-assignments\", \"attributes\": {\"product_code\": \"{{ data.attributes.product_code }}\", \"user_uuids\": {{ data.attributes.assigned_ids }}}}}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "ListEntityRiskScores": {
     "tag": "Entity Risk Scores",
     "undo": {
