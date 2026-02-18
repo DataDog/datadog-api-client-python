@@ -167,3 +167,26 @@ Feature: Observability Pipelines
     When the request is sent
     Then the response status is 200 OK
     And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with OCSF mapper custom mapping returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "mappings": [{"include": "source:custom", "mapping": {"mapping": [{"default": "", "dest": "time", "source": "timestamp"}, {"default": "", "dest": "severity", "source": "level"}, {"default": "", "dest": "device.type", "lookup": {"table": [{"contains": "Desktop", "value": "desktop"}]}, "source": "host.type"}], "metadata": {"class": "Device Inventory Info", "profiles": ["container"], "version": "1.3.0"}, "version": 1}}], "type": "ocsf_mapper"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Custom Mapper Pipeline"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with OCSF mapper invalid custom mapping returns "Bad Request" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "mappings": [{"include": "source:custom", "mapping": {"mapping": [{"dest": "time", "source": "timestamp"}], "metadata": {"class": "Invalid Class", "profiles": ["container"], "version": "1.3.0"}, "version": 0}}], "type": "ocsf_mapper"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Invalid Mapper Pipeline"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with OCSF mapper library mapping returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "type": "ocsf_mapper", "mappings": [{"include": "source:cloudtrail", "mapping": "CloudTrail Account Change"}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Mapper Pipeline"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0

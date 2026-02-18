@@ -14,6 +14,15 @@ class ObservabilityPipelineOcsfMapperProcessorMappingMapping(ModelComposed):
     def __init__(self, **kwargs):
         """
         Defines a single mapping rule for transforming logs into the OCSF schema.
+
+        :param mapping: A list of field mapping rules for transforming log fields to OCSF schema fields.
+        :type mapping: [ObservabilityPipelineOcsfMappingCustomFieldMapping]
+
+        :param metadata: Metadata for the custom OCSF mapping.
+        :type metadata: ObservabilityPipelineOcsfMappingCustomMetadata
+
+        :param version: The version of the custom mapping configuration.
+        :type version: int
         """
         super().__init__(kwargs)
 
@@ -26,8 +35,13 @@ class ObservabilityPipelineOcsfMapperProcessorMappingMapping(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom import (
+            ObservabilityPipelineOcsfMappingCustom,
+        )
+
         return {
             "oneOf": [
                 str,
+                ObservabilityPipelineOcsfMappingCustom,
             ],
         }

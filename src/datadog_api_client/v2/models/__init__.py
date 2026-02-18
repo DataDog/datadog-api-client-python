@@ -3543,6 +3543,21 @@ from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_ma
 from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor_type import (
     ObservabilityPipelineOcsfMapperProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom import (
+    ObservabilityPipelineOcsfMappingCustom,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_field_mapping import (
+    ObservabilityPipelineOcsfMappingCustomFieldMapping,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_lookup import (
+    ObservabilityPipelineOcsfMappingCustomLookup,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_lookup_table_entry import (
+    ObservabilityPipelineOcsfMappingCustomLookupTableEntry,
+)
+from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_custom_metadata import (
+    ObservabilityPipelineOcsfMappingCustomMetadata,
+)
 from datadog_api_client.v2.model.observability_pipeline_ocsf_mapping_library import (
     ObservabilityPipelineOcsfMappingLibrary,
 )
@@ -8583,6 +8598,11 @@ __all__ = [
     "ObservabilityPipelineOcsfMapperProcessorMapping",
     "ObservabilityPipelineOcsfMapperProcessorMappingMapping",
     "ObservabilityPipelineOcsfMapperProcessorType",
+    "ObservabilityPipelineOcsfMappingCustom",
+    "ObservabilityPipelineOcsfMappingCustomFieldMapping",
+    "ObservabilityPipelineOcsfMappingCustomLookup",
+    "ObservabilityPipelineOcsfMappingCustomLookupTableEntry",
+    "ObservabilityPipelineOcsfMappingCustomMetadata",
     "ObservabilityPipelineOcsfMappingLibrary",
     "ObservabilityPipelineOpenSearchDestination",
     "ObservabilityPipelineOpenSearchDestinationDataStream",
