@@ -106,6 +106,7 @@ from datadog_api_client.v2.model.security_monitoring_content_pack_states_respons
     SecurityMonitoringContentPackStatesResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
 from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_payload import (
     SecurityMonitoringRuleBulkExportPayload,
@@ -1795,6 +1796,11 @@ class SecurityMonitoringApi:
                 "query": {
                     "openapi_types": (str,),
                     "attribute": "query",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (SecurityMonitoringRuleSort,),
+                    "attribute": "sort",
                     "location": "query",
                 },
             },
@@ -4370,6 +4376,7 @@ class SecurityMonitoringApi:
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
+        sort: Union[SecurityMonitoringRuleSort, UnsetType] = unset,
     ) -> SecurityMonitoringListRulesResponse:
         """List rules.
 
@@ -4381,6 +4388,8 @@ class SecurityMonitoringApi:
         :type page_number: int, optional
         :param query: A search query to filter security rules. You can filter by attributes such as ``type`` , ``source`` , ``tags``.
         :type query: str, optional
+        :param sort: Attribute used to sort rules. Prefix with ``-`` to sort in descending order.
+        :type sort: SecurityMonitoringRuleSort, optional
         :rtype: SecurityMonitoringListRulesResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -4392,6 +4401,9 @@ class SecurityMonitoringApi:
 
         if query is not unset:
             kwargs["query"] = query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
 
         return self._list_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
