@@ -2622,6 +2622,20 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.seats_api" class="md-nav__link">datadog_api_client.v2.api.seats_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.seats_api.SeatsApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SeatsApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.seats_api.SeatsApi.assign_seats_user" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SeatsApi.assign_seats_user()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.seats_api.SeatsApi.get_seats_users" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SeatsApi.get_seats_users()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.seats_api.SeatsApi.unassign_seats_user" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SeatsApi.unassign_seats_user()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.security_monitoring_api" class="md-nav__link">datadog_api_client.v2.api.security_monitoring_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.security_monitoring_api.SecurityMonitoringApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SecurityMonitoringApi</span></code></a><nav class="md-nav">
@@ -13871,6 +13885,55 @@ Returns RUM retention filter objects from the request body when the request is s
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse" title="datadog_api_client.v2.model.rum_retention_filter_response.RumRetentionFilterResponse">RumRetentionFilterResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.seats_api">
+<span id="datadog-api-client-v2-api-seats-api-module"></span><h2 id="module-datadog_api_client.v2.api.seats_api">datadog_api_client.v2.api.seats_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.seats_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.seats_api.SeatsApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SeatsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.seats_api.SeatsApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The seats API allows you to view, assign, and unassign seats for your organization.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.seats_api.SeatsApi.assign_seats_user">
+<span class="sig-name descname"><span class="pre">assign_seats_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.assign_seats_user_request.AssignSeatsUserRequest" title="datadog_api_client.v2.model.assign_seats_user_request.AssignSeatsUserRequest"><span class="pre">AssignSeatsUserRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.assign_seats_user_response.AssignSeatsUserResponse" title="datadog_api_client.v2.model.assign_seats_user_response.AssignSeatsUserResponse"><span class="pre">AssignSeatsUserResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.seats_api.SeatsApi.assign_seats_user" title="Link to this definition">¶</a></dt>
+<dd><p>Assign seats to users.</p>
+<p>Assign seats to users for a product code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.assign_seats_user_response.AssignSeatsUserResponse" title="datadog_api_client.v2.model.assign_seats_user_response.AssignSeatsUserResponse">AssignSeatsUserResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.seats_api.SeatsApi.get_seats_users">
+<span class="sig-name descname"><span class="pre">get_seats_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">product_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_cursor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" title="datadog_api_client.model_utils.UnsetType"><span class="pre">UnsetType</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">UnsetType.unset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.seat_user_data_array.SeatUserDataArray" title="datadog_api_client.v2.model.seat_user_data_array.SeatUserDataArray"><span class="pre">SeatUserDataArray</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.seats_api.SeatsApi.get_seats_users" title="Link to this definition">¶</a></dt>
+<dd><p>Get users with seats.</p>
+<p>Get the list of users assigned seats for a product code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>product_code</strong> (<em>str</em>) – The product code for which to retrieve seat users.</p></li>
+<li><p><strong>page_limit</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of results to return.</p></li>
+<li><p><strong>page_cursor</strong> (<em>str</em><em>, </em><em>optional</em>) – Cursor for pagination.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.seat_user_data_array.SeatUserDataArray" title="datadog_api_client.v2.model.seat_user_data_array.SeatUserDataArray">SeatUserDataArray</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.seats_api.SeatsApi.unassign_seats_user">
+<span class="sig-name descname"><span class="pre">unassign_seats_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.unassign_seats_user_request.UnassignSeatsUserRequest" title="datadog_api_client.v2.model.unassign_seats_user_request.UnassignSeatsUserRequest"><span class="pre">UnassignSeatsUserRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#datadog_api_client.v2.api.seats_api.SeatsApi.unassign_seats_user" title="Link to this definition">¶</a></dt>
+<dd><p>Unassign seats from users.</p>
+<p>Unassign seats from users for a product code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
