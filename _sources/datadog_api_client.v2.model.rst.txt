@@ -1782,6 +1782,34 @@ datadog\_api\_client.v2.model.aws\_auth\_config\_role module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_attributes\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_data\_response module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mappings\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mappings_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_credentials module
 -----------------------------------------------------
 
