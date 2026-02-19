@@ -17,6 +17,7 @@ body = RoleCreateRequest(
     data=RoleCreateData(
         attributes=RoleCreateAttributes(
             name="developers",
+            receives_permissions_from=[],
         ),
         relationships=RoleRelationships(
             permissions=RelationshipToPermissions(
