@@ -72,8 +72,6 @@ class CodeCoverageApi:
         This endpoint provides overall coverage metrics as well as breakdowns by service
         and code owner.
 
-        **Note** : This endpoint requires the ``code_coverage_read`` permission.
-
         :type body: BranchCoverageSummaryRequest
         :rtype: CoverageSummaryResponse
         """
@@ -93,8 +91,6 @@ class CodeCoverageApi:
         and code owner.
 
         The commit SHA must be a 40-character hexadecimal string (SHA-1 hash).
-
-        **Note** : This endpoint requires the ``code_coverage_read`` permission.
 
         :type body: CommitCoverageSummaryRequest
         :rtype: CoverageSummaryResponse
