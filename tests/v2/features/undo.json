@@ -972,6 +972,46 @@
       "type": "safe"
     }
   },
+  "CreateChangeRequest": {
+    "tag": "Change Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetChangeRequest": {
+    "tag": "Change Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateChangeRequest": {
+    "tag": "Change Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateChangeRequestBranch": {
+    "tag": "Change Management",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "DeleteChangeRequestDecision": {
+    "tag": "Change Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateChangeRequestDecision": {
+    "tag": "Change Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateCIAppPipelineEvent": {
     "tag": "CI Visibility Pipelines",
     "undo": {
