@@ -775,6 +775,52 @@ from datadog_api_client.v2.model.change_event_custom_attributes_impacted_resourc
     ChangeEventCustomAttributesImpactedResourcesItemsType,
 )
 from datadog_api_client.v2.model.change_event_trigger_wrapper import ChangeEventTriggerWrapper
+from datadog_api_client.v2.model.change_request_branch_create_attributes import ChangeRequestBranchCreateAttributes
+from datadog_api_client.v2.model.change_request_branch_create_data import ChangeRequestBranchCreateData
+from datadog_api_client.v2.model.change_request_branch_create_request import ChangeRequestBranchCreateRequest
+from datadog_api_client.v2.model.change_request_branch_resource_type import ChangeRequestBranchResourceType
+from datadog_api_client.v2.model.change_request_change_type import ChangeRequestChangeType
+from datadog_api_client.v2.model.change_request_create_attributes import ChangeRequestCreateAttributes
+from datadog_api_client.v2.model.change_request_create_data import ChangeRequestCreateData
+from datadog_api_client.v2.model.change_request_create_request import ChangeRequestCreateRequest
+from datadog_api_client.v2.model.change_request_decision_create_attributes import ChangeRequestDecisionCreateAttributes
+from datadog_api_client.v2.model.change_request_decision_create_item import ChangeRequestDecisionCreateItem
+from datadog_api_client.v2.model.change_request_decision_create_relationships import (
+    ChangeRequestDecisionCreateRelationships,
+)
+from datadog_api_client.v2.model.change_request_decision_relationship_data import ChangeRequestDecisionRelationshipData
+from datadog_api_client.v2.model.change_request_decision_relationships import ChangeRequestDecisionRelationships
+from datadog_api_client.v2.model.change_request_decision_resource_type import ChangeRequestDecisionResourceType
+from datadog_api_client.v2.model.change_request_decision_response_attributes import (
+    ChangeRequestDecisionResponseAttributes,
+)
+from datadog_api_client.v2.model.change_request_decision_status_type import ChangeRequestDecisionStatusType
+from datadog_api_client.v2.model.change_request_decision_update_data import ChangeRequestDecisionUpdateData
+from datadog_api_client.v2.model.change_request_decision_update_data_attributes import (
+    ChangeRequestDecisionUpdateDataAttributes,
+)
+from datadog_api_client.v2.model.change_request_decision_update_data_relationships import (
+    ChangeRequestDecisionUpdateDataRelationships,
+)
+from datadog_api_client.v2.model.change_request_decision_update_request import ChangeRequestDecisionUpdateRequest
+from datadog_api_client.v2.model.change_request_decisions_relationship import ChangeRequestDecisionsRelationship
+from datadog_api_client.v2.model.change_request_included_decision import ChangeRequestIncludedDecision
+from datadog_api_client.v2.model.change_request_included_item import ChangeRequestIncludedItem
+from datadog_api_client.v2.model.change_request_included_user import ChangeRequestIncludedUser
+from datadog_api_client.v2.model.change_request_included_user_attributes import ChangeRequestIncludedUserAttributes
+from datadog_api_client.v2.model.change_request_object_attributes import ChangeRequestObjectAttributes
+from datadog_api_client.v2.model.change_request_relationships import ChangeRequestRelationships
+from datadog_api_client.v2.model.change_request_resource_type import ChangeRequestResourceType
+from datadog_api_client.v2.model.change_request_response import ChangeRequestResponse
+from datadog_api_client.v2.model.change_request_response_attributes import ChangeRequestResponseAttributes
+from datadog_api_client.v2.model.change_request_response_data import ChangeRequestResponseData
+from datadog_api_client.v2.model.change_request_risk_level import ChangeRequestRiskLevel
+from datadog_api_client.v2.model.change_request_update_attributes import ChangeRequestUpdateAttributes
+from datadog_api_client.v2.model.change_request_update_data import ChangeRequestUpdateData
+from datadog_api_client.v2.model.change_request_update_relationships import ChangeRequestUpdateRelationships
+from datadog_api_client.v2.model.change_request_update_request import ChangeRequestUpdateRequest
+from datadog_api_client.v2.model.change_request_user_relationship import ChangeRequestUserRelationship
+from datadog_api_client.v2.model.change_request_user_relationship_data import ChangeRequestUserRelationshipData
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.circle_ciapi_key import CircleCIAPIKey
 from datadog_api_client.v2.model.circle_ciapi_key_type import CircleCIAPIKeyType
@@ -6711,6 +6757,44 @@ __all__ = [
     "ChangeEventCustomAttributesImpactedResourcesItems",
     "ChangeEventCustomAttributesImpactedResourcesItemsType",
     "ChangeEventTriggerWrapper",
+    "ChangeRequestBranchCreateAttributes",
+    "ChangeRequestBranchCreateData",
+    "ChangeRequestBranchCreateRequest",
+    "ChangeRequestBranchResourceType",
+    "ChangeRequestChangeType",
+    "ChangeRequestCreateAttributes",
+    "ChangeRequestCreateData",
+    "ChangeRequestCreateRequest",
+    "ChangeRequestDecisionCreateAttributes",
+    "ChangeRequestDecisionCreateItem",
+    "ChangeRequestDecisionCreateRelationships",
+    "ChangeRequestDecisionRelationshipData",
+    "ChangeRequestDecisionRelationships",
+    "ChangeRequestDecisionResourceType",
+    "ChangeRequestDecisionResponseAttributes",
+    "ChangeRequestDecisionStatusType",
+    "ChangeRequestDecisionUpdateData",
+    "ChangeRequestDecisionUpdateDataAttributes",
+    "ChangeRequestDecisionUpdateDataRelationships",
+    "ChangeRequestDecisionUpdateRequest",
+    "ChangeRequestDecisionsRelationship",
+    "ChangeRequestIncludedDecision",
+    "ChangeRequestIncludedItem",
+    "ChangeRequestIncludedUser",
+    "ChangeRequestIncludedUserAttributes",
+    "ChangeRequestObjectAttributes",
+    "ChangeRequestRelationships",
+    "ChangeRequestResourceType",
+    "ChangeRequestResponse",
+    "ChangeRequestResponseAttributes",
+    "ChangeRequestResponseData",
+    "ChangeRequestRiskLevel",
+    "ChangeRequestUpdateAttributes",
+    "ChangeRequestUpdateData",
+    "ChangeRequestUpdateRelationships",
+    "ChangeRequestUpdateRequest",
+    "ChangeRequestUserRelationship",
+    "ChangeRequestUserRelationshipData",
     "ChargebackBreakdown",
     "CircleCIAPIKey",
     "CircleCIAPIKeyType",
