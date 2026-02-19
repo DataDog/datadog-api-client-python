@@ -33,6 +33,14 @@ from datadog_api_client.v2.model.aws_assume_role_update import AWSAssumeRoleUpda
 from datadog_api_client.v2.model.aws_auth_config import AWSAuthConfig
 from datadog_api_client.v2.model.aws_auth_config_keys import AWSAuthConfigKeys
 from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_attributes_response import (
+    AWSCloudAuthPersonaMappingAttributesResponse,
+)
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_data_response import (
+    AWSCloudAuthPersonaMappingDataResponse,
+)
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_type import AWSCloudAuthPersonaMappingType
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mappings_response import AWSCloudAuthPersonaMappingsResponse
 from datadog_api_client.v2.model.aws_credentials import AWSCredentials
 from datadog_api_client.v2.model.aws_credentials_update import AWSCredentialsUpdate
 from datadog_api_client.v2.model.aws_event_bridge_account_configuration import AWSEventBridgeAccountConfiguration
@@ -6094,6 +6102,10 @@ __all__ = [
     "AWSAuthConfig",
     "AWSAuthConfigKeys",
     "AWSAuthConfigRole",
+    "AWSCloudAuthPersonaMappingAttributesResponse",
+    "AWSCloudAuthPersonaMappingDataResponse",
+    "AWSCloudAuthPersonaMappingType",
+    "AWSCloudAuthPersonaMappingsResponse",
     "AWSCredentials",
     "AWSCredentialsUpdate",
     "AWSEventBridgeAccountConfiguration",
