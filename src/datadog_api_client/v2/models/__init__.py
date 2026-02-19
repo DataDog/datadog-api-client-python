@@ -2600,6 +2600,8 @@ from datadog_api_client.v2.model.input_schema import InputSchema
 from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParameters
 from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v2.model.integration import Integration
+from datadog_api_client.v2.model.integration_attributes import IntegrationAttributes
 from datadog_api_client.v2.model.integration_incident import IntegrationIncident
 from datadog_api_client.v2.model.integration_incident_field_mappings_items import IntegrationIncidentFieldMappingsItems
 from datadog_api_client.v2.model.integration_incident_severity_config import IntegrationIncidentSeverityConfig
@@ -2612,6 +2614,7 @@ from datadog_api_client.v2.model.integration_jira_sync_properties import Integra
 from datadog_api_client.v2.model.integration_jira_sync_properties_custom_fields_additional_properties import (
     IntegrationJiraSyncPropertiesCustomFieldsAdditionalProperties,
 )
+from datadog_api_client.v2.model.integration_links import IntegrationLinks
 from datadog_api_client.v2.model.integration_monitor import IntegrationMonitor
 from datadog_api_client.v2.model.integration_on_call import IntegrationOnCall
 from datadog_api_client.v2.model.integration_on_call_escalation_queries_items import (
@@ -2629,6 +2632,7 @@ from datadog_api_client.v2.model.integration_service_now_sync_config139772721534
 from datadog_api_client.v2.model.integration_service_now_sync_config_priority import (
     IntegrationServiceNowSyncConfigPriority,
 )
+from datadog_api_client.v2.model.integration_type import IntegrationType
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
 from datadog_api_client.v2.model.issue import Issue
@@ -2813,6 +2817,7 @@ from datadog_api_client.v2.model.list_entity_catalog_response_links import ListE
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.list_integrations_response import ListIntegrationsResponse
 from datadog_api_client.v2.model.list_interface_tags_response import ListInterfaceTagsResponse
 from datadog_api_client.v2.model.list_interface_tags_response_data import ListInterfaceTagsResponseData
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
@@ -8124,6 +8129,8 @@ __all__ = [
     "InputSchemaParameters",
     "InputSchemaParametersType",
     "IntakePayloadAccepted",
+    "Integration",
+    "IntegrationAttributes",
     "IntegrationIncident",
     "IntegrationIncidentFieldMappingsItems",
     "IntegrationIncidentSeverityConfig",
@@ -8134,6 +8141,7 @@ __all__ = [
     "IntegrationJiraSyncDueDate",
     "IntegrationJiraSyncProperties",
     "IntegrationJiraSyncPropertiesCustomFieldsAdditionalProperties",
+    "IntegrationLinks",
     "IntegrationMonitor",
     "IntegrationOnCall",
     "IntegrationOnCallEscalationQueriesItems",
@@ -8143,6 +8151,7 @@ __all__ = [
     "IntegrationServiceNowSyncConfig",
     "IntegrationServiceNowSyncConfig139772721534496",
     "IntegrationServiceNowSyncConfigPriority",
+    "IntegrationType",
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
     "Issue",
@@ -8305,6 +8314,7 @@ __all__ = [
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
+    "ListIntegrationsResponse",
     "ListInterfaceTagsResponse",
     "ListInterfaceTagsResponseData",
     "ListKindCatalogResponse",
