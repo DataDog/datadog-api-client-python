@@ -4541,11 +4541,14 @@ and should be formatted to a single line then URL encoded.</p></li>
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SyntheticsApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v1.api.synthetics_api.SyntheticsApi" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Datadog Synthetic Monitoring uses simulated user requests and browser rendering to help you ensure uptime,
-identify regional issues, and track your application performance. Synthetic tests come in
-two different flavors, <a class="reference external" href="https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest">API tests</a>
-and <a class="reference external" href="https://docs.datadoghq.com/synthetics/browser_tests">browser tests</a>. You can use Datadog’s API to
-manage both test types programmatically.</p>
+<p>Synthetic tests use simulated requests and actions so you can monitor the availability and performance of systems and applications. Datadog supports the following types of synthetic tests:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.datadoghq.com/synthetics/api_tests/">API tests</a></p></li>
+<li><p><a class="reference external" href="https://docs.datadoghq.com/synthetics/browser_tests">Browser tests</a></p></li>
+<li><p><a class="reference external" href="https://docs.datadoghq.com/synthetics/network_path_tests/">Network Path tests</a></p></li>
+<li><p><a class="reference external" href="https://docs.datadoghq.com/synthetics/mobile_app_testing">Mobile Application tests</a></p></li>
+</ul>
+<p>You can use the Datadog API to create, manage, and organize tests and test suites programmatically.</p>
 <p>For more information, see the <a class="reference external" href="https://docs.datadoghq.com/synthetics/">Synthetic Monitoring documentation</a>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datadog_api_client.v1.api.synthetics_api.SyntheticsApi.create_global_variable">
