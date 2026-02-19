@@ -5387,6 +5387,37 @@
       "type": "idempotent"
     }
   },
+  "DeleteSyntheticsTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateSyntheticsNetworkTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "DeleteSyntheticsTests",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"data\": {\"type\": \"delete_tests_request\", \"attributes\": {\"public_ids\": [\"{{ data.attributes.public_id }}\"]}}}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetSyntheticsNetworkTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSyntheticsNetworkTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "PatchGlobalVariable": {
     "tag": "Synthetics",
     "undo": {

@@ -121,7 +121,7 @@ class SyntheticsTestDetailsWithoutSteps(ModelNormal):
         :param tags: Array of tags attached to the test.
         :type tags: [str], optional
 
-        :param type: Type of the Synthetic test, either ``api`` or ``browser``.
+        :param type: Type of the Synthetic test.
         :type type: SyntheticsTestDetailsType, optional
         """
         if config is not unset:

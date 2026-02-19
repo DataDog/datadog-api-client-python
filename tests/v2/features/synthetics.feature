@@ -1,13 +1,16 @@
 @endpoint(synthetics) @endpoint(synthetics-v2)
 Feature: Synthetics
-  Datadog Synthetics uses simulated user requests and browser rendering to
-  help you ensure uptime, identify regional issues, and track your
-  application performance. Datadog Synthetics tests come in two different
-  flavors, [API tests](https://docs.datadoghq.com/synthetics/api_tests/) and
-  [browser tests](https://docs.datadoghq.com/synthetics/browser_tests). You
-  can use Datadog’s API to manage both test types programmatically.  For
-  more information about Synthetics, see the [Synthetics
-  overview](https://docs.datadoghq.com/synthetics/).
+  Synthetic tests use simulated requests and actions so you can monitor the
+  availability and performance of systems and applications. Datadog supports
+  the following types of synthetic tests: - [API
+  tests](https://docs.datadoghq.com/synthetics/api_tests/) - [Browser
+  tests](https://docs.datadoghq.com/synthetics/browser_tests) - [Network
+  Path tests](https://docs.datadoghq.com/synthetics/network_path_tests/) -
+  [Mobile Application
+  tests](https://docs.datadoghq.com/synthetics/mobile_app_testing)  You can
+  use the Datadog API to create, manage, and organize tests and test suites
+  programmatically.  For more information, see the [Synthetic Monitoring
+  documentation](https://docs.datadoghq.com/synthetics/).
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -79,6 +82,34 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Bulk delete tests returns "API error response." response
+    Given new "DeleteSyntheticsTests" request
+    And body with value {"data": {"attributes": {"public_ids": [""]}, "type": "delete_tests_request"}}
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Bulk delete tests returns "OK" response
+    Given new "DeleteSyntheticsTests" request
+    And body with value {"data": {"attributes": {"public_ids": [""]}, "type": "delete_tests_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Create a Network Path test returns "API error response." response
+    Given new "CreateSyntheticsNetworkTest" request
+    And body with value {"data": {"attributes": {"config": {"assertions": [{"operator": "lessThan", "property": "avg", "target": 500, "type": "latency"}], "request": {"e2e_queries": 50, "host": "", "max_ttl": 30, "port": 443, "tcp_method": "prefer_sack", "traceroute_queries": 3}}, "locations": ["aws:us-east-1", "agent:my-agent-name"], "message": "Network Path test notification", "name": "Example Network Path test", "options": {"monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}}, "status": "live", "subtype": "tcp", "tags": ["env:production"], "type": "network"}, "type": "network"}}
+    When the request is sent
+    Then the response status is 400 API error response.
+
+  @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Create a Network Path test returns "OK" response
+    Given new "CreateSyntheticsNetworkTest" request
+    And body with value {"data": {"attributes": {"config": {"assertions": [{"operator": "lessThan", "property": "avg", "target": 500, "type": "latency"}], "request": {"host": "example.com", "port": 443, "tcp_method": "prefer_sack", "max_ttl": 30, "e2e_queries": 50, "traceroute_queries": 3}}, "locations": ["aws:us-east-1", "agent:my-agent-name"], "message": "Network Path test notification", "name": "Example Network Path test", "options": {"tick_every": 60}, "status": "live", "subtype": "tcp", "tags": ["env:production"], "type": "network"}, "type": "network"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
   Scenario: Synthetics: Create a test suite returns "API error response." response
     Given new "CreateSyntheticsSuite" request
     And body with value {"data": {"attributes": {"message": "Notification message", "name": "Example suite name", "options": {}, "tags": ["env:production"], "tests": [{"alerting_criticality": "critical", "public_id": ""}], "type": "suite"}, "type": "suites"}}
@@ -89,6 +120,22 @@ Feature: Synthetics
   Scenario: Synthetics: Create a test suite returns "OK" response
     Given new "CreateSyntheticsSuite" request
     And body with value {"data": {"attributes": {"message": "Notification message", "name": "Example suite name", "options": {}, "tags": ["env:production"], "tests": [], "type": "suite"}, "type": "suites"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Edit a Network Path test returns "API error response." response
+    Given new "UpdateSyntheticsNetworkTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"config": {"assertions": [{"operator": "lessThan", "property": "avg", "target": 500, "type": "latency"}], "request": {"e2e_queries": 50, "host": "", "max_ttl": 30, "port": 443, "tcp_method": "prefer_sack", "traceroute_queries": 3}}, "locations": ["aws:us-east-1", "agent:my-agent-name"], "message": "Network Path test notification", "name": "Example Network Path test", "options": {"monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}}, "status": "live", "subtype": "tcp", "tags": ["env:production"], "type": "network"}, "type": "network"}}
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Edit a Network Path test returns "OK" response
+    Given new "UpdateSyntheticsNetworkTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"config": {"assertions": [{"operator": "lessThan", "property": "avg", "target": 500, "type": "latency"}], "request": {"e2e_queries": 50, "host": "", "max_ttl": 30, "port": 443, "tcp_method": "prefer_sack", "traceroute_queries": 3}}, "locations": ["aws:us-east-1", "agent:my-agent-name"], "message": "Network Path test notification", "name": "Example Network Path test", "options": {"monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}}, "status": "live", "subtype": "tcp", "tags": ["env:production"], "type": "network"}, "type": "network"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -105,6 +152,20 @@ Feature: Synthetics
     Given new "EditSyntheticsSuite" request
     And request contains "public_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"message": "Notification message", "name": "Example suite name", "options": {}, "tags": ["env:production"], "tests": [{"alerting_criticality": "critical", "public_id": ""}], "type": "suite"}, "type": "suites"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Get a Network Path test returns "API error response." response
+    Given new "GetSyntheticsNetworkTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @replay-only @team:DataDog/synthetics-managing
+  Scenario: Synthetics: Get a Network Path test returns "OK" response
+    Given new "GetSyntheticsNetworkTest" request
+    And request contains "public_id" parameter with value "amg-96x-tps"
     When the request is sent
     Then the response status is 200 OK
 

@@ -7816,6 +7816,62 @@ datadog\_api\_client.v2.model.deleted\_suites\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deleted\_test\_response\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_test_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_test\_response\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_test_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_tests\_request\_delete module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_tests_request_delete
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_tests\_request\_delete\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_tests_request_delete_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_tests\_request\_delete\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_tests_request_delete_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_tests\_request\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_tests_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_tests\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_tests_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deleted\_tests\_response\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deleted_tests_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dependency\_location module
 ---------------------------------------------------------
 
@@ -27255,6 +27311,160 @@ datadog\_api\_client.v2.model.synthetics\_global\_variable\_value module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.synthetics\_network\_assertion module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_jitter module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_jitter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_jitter\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_jitter_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_latency module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_latency
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_latency\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_latency_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_multi\_network\_hop module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_multi_network_hop
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_multi\_network\_hop\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_multi_network_hop_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_operator module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_operator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_packet\_loss\_percentage module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_packet_loss_percentage
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_packet\_loss\_percentage\_type module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_packet_loss_percentage_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_assertion\_property module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_assertion_property
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_config module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_edit module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_edit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_edit\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_edit_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_request\_tcp\_method module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_request_tcp_method
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_response\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_response\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_sub\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_sub_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_network\_test\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_network_test_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.synthetics\_suite module
 ------------------------------------------------------
 
@@ -27329,6 +27539,55 @@ datadog\_api\_client.v2.model.synthetics\_suite\_types module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.synthetics_suite_types
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_options module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_options\_monitor\_options module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_options_monitor_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_options\_monitor\_options\_notification\_preset\_name module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_options_monitor_options_notification_preset_name
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_options\_retry module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_options_retry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_options\_scheduling module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_options_scheduling
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_options\_scheduling\_timeframe module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_options_scheduling_timeframe
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_pause\_status module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_pause_status
    :members:
    :show-inheritance:
 
