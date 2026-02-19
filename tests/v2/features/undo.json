@@ -1014,6 +1014,12 @@
       "type": "safe"
     }
   },
+  "ListAWSCloudAuthPersonaMappings": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateCustomFramework": {
     "tag": "Security Monitoring",
     "undo": {

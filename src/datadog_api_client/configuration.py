@@ -273,6 +273,7 @@ class Configuration:
                 "v2.link_jira_issue_to_case": False,
                 "v2.move_case_to_project": False,
                 "v2.unlink_jira_issue": False,
+                "v2.list_aws_cloud_auth_persona_mappings": False,
                 "v2.activate_content_pack": False,
                 "v2.cancel_threat_hunting_job": False,
                 "v2.convert_job_result_to_signal": False,
