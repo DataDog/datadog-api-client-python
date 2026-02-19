@@ -1132,6 +1132,26 @@
         </li></ul>
             </nav>
         </li>
+        <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.change_management_api" class="md-nav__link">datadog_api_client.v2.api.change_management_api module</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ChangeManagementApi</span></code></a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.create_change_request" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ChangeManagementApi.create_change_request()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.create_change_request_branch" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ChangeManagementApi.create_change_request_branch()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.delete_change_request_decision" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ChangeManagementApi.delete_change_request_decision()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.get_change_request" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ChangeManagementApi.get_change_request()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.update_change_request" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ChangeManagementApi.update_change_request()</span></code></a>
+        </li>
+        <li class="md-nav__item"><a href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.update_change_request_decision" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ChangeManagementApi.update_change_request_decision()</span></code></a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
         <li class="md-nav__item"><a href="#module-datadog_api_client.v2.api.ci_visibility_pipelines_api" class="md-nav__link">datadog_api_client.v2.api.ci_visibility_pipelines_api module</a><nav class="md-nav">
               <ul class="md-nav__list">
         <li class="md-nav__item"><a href="#datadog_api_client.v2.api.ci_visibility_pipelines_api.CIVisibilityPipelinesApi" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">CIVisibilityPipelinesApi</span></code></a><nav class="md-nav">
@@ -5414,6 +5434,112 @@ For more information, see the <a class="reference external" href="https://docs.d
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.case_types_response.CaseTypesResponse" title="datadog_api_client.v2.model.case_types_response.CaseTypesResponse">CaseTypesResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="module-datadog_api_client.v2.api.change_management_api">
+<span id="datadog-api-client-v2-api-change-management-api-module"></span><h2 id="module-datadog_api_client.v2.api.change_management_api">datadog_api_client.v2.api.change_management_api module<a class="headerlink" href="#module-datadog_api_client.v2.api.change_management_api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.change_management_api.ChangeManagementApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ChangeManagementApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>View and manage change requests within Change Management. See the <a class="reference external" href="https://docs.datadoghq.com/service_management/case_management/">Case Management page</a> for more information.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.change_management_api.ChangeManagementApi.create_change_request">
+<span class="sig-name descname"><span class="pre">create_change_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_create_request.ChangeRequestCreateRequest" title="datadog_api_client.v2.model.change_request_create_request.ChangeRequestCreateRequest"><span class="pre">ChangeRequestCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse"><span class="pre">ChangeRequestResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.create_change_request" title="Link to this definition">¶</a></dt>
+<dd><p>Create a change request.</p>
+<p>Create a new change request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_create_request.ChangeRequestCreateRequest" title="datadog_api_client.v2.model.change_request_create_request.ChangeRequestCreateRequest"><em>ChangeRequestCreateRequest</em></a>) – Change request payload.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse">ChangeRequestResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.change_management_api.ChangeManagementApi.create_change_request_branch">
+<span class="sig-name descname"><span class="pre">create_change_request_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change_request_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_branch_create_request.ChangeRequestBranchCreateRequest" title="datadog_api_client.v2.model.change_request_branch_create_request.ChangeRequestBranchCreateRequest"><span class="pre">ChangeRequestBranchCreateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse"><span class="pre">ChangeRequestResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.create_change_request_branch" title="Link to this definition">¶</a></dt>
+<dd><p>Create a change request branch.</p>
+<p>Create a new branch in a repository for a change request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>change_request_id</strong> (<em>str</em>) – The identifier of the change request.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_branch_create_request.ChangeRequestBranchCreateRequest" title="datadog_api_client.v2.model.change_request_branch_create_request.ChangeRequestBranchCreateRequest"><em>ChangeRequestBranchCreateRequest</em></a>) – Branch creation payload.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse">ChangeRequestResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.change_management_api.ChangeManagementApi.delete_change_request_decision">
+<span class="sig-name descname"><span class="pre">delete_change_request_decision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change_request_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decision_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse"><span class="pre">ChangeRequestResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.delete_change_request_decision" title="Link to this definition">¶</a></dt>
+<dd><p>Delete a change request decision.</p>
+<p>Delete a decision from a change request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>change_request_id</strong> (<em>str</em>) – The identifier of the change request.</p></li>
+<li><p><strong>decision_id</strong> (<em>str</em>) – The identifier of the change request decision.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse">ChangeRequestResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.change_management_api.ChangeManagementApi.get_change_request">
+<span class="sig-name descname"><span class="pre">get_change_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change_request_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse"><span class="pre">ChangeRequestResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.get_change_request" title="Link to this definition">¶</a></dt>
+<dd><p>Get a change request.</p>
+<p>Get the details of a change request by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>change_request_id</strong> (<em>str</em>) – The identifier of the change request.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse">ChangeRequestResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.change_management_api.ChangeManagementApi.update_change_request">
+<span class="sig-name descname"><span class="pre">update_change_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change_request_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_update_request.ChangeRequestUpdateRequest" title="datadog_api_client.v2.model.change_request_update_request.ChangeRequestUpdateRequest"><span class="pre">ChangeRequestUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse"><span class="pre">ChangeRequestResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.update_change_request" title="Link to this definition">¶</a></dt>
+<dd><p>Update a change request.</p>
+<p>Update the properties of a change request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>change_request_id</strong> (<em>str</em>) – The identifier of the change request.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_update_request.ChangeRequestUpdateRequest" title="datadog_api_client.v2.model.change_request_update_request.ChangeRequestUpdateRequest"><em>ChangeRequestUpdateRequest</em></a>) – Change request update payload.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse">ChangeRequestResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datadog_api_client.v2.api.change_management_api.ChangeManagementApi.update_change_request_decision">
+<span class="sig-name descname"><span class="pre">update_change_request_decision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">change_request_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decision_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_decision_update_request.ChangeRequestDecisionUpdateRequest" title="datadog_api_client.v2.model.change_request_decision_update_request.ChangeRequestDecisionUpdateRequest"><span class="pre">ChangeRequestDecisionUpdateRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse"><span class="pre">ChangeRequestResponse</span></a></span></span><a class="headerlink" href="#datadog_api_client.v2.api.change_management_api.ChangeManagementApi.update_change_request_decision" title="Link to this definition">¶</a></dt>
+<dd><p>Update a change request decision.</p>
+<p>Update a decision on a change request, such as approving or declining it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>change_request_id</strong> (<em>str</em>) – The identifier of the change request.</p></li>
+<li><p><strong>decision_id</strong> (<em>str</em>) – The identifier of the change request decision.</p></li>
+<li><p><strong>body</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_decision_update_request.ChangeRequestDecisionUpdateRequest" title="datadog_api_client.v2.model.change_request_decision_update_request.ChangeRequestDecisionUpdateRequest"><em>ChangeRequestDecisionUpdateRequest</em></a>) – Decision update payload.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.change_request_response.ChangeRequestResponse" title="datadog_api_client.v2.model.change_request_response.ChangeRequestResponse">ChangeRequestResponse</a></p>
 </dd>
 </dl>
 </dd></dl>

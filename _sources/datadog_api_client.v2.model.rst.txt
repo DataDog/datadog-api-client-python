@@ -3623,6 +3623,272 @@ datadog\_api\_client.v2.model.change\_event\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.change\_request\_branch\_create\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_branch_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_branch\_create\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_branch_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_branch\_create\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_branch_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_branch\_resource\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_branch_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_change\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_change_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_create\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_create\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_create\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_create\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_create\_item module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_create_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_create\_relationships module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_create_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_relationship\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_relationships module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_resource\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_response\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_status\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_status_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_update\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_update\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_update_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_update\_data\_relationships module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_update_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decision\_update\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decision_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_decisions\_relationship module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_decisions_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_included\_decision module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_included_decision
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_included\_item module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_included\_user module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_included_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_included\_user\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_included_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_object\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_object_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_relationships module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_resource\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_response\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_response\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_risk\_level module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_risk_level
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_update\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_update\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_update\_relationships module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_update_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_update\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_user\_relationship module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_user_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.change\_request\_user\_relationship\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.change_request_user_relationship_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.chargeback\_breakdown module
 ----------------------------------------------------------
 
