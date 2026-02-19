@@ -67,6 +67,7 @@ from datadog_api_client.v2.api.powerpack_api import PowerpackApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
 from datadog_api_client.v2.api.rum_api import RUMApi
+from datadog_api_client.v2.api.rum_user_segments_api import RUMUserSegmentsApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
@@ -169,6 +170,7 @@ __all__ = [
     "ProcessesApi",
     "ProductAnalyticsApi",
     "RUMApi",
+    "RUMUserSegmentsApi",
     "ReferenceTablesApi",
     "RestrictionPoliciesApi",
     "RolesApi",

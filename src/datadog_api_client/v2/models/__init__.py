@@ -4551,6 +4551,45 @@ from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
 from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_segment_create_attributes import RumSegmentCreateAttributes
+from datadog_api_client.v2.model.rum_segment_create_data import RumSegmentCreateData
+from datadog_api_client.v2.model.rum_segment_create_request import RumSegmentCreateRequest
+from datadog_api_client.v2.model.rum_segment_data_query import RumSegmentDataQuery
+from datadog_api_client.v2.model.rum_segment_delete_attributes import RumSegmentDeleteAttributes
+from datadog_api_client.v2.model.rum_segment_delete_data import RumSegmentDeleteData
+from datadog_api_client.v2.model.rum_segment_delete_response import RumSegmentDeleteResponse
+from datadog_api_client.v2.model.rum_segment_delete_type import RumSegmentDeleteType
+from datadog_api_client.v2.model.rum_segment_event_platform import RumSegmentEventPlatform
+from datadog_api_client.v2.model.rum_segment_journey import RumSegmentJourney
+from datadog_api_client.v2.model.rum_segment_list_response import RumSegmentListResponse
+from datadog_api_client.v2.model.rum_segment_reference_table import RumSegmentReferenceTable
+from datadog_api_client.v2.model.rum_segment_reference_table_column import RumSegmentReferenceTableColumn
+from datadog_api_client.v2.model.rum_segment_reference_table_join_condition import RumSegmentReferenceTableJoinCondition
+from datadog_api_client.v2.model.rum_segment_resource_type import RumSegmentResourceType
+from datadog_api_client.v2.model.rum_segment_response import RumSegmentResponse
+from datadog_api_client.v2.model.rum_segment_response_attributes import RumSegmentResponseAttributes
+from datadog_api_client.v2.model.rum_segment_response_data import RumSegmentResponseData
+from datadog_api_client.v2.model.rum_segment_segment_type import RumSegmentSegmentType
+from datadog_api_client.v2.model.rum_segment_source import RumSegmentSource
+from datadog_api_client.v2.model.rum_segment_static_entry import RumSegmentStaticEntry
+from datadog_api_client.v2.model.rum_segment_template_instance import RumSegmentTemplateInstance
+from datadog_api_client.v2.model.rum_segment_template_list_response import RumSegmentTemplateListResponse
+from datadog_api_client.v2.model.rum_segment_template_parameter_def import RumSegmentTemplateParameterDef
+from datadog_api_client.v2.model.rum_segment_template_resource_type import RumSegmentTemplateResourceType
+from datadog_api_client.v2.model.rum_segment_template_response_attributes import RumSegmentTemplateResponseAttributes
+from datadog_api_client.v2.model.rum_segment_template_response_data import RumSegmentTemplateResponseData
+from datadog_api_client.v2.model.rum_segment_template_status import RumSegmentTemplateStatus
+from datadog_api_client.v2.model.rum_segment_update_attributes import RumSegmentUpdateAttributes
+from datadog_api_client.v2.model.rum_segment_update_data import RumSegmentUpdateData
+from datadog_api_client.v2.model.rum_segment_update_request import RumSegmentUpdateRequest
+from datadog_api_client.v2.model.rum_segment_user import RumSegmentUser
+from datadog_api_client.v2.model.rum_static_segment_create_attributes import RumStaticSegmentCreateAttributes
+from datadog_api_client.v2.model.rum_static_segment_create_data import RumStaticSegmentCreateData
+from datadog_api_client.v2.model.rum_static_segment_create_request import RumStaticSegmentCreateRequest
+from datadog_api_client.v2.model.rum_static_segment_journey_filter import RumStaticSegmentJourneyFilter
+from datadog_api_client.v2.model.rum_static_segment_journey_node import RumStaticSegmentJourneyNode
+from datadog_api_client.v2.model.rum_static_segment_journey_query_object import RumStaticSegmentJourneyQueryObject
+from datadog_api_client.v2.model.rum_static_segment_request_type import RumStaticSegmentRequestType
 from datadog_api_client.v2.model.run_threat_hunting_job_request import RunThreatHuntingJobRequest
 from datadog_api_client.v2.model.run_threat_hunting_job_request_attributes import RunThreatHuntingJobRequestAttributes
 from datadog_api_client.v2.model.run_threat_hunting_job_request_data import RunThreatHuntingJobRequestData
@@ -9310,6 +9349,45 @@ __all__ = [
     "RumRetentionFiltersOrderRequest",
     "RumRetentionFiltersOrderResponse",
     "RumRetentionFiltersResponse",
+    "RumSegmentCreateAttributes",
+    "RumSegmentCreateData",
+    "RumSegmentCreateRequest",
+    "RumSegmentDataQuery",
+    "RumSegmentDeleteAttributes",
+    "RumSegmentDeleteData",
+    "RumSegmentDeleteResponse",
+    "RumSegmentDeleteType",
+    "RumSegmentEventPlatform",
+    "RumSegmentJourney",
+    "RumSegmentListResponse",
+    "RumSegmentReferenceTable",
+    "RumSegmentReferenceTableColumn",
+    "RumSegmentReferenceTableJoinCondition",
+    "RumSegmentResourceType",
+    "RumSegmentResponse",
+    "RumSegmentResponseAttributes",
+    "RumSegmentResponseData",
+    "RumSegmentSegmentType",
+    "RumSegmentSource",
+    "RumSegmentStaticEntry",
+    "RumSegmentTemplateInstance",
+    "RumSegmentTemplateListResponse",
+    "RumSegmentTemplateParameterDef",
+    "RumSegmentTemplateResourceType",
+    "RumSegmentTemplateResponseAttributes",
+    "RumSegmentTemplateResponseData",
+    "RumSegmentTemplateStatus",
+    "RumSegmentUpdateAttributes",
+    "RumSegmentUpdateData",
+    "RumSegmentUpdateRequest",
+    "RumSegmentUser",
+    "RumStaticSegmentCreateAttributes",
+    "RumStaticSegmentCreateData",
+    "RumStaticSegmentCreateRequest",
+    "RumStaticSegmentJourneyFilter",
+    "RumStaticSegmentJourneyNode",
+    "RumStaticSegmentJourneyQueryObject",
+    "RumStaticSegmentRequestType",
     "RunThreatHuntingJobRequest",
     "RunThreatHuntingJobRequestAttributes",
     "RunThreatHuntingJobRequestData",

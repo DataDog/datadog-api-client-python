@@ -22642,6 +22642,230 @@ datadog\_api\_client.v2.model.rum\_search\_events\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_segment\_create\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_create\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_create\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_data\_query module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_data_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_delete\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_delete_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_delete\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_delete_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_delete\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_delete_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_delete\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_delete_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_event\_platform module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_event_platform
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_journey module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_journey
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_list\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_reference\_table module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_reference_table
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_reference\_table\_column module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_reference_table_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_reference\_table\_join\_condition module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_reference_table_join_condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_resource\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_response\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_response\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_segment\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_segment_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_source module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_static\_entry module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_static_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_template\_instance module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_template_instance
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_template\_list\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_template_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_template\_parameter\_def module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_template_parameter_def
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_template\_resource\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_template_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_template\_response\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_template_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_template\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_template_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_template\_status module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_template_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_update\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_update\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_update\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_segment\_user module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_segment_user
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_sort module
 ----------------------------------------------
 
@@ -22653,6 +22877,55 @@ datadog\_api\_client.v2.model.rum\_sort\_order module
 -----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rum_sort_order
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_static\_segment\_create\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_static_segment_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_static\_segment\_create\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_static_segment_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_static\_segment\_create\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_static_segment_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_static\_segment\_journey\_filter module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_static_segment_journey_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_static\_segment\_journey\_node module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_static_segment_journey_node
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_static\_segment\_journey\_query\_object module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_static_segment_journey_query_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_static\_segment\_request\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_static_segment_request_type
    :members:
    :show-inheritance:
 
