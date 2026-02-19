@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class SyntheticsTestDetailsType(ModelSimple):
     """
-    Type of the Synthetic test, either `api` or `browser`.
+    Type of the Synthetic test.
 
-    :param value: Must be one of ["api", "browser", "mobile"].
+    :param value: Must be one of ["api", "browser", "mobile", "network"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class SyntheticsTestDetailsType(ModelSimple):
         "api",
         "browser",
         "mobile",
+        "network",
     }
     API: ClassVar["SyntheticsTestDetailsType"]
     BROWSER: ClassVar["SyntheticsTestDetailsType"]
     MOBILE: ClassVar["SyntheticsTestDetailsType"]
+    NETWORK: ClassVar["SyntheticsTestDetailsType"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class SyntheticsTestDetailsType(ModelSimple):
 SyntheticsTestDetailsType.API = SyntheticsTestDetailsType("api")
 SyntheticsTestDetailsType.BROWSER = SyntheticsTestDetailsType("browser")
 SyntheticsTestDetailsType.MOBILE = SyntheticsTestDetailsType("mobile")
+SyntheticsTestDetailsType.NETWORK = SyntheticsTestDetailsType("network")

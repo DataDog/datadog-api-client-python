@@ -1,13 +1,15 @@
 @endpoint(synthetics) @endpoint(synthetics-v1)
 Feature: Synthetics
-  Datadog Synthetic Monitoring uses simulated user requests and browser
-  rendering to help you ensure uptime, identify regional issues, and track
-  your application performance. Synthetic tests come in two different
-  flavors, [API
-  tests](https://docs.datadoghq.com/synthetics/api_tests/?tab=httptest) and
-  [browser tests](https://docs.datadoghq.com/synthetics/browser_tests). You
-  can use Datadog's API to manage both test types programmatically.  For
-  more information, see the [Synthetic Monitoring
+  Synthetic tests use simulated requests and actions so you can monitor the
+  availability and performance of systems and applications. Datadog supports
+  the following types of synthetic tests: - [API
+  tests](https://docs.datadoghq.com/synthetics/api_tests/) - [Browser
+  tests](https://docs.datadoghq.com/synthetics/browser_tests) - [Network
+  Path tests](https://docs.datadoghq.com/synthetics/network_path_tests/) -
+  [Mobile Application
+  tests](https://docs.datadoghq.com/synthetics/mobile_app_testing)  You can
+  use the Datadog API to create, manage, and organize tests and test suites
+  programmatically.  For more information, see the [Synthetic Monitoring
   documentation](https://docs.datadoghq.com/synthetics/).
 
   Background:

@@ -1590,6 +1590,14 @@ from datadog_api_client.v2.model.deleted_suites_request_delete_attributes import
 from datadog_api_client.v2.model.deleted_suites_request_delete_request import DeletedSuitesRequestDeleteRequest
 from datadog_api_client.v2.model.deleted_suites_request_type import DeletedSuitesRequestType
 from datadog_api_client.v2.model.deleted_suites_response import DeletedSuitesResponse
+from datadog_api_client.v2.model.deleted_test_response_data import DeletedTestResponseData
+from datadog_api_client.v2.model.deleted_test_response_data_attributes import DeletedTestResponseDataAttributes
+from datadog_api_client.v2.model.deleted_tests_request_delete import DeletedTestsRequestDelete
+from datadog_api_client.v2.model.deleted_tests_request_delete_attributes import DeletedTestsRequestDeleteAttributes
+from datadog_api_client.v2.model.deleted_tests_request_delete_request import DeletedTestsRequestDeleteRequest
+from datadog_api_client.v2.model.deleted_tests_request_type import DeletedTestsRequestType
+from datadog_api_client.v2.model.deleted_tests_response import DeletedTestsResponse
+from datadog_api_client.v2.model.deleted_tests_response_type import DeletedTestsResponseType
 from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deployment import Deployment
 from datadog_api_client.v2.model.deployment_attributes import DeploymentAttributes
@@ -5544,6 +5552,36 @@ from datadog_api_client.v2.model.synthetics_global_variable_totp_parameters impo
     SyntheticsGlobalVariableTOTPParameters,
 )
 from datadog_api_client.v2.model.synthetics_global_variable_value import SyntheticsGlobalVariableValue
+from datadog_api_client.v2.model.synthetics_network_assertion import SyntheticsNetworkAssertion
+from datadog_api_client.v2.model.synthetics_network_assertion_jitter import SyntheticsNetworkAssertionJitter
+from datadog_api_client.v2.model.synthetics_network_assertion_jitter_type import SyntheticsNetworkAssertionJitterType
+from datadog_api_client.v2.model.synthetics_network_assertion_latency import SyntheticsNetworkAssertionLatency
+from datadog_api_client.v2.model.synthetics_network_assertion_latency_type import SyntheticsNetworkAssertionLatencyType
+from datadog_api_client.v2.model.synthetics_network_assertion_multi_network_hop import (
+    SyntheticsNetworkAssertionMultiNetworkHop,
+)
+from datadog_api_client.v2.model.synthetics_network_assertion_multi_network_hop_type import (
+    SyntheticsNetworkAssertionMultiNetworkHopType,
+)
+from datadog_api_client.v2.model.synthetics_network_assertion_operator import SyntheticsNetworkAssertionOperator
+from datadog_api_client.v2.model.synthetics_network_assertion_packet_loss_percentage import (
+    SyntheticsNetworkAssertionPacketLossPercentage,
+)
+from datadog_api_client.v2.model.synthetics_network_assertion_packet_loss_percentage_type import (
+    SyntheticsNetworkAssertionPacketLossPercentageType,
+)
+from datadog_api_client.v2.model.synthetics_network_assertion_property import SyntheticsNetworkAssertionProperty
+from datadog_api_client.v2.model.synthetics_network_test import SyntheticsNetworkTest
+from datadog_api_client.v2.model.synthetics_network_test_config import SyntheticsNetworkTestConfig
+from datadog_api_client.v2.model.synthetics_network_test_edit import SyntheticsNetworkTestEdit
+from datadog_api_client.v2.model.synthetics_network_test_edit_request import SyntheticsNetworkTestEditRequest
+from datadog_api_client.v2.model.synthetics_network_test_request import SyntheticsNetworkTestRequest
+from datadog_api_client.v2.model.synthetics_network_test_request_tcp_method import SyntheticsNetworkTestRequestTCPMethod
+from datadog_api_client.v2.model.synthetics_network_test_response import SyntheticsNetworkTestResponse
+from datadog_api_client.v2.model.synthetics_network_test_response_data import SyntheticsNetworkTestResponseData
+from datadog_api_client.v2.model.synthetics_network_test_response_type import SyntheticsNetworkTestResponseType
+from datadog_api_client.v2.model.synthetics_network_test_sub_type import SyntheticsNetworkTestSubType
+from datadog_api_client.v2.model.synthetics_network_test_type import SyntheticsNetworkTestType
 from datadog_api_client.v2.model.synthetics_suite import SyntheticsSuite
 from datadog_api_client.v2.model.synthetics_suite_options import SyntheticsSuiteOptions
 from datadog_api_client.v2.model.synthetics_suite_response import SyntheticsSuiteResponse
@@ -5559,6 +5597,17 @@ from datadog_api_client.v2.model.synthetics_suite_test_alerting_criticality impo
 )
 from datadog_api_client.v2.model.synthetics_suite_type import SyntheticsSuiteType
 from datadog_api_client.v2.model.synthetics_suite_types import SyntheticsSuiteTypes
+from datadog_api_client.v2.model.synthetics_test_options import SyntheticsTestOptions
+from datadog_api_client.v2.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
+from datadog_api_client.v2.model.synthetics_test_options_monitor_options_notification_preset_name import (
+    SyntheticsTestOptionsMonitorOptionsNotificationPresetName,
+)
+from datadog_api_client.v2.model.synthetics_test_options_retry import SyntheticsTestOptionsRetry
+from datadog_api_client.v2.model.synthetics_test_options_scheduling import SyntheticsTestOptionsScheduling
+from datadog_api_client.v2.model.synthetics_test_options_scheduling_timeframe import (
+    SyntheticsTestOptionsSchedulingTimeframe,
+)
+from datadog_api_client.v2.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
 from datadog_api_client.v2.model.synthetics_variable_parser import SyntheticsVariableParser
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
 from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
@@ -7221,6 +7270,14 @@ __all__ = [
     "DeletedSuitesRequestDeleteRequest",
     "DeletedSuitesRequestType",
     "DeletedSuitesResponse",
+    "DeletedTestResponseData",
+    "DeletedTestResponseDataAttributes",
+    "DeletedTestsRequestDelete",
+    "DeletedTestsRequestDeleteAttributes",
+    "DeletedTestsRequestDeleteRequest",
+    "DeletedTestsRequestType",
+    "DeletedTestsResponse",
+    "DeletedTestsResponseType",
     "DependencyLocation",
     "Deployment",
     "DeploymentAttributes",
@@ -9971,6 +10028,28 @@ __all__ = [
     "SyntheticsGlobalVariableParserType",
     "SyntheticsGlobalVariableTOTPParameters",
     "SyntheticsGlobalVariableValue",
+    "SyntheticsNetworkAssertion",
+    "SyntheticsNetworkAssertionJitter",
+    "SyntheticsNetworkAssertionJitterType",
+    "SyntheticsNetworkAssertionLatency",
+    "SyntheticsNetworkAssertionLatencyType",
+    "SyntheticsNetworkAssertionMultiNetworkHop",
+    "SyntheticsNetworkAssertionMultiNetworkHopType",
+    "SyntheticsNetworkAssertionOperator",
+    "SyntheticsNetworkAssertionPacketLossPercentage",
+    "SyntheticsNetworkAssertionPacketLossPercentageType",
+    "SyntheticsNetworkAssertionProperty",
+    "SyntheticsNetworkTest",
+    "SyntheticsNetworkTestConfig",
+    "SyntheticsNetworkTestEdit",
+    "SyntheticsNetworkTestEditRequest",
+    "SyntheticsNetworkTestRequest",
+    "SyntheticsNetworkTestRequestTCPMethod",
+    "SyntheticsNetworkTestResponse",
+    "SyntheticsNetworkTestResponseData",
+    "SyntheticsNetworkTestResponseType",
+    "SyntheticsNetworkTestSubType",
+    "SyntheticsNetworkTestType",
     "SyntheticsSuite",
     "SyntheticsSuiteOptions",
     "SyntheticsSuiteResponse",
@@ -9982,6 +10061,13 @@ __all__ = [
     "SyntheticsSuiteTestAlertingCriticality",
     "SyntheticsSuiteType",
     "SyntheticsSuiteTypes",
+    "SyntheticsTestOptions",
+    "SyntheticsTestOptionsMonitorOptions",
+    "SyntheticsTestOptionsMonitorOptionsNotificationPresetName",
+    "SyntheticsTestOptionsRetry",
+    "SyntheticsTestOptionsScheduling",
+    "SyntheticsTestOptionsSchedulingTimeframe",
+    "SyntheticsTestPauseStatus",
     "SyntheticsVariableParser",
     "TableResultV2",
     "TableResultV2Array",
