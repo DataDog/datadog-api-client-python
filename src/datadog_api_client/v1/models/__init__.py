@@ -154,6 +154,12 @@ from datadog_api_client.v1.model.formula_and_function_event_query_definition_sea
     FormulaAndFunctionEventQueryDefinitionSearch,
 )
 from datadog_api_client.v1.model.formula_and_function_event_query_group_by import FormulaAndFunctionEventQueryGroupBy
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by_config import (
+    FormulaAndFunctionEventQueryGroupByConfig,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by_fields import (
+    FormulaAndFunctionEventQueryGroupByFields,
+)
 from datadog_api_client.v1.model.formula_and_function_event_query_group_by_sort import (
     FormulaAndFunctionEventQueryGroupBySort,
 )
@@ -1283,6 +1289,8 @@ __all__ = [
     "FormulaAndFunctionEventQueryDefinitionCompute",
     "FormulaAndFunctionEventQueryDefinitionSearch",
     "FormulaAndFunctionEventQueryGroupBy",
+    "FormulaAndFunctionEventQueryGroupByConfig",
+    "FormulaAndFunctionEventQueryGroupByFields",
     "FormulaAndFunctionEventQueryGroupBySort",
     "FormulaAndFunctionEventsDataSource",
     "FormulaAndFunctionMetricAggregation",

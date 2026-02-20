@@ -36,8 +36,8 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         :param compute: Compute options.
         :type compute: FormulaAndFunctionEventQueryDefinitionCompute
 
-        :param group_by: Group by options.
-        :type group_by: [FormulaAndFunctionEventQueryGroupBy], optional
+        :param group_by: Group by configuration for a formula and functions events query. Can be a list of facet objects or a flat object with a list of fields.
+        :type group_by: FormulaAndFunctionEventQueryGroupByConfig, optional
 
         :param indexes: An array of index names to query in the stream. Omit or use `[]` to query all indexes at once.
         :type indexes: [str], optional

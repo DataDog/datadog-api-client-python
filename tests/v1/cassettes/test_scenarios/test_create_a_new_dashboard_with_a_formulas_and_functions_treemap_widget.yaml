@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_treemap_widget-1731699150","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"logs","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"title":"","type":"treemap"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_treemap_widget-1771618745","widgets":[{"definition":{"requests":[{"formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"logs","indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"title":"","type":"treemap"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,9 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"sa5-czr-uat","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_treemap_widget-1731699150","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/sa5-czr-uat/test-createanewdashboardwithaformulasandfunctionstreemapwidget-1731699150","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"logs","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"title":"","type":"treemap"},"layout":{"height":4,"width":4,"x":0,"y":0},"id":2892895408255139}],"notify_list":null,"created_at":"2024-11-15T19:32:31.032272+00:00","modified_at":"2024-11-15T19:32:31.032272+00:00","restricted_roles":[]}
-
-        '
+      string: '{"id":"njk-kz4-p8c","title":"Test-Create_a_new_dashboard_with_a_formulas_and_functions_treemap_widget-1771618745","description":null,"author_handle":"frog@datadoghq.com","author_name":"frog","layout_type":"ordered","url":"/dashboard/njk-kz4-p8c/test-createanewdashboardwithaformulasandfunctionstreemapwidget-1771618745","template_variables":null,"widgets":[{"definition":{"requests":[{"formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"logs","indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"title":"","type":"treemap"},"layout":{"height":4,"width":4,"x":0,"y":0},"id":2582394402168111}],"notify_list":null,"created_at":"2026-02-20T20:19:06.014225+00:00","modified_at":"2026-02-20T20:19:06.014225+00:00","restricted_roles":[]}'
     headers:
       content-type:
       - application/json
@@ -25,12 +23,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/sa5-czr-uat
+    uri: https://api.datadoghq.com/api/v1/dashboard/njk-kz4-p8c
   response:
     body:
-      string: '{"deleted_dashboard_id":"sa5-czr-uat"}
-
-        '
+      string: '{"deleted_dashboard_id":"njk-kz4-p8c"}'
     headers:
       content-type:
       - application/json
