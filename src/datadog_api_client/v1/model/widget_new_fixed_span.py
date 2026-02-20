@@ -56,13 +56,13 @@ class WidgetNewFixedSpan(ModelNormal):
         """
         Used for fixed span times, such as 'March 1 to March 7'.
 
-        :param _from: Start time in seconds since epoch.
+        :param _from: Start time in milliseconds since epoch.
         :type _from: int
 
         :param hide_incomplete_cost_data: Whether to hide incomplete cost data in the widget.
         :type hide_incomplete_cost_data: bool, optional
 
-        :param to: End time in seconds since epoch.
+        :param to: End time in milliseconds since epoch.
         :type to: int
 
         :param type: Type "fixed" denotes a fixed span.
