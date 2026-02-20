@@ -35525,7 +35525,7 @@ paths:
     get:
       description: 'Get the detailed configuration associated with
 
-        a Synthetic Mobile test.'
+        a Synthetic mobile test.'
       operationId: GetMobileTest
       parameters:
       - description: The public ID of the test to get details from.
@@ -35562,7 +35562,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_read
-      summary: Get a Mobile test
+      summary: Get a mobile test
       tags:
       - Synthetics
       x-permission:
@@ -35570,7 +35570,7 @@ paths:
         permissions:
         - synthetics_read
     put:
-      description: Edit the configuration of a Synthetic Mobile test.
+      description: Edit the configuration of a Synthetic mobile test.
       operationId: UpdateMobileTest
       parameters:
       - description: The public ID of the test to get details from.
@@ -35624,7 +35624,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: Edit a Mobile test
+      summary: Edit a mobile test
       tags:
       - Synthetics
       x-codegen-request-body-name: body

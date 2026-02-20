@@ -1,5 +1,5 @@
 """
-Synthetics: Bulk delete tests returns "OK" response
+Bulk delete tests returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

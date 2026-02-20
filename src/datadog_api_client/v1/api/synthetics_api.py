@@ -1246,10 +1246,10 @@ class SyntheticsApi:
         self,
         public_id: str,
     ) -> SyntheticsMobileTest:
-        """Get a Mobile test.
+        """Get a mobile test.
 
         Get the detailed configuration associated with
-        a Synthetic Mobile test.
+        a Synthetic mobile test.
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str
@@ -1564,9 +1564,9 @@ class SyntheticsApi:
         public_id: str,
         body: SyntheticsMobileTest,
     ) -> SyntheticsMobileTest:
-        """Edit a Mobile test.
+        """Edit a mobile test.
 
-        Edit the configuration of a Synthetic Mobile test.
+        Edit the configuration of a Synthetic mobile test.
 
         :param public_id: The public ID of the test to get details from.
         :type public_id: str

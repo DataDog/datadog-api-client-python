@@ -1,5 +1,5 @@
 """
-Synthetics: Edit a test suite returns "OK" response
+Edit a test suite returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
