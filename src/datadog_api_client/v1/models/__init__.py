@@ -485,6 +485,7 @@ from datadog_api_client.v1.model.notebook_response_data import NotebookResponseD
 from datadog_api_client.v1.model.notebook_response_data_attributes import NotebookResponseDataAttributes
 from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
 from datadog_api_client.v1.model.notebook_status import NotebookStatus
+from datadog_api_client.v1.model.notebook_template_variable import NotebookTemplateVariable
 from datadog_api_client.v1.model.notebook_timeseries_cell_attributes import NotebookTimeseriesCellAttributes
 from datadog_api_client.v1.model.notebook_toplist_cell_attributes import NotebookToplistCellAttributes
 from datadog_api_client.v1.model.notebook_update_cell import NotebookUpdateCell
@@ -1566,6 +1567,7 @@ __all__ = [
     "NotebookResponseDataAttributes",
     "NotebookSplitBy",
     "NotebookStatus",
+    "NotebookTemplateVariable",
     "NotebookTimeseriesCellAttributes",
     "NotebookToplistCellAttributes",
     "NotebookUpdateCell",
