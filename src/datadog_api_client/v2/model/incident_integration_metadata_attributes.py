@@ -24,7 +24,7 @@ if TYPE_CHECKING:
 class IncidentIntegrationMetadataAttributes(ModelNormal):
     validations = {
         "integration_type": {
-            "inclusive_maximum": 9,
+            "inclusive_maximum": 100,
         },
         "status": {
             "inclusive_maximum": 5,
