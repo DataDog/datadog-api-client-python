@@ -326,6 +326,13 @@ datadog\_api\_client.v2.api.incidents\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.integrations\_api module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.integrations_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.ip\_allowlist\_api module
 -----------------------------------------------------
 

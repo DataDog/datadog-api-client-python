@@ -13640,6 +13640,20 @@ datadog\_api\_client.v2.model.intake\_payload\_accepted module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.integration module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.integration\_incident module
 ----------------------------------------------------------
 
@@ -13710,6 +13724,13 @@ datadog\_api\_client.v2.model.integration\_jira\_sync\_properties\_custom\_field
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.integration\_links module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_links
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.integration\_monitor module
 ---------------------------------------------------------
 
@@ -13770,6 +13791,13 @@ datadog\_api\_client.v2.model.integration\_service\_now\_sync\_config\_priority 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.integration_service_now_sync_config_priority
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_type
    :members:
    :show-inheritance:
 
@@ -14967,6 +14995,13 @@ datadog\_api\_client.v2.model.list\_findings\_response module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_findings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_integrations\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_integrations_response
    :members:
    :show-inheritance:
 
