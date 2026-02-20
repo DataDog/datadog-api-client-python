@@ -30,10 +30,10 @@ class WidgetTime(ModelComposed):
         :param value: Value of the time span.
         :type value: int
 
-        :param _from: Start time in seconds since epoch.
+        :param _from: Start time in milliseconds since epoch.
         :type _from: int
 
-        :param to: End time in seconds since epoch.
+        :param to: End time in milliseconds since epoch.
         :type to: int
         """
         super().__init__(kwargs)
