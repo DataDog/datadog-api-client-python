@@ -101907,7 +101907,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: 'Synthetics: Create a test suite'
+      summary: Create a test suite
       tags:
       - Synthetics
       x-permission:
@@ -101944,7 +101944,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: 'Synthetics: Bulk delete suites'
+      summary: Bulk delete suites
       tags:
       - Synthetics
       x-permission:
@@ -101953,7 +101953,7 @@ paths:
         - synthetics_write
   /api/v2/synthetics/suites/search:
     get:
-      description: Search for Synthetics suites.
+      description: Search for test suites.
       operationId: SearchSuites
       parameters:
       - description: The search query.
@@ -102012,7 +102012,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_read
-      summary: Search Synthetics suites
+      summary: Search test suites
       tags:
       - Synthetics
       x-permission:
@@ -102049,7 +102049,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_read
-      summary: 'Synthetics: Get a suite'
+      summary: Get a suite
       tags:
       - Synthetics
       x-permission:
@@ -102092,7 +102092,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: 'Synthetics: Edit a test suite'
+      summary: Edit a test suite
       tags:
       - Synthetics
       x-permission:
@@ -102134,7 +102134,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: 'Synthetics: Bulk delete tests'
+      summary: Bulk delete tests
       tags:
       - Synthetics
       x-permission:
@@ -102170,7 +102170,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: 'Synthetics: Create a Network Path test'
+      summary: Create a Network Path test
       tags:
       - Synthetics
       x-permission:
@@ -102214,7 +102214,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_read
-      summary: 'Synthetics: Get a Network Path test'
+      summary: Get a Network Path test
       tags:
       - Synthetics
       x-permission:
@@ -102263,7 +102263,7 @@ paths:
         appKeyAuth: []
       - AuthZ:
         - synthetics_write
-      summary: 'Synthetics: Edit a Network Path test'
+      summary: Edit a Network Path test
       tags:
       - Synthetics
       x-permission:

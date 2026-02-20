@@ -331,7 +331,7 @@ class SyntheticsApi:
         self,
         body: SyntheticsNetworkTestEditRequest,
     ) -> SyntheticsNetworkTestResponse:
-        """Synthetics: Create a Network Path test.
+        """Create a Network Path test.
 
         :type body: SyntheticsNetworkTestEditRequest
         :rtype: SyntheticsNetworkTestResponse
@@ -345,7 +345,7 @@ class SyntheticsApi:
         self,
         body: SuiteCreateEditRequest,
     ) -> SyntheticsSuiteResponse:
-        """Synthetics: Create a test suite.
+        """Create a test suite.
 
         :type body: SuiteCreateEditRequest
         :rtype: SyntheticsSuiteResponse
@@ -359,7 +359,7 @@ class SyntheticsApi:
         self,
         body: DeletedSuitesRequestDeleteRequest,
     ) -> DeletedSuitesResponse:
-        """Synthetics: Bulk delete suites.
+        """Bulk delete suites.
 
         :type body: DeletedSuitesRequestDeleteRequest
         :rtype: DeletedSuitesResponse
@@ -373,7 +373,7 @@ class SyntheticsApi:
         self,
         body: DeletedTestsRequestDeleteRequest,
     ) -> DeletedTestsResponse:
-        """Synthetics: Bulk delete tests.
+        """Bulk delete tests.
 
         :type body: DeletedTestsRequestDeleteRequest
         :rtype: DeletedTestsResponse
@@ -388,7 +388,7 @@ class SyntheticsApi:
         public_id: str,
         body: SuiteCreateEditRequest,
     ) -> SyntheticsSuiteResponse:
-        """Synthetics: Edit a test suite.
+        """Edit a test suite.
 
         :param public_id: The public ID of the suite to edit.
         :type public_id: str
@@ -419,7 +419,7 @@ class SyntheticsApi:
         self,
         public_id: str,
     ) -> SyntheticsNetworkTestResponse:
-        """Synthetics: Get a Network Path test.
+        """Get a Network Path test.
 
         :param public_id: The public ID of the Network Path test to get details from.
         :type public_id: str
@@ -434,7 +434,7 @@ class SyntheticsApi:
         self,
         public_id: str,
     ) -> SyntheticsSuiteResponse:
-        """Synthetics: Get a suite.
+        """Get a suite.
 
         :param public_id: The public ID of the suite to get details from.
         :type public_id: str
@@ -484,9 +484,9 @@ class SyntheticsApi:
         start: Union[int, UnsetType] = unset,
         count: Union[int, UnsetType] = unset,
     ) -> SyntheticsSuiteSearchResponse:
-        """Search Synthetics suites.
+        """Search test suites.
 
-        Search for Synthetics suites.
+        Search for test suites.
 
         :param query: The search query.
         :type query: str, optional
@@ -540,7 +540,7 @@ class SyntheticsApi:
         public_id: str,
         body: SyntheticsNetworkTestEditRequest,
     ) -> SyntheticsNetworkTestResponse:
-        """Synthetics: Edit a Network Path test.
+        """Edit a Network Path test.
 
         :param public_id: The public ID of the Network Path test to edit.
         :type public_id: str

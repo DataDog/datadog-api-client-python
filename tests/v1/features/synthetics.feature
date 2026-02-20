@@ -392,22 +392,6 @@ Feature: Synthetics
     Then the response status is 200 OK.
     And the response "deleted_tests[0].public_id" is equal to "{{ synthetics_api_test.public_id }}"
 
-  @generated @skip @team:DataDog/synthetics-managing
-  Scenario: Edit a Mobile test returns "- JSON format is wrong" response
-    Given new "UpdateMobileTest" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["chrome.laptop_large"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"principals": [], "relation": "editor"}], "ci": {"executionRule": "blocking"}, "device_ids": ["synthetics:mobile:device:apple_ipad_10th_gen_2022_ios_16"], "mobileApplication": {"applicationId": "00000000-0000-0000-0000-aaaaaaaaaaaa", "referenceId": "00000000-0000-0000-0000-aaaaaaaaaaab", "referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}, "tick_every": 300}, "status": "live", "steps": [{"name": "", "params": {"check": "equals", "direction": "up", "element": {"contextType": "native", "relativePosition": {}, "userLocator": {"values": [{"type": "accessibility-id"}]}}, "positions": [{}], "variable": {"example": "", "name": "VAR_NAME"}}, "publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
-    When the request is sent
-    Then the response status is 400 - JSON format is wrong
-
-  @generated @skip @team:DataDog/synthetics-managing
-  Scenario: Edit a Mobile test returns "- Synthetic Monitoring is not activated for the user" response
-    Given new "UpdateMobileTest" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And body with value {"config": {"variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["chrome.laptop_large"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"principals": [], "relation": "editor"}], "ci": {"executionRule": "blocking"}, "device_ids": ["synthetics:mobile:device:apple_ipad_10th_gen_2022_ios_16"], "mobileApplication": {"applicationId": "00000000-0000-0000-0000-aaaaaaaaaaaa", "referenceId": "00000000-0000-0000-0000-aaaaaaaaaaab", "referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}, "tick_every": 300}, "status": "live", "steps": [{"name": "", "params": {"check": "equals", "direction": "up", "element": {"contextType": "native", "relativePosition": {}, "userLocator": {"values": [{"type": "accessibility-id"}]}}, "positions": [{}], "variable": {"example": "", "name": "VAR_NAME"}}, "publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
-    When the request is sent
-    Then the response status is 404 - Synthetic Monitoring is not activated for the user
-
   @team:DataDog/synthetics-managing
   Scenario: Edit a Mobile test returns "OK" response
     Given there is a valid "synthetics_mobile_test" in the system
@@ -459,6 +443,30 @@ Feature: Synthetics
     Given new "EditGlobalVariable" request
     And request contains "variable_id" parameter from "REPLACE.ME"
     And body with value {"attributes": {"restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}, "description": "Example description", "name": "MY_VARIABLE", "parse_test_options": {"field": "content-type", "localVariableName": "LOCAL_VARIABLE", "parser": {"type": "regex", "value": ".*"}, "type": "http_body"}, "parse_test_public_id": "abc-def-123", "tags": ["team:front", "test:workflow-1"], "value": {"secure": true, "value": "value"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Edit a mobile test returns "- JSON format is wrong" response
+    Given new "UpdateMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["chrome.laptop_large"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"principals": [], "relation": "editor"}], "ci": {"executionRule": "blocking"}, "device_ids": ["synthetics:mobile:device:apple_ipad_10th_gen_2022_ios_16"], "mobileApplication": {"applicationId": "00000000-0000-0000-0000-aaaaaaaaaaaa", "referenceId": "00000000-0000-0000-0000-aaaaaaaaaaab", "referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}, "tick_every": 300}, "status": "live", "steps": [{"name": "", "params": {"check": "equals", "direction": "up", "element": {"contextType": "native", "relativePosition": {}, "userLocator": {"values": [{"type": "accessibility-id"}]}}, "positions": [{}], "variable": {"example": "", "name": "VAR_NAME"}}, "publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
+    When the request is sent
+    Then the response status is 400 - JSON format is wrong
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Edit a mobile test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "UpdateMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["chrome.laptop_large"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"principals": [], "relation": "editor"}], "ci": {"executionRule": "blocking"}, "device_ids": ["synthetics:mobile:device:apple_ipad_10th_gen_2022_ios_16"], "mobileApplication": {"applicationId": "00000000-0000-0000-0000-aaaaaaaaaaaa", "referenceId": "00000000-0000-0000-0000-aaaaaaaaaaab", "referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}, "tick_every": 300}, "status": "live", "steps": [{"name": "", "params": {"check": "equals", "direction": "up", "element": {"contextType": "native", "relativePosition": {}, "userLocator": {"values": [{"type": "accessibility-id"}]}}, "positions": [{}], "variable": {"example": "", "name": "VAR_NAME"}}, "publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Edit a mobile test returns "OK" response
+    Given new "UpdateMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"config": {"variables": [{"name": "VARIABLE_NAME", "secure": false, "type": "text"}]}, "device_ids": ["chrome.laptop_large"], "message": "Notification message", "name": "Example test name", "options": {"bindings": [{"principals": [], "relation": "editor"}], "ci": {"executionRule": "blocking"}, "device_ids": ["synthetics:mobile:device:apple_ipad_10th_gen_2022_ios_16"], "mobileApplication": {"applicationId": "00000000-0000-0000-0000-aaaaaaaaaaaa", "referenceId": "00000000-0000-0000-0000-aaaaaaaaaaab", "referenceType": "latest"}, "monitor_options": {"notification_preset_name": "show_all"}, "restricted_roles": ["xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"], "retry": {}, "scheduling": {"timeframes": [{"day": 1, "from": "07:00", "to": "16:00"}, {"day": 3, "from": "07:00", "to": "16:00"}], "timezone": "America/New_York"}, "tick_every": 300}, "status": "live", "steps": [{"name": "", "params": {"check": "equals", "direction": "up", "element": {"contextType": "native", "relativePosition": {}, "userLocator": {"values": [{"type": "accessibility-id"}]}}, "positions": [{}], "variable": {"example": "", "name": "VAR_NAME"}}, "publicId": "pub-lic-id0", "type": "assertElementContent"}], "tags": ["env:production"], "type": "mobile"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -520,13 +528,6 @@ Feature: Synthetics
     And the response "[0].public_id" is equal to "p8m-9gw-nte"
     And the response "[0].overall.uptime" is equal to 83.05682373046875
     And the response "[0].overall.history" has length 2
-
-  @generated @skip @team:DataDog/synthetics-managing
-  Scenario: Get a Mobile test returns "- Synthetic Monitoring is not activated for the user" response
-    Given new "GetMobileTest" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 - Synthetic Monitoring is not activated for the user
 
   @team:DataDog/synthetics-managing
   Scenario: Get a Mobile test returns "OK" response
@@ -602,6 +603,20 @@ Feature: Synthetics
   Scenario: Get a global variable returns "OK" response
     Given new "GetGlobalVariable" request
     And request contains "variable_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a mobile test returns "- Synthetic Monitoring is not activated for the user" response
+    Given new "GetMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 - Synthetic Monitoring is not activated for the user
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a mobile test returns "OK" response
+    Given new "GetMobileTest" request
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"message":"Notification message","name":"Example
+      suite name","options":{},"tags":["env:production"],"tests":[],"type":"suite"},"type":"suites"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/synthetics/suites
+  response:
+    body:
+      string: '{"data":{"type":"suites","attributes":{"type":"suite","monitor_id":259845717,"name":"Example
+        suite name","options":{},"tests":[],"tags":["env:production"],"public_id":"hik-xp5-9q6","created_at":"2026-02-18T16:57:05.583051+00:00","modified_at":"2026-02-18T16:57:05.583051+00:00","created_by":{"name":"Corentin
+        Girard","email":"corentin.girard@datadoghq.com","handle":"corentin.girard@datadoghq.com"},"message":"Notification
+        message","org_id":321813,"modified_by":{"name":"Corentin Girard","email":"corentin.girard@datadoghq.com","handle":"corentin.girard@datadoghq.com"}},"id":"hik-xp5-9q6"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"public_ids":["hik-xp5-9q6"]},"type":"delete_suites_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/synthetics/suites/bulk-delete
+  response:
+    body:
+      string: '{"data":[{"type":"suites","attributes":{"deleted_at":"2026-02-18 16:57:06.420679","public_id":"hik-xp5-9q6"},"id":"hik-xp5-9q6"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

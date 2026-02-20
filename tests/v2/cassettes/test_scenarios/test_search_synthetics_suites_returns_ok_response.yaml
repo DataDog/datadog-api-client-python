@@ -8,66 +8,80 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/synthetics/suites/search
   response:
     body:
-      string: '{"data":{"type":"suites_search","attributes":{"suites":[{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-12T14:36:38.194974+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765550180,"monitor_id":243683630,"tests":[],"notifications":[],"public_id":"q9j-u8p-3v5","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-12T15:13:58.194856+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765552435,"monitor_id":243691225,"tests":[],"notifications":[],"public_id":"qqj-ma8-msw","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-12T13:58:21.265235+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765547882,"monitor_id":243678032,"tests":[],"notifications":[],"public_id":"qwt-zcd-3e7","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-16T21:23:27.482218+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765920189,"monitor_id":244824489,"tests":[],"notifications":[],"public_id":"yya-xnv-r72","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2026-01-06T14:31:13.144659+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1767709878,"monitor_id":248911428,"tests":[],"notifications":[],"public_id":"37x-cfh-hik","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-12T14:52:23.813142+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765551141,"monitor_id":243686361,"tests":[],"notifications":[],"public_id":"y9a-9jy-ng2","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-15T14:02:40.227969+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765807338,"monitor_id":244243608,"tests":[],"notifications":[],"public_id":"45f-82u-p2d","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-15T14:22:09.594574+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765808505,"monitor_id":244250055,"tests":[],"notifications":[],"public_id":"xd9-dws-cm2","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-15T15:36:44.135107+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765813000,"monitor_id":244276690,"tests":[],"notifications":[],"public_id":"77s-9gi-8pa","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-16T09:42:02.245892+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765878101,"monitor_id":244658021,"tests":[],"notifications":[],"public_id":"xft-zns-y58","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-16T09:52:14.327958+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765878721,"monitor_id":244659781,"tests":[],"notifications":[],"public_id":"9ne-jp8-bbs","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-19T09:34:53.578670+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1766136882,"monitor_id":245439882,"tests":[],"notifications":[],"public_id":"rcp-hsx-ksp","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-09T10:37:16.189540+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765276630,"monitor_id":242864230,"tests":[],"notifications":[],"public_id":"ihb-7cb-mbq","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-12T14:58:39.394977+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765551515,"monitor_id":243687635,"tests":[],"notifications":[],"public_id":"m4t-g9e-cht","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-15T13:27:01.650049+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765805206,"monitor_id":244230166,"tests":[],"notifications":[],"public_id":"3rn-xv7-3gw","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-15T13:55:29.070758+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765806925,"monitor_id":244240495,"tests":[],"notifications":[],"public_id":"u5z-r6t-6gj","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-15T15:48:08.393886+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765813664,"monitor_id":244283444,"tests":[],"notifications":[],"public_id":"fug-wqb-jgm","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2025-12-17T08:57:02.235129+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1765961806,"monitor_id":244953226,"tests":[],"notifications":[],"public_id":"tmj-mmm-6rw","tags":["env:production"]},{"created_by":{"name":"CI
-        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"monitor_status":"No
-        Data","type":"suite","modified_at":"2026-01-06T13:52:15.675454+00:00","name":"Example
-        suite name","options":{},"monitor_name":"[Synthetics] Example suite name","last_triggered_ts":1767707530,"monitor_id":248904310,"tests":[],"notifications":[],"public_id":"pkr-4b7-tug","tags":["env:production"]}],"facets":[{"name":"mobile_platform","values":[]},{"name":"test_count","values":[{"name":"0","count":19}]},{"name":"step_count","values":[]},{"name":"http_path","values":[]},{"name":"team","values":[]},{"name":"type","values":[{"name":"suite","count":19}]},{"name":"env","values":[{"name":"production","count":19}]},{"name":"creator","values":[{"name":"CI
-        Account","count":19}]},{"name":"mobile_application","values":[]},{"name":"notification","values":[]},{"name":"endpoint","values":[]},{"name":"http_method","values":[]},{"name":"creation_source","values":[]},{"name":"domain","values":[]},{"name":"ci_execution_rule","values":[{"name":"blocking","count":19}]},{"name":"tag","values":[{"name":"env:production","count":19}]},{"name":"state","values":[{"name":"paused","count":19}]},{"name":"region","values":[]},{"name":"muted","values":[{"name":"0","count":19}]},{"name":"status","values":[{"name":"No
-        Data","count":19}]}],"total":19},"id":"74278a23-c9ce-4093-816d-7109fb05adb5"}}
+      string: '{"data":{"type":"suites_search","id":"a36a229d-a20c-45cb-9e0f-37c536d7d870","attributes":{"facets":[{"name":"mobile_platform","values":[]},{"name":"test_count","values":[{"count":24,"name":"0"}]},{"name":"step_count","values":[]},{"name":"http_path","values":[]},{"name":"team","values":[]},{"name":"env","values":[{"count":24,"name":"production"}]},{"name":"type","values":[{"count":24,"name":"suite"}]},{"name":"creator","values":[{"count":24,"name":"CI
+        Account"}]},{"name":"mobile_application","values":[]},{"name":"notification","values":[]},{"name":"endpoint","values":[]},{"name":"http_method","values":[]},{"name":"creation_source","values":[]},{"name":"domain","values":[]},{"name":"ci_execution_rule","values":[{"count":24,"name":"blocking"}]},{"name":"state","values":[{"count":24,"name":"paused"}]},{"name":"tag","values":[{"count":24,"name":"env:production"}]},{"name":"region","values":[]},{"name":"muted","values":[{"count":24,"name":"0"}]},{"name":"status","values":[{"count":24,"name":"No
+        Data"}]}],"suites":[{"monitor_id":243683630,"created_by":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-12T14:36:38.194974+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765550180,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"q9j-u8p-3v5","type":"suite"},{"monitor_id":243691225,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-12T15:13:58.194856+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765552435,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"qqj-ma8-msw","type":"suite"},{"monitor_id":243678032,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-12T13:58:21.265235+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765547882,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"qwt-zcd-3e7","type":"suite"},{"monitor_id":244824489,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-16T21:23:27.482218+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765920189,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"yya-xnv-r72","type":"suite"},{"monitor_id":249160092,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2026-01-07T14:35:57.222209+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1767796542,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"ymz-qsm-hr2","type":"suite"},{"monitor_id":248911428,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2026-01-06T14:31:13.144659+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1767709878,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"37x-cfh-hik","type":"suite"},{"monitor_id":249142412,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2026-01-07T12:44:43.086868+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1767789872,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"6dr-pg7-8h7","type":"suite"},{"monitor_id":249145123,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2026-01-07T13:04:35.589562+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1767791053,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"hzd-bzv-cd6","type":"suite"},{"monitor_id":243686361,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-12T14:52:23.813142+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765551141,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"y9a-9jy-ng2","type":"suite"},{"monitor_id":244243608,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-15T14:02:40.227969+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765807338,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"45f-82u-p2d","type":"suite"},{"monitor_id":244250055,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-15T14:22:09.594574+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765808505,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"xd9-dws-cm2","type":"suite"},{"monitor_id":244276690,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-15T15:36:44.135107+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765813000,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"77s-9gi-8pa","type":"suite"},{"monitor_id":244658021,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-16T09:42:02.245892+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765878101,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"xft-zns-y58","type":"suite"},{"monitor_id":244659781,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-16T09:52:14.327958+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765878721,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"9ne-jp8-bbs","type":"suite"},{"monitor_id":249382503,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2026-01-08T13:44:51.085083+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1767879873,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"2tv-8tv-nux","type":"suite"},{"monitor_id":245439882,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-19T09:34:53.578670+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1766136882,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"rcp-hsx-ksp","type":"suite"},{"monitor_id":242864230,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-09T10:37:16.189540+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765276630,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"ihb-7cb-mbq","type":"suite"},{"monitor_id":243687635,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-12T14:58:39.394977+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765551515,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"m4t-g9e-cht","type":"suite"},{"monitor_id":244240495,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-15T13:55:29.070758+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765806925,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"u5z-r6t-6gj","type":"suite"},{"monitor_id":244283444,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-15T15:48:08.393886+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765813664,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"fug-wqb-jgm","type":"suite"},{"monitor_id":244953226,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-17T08:57:02.235129+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765961806,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"tmj-mmm-6rw","type":"suite"},{"monitor_id":248904310,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2026-01-06T13:52:15.675454+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1767707530,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"pkr-4b7-tug","type":"suite"},{"monitor_id":244230166,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2025-12-15T13:27:01.650049+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1765805206,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"3rn-xv7-3gw","type":"suite"},{"monitor_id":249142218,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"modified_at":"2026-01-07T12:42:27.916511+00:00","options":{},"monitor_status":"No
+        Data","tests":[],"last_triggered_ts":1767789738,"name":"Example suite name","monitor_name":"[Synthetics]
+        Example suite name","notifications":[],"tags":["env:production"],"public_id":"dyh-dc6-yp8","type":"suite"}],"total":24}}}
 
         '
     headers:

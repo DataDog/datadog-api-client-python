@@ -1,5 +1,5 @@
 """
-Synthetics: Edit a Network Path test returns "OK" response
+Edit a Network Path test returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

@@ -1,5 +1,5 @@
 """
-Search Synthetics suites returns "OK" response
+Search test suites returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

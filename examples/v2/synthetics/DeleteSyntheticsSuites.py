@@ -1,5 +1,5 @@
 """
-Synthetics: Bulk delete suites returns "OK" response
+Bulk delete suites returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
