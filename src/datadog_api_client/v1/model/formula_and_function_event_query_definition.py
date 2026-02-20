@@ -18,11 +18,17 @@ if TYPE_CHECKING:
         FormulaAndFunctionEventQueryDefinitionCompute,
     )
     from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
-    from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
-        FormulaAndFunctionEventQueryGroupBy,
+    from datadog_api_client.v1.model.formula_and_function_event_query_group_by_config import (
+        FormulaAndFunctionEventQueryGroupByConfig,
     )
     from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
         FormulaAndFunctionEventQueryDefinitionSearch,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
+        FormulaAndFunctionEventQueryGroupBy,
+    )
+    from datadog_api_client.v1.model.formula_and_function_event_query_group_by_fields import (
+        FormulaAndFunctionEventQueryGroupByFields,
     )
 
 
@@ -41,8 +47,8 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         from datadog_api_client.v1.model.formula_and_function_events_data_source import (
             FormulaAndFunctionEventsDataSource,
         )
-        from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
-            FormulaAndFunctionEventQueryGroupBy,
+        from datadog_api_client.v1.model.formula_and_function_event_query_group_by_config import (
+            FormulaAndFunctionEventQueryGroupByConfig,
         )
         from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
             FormulaAndFunctionEventQueryDefinitionSearch,
@@ -52,7 +58,7 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
             "compute": (FormulaAndFunctionEventQueryDefinitionCompute,),
             "cross_org_uuids": ([str],),
             "data_source": (FormulaAndFunctionEventsDataSource,),
-            "group_by": ([FormulaAndFunctionEventQueryGroupBy],),
+            "group_by": (FormulaAndFunctionEventQueryGroupByConfig,),
             "indexes": ([str],),
             "name": (str,),
             "search": (FormulaAndFunctionEventQueryDefinitionSearch,),
@@ -76,7 +82,12 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         data_source: FormulaAndFunctionEventsDataSource,
         name: str,
         cross_org_uuids: Union[List[str], UnsetType] = unset,
-        group_by: Union[List[FormulaAndFunctionEventQueryGroupBy], UnsetType] = unset,
+        group_by: Union[
+            FormulaAndFunctionEventQueryGroupByConfig,
+            List[FormulaAndFunctionEventQueryGroupBy],
+            FormulaAndFunctionEventQueryGroupByFields,
+            UnsetType,
+        ] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         search: Union[FormulaAndFunctionEventQueryDefinitionSearch, UnsetType] = unset,
         storage: Union[str, UnsetType] = unset,
@@ -94,8 +105,8 @@ class FormulaAndFunctionEventQueryDefinition(ModelNormal):
         :param data_source: Data source for event platform-based queries.
         :type data_source: FormulaAndFunctionEventsDataSource
 
-        :param group_by: Group by options.
-        :type group_by: [FormulaAndFunctionEventQueryGroupBy], optional
+        :param group_by: Group by configuration for a formula and functions events query. Can be a list of facet objects or a flat object with a list of fields.
+        :type group_by: FormulaAndFunctionEventQueryGroupByConfig, optional
 
         :param indexes: An array of index names to query in the stream. Omit or use ``[]`` to query all indexes at once.
         :type indexes: [str], optional

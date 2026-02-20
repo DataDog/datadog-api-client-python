@@ -65,7 +65,6 @@ body = Dashboard(
                             indexes=[
                                 "*",
                             ],
-                            group_by=[],
                         ),
                         request_type=WidgetHistogramRequestType.HISTOGRAM,
                     ),
