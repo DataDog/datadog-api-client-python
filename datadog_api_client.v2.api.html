@@ -10897,7 +10897,8 @@ Once the <code class="docutils literal notranslate"><span class="pre">meta.pagin
 <li><p><strong>filter_metric_type</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_tag_configuration_metric_type_category.MetricTagConfigurationMetricTypeCategory" title="datadog_api_client.v2.model.metric_tag_configuration_metric_type_category.MetricTagConfigurationMetricTypeCategory"><em>MetricTagConfigurationMetricTypeCategory</em></a><em>, </em><em>optional</em>) – Filter metrics by metric type.</p></li>
 <li><p><strong>filter_include_percentiles</strong> (<em>bool</em><em>, </em><em>optional</em>) – Filter distributions with additional percentile
 aggregations enabled or disabled.</p></li>
-<li><p><strong>filter_queried</strong> (<em>bool</em><em>, </em><em>optional</em>) – (Preview) Filter custom metrics that have or have not been queried in the past 30 days.</p></li>
+<li><p><strong>filter_queried</strong> (<em>bool</em><em>, </em><em>optional</em>) – (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
+If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.</p></li>
 <li><p><strong>filter_tags</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
 Can only be combined with the filter[queried] filter.</p></li>
 <li><p><strong>filter_related_assets</strong> (<em>bool</em><em>, </em><em>optional</em>) – (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.</p></li>
@@ -10927,7 +10928,8 @@ Once the <code class="docutils literal notranslate"><span class="pre">meta.pagin
 <li><p><strong>filter_metric_type</strong> (<a class="reference internal" href="datadog_api_client.v2.model.html#datadog_api_client.v2.model.metric_tag_configuration_metric_type_category.MetricTagConfigurationMetricTypeCategory" title="datadog_api_client.v2.model.metric_tag_configuration_metric_type_category.MetricTagConfigurationMetricTypeCategory"><em>MetricTagConfigurationMetricTypeCategory</em></a><em>, </em><em>optional</em>) – Filter metrics by metric type.</p></li>
 <li><p><strong>filter_include_percentiles</strong> (<em>bool</em><em>, </em><em>optional</em>) – Filter distributions with additional percentile
 aggregations enabled or disabled.</p></li>
-<li><p><strong>filter_queried</strong> (<em>bool</em><em>, </em><em>optional</em>) – (Preview) Filter custom metrics that have or have not been queried in the past 30 days.</p></li>
+<li><p><strong>filter_queried</strong> (<em>bool</em><em>, </em><em>optional</em>) – (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
+If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.</p></li>
 <li><p><strong>filter_tags</strong> (<em>str</em><em>, </em><em>optional</em>) – Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
 Can only be combined with the filter[queried] filter.</p></li>
 <li><p><strong>filter_related_assets</strong> (<em>bool</em><em>, </em><em>optional</em>) – (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.</p></li>
