@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.degradation_data import DegradationData
-    from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
+    from datadog_api_client.v2.model.degradation_included import DegradationIncluded
     from datadog_api_client.v2.model.status_pages_user import StatusPagesUser
     from datadog_api_client.v2.model.status_page_as_included import StatusPageAsIncluded
 
@@ -24,11 +24,11 @@ class Degradation(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.degradation_data import DegradationData
-        from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
+        from datadog_api_client.v2.model.degradation_included import DegradationIncluded
 
         return {
             "data": (DegradationData,),
-            "included": ([DegradationArrayIncluded],),
+            "included": ([DegradationIncluded],),
         }
 
     attribute_map = {
@@ -39,9 +39,7 @@ class Degradation(ModelNormal):
     def __init__(
         self_,
         data: Union[DegradationData, UnsetType] = unset,
-        included: Union[
-            List[Union[DegradationArrayIncluded, StatusPagesUser, StatusPageAsIncluded]], UnsetType
-        ] = unset,
+        included: Union[List[Union[DegradationIncluded, StatusPagesUser, StatusPageAsIncluded]], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -51,7 +49,7 @@ class Degradation(ModelNormal):
         :type data: DegradationData, optional
 
         :param included: The included related resources of a degradation. Client must explicitly request these resources by name in the ``include`` query parameter.
-        :type included: [DegradationArrayIncluded], optional
+        :type included: [DegradationIncluded], optional
         """
         if data is not unset:
             kwargs["data"] = data

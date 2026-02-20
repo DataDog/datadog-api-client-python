@@ -1176,6 +1176,14 @@ from datadog_api_client.v2.model.create_jira_issue_request_data_attributes impor
 from datadog_api_client.v2.model.create_jira_issue_request_data_relationships import (
     CreateJiraIssueRequestDataRelationships,
 )
+from datadog_api_client.v2.model.create_maintenance_request import CreateMaintenanceRequest
+from datadog_api_client.v2.model.create_maintenance_request_data import CreateMaintenanceRequestData
+from datadog_api_client.v2.model.create_maintenance_request_data_attributes import (
+    CreateMaintenanceRequestDataAttributes,
+)
+from datadog_api_client.v2.model.create_maintenance_request_data_attributes_components_affected_items import (
+    CreateMaintenanceRequestDataAttributesComponentsAffectedItems,
+)
 from datadog_api_client.v2.model.create_notification_channel_attributes import CreateNotificationChannelAttributes
 from datadog_api_client.v2.model.create_notification_channel_config import CreateNotificationChannelConfig
 from datadog_api_client.v2.model.create_notification_channel_data import CreateNotificationChannelData
@@ -1585,7 +1593,6 @@ from datadog_api_client.v2.model.datastore_trigger import DatastoreTrigger
 from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
 from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.degradation_array import DegradationArray
-from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
 from datadog_api_client.v2.model.degradation_data import DegradationData
 from datadog_api_client.v2.model.degradation_data_attributes import DegradationDataAttributes
 from datadog_api_client.v2.model.degradation_data_attributes_components_affected_items import (
@@ -1614,6 +1621,7 @@ from datadog_api_client.v2.model.degradation_data_relationships_status_page impo
 from datadog_api_client.v2.model.degradation_data_relationships_status_page_data import (
     DegradationDataRelationshipsStatusPageData,
 )
+from datadog_api_client.v2.model.degradation_included import DegradationIncluded
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_datastore_item_request import DeleteAppsDatastoreItemRequest
@@ -2921,6 +2929,37 @@ from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
 from datadog_api_client.v2.model.ms_teams_integration_metadata import MSTeamsIntegrationMetadata
 from datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item import MSTeamsIntegrationMetadataTeamsItem
+from datadog_api_client.v2.model.maintenance import Maintenance
+from datadog_api_client.v2.model.maintenance_array import MaintenanceArray
+from datadog_api_client.v2.model.maintenance_data import MaintenanceData
+from datadog_api_client.v2.model.maintenance_data_attributes import MaintenanceDataAttributes
+from datadog_api_client.v2.model.maintenance_data_attributes_components_affected_items import (
+    MaintenanceDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.maintenance_data_attributes_status import MaintenanceDataAttributesStatus
+from datadog_api_client.v2.model.maintenance_data_attributes_updates_items import MaintenanceDataAttributesUpdatesItems
+from datadog_api_client.v2.model.maintenance_data_attributes_updates_items_components_affected_items import (
+    MaintenanceDataAttributesUpdatesItemsComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.maintenance_data_relationships import MaintenanceDataRelationships
+from datadog_api_client.v2.model.maintenance_data_relationships_created_by_user import (
+    MaintenanceDataRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.maintenance_data_relationships_created_by_user_data import (
+    MaintenanceDataRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.maintenance_data_relationships_last_modified_by_user import (
+    MaintenanceDataRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.maintenance_data_relationships_last_modified_by_user_data import (
+    MaintenanceDataRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.maintenance_data_relationships_status_page import (
+    MaintenanceDataRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.maintenance_data_relationships_status_page_data import (
+    MaintenanceDataRelationshipsStatusPageData,
+)
 from datadog_api_client.v2.model.member_team import MemberTeam
 from datadog_api_client.v2.model.member_team_type import MemberTeamType
 from datadog_api_client.v2.model.metadata import Metadata
@@ -4071,6 +4110,8 @@ from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaPar
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.page_urgency import PageUrgency
 from datadog_api_client.v2.model.pagination import Pagination
+from datadog_api_client.v2.model.pagination_meta import PaginationMeta
+from datadog_api_client.v2.model.pagination_meta_page import PaginationMetaPage
 from datadog_api_client.v2.model.parameter import Parameter
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
 from datadog_api_client.v2.model.partial_api_key_attributes import PartialAPIKeyAttributes
@@ -4099,6 +4140,16 @@ from datadog_api_client.v2.model.patch_degradation_request_data_type import Patc
 from datadog_api_client.v2.model.patch_incident_notification_template_request import (
     PatchIncidentNotificationTemplateRequest,
 )
+from datadog_api_client.v2.model.patch_maintenance_request import PatchMaintenanceRequest
+from datadog_api_client.v2.model.patch_maintenance_request_data import PatchMaintenanceRequestData
+from datadog_api_client.v2.model.patch_maintenance_request_data_attributes import PatchMaintenanceRequestDataAttributes
+from datadog_api_client.v2.model.patch_maintenance_request_data_attributes_components_affected_items import (
+    PatchMaintenanceRequestDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.patch_maintenance_request_data_attributes_components_affected_items_status import (
+    PatchMaintenanceRequestDataAttributesComponentsAffectedItemsStatus,
+)
+from datadog_api_client.v2.model.patch_maintenance_request_data_type import PatchMaintenanceRequestDataType
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data import PatchNotificationRuleParametersData
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
@@ -7044,6 +7095,10 @@ __all__ = [
     "CreateJiraIssueRequestData",
     "CreateJiraIssueRequestDataAttributes",
     "CreateJiraIssueRequestDataRelationships",
+    "CreateMaintenanceRequest",
+    "CreateMaintenanceRequestData",
+    "CreateMaintenanceRequestDataAttributes",
+    "CreateMaintenanceRequestDataAttributesComponentsAffectedItems",
     "CreateNotificationChannelAttributes",
     "CreateNotificationChannelConfig",
     "CreateNotificationChannelData",
@@ -7321,7 +7376,6 @@ __all__ = [
     "DatastoreTriggerWrapper",
     "Degradation",
     "DegradationArray",
-    "DegradationArrayIncluded",
     "DegradationData",
     "DegradationDataAttributes",
     "DegradationDataAttributesComponentsAffectedItems",
@@ -7334,6 +7388,7 @@ __all__ = [
     "DegradationDataRelationshipsLastModifiedByUserData",
     "DegradationDataRelationshipsStatusPage",
     "DegradationDataRelationshipsStatusPageData",
+    "DegradationIncluded",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsDatastoreItemRequest",
@@ -8409,6 +8464,21 @@ __all__ = [
     "LogsWarning",
     "MSTeamsIntegrationMetadata",
     "MSTeamsIntegrationMetadataTeamsItem",
+    "Maintenance",
+    "MaintenanceArray",
+    "MaintenanceData",
+    "MaintenanceDataAttributes",
+    "MaintenanceDataAttributesComponentsAffectedItems",
+    "MaintenanceDataAttributesStatus",
+    "MaintenanceDataAttributesUpdatesItems",
+    "MaintenanceDataAttributesUpdatesItemsComponentsAffectedItems",
+    "MaintenanceDataRelationships",
+    "MaintenanceDataRelationshipsCreatedByUser",
+    "MaintenanceDataRelationshipsCreatedByUserData",
+    "MaintenanceDataRelationshipsLastModifiedByUser",
+    "MaintenanceDataRelationshipsLastModifiedByUserData",
+    "MaintenanceDataRelationshipsStatusPage",
+    "MaintenanceDataRelationshipsStatusPageData",
     "MemberTeam",
     "MemberTeamType",
     "Metadata",
@@ -9013,6 +9083,8 @@ __all__ = [
     "OutputSchemaParametersType",
     "PageUrgency",
     "Pagination",
+    "PaginationMeta",
+    "PaginationMetaPage",
     "Parameter",
     "PartialAPIKey",
     "PartialAPIKeyAttributes",
@@ -9033,6 +9105,12 @@ __all__ = [
     "PatchDegradationRequestDataAttributesStatus",
     "PatchDegradationRequestDataType",
     "PatchIncidentNotificationTemplateRequest",
+    "PatchMaintenanceRequest",
+    "PatchMaintenanceRequestData",
+    "PatchMaintenanceRequestDataAttributes",
+    "PatchMaintenanceRequestDataAttributesComponentsAffectedItems",
+    "PatchMaintenanceRequestDataAttributesComponentsAffectedItemsStatus",
+    "PatchMaintenanceRequestDataType",
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
