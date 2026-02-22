@@ -12,6 +12,8 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
+from datadog_api_client.v2.model.saml_configurations_update_request import SamlConfigurationsUpdateRequest
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
 from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
 from datadog_api_client.v2.model.org_config_write_request import OrgConfigWriteRequest
@@ -66,6 +68,26 @@ class OrganizationsApi:
             api_client=api_client,
         )
 
+        self._update_login_org_config_max_session_duration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/login/org_configs/max_session_duration",
+                "operation_id": "update_login_org_config_max_session_duration",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (MaxSessionDurationUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_org_config_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgConfigGetResponse,),
@@ -89,6 +111,26 @@ class OrganizationsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_org_saml_configurations_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/org/saml_configurations",
+                "operation_id": "update_org_saml_configurations",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SamlConfigurationsUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -141,6 +183,26 @@ class OrganizationsApi:
         kwargs: Dict[str, Any] = {}
         return self._list_org_configs_endpoint.call_with_http_info(**kwargs)
 
+    def update_login_org_config_max_session_duration(
+        self,
+        body: MaxSessionDurationUpdateRequest,
+    ) -> None:
+        """Update maximum session duration.
+
+        Updates the maximum session duration for an organization. This controls how long user sessions
+        can remain active before requiring re-authentication. The value must not exceed 30 days (2592000 seconds).
+        Note: Government cloud environments are limited to 24 hours (86400 seconds).
+
+        Requires ``org_management`` permission and a session that has been active within the last 12 hours.
+
+        :type body: MaxSessionDurationUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_login_org_config_max_session_duration_endpoint.call_with_http_info(**kwargs)
+
     def update_org_config(
         self,
         org_config_name: str,
@@ -161,6 +223,29 @@ class OrganizationsApi:
         kwargs["body"] = body
 
         return self._update_org_config_endpoint.call_with_http_info(**kwargs)
+
+    def update_org_saml_configurations(
+        self,
+        body: SamlConfigurationsUpdateRequest,
+    ) -> None:
+        """Update organization SAML preferences.
+
+        Updates SAML preferences for an organization, including JIT provisioning domains and default role assignments.
+
+        This endpoint allows you to configure:
+
+        * ``jit_domains`` : List of domains for Just-In-Time user provisioning (up to 50 domains, 1-256 characters each)
+        * ``default_role_uuids`` : List of role UUIDs to assign to JIT-provisioned users (exactly 1 role required)
+
+        Requires ``org_management`` permission. This endpoint is gated by the ``org-saml-preferences-api-gate`` experiment.
+
+        :type body: SamlConfigurationsUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_org_saml_configurations_endpoint.call_with_http_info(**kwargs)
 
     def upload_idp_metadata(
         self,

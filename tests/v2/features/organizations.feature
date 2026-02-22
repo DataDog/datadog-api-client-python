@@ -65,6 +65,38 @@ Feature: Organizations
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/team-aaa-identity
+  Scenario: Update maximum session duration returns "Bad Request" response
+    Given operation "UpdateLoginOrgConfigMaxSessionDuration" enabled
+    And new "UpdateLoginOrgConfigMaxSessionDuration" request
+    And body with value {"data": {"attributes": {"max_session_duration": 60}, "type": "max_session_duration"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/team-aaa-identity
+  Scenario: Update maximum session duration returns "No Content - The maximum session duration was successfully updated." response
+    Given operation "UpdateLoginOrgConfigMaxSessionDuration" enabled
+    And new "UpdateLoginOrgConfigMaxSessionDuration" request
+    And body with value {"data": {"attributes": {"max_session_duration": 60}, "type": "max_session_duration"}}
+    When the request is sent
+    Then the response status is 204 No Content - The maximum session duration was successfully updated.
+
+  @generated @skip @team:DataDog/team-aaa-identity
+  Scenario: Update organization SAML preferences returns "Bad Request" response
+    Given operation "UpdateOrgSamlConfigurations" enabled
+    And new "UpdateOrgSamlConfigurations" request
+    And body with value {"data": {"attributes": {"default_role_uuids": ["19fcc38b-b651-46a0-b463-1f8f56c6a862"], "jit_domains": ["example1.com", "example2.com"]}, "type": "saml_preferences"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/team-aaa-identity
+  Scenario: Update organization SAML preferences returns "No Content - The SAML preferences were successfully updated." response
+    Given operation "UpdateOrgSamlConfigurations" enabled
+    And new "UpdateOrgSamlConfigurations" request
+    And body with value {"data": {"attributes": {"default_role_uuids": ["19fcc38b-b651-46a0-b463-1f8f56c6a862"], "jit_domains": ["example1.com", "example2.com"]}, "type": "saml_preferences"}}
+    When the request is sent
+    Then the response status is 204 No Content - The SAML preferences were successfully updated.
+
   @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/team-aaa-identity
   Scenario: Upload IdP metadata returns "Bad Request - caused by either malformed XML or invalid SAML IdP metadata" response
     Given new "UploadIdPMetadata" request
