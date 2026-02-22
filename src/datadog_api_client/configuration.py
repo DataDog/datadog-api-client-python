@@ -350,6 +350,7 @@ class Configuration:
                 "v2.get_incident_postmortem_template": False,
                 "v2.get_incident_todo": False,
                 "v2.get_incident_type": False,
+                "v2.import_incident": False,
                 "v2.list_global_incident_handles": False,
                 "v2.list_incident_attachments": False,
                 "v2.list_incident_integrations": False,

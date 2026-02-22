@@ -12,9 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/incidents/config/types
   response:
     body:
-      string: '{"data":{"id":"277726ef-7483-47e6-9dd8-b09734169bc3","type":"incident_types","attributes":{"createdAt":"2026-01-19T20:15:54.23038215Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
+      string: '{"data":{"id":"749272f0-0b27-4293-a508-6ad84c5911f7","type":"incident_types","attributes":{"createdAt":"2026-02-17T13:49:18.238629232Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
         incidents that harm (or have the potential to) the confidentiality, integrity,
-        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2026-01-19T20:15:54.230382224Z","name":"Security
+        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2026-02-17T13:49:18.238629322Z","name":"Security
         Incident","prefix":"IR"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"google_chat_configuration":{"data":null},"google_meet_configuration":{"data":null},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"microsoft_teams_configuration":{"data":null},"zoom_configuration":{"data":null}}}}'
     headers:
       content-type:
@@ -28,7 +28,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/types/277726ef-7483-47e6-9dd8-b09734169bc3
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/749272f0-0b27-4293-a508-6ad84c5911f7
   response:
     body:
       string: ''
@@ -42,7 +42,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/types/277726ef-7483-47e6-9dd8-b09734169bc3
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/749272f0-0b27-4293-a508-6ad84c5911f7
   response:
     body:
       string: '{"errors":[{"status":"404","title":"Not Found"}]}'
