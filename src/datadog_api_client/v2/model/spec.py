@@ -27,6 +27,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
     from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
     from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
+    from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
     from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
     from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
     from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
@@ -89,6 +90,7 @@ class Spec(ModelNormal):
                     DatabaseMonitoringTriggerWrapper,
                     DatastoreTriggerWrapper,
                     DashboardTriggerWrapper,
+                    FormTriggerWrapper,
                     GithubWebhookTriggerWrapper,
                     IncidentTriggerWrapper,
                     MonitorTriggerWrapper,

@@ -39,6 +39,9 @@ class Trigger(ModelComposed):
         :param dashboard_trigger: Trigger a workflow from a Dashboard.
         :type dashboard_trigger: dict
 
+        :param form_trigger: Trigger a workflow from a Form.
+        :type form_trigger: FormTrigger
+
         :param github_webhook_trigger: Trigger a workflow from a GitHub webhook. To trigger a workflow from GitHub, you must set a `webhookSecret`. In your GitHub Webhook Settings, set the Payload URL to "base_url"/api/v2/workflows/"workflow_id"/webhook?orgId="org_id", select application/json for the content type, and be highly recommend enabling SSL verification for security. The workflow must be published.
         :type github_webhook_trigger: GithubWebhookTrigger
 
@@ -90,6 +93,7 @@ class Trigger(ModelComposed):
         from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
         from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
         from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
+        from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
         from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
         from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
         from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
@@ -111,6 +115,7 @@ class Trigger(ModelComposed):
                 DatabaseMonitoringTriggerWrapper,
                 DatastoreTriggerWrapper,
                 DashboardTriggerWrapper,
+                FormTriggerWrapper,
                 GithubWebhookTriggerWrapper,
                 IncidentTriggerWrapper,
                 MonitorTriggerWrapper,
