@@ -3550,6 +3550,43 @@
       "type": "safe"
     }
   },
+  "ListPersonalAccessTokens": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreatePersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "operationId": "RevokePersonalAccessToken",
+      "parameters": [
+        {
+          "name": "pat_uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RevokePersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListFindings": {
     "tag": "Security Monitoring",
     "undo": {

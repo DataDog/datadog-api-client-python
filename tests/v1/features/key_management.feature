@@ -48,6 +48,22 @@ Feature: Key Management
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/credentials-management
+  Scenario: Create client token returns "Bad Request" response
+    Given operation "CreateClientToken" enabled
+    And new "CreateClientToken" request
+    And body with value {"name": "Example Client Token", "origin_urls": ["https://example.com"]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Create client token returns "OK" response
+    Given operation "CreateClientToken" enabled
+    And new "CreateClientToken" request
+    And body with value {"name": "Example Client Token", "origin_urls": ["https://example.com"]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/credentials-management
   Scenario: Delete an API key returns "Bad Request" response
     Given new "DeleteAPIKey" request
     And request contains "key" parameter from "REPLACE.ME"
@@ -175,5 +191,53 @@ Feature: Key Management
   Scenario: Get an application key returns "OK" response
     Given new "GetApplicationKey" request
     And request contains "key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Revoke client token returns "Bad Request" response
+    Given operation "RevokeClientToken" enabled
+    And new "RevokeClientToken" request
+    And body with value {"hash": "1234567890abcdef1234567890abcdef123"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Revoke client token returns "No Content" response
+    Given operation "RevokeClientToken" enabled
+    And new "RevokeClientToken" request
+    And body with value {"hash": "1234567890abcdef1234567890abcdef123"}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Revoke client token returns "Not Found" response
+    Given operation "RevokeClientToken" enabled
+    And new "RevokeClientToken" request
+    And body with value {"hash": "1234567890abcdef1234567890abcdef123"}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Update client token returns "Bad Request" response
+    Given operation "UpdateClientToken" enabled
+    And new "UpdateClientToken" request
+    And body with value {"hash": "1234567890abcdef1234567890abcdef123", "name": "Updated Client Token Name", "origin_urls": ["https://example.com"]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Update client token returns "Not Found" response
+    Given operation "UpdateClientToken" enabled
+    And new "UpdateClientToken" request
+    And body with value {"hash": "1234567890abcdef1234567890abcdef123", "name": "Updated Client Token Name", "origin_urls": ["https://example.com"]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Update client token returns "OK" response
+    Given operation "UpdateClientToken" enabled
+    And new "UpdateClientToken" request
+    And body with value {"hash": "1234567890abcdef1234567890abcdef123", "name": "Updated Client Token Name", "origin_urls": ["https://example.com"]}
     When the request is sent
     Then the response status is 200 OK
