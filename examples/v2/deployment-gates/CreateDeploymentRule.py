@@ -11,9 +11,7 @@ from datadog_api_client.v2.model.create_deployment_rule_params_data_attributes i
     CreateDeploymentRuleParamsDataAttributes,
 )
 from datadog_api_client.v2.model.deployment_rule_data_type import DeploymentRuleDataType
-from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
-    DeploymentRuleOptionsFaultyDeploymentDetection,
-)
+from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
 
 # there is a valid "deployment_gate" in the system
 DEPLOYMENT_GATE_DATA_ID = environ["DEPLOYMENT_GATE_DATA_ID"]
@@ -23,9 +21,7 @@ body = CreateDeploymentRuleParams(
         attributes=CreateDeploymentRuleParamsDataAttributes(
             dry_run=False,
             name="My deployment rule",
-            options=DeploymentRuleOptionsFaultyDeploymentDetection(
-                excluded_resources=[],
-            ),
+            options=DeploymentRulesOptions([("excluded_resources", "[]")]),
             type="faulty_deployment_detection",
         ),
         type=DeploymentRuleDataType.DEPLOYMENT_RULE,
