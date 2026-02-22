@@ -71,6 +71,12 @@ from datadog_api_client.v2.model.incident_todo_list_response import IncidentTodo
 from datadog_api_client.v2.model.incident_todo_response import IncidentTodoResponse
 from datadog_api_client.v2.model.incident_todo_create_request import IncidentTodoCreateRequest
 from datadog_api_client.v2.model.incident_todo_patch_request import IncidentTodoPatchRequest
+from datadog_api_client.v2.model.incident_timestamp_overrides_response import IncidentTimestampOverridesResponse
+from datadog_api_client.v2.model.incident_timestamp_override_response import IncidentTimestampOverrideResponse
+from datadog_api_client.v2.model.incident_timestamp_override_create_request import (
+    IncidentTimestampOverrideCreateRequest,
+)
+from datadog_api_client.v2.model.incident_timestamp_override_patch_request import IncidentTimestampOverridePatchRequest
 
 
 class IncidentsApi:
@@ -296,6 +302,37 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (PostmortemTemplateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_timestamp_override_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTimestampOverrideResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides",
+                "operation_id": "create_incident_timestamp_override",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTimestampOverrideCreateRequest,),
                     "location": "body",
                 },
             },
@@ -545,6 +582,35 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "template_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_incident_timestamp_override_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides/{timestamp_override_id}",
+                "operation_id": "delete_incident_timestamp_override",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "timestamp_override_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "timestamp_override_id",
                     "location": "path",
                 },
             },
@@ -1016,6 +1082,39 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._list_incident_timestamp_overrides_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTimestampOverridesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides",
+                "operation_id": "list_incident_timestamp_overrides",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "include_deleted": {
+                    "openapi_types": (bool,),
+                    "attribute": "include-deleted",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_incident_todos_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTodoListResponse,),
@@ -1338,6 +1437,43 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_timestamp_override_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTimestampOverrideResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides/{timestamp_override_id}",
+                "operation_id": "update_incident_timestamp_override",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "timestamp_override_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "timestamp_override_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTimestampOverridePatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_incident_todo_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTodoResponse,),
@@ -1588,6 +1724,34 @@ class IncidentsApi:
 
         return self._create_incident_postmortem_template_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_timestamp_override(
+        self,
+        incident_id: UUID,
+        body: IncidentTimestampOverrideCreateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentTimestampOverrideResponse:
+        """Create a timestamp override for an incident.
+
+        Create a new timestamp override for a specific incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: UUID
+        :type body: IncidentTimestampOverrideCreateRequest
+        :param include: Specifies which types of related objects are included in the response.
+        :type include: str, optional
+        :rtype: IncidentTimestampOverrideResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_incident_timestamp_override_endpoint.call_with_http_info(**kwargs)
+
     def create_incident_todo(
         self,
         incident_id: str,
@@ -1784,6 +1948,28 @@ class IncidentsApi:
         kwargs["template_id"] = template_id
 
         return self._delete_incident_postmortem_template_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_timestamp_override(
+        self,
+        incident_id: UUID,
+        timestamp_override_id: UUID,
+    ) -> None:
+        """Delete a timestamp override for an incident.
+
+        Delete an existing timestamp override for a specific incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: UUID
+        :param timestamp_override_id: The UUID of the timestamp override.
+        :type timestamp_override_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["timestamp_override_id"] = timestamp_override_id
+
+        return self._delete_incident_timestamp_override_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_todo(
         self,
@@ -2206,6 +2392,36 @@ class IncidentsApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def list_incident_timestamp_overrides(
+        self,
+        incident_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+        include_deleted: Union[bool, UnsetType] = unset,
+    ) -> IncidentTimestampOverridesResponse:
+        """List timestamp overrides for an incident.
+
+        Get all timestamp overrides for a specific incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: UUID
+        :param include: Specifies which types of related objects are included in the response.
+        :type include: str, optional
+        :param include_deleted: Specifies whether to include deleted timestamp overrides in the response.
+        :type include_deleted: bool, optional
+        :rtype: IncidentTimestampOverridesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if include_deleted is not unset:
+            kwargs["include_deleted"] = include_deleted
+
+        return self._list_incident_timestamp_overrides_endpoint.call_with_http_info(**kwargs)
+
     def list_incident_todos(
         self,
         incident_id: str,
@@ -2544,6 +2760,39 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_postmortem_template_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_timestamp_override(
+        self,
+        incident_id: UUID,
+        timestamp_override_id: UUID,
+        body: IncidentTimestampOverridePatchRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentTimestampOverrideResponse:
+        """Update a timestamp override for an incident.
+
+        Update an existing timestamp override for a specific incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: UUID
+        :param timestamp_override_id: The UUID of the timestamp override.
+        :type timestamp_override_id: UUID
+        :type body: IncidentTimestampOverridePatchRequest
+        :param include: Specifies which types of related objects are included in the response.
+        :type include: str, optional
+        :rtype: IncidentTimestampOverrideResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["timestamp_override_id"] = timestamp_override_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_incident_timestamp_override_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_todo(
         self,
