@@ -30,7 +30,7 @@ class DORAFailureRequest(ModelNormal):
 
     def __init__(self_, data: DORAFailureRequestData, **kwargs):
         """
-        Request to create a DORA failure event.
+        Request to create a DORA incident event.
 
         :param data: The JSON:API data.
         :type data: DORAFailureRequestData

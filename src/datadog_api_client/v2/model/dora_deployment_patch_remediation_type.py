@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class DORADeploymentPatchRemediationType(ModelSimple):
     """
-    The type of remediation action taken.
+    The type of remediation action taken. Required when the failed deployment must be linked to a remediation deployment.
 
     :param value: Must be one of ["rollback", "rollforward"].
     :type value: str
