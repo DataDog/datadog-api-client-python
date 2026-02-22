@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
     from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
 
 
@@ -27,9 +28,11 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
         from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
 
         return {
+            "cross_product_sampling": (RumCrossProductSamplingCreate,),
             "enabled": (bool,),
             "event_type": (RumRetentionFilterEventType,),
             "name": (str,),
@@ -38,6 +41,7 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "cross_product_sampling": "cross_product_sampling",
         "enabled": "enabled",
         "event_type": "event_type",
         "name": "name",
@@ -50,12 +54,16 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
         event_type: RumRetentionFilterEventType,
         name: str,
         sample_rate: float,
+        cross_product_sampling: Union[RumCrossProductSamplingCreate, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         The object describing attributes of a RUM retention filter to create.
+
+        :param cross_product_sampling: Configuration for cross-product sampling when creating a retention filter.
+        :type cross_product_sampling: RumCrossProductSamplingCreate, optional
 
         :param enabled: Whether the retention filter is enabled.
         :type enabled: bool, optional
@@ -72,6 +80,8 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
         :param sample_rate: The sample rate for a RUM retention filter, between 0.1 and 100.
         :type sample_rate: float
         """
+        if cross_product_sampling is not unset:
+            kwargs["cross_product_sampling"] = cross_product_sampling
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if query is not unset:
