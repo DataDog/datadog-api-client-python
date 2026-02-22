@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"8b002b194234f379","enabled":true,"name":"A
+      Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"11437d68-2f35-4d09-be7a-ee618a110ddb","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"04f3a7c8-7f9c-42bc-99f2-f1bcc4fc22f7","name":"Application","type":"group","position":0,"components":[{"id":"11c88ebd-d05a-41c2-9d77-cbeb32d74dce","name":"Login","type":"component","status":"operational","position":0},{"id":"544744c0-3700-470f-9cc5-1b64f5fa265e","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-02-19T21:09:32.891286Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"8b002b194234f379","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-02-19T21:09:32.891286Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/11437d68-2f35-4d09-be7a-ee618a110ddb/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"completed_date":"2026-02-19T23:09:32.555Z","completed_description":"We
+      have completed maintenance on the API to improve performance.","components_affected":[{"id":"11c88ebd-d05a-41c2-9d77-cbeb32d74dce","status":"operational"}],"in_progress_description":"We
+      are currently performing maintenance on the API to improve performance.","scheduled_description":"We
+      will be performing maintenance on the API to improve performance.","start_date":"2026-02-19T22:09:32.555Z","title":"API
+      Maintenance"},"type":"maintenances"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/11437d68-2f35-4d09-be7a-ee618a110ddb/maintenances
+  response:
+    body:
+      string: '{"data":{"id":"59df7b47-92b4-4834-88cf-b3c564420753","type":"maintenances","attributes":{"completed_date":"2026-02-19T23:09:32.555Z","completed_description":"We
+        have completed maintenance on the API to improve performance.","components_affected":[{"id":"11c88ebd-d05a-41c2-9d77-cbeb32d74dce","name":"Login","status":"operational"}],"in_progress_description":"We
+        are currently performing maintenance on the API to improve performance.","modified_at":"2026-02-19T21:09:33.606484Z","published_date":"2026-02-19T21:09:33.606484Z","scheduled_description":"We
+        will be performing maintenance on the API to improve performance.","start_date":"2026-02-19T22:09:32.555Z","status":"scheduled","title":"API
+        Maintenance","updates":[{"id":"341fecc7-ff4a-4284-98a3-1891f82f49d3","created_at":"2026-02-19T21:09:33.606484Z","modified_at":"2026-02-19T21:09:33.606484Z","started_at":"2026-02-19T21:09:33.606484Z","manual_transition":false,"status":"scheduled","description":"We
+        will be performing maintenance on the API to improve performance.","components_affected":[{"id":"11c88ebd-d05a-41c2-9d77-cbeb32d74dce","name":"Login","status":"operational"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"11437d68-2f35-4d09-be7a-ee618a110ddb","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/statuspages/11437d68-2f35-4d09-be7a-ee618a110ddb/maintenances/59df7b47-92b4-4834-88cf-b3c564420753
+  response:
+    body:
+      string: '{"data":{"id":"59df7b47-92b4-4834-88cf-b3c564420753","type":"maintenances","attributes":{"completed_date":"2026-02-19T23:09:32.555Z","completed_description":"We
+        have completed maintenance on the API to improve performance.","components_affected":[{"id":"11c88ebd-d05a-41c2-9d77-cbeb32d74dce","name":"Login","status":"operational"}],"in_progress_description":"We
+        are currently performing maintenance on the API to improve performance.","modified_at":"2026-02-19T21:09:33.606484Z","published_date":"2026-02-19T21:09:33.606484Z","scheduled_description":"We
+        will be performing maintenance on the API to improve performance.","start_date":"2026-02-19T22:09:32.555Z","status":"scheduled","title":"API
+        Maintenance","updates":[{"id":"341fecc7-ff4a-4284-98a3-1891f82f49d3","created_at":"2026-02-19T21:09:33.606484Z","modified_at":"2026-02-19T21:09:33.606484Z","started_at":"2026-02-19T21:09:33.606484Z","manual_transition":false,"status":"scheduled","description":"We
+        will be performing maintenance on the API to improve performance.","components_affected":[{"id":"11c88ebd-d05a-41c2-9d77-cbeb32d74dce","name":"Login","status":"operational"}]}]},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"status_page":{"data":{"id":"11437d68-2f35-4d09-be7a-ee618a110ddb","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/11437d68-2f35-4d09-be7a-ee618a110ddb
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
