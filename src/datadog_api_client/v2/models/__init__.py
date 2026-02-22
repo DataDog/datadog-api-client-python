@@ -1496,6 +1496,19 @@ from datadog_api_client.v2.model.custom_ruleset_request import CustomRulesetRequ
 from datadog_api_client.v2.model.custom_ruleset_request_data import CustomRulesetRequestData
 from datadog_api_client.v2.model.custom_ruleset_request_data_attributes import CustomRulesetRequestDataAttributes
 from datadog_api_client.v2.model.custom_ruleset_response import CustomRulesetResponse
+from datadog_api_client.v2.model.cyclone_dx_advisory import CycloneDXAdvisory
+from datadog_api_client.v2.model.cyclone_dx_affect import CycloneDXAffect
+from datadog_api_client.v2.model.cyclone_dx_asset_component import CycloneDXAssetComponent
+from datadog_api_client.v2.model.cyclone_dxbom import CycloneDXBOM
+from datadog_api_client.v2.model.cyclone_dx_component import CycloneDXComponent
+from datadog_api_client.v2.model.cyclone_dx_component_type import CycloneDXComponentType
+from datadog_api_client.v2.model.cyclone_dx_metadata import CycloneDXMetadata
+from datadog_api_client.v2.model.cyclone_dx_rating import CycloneDXRating
+from datadog_api_client.v2.model.cyclone_dx_reference import CycloneDXReference
+from datadog_api_client.v2.model.cyclone_dx_reference_source import CycloneDXReferenceSource
+from datadog_api_client.v2.model.cyclone_dx_tool_component import CycloneDXToolComponent
+from datadog_api_client.v2.model.cyclone_dx_tools import CycloneDXTools
+from datadog_api_client.v2.model.cyclone_dx_vulnerability import CycloneDXVulnerability
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
 from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
 from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
@@ -4790,6 +4803,7 @@ from datadog_api_client.v2.model.security_filter_update_attributes import Securi
 from datadog_api_client.v2.model.security_filter_update_data import SecurityFilterUpdateData
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
+from datadog_api_client.v2.model.security_finding_type import SecurityFindingType
 from datadog_api_client.v2.model.security_findings_attributes import SecurityFindingsAttributes
 from datadog_api_client.v2.model.security_findings_data import SecurityFindingsData
 from datadog_api_client.v2.model.security_findings_data_type import SecurityFindingsDataType
@@ -5855,6 +5869,7 @@ from datadog_api_client.v2.model.threat_hunting_job_query import ThreatHuntingJo
 from datadog_api_client.v2.model.threat_hunting_job_response import ThreatHuntingJobResponse
 from datadog_api_client.v2.model.threat_hunting_job_response_attributes import ThreatHuntingJobResponseAttributes
 from datadog_api_client.v2.model.threat_hunting_job_response_data import ThreatHuntingJobResponseData
+from datadog_api_client.v2.model.threat_intel_indicator_type import ThreatIntelIndicatorType
 from datadog_api_client.v2.model.time_restriction import TimeRestriction
 from datadog_api_client.v2.model.time_restrictions import TimeRestrictions
 from datadog_api_client.v2.model.timeline_cell import TimelineCell
@@ -7237,6 +7252,19 @@ __all__ = [
     "CustomRulesetRequestData",
     "CustomRulesetRequestDataAttributes",
     "CustomRulesetResponse",
+    "CycloneDXAdvisory",
+    "CycloneDXAffect",
+    "CycloneDXAssetComponent",
+    "CycloneDXBOM",
+    "CycloneDXComponent",
+    "CycloneDXComponentType",
+    "CycloneDXMetadata",
+    "CycloneDXRating",
+    "CycloneDXReference",
+    "CycloneDXReferenceSource",
+    "CycloneDXToolComponent",
+    "CycloneDXTools",
+    "CycloneDXVulnerability",
     "DORADeploymentFetchResponse",
     "DORADeploymentObject",
     "DORADeploymentObjectAttributes",
@@ -9599,6 +9627,7 @@ __all__ = [
     "SecurityFilterUpdateData",
     "SecurityFilterUpdateRequest",
     "SecurityFiltersResponse",
+    "SecurityFindingType",
     "SecurityFindingsAttributes",
     "SecurityFindingsData",
     "SecurityFindingsDataType",
@@ -10316,6 +10345,7 @@ __all__ = [
     "ThreatHuntingJobResponse",
     "ThreatHuntingJobResponseAttributes",
     "ThreatHuntingJobResponseData",
+    "ThreatIntelIndicatorType",
     "TimeRestriction",
     "TimeRestrictions",
     "TimelineCell",

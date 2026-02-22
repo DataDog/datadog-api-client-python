@@ -708,6 +708,24 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Create security finding returns "Bad Request" response
+    Given operation "CreateSecurityFinding" enabled
+    And new "CreateSecurityFinding" request
+    And request contains "vendor" parameter from "REPLACE.ME"
+    And request contains "finding_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Create security finding returns "OK" response
+    Given operation "CreateSecurityFinding" enabled
+    And new "CreateSecurityFinding" request
+    And request contains "vendor" parameter from "REPLACE.ME"
+    And request contains "finding_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-security-platform
   Scenario: Deactivate content pack returns "Accepted" response
     Given operation "DeactivateContentPack" enabled
@@ -1396,6 +1414,40 @@ Feature: Security Monitoring
     And new "GetVulnerabilityNotificationRules" request
     When the request is sent
     Then the response status is 200 The list of notification rules.
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Import threat intelligence feed returns "Bad Request" response
+    Given operation "ImportThreatIntel" enabled
+    And new "ImportThreatIntel" request
+    And request contains "ti_vendor" parameter from "REPLACE.ME"
+    And request contains "ti_indicator" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Import threat intelligence feed returns "OK" response
+    Given operation "ImportThreatIntel" enabled
+    And new "ImportThreatIntel" request
+    And request contains "ti_vendor" parameter from "REPLACE.ME"
+    And request contains "ti_indicator" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Import vulnerabilities returns "Bad Request" response
+    Given operation "ImportSecurityVulnerabilities" enabled
+    And new "ImportSecurityVulnerabilities" request
+    And body with value {"bomFormat": "CycloneDX", "components": [{"bom-ref": "a3390fca-c315-41ae-ae05-af5e7859cdee", "name": "lodash", "purl": "pkg:npm/lodash@4.17.21", "type": "library", "version": "4.17.21"}], "metadata": {"component": {"bom-ref": "asset-ref-123", "name": "i-12345", "type": "operating-system"}, "tools": {"components": [{"name": "my-scanner", "type": "application"}]}}, "specVersion": "1.5", "version": 1, "vulnerabilities": [{"advisories": [{"url": "https://example.com/advisory/CVE-2021-1234"}], "affects": [{"ref": "a3390fca-c315-41ae-ae05-af5e7859cdee"}], "cwes": [123, 345], "description": "Sample vulnerability detected in the application.", "detail": "Details about the vulnerability", "id": "CVE-2021-1234", "ratings": [{"score": 9.0, "severity": "high", "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N"}], "references": [{"id": "GHSA-35m5-8cvj-8783", "source": {"url": "https://example.com"}}]}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/asm-vm
+  Scenario: Import vulnerabilities returns "OK" response
+    Given operation "ImportSecurityVulnerabilities" enabled
+    And new "ImportSecurityVulnerabilities" request
+    And body with value {"bomFormat": "CycloneDX", "components": [{"bom-ref": "a3390fca-c315-41ae-ae05-af5e7859cdee", "name": "lodash", "purl": "pkg:npm/lodash@4.17.21", "type": "library", "version": "4.17.21"}], "metadata": {"component": {"bom-ref": "asset-ref-123", "name": "i-12345", "type": "operating-system"}, "tools": {"components": [{"name": "my-scanner", "type": "application"}]}}, "specVersion": "1.5", "version": 1, "vulnerabilities": [{"advisories": [{"url": "https://example.com/advisory/CVE-2021-1234"}], "affects": [{"ref": "a3390fca-c315-41ae-ae05-af5e7859cdee"}], "cwes": [123, 345], "description": "Sample vulnerability detected in the application.", "detail": "Details about the vulnerability", "id": "CVE-2021-1234", "ratings": [{"score": 9.0, "severity": "high", "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N"}], "references": [{"id": "GHSA-35m5-8cvj-8783", "source": {"url": "https://example.com"}}]}]}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
