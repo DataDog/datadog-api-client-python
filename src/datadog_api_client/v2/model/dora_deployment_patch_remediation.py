@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -32,17 +34,23 @@ class DORADeploymentPatchRemediation(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: DORADeploymentPatchRemediationType, **kwargs):
+    def __init__(
+        self_,
+        id: Union[str, UnsetType] = unset,
+        type: Union[DORADeploymentPatchRemediationType, UnsetType] = unset,
+        **kwargs,
+    ):
         """
-        Remediation details for the deployment.
+        Remediation details for the deployment. Optional, but required to calculate failed deployment recovery time.
 
-        :param id: The ID of the remediation action.
-        :type id: str
+        :param id: The ID of the remediation deployment. Required when the failed deployment must be linked to a remediation deployment.
+        :type id: str, optional
 
-        :param type: The type of remediation action taken.
-        :type type: DORADeploymentPatchRemediationType
+        :param type: The type of remediation action taken. Required when the failed deployment must be linked to a remediation deployment.
+        :type type: DORADeploymentPatchRemediationType, optional
         """
+        if id is not unset:
+            kwargs["id"] = id
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_.id = id
-        self_.type = type

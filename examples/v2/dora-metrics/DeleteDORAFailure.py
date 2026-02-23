@@ -1,5 +1,5 @@
 """
-Delete a failure event returns "Accepted" response
+Delete an incident event returns "Accepted" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -9,5 +9,5 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = DORAMetricsApi(api_client)
     api_instance.delete_dora_failure(
-        failure_id="NO_VALUE",
+        failure_id="failure_id",
     )

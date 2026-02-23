@@ -18430,20 +18430,20 @@ components:
       - finished_at
       type: object
     DORADeploymentPatchRemediation:
-      description: Remediation details for the deployment.
+      description: Remediation details for the deployment. Optional, but required
+        to calculate failed deployment recovery time.
       properties:
         id:
-          description: The ID of the remediation action.
+          description: The ID of the remediation deployment. Required when the failed
+            deployment must be linked to a remediation deployment.
           example: eG42zNIkVjM
           type: string
         type:
           $ref: '#/components/schemas/DORADeploymentPatchRemediationType'
-      required:
-      - id
-      - type
       type: object
     DORADeploymentPatchRemediationType:
-      description: The type of remediation action taken.
+      description: The type of remediation action taken. Required when the failed
+        deployment must be linked to a remediation deployment.
       enum:
       - rollback
       - rollforward
@@ -18647,13 +18647,13 @@ components:
           type: array
       type: object
     DORAFailureFetchResponse:
-      description: Response for fetching a single failure event.
+      description: Response for fetching a single incident event.
       properties:
         data:
           $ref: '#/components/schemas/DORAIncidentObject'
       type: object
     DORAFailureRequest:
-      description: Request to create a DORA failure event.
+      description: Request to create a DORA incident event.
       properties:
         data:
           $ref: '#/components/schemas/DORAFailureRequestData'
@@ -18661,16 +18661,16 @@ components:
       - data
       type: object
     DORAFailureRequestAttributes:
-      description: Attributes to create a DORA failure event.
+      description: Attributes to create a DORA incident event.
       properties:
         custom_tags:
           $ref: '#/components/schemas/DORACustomTags'
         env:
-          description: Environment name that was impacted by the failure.
+          description: Environment name that was impacted by the incident.
           example: staging
           type: string
         finished_at:
-          description: Unix timestamp when the failure finished. It must be in nanoseconds,
+          description: Unix timestamp when the incident finished. It must be in nanoseconds,
             milliseconds, or seconds.
           example: 1693491984000000000
           format: int64
@@ -18678,16 +18678,16 @@ components:
         git:
           $ref: '#/components/schemas/DORAGitInfo'
         id:
-          description: Failure ID. Must be 16-128 characters and contain only alphanumeric
+          description: Incident ID. Must be 16-128 characters and contain only alphanumeric
             characters, hyphens, underscores, periods, and colons (a-z, A-Z, 0-9,
             -, _, ., :).
           type: string
         name:
-          description: Failure name.
+          description: Incident name.
           example: Webserver is down failing all requests.
           type: string
         services:
-          description: Service names impacted by the failure. If possible, use names
+          description: Service names impacted by the incident. If possible, use names
             registered in the Service Catalog. Required when the team field is not
             provided.
           example:
@@ -18696,11 +18696,11 @@ components:
             type: string
           type: array
         severity:
-          description: Failure severity.
+          description: Incident severity.
           example: High
           type: string
         started_at:
-          description: Unix timestamp when the failure started. It must be in nanoseconds,
+          description: Unix timestamp when the incident started. It must be in nanoseconds,
             milliseconds, or seconds.
           example: 1693491974000000000
           format: int64
@@ -18727,7 +18727,7 @@ components:
       - attributes
       type: object
     DORAFailureResponse:
-      description: Response after receiving a DORA failure event.
+      description: Response after receiving a DORA incident event.
       properties:
         data:
           $ref: '#/components/schemas/DORAFailureResponseData'
@@ -18735,10 +18735,10 @@ components:
       - data
       type: object
     DORAFailureResponseData:
-      description: Response after receiving a DORA failure event.
+      description: Response after receiving a DORA incident event.
       properties:
         id:
-          description: The ID of the received DORA failure event.
+          description: The ID of the received DORA incident event.
           example: 4242fcdd31586083
           type: string
         type:
@@ -18748,7 +18748,7 @@ components:
       type: object
     DORAFailureType:
       default: dora_failure
-      description: JSON:API type for DORA failure events.
+      description: JSON:API type for DORA incident events.
       enum:
       - dora_failure
       example: dora_failure
@@ -18756,7 +18756,7 @@ components:
       x-enum-varnames:
       - DORA_FAILURE
     DORAFailuresListResponse:
-      description: Response for the list failures endpoint.
+      description: Response for the list incidents endpoint.
       example:
         data:
         - attributes:
@@ -18890,7 +18890,7 @@ components:
             from: '2025-01-01T00:00:00Z'
             limit: 100
             query: service:(shopist OR api-service) env:production team:backend
-            sort: -started_at
+            sort: -finished_at
             to: '2025-01-31T23:59:59Z'
           type: dora_deployments_list_request
       properties:
@@ -18921,7 +18921,7 @@ components:
           type: string
         sort:
           description: Sort order (prefixed with `-` for descending).
-          example: -started_at
+          example: -finished_at
           type: string
         to:
           description: Maximum timestamp for requested events.
@@ -18957,7 +18957,7 @@ components:
       x-enum-varnames:
       - DORA_DEPLOYMENTS_LIST_REQUEST
     DORAListFailuresRequest:
-      description: Request to get a list of failures.
+      description: Request to get a list of incidents.
       example:
         data:
           attributes:
@@ -18974,7 +18974,7 @@ components:
       - data
       type: object
     DORAListFailuresRequestAttributes:
-      description: Attributes to get a list of failures.
+      description: Attributes to get a list of incidents.
       properties:
         from:
           description: Minimum timestamp for requested events.
@@ -79446,7 +79446,9 @@ paths:
 
         - Change Lead Time
 
-        - Change Failure Rate'
+        - Change Failure Rate
+
+        - Failed Deployment Recovery Time'
       operationId: CreateDORADeployment
       requestBody:
         content:
@@ -79595,7 +79597,9 @@ paths:
         permissions:
         - dora_metrics_read
     patch:
-      description: Use this API endpoint to patch a deployment event.
+      description: Update a deployment's change failure status. Use this to mark a
+        deployment as a change failure or back to stable. You can optionally include
+        remediation details to enable failed deployment recovery time calculation.
       operationId: PatchDORADeployment
       parameters:
       - description: The ID of the deployment event.
@@ -79636,14 +79640,14 @@ paths:
         - dora_metrics_write
   /api/v2/dora/failure:
     post:
-      description: 'Use this API endpoint to provide failure data.
+      description: 'Use this API endpoint to provide incident data for DORA Metrics.
 
+        Note that change failure rate and failed deployment recovery time are computed
+        from change failures detected on deployments, not from incident events sent
+        through this endpoint.
 
-        This is necessary for:
-
-        - Change Failure Rate
-
-        - Time to Restore'
+        Tracking incidents gives a side-by-side view of how failed deployments translate
+        into real-world incidents, including their severity and frequency.'
       operationId: CreateDORAFailure
       requestBody:
         content:
@@ -79676,16 +79680,16 @@ paths:
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
       - apiKeyAuth: []
-      summary: Send a failure event
+      summary: Send an incident event
       tags:
       - DORA Metrics
       x-codegen-request-body-name: body
   /api/v2/dora/failure/{failure_id}:
     delete:
-      description: Use this API endpoint to delete a failure event.
+      description: Use this API endpoint to delete an incident event.
       operationId: DeleteDORAFailure
       parameters:
-      - description: The ID of the failure event to delete.
+      - description: The ID of the incident event to delete.
         in: path
         name: failure_id
         required: true
@@ -79707,7 +79711,7 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      summary: Delete a failure event
+      summary: Delete an incident event
       tags:
       - DORA Metrics
       x-permission:
@@ -79716,7 +79720,7 @@ paths:
         - dora_metrics_write
   /api/v2/dora/failures:
     post:
-      description: Use this API endpoint to get a list of failure events.
+      description: Use this API endpoint to get a list of incident events.
       operationId: ListDORAFailures
       requestBody:
         content:
@@ -79744,7 +79748,7 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      summary: Get a list of failure events
+      summary: Get a list of incident events
       tags:
       - DORA Metrics
       x-codegen-request-body-name: body
@@ -79754,10 +79758,10 @@ paths:
         - dora_metrics_read
   /api/v2/dora/failures/{failure_id}:
     get:
-      description: Use this API endpoint to get a failure event.
+      description: Use this API endpoint to get an incident event.
       operationId: GetDORAFailure
       parameters:
-      - description: The ID of the failure event.
+      - description: The ID of the incident event.
         in: path
         name: failure_id
         required: true
@@ -79783,7 +79787,7 @@ paths:
       security:
       - apiKeyAuth: []
         appKeyAuth: []
-      summary: Get a failure event
+      summary: Get an incident event
       tags:
       - DORA Metrics
       x-codegen-request-body-name: body
@@ -79798,14 +79802,10 @@ paths:
         instead.
 
 
-        Use this API endpoint to provide failure data.
+        Use this API endpoint to provide incident data.
 
-
-        This is necessary for:
-
-        - Change Failure Rate
-
-        - Time to Restore'
+        Tracking incidents gives a side-by-side view of how failed deployments translate
+        into real-world incidents.'
       operationId: CreateDORAIncident
       requestBody:
         content:
@@ -79838,7 +79838,7 @@ paths:
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
       - apiKeyAuth: []
-      summary: Send an incident event
+      summary: Send an incident event (legacy)
       tags:
       - DORA Metrics
       x-codegen-request-body-name: body

@@ -32,7 +32,7 @@ class DORAFailureRequestData(ModelNormal):
         """
         The JSON:API data.
 
-        :param attributes: Attributes to create a DORA failure event.
+        :param attributes: Attributes to create a DORA incident event.
         :type attributes: DORAFailureRequestAttributes
         """
         super().__init__(kwargs)

@@ -44,7 +44,7 @@ class DORADeploymentPatchRequestAttributes(ModelNormal):
         :param change_failure: Indicates whether the deployment resulted in a change failure.
         :type change_failure: bool, optional
 
-        :param remediation: Remediation details for the deployment.
+        :param remediation: Remediation details for the deployment. Optional, but required to calculate failed deployment recovery time.
         :type remediation: DORADeploymentPatchRemediation, optional
         """
         if change_failure is not unset:

@@ -1,5 +1,5 @@
 """
-Get a list of incident events returns "OK" response
+Get a list of failure events returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -14,11 +14,9 @@ from dateutil.tz import tzutc
 body = DORAListFailuresRequest(
     data=DORAListFailuresRequestData(
         attributes=DORAListFailuresRequestAttributes(
-            _from=datetime(2025, 1, 1, 0, 0, tzinfo=tzutc()),
-            limit=100,
-            query="severity:(SEV-1 OR SEV-2) env:production team:backend",
-            sort="-started_at",
-            to=datetime(2025, 1, 31, 23, 59, 59, tzinfo=tzutc()),
+            _from=datetime(2025, 3, 23, 0, 0, tzinfo=tzutc()),
+            limit=1,
+            to=datetime(2025, 3, 24, 0, 0, tzinfo=tzutc()),
         ),
         type=DORAListFailuresRequestDataType.DORA_FAILURES_LIST_REQUEST,
     ),

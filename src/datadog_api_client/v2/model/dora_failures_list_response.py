@@ -32,7 +32,7 @@ class DORAFailuresListResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[DORAIncidentObject], UnsetType] = unset, **kwargs):
         """
-        Response for the list failures endpoint.
+        Response for the list incidents endpoint.
 
         :param data: The list of DORA incident events.
         :type data: [DORAIncidentObject], optional

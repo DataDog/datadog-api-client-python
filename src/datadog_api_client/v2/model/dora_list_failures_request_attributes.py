@@ -49,7 +49,7 @@ class DORAListFailuresRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes to get a list of failures.
+        Attributes to get a list of incidents.
 
         :param _from: Minimum timestamp for requested events.
         :type _from: datetime, optional
