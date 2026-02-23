@@ -43,7 +43,7 @@ class DORAListFailuresRequestData(ModelNormal):
         """
         The JSON:API data.
 
-        :param attributes: Attributes to get a list of failures.
+        :param attributes: Attributes to get a list of incidents.
         :type attributes: DORAListFailuresRequestAttributes
 
         :param type: The definition of ``DORAListFailuresRequestDataType`` object.

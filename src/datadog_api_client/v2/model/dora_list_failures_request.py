@@ -30,7 +30,7 @@ class DORAListFailuresRequest(ModelNormal):
 
     def __init__(self_, data: DORAListFailuresRequestData, **kwargs):
         """
-        Request to get a list of failures.
+        Request to get a list of incidents.
 
         :param data: The JSON:API data.
         :type data: DORAListFailuresRequestData

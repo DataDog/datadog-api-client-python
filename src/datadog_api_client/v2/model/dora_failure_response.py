@@ -30,9 +30,9 @@ class DORAFailureResponse(ModelNormal):
 
     def __init__(self_, data: DORAFailureResponseData, **kwargs):
         """
-        Response after receiving a DORA failure event.
+        Response after receiving a DORA incident event.
 
-        :param data: Response after receiving a DORA failure event.
+        :param data: Response after receiving a DORA incident event.
         :type data: DORAFailureResponseData
         """
         super().__init__(kwargs)

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class DORAFailureType(ModelSimple):
     """
-    JSON:API type for DORA failure events.
+    JSON:API type for DORA incident events.
 
     :param value: If omitted defaults to "dora_failure". Must be one of ["dora_failure"].
     :type value: str
