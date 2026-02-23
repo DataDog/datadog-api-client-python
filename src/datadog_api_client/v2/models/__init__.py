@@ -2129,6 +2129,8 @@ from datadog_api_client.v2.model.fleet_schedule_resource_type import FleetSchedu
 from datadog_api_client.v2.model.fleet_schedule_response import FleetScheduleResponse
 from datadog_api_client.v2.model.fleet_schedule_status import FleetScheduleStatus
 from datadog_api_client.v2.model.fleet_schedules_response import FleetSchedulesResponse
+from datadog_api_client.v2.model.form_trigger import FormTrigger
+from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.freshservice_api_key import FreshserviceAPIKey
@@ -7746,6 +7748,8 @@ __all__ = [
     "FleetScheduleResponse",
     "FleetScheduleStatus",
     "FleetSchedulesResponse",
+    "FormTrigger",
+    "FormTriggerWrapper",
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
     "FreshserviceAPIKey",

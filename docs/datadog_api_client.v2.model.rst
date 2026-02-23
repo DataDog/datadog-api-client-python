@@ -11022,6 +11022,20 @@ datadog\_api\_client.v2.model.fleet\_schedules\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.form\_trigger module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_trigger
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.form\_trigger\_wrapper module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_trigger_wrapper
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.formula\_limit module
 ---------------------------------------------------
 
