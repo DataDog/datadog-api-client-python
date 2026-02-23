@@ -13360,6 +13360,83 @@ datadog\_api\_client.v2.model.incident\_timeline\_cell\_markdown\_create\_attrib
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_create\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_create\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_create\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_patch\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_patch_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_patch\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_patch_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_patch\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_relationships module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_override\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_override_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_timestamp\_overrides\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_timestamp_overrides_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_todo\_anonymous\_assignee module
 ------------------------------------------------------------------------
 
@@ -13616,6 +13693,13 @@ datadog\_api\_client.v2.model.incidents\_response module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incidents_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incidents\_timestamp\_overrides\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incidents_timestamp_overrides_type
    :members:
    :show-inheritance:
 
@@ -29180,6 +29264,27 @@ datadog\_api\_client.v2.model.timeseries\_response\_values\_list module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.timestamp\_override\_user\_relationship module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timestamp_override_user_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timestamp\_override\_user\_relationship\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timestamp_override_user_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.timestamp\_type module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.timestamp_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.token\_type module
 ------------------------------------------------
 
@@ -29968,6 +30073,20 @@ datadog\_api\_client.v2.model.user\_create\_request module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_included module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_included\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_included_attributes
    :members:
    :show-inheritance:
 
