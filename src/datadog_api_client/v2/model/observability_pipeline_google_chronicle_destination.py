@@ -50,6 +50,7 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
             "buffer": (ObservabilityPipelineBufferOptions,),
             "customer_id": (str,),
             "encoding": (ObservabilityPipelineGoogleChronicleDestinationEncoding,),
+            "endpoint_url_key": (str,),
             "id": (str,),
             "inputs": ([str],),
             "log_type": (str,),
@@ -61,6 +62,7 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
         "buffer": "buffer",
         "customer_id": "customer_id",
         "encoding": "encoding",
+        "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "inputs": "inputs",
         "log_type": "log_type",
@@ -82,6 +84,7 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
             UnsetType,
         ] = unset,
         encoding: Union[ObservabilityPipelineGoogleChronicleDestinationEncoding, UnsetType] = unset,
+        endpoint_url_key: Union[str, UnsetType] = unset,
         log_type: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -90,7 +93,7 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
 
         **Supported pipeline types:** logs
 
-        :param auth: GCP credentials used to authenticate with Google Cloud Storage.
+        :param auth: Google Cloud credentials used to authenticate with Google Cloud Storage.
         :type auth: ObservabilityPipelineGcpAuth, optional
 
         :param buffer: Configuration for buffer settings on destination components.
@@ -101,6 +104,9 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
 
         :param encoding: The encoding format for the logs sent to Chronicle.
         :type encoding: ObservabilityPipelineGoogleChronicleDestinationEncoding, optional
+
+        :param endpoint_url_key: Name of the environment variable or secret that holds the Google Chronicle endpoint URL.
+        :type endpoint_url_key: str, optional
 
         :param id: The unique identifier for this component.
         :type id: str
@@ -120,6 +126,8 @@ class ObservabilityPipelineGoogleChronicleDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if encoding is not unset:
             kwargs["encoding"] = encoding
+        if endpoint_url_key is not unset:
+            kwargs["endpoint_url_key"] = endpoint_url_key
         if log_type is not unset:
             kwargs["log_type"] = log_type
         super().__init__(kwargs)

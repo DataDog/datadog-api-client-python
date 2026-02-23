@@ -35,6 +35,7 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         )
 
         return {
+            "address_key": (str,),
             "id": (str,),
             "mode": (ObservabilityPipelineSyslogSourceMode,),
             "tls": (ObservabilityPipelineTls,),
@@ -42,6 +43,7 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         }
 
     attribute_map = {
+        "address_key": "address_key",
         "id": "id",
         "mode": "mode",
         "tls": "tls",
@@ -53,6 +55,7 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         id: str,
         mode: ObservabilityPipelineSyslogSourceMode,
         type: ObservabilityPipelineSyslogNgSourceType,
+        address_key: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -60,6 +63,9 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         The ``syslog_ng`` source listens for logs over TCP or UDP from a ``syslog-ng`` server using the syslog protocol.
 
         **Supported pipeline types:** logs
+
+        :param address_key: Name of the environment variable or secret that holds the listen address for the syslog-ng receiver.
+        :type address_key: str, optional
 
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
@@ -73,6 +79,8 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         :param type: The source type. The value should always be ``syslog_ng``.
         :type type: ObservabilityPipelineSyslogNgSourceType
         """
+        if address_key is not unset:
+            kwargs["address_key"] = address_key
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)

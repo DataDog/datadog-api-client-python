@@ -52,6 +52,7 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
         return {
             "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineSumoLogicDestinationEncoding,),
+            "endpoint_url_key": (str,),
             "header_custom_fields": ([ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem],),
             "header_host_name": (str,),
             "header_source_category": (str,),
@@ -64,6 +65,7 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
     attribute_map = {
         "buffer": "buffer",
         "encoding": "encoding",
+        "endpoint_url_key": "endpoint_url_key",
         "header_custom_fields": "header_custom_fields",
         "header_host_name": "header_host_name",
         "header_source_category": "header_source_category",
@@ -86,6 +88,7 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
             UnsetType,
         ] = unset,
         encoding: Union[ObservabilityPipelineSumoLogicDestinationEncoding, UnsetType] = unset,
+        endpoint_url_key: Union[str, UnsetType] = unset,
         header_custom_fields: Union[
             List[ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem], UnsetType
         ] = unset,
@@ -104,6 +107,9 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
 
         :param encoding: The output encoding format.
         :type encoding: ObservabilityPipelineSumoLogicDestinationEncoding, optional
+
+        :param endpoint_url_key: Name of the environment variable or secret that holds the Sumo Logic HTTP endpoint URL.
+        :type endpoint_url_key: str, optional
 
         :param header_custom_fields: A list of custom headers to include in the request to Sumo Logic.
         :type header_custom_fields: [ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem], optional
@@ -130,6 +136,8 @@ class ObservabilityPipelineSumoLogicDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if encoding is not unset:
             kwargs["encoding"] = encoding
+        if endpoint_url_key is not unset:
+            kwargs["endpoint_url_key"] = endpoint_url_key
         if header_custom_fields is not unset:
             kwargs["header_custom_fields"] = header_custom_fields
         if header_host_name is not unset:

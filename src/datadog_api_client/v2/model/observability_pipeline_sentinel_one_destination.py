@@ -48,6 +48,7 @@ class ObservabilityPipelineSentinelOneDestination(ModelNormal):
             "id": (str,),
             "inputs": ([str],),
             "region": (ObservabilityPipelineSentinelOneDestinationRegion,),
+            "token_key": (str,),
             "type": (ObservabilityPipelineSentinelOneDestinationType,),
         }
 
@@ -56,6 +57,7 @@ class ObservabilityPipelineSentinelOneDestination(ModelNormal):
         "id": "id",
         "inputs": "inputs",
         "region": "region",
+        "token_key": "token_key",
         "type": "type",
     }
 
@@ -72,6 +74,7 @@ class ObservabilityPipelineSentinelOneDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        token_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -91,11 +94,16 @@ class ObservabilityPipelineSentinelOneDestination(ModelNormal):
         :param region: The SentinelOne region to send logs to.
         :type region: ObservabilityPipelineSentinelOneDestinationRegion
 
+        :param token_key: Name of the environment variable or secret that holds the SentinelOne API token.
+        :type token_key: str, optional
+
         :param type: The destination type. The value should always be ``sentinel_one``.
         :type type: ObservabilityPipelineSentinelOneDestinationType
         """
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if token_key is not unset:
+            kwargs["token_key"] = token_key
         super().__init__(kwargs)
 
         self_.id = id

@@ -17,20 +17,32 @@ class ObservabilityPipelineEnrichmentTableReferenceTable(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "app_key_key": (str,),
             "columns": ([str],),
             "key_field": (str,),
             "table_id": (str,),
         }
 
     attribute_map = {
+        "app_key_key": "app_key_key",
         "columns": "columns",
         "key_field": "key_field",
         "table_id": "table_id",
     }
 
-    def __init__(self_, key_field: str, table_id: str, columns: Union[List[str], UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        key_field: str,
+        table_id: str,
+        app_key_key: Union[str, UnsetType] = unset,
+        columns: Union[List[str], UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Uses a Datadog reference table to enrich logs.
+
+        :param app_key_key: Name of the environment variable or secret that holds the Datadog application key used to access the reference table.
+        :type app_key_key: str, optional
 
         :param columns: List of column names to include from the reference table. If not provided, all columns are included.
         :type columns: [str], optional
@@ -41,6 +53,8 @@ class ObservabilityPipelineEnrichmentTableReferenceTable(ModelNormal):
         :param table_id: The unique identifier of the reference table.
         :type table_id: str
         """
+        if app_key_key is not unset:
+            kwargs["app_key_key"] = app_key_key
         if columns is not unset:
             kwargs["columns"] = columns
         super().__init__(kwargs)

@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -25,22 +27,34 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         )
 
         return {
+            "endpoint_url_key": (str,),
             "id": (str,),
             "inputs": ([str],),
             "type": (ObservabilityPipelineCloudPremDestinationType,),
         }
 
     attribute_map = {
+        "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "inputs": "inputs",
         "type": "type",
     }
 
-    def __init__(self_, id: str, inputs: List[str], type: ObservabilityPipelineCloudPremDestinationType, **kwargs):
+    def __init__(
+        self_,
+        id: str,
+        inputs: List[str],
+        type: ObservabilityPipelineCloudPremDestinationType,
+        endpoint_url_key: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The ``cloud_prem`` destination sends logs to Datadog CloudPrem.
 
         **Supported pipeline types:** logs
+
+        :param endpoint_url_key: Name of the environment variable or secret that holds the CloudPrem endpoint URL.
+        :type endpoint_url_key: str, optional
 
         :param id: The unique identifier for this component.
         :type id: str
@@ -51,6 +65,8 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         :param type: The destination type. The value should always be ``cloud_prem``.
         :type type: ObservabilityPipelineCloudPremDestinationType
         """
+        if endpoint_url_key is not unset:
+            kwargs["endpoint_url_key"] = endpoint_url_key
         super().__init__(kwargs)
 
         self_.id = id

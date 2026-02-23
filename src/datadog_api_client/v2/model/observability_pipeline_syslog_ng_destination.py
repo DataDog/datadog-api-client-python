@@ -47,6 +47,7 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
 
         return {
             "buffer": (ObservabilityPipelineBufferOptions,),
+            "endpoint_url_key": (str,),
             "id": (str,),
             "inputs": ([str],),
             "keepalive": (int,),
@@ -56,6 +57,7 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
 
     attribute_map = {
         "buffer": "buffer",
+        "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "inputs": "inputs",
         "keepalive": "keepalive",
@@ -75,6 +77,7 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        endpoint_url_key: Union[str, UnsetType] = unset,
         keepalive: Union[int, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
@@ -86,6 +89,9 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
 
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
+
+        :param endpoint_url_key: Name of the environment variable or secret that holds the syslog-ng server endpoint URL.
+        :type endpoint_url_key: str, optional
 
         :param id: The unique identifier for this component.
         :type id: str
@@ -104,6 +110,8 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
         """
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if endpoint_url_key is not unset:
+            kwargs["endpoint_url_key"] = endpoint_url_key
         if keepalive is not unset:
             kwargs["keepalive"] = keepalive
         if tls is not unset:

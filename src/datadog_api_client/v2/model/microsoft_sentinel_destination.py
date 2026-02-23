@@ -36,6 +36,8 @@ class MicrosoftSentinelDestination(ModelNormal):
         return {
             "buffer": (ObservabilityPipelineBufferOptions,),
             "client_id": (str,),
+            "client_secret_key": (str,),
+            "dce_uri_key": (str,),
             "dcr_immutable_id": (str,),
             "id": (str,),
             "inputs": ([str],),
@@ -47,6 +49,8 @@ class MicrosoftSentinelDestination(ModelNormal):
     attribute_map = {
         "buffer": "buffer",
         "client_id": "client_id",
+        "client_secret_key": "client_secret_key",
+        "dce_uri_key": "dce_uri_key",
         "dcr_immutable_id": "dcr_immutable_id",
         "id": "id",
         "inputs": "inputs",
@@ -71,6 +75,8 @@ class MicrosoftSentinelDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        client_secret_key: Union[str, UnsetType] = unset,
+        dce_uri_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -83,6 +89,12 @@ class MicrosoftSentinelDestination(ModelNormal):
 
         :param client_id: Azure AD client ID used for authentication.
         :type client_id: str
+
+        :param client_secret_key: Name of the environment variable or secret that holds the Azure AD client secret.
+        :type client_secret_key: str, optional
+
+        :param dce_uri_key: Name of the environment variable or secret that holds the Data Collection Endpoint (DCE) URI.
+        :type dce_uri_key: str, optional
 
         :param dcr_immutable_id: The immutable ID of the Data Collection Rule (DCR).
         :type dcr_immutable_id: str
@@ -104,6 +116,10 @@ class MicrosoftSentinelDestination(ModelNormal):
         """
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if client_secret_key is not unset:
+            kwargs["client_secret_key"] = client_secret_key
+        if dce_uri_key is not unset:
+            kwargs["dce_uri_key"] = dce_uri_key
         super().__init__(kwargs)
 
         self_.client_id = client_id

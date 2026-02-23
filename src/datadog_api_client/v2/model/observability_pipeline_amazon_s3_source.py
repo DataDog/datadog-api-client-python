@@ -36,6 +36,7 @@ class ObservabilityPipelineAmazonS3Source(ModelNormal):
             "region": (str,),
             "tls": (ObservabilityPipelineTls,),
             "type": (ObservabilityPipelineAmazonS3SourceType,),
+            "url_key": (str,),
         }
 
     attribute_map = {
@@ -44,6 +45,7 @@ class ObservabilityPipelineAmazonS3Source(ModelNormal):
         "region": "region",
         "tls": "tls",
         "type": "type",
+        "url_key": "url_key",
     }
 
     def __init__(
@@ -53,6 +55,7 @@ class ObservabilityPipelineAmazonS3Source(ModelNormal):
         type: ObservabilityPipelineAmazonS3SourceType,
         auth: Union[ObservabilityPipelineAwsAuth, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        url_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -76,11 +79,16 @@ class ObservabilityPipelineAmazonS3Source(ModelNormal):
 
         :param type: The source type. Always ``amazon_s3``.
         :type type: ObservabilityPipelineAmazonS3SourceType
+
+        :param url_key: Name of the environment variable or secret that holds the S3 bucket URL.
+        :type url_key: str, optional
         """
         if auth is not unset:
             kwargs["auth"] = auth
         if tls is not unset:
             kwargs["tls"] = tls
+        if url_key is not unset:
+            kwargs["url_key"] = url_key
         super().__init__(kwargs)
 
         self_.id = id

@@ -67,6 +67,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         )
 
         return {
+            "address_key": (str,),
             "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineSocketDestinationEncoding,),
             "framing": (ObservabilityPipelineSocketDestinationFraming,),
@@ -78,6 +79,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         }
 
     attribute_map = {
+        "address_key": "address_key",
         "buffer": "buffer",
         "encoding": "encoding",
         "framing": "framing",
@@ -101,6 +103,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         inputs: List[str],
         mode: ObservabilityPipelineSocketDestinationMode,
         type: ObservabilityPipelineSocketDestinationType,
+        address_key: Union[str, UnsetType] = unset,
         buffer: Union[
             ObservabilityPipelineBufferOptions,
             ObservabilityPipelineDiskBufferOptions,
@@ -115,6 +118,9 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         The ``socket`` destination sends logs over TCP or UDP to a remote server.
 
         **Supported pipeline types:** logs
+
+        :param address_key: Name of the environment variable or secret that holds the socket address (host:port).
+        :type address_key: str, optional
 
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
@@ -140,6 +146,8 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         :param type: The destination type. The value should always be ``socket``.
         :type type: ObservabilityPipelineSocketDestinationType
         """
+        if address_key is not unset:
+            kwargs["address_key"] = address_key
         if buffer is not unset:
             kwargs["buffer"] = buffer
         if tls is not unset:

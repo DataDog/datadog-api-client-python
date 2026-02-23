@@ -44,17 +44,21 @@ class ObservabilityPipelineNewRelicDestination(ModelNormal):
         )
 
         return {
+            "account_id_key": (str,),
             "buffer": (ObservabilityPipelineBufferOptions,),
             "id": (str,),
             "inputs": ([str],),
+            "license_key_key": (str,),
             "region": (ObservabilityPipelineNewRelicDestinationRegion,),
             "type": (ObservabilityPipelineNewRelicDestinationType,),
         }
 
     attribute_map = {
+        "account_id_key": "account_id_key",
         "buffer": "buffer",
         "id": "id",
         "inputs": "inputs",
+        "license_key_key": "license_key_key",
         "region": "region",
         "type": "type",
     }
@@ -65,6 +69,7 @@ class ObservabilityPipelineNewRelicDestination(ModelNormal):
         inputs: List[str],
         region: ObservabilityPipelineNewRelicDestinationRegion,
         type: ObservabilityPipelineNewRelicDestinationType,
+        account_id_key: Union[str, UnsetType] = unset,
         buffer: Union[
             ObservabilityPipelineBufferOptions,
             ObservabilityPipelineDiskBufferOptions,
@@ -72,12 +77,16 @@ class ObservabilityPipelineNewRelicDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        license_key_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         The ``new_relic`` destination sends logs to the New Relic platform.
 
         **Supported pipeline types:** logs
+
+        :param account_id_key: Name of the environment variable or secret that holds the New Relic account ID.
+        :type account_id_key: str, optional
 
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
@@ -88,14 +97,21 @@ class ObservabilityPipelineNewRelicDestination(ModelNormal):
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
 
+        :param license_key_key: Name of the environment variable or secret that holds the New Relic license key.
+        :type license_key_key: str, optional
+
         :param region: The New Relic region.
         :type region: ObservabilityPipelineNewRelicDestinationRegion
 
         :param type: The destination type. The value should always be ``new_relic``.
         :type type: ObservabilityPipelineNewRelicDestinationType
         """
+        if account_id_key is not unset:
+            kwargs["account_id_key"] = account_id_key
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if license_key_key is not unset:
+            kwargs["license_key_key"] = license_key_key
         super().__init__(kwargs)
 
         self_.id = id

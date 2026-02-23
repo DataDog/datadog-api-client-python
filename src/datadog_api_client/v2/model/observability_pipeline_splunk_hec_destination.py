@@ -47,10 +47,12 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             "auto_extract_timestamp": (bool,),
             "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineSplunkHecDestinationEncoding,),
+            "endpoint_url_key": (str,),
             "id": (str,),
             "index": (str,),
             "inputs": ([str],),
             "sourcetype": (str,),
+            "token_key": (str,),
             "type": (ObservabilityPipelineSplunkHecDestinationType,),
         }
 
@@ -58,10 +60,12 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         "auto_extract_timestamp": "auto_extract_timestamp",
         "buffer": "buffer",
         "encoding": "encoding",
+        "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "index": "index",
         "inputs": "inputs",
         "sourcetype": "sourcetype",
+        "token_key": "token_key",
         "type": "type",
     }
 
@@ -79,8 +83,10 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             UnsetType,
         ] = unset,
         encoding: Union[ObservabilityPipelineSplunkHecDestinationEncoding, UnsetType] = unset,
+        endpoint_url_key: Union[str, UnsetType] = unset,
         index: Union[str, UnsetType] = unset,
         sourcetype: Union[str, UnsetType] = unset,
+        token_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -98,6 +104,9 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineSplunkHecDestinationEncoding, optional
 
+        :param endpoint_url_key: Name of the environment variable or secret that holds the Splunk HEC endpoint URL.
+        :type endpoint_url_key: str, optional
+
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
@@ -110,6 +119,9 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         :param sourcetype: The Splunk sourcetype to assign to log events.
         :type sourcetype: str, optional
 
+        :param token_key: Name of the environment variable or secret that holds the Splunk HEC token.
+        :type token_key: str, optional
+
         :param type: The destination type. Always ``splunk_hec``.
         :type type: ObservabilityPipelineSplunkHecDestinationType
         """
@@ -119,10 +131,14 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if encoding is not unset:
             kwargs["encoding"] = encoding
+        if endpoint_url_key is not unset:
+            kwargs["endpoint_url_key"] = endpoint_url_key
         if index is not unset:
             kwargs["index"] = index
         if sourcetype is not unset:
             kwargs["sourcetype"] = sourcetype
+        if token_key is not unset:
+            kwargs["token_key"] = token_key
         super().__init__(kwargs)
 
         self_.id = id

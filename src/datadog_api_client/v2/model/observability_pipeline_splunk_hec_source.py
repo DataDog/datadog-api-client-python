@@ -29,12 +29,14 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         )
 
         return {
+            "address_key": (str,),
             "id": (str,),
             "tls": (ObservabilityPipelineTls,),
             "type": (ObservabilityPipelineSplunkHecSourceType,),
         }
 
     attribute_map = {
+        "address_key": "address_key",
         "id": "id",
         "tls": "tls",
         "type": "type",
@@ -44,6 +46,7 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         self_,
         id: str,
         type: ObservabilityPipelineSplunkHecSourceType,
+        address_key: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,6 +54,9 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         The ``splunk_hec`` source implements the Splunk HTTP Event Collector (HEC) API.
 
         **Supported pipeline types:** logs
+
+        :param address_key: Name of the environment variable or secret that holds the listen address for the HEC API.
+        :type address_key: str, optional
 
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
@@ -61,6 +67,8 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         :param type: The source type. Always ``splunk_hec``.
         :type type: ObservabilityPipelineSplunkHecSourceType
         """
+        if address_key is not unset:
+            kwargs["address_key"] = address_key
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)
