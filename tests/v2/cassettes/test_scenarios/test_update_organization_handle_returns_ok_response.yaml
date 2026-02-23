@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Update_organization_handle_returns_OK_response-1770751032","space_resource_name":"spaces/AAQA-zFIks8"}},"type":"google-chat-organization-handle"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles
+  response:
+    body:
+      string: '{"data":{"id":"b036578c-665f-4ff2-8785-ba4d00fc87b5","type":"google-chat-organization-handle","attributes":{"name":"Test-Update_organization_handle_returns_OK_response-1770751032","space_display_name":"api-test-space","space_resource_name":"spaces/AAQA-zFIks8"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"name":"Test-Update_organization_handle_returns_OK_response-1770751032--updated"}},"type":"google-chat-organization-handle"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/b036578c-665f-4ff2-8785-ba4d00fc87b5
+  response:
+    body:
+      string: '{"data":{"id":"b036578c-665f-4ff2-8785-ba4d00fc87b5","type":"google-chat-organization-handle","attributes":{"name":"Test-Update_organization_handle_returns_OK_response-1770751032--updated","space_display_name":"api-test-space","space_resource_name":"spaces/AAQA-zFIks8"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/b036578c-665f-4ff2-8785-ba4d00fc87b5
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -2312,6 +2312,39 @@ from datadog_api_client.v2.model.global_variable_json_patch_request_data_attribu
 from datadog_api_client.v2.model.global_variable_json_patch_type import GlobalVariableJsonPatchType
 from datadog_api_client.v2.model.global_variable_response import GlobalVariableResponse
 from datadog_api_client.v2.model.global_variable_type import GlobalVariableType
+from datadog_api_client.v2.model.google_chat_app_named_space_response import GoogleChatAppNamedSpaceResponse
+from datadog_api_client.v2.model.google_chat_app_named_space_response_attributes import (
+    GoogleChatAppNamedSpaceResponseAttributes,
+)
+from datadog_api_client.v2.model.google_chat_app_named_space_response_data import GoogleChatAppNamedSpaceResponseData
+from datadog_api_client.v2.model.google_chat_app_named_space_type import GoogleChatAppNamedSpaceType
+from datadog_api_client.v2.model.google_chat_create_organization_handle_request import (
+    GoogleChatCreateOrganizationHandleRequest,
+)
+from datadog_api_client.v2.model.google_chat_create_organization_handle_request_attributes import (
+    GoogleChatCreateOrganizationHandleRequestAttributes,
+)
+from datadog_api_client.v2.model.google_chat_create_organization_handle_request_data import (
+    GoogleChatCreateOrganizationHandleRequestData,
+)
+from datadog_api_client.v2.model.google_chat_organization_handle_response import GoogleChatOrganizationHandleResponse
+from datadog_api_client.v2.model.google_chat_organization_handle_response_attributes import (
+    GoogleChatOrganizationHandleResponseAttributes,
+)
+from datadog_api_client.v2.model.google_chat_organization_handle_response_data import (
+    GoogleChatOrganizationHandleResponseData,
+)
+from datadog_api_client.v2.model.google_chat_organization_handle_type import GoogleChatOrganizationHandleType
+from datadog_api_client.v2.model.google_chat_organization_handles_response import GoogleChatOrganizationHandlesResponse
+from datadog_api_client.v2.model.google_chat_update_organization_handle_request import (
+    GoogleChatUpdateOrganizationHandleRequest,
+)
+from datadog_api_client.v2.model.google_chat_update_organization_handle_request_attributes import (
+    GoogleChatUpdateOrganizationHandleRequestAttributes,
+)
+from datadog_api_client.v2.model.google_chat_update_organization_handle_request_data import (
+    GoogleChatUpdateOrganizationHandleRequestData,
+)
 from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
 from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
 from datadog_api_client.v2.model.grey_noise_api_key import GreyNoiseAPIKey
@@ -7895,6 +7928,21 @@ __all__ = [
     "GlobalVariableJsonPatchType",
     "GlobalVariableResponse",
     "GlobalVariableType",
+    "GoogleChatAppNamedSpaceResponse",
+    "GoogleChatAppNamedSpaceResponseAttributes",
+    "GoogleChatAppNamedSpaceResponseData",
+    "GoogleChatAppNamedSpaceType",
+    "GoogleChatCreateOrganizationHandleRequest",
+    "GoogleChatCreateOrganizationHandleRequestAttributes",
+    "GoogleChatCreateOrganizationHandleRequestData",
+    "GoogleChatOrganizationHandleResponse",
+    "GoogleChatOrganizationHandleResponseAttributes",
+    "GoogleChatOrganizationHandleResponseData",
+    "GoogleChatOrganizationHandleType",
+    "GoogleChatOrganizationHandlesResponse",
+    "GoogleChatUpdateOrganizationHandleRequest",
+    "GoogleChatUpdateOrganizationHandleRequestAttributes",
+    "GoogleChatUpdateOrganizationHandleRequestData",
     "GoogleMeetConfigurationReference",
     "GoogleMeetConfigurationReferenceData",
     "GreyNoiseAPIKey",

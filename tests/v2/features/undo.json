@@ -2257,6 +2257,54 @@
       "type": "idempotent"
     }
   },
+  "GetSpaceByDisplayName": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOrganizationHandles": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "operationId": "DeleteOrganizationHandle",
+      "parameters": [
+        {
+          "name": "organization_binding_id",
+          "origin": "path",
+          "source": "organization_binding_id"
+        },
+        {
+          "name": "handle_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListJiraAccounts": {
     "tag": "Jira Integration",
     "undo": {
