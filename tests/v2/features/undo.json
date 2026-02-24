@@ -4349,6 +4349,60 @@
       "type": "idempotent"
     }
   },
+  "ListScorecardCampaigns": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateScorecardCampaign": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteScorecardCampaign": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetScorecardCampaign": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateScorecardCampaign": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GenerateScorecardCampaignTeamReports": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GenerateScorecardCampaignReport": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "ListScorecardDefaultRules": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListScorecardFacets": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListScorecardOutcomes": {
     "tag": "Service Scorecards",
     "undo": {
@@ -4396,6 +4450,36 @@
     "tag": "Service Scorecards",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "DeleteScorecardRuleWorkflow": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateScorecardRuleWorkflow": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListScorecards": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListScorecardScores": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SetupScorecardRules": {
+    "tag": "Service Scorecards",
+    "undo": {
+      "type": "unsafe"
     }
   },
   "UnassignSeatsUser": {
