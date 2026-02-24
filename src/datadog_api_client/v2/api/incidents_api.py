@@ -44,6 +44,9 @@ from datadog_api_client.v2.model.incident_type_list_response import IncidentType
 from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
 from datadog_api_client.v2.model.incident_type_create_request import IncidentTypeCreateRequest
 from datadog_api_client.v2.model.incident_type_patch_request import IncidentTypePatchRequest
+from datadog_api_client.v2.model.incident_import_response import IncidentImportResponse
+from datadog_api_client.v2.model.incident_import_related_object import IncidentImportRelatedObject
+from datadog_api_client.v2.model.incident_import_request import IncidentImportRequest
 from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
 from datadog_api_client.v2.model.incident_search_sort_order import IncidentSearchSortOrder
 from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
@@ -808,6 +811,32 @@ class IncidentsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._import_incident_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentImportResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/import",
+                "operation_id": "import_incident",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": ([IncidentImportRelatedObject],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentImportRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1985,6 +2014,32 @@ class IncidentsApi:
         kwargs["incident_type_id"] = incident_type_id
 
         return self._get_incident_type_endpoint.call_with_http_info(**kwargs)
+
+    def import_incident(
+        self,
+        body: IncidentImportRequest,
+        *,
+        include: Union[List[IncidentImportRelatedObject], UnsetType] = unset,
+    ) -> IncidentImportResponse:
+        """Import an incident.
+
+        Import an incident from an external system. This endpoint allows you to create incidents with
+        historical data such as custom timestamps for detection, declaration, and resolution.
+        Imported incidents do not execute integrations or notification rules.
+
+        :param body: Incident import payload.
+        :type body: IncidentImportRequest
+        :param include: Specifies which related object types to include in the response when importing an incident.
+        :type include: [IncidentImportRelatedObject], optional
+        :rtype: IncidentImportResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._import_incident_endpoint.call_with_http_info(**kwargs)
 
     def list_global_incident_handles(
         self,

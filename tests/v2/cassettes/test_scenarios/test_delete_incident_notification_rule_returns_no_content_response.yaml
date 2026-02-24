@@ -12,9 +12,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/incidents/config/types
   response:
     body:
-      string: '{"data":{"id":"9ff0a6b4-5e86-46c9-a92f-e656551264b2","type":"incident_types","attributes":{"createdAt":"2026-01-19T20:15:55.015947772Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
+      string: '{"data":{"id":"e64d4c78-53b3-48ce-8e67-e6eec5d2bf1f","type":"incident_types","attributes":{"createdAt":"2026-02-23T14:06:39.676479437Z","createdBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Any
         incidents that harm (or have the potential to) the confidentiality, integrity,
-        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2026-01-19T20:15:55.015947854Z","name":"Security
+        or availability of our data.","is_default":false,"lastModifiedBy":"3ad549bf-eba0-11e9-a77a-0705486660d0","modifiedAt":"2026-02-23T14:06:39.676479519Z","name":"Security
         Incident","prefix":"IR"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"google_chat_configuration":{"data":null},"google_meet_configuration":{"data":null},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"microsoft_teams_configuration":{"data":null},"zoom_configuration":{"data":null}}}}'
     headers:
       content-type:
@@ -23,7 +23,7 @@ interactions:
       code: 201
       message: Created
 - request:
-    body: '{"data":{"attributes":{"conditions":[{"field":"severity","values":["SEV-1","SEV-2"]}],"enabled":true,"handles":["@test-email@company.com"],"trigger":"incident_created_trigger","visibility":"organization"},"relationships":{"incident_type":{"data":{"id":"9ff0a6b4-5e86-46c9-a92f-e656551264b2","type":"incident_types"}}},"type":"incident_notification_rules"}}'
+    body: '{"data":{"attributes":{"conditions":[{"field":"severity","values":["SEV-1","SEV-2"]}],"enabled":true,"handles":["@test-email@company.com"],"trigger":"incident_created_trigger","visibility":"organization"},"relationships":{"incident_type":{"data":{"id":"e64d4c78-53b3-48ce-8e67-e6eec5d2bf1f","type":"incident_types"}}},"type":"incident_notification_rules"}}'
     headers:
       accept:
       - application/json
@@ -33,7 +33,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/incidents/config/notification-rules
   response:
     body:
-      string: '{"data":{"id":"c35898ba-d355-4e68-a6a5-47e3bcb87d63","type":"incident_notification_rules","attributes":{"conditions":[{"field":"severity","values":["SEV-1","SEV-2"]}],"created":"2026-01-19T20:15:55.288625248Z","enabled":true,"handles":["@test-email@company.com"],"modified":"2026-01-19T20:15:55.288625248Z","renotify_on":[],"trigger":"incident_created_trigger","visibility":"organization"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident_type":{"data":{"id":"9ff0a6b4-5e86-46c9-a92f-e656551264b2","type":"incident_types"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"71eed31b-15c3-418f-9492-3fe4e4966540","type":"incident_notification_rules","attributes":{"conditions":[{"field":"severity","values":["SEV-1","SEV-2"]}],"created":"2026-02-23T14:06:39.918910755Z","enabled":true,"handles":["@test-email@company.com"],"modified":"2026-02-23T14:06:39.918910755Z","renotify_on":[],"trigger":"incident_created_trigger","visibility":"organization"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"incident_type":{"data":{"id":"e64d4c78-53b3-48ce-8e67-e6eec5d2bf1f","type":"incident_types"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -46,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-rules/c35898ba-d355-4e68-a6a5-47e3bcb87d63
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-rules/71eed31b-15c3-418f-9492-3fe4e4966540
   response:
     body:
       string: ''
@@ -60,7 +60,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-rules/c35898ba-d355-4e68-a6a5-47e3bcb87d63
+    uri: https://api.datadoghq.com/api/v2/incidents/config/notification-rules/71eed31b-15c3-418f-9492-3fe4e4966540
   response:
     body:
       string: '{"errors":[{"title":"Generic Error","detail":"rule not found"}]}'
@@ -76,7 +76,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/incidents/config/types/9ff0a6b4-5e86-46c9-a92f-e656551264b2
+    uri: https://api.datadoghq.com/api/v2/incidents/config/types/e64d4c78-53b3-48ce-8e67-e6eec5d2bf1f
   response:
     body:
       string: ''

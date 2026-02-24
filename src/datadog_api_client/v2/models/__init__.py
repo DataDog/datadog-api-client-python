@@ -2442,6 +2442,24 @@ from datadog_api_client.v2.model.incident_impact_response_data import IncidentIm
 from datadog_api_client.v2.model.incident_impact_type import IncidentImpactType
 from datadog_api_client.v2.model.incident_impacts_response import IncidentImpactsResponse
 from datadog_api_client.v2.model.incident_impacts_type import IncidentImpactsType
+from datadog_api_client.v2.model.incident_import_field_attributes import IncidentImportFieldAttributes
+from datadog_api_client.v2.model.incident_import_field_attributes_multiple_value import (
+    IncidentImportFieldAttributesMultipleValue,
+)
+from datadog_api_client.v2.model.incident_import_field_attributes_single_value import (
+    IncidentImportFieldAttributesSingleValue,
+)
+from datadog_api_client.v2.model.incident_import_related_object import IncidentImportRelatedObject
+from datadog_api_client.v2.model.incident_import_relationships import IncidentImportRelationships
+from datadog_api_client.v2.model.incident_import_request import IncidentImportRequest
+from datadog_api_client.v2.model.incident_import_request_attributes import IncidentImportRequestAttributes
+from datadog_api_client.v2.model.incident_import_request_data import IncidentImportRequestData
+from datadog_api_client.v2.model.incident_import_response import IncidentImportResponse
+from datadog_api_client.v2.model.incident_import_response_attributes import IncidentImportResponseAttributes
+from datadog_api_client.v2.model.incident_import_response_data import IncidentImportResponseData
+from datadog_api_client.v2.model.incident_import_response_included_item import IncidentImportResponseIncludedItem
+from datadog_api_client.v2.model.incident_import_response_relationships import IncidentImportResponseRelationships
+from datadog_api_client.v2.model.incident_import_visibility import IncidentImportVisibility
 from datadog_api_client.v2.model.incident_integration_metadata_attributes import IncidentIntegrationMetadataAttributes
 from datadog_api_client.v2.model.incident_integration_metadata_create_data import IncidentIntegrationMetadataCreateData
 from datadog_api_client.v2.model.incident_integration_metadata_create_request import (
@@ -8041,6 +8059,20 @@ __all__ = [
     "IncidentImpactType",
     "IncidentImpactsResponse",
     "IncidentImpactsType",
+    "IncidentImportFieldAttributes",
+    "IncidentImportFieldAttributesMultipleValue",
+    "IncidentImportFieldAttributesSingleValue",
+    "IncidentImportRelatedObject",
+    "IncidentImportRelationships",
+    "IncidentImportRequest",
+    "IncidentImportRequestAttributes",
+    "IncidentImportRequestData",
+    "IncidentImportResponse",
+    "IncidentImportResponseAttributes",
+    "IncidentImportResponseData",
+    "IncidentImportResponseIncludedItem",
+    "IncidentImportResponseRelationships",
+    "IncidentImportVisibility",
     "IncidentIntegrationMetadataAttributes",
     "IncidentIntegrationMetadataCreateData",
     "IncidentIntegrationMetadataCreateRequest",
