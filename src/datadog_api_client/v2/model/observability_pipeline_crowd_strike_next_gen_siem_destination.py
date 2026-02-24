@@ -55,9 +55,11 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
             "buffer": (ObservabilityPipelineBufferOptions,),
             "compression": (ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression,),
             "encoding": (ObservabilityPipelineCrowdStrikeNextGenSiemDestinationEncoding,),
+            "endpoint_url_key": (str,),
             "id": (str,),
             "inputs": ([str],),
             "tls": (ObservabilityPipelineTls,),
+            "token_key": (str,),
             "type": (ObservabilityPipelineCrowdStrikeNextGenSiemDestinationType,),
         }
 
@@ -65,9 +67,11 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         "buffer": "buffer",
         "compression": "compression",
         "encoding": "encoding",
+        "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "inputs": "inputs",
         "tls": "tls",
+        "token_key": "token_key",
         "type": "type",
     }
 
@@ -85,7 +89,9 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
             UnsetType,
         ] = unset,
         compression: Union[ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression, UnsetType] = unset,
+        endpoint_url_key: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        token_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -102,6 +108,9 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationEncoding
 
+        :param endpoint_url_key: Name of the environment variable or secret that holds the CrowdStrike endpoint URL.
+        :type endpoint_url_key: str, optional
+
         :param id: The unique identifier for this component.
         :type id: str
 
@@ -111,6 +120,9 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
 
+        :param token_key: Name of the environment variable or secret that holds the CrowdStrike API token.
+        :type token_key: str, optional
+
         :param type: The destination type. The value should always be ``crowdstrike_next_gen_siem``.
         :type type: ObservabilityPipelineCrowdStrikeNextGenSiemDestinationType
         """
@@ -118,8 +130,12 @@ class ObservabilityPipelineCrowdStrikeNextGenSiemDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if compression is not unset:
             kwargs["compression"] = compression
+        if endpoint_url_key is not unset:
+            kwargs["endpoint_url_key"] = endpoint_url_key
         if tls is not unset:
             kwargs["tls"] = tls
+        if token_key is not unset:
+            kwargs["token_key"] = token_key
         super().__init__(kwargs)
 
         self_.encoding = encoding

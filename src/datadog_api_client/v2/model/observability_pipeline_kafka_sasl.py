@@ -28,19 +28,39 @@ class ObservabilityPipelineKafkaSasl(ModelNormal):
 
         return {
             "mechanism": (ObservabilityPipelineKafkaSaslMechanism,),
+            "password_key": (str,),
+            "username_key": (str,),
         }
 
     attribute_map = {
         "mechanism": "mechanism",
+        "password_key": "password_key",
+        "username_key": "username_key",
     }
 
-    def __init__(self_, mechanism: Union[ObservabilityPipelineKafkaSaslMechanism, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        mechanism: Union[ObservabilityPipelineKafkaSaslMechanism, UnsetType] = unset,
+        password_key: Union[str, UnsetType] = unset,
+        username_key: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Specifies the SASL mechanism for authenticating with a Kafka cluster.
 
         :param mechanism: SASL mechanism used for Kafka authentication.
         :type mechanism: ObservabilityPipelineKafkaSaslMechanism, optional
+
+        :param password_key: Name of the environment variable or secret that holds the SASL password.
+        :type password_key: str, optional
+
+        :param username_key: Name of the environment variable or secret that holds the SASL username.
+        :type username_key: str, optional
         """
         if mechanism is not unset:
             kwargs["mechanism"] = mechanism
+        if password_key is not unset:
+            kwargs["password_key"] = password_key
+        if username_key is not unset:
+            kwargs["username_key"] = username_key
         super().__init__(kwargs)

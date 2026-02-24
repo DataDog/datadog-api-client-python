@@ -68,7 +68,7 @@ class ObservabilityPipelineGooglePubSubSource(ModelNormal):
 
         **Supported pipeline types:** logs
 
-        :param auth: GCP credentials used to authenticate with Google Cloud Storage.
+        :param auth: Google Cloud credentials used to authenticate with Google Cloud Storage.
         :type auth: ObservabilityPipelineGcpAuth, optional
 
         :param decoding: The decoding format used to interpret incoming logs.
@@ -77,7 +77,7 @@ class ObservabilityPipelineGooglePubSubSource(ModelNormal):
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
-        :param project: The GCP project ID that owns the Pub/Sub subscription.
+        :param project: The Google Cloud project ID that owns the Pub/Sub subscription.
         :type project: str
 
         :param subscription: The Pub/Sub subscription name from which messages are consumed.

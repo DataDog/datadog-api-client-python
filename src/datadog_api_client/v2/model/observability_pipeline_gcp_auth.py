@@ -23,9 +23,9 @@ class ObservabilityPipelineGcpAuth(ModelNormal):
 
     def __init__(self_, credentials_file: str, **kwargs):
         """
-        GCP credentials used to authenticate with Google Cloud Storage.
+        Google Cloud credentials used to authenticate with Google Cloud Storage.
 
-        :param credentials_file: Path to the GCP service account key file.
+        :param credentials_file: Path to the Google Cloud service account key file.
         :type credentials_file: str
         """
         super().__init__(kwargs)

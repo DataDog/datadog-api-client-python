@@ -51,6 +51,7 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
             "auth": (ObservabilityPipelineGcpAuth,),
             "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineGooglePubSubDestinationEncoding,),
+            "endpoint_url_key": (str,),
             "id": (str,),
             "inputs": ([str],),
             "project": (str,),
@@ -63,6 +64,7 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
         "auth": "auth",
         "buffer": "buffer",
         "encoding": "encoding",
+        "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "inputs": "inputs",
         "project": "project",
@@ -87,6 +89,7 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        endpoint_url_key: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -95,7 +98,7 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
 
         **Supported pipeline types:** logs
 
-        :param auth: GCP credentials used to authenticate with Google Cloud Storage.
+        :param auth: Google Cloud credentials used to authenticate with Google Cloud Storage.
         :type auth: ObservabilityPipelineGcpAuth, optional
 
         :param buffer: Configuration for buffer settings on destination components.
@@ -104,13 +107,16 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineGooglePubSubDestinationEncoding
 
+        :param endpoint_url_key: Name of the environment variable or secret that holds the Google Cloud Pub/Sub endpoint URL.
+        :type endpoint_url_key: str, optional
+
         :param id: The unique identifier for this component.
         :type id: str
 
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
 
-        :param project: The GCP project ID that owns the Pub/Sub topic.
+        :param project: The Google Cloud project ID that owns the Pub/Sub topic.
         :type project: str
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
@@ -126,6 +132,8 @@ class ObservabilityPipelineGooglePubSubDestination(ModelNormal):
             kwargs["auth"] = auth
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if endpoint_url_key is not unset:
+            kwargs["endpoint_url_key"] = endpoint_url_key
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)

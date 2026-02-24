@@ -37,6 +37,7 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         )
 
         return {
+            "bootstrap_servers_key": (str,),
             "group_id": (str,),
             "id": (str,),
             "librdkafka_options": ([ObservabilityPipelineKafkaLibrdkafkaOption],),
@@ -47,6 +48,7 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         }
 
     attribute_map = {
+        "bootstrap_servers_key": "bootstrap_servers_key",
         "group_id": "group_id",
         "id": "id",
         "librdkafka_options": "librdkafka_options",
@@ -62,6 +64,7 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         id: str,
         topics: List[str],
         type: ObservabilityPipelineKafkaSourceType,
+        bootstrap_servers_key: Union[str, UnsetType] = unset,
         librdkafka_options: Union[List[ObservabilityPipelineKafkaLibrdkafkaOption], UnsetType] = unset,
         sasl: Union[ObservabilityPipelineKafkaSasl, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
@@ -71,6 +74,9 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         The ``kafka`` source ingests data from Apache Kafka topics.
 
         **Supported pipeline types:** logs
+
+        :param bootstrap_servers_key: Name of the environment variable or secret that holds the Kafka bootstrap servers list.
+        :type bootstrap_servers_key: str, optional
 
         :param group_id: Consumer group ID used by the Kafka client.
         :type group_id: str
@@ -93,6 +99,8 @@ class ObservabilityPipelineKafkaSource(ModelNormal):
         :param type: The source type. The value should always be ``kafka``.
         :type type: ObservabilityPipelineKafkaSourceType
         """
+        if bootstrap_servers_key is not unset:
+            kwargs["bootstrap_servers_key"] = bootstrap_servers_key
         if librdkafka_options is not unset:
             kwargs["librdkafka_options"] = librdkafka_options
         if sasl is not unset:

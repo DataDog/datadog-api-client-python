@@ -65,6 +65,7 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
         )
 
         return {
+            "bootstrap_servers_key": (str,),
             "compression": (ObservabilityPipelineKafkaDestinationCompression,),
             "encoding": (ObservabilityPipelineKafkaDestinationEncoding,),
             "headers_key": (str,),
@@ -83,6 +84,7 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
         }
 
     attribute_map = {
+        "bootstrap_servers_key": "bootstrap_servers_key",
         "compression": "compression",
         "encoding": "encoding",
         "headers_key": "headers_key",
@@ -107,6 +109,7 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
         inputs: List[str],
         topic: str,
         type: ObservabilityPipelineKafkaDestinationType,
+        bootstrap_servers_key: Union[str, UnsetType] = unset,
         compression: Union[ObservabilityPipelineKafkaDestinationCompression, UnsetType] = unset,
         headers_key: Union[str, UnsetType] = unset,
         key_field: Union[str, UnsetType] = unset,
@@ -123,6 +126,9 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
         The ``kafka`` destination sends logs to Apache Kafka topics.
 
         **Supported pipeline types:** logs
+
+        :param bootstrap_servers_key: Name of the environment variable or secret that holds the Kafka bootstrap servers list.
+        :type bootstrap_servers_key: str, optional
 
         :param compression: Compression codec for Kafka messages.
         :type compression: ObservabilityPipelineKafkaDestinationCompression, optional
@@ -169,6 +175,8 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
         :param type: The destination type. The value should always be ``kafka``.
         :type type: ObservabilityPipelineKafkaDestinationType
         """
+        if bootstrap_servers_key is not unset:
+            kwargs["bootstrap_servers_key"] = bootstrap_servers_key
         if compression is not unset:
             kwargs["compression"] = compression
         if headers_key is not unset:

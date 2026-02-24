@@ -24,6 +24,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param type: The source type. The value should always be `datadog_agent`.
         :type type: ObservabilityPipelineDatadogAgentSourceType
 
+        :param address_key: Name of the environment variable or secret that holds the Firehose delivery stream address.
+        :type address_key: str, optional
+
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
         :type auth: ObservabilityPipelineAwsAuth, optional
@@ -31,10 +34,13 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param region: AWS region where the S3 bucket resides.
         :type region: str
 
+        :param url_key: Name of the environment variable or secret that holds the S3 bucket URL.
+        :type url_key: str, optional
+
         :param decoding: The decoding format used to interpret incoming logs.
         :type decoding: ObservabilityPipelineDecoding
 
-        :param project: The GCP project ID that owns the Pub/Sub subscription.
+        :param project: The Google Cloud project ID that owns the Pub/Sub subscription.
         :type project: str
 
         :param subscription: The Pub/Sub subscription name from which messages are consumed.
@@ -43,11 +49,29 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param auth_strategy: Optional authentication strategy for HTTP requests.
         :type auth_strategy: ObservabilityPipelineHttpClientSourceAuthStrategy, optional
 
+        :param custom_key: Name of the environment variable or secret that holds a custom header value (used with custom auth strategies).
+        :type custom_key: str, optional
+
+        :param endpoint_url_key: Name of the environment variable or secret that holds the HTTP endpoint URL to scrape.
+        :type endpoint_url_key: str, optional
+
+        :param password_key: Name of the environment variable or secret that holds the password (used when `auth_strategy` is `basic`).
+        :type password_key: str, optional
+
         :param scrape_interval_secs: The interval (in seconds) between HTTP scrape requests.
         :type scrape_interval_secs: int, optional
 
         :param scrape_timeout_secs: The timeout (in seconds) for each scrape request.
         :type scrape_timeout_secs: int, optional
+
+        :param token_key: Name of the environment variable or secret that holds the bearer token (used when `auth_strategy` is `bearer`).
+        :type token_key: str, optional
+
+        :param username_key: Name of the environment variable or secret that holds the username (used when `auth_strategy` is `basic`).
+        :type username_key: str, optional
+
+        :param bootstrap_servers_key: Name of the environment variable or secret that holds the Kafka bootstrap servers list.
+        :type bootstrap_servers_key: str, optional
 
         :param group_id: Consumer group ID used by the Kafka client.
         :type group_id: str

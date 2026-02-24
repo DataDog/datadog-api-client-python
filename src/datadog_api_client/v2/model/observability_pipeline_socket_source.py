@@ -56,6 +56,7 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         )
 
         return {
+            "address_key": (str,),
             "framing": (ObservabilityPipelineSocketSourceFraming,),
             "id": (str,),
             "mode": (ObservabilityPipelineSocketSourceMode,),
@@ -64,6 +65,7 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         }
 
     attribute_map = {
+        "address_key": "address_key",
         "framing": "framing",
         "id": "id",
         "mode": "mode",
@@ -84,6 +86,7 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         id: str,
         mode: ObservabilityPipelineSocketSourceMode,
         type: ObservabilityPipelineSocketSourceType,
+        address_key: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -91,6 +94,9 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         The ``socket`` source ingests logs over TCP or UDP.
 
         **Supported pipeline types:** logs
+
+        :param address_key: Name of the environment variable or secret that holds the listen address for the socket.
+        :type address_key: str, optional
 
         :param framing: Framing method configuration for the socket source.
         :type framing: ObservabilityPipelineSocketSourceFraming
@@ -107,6 +113,8 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         :param type: The source type. The value should always be ``socket``.
         :type type: ObservabilityPipelineSocketSourceType
         """
+        if address_key is not unset:
+            kwargs["address_key"] = address_key
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)

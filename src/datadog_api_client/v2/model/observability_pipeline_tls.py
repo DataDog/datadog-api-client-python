@@ -20,16 +20,23 @@ class ObservabilityPipelineTls(ModelNormal):
             "ca_file": (str,),
             "crt_file": (str,),
             "key_file": (str,),
+            "key_pass_key": (str,),
         }
 
     attribute_map = {
         "ca_file": "ca_file",
         "crt_file": "crt_file",
         "key_file": "key_file",
+        "key_pass_key": "key_pass_key",
     }
 
     def __init__(
-        self_, crt_file: str, ca_file: Union[str, UnsetType] = unset, key_file: Union[str, UnsetType] = unset, **kwargs
+        self_,
+        crt_file: str,
+        ca_file: Union[str, UnsetType] = unset,
+        key_file: Union[str, UnsetType] = unset,
+        key_pass_key: Union[str, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Configuration for enabling TLS encryption between the pipeline component and external services.
@@ -42,11 +49,16 @@ class ObservabilityPipelineTls(ModelNormal):
 
         :param key_file: Path to the private key file associated with the TLS client certificate. Used for mutual TLS authentication.
         :type key_file: str, optional
+
+        :param key_pass_key: Name of the environment variable or secret that holds the passphrase for the private key file.
+        :type key_pass_key: str, optional
         """
         if ca_file is not unset:
             kwargs["ca_file"] = ca_file
         if key_file is not unset:
             kwargs["key_file"] = key_file
+        if key_pass_key is not unset:
+            kwargs["key_pass_key"] = key_pass_key
         super().__init__(kwargs)
 
         self_.crt_file = crt_file

@@ -36,6 +36,7 @@ class AzureStorageDestination(ModelNormal):
         return {
             "blob_prefix": (str,),
             "buffer": (ObservabilityPipelineBufferOptions,),
+            "connection_string_key": (str,),
             "container_name": (str,),
             "id": (str,),
             "inputs": ([str],),
@@ -45,6 +46,7 @@ class AzureStorageDestination(ModelNormal):
     attribute_map = {
         "blob_prefix": "blob_prefix",
         "buffer": "buffer",
+        "connection_string_key": "connection_string_key",
         "container_name": "container_name",
         "id": "id",
         "inputs": "inputs",
@@ -65,6 +67,7 @@ class AzureStorageDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        connection_string_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -77,6 +80,9 @@ class AzureStorageDestination(ModelNormal):
 
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
+
+        :param connection_string_key: Name of the environment variable or secret that holds the Azure Storage connection string.
+        :type connection_string_key: str, optional
 
         :param container_name: The name of the Azure Blob Storage container to store logs in.
         :type container_name: str
@@ -94,6 +100,8 @@ class AzureStorageDestination(ModelNormal):
             kwargs["blob_prefix"] = blob_prefix
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if connection_string_key is not unset:
+            kwargs["connection_string_key"] = connection_string_key
         super().__init__(kwargs)
 
         self_.container_name = container_name

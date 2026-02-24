@@ -21,6 +21,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param compression: Compression configuration for HTTP requests.
         :type compression: ObservabilityPipelineHttpClientDestinationCompression, optional
 
+        :param custom_key: Name of the environment variable or secret that holds a custom header value (used with custom auth strategies).
+        :type custom_key: str, optional
+
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineHttpClientDestinationEncoding
 
@@ -30,11 +33,23 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param inputs: A list of component IDs whose output is used as the input for this component.
         :type inputs: [str]
 
+        :param password_key: Name of the environment variable or secret that holds the password (used when `auth_strategy` is `basic`).
+        :type password_key: str, optional
+
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
 
+        :param token_key: Name of the environment variable or secret that holds the bearer token (used when `auth_strategy` is `bearer`).
+        :type token_key: str, optional
+
         :param type: The destination type. The value should always be `http_client`.
         :type type: ObservabilityPipelineHttpClientDestinationType
+
+        :param uri_key: Name of the environment variable or secret that holds the HTTP endpoint URI.
+        :type uri_key: str, optional
+
+        :param username_key: Name of the environment variable or secret that holds the username (used when `auth_strategy` is `basic`).
+        :type username_key: str, optional
 
         :param auth: Authentication settings for the Amazon OpenSearch destination.
             The `strategy` field determines whether basic or AWS-based authentication is used.
@@ -64,8 +79,14 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param blob_prefix: Optional prefix for blobs written to the container.
         :type blob_prefix: str, optional
 
+        :param connection_string_key: Name of the environment variable or secret that holds the Azure Storage connection string.
+        :type connection_string_key: str, optional
+
         :param container_name: The name of the Azure Blob Storage container to store logs in.
         :type container_name: str
+
+        :param endpoint_url_key: Name of the environment variable or secret that holds the CloudPrem endpoint URL.
+        :type endpoint_url_key: str, optional
 
         :param routes: A list of routing rules that forward matching logs to Datadog using dedicated API keys.
         :type routes: [ObservabilityPipelineDatadogLogsDestinationRoute], optional
@@ -88,11 +109,14 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param metadata: Custom metadata to attach to each object uploaded to the GCS bucket.
         :type metadata: [ObservabilityPipelineMetadataEntry], optional
 
-        :param project: The GCP project ID that owns the Pub/Sub topic.
+        :param project: The Google Cloud project ID that owns the Pub/Sub topic.
         :type project: str
 
         :param topic: The Pub/Sub topic name to publish logs to.
         :type topic: str
+
+        :param bootstrap_servers_key: Name of the environment variable or secret that holds the Kafka bootstrap servers list.
+        :type bootstrap_servers_key: str, optional
 
         :param headers_key: The field name to use for Kafka message headers.
         :type headers_key: str, optional
@@ -121,6 +145,12 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param client_id: Azure AD client ID used for authentication.
         :type client_id: str
 
+        :param client_secret_key: Name of the environment variable or secret that holds the Azure AD client secret.
+        :type client_secret_key: str, optional
+
+        :param dce_uri_key: Name of the environment variable or secret that holds the Data Collection Endpoint (DCE) URI.
+        :type dce_uri_key: str, optional
+
         :param dcr_immutable_id: The immutable ID of the Data Collection Rule (DCR).
         :type dcr_immutable_id: str
 
@@ -130,8 +160,17 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param tenant_id: Azure AD tenant ID.
         :type tenant_id: str
 
+        :param account_id_key: Name of the environment variable or secret that holds the New Relic account ID.
+        :type account_id_key: str, optional
+
+        :param license_key_key: Name of the environment variable or secret that holds the New Relic license key.
+        :type license_key_key: str, optional
+
         :param keepalive: Optional socket keepalive duration in milliseconds.
         :type keepalive: int, optional
+
+        :param address_key: Name of the environment variable or secret that holds the socket address (host:port).
+        :type address_key: str, optional
 
         :param framing: Framing method configuration.
         :type framing: ObservabilityPipelineSocketDestinationFraming

@@ -31,6 +31,7 @@ class ObservabilityPipelineAmazonDataFirehoseSource(ModelNormal):
         )
 
         return {
+            "address_key": (str,),
             "auth": (ObservabilityPipelineAwsAuth,),
             "id": (str,),
             "tls": (ObservabilityPipelineTls,),
@@ -38,6 +39,7 @@ class ObservabilityPipelineAmazonDataFirehoseSource(ModelNormal):
         }
 
     attribute_map = {
+        "address_key": "address_key",
         "auth": "auth",
         "id": "id",
         "tls": "tls",
@@ -48,6 +50,7 @@ class ObservabilityPipelineAmazonDataFirehoseSource(ModelNormal):
         self_,
         id: str,
         type: ObservabilityPipelineAmazonDataFirehoseSourceType,
+        address_key: Union[str, UnsetType] = unset,
         auth: Union[ObservabilityPipelineAwsAuth, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
@@ -56,6 +59,9 @@ class ObservabilityPipelineAmazonDataFirehoseSource(ModelNormal):
         The ``amazon_data_firehose`` source ingests logs from AWS Data Firehose.
 
         **Supported pipeline types:** logs
+
+        :param address_key: Name of the environment variable or secret that holds the Firehose delivery stream address.
+        :type address_key: str, optional
 
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
@@ -70,6 +76,8 @@ class ObservabilityPipelineAmazonDataFirehoseSource(ModelNormal):
         :param type: The source type. The value should always be ``amazon_data_firehose``.
         :type type: ObservabilityPipelineAmazonDataFirehoseSourceType
         """
+        if address_key is not unset:
+            kwargs["address_key"] = address_key
         if auth is not unset:
             kwargs["auth"] = auth
         if tls is not unset:
