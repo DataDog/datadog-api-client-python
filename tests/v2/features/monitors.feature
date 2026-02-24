@@ -241,7 +241,10 @@ Feature: Monitors
     And operation "ListMonitorUserTemplates" enabled
     When the request is sent
     Then the response status is 200 OK
-    And the response "data" has length 1
+    And the response "data" has item with field "type" with value "monitor-user-template"
+    And the response "data" has item with field "id" with value "{{ monitor_user_template.data.id }}"
+    And the response "data" has item with field "attributes.description" with value "It's a threshold"
+    And the response "data" has item with field "attributes.monitor_definition.message" with value "cats"
 
   @skip-validation @team:DataDog/monitor-app
   Scenario: Update a monitor notification rule returns "Bad Request" response
