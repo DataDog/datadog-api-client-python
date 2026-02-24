@@ -12758,6 +12758,104 @@ datadog\_api\_client.v2.model.incident\_impacts\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_import\_field\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_field_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_field\_attributes\_multiple\_value module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_field_attributes_multiple_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_field\_attributes\_single\_value module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_field_attributes_single_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_related\_object module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_related_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_relationships module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_request\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_response\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_response\_included\_item module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_response_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_response\_relationships module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_response_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_import\_visibility module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_import_visibility
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_integration\_metadata\_attributes module
 --------------------------------------------------------------------------------
 

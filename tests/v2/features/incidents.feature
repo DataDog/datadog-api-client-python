@@ -902,6 +902,32 @@ Feature: Incidents
     And the response "data.attributes.title" has the same value as "incident.data.attributes.title"
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Import an incident returns "Bad Request" response
+    Given operation "ImportIncident" enabled
+    And new "ImportIncident" request
+    And body with value {"data": {"attributes": {"declared": "2025-01-01T00:00:00Z", "detected": "2025-01-01T00:00:00Z", "fields": {"severity": {"value": "SEV-5"}, "state": {"value": "active"}}, "incident_type_uuid": "00000000-0000-0000-0000-000000000000", "resolved": "2025-01-01T01:00:00Z", "title": "Imported incident from external system", "visibility": "organization"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "declared_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/incident-app
+  Scenario: Import an incident returns "CREATED" response
+    Given operation "ImportIncident" enabled
+    And new "ImportIncident" request
+    And body with value {"data": {"type": "incidents", "attributes": {"title": "{{unique}}", "visibility": "organization"}}}
+    When the request is sent
+    Then the response status is 201 CREATED
+    And the response "data.type" is equal to "incidents"
+    And the response "data.attributes.title" has the same value as "unique"
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Import an incident returns "Not Found" response
+    Given operation "ImportIncident" enabled
+    And new "ImportIncident" request
+    And body with value {"data": {"attributes": {"declared": "2025-01-01T00:00:00Z", "detected": "2025-01-01T00:00:00Z", "fields": {"severity": {"value": "SEV-5"}, "state": {"value": "active"}}, "incident_type_uuid": "00000000-0000-0000-0000-000000000000", "resolved": "2025-01-01T01:00:00Z", "title": "Imported incident from external system", "visibility": "organization"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "declared_by_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: List an incident's impacts returns "Bad Request" response
     Given new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "REPLACE.ME"
