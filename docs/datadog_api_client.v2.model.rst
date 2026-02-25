@@ -20955,6 +20955,13 @@ datadog\_api\_client.v2.model.product\_analytics\_interval module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.product\_analytics\_join\_keys module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_join_keys
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.product\_analytics\_occurrence\_filter module
 ---------------------------------------------------------------------------
 
@@ -20994,6 +21001,125 @@ datadog\_api\_client.v2.model.product\_analytics\_response\_meta\_status module
 -------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.product_analytics_response_meta_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sampling module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sampling
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_aggregated\_node module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_aggregated_node
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_aggregated\_node\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_aggregated_node_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_definition module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_link module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_link
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_node module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_node
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_node\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_node_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_request\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_request\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_response\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_response\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_response\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_search module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_sankey\_time module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_sankey_time
    :members:
    :show-inheritance:
 
