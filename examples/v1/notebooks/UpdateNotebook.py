@@ -19,6 +19,7 @@ from datadog_api_client.v1.model.notebook_timeseries_cell_attributes import Note
 from datadog_api_client.v1.model.notebook_update_data import NotebookUpdateData
 from datadog_api_client.v1.model.notebook_update_data_attributes import NotebookUpdateDataAttributes
 from datadog_api_client.v1.model.notebook_update_request import NotebookUpdateRequest
+from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
@@ -27,7 +28,6 @@ from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
-from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 # there is a valid "notebook" in the system
 NOTEBOOK_DATA_ID = environ["NOTEBOOK_DATA_ID"]
@@ -52,7 +52,7 @@ body = NotebookUpdateRequest(
                                 TimeseriesWidgetRequest(
                                     display_type=WidgetDisplayType.LINE,
                                     q="avg:system.load.1{*}",
-                                    style=WidgetRequestStyle(
+                                    style=TimeseriesRequestStyle(
                                         line_type=WidgetLineType.SOLID,
                                         line_width=WidgetLineWidth.NORMAL,
                                         palette="dog_classic",
