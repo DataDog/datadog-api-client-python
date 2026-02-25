@@ -711,6 +711,13 @@ datadog\_api\_client.v2.api.users\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.widgets\_api module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.widgets_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.workflow\_automation\_api module
 ------------------------------------------------------------
 

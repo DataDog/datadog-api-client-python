@@ -99,6 +99,7 @@ from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.users_api import UsersApi
+from datadog_api_client.v2.api.widgets_api import WidgetsApi
 from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomationApi
 
 
@@ -204,5 +205,6 @@ __all__ = [
     "TestOptimizationApi",
     "UsageMeteringApi",
     "UsersApi",
+    "WidgetsApi",
     "WorkflowAutomationApi",
 ]

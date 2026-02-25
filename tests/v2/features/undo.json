@@ -5981,6 +5981,38 @@
       "type": "safe"
     }
   },
+  "SearchWidgetsApiV2WidgetsExperienceTypeGet": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWidgetApiV2WidgetsExperienceTypePost": {
+    "tag": "Widgets",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWidgetApiV2WidgetsExperienceTypeUuidDelete": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWidgetApiV2WidgetsExperienceTypeUuidGet": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWidgetApiV2WidgetsExperienceTypeUuidPut": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateWorkflow": {
     "tag": "Workflow Automation",
     "undo": {

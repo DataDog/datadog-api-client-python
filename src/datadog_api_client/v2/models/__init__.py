@@ -1191,6 +1191,13 @@ from datadog_api_client.v2.model.create_on_call_notification_rule_request_data i
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
+from datadog_api_client.v2.model.create_or_update_widget_request_attributes import CreateOrUpdateWidgetRequestAttributes
+from datadog_api_client.v2.model.create_or_update_widget_request_jsonapi_request_document import (
+    CreateOrUpdateWidgetRequestJSONAPIRequestDocument,
+)
+from datadog_api_client.v2.model.create_or_update_widget_request_resource_object_request import (
+    CreateOrUpdateWidgetRequestResourceObjectRequest,
+)
 from datadog_api_client.v2.model.create_page_request import CreatePageRequest
 from datadog_api_client.v2.model.create_page_request_data import CreatePageRequestData
 from datadog_api_client.v2.model.create_page_request_data_attributes import CreatePageRequestDataAttributes
@@ -1583,6 +1590,7 @@ from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItems
 from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
 from datadog_api_client.v2.model.datastore_trigger import DatastoreTrigger
 from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
+from datadog_api_client.v2.model.definition import Definition
 from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.degradation_array import DegradationArray
 from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
@@ -1873,6 +1881,9 @@ from datadog_api_client.v2.model.entity_v3_system_datadog import EntityV3SystemD
 from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
 from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.error_handler import ErrorHandler
+from datadog_api_client.v2.model.error_links import ErrorLinks
+from datadog_api_client.v2.model.error_links_about import ErrorLinksAbout
+from datadog_api_client.v2.model.error_source import ErrorSource
 from datadog_api_client.v2.model.escalation import Escalation
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
@@ -2753,6 +2764,7 @@ from datadog_api_client.v2.model.item_api_payload_meta import ItemApiPayloadMeta
 from datadog_api_client.v2.model.item_api_payload_meta_page import ItemApiPayloadMetaPage
 from datadog_api_client.v2.model.item_api_payload_meta_schema import ItemApiPayloadMetaSchema
 from datadog_api_client.v2.model.item_api_payload_meta_schema_field import ItemApiPayloadMetaSchemaField
+from datadog_api_client.v2.model.jsonapi_attributes import JSONAPIAttributes
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
@@ -2827,7 +2839,15 @@ from datadog_api_client.v2.model.leaked_key import LeakedKey
 from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
 from datadog_api_client.v2.model.library import Library
+from datadog_api_client.v2.model.link_object import LinkObject
 from datadog_api_client.v2.model.links import Links
+from datadog_api_client.v2.model.links_described_by import LinksDescribedBy
+from datadog_api_client.v2.model.links_first import LinksFirst
+from datadog_api_client.v2.model.links_last import LinksLast
+from datadog_api_client.v2.model.links_next import LinksNext
+from datadog_api_client.v2.model.links_prev import LinksPrev
+from datadog_api_client.v2.model.links_related import LinksRelated
+from datadog_api_client.v2.model.links_self import LinksSelf
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
@@ -4403,6 +4423,7 @@ from datadog_api_client.v2.model.relation_response_type import RelationResponseT
 from datadog_api_client.v2.model.relation_to_entity import RelationToEntity
 from datadog_api_client.v2.model.relation_type import RelationType
 from datadog_api_client.v2.model.relationship_item import RelationshipItem
+from datadog_api_client.v2.model.relationship_object_output_data import RelationshipObjectOutputData
 from datadog_api_client.v2.model.relationship_to_incident import RelationshipToIncident
 from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
 from datadog_api_client.v2.model.relationship_to_incident_attachment_data import RelationshipToIncidentAttachmentData
@@ -4500,6 +4521,11 @@ from datadog_api_client.v2.model.resolve_vulnerable_symbols_response_results_vul
 )
 from datadog_api_client.v2.model.resource_filter_attributes import ResourceFilterAttributes
 from datadog_api_client.v2.model.resource_filter_request_type import ResourceFilterRequestType
+from datadog_api_client.v2.model.resource_identifier_object import ResourceIdentifierObject
+from datadog_api_client.v2.model.resource_object_input_attributes import ResourceObjectInputAttributes
+from datadog_api_client.v2.model.resource_object_input_attributes_one_of import ResourceObjectInputAttributesOneOf
+from datadog_api_client.v2.model.resource_object_output_attributes import ResourceObjectOutputAttributes
+from datadog_api_client.v2.model.resource_object_output_attributes_one_of import ResourceObjectOutputAttributesOneOf
 from datadog_api_client.v2.model.response_meta_attributes import ResponseMetaAttributes
 from datadog_api_client.v2.model.restriction_policy import RestrictionPolicy
 from datadog_api_client.v2.model.restriction_policy_attributes import RestrictionPolicyAttributes
@@ -6190,7 +6216,19 @@ from datadog_api_client.v2.model.watcher_data import WatcherData
 from datadog_api_client.v2.model.watcher_data_attributes import WatcherDataAttributes
 from datadog_api_client.v2.model.watcher_data_type import WatcherDataType
 from datadog_api_client.v2.model.weekday import Weekday
+from datadog_api_client.v2.model.widget_error_input import WidgetErrorInput
+from datadog_api_client.v2.model.widget_experience_type import WidgetExperienceType
+from datadog_api_client.v2.model.widget_links import WidgetLinks
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v2.model.widget_relationship_object_input import WidgetRelationshipObjectInput
+from datadog_api_client.v2.model.widget_relationship_object_output import WidgetRelationshipObjectOutput
+from datadog_api_client.v2.model.widget_resource_object_input import WidgetResourceObjectInput
+from datadog_api_client.v2.model.widget_resource_object_output import WidgetResourceObjectOutput
+from datadog_api_client.v2.model.widget_schema_attributes import WidgetSchemaAttributes
+from datadog_api_client.v2.model.widget_schema_jsonapi_document import WidgetSchemaJSONAPIDocument
+from datadog_api_client.v2.model.widget_schema_jsonapi_list_document import WidgetSchemaJSONAPIListDocument
+from datadog_api_client.v2.model.widget_schema_resource import WidgetSchemaResource
+from datadog_api_client.v2.model.widget_type import WidgetType
 from datadog_api_client.v2.model.workflow_data import WorkflowData
 from datadog_api_client.v2.model.workflow_data_attributes import WorkflowDataAttributes
 from datadog_api_client.v2.model.workflow_data_relationships import WorkflowDataRelationships
@@ -7116,6 +7154,9 @@ __all__ = [
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
+    "CreateOrUpdateWidgetRequestAttributes",
+    "CreateOrUpdateWidgetRequestJSONAPIRequestDocument",
+    "CreateOrUpdateWidgetRequestResourceObjectRequest",
     "CreatePageRequest",
     "CreatePageRequestData",
     "CreatePageRequestDataAttributes",
@@ -7380,6 +7421,7 @@ __all__ = [
     "DatastorePrimaryKeyGenerationStrategy",
     "DatastoreTrigger",
     "DatastoreTriggerWrapper",
+    "Definition",
     "Degradation",
     "DegradationArray",
     "DegradationArrayIncluded",
@@ -7586,6 +7628,9 @@ __all__ = [
     "EntityV3SystemKind",
     "EntityV3SystemSpec",
     "ErrorHandler",
+    "ErrorLinks",
+    "ErrorLinksAbout",
+    "ErrorSource",
     "Escalation",
     "EscalationPolicy",
     "EscalationPolicyCreateRequest",
@@ -8300,6 +8345,7 @@ __all__ = [
     "ItemApiPayloadMetaPage",
     "ItemApiPayloadMetaSchema",
     "ItemApiPayloadMetaSchemaField",
+    "JSONAPIAttributes",
     "JSONAPIErrorItem",
     "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
@@ -8366,7 +8412,15 @@ __all__ = [
     "LeakedKeyAttributes",
     "LeakedKeyType",
     "Library",
+    "LinkObject",
     "Links",
+    "LinksDescribedBy",
+    "LinksFirst",
+    "LinksLast",
+    "LinksNext",
+    "LinksPrev",
+    "LinksRelated",
+    "LinksSelf",
     "ListAPIsResponse",
     "ListAPIsResponseData",
     "ListAPIsResponseDataAttributes",
@@ -9334,6 +9388,7 @@ __all__ = [
     "RelationToEntity",
     "RelationType",
     "RelationshipItem",
+    "RelationshipObjectOutputData",
     "RelationshipToIncident",
     "RelationshipToIncidentAttachment",
     "RelationshipToIncidentAttachmentData",
@@ -9403,6 +9458,11 @@ __all__ = [
     "ResolveVulnerableSymbolsResponseResultsVulnerableSymbolsSymbols",
     "ResourceFilterAttributes",
     "ResourceFilterRequestType",
+    "ResourceIdentifierObject",
+    "ResourceObjectInputAttributes",
+    "ResourceObjectInputAttributesOneOf",
+    "ResourceObjectOutputAttributes",
+    "ResourceObjectOutputAttributesOneOf",
     "ResponseMetaAttributes",
     "RestrictionPolicy",
     "RestrictionPolicyAttributes",
@@ -10629,7 +10689,19 @@ __all__ = [
     "WatcherDataAttributes",
     "WatcherDataType",
     "Weekday",
+    "WidgetErrorInput",
+    "WidgetExperienceType",
+    "WidgetLinks",
     "WidgetLiveSpan",
+    "WidgetRelationshipObjectInput",
+    "WidgetRelationshipObjectOutput",
+    "WidgetResourceObjectInput",
+    "WidgetResourceObjectOutput",
+    "WidgetSchemaAttributes",
+    "WidgetSchemaJSONAPIDocument",
+    "WidgetSchemaJSONAPIListDocument",
+    "WidgetSchemaResource",
+    "WidgetType",
     "WorkflowData",
     "WorkflowDataAttributes",
     "WorkflowDataRelationships",
