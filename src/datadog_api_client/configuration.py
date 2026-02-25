@@ -310,7 +310,6 @@ class Configuration:
                 "v2.create_dataset": False,
                 "v2.delete_dataset": False,
                 "v2.get_all_datasets": False,
-                "v2.get_dataset": False,
                 "v2.update_dataset": False,
                 "v2.cancel_data_deletion_request": False,
                 "v2.create_data_deletion_request": False,
