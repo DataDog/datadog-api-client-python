@@ -3731,6 +3731,12 @@
       "type": "safe"
     }
   },
+  "QueryProductAnalyticsSankey": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "QueryEventFilteredUsers": {
     "tag": "Rum Audience Management",
     "undo": {

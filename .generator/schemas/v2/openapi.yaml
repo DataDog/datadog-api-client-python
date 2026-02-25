@@ -48417,6 +48417,19 @@ components:
         type:
           type: string
       type: object
+    ProductAnalyticsJoinKeys:
+      description: Join key configuration for correlating events.
+      properties:
+        primary:
+          description: The primary join key facet.
+          example: '@session.id'
+          type: string
+        secondary:
+          description: Secondary join key facets.
+          items:
+            type: string
+          type: array
+      type: object
     ProductAnalyticsOccurrenceFilter:
       description: Filter for occurrence-based queries.
       properties:
@@ -48484,6 +48497,273 @@ components:
       - DONE
       - RUNNING
       - TIMEOUT
+    ProductAnalyticsSampling:
+      description: Sampling configuration.
+      properties:
+        enabled:
+          default: false
+          description: Whether sampling is enabled.
+          type: boolean
+      type: object
+    ProductAnalyticsSankeyAggregatedNode:
+      description: A node aggregated into an "other" node.
+      properties:
+        id:
+          type: string
+        incoming_value:
+          format: int64
+          type: integer
+        name:
+          type: string
+        outgoing_value:
+          format: int64
+          type: integer
+        type:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyAggregatedNodeType'
+        value:
+          format: int64
+          type: integer
+      type: object
+    ProductAnalyticsSankeyAggregatedNodeType:
+      enum:
+      - aggregated
+      type: string
+      x-enum-varnames:
+      - AGGREGATED
+    ProductAnalyticsSankeyDefinition:
+      description: 'Sankey visualization definition. Set either `source` or `target`,
+        not both.
+
+        Use `source` for forward flow (where do users go after this page?) or
+
+        `target` for backward flow (where did users come from?).'
+      properties:
+        entries_per_step:
+          default: 5
+          description: Number of page entries per step. Default 5, max 10.
+          example: 5
+          format: int64
+          maximum: 10
+          type: integer
+        number_of_steps:
+          default: 5
+          description: Number of steps in the flow. Default 5, max 10.
+          example: 5
+          format: int64
+          maximum: 10
+          type: integer
+        source:
+          description: The source page for forward flow analysis. Use "*" for all
+            pages.
+          example: /logs
+          type: string
+        target:
+          description: The target page for backward flow analysis.
+          type: string
+      type: object
+    ProductAnalyticsSankeyLink:
+      description: A link between two nodes in the Sankey diagram.
+      properties:
+        column:
+          description: The step column of the source node.
+          format: int64
+          type: integer
+        id:
+          type: string
+        source:
+          description: The source node ID.
+          type: string
+        target:
+          description: The target node ID.
+          type: string
+        value:
+          description: The number of sessions through this link.
+          format: int64
+          type: integer
+      type: object
+    ProductAnalyticsSankeyNode:
+      description: A node in the Sankey diagram representing a page or aggregation.
+      properties:
+        aggregated_nodes:
+          description: Nodes aggregated into this node (for "other" type).
+          items:
+            $ref: '#/components/schemas/ProductAnalyticsSankeyAggregatedNode'
+          type: array
+        column:
+          description: The step column (0-indexed).
+          format: int64
+          type: integer
+        dropoff_value:
+          format: int64
+          type: integer
+        id:
+          type: string
+        incoming_value:
+          format: int64
+          type: integer
+        name:
+          description: The page name.
+          example: /logs
+          type: string
+        outgoing_value:
+          format: int64
+          type: integer
+        type:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyNodeType'
+        value:
+          description: The number of sessions through this node.
+          format: int64
+          type: integer
+      type: object
+    ProductAnalyticsSankeyNodeType:
+      description: Node type.
+      enum:
+      - regular
+      - other
+      - dropoff
+      type: string
+      x-enum-varnames:
+      - REGULAR
+      - OTHER
+      - DROPOFF
+    ProductAnalyticsSankeyRequest:
+      description: Request for computing a Sankey flow analysis.
+      example:
+        data:
+          attributes:
+            data_source: product_analytics
+            definition:
+              entries_per_step: 5
+              number_of_steps: 5
+              source: /logs
+              target: ''
+            search:
+              join_keys:
+                primary: '@session.id'
+              query: '@type:view'
+            time:
+              from: 1771232048460
+              to: 1771836848262
+          type: sankey_request
+      properties:
+        data:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyRequestData'
+      required:
+      - data
+      type: object
+    ProductAnalyticsSankeyRequestAttributes:
+      description: Attributes for a Sankey request.
+      properties:
+        data_source:
+          description: The data source for the Sankey query.
+          example: product_analytics
+          type: string
+        definition:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyDefinition'
+        enforced_execution_type:
+          $ref: '#/components/schemas/ProductAnalyticsExecutionType'
+        request_id:
+          type: string
+        sampling:
+          $ref: '#/components/schemas/ProductAnalyticsSampling'
+        search:
+          $ref: '#/components/schemas/ProductAnalyticsSankeySearch'
+        time:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyTime'
+      required:
+      - time
+      - search
+      - definition
+      - data_source
+      type: object
+    ProductAnalyticsSankeyRequestData:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyRequestAttributes'
+        type:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyRequestType'
+      required:
+      - type
+      - attributes
+      type: object
+    ProductAnalyticsSankeyRequestType:
+      enum:
+      - sankey_request
+      example: sankey_request
+      type: string
+      x-enum-varnames:
+      - SANKEY_REQUEST
+    ProductAnalyticsSankeyResponse:
+      description: Response for a Sankey flow analysis.
+      properties:
+        data:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyResponseData'
+        meta:
+          $ref: '#/components/schemas/ProductAnalyticsResponseMeta'
+      type: object
+    ProductAnalyticsSankeyResponseAttributes:
+      properties:
+        links:
+          description: The links (flows) between nodes.
+          items:
+            $ref: '#/components/schemas/ProductAnalyticsSankeyLink'
+          type: array
+        nodes:
+          description: The nodes (pages) in the Sankey diagram.
+          items:
+            $ref: '#/components/schemas/ProductAnalyticsSankeyNode'
+          type: array
+      type: object
+    ProductAnalyticsSankeyResponseData:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyResponseAttributes'
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/ProductAnalyticsSankeyResponseType'
+      type: object
+    ProductAnalyticsSankeyResponseType:
+      enum:
+      - sankey_response
+      type: string
+      x-enum-varnames:
+      - SANKEY_RESPONSE
+    ProductAnalyticsSankeySearch:
+      description: Search parameters for a Sankey query.
+      properties:
+        audience_filters:
+          $ref: '#/components/schemas/ProductAnalyticsAudienceFilters'
+        join_keys:
+          $ref: '#/components/schemas/ProductAnalyticsJoinKeys'
+        occurrences:
+          $ref: '#/components/schemas/ProductAnalyticsOccurrenceFilter'
+        query:
+          description: The search query. Cannot be empty.
+          example: '@type:view'
+          type: string
+        subquery_id:
+          type: string
+      required:
+      - query
+      type: object
+    ProductAnalyticsSankeyTime:
+      description: Time range for the Sankey query.
+      properties:
+        from:
+          description: Start time in epoch milliseconds.
+          example: 0
+          format: int64
+          type: integer
+        to:
+          description: End time in epoch milliseconds.
+          example: 0
+          format: int64
+          type: integer
+      required:
+      - from
+      - to
+      type: object
     ProductAnalyticsScalarColumn:
       description: A column in a scalar response.
       properties:
@@ -93198,6 +93478,43 @@ paths:
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       summary: Compute timeseries analytics
+      tags:
+      - Product Analytics
+      x-codegen-request-body-name: body
+      x-permission:
+        operator: OR
+        permissions:
+        - rum_apps_read
+  /api/v2/product-analytics/sankey:
+    post:
+      description: 'Compute a Sankey flow analysis showing how users navigate between
+        pages.
+
+        Specify either a `source` page (forward flow) or `target` page (backward flow),
+        but not both.
+
+        Maximum 10 steps and 10 entries per step.'
+      operationId: QueryProductAnalyticsSankey
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductAnalyticsSankeyRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductAnalyticsSankeyResponse'
+          description: OK
+        '400':
+          $ref: '#/components/responses/BadRequestResponse'
+        '403':
+          $ref: '#/components/responses/NotAuthorizedResponse'
+        '429':
+          $ref: '#/components/responses/TooManyRequestsResponse'
+      summary: Compute Sankey flow analysis
       tags:
       - Product Analytics
       x-codegen-request-body-name: body

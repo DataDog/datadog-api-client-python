@@ -4279,6 +4279,7 @@ from datadog_api_client.v2.model.product_analytics_execution_type import Product
 from datadog_api_client.v2.model.product_analytics_group_by import ProductAnalyticsGroupBy
 from datadog_api_client.v2.model.product_analytics_group_by_sort import ProductAnalyticsGroupBySort
 from datadog_api_client.v2.model.product_analytics_interval import ProductAnalyticsInterval
+from datadog_api_client.v2.model.product_analytics_join_keys import ProductAnalyticsJoinKeys
 from datadog_api_client.v2.model.product_analytics_occurrence_filter import ProductAnalyticsOccurrenceFilter
 from datadog_api_client.v2.model.product_analytics_occurrence_query import ProductAnalyticsOccurrenceQuery
 from datadog_api_client.v2.model.product_analytics_occurrence_query_data_source import (
@@ -4287,6 +4288,29 @@ from datadog_api_client.v2.model.product_analytics_occurrence_query_data_source 
 from datadog_api_client.v2.model.product_analytics_occurrence_search import ProductAnalyticsOccurrenceSearch
 from datadog_api_client.v2.model.product_analytics_response_meta import ProductAnalyticsResponseMeta
 from datadog_api_client.v2.model.product_analytics_response_meta_status import ProductAnalyticsResponseMetaStatus
+from datadog_api_client.v2.model.product_analytics_sampling import ProductAnalyticsSampling
+from datadog_api_client.v2.model.product_analytics_sankey_aggregated_node import ProductAnalyticsSankeyAggregatedNode
+from datadog_api_client.v2.model.product_analytics_sankey_aggregated_node_type import (
+    ProductAnalyticsSankeyAggregatedNodeType,
+)
+from datadog_api_client.v2.model.product_analytics_sankey_definition import ProductAnalyticsSankeyDefinition
+from datadog_api_client.v2.model.product_analytics_sankey_link import ProductAnalyticsSankeyLink
+from datadog_api_client.v2.model.product_analytics_sankey_node import ProductAnalyticsSankeyNode
+from datadog_api_client.v2.model.product_analytics_sankey_node_type import ProductAnalyticsSankeyNodeType
+from datadog_api_client.v2.model.product_analytics_sankey_request import ProductAnalyticsSankeyRequest
+from datadog_api_client.v2.model.product_analytics_sankey_request_attributes import (
+    ProductAnalyticsSankeyRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_sankey_request_data import ProductAnalyticsSankeyRequestData
+from datadog_api_client.v2.model.product_analytics_sankey_request_type import ProductAnalyticsSankeyRequestType
+from datadog_api_client.v2.model.product_analytics_sankey_response import ProductAnalyticsSankeyResponse
+from datadog_api_client.v2.model.product_analytics_sankey_response_attributes import (
+    ProductAnalyticsSankeyResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_sankey_response_data import ProductAnalyticsSankeyResponseData
+from datadog_api_client.v2.model.product_analytics_sankey_response_type import ProductAnalyticsSankeyResponseType
+from datadog_api_client.v2.model.product_analytics_sankey_search import ProductAnalyticsSankeySearch
+from datadog_api_client.v2.model.product_analytics_sankey_time import ProductAnalyticsSankeyTime
 from datadog_api_client.v2.model.product_analytics_scalar_column import ProductAnalyticsScalarColumn
 from datadog_api_client.v2.model.product_analytics_scalar_column_meta import ProductAnalyticsScalarColumnMeta
 from datadog_api_client.v2.model.product_analytics_scalar_column_type import ProductAnalyticsScalarColumnType
@@ -9283,12 +9307,30 @@ __all__ = [
     "ProductAnalyticsGroupBy",
     "ProductAnalyticsGroupBySort",
     "ProductAnalyticsInterval",
+    "ProductAnalyticsJoinKeys",
     "ProductAnalyticsOccurrenceFilter",
     "ProductAnalyticsOccurrenceQuery",
     "ProductAnalyticsOccurrenceQueryDataSource",
     "ProductAnalyticsOccurrenceSearch",
     "ProductAnalyticsResponseMeta",
     "ProductAnalyticsResponseMetaStatus",
+    "ProductAnalyticsSampling",
+    "ProductAnalyticsSankeyAggregatedNode",
+    "ProductAnalyticsSankeyAggregatedNodeType",
+    "ProductAnalyticsSankeyDefinition",
+    "ProductAnalyticsSankeyLink",
+    "ProductAnalyticsSankeyNode",
+    "ProductAnalyticsSankeyNodeType",
+    "ProductAnalyticsSankeyRequest",
+    "ProductAnalyticsSankeyRequestAttributes",
+    "ProductAnalyticsSankeyRequestData",
+    "ProductAnalyticsSankeyRequestType",
+    "ProductAnalyticsSankeyResponse",
+    "ProductAnalyticsSankeyResponseAttributes",
+    "ProductAnalyticsSankeyResponseData",
+    "ProductAnalyticsSankeyResponseType",
+    "ProductAnalyticsSankeySearch",
+    "ProductAnalyticsSankeyTime",
     "ProductAnalyticsScalarColumn",
     "ProductAnalyticsScalarColumnMeta",
     "ProductAnalyticsScalarColumnType",

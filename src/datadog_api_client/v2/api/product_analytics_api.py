@@ -11,6 +11,8 @@ from datadog_api_client.v2.model.product_analytics_server_side_event_item import
 from datadog_api_client.v2.model.product_analytics_scalar_response import ProductAnalyticsScalarResponse
 from datadog_api_client.v2.model.product_analytics_analytics_request import ProductAnalyticsAnalyticsRequest
 from datadog_api_client.v2.model.product_analytics_timeseries_response import ProductAnalyticsTimeseriesResponse
+from datadog_api_client.v2.model.product_analytics_sankey_response import ProductAnalyticsSankeyResponse
+from datadog_api_client.v2.model.product_analytics_sankey_request import ProductAnalyticsSankeyRequest
 
 
 class ProductAnalyticsApi:
@@ -25,6 +27,26 @@ class ProductAnalyticsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._query_product_analytics_sankey_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsSankeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/sankey",
+                "operation_id": "query_product_analytics_sankey",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsSankeyRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._query_product_analytics_scalar_endpoint = _Endpoint(
             settings={
@@ -134,6 +156,24 @@ class ProductAnalyticsApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def query_product_analytics_sankey(
+        self,
+        body: ProductAnalyticsSankeyRequest,
+    ) -> ProductAnalyticsSankeyResponse:
+        """Compute Sankey flow analysis.
+
+        Compute a Sankey flow analysis showing how users navigate between pages.
+        Specify either a ``source`` page (forward flow) or ``target`` page (backward flow), but not both.
+        Maximum 10 steps and 10 entries per step.
+
+        :type body: ProductAnalyticsSankeyRequest
+        :rtype: ProductAnalyticsSankeyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_product_analytics_sankey_endpoint.call_with_http_info(**kwargs)
 
     def query_product_analytics_scalar(
         self,

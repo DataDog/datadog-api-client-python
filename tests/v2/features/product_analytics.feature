@@ -13,6 +13,22 @@ Feature: Product Analytics
     And an instance of "ProductAnalytics" API
 
   @generated @skip @team:DataDog/product-analytics-backend
+  Scenario: Compute Sankey flow analysis returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryProductAnalyticsSankey" request
+    And body with value {"data": {"attributes": {"data_source": "product_analytics", "definition": {"entries_per_step": 5, "number_of_steps": 5, "source": "/logs", "target": ""}, "search": {"join_keys": {"primary": "@session.id"}, "query": "@type:view"}, "time": {"from": 1771232048460, "to": 1771836848262}}, "type": "sankey_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/product-analytics-backend
+  Scenario: Compute Sankey flow analysis returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryProductAnalyticsSankey" request
+    And body with value {"data": {"attributes": {"data_source": "product_analytics", "definition": {"entries_per_step": 5, "number_of_steps": 5, "source": "/logs", "target": ""}, "search": {"join_keys": {"primary": "@session.id"}, "query": "@type:view"}, "time": {"from": 1771232048460, "to": 1771836848262}}, "type": "sankey_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/product-analytics-backend
   Scenario: Compute scalar analytics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryProductAnalyticsScalar" request
