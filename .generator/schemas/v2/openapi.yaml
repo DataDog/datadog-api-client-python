@@ -20839,11 +20839,12 @@ components:
       - id
       type: object
     DeploymentRulesOptions:
-      description: Options for deployment rule response representing either faulty
-        deployment detection or monitor options.
-      oneOf:
+      anyOf:
       - $ref: '#/components/schemas/DeploymentRuleOptionsFaultyDeploymentDetection'
       - $ref: '#/components/schemas/DeploymentRuleOptionsMonitor'
+      description: Options for deployment rule response representing either faulty
+        deployment detection or monitor options. The actual type is determined by
+        the parent's 'type' field.
     DetachCaseRequest:
       description: Request for detaching security findings from their case.
       properties:

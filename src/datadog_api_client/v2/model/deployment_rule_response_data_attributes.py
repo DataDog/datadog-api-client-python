@@ -3,14 +3,17 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import Any, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
     datetime,
+    none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -18,17 +21,12 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.deployment_rule_response_data_attributes_created_by import (
         DeploymentRuleResponseDataAttributesCreatedBy,
     )
-    from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
     from datadog_api_client.v2.model.deployment_rule_response_data_attributes_type import (
         DeploymentRuleResponseDataAttributesType,
     )
     from datadog_api_client.v2.model.deployment_rule_response_data_attributes_updated_by import (
         DeploymentRuleResponseDataAttributesUpdatedBy,
     )
-    from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
-        DeploymentRuleOptionsFaultyDeploymentDetection,
-    )
-    from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
 
 
 class DeploymentRuleResponseDataAttributes(ModelNormal):
@@ -37,7 +35,6 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.deployment_rule_response_data_attributes_created_by import (
             DeploymentRuleResponseDataAttributesCreatedBy,
         )
-        from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
         from datadog_api_client.v2.model.deployment_rule_response_data_attributes_type import (
             DeploymentRuleResponseDataAttributesType,
         )
@@ -51,7 +48,18 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
             "dry_run": (bool,),
             "gate_id": (str,),
             "name": (str,),
-            "options": (DeploymentRulesOptions,),
+            "options": (
+                bool,
+                date,
+                datetime,
+                dict,
+                float,
+                int,
+                list,
+                str,
+                UUID,
+                none_type,
+            ),
             "type": (DeploymentRuleResponseDataAttributesType,),
             "updated_at": (datetime,),
             "updated_by": (DeploymentRuleResponseDataAttributesUpdatedBy,),
@@ -76,9 +84,7 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
         dry_run: bool,
         gate_id: str,
         name: str,
-        options: Union[
-            DeploymentRulesOptions, DeploymentRuleOptionsFaultyDeploymentDetection, DeploymentRuleOptionsMonitor
-        ],
+        options: Any,
         type: DeploymentRuleResponseDataAttributesType,
         updated_at: Union[datetime, UnsetType] = unset,
         updated_by: Union[DeploymentRuleResponseDataAttributesUpdatedBy, UnsetType] = unset,
@@ -102,8 +108,8 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
         :param name: The name of the deployment rule.
         :type name: str
 
-        :param options: Options for deployment rule response representing either faulty deployment detection or monitor options.
-        :type options: DeploymentRulesOptions
+        :param options: Options for deployment rule response representing either faulty deployment detection or monitor options. The actual type is determined by the parent's 'type' field.
+        :type options: bool, date, datetime, dict, float, int, list, str, UUID, none_type
 
         :param type: The type of the deployment rule.
         :type type: DeploymentRuleResponseDataAttributesType

@@ -8264,20 +8264,6 @@ datadog\_api\_client.v2.model.deployment\_rule\_data\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.deployment\_rule\_options\_faulty\_deployment\_detection module
----------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_rule\_options\_monitor module
------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_rule_options_monitor
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.deployment\_rule\_response module
 ---------------------------------------------------------------
 
@@ -8317,13 +8303,6 @@ datadog\_api\_client.v2.model.deployment\_rule\_response\_data\_attributes\_upda
 ----------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.deployment_rule_response_data_attributes_updated_by
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.deployment\_rules\_options module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.deployment_rules_options
    :members:
    :show-inheritance:
 
