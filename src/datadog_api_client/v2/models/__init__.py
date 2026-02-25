@@ -4062,6 +4062,70 @@ from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcur
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap_type import OnDemandConcurrencyCapType
+from datadog_api_client.v2.model.on_prem_management_service_create_enrollment_request import (
+    OnPremManagementServiceCreateEnrollmentRequest,
+)
+from datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response import (
+    OnPremManagementServiceCreateEnrollmentResponse,
+)
+from datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response_attributes import (
+    OnPremManagementServiceCreateEnrollmentResponseAttributes,
+)
+from datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response_data import (
+    OnPremManagementServiceCreateEnrollmentResponseData,
+)
+from datadog_api_client.v2.model.on_prem_management_service_create_enrollment_response_type import (
+    OnPremManagementServiceCreateEnrollmentResponseType,
+)
+from datadog_api_client.v2.model.on_prem_management_service_enrollment_attributes import (
+    OnPremManagementServiceEnrollmentAttributes,
+)
+from datadog_api_client.v2.model.on_prem_management_service_enrollment_attributes_runner_modes_items import (
+    OnPremManagementServiceEnrollmentAttributesRunnerModesItems,
+)
+from datadog_api_client.v2.model.on_prem_management_service_enrollment_data_request import (
+    OnPremManagementServiceEnrollmentDataRequest,
+)
+from datadog_api_client.v2.model.on_prem_management_service_enrollment_type import OnPremManagementServiceEnrollmentType
+from datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response import (
+    OnPremManagementServiceGetEnrollmentResponse,
+)
+from datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_attributes import (
+    OnPremManagementServiceGetEnrollmentResponseAttributes,
+)
+from datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_attributes_status import (
+    OnPremManagementServiceGetEnrollmentResponseAttributesStatus,
+)
+from datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_data import (
+    OnPremManagementServiceGetEnrollmentResponseData,
+)
+from datadog_api_client.v2.model.on_prem_management_service_get_enrollment_response_type import (
+    OnPremManagementServiceGetEnrollmentResponseType,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_attributes import (
+    OnPremManagementServiceRegisterTokenAttributes,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_data_request import (
+    OnPremManagementServiceRegisterTokenDataRequest,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_request import (
+    OnPremManagementServiceRegisterTokenRequest,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_response import (
+    OnPremManagementServiceRegisterTokenResponse,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_response_attributes import (
+    OnPremManagementServiceRegisterTokenResponseAttributes,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_response_data import (
+    OnPremManagementServiceRegisterTokenResponseData,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_response_type import (
+    OnPremManagementServiceRegisterTokenResponseType,
+)
+from datadog_api_client.v2.model.on_prem_management_service_register_token_type import (
+    OnPremManagementServiceRegisterTokenType,
+)
 from datadog_api_client.v2.model.open_aiapi_key import OpenAIAPIKey
 from datadog_api_client.v2.model.open_aiapi_key_type import OpenAIAPIKeyType
 from datadog_api_client.v2.model.open_aiapi_key_update import OpenAIAPIKeyUpdate
@@ -9100,6 +9164,28 @@ __all__ = [
     "OnDemandConcurrencyCapAttributes",
     "OnDemandConcurrencyCapResponse",
     "OnDemandConcurrencyCapType",
+    "OnPremManagementServiceCreateEnrollmentRequest",
+    "OnPremManagementServiceCreateEnrollmentResponse",
+    "OnPremManagementServiceCreateEnrollmentResponseAttributes",
+    "OnPremManagementServiceCreateEnrollmentResponseData",
+    "OnPremManagementServiceCreateEnrollmentResponseType",
+    "OnPremManagementServiceEnrollmentAttributes",
+    "OnPremManagementServiceEnrollmentAttributesRunnerModesItems",
+    "OnPremManagementServiceEnrollmentDataRequest",
+    "OnPremManagementServiceEnrollmentType",
+    "OnPremManagementServiceGetEnrollmentResponse",
+    "OnPremManagementServiceGetEnrollmentResponseAttributes",
+    "OnPremManagementServiceGetEnrollmentResponseAttributesStatus",
+    "OnPremManagementServiceGetEnrollmentResponseData",
+    "OnPremManagementServiceGetEnrollmentResponseType",
+    "OnPremManagementServiceRegisterTokenAttributes",
+    "OnPremManagementServiceRegisterTokenDataRequest",
+    "OnPremManagementServiceRegisterTokenRequest",
+    "OnPremManagementServiceRegisterTokenResponse",
+    "OnPremManagementServiceRegisterTokenResponseAttributes",
+    "OnPremManagementServiceRegisterTokenResponseData",
+    "OnPremManagementServiceRegisterTokenResponseType",
+    "OnPremManagementServiceRegisterTokenType",
     "OpenAIAPIKey",
     "OpenAIAPIKeyType",
     "OpenAIAPIKeyUpdate",
