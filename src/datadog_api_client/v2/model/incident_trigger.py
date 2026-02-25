@@ -24,19 +24,28 @@ class IncidentTrigger(ModelNormal):
 
         return {
             "rate_limit": (TriggerRateLimit,),
+            "version": (str,),
         }
 
     attribute_map = {
         "rate_limit": "rateLimit",
+        "version": "version",
     }
 
-    def __init__(self_, rate_limit: Union[TriggerRateLimit, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, rate_limit: Union[TriggerRateLimit, UnsetType] = unset, version: Union[str, UnsetType] = unset, **kwargs
+    ):
         """
         Trigger a workflow from an Incident. For automatic triggering a handle must be configured and the workflow must be published.
 
         :param rate_limit: Defines a rate limit for a trigger.
         :type rate_limit: TriggerRateLimit, optional
+
+        :param version: Version of the incident trigger.
+        :type version: str, optional
         """
         if rate_limit is not unset:
             kwargs["rate_limit"] = rate_limit
+        if version is not unset:
+            kwargs["version"] = version
         super().__init__(kwargs)
