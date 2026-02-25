@@ -23097,6 +23097,27 @@ datadog\_api\_client.v2.model.rum\_compute\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_cross\_product\_sampling module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_cross_product_sampling
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_cross\_product\_sampling\_create module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_cross_product_sampling_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_cross\_product\_sampling\_update module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_cross_product_sampling_update
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_event module
 -----------------------------------------------
 
