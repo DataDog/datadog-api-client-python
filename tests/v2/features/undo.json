@@ -1060,6 +1060,31 @@
       "type": "safe"
     }
   },
+  "CreateAWSCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "operationId": "DeleteAWSCloudAuthPersonaMapping",
+      "parameters": [
+        {
+          "name": "persona_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAWSCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAWSCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateCustomFramework": {
     "tag": "Security Monitoring",
     "undo": {

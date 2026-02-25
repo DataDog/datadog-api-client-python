@@ -36,9 +36,17 @@ from datadog_api_client.v2.model.aws_auth_config_role import AWSAuthConfigRole
 from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_attributes_response import (
     AWSCloudAuthPersonaMappingAttributesResponse,
 )
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_create_attributes import (
+    AWSCloudAuthPersonaMappingCreateAttributes,
+)
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_create_data import AWSCloudAuthPersonaMappingCreateData
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_create_request import (
+    AWSCloudAuthPersonaMappingCreateRequest,
+)
 from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_data_response import (
     AWSCloudAuthPersonaMappingDataResponse,
 )
+from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_response import AWSCloudAuthPersonaMappingResponse
 from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_type import AWSCloudAuthPersonaMappingType
 from datadog_api_client.v2.model.aws_cloud_auth_persona_mappings_response import AWSCloudAuthPersonaMappingsResponse
 from datadog_api_client.v2.model.aws_credentials import AWSCredentials
@@ -6259,7 +6267,11 @@ __all__ = [
     "AWSAuthConfigKeys",
     "AWSAuthConfigRole",
     "AWSCloudAuthPersonaMappingAttributesResponse",
+    "AWSCloudAuthPersonaMappingCreateAttributes",
+    "AWSCloudAuthPersonaMappingCreateData",
+    "AWSCloudAuthPersonaMappingCreateRequest",
     "AWSCloudAuthPersonaMappingDataResponse",
+    "AWSCloudAuthPersonaMappingResponse",
     "AWSCloudAuthPersonaMappingType",
     "AWSCloudAuthPersonaMappingsResponse",
     "AWSCredentials",
