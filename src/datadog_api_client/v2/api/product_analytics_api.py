@@ -8,6 +8,9 @@ from typing import Any, Dict
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.product_analytics_server_side_event_item import ProductAnalyticsServerSideEventItem
+from datadog_api_client.v2.model.product_analytics_scalar_response import ProductAnalyticsScalarResponse
+from datadog_api_client.v2.model.product_analytics_analytics_request import ProductAnalyticsAnalyticsRequest
+from datadog_api_client.v2.model.product_analytics_timeseries_response import ProductAnalyticsTimeseriesResponse
 
 
 class ProductAnalyticsApi:
@@ -22,6 +25,46 @@ class ProductAnalyticsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._query_product_analytics_scalar_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsScalarResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/analytics/scalar",
+                "operation_id": "query_product_analytics_scalar",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsAnalyticsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._query_product_analytics_timeseries_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsTimeseriesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/analytics/timeseries",
+                "operation_id": "query_product_analytics_timeseries",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsAnalyticsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._submit_product_analytics_event_endpoint = _Endpoint(
             settings={
@@ -91,6 +134,41 @@ class ProductAnalyticsApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def query_product_analytics_scalar(
+        self,
+        body: ProductAnalyticsAnalyticsRequest,
+    ) -> ProductAnalyticsScalarResponse:
+        """Compute scalar analytics.
+
+        Compute scalar analytics results for Product Analytics data.
+        Returns aggregated values (counts, averages, percentiles) optionally grouped by facets.
+
+        :type body: ProductAnalyticsAnalyticsRequest
+        :rtype: ProductAnalyticsScalarResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_product_analytics_scalar_endpoint.call_with_http_info(**kwargs)
+
+    def query_product_analytics_timeseries(
+        self,
+        body: ProductAnalyticsAnalyticsRequest,
+    ) -> ProductAnalyticsTimeseriesResponse:
+        """Compute timeseries analytics.
+
+        Compute timeseries analytics results for Product Analytics data.
+        Returns time-bucketed values for charts and trend analysis.
+        The ``compute.interval`` field (milliseconds) is required for time bucketing.
+
+        :type body: ProductAnalyticsAnalyticsRequest
+        :rtype: ProductAnalyticsTimeseriesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_product_analytics_timeseries_endpoint.call_with_http_info(**kwargs)
 
     def submit_product_analytics_event(
         self,

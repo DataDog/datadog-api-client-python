@@ -4255,6 +4255,48 @@ from datadog_api_client.v2.model.process_summaries_response import ProcessSummar
 from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+from datadog_api_client.v2.model.product_analytics_analytics_query import ProductAnalyticsAnalyticsQuery
+from datadog_api_client.v2.model.product_analytics_analytics_request import ProductAnalyticsAnalyticsRequest
+from datadog_api_client.v2.model.product_analytics_analytics_request_attributes import (
+    ProductAnalyticsAnalyticsRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_analytics_request_data import ProductAnalyticsAnalyticsRequestData
+from datadog_api_client.v2.model.product_analytics_analytics_request_type import ProductAnalyticsAnalyticsRequestType
+from datadog_api_client.v2.model.product_analytics_audience_account_subquery import (
+    ProductAnalyticsAudienceAccountSubquery,
+)
+from datadog_api_client.v2.model.product_analytics_audience_filters import ProductAnalyticsAudienceFilters
+from datadog_api_client.v2.model.product_analytics_audience_segment_subquery import (
+    ProductAnalyticsAudienceSegmentSubquery,
+)
+from datadog_api_client.v2.model.product_analytics_audience_user_subquery import ProductAnalyticsAudienceUserSubquery
+from datadog_api_client.v2.model.product_analytics_base_query import ProductAnalyticsBaseQuery
+from datadog_api_client.v2.model.product_analytics_compute import ProductAnalyticsCompute
+from datadog_api_client.v2.model.product_analytics_event_query import ProductAnalyticsEventQuery
+from datadog_api_client.v2.model.product_analytics_event_query_data_source import ProductAnalyticsEventQueryDataSource
+from datadog_api_client.v2.model.product_analytics_event_search import ProductAnalyticsEventSearch
+from datadog_api_client.v2.model.product_analytics_execution_type import ProductAnalyticsExecutionType
+from datadog_api_client.v2.model.product_analytics_group_by import ProductAnalyticsGroupBy
+from datadog_api_client.v2.model.product_analytics_group_by_sort import ProductAnalyticsGroupBySort
+from datadog_api_client.v2.model.product_analytics_interval import ProductAnalyticsInterval
+from datadog_api_client.v2.model.product_analytics_occurrence_filter import ProductAnalyticsOccurrenceFilter
+from datadog_api_client.v2.model.product_analytics_occurrence_query import ProductAnalyticsOccurrenceQuery
+from datadog_api_client.v2.model.product_analytics_occurrence_query_data_source import (
+    ProductAnalyticsOccurrenceQueryDataSource,
+)
+from datadog_api_client.v2.model.product_analytics_occurrence_search import ProductAnalyticsOccurrenceSearch
+from datadog_api_client.v2.model.product_analytics_response_meta import ProductAnalyticsResponseMeta
+from datadog_api_client.v2.model.product_analytics_response_meta_status import ProductAnalyticsResponseMetaStatus
+from datadog_api_client.v2.model.product_analytics_scalar_column import ProductAnalyticsScalarColumn
+from datadog_api_client.v2.model.product_analytics_scalar_column_meta import ProductAnalyticsScalarColumnMeta
+from datadog_api_client.v2.model.product_analytics_scalar_column_type import ProductAnalyticsScalarColumnType
+from datadog_api_client.v2.model.product_analytics_scalar_response import ProductAnalyticsScalarResponse
+from datadog_api_client.v2.model.product_analytics_scalar_response_attributes import (
+    ProductAnalyticsScalarResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_scalar_response_data import ProductAnalyticsScalarResponseData
+from datadog_api_client.v2.model.product_analytics_scalar_response_type import ProductAnalyticsScalarResponseType
+from datadog_api_client.v2.model.product_analytics_serie import ProductAnalyticsSerie
 from datadog_api_client.v2.model.product_analytics_server_side_event_error import ProductAnalyticsServerSideEventError
 from datadog_api_client.v2.model.product_analytics_server_side_event_errors import ProductAnalyticsServerSideEventErrors
 from datadog_api_client.v2.model.product_analytics_server_side_event_item import ProductAnalyticsServerSideEventItem
@@ -4276,6 +4318,17 @@ from datadog_api_client.v2.model.product_analytics_server_side_event_item_type i
 from datadog_api_client.v2.model.product_analytics_server_side_event_item_usr import (
     ProductAnalyticsServerSideEventItemUsr,
 )
+from datadog_api_client.v2.model.product_analytics_timeseries_response import ProductAnalyticsTimeseriesResponse
+from datadog_api_client.v2.model.product_analytics_timeseries_response_attributes import (
+    ProductAnalyticsTimeseriesResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_timeseries_response_data import (
+    ProductAnalyticsTimeseriesResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_timeseries_response_type import (
+    ProductAnalyticsTimeseriesResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_unit import ProductAnalyticsUnit
 from datadog_api_client.v2.model.project import Project
 from datadog_api_client.v2.model.project_attributes import ProjectAttributes
 from datadog_api_client.v2.model.project_columns_config import ProjectColumnsConfig
@@ -9212,6 +9265,38 @@ __all__ = [
     "ProcessSummary",
     "ProcessSummaryAttributes",
     "ProcessSummaryType",
+    "ProductAnalyticsAnalyticsQuery",
+    "ProductAnalyticsAnalyticsRequest",
+    "ProductAnalyticsAnalyticsRequestAttributes",
+    "ProductAnalyticsAnalyticsRequestData",
+    "ProductAnalyticsAnalyticsRequestType",
+    "ProductAnalyticsAudienceAccountSubquery",
+    "ProductAnalyticsAudienceFilters",
+    "ProductAnalyticsAudienceSegmentSubquery",
+    "ProductAnalyticsAudienceUserSubquery",
+    "ProductAnalyticsBaseQuery",
+    "ProductAnalyticsCompute",
+    "ProductAnalyticsEventQuery",
+    "ProductAnalyticsEventQueryDataSource",
+    "ProductAnalyticsEventSearch",
+    "ProductAnalyticsExecutionType",
+    "ProductAnalyticsGroupBy",
+    "ProductAnalyticsGroupBySort",
+    "ProductAnalyticsInterval",
+    "ProductAnalyticsOccurrenceFilter",
+    "ProductAnalyticsOccurrenceQuery",
+    "ProductAnalyticsOccurrenceQueryDataSource",
+    "ProductAnalyticsOccurrenceSearch",
+    "ProductAnalyticsResponseMeta",
+    "ProductAnalyticsResponseMetaStatus",
+    "ProductAnalyticsScalarColumn",
+    "ProductAnalyticsScalarColumnMeta",
+    "ProductAnalyticsScalarColumnType",
+    "ProductAnalyticsScalarResponse",
+    "ProductAnalyticsScalarResponseAttributes",
+    "ProductAnalyticsScalarResponseData",
+    "ProductAnalyticsScalarResponseType",
+    "ProductAnalyticsSerie",
     "ProductAnalyticsServerSideEventError",
     "ProductAnalyticsServerSideEventErrors",
     "ProductAnalyticsServerSideEventItem",
@@ -9221,6 +9306,11 @@ __all__ = [
     "ProductAnalyticsServerSideEventItemSession",
     "ProductAnalyticsServerSideEventItemType",
     "ProductAnalyticsServerSideEventItemUsr",
+    "ProductAnalyticsTimeseriesResponse",
+    "ProductAnalyticsTimeseriesResponseAttributes",
+    "ProductAnalyticsTimeseriesResponseData",
+    "ProductAnalyticsTimeseriesResponseType",
+    "ProductAnalyticsUnit",
     "Project",
     "ProjectAttributes",
     "ProjectColumnsConfig",

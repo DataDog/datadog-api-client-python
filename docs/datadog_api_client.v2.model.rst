@@ -20829,6 +20829,230 @@ datadog\_api\_client.v2.model.process\_summary\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.product\_analytics\_analytics\_query module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_analytics_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_analytics\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_analytics_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_analytics\_request\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_analytics_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_analytics\_request\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_analytics_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_analytics\_request\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_analytics_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_audience\_account\_subquery module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_audience_account_subquery
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_audience\_filters module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_audience_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_audience\_segment\_subquery module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_audience_segment_subquery
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_audience\_user\_subquery module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_audience_user_subquery
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_base\_query module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_base_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_compute module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_event\_query module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_event_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_event\_query\_data\_source module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_event_query_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_event\_search module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_event_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_execution\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_execution_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_group\_by module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_group\_by\_sort module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_group_by_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_interval module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_interval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_occurrence\_filter module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_occurrence_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_occurrence\_query module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_occurrence_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_occurrence\_query\_data\_source module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_occurrence_query_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_occurrence\_search module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_occurrence_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_response\_meta module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_response\_meta\_status module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_response_meta_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_scalar\_column module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_scalar_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_scalar\_column\_meta module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_scalar_column_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_scalar\_column\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_scalar_column_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_scalar\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_scalar_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_scalar\_response\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_scalar_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_scalar\_response\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_scalar_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_scalar\_response\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_scalar_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_serie module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_serie
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_error module
 -----------------------------------------------------------------------------------
 
@@ -20889,6 +21113,41 @@ datadog\_api\_client.v2.model.product\_analytics\_server\_side\_event\_item\_usr
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.product_analytics_server_side_event_item_usr
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_timeseries\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_timeseries_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_timeseries\_response\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_timeseries_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_timeseries\_response\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_timeseries_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_timeseries\_response\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_timeseries_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.product\_analytics\_unit module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.product_analytics_unit
    :members:
    :show-inheritance:
 
