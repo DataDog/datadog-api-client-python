@@ -53,6 +53,30 @@ Feature: Key Management
     And the response "data.type" is equal to "application_keys"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Create personal access token returns "Bad Request" response
+    Given operation "CreatePersonalAccessToken" enabled
+    And new "CreatePersonalAccessToken" request
+    And body with value {"data": {"attributes": {"expires_at": "2025-03-15T10:30:00.000000+00:00", "name": "Example Personal Access Token", "scopes": ["dashboards_read", "monitors_read"]}, "type": "personal_access_tokens"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Create personal access token returns "Not Found - Personal access tokens feature is not enabled" response
+    Given operation "CreatePersonalAccessToken" enabled
+    And new "CreatePersonalAccessToken" request
+    And body with value {"data": {"attributes": {"expires_at": "2025-03-15T10:30:00.000000+00:00", "name": "Example Personal Access Token", "scopes": ["dashboards_read", "monitors_read"]}, "type": "personal_access_tokens"}}
+    When the request is sent
+    Then the response status is 404 Not Found - Personal access tokens feature is not enabled
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Create personal access token returns "OK" response
+    Given operation "CreatePersonalAccessToken" enabled
+    And new "CreatePersonalAccessToken" request
+    And body with value {"data": {"attributes": {"expires_at": "2025-03-15T10:30:00.000000+00:00", "name": "Example Personal Access Token", "scopes": ["dashboards_read", "monitors_read"]}, "type": "personal_access_tokens"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/credentials-management
   Scenario: Delete an API key returns "No Content" response
     Given there is a valid "api_key" in the system
@@ -301,3 +325,83 @@ Feature: Key Management
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}"
     And the response "data.attributes" has field "scopes"
     And the response "data.attributes" has field "last_used_at"
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Get personal access token returns "Not Found" response
+    Given operation "GetPersonalAccessToken" enabled
+    And new "GetPersonalAccessToken" request
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Get personal access token returns "OK" response
+    Given operation "GetPersonalAccessToken" enabled
+    And new "GetPersonalAccessToken" request
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: List personal access tokens returns "Bad Request" response
+    Given operation "ListPersonalAccessTokens" enabled
+    And new "ListPersonalAccessTokens" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: List personal access tokens returns "Not Found - Personal access tokens feature is not enabled" response
+    Given operation "ListPersonalAccessTokens" enabled
+    And new "ListPersonalAccessTokens" request
+    When the request is sent
+    Then the response status is 404 Not Found - Personal access tokens feature is not enabled
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: List personal access tokens returns "OK" response
+    Given operation "ListPersonalAccessTokens" enabled
+    And new "ListPersonalAccessTokens" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Revoke personal access token returns "No Content" response
+    Given operation "RevokePersonalAccessToken" enabled
+    And new "RevokePersonalAccessToken" request
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Revoke personal access token returns "Not Found" response
+    Given operation "RevokePersonalAccessToken" enabled
+    And new "RevokePersonalAccessToken" request
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Update personal access token returns "Bad Request" response
+    Given operation "UpdatePersonalAccessToken" enabled
+    And new "UpdatePersonalAccessToken" request
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Updated Personal Access Token Name", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "personal_access_tokens"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Update personal access token returns "Not Found" response
+    Given operation "UpdatePersonalAccessToken" enabled
+    And new "UpdatePersonalAccessToken" request
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Updated Personal Access Token Name", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "personal_access_tokens"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Update personal access token returns "OK" response
+    Given operation "UpdatePersonalAccessToken" enabled
+    And new "UpdatePersonalAccessToken" request
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Updated Personal Access Token Name", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "personal_access_tokens"}}
+    When the request is sent
+    Then the response status is 200 OK

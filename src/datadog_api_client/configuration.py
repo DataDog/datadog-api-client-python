@@ -247,6 +247,9 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
+                "v1.create_client_token": False,
+                "v1.revoke_client_token": False,
+                "v1.update_client_token": False,
                 "v2.cancel_fleet_deployment": False,
                 "v2.create_fleet_deployment_configure": False,
                 "v2.create_fleet_deployment_upgrade": False,
@@ -261,6 +264,11 @@ class Configuration:
                 "v2.list_fleet_schedules": False,
                 "v2.trigger_fleet_schedule": False,
                 "v2.update_fleet_schedule": False,
+                "v2.create_personal_access_token": False,
+                "v2.get_personal_access_token": False,
+                "v2.list_personal_access_tokens": False,
+                "v2.revoke_personal_access_token": False,
+                "v2.update_personal_access_token": False,
                 "v2.create_open_api": False,
                 "v2.delete_open_api": False,
                 "v2.get_open_api": False,

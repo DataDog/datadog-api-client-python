@@ -2147,6 +2147,8 @@ from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
 from datadog_api_client.v2.model.full_custom_framework_data import FullCustomFrameworkData
 from datadog_api_client.v2.model.full_custom_framework_data_attributes import FullCustomFrameworkDataAttributes
+from datadog_api_client.v2.model.full_personal_access_token import FullPersonalAccessToken
+from datadog_api_client.v2.model.full_personal_access_token_attributes import FullPersonalAccessTokenAttributes
 from datadog_api_client.v2.model.gcp_credentials import GCPCredentials
 from datadog_api_client.v2.model.gcp_credentials_update import GCPCredentialsUpdate
 from datadog_api_client.v2.model.gcp_integration import GCPIntegration
@@ -4201,6 +4203,22 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.personal_access_token import PersonalAccessToken
+from datadog_api_client.v2.model.personal_access_token_attributes import PersonalAccessTokenAttributes
+from datadog_api_client.v2.model.personal_access_token_create_attributes import PersonalAccessTokenCreateAttributes
+from datadog_api_client.v2.model.personal_access_token_create_data import PersonalAccessTokenCreateData
+from datadog_api_client.v2.model.personal_access_token_create_request import PersonalAccessTokenCreateRequest
+from datadog_api_client.v2.model.personal_access_token_get_response import PersonalAccessTokenGetResponse
+from datadog_api_client.v2.model.personal_access_token_relationships import PersonalAccessTokenRelationships
+from datadog_api_client.v2.model.personal_access_token_response import PersonalAccessTokenResponse
+from datadog_api_client.v2.model.personal_access_token_type import PersonalAccessTokenType
+from datadog_api_client.v2.model.personal_access_token_update_attributes import PersonalAccessTokenUpdateAttributes
+from datadog_api_client.v2.model.personal_access_token_update_data import PersonalAccessTokenUpdateData
+from datadog_api_client.v2.model.personal_access_token_update_request import PersonalAccessTokenUpdateRequest
+from datadog_api_client.v2.model.personal_access_tokens_list_response import PersonalAccessTokensListResponse
+from datadog_api_client.v2.model.personal_access_tokens_response_meta import PersonalAccessTokensResponseMeta
+from datadog_api_client.v2.model.personal_access_tokens_response_meta_page import PersonalAccessTokensResponseMetaPage
+from datadog_api_client.v2.model.personal_access_tokens_sort import PersonalAccessTokensSort
 from datadog_api_client.v2.model.playlist import Playlist
 from datadog_api_client.v2.model.playlist_array import PlaylistArray
 from datadog_api_client.v2.model.playlist_data import PlaylistData
@@ -7820,6 +7838,8 @@ __all__ = [
     "FullApplicationKeyAttributes",
     "FullCustomFrameworkData",
     "FullCustomFrameworkDataAttributes",
+    "FullPersonalAccessToken",
+    "FullPersonalAccessTokenAttributes",
     "GCPCredentials",
     "GCPCredentialsUpdate",
     "GCPIntegration",
@@ -9154,6 +9174,22 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "PersonalAccessToken",
+    "PersonalAccessTokenAttributes",
+    "PersonalAccessTokenCreateAttributes",
+    "PersonalAccessTokenCreateData",
+    "PersonalAccessTokenCreateRequest",
+    "PersonalAccessTokenGetResponse",
+    "PersonalAccessTokenRelationships",
+    "PersonalAccessTokenResponse",
+    "PersonalAccessTokenType",
+    "PersonalAccessTokenUpdateAttributes",
+    "PersonalAccessTokenUpdateData",
+    "PersonalAccessTokenUpdateRequest",
+    "PersonalAccessTokensListResponse",
+    "PersonalAccessTokensResponseMeta",
+    "PersonalAccessTokensResponseMetaPage",
+    "PersonalAccessTokensSort",
     "Playlist",
     "PlaylistArray",
     "PlaylistData",
