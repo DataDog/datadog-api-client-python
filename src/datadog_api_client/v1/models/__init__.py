@@ -85,6 +85,7 @@ from datadog_api_client.v1.model.dashboard_restore_request import DashboardResto
 from datadog_api_client.v1.model.dashboard_share_type import DashboardShareType
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
+from datadog_api_client.v1.model.dashboard_tab import DashboardTab
 from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable
 from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
 from datadog_api_client.v1.model.dashboard_template_variable_preset_value import DashboardTemplateVariablePresetValue
@@ -1238,6 +1239,7 @@ __all__ = [
     "DashboardShareType",
     "DashboardSummary",
     "DashboardSummaryDefinition",
+    "DashboardTab",
     "DashboardTemplateVariable",
     "DashboardTemplateVariablePreset",
     "DashboardTemplateVariablePresetValue",
