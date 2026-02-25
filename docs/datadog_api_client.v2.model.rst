@@ -1789,10 +1789,38 @@ datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_attributes\_re
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_create\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_create\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_create\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_create_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_data\_response module
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_response
    :members:
    :show-inheritance:
 
