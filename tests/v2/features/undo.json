@@ -4491,6 +4491,12 @@
       "type": "safe"
     }
   },
+  "CreateSecurityFinding": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "DetachCase": {
     "tag": "Security Monitoring",
     "undo": {
@@ -4596,10 +4602,22 @@
       "type": "idempotent"
     }
   },
+  "ImportThreatIntel": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "ListVulnerabilities": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "ImportSecurityVulnerabilities": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "unsafe"
     }
   },
   "GetVulnerabilityNotificationRules": {

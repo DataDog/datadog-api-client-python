@@ -9,12 +9,15 @@ from typing import Any, Dict, List, Union
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    date,
     datetime,
     set_attribute_from_path,
     get_attribute_from_path,
     file_type,
+    none_type,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.create_custom_framework_response import CreateCustomFrameworkResponse
 from datadog_api_client.v2.model.create_custom_framework_request import CreateCustomFrameworkRequest
@@ -40,6 +43,7 @@ from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
 from datadog_api_client.v2.model.security_findings_data import SecurityFindingsData
+from datadog_api_client.v2.model.security_finding_type import SecurityFindingType
 from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
 from datadog_api_client.v2.model.finding_case_response_array import FindingCaseResponseArray
 from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequestArray
@@ -58,12 +62,14 @@ from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
+from datadog_api_client.v2.model.threat_intel_indicator_type import ThreatIntelIndicatorType
 from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
 from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeverity
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_ecosystem import VulnerabilityEcosystem
+from datadog_api_client.v2.model.cyclone_dxbom import CycloneDXBOM
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.security_monitoring_critical_assets_response import (
     SecurityMonitoringCriticalAssetsResponse,
@@ -410,6 +416,53 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_security_finding_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings",
+                "operation_id": "create_security_finding",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "vendor": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "vendor",
+                    "location": "header",
+                },
+                "finding_type": {
+                    "required": True,
+                    "openapi_types": (SecurityFindingType,),
+                    "attribute": "finding_type",
+                    "location": "header",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (
+                        {
+                            str: (
+                                bool,
+                                date,
+                                datetime,
+                                dict,
+                                float,
+                                int,
+                                list,
+                                str,
+                                UUID,
+                                none_type,
+                            )
+                        },
+                    ),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1411,6 +1464,63 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._import_security_vulnerabilities_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/vulnerabilities",
+                "operation_id": "import_security_vulnerabilities",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CycloneDXBOM,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._import_threat_intel_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/threat-intel-feed",
+                "operation_id": "import_threat_intel",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "ti_vendor": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "ti_vendor",
+                    "location": "header",
+                },
+                "ti_indicator": {
+                    "required": True,
+                    "openapi_types": (ThreatIntelIndicatorType,),
+                    "attribute": "ti_indicator",
+                    "location": "header",
+                },
+                "ti_integration_account": {
+                    "openapi_types": (str,),
+                    "attribute": "ti_integration_account",
+                    "location": "header",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (dict,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json", "application/octet-stream"]},
             api_client=api_client,
         )
 
@@ -2908,6 +3018,35 @@ class SecurityMonitoringApi:
 
         return self._create_security_filter_endpoint.call_with_http_info(**kwargs)
 
+    def create_security_finding(
+        self,
+        vendor: str,
+        finding_type: SecurityFindingType,
+        body: Dict[str, Any],
+    ) -> None:
+        """Create security finding.
+
+        Allows external integrations to send security findings to Datadog. This endpoint accepts finding data in a custom format and returns an empty response on success.
+
+        **Note** : This endpoint is in preview and is subject to change.
+        If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+
+        :param vendor: The vendor providing the security finding. Must be lowercase.
+        :type vendor: str
+        :param finding_type: The type of security finding.
+        :type finding_type: SecurityFindingType
+        :type body: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["vendor"] = vendor
+
+        kwargs["finding_type"] = finding_type
+
+        kwargs["body"] = body
+
+        return self._create_security_finding_endpoint.call_with_http_info(**kwargs)
+
     def create_security_monitoring_critical_asset(
         self,
         body: SecurityMonitoringCriticalAssetCreateRequest,
@@ -3727,6 +3866,61 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_vulnerability_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def import_security_vulnerabilities(
+        self,
+        body: CycloneDXBOM,
+    ) -> None:
+        """Import vulnerabilities.
+
+        Import vulnerabilities in CycloneDX 1.5 format. This endpoint validates the payload against the CycloneDX 1.5 schema and additional mandatory field requirements.
+
+        **Note** : This endpoint is in preview and is subject to change.
+        If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+
+        :type body: CycloneDXBOM
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._import_security_vulnerabilities_endpoint.call_with_http_info(**kwargs)
+
+    def import_threat_intel(
+        self,
+        ti_vendor: str,
+        ti_indicator: ThreatIntelIndicatorType,
+        body: dict,
+        *,
+        ti_integration_account: Union[str, UnsetType] = unset,
+    ) -> None:
+        """Import threat intelligence feed.
+
+        Import threat intelligence feeds with support for IP addresses, domains, and SHA256 hashes. This endpoint requires specific headers to identify the vendor and indicator type.
+
+        **Note** : This endpoint is in preview and is subject to change.
+        If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+
+        :param ti_vendor: The vendor providing the threat intelligence feed.
+        :type ti_vendor: str
+        :param ti_indicator: The type of threat indicator. Valid values are ip_address, domain, or sha256.
+        :type ti_indicator: ThreatIntelIndicatorType
+        :type body: dict
+        :param ti_integration_account: Optional integration account identifier.
+        :type ti_integration_account: str, optional
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["ti_vendor"] = ti_vendor
+
+        kwargs["ti_indicator"] = ti_indicator
+
+        if ti_integration_account is not unset:
+            kwargs["ti_integration_account"] = ti_integration_account
+
+        kwargs["body"] = body
+
+        return self._import_threat_intel_endpoint.call_with_http_info(**kwargs)
 
     def list_assets_sbo_ms(
         self,
