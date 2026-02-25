@@ -950,6 +950,7 @@ from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.target_format_type import TargetFormatType
 from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
 from datadog_api_client.v1.model.timeseries_background_type import TimeseriesBackgroundType
+from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_expression_alias import TimeseriesWidgetExpressionAlias
@@ -1955,6 +1956,7 @@ __all__ = [
     "TargetFormatType",
     "TimeseriesBackground",
     "TimeseriesBackgroundType",
+    "TimeseriesRequestStyle",
     "TimeseriesWidgetDefinition",
     "TimeseriesWidgetDefinitionType",
     "TimeseriesWidgetExpressionAlias",

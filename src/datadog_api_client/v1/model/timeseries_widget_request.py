@@ -21,7 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-    from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
+    from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
     )
@@ -55,7 +55,7 @@ class TimeseriesWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
-        from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
+        from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 
         return {
             "apm_query": (LogQueryDefinition,),
@@ -74,7 +74,7 @@ class TimeseriesWidgetRequest(ModelNormal):
             "response_format": (FormulaAndFunctionResponseFormat,),
             "rum_query": (LogQueryDefinition,),
             "security_query": (LogQueryDefinition,),
-            "style": (WidgetRequestStyle,),
+            "style": (TimeseriesRequestStyle,),
         }
 
     attribute_map = {
@@ -129,7 +129,7 @@ class TimeseriesWidgetRequest(ModelNormal):
         response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
         rum_query: Union[LogQueryDefinition, UnsetType] = unset,
         security_query: Union[LogQueryDefinition, UnsetType] = unset,
-        style: Union[WidgetRequestStyle, UnsetType] = unset,
+        style: Union[TimeseriesRequestStyle, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -183,8 +183,8 @@ class TimeseriesWidgetRequest(ModelNormal):
         :param security_query: The log query.
         :type security_query: LogQueryDefinition, optional
 
-        :param style: Define request widget style.
-        :type style: WidgetRequestStyle, optional
+        :param style: Define request widget style for timeseries widgets.
+        :type style: TimeseriesRequestStyle, optional
         """
         if apm_query is not unset:
             kwargs["apm_query"] = apm_query

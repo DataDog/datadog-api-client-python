@@ -19,6 +19,7 @@ from datadog_api_client.v1.model.split_graph_widget_definition import SplitGraph
 from datadog_api_client.v1.model.split_graph_widget_definition_type import SplitGraphWidgetDefinitionType
 from datadog_api_client.v1.model.split_sort import SplitSort
 from datadog_api_client.v1.model.split_vector_entry_item import SplitVectorEntryItem
+from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
@@ -27,7 +28,6 @@ from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
-from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 from datadog_api_client.v1.model.widget_sort import WidgetSort
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 
@@ -60,7 +60,7 @@ body = Dashboard(
                                     query="avg:system.cpu.user{*}",
                                 ),
                             ],
-                            style=WidgetRequestStyle(
+                            style=TimeseriesRequestStyle(
                                 palette="dog_classic",
                                 line_type=WidgetLineType.SOLID,
                                 line_width=WidgetLineWidth.NORMAL,

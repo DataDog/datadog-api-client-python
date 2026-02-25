@@ -19,6 +19,7 @@ from datadog_api_client.v1.model.formula_and_function_event_query_definition_sea
 )
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
@@ -32,7 +33,6 @@ from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_live_span_unit import WidgetLiveSpanUnit
 from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
 from datadog_api_client.v1.model.widget_new_live_span_type import WidgetNewLiveSpanType
-from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 body = Dashboard(
     title="Example-Dashboard with new live span time",
@@ -81,7 +81,7 @@ body = Dashboard(
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat.TIMESERIES,
-                        style=WidgetRequestStyle(
+                        style=TimeseriesRequestStyle(
                             palette="dog_classic",
                             line_type=WidgetLineType.SOLID,
                             line_width=WidgetLineWidth.NORMAL,

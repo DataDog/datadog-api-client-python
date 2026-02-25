@@ -18,6 +18,7 @@ from datadog_api_client.v1.model.notebook_resource_type import NotebookResourceT
 from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
 from datadog_api_client.v1.model.notebook_status import NotebookStatus
 from datadog_api_client.v1.model.notebook_timeseries_cell_attributes import NotebookTimeseriesCellAttributes
+from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
@@ -26,7 +27,6 @@ from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
 from datadog_api_client.v1.model.widget_line_type import WidgetLineType
 from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 from datadog_api_client.v1.model.widget_live_span import WidgetLiveSpan
-from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
 body = NotebookCreateRequest(
     data=NotebookCreateData(
@@ -48,7 +48,7 @@ body = NotebookCreateRequest(
                                 TimeseriesWidgetRequest(
                                     display_type=WidgetDisplayType.LINE,
                                     q="avg:system.load.1{*}",
-                                    style=WidgetRequestStyle(
+                                    style=TimeseriesRequestStyle(
                                         line_type=WidgetLineType.SOLID,
                                         line_width=WidgetLineWidth.NORMAL,
                                         palette="dog_classic",
