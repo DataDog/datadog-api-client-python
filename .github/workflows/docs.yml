@@ -82,3 +82,5 @@ jobs:
           enable_jekyll: false
           # Only deploy if there were changes
           allow_empty_commit: false
+          # GH pages branch is getting super big, so we want to reduce it by creating an orphan branch
+          force_orphan: true
