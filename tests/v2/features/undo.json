@@ -4393,6 +4393,68 @@
       "type": "safe"
     }
   },
+  "ListRumSegments": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRumSegment": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "operationId": "DeleteRumSegment",
+      "parameters": [
+        {
+          "name": "segment_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "InitializeRumSegments": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateRumStaticSegment": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "operationId": "DeleteRumSegment",
+      "parameters": [
+        {
+          "name": "segment_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListRumSegmentTemplates": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteRumSegment": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRumSegment": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRumSegment": {
+    "tag": "RUM User Segments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UploadIdPMetadata": {
     "tag": "Organizations",
     "undo": {
