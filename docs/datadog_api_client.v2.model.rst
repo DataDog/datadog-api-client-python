@@ -15964,6 +15964,34 @@ datadog\_api\_client.v2.model.logs\_warning module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.max\_session\_duration\_update\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.max_session_duration_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.max\_session\_duration\_update\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.max_session_duration_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.max\_session\_duration\_update\_request\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.max_session_duration_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.max\_session\_duration\_update\_request\_data\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.max_session_duration_update_request_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.member\_team module
 -------------------------------------------------
 
@@ -23577,6 +23605,34 @@ datadog\_api\_client.v2.model.saml\_assertion\_attributes\_type module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.saml_assertion_attributes_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configurations\_update\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configurations_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configurations\_update\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configurations_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configurations\_update\_request\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configurations_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configurations\_update\_request\_data\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configurations_update_request_data_type
    :members:
    :show-inheritance:
 

@@ -2987,6 +2987,12 @@ from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
 from datadog_api_client.v2.model.ms_teams_integration_metadata import MSTeamsIntegrationMetadata
 from datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item import MSTeamsIntegrationMetadataTeamsItem
+from datadog_api_client.v2.model.max_session_duration_update_attributes import MaxSessionDurationUpdateAttributes
+from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
+from datadog_api_client.v2.model.max_session_duration_update_request_data import MaxSessionDurationUpdateRequestData
+from datadog_api_client.v2.model.max_session_duration_update_request_data_type import (
+    MaxSessionDurationUpdateRequestDataType,
+)
 from datadog_api_client.v2.model.member_team import MemberTeam
 from datadog_api_client.v2.model.member_team_type import MemberTeamType
 from datadog_api_client.v2.model.metadata import Metadata
@@ -4756,6 +4762,12 @@ from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
 from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
 from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
 from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
+from datadog_api_client.v2.model.saml_configurations_update_attributes import SamlConfigurationsUpdateAttributes
+from datadog_api_client.v2.model.saml_configurations_update_request import SamlConfigurationsUpdateRequest
+from datadog_api_client.v2.model.saml_configurations_update_request_data import SamlConfigurationsUpdateRequestData
+from datadog_api_client.v2.model.saml_configurations_update_request_data_type import (
+    SamlConfigurationsUpdateRequestDataType,
+)
 from datadog_api_client.v2.model.sca_request import ScaRequest
 from datadog_api_client.v2.model.sca_request_data import ScaRequestData
 from datadog_api_client.v2.model.sca_request_data_attributes import ScaRequestDataAttributes
@@ -8571,6 +8583,10 @@ __all__ = [
     "LogsWarning",
     "MSTeamsIntegrationMetadata",
     "MSTeamsIntegrationMetadataTeamsItem",
+    "MaxSessionDurationUpdateAttributes",
+    "MaxSessionDurationUpdateRequest",
+    "MaxSessionDurationUpdateRequestData",
+    "MaxSessionDurationUpdateRequestDataType",
     "MemberTeam",
     "MemberTeamType",
     "Metadata",
@@ -9680,6 +9696,10 @@ __all__ = [
     "SLOReportStatusGetResponse",
     "SLOReportStatusGetResponseAttributes",
     "SLOReportStatusGetResponseData",
+    "SamlConfigurationsUpdateAttributes",
+    "SamlConfigurationsUpdateRequest",
+    "SamlConfigurationsUpdateRequestData",
+    "SamlConfigurationsUpdateRequestDataType",
     "ScaRequest",
     "ScaRequestData",
     "ScaRequestDataAttributes",
