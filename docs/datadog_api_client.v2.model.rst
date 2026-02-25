@@ -3035,6 +3035,41 @@ datadog\_api\_client.v2.model.calculated\_field module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.campaign\_response module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.campaign_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.campaign\_response\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.campaign_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.campaign\_response\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.campaign_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.campaign\_status module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.campaign_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.campaign\_type module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.campaign_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cancel\_data\_deletion\_response\_body module
 ---------------------------------------------------------------------------
 
@@ -5884,6 +5919,27 @@ datadog\_api\_client.v2.model.create\_attachment\_request\_data\_attributes\_att
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_campaign\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_campaign_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_campaign\_request\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_campaign_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_campaign\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_campaign_request_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_case\_request\_array module
 -----------------------------------------------------------------
 
@@ -7865,6 +7921,27 @@ datadog\_api\_client.v2.model.datastore\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.default\_rule\_response\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.default_rule_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.default\_rule\_response\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.default_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.default\_rule\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.default_rule_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.degradation module
 ------------------------------------------------
 
@@ -8975,6 +9052,13 @@ datadog\_api\_client.v2.model.entity\_meta module
 -------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.entity_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_owner\_destination module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_owner_destination
    :members:
    :show-inheritance:
 
@@ -10228,6 +10312,34 @@ datadog\_api\_client.v2.model.facet\_info\_response\_data\_type module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.facet_info_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.facet\_item module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.facet_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.facet\_response\_attributes module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.facet_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.facet\_response\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.facet_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.facet\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.facet_type
    :members:
    :show-inheritance:
 
@@ -11586,6 +11698,62 @@ datadog\_api\_client.v2.model.gemini\_integration\_update module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.gemini_integration_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_report\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_report_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_report\_request\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_report_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_report\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_report_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_report\_request\_data\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_report_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_team\_reports\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_team_reports_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_team\_reports\_request\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_team_reports_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_team\_reports\_request\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_team_reports_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.generate\_campaign\_team\_reports\_request\_data\_type module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.generate_campaign_team_reports_request_data_type
    :members:
    :show-inheritance:
 
@@ -15110,6 +15278,13 @@ datadog\_api\_client.v2.model.list\_assets\_sbo\_ms\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_campaigns\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_campaigns_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_connections\_response module
 ----------------------------------------------------------------
 
@@ -15149,6 +15324,13 @@ datadog\_api\_client.v2.model.list\_connections\_response\_data\_type module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_connections_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_default\_rules\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_default_rules_response
    :members:
    :show-inheritance:
 
@@ -15219,6 +15401,20 @@ datadog\_api\_client.v2.model.list\_entity\_catalog\_response\_links module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_entity_catalog_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_facets\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_facets_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_facets\_response\_meta module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_facets_response_meta
    :members:
    :show-inheritance:
 
@@ -15338,6 +15534,20 @@ datadog\_api\_client.v2.model.list\_rules\_response\_links module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_rules_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_scorecards\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_scorecards_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_scores\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_scores_response
    :members:
    :show-inheritance:
 
@@ -20199,6 +20409,13 @@ datadog\_api\_client.v2.model.page\_urgency module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.paginated\_response\_meta module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.paginated_response_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.pagination module
 -----------------------------------------------
 
@@ -23923,6 +24140,48 @@ datadog\_api\_client.v2.model.schedule\_user\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.score\_response\_attributes module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.score_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.score\_response\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.score_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.score\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.score_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_list\_response\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_list_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_list\_response\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_list_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_list\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_list_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.scorecard\_type module
 ----------------------------------------------------
 
@@ -26415,6 +26674,34 @@ datadog\_api\_client.v2.model.session\_id\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.setup\_rules\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.setup_rules_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.setup\_rules\_request\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.setup_rules_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.setup\_rules\_request\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.setup_rules_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.setup\_rules\_request\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.setup_rules_request_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.shift module
 ------------------------------------------
 
@@ -26566,6 +26853,13 @@ datadog\_api\_client.v2.model.slack\_integration\_metadata\_channel\_item module
 --------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slack_integration_metadata_channel_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slack\_routing\_options module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slack_routing_options
    :members:
    :show-inheritance:
 
@@ -29625,6 +29919,27 @@ datadog\_api\_client.v2.model.update\_apps\_datastore\_request\_data\_attributes
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_apps_datastore_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_campaign\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_campaign_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_campaign\_request\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_campaign_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_campaign\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_campaign_request_data
    :members:
    :show-inheritance:
 

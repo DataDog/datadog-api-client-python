@@ -681,6 +681,11 @@ from datadog_api_client.v2.model.csm_agents_metadata import CSMAgentsMetadata
 from datadog_api_client.v2.model.csm_agents_type import CSMAgentsType
 from datadog_api_client.v2.model.cvss import CVSS
 from datadog_api_client.v2.model.calculated_field import CalculatedField
+from datadog_api_client.v2.model.campaign_response import CampaignResponse
+from datadog_api_client.v2.model.campaign_response_attributes import CampaignResponseAttributes
+from datadog_api_client.v2.model.campaign_response_data import CampaignResponseData
+from datadog_api_client.v2.model.campaign_status import CampaignStatus
+from datadog_api_client.v2.model.campaign_type import CampaignType
 from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
 from datadog_api_client.v2.model.case import Case
 from datadog_api_client.v2.model.case3rd_party_ticket_status import Case3rdPartyTicketStatus
@@ -1113,6 +1118,9 @@ from datadog_api_client.v2.model.create_attachment_request_data_attributes impor
 from datadog_api_client.v2.model.create_attachment_request_data_attributes_attachment import (
     CreateAttachmentRequestDataAttributesAttachment,
 )
+from datadog_api_client.v2.model.create_campaign_request import CreateCampaignRequest
+from datadog_api_client.v2.model.create_campaign_request_attributes import CreateCampaignRequestAttributes
+from datadog_api_client.v2.model.create_campaign_request_data import CreateCampaignRequestData
 from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequestArray
 from datadog_api_client.v2.model.create_case_request_data import CreateCaseRequestData
 from datadog_api_client.v2.model.create_case_request_data_attributes import CreateCaseRequestDataAttributes
@@ -1591,6 +1599,9 @@ from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItems
 from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
 from datadog_api_client.v2.model.datastore_trigger import DatastoreTrigger
 from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
+from datadog_api_client.v2.model.default_rule_response_attributes import DefaultRuleResponseAttributes
+from datadog_api_client.v2.model.default_rule_response_data import DefaultRuleResponseData
+from datadog_api_client.v2.model.default_rule_type import DefaultRuleType
 from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.degradation_array import DegradationArray
 from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
@@ -1756,6 +1767,7 @@ from datadog_api_client.v2.model.epss import EPSS
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_meta import EntityMeta
+from datadog_api_client.v2.model.entity_owner_destination import EntityOwnerDestination
 from datadog_api_client.v2.model.entity_relationships import EntityRelationships
 from datadog_api_client.v2.model.entity_response_array import EntityResponseArray
 from datadog_api_client.v2.model.entity_response_data_attributes import EntityResponseDataAttributes
@@ -2015,6 +2027,10 @@ from datadog_api_client.v2.model.facet_info_response_data_attributes_result_valu
     FacetInfoResponseDataAttributesResultValuesItems,
 )
 from datadog_api_client.v2.model.facet_info_response_data_type import FacetInfoResponseDataType
+from datadog_api_client.v2.model.facet_item import FacetItem
+from datadog_api_client.v2.model.facet_response_attributes import FacetResponseAttributes
+from datadog_api_client.v2.model.facet_response_data import FacetResponseData
+from datadog_api_client.v2.model.facet_type import FacetType
 from datadog_api_client.v2.model.fastly_api_key import FastlyAPIKey
 from datadog_api_client.v2.model.fastly_api_key_type import FastlyAPIKeyType
 from datadog_api_client.v2.model.fastly_api_key_update import FastlyAPIKeyUpdate
@@ -2220,6 +2236,22 @@ from datadog_api_client.v2.model.gemini_credentials_update import GeminiCredenti
 from datadog_api_client.v2.model.gemini_integration import GeminiIntegration
 from datadog_api_client.v2.model.gemini_integration_type import GeminiIntegrationType
 from datadog_api_client.v2.model.gemini_integration_update import GeminiIntegrationUpdate
+from datadog_api_client.v2.model.generate_campaign_report_request import GenerateCampaignReportRequest
+from datadog_api_client.v2.model.generate_campaign_report_request_attributes import (
+    GenerateCampaignReportRequestAttributes,
+)
+from datadog_api_client.v2.model.generate_campaign_report_request_data import GenerateCampaignReportRequestData
+from datadog_api_client.v2.model.generate_campaign_report_request_data_type import GenerateCampaignReportRequestDataType
+from datadog_api_client.v2.model.generate_campaign_team_reports_request import GenerateCampaignTeamReportsRequest
+from datadog_api_client.v2.model.generate_campaign_team_reports_request_attributes import (
+    GenerateCampaignTeamReportsRequestAttributes,
+)
+from datadog_api_client.v2.model.generate_campaign_team_reports_request_data import (
+    GenerateCampaignTeamReportsRequestData,
+)
+from datadog_api_client.v2.model.generate_campaign_team_reports_request_data_type import (
+    GenerateCampaignTeamReportsRequestDataType,
+)
 from datadog_api_client.v2.model.get_action_connection_response import GetActionConnectionResponse
 from datadog_api_client.v2.model.get_app_key_registration_response import GetAppKeyRegistrationResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
@@ -2853,6 +2885,7 @@ from datadog_api_client.v2.model.list_apps_response_data_items_relationships imp
 from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 from datadog_api_client.v2.model.list_apps_response_meta_page import ListAppsResponseMetaPage
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
+from datadog_api_client.v2.model.list_campaigns_response import ListCampaignsResponse
 from datadog_api_client.v2.model.list_connections_response import ListConnectionsResponse
 from datadog_api_client.v2.model.list_connections_response_data import ListConnectionsResponseData
 from datadog_api_client.v2.model.list_connections_response_data_attributes import ListConnectionsResponseDataAttributes
@@ -2863,6 +2896,7 @@ from datadog_api_client.v2.model.list_connections_response_data_attributes_conne
     ListConnectionsResponseDataAttributesConnectionsItemsJoin,
 )
 from datadog_api_client.v2.model.list_connections_response_data_type import ListConnectionsResponseDataType
+from datadog_api_client.v2.model.list_default_rules_response import ListDefaultRulesResponse
 from datadog_api_client.v2.model.list_deployment_rule_response_data import ListDeploymentRuleResponseData
 from datadog_api_client.v2.model.list_deployment_rules_data_type import ListDeploymentRulesDataType
 from datadog_api_client.v2.model.list_deployment_rules_response_data_attributes import (
@@ -2875,6 +2909,8 @@ from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesRes
 from datadog_api_client.v2.model.list_entity_catalog_response import ListEntityCatalogResponse
 from datadog_api_client.v2.model.list_entity_catalog_response_included_item import ListEntityCatalogResponseIncludedItem
 from datadog_api_client.v2.model.list_entity_catalog_response_links import ListEntityCatalogResponseLinks
+from datadog_api_client.v2.model.list_facets_response import ListFacetsResponse
+from datadog_api_client.v2.model.list_facets_response_meta import ListFacetsResponseMeta
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
@@ -2892,6 +2928,8 @@ from datadog_api_client.v2.model.list_relation_catalog_response_links import Lis
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
+from datadog_api_client.v2.model.list_scorecards_response import ListScorecardsResponse
+from datadog_api_client.v2.model.list_scores_response import ListScoresResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
@@ -4139,6 +4177,7 @@ from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.page_urgency import PageUrgency
+from datadog_api_client.v2.model.paginated_response_meta import PaginatedResponseMeta
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.parameter import Parameter
 from datadog_api_client.v2.model.partial_api_key import PartialAPIKey
@@ -4808,6 +4847,12 @@ from datadog_api_client.v2.model.schedule_update_request_data_type import Schedu
 from datadog_api_client.v2.model.schedule_user import ScheduleUser
 from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAttributes
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
+from datadog_api_client.v2.model.score_response_attributes import ScoreResponseAttributes
+from datadog_api_client.v2.model.score_response_data import ScoreResponseData
+from datadog_api_client.v2.model.score_type import ScoreType
+from datadog_api_client.v2.model.scorecard_list_response_attributes import ScorecardListResponseAttributes
+from datadog_api_client.v2.model.scorecard_list_response_data import ScorecardListResponseData
+from datadog_api_client.v2.model.scorecard_list_type import ScorecardListType
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
 from datadog_api_client.v2.model.seat_assignments_data_type import SeatAssignmentsDataType
@@ -5376,6 +5421,10 @@ from datadog_api_client.v2.model.service_now_user_type import ServiceNowUserType
 from datadog_api_client.v2.model.service_now_users_response import ServiceNowUsersResponse
 from datadog_api_client.v2.model.session_id_array import SessionIdArray
 from datadog_api_client.v2.model.session_id_data import SessionIdData
+from datadog_api_client.v2.model.setup_rules_request import SetupRulesRequest
+from datadog_api_client.v2.model.setup_rules_request_attributes import SetupRulesRequestAttributes
+from datadog_api_client.v2.model.setup_rules_request_data import SetupRulesRequestData
+from datadog_api_client.v2.model.setup_rules_request_data_type import SetupRulesRequestDataType
 from datadog_api_client.v2.model.shift import Shift
 from datadog_api_client.v2.model.shift_data import ShiftData
 from datadog_api_client.v2.model.shift_data_attributes import ShiftDataAttributes
@@ -5412,6 +5461,7 @@ from datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes_
 from datadog_api_client.v2.model.single_aggregated_dns_response_data_type import SingleAggregatedDnsResponseDataType
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
+from datadog_api_client.v2.model.slack_routing_options import SlackRoutingOptions
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
 from datadog_api_client.v2.model.slo_report_create_request_attributes import SloReportCreateRequestAttributes
@@ -5989,6 +6039,9 @@ from datadog_api_client.v2.model.update_apps_datastore_request_data import Updat
 from datadog_api_client.v2.model.update_apps_datastore_request_data_attributes import (
     UpdateAppsDatastoreRequestDataAttributes,
 )
+from datadog_api_client.v2.model.update_campaign_request import UpdateCampaignRequest
+from datadog_api_client.v2.model.update_campaign_request_attributes import UpdateCampaignRequestAttributes
+from datadog_api_client.v2.model.update_campaign_request_data import UpdateCampaignRequestData
 from datadog_api_client.v2.model.update_connection_request import UpdateConnectionRequest
 from datadog_api_client.v2.model.update_connection_request_data import UpdateConnectionRequestData
 from datadog_api_client.v2.model.update_connection_request_data_attributes import UpdateConnectionRequestDataAttributes
@@ -6742,6 +6795,11 @@ __all__ = [
     "CSMAgentsType",
     "CVSS",
     "CalculatedField",
+    "CampaignResponse",
+    "CampaignResponseAttributes",
+    "CampaignResponseData",
+    "CampaignStatus",
+    "CampaignType",
     "CancelDataDeletionResponseBody",
     "Case",
     "Case3rdPartyTicketStatus",
@@ -7076,6 +7134,9 @@ __all__ = [
     "CreateAttachmentRequestData",
     "CreateAttachmentRequestDataAttributes",
     "CreateAttachmentRequestDataAttributesAttachment",
+    "CreateCampaignRequest",
+    "CreateCampaignRequestAttributes",
+    "CreateCampaignRequestData",
     "CreateCaseRequestArray",
     "CreateCaseRequestData",
     "CreateCaseRequestDataAttributes",
@@ -7392,6 +7453,9 @@ __all__ = [
     "DatastorePrimaryKeyGenerationStrategy",
     "DatastoreTrigger",
     "DatastoreTriggerWrapper",
+    "DefaultRuleResponseAttributes",
+    "DefaultRuleResponseData",
+    "DefaultRuleType",
     "Degradation",
     "DegradationArray",
     "DegradationArrayIncluded",
@@ -7517,6 +7581,7 @@ __all__ = [
     "EntityAttributes",
     "EntityData",
     "EntityMeta",
+    "EntityOwnerDestination",
     "EntityRelationships",
     "EntityResponseArray",
     "EntityResponseDataAttributes",
@@ -7696,6 +7761,10 @@ __all__ = [
     "FacetInfoResponseDataAttributesResultRange",
     "FacetInfoResponseDataAttributesResultValuesItems",
     "FacetInfoResponseDataType",
+    "FacetItem",
+    "FacetResponseAttributes",
+    "FacetResponseData",
+    "FacetType",
     "FastlyAPIKey",
     "FastlyAPIKeyType",
     "FastlyAPIKeyUpdate",
@@ -7891,6 +7960,14 @@ __all__ = [
     "GeminiIntegration",
     "GeminiIntegrationType",
     "GeminiIntegrationUpdate",
+    "GenerateCampaignReportRequest",
+    "GenerateCampaignReportRequestAttributes",
+    "GenerateCampaignReportRequestData",
+    "GenerateCampaignReportRequestDataType",
+    "GenerateCampaignTeamReportsRequest",
+    "GenerateCampaignTeamReportsRequestAttributes",
+    "GenerateCampaignTeamReportsRequestData",
+    "GenerateCampaignTeamReportsRequestDataType",
     "GetActionConnectionResponse",
     "GetAppKeyRegistrationResponse",
     "GetAppResponse",
@@ -8394,12 +8471,14 @@ __all__ = [
     "ListAppsResponseMeta",
     "ListAppsResponseMetaPage",
     "ListAssetsSBOMsResponse",
+    "ListCampaignsResponse",
     "ListConnectionsResponse",
     "ListConnectionsResponseData",
     "ListConnectionsResponseDataAttributes",
     "ListConnectionsResponseDataAttributesConnectionsItems",
     "ListConnectionsResponseDataAttributesConnectionsItemsJoin",
     "ListConnectionsResponseDataType",
+    "ListDefaultRulesResponse",
     "ListDeploymentRuleResponseData",
     "ListDeploymentRulesDataType",
     "ListDeploymentRulesResponseDataAttributes",
@@ -8410,6 +8489,8 @@ __all__ = [
     "ListEntityCatalogResponse",
     "ListEntityCatalogResponseIncludedItem",
     "ListEntityCatalogResponseLinks",
+    "ListFacetsResponse",
+    "ListFacetsResponseMeta",
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
@@ -8427,6 +8508,8 @@ __all__ = [
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
+    "ListScorecardsResponse",
+    "ListScoresResponse",
     "ListSecurityFindingsResponse",
     "ListTagsResponse",
     "ListTagsResponseData",
@@ -9122,6 +9205,7 @@ __all__ = [
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
     "PageUrgency",
+    "PaginatedResponseMeta",
     "Pagination",
     "Parameter",
     "PartialAPIKey",
@@ -9661,6 +9745,12 @@ __all__ = [
     "ScheduleUser",
     "ScheduleUserAttributes",
     "ScheduleUserType",
+    "ScoreResponseAttributes",
+    "ScoreResponseData",
+    "ScoreType",
+    "ScorecardListResponseAttributes",
+    "ScorecardListResponseData",
+    "ScorecardListType",
     "ScorecardType",
     "SearchIssuesIncludeQueryParameterItem",
     "SeatAssignmentsDataType",
@@ -10021,6 +10111,10 @@ __all__ = [
     "ServiceNowUsersResponse",
     "SessionIdArray",
     "SessionIdData",
+    "SetupRulesRequest",
+    "SetupRulesRequestAttributes",
+    "SetupRulesRequestData",
+    "SetupRulesRequestDataType",
     "Shift",
     "ShiftData",
     "ShiftDataAttributes",
@@ -10043,6 +10137,7 @@ __all__ = [
     "SingleAggregatedDnsResponseDataType",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
+    "SlackRoutingOptions",
     "SlackTriggerWrapper",
     "SloReportCreateRequest",
     "SloReportCreateRequestAttributes",
@@ -10474,6 +10569,9 @@ __all__ = [
     "UpdateAppsDatastoreRequest",
     "UpdateAppsDatastoreRequestData",
     "UpdateAppsDatastoreRequestDataAttributes",
+    "UpdateCampaignRequest",
+    "UpdateCampaignRequestAttributes",
+    "UpdateCampaignRequestData",
     "UpdateConnectionRequest",
     "UpdateConnectionRequestData",
     "UpdateConnectionRequestDataAttributes",
