@@ -12541,6 +12541,13 @@ datadog\_api\_client.v2.model.incident\_attachment\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_condition module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_condition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_create\_attributes module
 -----------------------------------------------------------------
 
@@ -13280,6 +13287,20 @@ datadog\_api\_client.v2.model.incident\_response\_relationships module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_response_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_schedule\_trigger module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_schedule_trigger
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_schedule\_trigger\_wrapper module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_schedule_trigger_wrapper
    :members:
    :show-inheritance:
 

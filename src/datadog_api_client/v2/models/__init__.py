@@ -2413,6 +2413,7 @@ from datadog_api_client.v2.model.ip_allowlist_type import IPAllowlistType
 from datadog_api_client.v2.model.ip_allowlist_update_request import IPAllowlistUpdateRequest
 from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
 from datadog_api_client.v2.model.incident_attachment_type import IncidentAttachmentType
+from datadog_api_client.v2.model.incident_condition import IncidentCondition
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships
@@ -2563,6 +2564,8 @@ from datadog_api_client.v2.model.incident_response_included_item import Incident
 from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
 from datadog_api_client.v2.model.incident_response_meta_pagination import IncidentResponseMetaPagination
 from datadog_api_client.v2.model.incident_response_relationships import IncidentResponseRelationships
+from datadog_api_client.v2.model.incident_schedule_trigger import IncidentScheduleTrigger
+from datadog_api_client.v2.model.incident_schedule_trigger_wrapper import IncidentScheduleTriggerWrapper
 from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
 from datadog_api_client.v2.model.incident_search_response_attributes import IncidentSearchResponseAttributes
 from datadog_api_client.v2.model.incident_search_response_data import IncidentSearchResponseData
@@ -8036,6 +8039,7 @@ __all__ = [
     "IPAllowlistUpdateRequest",
     "IdPMetadataFormData",
     "IncidentAttachmentType",
+    "IncidentCondition",
     "IncidentCreateAttributes",
     "IncidentCreateData",
     "IncidentCreateRelationships",
@@ -8142,6 +8146,8 @@ __all__ = [
     "IncidentResponseMeta",
     "IncidentResponseMetaPagination",
     "IncidentResponseRelationships",
+    "IncidentScheduleTrigger",
+    "IncidentScheduleTriggerWrapper",
     "IncidentSearchResponse",
     "IncidentSearchResponseAttributes",
     "IncidentSearchResponseData",
