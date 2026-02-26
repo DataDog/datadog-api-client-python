@@ -1838,6 +1838,7 @@ from datadog_api_client.v2.model.entity_response_included_schema_attributes impo
 )
 from datadog_api_client.v2.model.entity_response_included_schema_type import EntityResponseIncludedSchemaType
 from datadog_api_client.v2.model.entity_response_meta import EntityResponseMeta
+from datadog_api_client.v2.model.entity_schema_version import EntitySchemaVersion
 from datadog_api_client.v2.model.entity_to_incidents import EntityToIncidents
 from datadog_api_client.v2.model.entity_to_oncalls import EntityToOncalls
 from datadog_api_client.v2.model.entity_to_raw_schema import EntityToRawSchema
@@ -2402,6 +2403,14 @@ from datadog_api_client.v2.model.hourly_usage_metadata import HourlyUsageMetadat
 from datadog_api_client.v2.model.hourly_usage_pagination import HourlyUsagePagination
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+from datadog_api_client.v2.model.idp_config_attributes import IDPConfigAttributes
+from datadog_api_client.v2.model.idp_config_data import IDPConfigData
+from datadog_api_client.v2.model.idp_config_request import IDPConfigRequest
+from datadog_api_client.v2.model.idp_config_request_attributes import IDPConfigRequestAttributes
+from datadog_api_client.v2.model.idp_config_request_data import IDPConfigRequestData
+from datadog_api_client.v2.model.idp_config_response import IDPConfigResponse
+from datadog_api_client.v2.model.idp_config_type import IDPConfigType
+from datadog_api_client.v2.model.idp_config_value_item import IDPConfigValueItem
 from datadog_api_client.v2.model.ip_allowlist_attributes import IPAllowlistAttributes
 from datadog_api_client.v2.model.ip_allowlist_data import IPAllowlistData
 from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
@@ -4448,6 +4457,8 @@ from datadog_api_client.v2.model.recommendation_attributes import Recommendation
 from datadog_api_client.v2.model.recommendation_data import RecommendationData
 from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
 from datadog_api_client.v2.model.recommendation_type import RecommendationType
+from datadog_api_client.v2.model.recommended_entity_id import RecommendedEntityID
+from datadog_api_client.v2.model.recommended_entity_with_schema import RecommendedEntityWithSchema
 from datadog_api_client.v2.model.reference_table_create_source_type import ReferenceTableCreateSourceType
 from datadog_api_client.v2.model.reference_table_schema_field_type import ReferenceTableSchemaFieldType
 from datadog_api_client.v2.model.reference_table_sort_type import ReferenceTableSortType
@@ -7608,6 +7619,7 @@ __all__ = [
     "EntityResponseIncludedSchemaAttributes",
     "EntityResponseIncludedSchemaType",
     "EntityResponseMeta",
+    "EntitySchemaVersion",
     "EntityToIncidents",
     "EntityToOncalls",
     "EntityToRawSchema",
@@ -8078,6 +8090,14 @@ __all__ = [
     "HourlyUsagePagination",
     "HourlyUsageResponse",
     "HourlyUsageType",
+    "IDPConfigAttributes",
+    "IDPConfigData",
+    "IDPConfigRequest",
+    "IDPConfigRequestAttributes",
+    "IDPConfigRequestData",
+    "IDPConfigResponse",
+    "IDPConfigType",
+    "IDPConfigValueItem",
     "IPAllowlistAttributes",
     "IPAllowlistData",
     "IPAllowlistEntry",
@@ -9420,6 +9440,8 @@ __all__ = [
     "RecommendationData",
     "RecommendationDocument",
     "RecommendationType",
+    "RecommendedEntityID",
+    "RecommendedEntityWithSchema",
     "ReferenceTableCreateSourceType",
     "ReferenceTableSchemaFieldType",
     "ReferenceTableSortType",
