@@ -15,6 +15,8 @@ from datadog_api_client.v2.model.aws_accounts_response import AWSAccountsRespons
 from datadog_api_client.v2.model.aws_account_response import AWSAccountResponse
 from datadog_api_client.v2.model.aws_account_create_request import AWSAccountCreateRequest
 from datadog_api_client.v2.model.aws_account_update_request import AWSAccountUpdateRequest
+from datadog_api_client.v2.model.aws_ccm_config_response import AWSCcmConfigResponse
+from datadog_api_client.v2.model.aws_ccm_config_request import AWSCcmConfigRequest
 from datadog_api_client.v2.model.aws_namespaces_response import AWSNamespacesResponse
 from datadog_api_client.v2.model.aws_event_bridge_delete_response import AWSEventBridgeDeleteResponse
 from datadog_api_client.v2.model.aws_event_bridge_delete_request import AWSEventBridgeDeleteRequest
@@ -49,6 +51,32 @@ class AWSIntegrationApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AWSAccountCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_aws_account_ccm_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSCcmConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
+                "operation_id": "create_aws_account_ccm_config",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "aws_account_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "aws_account_config_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSCcmConfigRequest,),
                     "location": "body",
                 },
             },
@@ -115,6 +143,29 @@ class AWSIntegrationApi:
             api_client=api_client,
         )
 
+        self._delete_aws_account_ccm_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
+                "operation_id": "delete_aws_account_ccm_config",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "aws_account_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "aws_account_config_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_aws_event_bridge_source_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeDeleteResponse,),
@@ -141,6 +192,29 @@ class AWSIntegrationApi:
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}",
                 "operation_id": "get_aws_account",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "aws_account_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "aws_account_config_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_aws_account_ccm_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSCcmConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
+                "operation_id": "get_aws_account_ccm_config",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -286,6 +360,32 @@ class AWSIntegrationApi:
             api_client=api_client,
         )
 
+        self._update_aws_account_ccm_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSCcmConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
+                "operation_id": "update_aws_account_ccm_config",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "aws_account_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "aws_account_config_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSCcmConfigRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_aws_account(
         self,
         body: AWSAccountCreateRequest,
@@ -301,6 +401,30 @@ class AWSIntegrationApi:
         kwargs["body"] = body
 
         return self._create_aws_account_endpoint.call_with_http_info(**kwargs)
+
+    def create_aws_account_ccm_config(
+        self,
+        aws_account_config_id: str,
+        body: AWSCcmConfigRequest,
+    ) -> AWSCcmConfigResponse:
+        """Create AWS CCM config.
+
+        Create the Cloud Cost Management config for an AWS Account Integration Config using Cost and Usage Report
+        (CUR) 2.0 by config ID.
+
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_ endpoint and query by AWS Account ID.
+        :type aws_account_config_id: str
+        :param body: Create a Cloud Cost Management config for an AWS Account Integration Config.
+        :type body: AWSCcmConfigRequest
+        :rtype: AWSCcmConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["aws_account_config_id"] = aws_account_config_id
+
+        kwargs["body"] = body
+
+        return self._create_aws_account_ccm_config_endpoint.call_with_http_info(**kwargs)
 
     def create_aws_event_bridge_source(
         self,
@@ -349,6 +473,25 @@ class AWSIntegrationApi:
 
         return self._delete_aws_account_endpoint.call_with_http_info(**kwargs)
 
+    def delete_aws_account_ccm_config(
+        self,
+        aws_account_config_id: str,
+    ) -> None:
+        """Delete AWS CCM config.
+
+        Delete the Cloud Cost Management config for an AWS Account Integration Config using Cost and Usage Report
+        (CUR) 2.0 by config ID.
+
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_ endpoint and query by AWS Account ID.
+        :type aws_account_config_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["aws_account_config_id"] = aws_account_config_id
+
+        return self._delete_aws_account_ccm_config_endpoint.call_with_http_info(**kwargs)
+
     def delete_aws_event_bridge_source(
         self,
         body: AWSEventBridgeDeleteRequest,
@@ -383,6 +526,25 @@ class AWSIntegrationApi:
         kwargs["aws_account_config_id"] = aws_account_config_id
 
         return self._get_aws_account_endpoint.call_with_http_info(**kwargs)
+
+    def get_aws_account_ccm_config(
+        self,
+        aws_account_config_id: str,
+    ) -> AWSCcmConfigResponse:
+        """Get AWS CCM config.
+
+        Get the Cloud Cost Management config for an AWS Account Integration Config using Cost and Usage Report
+        (CUR) 2.0 by config ID.
+
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_ endpoint and query by AWS Account ID.
+        :type aws_account_config_id: str
+        :rtype: AWSCcmConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["aws_account_config_id"] = aws_account_config_id
+
+        return self._get_aws_account_ccm_config_endpoint.call_with_http_info(**kwargs)
 
     def get_aws_integration_iam_permissions(
         self,
@@ -485,3 +647,27 @@ class AWSIntegrationApi:
         kwargs["body"] = body
 
         return self._update_aws_account_endpoint.call_with_http_info(**kwargs)
+
+    def update_aws_account_ccm_config(
+        self,
+        aws_account_config_id: str,
+        body: AWSCcmConfigRequest,
+    ) -> AWSCcmConfigResponse:
+        """Update AWS CCM config.
+
+        Update the Cloud Cost Management config for an AWS Account Integration Config using Cost and Usage Report
+        (CUR) 2.0 by config ID.
+
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_ endpoint and query by AWS Account ID.
+        :type aws_account_config_id: str
+        :param body: Update a Cloud Cost Management config for an AWS Account Integration Config.
+        :type body: AWSCcmConfigRequest
+        :rtype: AWSCcmConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["aws_account_config_id"] = aws_account_config_id
+
+        kwargs["body"] = body
+
+        return self._update_aws_account_ccm_config_endpoint.call_with_http_info(**kwargs)
