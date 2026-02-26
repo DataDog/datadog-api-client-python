@@ -40,6 +40,7 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
             "description": (str,),
             "id": (UUID,),
             "modified_at": (datetime,),
+            "started_at": (datetime,),
             "status": (CreateDegradationRequestDataAttributesStatus,),
         }
 
@@ -49,6 +50,7 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         "description": "description",
         "id": "id",
         "modified_at": "modified_at",
+        "started_at": "started_at",
         "status": "status",
     }
     read_only_vars = {
@@ -66,6 +68,7 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         description: Union[str, UnsetType] = unset,
         id: Union[UUID, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
+        started_at: Union[datetime, UnsetType] = unset,
         status: Union[CreateDegradationRequestDataAttributesStatus, UnsetType] = unset,
         **kwargs,
     ):
@@ -87,6 +90,9 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         :param modified_at: Timestamp of when the update was last modified.
         :type modified_at: datetime, optional
 
+        :param started_at: Timestamp of when the update started.
+        :type started_at: datetime, optional
+
         :param status: The status of the degradation.
         :type status: CreateDegradationRequestDataAttributesStatus, optional
         """
@@ -100,6 +106,8 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
             kwargs["id"] = id
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
+        if started_at is not unset:
+            kwargs["started_at"] = started_at
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)

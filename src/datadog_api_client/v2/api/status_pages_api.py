@@ -16,6 +16,7 @@ from datadog_api_client.v2.model.status_page_array import StatusPageArray
 from datadog_api_client.v2.model.status_page import StatusPage
 from datadog_api_client.v2.model.create_status_page_request import CreateStatusPageRequest
 from datadog_api_client.v2.model.degradation_array import DegradationArray
+from datadog_api_client.v2.model.maintenance_array import MaintenanceArray
 from datadog_api_client.v2.model.patch_status_page_request import PatchStatusPageRequest
 from datadog_api_client.v2.model.status_pages_component_array import StatusPagesComponentArray
 from datadog_api_client.v2.model.status_pages_component import StatusPagesComponent
@@ -24,6 +25,9 @@ from datadog_api_client.v2.model.patch_component_request import PatchComponentRe
 from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.create_degradation_request import CreateDegradationRequest
 from datadog_api_client.v2.model.patch_degradation_request import PatchDegradationRequest
+from datadog_api_client.v2.model.maintenance import Maintenance
+from datadog_api_client.v2.model.create_maintenance_request import CreateMaintenanceRequest
+from datadog_api_client.v2.model.patch_maintenance_request import PatchMaintenanceRequest
 
 
 class StatusPagesApi:
@@ -96,6 +100,42 @@ class StatusPagesApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateDegradationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_maintenance_endpoint = _Endpoint(
+            settings={
+                "response_type": (Maintenance,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenances",
+                "operation_id": "create_maintenance",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "notify_subscribers": {
+                    "openapi_types": (bool,),
+                    "attribute": "notify_subscribers",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateMaintenanceRequest,),
                     "location": "body",
                 },
             },
@@ -277,6 +317,40 @@ class StatusPagesApi:
             api_client=api_client,
         )
 
+        self._get_maintenance_endpoint = _Endpoint(
+            settings={
+                "response_type": (Maintenance,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenances/{maintenance_id}",
+                "operation_id": "get_maintenance",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "maintenance_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "maintenance_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_status_page_endpoint = _Endpoint(
             settings={
                 "response_type": (StatusPage,),
@@ -366,6 +440,58 @@ class StatusPagesApi:
                 "filter_status": {
                     "openapi_types": (str,),
                     "attribute": "filter[status]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_maintenances_endpoint = _Endpoint(
+            settings={
+                "response_type": (MaintenanceArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/maintenances",
+                "operation_id": "list_maintenances",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_page_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[page_id]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "filter_status": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[status]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
                     "location": "query",
                 },
             },
@@ -486,6 +612,48 @@ class StatusPagesApi:
             api_client=api_client,
         )
 
+        self._update_maintenance_endpoint = _Endpoint(
+            settings={
+                "response_type": (Maintenance,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenances/{maintenance_id}",
+                "operation_id": "update_maintenance",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "notify_subscribers": {
+                    "openapi_types": (bool,),
+                    "attribute": "notify_subscribers",
+                    "location": "query",
+                },
+                "maintenance_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "maintenance_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchMaintenanceRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_status_page_endpoint = _Endpoint(
             settings={
                 "response_type": (StatusPage,),
@@ -583,6 +751,40 @@ class StatusPagesApi:
         kwargs["body"] = body
 
         return self._create_degradation_endpoint.call_with_http_info(**kwargs)
+
+    def create_maintenance(
+        self,
+        page_id: UUID,
+        body: CreateMaintenanceRequest,
+        *,
+        notify_subscribers: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> Maintenance:
+        """Schedule maintenance.
+
+        Schedules a new maintenance.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :type body: CreateMaintenanceRequest
+        :param notify_subscribers: Whether to notify page subscribers of the maintenance.
+        :type notify_subscribers: bool, optional
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: Maintenance
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        if notify_subscribers is not unset:
+            kwargs["notify_subscribers"] = notify_subscribers
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_maintenance_endpoint.call_with_http_info(**kwargs)
 
     def create_status_page(
         self,
@@ -726,6 +928,35 @@ class StatusPagesApi:
 
         return self._get_degradation_endpoint.call_with_http_info(**kwargs)
 
+    def get_maintenance(
+        self,
+        page_id: UUID,
+        maintenance_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> Maintenance:
+        """Get maintenance.
+
+        Retrieves a specific maintenance by its ID.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param maintenance_id: The ID of the maintenance.
+        :type maintenance_id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: Maintenance
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["maintenance_id"] = maintenance_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_maintenance_endpoint.call_with_http_info(**kwargs)
+
     def get_status_page(
         self,
         page_id: UUID,
@@ -782,6 +1013,7 @@ class StatusPagesApi:
         page_limit: Union[int, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
         filter_status: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
     ) -> DegradationArray:
         """List degradations.
 
@@ -797,6 +1029,8 @@ class StatusPagesApi:
         :type include: str, optional
         :param filter_status: Optional degradation status filter. Supported values: investigating, identified, monitoring, resolved.
         :type filter_status: str, optional
+        :param sort: Sort order. Prefix with '-' for descending. Supported values: created_at, -created_at, modified_at, -modified_at.
+        :type sort: str, optional
         :rtype: DegradationArray
         """
         kwargs: Dict[str, Any] = {}
@@ -815,7 +1049,59 @@ class StatusPagesApi:
         if filter_status is not unset:
             kwargs["filter_status"] = filter_status
 
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._list_degradations_endpoint.call_with_http_info(**kwargs)
+
+    def list_maintenances(
+        self,
+        *,
+        filter_page_id: Union[str, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+        filter_status: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+    ) -> MaintenanceArray:
+        """List maintenances.
+
+        Lists all maintenances for the organization. Optionally filter by status and page.
+
+        :param filter_page_id: Optional page id filter.
+        :type filter_page_id: str, optional
+        :param page_offset: Offset to use as the start of the page.
+        :type page_offset: int, optional
+        :param page_limit: The number of maintenances to return per page.
+        :type page_limit: int, optional
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :param filter_status: Optional maintenance status filter. Supported values: scheduled, in_progress, completed.
+        :type filter_status: str, optional
+        :param sort: Sort order. Prefix with '-' for descending. Supported values: created_at, -created_at, start_date, -start_date.
+        :type sort: str, optional
+        :rtype: MaintenanceArray
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_page_id is not unset:
+            kwargs["filter_page_id"] = filter_page_id
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        return self._list_maintenances_endpoint.call_with_http_info(**kwargs)
 
     def list_status_pages(
         self,
@@ -919,6 +1205,45 @@ class StatusPagesApi:
         kwargs["body"] = body
 
         return self._update_degradation_endpoint.call_with_http_info(**kwargs)
+
+    def update_maintenance(
+        self,
+        page_id: UUID,
+        maintenance_id: UUID,
+        body: PatchMaintenanceRequest,
+        *,
+        notify_subscribers: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> Maintenance:
+        """Update maintenance.
+
+        Updates an existing maintenance's attributes.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param maintenance_id: The ID of the maintenance.
+        :type maintenance_id: UUID
+        :type body: PatchMaintenanceRequest
+        :param notify_subscribers: Whether to notify page subscribers of the maintenance.
+        :type notify_subscribers: bool, optional
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: Maintenance
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        if notify_subscribers is not unset:
+            kwargs["notify_subscribers"] = notify_subscribers
+
+        kwargs["maintenance_id"] = maintenance_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_maintenance_endpoint.call_with_http_info(**kwargs)
 
     def update_status_page(
         self,

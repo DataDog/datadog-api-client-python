@@ -15,8 +15,8 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.degradation_data import DegradationData
-    from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
-    from datadog_api_client.v2.model.status_pages_response_meta import StatusPagesResponseMeta
+    from datadog_api_client.v2.model.degradation_included import DegradationIncluded
+    from datadog_api_client.v2.model.pagination_meta import PaginationMeta
     from datadog_api_client.v2.model.status_pages_user import StatusPagesUser
     from datadog_api_client.v2.model.status_page_as_included import StatusPageAsIncluded
 
@@ -25,13 +25,13 @@ class DegradationArray(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.degradation_data import DegradationData
-        from datadog_api_client.v2.model.degradation_array_included import DegradationArrayIncluded
-        from datadog_api_client.v2.model.status_pages_response_meta import StatusPagesResponseMeta
+        from datadog_api_client.v2.model.degradation_included import DegradationIncluded
+        from datadog_api_client.v2.model.pagination_meta import PaginationMeta
 
         return {
             "data": ([DegradationData],),
-            "included": ([DegradationArrayIncluded],),
-            "meta": (StatusPagesResponseMeta,),
+            "included": ([DegradationIncluded],),
+            "meta": (PaginationMeta,),
         }
 
     attribute_map = {
@@ -46,10 +46,8 @@ class DegradationArray(ModelNormal):
     def __init__(
         self_,
         data: List[DegradationData],
-        included: Union[
-            List[Union[DegradationArrayIncluded, StatusPagesUser, StatusPageAsIncluded]], UnsetType
-        ] = unset,
-        meta: Union[StatusPagesResponseMeta, UnsetType] = unset,
+        included: Union[List[Union[DegradationIncluded, StatusPagesUser, StatusPageAsIncluded]], UnsetType] = unset,
+        meta: Union[PaginationMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -59,10 +57,10 @@ class DegradationArray(ModelNormal):
         :type data: [DegradationData]
 
         :param included: The included related resources of a degradation. Client must explicitly request these resources by name in the ``include`` query parameter.
-        :type included: [DegradationArrayIncluded], optional
+        :type included: [DegradationIncluded], optional
 
         :param meta: Response metadata.
-        :type meta: StatusPagesResponseMeta, optional
+        :type meta: PaginationMeta, optional
         """
         if included is not unset:
             kwargs["included"] = included

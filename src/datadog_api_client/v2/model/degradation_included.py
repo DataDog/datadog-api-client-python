@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class DegradationArrayIncluded(ModelComposed):
+class DegradationIncluded(ModelComposed):
     def __init__(self, **kwargs):
         """
 

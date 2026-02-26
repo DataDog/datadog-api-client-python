@@ -14,29 +14,29 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.status_pages_pagination import StatusPagesPagination
+    from datadog_api_client.v2.model.create_maintenance_request_data import CreateMaintenanceRequestData
 
 
-class StatusPagesResponseMeta(ModelNormal):
+class CreateMaintenanceRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.status_pages_pagination import StatusPagesPagination
+        from datadog_api_client.v2.model.create_maintenance_request_data import CreateMaintenanceRequestData
 
         return {
-            "page": (StatusPagesPagination,),
+            "data": (CreateMaintenanceRequestData,),
         }
 
     attribute_map = {
-        "page": "page",
+        "data": "data",
     }
 
-    def __init__(self_, page: Union[StatusPagesPagination, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[CreateMaintenanceRequestData, UnsetType] = unset, **kwargs):
         """
-        Response metadata.
 
-        :param page: Offset-based pagination schema.
-        :type page: StatusPagesPagination, optional
+
+        :param data:
+        :type data: CreateMaintenanceRequestData, optional
         """
-        if page is not unset:
-            kwargs["page"] = page
+        if data is not unset:
+            kwargs["data"] = data
         super().__init__(kwargs)

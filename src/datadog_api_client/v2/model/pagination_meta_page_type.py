@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class StatusPagesPaginationType(ModelSimple):
+class PaginationMetaPageType(ModelSimple):
     """
 
 
@@ -23,7 +23,7 @@ class StatusPagesPaginationType(ModelSimple):
     allowed_values = {
         "offset_limit",
     }
-    OFFSET_LIMIT: ClassVar["StatusPagesPaginationType"]
+    OFFSET_LIMIT: ClassVar["PaginationMetaPageType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class StatusPagesPaginationType(ModelSimple):
         }
 
 
-StatusPagesPaginationType.OFFSET_LIMIT = StatusPagesPaginationType("offset_limit")
+PaginationMetaPageType.OFFSET_LIMIT = PaginationMetaPageType("offset_limit")
