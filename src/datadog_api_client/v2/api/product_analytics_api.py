@@ -76,7 +76,7 @@ class ProductAnalyticsApi:
                 "version": "v2",
                 "servers": [
                     {
-                        "url": "https://{subdomain}.{site}",
+                        "url": "https://{subdomain}-{site}",
                         "variables": {
                             "site": {
                                 "description": "The regional site for customers.",
