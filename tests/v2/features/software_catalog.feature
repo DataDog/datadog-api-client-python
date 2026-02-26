@@ -8,6 +8,58 @@ Feature: Software Catalog
     And an instance of "SoftwareCatalog" API
 
   @generated @skip @team:DataDog/service-catalog
+  Scenario: Accept recommended entities in bulk returns "Accepted" response
+    Given operation "AcceptRecommendedEntities" enabled
+    And new "AcceptRecommendedEntities" request
+    And body with value [{"id": "123abc456def", "schema": {"apiVersion": "v3", "datadog": {"codeLocations": [{"paths": []}], "events": [{}], "logs": [{}], "performanceData": {"tags": []}, "pipelines": {"fingerprints": []}}, "integrations": {"opsgenie": {"serviceURL": "https://www.opsgenie.com/service/shopping-cart"}, "pagerduty": {"serviceURL": "https://www.pagerduty.com/service-directory/Pshopping-cart"}}, "kind": "service", "metadata": {"additionalOwners": [{"name": ""}], "contacts": [{"contact": "https://slack/", "type": "slack"}], "id": "4b163705-23c0-4573-b2fb-f6cea2163fcb", "inheritFrom": "application:default/myapp", "links": [{"name": "mylink", "type": "link", "url": "https://mylink"}], "name": "myService", "namespace": "default", "tags": ["this:tag", "that:tag"]}, "spec": {"componentOf": [], "dependsOn": [], "languages": []}}}]
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Accept recommended entities in bulk returns "Bad Request" response
+    Given operation "AcceptRecommendedEntities" enabled
+    And new "AcceptRecommendedEntities" request
+    And body with value [{"id": "123abc456def", "schema": {"apiVersion": "v3", "datadog": {"codeLocations": [{"paths": []}], "events": [{}], "logs": [{}], "performanceData": {"tags": []}, "pipelines": {"fingerprints": []}}, "integrations": {"opsgenie": {"serviceURL": "https://www.opsgenie.com/service/shopping-cart"}, "pagerduty": {"serviceURL": "https://www.pagerduty.com/service-directory/Pshopping-cart"}}, "kind": "service", "metadata": {"additionalOwners": [{"name": ""}], "contacts": [{"contact": "https://slack/", "type": "slack"}], "id": "4b163705-23c0-4573-b2fb-f6cea2163fcb", "inheritFrom": "application:default/myapp", "links": [{"name": "mylink", "type": "link", "url": "https://mylink"}], "name": "myService", "namespace": "default", "tags": ["this:tag", "that:tag"]}, "spec": {"componentOf": [], "dependsOn": [], "languages": []}}}]
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Convert entities between schema versions returns "Bad Request" response
+    Given operation "ConvertCatalogEntities" enabled
+    And new "ConvertCatalogEntities" request
+    And request contains "target_version" parameter from "REPLACE.ME"
+    And body with value {"apiVersion": "v3", "datadog": {"codeLocations": [{"paths": []}], "events": [{}], "logs": [{}], "performanceData": {"tags": []}, "pipelines": {"fingerprints": []}}, "integrations": {"opsgenie": {"serviceURL": "https://www.opsgenie.com/service/shopping-cart"}, "pagerduty": {"serviceURL": "https://www.pagerduty.com/service-directory/Pshopping-cart"}}, "kind": "service", "metadata": {"additionalOwners": [{"name": ""}], "contacts": [{"contact": "https://slack/", "type": "slack"}], "id": "4b163705-23c0-4573-b2fb-f6cea2163fcb", "inheritFrom": "application:default/myapp", "links": [{"name": "mylink", "type": "link", "url": "https://mylink"}], "name": "myService", "namespace": "default", "tags": ["this:tag", "that:tag"]}, "spec": {"componentOf": [], "dependsOn": [], "languages": []}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Convert entities between schema versions returns "OK" response
+    Given operation "ConvertCatalogEntities" enabled
+    And new "ConvertCatalogEntities" request
+    And request contains "target_version" parameter from "REPLACE.ME"
+    And body with value {"apiVersion": "v3", "datadog": {"codeLocations": [{"paths": []}], "events": [{}], "logs": [{}], "performanceData": {"tags": []}, "pipelines": {"fingerprints": []}}, "integrations": {"opsgenie": {"serviceURL": "https://www.opsgenie.com/service/shopping-cart"}, "pagerduty": {"serviceURL": "https://www.pagerduty.com/service-directory/Pshopping-cart"}}, "kind": "service", "metadata": {"additionalOwners": [{"name": ""}], "contacts": [{"contact": "https://slack/", "type": "slack"}], "id": "4b163705-23c0-4573-b2fb-f6cea2163fcb", "inheritFrom": "application:default/myapp", "links": [{"name": "mylink", "type": "link", "url": "https://mylink"}], "name": "myService", "namespace": "default", "tags": ["this:tag", "that:tag"]}, "spec": {"componentOf": [], "dependsOn": [], "languages": []}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Create or update IDP configuration returns "Bad Request" response
+    Given operation "UpsertIDPConfigValue" enabled
+    And new "UpsertIDPConfigValue" request
+    And request contains "config_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"value": [{"displayName": "My Dashboard", "id": "dashboard-1"}]}, "type": "idp_config"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Create or update IDP configuration returns "No Content" response
+    Given operation "UpsertIDPConfigValue" enabled
+    And new "UpsertIDPConfigValue" request
+    And request contains "config_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"value": [{"displayName": "My Dashboard", "id": "dashboard-1"}]}, "type": "idp_config"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:DataDog/service-catalog
   Scenario: Create or update entities returns "ACCEPTED" response
     Given new "UpsertCatalogEntity" request
     And body with value {"apiVersion": "v3", "datadog": {"codeLocations": [{"paths": []}], "events": [{}], "logs": [{}], "performanceData": {"tags": []}, "pipelines": {"fingerprints": []}}, "integrations": {"opsgenie": {"serviceURL": "https://www.opsgenie.com/service/shopping-cart"}, "pagerduty": {"serviceURL": "https://www.pagerduty.com/service-directory/Pshopping-cart"}}, "kind": "service", "metadata": {"additionalOwners": [{"name": ""}], "contacts": [{"contact": "https://slack/", "type": "slack"}], "id": "4b163705-23c0-4573-b2fb-f6cea2163fcb", "inheritFrom": "application:default/myapp", "links": [{"name": "mylink", "type": "link", "url": "https://mylink"}], "name": "myService", "namespace": "default", "tags": ["this:tag", "that:tag"]}, "spec": {"componentOf": [], "dependsOn": [], "languages": []}}
@@ -51,6 +103,22 @@ Feature: Software Catalog
     And the response "data[0].attributes.apiVersion" is equal to "v3"
     And the response "data[0].attributes.kind" is equal to "service"
     And the response "data[0].attributes.name" is equal to "service-{{ unique_lower_alnum }}"
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Decline recommended entities in bulk returns "Bad Request" response
+    Given operation "DeclineRecommendedEntities" enabled
+    And new "DeclineRecommendedEntities" request
+    And body with value [{"id": "123abcdef"}]
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Decline recommended entities in bulk returns "No Content" response
+    Given operation "DeclineRecommendedEntities" enabled
+    And new "DeclineRecommendedEntities" request
+    And body with value [{"id": "123abcdef"}]
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/service-catalog
   Scenario: Delete a single entity returns "Bad Request" response
@@ -102,6 +170,30 @@ Feature: Software Catalog
     Then the response status is 404 Not Found
     And the response "errors[0]" is equal to "Not Found"
 
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Get Internal Developer Portal configuration returns "Bad Request" response
+    Given operation "GetIDPConfigValue" enabled
+    And new "GetIDPConfigValue" request
+    And request contains "config_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Get Internal Developer Portal configuration returns "Not Found" response
+    Given operation "GetIDPConfigValue" enabled
+    And new "GetIDPConfigValue" request
+    And request contains "config_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Get Internal Developer Portal configuration returns "OK" response
+    Given operation "GetIDPConfigValue" enabled
+    And new "GetIDPConfigValue" request
+    And request contains "config_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/service-catalog
   Scenario: Get a list of entities returns "OK" response
     Given new "ListCatalogEntity" request
@@ -150,3 +242,17 @@ Feature: Software Catalog
     Given new "PreviewCatalogEntities" request
     When the request is sent
     Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Trigger recommended entity discovery returns "Accepted" response
+    Given operation "TriggerRecommendedEntities" enabled
+    And new "TriggerRecommendedEntities" request
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: Trigger recommended entity discovery returns "Bad Request" response
+    Given operation "TriggerRecommendedEntities" enabled
+    And new "TriggerRecommendedEntities" request
+    When the request is sent
+    Then the response status is 400 Bad Request

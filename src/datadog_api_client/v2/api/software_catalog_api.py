@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import collections
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -21,15 +21,20 @@ from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
 from datadog_api_client.v2.model.entity_v3 import EntityV3
+from datadog_api_client.v2.model.entity_schema_version import EntitySchemaVersion
 from datadog_api_client.v2.model.entity_response_array import EntityResponseArray
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.kind_data import KindData
 from datadog_api_client.v2.model.upsert_catalog_kind_response import UpsertCatalogKindResponse
 from datadog_api_client.v2.model.upsert_catalog_kind_request import UpsertCatalogKindRequest
 from datadog_api_client.v2.model.kind_obj import KindObj
+from datadog_api_client.v2.model.recommended_entity_with_schema import RecommendedEntityWithSchema
+from datadog_api_client.v2.model.recommended_entity_id import RecommendedEntityID
 from datadog_api_client.v2.model.list_relation_catalog_response import ListRelationCatalogResponse
 from datadog_api_client.v2.model.relation_include_type import RelationIncludeType
 from datadog_api_client.v2.model.relation_response import RelationResponse
+from datadog_api_client.v2.model.idp_config_response import IDPConfigResponse
+from datadog_api_client.v2.model.idp_config_request import IDPConfigRequest
 
 
 class SoftwareCatalogApi:
@@ -41,6 +46,74 @@ class SoftwareCatalogApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._accept_recommended_entities_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/recommended_entity/bulk_accept",
+                "operation_id": "accept_recommended_entities",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": ([RecommendedEntityWithSchema],),
+                    "location": "body",
+                    "collection_format": "multi",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._convert_catalog_entities_endpoint = _Endpoint(
+            settings={
+                "response_type": (str,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/entity/convert",
+                "operation_id": "convert_catalog_entities",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "target_version": {
+                    "required": True,
+                    "openapi_types": (EntitySchemaVersion,),
+                    "attribute": "target_version",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpsertCatalogEntityRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._decline_recommended_entities_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/recommended_entity/bulk_decline",
+                "operation_id": "decline_recommended_entities",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": ([RecommendedEntityID],),
+                    "location": "body",
+                    "collection_format": "multi",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._delete_catalog_entity_endpoint = _Endpoint(
             settings={
@@ -84,6 +157,29 @@ class SoftwareCatalogApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_idp_config_value_endpoint = _Endpoint(
+            settings={
+                "response_type": (IDPConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/idp/config/{config_name}",
+                "operation_id": "get_idp_config_value",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "config_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "config_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -265,6 +361,25 @@ class SoftwareCatalogApi:
             api_client=api_client,
         )
 
+        self._trigger_recommended_entities_endpoint = _Endpoint(
+            settings={
+                "response_type": (dict,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/catalog/recommended_entity/trigger",
+                "operation_id": "trigger_recommended_entities",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "openapi_types": (dict,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._upsert_catalog_entity_endpoint = _Endpoint(
             settings={
                 "response_type": (UpsertCatalogEntityResponse,),
@@ -305,6 +420,88 @@ class SoftwareCatalogApi:
             api_client=api_client,
         )
 
+        self._upsert_idp_config_value_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/idp/config/{config_name}",
+                "operation_id": "upsert_idp_config_value",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "config_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "config_name",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IDPConfigRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+    def accept_recommended_entities(
+        self,
+        body: List[RecommendedEntityWithSchema],
+    ) -> None:
+        """Accept recommended entities in bulk.
+
+        Accept multiple recommended entities in Software Catalog in a single request.
+
+        :param body: List of recommended entities to accept with their schemas.
+        :type body: [RecommendedEntityWithSchema]
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._accept_recommended_entities_endpoint.call_with_http_info(**kwargs)
+
+    def convert_catalog_entities(
+        self,
+        target_version: EntitySchemaVersion,
+        body: Union[UpsertCatalogEntityRequest, EntityV3, str],
+    ) -> str:
+        """Convert entities between schema versions.
+
+        Convert entities from one schema version to another in Software Catalog.
+
+        :param target_version: The target schema version to convert entities to.
+        :type target_version: EntitySchemaVersion
+        :param body: Entity YAML or JSON to convert.
+        :type body: UpsertCatalogEntityRequest
+        :rtype: str
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["target_version"] = target_version
+
+        kwargs["body"] = body
+
+        return self._convert_catalog_entities_endpoint.call_with_http_info(**kwargs)
+
+    def decline_recommended_entities(
+        self,
+        body: List[RecommendedEntityID],
+    ) -> None:
+        """Decline recommended entities in bulk.
+
+        Decline multiple recommended entities in Software Catalog in a single request.
+
+        :param body: List of recommended entity IDs to decline.
+        :type body: [RecommendedEntityID]
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._decline_recommended_entities_endpoint.call_with_http_info(**kwargs)
+
     def delete_catalog_entity(
         self,
         entity_id: str,
@@ -338,6 +535,23 @@ class SoftwareCatalogApi:
         kwargs["kind_id"] = kind_id
 
         return self._delete_catalog_kind_endpoint.call_with_http_info(**kwargs)
+
+    def get_idp_config_value(
+        self,
+        config_name: str,
+    ) -> IDPConfigResponse:
+        """Get Internal Developer Portal configuration.
+
+        Get a configuration value for the Internal Developer Portal (IDP).
+
+        :param config_name: The configuration key to retrieve.
+        :type config_name: str
+        :rtype: IDPConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["config_name"] = config_name
+
+        return self._get_idp_config_value_endpoint.call_with_http_info(**kwargs)
 
     def list_catalog_entity(
         self,
@@ -727,6 +941,25 @@ class SoftwareCatalogApi:
         kwargs: Dict[str, Any] = {}
         return self._preview_catalog_entities_endpoint.call_with_http_info(**kwargs)
 
+    def trigger_recommended_entities(
+        self,
+        *,
+        body: Union[dict, UnsetType] = unset,
+    ) -> dict:
+        """Trigger recommended entity discovery.
+
+        Trigger the discovery of recommended entities in Software Catalog.
+
+        :param body: Optional request body for triggering recommended entity discovery.
+        :type body: dict, optional
+        :rtype: dict
+        """
+        kwargs: Dict[str, Any] = {}
+        if body is not unset:
+            kwargs["body"] = body
+
+        return self._trigger_recommended_entities_endpoint.call_with_http_info(**kwargs)
+
     def upsert_catalog_entity(
         self,
         body: Union[UpsertCatalogEntityRequest, EntityV3, str],
@@ -760,3 +993,25 @@ class SoftwareCatalogApi:
         kwargs["body"] = body
 
         return self._upsert_catalog_kind_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_idp_config_value(
+        self,
+        config_name: str,
+        body: IDPConfigRequest,
+    ) -> None:
+        """Create or update IDP configuration.
+
+        Create or update a configuration value for the Internal Developer Portal (IDP).
+
+        :param config_name: The configuration key to create or update.
+        :type config_name: str
+        :param body: Configuration value to set.
+        :type body: IDPConfigRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["config_name"] = config_name
+
+        kwargs["body"] = body
+
+        return self._upsert_idp_config_value_endpoint.call_with_http_info(**kwargs)
