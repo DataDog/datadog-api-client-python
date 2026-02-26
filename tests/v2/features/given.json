@@ -1302,6 +1302,22 @@
   {
     "parameters": [
       {
+        "name": "page_id",
+        "value": "\"{{ status_page.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"API Maintenance\",\n      \"scheduled_description\": \"We will be performing maintenance on the API to improve performance.\",\n      \"in_progress_description\": \"We are currently performing maintenance on the API to improve performance.\",\n      \"completed_description\": \"We have completed maintenance on the API to improve performance.\",\n      \"start_date\": \"{{ timeISO('now + 1h') }}\",\n      \"completed_date\": \"{{ timeISO('now + 2h') }}\",\n      \"components_affected\": [\n        {\n          \"id\": \"{{ status_page.data.attributes.components[0].components[0].id }}\",\n          \"status\": \"operational\"\n        }\n      ]\n    },\n    \"type\": \"maintenances\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"maintenance\" in the system",
+    "key": "maintenance",
+    "tag": "Status Pages",
+    "operationId": "CreateMaintenance"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"handle\": \"test-handle-{{ unique_hash }}\",\n      \"name\": \"test-name-{{ unique_hash }}\"\n    },\n    \"type\": \"team\"\n  }\n}"
       }

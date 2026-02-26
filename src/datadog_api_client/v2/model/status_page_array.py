@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.status_page_data import StatusPageData
     from datadog_api_client.v2.model.status_page_array_included import StatusPageArrayIncluded
-    from datadog_api_client.v2.model.status_pages_response_meta import StatusPagesResponseMeta
+    from datadog_api_client.v2.model.pagination_meta import PaginationMeta
     from datadog_api_client.v2.model.status_pages_user import StatusPagesUser
 
 
@@ -25,12 +25,12 @@ class StatusPageArray(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.status_page_data import StatusPageData
         from datadog_api_client.v2.model.status_page_array_included import StatusPageArrayIncluded
-        from datadog_api_client.v2.model.status_pages_response_meta import StatusPagesResponseMeta
+        from datadog_api_client.v2.model.pagination_meta import PaginationMeta
 
         return {
             "data": ([StatusPageData],),
             "included": ([StatusPageArrayIncluded],),
-            "meta": (StatusPagesResponseMeta,),
+            "meta": (PaginationMeta,),
         }
 
     attribute_map = {
@@ -46,7 +46,7 @@ class StatusPageArray(ModelNormal):
         self_,
         data: List[StatusPageData],
         included: Union[List[Union[StatusPageArrayIncluded, StatusPagesUser]], UnsetType] = unset,
-        meta: Union[StatusPagesResponseMeta, UnsetType] = unset,
+        meta: Union[PaginationMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -59,7 +59,7 @@ class StatusPageArray(ModelNormal):
         :type included: [StatusPageArrayIncluded], optional
 
         :param meta: Response metadata.
-        :type meta: StatusPagesResponseMeta, optional
+        :type meta: PaginationMeta, optional
         """
         if included is not unset:
             kwargs["included"] = included
