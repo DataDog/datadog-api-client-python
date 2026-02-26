@@ -778,7 +778,7 @@ class MetricsApi:
     ) -> MetricsAndMetricTagConfigurationsResponse:
         """Get a list of metrics.
 
-        Returns all metrics that can be configured in the Metrics Summary page or with Metrics without Limits™ (matching additional filters if specified).
+        Returns all metrics for your organization that match the given filter parameters.
         Optionally, paginate by using the ``page[cursor]`` and/or ``page[size]`` query parameters.
         To fetch the first page, pass in a query parameter with either a valid ``page[size]`` or an empty cursor like ``page[cursor]=``. To fetch the next page, pass in the ``next_cursor`` value from the response as the new ``page[cursor]`` value.
         Once the ``meta.pagination.next_cursor`` value is null, all pages have been retrieved.
@@ -801,7 +801,7 @@ class MetricsApi:
         :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
         :type filter_related_assets: bool, optional
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
-            Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).
+            Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
         :type window_seconds: int, optional
         :param page_size: Maximum number of results returned.
         :type page_size: int, optional
@@ -880,7 +880,7 @@ class MetricsApi:
         :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
         :type filter_related_assets: bool, optional
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
-            Default value is 3600 (1 hour), maximum value is 2,592,000 (30 days).
+            Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
         :type window_seconds: int, optional
         :param page_size: Maximum number of results returned.
         :type page_size: int, optional
