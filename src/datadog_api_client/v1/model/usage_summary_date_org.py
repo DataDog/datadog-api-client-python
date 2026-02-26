@@ -68,6 +68,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "csm_host_enterprise_compliance_host_count_top99p": (int,),
             "csm_host_enterprise_cws_host_count_top99p": (int,),
             "csm_host_enterprise_gcp_host_count_top99p": (int,),
+            "csm_host_enterprise_oci_host_count_top99p": (int,),
             "csm_host_enterprise_total_host_count_top99p": (int,),
             "cspm_aas_host_top99p": (int,),
             "cspm_aws_host_top99p": (int,),
@@ -289,6 +290,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "csm_host_enterprise_compliance_host_count_top99p": "csm_host_enterprise_compliance_host_count_top99p",
         "csm_host_enterprise_cws_host_count_top99p": "csm_host_enterprise_cws_host_count_top99p",
         "csm_host_enterprise_gcp_host_count_top99p": "csm_host_enterprise_gcp_host_count_top99p",
+        "csm_host_enterprise_oci_host_count_top99p": "csm_host_enterprise_oci_host_count_top99p",
         "csm_host_enterprise_total_host_count_top99p": "csm_host_enterprise_total_host_count_top99p",
         "cspm_aas_host_top99p": "cspm_aas_host_top99p",
         "cspm_aws_host_top99p": "cspm_aws_host_top99p",
@@ -511,6 +513,7 @@ class UsageSummaryDateOrg(ModelNormal):
         csm_host_enterprise_compliance_host_count_top99p: Union[int, UnsetType] = unset,
         csm_host_enterprise_cws_host_count_top99p: Union[int, UnsetType] = unset,
         csm_host_enterprise_gcp_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_enterprise_oci_host_count_top99p: Union[int, UnsetType] = unset,
         csm_host_enterprise_total_host_count_top99p: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p: Union[int, UnsetType] = unset,
@@ -835,6 +838,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param csm_host_enterprise_gcp_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise GCP hosts over all hours in the current date for the given org.
         :type csm_host_enterprise_gcp_host_count_top99p: int, optional
+
+        :param csm_host_enterprise_oci_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise OCI hosts over all hours in the current date for the given org.
+        :type csm_host_enterprise_oci_host_count_top99p: int, optional
 
         :param csm_host_enterprise_total_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise hosts over all hours in the current date for the given org.
         :type csm_host_enterprise_total_host_count_top99p: int, optional
@@ -1441,6 +1447,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["csm_host_enterprise_cws_host_count_top99p"] = csm_host_enterprise_cws_host_count_top99p
         if csm_host_enterprise_gcp_host_count_top99p is not unset:
             kwargs["csm_host_enterprise_gcp_host_count_top99p"] = csm_host_enterprise_gcp_host_count_top99p
+        if csm_host_enterprise_oci_host_count_top99p is not unset:
+            kwargs["csm_host_enterprise_oci_host_count_top99p"] = csm_host_enterprise_oci_host_count_top99p
         if csm_host_enterprise_total_host_count_top99p is not unset:
             kwargs["csm_host_enterprise_total_host_count_top99p"] = csm_host_enterprise_total_host_count_top99p
         if cspm_aas_host_top99p is not unset:

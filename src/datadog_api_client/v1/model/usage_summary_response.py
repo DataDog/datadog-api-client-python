@@ -76,6 +76,7 @@ class UsageSummaryResponse(ModelNormal):
             "csm_host_enterprise_compliance_host_count_top99p_sum": (int,),
             "csm_host_enterprise_cws_host_count_top99p_sum": (int,),
             "csm_host_enterprise_gcp_host_count_top99p_sum": (int,),
+            "csm_host_enterprise_oci_host_count_top99p_sum": (int,),
             "csm_host_enterprise_total_host_count_top99p_sum": (int,),
             "cspm_aas_host_top99p_sum": (int,),
             "cspm_aws_host_top99p_sum": (int,),
@@ -302,6 +303,7 @@ class UsageSummaryResponse(ModelNormal):
         "csm_host_enterprise_compliance_host_count_top99p_sum": "csm_host_enterprise_compliance_host_count_top99p_sum",
         "csm_host_enterprise_cws_host_count_top99p_sum": "csm_host_enterprise_cws_host_count_top99p_sum",
         "csm_host_enterprise_gcp_host_count_top99p_sum": "csm_host_enterprise_gcp_host_count_top99p_sum",
+        "csm_host_enterprise_oci_host_count_top99p_sum": "csm_host_enterprise_oci_host_count_top99p_sum",
         "csm_host_enterprise_total_host_count_top99p_sum": "csm_host_enterprise_total_host_count_top99p_sum",
         "cspm_aas_host_top99p_sum": "cspm_aas_host_top99p_sum",
         "cspm_aws_host_top99p_sum": "cspm_aws_host_top99p_sum",
@@ -529,6 +531,7 @@ class UsageSummaryResponse(ModelNormal):
         csm_host_enterprise_compliance_host_count_top99p_sum: Union[int, UnsetType] = unset,
         csm_host_enterprise_cws_host_count_top99p_sum: Union[int, UnsetType] = unset,
         csm_host_enterprise_gcp_host_count_top99p_sum: Union[int, UnsetType] = unset,
+        csm_host_enterprise_oci_host_count_top99p_sum: Union[int, UnsetType] = unset,
         csm_host_enterprise_total_host_count_top99p_sum: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p_sum: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -856,6 +859,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param csm_host_enterprise_gcp_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise GCP hosts over all hours in the current month for all organizations.
         :type csm_host_enterprise_gcp_host_count_top99p_sum: int, optional
+
+        :param csm_host_enterprise_oci_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise OCI hosts over all hours in the current month for all organizations.
+        :type csm_host_enterprise_oci_host_count_top99p_sum: int, optional
 
         :param csm_host_enterprise_total_host_count_top99p_sum: Shows the 99th percentile of all Cloud Security Management Enterprise hosts over all hours in the current month for all organizations.
         :type csm_host_enterprise_total_host_count_top99p_sum: int, optional
@@ -1480,6 +1486,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["csm_host_enterprise_cws_host_count_top99p_sum"] = csm_host_enterprise_cws_host_count_top99p_sum
         if csm_host_enterprise_gcp_host_count_top99p_sum is not unset:
             kwargs["csm_host_enterprise_gcp_host_count_top99p_sum"] = csm_host_enterprise_gcp_host_count_top99p_sum
+        if csm_host_enterprise_oci_host_count_top99p_sum is not unset:
+            kwargs["csm_host_enterprise_oci_host_count_top99p_sum"] = csm_host_enterprise_oci_host_count_top99p_sum
         if csm_host_enterprise_total_host_count_top99p_sum is not unset:
             kwargs["csm_host_enterprise_total_host_count_top99p_sum"] = csm_host_enterprise_total_host_count_top99p_sum
         if cspm_aas_host_top99p_sum is not unset:
