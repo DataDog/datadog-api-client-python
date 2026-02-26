@@ -2196,6 +2196,32 @@
       "type": "idempotent"
     }
   },
+  "DeleteAWSAccountCCMConfig": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAWSAccountCCMConfig": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAWSAccountCCMConfig": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateAWSAccountCCMConfig": {
+    "tag": "AWS Integration",
+    "undo": {
+      "operationId": "DeleteAWSAccountCCMConfig",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListAWSNamespaces": {
     "tag": "AWS Integration",
     "undo": {
