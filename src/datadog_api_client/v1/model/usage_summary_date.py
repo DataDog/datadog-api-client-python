@@ -86,6 +86,7 @@ class UsageSummaryDate(ModelNormal):
             "cws_fargate_task_avg": (int,),
             "cws_host_top99p": (int,),
             "data_jobs_monitoring_host_hr_sum": (int,),
+            "data_observability_quality_monitoring_avg": (int,),
             "date": (datetime,),
             "dbm_host_top99p": (int,),
             "dbm_queries_count_avg": (int,),
@@ -301,6 +302,7 @@ class UsageSummaryDate(ModelNormal):
         "cws_fargate_task_avg": "cws_fargate_task_avg",
         "cws_host_top99p": "cws_host_top99p",
         "data_jobs_monitoring_host_hr_sum": "data_jobs_monitoring_host_hr_sum",
+        "data_observability_quality_monitoring_avg": "data_observability_quality_monitoring_avg",
         "date": "date",
         "dbm_host_top99p": "dbm_host_top99p",
         "dbm_queries_count_avg": "dbm_queries_count_avg",
@@ -517,6 +519,7 @@ class UsageSummaryDate(ModelNormal):
         cws_fargate_task_avg: Union[int, UnsetType] = unset,
         cws_host_top99p: Union[int, UnsetType] = unset,
         data_jobs_monitoring_host_hr_sum: Union[int, UnsetType] = unset,
+        data_observability_quality_monitoring_avg: Union[int, UnsetType] = unset,
         date: Union[datetime, UnsetType] = unset,
         dbm_host_top99p: Union[int, UnsetType] = unset,
         dbm_queries_count_avg: Union[int, UnsetType] = unset,
@@ -857,6 +860,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param data_jobs_monitoring_host_hr_sum: Shows the sum of all Data Jobs Monitoring hosts over all hours in the current date for the given org.
         :type data_jobs_monitoring_host_hr_sum: int, optional
+
+        :param data_observability_quality_monitoring_avg: Shows the average of all Data Observability Quality Monitoring usage over all hours in the current date for the given org.
+        :type data_observability_quality_monitoring_avg: int, optional
 
         :param date: The date for the usage.
         :type date: datetime, optional
@@ -1434,6 +1440,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["cws_host_top99p"] = cws_host_top99p
         if data_jobs_monitoring_host_hr_sum is not unset:
             kwargs["data_jobs_monitoring_host_hr_sum"] = data_jobs_monitoring_host_hr_sum
+        if data_observability_quality_monitoring_avg is not unset:
+            kwargs["data_observability_quality_monitoring_avg"] = data_observability_quality_monitoring_avg
         if date is not unset:
             kwargs["date"] = date
         if dbm_host_top99p is not unset:

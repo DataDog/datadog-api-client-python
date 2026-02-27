@@ -91,6 +91,7 @@ class UsageSummaryResponse(ModelNormal):
             "cws_fargate_task_avg_sum": (int,),
             "cws_host_top99p_sum": (int,),
             "data_jobs_monitoring_host_hr_agg_sum": (int,),
+            "data_observability_quality_monitoring_avg_sum": (int,),
             "dbm_host_top99p_sum": (int,),
             "dbm_queries_avg_sum": (int,),
             "end_date": (datetime,),
@@ -317,6 +318,7 @@ class UsageSummaryResponse(ModelNormal):
         "cws_fargate_task_avg_sum": "cws_fargate_task_avg_sum",
         "cws_host_top99p_sum": "cws_host_top99p_sum",
         "data_jobs_monitoring_host_hr_agg_sum": "data_jobs_monitoring_host_hr_agg_sum",
+        "data_observability_quality_monitoring_avg_sum": "data_observability_quality_monitoring_avg_sum",
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",
         "dbm_queries_avg_sum": "dbm_queries_avg_sum",
         "end_date": "end_date",
@@ -544,6 +546,7 @@ class UsageSummaryResponse(ModelNormal):
         cws_fargate_task_avg_sum: Union[int, UnsetType] = unset,
         cws_host_top99p_sum: Union[int, UnsetType] = unset,
         data_jobs_monitoring_host_hr_agg_sum: Union[int, UnsetType] = unset,
+        data_observability_quality_monitoring_avg_sum: Union[int, UnsetType] = unset,
         dbm_host_top99p_sum: Union[int, UnsetType] = unset,
         dbm_queries_avg_sum: Union[int, UnsetType] = unset,
         end_date: Union[datetime, UnsetType] = unset,
@@ -901,6 +904,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param data_jobs_monitoring_host_hr_agg_sum: Shows the sum of Data Jobs Monitoring hosts over all hours in the current months for all organizations
         :type data_jobs_monitoring_host_hr_agg_sum: int, optional
+
+        :param data_observability_quality_monitoring_avg_sum: Shows the sum of the average of all Data Observability Quality Monitoring usage over all hours in the current months for all organizations.
+        :type data_observability_quality_monitoring_avg_sum: int, optional
 
         :param dbm_host_top99p_sum: Shows the 99th percentile of all Database Monitoring hosts over all hours in the current month for all organizations.
         :type dbm_host_top99p_sum: int, optional
@@ -1510,6 +1516,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cws_host_top99p_sum"] = cws_host_top99p_sum
         if data_jobs_monitoring_host_hr_agg_sum is not unset:
             kwargs["data_jobs_monitoring_host_hr_agg_sum"] = data_jobs_monitoring_host_hr_agg_sum
+        if data_observability_quality_monitoring_avg_sum is not unset:
+            kwargs["data_observability_quality_monitoring_avg_sum"] = data_observability_quality_monitoring_avg_sum
         if dbm_host_top99p_sum is not unset:
             kwargs["dbm_host_top99p_sum"] = dbm_host_top99p_sum
         if dbm_queries_avg_sum is not unset:
