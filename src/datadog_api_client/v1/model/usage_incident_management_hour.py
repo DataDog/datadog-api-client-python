@@ -41,7 +41,7 @@ class UsageIncidentManagementHour(ModelNormal):
         **kwargs,
     ):
         """
-        Incident management usage for a given organization for a given hour.
+        Incident Management usage for a given organization for a given hour.
 
         :param hour: The hour for the usage.
         :type hour: datetime, optional
