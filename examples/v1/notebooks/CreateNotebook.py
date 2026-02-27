@@ -17,6 +17,7 @@ from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeT
 from datadog_api_client.v1.model.notebook_resource_type import NotebookResourceType
 from datadog_api_client.v1.model.notebook_split_by import NotebookSplitBy
 from datadog_api_client.v1.model.notebook_status import NotebookStatus
+from datadog_api_client.v1.model.notebook_template_variable import NotebookTemplateVariable
 from datadog_api_client.v1.model.notebook_timeseries_cell_attributes import NotebookTimeseriesCellAttributes
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
 from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
@@ -73,6 +74,17 @@ body = NotebookCreateRequest(
             ],
             name="Example-Notebook",
             status=NotebookStatus.PUBLISHED,
+            template_variables=[
+                NotebookTemplateVariable(
+                    name="example-notebook",
+                    prefix="host",
+                    available_values=[
+                        "host1",
+                        "host2",
+                    ],
+                    default="*",
+                ),
+            ],
             time=NotebookRelativeTime(
                 live_span=WidgetLiveSpan.PAST_ONE_HOUR,
             ),

@@ -2909,6 +2909,13 @@ datadog\_api\_client.v1.model.notebook\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.notebook\_template\_variable module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.notebook_template_variable
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.notebook\_timeseries\_cell\_attributes module
 ---------------------------------------------------------------------------
 
