@@ -8,6 +8,8 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -32,12 +34,14 @@ class SLOCountDefinition(ModelNormal):
         from datadog_api_client.v1.model.slo_data_source_query_definition import SLODataSourceQueryDefinition
 
         return {
+            "bad_events_formula": (SLOFormula,),
             "good_events_formula": (SLOFormula,),
             "queries": ([SLODataSourceQueryDefinition],),
             "total_events_formula": (SLOFormula,),
         }
 
     attribute_map = {
+        "bad_events_formula": "bad_events_formula",
         "good_events_formula": "good_events_formula",
         "queries": "queries",
         "total_events_formula": "total_events_formula",
@@ -47,12 +51,15 @@ class SLOCountDefinition(ModelNormal):
         self_,
         good_events_formula: SLOFormula,
         queries: List[Union[SLODataSourceQueryDefinition, FormulaAndFunctionMetricQueryDefinition]],
-        total_events_formula: SLOFormula,
+        bad_events_formula: Union[SLOFormula, UnsetType] = unset,
+        total_events_formula: Union[SLOFormula, UnsetType] = unset,
         **kwargs,
     ):
         """
-        A count-based (metric) SLI specification, composed of three parts: the good events formula, the total events formula,
-        and the underlying queries.
+        A count-based (metric) SLI specification, composed of three parts: the good events formula, the bad or total events formula, and the underlying queries.
+
+        :param bad_events_formula: A formula that specifies how to combine the results of multiple queries.
+        :type bad_events_formula: SLOFormula, optional
 
         :param good_events_formula: A formula that specifies how to combine the results of multiple queries.
         :type good_events_formula: SLOFormula
@@ -61,10 +68,13 @@ class SLOCountDefinition(ModelNormal):
         :type queries: [SLODataSourceQueryDefinition]
 
         :param total_events_formula: A formula that specifies how to combine the results of multiple queries.
-        :type total_events_formula: SLOFormula
+        :type total_events_formula: SLOFormula, optional
         """
+        if bad_events_formula is not unset:
+            kwargs["bad_events_formula"] = bad_events_formula
+        if total_events_formula is not unset:
+            kwargs["total_events_formula"] = total_events_formula
         super().__init__(kwargs)
 
         self_.good_events_formula = good_events_formula
         self_.queries = queries
-        self_.total_events_formula = total_events_formula

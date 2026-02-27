@@ -36,8 +36,7 @@ class SLOCountSpec(ModelNormal):
         """
         A metric SLI specification.
 
-        :param count: A count-based (metric) SLI specification, composed of three parts: the good events formula, the total events formula,
-            and the underlying queries.
+        :param count: A count-based (metric) SLI specification, composed of three parts: the good events formula, the bad or total events formula, and the underlying queries.
         :type count: SLOCountDefinition
         """
         super().__init__(kwargs)

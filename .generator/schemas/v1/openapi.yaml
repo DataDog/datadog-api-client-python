@@ -11902,10 +11902,10 @@ components:
       type: object
     SLOCountDefinition:
       description: 'A count-based (metric) SLI specification, composed of three parts:
-        the good events formula, the total events formula,
-
-        and the underlying queries.'
+        the good events formula, the bad or total events formula, and the underlying
+        queries.'
       example:
+        bad_events_formula: query2
         good_events_formula: query1 - query2
         queries:
         - data_source: metrics
@@ -11914,8 +11914,11 @@ components:
         - data_source: metrics
           name: query2
           query: sum:trace.servlet.request.errors{*} by {env}.as_count()
-        total_events_formula: query1
       properties:
+        bad_events_formula:
+          $ref: '#/components/schemas/SLOFormula'
+          description: The bad events formula (recommended). Alternatively, total
+            events can be defined by the `total_events_formula` field instead.
         good_events_formula:
           $ref: '#/components/schemas/SLOFormula'
         queries:
@@ -11929,9 +11932,10 @@ components:
           type: array
         total_events_formula:
           $ref: '#/components/schemas/SLOFormula'
+          description: '"The total events formula. Alternatively, bad events can be
+            defined by the `bad_events_formula` field instead.'
       required:
       - good_events_formula
-      - total_events_formula
       - queries
       type: object
     SLOCountSpec:
@@ -11939,6 +11943,7 @@ components:
       description: A metric SLI specification.
       example:
         count:
+          bad_events_formula: query2
           good_events_formula: query1 - query2
           queries:
           - data_source: metrics
@@ -11947,7 +11952,6 @@ components:
           - data_source: metrics
             name: query2
             query: sum:trace.servlet.request.errors{*} by {env}.as_count()
-          total_events_formula: query1
       properties:
         count:
           $ref: '#/components/schemas/SLOCountDefinition'
