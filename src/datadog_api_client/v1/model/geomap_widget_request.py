@@ -139,7 +139,7 @@ class GeomapWidgetRequest(ModelNormal):
         :param log_query: The log query.
         :type log_query: LogQueryDefinition, optional
 
-        :param q: The widget metrics query.
+        :param q: The widget metrics query. Deprecated - Use ``queries`` and ``formulas`` instead. **Deprecated**.
         :type q: str, optional
 
         :param queries: List of queries that can be returned directly or used in formulas.

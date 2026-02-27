@@ -120,7 +120,7 @@ class WidgetDefinition(ModelComposed):
         :param widgets: List of widget groups.
         :type widgets: [Widget]
 
-        :param events: List of widget events.
+        :param events: List of widget events. Deprecated - Use `overlay` request type instead.
         :type events: [WidgetEvent], optional
 
         :param no_group_hosts: Whether to show the hosts that don’t fit in a group.
