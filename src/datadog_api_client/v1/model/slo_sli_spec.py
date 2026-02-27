@@ -19,8 +19,7 @@ class SLOSliSpec(ModelComposed):
             and 3. the threshold. Optionally, a fourth part, the query interval, can be provided.
         :type time_slice: SLOTimeSliceCondition
 
-        :param count: A count-based (metric) SLI specification, composed of three parts: the good events formula, the total events formula,
-            and the underlying queries.
+        :param count: A count-based (metric) SLI specification, composed of three parts: the good events formula, the bad or total events formula, and the underlying queries.
         :type count: SLOCountDefinition
         """
         super().__init__(kwargs)
