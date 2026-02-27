@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class WidgetHistogramRequestType(ModelSimple):
     """
-    Request type for the histogram request.
+    Request type for distribution of point values for distribution metrics. Query space aggregator must be `histogram:<metric name>` for points distributions.
 
     :param value: If omitted defaults to "histogram". Must be one of ["histogram"].
     :type value: str

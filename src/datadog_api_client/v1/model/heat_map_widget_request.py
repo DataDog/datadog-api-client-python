@@ -156,7 +156,7 @@ class HeatMapWidgetRequest(ModelNormal):
         :param profile_metrics_query: The log query.
         :type profile_metrics_query: LogQueryDefinition, optional
 
-        :param q: Widget query.
+        :param q: Widget query. Deprecated - Use ``queries`` and ``formulas`` instead. **Deprecated**.
         :type q: str, optional
 
         :param queries: List of queries that can be returned directly or used in formulas.
@@ -165,7 +165,7 @@ class HeatMapWidgetRequest(ModelNormal):
         :param query: A formula and functions metrics query.
         :type query: FormulaAndFunctionMetricQueryDefinition, optional
 
-        :param request_type: Request type for the histogram request.
+        :param request_type: Request type for distribution of point values for distribution metrics. Query space aggregator must be ``histogram:<metric name>`` for points distributions.
         :type request_type: WidgetHistogramRequestType, optional
 
         :param response_format: Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.

@@ -157,7 +157,7 @@ class QueryValueWidgetRequest(ModelNormal):
         :param profile_metrics_query: The log query.
         :type profile_metrics_query: LogQueryDefinition, optional
 
-        :param q: TODO.
+        :param q: Widget query. Deprecated - Use ``queries`` and ``formulas`` instead. **Deprecated**.
         :type q: str, optional
 
         :param queries: List of queries that can be returned directly or used in formulas.
