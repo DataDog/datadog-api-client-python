@@ -43,7 +43,7 @@ class ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactOptio
         """
         Controls how partial redaction is applied, including character count and direction.
 
-        :param characters: The ``ObservabilityPipelineSensitiveDataScannerProcessorActionPartialRedactOptions`` ``characters``.
+        :param characters: Number of characters to leave visible from the start or end of the matched value; the rest are redacted.
         :type characters: int
 
         :param direction: Indicates whether to redact characters from the first or last part of the matched value.
