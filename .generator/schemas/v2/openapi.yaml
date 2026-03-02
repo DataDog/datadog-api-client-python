@@ -22994,6 +22994,35 @@ components:
             $ref: '#/components/schemas/EscalationPolicyIncluded'
           type: array
       type: object
+    EscalationPolicyAction:
+      description: Triggers an escalation policy when the routing rule matches.
+      properties:
+        policy_id:
+          description: The ID of the escalation policy to trigger.
+          example: fad4eee1-13f5-40d8-886b-4e56d8d5d1c6
+          type: string
+        support_hours:
+          $ref: '#/components/schemas/TimeRestrictions'
+          description: Defines the support hours during which the escalation policy
+            will be executed.
+          nullable: true
+        type:
+          $ref: '#/components/schemas/EscalationPolicyActionType'
+        urgency:
+          $ref: '#/components/schemas/Urgency'
+      required:
+      - type
+      - policy_id
+      type: object
+    EscalationPolicyActionType:
+      default: escalation_policy
+      description: Indicates that the action is an escalation policy action.
+      enum:
+      - escalation_policy
+      example: escalation_policy
+      type: string
+      x-enum-varnames:
+      - ESCALATION_POLICY
     EscalationPolicyCreateRequest:
       description: Represents a request to create a new escalation policy, including
         the policy data.
@@ -52369,6 +52398,7 @@ components:
       oneOf:
       - $ref: '#/components/schemas/SendSlackMessageAction'
       - $ref: '#/components/schemas/SendTeamsMessageAction'
+      - $ref: '#/components/schemas/EscalationPolicyAction'
     RoutingRuleAttributes:
       description: Defines the configurable attributes of a routing rule, such as
         actions, query, time restriction, and urgency.
@@ -91487,6 +91517,12 @@ paths:
         name: include
         schema:
           type: string
+      - description: When set to `true`, escalation policies are returned as actions
+          within routing rules rather than as a separate `policy_id` field.
+        in: query
+        name: use_policy_action
+        schema:
+          type: boolean
       responses:
         '200':
           content:
@@ -91524,6 +91560,12 @@ paths:
         name: include
         schema:
           type: string
+      - description: When set to `true`, escalation policies are returned as actions
+          within routing rules rather than as a separate `policy_id` field.
+        in: query
+        name: use_policy_action
+        schema:
+          type: boolean
       requestBody:
         content:
           application/json:
