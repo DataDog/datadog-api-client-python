@@ -77,7 +77,6 @@ body = Dashboard(
                                     aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                     metric="@ci.queue_time",
                                 ),
-                                group_by=[],
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat.TIMESERIES,
