@@ -928,6 +928,20 @@ datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_group\_by mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_group\_by\_config module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_event_query_group_by_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_group\_by\_fields module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_event_query_group_by_fields
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.formula\_and\_function\_event\_query\_group\_by\_sort module
 ------------------------------------------------------------------------------------------
 

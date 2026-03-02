@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","tags":["tm:foobar"],"title":"Test-Create_a_new_dashboard_with_invalid_team_tags_returns_Bad_Request_response-1731699164","widgets":[{"definition":{"requests":[{"change_type":"absolute","compare_to":"hour_before","formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"increase_good":true,"order_by":"change","order_dir":"desc","queries":[{"compute":{"aggregation":"count"},"data_source":"logs","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"change"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
+    body: '{"layout_type":"ordered","tags":["tm:foobar"],"title":"Test-Create_a_new_dashboard_with_invalid_team_tags_returns_Bad_Request_response-1772451092","widgets":[{"definition":{"requests":[{"change_type":"absolute","compare_to":"hour_before","formulas":[{"formula":"hour_before(query1)"},{"formula":"query1"}],"increase_good":true,"order_by":"change","order_dir":"desc","queries":[{"compute":{"aggregation":"count"},"data_source":"logs","indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"change"},"layout":{"height":4,"width":4,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"errors":["Invalid tag format. Tag key must be `team`."]}'
+      string: '{"errors":["Invalid tag format. Valid tag keys are: team."]}'
     headers:
       content-type:
       - application/json

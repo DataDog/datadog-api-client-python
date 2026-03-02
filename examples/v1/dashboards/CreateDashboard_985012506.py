@@ -69,7 +69,6 @@ body = Dashboard(
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
                                     aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
-                                group_by=[],
                             ),
                         ],
                         response_format=FormulaAndFunctionResponseFormat.TIMESERIES,

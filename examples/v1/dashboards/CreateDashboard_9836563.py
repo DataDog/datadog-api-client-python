@@ -68,7 +68,6 @@ body = Dashboard(
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
                                     aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
-                                group_by=[],
                             ),
                         ],
                         conditional_formats=[

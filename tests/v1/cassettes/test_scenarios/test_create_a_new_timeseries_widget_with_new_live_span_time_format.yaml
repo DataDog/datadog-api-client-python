@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_new_live_span_time_format-1756237679
-      with new live span time","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{"hide_incomplete_cost_data":true,"type":"live","unit":"minute","value":8},"title":"","type":"timeseries"}}]}'
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_new_live_span_time_format-1772451181
+      with new live span time","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{"hide_incomplete_cost_data":true,"type":"live","unit":"minute","value":8},"title":"","type":"timeseries"}}]}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"gwt-rfa-qem","title":"Test-Create_a_new_timeseries_widget_with_new_live_span_time_format-1756237679
-        with new live span time","description":null,"author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
-        Account","layout_type":"ordered","url":"/dashboard/gwt-rfa-qem/test-createanewtimeserieswidgetwithnewlivespantimeformat-1756237679-with-new-liv","template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{"hide_incomplete_cost_data":true,"type":"live","unit":"minute","value":8},"title":"","type":"timeseries"},"id":6382558947547501}],"notify_list":null,"created_at":"2025-08-26T19:47:59.501406+00:00","modified_at":"2025-08-26T19:47:59.501406+00:00","reflow_type":"auto","restricted_roles":[]}'
+      string: '{"id":"j9i-er8-3fp","title":"Test-Create_a_new_timeseries_widget_with_new_live_span_time_format-1772451181
+        with new live span time","description":null,"author_handle":"archana.asokan@datadoghq.com","author_name":"Archana
+        Asokan","layout_type":"ordered","url":"/dashboard/j9i-er8-3fp/test-createanewtimeserieswidgetwithnewlivespantimeformat-1772451181-with-new-liv","template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count","metric":"@ci.queue_time"},"data_source":"ci_pipelines","indexes":["*"],"name":"query1","search":{"query":"ci_level:job"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{"hide_incomplete_cost_data":true,"type":"live","unit":"minute","value":8},"title":"","type":"timeseries"},"id":6064667163154272}],"notify_list":null,"created_at":"2026-03-02T11:33:01.307731+00:00","modified_at":"2026-03-02T11:33:01.307731+00:00","reflow_type":"auto","restricted_roles":[]}'
     headers:
       content-type:
       - application/json
@@ -26,12 +26,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/gwt-rfa-qem
+    uri: https://api.datadoghq.com/api/v1/dashboard/j9i-er8-3fp
   response:
     body:
-      string: '{"deleted_dashboard_id":"gwt-rfa-qem"}
-
-        '
+      string: '{"deleted_dashboard_id":"j9i-er8-3fp"}'
     headers:
       content-type:
       - application/json

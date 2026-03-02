@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_formulas_and_functions_events_query_using_flat_group_by_fields-1772451128
+      with events flat group_by fields","widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"count"},"data_source":"events","group_by":{"fields":["service","host"],"limit":10},"name":"query1","search":{"query":""}}],"response_format":"timeseries"}],"type":"timeseries"},"layout":{"height":2,"width":4,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"fr8-fsd-e2q","title":"Test-Create_a_new_dashboard_with_formulas_and_functions_events_query_using_flat_group_by_fields-1772451128
+        with events flat group_by fields","description":null,"author_handle":"archana.asokan@datadoghq.com","author_name":"Archana
+        Asokan","layout_type":"ordered","url":"/dashboard/fr8-fsd-e2q/test-createanewdashboardwithformulasandfunctionseventsqueryusingflatgroupbyfield","template_variables":null,"widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"count"},"data_source":"events","group_by":{"fields":["service","host"],"limit":10},"name":"query1","search":{"query":""}}],"response_format":"timeseries"}],"type":"timeseries"},"layout":{"height":2,"width":4,"x":0,"y":0},"id":1614310387548006}],"notify_list":null,"created_at":"2026-03-02T11:32:08.617154+00:00","modified_at":"2026-03-02T11:32:08.617154+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/fr8-fsd-e2q
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"fr8-fsd-e2q"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
