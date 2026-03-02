@@ -75872,7 +75872,9 @@ paths:
       - Case Management
   /api/v2/cases/{case_id}/attributes:
     post:
-      description: Update case attributes
+      description: Update case attributes. This replaces all attributes with the provided
+        payload. To update a single attribute (e.g., team), include all existing attributes
+        in the request to avoid overwriting them.
       operationId: UpdateAttributes
       parameters:
       - $ref: '#/components/parameters/CaseIDPathParameter'
