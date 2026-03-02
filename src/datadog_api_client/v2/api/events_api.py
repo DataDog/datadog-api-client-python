@@ -13,12 +13,18 @@ from datadog_api_client.model_utils import (
     get_attribute_from_path,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.events_list_response import EventsListResponse
 from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.event_response import EventResponse
 from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
 from datadog_api_client.v2.model.event_create_request_payload import EventCreateRequestPayload
+from datadog_api_client.v2.model.event_email_addresses_response import EventEmailAddressesResponse
+from datadog_api_client.v2.model.event_email_address_single_response import EventEmailAddressSingleResponse
+from datadog_api_client.v2.model.event_email_address_create_request import EventEmailAddressCreateRequest
+from datadog_api_client.v2.model.on_call_event_email_address_create_request import OnCallEventEmailAddressCreateRequest
+from datadog_api_client.v2.model.event_email_address_update_request import EventEmailAddressUpdateRequest
 from datadog_api_client.v2.model.events_list_request import EventsListRequest
 from datadog_api_client.v2.model.v2_event_response import V2EventResponse
 
@@ -105,6 +111,92 @@ class EventsApi:
             api_client=api_client,
         )
 
+        self._create_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressSingleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail",
+                "operation_id": "create_event_email_address",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (EventEmailAddressCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_on_call_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressSingleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/on-call",
+                "operation_id": "create_on_call_event_email_address",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (OnCallEventEmailAddressCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/{email_uuid}",
+                "operation_id": "delete_event_email_address",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "email_uuid": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "email_uuid",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_on_call_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/on-call/{id}",
+                "operation_id": "delete_on_call_event_email_address",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_event_endpoint = _Endpoint(
             settings={
                 "response_type": (V2EventResponse,),
@@ -120,6 +212,56 @@ class EventsApi:
                     "openapi_types": (str,),
                     "attribute": "event_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressSingleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/{email_uuid}",
+                "operation_id": "get_event_email_address",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "email_uuid": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "email_uuid",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_event_email_addresses_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail",
+                "operation_id": "list_event_email_addresses",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "active": {
+                    "openapi_types": (bool,),
+                    "attribute": "active",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -178,6 +320,29 @@ class EventsApi:
             api_client=api_client,
         )
 
+        self._list_on_call_event_email_addresses_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/on-call",
+                "operation_id": "list_on_call_event_email_addresses",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_team_handle": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[team_handle]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._search_events_endpoint = _Endpoint(
             settings={
                 "response_type": (EventsListResponse,),
@@ -190,6 +355,32 @@ class EventsApi:
             params_map={
                 "body": {
                     "openapi_types": (EventsListRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_event_email_address_endpoint = _Endpoint(
+            settings={
+                "response_type": (EventEmailAddressSingleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/events/mail/{email_uuid}",
+                "operation_id": "update_event_email_address",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "email_uuid": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "email_uuid",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (EventEmailAddressUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -222,6 +413,72 @@ class EventsApi:
 
         return self._create_event_endpoint.call_with_http_info(**kwargs)
 
+    def create_event_email_address(
+        self,
+        body: EventEmailAddressCreateRequest,
+    ) -> EventEmailAddressSingleResponse:
+        """Create an event email address.
+
+        Create a new API email address to use in an event email integration rule.
+
+        :type body: EventEmailAddressCreateRequest
+        :rtype: EventEmailAddressSingleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_event_email_address_endpoint.call_with_http_info(**kwargs)
+
+    def create_on_call_event_email_address(
+        self,
+        body: OnCallEventEmailAddressCreateRequest,
+    ) -> EventEmailAddressSingleResponse:
+        """Create an on-call event email address.
+
+        Create a new on-call event email address associated with a team handle.
+
+        :type body: OnCallEventEmailAddressCreateRequest
+        :rtype: EventEmailAddressSingleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_on_call_event_email_address_endpoint.call_with_http_info(**kwargs)
+
+    def delete_event_email_address(
+        self,
+        email_uuid: UUID,
+    ) -> None:
+        """Revoke an event email address.
+
+        Revoke an existing API email address in your organization.
+
+        :param email_uuid: The UUID of the event email address.
+        :type email_uuid: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["email_uuid"] = email_uuid
+
+        return self._delete_event_email_address_endpoint.call_with_http_info(**kwargs)
+
+    def delete_on_call_event_email_address(
+        self,
+        id: UUID,
+    ) -> None:
+        """Revoke an on-call event email address.
+
+        Revoke an existing on-call event email address in your organization.
+
+        :param id: The UUID of the on-call event email address.
+        :type id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._delete_on_call_event_email_address_endpoint.call_with_http_info(**kwargs)
+
     def get_event(
         self,
         event_id: str,
@@ -238,6 +495,49 @@ class EventsApi:
         kwargs["event_id"] = event_id
 
         return self._get_event_endpoint.call_with_http_info(**kwargs)
+
+    def get_event_email_address(
+        self,
+        email_uuid: UUID,
+    ) -> EventEmailAddressSingleResponse:
+        """Get an event email address.
+
+        Get a single API email address for your organization.
+
+        :param email_uuid: The UUID of the event email address.
+        :type email_uuid: UUID
+        :rtype: EventEmailAddressSingleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["email_uuid"] = email_uuid
+
+        return self._get_event_email_address_endpoint.call_with_http_info(**kwargs)
+
+    def list_event_email_addresses(
+        self,
+        *,
+        active: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> EventEmailAddressesResponse:
+        """List event email addresses.
+
+        List all API email addresses for your organization.
+
+        :param active: When set to ``true`` , returns only active (non-revoked) email addresses.
+        :type active: bool, optional
+        :param include: Comma-separated list of related resources to include in the response.
+            Supported values are ``created_by`` and ``revoked_by``.
+        :type include: str, optional
+        :rtype: EventEmailAddressesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if active is not unset:
+            kwargs["active"] = active
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_event_email_addresses_endpoint.call_with_http_info(**kwargs)
 
     def list_events(
         self,
@@ -353,6 +653,23 @@ class EventsApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def list_on_call_event_email_addresses(
+        self,
+        filter_team_handle: str,
+    ) -> EventEmailAddressesResponse:
+        """List on-call event email addresses.
+
+        List all on-call event email addresses for a given team handle.
+
+        :param filter_team_handle: The team handle to filter on-call event email addresses.
+        :type filter_team_handle: str
+        :rtype: EventEmailAddressesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_team_handle"] = filter_team_handle
+
+        return self._list_on_call_event_email_addresses_endpoint.call_with_http_info(**kwargs)
+
     def search_events(
         self,
         *,
@@ -404,3 +721,24 @@ class EventsApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def update_event_email_address(
+        self,
+        email_uuid: UUID,
+        body: EventEmailAddressUpdateRequest,
+    ) -> EventEmailAddressSingleResponse:
+        """Update an event email address.
+
+        Update an existing API email address in your organization.
+
+        :param email_uuid: The UUID of the event email address.
+        :type email_uuid: UUID
+        :type body: EventEmailAddressUpdateRequest
+        :rtype: EventEmailAddressSingleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["email_uuid"] = email_uuid
+
+        kwargs["body"] = body
+
+        return self._update_event_email_address_endpoint.call_with_http_info(**kwargs)
