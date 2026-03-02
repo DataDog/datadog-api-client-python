@@ -2812,6 +2812,102 @@ from datadog_api_client.v2.model.kind_data import KindData
 from datadog_api_client.v2.model.kind_metadata import KindMetadata
 from datadog_api_client.v2.model.kind_obj import KindObj
 from datadog_api_client.v2.model.kind_response_meta import KindResponseMeta
+from datadog_api_client.v2.model.llm_obs_cursor_meta import LLMObsCursorMeta
+from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_request import LLMObsDatasetDataAttributesRequest
+from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_response import LLMObsDatasetDataAttributesResponse
+from datadog_api_client.v2.model.llm_obs_dataset_data_request import LLMObsDatasetDataRequest
+from datadog_api_client.v2.model.llm_obs_dataset_data_response import LLMObsDatasetDataResponse
+from datadog_api_client.v2.model.llm_obs_dataset_record_data_response import LLMObsDatasetRecordDataResponse
+from datadog_api_client.v2.model.llm_obs_dataset_record_item import LLMObsDatasetRecordItem
+from datadog_api_client.v2.model.llm_obs_dataset_record_update_item import LLMObsDatasetRecordUpdateItem
+from datadog_api_client.v2.model.llm_obs_dataset_records_data_attributes_request import (
+    LLMObsDatasetRecordsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_records_data_request import LLMObsDatasetRecordsDataRequest
+from datadog_api_client.v2.model.llm_obs_dataset_records_list_response import LLMObsDatasetRecordsListResponse
+from datadog_api_client.v2.model.llm_obs_dataset_records_mutation_data import LLMObsDatasetRecordsMutationData
+from datadog_api_client.v2.model.llm_obs_dataset_records_mutation_response import LLMObsDatasetRecordsMutationResponse
+from datadog_api_client.v2.model.llm_obs_dataset_records_request import LLMObsDatasetRecordsRequest
+from datadog_api_client.v2.model.llm_obs_dataset_records_update_data_attributes_request import (
+    LLMObsDatasetRecordsUpdateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_records_update_data_request import (
+    LLMObsDatasetRecordsUpdateDataRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_records_update_request import LLMObsDatasetRecordsUpdateRequest
+from datadog_api_client.v2.model.llm_obs_dataset_request import LLMObsDatasetRequest
+from datadog_api_client.v2.model.llm_obs_dataset_response import LLMObsDatasetResponse
+from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
+from datadog_api_client.v2.model.llm_obs_dataset_update_data_attributes_request import (
+    LLMObsDatasetUpdateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_update_data_request import LLMObsDatasetUpdateDataRequest
+from datadog_api_client.v2.model.llm_obs_dataset_update_request import LLMObsDatasetUpdateRequest
+from datadog_api_client.v2.model.llm_obs_datasets_response import LLMObsDatasetsResponse
+from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_attributes_request import (
+    LLMObsDeleteDatasetRecordsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_request import (
+    LLMObsDeleteDatasetRecordsDataRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_dataset_records_request import LLMObsDeleteDatasetRecordsRequest
+from datadog_api_client.v2.model.llm_obs_delete_datasets_data_attributes_request import (
+    LLMObsDeleteDatasetsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_datasets_data_request import LLMObsDeleteDatasetsDataRequest
+from datadog_api_client.v2.model.llm_obs_delete_datasets_request import LLMObsDeleteDatasetsRequest
+from datadog_api_client.v2.model.llm_obs_delete_experiments_data_attributes_request import (
+    LLMObsDeleteExperimentsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_experiments_data_request import LLMObsDeleteExperimentsDataRequest
+from datadog_api_client.v2.model.llm_obs_delete_experiments_request import LLMObsDeleteExperimentsRequest
+from datadog_api_client.v2.model.llm_obs_delete_projects_data_attributes_request import (
+    LLMObsDeleteProjectsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_projects_data_request import LLMObsDeleteProjectsDataRequest
+from datadog_api_client.v2.model.llm_obs_delete_projects_request import LLMObsDeleteProjectsRequest
+from datadog_api_client.v2.model.llm_obs_event_type import LLMObsEventType
+from datadog_api_client.v2.model.llm_obs_experiment_data_attributes_request import LLMObsExperimentDataAttributesRequest
+from datadog_api_client.v2.model.llm_obs_experiment_data_attributes_response import (
+    LLMObsExperimentDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_experiment_data_request import LLMObsExperimentDataRequest
+from datadog_api_client.v2.model.llm_obs_experiment_data_response import LLMObsExperimentDataResponse
+from datadog_api_client.v2.model.llm_obs_experiment_events_data_attributes_request import (
+    LLMObsExperimentEventsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_experiment_events_data_request import LLMObsExperimentEventsDataRequest
+from datadog_api_client.v2.model.llm_obs_experiment_events_request import LLMObsExperimentEventsRequest
+from datadog_api_client.v2.model.llm_obs_experiment_metric import LLMObsExperimentMetric
+from datadog_api_client.v2.model.llm_obs_experiment_metric_error import LLMObsExperimentMetricError
+from datadog_api_client.v2.model.llm_obs_experiment_request import LLMObsExperimentRequest
+from datadog_api_client.v2.model.llm_obs_experiment_response import LLMObsExperimentResponse
+from datadog_api_client.v2.model.llm_obs_experiment_span import LLMObsExperimentSpan
+from datadog_api_client.v2.model.llm_obs_experiment_span_error import LLMObsExperimentSpanError
+from datadog_api_client.v2.model.llm_obs_experiment_span_meta import LLMObsExperimentSpanMeta
+from datadog_api_client.v2.model.llm_obs_experiment_type import LLMObsExperimentType
+from datadog_api_client.v2.model.llm_obs_experiment_update_data_attributes_request import (
+    LLMObsExperimentUpdateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_experiment_update_data_request import LLMObsExperimentUpdateDataRequest
+from datadog_api_client.v2.model.llm_obs_experiment_update_request import LLMObsExperimentUpdateRequest
+from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
+from datadog_api_client.v2.model.llm_obs_metric_assessment import LLMObsMetricAssessment
+from datadog_api_client.v2.model.llm_obs_metric_score_type import LLMObsMetricScoreType
+from datadog_api_client.v2.model.llm_obs_project_data_attributes_request import LLMObsProjectDataAttributesRequest
+from datadog_api_client.v2.model.llm_obs_project_data_attributes_response import LLMObsProjectDataAttributesResponse
+from datadog_api_client.v2.model.llm_obs_project_data_request import LLMObsProjectDataRequest
+from datadog_api_client.v2.model.llm_obs_project_data_response import LLMObsProjectDataResponse
+from datadog_api_client.v2.model.llm_obs_project_request import LLMObsProjectRequest
+from datadog_api_client.v2.model.llm_obs_project_response import LLMObsProjectResponse
+from datadog_api_client.v2.model.llm_obs_project_type import LLMObsProjectType
+from datadog_api_client.v2.model.llm_obs_project_update_data_attributes_request import (
+    LLMObsProjectUpdateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_project_update_data_request import LLMObsProjectUpdateDataRequest
+from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
+from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
+from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
 from datadog_api_client.v2.model.language import Language
 from datadog_api_client.v2.model.launch_darkly_api_key import LaunchDarklyAPIKey
 from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
@@ -8410,6 +8506,76 @@ __all__ = [
     "KindMetadata",
     "KindObj",
     "KindResponseMeta",
+    "LLMObsCursorMeta",
+    "LLMObsDatasetDataAttributesRequest",
+    "LLMObsDatasetDataAttributesResponse",
+    "LLMObsDatasetDataRequest",
+    "LLMObsDatasetDataResponse",
+    "LLMObsDatasetRecordDataResponse",
+    "LLMObsDatasetRecordItem",
+    "LLMObsDatasetRecordUpdateItem",
+    "LLMObsDatasetRecordsDataAttributesRequest",
+    "LLMObsDatasetRecordsDataRequest",
+    "LLMObsDatasetRecordsListResponse",
+    "LLMObsDatasetRecordsMutationData",
+    "LLMObsDatasetRecordsMutationResponse",
+    "LLMObsDatasetRecordsRequest",
+    "LLMObsDatasetRecordsUpdateDataAttributesRequest",
+    "LLMObsDatasetRecordsUpdateDataRequest",
+    "LLMObsDatasetRecordsUpdateRequest",
+    "LLMObsDatasetRequest",
+    "LLMObsDatasetResponse",
+    "LLMObsDatasetType",
+    "LLMObsDatasetUpdateDataAttributesRequest",
+    "LLMObsDatasetUpdateDataRequest",
+    "LLMObsDatasetUpdateRequest",
+    "LLMObsDatasetsResponse",
+    "LLMObsDeleteDatasetRecordsDataAttributesRequest",
+    "LLMObsDeleteDatasetRecordsDataRequest",
+    "LLMObsDeleteDatasetRecordsRequest",
+    "LLMObsDeleteDatasetsDataAttributesRequest",
+    "LLMObsDeleteDatasetsDataRequest",
+    "LLMObsDeleteDatasetsRequest",
+    "LLMObsDeleteExperimentsDataAttributesRequest",
+    "LLMObsDeleteExperimentsDataRequest",
+    "LLMObsDeleteExperimentsRequest",
+    "LLMObsDeleteProjectsDataAttributesRequest",
+    "LLMObsDeleteProjectsDataRequest",
+    "LLMObsDeleteProjectsRequest",
+    "LLMObsEventType",
+    "LLMObsExperimentDataAttributesRequest",
+    "LLMObsExperimentDataAttributesResponse",
+    "LLMObsExperimentDataRequest",
+    "LLMObsExperimentDataResponse",
+    "LLMObsExperimentEventsDataAttributesRequest",
+    "LLMObsExperimentEventsDataRequest",
+    "LLMObsExperimentEventsRequest",
+    "LLMObsExperimentMetric",
+    "LLMObsExperimentMetricError",
+    "LLMObsExperimentRequest",
+    "LLMObsExperimentResponse",
+    "LLMObsExperimentSpan",
+    "LLMObsExperimentSpanError",
+    "LLMObsExperimentSpanMeta",
+    "LLMObsExperimentType",
+    "LLMObsExperimentUpdateDataAttributesRequest",
+    "LLMObsExperimentUpdateDataRequest",
+    "LLMObsExperimentUpdateRequest",
+    "LLMObsExperimentsResponse",
+    "LLMObsMetricAssessment",
+    "LLMObsMetricScoreType",
+    "LLMObsProjectDataAttributesRequest",
+    "LLMObsProjectDataAttributesResponse",
+    "LLMObsProjectDataRequest",
+    "LLMObsProjectDataResponse",
+    "LLMObsProjectRequest",
+    "LLMObsProjectResponse",
+    "LLMObsProjectType",
+    "LLMObsProjectUpdateDataAttributesRequest",
+    "LLMObsProjectUpdateDataRequest",
+    "LLMObsProjectUpdateRequest",
+    "LLMObsProjectsResponse",
+    "LLMObsRecordType",
     "Language",
     "LaunchDarklyAPIKey",
     "LaunchDarklyAPIKeyType",
