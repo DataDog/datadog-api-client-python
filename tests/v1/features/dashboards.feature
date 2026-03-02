@@ -38,7 +38,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a distribution widget using a histogram request containing a formulas and functions events query
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "description": "{{ unique }}", "widgets": [ { "definition": { "title": "Events Platform - Request latency HOP", "title_size": "16", "title_align": "left", "show_legend": false, "type": "distribution", "xaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "yaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "requests": [ { "query": { "search": { "query": "" }, "data_source": "events", "compute": { "metric": "@duration", "aggregation": "min" }, "name": "query1", "indexes": [ "*" ], "group_by": [] }, "request_type": "histogram" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "description": "{{ unique }}", "widgets": [ { "definition": { "title": "Events Platform - Request latency HOP", "title_size": "16", "title_align": "left", "show_legend": false, "type": "distribution", "xaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "yaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "requests": [ { "query": { "search": { "query": "" }, "data_source": "events", "compute": { "metric": "@duration", "aggregation": "min" }, "name": "query1", "indexes": [ "*" ] }, "request_type": "histogram" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].request_type" is equal to "histogram"
@@ -48,7 +48,6 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].query.compute.aggregation" is equal to "min"
     And the response "widgets[0].definition.requests[0].query.name" is equal to "query1"
     And the response "widgets[0].definition.requests[0].query.indexes" is equal to ["*"]
-    And the response "widgets[0].definition.requests[0].query.group_by" is equal to []
 
   @team:DataDog/dashboards-backend
   Scenario: Create a distribution widget using a histogram request containing a formulas and functions metrics query
@@ -75,7 +74,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a geomap widget with conditional formats and text formats
     Given new "CreateDashboard" request
-    And body with value {"title": "{{ unique }}","description": "{{ unique }}","widgets":[{"definition":{"title":"Log Count by Service and Source","type":"geomap","requests":[{"response_format":"scalar","queries":[{"data_source":"rum","name":"query1","search":{"query":"@type:session"},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[]}],"conditional_formats":[{"comparator":">","value":1000,"palette":"white_on_green"}],"formulas":[{"formula":"query1"}],"sort":{"count":250,"order_by":[{"type":"formula","index":0,"order":"desc"}]}},{"response_format":"event_list","query":{"data_source":"logs_stream","query_string":"","indexes":[],"storage":"hot"},"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"}],"style":{"color_by":"status"},"text_formats":[{"match":{"type":"is","value":"error"},"palette":"white_on_red"}]}],"style":{"palette":"hostmap_blues","palette_flip":false},"view":{"focus":"NORTH_AMERICA"}},"layout":{"x":0,"y":0,"width":12,"height":6}}],"template_variables":[],"layout_type":"ordered","notify_list":[],"reflow_type":"fixed","tags":[]}
+    And body with value {"title": "{{ unique }}","description": "{{ unique }}","widgets":[{"definition":{"title":"Log Count by Service and Source","type":"geomap","requests":[{"response_format":"scalar","queries":[{"data_source":"rum","name":"query1","search":{"query":"@type:session"},"indexes":["*"],"compute":{"aggregation":"count"}}],"conditional_formats":[{"comparator":">","value":1000,"palette":"white_on_green"}],"formulas":[{"formula":"query1"}],"sort":{"count":250,"order_by":[{"type":"formula","index":0,"order":"desc"}]}},{"response_format":"event_list","query":{"data_source":"logs_stream","query_string":"","indexes":[],"storage":"hot"},"columns":[{"field":"@network.client.geoip.location.latitude","width":"auto"},{"field":"@network.client.geoip.location.longitude","width":"auto"},{"field":"@network.client.geoip.country.iso_code","width":"auto"},{"field":"@network.client.geoip.subdivision.name","width":"auto"}],"style":{"color_by":"status"},"text_formats":[{"match":{"type":"is","value":"error"},"palette":"white_on_red"}]}],"style":{"palette":"hostmap_blues","palette_flip":false},"view":{"focus":"NORTH_AMERICA"}},"layout":{"x":0,"y":0,"width":12,"height":6}}],"template_variables":[],"layout_type":"ordered","notify_list":[],"reflow_type":"fixed","tags":[]}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "geomap"
@@ -144,7 +143,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a formulas and functions change widget
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" }, "group_by": [] } ], "response_format": "scalar", "compare_to": "hour_before", "increase_good": true, "order_by": "change", "change_type": "absolute", "order_dir": "desc" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" } } ], "response_format": "scalar", "compare_to": "hour_before", "increase_good": true, "order_by": "change", "change_type": "absolute", "order_dir": "desc" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
@@ -162,7 +161,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a formulas and functions treemap widget
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "type": "treemap", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" }, "group_by": [] } ], "response_format": "scalar" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "type": "treemap", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" } } ], "response_format": "scalar" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
@@ -296,7 +295,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with an audit logs query
     Given new "CreateDashboard" request
-    And body with value {"layout_type": "ordered", "title": "{{ unique }} with Audit Logs Query", "widgets": [{"definition": {"type": "timeseries","requests": [{"response_format": "timeseries","queries": [{"search": {"query": ""},"data_source": "audit","compute": {"aggregation": "count"},"name": "query1","indexes": ["*"],"group_by": []}]}]},"layout": {"x": 2,"y": 0,"width": 4,"height": 2}}]}
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with Audit Logs Query", "widgets": [{"definition": {"type": "timeseries","requests": [{"response_format": "timeseries","queries": [{"search": {"query": ""},"data_source": "audit","compute": {"aggregation": "count"},"name": "query1","indexes": ["*"]}]}]},"layout": {"x": 2,"y": 0,"width": 4,"height": 2}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "title" is equal to "{{ unique }} with Audit Logs Query"
@@ -467,6 +466,27 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].style.palette" is equal to "dog_classic"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with formulas and functions events query using facet group by
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }} with events facet group_by", "widgets": [{"definition": {"type": "timeseries", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "events", "name": "query1", "search": {"query": ""}, "compute": {"aggregation": "count"}, "group_by": [{"facet": "service", "limit": 10}]}]}]}, "layout": {"x": 0, "y": 0, "width": 4, "height": 2}}], "layout_type": "ordered"}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "events"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by[0].facet" is equal to "service"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by[0].limit" is equal to 10
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with formulas and functions events query using flat group by fields
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }} with events flat group_by fields", "widgets": [{"definition": {"type": "timeseries", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "events", "name": "query1", "search": {"query": ""}, "compute": {"aggregation": "count"}, "group_by": {"fields": ["service", "host"], "limit": 10}}]}]}, "layout": {"x": 0, "y": 0, "width": 4, "height": 2}}], "layout_type": "ordered"}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "events"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by.fields[0]" is equal to "service"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by.fields[1]" is equal to "host"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by.limit" is equal to 10
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with formulas and functions scatterplot widget
     Given new "CreateDashboard" request
     And body with value { "title": "{{ unique }}", "widgets": [ { "id": 5346764334358972, "definition": { "title": "", "title_size": "16", "title_align": "left", "type": "scatterplot", "requests": { "table": { "formulas": [ { "formula": "query1", "dimension": "x", "alias": "my-query1" }, { "formula": "query2", "dimension": "y", "alias": "my-query2" } ], "queries": [ { "data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {service}", "aggregator": "avg" }, { "data_source": "metrics", "name": "query2", "query": "avg:system.mem.used{*} by {service}", "aggregator": "avg" } ], "response_format": "scalar" } } }, "layout": { "x": 0, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
@@ -568,7 +588,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with invalid team tags returns "Bad Request" response
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" }, "group_by": [] } ], "response_format": "scalar", "compare_to": "hour_before", "increase_good": true, "order_by": "change", "change_type": "absolute", "order_dir": "desc" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "tags": ["tm:foobar"], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" } } ], "response_format": "scalar", "compare_to": "hour_before", "increase_good": true, "order_by": "change", "change_type": "absolute", "order_dir": "desc" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "tags": ["tm:foobar"], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -628,7 +648,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with logs query table widget and storage parameter
     Given new "CreateDashboard" request
-    And body with value {"layout_type":"ordered","title":"{{ unique }} with query table widget and storage parameter","widgets":[{"definition":{"type":"query_table","requests":[{"queries":[{"data_source":"logs","name":"query1","search":{"query":""},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[],"storage":"online_archives"}],"formulas":[{"conditional_formats":[],"cell_display_mode":"bar","formula":"query1"}],"sort":{"count":50, "order_by":[{"type":"formula","index":0,"order":"desc"}]},"response_format":"scalar"}]}}]}
+    And body with value {"layout_type":"ordered","title":"{{ unique }} with query table widget and storage parameter","widgets":[{"definition":{"type":"query_table","requests":[{"queries":[{"data_source":"logs","name":"query1","search":{"query":""},"indexes":["*"],"compute":{"aggregation":"count"},"storage":"online_archives"}],"formulas":[{"conditional_formats":[],"cell_display_mode":"bar","formula":"query1"}],"sort":{"count":50, "order_by":[{"type":"formula","index":0,"order":"desc"}]},"response_format":"scalar"}]}}]}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "query_table"
@@ -867,7 +887,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with team tags returns "OK" response
     Given new "CreateDashboard" request
-    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" }, "group_by": [] } ], "response_format": "scalar", "compare_to": "hour_before", "increase_good": true, "order_by": "change", "change_type": "absolute", "order_dir": "desc" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "tags": ["team:foobar"], "layout_type": "ordered" }
+    And body with value { "title": "{{ unique }}", "widgets": [ { "definition": { "title": "", "title_size": "16", "title_align": "left", "time": {}, "type": "change", "requests": [ { "formulas": [ { "formula": "hour_before(query1)" }, { "formula": "query1" } ], "queries": [ { "data_source": "logs", "name": "query1", "search": { "query": "" }, "indexes": [ "*" ], "compute": { "aggregation": "count" } } ], "response_format": "scalar", "compare_to": "hour_before", "increase_good": true, "order_by": "change", "change_type": "absolute", "order_dir": "desc" } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "tags": ["team:foobar"], "layout_type": "ordered" }
     When the request is sent
     Then the response status is 200 OK
     And the response "title" is equal to "{{ unique }}"
@@ -1030,7 +1050,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with ci_pipelines data source
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with ci_pipelines datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with ci_pipelines datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"}}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "ci_pipelines"
@@ -1039,7 +1059,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with ci_tests data source
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with ci_tests datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_tests","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with ci_tests datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_tests","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"}}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "ci_tests"
@@ -1048,7 +1068,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with incident_analytics data source
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with incident_analytics datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"incident_analytics","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with incident_analytics datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"incident_analytics","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"}}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "incident_analytics"
@@ -1057,7 +1077,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with legacy live span time format
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with legacy live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"live_span": "5m", "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with legacy live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"live_span": "5m", "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"}}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.time.live_span" is equal to "5m"
@@ -1066,7 +1086,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with new fixed span time format
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with new fixed span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "fixed", "from": 1712080128, "to": 1712083128, "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with new fixed span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "fixed", "from": 1712080128, "to": 1712083128, "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"}}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.time.type" is equal to "fixed"
@@ -1077,7 +1097,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with new live span time format
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with new live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "live", "unit": "minute", "value": 8, "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with new live span time","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{"type": "live", "unit": "minute", "value": 8, "hide_incomplete_cost_data": true},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"ci_pipelines","name":"query1","search":{"query":"ci_level:job"},"indexes":["*"],"compute":{"aggregation":"count", "metric": "@ci.queue_time"}}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.time.type" is equal to "live"
@@ -1088,7 +1108,7 @@ Feature: Dashboards
   @team:DataDog/dashboards-backend
   Scenario: Create a new timeseries widget with product_analytics data source
     Given new "CreateDashboard" request
-    And body with value {"title":"{{ unique }} with product_analytics datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"product_analytics","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"},"group_by":[]}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
+    And body with value {"title":"{{ unique }} with product_analytics datasource","widgets":[{"definition":{"title":"","show_legend":true,"legend_layout":"auto","legend_columns":["avg","min","max","value","sum"],"time":{},"type":"timeseries","requests":[{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"product_analytics","name":"query1","search":{"query":"test_level:test"},"indexes":["*"],"compute":{"aggregation":"count"}}],"response_format":"timeseries","style":{"palette":"dog_classic","line_type":"solid","line_width":"normal"},"display_type":"line"}]}}],"layout_type":"ordered","reflow_type":"auto"}
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "product_analytics"
