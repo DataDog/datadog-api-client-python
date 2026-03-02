@@ -1883,6 +1883,8 @@ from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.error_handler import ErrorHandler
 from datadog_api_client.v2.model.escalation import Escalation
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
+from datadog_api_client.v2.model.escalation_policy_action import EscalationPolicyAction
+from datadog_api_client.v2.model.escalation_policy_action_type import EscalationPolicyActionType
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_create_request_data import EscalationPolicyCreateRequestData
 from datadog_api_client.v2.model.escalation_policy_create_request_data_attributes import (
@@ -7653,6 +7655,8 @@ __all__ = [
     "ErrorHandler",
     "Escalation",
     "EscalationPolicy",
+    "EscalationPolicyAction",
+    "EscalationPolicyActionType",
     "EscalationPolicyCreateRequest",
     "EscalationPolicyCreateRequestData",
     "EscalationPolicyCreateRequestDataAttributes",

@@ -9559,6 +9559,20 @@ datadog\_api\_client.v2.model.escalation\_policy module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.escalation\_policy\_action module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.escalation\_policy\_action\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.escalation_policy_action_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.escalation\_policy\_create\_request module
 ------------------------------------------------------------------------
 
