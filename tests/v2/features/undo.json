@@ -1737,6 +1737,68 @@
       "type": "safe"
     }
   },
+  "ListEventEmailAddresses": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "operationId": "DeleteEventEmailAddress",
+      "parameters": [
+        {
+          "name": "email_uuid",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListOnCallEventEmailAddresses": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOnCallEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "operationId": "DeleteOnCallEventEmailAddress",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOnCallEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateEventEmailAddress": {
+    "tag": "Events",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SearchEvents": {
     "tag": "Events",
     "undo": {
