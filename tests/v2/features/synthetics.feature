@@ -7,9 +7,9 @@ Feature: Synthetics
   tests](https://docs.datadoghq.com/synthetics/browser_tests) - [Network
   Path tests](https://docs.datadoghq.com/synthetics/network_path_tests/) -
   [Mobile Application
-  tests](https://docs.datadoghq.com/synthetics/mobile_app_testing)  You can
+  tests](https://docs.datadoghq.com/synthetics/mobile_app_testing) You can
   use the Datadog API to create, manage, and organize tests and test suites
-  programmatically.  For more information, see the [Synthetic Monitoring
+  programmatically. For more information, see the [Synthetic Monitoring
   documentation](https://docs.datadoghq.com/synthetics/).
 
   Background:
