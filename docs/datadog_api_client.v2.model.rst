@@ -15404,6 +15404,496 @@ datadog\_api\_client.v2.model.list\_vulnerable\_assets\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_cursor\_meta module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_cursor_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_data\_attributes\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_data\_attributes\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_data\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_data\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_record\_data\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_record_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_record\_item module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_record_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_record\_update\_item module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_record_update_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_data\_attributes\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_data\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_list\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_mutation\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_mutation_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_mutation\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_mutation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_update\_data\_attributes\_request module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_update_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_update\_data\_request module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_update_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_update\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_update\_data\_attributes\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_update_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_update\_data\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_update_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_update\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_datasets\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_datasets_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_dataset\_records\_data\_attributes\_request module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_dataset\_records\_data\_request module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_dataset\_records\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_dataset_records_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_datasets\_data\_attributes\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_datasets_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_datasets\_data\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_datasets_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_datasets\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_datasets_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_experiments\_data\_attributes\_request module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_experiments_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_experiments\_data\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_experiments_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_experiments\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_experiments_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_projects\_data\_attributes\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_projects_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_projects\_data\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_projects_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_projects\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_projects_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_event\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_event_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_data\_attributes\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_data\_attributes\_response module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_data\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_data\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_events\_data\_attributes\_request module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_events_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_events\_data\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_events_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_events\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_events_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_metric module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_metric\_error module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_metric_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_span module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_span\_error module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_span_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_span\_meta module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_span_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_update\_data\_attributes\_request module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_update_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_update\_data\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_update_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_update\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiments\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiments_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_metric\_assessment module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_metric_assessment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_metric\_score\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_metric_score_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_data\_attributes\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_data\_attributes\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_data\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_data\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_update\_data\_attributes\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_update_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_update\_data\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_update_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_project\_update\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_project_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_projects\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_projects_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_record\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_record_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.log module
 ----------------------------------------
 
