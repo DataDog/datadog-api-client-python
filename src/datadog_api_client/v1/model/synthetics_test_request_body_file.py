@@ -38,6 +38,7 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
         return {
             "bucket_key": (str,),
             "content": (str,),
+            "encoding": (str,),
             "name": (str,),
             "original_file_name": (str,),
             "size": (int,),
@@ -47,6 +48,7 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
     attribute_map = {
         "bucket_key": "bucketKey",
         "content": "content",
+        "encoding": "encoding",
         "name": "name",
         "original_file_name": "originalFileName",
         "size": "size",
@@ -57,6 +59,7 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
         self_,
         bucket_key: Union[str, UnsetType] = unset,
         content: Union[str, UnsetType] = unset,
+        encoding: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         original_file_name: Union[str, UnsetType] = unset,
         size: Union[int, UnsetType] = unset,
@@ -71,6 +74,9 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
 
         :param content: Content of the file.
         :type content: str, optional
+
+        :param encoding: Encoding of the file content. The only supported value is ``base64`` , indicating the ``content`` field contains base64-encoded data.
+        :type encoding: str, optional
 
         :param name: Name of the file.
         :type name: str, optional
@@ -88,6 +94,8 @@ class SyntheticsTestRequestBodyFile(ModelNormal):
             kwargs["bucket_key"] = bucket_key
         if content is not unset:
             kwargs["content"] = content
+        if encoding is not unset:
+            kwargs["encoding"] = encoding
         if name is not unset:
             kwargs["name"] = name
         if original_file_name is not unset:
