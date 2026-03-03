@@ -1965,6 +1965,31 @@ from datadog_api_client.v2.model.event_create_response_attributes_attributes_evt
 )
 from datadog_api_client.v2.model.event_create_response_payload import EventCreateResponsePayload
 from datadog_api_client.v2.model.event_create_response_payload_links import EventCreateResponsePayloadLinks
+from datadog_api_client.v2.model.event_email_address_alert_type import EventEmailAddressAlertType
+from datadog_api_client.v2.model.event_email_address_create_attributes import EventEmailAddressCreateAttributes
+from datadog_api_client.v2.model.event_email_address_create_data import EventEmailAddressCreateData
+from datadog_api_client.v2.model.event_email_address_create_request import EventEmailAddressCreateRequest
+from datadog_api_client.v2.model.event_email_address_created_by_relationship import (
+    EventEmailAddressCreatedByRelationship,
+)
+from datadog_api_client.v2.model.event_email_address_data import EventEmailAddressData
+from datadog_api_client.v2.model.event_email_address_format import EventEmailAddressFormat
+from datadog_api_client.v2.model.event_email_address_included_user import EventEmailAddressIncludedUser
+from datadog_api_client.v2.model.event_email_address_included_user_attributes import (
+    EventEmailAddressIncludedUserAttributes,
+)
+from datadog_api_client.v2.model.event_email_address_relationships import EventEmailAddressRelationships
+from datadog_api_client.v2.model.event_email_address_resource_type import EventEmailAddressResourceType
+from datadog_api_client.v2.model.event_email_address_response_attributes import EventEmailAddressResponseAttributes
+from datadog_api_client.v2.model.event_email_address_revoked_by_relationship import (
+    EventEmailAddressRevokedByRelationship,
+)
+from datadog_api_client.v2.model.event_email_address_single_response import EventEmailAddressSingleResponse
+from datadog_api_client.v2.model.event_email_address_update_attributes import EventEmailAddressUpdateAttributes
+from datadog_api_client.v2.model.event_email_address_update_data import EventEmailAddressUpdateData
+from datadog_api_client.v2.model.event_email_address_update_request import EventEmailAddressUpdateRequest
+from datadog_api_client.v2.model.event_email_address_user_data import EventEmailAddressUserData
+from datadog_api_client.v2.model.event_email_addresses_response import EventEmailAddressesResponse
 from datadog_api_client.v2.model.event_payload import EventPayload
 from datadog_api_client.v2.model.event_payload_attributes import EventPayloadAttributes
 from datadog_api_client.v2.model.event_payload_integration_id import EventPayloadIntegrationId
@@ -4036,6 +4061,11 @@ from datadog_api_client.v2.model.okta_credentials_update import OktaCredentialsU
 from datadog_api_client.v2.model.okta_integration import OktaIntegration
 from datadog_api_client.v2.model.okta_integration_type import OktaIntegrationType
 from datadog_api_client.v2.model.okta_integration_update import OktaIntegrationUpdate
+from datadog_api_client.v2.model.on_call_event_email_address_create_attributes import (
+    OnCallEventEmailAddressCreateAttributes,
+)
+from datadog_api_client.v2.model.on_call_event_email_address_create_data import OnCallEventEmailAddressCreateData
+from datadog_api_client.v2.model.on_call_event_email_address_create_request import OnCallEventEmailAddressCreateRequest
 from datadog_api_client.v2.model.on_call_notification_rule import OnCallNotificationRule
 from datadog_api_client.v2.model.on_call_notification_rule_attributes import OnCallNotificationRuleAttributes
 from datadog_api_client.v2.model.on_call_notification_rule_category import OnCallNotificationRuleCategory
@@ -7705,6 +7735,25 @@ __all__ = [
     "EventCreateResponseAttributesAttributesEvt",
     "EventCreateResponsePayload",
     "EventCreateResponsePayloadLinks",
+    "EventEmailAddressAlertType",
+    "EventEmailAddressCreateAttributes",
+    "EventEmailAddressCreateData",
+    "EventEmailAddressCreateRequest",
+    "EventEmailAddressCreatedByRelationship",
+    "EventEmailAddressData",
+    "EventEmailAddressFormat",
+    "EventEmailAddressIncludedUser",
+    "EventEmailAddressIncludedUserAttributes",
+    "EventEmailAddressRelationships",
+    "EventEmailAddressResourceType",
+    "EventEmailAddressResponseAttributes",
+    "EventEmailAddressRevokedByRelationship",
+    "EventEmailAddressSingleResponse",
+    "EventEmailAddressUpdateAttributes",
+    "EventEmailAddressUpdateData",
+    "EventEmailAddressUpdateRequest",
+    "EventEmailAddressUserData",
+    "EventEmailAddressesResponse",
     "EventPayload",
     "EventPayloadAttributes",
     "EventPayloadIntegrationId",
@@ -9080,6 +9129,9 @@ __all__ = [
     "OktaIntegration",
     "OktaIntegrationType",
     "OktaIntegrationUpdate",
+    "OnCallEventEmailAddressCreateAttributes",
+    "OnCallEventEmailAddressCreateData",
+    "OnCallEventEmailAddressCreateRequest",
     "OnCallNotificationRule",
     "OnCallNotificationRuleAttributes",
     "OnCallNotificationRuleCategory",
