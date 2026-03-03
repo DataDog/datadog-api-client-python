@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_an_audit_logs_query-1731699156
-      with Audit Logs Query","widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"count"},"data_source":"audit","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"timeseries"}],"type":"timeseries"},"layout":{"height":2,"width":4,"x":2,"y":0}}]}'
+    body: '{"layout_type":"ordered","title":"Test-Create_a_new_dashboard_with_an_audit_logs_query-1772451079
+      with Audit Logs Query","widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"count"},"data_source":"audit","indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"timeseries"}],"type":"timeseries"},"layout":{"height":2,"width":4,"x":2,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -11,10 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"gu5-cq8-akb","title":"Test-Create_a_new_dashboard_with_an_audit_logs_query-1731699156
-        with Audit Logs Query","description":null,"author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"ordered","url":"/dashboard/gu5-cq8-akb/test-createanewdashboardwithanauditlogsquery-1731699156-with-audit-logs-query","is_read_only":false,"template_variables":null,"widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"count"},"data_source":"audit","group_by":[],"indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"timeseries"}],"type":"timeseries"},"layout":{"height":2,"width":4,"x":2,"y":0},"id":1074067237256022}],"notify_list":null,"created_at":"2024-11-15T19:32:36.200033+00:00","modified_at":"2024-11-15T19:32:36.200033+00:00","restricted_roles":[]}
-
-        '
+      string: '{"id":"u8e-wje-ac7","title":"Test-Create_a_new_dashboard_with_an_audit_logs_query-1772451079
+        with Audit Logs Query","description":null,"author_handle":"archana.asokan@datadoghq.com","author_name":"Archana
+        Asokan","layout_type":"ordered","url":"/dashboard/u8e-wje-ac7/test-createanewdashboardwithanauditlogsquery-1772451079-with-audit-logs-query","template_variables":null,"widgets":[{"definition":{"requests":[{"queries":[{"compute":{"aggregation":"count"},"data_source":"audit","indexes":["*"],"name":"query1","search":{"query":""}}],"response_format":"timeseries"}],"type":"timeseries"},"layout":{"height":2,"width":4,"x":2,"y":0},"id":3153401975327610}],"notify_list":null,"created_at":"2026-03-02T11:31:19.790638+00:00","modified_at":"2026-03-02T11:31:19.790638+00:00","restricted_roles":[]}'
     headers:
       content-type:
       - application/json
@@ -27,12 +26,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/gu5-cq8-akb
+    uri: https://api.datadoghq.com/api/v1/dashboard/u8e-wje-ac7
   response:
     body:
-      string: '{"deleted_dashboard_id":"gu5-cq8-akb"}
-
-        '
+      string: '{"deleted_dashboard_id":"u8e-wje-ac7"}'
     headers:
       content-type:
       - application/json
