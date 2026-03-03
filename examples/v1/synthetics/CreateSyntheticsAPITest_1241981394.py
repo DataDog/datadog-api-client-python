@@ -110,6 +110,7 @@ body = SyntheticsAPITest(
                     original_file_name="image.png",
                     content="file content",
                     type="file type",
+                    encoding="base64",
                 ),
             ],
             basic_auth=SyntheticsBasicAuthOauthClient(
