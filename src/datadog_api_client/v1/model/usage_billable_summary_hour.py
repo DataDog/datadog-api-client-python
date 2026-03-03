@@ -75,7 +75,7 @@ class UsageBillableSummaryHour(ModelNormal):
         :param account_public_id: The account public ID.
         :type account_public_id: str, optional
 
-        :param billing_plan: The billing plan.
+        :param billing_plan: The billing plan (metadata). (Deprecated from May 2026) **Deprecated**.
         :type billing_plan: str, optional
 
         :param end_date: Shows the last date of usage.
