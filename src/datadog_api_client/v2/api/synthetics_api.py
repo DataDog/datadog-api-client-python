@@ -34,10 +34,8 @@ class SyntheticsApi:
     * `Browser tests <https://docs.datadoghq.com/synthetics/browser_tests>`_
     * `Network Path tests <https://docs.datadoghq.com/synthetics/network_path_tests/>`_
     * `Mobile Application tests <https://docs.datadoghq.com/synthetics/mobile_app_testing>`_
-
-    You can use the Datadog API to create, manage, and organize tests and test suites programmatically.
-
-    For more information, see the `Synthetic Monitoring documentation <https://docs.datadoghq.com/synthetics/>`_.
+      You can use the Datadog API to create, manage, and organize tests and test suites programmatically.
+      For more information, see the `Synthetic Monitoring documentation <https://docs.datadoghq.com/synthetics/>`_.
     """
 
     def __init__(self, api_client=None):
