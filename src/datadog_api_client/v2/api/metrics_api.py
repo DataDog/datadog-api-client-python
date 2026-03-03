@@ -347,6 +347,15 @@ class MetricsApi:
                     "attribute": "filter[queried]",
                     "location": "query",
                 },
+                "filter_queried_window_seconds": {
+                    "validation": {
+                        "inclusive_maximum": 15552000,
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "filter[queried][window][seconds]",
+                    "location": "query",
+                },
                 "filter_tags": {
                     "openapi_types": (str,),
                     "attribute": "filter[tags]",
@@ -770,6 +779,7 @@ class MetricsApi:
         filter_metric_type: Union[MetricTagConfigurationMetricTypeCategory, UnsetType] = unset,
         filter_include_percentiles: Union[bool, UnsetType] = unset,
         filter_queried: Union[bool, UnsetType] = unset,
+        filter_queried_window_seconds: Union[int, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_related_assets: Union[bool, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
@@ -795,6 +805,12 @@ class MetricsApi:
         :param filter_queried: (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
             If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
         :type filter_queried: bool, optional
+        :param filter_queried_window_seconds: The number of seconds of look back (from now) used by the ``filter[queried]`` filter logic.
+            Must be sent with ``filter[queried]`` and is only applied when ``filter[queried]=true``.
+            If ``filter[queried]=false`` , this parameter is ignored and default queried-window behavior applies.
+            If ``filter[queried]`` is not provided, sending this parameter returns a 400.
+            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=7776000``.
+        :type filter_queried_window_seconds: int, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
             Can only be combined with the filter[queried] filter.
         :type filter_tags: str, optional
@@ -827,6 +843,9 @@ class MetricsApi:
         if filter_queried is not unset:
             kwargs["filter_queried"] = filter_queried
 
+        if filter_queried_window_seconds is not unset:
+            kwargs["filter_queried_window_seconds"] = filter_queried_window_seconds
+
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
 
@@ -852,6 +871,7 @@ class MetricsApi:
         filter_metric_type: Union[MetricTagConfigurationMetricTypeCategory, UnsetType] = unset,
         filter_include_percentiles: Union[bool, UnsetType] = unset,
         filter_queried: Union[bool, UnsetType] = unset,
+        filter_queried_window_seconds: Union[int, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_related_assets: Union[bool, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
@@ -874,6 +894,12 @@ class MetricsApi:
         :param filter_queried: (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
             If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
         :type filter_queried: bool, optional
+        :param filter_queried_window_seconds: The number of seconds of look back (from now) used by the ``filter[queried]`` filter logic.
+            Must be sent with ``filter[queried]`` and is only applied when ``filter[queried]=true``.
+            If ``filter[queried]=false`` , this parameter is ignored and default queried-window behavior applies.
+            If ``filter[queried]`` is not provided, sending this parameter returns a 400.
+            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=7776000``.
+        :type filter_queried_window_seconds: int, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
             Can only be combined with the filter[queried] filter.
         :type filter_tags: str, optional
@@ -907,6 +933,9 @@ class MetricsApi:
 
         if filter_queried is not unset:
             kwargs["filter_queried"] = filter_queried
+
+        if filter_queried_window_seconds is not unset:
+            kwargs["filter_queried_window_seconds"] = filter_queried_window_seconds
 
         if filter_tags is not unset:
             kwargs["filter_tags"] = filter_tags
