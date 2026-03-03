@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"ccm_config":{"data_export_configs":[{"bucket_name":"billing","bucket_region":"us-east-1","report_name":"cost-and-usage-report","report_prefix":"reports","report_type":"CUR2.0"}]}},"type":"ccm_config"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/b2087a32-4d4f-45b1-9321-1a0a48e9d7cf/ccm_config
+  response:
+    body:
+      string: '{"errors":[{"status":"409","title":"Account already exists","detail":"CCM
+        config already exists for this account"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: '{"data":{"attributes":{"ccm_config":{"data_export_configs":[{"bucket_name":"billing","bucket_region":"us-east-1","report_name":"cost-and-usage-report","report_prefix":"reports","report_type":"CUR2.0"}]}},"type":"ccm_config"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/b2087a32-4d4f-45b1-9321-1a0a48e9d7cf/ccm_config
+  response:
+    body:
+      string: '{"errors":[{"status":"409","title":"Account already exists","detail":"CCM
+        config already exists for this account"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 409
+      message: Conflict
+version: 1

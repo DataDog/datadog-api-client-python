@@ -1782,6 +1782,62 @@ datadog\_api\_client.v2.model.aws\_auth\_config\_role module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_ccm\_config module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_request\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_response\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_attributes\_response module
 ---------------------------------------------------------------------------------------------
 
@@ -7617,6 +7673,13 @@ datadog\_api\_client.v2.model.data\_deletion\_response\_meta module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.data_deletion_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_export\_config module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_export_config
    :members:
    :show-inheritance:
 
