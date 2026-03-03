@@ -1,7 +1,7 @@
 interactions:
 - request:
-    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_product_analytics_data_source-1758221477
-      with product_analytics datasource","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"product_analytics","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"}}]}'
+    body: '{"layout_type":"ordered","reflow_type":"auto","title":"Test-Create_a_new_timeseries_widget_with_product_analytics_data_source-1772451188
+      with product_analytics datasource","widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"product_analytics","indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"}}]}'
     headers:
       accept:
       - application/json
@@ -11,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"zvr-td5-ppm","title":"Test-Create_a_new_timeseries_widget_with_product_analytics_data_source-1758221477
-        with product_analytics datasource","description":null,"author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
-        Account","layout_type":"ordered","url":"/dashboard/zvr-td5-ppm/test-createanewtimeserieswidgetwithproductanalyticsdatasource-1758221477-with-pr","template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"product_analytics","group_by":[],"indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":6058978575853641}],"notify_list":null,"created_at":"2025-09-18T18:51:18.107135+00:00","modified_at":"2025-09-18T18:51:18.107135+00:00","reflow_type":"auto","restricted_roles":[]}'
+      string: '{"id":"i2r-t4n-8wa","title":"Test-Create_a_new_timeseries_widget_with_product_analytics_data_source-1772451188
+        with product_analytics datasource","description":null,"author_handle":"archana.asokan@datadoghq.com","author_name":"Archana
+        Asokan","layout_type":"ordered","url":"/dashboard/i2r-t4n-8wa/test-createanewtimeserieswidgetwithproductanalyticsdatasource-1772451188-with-pr","template_variables":null,"widgets":[{"definition":{"legend_columns":["avg","min","max","value","sum"],"legend_layout":"auto","requests":[{"display_type":"line","formulas":[{"formula":"query1"}],"queries":[{"compute":{"aggregation":"count"},"data_source":"product_analytics","indexes":["*"],"name":"query1","search":{"query":"test_level:test"}}],"response_format":"timeseries","style":{"line_type":"solid","line_width":"normal","palette":"dog_classic"}}],"show_legend":true,"time":{},"title":"","type":"timeseries"},"id":2831258963755573}],"notify_list":null,"created_at":"2026-03-02T11:33:08.943469+00:00","modified_at":"2026-03-02T11:33:08.943469+00:00","reflow_type":"auto","restricted_roles":[]}'
     headers:
       content-type:
       - application/json
@@ -26,12 +26,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/zvr-td5-ppm
+    uri: https://api.datadoghq.com/api/v1/dashboard/i2r-t4n-8wa
   response:
     body:
-      string: '{"deleted_dashboard_id":"zvr-td5-ppm"}
-
-        '
+      string: '{"deleted_dashboard_id":"i2r-t4n-8wa"}'
     headers:
       content-type:
       - application/json

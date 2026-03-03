@@ -51,7 +51,6 @@ body = Dashboard(
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
                                     aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
-                                group_by=[],
                                 storage="online_archives",
                             ),
                         ],

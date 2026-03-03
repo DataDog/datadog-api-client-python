@@ -48,7 +48,7 @@ class ViewershipHistorySessionData(ModelNormal):
         **kwargs,
     ):
         """
-
+        Viewership history session data.
 
         :param attributes:
         :type attributes: ViewershipHistorySessionDataAttributes, optional

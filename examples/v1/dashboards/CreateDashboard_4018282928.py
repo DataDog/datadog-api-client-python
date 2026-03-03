@@ -1,5 +1,5 @@
 """
-Create a new dashboard with an audit logs query
+Create a new dashboard with formulas and functions events query using flat group by fields
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -16,6 +16,9 @@ from datadog_api_client.v1.model.formula_and_function_event_query_definition_com
 from datadog_api_client.v1.model.formula_and_function_event_query_definition_search import (
     FormulaAndFunctionEventQueryDefinitionSearch,
 )
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by_fields import (
+    FormulaAndFunctionEventQueryGroupByFields,
+)
 from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
 from datadog_api_client.v1.model.timeseries_widget_definition import TimeseriesWidgetDefinition
@@ -25,8 +28,7 @@ from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_layout import WidgetLayout
 
 body = Dashboard(
-    layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Dashboard with Audit Logs Query",
+    title="Example-Dashboard with events flat group_by fields",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(
@@ -36,30 +38,35 @@ body = Dashboard(
                         response_format=FormulaAndFunctionResponseFormat.TIMESERIES,
                         queries=[
                             FormulaAndFunctionEventQueryDefinition(
+                                data_source=FormulaAndFunctionEventsDataSource.EVENTS,
+                                name="query1",
                                 search=FormulaAndFunctionEventQueryDefinitionSearch(
                                     query="",
                                 ),
-                                data_source=FormulaAndFunctionEventsDataSource.AUDIT,
                                 compute=FormulaAndFunctionEventQueryDefinitionCompute(
                                     aggregation=FormulaAndFunctionEventAggregation.COUNT,
                                 ),
-                                name="query1",
-                                indexes=[
-                                    "*",
-                                ],
+                                group_by=FormulaAndFunctionEventQueryGroupByFields(
+                                    fields=[
+                                        "service",
+                                        "host",
+                                    ],
+                                    limit=10,
+                                ),
                             ),
                         ],
                     ),
                 ],
             ),
             layout=WidgetLayout(
-                x=2,
+                x=0,
                 y=0,
                 width=4,
                 height=2,
             ),
         ),
     ],
+    layout_type=DashboardLayoutType.ORDERED,
 )
 
 configuration = Configuration()
