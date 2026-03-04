@@ -103,7 +103,7 @@ class HeatMapWidgetDefinition(ModelNormal):
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
-        :param events: List of widget events.
+        :param events: List of widget events. Deprecated - Use ``overlay`` request type instead. **Deprecated**.
         :type events: [WidgetEvent], optional
 
         :param legend_size: Available legend sizes for a widget. Should be one of "0", "2", "4", "8", "16", or "auto".

@@ -75,7 +75,7 @@ class SplitGraphSourceWidgetDefinition(ModelComposed):
         :param has_search_bar: Controls the display of the search bar.
         :type has_search_bar: TableWidgetHasSearchBar, optional
 
-        :param events: List of widget events.
+        :param events: List of widget events. Deprecated - Use `overlay` request type instead.
         :type events: [WidgetEvent], optional
 
         :param legend_columns: Columns displayed in the legend.
