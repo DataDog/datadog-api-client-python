@@ -31,6 +31,16 @@ Feature: Status Pages
     And the response "data.attributes.updates" has length 1
 
   @team:DataDog/incident-app
+  Scenario: Create maintenance returns "Created" response
+    Given there is a valid "status_page" in the system
+    And new "CreateMaintenance" request
+    And request contains "page_id" parameter from "status_page.data.id"
+    And body with value {"data": {"attributes": {"title": "API Maintenance", "scheduled_description": "We will be performing maintenance on the API to improve performance.", "in_progress_description": "We are currently performing maintenance on the API to improve performance.", "completed_description": "We have completed maintenance on the API to improve performance.", "start_date": "{{ timeISO('now + 1h') }}", "completed_date": "{{ timeISO('now + 2h') }}", "components_affected": [{"id": "{{ status_page.data.attributes.components[0].components[0].id }}", "status": "operational"}]}, "type": "maintenances"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.updates" has length 1
+
+  @team:DataDog/incident-app
   Scenario: Create status page returns "Created" response
     Given new "CreateStatusPage" request
     And body with value {"data": {"attributes": {"name": "A Status Page", "domain_prefix": "{{ unique_hash }}", "components":[{"name": "Login", "type": "component", "position": 0},{"name": "Settings", "type": "component", "position": 1}], "enabled": true, "type": "internal", "visualization_type": "bars_and_uptime_percentage"}, "type": "status_pages"}}
@@ -84,6 +94,16 @@ Feature: Status Pages
     Then the response status is 200 OK
 
   @team:DataDog/incident-app
+  Scenario: Get maintenance returns "OK" response
+    Given there is a valid "status_page" in the system
+    And there is a valid "maintenance" in the system
+    And new "GetMaintenance" request
+    And request contains "page_id" parameter from "status_page.data.id"
+    And request contains "maintenance_id" parameter from "maintenance.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/incident-app
   Scenario: Get status page returns "OK" response
     Given new "GetStatusPage" request
     And there is a valid "status_page" in the system
@@ -108,11 +128,27 @@ Feature: Status Pages
     Then the response status is 200 OK
 
   @team:DataDog/incident-app
+  Scenario: List maintenances returns "OK" response
+    Given there is a valid "status_page" in the system
+    And there is a valid "maintenance" in the system
+    And new "ListMaintenances" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/incident-app
   Scenario: List status pages returns "OK" response
     Given new "ListStatusPages" request
     And there is a valid "status_page" in the system
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Schedule maintenance returns "Created" response
+    Given new "CreateMaintenance" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"completed_date": "2026-02-18T19:51:13.332360075Z", "completed_description": "We have completed maintenance on the API to improve performance.", "components_affected": [{"id": "1234abcd-12ab-34cd-56ef-123456abcdef", "status": "operational"}], "in_progress_description": "We are currently performing maintenance on the API to improve performance.", "scheduled_description": "We will be performing maintenance on the API to improve performance.", "start_date": "2026-02-18T19:21:13.332360075Z", "title": "API Maintenance"}, "type": "maintenances"}}
+    When the request is sent
+    Then the response status is 201 Created
 
   @team:DataDog/incident-app
   Scenario: Update component returns "OK" response
@@ -136,6 +172,17 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "Elevated API Latency in US1"
+
+  @team:DataDog/incident-app
+  Scenario: Update maintenance returns "OK" response
+    Given there is a valid "status_page" in the system
+    And there is a valid "maintenance" in the system
+    And new "UpdateMaintenance" request
+    And request contains "page_id" parameter from "status_page.data.id"
+    And request contains "maintenance_id" parameter from "maintenance.data.id"
+    And body with value {"data": {"attributes": {"scheduled_description": "We will be performing maintenance on the API to improve performance for 40 minutes.", "in_progress_description": "We are currently performing maintenance on the API to improve performance for 40 minutes."}, "id": "{{ maintenance.data.id }}", "type": "maintenances"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/incident-app
   Scenario: Update status page returns "OK" response

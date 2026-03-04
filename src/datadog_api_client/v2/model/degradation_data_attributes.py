@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.degradation_data_attributes_components_affected_items import (
         DegradationDataAttributesComponentsAffectedItems,
     )
+    from datadog_api_client.v2.model.degradation_data_attributes_source import DegradationDataAttributesSource
     from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
         CreateDegradationRequestDataAttributesStatus,
     )
@@ -32,6 +33,7 @@ class DegradationDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.degradation_data_attributes_components_affected_items import (
             DegradationDataAttributesComponentsAffectedItems,
         )
+        from datadog_api_client.v2.model.degradation_data_attributes_source import DegradationDataAttributesSource
         from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
             CreateDegradationRequestDataAttributesStatus,
         )
@@ -44,6 +46,7 @@ class DegradationDataAttributes(ModelNormal):
             "created_at": (datetime,),
             "description": (str,),
             "modified_at": (datetime,),
+            "source": (DegradationDataAttributesSource,),
             "status": (CreateDegradationRequestDataAttributesStatus,),
             "title": (str,),
             "updates": ([DegradationDataAttributesUpdatesItems],),
@@ -54,6 +57,7 @@ class DegradationDataAttributes(ModelNormal):
         "created_at": "created_at",
         "description": "description",
         "modified_at": "modified_at",
+        "source": "source",
         "status": "status",
         "title": "title",
         "updates": "updates",
@@ -65,6 +69,7 @@ class DegradationDataAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
+        source: Union[DegradationDataAttributesSource, UnsetType] = unset,
         status: Union[CreateDegradationRequestDataAttributesStatus, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         updates: Union[List[DegradationDataAttributesUpdatesItems], UnsetType] = unset,
@@ -85,6 +90,9 @@ class DegradationDataAttributes(ModelNormal):
         :param modified_at: Timestamp of when the degradation was last modified.
         :type modified_at: datetime, optional
 
+        :param source: The source of the degradation.
+        :type source: DegradationDataAttributesSource, optional
+
         :param status: The status of the degradation.
         :type status: CreateDegradationRequestDataAttributesStatus, optional
 
@@ -102,6 +110,8 @@ class DegradationDataAttributes(ModelNormal):
             kwargs["description"] = description
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
+        if source is not unset:
+            kwargs["source"] = source
         if status is not unset:
             kwargs["status"] = status
         if title is not unset:

@@ -5388,6 +5388,12 @@
       "type": "safe"
     }
   },
+  "ListMaintenances": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteStatusPage": {
     "tag": "Status Pages",
     "undo": {
@@ -5477,6 +5483,24 @@
     }
   },
   "UpdateDegradation": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateMaintenance": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetMaintenance": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMaintenance": {
     "tag": "Status Pages",
     "undo": {
       "type": "idempotent"

@@ -15,13 +15,13 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.status_pages_pagination_type import StatusPagesPaginationType
+    from datadog_api_client.v2.model.pagination_meta_page_type import PaginationMetaPageType
 
 
-class StatusPagesPagination(ModelNormal):
+class PaginationMetaPage(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.status_pages_pagination_type import StatusPagesPaginationType
+        from datadog_api_client.v2.model.pagination_meta_page_type import PaginationMetaPageType
 
         return {
             "first_offset": (int,),
@@ -31,7 +31,7 @@ class StatusPagesPagination(ModelNormal):
             "offset": (int,),
             "prev_offset": (int, none_type),
             "total": (int, none_type),
-            "type": (StatusPagesPaginationType,),
+            "type": (PaginationMetaPageType,),
         }
 
     attribute_map = {
@@ -54,7 +54,7 @@ class StatusPagesPagination(ModelNormal):
         offset: Union[int, UnsetType] = unset,
         prev_offset: Union[int, none_type, UnsetType] = unset,
         total: Union[int, none_type, UnsetType] = unset,
-        type: Union[StatusPagesPaginationType, UnsetType] = unset,
+        type: Union[PaginationMetaPageType, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -66,7 +66,7 @@ class StatusPagesPagination(ModelNormal):
         :param last_offset: Integer representing the offset to fetch the last page of results.
         :type last_offset: int, none_type, optional
 
-        :param limit: Integer representing the number of elements to returned in the results.
+        :param limit: Integer representing the number of elements to be returned in the results.
         :type limit: int, optional
 
         :param next_offset: Integer representing the index of the first element in the next page of results. Equal to page size added to the current offset.
@@ -82,7 +82,7 @@ class StatusPagesPagination(ModelNormal):
         :type total: int, none_type, optional
 
         :param type:
-        :type type: StatusPagesPaginationType, optional
+        :type type: PaginationMetaPageType, optional
         """
         if first_offset is not unset:
             kwargs["first_offset"] = first_offset

@@ -16,7 +16,7 @@ class StatusPagesComponentGroupAttributesComponentsItemsStatus(ModelSimple):
     """
     The status of the component.
 
-    :param value: Must be one of ["operational", "degraded", "partial_outage", "major_outage"].
+    :param value: Must be one of ["operational", "degraded", "partial_outage", "major_outage", "maintenance"].
     :type value: str
     """
 
@@ -25,11 +25,13 @@ class StatusPagesComponentGroupAttributesComponentsItemsStatus(ModelSimple):
         "degraded",
         "partial_outage",
         "major_outage",
+        "maintenance",
     }
     OPERATIONAL: ClassVar["StatusPagesComponentGroupAttributesComponentsItemsStatus"]
     DEGRADED: ClassVar["StatusPagesComponentGroupAttributesComponentsItemsStatus"]
     PARTIAL_OUTAGE: ClassVar["StatusPagesComponentGroupAttributesComponentsItemsStatus"]
     MAJOR_OUTAGE: ClassVar["StatusPagesComponentGroupAttributesComponentsItemsStatus"]
+    MAINTENANCE: ClassVar["StatusPagesComponentGroupAttributesComponentsItemsStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -49,4 +51,7 @@ StatusPagesComponentGroupAttributesComponentsItemsStatus.PARTIAL_OUTAGE = (
 )
 StatusPagesComponentGroupAttributesComponentsItemsStatus.MAJOR_OUTAGE = (
     StatusPagesComponentGroupAttributesComponentsItemsStatus("major_outage")
+)
+StatusPagesComponentGroupAttributesComponentsItemsStatus.MAINTENANCE = (
+    StatusPagesComponentGroupAttributesComponentsItemsStatus("maintenance")
 )
