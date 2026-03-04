@@ -110,7 +110,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
-        :param events: List of widget events.
+        :param events: List of widget events. Deprecated - Use ``overlay`` request type instead. **Deprecated**.
         :type events: [WidgetEvent], optional
 
         :param legend_columns: Columns displayed in the legend.
