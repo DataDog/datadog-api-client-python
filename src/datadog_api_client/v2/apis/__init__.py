@@ -49,6 +49,7 @@ from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.api.integrations_api import IntegrationsApi
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
+from datadog_api_client.v2.api.llm_observability_api import LLMObservabilityApi
 from datadog_api_client.v2.api.logs_api import LogsApi
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDestinationsApi
@@ -154,6 +155,7 @@ __all__ = [
     "IntegrationsApi",
     "JiraIntegrationApi",
     "KeyManagementApi",
+    "LLMObservabilityApi",
     "LogsApi",
     "LogsArchivesApi",
     "LogsCustomDestinationsApi",
