@@ -1,0 +1,46 @@
+interactions:
+- request:
+    body: '{"message":"test message","name":"Test-Create_a_monitor_with_aggregate_filtered_query_variables_returns_OK_response-1772566404","options":{"thresholds":{"critical":100},"variables":[{"base_query":{"data_source":"metrics","name":"query1","query":"max:container.cpu.usage{*}
+      by {kube_cluster_name}.rollup(max)"},"data_source":"aggregate_filtered_query","filter_query":{"columns":[{"name":"cluster_name"}],"data_source":"reference_table","name":"filter_query","table_name":"test_table"},"filters":[{"base_attribute":"kube_cluster_name","filter_attribute":"cluster_name"}],"name":"query1"}]},"query":"formula(\"query1\").rollup(\"sum\").last(\"5m\")
+      > 100","type":"query alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"id":263171329,"org_id":321813,"type":"metric alert","name":"Test-Create_a_monitor_with_aggregate_filtered_query_variables_returns_OK_response-1772566404","message":"test
+        message","tags":[],"query":"formula(\"query1\").rollup(\"sum\").last(\"5m\")
+        > 100","options":{"thresholds":{"critical":100.0},"variables":[{"base_query":{"data_source":"metrics","name":"query1","query":"max:container.cpu.usage{*}
+        by {kube_cluster_name}.rollup(max)"},"data_source":"aggregate_filtered_query","filter_query":{"columns":[{"name":"cluster_name"}],"data_source":"reference_table","name":"filter_query","table_name":"test_table"},"filters":[{"base_attribute":"kube_cluster_name","filter_attribute":"cluster_name"}],"name":"query1"}],"notify_no_data":false,"notify_audit":false,"new_host_delay":300,"include_tags":true,"silenced":{}},"multi":false,"created_at":1772566405000,"created":"2026-03-03T19:33:25.076678+00:00","modified":"2026-03-03T19:33:25.076678+00:00","deleted":null,"priority":null,"restricted_roles":null,"restriction_policy":null,"draft_status":"published","assets":[],"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com","id":1445416}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/263171329
+  response:
+    body:
+      string: '{"deleted_monitor_id":263171329}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

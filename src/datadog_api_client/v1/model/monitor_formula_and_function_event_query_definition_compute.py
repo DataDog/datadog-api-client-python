@@ -30,12 +30,14 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
             "aggregation": (MonitorFormulaAndFunctionEventAggregation,),
             "interval": (int,),
             "metric": (str,),
+            "name": (str,),
         }
 
     attribute_map = {
         "aggregation": "aggregation",
         "interval": "interval",
         "metric": "metric",
+        "name": "name",
     }
 
     def __init__(
@@ -43,6 +45,7 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         aggregation: MonitorFormulaAndFunctionEventAggregation,
         interval: Union[int, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,11 +59,16 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
 
         :param metric: Measurable attribute to compute.
         :type metric: str, optional
+
+        :param name: The name assigned to this aggregation, when multiple aggregations are defined for a query.
+        :type name: str, optional
         """
         if interval is not unset:
             kwargs["interval"] = interval
         if metric is not unset:
             kwargs["metric"] = metric
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
         self_.aggregation = aggregation
