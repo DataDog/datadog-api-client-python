@@ -1,16 +1,9 @@
 """Tests for Personal Access Token (PAT) authentication support."""
 
-import pytest
-from datetime import datetime, timedelta
 from unittest.mock import patch
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.delegated_auth import (
-    DelegatedTokenCredentials,
-    DelegatedTokenConfig,
-    DelegatedTokenProvider,
-)
 
 
 class TestBearerTokenConfiguration:

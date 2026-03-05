@@ -478,6 +478,8 @@ class Configuration:
             self.api_key["apiKeyAuth"] = os.environ["DD_API_KEY"]
         if "DD_APP_KEY" in os.environ and not self.api_key.get("appKeyAuth"):
             self.api_key["appKeyAuth"] = os.environ["DD_APP_KEY"]
+        if "DD_BEARER_TOKEN" in os.environ and not self.access_token:
+            self.access_token = os.environ["DD_BEARER_TOKEN"]
 
     def __deepcopy__(self, memo):
         cls = self.__class__
@@ -776,5 +778,12 @@ class Configuration:
                 "value": self.get_api_key_with_prefix(
                     "appKeyAuth",
                 ),
+            }
+        if self.access_token is not None:
+            auth["bearerAuth"] = {
+                "type": "bearer",
+                "in": "header",
+                "key": "Authorization",
+                "value": "Bearer " + self.access_token,
             }
         return auth
