@@ -197,6 +197,12 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/revenue-query
+  Scenario: Get usage attribution types returns "OK" response
+    Given new "GetUsageAttributionTypes" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/revenue-query
   Scenario: GetEstimatedCostByOrg with both start_month and start_date returns "Bad Request" response
     Given new "GetEstimatedCostByOrg" request

@@ -31077,6 +31077,34 @@ datadog\_api\_client.v2.model.usage\_attributes\_object module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.usage\_attribution\_types\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_attribution_types_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.usage\_attribution\_types\_body module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_attribution_types_body
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.usage\_attribution\_types\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_attribution_types_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.usage\_attribution\_types\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_attribution_types_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.usage\_data\_object module
 --------------------------------------------------------
 

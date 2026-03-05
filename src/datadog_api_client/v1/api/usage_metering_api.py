@@ -1280,13 +1280,12 @@ class UsageMeteringApi:
              cursor := response.metadata.pagination.next_record_id
            END
 
-        The following values have been **deprecated** :
-            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage`` , ``llm_observability_usage`` , ``llm_observability_percentage``.
-
         :param start_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage beginning at this hour.
         :type start_hr: datetime
-        :param usage_type: Usage type to retrieve. The following values have been **deprecated** :
-            ``estimated_indexed_spans_usage`` , ``estimated_ingested_spans_usage``.
+        :param usage_type: Usage type to retrieve. Usage types are in the format ``<usage_type>_usage``.
+            Example: ``infra_host_usage``
+            To obtain the complete list of active usage types that can be used to replace
+            ``<usage_type>`` in the field names, make a request to the `Get usage attribution types API <https://docs.datadoghq.com/api/latest/usage-metering/#get-usage-attribution-types>`_.
         :type usage_type: HourlyUsageAttributionUsageType
         :param end_hr: Datetime in ISO-8601 format, UTC, precise to hour: ``[YYYY-MM-DDThh]`` for usage ending
             **before** this hour.
@@ -1448,16 +1447,19 @@ class UsageMeteringApi:
             Maximum of 15 months ago.
         :type start_month: datetime
         :param fields: Comma-separated list of usage types to return, or ``*`` for all usage types.
-            The following values have been **deprecated** :
-            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage`` , ``llm_observability_usage`` , ``llm_observability_percentage``.
+            Usage types are in the format ``<usage_type>_usage`` and ``<usage_type>_percentage``.
+            Example: ``infra_host_usage,infra_host_percentage``
+            To obtain the complete list of usage attribution types that can be used to replace
+            ``<usage_type>`` in the field names, make a request to the `Get usage attribution types API <https://docs.datadoghq.com/api/latest/usage-metering/#get-usage-attribution-types>`_.
         :type fields: MonthlyUsageAttributionSupportedMetrics
         :param end_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for usage ending this month.
         :type end_month: datetime, optional
         :param sort_direction: The direction to sort by: ``[desc, asc]``.
         :type sort_direction: UsageSortDirection, optional
-        :param sort_name: The field to sort by.
-            The following values have been **deprecated** :
-            ``estimated_indexed_spans_usage`` , ``estimated_indexed_spans_percentage`` , ``estimated_ingested_spans_usage`` , ``estimated_ingested_spans_percentage``.
+        :param sort_name: The field to sort by. Sort fields are in the format ``<usage_type>_usage``.
+            Example: ``infra_host_usage``
+            To obtain the complete list of usage attribution types that can be used to replace
+            ``<usage_type>`` in the field names, make a request to the `Get usage attribution types API <https://docs.datadoghq.com/api/latest/usage-metering/#get-usage-attribution-types>`_.
         :type sort_name: MonthlyUsageAttributionSupportedMetrics, optional
         :param tag_breakdown_keys: Comma separated list of tag keys used to group usage. If no value is provided the usage will not be broken down by tags.
 
