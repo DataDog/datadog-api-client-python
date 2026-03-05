@@ -25,6 +25,7 @@ from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageRespons
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
+from datadog_api_client.v2.model.usage_attribution_types_response import UsageAttributionTypesResponse
 
 
 class UsageMeteringApi:
@@ -378,6 +379,22 @@ class UsageMeteringApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_usage_attribution_types_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageAttributionTypesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/usage-attribution-types",
+                "operation_id": "get_usage_attribution_types",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
             },
@@ -813,6 +830,18 @@ class UsageMeteringApi:
 
         warnings.warn("get_usage_application_security_monitoring is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_application_security_monitoring_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_attribution_types(
+        self,
+    ) -> UsageAttributionTypesResponse:
+        """Get usage attribution types.
+
+        Get usage attribution types.
+
+        :rtype: UsageAttributionTypesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_usage_attribution_types_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_lambda_traced_invocations(
         self,

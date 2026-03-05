@@ -94,8 +94,8 @@ class HourlyUsageAttributionBody(ModelNormal):
         :param updated_at: Shows the most recent hour in the current month for all organizations where usages are calculated.
         :type updated_at: str, optional
 
-        :param usage_type: Supported products for hourly usage attribution requests.
-            The following values have been **deprecated** : ``estimated_indexed_spans_usage`` , ``estimated_ingested_spans_usage``.
+        :param usage_type: Supported products for hourly usage attribution requests. Usage types are in the format ``<usage_type>_usage``.
+            To obtain the complete list of valid usage types, make a request to the `Get usage attribution types API <https://docs.datadoghq.com/api/latest/usage-metering/#get-usage-attribution-types>`_.
         :type usage_type: HourlyUsageAttributionUsageType, optional
         """
         if hour is not unset:
