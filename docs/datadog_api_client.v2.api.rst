@@ -361,6 +361,13 @@ datadog\_api\_client.v2.api.key\_management\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.llm\_observability\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.llm_observability_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.logs\_api module
 --------------------------------------------
 

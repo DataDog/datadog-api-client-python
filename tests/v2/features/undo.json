@@ -2846,6 +2846,135 @@
       "type": "idempotent"
     }
   },
+  "ListLLMObsExperiments": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsExperiment": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsExperiments": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "UpdateLLMObsExperiment": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateLLMObsExperimentEvents": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "ListLLMObsProjects": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsProject": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsProjects": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "UpdateLLMObsProject": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListLLMObsDatasets": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsDataset": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsDatasets": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "UpdateLLMObsDataset": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListLLMObsDatasetRecords": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLLMObsDatasetRecords": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateLLMObsDatasetRecords": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "DeleteLLMObsDatasetRecords",
+      "parameters": [
+        {
+          "name": "TODO",
+          "source": "<RESPONSE_PATH>"
+        },
+        {
+          "name": "TODO",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsDatasetRecords": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {
