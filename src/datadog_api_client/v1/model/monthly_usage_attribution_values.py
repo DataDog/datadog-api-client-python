@@ -35,6 +35,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "bits_ai_investigations_usage": (float,),
             "browser_percentage": (float,),
             "browser_usage": (float,),
+            "ci_code_coverage_committers_percentage": (float,),
+            "ci_code_coverage_committers_usage": (float,),
             "ci_pipeline_indexed_spans_percentage": (float,),
             "ci_pipeline_indexed_spans_usage": (float,),
             "ci_test_indexed_spans_percentage": (float,),
@@ -198,6 +200,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "bits_ai_investigations_usage": "bits_ai_investigations_usage",
         "browser_percentage": "browser_percentage",
         "browser_usage": "browser_usage",
+        "ci_code_coverage_committers_percentage": "ci_code_coverage_committers_percentage",
+        "ci_code_coverage_committers_usage": "ci_code_coverage_committers_usage",
         "ci_pipeline_indexed_spans_percentage": "ci_pipeline_indexed_spans_percentage",
         "ci_pipeline_indexed_spans_usage": "ci_pipeline_indexed_spans_usage",
         "ci_test_indexed_spans_percentage": "ci_test_indexed_spans_percentage",
@@ -362,6 +366,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         bits_ai_investigations_usage: Union[float, UnsetType] = unset,
         browser_percentage: Union[float, UnsetType] = unset,
         browser_usage: Union[float, UnsetType] = unset,
+        ci_code_coverage_committers_percentage: Union[float, UnsetType] = unset,
+        ci_code_coverage_committers_usage: Union[float, UnsetType] = unset,
         ci_pipeline_indexed_spans_percentage: Union[float, UnsetType] = unset,
         ci_pipeline_indexed_spans_usage: Union[float, UnsetType] = unset,
         ci_test_indexed_spans_percentage: Union[float, UnsetType] = unset,
@@ -562,6 +568,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param browser_usage: The synthetic browser test usage by tag(s).
         :type browser_usage: float, optional
+
+        :param ci_code_coverage_committers_percentage: The percentage of Code Coverage committers usage by tag(s).
+        :type ci_code_coverage_committers_percentage: float, optional
+
+        :param ci_code_coverage_committers_usage: The total Code Coverage committers usage by tag(s).
+        :type ci_code_coverage_committers_usage: float, optional
 
         :param ci_pipeline_indexed_spans_percentage: The percentage of CI Pipeline Indexed Spans usage by tag(s).
         :type ci_pipeline_indexed_spans_percentage: float, optional
@@ -1025,6 +1037,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["browser_percentage"] = browser_percentage
         if browser_usage is not unset:
             kwargs["browser_usage"] = browser_usage
+        if ci_code_coverage_committers_percentage is not unset:
+            kwargs["ci_code_coverage_committers_percentage"] = ci_code_coverage_committers_percentage
+        if ci_code_coverage_committers_usage is not unset:
+            kwargs["ci_code_coverage_committers_usage"] = ci_code_coverage_committers_usage
         if ci_pipeline_indexed_spans_percentage is not unset:
             kwargs["ci_pipeline_indexed_spans_percentage"] = ci_pipeline_indexed_spans_percentage
         if ci_pipeline_indexed_spans_usage is not unset:
