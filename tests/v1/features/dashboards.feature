@@ -967,6 +967,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].q" is equal to "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with timeseries widget using has_value_labels
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with has_value_labels","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "avg:system.cpu.user{*} by {host}","style": {"palette": "dog_classic","line_type": "solid","line_width": "normal","has_value_labels": true},"display_type": "line"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].style.has_value_labels" is equal to true
+    And the response "widgets[0].definition.requests[0].style.palette" is equal to "dog_classic"
+    And the response "widgets[0].definition.requests[0].style.line_type" is equal to "solid"
+    And the response "widgets[0].definition.requests[0].style.line_width" is equal to "normal"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with timeseries widget using order_by tags
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered", "title": "{{ unique }} with order_by tags","widgets": [{"definition": {"type": "timeseries","requests": [{"q": "avg:system.cpu.user{*} by {host}","style": {"palette": "dog_classic","order_by": "tags"},"display_type": "line"}]}}]}
