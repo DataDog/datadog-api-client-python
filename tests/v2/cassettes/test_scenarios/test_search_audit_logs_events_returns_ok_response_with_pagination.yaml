@@ -46,4 +46,22 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"filter":{"from":"now-15m","to":"now"},"options":{"timezone":"GMT"},"page":{"cursor":"eyJhZnRlciI6IkFRQUFBWUFpT2hnV2pkb1otUUFBQUFCQldVRnBUMmgzVFVGQlJHSkxUR1pvU1U1MFRrOW5RVUUifQ","limit":2},"sort":"timestamp"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/audit/events/search
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
 version: 1
