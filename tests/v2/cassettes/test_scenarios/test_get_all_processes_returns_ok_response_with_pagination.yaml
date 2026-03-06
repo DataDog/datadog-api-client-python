@@ -32,4 +32,20 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/processes?page%5Blimit%5D=2&page%5Bcursor%5D=78ece26c7701000015e90400ecda56b600e21f012357ad716ee71ca9
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
 version: 1
