@@ -144,6 +144,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "ndm_netflow_events_sum": (int,),
             "netflow_indexed_events_count_sum": (int,),
             "network_device_wireless_top99p": (int,),
+            "network_path_sum": (int,),
             "npm_host_top99p": (int,),
             "observability_pipelines_bytes_processed_sum": (int,),
             "oci_host_sum": (int,),
@@ -365,6 +366,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "ndm_netflow_events_sum": "ndm_netflow_events_sum",
         "netflow_indexed_events_count_sum": "netflow_indexed_events_count_sum",
         "network_device_wireless_top99p": "network_device_wireless_top99p",
+        "network_path_sum": "network_path_sum",
         "npm_host_top99p": "npm_host_top99p",
         "observability_pipelines_bytes_processed_sum": "observability_pipelines_bytes_processed_sum",
         "oci_host_sum": "oci_host_sum",
@@ -587,6 +589,7 @@ class UsageSummaryDateOrg(ModelNormal):
         ndm_netflow_events_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_sum: Union[int, UnsetType] = unset,
         network_device_wireless_top99p: Union[int, UnsetType] = unset,
+        network_path_sum: Union[int, UnsetType] = unset,
         npm_host_top99p: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_sum: Union[int, UnsetType] = unset,
         oci_host_sum: Union[int, UnsetType] = unset,
@@ -1063,6 +1066,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param network_device_wireless_top99p: Shows the 99th percentile of all Network Device Monitoring wireless devices over all hours in the current date for the given org.
         :type network_device_wireless_top99p: int, optional
+
+        :param network_path_sum: Shows the sum of all Network Path scheduled tests over all hours in the current date for the given org.
+        :type network_path_sum: int, optional
 
         :param npm_host_top99p: Shows the 99th percentile of all distinct Cloud Network Monitoring hosts (formerly known as Network hosts) over all hours in the current date for the given org.
         :type npm_host_top99p: int, optional
@@ -1603,6 +1609,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["netflow_indexed_events_count_sum"] = netflow_indexed_events_count_sum
         if network_device_wireless_top99p is not unset:
             kwargs["network_device_wireless_top99p"] = network_device_wireless_top99p
+        if network_path_sum is not unset:
+            kwargs["network_path_sum"] = network_path_sum
         if npm_host_top99p is not unset:
             kwargs["npm_host_top99p"] = npm_host_top99p
         if observability_pipelines_bytes_processed_sum is not unset:
