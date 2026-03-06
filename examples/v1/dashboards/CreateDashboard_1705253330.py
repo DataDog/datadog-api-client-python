@@ -1,5 +1,5 @@
 """
-Create a new dashboard with timeseries widget using order_by tags
+Create a new dashboard with timeseries widget using has_value_labels
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -12,11 +12,12 @@ from datadog_api_client.v1.model.timeseries_widget_definition_type import Timese
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_display_type import WidgetDisplayType
-from datadog_api_client.v1.model.widget_style_order_by import WidgetStyleOrderBy
+from datadog_api_client.v1.model.widget_line_type import WidgetLineType
+from datadog_api_client.v1.model.widget_line_width import WidgetLineWidth
 
 body = Dashboard(
     layout_type=DashboardLayoutType.ORDERED,
-    title="Example-Dashboard with order_by tags",
+    title="Example-Dashboard with has_value_labels",
     widgets=[
         Widget(
             definition=TimeseriesWidgetDefinition(
@@ -26,7 +27,9 @@ body = Dashboard(
                         q="avg:system.cpu.user{*} by {host}",
                         style=TimeseriesRequestStyle(
                             palette="dog_classic",
-                            order_by=WidgetStyleOrderBy.TAGS,
+                            line_type=WidgetLineType.SOLID,
+                            line_width=WidgetLineWidth.NORMAL,
+                            has_value_labels=True,
                         ),
                         display_type=WidgetDisplayType.LINE,
                     ),
