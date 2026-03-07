@@ -155,6 +155,7 @@ class UsageSummaryResponse(ModelNormal):
             "ndm_netflow_events_agg_sum": (int,),
             "netflow_indexed_events_count_agg_sum": (int,),
             "network_device_wireless_top99p_sum": (int,),
+            "network_path_agg_sum": (int,),
             "npm_host_top99p_sum": (int,),
             "observability_pipelines_bytes_processed_agg_sum": (int,),
             "oci_host_agg_sum": (int,),
@@ -381,6 +382,7 @@ class UsageSummaryResponse(ModelNormal):
         "ndm_netflow_events_agg_sum": "ndm_netflow_events_agg_sum",
         "netflow_indexed_events_count_agg_sum": "netflow_indexed_events_count_agg_sum",
         "network_device_wireless_top99p_sum": "network_device_wireless_top99p_sum",
+        "network_path_agg_sum": "network_path_agg_sum",
         "npm_host_top99p_sum": "npm_host_top99p_sum",
         "observability_pipelines_bytes_processed_agg_sum": "observability_pipelines_bytes_processed_agg_sum",
         "oci_host_agg_sum": "oci_host_agg_sum",
@@ -608,6 +610,7 @@ class UsageSummaryResponse(ModelNormal):
         ndm_netflow_events_agg_sum: Union[int, UnsetType] = unset,
         netflow_indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
         network_device_wireless_top99p_sum: Union[int, UnsetType] = unset,
+        network_path_agg_sum: Union[int, UnsetType] = unset,
         npm_host_top99p_sum: Union[int, UnsetType] = unset,
         observability_pipelines_bytes_processed_agg_sum: Union[int, UnsetType] = unset,
         oci_host_agg_sum: Union[int, UnsetType] = unset,
@@ -1093,6 +1096,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param network_device_wireless_top99p_sum: Shows the 99th percentile of all Network Device Monitoring wireless devices over all hours in the current month for all organizations.
         :type network_device_wireless_top99p_sum: int, optional
+
+        :param network_path_agg_sum: Shows the sum of all Network Path scheduled tests over all hours in the current month for all organizations.
+        :type network_path_agg_sum: int, optional
 
         :param npm_host_top99p_sum: Shows the 99th percentile of all distinct Cloud Network Monitoring hosts (formerly known as Network hosts) over all hours in the current month for all organizations.
         :type npm_host_top99p_sum: int, optional
@@ -1650,6 +1656,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["netflow_indexed_events_count_agg_sum"] = netflow_indexed_events_count_agg_sum
         if network_device_wireless_top99p_sum is not unset:
             kwargs["network_device_wireless_top99p_sum"] = network_device_wireless_top99p_sum
+        if network_path_agg_sum is not unset:
+            kwargs["network_path_agg_sum"] = network_path_agg_sum
         if npm_host_top99p_sum is not unset:
             kwargs["npm_host_top99p_sum"] = npm_host_top99p_sum
         if observability_pipelines_bytes_processed_agg_sum is not unset:
