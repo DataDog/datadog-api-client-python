@@ -9,6 +9,33 @@ Feature: AWS Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "AWSIntegration" API
 
+  @skip @team:DataDog/aws-integrations
+  Scenario: Create AWS CCM config returns "AWS CCM Config object" response
+    Given operation "CreateAWSAccountCCMConfig" enabled
+    And new "CreateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 200 AWS CCM Config object
+
+  @skip @team:DataDog/aws-integrations
+  Scenario: Create AWS CCM config returns "Conflict" response
+    Given operation "CreateAWSAccountCCMConfig" enabled
+    And new "CreateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @skip @team:DataDog/aws-integrations
+  Scenario: Create AWS CCM config returns "Not Found" response
+    Given operation "CreateAWSAccountCCMConfig" enabled
+    And new "CreateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/aws-integrations
   Scenario: Create an AWS account returns "AWS Account object" response
     Given new "CreateAWSAccount" request
@@ -59,6 +86,22 @@ Feature: AWS Integration
     When the request is sent
     Then the response status is 409 Conflict
 
+  @skip @team:DataDog/aws-integrations
+  Scenario: Delete AWS CCM config returns "No Content" response
+    Given operation "DeleteAWSAccountCCMConfig" enabled
+    And new "DeleteAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @skip @team:DataDog/aws-integrations
+  Scenario: Delete AWS CCM config returns "Not Found" response
+    Given operation "DeleteAWSAccountCCMConfig" enabled
+    And new "DeleteAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/aws-integrations
   Scenario: Delete an AWS integration returns "Bad Request" response
     Given new "DeleteAWSAccount" request
@@ -107,6 +150,22 @@ Feature: AWS Integration
     Given new "CreateNewAWSExternalID" request
     When the request is sent
     Then the response status is 200 AWS External ID object
+
+  @skip @team:DataDog/aws-integrations
+  Scenario: Get AWS CCM config returns "AWS CCM Config object" response
+    Given operation "GetAWSAccountCCMConfig" enabled
+    And new "GetAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 AWS CCM Config object
+
+  @skip @team:DataDog/aws-integrations
+  Scenario: Get AWS CCM config returns "Not Found" response
+    Given operation "GetAWSAccountCCMConfig" enabled
+    And new "GetAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/aws-integrations
   Scenario: Get AWS integration IAM permissions returns "AWS IAM Permissions object" response
@@ -189,6 +248,24 @@ Feature: AWS Integration
     Given new "ListAWSNamespaces" request
     When the request is sent
     Then the response status is 200 AWS Namespaces List object
+
+  @skip @team:DataDog/aws-integrations
+  Scenario: Update AWS CCM config returns "AWS CCM Config object" response
+    Given operation "UpdateAWSAccountCCMConfig" enabled
+    And new "UpdateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 200 AWS CCM Config object
+
+  @skip @team:DataDog/aws-integrations
+  Scenario: Update AWS CCM config returns "Not Found" response
+    Given operation "UpdateAWSAccountCCMConfig" enabled
+    And new "UpdateAWSAccountCCMConfig" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"ccm_config": {"data_export_configs": [{"bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports", "report_type": "CUR2.0"}]}}, "type": "ccm_config"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @team:DataDog/aws-integrations
   Scenario: Update an AWS integration returns "AWS Account object" response
