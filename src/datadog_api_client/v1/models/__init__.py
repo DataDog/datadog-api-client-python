@@ -375,6 +375,36 @@ from datadog_api_client.v1.model.monitor_asset_category import MonitorAssetCateg
 from datadog_api_client.v1.model.monitor_asset_resource_type import MonitorAssetResourceType
 from datadog_api_client.v1.model.monitor_device_id import MonitorDeviceID
 from datadog_api_client.v1.model.monitor_draft_status import MonitorDraftStatus
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augment_query import (
+    MonitorFormulaAndFunctionAggregateAugmentQuery,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augmented_data_source import (
+    MonitorFormulaAndFunctionAggregateAugmentedDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augmented_query_definition import (
+    MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_base_query import (
+    MonitorFormulaAndFunctionAggregateBaseQuery,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filter_query import (
+    MonitorFormulaAndFunctionAggregateFilterQuery,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_data_source import (
+    MonitorFormulaAndFunctionAggregateFilteredDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_query_definition import (
+    MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_filter import (
+    MonitorFormulaAndFunctionAggregateQueryFilter,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_join_condition import (
+    MonitorFormulaAndFunctionAggregateQueryJoinCondition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_join_type import (
+    MonitorFormulaAndFunctionAggregateQueryJoinType,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
     MonitorFormulaAndFunctionCostAggregator,
 )
@@ -417,8 +447,26 @@ from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_
 from datadog_api_client.v1.model.monitor_formula_and_function_events_data_source import (
     MonitorFormulaAndFunctionEventsDataSource,
 )
+from datadog_api_client.v1.model.monitor_formula_and_function_metrics_aggregator import (
+    MonitorFormulaAndFunctionMetricsAggregator,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_metrics_data_source import (
+    MonitorFormulaAndFunctionMetricsDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_metrics_query_definition import (
+    MonitorFormulaAndFunctionMetricsQueryDefinition,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_query_definition import (
     MonitorFormulaAndFunctionQueryDefinition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_reference_table_column import (
+    MonitorFormulaAndFunctionReferenceTableColumn,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_reference_table_data_source import (
+    MonitorFormulaAndFunctionReferenceTableDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_reference_table_query_definition import (
+    MonitorFormulaAndFunctionReferenceTableQueryDefinition,
 )
 from datadog_api_client.v1.model.monitor_group_search_response import MonitorGroupSearchResponse
 from datadog_api_client.v1.model.monitor_group_search_response_counts import MonitorGroupSearchResponseCounts
@@ -1495,6 +1543,16 @@ __all__ = [
     "MonitorAssetResourceType",
     "MonitorDeviceID",
     "MonitorDraftStatus",
+    "MonitorFormulaAndFunctionAggregateAugmentQuery",
+    "MonitorFormulaAndFunctionAggregateAugmentedDataSource",
+    "MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition",
+    "MonitorFormulaAndFunctionAggregateBaseQuery",
+    "MonitorFormulaAndFunctionAggregateFilterQuery",
+    "MonitorFormulaAndFunctionAggregateFilteredDataSource",
+    "MonitorFormulaAndFunctionAggregateFilteredQueryDefinition",
+    "MonitorFormulaAndFunctionAggregateQueryFilter",
+    "MonitorFormulaAndFunctionAggregateQueryJoinCondition",
+    "MonitorFormulaAndFunctionAggregateQueryJoinType",
     "MonitorFormulaAndFunctionCostAggregator",
     "MonitorFormulaAndFunctionCostDataSource",
     "MonitorFormulaAndFunctionCostQueryDefinition",
@@ -1509,7 +1567,13 @@ __all__ = [
     "MonitorFormulaAndFunctionEventQueryGroupBy",
     "MonitorFormulaAndFunctionEventQueryGroupBySort",
     "MonitorFormulaAndFunctionEventsDataSource",
+    "MonitorFormulaAndFunctionMetricsAggregator",
+    "MonitorFormulaAndFunctionMetricsDataSource",
+    "MonitorFormulaAndFunctionMetricsQueryDefinition",
     "MonitorFormulaAndFunctionQueryDefinition",
+    "MonitorFormulaAndFunctionReferenceTableColumn",
+    "MonitorFormulaAndFunctionReferenceTableDataSource",
+    "MonitorFormulaAndFunctionReferenceTableQueryDefinition",
     "MonitorGroupSearchResponse",
     "MonitorGroupSearchResponseCounts",
     "MonitorGroupSearchResult",
