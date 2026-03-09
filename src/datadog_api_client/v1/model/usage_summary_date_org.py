@@ -126,6 +126,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "incident_management_monthly_active_users_hwm": (int,),
             "incident_management_seats_hwm": (int,),
             "indexed_events_count_sum": (int,),
+            "infra_edge_monitoring_devices_top99p": (int,),
             "infra_host_top99p": (int,),
             "ingested_events_bytes_sum": (int,),
             "iot_device_agg_sum": (int,),
@@ -347,6 +348,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "incident_management_monthly_active_users_hwm": "incident_management_monthly_active_users_hwm",
         "incident_management_seats_hwm": "incident_management_seats_hwm",
         "indexed_events_count_sum": "indexed_events_count_sum",
+        "infra_edge_monitoring_devices_top99p": "infra_edge_monitoring_devices_top99p",
         "infra_host_top99p": "infra_host_top99p",
         "ingested_events_bytes_sum": "ingested_events_bytes_sum",
         "iot_device_agg_sum": "iot_device_agg_sum",
@@ -569,6 +571,7 @@ class UsageSummaryDateOrg(ModelNormal):
         incident_management_monthly_active_users_hwm: Union[int, UnsetType] = unset,
         incident_management_seats_hwm: Union[int, UnsetType] = unset,
         indexed_events_count_sum: Union[int, UnsetType] = unset,
+        infra_edge_monitoring_devices_top99p: Union[int, UnsetType] = unset,
         infra_host_top99p: Union[int, UnsetType] = unset,
         ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         iot_device_agg_sum: Union[int, UnsetType] = unset,
@@ -1009,6 +1012,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param indexed_events_count_sum: Shows the sum of all log events indexed over all hours in the current date for the given org (To be deprecated on October 1st, 2024). **Deprecated**.
         :type indexed_events_count_sum: int, optional
+
+        :param infra_edge_monitoring_devices_top99p: Shows the 99th percentile of all Edge Devices Monitoring devices over all hours in the current date for the given org.
+        :type infra_edge_monitoring_devices_top99p: int, optional
 
         :param infra_host_top99p: Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for the given org.
         :type infra_host_top99p: int, optional
@@ -1567,6 +1573,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["incident_management_seats_hwm"] = incident_management_seats_hwm
         if indexed_events_count_sum is not unset:
             kwargs["indexed_events_count_sum"] = indexed_events_count_sum
+        if infra_edge_monitoring_devices_top99p is not unset:
+            kwargs["infra_edge_monitoring_devices_top99p"] = infra_edge_monitoring_devices_top99p
         if infra_host_top99p is not unset:
             kwargs["infra_host_top99p"] = infra_host_top99p
         if ingested_events_bytes_sum is not unset:
