@@ -58,7 +58,8 @@ class AWSLambdaForwarderConfig(ModelNormal):
 
         :param sources: List of service IDs set to enable automatic log collection.
             Discover the list of available services with the
-            `Get list of AWS log ready services <https://docs.datadoghq.com/api/latest/aws-logs-integration/#get-list-of-aws-log-ready-services>`_
+            `Get list of AWS log ready
+            services <https://docs.datadoghq.com/api/latest/aws-logs-integration/#get-list-of-aws-log-ready-services>`_
             endpoint.
         :type sources: [str], optional
         """

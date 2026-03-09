@@ -1,0 +1,16 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/integration/aws/accounts/b2087a32-4d4f-45b1-9321-1a0a48e9d7cf/ccm_config
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
