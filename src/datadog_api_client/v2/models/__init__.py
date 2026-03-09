@@ -2942,6 +2942,11 @@ from datadog_api_client.v2.model.leaked_key import LeakedKey
 from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
 from datadog_api_client.v2.model.library import Library
+from datadog_api_client.v2.model.licenses_list_request import LicensesListRequest
+from datadog_api_client.v2.model.licenses_list_request_data import LicensesListRequestData
+from datadog_api_client.v2.model.licenses_list_request_data_attributes import LicensesListRequestDataAttributes
+from datadog_api_client.v2.model.licenses_list_request_data_type import LicensesListRequestDataType
+from datadog_api_client.v2.model.licenses_list_request_license import LicensesListRequestLicense
 from datadog_api_client.v2.model.links import Links
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
@@ -8660,6 +8665,11 @@ __all__ = [
     "LeakedKeyAttributes",
     "LeakedKeyType",
     "Library",
+    "LicensesListRequest",
+    "LicensesListRequestData",
+    "LicensesListRequestDataAttributes",
+    "LicensesListRequestDataType",
+    "LicensesListRequestLicense",
     "Links",
     "ListAPIsResponse",
     "ListAPIsResponseData",
