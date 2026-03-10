@@ -59,4 +59,20 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/container_images?page%5Bsize%5D=2&page%5Bcursor%5D=bmFtZTowMTM5MTA3MzM1MTIuZGtyLmVjci51cy1lYXN0LTEuYW1hem9uYXdzLmNvbS9hcmdvfGlkOjAxMzkxMDczMzUxMi5ka3IuZWNyLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tL2FyZ29Ac2hhMjU2OmZmMTUxZWYyNDZkN2I0ZDZiOGZlMzE5MjNiMjk4ZDg0ZThmMjA2MzI3MDFiYmI2ZWQ5N2ZjYzU4YTAxNTBmODA%3D
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
 version: 1

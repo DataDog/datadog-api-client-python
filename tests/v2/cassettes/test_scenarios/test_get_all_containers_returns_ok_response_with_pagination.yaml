@@ -41,4 +41,20 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/containers?page%5Bsize%5D=2&page%5Bcursor%5D=c3RhcnRlZDoxNjk3MTE4NDExMDAwLjAwMDAwMHxpZC5yYXc6ODY4OWY2ODUtZTQ0MS00ODJjLTYwNDMtNWQ5ZA%3D%3D
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
 version: 1

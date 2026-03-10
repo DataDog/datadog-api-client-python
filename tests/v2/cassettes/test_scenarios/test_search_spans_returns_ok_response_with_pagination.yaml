@@ -38,4 +38,22 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: '{"data":{"attributes":{"filter":{"from":"now-15m","query":"service:python*","to":"now"},"options":{"timezone":"GMT"},"page":{"cursor":"eyJhZnRlciI6IkFnQUFBWWtHdXF2UUQ0YzdlUUFBQUFBQUFBQVlBQUFBQUVGWmEwZDFjbVpSUVVGRWMzZDVaVUZYYVZOblFWRmxOUUFBQUNRQUFBQUFNREU0T1RBMll6QXROVEZrT0MwME5EYzVMV0ZsT0RndE56WXdZbVl4TldRM016QXkiLCJ2YWx1ZXMiOlsiMjAyMy0wNi0yOVQxMDozNzoyNC4zMDRaIiwyNjA1MjA4MjVdfQ==","limit":2},"sort":"timestamp"},"type":"search_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/spans/events/search
+  response:
+    body:
+      string: '{"data":[]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
 version: 1
