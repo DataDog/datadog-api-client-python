@@ -136,6 +136,7 @@ class UsageSummaryResponse(ModelNormal):
             "incident_management_monthly_active_users_hwm_sum": (int,),
             "incident_management_seats_hwm_sum": (int,),
             "indexed_events_count_agg_sum": (int,),
+            "infra_edge_monitoring_devices_top99p_sum": (int,),
             "infra_host_top99p_sum": (int,),
             "ingested_events_bytes_agg_sum": (int,),
             "iot_device_agg_sum": (int,),
@@ -364,6 +365,7 @@ class UsageSummaryResponse(ModelNormal):
         "incident_management_monthly_active_users_hwm_sum": "incident_management_monthly_active_users_hwm_sum",
         "incident_management_seats_hwm_sum": "incident_management_seats_hwm_sum",
         "indexed_events_count_agg_sum": "indexed_events_count_agg_sum",
+        "infra_edge_monitoring_devices_top99p_sum": "infra_edge_monitoring_devices_top99p_sum",
         "infra_host_top99p_sum": "infra_host_top99p_sum",
         "ingested_events_bytes_agg_sum": "ingested_events_bytes_agg_sum",
         "iot_device_agg_sum": "iot_device_agg_sum",
@@ -593,6 +595,7 @@ class UsageSummaryResponse(ModelNormal):
         incident_management_monthly_active_users_hwm_sum: Union[int, UnsetType] = unset,
         incident_management_seats_hwm_sum: Union[int, UnsetType] = unset,
         indexed_events_count_agg_sum: Union[int, UnsetType] = unset,
+        infra_edge_monitoring_devices_top99p_sum: Union[int, UnsetType] = unset,
         infra_host_top99p_sum: Union[int, UnsetType] = unset,
         ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
         iot_device_agg_sum: Union[int, UnsetType] = unset,
@@ -1042,6 +1045,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param indexed_events_count_agg_sum: Shows the sum of all log events indexed over all hours in the current month for all organizations (To be deprecated on October 1st, 2024). **Deprecated**.
         :type indexed_events_count_agg_sum: int, optional
+
+        :param infra_edge_monitoring_devices_top99p_sum: Shows the 99th percentile of all Edge Devices Monitoring devices over all hours in the current month for all organizations.
+        :type infra_edge_monitoring_devices_top99p_sum: int, optional
 
         :param infra_host_top99p_sum: Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current month for all organizations.
         :type infra_host_top99p_sum: int, optional
@@ -1624,6 +1630,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["incident_management_seats_hwm_sum"] = incident_management_seats_hwm_sum
         if indexed_events_count_agg_sum is not unset:
             kwargs["indexed_events_count_agg_sum"] = indexed_events_count_agg_sum
+        if infra_edge_monitoring_devices_top99p_sum is not unset:
+            kwargs["infra_edge_monitoring_devices_top99p_sum"] = infra_edge_monitoring_devices_top99p_sum
         if infra_host_top99p_sum is not unset:
             kwargs["infra_host_top99p_sum"] = infra_host_top99p_sum
         if ingested_events_bytes_agg_sum is not unset:
