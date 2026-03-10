@@ -35,7 +35,7 @@ class FiltersPerProduct(ModelNormal):
         :type filters: [str]
 
         :param product: Name of the product the dataset is for. Possible values are 'apm', 'rum',
-            'metrics', 'logs', 'error_tracking', and 'cloud_cost'.
+            'metrics', 'logs', 'error_tracking', 'cloud_cost', and 'sd_repoinfo'.
         :type product: str
         """
         super().__init__(kwargs)
