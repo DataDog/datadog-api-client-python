@@ -11,5 +11,7 @@ from datadog_api_client.model_utils import (
 
 class AnyValueObject(ModelNormal):
     def __init__(self_, **kwargs):
-        """ """
+        """
+        An arbitrary object value with additional properties.
+        """
         super().__init__(kwargs)
