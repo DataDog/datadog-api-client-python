@@ -44821,7 +44821,7 @@ components:
         Protocol (OTLP) over gRPC and HTTP.
 
 
-        **Supported pipeline types:** logs, metrics'
+        **Supported pipeline types:** logs'
       properties:
         grpc_address_key:
           description: Environment variable name containing the gRPC server address
@@ -44851,7 +44851,6 @@ components:
       type: object
       x-pipeline-types:
       - logs
-      - metrics
     ObservabilityPipelineOpentelemetrySourceType:
       default: opentelemetry
       description: The source type. The value should always be `opentelemetry`.
@@ -56969,6 +56968,7 @@ components:
           - production
           - us-east-1
           items:
+            description: An environment tag associated with the entity.
             type: string
           type: array
         mitreTactics:
@@ -56977,6 +56977,7 @@ components:
           - Credential Access
           - Privilege Escalation
           items:
+            description: A MITRE ATT&CK tactic name.
             type: string
           type: array
         mitreTechniques:
@@ -56985,6 +56986,7 @@ components:
           - T1078
           - T1098
           items:
+            description: A MITRE ATT&CK technique identifier.
             type: string
           type: array
         projectID:
@@ -56997,6 +56999,7 @@ components:
           - api-gateway
           - lambda
           items:
+            description: A service name associated with the entity.
             type: string
           type: array
         sources:
@@ -57005,6 +57008,7 @@ components:
           - cloudtrail
           - cloud-security-posture-management
           items:
+            description: A data source identifier.
             type: string
           type: array
         subscriptionID:
@@ -57054,6 +57058,7 @@ components:
           example:
           - aws
           items:
+            description: A cloud provider name.
             type: string
           type: array
         entityRoles:
@@ -57062,6 +57067,7 @@ components:
           - Admin
           - Developer
           items:
+            description: A role assigned to the entity.
             type: string
           type: array
         entityType:
@@ -57169,6 +57175,7 @@ components:
       description: Response containing a list of entity risk scores
       properties:
         data:
+          description: Array of entity risk score objects.
           items:
             $ref: '#/components/schemas/SecurityEntityRiskScore'
           type: array
