@@ -38,9 +38,9 @@ class HamrOrgConnectionDataRequest(ModelNormal):
 
     def __init__(self_, attributes: HamrOrgConnectionAttributesRequest, id: str, type: HamrOrgConnectionType, **kwargs):
         """
+        Data object for a HAMR organization connection request.
 
-
-        :param attributes:
+        :param attributes: Attributes for a HAMR organization connection request.
         :type attributes: HamrOrgConnectionAttributesRequest
 
         :param id: The organization UUID for this HAMR connection. Must match the authenticated organization's UUID.

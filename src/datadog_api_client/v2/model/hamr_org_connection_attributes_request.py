@@ -49,7 +49,7 @@ class HamrOrgConnectionAttributesRequest(ModelNormal):
         **kwargs,
     ):
         """
-
+        Attributes for a HAMR organization connection request.
 
         :param hamr_status: Status of the HAMR connection:
 

@@ -30,9 +30,9 @@ class HamrOrgConnectionRequest(ModelNormal):
 
     def __init__(self_, data: HamrOrgConnectionDataRequest, **kwargs):
         """
+        Request payload for creating or updating a HAMR organization connection.
 
-
-        :param data:
+        :param data: Data object for a HAMR organization connection request.
         :type data: HamrOrgConnectionDataRequest
         """
         super().__init__(kwargs)
