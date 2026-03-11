@@ -45,9 +45,9 @@ class GlobalVariableJsonPatchRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a JSON Patch request on a Synthetic global variable.
 
-
-        :param attributes:
+        :param attributes: Attributes for a JSON Patch request on a Synthetic global variable.
         :type attributes: GlobalVariableJsonPatchRequestDataAttributes, optional
 
         :param type: Global variable JSON Patch type.

@@ -34,7 +34,7 @@ class GlobalVariableJsonPatchRequest(ModelNormal):
         """
         JSON Patch request for global variable.
 
-        :param data:
+        :param data: Data object for a JSON Patch request on a Synthetic global variable.
         :type data: GlobalVariableJsonPatchRequestData
         """
         super().__init__(kwargs)

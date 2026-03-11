@@ -28,7 +28,7 @@ class DeletedTestResponseDataAttributes(ModelNormal):
 
     def __init__(self_, deleted_at: Union[str, UnsetType] = unset, public_id: Union[str, UnsetType] = unset, **kwargs):
         """
-
+        Attributes of a deleted Synthetic test, including deletion timestamp and public ID.
 
         :param deleted_at: Deletion timestamp of the Synthetic test ID.
         :type deleted_at: str, optional

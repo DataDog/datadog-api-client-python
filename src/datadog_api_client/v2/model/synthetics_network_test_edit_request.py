@@ -32,7 +32,7 @@ class SyntheticsNetworkTestEditRequest(ModelNormal):
         """
         Network Path test request.
 
-        :param data:
+        :param data: Data object for creating or editing a Network Path test.
         :type data: SyntheticsNetworkTestEdit
         """
         super().__init__(kwargs)
