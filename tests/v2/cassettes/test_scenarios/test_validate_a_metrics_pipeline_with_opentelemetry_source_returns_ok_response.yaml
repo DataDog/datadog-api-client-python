@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-metrics-destination","inputs":["my-processor-group"],"type":"datadog_metrics"}],"pipeline_type":"metrics","processor_groups":[{"enabled":true,"id":"my-processor-group","include":"*","inputs":["opentelemetry-source"],"processors":[{"enabled":true,"id":"filter-processor","include":"env:production","type":"filter"}]}],"sources":[{"id":"opentelemetry-source","type":"opentelemetry"}]},"name":"Metrics
+      OTel Pipeline"},"type":"pipelines"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/validate
+  response:
+    body:
+      string: '{"errors":[]}
+
+        '
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

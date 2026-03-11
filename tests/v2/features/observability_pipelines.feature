@@ -150,6 +150,14 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.destinations[0].id" is equal to "updated-datadog-logs-destination-id"
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate a metrics pipeline with opentelemetry source returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"pipeline_type": "metrics", "destinations": [{"id": "datadog-metrics-destination", "inputs": ["my-processor-group"], "type": "datadog_metrics"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["opentelemetry-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "env:production", "type": "filter"}]}], "sources": [{"id": "opentelemetry-source", "type": "opentelemetry"}]}, "name": "Metrics OTel Pipeline"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline returns "Bad Request" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
