@@ -38,7 +38,7 @@ class BatchDeleteRowsRequestArray(ModelNormal):
         """
         The request body for deleting multiple rows from a reference table.
 
-        :param data:
+        :param data: List of row resources to delete from the reference table.
         :type data: [BatchDeleteRowsRequestData]
         """
         super().__init__(kwargs)
