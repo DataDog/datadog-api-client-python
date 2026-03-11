@@ -43,12 +43,12 @@ class ServiceListDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes of a service list entry, containing metadata and a list of service names.
 
-
-        :param metadata:
+        :param metadata: A list of metadata items associated with the service.
         :type metadata: [ServiceListDataAttributesMetadataItems], optional
 
-        :param services:
+        :param services: A list of service names.
         :type services: [str], optional
         """
         if metadata is not unset:
