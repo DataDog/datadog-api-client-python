@@ -30,9 +30,9 @@ class Playlist(ModelNormal):
 
     def __init__(self_, data: PlaylistData, **kwargs):
         """
+        A single RUM replay playlist resource returned by create, update, or get operations.
 
-
-        :param data:
+        :param data: Data object representing a RUM replay playlist, including its identifier, type, and attributes.
         :type data: PlaylistData
         """
         super().__init__(kwargs)

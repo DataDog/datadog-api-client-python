@@ -30,9 +30,9 @@ class PlaylistsSession(ModelNormal):
 
     def __init__(self_, data: PlaylistsSessionData, **kwargs):
         """
+        A single RUM replay session resource as it appears within a playlist context.
 
-
-        :param data:
+        :param data: Data object representing a session within a playlist, including its identifier, type, and attributes.
         :type data: PlaylistsSessionData
         """
         super().__init__(kwargs)

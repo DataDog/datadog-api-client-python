@@ -81,51 +81,51 @@ class SnapshotDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes of a heatmap snapshot, including view context, device information, and audit metadata.
 
-
-        :param application_id:
+        :param application_id: Unique identifier of the RUM application.
         :type application_id: str, optional
 
-        :param created_at:
+        :param created_at: Timestamp when the snapshot was created.
         :type created_at: datetime, optional
 
-        :param created_by:
+        :param created_by: Display name of the user who created the snapshot.
         :type created_by: str, optional
 
-        :param created_by_handle:
+        :param created_by_handle: Email handle of the user who created the snapshot.
         :type created_by_handle: str, optional
 
-        :param created_by_user_id:
+        :param created_by_user_id: Numeric identifier of the user who created the snapshot.
         :type created_by_user_id: int, optional
 
-        :param device_type:
+        :param device_type: Device type used when capturing the snapshot (e.g., desktop, mobile, tablet).
         :type device_type: str, optional
 
-        :param event_id:
+        :param event_id: Unique identifier of the RUM event associated with the snapshot.
         :type event_id: str, optional
 
-        :param is_device_type_selected_by_user:
+        :param is_device_type_selected_by_user: Indicates whether the device type was explicitly selected by the user rather than auto-detected.
         :type is_device_type_selected_by_user: bool, optional
 
-        :param modified_at:
+        :param modified_at: Timestamp when the snapshot was last modified.
         :type modified_at: datetime, optional
 
-        :param org_id:
+        :param org_id: Numeric identifier of the organization that owns the snapshot.
         :type org_id: int, optional
 
-        :param session_id:
+        :param session_id: Unique identifier of the RUM session associated with the snapshot.
         :type session_id: str, optional
 
-        :param snapshot_name:
+        :param snapshot_name: Human-readable name for the snapshot.
         :type snapshot_name: str, optional
 
-        :param start:
+        :param start: Offset in milliseconds from the start of the session at which the snapshot was captured.
         :type start: int, optional
 
-        :param view_id:
+        :param view_id: Unique identifier of the RUM view associated with the snapshot.
         :type view_id: str, optional
 
-        :param view_name:
+        :param view_name: URL path or name of the view where the snapshot was captured.
         :type view_name: str, optional
         """
         if application_id is not unset:

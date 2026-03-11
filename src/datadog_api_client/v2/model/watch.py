@@ -30,9 +30,9 @@ class Watch(ModelNormal):
 
     def __init__(self_, data: WatchData, **kwargs):
         """
+        A single RUM replay session watch resource returned by create operations.
 
-
-        :param data:
+        :param data: Data object representing a session watch record, including its identifier, type, and attributes.
         :type data: WatchData
         """
         super().__init__(kwargs)

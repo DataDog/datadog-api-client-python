@@ -46,12 +46,12 @@ class SnapshotUpdateRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a heatmap snapshot update request, containing the resource identifier, type, and attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes for updating a heatmap snapshot, including event, session, and view context.
         :type attributes: SnapshotUpdateRequestDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier of the heatmap snapshot to update.
         :type id: str, optional
 
         :param type: Snapshots resource type.

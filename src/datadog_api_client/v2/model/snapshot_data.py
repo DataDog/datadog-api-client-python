@@ -47,12 +47,12 @@ class SnapshotData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object representing a heatmap snapshot, including its identifier, type, and attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes of a heatmap snapshot, including view context, device information, and audit metadata.
         :type attributes: SnapshotDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier of the heatmap snapshot.
         :type id: str, optional
 
         :param type: Snapshots resource type.
