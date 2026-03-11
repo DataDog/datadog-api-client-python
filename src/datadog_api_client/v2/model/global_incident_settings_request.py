@@ -30,9 +30,9 @@ class GlobalIncidentSettingsRequest(ModelNormal):
 
     def __init__(self_, data: GlobalIncidentSettingsDataRequest, **kwargs):
         """
+        Request payload for updating global incident settings.
 
-
-        :param data:
+        :param data: Data object in the global incident settings request.
         :type data: GlobalIncidentSettingsDataRequest
         """
         super().__init__(kwargs)

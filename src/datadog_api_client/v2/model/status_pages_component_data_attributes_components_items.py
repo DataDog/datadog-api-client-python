@@ -63,15 +63,15 @@ class StatusPagesComponentDataAttributesComponentsItems(ModelNormal):
         **kwargs,
     ):
         """
+        A component within a component group.
 
-
-        :param id:
+        :param id: The ID of the component within the group.
         :type id: UUID, optional
 
-        :param name:
+        :param name: The name of the component within the group.
         :type name: str, optional
 
-        :param position:
+        :param position: The zero-indexed position of the component within the group.
         :type position: int, optional
 
         :param status: The status of the component.

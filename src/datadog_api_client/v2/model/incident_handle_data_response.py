@@ -50,7 +50,7 @@ class IncidentHandleDataResponse(ModelNormal):
         **kwargs,
     ):
         """
-
+        Data object representing an incident handle in a response.
 
         :param attributes: Incident handle attributes for responses
         :type attributes: IncidentHandleAttributesResponse
@@ -58,7 +58,7 @@ class IncidentHandleDataResponse(ModelNormal):
         :param id: The ID of the incident handle
         :type id: str
 
-        :param relationships:
+        :param relationships: Relationships associated with an incident handle response, including linked users and incident type.
         :type relationships: IncidentHandleRelationships, none_type, optional
 
         :param type: Incident handle resource type

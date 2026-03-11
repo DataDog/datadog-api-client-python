@@ -38,7 +38,7 @@ class CreateComponentRequestDataRelationships(ModelNormal):
         """
         The supported relationships for creating a component.
 
-        :param group:
+        :param group: The group to create the component within.
         :type group: CreateComponentRequestDataRelationshipsGroup, optional
         """
         if group is not unset:

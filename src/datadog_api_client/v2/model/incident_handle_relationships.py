@@ -47,18 +47,18 @@ class IncidentHandleRelationships(ModelNormal):
         **kwargs,
     ):
         """
+        Relationships associated with an incident handle response, including linked users and incident type.
 
-
-        :param commander_user:
+        :param commander_user: A single relationship object for an incident handle, wrapping the related resource data.
         :type commander_user: IncidentHandleRelationship, optional
 
-        :param created_by_user:
+        :param created_by_user: A single relationship object for an incident handle, wrapping the related resource data.
         :type created_by_user: IncidentHandleRelationship
 
-        :param incident_type:
+        :param incident_type: A single relationship object for an incident handle, wrapping the related resource data.
         :type incident_type: IncidentHandleRelationship
 
-        :param last_modified_by_user:
+        :param last_modified_by_user: A single relationship object for an incident handle, wrapping the related resource data.
         :type last_modified_by_user: IncidentHandleRelationship
         """
         if commander_user is not unset:

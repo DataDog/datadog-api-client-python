@@ -54,7 +54,7 @@ class CreateComponentRequestData(ModelNormal):
         **kwargs,
     ):
         """
-
+        The data object for creating a component.
 
         :param attributes: The supported attributes for creating a component.
         :type attributes: CreateComponentRequestDataAttributes

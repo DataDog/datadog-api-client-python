@@ -72,7 +72,7 @@ class CreateStatusPageRequestDataAttributesComponentsItems(ModelNormal):
         **kwargs,
     ):
         """
-
+        A component to be created on a status page.
 
         :param components: If creating a component of type ``group`` , the components to create within the group.
         :type components: [CreateStatusPageRequestDataAttributesComponentsItemsComponentsItems], optional

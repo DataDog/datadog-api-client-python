@@ -41,7 +41,7 @@ class PatchComponentRequestData(ModelNormal):
         self_, attributes: PatchComponentRequestDataAttributes, id: UUID, type: StatusPagesComponentGroupType, **kwargs
     ):
         """
-
+        The data object for updating a component.
 
         :param attributes: The supported attributes for updating a component.
         :type attributes: PatchComponentRequestDataAttributes

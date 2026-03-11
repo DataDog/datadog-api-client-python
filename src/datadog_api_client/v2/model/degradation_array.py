@@ -51,9 +51,9 @@ class DegradationArray(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a list of degradations.
 
-
-        :param data:
+        :param data: A list of degradation data objects.
         :type data: [DegradationData]
 
         :param included: The included related resources of a degradation. Client must explicitly request these resources by name in the ``include`` query parameter.

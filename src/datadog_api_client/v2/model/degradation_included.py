@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class DegradationIncluded(ModelComposed):
     def __init__(self, **kwargs):
         """
-
+        An included resource related to a degradation or maintenance.
 
         :param attributes: Attributes of the Datadog user.
         :type attributes: StatusPagesUserAttributes, optional

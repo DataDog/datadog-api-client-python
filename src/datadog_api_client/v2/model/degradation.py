@@ -43,9 +43,9 @@ class Degradation(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a single degradation.
 
-
-        :param data:
+        :param data: The data object for a degradation.
         :type data: DegradationData, optional
 
         :param included: The included related resources of a degradation. Client must explicitly request these resources by name in the ``include`` query parameter.

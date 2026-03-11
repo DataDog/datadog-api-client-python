@@ -35,9 +35,9 @@ class StatusPagesComponentGroupRelationshipsGroupData(ModelNormal):
 
     def __init__(self_, id: UUID, type: StatusPagesComponentGroupType, **kwargs):
         """
+        The data object identifying the parent group of a component group.
 
-
-        :param id:
+        :param id: The ID of the parent group.
         :type id: UUID
 
         :param type: Components resource type.

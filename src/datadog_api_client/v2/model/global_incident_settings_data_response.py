@@ -42,7 +42,7 @@ class GlobalIncidentSettingsDataResponse(ModelNormal):
         self_, attributes: GlobalIncidentSettingsAttributesResponse, id: str, type: GlobalIncidentSettingsType, **kwargs
     ):
         """
-
+        Data object in the global incident settings response.
 
         :param attributes: Global incident settings attributes
         :type attributes: GlobalIncidentSettingsAttributesResponse

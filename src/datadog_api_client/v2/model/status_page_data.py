@@ -50,7 +50,7 @@ class StatusPageData(ModelNormal):
         **kwargs,
     ):
         """
-
+        The data object for a status page.
 
         :param attributes: The attributes of a status page.
         :type attributes: StatusPageDataAttributes, optional

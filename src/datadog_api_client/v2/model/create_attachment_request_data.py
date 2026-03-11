@@ -53,7 +53,7 @@ class CreateAttachmentRequestData(ModelNormal):
         :param attributes: The attributes for creating an attachment.
         :type attributes: CreateAttachmentRequestDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the attachment.
         :type id: str, optional
 
         :param type: The incident attachment resource type.

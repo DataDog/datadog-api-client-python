@@ -30,9 +30,9 @@ class IncidentHandleRequest(ModelNormal):
 
     def __init__(self_, data: IncidentHandleDataRequest, **kwargs):
         """
+        Request payload for creating or updating a global incident handle.
 
-
-        :param data:
+        :param data: Data object representing an incident handle in a create or update request.
         :type data: IncidentHandleDataRequest
         """
         super().__init__(kwargs)
