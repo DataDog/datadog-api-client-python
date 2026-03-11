@@ -34,7 +34,7 @@ class BatchDeleteRowsRequestData(ModelNormal):
         """
         Row resource containing a single row identifier for deletion.
 
-        :param id:
+        :param id: The primary key value that uniquely identifies the row to delete.
         :type id: str
 
         :param type: Row resource type.
