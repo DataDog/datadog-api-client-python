@@ -32,7 +32,7 @@ class FindingCaseResponseArray(ModelNormal):
         """
         List of case responses.
 
-        :param data:
+        :param data: Array of case response data objects.
         :type data: [FindingCaseResponseData]
         """
         super().__init__(kwargs)

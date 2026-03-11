@@ -100,7 +100,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         :param assigned_to: Relationship to user.
         :type assigned_to: RelationshipToUser, optional
 
-        :param attributes:
+        :param attributes: Custom attributes associated with the case as key-value pairs where values are string arrays.
         :type attributes: {str: ([str],)}, optional
 
         :param closed_at: Timestamp of when the case was closed.
