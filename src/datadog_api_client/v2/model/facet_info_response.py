@@ -32,9 +32,9 @@ class FacetInfoResponse(ModelNormal):
 
     def __init__(self_, data: Union[FacetInfoResponseData, UnsetType] = unset, **kwargs):
         """
+        Response containing facet information for an attribute, including its distinct values and occurrence counts.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for the facet info response.
         :type data: FacetInfoResponseData, optional
         """
         if data is not unset:

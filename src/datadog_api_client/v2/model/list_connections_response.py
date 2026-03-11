@@ -32,9 +32,9 @@ class ListConnectionsResponse(ModelNormal):
 
     def __init__(self_, data: Union[ListConnectionsResponseData, UnsetType] = unset, **kwargs):
         """
+        Response containing the list of all data source connections configured for an entity.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for the list connections response.
         :type data: ListConnectionsResponseData, optional
         """
         if data is not unset:

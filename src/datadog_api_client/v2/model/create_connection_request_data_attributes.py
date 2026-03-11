@@ -52,21 +52,21 @@ class CreateConnectionRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes defining the data source connection, including join configuration and custom fields.
 
-
-        :param fields:
+        :param fields: List of custom attribute fields to import from the data source.
         :type fields: [CreateConnectionRequestDataAttributesFieldsItems], optional
 
-        :param join_attribute:
+        :param join_attribute: The attribute in the data source used to join records with the entity.
         :type join_attribute: str
 
-        :param join_type:
+        :param join_type: The type of join key used to link the data source to the entity (for example, email or user_id).
         :type join_type: str
 
-        :param metadata:
+        :param metadata: Additional key-value metadata associated with the connection.
         :type metadata: {str: (str,)}, optional
 
-        :param type:
+        :param type: The type of data source connection (for example, ref_table).
         :type type: str
         """
         if fields is not unset:

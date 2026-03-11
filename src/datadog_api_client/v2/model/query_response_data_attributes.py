@@ -32,12 +32,12 @@ class QueryResponseDataAttributes(ModelNormal):
 
     def __init__(self_, hits: Union[List[Any], UnsetType] = unset, total: Union[int, UnsetType] = unset, **kwargs):
         """
+        Attributes of the query response, containing the matched records and total count.
 
-
-        :param hits:
+        :param hits: The list of matching records returned by the query, each as a map of attribute names to values.
         :type hits: [bool, date, datetime, dict, float, int, list, str, UUID, none_type], optional
 
-        :param total:
+        :param total: Total number of records matching the query, regardless of the limit applied.
         :type total: int, optional
         """
         if hits is not unset:

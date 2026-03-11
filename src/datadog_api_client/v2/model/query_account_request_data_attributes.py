@@ -52,21 +52,21 @@ class QueryAccountRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for filtering and shaping the account query results.
 
-
-        :param limit:
+        :param limit: Maximum number of account records to return in the response.
         :type limit: int, optional
 
-        :param query:
+        :param query: Filter expression using account attribute conditions to narrow results.
         :type query: str, optional
 
-        :param select_columns:
+        :param select_columns: List of account attribute column names to include in the response.
         :type select_columns: [str], optional
 
-        :param sort:
+        :param sort: Sorting configuration specifying the field and direction for ordering query results.
         :type sort: QueryAccountRequestDataAttributesSort, optional
 
-        :param wildcard_search_term:
+        :param wildcard_search_term: Free-text term used for wildcard search across account attribute values.
         :type wildcard_search_term: str, optional
         """
         if limit is not unset:

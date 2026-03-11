@@ -34,9 +34,9 @@ class QueryEventFilteredUsersRequest(ModelNormal):
 
     def __init__(self_, data: Union[QueryEventFilteredUsersRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for querying users filtered by user properties combined with event platform activity.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for querying event-filtered users.
         :type data: QueryEventFilteredUsersRequestData, optional
         """
         if data is not unset:

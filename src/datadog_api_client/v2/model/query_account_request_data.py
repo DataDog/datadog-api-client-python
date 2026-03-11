@@ -44,12 +44,12 @@ class QueryAccountRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for querying accounts.
 
-
-        :param attributes:
+        :param attributes: Attributes for filtering and shaping the account query results.
         :type attributes: QueryAccountRequestDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the query account request resource.
         :type id: str, optional
 
         :param type: Query account request resource type.

@@ -44,12 +44,12 @@ class FacetInfoRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for the facet info request.
 
-
-        :param attributes:
+        :param attributes: Attributes for the facet info request, specifying which facet to query and optional filters to apply.
         :type attributes: FacetInfoRequestDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the facet info request resource.
         :type id: str, optional
 
         :param type: Users facet info request resource type.
