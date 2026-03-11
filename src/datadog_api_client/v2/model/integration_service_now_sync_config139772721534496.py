@@ -50,12 +50,12 @@ class IntegrationServiceNowSyncConfig139772721534496(ModelNormal):
         **kwargs,
     ):
         """
-
+        Field-level synchronization properties for ServiceNow integration
 
         :param comments: Sync property configuration
         :type comments: SyncProperty, optional
 
-        :param priority:
+        :param priority: Priority synchronization configuration for ServiceNow integration
         :type priority: IntegrationServiceNowSyncConfigPriority, optional
 
         :param status: Sync property with mapping configuration

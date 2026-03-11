@@ -34,7 +34,7 @@ class ProjectColumnsConfig(ModelNormal):
         """
         Project columns configuration
 
-        :param columns:
+        :param columns: List of column configurations for the project board view
         :type columns: [ProjectColumnsConfigColumnsItems], optional
         """
         if columns is not unset:

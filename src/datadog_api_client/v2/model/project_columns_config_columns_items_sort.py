@@ -28,12 +28,12 @@ class ProjectColumnsConfigColumnsItemsSort(ModelNormal):
 
     def __init__(self_, ascending: Union[bool, UnsetType] = unset, priority: Union[int, UnsetType] = unset, **kwargs):
         """
+        Sort configuration for a project board column
 
-
-        :param ascending:
+        :param ascending: Whether to sort in ascending order
         :type ascending: bool, optional
 
-        :param priority:
+        :param priority: The sort priority order for this column
         :type priority: int, optional
         """
         if ascending is not unset:
