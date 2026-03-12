@@ -2363,6 +2363,76 @@ datadog\_api\_client.v1.model.monitor\_draft\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_augment\_query module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augment_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_augmented\_data\_source module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augmented_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_augmented\_query\_definition module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augmented_query_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_base\_query module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_base_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_filter\_query module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filter_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_filtered\_data\_source module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_filtered\_query\_definition module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_query_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_query\_filter module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_query\_join\_condition module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_join_condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_query\_join\_type module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_join_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_cost\_aggregator module
 --------------------------------------------------------------------------------------
 
@@ -2461,10 +2531,52 @@ datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_events\_data\_sou
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_metrics\_aggregator module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_metrics_aggregator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_metrics\_data\_source module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_metrics_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_metrics\_query\_definition module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_metrics_query_definition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_query\_definition module
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_query_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_reference\_table\_column module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_reference_table_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_reference\_table\_data\_source module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_reference_table_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_reference\_table\_query\_definition module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_reference_table_query_definition
    :members:
    :show-inheritance:
 
