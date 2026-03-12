@@ -1545,6 +1545,7 @@ from datadog_api_client.v2.model.dora_failure_response_data import DORAFailureRe
 from datadog_api_client.v2.model.dora_failure_type import DORAFailureType
 from datadog_api_client.v2.model.dora_failures_list_response import DORAFailuresListResponse
 from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
+from datadog_api_client.v2.model.dora_git_info_response import DORAGitInfoResponse
 from datadog_api_client.v2.model.dora_incident_object import DORAIncidentObject
 from datadog_api_client.v2.model.dora_incident_object_attributes import DORAIncidentObjectAttributes
 from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
@@ -7559,6 +7560,7 @@ __all__ = [
     "DORAFailureType",
     "DORAFailuresListResponse",
     "DORAGitInfo",
+    "DORAGitInfoResponse",
     "DORAIncidentObject",
     "DORAIncidentObjectAttributes",
     "DORAListDeploymentsRequest",

@@ -8726,6 +8726,13 @@ datadog\_api\_client.v2.model.dora\_git\_info module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dora\_git\_info\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dora_git_info_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dora\_incident\_object module
 -----------------------------------------------------------
 
