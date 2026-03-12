@@ -59,7 +59,7 @@ class CreateDeploymentRuleParamsDataAttributes(ModelNormal):
         :param name: The name of the deployment rule.
         :type name: str
 
-        :param options: Options for deployment rule response representing either faulty deployment detection or monitor options.
+        :param options: Options for deployment rule requests representing either faulty deployment detection or monitor options.
         :type options: DeploymentRulesOptions
 
         :param type: The type of the deployment rule (faulty_deployment_detection or monitor).
