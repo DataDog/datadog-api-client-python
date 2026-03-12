@@ -185,6 +185,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param index: Optional name of the Splunk index where logs are written.
         :type index: str, optional
 
+        :param indexed_fields: List of log field names to send as indexed fields to Splunk HEC. Available only when `encoding` is `json`.
+        :type indexed_fields: [str], optional
+
         :param sourcetype: The Splunk sourcetype to assign to log events.
         :type sourcetype: str, optional
 

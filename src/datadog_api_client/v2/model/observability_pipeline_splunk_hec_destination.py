@@ -50,6 +50,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             "endpoint_url_key": (str,),
             "id": (str,),
             "index": (str,),
+            "indexed_fields": ([str],),
             "inputs": ([str],),
             "sourcetype": (str,),
             "token_key": (str,),
@@ -63,6 +64,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "index": "index",
+        "indexed_fields": "indexed_fields",
         "inputs": "inputs",
         "sourcetype": "sourcetype",
         "token_key": "token_key",
@@ -85,6 +87,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         encoding: Union[ObservabilityPipelineSplunkHecDestinationEncoding, UnsetType] = unset,
         endpoint_url_key: Union[str, UnsetType] = unset,
         index: Union[str, UnsetType] = unset,
+        indexed_fields: Union[List[str], UnsetType] = unset,
         sourcetype: Union[str, UnsetType] = unset,
         token_key: Union[str, UnsetType] = unset,
         **kwargs,
@@ -113,6 +116,9 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         :param index: Optional name of the Splunk index where logs are written.
         :type index: str, optional
 
+        :param indexed_fields: List of log field names to send as indexed fields to Splunk HEC. Available only when ``encoding`` is ``json``.
+        :type indexed_fields: [str], optional
+
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
 
@@ -135,6 +141,8 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             kwargs["endpoint_url_key"] = endpoint_url_key
         if index is not unset:
             kwargs["index"] = index
+        if indexed_fields is not unset:
+            kwargs["indexed_fields"] = indexed_fields
         if sourcetype is not unset:
             kwargs["sourcetype"] = sourcetype
         if token_key is not unset:
