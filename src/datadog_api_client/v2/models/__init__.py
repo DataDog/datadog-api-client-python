@@ -3496,6 +3496,51 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_st
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_type import (
     ObservabilityPipelineAmazonS3DestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_batch_settings import (
+    ObservabilityPipelineAmazonS3GenericBatchSettings,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression import (
+    ObservabilityPipelineAmazonS3GenericCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_gzip import (
+    ObservabilityPipelineAmazonS3GenericCompressionGzip,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_gzip_type import (
+    ObservabilityPipelineAmazonS3GenericCompressionGzipType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_snappy import (
+    ObservabilityPipelineAmazonS3GenericCompressionSnappy,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_snappy_type import (
+    ObservabilityPipelineAmazonS3GenericCompressionSnappyType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_zstd import (
+    ObservabilityPipelineAmazonS3GenericCompressionZstd,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_zstd_type import (
+    ObservabilityPipelineAmazonS3GenericCompressionZstdType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination import (
+    ObservabilityPipelineAmazonS3GenericDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination_type import (
+    ObservabilityPipelineAmazonS3GenericDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding import (
+    ObservabilityPipelineAmazonS3GenericEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_json import (
+    ObservabilityPipelineAmazonS3GenericEncodingJson,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_json_type import (
+    ObservabilityPipelineAmazonS3GenericEncodingJsonType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_parquet import (
+    ObservabilityPipelineAmazonS3GenericEncodingParquet,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_parquet_type import (
+    ObservabilityPipelineAmazonS3GenericEncodingParquetType,
+)
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import ObservabilityPipelineAmazonS3Source
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source_type import (
     ObservabilityPipelineAmazonS3SourceType,
@@ -9076,6 +9121,21 @@ __all__ = [
     "ObservabilityPipelineAmazonS3Destination",
     "ObservabilityPipelineAmazonS3DestinationStorageClass",
     "ObservabilityPipelineAmazonS3DestinationType",
+    "ObservabilityPipelineAmazonS3GenericBatchSettings",
+    "ObservabilityPipelineAmazonS3GenericCompression",
+    "ObservabilityPipelineAmazonS3GenericCompressionGzip",
+    "ObservabilityPipelineAmazonS3GenericCompressionGzipType",
+    "ObservabilityPipelineAmazonS3GenericCompressionSnappy",
+    "ObservabilityPipelineAmazonS3GenericCompressionSnappyType",
+    "ObservabilityPipelineAmazonS3GenericCompressionZstd",
+    "ObservabilityPipelineAmazonS3GenericCompressionZstdType",
+    "ObservabilityPipelineAmazonS3GenericDestination",
+    "ObservabilityPipelineAmazonS3GenericDestinationType",
+    "ObservabilityPipelineAmazonS3GenericEncoding",
+    "ObservabilityPipelineAmazonS3GenericEncodingJson",
+    "ObservabilityPipelineAmazonS3GenericEncodingJsonType",
+    "ObservabilityPipelineAmazonS3GenericEncodingParquet",
+    "ObservabilityPipelineAmazonS3GenericEncodingParquetType",
     "ObservabilityPipelineAmazonS3Source",
     "ObservabilityPipelineAmazonS3SourceType",
     "ObservabilityPipelineAmazonSecurityLakeDestination",

@@ -73,6 +73,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param storage_class: S3 storage class.
         :type storage_class: ObservabilityPipelineAmazonS3DestinationStorageClass
 
+        :param batch_settings: Event batching settings
+        :type batch_settings: ObservabilityPipelineAmazonS3GenericBatchSettings, optional
+
         :param custom_source_name: Custom source name for the logs in Security Lake.
         :type custom_source_name: str
 
@@ -185,9 +188,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param index: Optional name of the Splunk index where logs are written.
         :type index: str, optional
 
-        :param indexed_fields: List of log field names to send as indexed fields to Splunk HEC. Available only when `encoding` is `json`.
-        :type indexed_fields: [str], optional
-
         :param sourcetype: The Splunk sourcetype to assign to log events.
         :type sourcetype: str, optional
 
@@ -222,6 +222,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         )
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
             ObservabilityPipelineAmazonS3Destination,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination import (
+            ObservabilityPipelineAmazonS3GenericDestination,
         )
         from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination import (
             ObservabilityPipelineAmazonSecurityLakeDestination,
@@ -285,6 +288,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineHttpClientDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
                 ObservabilityPipelineAmazonS3Destination,
+                ObservabilityPipelineAmazonS3GenericDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 AzureStorageDestination,
                 ObservabilityPipelineCloudPremDestination,
