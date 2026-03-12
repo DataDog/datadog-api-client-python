@@ -40,15 +40,12 @@ class RumCrossProductSampling(ModelNormal):
         **kwargs,
     ):
         """
-        Configuration for additional APM trace data retention for sessions that match this retention filter.
-        When a session matches the filter and is retained (based on ``sample_rate`` ), you can configure
-        the percentage of retained sessions with ingested traces whose traces are indexed.
+        The configuration for cross-product retention filters.
 
-        :param trace_enabled: Indicates whether trace cross-product sampling is enabled. If ``false`` , no traces are indexed regardless of ``trace_sample_rate``.
+        :param trace_enabled: Whether the cross-product retention filter for APM traces is enabled.
         :type trace_enabled: bool, optional
 
-        :param trace_sample_rate: The percentage (0-100) of retained sessions with ingested traces whose traces are indexed.
-            For example, 25.0 means 25% of retained sessions with ingested traces have their traces indexed.
+        :param trace_sample_rate: The sample rate for the APM cross-product retention filter, between 0 and 100.
         :type trace_sample_rate: float, optional
         """
         if trace_enabled is not unset:
