@@ -18,6 +18,9 @@ class MetricsAndMetricTagConfigurations(ModelComposed):
         :param id: The metric name for this resource.
         :type id: str, optional
 
+        :param relationships: Relationships to related metric objects.
+        :type relationships: MetricRelationships, optional
+
         :param type: The metric resource type.
         :type type: MetricType, optional
 
