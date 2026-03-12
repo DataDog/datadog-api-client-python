@@ -15,19 +15,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
+    from datadog_api_client.v2.model.dora_git_info_response import DORAGitInfoResponse
 
 
 class DORADeploymentObjectAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.dora_git_info import DORAGitInfo
+        from datadog_api_client.v2.model.dora_git_info_response import DORAGitInfoResponse
 
         return {
             "custom_tags": ([str],),
             "env": (str,),
             "finished_at": (int,),
-            "git": (DORAGitInfo,),
+            "git": (DORAGitInfoResponse,),
             "service": (str,),
             "started_at": (int,),
             "team": (str,),
@@ -52,7 +52,7 @@ class DORADeploymentObjectAttributes(ModelNormal):
         started_at: int,
         custom_tags: Union[List[str], none_type, UnsetType] = unset,
         env: Union[str, UnsetType] = unset,
-        git: Union[DORAGitInfo, UnsetType] = unset,
+        git: Union[DORAGitInfoResponse, UnsetType] = unset,
         team: Union[str, UnsetType] = unset,
         version: Union[str, UnsetType] = unset,
         **kwargs,
@@ -69,8 +69,8 @@ class DORADeploymentObjectAttributes(ModelNormal):
         :param finished_at: Unix timestamp when the deployment finished.
         :type finished_at: int
 
-        :param git: Git info for DORA Metrics events.
-        :type git: DORAGitInfo, optional
+        :param git: Git info returned by DORA Metrics events.
+        :type git: DORAGitInfoResponse, optional
 
         :param service: Service name.
         :type service: str
