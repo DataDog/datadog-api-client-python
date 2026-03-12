@@ -57,6 +57,21 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         :param scope: Optional scoping expression to further filter metrics. Uses metrics filter syntax.
             This is useful when an entity has been configured to emit metrics with additional tags.
         :type scope: str, optional
+
+        :param augment_query: Augment query for aggregate augmented queries. Can be an events query or a reference table query.
+        :type augment_query: MonitorFormulaAndFunctionAggregateAugmentQuery
+
+        :param base_query: Base query for aggregate queries. Can be an events query or a metrics query.
+        :type base_query: MonitorFormulaAndFunctionAggregateBaseQuery
+
+        :param join_condition: Join condition for aggregate augmented queries.
+        :type join_condition: MonitorFormulaAndFunctionAggregateQueryJoinCondition
+
+        :param filter_query: Filter query for aggregate filtered queries. Can be an events query or a reference table query.
+        :type filter_query: MonitorFormulaAndFunctionAggregateFilterQuery
+
+        :param filters: Filter conditions for the query.
+        :type filters: [MonitorFormulaAndFunctionAggregateQueryFilter]
         """
         super().__init__(kwargs)
 
@@ -78,11 +93,19 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition import (
             MonitorFormulaAndFunctionDataQualityQueryDefinition,
         )
+        from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augmented_query_definition import (
+            MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
+        )
+        from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_query_definition import (
+            MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
+        )
 
         return {
             "oneOf": [
                 MonitorFormulaAndFunctionEventQueryDefinition,
                 MonitorFormulaAndFunctionCostQueryDefinition,
                 MonitorFormulaAndFunctionDataQualityQueryDefinition,
+                MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
+                MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
             ],
         }

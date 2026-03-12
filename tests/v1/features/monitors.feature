@@ -141,6 +141,26 @@ Feature: Monitors
     And the response "query" is equal to "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2"
 
   @team:DataDog/monitor-app
+  Scenario: Create a monitor with aggregate augmented query variables returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name":"{{ unique }}","type":"query alert","query":"formula(\"query1\").rollup(\"sum\").last(\"5m\") > 124","message":"test message","options":{"thresholds":{"critical":124},"variables":[{"data_source":"aggregate_augmented_query","name":"query1","group_by":[{"facet":"org_id"},{"facet":"name"}],"compute":[{"name":"compute_result","aggregation":"max"}],"augment_query":{"name":"filter_query","data_source":"reference_table","table_name":"test_table","columns":[{"name":"org_id"},{"name":"name"}]},"base_query":{"data_source":"metrics","name":"query1","query":"avg:dd{*} by {org_id}.as_count()"},"join_condition":{"augment_attribute":"org_id","base_attribute":"org_id","join_type":"inner"}}]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "options.variables[0].data_source" is equal to "aggregate_augmented_query"
+    And the response "options.variables[0].join_condition.join_type" is equal to "inner"
+
+  @team:DataDog/monitor-app
+  Scenario: Create a monitor with aggregate filtered query variables returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name":"{{ unique }}","type":"query alert","query":"formula(\"query1\").rollup(\"sum\").last(\"5m\") > 100","message":"test message","options":{"thresholds":{"critical":100},"variables":[{"data_source":"aggregate_filtered_query","name":"query1","base_query":{"data_source":"metrics","name":"query1","query":"max:container.cpu.usage{*} by {kube_cluster_name}.rollup(max)"},"filter_query":{"name":"filter_query","data_source":"reference_table","table_name":"test_table","columns":[{"name":"cluster_name"}]},"filters":[{"base_attribute":"kube_cluster_name","filter_attribute":"cluster_name"}]}]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "options.variables[0].data_source" is equal to "aggregate_filtered_query"
+    And the response "options.variables[0].filters[0].base_attribute" is equal to "kube_cluster_name"
+
+  @team:DataDog/monitor-app
   Scenario: Create a monitor with assets returns "OK" response
     Given new "CreateMonitor" request
     And body with value {"assets": [{"category": "runbook", "name": "Monitor Runbook", "resource_key": "12345", "resource_type": "notebook", "url": "/notebooks/12345"}], "name": "{{ unique }}", "type": "metric alert", "query": "avg(current_1mo):avg:system.load.5{*} > 0.5", "message": "some message Notify: @hipchat-channel", "options":{"thresholds":{"critical":0.5}, "scheduling_options":{"evaluation_window":{"day_starts":"04:00", "month_starts":1}}}}
@@ -190,7 +210,7 @@ Feature: Monitors
   Scenario: Edit a monitor returns "Bad Request" response
     Given new "UpdateMonitor" request
     And request contains "monitor_id" parameter from "REPLACE.ME"
-    And body with value {"assets": [{"category": "runbook", "name": "Monitor Runbook", "resource_key": "12345", "resource_type": "notebook", "url": "/notebooks/12345"}], "draft_status": "published", "options": {"evaluation_delay": null, "include_tags": true, "min_failure_duration": 0, "min_location_failed": 1, "new_group_delay": null, "new_host_delay": 300, "no_data_timeframe": null, "notification_preset_name": "show_all", "notify_audit": false, "notify_by": [], "on_missing_data": "default", "renotify_interval": null, "renotify_occurrences": null, "renotify_statuses": ["alert"], "scheduling_options": {"custom_schedule": {"recurrences": [{"rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", "start": "2023-08-31T16:30:00", "timezone": "Europe/Paris"}]}, "evaluation_window": {"day_starts": "04:00", "hour_starts": 0, "month_starts": 1, "timezone": "Europe/Paris"}}, "synthetics_check_id": null, "threshold_windows": {"recovery_window": null, "trigger_window": null}, "thresholds": {"critical_recovery": null, "ok": null, "unknown": null, "warning": null, "warning_recovery": null}, "timeout_h": null, "variables": [{"compute": {"aggregation": "avg", "interval": 60000, "metric": "@duration"}, "data_source": "rum", "group_by": [{"facet": "status", "limit": 10, "sort": {"aggregation": "avg", "order": "desc"}}], "indexes": ["days-3", "days-7"], "name": "query_errors", "search": {"query": "service:query"}}]}, "priority": null, "restricted_roles": [], "tags": [], "type": "query alert"}
+    And body with value {"assets": [{"category": "runbook", "name": "Monitor Runbook", "resource_key": "12345", "resource_type": "notebook", "url": "/notebooks/12345"}], "draft_status": "published", "options": {"evaluation_delay": null, "include_tags": true, "min_failure_duration": 0, "min_location_failed": 1, "new_group_delay": null, "new_host_delay": 300, "no_data_timeframe": null, "notification_preset_name": "show_all", "notify_audit": false, "notify_by": [], "on_missing_data": "default", "renotify_interval": null, "renotify_occurrences": null, "renotify_statuses": ["alert"], "scheduling_options": {"custom_schedule": {"recurrences": [{"rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR", "start": "2023-08-31T16:30:00", "timezone": "Europe/Paris"}]}, "evaluation_window": {"day_starts": "04:00", "hour_starts": 0, "month_starts": 1, "timezone": "Europe/Paris"}}, "synthetics_check_id": null, "threshold_windows": {"recovery_window": null, "trigger_window": null}, "thresholds": {"critical_recovery": null, "ok": null, "unknown": null, "warning": null, "warning_recovery": null}, "timeout_h": null, "variables": [{"compute": {"aggregation": "avg", "interval": 60000, "metric": "@duration", "name": "compute_result"}, "data_source": "rum", "group_by": [{"facet": "status", "limit": 10, "sort": {"aggregation": "avg", "order": "desc"}}], "indexes": ["days-3", "days-7"], "name": "query_errors", "search": {"query": "service:query"}}]}, "priority": null, "restricted_roles": [], "tags": [], "type": "query alert"}
     When the request is sent
     Then the response status is 400 Bad Request
 
