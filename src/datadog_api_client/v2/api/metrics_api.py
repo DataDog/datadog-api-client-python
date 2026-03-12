@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response 
 from datadog_api_client.v2.model.metric_tag_configuration_metric_type_category import (
     MetricTagConfigurationMetricTypeCategory,
 )
+from datadog_api_client.v2.model.metric_volumes_include import MetricVolumesInclude
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
@@ -364,6 +365,11 @@ class MetricsApi:
                 "filter_related_assets": {
                     "openapi_types": (bool,),
                     "attribute": "filter[related_assets]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (MetricVolumesInclude,),
+                    "attribute": "include",
                     "location": "query",
                 },
                 "window_seconds": {
@@ -782,6 +788,7 @@ class MetricsApi:
         filter_queried_window_seconds: Union[int, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_related_assets: Union[bool, UnsetType] = unset,
+        include: Union[MetricVolumesInclude, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
@@ -792,6 +799,7 @@ class MetricsApi:
         Optionally, paginate by using the ``page[cursor]`` and/or ``page[size]`` query parameters.
         To fetch the first page, pass in a query parameter with either a valid ``page[size]`` or an empty cursor like ``page[cursor]=``. To fetch the next page, pass in the ``next_cursor`` value from the response as the new ``page[cursor]`` value.
         Once the ``meta.pagination.next_cursor`` value is null, all pages have been retrieved.
+        Use the ``include`` query parameter to fetch additional data with the response. When ``include=metric_volumes`` is specified, the response includes volume data for each custom metric in the ``included`` array, with a corresponding ``relationships`` link on each metric in ``data``. Volume data is only returned for custom metrics. All volume values represent a 1-hour timeframe.
 
         :param filter_configured: Filter custom metrics that have configured tags.
         :type filter_configured: bool, optional
@@ -816,6 +824,8 @@ class MetricsApi:
         :type filter_tags: str, optional
         :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
         :type filter_related_assets: bool, optional
+        :param include: Comma-separated list of additional data to include in the response. Allowed values: ``metric_volumes``. When ``metric_volumes`` is specified, the response includes volume data for each custom metric in the ``included`` array, with a corresponding ``relationships`` link on each metric in ``data``.
+        :type include: MetricVolumesInclude, optional
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
             Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
         :type window_seconds: int, optional
@@ -852,6 +862,9 @@ class MetricsApi:
         if filter_related_assets is not unset:
             kwargs["filter_related_assets"] = filter_related_assets
 
+        if include is not unset:
+            kwargs["include"] = include
+
         if window_seconds is not unset:
             kwargs["window_seconds"] = window_seconds
 
@@ -874,6 +887,7 @@ class MetricsApi:
         filter_queried_window_seconds: Union[int, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_related_assets: Union[bool, UnsetType] = unset,
+        include: Union[MetricVolumesInclude, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
@@ -905,6 +919,8 @@ class MetricsApi:
         :type filter_tags: str, optional
         :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
         :type filter_related_assets: bool, optional
+        :param include: Comma-separated list of additional data to include in the response. Allowed values: ``metric_volumes``. When ``metric_volumes`` is specified, the response includes volume data for each custom metric in the ``included`` array, with a corresponding ``relationships`` link on each metric in ``data``.
+        :type include: MetricVolumesInclude, optional
         :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
             Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
         :type window_seconds: int, optional
@@ -942,6 +958,9 @@ class MetricsApi:
 
         if filter_related_assets is not unset:
             kwargs["filter_related_assets"] = filter_related_assets
+
+        if include is not unset:
+            kwargs["include"] = include
 
         if window_seconds is not unset:
             kwargs["window_seconds"] = window_seconds

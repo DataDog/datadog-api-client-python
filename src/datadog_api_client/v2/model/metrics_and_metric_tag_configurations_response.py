@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
+    from datadog_api_client.v2.model.metric_ingested_indexed_volume import MetricIngestedIndexedVolume
     from datadog_api_client.v2.model.metrics_list_response_links import MetricsListResponseLinks
     from datadog_api_client.v2.model.metric_pagination_meta import MetricPaginationMeta
     from datadog_api_client.v2.model.metric import Metric
@@ -25,17 +26,20 @@ class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
+        from datadog_api_client.v2.model.metric_ingested_indexed_volume import MetricIngestedIndexedVolume
         from datadog_api_client.v2.model.metrics_list_response_links import MetricsListResponseLinks
         from datadog_api_client.v2.model.metric_pagination_meta import MetricPaginationMeta
 
         return {
             "data": ([MetricsAndMetricTagConfigurations],),
+            "included": ([MetricIngestedIndexedVolume],),
             "links": (MetricsListResponseLinks,),
             "meta": (MetricPaginationMeta,),
         }
 
     attribute_map = {
         "data": "data",
+        "included": "included",
         "links": "links",
         "meta": "meta",
     }
@@ -43,6 +47,7 @@ class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[List[Union[MetricsAndMetricTagConfigurations, Metric, MetricTagConfiguration]], UnsetType] = unset,
+        included: Union[List[MetricIngestedIndexedVolume], UnsetType] = unset,
         links: Union[MetricsListResponseLinks, UnsetType] = unset,
         meta: Union[MetricPaginationMeta, UnsetType] = unset,
         **kwargs,
@@ -53,6 +58,9 @@ class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
         :param data: Array of metrics and metric tag configurations.
         :type data: [MetricsAndMetricTagConfigurations], optional
 
+        :param included: Array of included metric volume objects. Only present when ``include=metric_volumes`` is requested.
+        :type included: [MetricIngestedIndexedVolume], optional
+
         :param links: Pagination links. Only present if pagination query parameters were provided.
         :type links: MetricsListResponseLinks, optional
 
@@ -61,6 +69,8 @@ class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
         """
         if data is not unset:
             kwargs["data"] = data
+        if included is not unset:
+            kwargs["included"] = included
         if links is not unset:
             kwargs["links"] = links
         if meta is not unset:

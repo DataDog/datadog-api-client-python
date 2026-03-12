@@ -17126,6 +17126,13 @@ datadog\_api\_client.v2.model.metric\_point module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.metric\_relationships module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.metric\_resource module
 -----------------------------------------------------
 
@@ -17305,6 +17312,27 @@ datadog\_api\_client.v2.model.metric\_volumes module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.metric_volumes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_volumes\_include module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_volumes_include
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_volumes\_relationship module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_volumes_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.metric\_volumes\_relationship\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_volumes_relationship_data
    :members:
    :show-inheritance:
 
