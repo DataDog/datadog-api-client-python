@@ -809,14 +809,14 @@ class MetricsApi:
             Must be sent with ``filter[queried]`` and is only applied when ``filter[queried]=true``.
             If ``filter[queried]=false`` , this parameter is ignored and default queried-window behavior applies.
             If ``filter[queried]`` is not provided, sending this parameter returns a 400.
-            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=7776000``.
+            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=15552000``.
         :type filter_queried_window_seconds: int, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
             Can only be combined with the filter[queried] filter.
         :type filter_tags: str, optional
         :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
         :type filter_related_assets: bool, optional
-        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
+        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] query.
             Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
         :type window_seconds: int, optional
         :param page_size: Maximum number of results returned.
@@ -898,14 +898,14 @@ class MetricsApi:
             Must be sent with ``filter[queried]`` and is only applied when ``filter[queried]=true``.
             If ``filter[queried]=false`` , this parameter is ignored and default queried-window behavior applies.
             If ``filter[queried]`` is not provided, sending this parameter returns a 400.
-            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=7776000``.
+            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=15552000``.
         :type filter_queried_window_seconds: int, optional
         :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
             Can only be combined with the filter[queried] filter.
         :type filter_tags: str, optional
         :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
         :type filter_related_assets: bool, optional
-        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] or filter[queried] query.
+        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] query.
             Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
         :type window_seconds: int, optional
         :param page_size: Maximum number of results returned.
