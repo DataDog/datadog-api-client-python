@@ -35,12 +35,12 @@ class RumCrossProductSamplingCreate(ModelNormal):
 
     def __init__(self_, trace_sample_rate: float, trace_enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
-        Configuration for cross-product sampling when creating a retention filter.
+        The configuration for cross-product retention filters.
 
-        :param trace_enabled: Indicates whether trace cross-product sampling is enabled.
+        :param trace_enabled: Whether the cross-product retention filter for APM traces is enabled.
         :type trace_enabled: bool, optional
 
-        :param trace_sample_rate: The percentage (0-100) of retained sessions with ingested traces whose traces are indexed.
+        :param trace_sample_rate: The sample rate for the APM cross-product retention filter, between 0 and 100.
         :type trace_sample_rate: float
         """
         if trace_enabled is not unset:

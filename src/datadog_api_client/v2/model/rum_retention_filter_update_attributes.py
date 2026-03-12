@@ -62,7 +62,7 @@ class RumRetentionFilterUpdateAttributes(ModelNormal):
         """
         The object describing attributes of a RUM retention filter to update.
 
-        :param cross_product_sampling: Configuration for cross-product sampling when updating a retention filter. All fields are optional for partial updates.
+        :param cross_product_sampling: The configuration for cross-product retention filters. All fields are optional for partial updates.
         :type cross_product_sampling: RumCrossProductSamplingUpdate, optional
 
         :param enabled: Whether the retention filter is enabled.

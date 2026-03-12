@@ -62,7 +62,7 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
         """
         The object describing attributes of a RUM retention filter to create.
 
-        :param cross_product_sampling: Configuration for cross-product sampling when creating a retention filter.
+        :param cross_product_sampling: The configuration for cross-product retention filters.
         :type cross_product_sampling: RumCrossProductSamplingCreate, optional
 
         :param enabled: Whether the retention filter is enabled.
