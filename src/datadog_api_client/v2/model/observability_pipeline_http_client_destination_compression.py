@@ -36,7 +36,7 @@ class ObservabilityPipelineHttpClientDestinationCompression(ModelNormal):
         """
         Compression configuration for HTTP requests.
 
-        :param algorithm: Compression algorithm.
+        :param algorithm: The compression algorithm used for HTTP client destinations.
         :type algorithm: ObservabilityPipelineHttpClientDestinationCompressionAlgorithm
         """
         super().__init__(kwargs)
