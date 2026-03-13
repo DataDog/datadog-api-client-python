@@ -1,5 +1,5 @@
 """
-Create a new metric SLO object using sli_specification returns "OK" response
+Create a new metric SLO object using bad events formula returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -9,8 +9,8 @@ from datadog_api_client.v1.model.formula_and_function_metric_query_definition im
     FormulaAndFunctionMetricQueryDefinition,
 )
 from datadog_api_client.v1.model.service_level_objective_request import ServiceLevelObjectiveRequest
-from datadog_api_client.v1.model.slo_count_definition_with_total_events_formula import (
-    SLOCountDefinitionWithTotalEventsFormula,
+from datadog_api_client.v1.model.slo_count_definition_with_bad_events_formula import (
+    SLOCountDefinitionWithBadEventsFormula,
 )
 from datadog_api_client.v1.model.slo_count_spec import SLOCountSpec
 from datadog_api_client.v1.model.slo_formula import SLOFormula
@@ -23,12 +23,12 @@ body = ServiceLevelObjectiveRequest(
     description="Metric SLO using sli_specification",
     name="Example-Service-Level-Objective",
     sli_specification=SLOCountSpec(
-        count=SLOCountDefinitionWithTotalEventsFormula(
+        count=SLOCountDefinitionWithBadEventsFormula(
             good_events_formula=SLOFormula(
                 formula="query1 - query2",
             ),
-            total_events_formula=SLOFormula(
-                formula="query1",
+            bad_events_formula=SLOFormula(
+                formula="query2",
             ),
             queries=[
                 FormulaAndFunctionMetricQueryDefinition(

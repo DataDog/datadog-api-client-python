@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,6 +13,12 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.slo_count_definition import SLOCountDefinition
+    from datadog_api_client.v1.model.slo_count_definition_with_total_events_formula import (
+        SLOCountDefinitionWithTotalEventsFormula,
+    )
+    from datadog_api_client.v1.model.slo_count_definition_with_bad_events_formula import (
+        SLOCountDefinitionWithBadEventsFormula,
+    )
 
 
 class SLOCountSpec(ModelNormal):
@@ -32,12 +38,19 @@ class SLOCountSpec(ModelNormal):
         "count": "count",
     }
 
-    def __init__(self_, count: SLOCountDefinition, **kwargs):
+    def __init__(
+        self_,
+        count: Union[
+            SLOCountDefinition, SLOCountDefinitionWithTotalEventsFormula, SLOCountDefinitionWithBadEventsFormula
+        ],
+        **kwargs,
+    ):
         """
         A metric SLI specification.
 
-        :param count: A count-based (metric) SLI specification, composed of three parts: the good events formula, the total events formula,
-            and the underlying queries.
+        :param count: A count-based (metric) SLI specification, composed of three parts: the good events formula,
+            the bad or total events formula, and the underlying queries.
+            Exactly one of ``total_events_formula`` or ``bad_events_formula`` must be provided.
         :type count: SLOCountDefinition
         """
         super().__init__(kwargs)
