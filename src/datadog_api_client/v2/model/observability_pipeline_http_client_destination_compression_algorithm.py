@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ObservabilityPipelineHttpClientDestinationCompressionAlgorithm(ModelSimple):
     """
-    Compression algorithm.
+    The compression algorithm used for HTTP client destinations.
 
     :param value: If omitted defaults to "gzip". Must be one of ["gzip"].
     :type value: str
