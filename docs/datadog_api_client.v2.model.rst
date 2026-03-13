@@ -2769,10 +2769,59 @@ datadog\_api\_client.v2.model.batch\_delete\_rows\_request\_array module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.batch\_delete\_rows\_request\_data module
+datadog\_api\_client.v2.model.batch\_rows\_query\_data\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_rows\_query\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_rows\_query\_request\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_rows\_query\_request\_data\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_rows\_query\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_rows\_query\_response\_data module
 -----------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.batch_delete_rows_request_data
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_rows\_query\_response\_data\_relationships module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_response_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.batch\_rows\_query\_response\_data\_relationships\_rows module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.batch_rows_query_response_data_relationships_rows
    :members:
    :show-inheritance:
 
@@ -29303,6 +29352,13 @@ datadog\_api\_client.v2.model.table\_row\_resource\_data\_type module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.table_row_resource_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.table\_row\_resource\_identifier module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.table_row_resource_identifier
    :members:
    :show-inheritance:
 
