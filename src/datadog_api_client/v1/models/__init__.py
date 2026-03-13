@@ -207,6 +207,63 @@ from datadog_api_client.v1.model.graph_snapshot import GraphSnapshot
 from datadog_api_client.v1.model.group_type import GroupType
 from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
 from datadog_api_client.v1.model.group_widget_definition_type import GroupWidgetDefinitionType
+from datadog_api_client.v1.model.guided_table_column import GuidedTableColumn
+from datadog_api_client.v1.model.guided_table_column_comparison import GuidedTableColumnComparison
+from datadog_api_client.v1.model.guided_table_column_comparison_with_other_column import (
+    GuidedTableColumnComparisonWithOtherColumn,
+)
+from datadog_api_client.v1.model.guided_table_column_comparison_with_other_column_type import (
+    GuidedTableColumnComparisonWithOtherColumnType,
+)
+from datadog_api_client.v1.model.guided_table_column_comparison_with_self import GuidedTableColumnComparisonWithSelf
+from datadog_api_client.v1.model.guided_table_column_comparison_with_self_type import (
+    GuidedTableColumnComparisonWithSelfType,
+)
+from datadog_api_client.v1.model.guided_table_column_format import GuidedTableColumnFormat
+from datadog_api_client.v1.model.guided_table_column_function import GuidedTableColumnFunction
+from datadog_api_client.v1.model.guided_table_compute_column import GuidedTableComputeColumn
+from datadog_api_client.v1.model.guided_table_compute_column_compute import GuidedTableComputeColumnCompute
+from datadog_api_client.v1.model.guided_table_compute_column_type import GuidedTableComputeColumnType
+from datadog_api_client.v1.model.guided_table_conditional_formats import GuidedTableConditionalFormats
+from datadog_api_client.v1.model.guided_table_events_query import GuidedTableEventsQuery
+from datadog_api_client.v1.model.guided_table_events_query_data_source import GuidedTableEventsQueryDataSource
+from datadog_api_client.v1.model.guided_table_events_query_search import GuidedTableEventsQuerySearch
+from datadog_api_client.v1.model.guided_table_formula_column import GuidedTableFormulaColumn
+from datadog_api_client.v1.model.guided_table_group_key import GuidedTableGroupKey
+from datadog_api_client.v1.model.guided_table_metrics_query import GuidedTableMetricsQuery
+from datadog_api_client.v1.model.guided_table_metrics_query_data_source import GuidedTableMetricsQueryDataSource
+from datadog_api_client.v1.model.guided_table_number_bar_column_format import GuidedTableNumberBarColumnFormat
+from datadog_api_client.v1.model.guided_table_number_bar_column_format_mode import GuidedTableNumberBarColumnFormatMode
+from datadog_api_client.v1.model.guided_table_number_format import GuidedTableNumberFormat
+from datadog_api_client.v1.model.guided_table_number_format_precision import GuidedTableNumberFormatPrecision
+from datadog_api_client.v1.model.guided_table_preset_column import GuidedTablePresetColumn
+from datadog_api_client.v1.model.guided_table_preset_column_preset import GuidedTablePresetColumnPreset
+from datadog_api_client.v1.model.guided_table_preset_column_preset_type import GuidedTablePresetColumnPresetType
+from datadog_api_client.v1.model.guided_table_preset_column_type import GuidedTablePresetColumnType
+from datadog_api_client.v1.model.guided_table_query import GuidedTableQuery
+from datadog_api_client.v1.model.guided_table_range_formatting_rule import GuidedTableRangeFormattingRule
+from datadog_api_client.v1.model.guided_table_range_formatting_rule_scale import GuidedTableRangeFormattingRuleScale
+from datadog_api_client.v1.model.guided_table_range_formatting_rule_type import GuidedTableRangeFormattingRuleType
+from datadog_api_client.v1.model.guided_table_range_palette import GuidedTableRangePalette
+from datadog_api_client.v1.model.guided_table_request import GuidedTableRequest
+from datadog_api_client.v1.model.guided_table_request_request_type import GuidedTableRequestRequestType
+from datadog_api_client.v1.model.guided_table_row_group_by import GuidedTableRowGroupBy
+from datadog_api_client.v1.model.guided_table_row_group_by_format import GuidedTableRowGroupByFormat
+from datadog_api_client.v1.model.guided_table_rows import GuidedTableRows
+from datadog_api_client.v1.model.guided_table_sort import GuidedTableSort
+from datadog_api_client.v1.model.guided_table_storage_type import GuidedTableStorageType
+from datadog_api_client.v1.model.guided_table_text_formatting_rule import GuidedTableTextFormattingRule
+from datadog_api_client.v1.model.guided_table_text_formatting_rule_replace import GuidedTableTextFormattingRuleReplace
+from datadog_api_client.v1.model.guided_table_text_formatting_rule_replace_one_of4484404608 import (
+    GuidedTableTextFormattingRuleReplaceOneOf4484404608,
+)
+from datadog_api_client.v1.model.guided_table_threshold_formatting_rule import GuidedTableThresholdFormattingRule
+from datadog_api_client.v1.model.guided_table_threshold_formatting_rule_value import (
+    GuidedTableThresholdFormattingRuleValue,
+)
+from datadog_api_client.v1.model.guided_table_threshold_palette import GuidedTableThresholdPalette
+from datadog_api_client.v1.model.guided_table_trend_column_format import GuidedTableTrendColumnFormat
+from datadog_api_client.v1.model.guided_table_trend_column_format_mode import GuidedTableTrendColumnFormatMode
 from datadog_api_client.v1.model.http_log import HTTPLog
 from datadog_api_client.v1.model.http_log_error import HTTPLogError
 from datadog_api_client.v1.model.http_log_item import HTTPLogItem
@@ -1379,6 +1436,53 @@ __all__ = [
     "GroupType",
     "GroupWidgetDefinition",
     "GroupWidgetDefinitionType",
+    "GuidedTableColumn",
+    "GuidedTableColumnComparison",
+    "GuidedTableColumnComparisonWithOtherColumn",
+    "GuidedTableColumnComparisonWithOtherColumnType",
+    "GuidedTableColumnComparisonWithSelf",
+    "GuidedTableColumnComparisonWithSelfType",
+    "GuidedTableColumnFormat",
+    "GuidedTableColumnFunction",
+    "GuidedTableComputeColumn",
+    "GuidedTableComputeColumnCompute",
+    "GuidedTableComputeColumnType",
+    "GuidedTableConditionalFormats",
+    "GuidedTableEventsQuery",
+    "GuidedTableEventsQueryDataSource",
+    "GuidedTableEventsQuerySearch",
+    "GuidedTableFormulaColumn",
+    "GuidedTableGroupKey",
+    "GuidedTableMetricsQuery",
+    "GuidedTableMetricsQueryDataSource",
+    "GuidedTableNumberBarColumnFormat",
+    "GuidedTableNumberBarColumnFormatMode",
+    "GuidedTableNumberFormat",
+    "GuidedTableNumberFormatPrecision",
+    "GuidedTablePresetColumn",
+    "GuidedTablePresetColumnPreset",
+    "GuidedTablePresetColumnPresetType",
+    "GuidedTablePresetColumnType",
+    "GuidedTableQuery",
+    "GuidedTableRangeFormattingRule",
+    "GuidedTableRangeFormattingRuleScale",
+    "GuidedTableRangeFormattingRuleType",
+    "GuidedTableRangePalette",
+    "GuidedTableRequest",
+    "GuidedTableRequestRequestType",
+    "GuidedTableRowGroupBy",
+    "GuidedTableRowGroupByFormat",
+    "GuidedTableRows",
+    "GuidedTableSort",
+    "GuidedTableStorageType",
+    "GuidedTableTextFormattingRule",
+    "GuidedTableTextFormattingRuleReplace",
+    "GuidedTableTextFormattingRuleReplaceOneOf4484404608",
+    "GuidedTableThresholdFormattingRule",
+    "GuidedTableThresholdFormattingRuleValue",
+    "GuidedTableThresholdPalette",
+    "GuidedTableTrendColumnFormat",
+    "GuidedTableTrendColumnFormatMode",
     "HTTPLog",
     "HTTPLogError",
     "HTTPLogItem",

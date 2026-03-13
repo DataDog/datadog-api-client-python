@@ -1215,6 +1215,335 @@ datadog\_api\_client.v1.model.group\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.guided\_table\_column module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_column\_comparison module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column_comparison
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_column\_comparison\_with\_other\_column module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column_comparison_with_other_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_column\_comparison\_with\_other\_column\_type module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column_comparison_with_other_column_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_column\_comparison\_with\_self module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column_comparison_with_self
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_column\_comparison\_with\_self\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column_comparison_with_self_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_column\_format module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_column\_function module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_column_function
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_compute\_column module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_compute_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_compute\_column\_compute module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_compute_column_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_compute\_column\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_compute_column_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_conditional\_formats module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_conditional_formats
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_events\_query module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_events_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_events\_query\_data\_source module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_events_query_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_events\_query\_search module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_events_query_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_formula\_column module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_formula_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_group\_key module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_group_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_metrics\_query module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_metrics_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_metrics\_query\_data\_source module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_metrics_query_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_number\_bar\_column\_format module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_number_bar_column_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_number\_bar\_column\_format\_mode module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_number_bar_column_format_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_number\_format module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_number_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_number\_format\_precision module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_number_format_precision
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_preset\_column module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_preset_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_preset\_column\_preset module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_preset_column_preset
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_preset\_column\_preset\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_preset_column_preset_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_preset\_column\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_preset_column_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_query module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_range\_formatting\_rule module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_range_formatting_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_range\_formatting\_rule\_scale module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_range_formatting_rule_scale
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_range\_formatting\_rule\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_range_formatting_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_range\_palette module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_range_palette
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_request\_request\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_request_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_row\_group\_by module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_row_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_row\_group\_by\_format module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_row_group_by_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_rows module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_rows
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_sort module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_storage\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_storage_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_text\_formatting\_rule module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_text_formatting_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_text\_formatting\_rule\_replace module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_text_formatting_rule_replace
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_text\_formatting\_rule\_replace\_one\_of4484404608 module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_text_formatting_rule_replace_one_of4484404608
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_threshold\_formatting\_rule module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_threshold_formatting_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_threshold\_formatting\_rule\_value module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_threshold_formatting_rule_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_threshold\_palette module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_threshold_palette
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_trend\_column\_format module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_trend_column_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.guided\_table\_trend\_column\_format\_mode module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.guided_table_trend_column_format_mode
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.heat\_map\_widget\_definition module
 ------------------------------------------------------------------
 
