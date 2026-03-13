@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -15,13 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
 
 
-class BatchDeleteRowsRequestArray(ModelNormal):
-    validations = {
-        "data": {
-            "max_items": 200,
-        },
-    }
-
+class BatchRowsQueryResponseDataRelationshipsRows(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
@@ -34,13 +30,13 @@ class BatchDeleteRowsRequestArray(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: List[TableRowResourceIdentifier], **kwargs):
+    def __init__(self_, data: Union[List[TableRowResourceIdentifier], UnsetType] = unset, **kwargs):
         """
-        The request body for deleting multiple rows from a reference table.
+
 
         :param data:
-        :type data: [TableRowResourceIdentifier]
+        :type data: [TableRowResourceIdentifier], optional
         """
+        if data is not unset:
+            kwargs["data"] = data
         super().__init__(kwargs)
-
-        self_.data = data
