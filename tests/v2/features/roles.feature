@@ -217,6 +217,7 @@ Feature: Roles
     And the response "data" has item with field "attributes.restricted" with value true
     And the response "data" has item with field "attributes.restricted" with value false
     And the response "data" has item with field "attributes.name" with value "admin"
+    And the response "data" has item with field "attributes.name_aliases" with value []
 
   @generated @skip @team:DataDog/aaa-core-access
   Scenario: List role templates returns "OK" response
