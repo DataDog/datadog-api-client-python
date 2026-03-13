@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -24,6 +24,7 @@ class PermissionAttributes(ModelNormal):
             "display_type": (str,),
             "group_name": (str,),
             "name": (str,),
+            "name_aliases": ([str],),
             "restricted": (bool,),
         }
 
@@ -34,6 +35,7 @@ class PermissionAttributes(ModelNormal):
         "display_type": "display_type",
         "group_name": "group_name",
         "name": "name",
+        "name_aliases": "name_aliases",
         "restricted": "restricted",
     }
 
@@ -45,6 +47,7 @@ class PermissionAttributes(ModelNormal):
         display_type: Union[str, UnsetType] = unset,
         group_name: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        name_aliases: Union[List[str], UnsetType] = unset,
         restricted: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -69,6 +72,9 @@ class PermissionAttributes(ModelNormal):
         :param name: Name of the permission.
         :type name: str, optional
 
+        :param name_aliases: List of alias names for the permission.
+        :type name_aliases: [str], optional
+
         :param restricted: Whether or not the permission is restricted.
         :type restricted: bool, optional
         """
@@ -84,6 +90,8 @@ class PermissionAttributes(ModelNormal):
             kwargs["group_name"] = group_name
         if name is not unset:
             kwargs["name"] = name
+        if name_aliases is not unset:
+            kwargs["name_aliases"] = name_aliases
         if restricted is not unset:
             kwargs["restricted"] = restricted
         super().__init__(kwargs)
