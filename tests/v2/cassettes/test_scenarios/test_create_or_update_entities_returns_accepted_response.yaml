@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: '{"apiVersion":"v3","datadog":{"codeLocations":[{"paths":[]}],"events":[{}],"logs":[{}],"performanceData":{"tags":[]},"pipelines":{"fingerprints":[]}},"integrations":{"opsgenie":{"serviceURL":"https://www.opsgenie.com/service/shopping-cart"},"pagerduty":{"serviceURL":"https://www.pagerduty.com/service-directory/Pshopping-cart"}},"kind":"service","metadata":{"additionalOwners":[{"name":""}],"contacts":[{"contact":"https://slack/","type":"slack"}],"id":"4b163705-23c0-4573-b2fb-f6cea2163fcb","inheritFrom":"application:default/myapp","links":[{"name":"mylink","type":"link","url":"https://mylink"}],"name":"myService","namespace":"default","tags":["this:tag","that:tag"]},"spec":{"componentOf":[],"dependsOn":[],"languages":[]}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/catalog/entity
+  response:
+    body:
+      string: '{"data":[{"id":"a3ad0180-7ec0-40fa-98fd-b34f27ef4afc","type":"entity","attributes":{"apiVersion":"v3","kind":"service","name":"myService","namespace":"default","tags":["this:tag","that:tag"]},"relationships":{"schema":{"data":{"id":"a3ad0180-7ec0-40fa-98fd-b34f27ef4afc","type":"schema"}}},"meta":{"createdAt":"2026-02-16T10:02:12.338681256Z","modifiedAt":"2026-02-16T10:02:12.338681157Z","ingestionSource":"api"}}],"meta":{"count":1,"includeCount":1},"included":[{"id":"a3ad0180-7ec0-40fa-98fd-b34f27ef4afc","type":"schema","attributes":{"schema":{"apiVersion":"v3","kind":"service","metadata":{"name":"myService","namespace":"default","inheritFrom":"application:default/myapp","tags":["this:tag","that:tag"],"links":[{"name":"mylink","type":"link","url":"https://mylink"}],"contacts":[{"type":"slack","contact":"https://slack/"}],"additionalOwners":[{}],"managed":{"ingestionSource":"api","createdAt":"2026-02-16T10:02:12.338681256Z","modifiedAt":"2026-02-16T10:02:12.338681157Z","status":{"warnings":[{"keyword_location":"/allOf/0/$ref/properties/metadata/$ref/additionalProperties","instance_location":"/metadata","message":"additionalProperties
+        ''namespace'' not allowed"}]}}},"integrations":{"pagerduty":{"serviceURL":"https://www.pagerduty.com/service-directory/Pshopping-cart"},"opsgenie":{"serviceURL":"https://www.opsgenie.com/service/shopping-cart"}},"datadog":{"performanceData":{"tags":[]},"events":[{"name":"","query":""}],"logs":[{"name":"","query":""}],"pipelines":{"fingerprints":[]},"codeLocations":[{}]},"spec":{}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/catalog/entity/a3ad0180-7ec0-40fa-98fd-b34f27ef4afc
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
