@@ -81,7 +81,7 @@ class PaginationMetaPage(ModelNormal):
         :param total: Integer representing the total number of elements available.
         :type total: int, none_type, optional
 
-        :param type:
+        :param type: The pagination type used for offset-based pagination.
         :type type: PaginationMetaPageType, optional
         """
         if first_offset is not unset:

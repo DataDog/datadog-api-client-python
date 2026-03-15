@@ -50,7 +50,7 @@ class MaintenanceData(ModelNormal):
         **kwargs,
     ):
         """
-
+        The data object for a maintenance.
 
         :param attributes: The attributes of a maintenance.
         :type attributes: MaintenanceDataAttributes, optional

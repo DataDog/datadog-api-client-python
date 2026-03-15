@@ -25,7 +25,7 @@ class IncidentHandleRelationshipData(ModelNormal):
 
     def __init__(self_, id: str, type: str, **kwargs):
         """
-
+        Relationship data for an incident handle, containing the ID and type of the related resource.
 
         :param id: The ID of the related resource
         :type id: str

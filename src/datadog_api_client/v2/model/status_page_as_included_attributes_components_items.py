@@ -72,9 +72,9 @@ class StatusPageAsIncludedAttributesComponentsItems(ModelNormal):
         **kwargs,
     ):
         """
+        A component displayed on an included status page.
 
-
-        :param components:
+        :param components: If the component is of type ``group`` , the components within the group.
         :type components: [StatusPageAsIncludedAttributesComponentsItemsComponentsItems], optional
 
         :param id: The ID of the component.

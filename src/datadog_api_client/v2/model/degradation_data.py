@@ -50,7 +50,7 @@ class DegradationData(ModelNormal):
         **kwargs,
     ):
         """
-
+        The data object for a degradation.
 
         :param attributes: The attributes of a degradation.
         :type attributes: DegradationDataAttributes, optional

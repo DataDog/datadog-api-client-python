@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class StatusPageArrayIncluded(ModelComposed):
     def __init__(self, **kwargs):
         """
-
+        An included resource related to a status page.
 
         :param attributes: Attributes of the Datadog user.
         :type attributes: StatusPagesUserAttributes, optional

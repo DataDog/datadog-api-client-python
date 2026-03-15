@@ -40,7 +40,7 @@ class CreateDegradationRequestData(ModelNormal):
         self_, attributes: CreateDegradationRequestDataAttributes, type: PatchDegradationRequestDataType, **kwargs
     ):
         """
-
+        The data object for creating a degradation.
 
         :param attributes: The supported attributes for creating a degradation.
         :type attributes: CreateDegradationRequestDataAttributes

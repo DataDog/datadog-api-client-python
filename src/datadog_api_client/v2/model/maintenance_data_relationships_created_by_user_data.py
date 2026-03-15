@@ -33,7 +33,7 @@ class MaintenanceDataRelationshipsCreatedByUserData(ModelNormal):
 
     def __init__(self_, id: UUID, type: StatusPagesUserType, **kwargs):
         """
-
+        The data object identifying the Datadog user who created the maintenance.
 
         :param id: The ID of the Datadog user who created the maintenance.
         :type id: UUID

@@ -63,7 +63,7 @@ class CreateStatusPageRequestDataAttributesComponentsItemsComponentsItems(ModelN
         **kwargs,
     ):
         """
-
+        A grouped component to be created within a status page component group.
 
         :param id: The ID of the grouped component.
         :type id: UUID, optional

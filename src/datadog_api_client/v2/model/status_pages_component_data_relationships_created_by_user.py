@@ -34,9 +34,9 @@ class StatusPagesComponentDataRelationshipsCreatedByUser(ModelNormal):
 
     def __init__(self_, data: StatusPagesComponentDataRelationshipsCreatedByUserData, **kwargs):
         """
+        The Datadog user who created the component.
 
-
-        :param data:
+        :param data: The data object identifying the Datadog user who created the component.
         :type data: StatusPagesComponentDataRelationshipsCreatedByUserData
         """
         super().__init__(kwargs)
