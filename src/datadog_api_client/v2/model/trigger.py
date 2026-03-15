@@ -48,6 +48,9 @@ class Trigger(ModelComposed):
         :param incident_trigger: Trigger a workflow from an Incident. For automatic triggering a handle must be configured and the workflow must be published.
         :type incident_trigger: IncidentTrigger
 
+        :param incident_schedule_trigger: Trigger a workflow from an Incident Schedule. The workflow must be published.
+        :type incident_schedule_trigger: IncidentScheduleTrigger
+
         :param monitor_trigger: Trigger a workflow from a Monitor. For automatic triggering a handle must be configured and the workflow must be published.
         :type monitor_trigger: MonitorTrigger
 
@@ -96,6 +99,7 @@ class Trigger(ModelComposed):
         from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
         from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
         from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
+        from datadog_api_client.v2.model.incident_schedule_trigger_wrapper import IncidentScheduleTriggerWrapper
         from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
         from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
         from datadog_api_client.v2.model.on_call_trigger_wrapper import OnCallTriggerWrapper
@@ -118,6 +122,7 @@ class Trigger(ModelComposed):
                 FormTriggerWrapper,
                 GithubWebhookTriggerWrapper,
                 IncidentTriggerWrapper,
+                IncidentScheduleTriggerWrapper,
                 MonitorTriggerWrapper,
                 NotebookTriggerWrapper,
                 OnCallTriggerWrapper,
