@@ -616,6 +616,12 @@ from datadog_api_client.v1.model.slo_correction_update_data import SLOCorrection
 from datadog_api_client.v1.model.slo_correction_update_request import SLOCorrectionUpdateRequest
 from datadog_api_client.v1.model.slo_correction_update_request_attributes import SLOCorrectionUpdateRequestAttributes
 from datadog_api_client.v1.model.slo_count_definition import SLOCountDefinition
+from datadog_api_client.v1.model.slo_count_definition_with_bad_events_formula import (
+    SLOCountDefinitionWithBadEventsFormula,
+)
+from datadog_api_client.v1.model.slo_count_definition_with_total_events_formula import (
+    SLOCountDefinitionWithTotalEventsFormula,
+)
 from datadog_api_client.v1.model.slo_count_spec import SLOCountSpec
 from datadog_api_client.v1.model.slo_creator import SLOCreator
 from datadog_api_client.v1.model.slo_data_source_query_definition import SLODataSourceQueryDefinition
@@ -1710,6 +1716,8 @@ __all__ = [
     "SLOCorrectionUpdateRequest",
     "SLOCorrectionUpdateRequestAttributes",
     "SLOCountDefinition",
+    "SLOCountDefinitionWithBadEventsFormula",
+    "SLOCountDefinitionWithTotalEventsFormula",
     "SLOCountSpec",
     "SLOCreator",
     "SLODataSourceQueryDefinition",

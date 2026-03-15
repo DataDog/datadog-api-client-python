@@ -49,6 +49,19 @@ Feature: Service Level Objectives
     Then the response status is 200 OK
 
   @team:DataDog/slo-app
+  Scenario: Create a new metric SLO object using bad events formula returns "OK" response
+    Given new "CreateSLO" request
+    And body with value {"type":"metric","description":"Metric SLO using sli_specification","name":"{{ unique }}","sli_specification":{"count":{"good_events_formula":{"formula":"query1 - query2"},"bad_events_formula":{"formula":"query2"},"queries":[{"data_source":"metrics","name":"query1","query":"sum:httpservice.hits{*}.as_count()"},{"data_source":"metrics","name":"query2","query":"sum:httpservice.errors{*}.as_count()"}]}},"tags":["env:prod","type:count"],"thresholds":[{"target":99.0,"target_display":"99.0","timeframe":"7d","warning":99.5,"warning_display":"99.5"}],"timeframe":"7d","target_threshold":99.0,"warning_threshold":99.5}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0]" has field "sli_specification"
+    And the response "data[0].sli_specification" has field "count"
+    And the response "data[0].sli_specification.count" has field "good_events_formula"
+    And the response "data[0].sli_specification.count" has field "bad_events_formula"
+    And the response "data[0].sli_specification.count" has field "queries"
+    And the response "data[0].sli_specification.count.queries" has length 2
+
+  @team:DataDog/slo-app
   Scenario: Create a new metric SLO object using sli_specification returns "OK" response
     Given new "CreateSLO" request
     And body with value {"type":"metric","description":"Metric SLO using sli_specification","name":"{{ unique }}","sli_specification":{"count":{"good_events_formula":{"formula":"query1 - query2"},"total_events_formula":{"formula":"query1"},"queries":[{"data_source":"metrics","name":"query1","query":"sum:httpservice.hits{*}.as_count()"},{"data_source":"metrics","name":"query2","query":"sum:httpservice.errors{*}.as_count()"}]}},"tags":["env:prod","type:count"],"thresholds":[{"target":99.0,"target_display":"99.0","timeframe":"7d","warning":99.5,"warning_display":"99.5"}],"timeframe":"7d","target_threshold":99.0,"warning_threshold":99.5}
@@ -247,7 +260,7 @@ Feature: Service Level Objectives
   Scenario: Update an SLO returns "Not Found" response
     Given new "UpdateSLO" request
     And request contains "slo_id" parameter from "REPLACE.ME"
-    And body with value {"description": null, "groups": ["env:prod", "role:mysql"], "monitor_ids": [], "monitor_tags": [], "name": "Custom Metric SLO", "query": {"denominator": "sum:my.custom.metric{*}.as_count()", "numerator": "sum:my.custom.metric{type:good}.as_count()"}, "sli_specification": {"time_slice": {"comparator": "<", "query": {"formulas": [{"formula": "query2/query1"}], "queries": [{"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.hits{*} by {env}.as_count()"}, {"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.errors{*} by {env}.as_count()"}]}, "threshold": 5}}, "tags": ["env:prod", "app:core"], "target_threshold": 99.9, "thresholds": [{"target": 95, "timeframe": "7d"}, {"target": 95, "timeframe": "30d", "warning": 97}], "timeframe": "30d", "type": "metric", "warning_threshold": 99.95}
+    And body with value {"description": null, "groups": ["env:prod", "role:mysql"], "monitor_ids": [], "monitor_tags": [], "name": "Custom Metric SLO", "query": {"denominator": "sum:my.custom.metric{*}.as_count()", "numerator": "sum:my.custom.metric{type:good}.as_count()"}, "sli_specification": {"time_slice": {"comparator": "<", "query": {"formulas": [{"formula": "query2/query1"}], "queries": [{"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.hits{*} by {env}.as_count()"}, {"data_source": "metrics", "name": "query2", "query": "sum:trace.servlet.request.errors{*} by {env}.as_count()"}]}, "threshold": 5}}, "tags": ["env:prod", "app:core"], "target_threshold": 99.9, "thresholds": [{"target": 95, "timeframe": "7d"}, {"target": 95, "timeframe": "30d", "warning": 97}], "timeframe": "30d", "type": "metric", "warning_threshold": 99.95}
     When the request is sent
     Then the response status is 404 Not Found
 
