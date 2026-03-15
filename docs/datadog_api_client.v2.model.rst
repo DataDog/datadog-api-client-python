@@ -30076,6 +30076,41 @@ datadog\_api\_client.v2.model.team\_sync\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.team\_sync\_selection\_state\_external\_id module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_selection_state_external_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_selection\_state\_external\_id\_type module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_selection_state_external_id_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_selection\_state\_item module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_selection_state_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_selection\_state\_operation module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_selection_state_operation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.team\_sync\_selection\_state\_scope module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.team_sync_selection_state_scope
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team\_target module
 -------------------------------------------------
 
