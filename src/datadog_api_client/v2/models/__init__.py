@@ -1704,6 +1704,9 @@ from datadog_api_client.v2.model.deployment_rule_data_type import DeploymentRule
 from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
     DeploymentRuleOptionsFaultyDeploymentDetection,
 )
+from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection_response import (
+    DeploymentRuleOptionsFaultyDeploymentDetectionResponse,
+)
 from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
 from datadog_api_client.v2.model.deployment_rule_response import DeploymentRuleResponse
 from datadog_api_client.v2.model.deployment_rule_response_data import DeploymentRuleResponseData
@@ -1718,6 +1721,7 @@ from datadog_api_client.v2.model.deployment_rule_response_data_attributes_update
     DeploymentRuleResponseDataAttributesUpdatedBy,
 )
 from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
+from datadog_api_client.v2.model.deployment_rules_options_response import DeploymentRulesOptionsResponse
 from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
 from datadog_api_client.v2.model.detach_case_request_data import DetachCaseRequestData
 from datadog_api_client.v2.model.detach_case_request_data_relationships import DetachCaseRequestDataRelationships
@@ -7703,6 +7707,7 @@ __all__ = [
     "DeploymentRelationshipData",
     "DeploymentRuleDataType",
     "DeploymentRuleOptionsFaultyDeploymentDetection",
+    "DeploymentRuleOptionsFaultyDeploymentDetectionResponse",
     "DeploymentRuleOptionsMonitor",
     "DeploymentRuleResponse",
     "DeploymentRuleResponseData",
@@ -7711,6 +7716,7 @@ __all__ = [
     "DeploymentRuleResponseDataAttributesType",
     "DeploymentRuleResponseDataAttributesUpdatedBy",
     "DeploymentRulesOptions",
+    "DeploymentRulesOptionsResponse",
     "DetachCaseRequest",
     "DetachCaseRequestData",
     "DetachCaseRequestDataRelationships",

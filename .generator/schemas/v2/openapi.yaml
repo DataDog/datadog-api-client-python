@@ -21037,6 +21037,29 @@ components:
             type: string
           type: array
       type: object
+    DeploymentRuleOptionsFaultyDeploymentDetectionResponse:
+      additionalProperties: false
+      description: Faulty deployment detection options returned in deployment rule
+        responses. The `excluded_resources` field is always present, which allows
+        disambiguating this type from monitor options when both share a `duration`
+        field.
+      properties:
+        duration:
+          description: The duration for faulty deployment detection.
+          example: 3600
+          format: int64
+          type: integer
+        excluded_resources:
+          description: Resources to exclude from faulty deployment detection.
+          example:
+          - resource1
+          - resource2
+          items:
+            type: string
+          type: array
+      required:
+      - excluded_resources
+      type: object
     DeploymentRuleOptionsMonitor:
       additionalProperties: false
       description: Monitor options for deployment rules.
@@ -21099,7 +21122,7 @@ components:
           example: My deployment rule
           type: string
         options:
-          $ref: '#/components/schemas/DeploymentRulesOptions'
+          $ref: '#/components/schemas/DeploymentRulesOptionsResponse'
         type:
           $ref: '#/components/schemas/DeploymentRuleResponseDataAttributesType'
         updated_at:
@@ -21164,10 +21187,17 @@ components:
       - id
       type: object
     DeploymentRulesOptions:
-      description: Options for deployment rule response representing either faulty
+      description: Options for deployment rule requests representing either faulty
         deployment detection or monitor options.
       oneOf:
       - $ref: '#/components/schemas/DeploymentRuleOptionsFaultyDeploymentDetection'
+      - $ref: '#/components/schemas/DeploymentRuleOptionsMonitor'
+    DeploymentRulesOptionsResponse:
+      description: Options returned in deployment rule responses representing either
+        faulty deployment detection or monitor options. Faulty deployment detection
+        responses always include `excluded_resources`, making the two variants unambiguous.
+      oneOf:
+      - $ref: '#/components/schemas/DeploymentRuleOptionsFaultyDeploymentDetectionResponse'
       - $ref: '#/components/schemas/DeploymentRuleOptionsMonitor'
     DetachCaseRequest:
       description: Request for detaching security findings from their case.

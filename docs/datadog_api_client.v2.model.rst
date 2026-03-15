@@ -8425,6 +8425,13 @@ datadog\_api\_client.v2.model.deployment\_rule\_options\_faulty\_deployment\_det
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deployment\_rule\_options\_faulty\_deployment\_detection\_response module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.deployment\_rule\_options\_monitor module
 -----------------------------------------------------------------------
 
@@ -8478,6 +8485,13 @@ datadog\_api\_client.v2.model.deployment\_rules\_options module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.deployment_rules_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_rules\_options\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_rules_options_response
    :members:
    :show-inheritance:
 

@@ -18,15 +18,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.deployment_rule_response_data_attributes_created_by import (
         DeploymentRuleResponseDataAttributesCreatedBy,
     )
-    from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
+    from datadog_api_client.v2.model.deployment_rules_options_response import DeploymentRulesOptionsResponse
     from datadog_api_client.v2.model.deployment_rule_response_data_attributes_type import (
         DeploymentRuleResponseDataAttributesType,
     )
     from datadog_api_client.v2.model.deployment_rule_response_data_attributes_updated_by import (
         DeploymentRuleResponseDataAttributesUpdatedBy,
     )
-    from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
-        DeploymentRuleOptionsFaultyDeploymentDetection,
+    from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection_response import (
+        DeploymentRuleOptionsFaultyDeploymentDetectionResponse,
     )
     from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
 
@@ -37,7 +37,7 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.deployment_rule_response_data_attributes_created_by import (
             DeploymentRuleResponseDataAttributesCreatedBy,
         )
-        from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
+        from datadog_api_client.v2.model.deployment_rules_options_response import DeploymentRulesOptionsResponse
         from datadog_api_client.v2.model.deployment_rule_response_data_attributes_type import (
             DeploymentRuleResponseDataAttributesType,
         )
@@ -51,7 +51,7 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
             "dry_run": (bool,),
             "gate_id": (str,),
             "name": (str,),
-            "options": (DeploymentRulesOptions,),
+            "options": (DeploymentRulesOptionsResponse,),
             "type": (DeploymentRuleResponseDataAttributesType,),
             "updated_at": (datetime,),
             "updated_by": (DeploymentRuleResponseDataAttributesUpdatedBy,),
@@ -77,7 +77,9 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
         gate_id: str,
         name: str,
         options: Union[
-            DeploymentRulesOptions, DeploymentRuleOptionsFaultyDeploymentDetection, DeploymentRuleOptionsMonitor
+            DeploymentRulesOptionsResponse,
+            DeploymentRuleOptionsFaultyDeploymentDetectionResponse,
+            DeploymentRuleOptionsMonitor,
         ],
         type: DeploymentRuleResponseDataAttributesType,
         updated_at: Union[datetime, UnsetType] = unset,
@@ -102,8 +104,8 @@ class DeploymentRuleResponseDataAttributes(ModelNormal):
         :param name: The name of the deployment rule.
         :type name: str
 
-        :param options: Options for deployment rule response representing either faulty deployment detection or monitor options.
-        :type options: DeploymentRulesOptions
+        :param options: Options returned in deployment rule responses representing either faulty deployment detection or monitor options. Faulty deployment detection responses always include ``excluded_resources`` , making the two variants unambiguous.
+        :type options: DeploymentRulesOptionsResponse
 
         :param type: The type of the deployment rule.
         :type type: DeploymentRuleResponseDataAttributesType
