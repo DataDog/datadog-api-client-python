@@ -11677,6 +11677,7 @@ components:
           - gcp_iam_service_account
           - gcp_iam_policy
           items:
+            description: A cloud resource type identifier.
             type: string
           type: array
       required:
@@ -11708,6 +11709,7 @@ components:
         defaultGroupByFields:
           description: The default group by fields.
           items:
+            description: A field name used for default grouping.
             type: string
           nullable: true
           type: array
@@ -11718,6 +11720,7 @@ components:
         userGroupByFields:
           description: Fields to use to group findings by when sending signals.
           items:
+            description: A field name to group findings by.
             type: string
           nullable: true
           type: array
@@ -11900,13 +11903,16 @@ components:
         hostTags:
           description: The host tags defining where this policy is deployed
           items:
+            description: A host tag used to identify where this policy is deployed.
             type: string
           type: array
         hostTagsLists:
           description: The host tags defining where this policy is deployed, the inner
             values are linked with AND, the outer values are linked with OR
           items:
+            description: A list of host tags linked with AND logic.
             items:
+              description: A host tag used to filter the deployment scope.
               type: string
             type: array
           type: array
@@ -11972,13 +11978,16 @@ components:
         hostTags:
           description: The host tags defining where this policy is deployed
           items:
+            description: A host tag used to identify where this policy is deployed.
             type: string
           type: array
         hostTagsLists:
           description: The host tags defining where this policy is deployed, the inner
             values are linked with AND, the outer values are linked with OR
           items:
+            description: A list of host tags linked with AND logic.
             items:
+              description: A host tag used to filter the deployment scope.
               type: string
             type: array
           type: array
@@ -12053,13 +12062,16 @@ components:
         hostTags:
           description: The host tags defining where this policy is deployed
           items:
+            description: A host tag used to identify where this policy is deployed.
             type: string
           type: array
         hostTagsLists:
           description: The host tags defining where this policy is deployed, the inner
             values are linked with AND, the outer values are linked with OR
           items:
+            description: A list of host tags linked with AND logic.
             items:
+              description: A host tag used to filter the deployment scope.
               type: string
             type: array
           type: array
@@ -12214,6 +12226,7 @@ components:
         blocking:
           description: The blocking policies that the rule belongs to
           items:
+            description: The ID of a blocking policy that this rule belongs to.
             type: string
           type: array
         category:
@@ -12242,6 +12255,7 @@ components:
         disabled:
           description: The disabled policies that the rule belongs to
           items:
+            description: The ID of a disabled policy that this rule belongs to.
             type: string
           type: array
         enabled:
@@ -12255,11 +12269,13 @@ components:
         filters:
           description: The platforms the Agent rule is supported on
           items:
+            description: A platform filter that the Agent rule is supported on.
             type: string
           type: array
         monitoring:
           description: The monitoring policies that the rule belongs to
           items:
+            description: The ID of a monitoring policy that this rule belongs to.
             type: string
           type: array
         name:
@@ -12269,6 +12285,7 @@ components:
         product_tags:
           description: The list of product tags associated with the rule
           items:
+            description: A product tag associated with the rule.
             type: string
           type: array
         silent:
@@ -12308,6 +12325,7 @@ components:
         blocking:
           description: The blocking policies that the rule belongs to.
           items:
+            description: The ID of a blocking policy that this rule belongs to.
             type: string
           type: array
         description:
@@ -12317,6 +12335,7 @@ components:
         disabled:
           description: The disabled policies that the rule belongs to.
           items:
+            description: The ID of a disabled policy that this rule belongs to.
             type: string
           type: array
         enabled:
@@ -12330,11 +12349,13 @@ components:
         filters:
           description: The platforms the Agent rule is supported on.
           items:
+            description: A platform filter that the Agent rule is supported on.
             type: string
           type: array
         monitoring:
           description: The monitoring policies that the rule belongs to.
           items:
+            description: The ID of a monitoring policy that this rule belongs to.
             type: string
           type: array
         name:
@@ -12348,6 +12369,7 @@ components:
         product_tags:
           description: The list of product tags associated with the rule.
           items:
+            description: A product tag associated with the rule.
             type: string
           type: array
         silent:
@@ -12439,6 +12461,7 @@ components:
         blocking:
           description: The blocking policies that the rule belongs to
           items:
+            description: The ID of a blocking policy that this rule belongs to.
             type: string
           type: array
         description:
@@ -12448,6 +12471,7 @@ components:
         disabled:
           description: The disabled policies that the rule belongs to
           items:
+            description: The ID of a disabled policy that this rule belongs to.
             type: string
           type: array
         enabled:
@@ -12461,6 +12485,7 @@ components:
         monitoring:
           description: The monitoring policies that the rule belongs to
           items:
+            description: The ID of a monitoring policy that this rule belongs to.
             type: string
           type: array
         policy_id:
@@ -12470,6 +12495,7 @@ components:
         product_tags:
           description: The list of product tags associated with the rule
           items:
+            description: A product tag associated with the rule.
             type: string
           type: array
         silent:
@@ -14228,6 +14254,7 @@ components:
           example:
           - ''
           items:
+            description: A job result ID.
             type: string
           type: array
         notifications:
@@ -14235,6 +14262,7 @@ components:
           example:
           - ''
           items:
+            description: A notification recipient handle.
             type: string
           type: array
         signalMessage:
@@ -16734,6 +16762,7 @@ components:
         cluster_name:
           description: List of cluster names associated with the Agent.
           items:
+            description: A cluster name associated with the Agent.
             type: string
           type: array
         datadog_agent:
@@ -16745,6 +16774,7 @@ components:
         envs:
           description: List of environments associated with the Agent.
           items:
+            description: An environment name associated with the Agent.
             type: string
           nullable: true
           type: array
@@ -18089,6 +18119,7 @@ components:
           example:
           - '["def-000-abc"]'
           items:
+            description: A rule ID associated with the control.
             type: string
           type: array
       required:
@@ -34867,6 +34898,7 @@ components:
         tags:
           description: Tags for generated signals.
           items:
+            description: A tag string in `key:value` format.
             type: string
           type: array
         thirdPartyCases:
@@ -34915,6 +34947,8 @@ components:
           example:
           - '@sns-cloudtrail-results'
           items:
+            description: A notification recipient handle (for example, `@user` or
+              `@channel`).
             type: string
           type: array
         to:
@@ -44902,7 +44936,7 @@ components:
         Protocol (OTLP) over gRPC and HTTP.
 
 
-        **Supported pipeline types:** logs, metrics'
+        **Supported pipeline types:** logs'
       properties:
         grpc_address_key:
           description: Environment variable name containing the gRPC server address
@@ -44932,7 +44966,6 @@ components:
       type: object
       x-pipeline-types:
       - logs
-      - metrics
     ObservabilityPipelineOpentelemetrySourceType:
       default: opentelemetry
       description: The source type. The value should always be `opentelemetry`.
@@ -57826,6 +57859,7 @@ components:
           - team:database
           - source:cloudtrail
           items:
+            description: A tag string in `key:value` format.
             type: string
           type: array
         update_author_id:
@@ -57877,6 +57911,7 @@ components:
           - team:database
           - source:cloudtrail
           items:
+            description: A tag string in `key:value` format.
             type: string
           type: array
       required:
@@ -57970,6 +58005,7 @@ components:
           - technique:T1110-brute-force
           - source:cloudtrail
           items:
+            description: A tag string in `key:value` format.
             type: string
           type: array
         version:
@@ -58163,6 +58199,7 @@ components:
           - def-000-u7q
           - def-000-7dd
           items:
+            description: A rule ID to include in the bulk export.
             type: string
           minItems: 1
           type: array
@@ -58779,6 +58816,7 @@ components:
 
             False otherwise.'
           items:
+            description: Whether the rule query result matched the expected result.
             type: boolean
           type: array
       type: object
@@ -60193,6 +60231,7 @@ components:
           - technique:T1110-brute-force
           - source:cloudtrail
           items:
+            description: A tag string in `key:value` format.
             type: string
           type: array
         update_date:
@@ -60262,6 +60301,7 @@ components:
           - technique:T1110-brute-force
           - source:cloudtrail
           items:
+            description: A tag string in `key:value` format.
             type: string
           type: array
       required:
@@ -60392,6 +60432,7 @@ components:
           - technique:T1110-brute-force
           - source:cloudtrail
           items:
+            description: A tag string in `key:value` format.
             type: string
           type: array
         version:
