@@ -42,21 +42,21 @@ class PlaylistDataAttributesCreatedBy(ModelNormal):
         **kwargs,
     ):
         """
+        Information about the user who created the playlist.
 
-
-        :param handle:
+        :param handle: Email handle of the user who created the playlist.
         :type handle: str
 
-        :param icon:
+        :param icon: URL or identifier of the user's avatar icon.
         :type icon: str, optional
 
-        :param id:
+        :param id: Unique identifier of the user who created the playlist.
         :type id: str
 
-        :param name:
+        :param name: Display name of the user who created the playlist.
         :type name: str, optional
 
-        :param uuid:
+        :param uuid: UUID of the user who created the playlist.
         :type uuid: str
         """
         if icon is not unset:

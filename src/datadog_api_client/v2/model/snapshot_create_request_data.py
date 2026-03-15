@@ -43,9 +43,9 @@ class SnapshotCreateRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a heatmap snapshot creation request, containing the resource type and attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes for creating a heatmap snapshot, including the view, session, event, and device context.
         :type attributes: SnapshotCreateRequestDataAttributes, optional
 
         :param type: Snapshots resource type.

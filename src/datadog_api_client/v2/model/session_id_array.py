@@ -30,9 +30,9 @@ class SessionIdArray(ModelNormal):
 
     def __init__(self_, data: List[SessionIdData], **kwargs):
         """
+        A collection of session identifiers used for bulk add or remove operations on a playlist.
 
-
-        :param data:
+        :param data: Array of session identifier data objects.
         :type data: [SessionIdData]
         """
         super().__init__(kwargs)

@@ -30,9 +30,9 @@ class SnapshotArray(ModelNormal):
 
     def __init__(self_, data: List[SnapshotData], **kwargs):
         """
+        A list of heatmap snapshots returned by a list operation.
 
-
-        :param data:
+        :param data: Array of heatmap snapshot data objects.
         :type data: [SnapshotData]
         """
         super().__init__(kwargs)

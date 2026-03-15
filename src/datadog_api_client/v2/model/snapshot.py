@@ -32,9 +32,9 @@ class Snapshot(ModelNormal):
 
     def __init__(self_, data: Union[SnapshotData, UnsetType] = unset, **kwargs):
         """
+        A single heatmap snapshot resource returned by create or update operations.
 
-
-        :param data:
+        :param data: Data object representing a heatmap snapshot, including its identifier, type, and attributes.
         :type data: SnapshotData, optional
         """
         if data is not unset:
