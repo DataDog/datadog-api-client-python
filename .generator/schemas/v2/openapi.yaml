@@ -7145,6 +7145,8 @@ components:
           example:
           - processor-id
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         type:
@@ -39965,6 +39967,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         table:
@@ -41938,6 +41942,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         type:
@@ -42017,6 +42023,8 @@ components:
           example:
           - datadog-agent-source
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         key_prefix:
@@ -42149,6 +42157,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         region:
@@ -42248,6 +42258,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         type:
@@ -42423,6 +42435,7 @@ components:
           example:
           - datadog-agent-source
           items:
+            description: The ID of a component whose output is used as input.
             type: string
           type: array
         processors:
@@ -42523,6 +42536,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         tls:
@@ -42751,6 +42766,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         routes:
@@ -42822,6 +42839,8 @@ components:
           example:
           - metric-tags-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         type:
@@ -42875,6 +42894,7 @@ components:
           - service
           - version
           items:
+            description: A Datadog tag key to include or exclude.
             type: string
           type: array
         mode:
@@ -42953,6 +42973,7 @@ components:
           - log.message
           - log.error
           items:
+            description: A log field path to evaluate for duplicate values.
             type: string
           type: array
         id:
@@ -43059,6 +43080,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         type:
@@ -43325,6 +43348,7 @@ components:
           description: List of column names to include from the reference table. If
             not provided, all columns are included.
           items:
+            description: The name of a column to include from the reference table.
             type: string
           type: array
         key_field:
@@ -43545,6 +43569,7 @@ components:
           - service
           - env
           items:
+            description: A log field name used to group the metric series.
             type: string
           type: array
         include:
@@ -43648,6 +43673,8 @@ components:
           example:
           - parse-json-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         log_type:
@@ -43712,6 +43739,8 @@ components:
           example:
           - datadog-agent-source
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         key_prefix:
@@ -43805,6 +43834,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         project:
@@ -43922,6 +43953,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         password_key:
@@ -44183,6 +44216,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         key_field:
@@ -44357,6 +44392,7 @@ components:
           - topic1
           - topic2
           items:
+            description: A Kafka topic name to subscribe to.
             type: string
           type: array
         type:
@@ -44518,6 +44554,7 @@ components:
           - service
           - version
           items:
+            description: A metric tag key to include or exclude based on the action.
             type: string
           type: array
         mode:
@@ -44583,6 +44620,8 @@ components:
           example:
           - parse-json-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         license_key_key:
@@ -44791,6 +44830,7 @@ components:
           example:
           - container
           items:
+            description: The name of an OCSF profile to apply to the event.
             type: string
           type: array
         version:
@@ -44860,6 +44900,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         type:
@@ -44902,7 +44944,7 @@ components:
         Protocol (OTLP) over gRPC and HTTP.
 
 
-        **Supported pipeline types:** logs, metrics'
+        **Supported pipeline types:** logs'
       properties:
         grpc_address_key:
           description: Environment variable name containing the gRPC server address
@@ -44932,7 +44974,6 @@ components:
       type: object
       x-pipeline-types:
       - logs
-      - metrics
     ObservabilityPipelineOpentelemetrySourceType:
       default: opentelemetry
       description: The source type. The value should always be `opentelemetry`.
@@ -45242,6 +45283,7 @@ components:
             Quotas are tracked independently by unique combinations of these field
             values.
           items:
+            description: The name of a log field used to partition quota enforcement.
             type: string
           type: array
         too_many_buckets_action:
@@ -45348,6 +45390,7 @@ components:
           - log.user.id
           - log.device.id
           items:
+            description: A log field path used to group events for aggregation.
             type: string
           type: array
         id:
@@ -45447,6 +45490,7 @@ components:
           - field1
           - field2
           items:
+            description: The name of a field to remove from the log event.
             type: string
           type: array
         id:
@@ -45575,6 +45619,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         keepalive:
@@ -45663,6 +45709,7 @@ components:
           - service
           - host
           items:
+            description: A log field name used to group events for independent sampling.
             type: string
           minItems: 1
           type: array
@@ -45896,6 +45943,8 @@ components:
           - card
           - account
           items:
+            description: A keyword string that reinforces detection when found near
+              the sensitive pattern.
             type: string
           type: array
         proximity:
@@ -45976,6 +46025,8 @@ components:
           - pii
           - ccn
           items:
+            description: A tag string used to classify and filter this sensitive data
+              rule.
             type: string
           type: array
       required:
@@ -46055,6 +46106,8 @@ components:
           example:
           - ''
           items:
+            description: A log field path to include or exclude from sensitive data
+              scanning.
             type: string
           type: array
       required:
@@ -46087,6 +46140,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         region:
@@ -46157,6 +46212,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         mode:
@@ -46558,6 +46615,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         sourcetype:
@@ -46716,6 +46775,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         type:
@@ -46821,6 +46882,8 @@ components:
           example:
           - filter-processor
           items:
+            description: The ID of a component whose output is used as input for this
+              destination.
             type: string
           type: array
         keepalive:
@@ -46918,6 +46981,7 @@ components:
           example:
           - log.user.id
           items:
+            description: A log field name used to group events for independent throttling.
             type: string
           type: array
         id:
