@@ -12586,6 +12586,8 @@ components:
           - lb
           - worker
           items:
+            description: A Cloudflare resource type (for example, `web`, `dns`, `lb`,
+              `worker`).
             type: string
           type: array
         zones:
@@ -12594,6 +12596,7 @@ components:
           - zone_id_1
           - zone_id_2
           items:
+            description: A Cloudflare zone ID to restrict pulling metrics for.
             type: string
           type: array
       required:
@@ -12637,6 +12640,8 @@ components:
           - lb
           - worker
           items:
+            description: A Cloudflare resource type (for example, `web`, `dns`, `lb`,
+              `worker`).
             type: string
           type: array
         zones:
@@ -12645,6 +12650,7 @@ components:
           - zone_id_1
           - zone_id_2
           items:
+            description: A Cloudflare zone ID to restrict pulling metrics for.
             type: string
           type: array
       required:
@@ -12707,6 +12713,8 @@ components:
           - lb
           - worker
           items:
+            description: A Cloudflare resource type (for example, `web`, `dns`, `lb`,
+              `worker`).
             type: string
           type: array
         zones:
@@ -12715,6 +12723,7 @@ components:
           - zone_id_1
           - zone_id_2
           items:
+            description: A Cloudflare zone ID to restrict pulling metrics for.
             type: string
           type: array
       required:
@@ -13283,6 +13292,8 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Confluent resource. Can be a single key or
+              a key-value pair separated by a colon.
             type: string
           type: array
       required:
@@ -13325,6 +13336,8 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Confluent resource. Can be a single key or
+              a key-value pair separated by a colon.
             type: string
           type: array
       required:
@@ -13356,6 +13369,8 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Confluent resource. Can be a single key or
+              a key-value pair separated by a colon.
             type: string
           type: array
       required:
@@ -13412,6 +13427,8 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Confluent resource. Can be a single key or
+              a key-value pair separated by a colon.
             type: string
           type: array
       required:
@@ -13467,6 +13484,8 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Confluent resource. Can be a single key or
+              a key-value pair separated by a colon.
             type: string
           type: array
       required:
@@ -13519,6 +13538,8 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Confluent resource. Can be a single key or
+              a key-value pair separated by a colon.
             type: string
           type: array
       required:
@@ -24963,6 +24984,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Fastly service.
             type: string
           type: array
       required:
@@ -24977,6 +24999,7 @@ components:
           - myTag
           - myTag2:myValue
           items:
+            description: A tag for the Fastly service.
             type: string
           type: array
       type: object
@@ -44902,7 +44925,7 @@ components:
         Protocol (OTLP) over gRPC and HTTP.
 
 
-        **Supported pipeline types:** logs, metrics'
+        **Supported pipeline types:** logs'
       properties:
         grpc_address_key:
           description: Environment variable name containing the gRPC server address
@@ -44932,7 +44955,6 @@ components:
       type: object
       x-pipeline-types:
       - logs
-      - metrics
     ObservabilityPipelineOpentelemetrySourceType:
       default: opentelemetry
       description: The source type. The value should always be `opentelemetry`.
