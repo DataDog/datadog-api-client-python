@@ -40,9 +40,9 @@ class ListConnectionsResponseDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes of the list connections response, containing the collection of data source connections.
 
-
-        :param connections:
+        :param connections: The list of data source connections configured for the entity.
         :type connections: [ListConnectionsResponseDataAttributesConnectionsItems], optional
         """
         if connections is not unset:

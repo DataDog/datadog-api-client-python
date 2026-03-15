@@ -44,12 +44,12 @@ class FacetInfoResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for the facet info response.
 
-
-        :param attributes:
+        :param attributes: Attributes of the facet info response, containing the facet result data.
         :type attributes: FacetInfoResponseDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the facet info response resource.
         :type id: str, optional
 
         :param type: Users facet info resource type.

@@ -28,12 +28,12 @@ class FacetInfoResponseDataAttributesResultRange(ModelNormal):
 
     def __init__(self_, max: Union[dict, UnsetType] = unset, min: Union[dict, UnsetType] = unset, **kwargs):
         """
+        The numeric range of a facet attribute, representing the minimum and maximum observed values.
 
-
-        :param max:
+        :param max: The maximum observed value for the numeric facet attribute.
         :type max: dict, optional
 
-        :param min:
+        :param min: The minimum observed value for the numeric facet attribute.
         :type min: dict, optional
         """
         if max is not unset:

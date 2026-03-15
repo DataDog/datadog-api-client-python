@@ -32,9 +32,9 @@ class UpdateConnectionRequest(ModelNormal):
 
     def __init__(self_, data: Union[UpdateConnectionRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for updating an existing data source connection by adding, modifying, or removing fields.
 
-
-        :param data:
+        :param data: The data object containing the resource identifier and attributes for updating an existing connection.
         :type data: UpdateConnectionRequestData, optional
         """
         if data is not unset:

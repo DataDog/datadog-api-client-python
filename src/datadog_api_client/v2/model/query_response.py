@@ -32,9 +32,9 @@ class QueryResponse(ModelNormal):
 
     def __init__(self_, data: Union[QueryResponseData, UnsetType] = unset, **kwargs):
         """
+        Response containing the query results with matched records and total count.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes of the query response.
         :type data: QueryResponseData, optional
         """
         if data is not unset:

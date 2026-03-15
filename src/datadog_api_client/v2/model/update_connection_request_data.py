@@ -48,12 +48,12 @@ class UpdateConnectionRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource identifier and attributes for updating an existing connection.
 
-
-        :param attributes:
+        :param attributes: Attributes specifying the field modifications to apply to an existing connection.
         :type attributes: UpdateConnectionRequestDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the connection to update.
         :type id: str
 
         :param type: Connection id resource type.
