@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class DeletedTestsResponseType(ModelSimple):
     """
-
+    Type for the bulk delete Synthetic tests response, `delete_tests`.
 
     :param value: If omitted defaults to "delete_tests". Must be one of ["delete_tests"].
     :type value: str

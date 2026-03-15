@@ -54,10 +54,10 @@ class SyntheticsSuiteSearchResponseData(ModelNormal):
         :param attributes: Synthetics suite search response data attributes
         :type attributes: SyntheticsSuiteSearchResponseDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the suite search response data.
         :type id: UUID, optional
 
-        :param type:
+        :param type: Type for the Synthetics suites search response, ``suites_search``.
         :type type: SuiteSearchResponseType, optional
         """
         if attributes is not unset:
