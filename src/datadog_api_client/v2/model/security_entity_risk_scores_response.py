@@ -36,7 +36,7 @@ class SecurityEntityRiskScoresResponse(ModelNormal):
         """
         Response containing a list of entity risk scores
 
-        :param data:
+        :param data: Array of entity risk score objects.
         :type data: [SecurityEntityRiskScore]
 
         :param meta: Metadata for pagination
