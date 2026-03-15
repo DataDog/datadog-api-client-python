@@ -90,6 +90,21 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         :param stat: APM statistic.
         :type stat: FormulaAndFunctionApmDependencyStatName
 
+        :param operation_mode: Optional operation mode to aggregate across operation names.
+        :type operation_mode: str, optional
+
+        :param peer_tags: Tags to query for a specific downstream entity (peer.service, peer.db_instance, peer.s3, peer.s3.bucket, etc.).
+        :type peer_tags: [str], optional
+
+        :param query_filter: Additional filters for the query using metrics query syntax (e.g., env, primary_tag).
+        :type query_filter: str, optional
+
+        :param resource_hash: The hash of a specific resource to filter by.
+        :type resource_hash: str, optional
+
+        :param span_kind: Describes the relationship between the span, its parents, and its children in a trace.
+        :type span_kind: FormulaAndFunctionApmMetricsSpanKind, optional
+
         :param additional_query_filters: Additional filters applied to the SLO query.
         :type additional_query_filters: str, optional
 
@@ -131,6 +146,9 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.formula_and_function_apm_resource_stats_query_definition import (
             FormulaAndFunctionApmResourceStatsQueryDefinition,
         )
+        from datadog_api_client.v1.model.formula_and_function_apm_metrics_query_definition import (
+            FormulaAndFunctionApmMetricsQueryDefinition,
+        )
         from datadog_api_client.v1.model.formula_and_function_slo_query_definition import (
             FormulaAndFunctionSLOQueryDefinition,
         )
@@ -145,6 +163,7 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                 FormulaAndFunctionProcessQueryDefinition,
                 FormulaAndFunctionApmDependencyStatsQueryDefinition,
                 FormulaAndFunctionApmResourceStatsQueryDefinition,
+                FormulaAndFunctionApmMetricsQueryDefinition,
                 FormulaAndFunctionSLOQueryDefinition,
                 FormulaAndFunctionCloudCostQueryDefinition,
             ],
