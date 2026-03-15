@@ -16,10 +16,11 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
-    from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
     from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
+    from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
+    from datadog_api_client.v1.model.guided_table_request import GuidedTableRequest
     from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
     from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
     from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
@@ -30,7 +31,6 @@ class TableWidgetDefinition(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
         from datadog_api_client.v1.model.table_widget_has_search_bar import TableWidgetHasSearchBar
-        from datadog_api_client.v1.model.table_widget_request import TableWidgetRequest
         from datadog_api_client.v1.model.widget_time import WidgetTime
         from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
         from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
@@ -38,7 +38,7 @@ class TableWidgetDefinition(ModelNormal):
         return {
             "custom_links": ([WidgetCustomLink],),
             "has_search_bar": (TableWidgetHasSearchBar,),
-            "requests": ([TableWidgetRequest],),
+            "requests": ([TableWidgetRequest, GuidedTableRequest],),
             "time": (WidgetTime,),
             "title": (str,),
             "title_align": (WidgetTextAlign,),
@@ -59,7 +59,7 @@ class TableWidgetDefinition(ModelNormal):
 
     def __init__(
         self_,
-        requests: List[TableWidgetRequest],
+        requests: List[Union[TableWidgetRequest, GuidedTableRequest]],
         type: TableWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
         has_search_bar: Union[TableWidgetHasSearchBar, UnsetType] = unset,
@@ -78,8 +78,8 @@ class TableWidgetDefinition(ModelNormal):
         :param has_search_bar: Controls the display of the search bar.
         :type has_search_bar: TableWidgetHasSearchBar, optional
 
-        :param requests: Widget definition.
-        :type requests: [TableWidgetRequest]
+        :param requests: Widget definition. Each item is either a classic ``TableWidgetRequest`` or an experimental ``GuidedTableRequest`` (used when the ``graphing_new_table_widget_editor`` feature flag is enabled).
+        :type requests: [TableWidgetRequest, GuidedTableRequest]
 
         :param time: Time setting for the widget.
         :type time: WidgetTime, optional
