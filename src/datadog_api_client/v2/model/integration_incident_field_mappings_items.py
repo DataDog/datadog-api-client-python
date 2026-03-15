@@ -33,12 +33,12 @@ class IntegrationIncidentFieldMappingsItems(ModelNormal):
         **kwargs,
     ):
         """
+        Mapping between an incident user-defined field and a case field
 
-
-        :param case_field:
+        :param case_field: The case field to map the incident field value to
         :type case_field: str, optional
 
-        :param incident_user_defined_field_id:
+        :param incident_user_defined_field_id: The identifier of the incident user-defined field to map from
         :type incident_user_defined_field_id: str, optional
         """
         if case_field is not unset:

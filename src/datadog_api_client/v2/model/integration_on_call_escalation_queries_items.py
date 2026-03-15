@@ -49,18 +49,18 @@ class IntegrationOnCallEscalationQueriesItems(ModelNormal):
         **kwargs,
     ):
         """
+        An On-Call escalation query entry used to route cases to on-call responders
 
-
-        :param enabled:
+        :param enabled: Whether this escalation query is enabled
         :type enabled: bool, optional
 
-        :param id:
+        :param id: Unique identifier of the escalation query
         :type id: str, optional
 
-        :param query:
+        :param query: The query used to match cases for escalation
         :type query: str, optional
 
-        :param target:
+        :param target: The target recipient for an On-Call escalation query
         :type target: IntegrationOnCallEscalationQueriesItemsTarget, optional
         """
         if enabled is not unset:

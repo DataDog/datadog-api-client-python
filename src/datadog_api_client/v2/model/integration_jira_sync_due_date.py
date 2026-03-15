@@ -30,12 +30,12 @@ class IntegrationJiraSyncDueDate(ModelNormal):
         self_, jira_field_id: Union[str, UnsetType] = unset, sync_type: Union[str, UnsetType] = unset, **kwargs
     ):
         """
+        Due date synchronization configuration for Jira integration
 
-
-        :param jira_field_id:
+        :param jira_field_id: The Jira field identifier used to store the due date
         :type jira_field_id: str, optional
 
-        :param sync_type:
+        :param sync_type: The type of synchronization to apply for the due date field
         :type sync_type: str, optional
         """
         if jira_field_id is not unset:

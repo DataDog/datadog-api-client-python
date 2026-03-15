@@ -38,13 +38,13 @@ class SyncPropertyWithMapping(ModelNormal):
         """
         Sync property with mapping configuration
 
-        :param mapping:
+        :param mapping: Map of source values to destination values for synchronization
         :type mapping: {str: (str,)}, optional
 
-        :param name_mapping:
+        :param name_mapping: Map of source names to display names used during synchronization
         :type name_mapping: {str: (str,)}, optional
 
-        :param sync_type:
+        :param sync_type: The direction and type of synchronization for this property
         :type sync_type: str, optional
         """
         if mapping is not unset:

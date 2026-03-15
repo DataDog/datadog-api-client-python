@@ -54,7 +54,7 @@ class IntegrationOnCall(ModelNormal):
         :param enabled: Whether On-Call integration is enabled
         :type enabled: bool, optional
 
-        :param escalation_queries:
+        :param escalation_queries: List of escalation queries for routing cases to on-call responders
         :type escalation_queries: [IntegrationOnCallEscalationQueriesItems], optional
         """
         if auto_assign_on_call is not unset:

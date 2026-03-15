@@ -28,7 +28,7 @@ class SyncProperty(ModelNormal):
         """
         Sync property configuration
 
-        :param sync_type:
+        :param sync_type: The direction and type of synchronization for this property
         :type sync_type: str, optional
         """
         if sync_type is not unset:

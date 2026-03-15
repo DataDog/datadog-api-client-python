@@ -36,15 +36,15 @@ class IntegrationJiraMetadata(ModelNormal):
         **kwargs,
     ):
         """
+        Metadata for connecting a case management project to a Jira project
 
-
-        :param account_id:
+        :param account_id: The Jira account identifier
         :type account_id: str, optional
 
-        :param issue_type_id:
+        :param issue_type_id: The Jira issue type identifier to use when creating issues
         :type issue_type_id: str, optional
 
-        :param project_id:
+        :param project_id: The Jira project identifier to associate with this case project
         :type project_id: str, optional
         """
         if account_id is not unset:
