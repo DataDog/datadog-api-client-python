@@ -32,7 +32,7 @@ class CaseManagementProject(ModelNormal):
         """
         Case management project.
 
-        :param data:
+        :param data: Data object representing a case management project.
         :type data: CaseManagementProjectData
         """
         super().__init__(kwargs)

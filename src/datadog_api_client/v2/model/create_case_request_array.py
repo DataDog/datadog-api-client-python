@@ -32,7 +32,7 @@ class CreateCaseRequestArray(ModelNormal):
         """
         List of requests to create cases for security findings.
 
-        :param data:
+        :param data: Array of case creation request data objects.
         :type data: [CreateCaseRequestData]
         """
         super().__init__(kwargs)
