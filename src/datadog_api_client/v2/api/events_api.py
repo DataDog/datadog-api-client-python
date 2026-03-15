@@ -38,7 +38,7 @@ class EventsApi:
         self._create_event_endpoint = _Endpoint(
             settings={
                 "response_type": (EventCreateResponsePayload,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth"],
                 "endpoint_path": "/api/v2/events",
                 "operation_id": "create_event",
                 "http_method": "POST",

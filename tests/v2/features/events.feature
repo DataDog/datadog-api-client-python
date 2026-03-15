@@ -14,8 +14,8 @@ Feature: Events
 
   Background:
     Given a valid "apiKeyAuth" key in the system
-    And a valid "appKeyAuth" key in the system
     And an instance of "Events" API
+    And a valid "appKeyAuth" key in the system
 
   @generated @skip @team:DataDog/event-management
   Scenario: Get a list of events returns "Bad Request" response
