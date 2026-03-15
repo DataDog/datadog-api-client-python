@@ -44902,7 +44902,7 @@ components:
         Protocol (OTLP) over gRPC and HTTP.
 
 
-        **Supported pipeline types:** logs, metrics'
+        **Supported pipeline types:** logs'
       properties:
         grpc_address_key:
           description: Environment variable name containing the gRPC server address
@@ -44932,7 +44932,6 @@ components:
       type: object
       x-pipeline-types:
       - logs
-      - metrics
     ObservabilityPipelineOpentelemetrySourceType:
       default: opentelemetry
       description: The source type. The value should always be `opentelemetry`.
@@ -53816,6 +53815,7 @@ components:
             If empty or not specified, the role does not automatically inherit permissions
             from any managed role.'
           items:
+            description: Name of a managed role to inherit permissions from.
             type: string
           type: array
         user_count:
@@ -53853,6 +53853,7 @@ components:
             If empty or not specified, the role does not automatically inherit permissions
             from any managed role.'
           items:
+            description: Name of a managed role to inherit permissions from.
             type: string
           type: array
       required:
@@ -53893,6 +53894,7 @@ components:
             If empty or not specified, the role does not automatically inherit permissions
             from any managed role.'
           items:
+            description: Name of a managed role to inherit permissions from.
             type: string
           type: array
       required:
@@ -54026,6 +54028,7 @@ components:
             If empty or not specified, the role does not automatically inherit permissions
             from any managed role.'
           items:
+            description: Name of a managed role to inherit permissions from.
             type: string
           type: array
         user_count:
