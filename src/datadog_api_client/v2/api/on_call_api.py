@@ -324,6 +324,11 @@ class OnCallApi:
                     "attribute": "include",
                     "location": "query",
                 },
+                "use_policy_action": {
+                    "openapi_types": (bool,),
+                    "attribute": "use_policy_action",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -525,6 +530,11 @@ class OnCallApi:
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
+                    "location": "query",
+                },
+                "use_policy_action": {
+                    "openapi_types": (bool,),
+                    "attribute": "use_policy_action",
                     "location": "query",
                 },
                 "body": {
@@ -855,6 +865,7 @@ class OnCallApi:
         team_id: str,
         *,
         include: Union[str, UnsetType] = unset,
+        use_policy_action: Union[bool, UnsetType] = unset,
     ) -> TeamRoutingRules:
         """Get On-Call team routing rules.
 
@@ -864,6 +875,8 @@ class OnCallApi:
         :type team_id: str
         :param include: Comma-separated list of included relationships to be returned. Allowed values: ``rules`` , ``rules.policy``.
         :type include: str, optional
+        :param use_policy_action: When set to ``true`` , escalation policies are returned as actions within routing rules rather than as a separate ``policy_id`` field.
+        :type use_policy_action: bool, optional
         :rtype: TeamRoutingRules
         """
         kwargs: Dict[str, Any] = {}
@@ -871,6 +884,9 @@ class OnCallApi:
 
         if include is not unset:
             kwargs["include"] = include
+
+        if use_policy_action is not unset:
+            kwargs["use_policy_action"] = use_policy_action
 
         return self._get_on_call_team_routing_rules_endpoint.call_with_http_info(**kwargs)
 
@@ -1026,6 +1042,7 @@ class OnCallApi:
         body: TeamRoutingRulesRequest,
         *,
         include: Union[str, UnsetType] = unset,
+        use_policy_action: Union[bool, UnsetType] = unset,
     ) -> TeamRoutingRules:
         """Set On-Call team routing rules.
 
@@ -1036,6 +1053,8 @@ class OnCallApi:
         :type body: TeamRoutingRulesRequest
         :param include: Comma-separated list of included relationships to be returned. Allowed values: ``rules`` , ``rules.policy``.
         :type include: str, optional
+        :param use_policy_action: When set to ``true`` , escalation policies are returned as actions within routing rules rather than as a separate ``policy_id`` field.
+        :type use_policy_action: bool, optional
         :rtype: TeamRoutingRules
         """
         kwargs: Dict[str, Any] = {}
@@ -1043,6 +1062,9 @@ class OnCallApi:
 
         if include is not unset:
             kwargs["include"] = include
+
+        if use_policy_action is not unset:
+            kwargs["use_policy_action"] = use_policy_action
 
         kwargs["body"] = body
 

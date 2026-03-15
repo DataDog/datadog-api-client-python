@@ -29,6 +29,15 @@ class RoutingRuleAction(ModelComposed):
 
         :param tenant: The tenant ID.
         :type tenant: str
+
+        :param policy_id: The ID of the escalation policy to trigger.
+        :type policy_id: str
+
+        :param support_hours: Holds time zone information and a list of time restrictions for a routing rule.
+        :type support_hours: TimeRestrictions, optional
+
+        :param urgency: Specifies the level of urgency for a routing rule (low, high, or dynamic).
+        :type urgency: Urgency, optional
         """
         super().__init__(kwargs)
 
@@ -43,10 +52,12 @@ class RoutingRuleAction(ModelComposed):
         # loading
         from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
         from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
+        from datadog_api_client.v2.model.escalation_policy_action import EscalationPolicyAction
 
         return {
             "oneOf": [
                 SendSlackMessageAction,
                 SendTeamsMessageAction,
+                EscalationPolicyAction,
             ],
         }
