@@ -15159,6 +15159,41 @@ datadog\_api\_client.v2.model.library module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.licenses\_list\_request module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_request\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_request\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_request\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_request\_license module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_request_license
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.links module
 ------------------------------------------
 

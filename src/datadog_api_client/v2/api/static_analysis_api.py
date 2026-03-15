@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.sca_request import ScaRequest
+from datadog_api_client.v2.model.licenses_list_request import LicensesListRequest
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_response import ResolveVulnerableSymbolsResponse
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
 from datadog_api_client.v2.model.custom_ruleset_response import CustomRulesetResponse
@@ -271,6 +272,22 @@ class StaticAnalysisApi:
             },
             headers_map={
                 "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_licenses_endpoint = _Endpoint(
+            settings={
+                "response_type": (LicensesListRequest,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis-sca/licenses/list",
+                "operation_id": "get_licenses",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["*/*"],
             },
             api_client=api_client,
         )
@@ -551,6 +568,18 @@ class StaticAnalysisApi:
         kwargs["ruleset_name"] = ruleset_name
 
         return self._get_custom_ruleset_endpoint.call_with_http_info(**kwargs)
+
+    def get_licenses(
+        self,
+    ) -> LicensesListRequest:
+        """Get list of available licenses.
+
+        Returns a list of all available license identifiers and display names that can be used for filtering and categorization in SCA.
+
+        :rtype: LicensesListRequest
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_licenses_endpoint.call_with_http_info(**kwargs)
 
     def list_custom_rule_revisions(
         self,
