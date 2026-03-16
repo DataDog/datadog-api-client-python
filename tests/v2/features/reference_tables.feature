@@ -8,27 +8,6 @@ Feature: Reference Tables
     And an instance of "ReferenceTables" API
 
   @generated @skip @team:DataDog/redapl-experiences
-  Scenario: Batch rows query returns "Bad Request" response
-    Given new "BatchRowsQuery" request
-    And body with value {"data": {"attributes": {"row_ids": ["row_id_1", "row_id_2"], "table_id": "00000000-0000-0000-0000-000000000000"}, "type": "reference-tables-batch-rows-query"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/redapl-experiences
-  Scenario: Batch rows query returns "Not Found" response
-    Given new "BatchRowsQuery" request
-    And body with value {"data": {"attributes": {"row_ids": ["row_id_1", "row_id_2"], "table_id": "00000000-0000-0000-0000-000000000000"}, "type": "reference-tables-batch-rows-query"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:DataDog/redapl-experiences
-  Scenario: Batch rows query returns "Successfully retrieved rows. Some or all requested rows were found. Response includes found rows in the included section." response
-    Given new "BatchRowsQuery" request
-    And body with value {"data": {"attributes": {"row_ids": ["row_id_1", "row_id_2"], "table_id": "00000000-0000-0000-0000-000000000000"}, "type": "reference-tables-batch-rows-query"}}
-    When the request is sent
-    Then the response status is 200 Successfully retrieved rows. Some or all requested rows were found. Response includes found rows in the included section.
-
-  @generated @skip @team:DataDog/redapl-experiences
   Scenario: Create reference table returns "Bad Request" response
     Given new "CreateReferenceTable" request
     And body with value {"data": {"attributes": {"file_metadata": {"access_details": {"aws_detail": {"aws_account_id": "123456789000", "aws_bucket_name": "example-data-bucket", "file_path": "reference-tables/users.csv"}, "azure_detail": {"azure_client_id": "aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb", "azure_container_name": "reference-data", "azure_storage_account_name": "examplestorageaccount", "azure_tenant_id": "cccccccc-4444-5555-6666-dddddddddddd", "file_path": "tables/users.csv"}, "gcp_detail": {"file_path": "data/reference_tables/users.csv", "gcp_bucket_name": "example-data-bucket", "gcp_project_id": "example-gcp-project-12345", "gcp_service_account_email": "example-service@example-gcp-project-12345.iam.gserviceaccount.com"}}, "sync_enabled": false}, "schema": {"fields": [{"name": "field_1", "type": "STRING"}], "primary_keys": ["field_1"]}, "source": "LOCAL_FILE", "table_name": "table_1", "tags": ["tag_1", "tag_2"]}, "type": "reference_table"}}

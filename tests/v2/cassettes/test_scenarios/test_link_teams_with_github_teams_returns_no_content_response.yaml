@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"source":"github","type":"link"},"type":"team_sync_bulk"}}'
+    body: '{"data":{"attributes":{"selection_state":[{"external_id":{"type":"organization","value":"1"}}],"source":"github","type":"link"},"type":"team_sync_bulk"}}'
     headers:
       accept:
       - '*/*'
@@ -11,10 +11,8 @@ interactions:
   response:
     body:
       string: ''
-    headers:
-      content-type:
-      - text/plain
+    headers: {}
     status:
-      code: 200
-      message: OK
+      code: 204
+      message: No Content
 version: 1

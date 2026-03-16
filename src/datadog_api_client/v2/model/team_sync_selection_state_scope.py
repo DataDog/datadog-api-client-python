@@ -12,18 +12,20 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class BatchRowsQueryDataType(ModelSimple):
+class TeamSyncSelectionStateScope(ModelSimple):
     """
-    Resource type identifier for batch queries of reference table rows.
+    The scope of the selection. When set to `subtree`,
+        synchronization includes the referenced team or
+        organization and everything nested under it.
 
-    :param value: If omitted defaults to "reference-tables-batch-rows-query". Must be one of ["reference-tables-batch-rows-query"].
+    :param value: If omitted defaults to "subtree". Must be one of ["subtree"].
     :type value: str
     """
 
     allowed_values = {
-        "reference-tables-batch-rows-query",
+        "subtree",
     }
-    REFERENCE_TABLES_BATCH_ROWS_QUERY: ClassVar["BatchRowsQueryDataType"]
+    SUBTREE: ClassVar["TeamSyncSelectionStateScope"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +34,4 @@ class BatchRowsQueryDataType(ModelSimple):
         }
 
 
-BatchRowsQueryDataType.REFERENCE_TABLES_BATCH_ROWS_QUERY = BatchRowsQueryDataType("reference-tables-batch-rows-query")
+TeamSyncSelectionStateScope.SUBTREE = TeamSyncSelectionStateScope("subtree")
