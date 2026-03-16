@@ -3963,12 +3963,6 @@
       "type": "idempotent"
     }
   },
-  "BatchRowsQuery": {
-    "tag": "Reference Tables",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "ListTables": {
     "tag": "Reference Tables",
     "undo": {

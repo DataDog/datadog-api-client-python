@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
+    from datadog_api_client.v2.model.batch_delete_rows_request_data import BatchDeleteRowsRequestData
 
 
 class BatchDeleteRowsRequestArray(ModelNormal):
@@ -24,22 +24,22 @@ class BatchDeleteRowsRequestArray(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
+        from datadog_api_client.v2.model.batch_delete_rows_request_data import BatchDeleteRowsRequestData
 
         return {
-            "data": ([TableRowResourceIdentifier],),
+            "data": ([BatchDeleteRowsRequestData],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: List[TableRowResourceIdentifier], **kwargs):
+    def __init__(self_, data: List[BatchDeleteRowsRequestData], **kwargs):
         """
         The request body for deleting multiple rows from a reference table.
 
         :param data:
-        :type data: [TableRowResourceIdentifier]
+        :type data: [BatchDeleteRowsRequestData]
         """
         super().__init__(kwargs)
 
