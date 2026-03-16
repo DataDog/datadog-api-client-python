@@ -62,6 +62,7 @@ Feature: Deployment Gates
     And body with value {"data": {"attributes": {"dry_run": false, "name": "My deployment rule", "options": {"excluded_resources": []}, "type": "faulty_deployment_detection"}, "type": "deployment_rule"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.options.excluded_resources" is equal to []
 
   @team:DataDog/ci-app-backend
   Scenario: Delete deployment gate returns "Bad Request" response
@@ -206,6 +207,7 @@ Feature: Deployment Gates
     And request contains "id" parameter from "deployment_rule.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.options.excluded_resources" is equal to []
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get rules for a deployment gate returns "Bad request." response
@@ -304,3 +306,4 @@ Feature: Deployment Gates
     And body with value {"data": {"attributes": {"dry_run": false, "name": "Updated deployment rule", "options": {"excluded_resources": []}}, "type": "deployment_rule"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.options.excluded_resources" is equal to []
