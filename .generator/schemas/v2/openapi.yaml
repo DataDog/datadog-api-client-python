@@ -3130,6 +3130,7 @@ components:
         tags:
           description: The tags of the connection group.
           items:
+            description: A tag for the connection group.
             type: string
           type: array
       type: object
@@ -8036,6 +8037,7 @@ components:
           description: List of primary keys identifying items to delete from datastore.
             Up to 100 items can be deleted in a single request.
           items:
+            description: A primary key identifying a datastore item to delete.
             type: string
           maxItems: 100
           type: array
@@ -44902,7 +44904,7 @@ components:
         Protocol (OTLP) over gRPC and HTTP.
 
 
-        **Supported pipeline types:** logs, metrics'
+        **Supported pipeline types:** logs'
       properties:
         grpc_address_key:
           description: Environment variable name containing the gRPC server address
@@ -44932,7 +44934,6 @@ components:
       type: object
       x-pipeline-types:
       - logs
-      - metrics
     ObservabilityPipelineOpentelemetrySourceType:
       default: opentelemetry
       description: The source type. The value should always be `opentelemetry`.
