@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
 
 
-class TableRowResourceIdentifier(ModelNormal):
+class BatchDeleteRowsRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
@@ -32,7 +32,7 @@ class TableRowResourceIdentifier(ModelNormal):
 
     def __init__(self_, id: str, type: TableRowResourceDataType, **kwargs):
         """
-        Row resource containing a single row identifier.
+        Row resource containing a single row identifier for deletion.
 
         :param id:
         :type id: str

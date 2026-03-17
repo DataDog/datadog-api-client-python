@@ -10,16 +10,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-class DeploymentRulesOptions(ModelComposed):
+class DeploymentRulesOptionsResponse(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Options for deployment rule requests representing either faulty deployment detection or monitor options.
+        Options returned in deployment rule responses representing either faulty deployment detection or monitor options. Faulty deployment detection responses always include ``excluded_resources`` , making the two variants unambiguous.
 
         :param duration: The duration for faulty deployment detection.
         :type duration: int, optional
 
         :param excluded_resources: Resources to exclude from faulty deployment detection.
-        :type excluded_resources: [str], optional
+        :type excluded_resources: [str]
 
         :param query: Monitors that match this query are evaluated.
         :type query: str
@@ -35,14 +35,14 @@ class DeploymentRulesOptions(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection import (
-            DeploymentRuleOptionsFaultyDeploymentDetection,
+        from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detection_response import (
+            DeploymentRuleOptionsFaultyDeploymentDetectionResponse,
         )
         from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
 
         return {
             "oneOf": [
-                DeploymentRuleOptionsFaultyDeploymentDetection,
+                DeploymentRuleOptionsFaultyDeploymentDetectionResponse,
                 DeploymentRuleOptionsMonitor,
             ],
         }
