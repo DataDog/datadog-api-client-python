@@ -6209,6 +6209,53 @@
       "type": "safe"
     }
   },
+  "ListWebIntegrationAccounts": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWebIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "operationId": "DeleteWebIntegrationAccount",
+      "parameters": [
+        {
+          "name": "integration_name",
+          "source": "integration_name"
+        },
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetWebIntegrationAccountSchema": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteWebIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWebIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWebIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateWorkflow": {
     "tag": "Workflow Automation",
     "undo": {

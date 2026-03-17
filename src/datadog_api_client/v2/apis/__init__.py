@@ -46,6 +46,7 @@ from datadog_api_client.v2.api.ip_allowlist_api import IPAllowlistApi
 from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
 from datadog_api_client.v2.api.incident_teams_api import IncidentTeamsApi
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
+from datadog_api_client.v2.api.integration_accounts_api import IntegrationAccountsApi
 from datadog_api_client.v2.api.integrations_api import IntegrationsApi
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
@@ -152,6 +153,7 @@ __all__ = [
     "IncidentServicesApi",
     "IncidentTeamsApi",
     "IncidentsApi",
+    "IntegrationAccountsApi",
     "IntegrationsApi",
     "JiraIntegrationApi",
     "KeyManagementApi",
