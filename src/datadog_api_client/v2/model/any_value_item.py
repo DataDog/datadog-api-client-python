@@ -12,7 +12,9 @@ from datadog_api_client.model_utils import (
 
 class AnyValueItem(ModelComposed):
     def __init__(self, **kwargs):
-        """ """
+        """
+        A single item in an array of arbitrary values, which can be a string, number, object, or boolean.
+        """
         super().__init__(kwargs)
 
     @cached_property
