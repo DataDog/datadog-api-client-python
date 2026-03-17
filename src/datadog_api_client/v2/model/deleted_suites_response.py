@@ -32,9 +32,9 @@ class DeletedSuitesResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[DeletedSuiteResponseData], UnsetType] = unset, **kwargs):
         """
+        Response containing the list of deleted Synthetic test suites.
 
-
-        :param data:
+        :param data: List of deleted Synthetic suite data objects.
         :type data: [DeletedSuiteResponseData], optional
         """
         if data is not unset:

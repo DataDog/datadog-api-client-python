@@ -44,10 +44,10 @@ class SyntheticsSuiteSearchResponseDataAttributes(ModelNormal):
         """
         Synthetics suite search response data attributes
 
-        :param suites:
+        :param suites: List of Synthetic suites matching the search query.
         :type suites: [SyntheticsSuite], optional
 
-        :param total:
+        :param total: Total number of Synthetic suites matching the search query.
         :type total: int, optional
         """
         if suites is not unset:

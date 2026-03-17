@@ -46,15 +46,15 @@ class DeletedTestsRequestDelete(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a bulk delete Synthetic tests request.
 
-
-        :param attributes:
+        :param attributes: Attributes for a bulk delete Synthetic tests request.
         :type attributes: DeletedTestsRequestDeleteAttributes
 
-        :param id:
+        :param id: An optional identifier for the delete request.
         :type id: str, optional
 
-        :param type:
+        :param type: Type for the bulk delete Synthetic tests request, ``delete_tests_request``.
         :type type: DeletedTestsRequestType, optional
         """
         if id is not unset:

@@ -44,15 +44,15 @@ class DeletedTestResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a deleted Synthetic test.
 
-
-        :param attributes:
+        :param attributes: Attributes of a deleted Synthetic test, including deletion timestamp and public ID.
         :type attributes: DeletedTestResponseDataAttributes, optional
 
-        :param id:
+        :param id: The public ID of the deleted Synthetic test.
         :type id: str, optional
 
-        :param type:
+        :param type: Type for the bulk delete Synthetic tests response, ``delete_tests``.
         :type type: DeletedTestsResponseType, optional
         """
         if attributes is not unset:
