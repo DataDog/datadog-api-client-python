@@ -73,6 +73,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param storage_class: S3 storage class.
         :type storage_class: ObservabilityPipelineAmazonS3DestinationStorageClass
 
+        :param batch_settings: Event batching settings
+        :type batch_settings: ObservabilityPipelineAmazonS3GenericBatchSettings, optional
+
         :param custom_source_name: Custom source name for the logs in Security Lake.
         :type custom_source_name: str
 
@@ -223,6 +226,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
             ObservabilityPipelineAmazonS3Destination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination import (
+            ObservabilityPipelineAmazonS3GenericDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination import (
             ObservabilityPipelineAmazonSecurityLakeDestination,
         )
@@ -285,6 +291,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineHttpClientDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
                 ObservabilityPipelineAmazonS3Destination,
+                ObservabilityPipelineAmazonS3GenericDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 AzureStorageDestination,
                 ObservabilityPipelineCloudPremDestination,

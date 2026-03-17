@@ -35,6 +35,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
         ObservabilityPipelineAmazonS3Destination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination import (
+        ObservabilityPipelineAmazonS3GenericDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination import (
         ObservabilityPipelineAmazonSecurityLakeDestination,
     )
@@ -172,6 +175,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineHttpClientDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
                 ObservabilityPipelineAmazonS3Destination,
+                ObservabilityPipelineAmazonS3GenericDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 AzureStorageDestination,
                 ObservabilityPipelineCloudPremDestination,
