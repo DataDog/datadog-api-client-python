@@ -333,6 +333,13 @@ datadog\_api\_client.v2.api.incidents\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.integration\_accounts\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.integration_accounts_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.integrations\_api module
 ----------------------------------------------------
 
