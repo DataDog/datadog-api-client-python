@@ -11,8 +11,6 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
-from datadog_api_client.v2.model.batch_rows_query_response import BatchRowsQueryResponse
-from datadog_api_client.v2.model.batch_rows_query_request import BatchRowsQueryRequest
 from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
 from datadog_api_client.v2.model.reference_table_sort_type import ReferenceTableSortType
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
@@ -34,26 +32,6 @@ class ReferenceTablesApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
-
-        self._batch_rows_query_endpoint = _Endpoint(
-            settings={
-                "response_type": (BatchRowsQueryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/reference-tables/queries/batch-rows",
-                "operation_id": "batch_rows_query",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (BatchRowsQueryRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
 
         self._create_reference_table_endpoint = _Endpoint(
             settings={
@@ -302,22 +280,6 @@ class ReferenceTablesApi:
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
-
-    def batch_rows_query(
-        self,
-        body: BatchRowsQueryRequest,
-    ) -> BatchRowsQueryResponse:
-        """Batch rows query.
-
-        Batch query reference table rows by their primary key values.  Returns only found rows in the included array.
-
-        :type body: BatchRowsQueryRequest
-        :rtype: BatchRowsQueryResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._batch_rows_query_endpoint.call_with_http_info(**kwargs)
 
     def create_reference_table(
         self,
