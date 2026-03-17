@@ -51,7 +51,7 @@ class TimeseriesResponseSeries(ModelNormal):
         **kwargs,
     ):
         """
-
+        A single series in a timeseries query response, containing the query index, unit information, and group tags.
 
         :param group_tags: List of tags that apply to a single response value.
         :type group_tags: GroupTags, optional
