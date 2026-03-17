@@ -55,18 +55,18 @@ class FacetInfoRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for the facet info request, specifying which facet to query and optional filters to apply.
 
-
-        :param facet_id:
+        :param facet_id: The identifier of the facet attribute to retrieve value information for.
         :type facet_id: str
 
-        :param limit:
+        :param limit: Maximum number of facet values to return in the response.
         :type limit: int
 
-        :param search:
+        :param search: Query-based search configuration for filtering the audience context when retrieving facet values.
         :type search: FacetInfoRequestDataAttributesSearch, optional
 
-        :param term_search:
+        :param term_search: Term-level search configuration for filtering facet values by an exact or partial term match.
         :type term_search: FacetInfoRequestDataAttributesTermSearch, optional
         """
         if search is not unset:

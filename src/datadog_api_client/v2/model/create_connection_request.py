@@ -32,9 +32,9 @@ class CreateConnectionRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateConnectionRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for creating a new data source connection for an entity.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for creating a new connection.
         :type data: CreateConnectionRequestData, optional
         """
         if data is not unset:

@@ -42,21 +42,21 @@ class UpdateConnectionRequestDataAttributesFieldsToUpdateItems(ModelNormal):
         **kwargs,
     ):
         """
+        Specification for updating an existing field in a connection, including which field to modify and the new values.
 
-
-        :param field_id:
+        :param field_id: The identifier of the existing field to update.
         :type field_id: str
 
-        :param updated_description:
+        :param updated_description: The new description to set for the field.
         :type updated_description: str, optional
 
-        :param updated_display_name:
+        :param updated_display_name: The new human-readable display name to set for the field.
         :type updated_display_name: str, optional
 
-        :param updated_field_id:
+        :param updated_field_id: The new identifier to assign to the field, if renaming it.
         :type updated_field_id: str, optional
 
-        :param updated_groups:
+        :param updated_groups: The updated list of group labels to associate with the field.
         :type updated_groups: [str], optional
         """
         if updated_description is not unset:

@@ -28,12 +28,12 @@ class ListConnectionsResponseDataAttributesConnectionsItemsJoin(ModelNormal):
 
     def __init__(self_, attribute: Union[str, UnsetType] = unset, type: Union[str, UnsetType] = unset, **kwargs):
         """
+        The join configuration describing how the data source is linked to the entity.
 
-
-        :param attribute:
+        :param attribute: The entity attribute used as the join key to link records from the data source.
         :type attribute: str, optional
 
-        :param type:
+        :param type: The type of join key used (for example, email or user_id).
         :type type: str, optional
         """
         if attribute is not unset:
