@@ -28,14 +28,12 @@ class FlakyTestsSearchRequestAttributes(ModelNormal):
 
         return {
             "filter": (FlakyTestsSearchFilter,),
-            "include_history": (bool,),
             "page": (FlakyTestsSearchPageOptions,),
             "sort": (FlakyTestsSearchSort,),
         }
 
     attribute_map = {
         "filter": "filter",
-        "include_history": "include_history",
         "page": "page",
         "sort": "sort",
     }
@@ -43,7 +41,6 @@ class FlakyTestsSearchRequestAttributes(ModelNormal):
     def __init__(
         self_,
         filter: Union[FlakyTestsSearchFilter, UnsetType] = unset,
-        include_history: Union[bool, UnsetType] = unset,
         page: Union[FlakyTestsSearchPageOptions, UnsetType] = unset,
         sort: Union[FlakyTestsSearchSort, UnsetType] = unset,
         **kwargs,
@@ -54,11 +51,6 @@ class FlakyTestsSearchRequestAttributes(ModelNormal):
         :param filter: Search filter settings.
         :type filter: FlakyTestsSearchFilter, optional
 
-        :param include_history: Whether to include the status change history for each flaky test in the response.
-            When set to true, each test will include a ``history`` array with chronological status changes.
-            Defaults to false.
-        :type include_history: bool, optional
-
         :param page: Pagination attributes for listing flaky tests.
         :type page: FlakyTestsSearchPageOptions, optional
 
@@ -67,8 +59,6 @@ class FlakyTestsSearchRequestAttributes(ModelNormal):
         """
         if filter is not unset:
             kwargs["filter"] = filter
-        if include_history is not unset:
-            kwargs["include_history"] = include_history
         if page is not unset:
             kwargs["page"] = page
         if sort is not unset:
