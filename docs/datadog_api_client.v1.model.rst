@@ -3917,6 +3917,20 @@ datadog\_api\_client.v1.model.slo\_count\_definition module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.slo\_count\_definition\_with\_bad\_events\_formula module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_count_definition_with_bad_events_formula
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.slo\_count\_definition\_with\_total\_events\_formula module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.slo_count_definition_with_total_events_formula
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.slo\_count\_spec module
 -----------------------------------------------------
 

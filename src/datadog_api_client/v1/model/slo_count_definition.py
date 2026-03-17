@@ -3,56 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.slo_formula import SLOFormula
-    from datadog_api_client.v1.model.slo_data_source_query_definition import SLODataSourceQueryDefinition
-    from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
-        FormulaAndFunctionMetricQueryDefinition,
-    )
-
-
-class SLOCountDefinition(ModelNormal):
-    validations = {
-        "queries": {
-            "min_items": 1,
-        },
-    }
-
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v1.model.slo_formula import SLOFormula
-        from datadog_api_client.v1.model.slo_data_source_query_definition import SLODataSourceQueryDefinition
-
-        return {
-            "good_events_formula": (SLOFormula,),
-            "queries": ([SLODataSourceQueryDefinition],),
-            "total_events_formula": (SLOFormula,),
-        }
-
-    attribute_map = {
-        "good_events_formula": "good_events_formula",
-        "queries": "queries",
-        "total_events_formula": "total_events_formula",
-    }
-
-    def __init__(
-        self_,
-        good_events_formula: SLOFormula,
-        queries: List[Union[SLODataSourceQueryDefinition, FormulaAndFunctionMetricQueryDefinition]],
-        total_events_formula: SLOFormula,
-        **kwargs,
-    ):
+class SLOCountDefinition(ModelComposed):
+    def __init__(self, **kwargs):
         """
-        A count-based (metric) SLI specification, composed of three parts: the good events formula, the total events formula,
-        and the underlying queries.
+        A count-based (metric) SLI specification, composed of three parts: the good events formula,
+        the bad or total events formula, and the underlying queries.
+        Exactly one of ``total_events_formula`` or ``bad_events_formula`` must be provided.
 
         :param good_events_formula: A formula that specifies how to combine the results of multiple queries.
         :type good_events_formula: SLOFormula
@@ -62,9 +25,31 @@ class SLOCountDefinition(ModelNormal):
 
         :param total_events_formula: A formula that specifies how to combine the results of multiple queries.
         :type total_events_formula: SLOFormula
+
+        :param bad_events_formula: A formula that specifies how to combine the results of multiple queries.
+        :type bad_events_formula: SLOFormula
         """
         super().__init__(kwargs)
 
-        self_.good_events_formula = good_events_formula
-        self_.queries = queries
-        self_.total_events_formula = total_events_formula
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v1.model.slo_count_definition_with_total_events_formula import (
+            SLOCountDefinitionWithTotalEventsFormula,
+        )
+        from datadog_api_client.v1.model.slo_count_definition_with_bad_events_formula import (
+            SLOCountDefinitionWithBadEventsFormula,
+        )
+
+        return {
+            "oneOf": [
+                SLOCountDefinitionWithTotalEventsFormula,
+                SLOCountDefinitionWithBadEventsFormula,
+            ],
+        }
