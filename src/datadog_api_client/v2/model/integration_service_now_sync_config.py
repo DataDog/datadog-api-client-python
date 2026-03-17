@@ -43,12 +43,12 @@ class IntegrationServiceNowSyncConfig(ModelNormal):
         **kwargs,
     ):
         """
+        Synchronization configuration for ServiceNow integration
 
-
-        :param enabled:
+        :param enabled: Whether ServiceNow synchronization is enabled
         :type enabled: bool, optional
 
-        :param properties:
+        :param properties: Field-level synchronization properties for ServiceNow integration
         :type properties: IntegrationServiceNowSyncConfig139772721534496, optional
         """
         if enabled is not unset:
