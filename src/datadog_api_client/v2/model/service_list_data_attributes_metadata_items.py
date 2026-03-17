@@ -28,12 +28,12 @@ class ServiceListDataAttributesMetadataItems(ModelNormal):
 
     def __init__(self_, is_traced: Union[bool, UnsetType] = unset, is_usm: Union[bool, UnsetType] = unset, **kwargs):
         """
+        An object containing metadata flags for a service, indicating whether it is traced by APM or monitored via Universal Service Monitoring.
 
-
-        :param is_traced:
+        :param is_traced: Indicates whether the service is traced by APM.
         :type is_traced: bool, optional
 
-        :param is_usm:
+        :param is_usm: Indicates whether the service uses Universal Service Monitoring.
         :type is_usm: bool, optional
         """
         if is_traced is not unset:
