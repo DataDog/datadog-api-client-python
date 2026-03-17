@@ -526,18 +526,7 @@ from datadog_api_client.v2.model.azure_uc_config_post_request_attributes import 
 from datadog_api_client.v2.model.azure_uc_config_post_request_type import AzureUCConfigPostRequestType
 from datadog_api_client.v2.model.azure_uc_configs_response import AzureUCConfigsResponse
 from datadog_api_client.v2.model.batch_delete_rows_request_array import BatchDeleteRowsRequestArray
-from datadog_api_client.v2.model.batch_rows_query_data_type import BatchRowsQueryDataType
-from datadog_api_client.v2.model.batch_rows_query_request import BatchRowsQueryRequest
-from datadog_api_client.v2.model.batch_rows_query_request_data import BatchRowsQueryRequestData
-from datadog_api_client.v2.model.batch_rows_query_request_data_attributes import BatchRowsQueryRequestDataAttributes
-from datadog_api_client.v2.model.batch_rows_query_response import BatchRowsQueryResponse
-from datadog_api_client.v2.model.batch_rows_query_response_data import BatchRowsQueryResponseData
-from datadog_api_client.v2.model.batch_rows_query_response_data_relationships import (
-    BatchRowsQueryResponseDataRelationships,
-)
-from datadog_api_client.v2.model.batch_rows_query_response_data_relationships_rows import (
-    BatchRowsQueryResponseDataRelationshipsRows,
-)
+from datadog_api_client.v2.model.batch_delete_rows_request_data import BatchDeleteRowsRequestData
 from datadog_api_client.v2.model.batch_upsert_rows_request_array import BatchUpsertRowsRequestArray
 from datadog_api_client.v2.model.batch_upsert_rows_request_data import BatchUpsertRowsRequestData
 from datadog_api_client.v2.model.batch_upsert_rows_request_data_attributes import BatchUpsertRowsRequestDataAttributes
@@ -5980,7 +5969,6 @@ from datadog_api_client.v2.model.table_row_resource_array import TableRowResourc
 from datadog_api_client.v2.model.table_row_resource_data import TableRowResourceData
 from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
 from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
-from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
@@ -6105,6 +6093,11 @@ from datadog_api_client.v2.model.team_sync_bulk_type import TeamSyncBulkType
 from datadog_api_client.v2.model.team_sync_data import TeamSyncData
 from datadog_api_client.v2.model.team_sync_request import TeamSyncRequest
 from datadog_api_client.v2.model.team_sync_response import TeamSyncResponse
+from datadog_api_client.v2.model.team_sync_selection_state_external_id import TeamSyncSelectionStateExternalId
+from datadog_api_client.v2.model.team_sync_selection_state_external_id_type import TeamSyncSelectionStateExternalIdType
+from datadog_api_client.v2.model.team_sync_selection_state_item import TeamSyncSelectionStateItem
+from datadog_api_client.v2.model.team_sync_selection_state_operation import TeamSyncSelectionStateOperation
+from datadog_api_client.v2.model.team_sync_selection_state_scope import TeamSyncSelectionStateScope
 from datadog_api_client.v2.model.team_target import TeamTarget
 from datadog_api_client.v2.model.team_target_type import TeamTargetType
 from datadog_api_client.v2.model.team_type import TeamType
@@ -6857,14 +6850,7 @@ __all__ = [
     "AzureUCConfigPostRequestType",
     "AzureUCConfigsResponse",
     "BatchDeleteRowsRequestArray",
-    "BatchRowsQueryDataType",
-    "BatchRowsQueryRequest",
-    "BatchRowsQueryRequestData",
-    "BatchRowsQueryRequestDataAttributes",
-    "BatchRowsQueryResponse",
-    "BatchRowsQueryResponseData",
-    "BatchRowsQueryResponseDataRelationships",
-    "BatchRowsQueryResponseDataRelationshipsRows",
+    "BatchDeleteRowsRequestData",
     "BatchUpsertRowsRequestArray",
     "BatchUpsertRowsRequestData",
     "BatchUpsertRowsRequestDataAttributes",
@@ -10665,7 +10651,6 @@ __all__ = [
     "TableRowResourceData",
     "TableRowResourceDataAttributes",
     "TableRowResourceDataType",
-    "TableRowResourceIdentifier",
     "TagsEventAttribute",
     "Team",
     "TeamAttributes",
@@ -10768,6 +10753,11 @@ __all__ = [
     "TeamSyncData",
     "TeamSyncRequest",
     "TeamSyncResponse",
+    "TeamSyncSelectionStateExternalId",
+    "TeamSyncSelectionStateExternalIdType",
+    "TeamSyncSelectionStateItem",
+    "TeamSyncSelectionStateOperation",
+    "TeamSyncSelectionStateScope",
     "TeamTarget",
     "TeamTargetType",
     "TeamType",

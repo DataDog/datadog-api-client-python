@@ -7475,89 +7475,23 @@ components:
       properties:
         data:
           items:
-            $ref: '#/components/schemas/TableRowResourceIdentifier'
+            $ref: '#/components/schemas/BatchDeleteRowsRequestData'
           maxItems: 200
           type: array
       required:
       - data
       type: object
-    BatchRowsQueryDataType:
-      default: reference-tables-batch-rows-query
-      description: Resource type identifier for batch queries of reference table rows.
-      enum:
-      - reference-tables-batch-rows-query
-      example: reference-tables-batch-rows-query
-      type: string
-      x-enum-varnames:
-      - REFERENCE_TABLES_BATCH_ROWS_QUERY
-    BatchRowsQueryRequest:
-      properties:
-        data:
-          $ref: '#/components/schemas/BatchRowsQueryRequestData'
-      type: object
-    BatchRowsQueryRequestData:
-      properties:
-        attributes:
-          $ref: '#/components/schemas/BatchRowsQueryRequestDataAttributes'
-        type:
-          $ref: '#/components/schemas/BatchRowsQueryDataType'
-      required:
-      - type
-      type: object
-    BatchRowsQueryRequestDataAttributes:
-      properties:
-        row_ids:
-          example:
-          - row_id_1
-          - row_id_2
-          items:
-            type: string
-          type: array
-        table_id:
-          example: 00000000-0000-0000-0000-000000000000
-          type: string
-      required:
-      - row_ids
-      - table_id
-      type: object
-    BatchRowsQueryResponse:
-      example:
-        data:
-          id: 00000000-0000-0000-0000-000000000000
-          relationships:
-            rows:
-              data:
-              - id: row_id_1
-                type: row
-              - id: row_id_2
-                type: row
-          type: reference-tables-batch-rows-query
-      properties:
-        data:
-          $ref: '#/components/schemas/BatchRowsQueryResponseData'
-      type: object
-    BatchRowsQueryResponseData:
+    BatchDeleteRowsRequestData:
+      description: Row resource containing a single row identifier for deletion.
       properties:
         id:
+          example: primary_key_value
           type: string
-        relationships:
-          $ref: '#/components/schemas/BatchRowsQueryResponseDataRelationships'
         type:
-          $ref: '#/components/schemas/BatchRowsQueryDataType'
+          $ref: '#/components/schemas/TableRowResourceDataType'
       required:
       - type
-      type: object
-    BatchRowsQueryResponseDataRelationships:
-      properties:
-        rows:
-          $ref: '#/components/schemas/BatchRowsQueryResponseDataRelationshipsRows'
-      type: object
-    BatchRowsQueryResponseDataRelationshipsRows:
-      properties:
-        data:
-          items:
-            $ref: '#/components/schemas/TableRowResourceIdentifier'
-          type: array
+      - id
       type: object
     BatchUpsertRowsRequestArray:
       description: The request body for creating or updating multiple rows into a
@@ -67019,18 +66953,6 @@ components:
       type: string
       x-enum-varnames:
       - ROW
-    TableRowResourceIdentifier:
-      description: Row resource containing a single row identifier.
-      properties:
-        id:
-          example: primary_key_value
-          type: string
-        type:
-          $ref: '#/components/schemas/TableRowResourceDataType'
-      required:
-      - type
-      - id
-      type: object
     TagsEventAttribute:
       description: Array of tags associated with your event.
       example:
@@ -68309,6 +68231,8 @@ components:
       properties:
         frequency:
           $ref: '#/components/schemas/TeamSyncAttributesFrequency'
+        selection_state:
+          $ref: '#/components/schemas/TeamSyncAttributesSelectionState'
         source:
           $ref: '#/components/schemas/TeamSyncAttributesSource'
         sync_membership:
@@ -68332,6 +68256,15 @@ components:
       - ONCE
       - CONTINUOUSLY
       - PAUSED
+    TeamSyncAttributesSelectionState:
+      description: 'Specifies which teams or organizations to sync. When
+
+        provided, synchronization is limited to the specified
+
+        items and their subtrees.'
+      items:
+        $ref: '#/components/schemas/TeamSyncSelectionStateItem'
+      type: array
     TeamSyncAttributesSource:
       description: The external source platform for team synchronization. Only "github"
         is supported.
@@ -68342,6 +68275,7 @@ components:
       x-enum-varnames:
       - GITHUB
     TeamSyncAttributesSyncMembership:
+      default: false
       description: Whether to sync members from the external team to the Datadog team.
         Defaults to `false` when not provided.
       example: true
@@ -68404,6 +68338,78 @@ components:
             $ref: '#/components/schemas/TeamSyncData'
           type: array
       type: object
+    TeamSyncSelectionStateExternalId:
+      description: The external identifier for a team or organization in the source
+        platform.
+      properties:
+        type:
+          $ref: '#/components/schemas/TeamSyncSelectionStateExternalIdType'
+        value:
+          $ref: '#/components/schemas/TeamSyncSelectionStateExternalIdValue'
+      required:
+      - type
+      - value
+      type: object
+    TeamSyncSelectionStateExternalIdType:
+      description: 'The type of external identifier for the selection state item.
+
+        For GitHub synchronization, the allowed values are `team` and
+
+        `organization`.'
+      enum:
+      - team
+      - organization
+      example: team
+      type: string
+      x-enum-varnames:
+      - TEAM
+      - ORGANIZATION
+    TeamSyncSelectionStateExternalIdValue:
+      description: 'The external identifier value from the source
+
+        platform. For GitHub, this is the string
+
+        representation of a GitHub organization ID or team
+
+        ID.'
+      example: '1'
+      type: string
+    TeamSyncSelectionStateItem:
+      description: Identifies a team or organization hierarchy to include in synchronization.
+      properties:
+        external_id:
+          $ref: '#/components/schemas/TeamSyncSelectionStateExternalId'
+        operation:
+          $ref: '#/components/schemas/TeamSyncSelectionStateOperation'
+        scope:
+          $ref: '#/components/schemas/TeamSyncSelectionStateScope'
+      required:
+      - external_id
+      type: object
+    TeamSyncSelectionStateOperation:
+      description: 'The operation to perform on the selected hierarchy.
+
+        When set to `include`, synchronization covers the
+
+        referenced teams or organizations.'
+      enum:
+      - include
+      example: include
+      type: string
+      x-enum-varnames:
+      - INCLUDE
+    TeamSyncSelectionStateScope:
+      description: 'The scope of the selection. When set to `subtree`,
+
+        synchronization includes the referenced team or
+
+        organization and everything nested under it.'
+      enum:
+      - subtree
+      example: subtree
+      type: string
+      x-enum-varnames:
+      - SUBTREE
     TeamTarget:
       description: Represents a team target for an escalation policy step, including
         the team's ID and resource type.
@@ -96466,57 +96472,6 @@ paths:
         operator: OR
         permissions:
         - timeseries_query
-  /api/v2/reference-tables/queries/batch-rows:
-    post:
-      description: Batch query reference table rows by their primary key values.  Returns
-        only found rows in the included array.
-      operationId: BatchRowsQuery
-      requestBody:
-        content:
-          application/json:
-            examples:
-              happy_path:
-                summary: Batch query reference table rows by their primary key values.
-                value:
-                  data:
-                    attributes:
-                      row_ids:
-                      - row_id_1
-                      - row_id_2
-                      table_id: 00000000-0000-0000-0000-000000000000
-                    type: reference-tables-batch-rows-query
-            schema:
-              $ref: '#/components/schemas/BatchRowsQueryRequest'
-        required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BatchRowsQueryResponse'
-          description: Successfully retrieved rows. Some or all requested rows were
-            found. Response includes found rows in the included section.
-        '400':
-          $ref: '#/components/responses/BadRequestResponse'
-        '403':
-          $ref: '#/components/responses/ForbiddenResponse'
-        '404':
-          $ref: '#/components/responses/NotFoundResponse'
-        '429':
-          $ref: '#/components/responses/TooManyRequestsResponse'
-        '500':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: Internal Server Error
-      security:
-      - apiKeyAuth: []
-        appKeyAuth: []
-      - AuthZ: []
-      summary: Batch rows query
-      tags:
-      - Reference Tables
   /api/v2/reference-tables/tables:
     get:
       description: List all reference tables in this organization.
@@ -108064,12 +108019,6 @@ paths:
           description: OK
         '403':
           $ref: '#/components/responses/ForbiddenResponse'
-        '404':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIErrorResponse'
-          description: Team sync configurations not found
         '429':
           $ref: '#/components/responses/TooManyRequestsResponse'
       security:
@@ -108085,8 +108034,8 @@ paths:
         permissions:
         - teams_read
     post:
-      description: 'This endpoint attempts to link your existing Datadog teams with
-        GitHub teams by matching their names.
+      description: 'This endpoint configures synchronization between your existing
+        Datadog teams and GitHub teams by matching their names.
 
         It evaluates all current Datadog teams and compares them against teams in
         the GitHub organization
@@ -108099,6 +108048,13 @@ paths:
 
         This operation is read-only on the GitHub side, no teams will be modified
         or created.
+
+
+        Optionally, provide `selection_state` to limit synchronization
+
+        to specific teams or organizations and their subtrees, instead
+
+        of syncing all teams.
 
 
         [A GitHub organization must be connected to your Datadog account](https://docs.datadoghq.com/integrations/github/),
@@ -108122,6 +108078,8 @@ paths:
       responses:
         '200':
           description: OK
+        '204':
+          description: No Content
         '403':
           $ref: '#/components/responses/ForbiddenResponse'
         '429':
