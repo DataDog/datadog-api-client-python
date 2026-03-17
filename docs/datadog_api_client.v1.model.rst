@@ -613,6 +613,13 @@ datadog\_api\_client.v1.model.dashboard\_summary\_definition module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.dashboard\_tab module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_tab
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.dashboard\_template\_variable module
 ------------------------------------------------------------------
 
