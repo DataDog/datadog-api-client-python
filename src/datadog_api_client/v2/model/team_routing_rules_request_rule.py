@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.urgency import Urgency
     from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
     from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
+    from datadog_api_client.v2.model.escalation_policy_action import EscalationPolicyAction
 
 
 class TeamRoutingRulesRequestRule(ModelNormal):
@@ -47,7 +48,8 @@ class TeamRoutingRulesRequestRule(ModelNormal):
     def __init__(
         self_,
         actions: Union[
-            List[Union[RoutingRuleAction, SendSlackMessageAction, SendTeamsMessageAction]], UnsetType
+            List[Union[RoutingRuleAction, SendSlackMessageAction, SendTeamsMessageAction, EscalationPolicyAction]],
+            UnsetType,
         ] = unset,
         policy_id: Union[str, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
