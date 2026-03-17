@@ -15620,6 +15620,7 @@ components:
         tags:
           description: Tags to help categorize or filter the page.
           items:
+            description: A tag for categorizing or filtering the page.
             type: string
           type: array
         target:
@@ -36847,6 +36848,7 @@ components:
       description: Response type for listing notification channels for a user
       properties:
         data:
+          description: Array of notification channel data objects.
           items:
             $ref: '#/components/schemas/NotificationChannelData'
           type: array
@@ -36855,10 +36857,12 @@ components:
       description: Response type for listing notification rules for a user
       properties:
         data:
+          description: Array of notification rule data objects.
           items:
             $ref: '#/components/schemas/OnCallNotificationRuleData'
           type: array
         included:
+          description: Array of related resources included in the response.
           items:
             $ref: '#/components/schemas/OnCallNotificationRulesIncluded'
           type: array
@@ -44902,7 +44906,7 @@ components:
         Protocol (OTLP) over gRPC and HTTP.
 
 
-        **Supported pipeline types:** logs, metrics'
+        **Supported pipeline types:** logs'
       properties:
         grpc_address_key:
           description: Environment variable name containing the gRPC server address
@@ -44932,7 +44936,6 @@ components:
       type: object
       x-pipeline-types:
       - logs
-      - metrics
     ObservabilityPipelineOpentelemetrySourceType:
       default: opentelemetry
       description: The source type. The value should always be `opentelemetry`.
@@ -47220,6 +47223,7 @@ components:
         data:
           $ref: '#/components/schemas/OnCallNotificationRuleData'
         included:
+          description: Array of related resources included in the response.
           items:
             $ref: '#/components/schemas/OnCallNotificationRulesIncluded'
           type: array

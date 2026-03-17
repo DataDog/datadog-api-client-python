@@ -47,7 +47,7 @@ class OnCallNotificationRule(ModelNormal):
         :param data: Data for an on-call notification rule
         :type data: OnCallNotificationRuleData
 
-        :param included:
+        :param included: Array of related resources included in the response.
         :type included: [OnCallNotificationRulesIncluded], optional
         """
         if included is not unset:

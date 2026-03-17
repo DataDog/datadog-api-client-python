@@ -44,10 +44,10 @@ class ListOnCallNotificationRulesResponse(ModelNormal):
         """
         Response type for listing notification rules for a user
 
-        :param data:
+        :param data: Array of notification rule data objects.
         :type data: [OnCallNotificationRuleData], optional
 
-        :param included:
+        :param included: Array of related resources included in the response.
         :type included: [OnCallNotificationRulesIncluded], optional
         """
         if data is not unset:
