@@ -69,16 +69,16 @@ class StatusPagesComponentDataRelationships(ModelNormal):
         """
         The relationships of a component.
 
-        :param created_by_user:
+        :param created_by_user: The Datadog user who created the component.
         :type created_by_user: StatusPagesComponentDataRelationshipsCreatedByUser, optional
 
-        :param group:
+        :param group: The group the component belongs to.
         :type group: StatusPagesComponentDataRelationshipsGroup, optional
 
-        :param last_modified_by_user:
+        :param last_modified_by_user: The Datadog user who last modified the component.
         :type last_modified_by_user: StatusPagesComponentDataRelationshipsLastModifiedByUser, optional
 
-        :param status_page:
+        :param status_page: The status page the component belongs to.
         :type status_page: StatusPagesComponentDataRelationshipsStatusPage, optional
         """
         if created_by_user is not unset:

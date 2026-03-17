@@ -36,7 +36,7 @@ class StatusPagesComponentGroupRelationshipsCreatedByUser(ModelNormal):
         """
         The Datadog user who created the component group.
 
-        :param data:
+        :param data: The data object identifying the Datadog user who created the component group.
         :type data: StatusPagesComponentGroupRelationshipsCreatedByUserData
         """
         super().__init__(kwargs)

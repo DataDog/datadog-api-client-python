@@ -41,7 +41,7 @@ class PatchStatusPageRequestData(ModelNormal):
 
     def __init__(self_, attributes: PatchStatusPageRequestDataAttributes, id: UUID, type: StatusPageDataType, **kwargs):
         """
-
+        The data object for updating a status page.
 
         :param attributes: The supported attributes for updating a status page.
         :type attributes: PatchStatusPageRequestDataAttributes

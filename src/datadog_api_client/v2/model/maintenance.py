@@ -43,9 +43,9 @@ class Maintenance(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a single maintenance.
 
-
-        :param data:
+        :param data: The data object for a maintenance.
         :type data: MaintenanceData, optional
 
         :param included: The included related resources of a maintenance. Client must explicitly request these resources by name in the ``include`` query parameter.

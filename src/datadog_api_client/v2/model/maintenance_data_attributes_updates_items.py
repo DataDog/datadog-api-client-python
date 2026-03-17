@@ -71,7 +71,7 @@ class MaintenanceDataAttributesUpdatesItems(ModelNormal):
         **kwargs,
     ):
         """
-
+        A status update recorded during a maintenance.
 
         :param components_affected: The components affected at the time of the update.
         :type components_affected: [MaintenanceDataAttributesUpdatesItemsComponentsAffectedItems], optional

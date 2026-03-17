@@ -34,9 +34,9 @@ class StatusPageDataRelationshipsCreatedByUser(ModelNormal):
 
     def __init__(self_, data: StatusPageDataRelationshipsCreatedByUserData, **kwargs):
         """
+        The Datadog user who created the status page.
 
-
-        :param data:
+        :param data: The data object identifying the Datadog user who created the status page.
         :type data: StatusPageDataRelationshipsCreatedByUserData
         """
         super().__init__(kwargs)

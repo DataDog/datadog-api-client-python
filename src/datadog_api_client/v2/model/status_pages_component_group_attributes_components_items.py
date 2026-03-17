@@ -63,7 +63,7 @@ class StatusPagesComponentGroupAttributesComponentsItems(ModelNormal):
         **kwargs,
     ):
         """
-
+        A component within a component group.
 
         :param id: The ID of the grouped component.
         :type id: UUID, optional

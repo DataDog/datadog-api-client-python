@@ -60,13 +60,13 @@ class DegradationDataRelationships(ModelNormal):
         """
         The relationships of a degradation.
 
-        :param created_by_user:
+        :param created_by_user: The Datadog user who created the degradation.
         :type created_by_user: DegradationDataRelationshipsCreatedByUser, optional
 
-        :param last_modified_by_user:
+        :param last_modified_by_user: The Datadog user who last modified the degradation.
         :type last_modified_by_user: DegradationDataRelationshipsLastModifiedByUser, optional
 
-        :param status_page:
+        :param status_page: The status page the degradation belongs to.
         :type status_page: DegradationDataRelationshipsStatusPage, optional
         """
         if created_by_user is not unset:

@@ -60,13 +60,13 @@ class MaintenanceDataRelationships(ModelNormal):
         """
         The relationships of a maintenance.
 
-        :param created_by_user:
+        :param created_by_user: The Datadog user who created the maintenance.
         :type created_by_user: MaintenanceDataRelationshipsCreatedByUser, optional
 
-        :param last_modified_by_user:
+        :param last_modified_by_user: The Datadog user who last modified the maintenance.
         :type last_modified_by_user: MaintenanceDataRelationshipsLastModifiedByUser, optional
 
-        :param status_page:
+        :param status_page: The status page the maintenance belongs to.
         :type status_page: MaintenanceDataRelationshipsStatusPage, optional
         """
         if created_by_user is not unset:

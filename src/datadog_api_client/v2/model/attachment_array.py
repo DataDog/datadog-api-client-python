@@ -44,10 +44,10 @@ class AttachmentArray(ModelNormal):
         """
         A list of incident attachments.
 
-        :param data:
+        :param data: An array of attachment data objects.
         :type data: [AttachmentData]
 
-        :param included:
+        :param included: A list of related objects included in the response.
         :type included: [AttachmentIncluded], optional
         """
         if included is not unset:

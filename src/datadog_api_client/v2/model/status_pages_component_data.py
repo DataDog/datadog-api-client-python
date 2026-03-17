@@ -56,7 +56,7 @@ class StatusPagesComponentData(ModelNormal):
         **kwargs,
     ):
         """
-
+        The data object for a component.
 
         :param attributes: The attributes of a component.
         :type attributes: StatusPagesComponentDataAttributes, optional

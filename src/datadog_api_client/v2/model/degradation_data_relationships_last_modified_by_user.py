@@ -34,9 +34,9 @@ class DegradationDataRelationshipsLastModifiedByUser(ModelNormal):
 
     def __init__(self_, data: DegradationDataRelationshipsLastModifiedByUserData, **kwargs):
         """
+        The Datadog user who last modified the degradation.
 
-
-        :param data:
+        :param data: The data object identifying the Datadog user who last modified the degradation.
         :type data: DegradationDataRelationshipsLastModifiedByUserData
         """
         super().__init__(kwargs)

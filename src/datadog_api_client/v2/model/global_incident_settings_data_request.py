@@ -45,7 +45,7 @@ class GlobalIncidentSettingsDataRequest(ModelNormal):
         **kwargs,
     ):
         """
-
+        Data object in the global incident settings request.
 
         :param attributes: Global incident settings attributes
         :type attributes: GlobalIncidentSettingsAttributesRequest, optional

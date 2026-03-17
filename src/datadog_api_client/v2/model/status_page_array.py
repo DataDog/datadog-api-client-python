@@ -50,9 +50,9 @@ class StatusPageArray(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a list of status pages.
 
-
-        :param data:
+        :param data: A list of status page data objects.
         :type data: [StatusPageData]
 
         :param included: The included related resources of a status page. Client must explicitly request these resources by name in the ``include`` query parameter.

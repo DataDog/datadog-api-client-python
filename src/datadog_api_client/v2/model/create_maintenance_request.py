@@ -32,9 +32,9 @@ class CreateMaintenanceRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateMaintenanceRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for creating a maintenance.
 
-
-        :param data:
+        :param data: The data object for creating a maintenance.
         :type data: CreateMaintenanceRequestData, optional
         """
         if data is not unset:

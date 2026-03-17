@@ -40,7 +40,7 @@ class CreateComponentRequestDataAttributesComponentsItems(ModelNormal):
         self_, name: str, position: int, type: StatusPagesComponentGroupAttributesComponentsItemsType, **kwargs
     ):
         """
-
+        A component to be created within a group.
 
         :param name: The name of the grouped component.
         :type name: str

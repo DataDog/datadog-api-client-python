@@ -33,7 +33,7 @@ class StatusPagesComponentDataRelationshipsStatusPageData(ModelNormal):
 
     def __init__(self_, id: UUID, type: StatusPageDataType, **kwargs):
         """
-
+        The data object identifying the status page the component belongs to.
 
         :param id: The ID of the status page the component belongs to.
         :type id: UUID

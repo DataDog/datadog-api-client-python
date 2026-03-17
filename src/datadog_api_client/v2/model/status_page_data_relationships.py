@@ -51,10 +51,10 @@ class StatusPageDataRelationships(ModelNormal):
         """
         The relationships of a status page.
 
-        :param created_by_user:
+        :param created_by_user: The Datadog user who created the status page.
         :type created_by_user: StatusPageDataRelationshipsCreatedByUser, optional
 
-        :param last_modified_by_user:
+        :param last_modified_by_user: The Datadog user who last modified the status page.
         :type last_modified_by_user: StatusPageDataRelationshipsLastModifiedByUser, optional
         """
         if created_by_user is not unset:

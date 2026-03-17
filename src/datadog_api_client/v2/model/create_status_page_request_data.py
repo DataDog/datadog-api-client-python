@@ -38,7 +38,7 @@ class CreateStatusPageRequestData(ModelNormal):
 
     def __init__(self_, attributes: CreateStatusPageRequestDataAttributes, type: StatusPageDataType, **kwargs):
         """
-
+        The data object for creating a status page.
 
         :param attributes: The supported attributes for creating a status page.
         :type attributes: CreateStatusPageRequestDataAttributes
