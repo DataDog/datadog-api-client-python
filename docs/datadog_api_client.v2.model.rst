@@ -18421,6 +18421,111 @@ datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_batch\_settings module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_batch_settings
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_compression module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_compression\_gzip module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_gzip
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_compression\_gzip\_type module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_gzip_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_compression\_snappy module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_snappy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_compression\_snappy\_type module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_snappy_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_compression\_zstd module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_zstd
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_compression\_zstd\_type module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_zstd_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_destination module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_destination\_type module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_encoding module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_encoding\_json module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_json
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_encoding\_json\_type module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_json_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_encoding\_parquet module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_parquet
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_generic\_encoding\_parquet\_type module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding_parquet_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_source module
 --------------------------------------------------------------------------------
 
