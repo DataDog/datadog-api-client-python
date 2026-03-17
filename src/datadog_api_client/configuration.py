@@ -470,6 +470,7 @@ class Configuration:
                 "v2.get_custom_rule": False,
                 "v2.get_custom_rule_revision": False,
                 "v2.get_custom_ruleset": False,
+                "v2.get_licenses": False,
                 "v2.list_custom_rule_revisions": False,
                 "v2.revert_custom_rule_revision": False,
                 "v2.update_custom_ruleset": False,

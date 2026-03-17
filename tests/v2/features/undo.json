@@ -5442,6 +5442,12 @@
       "type": "safe"
     }
   },
+  "GetLicenses": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateSCAResolveVulnerableSymbols": {
     "tag": "Static Analysis",
     "undo": {

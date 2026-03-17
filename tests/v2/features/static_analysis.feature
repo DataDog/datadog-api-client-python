@@ -124,6 +124,13 @@ Feature: Static Analysis
     When the request is sent
     Then the response status is 200 Successfully deleted
 
+  @generated @skip @team:DataDog/k9-vm-sca
+  Scenario: Get list of available licenses returns "OK" response
+    Given operation "GetLicenses" enabled
+    And new "GetLicenses" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-vm-ast
   Scenario: List Custom Rule Revisions returns "Bad request" response
     Given operation "ListCustomRuleRevisions" enabled
