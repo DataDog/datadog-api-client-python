@@ -15,9 +15,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         """
         A data source for the pipeline.
 
-        :param address_key: Name of the environment variable or secret that holds the listen address for the Datadog Agent source.
-        :type address_key: str, optional
-
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the `input` to downstream components).
         :type id: str
 
@@ -26,6 +23,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param type: The source type. The value should always be `datadog_agent`.
         :type type: ObservabilityPipelineDatadogAgentSourceType
+
+        :param address_key: Name of the environment variable or secret that holds the Firehose delivery stream address.
+        :type address_key: str, optional
 
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
