@@ -37,6 +37,7 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
             "enabled": (bool,),
             "id": (str,),
             "include": (str,),
+            "keep_unmatched": (bool,),
             "mappings": ([ObservabilityPipelineOcsfMapperProcessorMapping],),
             "type": (ObservabilityPipelineOcsfMapperProcessorType,),
         }
@@ -46,6 +47,7 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         "enabled": "enabled",
         "id": "id",
         "include": "include",
+        "keep_unmatched": "keep_unmatched",
         "mappings": "mappings",
         "type": "type",
     }
@@ -58,6 +60,7 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         mappings: List[ObservabilityPipelineOcsfMapperProcessorMapping],
         type: ObservabilityPipelineOcsfMapperProcessorType,
         display_name: Union[str, UnsetType] = unset,
+        keep_unmatched: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -77,6 +80,9 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
+        :param keep_unmatched: Whether to keep an event that does not match any of the mapping filters.
+        :type keep_unmatched: bool, optional
+
         :param mappings: A list of mapping rules to convert events to the OCSF format.
         :type mappings: [ObservabilityPipelineOcsfMapperProcessorMapping]
 
@@ -85,6 +91,8 @@ class ObservabilityPipelineOcsfMapperProcessor(ModelNormal):
         """
         if display_name is not unset:
             kwargs["display_name"] = display_name
+        if keep_unmatched is not unset:
+            kwargs["keep_unmatched"] = keep_unmatched
         super().__init__(kwargs)
 
         self_.enabled = enabled

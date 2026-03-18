@@ -66,6 +66,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param metrics: Configuration for generating individual metrics.
         :type metrics: [ObservabilityPipelineGeneratedMetric], optional
 
+        :param keep_unmatched: Whether to keep an event that does not match any of the mapping filters.
+        :type keep_unmatched: bool, optional
+
         :param mappings: A list of mapping rules to convert events to the OCSF format.
         :type mappings: [ObservabilityPipelineOcsfMapperProcessorMapping]
 
