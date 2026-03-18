@@ -350,7 +350,7 @@ class MetricsApi:
                 "filter_queried_window_seconds": {
                     "validation": {
                         "inclusive_maximum": 15552000,
-                        "inclusive_minimum": 0,
+                        "inclusive_minimum": 1,
                     },
                     "openapi_types": (int,),
                     "attribute": "filter[queried][window][seconds]",
@@ -367,6 +367,10 @@ class MetricsApi:
                     "location": "query",
                 },
                 "window_seconds": {
+                    "validation": {
+                        "inclusive_maximum": 2592000,
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "window[seconds]",
                     "location": "query",
@@ -788,42 +792,29 @@ class MetricsApi:
     ) -> MetricsAndMetricTagConfigurationsResponse:
         """Get a list of metrics.
 
-        Returns all metrics for your organization that match the given filter parameters.
-        Optionally, paginate by using the ``page[cursor]`` and/or ``page[size]`` query parameters.
-        To fetch the first page, pass in a query parameter with either a valid ``page[size]`` or an empty cursor like ``page[cursor]=``. To fetch the next page, pass in the ``next_cursor`` value from the response as the new ``page[cursor]`` value.
-        Once the ``meta.pagination.next_cursor`` value is null, all pages have been retrieved.
+        Get a list of actively reporting metrics for your organization. Pagination is optional using the ``page[cursor]`` and ``page[size]`` query parameters.
 
-        :param filter_configured: Filter custom metrics that have configured tags.
+        :param filter_configured: Only return custom metrics that have been configured with Metrics Without Limits.
         :type filter_configured: bool, optional
-        :param filter_tags_configured: Filter tag configurations by configured tags.
+        :param filter_tags_configured: Only return metrics that have the given tag key(s) in their Metrics Without Limits configuration (included or excluded).
         :type filter_tags_configured: str, optional
-        :param filter_metric_type: Filter metrics by metric type.
+        :param filter_metric_type: Only return metrics of the given metric type.
         :type filter_metric_type: MetricTagConfigurationMetricTypeCategory, optional
-        :param filter_include_percentiles: Filter distributions with additional percentile
-            aggregations enabled or disabled.
+        :param filter_include_percentiles: Only return distribution metrics that have percentile aggregations enabled (true) or disabled (false).
         :type filter_include_percentiles: bool, optional
-        :param filter_queried: (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
-            If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
+        :param filter_queried: Only return metrics that have been queried (true) or not queried (false) in the look back window. Set the window with ``filter[queried][window][seconds]`` ; if omitted, a default window is used.
         :type filter_queried: bool, optional
-        :param filter_queried_window_seconds: The number of seconds of look back (from now) used by the ``filter[queried]`` filter logic.
-            Must be sent with ``filter[queried]`` and is only applied when ``filter[queried]=true``.
-            If ``filter[queried]=false`` , this parameter is ignored and default queried-window behavior applies.
-            If ``filter[queried]`` is not provided, sending this parameter returns a 400.
-            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=15552000``.
+        :param filter_queried_window_seconds: Only return metrics that have been queried or not queried in the specified window. Dependent on being sent with ``filter[queried]``.
         :type filter_queried_window_seconds: int, optional
-        :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
-            Can only be combined with the filter[queried] filter.
+        :param filter_tags: Only return metrics that were submitted with tags matching this expression. You can use AND, OR, IN, and wildcards (for example, service:web*).
         :type filter_tags: str, optional
-        :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
+        :param filter_related_assets: Only return metrics that are used in at least one dashboard, monitor, notebook, or SLO.
         :type filter_related_assets: bool, optional
-        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] query.
-            Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
+        :param window_seconds: Only return metrics that have been actively reporting in the specified window.
         :type window_seconds: int, optional
-        :param page_size: Maximum number of results returned.
+        :param page_size: Maximum number of results per page. Use with ``page[cursor]`` for pagination.
         :type page_size: int, optional
-        :param page_cursor: String to query the next page of results.
-            This key is provided with each valid response from the API in ``meta.pagination.next_cursor``.
-            Once the ``meta.pagination.next_cursor`` key is null, all pages have been retrieved.
+        :param page_cursor: Cursor for pagination. Use ``page[size]`` to opt-in to pagination and get the first page; for subsequent pages, use the value from ``meta.pagination.next_cursor`` in the response. Pagination is complete when ``next_cursor`` is null.
         :type page_cursor: str, optional
         :rtype: MetricsAndMetricTagConfigurationsResponse
         """
@@ -882,37 +873,27 @@ class MetricsApi:
 
         Provide a paginated version of :meth:`list_tag_configurations`, returning all items.
 
-        :param filter_configured: Filter custom metrics that have configured tags.
+        :param filter_configured: Only return custom metrics that have been configured with Metrics Without Limits.
         :type filter_configured: bool, optional
-        :param filter_tags_configured: Filter tag configurations by configured tags.
+        :param filter_tags_configured: Only return metrics that have the given tag key(s) in their Metrics Without Limits configuration (included or excluded).
         :type filter_tags_configured: str, optional
-        :param filter_metric_type: Filter metrics by metric type.
+        :param filter_metric_type: Only return metrics of the given metric type.
         :type filter_metric_type: MetricTagConfigurationMetricTypeCategory, optional
-        :param filter_include_percentiles: Filter distributions with additional percentile
-            aggregations enabled or disabled.
+        :param filter_include_percentiles: Only return distribution metrics that have percentile aggregations enabled (true) or disabled (false).
         :type filter_include_percentiles: bool, optional
-        :param filter_queried: (Preview) Filter custom metrics that have or have not been queried in the specified window[seconds].
-            If no window is provided or the window is less than 2 hours, a default of 2 hours will be applied.
+        :param filter_queried: Only return metrics that have been queried (true) or not queried (false) in the look back window. Set the window with ``filter[queried][window][seconds]`` ; if omitted, a default window is used.
         :type filter_queried: bool, optional
-        :param filter_queried_window_seconds: The number of seconds of look back (from now) used by the ``filter[queried]`` filter logic.
-            Must be sent with ``filter[queried]`` and is only applied when ``filter[queried]=true``.
-            If ``filter[queried]=false`` , this parameter is ignored and default queried-window behavior applies.
-            If ``filter[queried]`` is not provided, sending this parameter returns a 400.
-            For example: ``GET /api/v2/metrics?filter[queried]=true&filter[queried][window][seconds]=15552000``.
+        :param filter_queried_window_seconds: Only return metrics that have been queried or not queried in the specified window. Dependent on being sent with ``filter[queried]``.
         :type filter_queried_window_seconds: int, optional
-        :param filter_tags: Filter metrics that have been submitted with the given tags. Supports boolean and wildcard expressions.
-            Can only be combined with the filter[queried] filter.
+        :param filter_tags: Only return metrics that were submitted with tags matching this expression. You can use AND, OR, IN, and wildcards (for example, service:web*).
         :type filter_tags: str, optional
-        :param filter_related_assets: (Preview) Filter metrics that are used in dashboards, monitors, notebooks, SLOs.
+        :param filter_related_assets: Only return metrics that are used in at least one dashboard, monitor, notebook, or SLO.
         :type filter_related_assets: bool, optional
-        :param window_seconds: The number of seconds of look back (from now) to apply to a filter[tag] query.
-            Default value is 3600 (1 hour), maximum value is 5,184,000 (60 days).
+        :param window_seconds: Only return metrics that have been actively reporting in the specified window.
         :type window_seconds: int, optional
-        :param page_size: Maximum number of results returned.
+        :param page_size: Maximum number of results per page. Use with ``page[cursor]`` for pagination.
         :type page_size: int, optional
-        :param page_cursor: String to query the next page of results.
-            This key is provided with each valid response from the API in ``meta.pagination.next_cursor``.
-            Once the ``meta.pagination.next_cursor`` key is null, all pages have been retrieved.
+        :param page_cursor: Cursor for pagination. Use ``page[size]`` to opt-in to pagination and get the first page; for subsequent pages, use the value from ``meta.pagination.next_cursor`` in the response. Pagination is complete when ``next_cursor`` is null.
         :type page_cursor: str, optional
 
         :return: A generator of paginated results.
