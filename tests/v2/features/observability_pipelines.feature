@@ -192,6 +192,14 @@ Feature: Observability Pipelines
     Then the response status is 400 Bad Request
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with OCSF mapper keep_unmatched returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "type": "ocsf_mapper", "keep_unmatched": true, "mappings": [{"include": "source:cloudtrail", "mapping": "CloudTrail Account Change"}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Mapper Keep Unmatched Pipeline"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline with OCSF mapper library mapping returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "type": "ocsf_mapper", "mappings": [{"include": "source:cloudtrail", "mapping": "CloudTrail Account Change"}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Mapper Pipeline"}, "type": "pipelines"}}
