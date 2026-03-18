@@ -29,14 +29,12 @@ class ObservabilityPipelineDatadogAgentSource(ModelNormal):
         )
 
         return {
-            "address_key": (str,),
             "id": (str,),
             "tls": (ObservabilityPipelineTls,),
             "type": (ObservabilityPipelineDatadogAgentSourceType,),
         }
 
     attribute_map = {
-        "address_key": "address_key",
         "id": "id",
         "tls": "tls",
         "type": "type",
@@ -46,7 +44,6 @@ class ObservabilityPipelineDatadogAgentSource(ModelNormal):
         self_,
         id: str,
         type: ObservabilityPipelineDatadogAgentSourceType,
-        address_key: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -54,9 +51,6 @@ class ObservabilityPipelineDatadogAgentSource(ModelNormal):
         The ``datadog_agent`` source collects logs/metrics from the Datadog Agent.
 
         **Supported pipeline types:** logs, metrics
-
-        :param address_key: Name of the environment variable or secret that holds the listen address for the Datadog Agent source.
-        :type address_key: str, optional
 
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
@@ -67,8 +61,6 @@ class ObservabilityPipelineDatadogAgentSource(ModelNormal):
         :param type: The source type. The value should always be ``datadog_agent``.
         :type type: ObservabilityPipelineDatadogAgentSourceType
         """
-        if address_key is not unset:
-            kwargs["address_key"] = address_key
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)

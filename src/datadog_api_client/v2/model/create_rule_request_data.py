@@ -3,29 +3,27 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rule_attributes import RuleAttributes
+    from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
     from datadog_api_client.v2.model.rule_type import RuleType
 
 
 class CreateRuleRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rule_attributes import RuleAttributes
+        from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
         from datadog_api_client.v2.model.rule_type import RuleType
 
         return {
-            "attributes": (RuleAttributes,),
+            "attributes": (RuleAttributesRequest,),
             "type": (RuleType,),
         }
 
@@ -34,20 +32,17 @@ class CreateRuleRequestData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_, attributes: Union[RuleAttributes, UnsetType] = unset, type: Union[RuleType, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, attributes: RuleAttributesRequest, type: RuleType, **kwargs):
         """
         Scorecard create rule request data.
 
-        :param attributes: Details of a rule.
-        :type attributes: RuleAttributes, optional
+        :param attributes: Attributes for creating or updating a rule. Server-managed fields (created_at, modified_at, custom) are excluded.
+        :type attributes: RuleAttributesRequest
 
         :param type: The JSON:API type for scorecard rules.
-        :type type: RuleType, optional
+        :type type: RuleType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.attributes = attributes
+        self_.type = type

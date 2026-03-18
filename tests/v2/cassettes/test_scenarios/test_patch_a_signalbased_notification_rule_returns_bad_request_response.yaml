@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Patch_a_signal_based_notification_rule_returns_Bad_Request_response-1738763171","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
+    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Patch_a_signal_based_notification_rule_returns_Bad_Request_response-1773394504","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
   response:
     body:
-      string: '{"data":{"id":"uwx-6n1-x2z","type":"notification_rules","attributes":{"created_at":1738763171531,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763171531,"modified_by":{"name":"","handle":""},"name":"Test-Patch_a_signal_based_notification_rule_returns_Bad_Request_response-1738763171","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
+      string: '{"data":{"id":"sa8-rjy-zkl","type":"notification_rules","attributes":{"created_at":1773394506389,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"enabled":true,"modified_at":1773394506389,"modified_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"name":"Test-Patch_a_signal_based_notification_rule_returns_Bad_Request_response-1773394504","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -26,7 +28,7 @@ interactions:
       content-type:
       - application/json
     method: PATCH
-    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/uwx-6n1-x2z
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/sa8-rjy-zkl
   response:
     body:
       string: '{"errors":["input_validation_error(Field ''data.attributes.version''
@@ -44,7 +46,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/uwx-6n1-x2z
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/sa8-rjy-zkl
   response:
     body:
       string: ''

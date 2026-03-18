@@ -1,0 +1,13 @@
+"""
+Delete a rule returns "OK" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = ScorecardsApi(api_client)
+    api_instance.delete_scorecard_rule(
+        rule_id="rule_id",
+    )
