@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class MetricTagConfigurationMetricTypes(ModelSimple):
     """
-    The metric's type.
+    The metric's type. Contact your Customer Success Manager (CSM) for instructions on how to use the histogram types.
 
-    :param value: If omitted defaults to "gauge". Must be one of ["gauge", "count", "rate", "distribution"].
+    :param value: If omitted defaults to "gauge". Must be one of ["gauge", "count", "rate", "distribution", "exponential_histogram", "explicit_histogram"].
     :type value: str
     """
 
@@ -25,11 +25,15 @@ class MetricTagConfigurationMetricTypes(ModelSimple):
         "count",
         "rate",
         "distribution",
+        "exponential_histogram",
+        "explicit_histogram",
     }
     GAUGE: ClassVar["MetricTagConfigurationMetricTypes"]
     COUNT: ClassVar["MetricTagConfigurationMetricTypes"]
     RATE: ClassVar["MetricTagConfigurationMetricTypes"]
     DISTRIBUTION: ClassVar["MetricTagConfigurationMetricTypes"]
+    EXPONENTIAL_HISTOGRAM: ClassVar["MetricTagConfigurationMetricTypes"]
+    EXPLICIT_HISTOGRAM: ClassVar["MetricTagConfigurationMetricTypes"]
 
     @cached_property
     def openapi_types(_):
@@ -42,3 +46,5 @@ MetricTagConfigurationMetricTypes.GAUGE = MetricTagConfigurationMetricTypes("gau
 MetricTagConfigurationMetricTypes.COUNT = MetricTagConfigurationMetricTypes("count")
 MetricTagConfigurationMetricTypes.RATE = MetricTagConfigurationMetricTypes("rate")
 MetricTagConfigurationMetricTypes.DISTRIBUTION = MetricTagConfigurationMetricTypes("distribution")
+MetricTagConfigurationMetricTypes.EXPONENTIAL_HISTOGRAM = MetricTagConfigurationMetricTypes("exponential_histogram")
+MetricTagConfigurationMetricTypes.EXPLICIT_HISTOGRAM = MetricTagConfigurationMetricTypes("explicit_histogram")
