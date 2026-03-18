@@ -10,10 +10,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class MonitorFormulaAndFunctionAggregateFilterQuery(ModelComposed):
+class MonitorFormulaAndFunctionAggregateSubQuery(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Filter query for aggregate filtered queries. Can be an events query or a reference table query.
+        Sub-query for aggregate composite queries (augmented or filtered). Can be an events query or a reference table query.
 
         :param compute: Compute options.
         :type compute: MonitorFormulaAndFunctionEventQueryDefinitionCompute

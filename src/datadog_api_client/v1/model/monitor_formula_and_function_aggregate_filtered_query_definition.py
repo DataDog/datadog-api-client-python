@@ -23,8 +23,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_data_source import (
         MonitorFormulaAndFunctionAggregateFilteredDataSource,
     )
-    from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filter_query import (
-        MonitorFormulaAndFunctionAggregateFilterQuery,
+    from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_sub_query import (
+        MonitorFormulaAndFunctionAggregateSubQuery,
     )
     from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_filter import (
         MonitorFormulaAndFunctionAggregateQueryFilter,
@@ -59,8 +59,8 @@ class MonitorFormulaAndFunctionAggregateFilteredQueryDefinition(ModelNormal):
         from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_data_source import (
             MonitorFormulaAndFunctionAggregateFilteredDataSource,
         )
-        from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filter_query import (
-            MonitorFormulaAndFunctionAggregateFilterQuery,
+        from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_sub_query import (
+            MonitorFormulaAndFunctionAggregateSubQuery,
         )
         from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_filter import (
             MonitorFormulaAndFunctionAggregateQueryFilter,
@@ -73,7 +73,7 @@ class MonitorFormulaAndFunctionAggregateFilteredQueryDefinition(ModelNormal):
             "base_query": (MonitorFormulaAndFunctionAggregateBaseQuery,),
             "compute": ([MonitorFormulaAndFunctionEventQueryDefinitionCompute],),
             "data_source": (MonitorFormulaAndFunctionAggregateFilteredDataSource,),
-            "filter_query": (MonitorFormulaAndFunctionAggregateFilterQuery,),
+            "filter_query": (MonitorFormulaAndFunctionAggregateSubQuery,),
             "filters": ([MonitorFormulaAndFunctionAggregateQueryFilter],),
             "group_by": ([MonitorFormulaAndFunctionEventQueryGroupBy],),
             "name": (str,),
@@ -98,7 +98,7 @@ class MonitorFormulaAndFunctionAggregateFilteredQueryDefinition(ModelNormal):
         ],
         data_source: MonitorFormulaAndFunctionAggregateFilteredDataSource,
         filter_query: Union[
-            MonitorFormulaAndFunctionAggregateFilterQuery,
+            MonitorFormulaAndFunctionAggregateSubQuery,
             MonitorFormulaAndFunctionEventQueryDefinition,
             MonitorFormulaAndFunctionReferenceTableQueryDefinition,
         ],
@@ -120,8 +120,8 @@ class MonitorFormulaAndFunctionAggregateFilteredQueryDefinition(ModelNormal):
         :param data_source: Data source for aggregate filtered queries.
         :type data_source: MonitorFormulaAndFunctionAggregateFilteredDataSource
 
-        :param filter_query: Filter query for aggregate filtered queries. Can be an events query or a reference table query.
-        :type filter_query: MonitorFormulaAndFunctionAggregateFilterQuery
+        :param filter_query: Sub-query for aggregate composite queries (augmented or filtered). Can be an events query or a reference table query.
+        :type filter_query: MonitorFormulaAndFunctionAggregateSubQuery
 
         :param filters: Filter conditions for the query.
         :type filters: [MonitorFormulaAndFunctionAggregateQueryFilter]

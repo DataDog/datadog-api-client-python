@@ -58,8 +58,8 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
             This is useful when an entity has been configured to emit metrics with additional tags.
         :type scope: str, optional
 
-        :param augment_query: Augment query for aggregate augmented queries. Can be an events query or a reference table query.
-        :type augment_query: MonitorFormulaAndFunctionAggregateAugmentQuery
+        :param augment_query: Sub-query for aggregate composite queries (augmented or filtered). Can be an events query or a reference table query.
+        :type augment_query: MonitorFormulaAndFunctionAggregateSubQuery
 
         :param base_query: Base query for aggregate queries. Can be an events query or a metrics query.
         :type base_query: MonitorFormulaAndFunctionAggregateBaseQuery
@@ -67,8 +67,8 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         :param join_condition: Join condition for aggregate augmented queries.
         :type join_condition: MonitorFormulaAndFunctionAggregateQueryJoinCondition
 
-        :param filter_query: Filter query for aggregate filtered queries. Can be an events query or a reference table query.
-        :type filter_query: MonitorFormulaAndFunctionAggregateFilterQuery
+        :param filter_query: Sub-query for aggregate composite queries (augmented or filtered). Can be an events query or a reference table query.
+        :type filter_query: MonitorFormulaAndFunctionAggregateSubQuery
 
         :param filters: Filter conditions for the query.
         :type filters: [MonitorFormulaAndFunctionAggregateQueryFilter]

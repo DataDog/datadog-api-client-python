@@ -14,8 +14,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augment_query import (
-        MonitorFormulaAndFunctionAggregateAugmentQuery,
+    from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_sub_query import (
+        MonitorFormulaAndFunctionAggregateSubQuery,
     )
     from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_base_query import (
         MonitorFormulaAndFunctionAggregateBaseQuery,
@@ -56,8 +56,8 @@ class MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augment_query import (
-            MonitorFormulaAndFunctionAggregateAugmentQuery,
+        from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_sub_query import (
+            MonitorFormulaAndFunctionAggregateSubQuery,
         )
         from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_base_query import (
             MonitorFormulaAndFunctionAggregateBaseQuery,
@@ -76,7 +76,7 @@ class MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition(ModelNormal):
         )
 
         return {
-            "augment_query": (MonitorFormulaAndFunctionAggregateAugmentQuery,),
+            "augment_query": (MonitorFormulaAndFunctionAggregateSubQuery,),
             "base_query": (MonitorFormulaAndFunctionAggregateBaseQuery,),
             "compute": ([MonitorFormulaAndFunctionEventQueryDefinitionCompute],),
             "data_source": (MonitorFormulaAndFunctionAggregateAugmentedDataSource,),
@@ -98,7 +98,7 @@ class MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition(ModelNormal):
     def __init__(
         self_,
         augment_query: Union[
-            MonitorFormulaAndFunctionAggregateAugmentQuery,
+            MonitorFormulaAndFunctionAggregateSubQuery,
             MonitorFormulaAndFunctionEventQueryDefinition,
             MonitorFormulaAndFunctionReferenceTableQueryDefinition,
         ],
@@ -117,8 +117,8 @@ class MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition(ModelNormal):
         """
         A formula and functions aggregate augmented query. Used to enrich base query results with data from a reference table.
 
-        :param augment_query: Augment query for aggregate augmented queries. Can be an events query or a reference table query.
-        :type augment_query: MonitorFormulaAndFunctionAggregateAugmentQuery
+        :param augment_query: Sub-query for aggregate composite queries (augmented or filtered). Can be an events query or a reference table query.
+        :type augment_query: MonitorFormulaAndFunctionAggregateSubQuery
 
         :param base_query: Base query for aggregate queries. Can be an events query or a metrics query.
         :type base_query: MonitorFormulaAndFunctionAggregateBaseQuery

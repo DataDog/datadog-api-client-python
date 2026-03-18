@@ -2363,13 +2363,6 @@ datadog\_api\_client.v1.model.monitor\_draft\_status module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_augment\_query module
------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augment_query
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_augmented\_data\_source module
 --------------------------------------------------------------------------------------------------------
 
@@ -2388,13 +2381,6 @@ datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_base\_
 --------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_base_query
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_filter\_query module
-----------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filter_query
    :members:
    :show-inheritance:
 
@@ -2430,6 +2416,13 @@ datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_query\
 --------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_join_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_aggregate\_sub\_query module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_aggregate_sub_query
    :members:
    :show-inheritance:
 
