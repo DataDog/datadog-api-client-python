@@ -74,7 +74,7 @@ class MetricTagConfigurationAttributes(ModelNormal):
             Only present when the ``metric_type`` is ``distribution``.
         :type include_percentiles: bool, optional
 
-        :param metric_type: The metric's type.
+        :param metric_type: The metric's type. Contact your Customer Success Manager (CSM) for instructions on how to use the histogram types.
         :type metric_type: MetricTagConfigurationMetricTypes, optional
 
         :param modified_at: Timestamp when the tag configuration was last modified.
