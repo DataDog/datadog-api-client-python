@@ -1317,7 +1317,7 @@ components:
         tabs:
           description: List of tabs for organizing dashboard widgets into groups.
           items:
-            $ref: '#/components/schemas/DashboardTab'
+            $ref: "#/components/schemas/DashboardTab"
           maxItems: 100
           nullable: true
           type: array
@@ -1596,7 +1596,7 @@ components:
       properties:
         id:
           description: UUID of the tab.
-          example: ''
+          example: ""
           format: uuid
           type: string
         name:
@@ -1606,20 +1606,19 @@ components:
           minLength: 1
           type: string
         widget_ids:
-          description: List of widget IDs belonging to this tab. The backend also
-            accepts positional references in @N format (1-indexed) as a convenience
-            for Terraform and other declarative tools.
+          description: >-
+            List of widget IDs belonging to this tab. The backend also accepts positional references in @N format (1-indexed) as a convenience for Terraform and other declarative tools.
           example:
-          - 0
+            - 0
           items:
             description: Widget ID.
             format: int64
             type: integer
           type: array
       required:
-      - id
-      - name
-      - widget_ids
+        - id
+        - name
+        - widget_ids
       type: object
     DashboardTemplateVariable:
       description: Template variable.
