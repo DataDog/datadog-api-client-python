@@ -641,6 +641,7 @@ class MetricsApi:
 
         Deletes a metric's tag configuration. Can only be used with application
         keys from users with the ``Manage Tags for Metrics`` permission.
+        Note: This operation is irreversible.
 
         :param metric_name: The name of the metric.
         :type metric_name: str

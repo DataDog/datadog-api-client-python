@@ -253,7 +253,7 @@ class WebhooksIntegrationApi:
     ) -> None:
         """Delete a webhook.
 
-        Deletes the endpoint with the name ``<WEBHOOK NAME>``.
+        Deletes the endpoint with the name ``<WEBHOOK NAME>``. This action cannot be undone.
 
         :param webhook_name: The name of the webhook.
         :type webhook_name: str
