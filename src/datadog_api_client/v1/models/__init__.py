@@ -128,6 +128,14 @@ from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_data_
 from datadog_api_client.v1.model.formula_and_function_apm_dependency_stats_query_definition import (
     FormulaAndFunctionApmDependencyStatsQueryDefinition,
 )
+from datadog_api_client.v1.model.formula_and_function_apm_metric_stat_name import FormulaAndFunctionApmMetricStatName
+from datadog_api_client.v1.model.formula_and_function_apm_metrics_data_source import (
+    FormulaAndFunctionApmMetricsDataSource,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_metrics_query_definition import (
+    FormulaAndFunctionApmMetricsQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_apm_metrics_span_kind import FormulaAndFunctionApmMetricsSpanKind
 from datadog_api_client.v1.model.formula_and_function_apm_resource_stat_name import (
     FormulaAndFunctionApmResourceStatName,
 )
@@ -1331,6 +1339,10 @@ __all__ = [
     "FormulaAndFunctionApmDependencyStatName",
     "FormulaAndFunctionApmDependencyStatsDataSource",
     "FormulaAndFunctionApmDependencyStatsQueryDefinition",
+    "FormulaAndFunctionApmMetricStatName",
+    "FormulaAndFunctionApmMetricsDataSource",
+    "FormulaAndFunctionApmMetricsQueryDefinition",
+    "FormulaAndFunctionApmMetricsSpanKind",
     "FormulaAndFunctionApmResourceStatName",
     "FormulaAndFunctionApmResourceStatsDataSource",
     "FormulaAndFunctionApmResourceStatsQueryDefinition",
