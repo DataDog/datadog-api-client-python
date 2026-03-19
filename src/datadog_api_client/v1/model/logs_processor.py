@@ -76,11 +76,17 @@ class LogsProcessor(ModelComposed):
         :param template: A formula with one or more attributes and raw text.
         :type template: str
 
+        :param description: A description of the pipeline.
+        :type description: str, optional
+
         :param filter: Filter for logs.
         :type filter: LogsFilter, optional
 
         :param processors: Ordered list of processors in this pipeline.
         :type processors: [LogsProcessor], optional
+
+        :param tags: A list of tags associated with the pipeline.
+        :type tags: [str], optional
 
         :param default_lookup: Value to set the target attribute if the source value is not found in the list.
         :type default_lookup: str, optional

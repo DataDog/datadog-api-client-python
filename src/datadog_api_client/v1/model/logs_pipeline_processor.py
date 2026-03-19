@@ -46,24 +46,29 @@ class LogsPipelineProcessor(ModelNormal):
         from datadog_api_client.v1.model.logs_pipeline_processor_type import LogsPipelineProcessorType
 
         return {
+            "description": (str,),
             "filter": (LogsFilter,),
             "is_enabled": (bool,),
             "name": (str,),
             "processors": ([LogsProcessor],),
+            "tags": ([str],),
             "type": (LogsPipelineProcessorType,),
         }
 
     attribute_map = {
+        "description": "description",
         "filter": "filter",
         "is_enabled": "is_enabled",
         "name": "name",
         "processors": "processors",
+        "tags": "tags",
         "type": "type",
     }
 
     def __init__(
         self_,
         type: LogsPipelineProcessorType,
+        description: Union[str, UnsetType] = unset,
         filter: Union[LogsFilter, UnsetType] = unset,
         is_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -95,6 +100,7 @@ class LogsPipelineProcessor(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -103,6 +109,9 @@ class LogsPipelineProcessor(ModelNormal):
         integration, service, or any other tag or attribute.
 
         A pipeline can contain Nested Pipelines and Processors whereas a Nested Pipeline can only contain Processors.
+
+        :param description: A description of the pipeline.
+        :type description: str, optional
 
         :param filter: Filter for logs.
         :type filter: LogsFilter, optional
@@ -116,9 +125,14 @@ class LogsPipelineProcessor(ModelNormal):
         :param processors: Ordered list of processors in this pipeline.
         :type processors: [LogsProcessor], optional
 
+        :param tags: A list of tags associated with the pipeline.
+        :type tags: [str], optional
+
         :param type: Type of logs pipeline processor.
         :type type: LogsPipelineProcessorType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if filter is not unset:
             kwargs["filter"] = filter
         if is_enabled is not unset:
@@ -127,6 +141,8 @@ class LogsPipelineProcessor(ModelNormal):
             kwargs["name"] = name
         if processors is not unset:
             kwargs["processors"] = processors
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.type = type
