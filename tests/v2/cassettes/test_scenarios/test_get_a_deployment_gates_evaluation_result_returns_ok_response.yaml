@@ -1,0 +1,106 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"dry_run":false,"env":"production","identifier":"my-gate-testgetadeploymentgatesevaluationresultreturnsokresponse1773742995","service":"my-service"},"type":"deployment_gate"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deployment_gates
+  response:
+    body:
+      string: '{"data":{"id":"7b930550-63b0-4002-8b74-4c827bd070d3","type":"deployment_gate","attributes":{"created_at":"2026-03-17T10:23:15.799742Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"env":"production","identifier":"my-gate-testgetadeploymentgatesevaluationresultreturnsokresponse1773742995","service":"my-service","updated_at":"2026-03-17T10:23:15.799742Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"dry_run":false,"name":"My deployment rule","options":{"excluded_resources":[]},"type":"faulty_deployment_detection"},"type":"deployment_rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/7b930550-63b0-4002-8b74-4c827bd070d3/rules
+  response:
+    body:
+      string: '{"data":{"id":"c2058cfd-aa63-4efc-a8fe-a37d622e7cc3","type":"deployment_rule","attributes":{"created_at":"2026-03-17T10:23:15.934037Z","created_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"dry_run":false,"gate_id":"7b930550-63b0-4002-8b74-4c827bd070d3","name":"My
+        deployment rule","options":{"excluded_resources":[]},"type":"faulty_deployment_detection","updated_at":"2026-03-17T10:23:15.934037Z","updated_by":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"env":"production","identifier":"my-gate-testgetadeploymentgatesevaluationresultreturnsokresponse1773742995","service":"my-service"},"type":"deployment_gates_evaluation_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/deployments/gates/evaluation
+  response:
+    body:
+      string: '{"data":{"id":"fb1d7aef-236f-433d-ab3e-11648edb64c0","type":"deployment_gates_evaluation_response","attributes":{"evaluation_id":"fb1d7aef-236f-433d-ab3e-11648edb64c0"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 202
+      message: Accepted
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/deployments/gates/evaluation/fb1d7aef-236f-433d-ab3e-11648edb64c0
+  response:
+    body:
+      string: '{"data":{"id":"fb1d7aef-236f-433d-ab3e-11648edb64c0","type":"deployment_gates_evaluation_result_response","attributes":{"dry_run":false,"evaluation_id":"fb1d7aef-236f-433d-ab3e-11648edb64c0","evaluation_url":"https://frog.datadoghq.com/ci/deployment-gates/evaluations?deployment_gates_source=evaluation_result_url\u0026end=1773743896343\u0026index=cdgates\u0026paused=true\u0026query=level%3Agate+%40evaluation_id%3Afb1d7aef-236f-433d-ab3e-11648edb64c0\u0026recent_gate_id=fb1d7aef-236f-433d-ab3e-11648edb64c0\u0026start=1773742096343","gate_id":"7b930550-63b0-4002-8b74-4c827bd070d3","gate_status":"in_progress","rules":[{"name":"My
+        deployment rule","status":"in_progress","dry_run":false}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/7b930550-63b0-4002-8b74-4c827bd070d3/rules/c2058cfd-aa63-4efc-a8fe-a37d622e7cc3
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/7b930550-63b0-4002-8b74-4c827bd070d3
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

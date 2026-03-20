@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"dry_run":false},"id":"12345678-1234-1234-1234-123456789012","type":"deployment_gate"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/deployment_gates/00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"Gate does
+        not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

@@ -3,10 +3,16 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+    UUID,
+)
+from datadog_api_client.v2.model.deployment_gates_list_response import DeploymentGatesListResponse
 from datadog_api_client.v2.model.deployment_gate_response import DeploymentGateResponse
 from datadog_api_client.v2.model.create_deployment_gate_params import CreateDeploymentGateParams
 from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
@@ -14,6 +20,11 @@ from datadog_api_client.v2.model.deployment_rule_response import DeploymentRuleR
 from datadog_api_client.v2.model.create_deployment_rule_params import CreateDeploymentRuleParams
 from datadog_api_client.v2.model.update_deployment_rule_params import UpdateDeploymentRuleParams
 from datadog_api_client.v2.model.update_deployment_gate_params import UpdateDeploymentGateParams
+from datadog_api_client.v2.model.deployment_gates_evaluation_response import DeploymentGatesEvaluationResponse
+from datadog_api_client.v2.model.deployment_gates_evaluation_request import DeploymentGatesEvaluationRequest
+from datadog_api_client.v2.model.deployment_gates_evaluation_result_response import (
+    DeploymentGatesEvaluationResultResponse,
+)
 
 
 class DeploymentGatesApi:
@@ -170,6 +181,29 @@ class DeploymentGatesApi:
             api_client=api_client,
         )
 
+        self._get_deployment_gates_evaluation_result_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeploymentGatesEvaluationResultResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/deployments/gates/evaluation/{id}",
+                "operation_id": "get_deployment_gates_evaluation_result",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_deployment_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentRuleResponse,),
@@ -196,6 +230,57 @@ class DeploymentGatesApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._list_deployment_gates_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeploymentGatesListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/deployment_gates",
+                "operation_id": "list_deployment_gates",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._trigger_deployment_gates_evaluation_endpoint = _Endpoint(
+            settings={
+                "response_type": (DeploymentGatesEvaluationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/deployments/gates/evaluation",
+                "operation_id": "trigger_deployment_gates_evaluation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DeploymentGatesEvaluationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -367,6 +452,27 @@ class DeploymentGatesApi:
 
         return self._get_deployment_gate_rules_endpoint.call_with_http_info(**kwargs)
 
+    def get_deployment_gates_evaluation_result(
+        self,
+        id: UUID,
+    ) -> DeploymentGatesEvaluationResultResponse:
+        """Get a deployment gate evaluation result.
+
+        Retrieves the result of a deployment gate evaluation by its evaluation ID.
+        If the evaluation is still in progress, ``data.attributes.gate_status`` will be ``in_progress`` ;
+        continue polling until it returns ``pass`` or ``fail``.
+        Polling every 10-20 seconds is recommended.
+        The endpoint may return a 404 if called too soon after triggering; retry after a few seconds.
+
+        :param id: The evaluation ID returned by the trigger endpoint.
+        :type id: UUID
+        :rtype: DeploymentGatesEvaluationResultResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._get_deployment_gates_evaluation_result_endpoint.call_with_http_info(**kwargs)
+
     def get_deployment_rule(
         self,
         gate_id: str,
@@ -388,6 +494,50 @@ class DeploymentGatesApi:
         kwargs["id"] = id
 
         return self._get_deployment_rule_endpoint.call_with_http_info(**kwargs)
+
+    def list_deployment_gates(
+        self,
+        *,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> DeploymentGatesListResponse:
+        """Get all deployment gates.
+
+        Returns a paginated list of all deployment gates for the organization.
+        Use ``page[cursor]`` and ``page[size]`` query parameters to paginate through results.
+
+        :param page_cursor: Cursor for pagination. Use the ``meta.page.next_cursor`` value from the previous response.
+        :type page_cursor: str, optional
+        :param page_size: Number of results per page. Defaults to 50. Must be between 1 and 1000.
+        :type page_size: int, optional
+        :rtype: DeploymentGatesListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        return self._list_deployment_gates_endpoint.call_with_http_info(**kwargs)
+
+    def trigger_deployment_gates_evaluation(
+        self,
+        body: DeploymentGatesEvaluationRequest,
+    ) -> DeploymentGatesEvaluationResponse:
+        """Trigger a deployment gate evaluation.
+
+        Triggers an asynchronous deployment gate evaluation for the given service and environment.
+        Returns an evaluation ID that can be used to poll for the result via the
+        ``GET /api/v2/deployments/gates/evaluation/{id}`` endpoint.
+
+        :type body: DeploymentGatesEvaluationRequest
+        :rtype: DeploymentGatesEvaluationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._trigger_deployment_gates_evaluation_endpoint.call_with_http_info(**kwargs)
 
     def update_deployment_gate(
         self,

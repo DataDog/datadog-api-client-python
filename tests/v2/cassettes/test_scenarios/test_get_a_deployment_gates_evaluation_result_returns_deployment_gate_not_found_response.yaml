@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/deployments/gates/evaluation/00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"gate evaluation
+        with id 00000000-0000-0000-0000-000000000000 not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
