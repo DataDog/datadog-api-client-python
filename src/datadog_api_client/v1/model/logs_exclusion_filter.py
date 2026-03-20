@@ -18,15 +18,23 @@ class LogsExclusionFilter(ModelNormal):
     def openapi_types(_):
         return {
             "query": (str,),
+            "sample_attribute": (str,),
             "sample_rate": (float,),
         }
 
     attribute_map = {
         "query": "query",
+        "sample_attribute": "sample_attribute",
         "sample_rate": "sample_rate",
     }
 
-    def __init__(self_, sample_rate: float, query: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        sample_rate: float,
+        query: Union[str, UnsetType] = unset,
+        sample_attribute: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Exclusion filter is defined by a query, a sampling rule, and a active/inactive toggle.
 
@@ -34,12 +42,18 @@ class LogsExclusionFilter(ModelNormal):
             Scope down exclusion filter to only a subset of logs with a log query.
         :type query: str, optional
 
+        :param sample_attribute: Sample attribute to use for the sampling of logs going through this exclusion filter.
+            When set, only the logs with the specified attribute are sampled.
+        :type sample_attribute: str, optional
+
         :param sample_rate: Sample rate to apply to logs going through this exclusion filter,
             a value of 1.0 excludes all logs matching the query.
         :type sample_rate: float
         """
         if query is not unset:
             kwargs["query"] = query
+        if sample_attribute is not unset:
+            kwargs["sample_attribute"] = sample_attribute
         super().__init__(kwargs)
 
         self_.sample_rate = sample_rate
