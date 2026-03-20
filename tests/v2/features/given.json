@@ -433,6 +433,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"type\": \"feature-flags\", \"attributes\": {\"key\": \"test-feature-flag-{{ unique }}\", \"name\": \"Test Feature Flag {{ unique }}\", \"description\": \"Test feature flag for BDD scenarios\", \"value_type\": \"BOOLEAN\", \"variants\": [{\"key\": \"variant-{{ unique }}-1\", \"name\": \"Variant {{ unique }} A\", \"value\": \"true\"}, {\"key\": \"variant-{{ unique }}-2\", \"name\": \"Variant {{ unique }} B\", \"value\": \"false\"}]}}}"
+      }
+    ],
+    "step": "there is a valid \"feature_flag\" in the system",
+    "key": "feature_flag",
+    "tag": "Feature Flags",
+    "operationId": "CreateFeatureFlag"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"environments\", \"attributes\": {\"name\": \"Test Environment {{ unique }}\", \"queries\": [\"test-{{ unique }}\", \"env-{{ unique }}\"]}}}"
+      }
+    ],
+    "step": "there is a valid \"environment\" in the system",
+    "key": "environment",
+    "tag": "Feature Flags",
+    "operationId": "CreateFeatureFlagsEnvironment"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
     ],

@@ -1749,6 +1749,112 @@
       "type": "safe"
     }
   },
+  "ListFeatureFlags": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "operationId": "ArchiveFeatureFlag",
+      "parameters": [
+        {
+          "name": "feature_flag_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListFeatureFlagsEnvironments": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateFeatureFlagsEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "operationId": "DeleteFeatureFlagsEnvironment",
+      "parameters": [
+        {
+          "name": "environment_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteFeatureFlagsEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetFeatureFlagsEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateFeatureFlagsEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ArchiveFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "operationId": "UnarchiveFeatureFlag",
+      "parameters": [
+        {
+          "name": "feature_flag_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DisableFeatureFlagEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EnableFeatureFlagEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UnarchiveFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "operationId": "ArchiveFeatureFlag",
+      "parameters": [
+        {
+          "name": "feature_flag_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "GetHamrOrgConnection": {
     "tag": "High Availability MultiRegion",
     "undo": {
