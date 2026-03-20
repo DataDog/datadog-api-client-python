@@ -14,6 +14,18 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.test_optimization_delete_service_settings_request import (
+    TestOptimizationDeleteServiceSettingsRequest,
+)
+from datadog_api_client.v2.model.test_optimization_service_settings_response import (
+    TestOptimizationServiceSettingsResponse,
+)
+from datadog_api_client.v2.model.test_optimization_update_service_settings_request import (
+    TestOptimizationUpdateServiceSettingsRequest,
+)
+from datadog_api_client.v2.model.test_optimization_get_service_settings_request import (
+    TestOptimizationGetServiceSettingsRequest,
+)
 from datadog_api_client.v2.model.update_flaky_tests_response import UpdateFlakyTestsResponse
 from datadog_api_client.v2.model.update_flaky_tests_request import UpdateFlakyTestsRequest
 from datadog_api_client.v2.model.flaky_tests_search_response import FlakyTestsSearchResponse
@@ -30,6 +42,46 @@ class TestOptimizationApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._delete_test_optimization_service_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/ci/test-optimization/settings/service",
+                "operation_id": "delete_test_optimization_service_settings",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TestOptimizationDeleteServiceSettingsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_test_optimization_service_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": (TestOptimizationServiceSettingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/ci/test-optimization/settings/service",
+                "operation_id": "get_test_optimization_service_settings",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TestOptimizationGetServiceSettingsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._search_flaky_tests_endpoint = _Endpoint(
             settings={
@@ -69,6 +121,58 @@ class TestOptimizationApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+        self._update_test_optimization_service_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": (TestOptimizationServiceSettingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/ci/test-optimization/settings/service",
+                "operation_id": "update_test_optimization_service_settings",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TestOptimizationUpdateServiceSettingsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+    def delete_test_optimization_service_settings(
+        self,
+        body: TestOptimizationDeleteServiceSettingsRequest,
+    ) -> None:
+        """Delete Test Optimization service settings.
+
+        Delete Test Optimization settings for a specific service identified by repository, service name, and environment.
+
+        :type body: TestOptimizationDeleteServiceSettingsRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._delete_test_optimization_service_settings_endpoint.call_with_http_info(**kwargs)
+
+    def get_test_optimization_service_settings(
+        self,
+        body: TestOptimizationGetServiceSettingsRequest,
+    ) -> TestOptimizationServiceSettingsResponse:
+        """Get Test Optimization service settings.
+
+        Retrieve Test Optimization settings for a specific service identified by repository, service name, and environment.
+
+        :type body: TestOptimizationGetServiceSettingsRequest
+        :rtype: TestOptimizationServiceSettingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._get_test_optimization_service_settings_endpoint.call_with_http_info(**kwargs)
 
     def search_flaky_tests(
         self,
@@ -148,3 +252,20 @@ class TestOptimizationApi:
         kwargs["body"] = body
 
         return self._update_flaky_tests_endpoint.call_with_http_info(**kwargs)
+
+    def update_test_optimization_service_settings(
+        self,
+        body: TestOptimizationUpdateServiceSettingsRequest,
+    ) -> TestOptimizationServiceSettingsResponse:
+        """Update Test Optimization service settings.
+
+        Partially update Test Optimization settings for a specific service identified by repository, service name, and environment.
+        Only provided fields are updated; null or omitted fields are left unchanged.
+
+        :type body: TestOptimizationUpdateServiceSettingsRequest
+        :rtype: TestOptimizationServiceSettingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_test_optimization_service_settings_endpoint.call_with_http_info(**kwargs)
