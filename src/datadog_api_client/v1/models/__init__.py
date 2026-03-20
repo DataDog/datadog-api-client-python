@@ -409,6 +409,9 @@ from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_query_jo
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
     MonitorFormulaAndFunctionCostAggregator,
 )
+from datadog_api_client.v1.model.monitor_formula_and_function_cost_data_source import (
+    MonitorFormulaAndFunctionCostDataSource,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition import (
     MonitorFormulaAndFunctionCostQueryDefinition,
 )
@@ -1559,6 +1562,7 @@ __all__ = [
     "MonitorFormulaAndFunctionAggregateQueryJoinCondition",
     "MonitorFormulaAndFunctionAggregateQueryJoinType",
     "MonitorFormulaAndFunctionCostAggregator",
+    "MonitorFormulaAndFunctionCostDataSource",
     "MonitorFormulaAndFunctionCostQueryDefinition",
     "MonitorFormulaAndFunctionDataQualityDataSource",
     "MonitorFormulaAndFunctionDataQualityModelTypeOverride",

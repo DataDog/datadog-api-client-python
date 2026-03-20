@@ -8,11 +8,11 @@ from datadog_api_client.v1.model.monitor import Monitor
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
     MonitorFormulaAndFunctionCostAggregator,
 )
+from datadog_api_client.v1.model.monitor_formula_and_function_cost_data_source import (
+    MonitorFormulaAndFunctionCostDataSource,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition import (
     MonitorFormulaAndFunctionCostQueryDefinition,
-)
-from datadog_api_client.v1.model.monitor_formula_and_function_metrics_data_source import (
-    MonitorFormulaAndFunctionMetricsDataSource,
 )
 from datadog_api_client.v1.model.monitor_options import MonitorOptions
 from datadog_api_client.v1.model.monitor_thresholds import MonitorThresholds
@@ -35,7 +35,7 @@ body = Monitor(
         ),
         variables=[
             MonitorFormulaAndFunctionCostQueryDefinition(
-                data_source=MonitorFormulaAndFunctionMetricsDataSource.CLOUD_COST,
+                data_source=MonitorFormulaAndFunctionCostDataSource.CLOUD_COST,
                 query="sum:aws.cost.net.amortized.shared.resources.allocated{aws_product IN (amplify ,athena, backup, bedrock ) } by {aws_product}.rollup(sum, 86400)",
                 name="query1",
                 aggregator=MonitorFormulaAndFunctionCostAggregator.SUM,
