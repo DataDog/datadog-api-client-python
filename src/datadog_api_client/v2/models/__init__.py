@@ -6183,6 +6183,50 @@ from datadog_api_client.v2.model.tenancy_products_data_attributes_products_items
 )
 from datadog_api_client.v2.model.tenancy_products_data_type import TenancyProductsDataType
 from datadog_api_client.v2.model.tenancy_products_list import TenancyProductsList
+from datadog_api_client.v2.model.test_optimization_delete_service_settings_request import (
+    TestOptimizationDeleteServiceSettingsRequest,
+)
+from datadog_api_client.v2.model.test_optimization_delete_service_settings_request_attributes import (
+    TestOptimizationDeleteServiceSettingsRequestAttributes,
+)
+from datadog_api_client.v2.model.test_optimization_delete_service_settings_request_data import (
+    TestOptimizationDeleteServiceSettingsRequestData,
+)
+from datadog_api_client.v2.model.test_optimization_delete_service_settings_request_data_type import (
+    TestOptimizationDeleteServiceSettingsRequestDataType,
+)
+from datadog_api_client.v2.model.test_optimization_get_service_settings_request import (
+    TestOptimizationGetServiceSettingsRequest,
+)
+from datadog_api_client.v2.model.test_optimization_get_service_settings_request_attributes import (
+    TestOptimizationGetServiceSettingsRequestAttributes,
+)
+from datadog_api_client.v2.model.test_optimization_get_service_settings_request_data import (
+    TestOptimizationGetServiceSettingsRequestData,
+)
+from datadog_api_client.v2.model.test_optimization_get_service_settings_request_data_type import (
+    TestOptimizationGetServiceSettingsRequestDataType,
+)
+from datadog_api_client.v2.model.test_optimization_service_settings_attributes import (
+    TestOptimizationServiceSettingsAttributes,
+)
+from datadog_api_client.v2.model.test_optimization_service_settings_data import TestOptimizationServiceSettingsData
+from datadog_api_client.v2.model.test_optimization_service_settings_response import (
+    TestOptimizationServiceSettingsResponse,
+)
+from datadog_api_client.v2.model.test_optimization_service_settings_type import TestOptimizationServiceSettingsType
+from datadog_api_client.v2.model.test_optimization_update_service_settings_request import (
+    TestOptimizationUpdateServiceSettingsRequest,
+)
+from datadog_api_client.v2.model.test_optimization_update_service_settings_request_attributes import (
+    TestOptimizationUpdateServiceSettingsRequestAttributes,
+)
+from datadog_api_client.v2.model.test_optimization_update_service_settings_request_data import (
+    TestOptimizationUpdateServiceSettingsRequestData,
+)
+from datadog_api_client.v2.model.test_optimization_update_service_settings_request_data_type import (
+    TestOptimizationUpdateServiceSettingsRequestDataType,
+)
 from datadog_api_client.v2.model.threat_hunting_job_data_type import ThreatHuntingJobDataType
 from datadog_api_client.v2.model.threat_hunting_job_list_meta import ThreatHuntingJobListMeta
 from datadog_api_client.v2.model.threat_hunting_job_options import ThreatHuntingJobOptions
@@ -10855,6 +10899,22 @@ __all__ = [
     "TenancyProductsDataAttributesProductsItems",
     "TenancyProductsDataType",
     "TenancyProductsList",
+    "TestOptimizationDeleteServiceSettingsRequest",
+    "TestOptimizationDeleteServiceSettingsRequestAttributes",
+    "TestOptimizationDeleteServiceSettingsRequestData",
+    "TestOptimizationDeleteServiceSettingsRequestDataType",
+    "TestOptimizationGetServiceSettingsRequest",
+    "TestOptimizationGetServiceSettingsRequestAttributes",
+    "TestOptimizationGetServiceSettingsRequestData",
+    "TestOptimizationGetServiceSettingsRequestDataType",
+    "TestOptimizationServiceSettingsAttributes",
+    "TestOptimizationServiceSettingsData",
+    "TestOptimizationServiceSettingsResponse",
+    "TestOptimizationServiceSettingsType",
+    "TestOptimizationUpdateServiceSettingsRequest",
+    "TestOptimizationUpdateServiceSettingsRequestAttributes",
+    "TestOptimizationUpdateServiceSettingsRequestData",
+    "TestOptimizationUpdateServiceSettingsRequestDataType",
     "ThreatHuntingJobDataType",
     "ThreatHuntingJobListMeta",
     "ThreatHuntingJobOptions",

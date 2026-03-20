@@ -30370,6 +30370,118 @@ datadog\_api\_client.v2.model.tenancy\_products\_list module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.test\_optimization\_delete\_service\_settings\_request module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_delete_service_settings_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_delete\_service\_settings\_request\_attributes module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_delete_service_settings_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_delete\_service\_settings\_request\_data module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_delete_service_settings_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_delete\_service\_settings\_request\_data\_type module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_delete_service_settings_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_get\_service\_settings\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_get_service_settings_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_get\_service\_settings\_request\_attributes module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_get_service_settings_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_get\_service\_settings\_request\_data module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_get_service_settings_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_get\_service\_settings\_request\_data\_type module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_get_service_settings_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_service\_settings\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_service_settings_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_service\_settings\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_service_settings_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_service\_settings\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_service_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_service\_settings\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_service_settings_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_update\_service\_settings\_request module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_update_service_settings_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_update\_service\_settings\_request\_attributes module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_update_service_settings_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_update\_service\_settings\_request\_data module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_update_service_settings_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_update\_service\_settings\_request\_data\_type module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_update_service_settings_request_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.threat\_hunting\_job\_data\_type module
 ---------------------------------------------------------------------
 

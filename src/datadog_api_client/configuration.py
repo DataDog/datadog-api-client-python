@@ -279,6 +279,11 @@ class Configuration:
                 "v2.get_change_request": False,
                 "v2.update_change_request": False,
                 "v2.update_change_request_decision": False,
+                "v2.delete_test_optimization_service_settings": False,
+                "v2.get_test_optimization_service_settings": False,
+                "v2.search_flaky_tests": False,
+                "v2.update_flaky_tests": False,
+                "v2.update_test_optimization_service_settings": False,
                 "v2.create_aws_cloud_auth_persona_mapping": False,
                 "v2.delete_aws_cloud_auth_persona_mapping": False,
                 "v2.get_aws_cloud_auth_persona_mapping": False,
@@ -481,8 +486,6 @@ class Configuration:
                 "v2.get_incident_team": False,
                 "v2.list_incident_teams": False,
                 "v2.update_incident_team": False,
-                "v2.search_flaky_tests": False,
-                "v2.update_flaky_tests": False,
             }
         )
 
