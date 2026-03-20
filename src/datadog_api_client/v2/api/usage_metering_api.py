@@ -21,6 +21,7 @@ from datadog_api_client.v2.model.usage_application_security_monitoring_response 
 )
 from datadog_api_client.v2.model.billing_dimensions_mapping_response import BillingDimensionsMappingResponse
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
+from datadog_api_client.v2.model.cost_aggregation_type import CostAggregationType
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
@@ -151,6 +152,11 @@ class UsageMeteringApi:
                 "end_date": {
                     "openapi_types": (datetime,),
                     "attribute": "end_date",
+                    "location": "query",
+                },
+                "cost_aggregation": {
+                    "openapi_types": (CostAggregationType,),
+                    "attribute": "cost_aggregation",
                     "location": "query",
                 },
                 "include_connected_accounts": {
@@ -536,6 +542,7 @@ class UsageMeteringApi:
         end_month: Union[datetime, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         end_date: Union[datetime, UnsetType] = unset,
+        cost_aggregation: Union[CostAggregationType, UnsetType] = unset,
         include_connected_accounts: Union[bool, UnsetType] = unset,
     ) -> CostByOrgResponse:
         """Get estimated cost across your account.
@@ -557,6 +564,8 @@ class UsageMeteringApi:
         :type start_date: datetime, optional
         :param end_date: Datetime in ISO-8601 format, UTC, precise to day: ``[YYYY-MM-DD]`` for cost ending this day.
         :type end_date: datetime, optional
+        :param cost_aggregation: Controls how costs are aggregated when using ``start_date``. The ``cumulative`` option returns month-to-date running totals.
+        :type cost_aggregation: CostAggregationType, optional
         :param include_connected_accounts: Boolean to specify whether to include accounts connected to the current account as partner customers in the Datadog partner network program. Defaults to ``false``.
         :type include_connected_accounts: bool, optional
         :rtype: CostByOrgResponse
@@ -576,6 +585,9 @@ class UsageMeteringApi:
 
         if end_date is not unset:
             kwargs["end_date"] = end_date
+
+        if cost_aggregation is not unset:
+            kwargs["cost_aggregation"] = cost_aggregation
 
         if include_connected_accounts is not unset:
             kwargs["include_connected_accounts"] = include_connected_accounts
