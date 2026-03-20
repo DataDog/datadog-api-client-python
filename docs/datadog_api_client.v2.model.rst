@@ -5772,6 +5772,13 @@ datadog\_api\_client.v2.model.convert\_job\_results\_to\_signals\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_aggregation\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_aggregation_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_attribution\_aggregates\_body module
 ------------------------------------------------------------------------
 
