@@ -6234,6 +6234,62 @@ datadog\_api\_client.v2.model.create\_email\_notification\_channel\_config modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_environment\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_environment_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_environment\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_environment_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_environment\_data\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_environment_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_environment\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_environment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_feature\_flag\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_feature_flag_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_feature\_flag\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_feature_flag_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_feature\_flag\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_feature_flag_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_feature\_flag\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_feature_flag_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_incident\_notification\_rule\_request module
 ----------------------------------------------------------------------------------
 
@@ -6784,6 +6840,13 @@ datadog\_api\_client.v2.model.create\_user\_notification\_channel\_request modul
 ---------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_user_notification_channel_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_variant module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_variant
    :members:
    :show-inheritance:
 
@@ -9692,6 +9755,41 @@ datadog\_api\_client.v2.model.entity\_v3\_system\_spec module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.environment module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.environment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.environment\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.environment_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.environment\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.environment_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.environments\_pagination\_meta module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.environments_pagination_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.environments\_pagination\_meta\_page module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.environments_pagination_meta_page
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.epss module
 -----------------------------------------
 
@@ -10571,6 +10669,62 @@ datadog\_api\_client.v2.model.fastly\_services\_response module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.fastly_services_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag\_environment module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_environment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag\_status module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag\_targeting\_rule module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_targeting_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flags\_pagination\_meta module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flags_pagination_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flags\_pagination\_meta\_page module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flags_pagination_meta_page
    :members:
    :show-inheritance:
 
@@ -15380,6 +15534,20 @@ datadog\_api\_client.v2.model.list\_entity\_catalog\_response\_links module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_entity_catalog_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_environments\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_environments_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_feature\_flags\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_feature_flags_response
    :members:
    :show-inheritance:
 
@@ -30916,6 +31084,62 @@ datadog\_api\_client.v2.model.update\_deployment\_rule\_params\_data\_attributes
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_environment\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_environment_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_environment\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_environment_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_environment\_data\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_environment_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_environment\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_environment_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_feature\_flag\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_feature_flag_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_feature\_flag\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_feature_flag_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_feature\_flag\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_feature_flag_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_feature\_flag\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_feature_flag_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_flaky\_tests\_request module
 ------------------------------------------------------------------
 
@@ -31753,6 +31977,20 @@ datadog\_api\_client.v2.model.validation\_response module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.validation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.value\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.value_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.variant module
+--------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.variant
    :members:
    :show-inheritance:
 

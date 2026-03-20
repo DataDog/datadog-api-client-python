@@ -1,0 +1,95 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test feature flag for BDD scenarios","key":"test-feature-flag-Test-Archive_a_feature_flag_returns_OK_response-1773768381","name":"Test
+      Feature Flag Test-Archive_a_feature_flag_returns_OK_response-1773768381","value_type":"BOOLEAN","variants":[{"key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-1","name":"Variant
+      Test-Archive_a_feature_flag_returns_OK_response-1773768381 A","value":"true"},{"key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-2","name":"Variant
+      Test-Archive_a_feature_flag_returns_OK_response-1773768381 B","value":"false"}]},"type":"feature-flags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags
+  response:
+    body:
+      string: '{"data":{"id":"194c984e-34a0-4388-89d4-94a818312493","type":"feature-flags","attributes":{"archived_at":null,"created_at":"2026-03-17T17:26:21.863655Z","created_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Test
+        feature flag for BDD scenarios","distribution_channel":"ALL","feature_flag_environments":[{"environment_id":"0b94dbaa-9efb-419d-8bd7-ef56f3828986","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773321543","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-a8a51d28e424","override_allocation_key":"allocation-override-a8a51d28e424","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false},{"environment_id":"afdaa512-6307-4965-bf92-62cc6bea5d00","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773322166","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-f1974d82b5b7","override_allocation_key":"allocation-override-f1974d82b5b7","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false}],"key":"test-feature-flag-Test-Archive_a_feature_flag_returns_OK_response-1773768381","last_updated_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"Test
+        Feature Flag Test-Archive_a_feature_flag_returns_OK_response-1773768381","require_approval":false,"updated_at":"2026-03-17T17:26:21.863655Z","value_type":"BOOLEAN","variants":[{"id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-1","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 A","value":"true","created_at":"2026-03-17T17:26:21.86806Z","updated_at":"2026-03-17T17:26:21.86806Z"},{"id":"9cda04ed-7ff3-4cf8-89ac-3f0e33b8f6e1","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-2","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 B","value":"false","created_at":"2026-03-17T17:26:21.872328Z","updated_at":"2026-03-17T17:26:21.872328Z"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags/194c984e-34a0-4388-89d4-94a818312493/archive
+  response:
+    body:
+      string: '{"data":{"id":"194c984e-34a0-4388-89d4-94a818312493","type":"feature-flags","attributes":{"archived_at":"2026-03-17T17:26:22.178257Z","created_at":"2026-03-17T17:26:21.863655Z","created_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Test
+        feature flag for BDD scenarios","distribution_channel":"ALL","feature_flag_environments":[{"environment_id":"0b94dbaa-9efb-419d-8bd7-ef56f3828986","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773321543","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-a8a51d28e424","override_allocation_key":"allocation-override-a8a51d28e424","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false},{"environment_id":"afdaa512-6307-4965-bf92-62cc6bea5d00","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773322166","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-f1974d82b5b7","override_allocation_key":"allocation-override-f1974d82b5b7","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false}],"key":"test-feature-flag-Test-Archive_a_feature_flag_returns_OK_response-1773768381","last_updated_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"Test
+        Feature Flag Test-Archive_a_feature_flag_returns_OK_response-1773768381","require_approval":false,"updated_at":"2026-03-17T17:26:22.178257Z","value_type":"BOOLEAN","variants":[{"id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-1","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 A","value":"true","created_at":"2026-03-17T17:26:21.86806Z","updated_at":"2026-03-17T17:26:21.86806Z"},{"id":"9cda04ed-7ff3-4cf8-89ac-3f0e33b8f6e1","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-2","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 B","value":"false","created_at":"2026-03-17T17:26:21.872328Z","updated_at":"2026-03-17T17:26:21.872328Z"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags/194c984e-34a0-4388-89d4-94a818312493/unarchive
+  response:
+    body:
+      string: '{"data":{"id":"194c984e-34a0-4388-89d4-94a818312493","type":"feature-flags","attributes":{"archived_at":null,"created_at":"2026-03-17T17:26:21.863655Z","created_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Test
+        feature flag for BDD scenarios","distribution_channel":"ALL","feature_flag_environments":[{"environment_id":"0b94dbaa-9efb-419d-8bd7-ef56f3828986","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773321543","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-a8a51d28e424","override_allocation_key":"allocation-override-a8a51d28e424","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false},{"environment_id":"afdaa512-6307-4965-bf92-62cc6bea5d00","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773322166","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-f1974d82b5b7","override_allocation_key":"allocation-override-f1974d82b5b7","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false}],"key":"test-feature-flag-Test-Archive_a_feature_flag_returns_OK_response-1773768381","last_updated_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"Test
+        Feature Flag Test-Archive_a_feature_flag_returns_OK_response-1773768381","require_approval":false,"updated_at":"2026-03-17T17:26:22.541762Z","value_type":"BOOLEAN","variants":[{"id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-1","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 A","value":"true","created_at":"2026-03-17T17:26:21.86806Z","updated_at":"2026-03-17T17:26:21.86806Z"},{"id":"9cda04ed-7ff3-4cf8-89ac-3f0e33b8f6e1","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-2","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 B","value":"false","created_at":"2026-03-17T17:26:21.872328Z","updated_at":"2026-03-17T17:26:21.872328Z"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags/194c984e-34a0-4388-89d4-94a818312493/archive
+  response:
+    body:
+      string: '{"data":{"id":"194c984e-34a0-4388-89d4-94a818312493","type":"feature-flags","attributes":{"archived_at":"2026-03-17T17:26:22.921183Z","created_at":"2026-03-17T17:26:21.863655Z","created_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Test
+        feature flag for BDD scenarios","distribution_channel":"ALL","feature_flag_environments":[{"environment_id":"0b94dbaa-9efb-419d-8bd7-ef56f3828986","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773321543","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-a8a51d28e424","override_allocation_key":"allocation-override-a8a51d28e424","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false},{"environment_id":"afdaa512-6307-4965-bf92-62cc6bea5d00","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773322166","status":"DISABLED","default_variant_id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","override_variant_id":null,"default_allocation_key":"allocation-default-f1974d82b5b7","override_allocation_key":"allocation-override-f1974d82b5b7","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"pending_suggestion_id":null,"require_feature_flag_approval":false}],"key":"test-feature-flag-Test-Archive_a_feature_flag_returns_OK_response-1773768381","last_updated_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"Test
+        Feature Flag Test-Archive_a_feature_flag_returns_OK_response-1773768381","require_approval":false,"updated_at":"2026-03-17T17:26:22.921183Z","value_type":"BOOLEAN","variants":[{"id":"58f4eaa1-9868-40c4-927f-10c6bf2bd133","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-1","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 A","value":"true","created_at":"2026-03-17T17:26:21.86806Z","updated_at":"2026-03-17T17:26:21.86806Z"},{"id":"9cda04ed-7ff3-4cf8-89ac-3f0e33b8f6e1","key":"variant-Test-Archive_a_feature_flag_returns_OK_response-1773768381-2","name":"Variant
+        Test-Archive_a_feature_flag_returns_OK_response-1773768381 B","value":"false","created_at":"2026-03-17T17:26:21.872328Z","updated_at":"2026-03-17T17:26:21.872328Z"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

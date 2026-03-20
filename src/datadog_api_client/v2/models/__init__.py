@@ -1193,6 +1193,14 @@ from datadog_api_client.v2.model.create_deployment_rule_params_data_attributes i
     CreateDeploymentRuleParamsDataAttributes,
 )
 from datadog_api_client.v2.model.create_email_notification_channel_config import CreateEmailNotificationChannelConfig
+from datadog_api_client.v2.model.create_environment_attributes import CreateEnvironmentAttributes
+from datadog_api_client.v2.model.create_environment_data import CreateEnvironmentData
+from datadog_api_client.v2.model.create_environment_data_type import CreateEnvironmentDataType
+from datadog_api_client.v2.model.create_environment_request import CreateEnvironmentRequest
+from datadog_api_client.v2.model.create_feature_flag_attributes import CreateFeatureFlagAttributes
+from datadog_api_client.v2.model.create_feature_flag_data import CreateFeatureFlagData
+from datadog_api_client.v2.model.create_feature_flag_data_type import CreateFeatureFlagDataType
+from datadog_api_client.v2.model.create_feature_flag_request import CreateFeatureFlagRequest
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
@@ -1328,6 +1336,7 @@ from datadog_api_client.v2.model.create_upload_response_data import CreateUpload
 from datadog_api_client.v2.model.create_upload_response_data_attributes import CreateUploadResponseDataAttributes
 from datadog_api_client.v2.model.create_upload_response_data_type import CreateUploadResponseDataType
 from datadog_api_client.v2.model.create_user_notification_channel_request import CreateUserNotificationChannelRequest
+from datadog_api_client.v2.model.create_variant import CreateVariant
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
@@ -1911,6 +1920,11 @@ from datadog_api_client.v2.model.entity_v3_system import EntityV3System
 from datadog_api_client.v2.model.entity_v3_system_datadog import EntityV3SystemDatadog
 from datadog_api_client.v2.model.entity_v3_system_kind import EntityV3SystemKind
 from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
+from datadog_api_client.v2.model.environment import Environment
+from datadog_api_client.v2.model.environment_attributes import EnvironmentAttributes
+from datadog_api_client.v2.model.environment_response import EnvironmentResponse
+from datadog_api_client.v2.model.environments_pagination_meta import EnvironmentsPaginationMeta
+from datadog_api_client.v2.model.environments_pagination_meta_page import EnvironmentsPaginationMetaPage
 from datadog_api_client.v2.model.error_handler import ErrorHandler
 from datadog_api_client.v2.model.escalation import Escalation
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
@@ -2072,6 +2086,14 @@ from datadog_api_client.v2.model.fastly_service_request import FastlyServiceRequ
 from datadog_api_client.v2.model.fastly_service_response import FastlyServiceResponse
 from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
+from datadog_api_client.v2.model.feature_flag import FeatureFlag
+from datadog_api_client.v2.model.feature_flag_attributes import FeatureFlagAttributes
+from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
+from datadog_api_client.v2.model.feature_flag_response import FeatureFlagResponse
+from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
+from datadog_api_client.v2.model.feature_flag_targeting_rule import FeatureFlagTargetingRule
+from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
+from datadog_api_client.v2.model.feature_flags_pagination_meta_page import FeatureFlagsPaginationMetaPage
 from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.finding_attributes import FindingAttributes
@@ -3003,6 +3025,8 @@ from datadog_api_client.v2.model.list_downtimes_response import ListDowntimesRes
 from datadog_api_client.v2.model.list_entity_catalog_response import ListEntityCatalogResponse
 from datadog_api_client.v2.model.list_entity_catalog_response_included_item import ListEntityCatalogResponseIncludedItem
 from datadog_api_client.v2.model.list_entity_catalog_response_links import ListEntityCatalogResponseLinks
+from datadog_api_client.v2.model.list_environments_response import ListEnvironmentsResponse
+from datadog_api_client.v2.model.list_feature_flags_response import ListFeatureFlagsResponse
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
@@ -6279,6 +6303,14 @@ from datadog_api_client.v2.model.update_deployment_rule_params_data import Updat
 from datadog_api_client.v2.model.update_deployment_rule_params_data_attributes import (
     UpdateDeploymentRuleParamsDataAttributes,
 )
+from datadog_api_client.v2.model.update_environment_attributes import UpdateEnvironmentAttributes
+from datadog_api_client.v2.model.update_environment_data import UpdateEnvironmentData
+from datadog_api_client.v2.model.update_environment_data_type import UpdateEnvironmentDataType
+from datadog_api_client.v2.model.update_environment_request import UpdateEnvironmentRequest
+from datadog_api_client.v2.model.update_feature_flag_attributes import UpdateFeatureFlagAttributes
+from datadog_api_client.v2.model.update_feature_flag_data import UpdateFeatureFlagData
+from datadog_api_client.v2.model.update_feature_flag_data_type import UpdateFeatureFlagDataType
+from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
 from datadog_api_client.v2.model.update_flaky_tests_request import UpdateFlakyTestsRequest
 from datadog_api_client.v2.model.update_flaky_tests_request_attributes import UpdateFlakyTestsRequestAttributes
 from datadog_api_client.v2.model.update_flaky_tests_request_data import UpdateFlakyTestsRequestData
@@ -6433,6 +6465,8 @@ from datadog_api_client.v2.model.v2_event_response import V2EventResponse
 from datadog_api_client.v2.model.validation_error import ValidationError
 from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMeta
 from datadog_api_client.v2.model.validation_response import ValidationResponse
+from datadog_api_client.v2.model.value_type import ValueType
+from datadog_api_client.v2.model.variant import Variant
 from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
 from datadog_api_client.v2.model.version_history_update_type import VersionHistoryUpdateType
 from datadog_api_client.v2.model.viewership_history_session_array import ViewershipHistorySessionArray
@@ -7401,6 +7435,14 @@ __all__ = [
     "CreateDeploymentRuleParamsData",
     "CreateDeploymentRuleParamsDataAttributes",
     "CreateEmailNotificationChannelConfig",
+    "CreateEnvironmentAttributes",
+    "CreateEnvironmentData",
+    "CreateEnvironmentDataType",
+    "CreateEnvironmentRequest",
+    "CreateFeatureFlagAttributes",
+    "CreateFeatureFlagData",
+    "CreateFeatureFlagDataType",
+    "CreateFeatureFlagRequest",
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateJiraIssueRequestArray",
@@ -7480,6 +7522,7 @@ __all__ = [
     "CreateUploadResponseDataAttributes",
     "CreateUploadResponseDataType",
     "CreateUserNotificationChannelRequest",
+    "CreateVariant",
     "CreateWorkflowRequest",
     "CreateWorkflowResponse",
     "Creator",
@@ -7895,6 +7938,11 @@ __all__ = [
     "EntityV3SystemDatadog",
     "EntityV3SystemKind",
     "EntityV3SystemSpec",
+    "Environment",
+    "EnvironmentAttributes",
+    "EnvironmentResponse",
+    "EnvironmentsPaginationMeta",
+    "EnvironmentsPaginationMetaPage",
     "ErrorHandler",
     "Escalation",
     "EscalationPolicy",
@@ -8020,6 +8068,14 @@ __all__ = [
     "FastlyServiceResponse",
     "FastlyServiceType",
     "FastlyServicesResponse",
+    "FeatureFlag",
+    "FeatureFlagAttributes",
+    "FeatureFlagEnvironment",
+    "FeatureFlagResponse",
+    "FeatureFlagStatus",
+    "FeatureFlagTargetingRule",
+    "FeatureFlagsPaginationMeta",
+    "FeatureFlagsPaginationMetaPage",
     "FiltersPerProduct",
     "Finding",
     "FindingAttributes",
@@ -8779,6 +8835,8 @@ __all__ = [
     "ListEntityCatalogResponse",
     "ListEntityCatalogResponseIncludedItem",
     "ListEntityCatalogResponseLinks",
+    "ListEnvironmentsResponse",
+    "ListFeatureFlagsResponse",
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
@@ -10933,6 +10991,14 @@ __all__ = [
     "UpdateDeploymentRuleParams",
     "UpdateDeploymentRuleParamsData",
     "UpdateDeploymentRuleParamsDataAttributes",
+    "UpdateEnvironmentAttributes",
+    "UpdateEnvironmentData",
+    "UpdateEnvironmentDataType",
+    "UpdateEnvironmentRequest",
+    "UpdateFeatureFlagAttributes",
+    "UpdateFeatureFlagData",
+    "UpdateFeatureFlagDataType",
+    "UpdateFeatureFlagRequest",
     "UpdateFlakyTestsRequest",
     "UpdateFlakyTestsRequestAttributes",
     "UpdateFlakyTestsRequestData",
@@ -11053,6 +11119,8 @@ __all__ = [
     "ValidationError",
     "ValidationErrorMeta",
     "ValidationResponse",
+    "ValueType",
+    "Variant",
     "VersionHistoryUpdate",
     "VersionHistoryUpdateType",
     "ViewershipHistorySessionArray",
