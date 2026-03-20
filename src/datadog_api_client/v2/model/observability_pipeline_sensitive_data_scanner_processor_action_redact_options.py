@@ -25,7 +25,7 @@ class ObservabilityPipelineSensitiveDataScannerProcessorActionRedactOptions(Mode
         """
         Configuration for fully redacting sensitive data.
 
-        :param replace: The string used to replace matched sensitive data (for example, "***" or "[REDACTED]").
+        :param replace: The ``ObservabilityPipelineSensitiveDataScannerProcessorActionRedactOptions`` ``replace``.
         :type replace: str
         """
         super().__init__(kwargs)
