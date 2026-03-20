@@ -51,6 +51,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
     from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
     from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
+    from datadog_api_client.v1.model.wildcard_widget_definition import WildcardWidgetDefinition
 
 
 class Widget(ModelNormal):
@@ -110,6 +111,7 @@ class Widget(ModelNormal):
             ToplistWidgetDefinition,
             TopologyMapWidgetDefinition,
             TreeMapWidgetDefinition,
+            WildcardWidgetDefinition,
         ],
         id: Union[int, UnsetType] = unset,
         layout: Union[WidgetLayout, UnsetType] = unset,
