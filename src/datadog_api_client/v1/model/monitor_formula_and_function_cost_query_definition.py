@@ -17,8 +17,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
         MonitorFormulaAndFunctionCostAggregator,
     )
-    from datadog_api_client.v1.model.monitor_formula_and_function_metrics_data_source import (
-        MonitorFormulaAndFunctionMetricsDataSource,
+    from datadog_api_client.v1.model.monitor_formula_and_function_cost_data_source import (
+        MonitorFormulaAndFunctionCostDataSource,
     )
 
 
@@ -28,13 +28,13 @@ class MonitorFormulaAndFunctionCostQueryDefinition(ModelNormal):
         from datadog_api_client.v1.model.monitor_formula_and_function_cost_aggregator import (
             MonitorFormulaAndFunctionCostAggregator,
         )
-        from datadog_api_client.v1.model.monitor_formula_and_function_metrics_data_source import (
-            MonitorFormulaAndFunctionMetricsDataSource,
+        from datadog_api_client.v1.model.monitor_formula_and_function_cost_data_source import (
+            MonitorFormulaAndFunctionCostDataSource,
         )
 
         return {
             "aggregator": (MonitorFormulaAndFunctionCostAggregator,),
-            "data_source": (MonitorFormulaAndFunctionMetricsDataSource,),
+            "data_source": (MonitorFormulaAndFunctionCostDataSource,),
             "name": (str,),
             "query": (str,),
         }
@@ -48,7 +48,7 @@ class MonitorFormulaAndFunctionCostQueryDefinition(ModelNormal):
 
     def __init__(
         self_,
-        data_source: MonitorFormulaAndFunctionMetricsDataSource,
+        data_source: MonitorFormulaAndFunctionCostDataSource,
         name: str,
         query: str,
         aggregator: Union[MonitorFormulaAndFunctionCostAggregator, UnsetType] = unset,
@@ -60,8 +60,8 @@ class MonitorFormulaAndFunctionCostQueryDefinition(ModelNormal):
         :param aggregator: Aggregation methods for metric queries.
         :type aggregator: MonitorFormulaAndFunctionCostAggregator, optional
 
-        :param data_source: Data source for metrics queries.
-        :type data_source: MonitorFormulaAndFunctionMetricsDataSource
+        :param data_source: Data source for cost queries.
+        :type data_source: MonitorFormulaAndFunctionCostDataSource
 
         :param name: Name of the query for use in formulas.
         :type name: str
