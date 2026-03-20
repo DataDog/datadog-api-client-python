@@ -1211,6 +1211,11 @@ from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
 from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
 from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
 from datadog_api_client.v1.model.widget_viz_type import WidgetVizType
+from datadog_api_client.v1.model.wildcard_widget_definition import WildcardWidgetDefinition
+from datadog_api_client.v1.model.wildcard_widget_definition_type import WildcardWidgetDefinitionType
+from datadog_api_client.v1.model.wildcard_widget_request import WildcardWidgetRequest
+from datadog_api_client.v1.model.wildcard_widget_specification import WildcardWidgetSpecification
+from datadog_api_client.v1.model.wildcard_widget_specification_type import WildcardWidgetSpecificationType
 
 __all__ = [
     "APIErrorResponse",
@@ -2226,4 +2231,9 @@ __all__ = [
     "WidgetVerticalAlign",
     "WidgetViewMode",
     "WidgetVizType",
+    "WildcardWidgetDefinition",
+    "WildcardWidgetDefinitionType",
+    "WildcardWidgetRequest",
+    "WildcardWidgetSpecification",
+    "WildcardWidgetSpecificationType",
 ]
