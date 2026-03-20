@@ -26,7 +26,7 @@ class ObservabilityPipelineSensitiveDataScannerProcessorScopeOptions(ModelNormal
         """
         Fields to which the scope rule applies.
 
-        :param fields: The ``ObservabilityPipelineSensitiveDataScannerProcessorScopeOptions`` ``fields``.
+        :param fields: List of log attribute names (field paths) to which the scope applies. Only these fields are included in or excluded from pattern matching.
         :type fields: [str]
         """
         super().__init__(kwargs)

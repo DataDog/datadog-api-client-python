@@ -106,8 +106,8 @@ class ObservabilityPipelineSensitiveDataScannerProcessorRule(ModelNormal):
             ObservabilityPipelineSensitiveDataScannerProcessorScopeExclude,
             ObservabilityPipelineSensitiveDataScannerProcessorScopeAll,
         ],
-        tags: List[str],
         keyword_options: Union[ObservabilityPipelineSensitiveDataScannerProcessorKeywordOptions, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -129,14 +129,15 @@ class ObservabilityPipelineSensitiveDataScannerProcessorRule(ModelNormal):
         :type scope: ObservabilityPipelineSensitiveDataScannerProcessorScope
 
         :param tags: Tags assigned to this rule for filtering and classification.
-        :type tags: [str]
+        :type tags: [str], optional
         """
         if keyword_options is not unset:
             kwargs["keyword_options"] = keyword_options
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.name = name
         self_.on_match = on_match
         self_.pattern = pattern
         self_.scope = scope
-        self_.tags = tags
