@@ -48,9 +48,7 @@ class ObservabilityPipelineSensitiveDataScannerProcessorActionHash(ModelNormal):
         :param action: Action type that replaces the matched sensitive data with a hashed representation, preserving structure while securing content.
         :type action: ObservabilityPipelineSensitiveDataScannerProcessorActionHashAction
 
-        :param options: Optional settings for the hash action. When omitted or empty, matched sensitive data is
-            replaced with a deterministic hashed value that preserves structure for analytics while
-            protecting the original content. Reserved for future hash configuration (for example, algorithm or salt).
+        :param options: The ``ObservabilityPipelineSensitiveDataScannerProcessorActionHash`` ``options``.
         :type options: dict, optional
         """
         if options is not unset:
