@@ -1095,6 +1095,7 @@ from datadog_api_client.v2.model.convert_job_results_to_signals_attributes impor
 from datadog_api_client.v2.model.convert_job_results_to_signals_data import ConvertJobResultsToSignalsData
 from datadog_api_client.v2.model.convert_job_results_to_signals_data_type import ConvertJobResultsToSignalsDataType
 from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
+from datadog_api_client.v2.model.cost_aggregation_type import CostAggregationType
 from datadog_api_client.v2.model.cost_attribution_aggregates_body import CostAttributionAggregatesBody
 from datadog_api_client.v2.model.cost_attribution_tag_names import CostAttributionTagNames
 from datadog_api_client.v2.model.cost_attribution_type import CostAttributionType
@@ -7453,6 +7454,7 @@ __all__ = [
     "ConvertJobResultsToSignalsData",
     "ConvertJobResultsToSignalsDataType",
     "ConvertJobResultsToSignalsRequest",
+    "CostAggregationType",
     "CostAttributionAggregatesBody",
     "CostAttributionTagNames",
     "CostAttributionType",
