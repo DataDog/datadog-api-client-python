@@ -8453,6 +8453,125 @@ datadog\_api\_client.v2.model.deployment\_gate\_rules\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_request\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_request\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_request\_data\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_response\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_response\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_response\_data\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_result\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_result_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_result\_response\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_result_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_result\_response\_attributes\_gate\_status module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_result_response_attributes_gate_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_result\_response\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_result_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_result\_response\_data\_type module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_result_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_list\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_list\_response\_meta module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_list_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_list\_response\_meta\_page module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_list_response_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_rule\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_rule_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.deployment\_metadata module
 ---------------------------------------------------------
 

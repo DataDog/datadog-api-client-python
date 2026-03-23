@@ -79,11 +79,11 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @team:DataDog/ci-app-backend
   Scenario: Delete deployment gate returns "Deployment gate not found." response
     Given operation "DeleteDeploymentGate" enabled
     And new "DeleteDeploymentGate" request
-    And request contains "id" parameter from "REPLACE.ME"
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
@@ -114,12 +114,12 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @team:DataDog/ci-app-backend
   Scenario: Delete deployment rule returns "Deployment gate not found." response
     Given operation "DeleteDeploymentRule" enabled
     And new "DeleteDeploymentRule" request
-    And request contains "gate_id" parameter from "REPLACE.ME"
-    And request contains "id" parameter from "REPLACE.ME"
+    And request contains "gate_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
@@ -133,6 +133,64 @@ Feature: Deployment Gates
     And request contains "id" parameter from "deployment_rule.data.id"
     When the request is sent
     Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get a deployment gate evaluation result returns "Bad request." response
+    Given operation "GetDeploymentGatesEvaluationResult" enabled
+    And new "GetDeploymentGatesEvaluationResult" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad request.
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get a deployment gate evaluation result returns "Deployment gate not found." response
+    Given operation "GetDeploymentGatesEvaluationResult" enabled
+    And new "GetDeploymentGatesEvaluationResult" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Deployment gate not found.
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get a deployment gate evaluation result returns "OK" response
+    Given operation "GetDeploymentGatesEvaluationResult" enabled
+    And new "GetDeploymentGatesEvaluationResult" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/ci-app-backend
+  Scenario: Get a deployment gates evaluation result returns "Deployment gate not found." response
+    Given operation "GetDeploymentGatesEvaluationResult" enabled
+    And new "GetDeploymentGatesEvaluationResult" request
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Deployment gate not found.
+
+  @team:DataDog/ci-app-backend
+  Scenario: Get a deployment gates evaluation result returns "OK" response
+    Given operation "GetDeploymentGatesEvaluationResult" enabled
+    And there is a valid "deployment_gate" in the system
+    And there is a valid "deployment_rule" in the system
+    And there is a valid "deployment_gates_evaluation" in the system
+    And new "GetDeploymentGatesEvaluationResult" request
+    And request contains "id" parameter from "deployment_gates_evaluation.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "deployment_gates_evaluation_result_response"
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get all deployment gates returns "Bad request." response
+    Given operation "ListDeploymentGates" enabled
+    And new "ListDeploymentGates" request
+    When the request is sent
+    Then the response status is 400 Bad request.
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get all deployment gates returns "OK" response
+    Given operation "ListDeploymentGates" enabled
+    And new "ListDeploymentGates" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/ci-app-backend
   Scenario: Get deployment gate returns "Bad Request" response
@@ -150,11 +208,11 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @team:DataDog/ci-app-backend
   Scenario: Get deployment gate returns "Deployment gate not found." response
     Given operation "GetDeploymentGate" enabled
     And new "GetDeploymentGate" request
-    And request contains "id" parameter from "REPLACE.ME"
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
@@ -187,12 +245,12 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @team:DataDog/ci-app-backend
   Scenario: Get deployment rule returns "Deployment rule not found." response
     Given operation "GetDeploymentRule" enabled
     And new "GetDeploymentRule" request
-    And request contains "gate_id" parameter from "REPLACE.ME"
-    And request contains "id" parameter from "REPLACE.ME"
+    And request contains "gate_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Deployment rule not found.
 
@@ -207,11 +265,11 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @team:DataDog/ci-app-backend
   Scenario: Get rules for a deployment gate returns "Bad request." response
     Given operation "GetDeploymentGateRules" enabled
     And new "GetDeploymentGateRules" request
-    And request contains "gate_id" parameter from "REPLACE.ME"
+    And request contains "gate_id" parameter with value "not-a-valid-id"
     When the request is sent
     Then the response status is 400 Bad request.
 
@@ -223,6 +281,57 @@ Feature: Deployment Gates
     And request contains "gate_id" parameter from "deployment_gate.data.id"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Trigger a deployment gate evaluation returns "Accepted" response
+    Given operation "TriggerDeploymentGatesEvaluation" enabled
+    And new "TriggerDeploymentGatesEvaluation" request
+    And body with value {"data": {"attributes": {"env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Trigger a deployment gate evaluation returns "Bad request." response
+    Given operation "TriggerDeploymentGatesEvaluation" enabled
+    And new "TriggerDeploymentGatesEvaluation" request
+    And body with value {"data": {"attributes": {"env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
+    When the request is sent
+    Then the response status is 400 Bad request.
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Trigger a deployment gate evaluation returns "Deployment gate not found." response
+    Given operation "TriggerDeploymentGatesEvaluation" enabled
+    And new "TriggerDeploymentGatesEvaluation" request
+    And body with value {"data": {"attributes": {"env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
+    When the request is sent
+    Then the response status is 404 Deployment gate not found.
+
+  @team:DataDog/ci-app-backend
+  Scenario: Trigger a deployment gates evaluation returns "Accepted" response
+    Given operation "TriggerDeploymentGatesEvaluation" enabled
+    And there is a valid "deployment_gate" in the system
+    And there is a valid "deployment_rule" in the system
+    And new "TriggerDeploymentGatesEvaluation" request
+    And body with value {"data": {"attributes": {"env": "production", "identifier": "{{ deployment_gate.data.attributes.identifier }}", "service": "my-service"}, "type": "deployment_gates_evaluation_request"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+    And the response "data.type" is equal to "deployment_gates_evaluation_response"
+
+  @team:DataDog/ci-app-backend
+  Scenario: Trigger a deployment gates evaluation returns "Bad request." response
+    Given operation "TriggerDeploymentGatesEvaluation" enabled
+    And new "TriggerDeploymentGatesEvaluation" request
+    And body with value {"data": {"attributes": {"env": "", "service": "my-service"}, "type": "deployment_gates_evaluation_request"}}
+    When the request is sent
+    Then the response status is 400 Bad request.
+
+  @team:DataDog/ci-app-backend
+  Scenario: Trigger a deployment gates evaluation returns "Deployment gate not found." response
+    Given operation "TriggerDeploymentGatesEvaluation" enabled
+    And new "TriggerDeploymentGatesEvaluation" request
+    And body with value {"data": {"attributes": {"env": "staging", "service": "non-existent-service-xyz"}, "type": "deployment_gates_evaluation_request"}}
+    When the request is sent
+    Then the response status is 404 Deployment gate not found.
 
   @team:DataDog/ci-app-backend
   Scenario: Update deployment gate returns "Bad Request" response
@@ -242,11 +351,11 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @team:DataDog/ci-app-backend
   Scenario: Update deployment gate returns "Deployment gate not found." response
     Given operation "UpdateDeploymentGate" enabled
     And new "UpdateDeploymentGate" request
-    And request contains "id" parameter from "REPLACE.ME"
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     And body with value {"data": {"attributes": {"dry_run": false}, "id": "12345678-1234-1234-1234-123456789012", "type": "deployment_gate"}}
     When the request is sent
     Then the response status is 404 Deployment gate not found.
@@ -283,12 +392,12 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @team:DataDog/ci-app-backend
   Scenario: Update deployment rule returns "Deployment rule not found." response
     Given operation "UpdateDeploymentRule" enabled
     And new "UpdateDeploymentRule" request
-    And request contains "gate_id" parameter from "REPLACE.ME"
-    And request contains "id" parameter from "REPLACE.ME"
+    And request contains "gate_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     And body with value {"data": {"attributes": {"dry_run": false, "name": "Updated deployment rule", "options": {"duration": 3600, "excluded_resources": ["resource1", "resource2"]}}, "type": "deployment_rule"}}
     When the request is sent
     Then the response status is 404 Deployment rule not found.
