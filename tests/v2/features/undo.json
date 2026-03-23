@@ -1036,6 +1036,24 @@
       "type": "safe"
     }
   },
+  "DeleteTestOptimizationServiceSettings": {
+    "tag": "Test Optimization",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "UpdateTestOptimizationServiceSettings": {
+    "tag": "Test Optimization",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetTestOptimizationServiceSettings": {
+    "tag": "Test Optimization",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "AggregateCIAppTestEvents": {
     "tag": "CI Visibility Tests",
     "undo": {
