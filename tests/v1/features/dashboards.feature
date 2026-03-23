@@ -1357,8 +1357,16 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/reporting-and-sharing
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Send shared dashboard invitation email returns "OK" response
+    Given new "SendPublicDashboardInvitation" request
+    And request contains "token" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"email": "test@datadoghq.com"}, "type": "public_dashboard_invitation"}]}
+    When the request is sent
+    Then the response status is 201 OK
+
+  @team:DataDog/reporting-and-sharing
+  Scenario: Send shared dashboard invitation email returns OK
     Given there is a valid "dashboard" in the system
     And there is a valid "shared_dashboard" in the system
     And new "SendPublicDashboardInvitation" request
@@ -1366,7 +1374,7 @@ Feature: Dashboards
     And body with value {"data": {"attributes": {"email": "{{unique_lower_alnum}}@datadoghq.com"}, "type": "public_dashboard_invitation"}}
     When the request is sent
     Then the response status is 201 OK
-    And the response "data.attributes.email" has the same value as "shared_dashboard.share_list[0]"
+    And the response "data.attributes.email" has the same value as "shared_dashboard.share_list[1]"
     And the response "data.attributes.share_token" has the same value as "shared_dashboard.token"
 
   @generated @skip @team:DataDog/dashboards-backend
