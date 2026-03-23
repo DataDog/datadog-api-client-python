@@ -408,6 +408,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"deployment_gates_evaluation_request\",\n    \"attributes\": {\n      \"service\": \"my-service\",\n      \"env\": \"production\",\n      \"identifier\": \"{{ deployment_gate.data.attributes.identifier }}\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"deployment_gates_evaluation\" in the system",
+    "key": "deployment_gates_evaluation",
+    "tag": "Deployment Gates",
+    "operationId": "TriggerDeploymentGatesEvaluation"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"message\": \"test message\",\n      \"monitor_identifier\": {\n        \"monitor_tags\": [\"cat:hat\"]\n      },\n      \"scope\": \"test:{{ unique_lower_alnum }}\",\n      \"schedule\": {\n        \"start\": null\n      }\n    },\n    \"type\": \"downtime\"\n  }\n}"
       }
     ],

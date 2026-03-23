@@ -1706,6 +1706,41 @@ from datadog_api_client.v2.model.deployment_gate_response_data_attributes_update
     DeploymentGateResponseDataAttributesUpdatedBy,
 )
 from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
+from datadog_api_client.v2.model.deployment_gates_evaluation_request import DeploymentGatesEvaluationRequest
+from datadog_api_client.v2.model.deployment_gates_evaluation_request_attributes import (
+    DeploymentGatesEvaluationRequestAttributes,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_request_data import DeploymentGatesEvaluationRequestData
+from datadog_api_client.v2.model.deployment_gates_evaluation_request_data_type import (
+    DeploymentGatesEvaluationRequestDataType,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_response import DeploymentGatesEvaluationResponse
+from datadog_api_client.v2.model.deployment_gates_evaluation_response_attributes import (
+    DeploymentGatesEvaluationResponseAttributes,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_response_data import DeploymentGatesEvaluationResponseData
+from datadog_api_client.v2.model.deployment_gates_evaluation_response_data_type import (
+    DeploymentGatesEvaluationResponseDataType,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_result_response import (
+    DeploymentGatesEvaluationResultResponse,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_result_response_attributes import (
+    DeploymentGatesEvaluationResultResponseAttributes,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_result_response_attributes_gate_status import (
+    DeploymentGatesEvaluationResultResponseAttributesGateStatus,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_result_response_data import (
+    DeploymentGatesEvaluationResultResponseData,
+)
+from datadog_api_client.v2.model.deployment_gates_evaluation_result_response_data_type import (
+    DeploymentGatesEvaluationResultResponseDataType,
+)
+from datadog_api_client.v2.model.deployment_gates_list_response import DeploymentGatesListResponse
+from datadog_api_client.v2.model.deployment_gates_list_response_meta import DeploymentGatesListResponseMeta
+from datadog_api_client.v2.model.deployment_gates_list_response_meta_page import DeploymentGatesListResponseMetaPage
+from datadog_api_client.v2.model.deployment_gates_rule_response import DeploymentGatesRuleResponse
 from datadog_api_client.v2.model.deployment_metadata import DeploymentMetadata
 from datadog_api_client.v2.model.deployment_relationship import DeploymentRelationship
 from datadog_api_client.v2.model.deployment_relationship_data import DeploymentRelationshipData
@@ -7786,6 +7821,23 @@ __all__ = [
     "DeploymentGateResponseDataAttributesCreatedBy",
     "DeploymentGateResponseDataAttributesUpdatedBy",
     "DeploymentGateRulesResponse",
+    "DeploymentGatesEvaluationRequest",
+    "DeploymentGatesEvaluationRequestAttributes",
+    "DeploymentGatesEvaluationRequestData",
+    "DeploymentGatesEvaluationRequestDataType",
+    "DeploymentGatesEvaluationResponse",
+    "DeploymentGatesEvaluationResponseAttributes",
+    "DeploymentGatesEvaluationResponseData",
+    "DeploymentGatesEvaluationResponseDataType",
+    "DeploymentGatesEvaluationResultResponse",
+    "DeploymentGatesEvaluationResultResponseAttributes",
+    "DeploymentGatesEvaluationResultResponseAttributesGateStatus",
+    "DeploymentGatesEvaluationResultResponseData",
+    "DeploymentGatesEvaluationResultResponseDataType",
+    "DeploymentGatesListResponse",
+    "DeploymentGatesListResponseMeta",
+    "DeploymentGatesListResponseMetaPage",
+    "DeploymentGatesRuleResponse",
     "DeploymentMetadata",
     "DeploymentRelationship",
     "DeploymentRelationshipData",
