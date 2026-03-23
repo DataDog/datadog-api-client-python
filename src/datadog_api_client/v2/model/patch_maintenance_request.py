@@ -32,9 +32,9 @@ class PatchMaintenanceRequest(ModelNormal):
 
     def __init__(self_, data: Union[PatchMaintenanceRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for updating a maintenance.
 
-
-        :param data:
+        :param data: The data object for updating a maintenance.
         :type data: PatchMaintenanceRequestData, optional
         """
         if data is not unset:

@@ -34,9 +34,9 @@ class StatusPagesComponentDataRelationshipsStatusPage(ModelNormal):
 
     def __init__(self_, data: StatusPagesComponentDataRelationshipsStatusPageData, **kwargs):
         """
+        The status page the component belongs to.
 
-
-        :param data:
+        :param data: The data object identifying the status page the component belongs to.
         :type data: StatusPagesComponentDataRelationshipsStatusPageData
         """
         super().__init__(kwargs)

@@ -47,9 +47,9 @@ class IncidentHandleResponse(ModelNormal):
         **kwargs,
     ):
         """
+        Response payload for a single incident handle, including the handle data and related resources.
 
-
-        :param data:
+        :param data: Data object representing an incident handle in a response.
         :type data: IncidentHandleDataResponse
 
         :param included: Included related resources

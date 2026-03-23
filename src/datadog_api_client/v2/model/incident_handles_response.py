@@ -47,9 +47,9 @@ class IncidentHandlesResponse(ModelNormal):
         **kwargs,
     ):
         """
+        Response payload for a list of global incident handles, including handle data and related resources.
 
-
-        :param data:
+        :param data: Array of incident handle data objects returned in a list response.
         :type data: [IncidentHandleDataResponse]
 
         :param included: Included related resources

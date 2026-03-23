@@ -36,7 +36,7 @@ class StatusPagesComponentGroupRelationshipsLastModifiedByUser(ModelNormal):
         """
         The Datadog user who last modified the component group.
 
-        :param data:
+        :param data: The data object identifying the Datadog user who last modified the component group.
         :type data: StatusPagesComponentGroupRelationshipsLastModifiedByUserData
         """
         super().__init__(kwargs)

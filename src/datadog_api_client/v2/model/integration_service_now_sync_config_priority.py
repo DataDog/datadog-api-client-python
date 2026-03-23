@@ -36,15 +36,15 @@ class IntegrationServiceNowSyncConfigPriority(ModelNormal):
         **kwargs,
     ):
         """
+        Priority synchronization configuration for ServiceNow integration.
 
-
-        :param impact_mapping:
+        :param impact_mapping: Mapping of case priority values to ServiceNow impact values.
         :type impact_mapping: {str: (str,)}, optional
 
-        :param sync_type:
+        :param sync_type: The type of synchronization to apply for priority.
         :type sync_type: str, optional
 
-        :param urgency_mapping:
+        :param urgency_mapping: Mapping of case priority values to ServiceNow urgency values.
         :type urgency_mapping: {str: (str,)}, optional
         """
         if impact_mapping is not unset:

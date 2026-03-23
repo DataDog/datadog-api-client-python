@@ -36,9 +36,9 @@ class PostmortemTemplateDataRequest(ModelNormal):
 
     def __init__(self_, attributes: PostmortemTemplateAttributesRequest, type: PostmortemTemplateType, **kwargs):
         """
+        Data object for creating or updating a postmortem template.
 
-
-        :param attributes:
+        :param attributes: Attributes for creating or updating a postmortem template.
         :type attributes: PostmortemTemplateAttributesRequest
 
         :param type: Postmortem template resource type

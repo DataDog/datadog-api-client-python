@@ -28,12 +28,12 @@ class BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems(ModelNormal):
 
     def __init__(self_, tag_key: Union[str, UnsetType] = unset, tag_value: Union[str, UnsetType] = unset, **kwargs):
         """
+        A tag filter used to scope a budget entry to specific resource tags.
 
-
-        :param tag_key:
+        :param tag_key: The tag key to filter on.
         :type tag_key: str, optional
 
-        :param tag_value:
+        :param tag_value: The tag value to filter on.
         :type tag_value: str, optional
         """
         if tag_key is not unset:

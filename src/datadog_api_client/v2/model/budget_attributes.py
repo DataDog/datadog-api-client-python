@@ -81,7 +81,7 @@ class BudgetAttributes(ModelNormal):
         :param end_month: The month when the budget ends.
         :type end_month: int, optional
 
-        :param entries:
+        :param entries: The list of monthly budget entries.
         :type entries: [BudgetWithEntriesDataAttributesEntriesItems], optional
 
         :param metrics_query: The cost query used to track against the budget.

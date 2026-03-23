@@ -52,21 +52,21 @@ class QueryEventFilteredUsersRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for filtering users by both user properties and event platform activity.
 
-
-        :param event_query:
+        :param event_query: Event platform query used to filter users based on their event activity within a specified time window.
         :type event_query: QueryEventFilteredUsersRequestDataAttributesEventQuery, optional
 
-        :param include_row_count:
+        :param include_row_count: Whether to include the total count of matching users in the response.
         :type include_row_count: bool, optional
 
-        :param limit:
+        :param limit: Maximum number of user records to return in the response.
         :type limit: int, optional
 
-        :param query:
+        :param query: Filter expression using user attribute conditions to narrow results.
         :type query: str, optional
 
-        :param select_columns:
+        :param select_columns: List of user attribute column names to include in the response.
         :type select_columns: [str], optional
         """
         if event_query is not unset:

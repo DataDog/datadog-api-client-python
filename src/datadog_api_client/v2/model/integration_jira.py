@@ -49,18 +49,18 @@ class IntegrationJira(ModelNormal):
         **kwargs,
     ):
         """
-        Jira integration settings
+        Jira integration settings.
 
-        :param auto_creation:
+        :param auto_creation: Auto-creation settings for Jira issues from cases.
         :type auto_creation: IntegrationJiraAutoCreation, optional
 
-        :param enabled: Whether Jira integration is enabled
+        :param enabled: Whether Jira integration is enabled.
         :type enabled: bool, optional
 
-        :param metadata:
+        :param metadata: Metadata for connecting a case management project to a Jira project.
         :type metadata: IntegrationJiraMetadata, optional
 
-        :param sync:
+        :param sync: Synchronization configuration for Jira integration.
         :type sync: IntegrationJiraSync, optional
         """
         if auto_creation is not unset:

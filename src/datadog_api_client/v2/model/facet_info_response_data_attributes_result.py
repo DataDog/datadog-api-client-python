@@ -49,12 +49,12 @@ class FacetInfoResponseDataAttributesResult(ModelNormal):
         **kwargs,
     ):
         """
+        The facet query result containing discrete value counts or a numeric range for the requested facet.
 
-
-        :param range:
+        :param range: The numeric range of a facet attribute, representing the minimum and maximum observed values.
         :type range: FacetInfoResponseDataAttributesResultRange, optional
 
-        :param values:
+        :param values: List of discrete facet values with their occurrence counts.
         :type values: [FacetInfoResponseDataAttributesResultValuesItems], optional
         """
         if range is not unset:

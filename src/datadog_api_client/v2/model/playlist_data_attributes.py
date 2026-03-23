@@ -52,24 +52,24 @@ class PlaylistDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes of a RUM replay playlist, including its name, description, session count, and audit timestamps.
 
-
-        :param created_at:
+        :param created_at: Timestamp when the playlist was created.
         :type created_at: datetime, optional
 
-        :param created_by:
+        :param created_by: Information about the user who created the playlist.
         :type created_by: PlaylistDataAttributesCreatedBy, optional
 
-        :param description:
+        :param description: Optional human-readable description of the playlist's purpose or contents.
         :type description: str, optional
 
-        :param name:
+        :param name: Human-readable name of the playlist.
         :type name: str
 
-        :param session_count:
+        :param session_count: Number of replay sessions in the playlist.
         :type session_count: int, optional
 
-        :param updated_at:
+        :param updated_at: Timestamp when the playlist was last updated.
         :type updated_at: datetime, optional
         """
         if created_at is not unset:

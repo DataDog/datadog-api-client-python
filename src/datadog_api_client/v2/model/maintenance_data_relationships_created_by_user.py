@@ -34,9 +34,9 @@ class MaintenanceDataRelationshipsCreatedByUser(ModelNormal):
 
     def __init__(self_, data: MaintenanceDataRelationshipsCreatedByUserData, **kwargs):
         """
+        The Datadog user who created the maintenance.
 
-
-        :param data:
+        :param data: The data object identifying the Datadog user who created the maintenance.
         :type data: MaintenanceDataRelationshipsCreatedByUserData
         """
         super().__init__(kwargs)

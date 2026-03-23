@@ -48,12 +48,12 @@ class BudgetValidationResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object for a budget validation response, containing the resource type, ID, and validation attributes.
 
-
-        :param attributes:
+        :param attributes: The attributes of a budget validation response, including any validation errors and the validity status.
         :type attributes: BudgetValidationResponseDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the budget being validated.
         :type id: str, optional
 
         :param type: Budget validation resource type.

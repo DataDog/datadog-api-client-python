@@ -34,9 +34,9 @@ class StatusPagesComponentDataRelationshipsLastModifiedByUser(ModelNormal):
 
     def __init__(self_, data: StatusPagesComponentDataRelationshipsLastModifiedByUserData, **kwargs):
         """
+        The Datadog user who last modified the component.
 
-
-        :param data:
+        :param data: The data object identifying the Datadog user who last modified the component.
         :type data: StatusPagesComponentDataRelationshipsLastModifiedByUserData
         """
         super().__init__(kwargs)

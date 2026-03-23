@@ -36,9 +36,9 @@ class TenancyProductsDataAttributes(ModelNormal):
 
     def __init__(self_, products: Union[List[TenancyProductsDataAttributesProductsItems], UnsetType] = unset, **kwargs):
         """
+        Attributes of an OCI tenancy product resource, containing the list of available products and their enablement status.
 
-
-        :param products:
+        :param products: List of Datadog products and their enablement status for the tenancy.
         :type products: [TenancyProductsDataAttributesProductsItems], optional
         """
         if products is not unset:

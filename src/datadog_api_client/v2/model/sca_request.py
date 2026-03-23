@@ -32,9 +32,9 @@ class ScaRequest(ModelNormal):
 
     def __init__(self_, data: Union[ScaRequestData, UnsetType] = unset, **kwargs):
         """
+        The top-level request object for submitting a Software Composition Analysis (SCA) scan result.
 
-
-        :param data:
+        :param data: The data object in an SCA request, containing the dependency graph attributes and request type.
         :type data: ScaRequestData, optional
         """
         if data is not unset:

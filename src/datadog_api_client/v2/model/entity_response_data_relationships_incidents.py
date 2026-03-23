@@ -38,9 +38,9 @@ class EntityResponseDataRelationshipsIncidents(ModelNormal):
         self_, data: Union[List[EntityResponseDataRelationshipsIncidentsDataItems], UnsetType] = unset, **kwargs
     ):
         """
+        Incidents relationship containing a list of incident resources associated with this entity.
 
-
-        :param data:
+        :param data: List of incident relationship data items.
         :type data: [EntityResponseDataRelationshipsIncidentsDataItems], optional
         """
         if data is not unset:

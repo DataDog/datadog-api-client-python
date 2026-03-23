@@ -49,18 +49,18 @@ class Project(ModelNormal):
         **kwargs,
     ):
         """
-        A Project
+        A Project.
 
-        :param attributes: Project attributes
+        :param attributes: Project attributes.
         :type attributes: ProjectAttributes
 
-        :param id: The Project's identifier
+        :param id: The Project's identifier.
         :type id: str
 
-        :param relationships: Project relationships
+        :param relationships: Project relationships.
         :type relationships: ProjectRelationships, optional
 
-        :param type: Project resource type
+        :param type: Project resource type.
         :type type: ProjectResourceType
         """
         if relationships is not unset:

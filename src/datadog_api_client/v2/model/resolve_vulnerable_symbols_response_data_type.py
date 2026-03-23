@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ResolveVulnerableSymbolsResponseDataType(ModelSimple):
     """
-
+    The type identifier for responses containing resolved vulnerable symbols.
 
     :param value: If omitted defaults to "resolve-vulnerable-symbols-response". Must be one of ["resolve-vulnerable-symbols-response"].
     :type value: str

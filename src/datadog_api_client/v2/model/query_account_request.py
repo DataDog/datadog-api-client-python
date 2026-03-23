@@ -32,9 +32,9 @@ class QueryAccountRequest(ModelNormal):
 
     def __init__(self_, data: Union[QueryAccountRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for querying accounts with optional filtering, column selection, and sorting.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for querying accounts.
         :type data: QueryAccountRequestData, optional
         """
         if data is not unset:

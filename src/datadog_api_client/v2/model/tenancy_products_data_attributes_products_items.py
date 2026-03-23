@@ -28,12 +28,12 @@ class TenancyProductsDataAttributesProductsItems(ModelNormal):
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, product_key: Union[str, UnsetType] = unset, **kwargs):
         """
+        An individual Datadog product with its enablement status for a tenancy.
 
-
-        :param enabled:
+        :param enabled: Indicates whether the product is enabled for the tenancy.
         :type enabled: bool, optional
 
-        :param product_key:
+        :param product_key: The unique key identifying the Datadog product (for example, CLOUD_SECURITY_POSTURE_MANAGEMENT).
         :type product_key: str, optional
         """
         if enabled is not unset:

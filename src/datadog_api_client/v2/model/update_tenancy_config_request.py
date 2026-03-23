@@ -30,9 +30,9 @@ class UpdateTenancyConfigRequest(ModelNormal):
 
     def __init__(self_, data: UpdateTenancyConfigData, **kwargs):
         """
+        Request body for updating an existing OCI tenancy integration configuration.
 
-
-        :param data:
+        :param data: The data object for updating an existing OCI tenancy integration configuration, including the tenancy ID, type, and updated attributes.
         :type data: UpdateTenancyConfigData
         """
         super().__init__(kwargs)

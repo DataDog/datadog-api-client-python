@@ -40,18 +40,18 @@ class WatchDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for recording a session watch event, including the application, event reference, and timestamp.
 
-
-        :param application_id:
+        :param application_id: Unique identifier of the RUM application containing the session.
         :type application_id: str
 
-        :param data_source:
+        :param data_source: Data source type indicating the origin of the session data (e.g., rum or product_analytics).
         :type data_source: str, optional
 
-        :param event_id:
+        :param event_id: Unique identifier of the RUM event that was watched.
         :type event_id: str
 
-        :param timestamp:
+        :param timestamp: Timestamp when the session was watched.
         :type timestamp: datetime
         """
         if data_source is not unset:

@@ -39,18 +39,18 @@ class IntegrationMonitor(ModelNormal):
         **kwargs,
     ):
         """
-        Monitor integration settings
+        Monitor integration settings.
 
-        :param auto_resolve_enabled: Whether auto-resolve is enabled
+        :param auto_resolve_enabled: Whether auto-resolve is enabled.
         :type auto_resolve_enabled: bool, optional
 
-        :param case_type_id: Case type ID for monitor integration
+        :param case_type_id: Case type ID for monitor integration.
         :type case_type_id: str, optional
 
-        :param enabled: Whether monitor integration is enabled
+        :param enabled: Whether monitor integration is enabled.
         :type enabled: bool, optional
 
-        :param handle: Monitor handle
+        :param handle: Monitor handle.
         :type handle: str, optional
         """
         if auto_resolve_enabled is not unset:

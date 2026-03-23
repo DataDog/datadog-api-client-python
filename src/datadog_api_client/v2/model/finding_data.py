@@ -32,7 +32,7 @@ class FindingData(ModelNormal):
 
     def __init__(self_, id: str, type: FindingDataType, **kwargs):
         """
-
+        Data object representing a security finding.
 
         :param id: Unique identifier of the security finding.
         :type id: str

@@ -26,7 +26,7 @@ class CustomRuleRequestDataAttributes(ModelNormal):
 
     def __init__(self_, name: Union[str, UnsetType] = unset, **kwargs):
         """
-
+        Attributes for creating or updating a custom rule.
 
         :param name: Rule name
         :type name: str, optional

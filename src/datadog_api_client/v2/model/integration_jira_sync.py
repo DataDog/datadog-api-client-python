@@ -39,12 +39,12 @@ class IntegrationJiraSync(ModelNormal):
         **kwargs,
     ):
         """
+        Synchronization configuration for Jira integration.
 
-
-        :param enabled:
+        :param enabled: Whether Jira field synchronization is enabled.
         :type enabled: bool, optional
 
-        :param properties:
+        :param properties: Field synchronization properties for Jira integration.
         :type properties: IntegrationJiraSyncProperties, optional
         """
         if enabled is not unset:

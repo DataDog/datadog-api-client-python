@@ -41,12 +41,12 @@ class SeatUserDataArray(ModelNormal):
         **kwargs,
     ):
         """
-
+        A paginated list of seat user resources with associated pagination metadata.
 
         :param data: The list of seat users.
         :type data: [SeatUserData], optional
 
-        :param meta:
+        :param meta: Pagination metadata for the seat users list response.
         :type meta: SeatUserMeta, optional
         """
         if data is not unset:

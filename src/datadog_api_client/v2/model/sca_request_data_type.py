@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ScaRequestDataType(ModelSimple):
     """
-
+    The type identifier for SCA dependency analysis requests.
 
     :param value: If omitted defaults to "scarequests". Must be one of ["scarequests"].
     :type value: str

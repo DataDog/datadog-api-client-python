@@ -33,7 +33,7 @@ class RevertCustomRuleRevisionRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-
+        Attributes specifying the current and target revision IDs for a revert operation.
 
         :param current_revision: Current revision ID
         :type current_revision: str, optional

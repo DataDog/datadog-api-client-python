@@ -58,21 +58,21 @@ class GetMultipleRulesetsResponseDataAttributesRulesetsItems(ModelNormal):
         **kwargs,
     ):
         """
+        A ruleset returned in the response, containing its metadata and associated rules.
 
-
-        :param data:
+        :param data: The resource identifier and type for a ruleset.
         :type data: GetMultipleRulesetsResponseDataAttributesRulesetsItemsData
 
-        :param description:
+        :param description: A detailed description of the ruleset's purpose and the types of issues it targets.
         :type description: str, optional
 
-        :param name:
+        :param name: The unique name of the ruleset.
         :type name: str, optional
 
-        :param rules:
+        :param rules: The list of static analysis rules included in this ruleset.
         :type rules: [GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems], optional
 
-        :param short_description:
+        :param short_description: A brief summary of the ruleset, suitable for display in listings.
         :type short_description: str, optional
         """
         if description is not unset:

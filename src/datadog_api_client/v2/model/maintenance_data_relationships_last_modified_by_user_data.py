@@ -33,7 +33,7 @@ class MaintenanceDataRelationshipsLastModifiedByUserData(ModelNormal):
 
     def __init__(self_, id: UUID, type: StatusPagesUserType, **kwargs):
         """
-
+        The data object identifying the Datadog user who last modified the maintenance.
 
         :param id: The ID of the Datadog user who last modified the maintenance.
         :type id: UUID

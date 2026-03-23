@@ -38,9 +38,9 @@ class GetMappingResponseDataAttributes(ModelNormal):
         self_, attributes: Union[List[GetMappingResponseDataAttributesAttributesItems], UnsetType] = unset, **kwargs
     ):
         """
+        Attributes of the get mapping response, containing the list of configured entity attributes.
 
-
-        :param attributes:
+        :param attributes: The list of entity attributes and their mapping configurations.
         :type attributes: [GetMappingResponseDataAttributesAttributesItems], optional
         """
         if attributes is not unset:

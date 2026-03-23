@@ -38,9 +38,9 @@ class EntityResponseDataRelationshipsRelatedEntities(ModelNormal):
         self_, data: Union[List[EntityResponseDataRelationshipsRelatedEntitiesDataItems], UnsetType] = unset, **kwargs
     ):
         """
+        Related entities relationship containing a list of entity references related to this entity.
 
-
-        :param data:
+        :param data: List of related entity relationship data items.
         :type data: [EntityResponseDataRelationshipsRelatedEntitiesDataItems], optional
         """
         if data is not unset:

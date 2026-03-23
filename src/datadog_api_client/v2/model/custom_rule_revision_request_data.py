@@ -44,9 +44,9 @@ class CustomRuleRevisionRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a custom rule revision create request.
 
-
-        :param attributes:
+        :param attributes: Input attributes for creating or updating a custom rule revision.
         :type attributes: CustomRuleRevisionInputAttributes, optional
 
         :param id: Revision identifier

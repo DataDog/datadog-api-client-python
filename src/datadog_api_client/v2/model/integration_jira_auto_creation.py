@@ -26,9 +26,9 @@ class IntegrationJiraAutoCreation(ModelNormal):
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
+        Auto-creation settings for Jira issues from cases.
 
-
-        :param enabled:
+        :param enabled: Whether automatic Jira issue creation is enabled.
         :type enabled: bool, optional
         """
         if enabled is not unset:

@@ -27,7 +27,7 @@ class CustomRuleRevisionTest(ModelNormal):
 
     def __init__(self_, annotation_count: int, code: str, filename: str, **kwargs):
         """
-
+        A test case associated with a custom rule revision, used to validate rule behavior.
 
         :param annotation_count: Expected violation count
         :type annotation_count: int

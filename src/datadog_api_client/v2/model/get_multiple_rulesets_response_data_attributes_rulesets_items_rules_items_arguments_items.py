@@ -28,12 +28,12 @@ class GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsArgumentsI
 
     def __init__(self_, description: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
+        An argument parameter for a static analysis rule, with a name and description.
 
-
-        :param description:
+        :param description: A human-readable explanation of the argument's purpose and accepted values.
         :type description: str, optional
 
-        :param name:
+        :param name: The name of the rule argument.
         :type name: str, optional
         """
         if description is not unset:

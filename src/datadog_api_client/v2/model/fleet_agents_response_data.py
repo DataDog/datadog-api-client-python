@@ -36,7 +36,7 @@ class FleetAgentsResponseData(ModelNormal):
         """
         The response data containing status and agents array.
 
-        :param attributes:
+        :param attributes: Attributes of the fleet agents response containing the list of agents.
         :type attributes: FleetAgentsResponseDataAttributes
 
         :param id: Status identifier.

@@ -32,9 +32,9 @@ class CustomRuleRevisionsResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[CustomRuleRevision], UnsetType] = unset, **kwargs):
         """
+        Response containing a paginated list of custom rule revisions.
 
-
-        :param data:
+        :param data: List of custom rule revisions.
         :type data: [CustomRuleRevision], optional
         """
         if data is not unset:

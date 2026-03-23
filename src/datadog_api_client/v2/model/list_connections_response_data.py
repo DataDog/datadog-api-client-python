@@ -48,12 +48,12 @@ class ListConnectionsResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for the list connections response.
 
-
-        :param attributes:
+        :param attributes: Attributes of the list connections response, containing the collection of data source connections.
         :type attributes: ListConnectionsResponseDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the list connections response resource.
         :type id: str, optional
 
         :param type: List connections response resource type.

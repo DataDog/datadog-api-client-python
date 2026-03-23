@@ -44,12 +44,12 @@ class PlaylistData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object representing a RUM replay playlist, including its identifier, type, and attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes of a RUM replay playlist, including its name, description, session count, and audit timestamps.
         :type attributes: PlaylistDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier of the playlist.
         :type id: str, optional
 
         :param type: Rum replay playlist resource type.

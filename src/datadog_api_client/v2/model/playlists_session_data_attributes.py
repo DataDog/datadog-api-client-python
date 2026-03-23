@@ -49,12 +49,12 @@ class PlaylistsSessionDataAttributes(ModelNormal):
         self_, session_event: Union[Dict[str, Any], UnsetType] = unset, track: Union[str, UnsetType] = unset, **kwargs
     ):
         """
+        Attributes of a session within a playlist, including the session event data and its replay track.
 
-
-        :param session_event:
+        :param session_event: Raw event data associated with the replay session.
         :type session_event: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param track:
+        :param track: Replay track identifier indicating which recording track the session belongs to.
         :type track: str, optional
         """
         if session_event is not unset:

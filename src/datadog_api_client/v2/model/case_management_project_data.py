@@ -32,7 +32,7 @@ class CaseManagementProjectData(ModelNormal):
 
     def __init__(self_, id: str, type: CaseManagementProjectDataType, **kwargs):
         """
-
+        Data object representing a case management project.
 
         :param id: Unique identifier of the case management project.
         :type id: str

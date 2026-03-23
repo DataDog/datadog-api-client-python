@@ -43,12 +43,12 @@ class ResolveVulnerableSymbolsResponseResultsVulnerableSymbols(ModelNormal):
         **kwargs,
     ):
         """
+        A collection of vulnerable symbols associated with a specific security advisory.
 
-
-        :param advisory_id:
+        :param advisory_id: The identifier of the security advisory that describes the vulnerability.
         :type advisory_id: str, optional
 
-        :param symbols:
+        :param symbols: The list of symbols that are vulnerable according to this advisory.
         :type symbols: [ResolveVulnerableSymbolsResponseResultsVulnerableSymbolsSymbols], optional
         """
         if advisory_id is not unset:

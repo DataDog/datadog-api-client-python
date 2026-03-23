@@ -59,7 +59,7 @@ class IssueCaseRelationships(ModelNormal):
         :param modified_by: Relationship to user.
         :type modified_by: NullableUserRelationship, none_type, optional
 
-        :param project: Relationship to project
+        :param project: Relationship to project.
         :type project: ProjectRelationship, optional
         """
         if assignee is not unset:

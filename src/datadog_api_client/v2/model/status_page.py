@@ -42,9 +42,9 @@ class StatusPage(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a single status page.
 
-
-        :param data:
+        :param data: The data object for a status page.
         :type data: StatusPageData, optional
 
         :param included: The included related resources of a status page. Client must explicitly request these resources by name in the ``include`` query parameter.

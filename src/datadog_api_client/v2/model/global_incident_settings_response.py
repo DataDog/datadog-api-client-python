@@ -32,9 +32,9 @@ class GlobalIncidentSettingsResponse(ModelNormal):
 
     def __init__(self_, data: GlobalIncidentSettingsDataResponse, **kwargs):
         """
+        Response payload containing global incident settings.
 
-
-        :param data:
+        :param data: Data object in the global incident settings response.
         :type data: GlobalIncidentSettingsDataResponse
         """
         super().__init__(kwargs)

@@ -78,39 +78,39 @@ class ScaRequestDataAttributesDependenciesItems(ModelNormal):
         **kwargs,
     ):
         """
+        A dependency found in the repository, including its identity, location, and reachability metadata.
 
-
-        :param exclusions:
+        :param exclusions: A list of patterns or identifiers that should be excluded from analysis for this dependency.
         :type exclusions: [str], optional
 
-        :param group:
+        :param group: The group or organization namespace of the dependency (e.g., Maven group ID).
         :type group: str, optional
 
-        :param is_dev:
+        :param is_dev: Indicates whether this is a development-only dependency not used in production.
         :type is_dev: bool, optional
 
-        :param is_direct:
+        :param is_direct: Indicates whether this is a direct dependency (as opposed to a transitive one).
         :type is_direct: bool, optional
 
-        :param language:
+        :param language: The programming language ecosystem of this dependency (e.g., java, python, javascript).
         :type language: str, optional
 
-        :param locations:
+        :param locations: The list of source file locations where this dependency is declared.
         :type locations: [ScaRequestDataAttributesDependenciesItemsLocationsItems], optional
 
-        :param name:
+        :param name: The name of the dependency package.
         :type name: str, optional
 
-        :param package_manager:
+        :param package_manager: The package manager responsible for this dependency (e.g., maven, pip, npm).
         :type package_manager: str, optional
 
-        :param purl:
+        :param purl: The Package URL (PURL) uniquely identifying this dependency.
         :type purl: str, optional
 
-        :param reachable_symbol_properties:
+        :param reachable_symbol_properties: Properties describing symbols from this dependency that are reachable in the application code.
         :type reachable_symbol_properties: [ScaRequestDataAttributesDependenciesItemsReachableSymbolPropertiesItems], optional
 
-        :param version:
+        :param version: The version of the dependency.
         :type version: str, optional
         """
         if exclusions is not unset:

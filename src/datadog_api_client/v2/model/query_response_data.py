@@ -44,12 +44,12 @@ class QueryResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes of the query response.
 
-
-        :param attributes:
+        :param attributes: Attributes of the query response, containing the matched records and total count.
         :type attributes: QueryResponseDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the query response resource.
         :type id: str, optional
 
         :param type: Query response resource type.

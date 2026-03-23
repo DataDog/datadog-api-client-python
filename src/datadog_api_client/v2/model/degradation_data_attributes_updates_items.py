@@ -73,7 +73,7 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         **kwargs,
     ):
         """
-
+        A status update recorded during a degradation.
 
         :param components_affected: The components affected at the time of the update.
         :type components_affected: [DegradationDataAttributesUpdatesItemsComponentsAffectedItems], optional

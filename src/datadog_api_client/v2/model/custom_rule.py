@@ -37,7 +37,7 @@ class CustomRule(ModelNormal):
 
     def __init__(self_, created_at: datetime, created_by: str, last_revision: CustomRuleRevision, name: str, **kwargs):
         """
-
+        A custom static analysis rule within a ruleset.
 
         :param created_at: Creation timestamp
         :type created_at: datetime
@@ -45,7 +45,7 @@ class CustomRule(ModelNormal):
         :param created_by: Creator identifier
         :type created_by: str
 
-        :param last_revision:
+        :param last_revision: A specific revision of a custom static analysis rule.
         :type last_revision: CustomRuleRevision
 
         :param name: Rule name

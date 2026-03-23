@@ -38,9 +38,9 @@ class EntityResponseDataRelationshipsOncalls(ModelNormal):
         self_, data: Union[List[EntityResponseDataRelationshipsOncallsDataItems], UnsetType] = unset, **kwargs
     ):
         """
+        Oncalls relationship containing a list of oncall resources associated with this entity.
 
-
-        :param data:
+        :param data: List of oncall relationship data items.
         :type data: [EntityResponseDataRelationshipsOncallsDataItems], optional
         """
         if data is not unset:

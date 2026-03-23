@@ -49,18 +49,18 @@ class ScaRequestDataAttributesDependenciesItemsLocationsItems(ModelNormal):
         **kwargs,
     ):
         """
+        The source code location where a dependency is declared, including block, name, namespace, and version positions within the file.
 
-
-        :param block:
+        :param block: A range within a file defined by a start and end position, along with the file name.
         :type block: ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition, optional
 
-        :param name:
+        :param name: A range within a file defined by a start and end position, along with the file name.
         :type name: ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition, optional
 
-        :param namespace:
+        :param namespace: A range within a file defined by a start and end position, along with the file name.
         :type namespace: ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition, optional
 
-        :param version:
+        :param version: A range within a file defined by a start and end position, along with the file name.
         :type version: ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition, optional
         """
         if block is not unset:

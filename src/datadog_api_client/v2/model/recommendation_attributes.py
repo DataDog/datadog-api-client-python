@@ -44,7 +44,7 @@ class RecommendationAttributes(ModelNormal):
         """
         Attributes of the SPA Recommendation resource. Contains recommendations for both driver and executor components.
 
-        :param confidence_level:
+        :param confidence_level: The confidence level of the recommendation, expressed as a value between 0.0 (low confidence) and 1.0 (high confidence).
         :type confidence_level: float, optional
 
         :param driver: Resource recommendation for a single Spark component (driver or executor). Contains estimation data used to patch Spark job specs.

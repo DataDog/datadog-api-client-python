@@ -50,12 +50,12 @@ class GetMultipleRulesetsResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The primary data object in the get-multiple-rulesets response, containing the response attributes and resource type.
 
-
-        :param attributes:
+        :param attributes: The attributes of the get-multiple-rulesets response, containing the list of requested rulesets.
         :type attributes: GetMultipleRulesetsResponseDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the get-multiple-rulesets response resource.
         :type id: str, optional
 
         :param type: Get multiple rulesets response resource type.

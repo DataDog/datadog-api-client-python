@@ -36,9 +36,9 @@ class CustomRuleRevision(ModelNormal):
 
     def __init__(self_, attributes: CustomRuleRevisionAttributes, id: str, type: CustomRuleRevisionDataType, **kwargs):
         """
+        A specific revision of a custom static analysis rule.
 
-
-        :param attributes:
+        :param attributes: Attributes of a custom rule revision, including code, metadata, and test cases.
         :type attributes: CustomRuleRevisionAttributes
 
         :param id: Revision identifier

@@ -48,12 +48,12 @@ class CreateConnectionRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for creating a new connection.
 
-
-        :param attributes:
+        :param attributes: Attributes defining the data source connection, including join configuration and custom fields.
         :type attributes: CreateConnectionRequestDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the new connection resource.
         :type id: str, optional
 
         :param type: Connection id resource type.

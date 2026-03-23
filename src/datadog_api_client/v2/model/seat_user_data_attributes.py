@@ -38,7 +38,7 @@ class SeatUserDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-
+        Attributes of a user assigned to a seat, including their email, name, and assignment timestamp.
 
         :param assigned_at: The date and time the seat was assigned.
         :type assigned_at: datetime, none_type, optional

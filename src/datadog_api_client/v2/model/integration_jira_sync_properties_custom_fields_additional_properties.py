@@ -48,9 +48,9 @@ class IntegrationJiraSyncPropertiesCustomFieldsAdditionalProperties(ModelNormal)
         **kwargs,
     ):
         """
+        Synchronization configuration for a Jira custom field.
 
-
-        :param sync_type:
+        :param sync_type: The type of synchronization to apply for this custom field.
         :type sync_type: str, optional
 
         :param value: Represents any valid JSON value.

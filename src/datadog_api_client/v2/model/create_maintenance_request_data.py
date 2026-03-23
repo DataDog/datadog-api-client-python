@@ -40,7 +40,7 @@ class CreateMaintenanceRequestData(ModelNormal):
         self_, attributes: CreateMaintenanceRequestDataAttributes, type: PatchMaintenanceRequestDataType, **kwargs
     ):
         """
-
+        The data object for creating a maintenance.
 
         :param attributes: The supported attributes for creating a maintenance.
         :type attributes: CreateMaintenanceRequestDataAttributes

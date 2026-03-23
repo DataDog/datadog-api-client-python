@@ -41,16 +41,16 @@ class ProductAnalyticsInterval(ModelNormal):
         """
         An interval definition in a timeseries response.
 
-        :param milliseconds:
+        :param milliseconds: The duration of each time bucket in milliseconds.
         :type milliseconds: int, optional
 
-        :param start_time:
+        :param start_time: The start of this interval as an epoch timestamp in milliseconds.
         :type start_time: int, optional
 
-        :param times:
+        :param times: Epoch timestamps (in milliseconds) for each bucket in this interval.
         :type times: [int], optional
 
-        :param type:
+        :param type: The interval type (e.g., fixed or auto-computed bucket size).
         :type type: str, optional
         """
         if milliseconds is not unset:

@@ -33,7 +33,7 @@ class MaintenanceDataRelationshipsStatusPageData(ModelNormal):
 
     def __init__(self_, id: UUID, type: StatusPageDataType, **kwargs):
         """
-
+        The data object identifying the status page associated with a maintenance.
 
         :param id: The ID of the status page.
         :type id: UUID

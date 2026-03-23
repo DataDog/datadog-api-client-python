@@ -50,7 +50,7 @@ class IncidentHandleDataRequest(ModelNormal):
         **kwargs,
     ):
         """
-
+        Data object representing an incident handle in a create or update request.
 
         :param attributes: Incident handle attributes for requests
         :type attributes: IncidentHandleAttributesRequest
@@ -58,7 +58,7 @@ class IncidentHandleDataRequest(ModelNormal):
         :param id: The ID of the incident handle (required for PUT requests)
         :type id: str, optional
 
-        :param relationships:
+        :param relationships: Relationships to associate with an incident handle in a create or update request.
         :type relationships: IncidentHandleRelationshipsRequest, none_type, optional
 
         :param type: Incident handle resource type

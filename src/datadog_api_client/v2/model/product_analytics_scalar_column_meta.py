@@ -33,9 +33,9 @@ class ProductAnalyticsScalarColumnMeta(ModelNormal):
 
     def __init__(self_, unit: Union[List[ProductAnalyticsUnit], none_type, UnsetType] = unset, **kwargs):
         """
+        Metadata associated with a scalar response column, including optional unit information.
 
-
-        :param unit:
+        :param unit: Unit definitions for the column values, if applicable.
         :type unit: [ProductAnalyticsUnit], none_type, optional
         """
         if unit is not unset:

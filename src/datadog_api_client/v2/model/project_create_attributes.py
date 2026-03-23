@@ -39,18 +39,18 @@ class ProjectCreateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Project creation attributes
+        Project creation attributes.
 
-        :param enabled_custom_case_types: List of enabled custom case type IDs
+        :param enabled_custom_case_types: List of enabled custom case type IDs.
         :type enabled_custom_case_types: [str], optional
 
-        :param key: Project's key. Cannot be "CASE"
+        :param key: Project's key. Cannot be "CASE".
         :type key: str
 
-        :param name: Project name
+        :param name: Project name.
         :type name: str
 
-        :param team_uuid: Team UUID to associate with the project
+        :param team_uuid: Team UUID to associate with the project.
         :type team_uuid: str, optional
         """
         if enabled_custom_case_types is not unset:

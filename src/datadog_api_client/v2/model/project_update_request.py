@@ -30,9 +30,9 @@ class ProjectUpdateRequest(ModelNormal):
 
     def __init__(self_, data: ProjectUpdate, **kwargs):
         """
-        Project update request
+        Project update request.
 
-        :param data: Project update
+        :param data: Project update.
         :type data: ProjectUpdate
         """
         super().__init__(kwargs)

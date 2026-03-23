@@ -71,7 +71,7 @@ class StatusPageDataAttributesComponentsItems(ModelNormal):
         **kwargs,
     ):
         """
-
+        A component displayed on a status page.
 
         :param components: If the component is of type ``group`` , the components within the group.
         :type components: [StatusPageDataAttributesComponentsItemsComponentsItems], optional

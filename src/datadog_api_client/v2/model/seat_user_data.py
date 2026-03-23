@@ -45,9 +45,9 @@ class SeatUserData(ModelNormal):
         **kwargs,
     ):
         """
+        A seat user resource object containing its ID, type, and associated attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes of a user assigned to a seat, including their email, name, and assignment timestamp.
         :type attributes: SeatUserDataAttributes, optional
 
         :param id: The ID of the seat user.

@@ -69,30 +69,30 @@ class IntegrationJiraSyncProperties(ModelNormal):
         **kwargs,
     ):
         """
+        Field synchronization properties for Jira integration.
 
-
-        :param assignee: Sync property configuration
+        :param assignee: Sync property configuration.
         :type assignee: SyncProperty, optional
 
-        :param comments: Sync property configuration
+        :param comments: Sync property configuration.
         :type comments: SyncProperty, optional
 
-        :param custom_fields:
+        :param custom_fields: Map of custom field identifiers to their sync configurations.
         :type custom_fields: {str: (IntegrationJiraSyncPropertiesCustomFieldsAdditionalProperties,)}, optional
 
-        :param description: Sync property configuration
+        :param description: Sync property configuration.
         :type description: SyncProperty, optional
 
-        :param due_date:
+        :param due_date: Due date synchronization configuration for Jira integration.
         :type due_date: IntegrationJiraSyncDueDate, optional
 
-        :param priority: Sync property with mapping configuration
+        :param priority: Sync property with mapping configuration.
         :type priority: SyncPropertyWithMapping, optional
 
-        :param status: Sync property with mapping configuration
+        :param status: Sync property with mapping configuration.
         :type status: SyncPropertyWithMapping, optional
 
-        :param title: Sync property configuration
+        :param title: Sync property configuration.
         :type title: SyncProperty, optional
         """
         if assignee is not unset:

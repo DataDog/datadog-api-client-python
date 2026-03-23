@@ -48,7 +48,7 @@ class ListDeploymentRuleResponseData(ModelNormal):
         """
         Data for a list of deployment rules.
 
-        :param attributes:
+        :param attributes: Attributes of the response for listing deployment rules.
         :type attributes: ListDeploymentRulesResponseDataAttributes
 
         :param id: Unique identifier of the deployment rule.

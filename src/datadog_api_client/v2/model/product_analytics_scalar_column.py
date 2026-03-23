@@ -53,7 +53,7 @@ class ProductAnalyticsScalarColumn(ModelNormal):
         """
         A column in a scalar response.
 
-        :param meta:
+        :param meta: Metadata associated with a scalar response column, including optional unit information.
         :type meta: ProductAnalyticsScalarColumnMeta, optional
 
         :param name: Column name (facet name for group-by, or "query").

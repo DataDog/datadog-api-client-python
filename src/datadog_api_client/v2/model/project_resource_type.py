@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ProjectResourceType(ModelSimple):
     """
-    Project resource type
+    Project resource type.
 
     :param value: If omitted defaults to "project". Must be one of ["project"].
     :type value: str

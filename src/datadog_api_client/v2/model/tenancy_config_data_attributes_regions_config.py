@@ -36,15 +36,15 @@ class TenancyConfigDataAttributesRegionsConfig(ModelNormal):
         **kwargs,
     ):
         """
+        Region configuration for an OCI tenancy, indicating which regions are available, enabled, or disabled for data collection.
 
-
-        :param available:
+        :param available: List of OCI regions available for data collection in the tenancy.
         :type available: [str], optional
 
-        :param disabled:
+        :param disabled: List of OCI regions explicitly disabled for data collection.
         :type disabled: [str], optional
 
-        :param enabled:
+        :param enabled: List of OCI regions enabled for data collection.
         :type enabled: [str], optional
         """
         if available is not unset:

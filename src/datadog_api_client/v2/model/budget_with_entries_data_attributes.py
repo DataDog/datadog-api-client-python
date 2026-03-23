@@ -70,39 +70,39 @@ class BudgetWithEntriesDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        The attributes of a budget including all its monthly entries.
 
-
-        :param created_at:
+        :param created_at: The timestamp when the budget was created.
         :type created_at: int, optional
 
-        :param created_by:
+        :param created_by: The ID of the user that created the budget.
         :type created_by: str, optional
 
-        :param end_month:
+        :param end_month: The month when the budget ends, in YYYYMM format.
         :type end_month: int, optional
 
-        :param entries:
+        :param entries: The list of monthly budget entries.
         :type entries: [BudgetWithEntriesDataAttributesEntriesItems], optional
 
-        :param metrics_query:
+        :param metrics_query: The cost query used to track spending against the budget.
         :type metrics_query: str, optional
 
-        :param name:
+        :param name: The name of the budget.
         :type name: str, optional
 
-        :param org_id:
+        :param org_id: The ID of the organization the budget belongs to.
         :type org_id: int, optional
 
-        :param start_month:
+        :param start_month: The month when the budget starts, in YYYYMM format.
         :type start_month: int, optional
 
-        :param total_amount:
+        :param total_amount: The total budget amount across all entries.
         :type total_amount: float, optional
 
-        :param updated_at:
+        :param updated_at: The timestamp when the budget was last updated.
         :type updated_at: int, optional
 
-        :param updated_by:
+        :param updated_by: The ID of the user that last updated the budget.
         :type updated_by: str, optional
         """
         if created_at is not unset:

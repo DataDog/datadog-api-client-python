@@ -51,9 +51,9 @@ class StatusPagesComponentArray(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a list of components.
 
-
-        :param data:
+        :param data: A list of component data objects.
         :type data: [StatusPagesComponentData]
 
         :param included: The included related resources of a component. Client must explicitly request these resources by name in the ``include`` query parameter.

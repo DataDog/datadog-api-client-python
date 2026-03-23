@@ -32,9 +32,9 @@ class PatchComponentRequest(ModelNormal):
 
     def __init__(self_, data: Union[PatchComponentRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for updating a component.
 
-
-        :param data:
+        :param data: The data object for updating a component.
         :type data: PatchComponentRequestData, optional
         """
         if data is not unset:

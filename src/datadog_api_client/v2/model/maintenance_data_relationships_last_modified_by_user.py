@@ -34,9 +34,9 @@ class MaintenanceDataRelationshipsLastModifiedByUser(ModelNormal):
 
     def __init__(self_, data: MaintenanceDataRelationshipsLastModifiedByUserData, **kwargs):
         """
+        The Datadog user who last modified the maintenance.
 
-
-        :param data:
+        :param data: The data object identifying the Datadog user who last modified the maintenance.
         :type data: MaintenanceDataRelationshipsLastModifiedByUserData
         """
         super().__init__(kwargs)

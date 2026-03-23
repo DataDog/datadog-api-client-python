@@ -30,9 +30,9 @@ class ProjectCreateRequest(ModelNormal):
 
     def __init__(self_, data: ProjectCreate, **kwargs):
         """
-        Project create request
+        Project create request.
 
-        :param data: Project create
+        :param data: Project create.
         :type data: ProjectCreate
         """
         super().__init__(kwargs)
