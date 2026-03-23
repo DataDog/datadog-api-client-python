@@ -6209,6 +6209,11 @@ from datadog_api_client.v2.model.team_sync_bulk_type import TeamSyncBulkType
 from datadog_api_client.v2.model.team_sync_data import TeamSyncData
 from datadog_api_client.v2.model.team_sync_request import TeamSyncRequest
 from datadog_api_client.v2.model.team_sync_response import TeamSyncResponse
+from datadog_api_client.v2.model.team_sync_selection_state_external_id import TeamSyncSelectionStateExternalId
+from datadog_api_client.v2.model.team_sync_selection_state_external_id_type import TeamSyncSelectionStateExternalIdType
+from datadog_api_client.v2.model.team_sync_selection_state_item import TeamSyncSelectionStateItem
+from datadog_api_client.v2.model.team_sync_selection_state_operation import TeamSyncSelectionStateOperation
+from datadog_api_client.v2.model.team_sync_selection_state_scope import TeamSyncSelectionStateScope
 from datadog_api_client.v2.model.team_target import TeamTarget
 from datadog_api_client.v2.model.team_target_type import TeamTargetType
 from datadog_api_client.v2.model.team_type import TeamType
@@ -10938,6 +10943,11 @@ __all__ = [
     "TeamSyncData",
     "TeamSyncRequest",
     "TeamSyncResponse",
+    "TeamSyncSelectionStateExternalId",
+    "TeamSyncSelectionStateExternalIdType",
+    "TeamSyncSelectionStateItem",
+    "TeamSyncSelectionStateOperation",
+    "TeamSyncSelectionStateScope",
     "TeamTarget",
     "TeamTargetType",
     "TeamType",

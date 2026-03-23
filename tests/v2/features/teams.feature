@@ -431,19 +431,12 @@ Feature: Teams
     Then the response status is 200 OK
     And the response "data" has length 1
 
-  @generated @skip @team:DataDog/aaa-omg
+  @team:DataDog/aaa-omg
   Scenario: Get team sync configurations returns "OK" response
     Given new "GetTeamSync" request
-    And request contains "filter[source]" parameter from "REPLACE.ME"
+    And request contains "filter[source]" parameter with value "github"
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/aaa-omg
-  Scenario: Get team sync configurations returns "Team sync configurations not found" response
-    Given new "GetTeamSync" request
-    And request contains "filter[source]" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 Team sync configurations not found
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Get user memberships returns "API error response." response
@@ -460,6 +453,13 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
     And the response "data" has length 0
+
+  @team:DataDog/aaa-omg
+  Scenario: Link Teams with GitHub Teams returns "No Content" response
+    Given new "SyncTeams" request
+    And body with value {"data": {"attributes": {"source": "github", "type": "link", "selection_state": [{"external_id": {"type": "organization", "value": "1"}}]}, "type": "team_sync_bulk"}}
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/aaa-omg
   Scenario: Link Teams with GitHub Teams returns "OK" response
@@ -581,13 +581,6 @@ Feature: Teams
     And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
-
-  @replay-only @team:DataDog/aaa-omg
-  Scenario: Sync teams returns "OK" response
-    Given new "SyncTeams" request
-    And body with value {"data": {"attributes": {"source": "github", "type": "link"}, "type": "team_sync_bulk"}}
-    When the request is sent
-    Then the response status is 200 OK
 
   @team:DataDog/aaa-omg
   Scenario: Update a team link returns "API error response." response
