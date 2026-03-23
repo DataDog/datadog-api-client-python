@@ -30,9 +30,9 @@ class PlaylistsSessionArray(ModelNormal):
 
     def __init__(self_, data: List[PlaylistsSessionData], **kwargs):
         """
+        A list of RUM replay sessions belonging to a playlist.
 
-
-        :param data:
+        :param data: Array of playlist session data objects.
         :type data: [PlaylistsSessionData]
         """
         super().__init__(kwargs)

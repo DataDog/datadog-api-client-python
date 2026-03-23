@@ -32,12 +32,12 @@ class ProjectRelationshipData(ModelNormal):
 
     def __init__(self_, id: str, type: ProjectResourceType, **kwargs):
         """
-        Relationship to project object
+        Relationship to project object.
 
-        :param id: A unique identifier that represents the project
+        :param id: A unique identifier that represents the project.
         :type id: str
 
-        :param type: Project resource type
+        :param type: Project resource type.
         :type type: ProjectResourceType
         """
         super().__init__(kwargs)

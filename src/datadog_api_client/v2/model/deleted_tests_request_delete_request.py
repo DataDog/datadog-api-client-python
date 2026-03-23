@@ -30,9 +30,9 @@ class DeletedTestsRequestDeleteRequest(ModelNormal):
 
     def __init__(self_, data: DeletedTestsRequestDelete, **kwargs):
         """
+        Request body for bulk deleting Synthetic tests.
 
-
-        :param data:
+        :param data: Data object for a bulk delete Synthetic tests request.
         :type data: DeletedTestsRequestDelete
         """
         super().__init__(kwargs)

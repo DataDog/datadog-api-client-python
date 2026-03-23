@@ -30,9 +30,9 @@ class PostmortemTemplateResponse(ModelNormal):
 
     def __init__(self_, data: PostmortemTemplateDataResponse, **kwargs):
         """
+        Response containing a single postmortem template.
 
-
-        :param data:
+        :param data: Data object for a postmortem template returned in a response.
         :type data: PostmortemTemplateDataResponse
         """
         super().__init__(kwargs)

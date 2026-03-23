@@ -32,9 +32,9 @@ class CreateDegradationRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateDegradationRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for creating a degradation.
 
-
-        :param data:
+        :param data: The data object for creating a degradation.
         :type data: CreateDegradationRequestData, optional
         """
         if data is not unset:

@@ -50,21 +50,21 @@ class QueryUsersRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for filtering and shaping the user query results.
 
-
-        :param limit:
+        :param limit: Maximum number of user records to return in the response.
         :type limit: int, optional
 
-        :param query:
+        :param query: Filter expression using user attribute conditions to narrow results.
         :type query: str, optional
 
-        :param select_columns:
+        :param select_columns: List of user attribute column names to include in the response.
         :type select_columns: [str], optional
 
-        :param sort:
+        :param sort: Sorting configuration specifying the field and direction for ordering user query results.
         :type sort: QueryUsersRequestDataAttributesSort, optional
 
-        :param wildcard_search_term:
+        :param wildcard_search_term: Free-text term used for wildcard search across user attribute values.
         :type wildcard_search_term: str, optional
         """
         if limit is not unset:

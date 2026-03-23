@@ -46,9 +46,9 @@ class CustomRulesetRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a custom ruleset create or update request.
 
-
-        :param attributes:
+        :param attributes: Attributes for creating or updating a custom ruleset.
         :type attributes: CustomRulesetRequestDataAttributes, optional
 
         :param id: Ruleset identifier

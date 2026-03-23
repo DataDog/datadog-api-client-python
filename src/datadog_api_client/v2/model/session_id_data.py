@@ -34,9 +34,9 @@ class SessionIdData(ModelNormal):
 
     def __init__(self_, type: ViewershipHistorySessionDataType, id: Union[str, UnsetType] = unset, **kwargs):
         """
+        A session identifier data object used for bulk playlist operations.
 
-
-        :param id:
+        :param id: Unique identifier of the RUM replay session.
         :type id: str, optional
 
         :param type: Rum replay session resource type.

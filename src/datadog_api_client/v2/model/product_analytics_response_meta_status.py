@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ProductAnalyticsResponseMetaStatus(ModelSimple):
     """
-
+    The execution status of a Product Analytics query.
 
     :param value: Must be one of ["done", "running", "timeout"].
     :type value: str

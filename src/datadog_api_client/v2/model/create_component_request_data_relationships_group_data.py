@@ -35,7 +35,7 @@ class CreateComponentRequestDataRelationshipsGroupData(ModelNormal):
 
     def __init__(self_, id: UUID, type: StatusPagesComponentGroupType, **kwargs):
         """
-
+        The data object identifying the group to create the component within.
 
         :param id: The ID of the group.
         :type id: UUID

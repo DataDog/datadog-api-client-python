@@ -26,9 +26,9 @@ class AutoTransitionAssignedCases(ModelNormal):
 
     def __init__(self_, auto_transition_assigned_cases_on_self_assigned: Union[bool, UnsetType] = unset, **kwargs):
         """
-        Auto-transition assigned cases settings
+        Auto-transition assigned cases settings.
 
-        :param auto_transition_assigned_cases_on_self_assigned: Whether to auto-transition cases when self-assigned
+        :param auto_transition_assigned_cases_on_self_assigned: Whether to auto-transition cases when self-assigned.
         :type auto_transition_assigned_cases_on_self_assigned: bool, optional
         """
         if auto_transition_assigned_cases_on_self_assigned is not unset:

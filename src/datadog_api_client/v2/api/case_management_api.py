@@ -1044,7 +1044,7 @@ class CaseManagementApi:
 
         Create a project.
 
-        :param body: Project payload
+        :param body: Project payload.
         :type body: ProjectCreateRequest
         :rtype: ProjectResponse
         """
@@ -1127,7 +1127,7 @@ class CaseManagementApi:
 
         Remove a project using the project's ``id``.
 
-        :param project_id: Project UUID
+        :param project_id: Project UUID.
         :type project_id: str
         :rtype: None
         """
@@ -1183,7 +1183,7 @@ class CaseManagementApi:
 
         Get the details of a project by ``project_id``.
 
-        :param project_id: Project UUID
+        :param project_id: Project UUID.
         :type project_id: str
         :rtype: ProjectResponse
         """
@@ -1570,9 +1570,9 @@ class CaseManagementApi:
 
         Update a project.
 
-        :param project_id: Project UUID
+        :param project_id: Project UUID.
         :type project_id: str
-        :param body: Project payload
+        :param body: Project payload.
         :type body: ProjectUpdateRequest
         :rtype: ProjectResponse
         """

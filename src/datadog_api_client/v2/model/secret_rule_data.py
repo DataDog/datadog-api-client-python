@@ -44,12 +44,12 @@ class SecretRuleData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object representing a secret detection rule, including its attributes and resource type.
 
-
-        :param attributes:
+        :param attributes: The attributes of a secret detection rule, including its pattern, priority, and validation configuration.
         :type attributes: SecretRuleDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the secret rule resource.
         :type id: str, optional
 
         :param type: Secret rule resource type.

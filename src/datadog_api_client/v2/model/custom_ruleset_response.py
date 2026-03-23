@@ -30,9 +30,9 @@ class CustomRulesetResponse(ModelNormal):
 
     def __init__(self_, data: CustomRuleset, **kwargs):
         """
+        Response containing a single custom ruleset.
 
-
-        :param data:
+        :param data: A custom static analysis ruleset containing a set of user-defined rules.
         :type data: CustomRuleset
         """
         super().__init__(kwargs)

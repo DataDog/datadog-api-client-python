@@ -40,9 +40,9 @@ class HamrOrgConnectionDataResponse(ModelNormal):
         self_, attributes: HamrOrgConnectionAttributesResponse, id: str, type: HamrOrgConnectionType, **kwargs
     ):
         """
+        Data object for a HAMR organization connection response.
 
-
-        :param attributes:
+        :param attributes: Attributes of a HAMR organization connection response.
         :type attributes: HamrOrgConnectionAttributesResponse
 
         :param id: The organization UUID for this HAMR connection.

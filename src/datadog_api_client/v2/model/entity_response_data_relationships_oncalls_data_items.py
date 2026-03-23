@@ -36,9 +36,9 @@ class EntityResponseDataRelationshipsOncallsDataItems(ModelNormal):
 
     def __init__(self_, id: str, type: EntityResponseDataRelationshipsOncallsDataItemsType, **kwargs):
         """
+        Oncall relationship data item containing the oncall resource identifier and type.
 
-
-        :param id:
+        :param id: Oncall resource unique identifier.
         :type id: str
 
         :param type: Oncall resource type.

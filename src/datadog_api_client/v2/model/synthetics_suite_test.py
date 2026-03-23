@@ -48,7 +48,7 @@ class SyntheticsSuiteTest(ModelNormal):
         :param alerting_criticality: Alerting criticality for each the test.
         :type alerting_criticality: SyntheticsSuiteTestAlertingCriticality, optional
 
-        :param public_id:
+        :param public_id: The public ID of the Synthetic test included in the suite.
         :type public_id: str
         """
         if alerting_criticality is not unset:

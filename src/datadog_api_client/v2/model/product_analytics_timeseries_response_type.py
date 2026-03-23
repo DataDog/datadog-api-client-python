@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ProductAnalyticsTimeseriesResponseType(ModelSimple):
     """
-
+    The resource type identifier for a timeseries analytics response.
 
     :param value: If omitted defaults to "timeseries_response". Must be one of ["timeseries_response"].
     :type value: str

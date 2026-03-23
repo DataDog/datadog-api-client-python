@@ -30,9 +30,9 @@ class IncidentHandleRelationship(ModelNormal):
 
     def __init__(self_, data: IncidentHandleRelationshipData, **kwargs):
         """
+        A single relationship object for an incident handle, wrapping the related resource data.
 
-
-        :param data:
+        :param data: Relationship data for an incident handle, containing the ID and type of the related resource.
         :type data: IncidentHandleRelationshipData
         """
         super().__init__(kwargs)

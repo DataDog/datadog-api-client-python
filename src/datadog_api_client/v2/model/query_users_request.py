@@ -32,9 +32,9 @@ class QueryUsersRequest(ModelNormal):
 
     def __init__(self_, data: Union[QueryUsersRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for querying users with optional filtering, column selection, and sorting.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for querying users.
         :type data: QueryUsersRequestData, optional
         """
         if data is not unset:

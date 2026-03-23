@@ -50,7 +50,7 @@ class MaintenanceDataAttributesUpdatesItemsComponentsAffectedItems(ModelNormal):
         **kwargs,
     ):
         """
-
+        A component affected at the time of a maintenance update.
 
         :param id: Identifier of the component affected at the time of the update.
         :type id: UUID

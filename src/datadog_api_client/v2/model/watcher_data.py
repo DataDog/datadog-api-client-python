@@ -44,12 +44,12 @@ class WatcherData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object representing a session watcher, including their identifier, type, and attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes of a user who has watched a RUM replay session, including contact information and watch statistics.
         :type attributes: WatcherDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier of the watcher user.
         :type id: str, optional
 
         :param type: Rum replay watcher resource type.

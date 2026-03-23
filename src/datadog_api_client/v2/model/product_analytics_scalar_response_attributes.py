@@ -32,9 +32,9 @@ class ProductAnalyticsScalarResponseAttributes(ModelNormal):
 
     def __init__(self_, columns: Union[List[ProductAnalyticsScalarColumn], UnsetType] = unset, **kwargs):
         """
+        Attributes of a scalar analytics response, containing the result columns.
 
-
-        :param columns:
+        :param columns: The list of result columns, each containing values and metadata.
         :type columns: [ProductAnalyticsScalarColumn], optional
         """
         if columns is not unset:

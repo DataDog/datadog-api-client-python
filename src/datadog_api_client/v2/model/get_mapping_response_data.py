@@ -44,12 +44,12 @@ class GetMappingResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for the get mapping response.
 
-
-        :param attributes:
+        :param attributes: Attributes of the get mapping response, containing the list of configured entity attributes.
         :type attributes: GetMappingResponseDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the get mapping response resource.
         :type id: str, optional
 
         :param type: Get mappings response resource type.

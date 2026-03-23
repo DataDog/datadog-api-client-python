@@ -64,33 +64,33 @@ class SecretRuleDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        The attributes of a secret detection rule, including its pattern, priority, and validation configuration.
 
-
-        :param default_included_keywords:
+        :param default_included_keywords: A list of keywords that are included by default when scanning for secrets matching this rule.
         :type default_included_keywords: [str], optional
 
-        :param description:
+        :param description: A detailed explanation of what type of secret this rule detects.
         :type description: str, optional
 
-        :param license:
+        :param license: The license under which this secret rule is distributed.
         :type license: str, optional
 
-        :param match_validation:
+        :param match_validation: Configuration for validating whether a detected secret is active by making an HTTP request and inspecting the response.
         :type match_validation: SecretRuleDataAttributesMatchValidation, optional
 
-        :param name:
+        :param name: The unique name of the secret detection rule.
         :type name: str, optional
 
-        :param pattern:
+        :param pattern: The regular expression pattern used to identify potential secrets in source code or configuration.
         :type pattern: str, optional
 
-        :param priority:
+        :param priority: The priority level of this rule, used to rank findings when multiple rules match.
         :type priority: str, optional
 
-        :param sds_id:
+        :param sds_id: The identifier of the corresponding Sensitive Data Scanner rule, if one exists.
         :type sds_id: str, optional
 
-        :param validators:
+        :param validators: A list of validator identifiers used to further confirm a detected secret is genuine.
         :type validators: [str], optional
         """
         if default_included_keywords is not unset:

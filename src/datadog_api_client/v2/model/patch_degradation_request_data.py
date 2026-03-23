@@ -47,7 +47,7 @@ class PatchDegradationRequestData(ModelNormal):
         **kwargs,
     ):
         """
-
+        The data object for updating a degradation.
 
         :param attributes: The supported attributes for updating a degradation.
         :type attributes: PatchDegradationRequestDataAttributes

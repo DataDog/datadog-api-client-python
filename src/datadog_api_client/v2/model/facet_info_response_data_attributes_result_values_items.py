@@ -28,12 +28,12 @@ class FacetInfoResponseDataAttributesResultValuesItems(ModelNormal):
 
     def __init__(self_, count: Union[int, UnsetType] = unset, value: Union[str, UnsetType] = unset, **kwargs):
         """
+        A single facet value with its occurrence count in the dataset.
 
-
-        :param count:
+        :param count: The number of records that have this facet value.
         :type count: int, optional
 
-        :param value:
+        :param value: The facet value (for example, a browser name or country code).
         :type value: str, optional
         """
         if count is not unset:

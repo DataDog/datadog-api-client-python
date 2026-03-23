@@ -44,12 +44,12 @@ class TenancyConfigData(ModelNormal):
         **kwargs,
     ):
         """
+        A single OCI tenancy integration configuration resource object containing the tenancy ID, type, and configuration attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes of an OCI tenancy integration configuration, including authentication details, region settings, and collection options.
         :type attributes: TenancyConfigDataAttributes, optional
 
-        :param id:
+        :param id: The OCID of the OCI tenancy.
         :type id: str, optional
 
         :param type: OCI tenancy resource type.

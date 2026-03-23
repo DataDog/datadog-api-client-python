@@ -35,9 +35,9 @@ class StatusPagesComponentDataRelationshipsGroup(ModelNormal):
 
     def __init__(self_, data: Union[StatusPagesComponentDataRelationshipsGroupData, none_type], **kwargs):
         """
+        The group the component belongs to.
 
-
-        :param data:
+        :param data: The data object identifying the group the component belongs to.
         :type data: StatusPagesComponentDataRelationshipsGroupData, none_type
         """
         super().__init__(kwargs)

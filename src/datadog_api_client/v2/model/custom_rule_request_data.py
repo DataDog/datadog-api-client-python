@@ -44,9 +44,9 @@ class CustomRuleRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a custom rule create or update request.
 
-
-        :param attributes:
+        :param attributes: Attributes for creating or updating a custom rule.
         :type attributes: CustomRuleRequestDataAttributes, optional
 
         :param id: Rule identifier

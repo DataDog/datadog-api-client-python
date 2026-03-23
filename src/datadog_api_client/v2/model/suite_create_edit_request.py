@@ -30,9 +30,9 @@ class SuiteCreateEditRequest(ModelNormal):
 
     def __init__(self_, data: SuiteCreateEdit, **kwargs):
         """
+        Request body for creating or editing a Synthetic test suite.
 
-
-        :param data:
+        :param data: Data object for creating or editing a Synthetic test suite.
         :type data: SuiteCreateEdit
         """
         super().__init__(kwargs)

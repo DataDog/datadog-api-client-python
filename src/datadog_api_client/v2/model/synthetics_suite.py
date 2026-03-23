@@ -85,7 +85,7 @@ class SyntheticsSuite(ModelNormal):
         :param tags: Array of tags attached to the suite.
         :type tags: [str], optional
 
-        :param tests:
+        :param tests: Array of Synthetic tests included in the suite.
         :type tests: [SyntheticsSuiteTest]
 
         :param type: Type of the Synthetic suite, ``suite``.

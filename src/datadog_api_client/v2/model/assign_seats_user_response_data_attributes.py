@@ -30,7 +30,7 @@ class AssignSeatsUserResponseDataAttributes(ModelNormal):
         self_, assigned_ids: Union[List[str], UnsetType] = unset, product_code: Union[str, UnsetType] = unset, **kwargs
     ):
         """
-
+        Attributes of the assign seats response, including the list of users assigned and the product code.
 
         :param assigned_ids: The list of user IDs to which the seats were assigned.
         :type assigned_ids: [str], optional

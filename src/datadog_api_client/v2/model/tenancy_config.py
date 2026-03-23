@@ -32,9 +32,9 @@ class TenancyConfig(ModelNormal):
 
     def __init__(self_, data: Union[TenancyConfigData, UnsetType] = unset, **kwargs):
         """
+        Response containing a single OCI tenancy integration configuration.
 
-
-        :param data:
+        :param data: A single OCI tenancy integration configuration resource object containing the tenancy ID, type, and configuration attributes.
         :type data: TenancyConfigData, optional
         """
         if data is not unset:

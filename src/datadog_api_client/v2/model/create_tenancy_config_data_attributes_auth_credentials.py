@@ -28,12 +28,12 @@ class CreateTenancyConfigDataAttributesAuthCredentials(ModelNormal):
 
     def __init__(self_, private_key: str, fingerprint: Union[str, UnsetType] = unset, **kwargs):
         """
+        OCI API signing key credentials used to authenticate the Datadog integration with the OCI tenancy.
 
-
-        :param fingerprint:
+        :param fingerprint: The fingerprint of the OCI API signing key used for authentication.
         :type fingerprint: str, optional
 
-        :param private_key:
+        :param private_key: The PEM-encoded private key corresponding to the OCI API signing key fingerprint.
         :type private_key: str
         """
         if fingerprint is not unset:

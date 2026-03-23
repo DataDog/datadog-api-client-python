@@ -32,9 +32,9 @@ class CreateStatusPageRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateStatusPageRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for creating a status page.
 
-
-        :param data:
+        :param data: The data object for creating a status page.
         :type data: CreateStatusPageRequestData, optional
         """
         if data is not unset:

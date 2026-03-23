@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class PaginationMetaPageType(ModelSimple):
     """
-
+    The pagination type used for offset-based pagination.
 
     :param value: If omitted defaults to "offset_limit". Must be one of ["offset_limit"].
     :type value: str

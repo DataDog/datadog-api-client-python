@@ -129,81 +129,81 @@ class GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems(ModelNorm
         **kwargs,
     ):
         """
+        A static analysis rule within a ruleset, including its definition, metadata, and associated test cases.
 
-
-        :param arguments:
+        :param arguments: The list of configurable arguments accepted by this rule.
         :type arguments: [GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsArgumentsItems], optional
 
-        :param category:
+        :param category: The category classifying the type of issue this rule detects (e.g., security, style, performance).
         :type category: str, optional
 
-        :param checksum:
+        :param checksum: A checksum of the rule definition used to detect changes.
         :type checksum: str, optional
 
-        :param code:
+        :param code: The rule implementation code used by the static analysis engine.
         :type code: str, optional
 
-        :param created_at:
+        :param created_at: The date and time when the rule was created.
         :type created_at: datetime, optional
 
-        :param created_by:
+        :param created_by: The identifier of the user or system that created the rule.
         :type created_by: str, optional
 
-        :param cve:
+        :param cve: The CVE identifier associated with the vulnerability this rule detects, if applicable.
         :type cve: str, optional
 
-        :param cwe:
+        :param cwe: The CWE identifier associated with the weakness category this rule detects, if applicable.
         :type cwe: str, optional
 
-        :param data:
+        :param data: The resource identifier and type for a static analysis rule.
         :type data: GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsData
 
-        :param description:
+        :param description: A detailed explanation of what the rule detects and why it matters.
         :type description: str, optional
 
-        :param documentation_url:
+        :param documentation_url: A URL pointing to additional documentation for this rule.
         :type documentation_url: str, optional
 
-        :param entity_checked:
+        :param entity_checked: The code entity type (e.g., function, class, variable) that this rule inspects.
         :type entity_checked: str, optional
 
-        :param is_published:
+        :param is_published: Indicates whether the rule is publicly published and available to all users.
         :type is_published: bool, optional
 
-        :param is_testing:
+        :param is_testing: Indicates whether the rule is in testing mode and not yet promoted to production.
         :type is_testing: bool, optional
 
-        :param language:
+        :param language: The programming language this rule applies to.
         :type language: str, optional
 
-        :param last_updated_at:
+        :param last_updated_at: The date and time when the rule was last modified.
         :type last_updated_at: datetime, optional
 
-        :param last_updated_by:
+        :param last_updated_by: The identifier of the user or system that last updated the rule.
         :type last_updated_by: str, optional
 
-        :param name:
+        :param name: The unique name identifying this rule within its ruleset.
         :type name: str, optional
 
-        :param regex:
+        :param regex: A regular expression pattern used by the rule for pattern-based detection.
         :type regex: str, optional
 
-        :param severity:
+        :param severity: The severity level of findings produced by this rule (e.g., ERROR, WARNING, NOTICE).
         :type severity: str, optional
 
-        :param short_description:
+        :param short_description: A brief summary of what the rule detects, suitable for display in listings.
         :type short_description: str, optional
 
-        :param should_use_ai_fix:
+        :param should_use_ai_fix: Indicates whether an AI-generated fix suggestion should be offered for findings from this rule.
         :type should_use_ai_fix: bool, optional
 
-        :param tests:
+        :param tests: The list of test cases used to validate the rule's behavior.
         :type tests: [GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsTestsItems], optional
 
-        :param tree_sitter_query:
+        :param tree_sitter_query: The Tree-sitter query expression used by the rule to match code patterns in the AST.
         :type tree_sitter_query: str, optional
 
-        :param type:
+        :param type: The rule type indicating the detection mechanism used (e.g., tree_sitter, regex).
         :type type: str, optional
         """
         if arguments is not unset:

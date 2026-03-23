@@ -32,9 +32,9 @@ class ProjectResponse(ModelNormal):
 
     def __init__(self_, data: Union[Project, UnsetType] = unset, **kwargs):
         """
-        Project response
+        Project response.
 
-        :param data: A Project
+        :param data: A Project.
         :type data: Project, optional
         """
         if data is not unset:

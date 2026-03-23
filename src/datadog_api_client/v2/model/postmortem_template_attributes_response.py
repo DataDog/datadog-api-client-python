@@ -28,7 +28,7 @@ class PostmortemTemplateAttributesResponse(ModelNormal):
 
     def __init__(self_, created_at: datetime, modified_at: datetime, name: str, **kwargs):
         """
-
+        Attributes of a postmortem template returned in a response.
 
         :param created_at: When the template was created
         :type created_at: datetime

@@ -30,9 +30,9 @@ class CreateTenancyConfigRequest(ModelNormal):
 
     def __init__(self_, data: CreateTenancyConfigData, **kwargs):
         """
+        Request body for creating a new OCI tenancy integration configuration.
 
-
-        :param data:
+        :param data: The data object for creating a new OCI tenancy integration configuration, including the tenancy ID, type, and configuration attributes.
         :type data: CreateTenancyConfigData
         """
         super().__init__(kwargs)

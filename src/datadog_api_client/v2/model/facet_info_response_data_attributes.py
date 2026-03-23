@@ -36,9 +36,9 @@ class FacetInfoResponseDataAttributes(ModelNormal):
 
     def __init__(self_, result: Union[FacetInfoResponseDataAttributesResult, UnsetType] = unset, **kwargs):
         """
+        Attributes of the facet info response, containing the facet result data.
 
-
-        :param result:
+        :param result: The facet query result containing discrete value counts or a numeric range for the requested facet.
         :type result: FacetInfoResponseDataAttributesResult, optional
         """
         if result is not unset:

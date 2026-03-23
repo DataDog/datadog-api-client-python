@@ -52,7 +52,7 @@ class HamrOrgConnectionAttributesResponse(ModelNormal):
         **kwargs,
     ):
         """
-
+        Attributes of a HAMR organization connection response.
 
         :param hamr_status: Status of the HAMR connection:
 

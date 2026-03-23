@@ -71,30 +71,30 @@ class ProjectSettings(ModelNormal):
         **kwargs,
     ):
         """
-        Project settings
+        Project settings.
 
-        :param auto_close_inactive_cases: Auto-close inactive cases settings
+        :param auto_close_inactive_cases: Auto-close inactive cases settings.
         :type auto_close_inactive_cases: AutoCloseInactiveCases, optional
 
-        :param auto_transition_assigned_cases: Auto-transition assigned cases settings
+        :param auto_transition_assigned_cases: Auto-transition assigned cases settings.
         :type auto_transition_assigned_cases: AutoTransitionAssignedCases, optional
 
-        :param integration_incident: Incident integration settings
+        :param integration_incident: Incident integration settings.
         :type integration_incident: IntegrationIncident, optional
 
-        :param integration_jira: Jira integration settings
+        :param integration_jira: Jira integration settings.
         :type integration_jira: IntegrationJira, optional
 
-        :param integration_monitor: Monitor integration settings
+        :param integration_monitor: Monitor integration settings.
         :type integration_monitor: IntegrationMonitor, optional
 
-        :param integration_on_call: On-Call integration settings
+        :param integration_on_call: On-Call integration settings.
         :type integration_on_call: IntegrationOnCall, optional
 
-        :param integration_service_now: ServiceNow integration settings
+        :param integration_service_now: ServiceNow integration settings.
         :type integration_service_now: IntegrationServiceNow, optional
 
-        :param notification: Project notification settings
+        :param notification: Project notification settings.
         :type notification: ProjectNotificationSettings, optional
         """
         if auto_close_inactive_cases is not unset:

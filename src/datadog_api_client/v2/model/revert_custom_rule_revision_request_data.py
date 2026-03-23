@@ -48,9 +48,9 @@ class RevertCustomRuleRevisionRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a request to revert a custom rule to a previous revision.
 
-
-        :param attributes:
+        :param attributes: Attributes specifying the current and target revision IDs for a revert operation.
         :type attributes: RevertCustomRuleRevisionRequestDataAttributes, optional
 
         :param id: Request identifier

@@ -36,15 +36,15 @@ class UpdateTenancyConfigDataAttributesLogsConfig(ModelNormal):
         **kwargs,
     ):
         """
+        Log collection configuration for updating an OCI tenancy, controlling which compartments and services have log collection enabled.
 
-
-        :param compartment_tag_filters:
+        :param compartment_tag_filters: List of compartment tag filters to scope log collection to specific compartments.
         :type compartment_tag_filters: [str], optional
 
-        :param enabled:
+        :param enabled: Whether log collection is enabled for the tenancy.
         :type enabled: bool, optional
 
-        :param enabled_services:
+        :param enabled_services: List of OCI service names for which log collection is enabled.
         :type enabled_services: [str], optional
         """
         if compartment_tag_filters is not unset:

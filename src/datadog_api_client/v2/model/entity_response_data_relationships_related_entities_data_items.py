@@ -36,9 +36,9 @@ class EntityResponseDataRelationshipsRelatedEntitiesDataItems(ModelNormal):
 
     def __init__(self_, id: str, type: EntityResponseDataRelationshipsRelatedEntitiesDataItemsType, **kwargs):
         """
+        Related entity relationship data item containing the related entity resource identifier and type.
 
-
-        :param id:
+        :param id: Related entity unique identifier.
         :type id: str
 
         :param type: Related entity resource type.

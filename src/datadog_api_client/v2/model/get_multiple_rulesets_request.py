@@ -32,9 +32,9 @@ class GetMultipleRulesetsRequest(ModelNormal):
 
     def __init__(self_, data: Union[GetMultipleRulesetsRequestData, UnsetType] = unset, **kwargs):
         """
+        The request payload for retrieving rules for multiple rulesets in a single batch call.
 
-
-        :param data:
+        :param data: The primary data object in the get-multiple-rulesets request, containing request attributes and resource type.
         :type data: GetMultipleRulesetsRequestData, optional
         """
         if data is not unset:

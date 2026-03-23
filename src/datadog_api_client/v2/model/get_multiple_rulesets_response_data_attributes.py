@@ -40,9 +40,9 @@ class GetMultipleRulesetsResponseDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        The attributes of the get-multiple-rulesets response, containing the list of requested rulesets.
 
-
-        :param rulesets:
+        :param rulesets: The list of rulesets returned in response to the batch request.
         :type rulesets: [GetMultipleRulesetsResponseDataAttributesRulesetsItems], optional
         """
         if rulesets is not unset:

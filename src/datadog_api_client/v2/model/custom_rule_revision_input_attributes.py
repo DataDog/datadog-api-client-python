@@ -99,7 +99,7 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
         **kwargs,
     ):
         """
-
+        Input attributes for creating or updating a custom rule revision.
 
         :param arguments: Rule arguments
         :type arguments: [Argument]

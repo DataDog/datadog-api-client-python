@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class IncidentHandleIncludedItemResponse(ModelComposed):
     def __init__(self, **kwargs):
         """
-
+        A single included resource item in an incident handle response, which can be a user or an incident type.
 
         :param attributes: Attributes of user object returned by the API.
         :type attributes: IncidentUserAttributes, optional

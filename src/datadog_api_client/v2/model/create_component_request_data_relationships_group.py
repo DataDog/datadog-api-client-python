@@ -35,9 +35,9 @@ class CreateComponentRequestDataRelationshipsGroup(ModelNormal):
 
     def __init__(self_, data: Union[CreateComponentRequestDataRelationshipsGroupData, none_type], **kwargs):
         """
+        The group to create the component within.
 
-
-        :param data:
+        :param data: The data object identifying the group to create the component within.
         :type data: CreateComponentRequestDataRelationshipsGroupData, none_type
         """
         super().__init__(kwargs)

@@ -30,9 +30,9 @@ class TenancyProductsList(ModelNormal):
 
     def __init__(self_, data: List[TenancyProductsData], **kwargs):
         """
+        Response containing a list of OCI tenancy product resources with their product enablement status.
 
-
-        :param data:
+        :param data: List of OCI tenancy product resource objects.
         :type data: [TenancyProductsData]
         """
         super().__init__(kwargs)

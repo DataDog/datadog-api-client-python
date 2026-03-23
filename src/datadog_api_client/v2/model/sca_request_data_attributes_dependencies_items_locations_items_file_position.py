@@ -46,15 +46,15 @@ class ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition(ModelN
         **kwargs,
     ):
         """
+        A range within a file defined by a start and end position, along with the file name.
 
-
-        :param end:
+        :param end: A specific position (line and column) within a source file.
         :type end: ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition, optional
 
-        :param file_name:
+        :param file_name: The name or path of the file containing this location.
         :type file_name: str, optional
 
-        :param start:
+        :param start: A specific position (line and column) within a source file.
         :type start: ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition, optional
         """
         if end is not unset:

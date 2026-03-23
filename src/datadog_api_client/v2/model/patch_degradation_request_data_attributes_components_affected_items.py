@@ -46,12 +46,12 @@ class PatchDegradationRequestDataAttributesComponentsAffectedItems(ModelNormal):
         self_, id: UUID, status: StatusPagesComponentDataAttributesStatus, name: Union[str, UnsetType] = unset, **kwargs
     ):
         """
-
+        A component affected by a degradation.
 
         :param id: The ID of the component. Must be a component of type ``component``.
         :type id: UUID
 
-        :param name:
+        :param name: The name of the component.
         :type name: str, optional
 
         :param status: The status of the component.

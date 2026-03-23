@@ -89,39 +89,39 @@ class CreateTenancyConfigDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for creating a new OCI tenancy integration configuration, including credentials, region settings, and collection options.
 
-
-        :param auth_credentials:
+        :param auth_credentials: OCI API signing key credentials used to authenticate the Datadog integration with the OCI tenancy.
         :type auth_credentials: CreateTenancyConfigDataAttributesAuthCredentials
 
-        :param config_version:
+        :param config_version: Version number of the integration the tenancy is integrated with
         :type config_version: int, none_type, optional
 
-        :param cost_collection_enabled:
+        :param cost_collection_enabled: Whether cost data collection from OCI is enabled for the tenancy.
         :type cost_collection_enabled: bool, optional
 
-        :param dd_compartment_id:
+        :param dd_compartment_id: The OCID of the OCI compartment used by the Datadog integration stack.
         :type dd_compartment_id: str, optional
 
-        :param dd_stack_id:
+        :param dd_stack_id: The OCID of the OCI Resource Manager stack used by the Datadog integration.
         :type dd_stack_id: str, optional
 
-        :param home_region:
+        :param home_region: The home region of the OCI tenancy (for example, us-ashburn-1).
         :type home_region: str
 
-        :param logs_config:
+        :param logs_config: Log collection configuration for an OCI tenancy, controlling which compartments and services have log collection enabled.
         :type logs_config: CreateTenancyConfigDataAttributesLogsConfig, optional
 
-        :param metrics_config:
+        :param metrics_config: Metrics collection configuration for an OCI tenancy, controlling which compartments and services are included or excluded.
         :type metrics_config: CreateTenancyConfigDataAttributesMetricsConfig, optional
 
-        :param regions_config:
+        :param regions_config: Region configuration for an OCI tenancy, specifying which regions are available, enabled, or disabled for data collection.
         :type regions_config: CreateTenancyConfigDataAttributesRegionsConfig, optional
 
-        :param resource_collection_enabled:
+        :param resource_collection_enabled: Whether resource collection from OCI is enabled for the tenancy.
         :type resource_collection_enabled: bool, optional
 
-        :param user_ocid:
+        :param user_ocid: The OCID of the OCI user used by the Datadog integration for authentication.
         :type user_ocid: str
         """
         if config_version is not unset:

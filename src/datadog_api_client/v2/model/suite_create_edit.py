@@ -34,7 +34,7 @@ class SuiteCreateEdit(ModelNormal):
 
     def __init__(self_, attributes: SyntheticsSuite, type: SyntheticsSuiteTypes, **kwargs):
         """
-
+        Data object for creating or editing a Synthetic test suite.
 
         :param attributes: Object containing details about a Synthetic suite.
         :type attributes: SyntheticsSuite

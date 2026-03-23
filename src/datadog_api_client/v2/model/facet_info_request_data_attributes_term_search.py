@@ -26,9 +26,9 @@ class FacetInfoRequestDataAttributesTermSearch(ModelNormal):
 
     def __init__(self_, value: Union[str, UnsetType] = unset, **kwargs):
         """
+        Term-level search configuration for filtering facet values by an exact or partial term match.
 
-
-        :param value:
+        :param value: The term string to match against facet values.
         :type value: str, optional
         """
         if value is not unset:

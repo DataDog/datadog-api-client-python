@@ -36,15 +36,15 @@ class GetMultipleRulesetsRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        The request attributes for fetching multiple rulesets, specifying which rulesets to retrieve and what data to include.
 
-
-        :param include_testing_rules:
+        :param include_testing_rules: When true, rules that are available in testing mode are included in the response.
         :type include_testing_rules: bool, optional
 
-        :param include_tests:
+        :param include_tests: When true, test cases associated with each rule are included in the response.
         :type include_tests: bool, optional
 
-        :param rulesets:
+        :param rulesets: The list of ruleset names to retrieve.
         :type rulesets: [str], optional
         """
         if include_testing_rules is not unset:

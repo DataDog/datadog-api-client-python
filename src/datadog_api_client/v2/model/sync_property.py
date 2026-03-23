@@ -26,9 +26,9 @@ class SyncProperty(ModelNormal):
 
     def __init__(self_, sync_type: Union[str, UnsetType] = unset, **kwargs):
         """
-        Sync property configuration
+        Sync property configuration.
 
-        :param sync_type:
+        :param sync_type: The direction and type of synchronization for this property.
         :type sync_type: str, optional
         """
         if sync_type is not unset:

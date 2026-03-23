@@ -26,7 +26,7 @@ class FleetAgentVersionAttributes(ModelNormal):
 
     def __init__(self_, version: Union[str, UnsetType] = unset, **kwargs):
         """
-
+        Attributes of an available Datadog Agent version.
 
         :param version: The Agent version string.
         :type version: str, optional

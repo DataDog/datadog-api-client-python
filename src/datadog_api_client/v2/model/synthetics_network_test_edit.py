@@ -34,7 +34,7 @@ class SyntheticsNetworkTestEdit(ModelNormal):
 
     def __init__(self_, attributes: SyntheticsNetworkTest, type: SyntheticsNetworkTestType, **kwargs):
         """
-
+        Data object for creating or editing a Network Path test.
 
         :param attributes: Object containing details about a Network Path test.
         :type attributes: SyntheticsNetworkTest

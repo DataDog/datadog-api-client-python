@@ -50,21 +50,21 @@ class ProjectUpdateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Project update attributes
+        Project update attributes.
 
-        :param columns_config: Project columns configuration
+        :param columns_config: Project columns configuration.
         :type columns_config: ProjectColumnsConfig, optional
 
-        :param enabled_custom_case_types: List of enabled custom case type IDs
+        :param enabled_custom_case_types: List of enabled custom case type IDs.
         :type enabled_custom_case_types: [str], optional
 
-        :param name: Project name
+        :param name: Project name.
         :type name: str, optional
 
-        :param settings: Project settings
+        :param settings: Project settings.
         :type settings: ProjectSettings, optional
 
-        :param team_uuid: Team UUID to associate with the project
+        :param team_uuid: Team UUID to associate with the project.
         :type team_uuid: str, optional
         """
         if columns_config is not unset:

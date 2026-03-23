@@ -49,21 +49,21 @@ class WatcherDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes of a user who has watched a RUM replay session, including contact information and watch statistics.
 
-
-        :param handle:
+        :param handle: Email handle of the user who watched the session.
         :type handle: str
 
-        :param icon:
+        :param icon: URL or identifier of the watcher's avatar icon.
         :type icon: str, optional
 
-        :param last_watched_at:
+        :param last_watched_at: Timestamp when the watcher last viewed the session.
         :type last_watched_at: datetime
 
-        :param name:
+        :param name: Display name of the user who watched the session.
         :type name: str, optional
 
-        :param watch_count:
+        :param watch_count: Total number of times the user has watched the session.
         :type watch_count: int
         """
         if icon is not unset:

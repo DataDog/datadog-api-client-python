@@ -33,12 +33,12 @@ class AutoCloseInactiveCases(ModelNormal):
         **kwargs,
     ):
         """
-        Auto-close inactive cases settings
+        Auto-close inactive cases settings.
 
-        :param enabled: Whether auto-close is enabled
+        :param enabled: Whether auto-close is enabled.
         :type enabled: bool, optional
 
-        :param max_inactive_time_in_secs: Maximum inactive time in seconds before auto-closing
+        :param max_inactive_time_in_secs: Maximum inactive time in seconds before auto-closing.
         :type max_inactive_time_in_secs: int, optional
         """
         if enabled is not unset:

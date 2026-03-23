@@ -53,7 +53,7 @@ class BatchUpsertRowsRequestData(ModelNormal):
         :param attributes: Attributes containing row data values for row creation or update operations.
         :type attributes: BatchUpsertRowsRequestDataAttributes, optional
 
-        :param id:
+        :param id: The primary key value that uniquely identifies the row to create or update.
         :type id: str
 
         :param type: Row resource type.

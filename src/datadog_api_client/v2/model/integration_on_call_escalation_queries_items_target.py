@@ -36,15 +36,15 @@ class IntegrationOnCallEscalationQueriesItemsTarget(ModelNormal):
         **kwargs,
     ):
         """
+        The target recipient for an On-Call escalation query.
 
-
-        :param dynamic_team_paging:
+        :param dynamic_team_paging: Whether to use dynamic team paging for escalation.
         :type dynamic_team_paging: bool, optional
 
-        :param team_id:
+        :param team_id: The identifier of the team to escalate to.
         :type team_id: str, optional
 
-        :param user_id:
+        :param user_id: The identifier of the user to escalate to.
         :type user_id: str, optional
         """
         if dynamic_team_paging is not unset:

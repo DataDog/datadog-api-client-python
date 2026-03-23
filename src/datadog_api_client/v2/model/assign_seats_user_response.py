@@ -32,9 +32,9 @@ class AssignSeatsUserResponse(ModelNormal):
 
     def __init__(self_, data: Union[AssignSeatsUserResponseData, UnsetType] = unset, **kwargs):
         """
+        The response body returned after successfully assigning seats to users.
 
-
-        :param data:
+        :param data: The response data object containing attributes of the seat assignment result.
         :type data: AssignSeatsUserResponseData, optional
         """
         if data is not unset:

@@ -54,33 +54,33 @@ class ProjectNotificationSettings(ModelNormal):
         **kwargs,
     ):
         """
-        Project notification settings
+        Project notification settings.
 
-        :param destinations: Notification destinations (1=email, 2=slack, 3=in-app)
+        :param destinations: Notification destinations (1=email, 2=slack, 3=in-app).
         :type destinations: [int], optional
 
-        :param enabled: Whether notifications are enabled
+        :param enabled: Whether notifications are enabled.
         :type enabled: bool, optional
 
-        :param notify_on_case_assignment:
+        :param notify_on_case_assignment: Whether to send a notification when a case is assigned.
         :type notify_on_case_assignment: bool, optional
 
-        :param notify_on_case_closed:
+        :param notify_on_case_closed: Whether to send a notification when a case is closed.
         :type notify_on_case_closed: bool, optional
 
-        :param notify_on_case_comment:
+        :param notify_on_case_comment: Whether to send a notification when a comment is added to a case.
         :type notify_on_case_comment: bool, optional
 
-        :param notify_on_case_comment_mention:
+        :param notify_on_case_comment_mention: Whether to send a notification when a user is mentioned in a case comment.
         :type notify_on_case_comment_mention: bool, optional
 
-        :param notify_on_case_priority_change:
+        :param notify_on_case_priority_change: Whether to send a notification when a case's priority changes.
         :type notify_on_case_priority_change: bool, optional
 
-        :param notify_on_case_status_change:
+        :param notify_on_case_status_change: Whether to send a notification when a case's status changes.
         :type notify_on_case_status_change: bool, optional
 
-        :param notify_on_case_unassignment:
+        :param notify_on_case_unassignment: Whether to send a notification when a case is unassigned.
         :type notify_on_case_unassignment: bool, optional
         """
         if destinations is not unset:
