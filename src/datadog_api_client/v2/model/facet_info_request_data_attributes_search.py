@@ -26,9 +26,9 @@ class FacetInfoRequestDataAttributesSearch(ModelNormal):
 
     def __init__(self_, query: Union[str, UnsetType] = unset, **kwargs):
         """
+        Query-based search configuration for filtering the audience context when retrieving facet values.
 
-
-        :param query:
+        :param query: The filter expression used to scope the audience from which facet values are retrieved.
         :type query: str, optional
         """
         if query is not unset:

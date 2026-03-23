@@ -46,12 +46,12 @@ class DeletedSuiteResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a deleted Synthetic test suite.
 
-
-        :param attributes:
+        :param attributes: Attributes of a deleted Synthetic test suite, including deletion timestamp and public ID.
         :type attributes: DeletedSuiteResponseDataAttributes, optional
 
-        :param id:
+        :param id: The public ID of the deleted Synthetic test suite.
         :type id: str, optional
 
         :param type: Type for the Synthetics suites responses, ``suites``.

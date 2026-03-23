@@ -71,33 +71,33 @@ class ListConnectionsResponseDataAttributesConnectionsItems(ModelNormal):
         **kwargs,
     ):
         """
+        Details of a single data source connection, including its fields, join configuration, and audit metadata.
 
-
-        :param created_at:
+        :param created_at: Timestamp indicating when the connection was created.
         :type created_at: datetime, optional
 
-        :param created_by:
+        :param created_by: Identifier of the user who created the connection.
         :type created_by: str, optional
 
-        :param fields:
+        :param fields: List of custom attribute fields imported from the data source.
         :type fields: [CreateConnectionRequestDataAttributesFieldsItems], optional
 
-        :param id:
+        :param id: Unique identifier of the connection.
         :type id: str, optional
 
-        :param join:
+        :param join: The join configuration describing how the data source is linked to the entity.
         :type join: ListConnectionsResponseDataAttributesConnectionsItemsJoin, optional
 
-        :param metadata:
+        :param metadata: Additional key-value metadata associated with the connection.
         :type metadata: {str: (str,)}, optional
 
-        :param type:
+        :param type: The type of data source connection (for example, ref_table).
         :type type: str, optional
 
-        :param updated_at:
+        :param updated_at: Timestamp indicating when the connection was last updated.
         :type updated_at: datetime, optional
 
-        :param updated_by:
+        :param updated_by: Identifier of the user who last updated the connection.
         :type updated_by: str, optional
         """
         if created_at is not unset:

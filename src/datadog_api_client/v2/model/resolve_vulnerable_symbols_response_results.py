@@ -43,12 +43,12 @@ class ResolveVulnerableSymbolsResponseResults(ModelNormal):
         **kwargs,
     ):
         """
+        The result of resolving vulnerable symbols for a specific package, identified by its PURL.
 
-
-        :param purl:
+        :param purl: The Package URL (PURL) uniquely identifying the package for which vulnerable symbols are resolved.
         :type purl: str, optional
 
-        :param vulnerable_symbols:
+        :param vulnerable_symbols: The list of vulnerable symbol groups found in this package, organized by advisory.
         :type vulnerable_symbols: [ResolveVulnerableSymbolsResponseResultsVulnerableSymbols], optional
         """
         if purl is not unset:

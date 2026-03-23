@@ -42,21 +42,21 @@ class SnapshotUpdateRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for updating a heatmap snapshot, including event, session, and view context.
 
-
-        :param event_id:
+        :param event_id: Unique identifier of the RUM event associated with the snapshot.
         :type event_id: str
 
-        :param is_device_type_selected_by_user:
+        :param is_device_type_selected_by_user: Indicates whether the device type was explicitly selected by the user rather than auto-detected.
         :type is_device_type_selected_by_user: bool
 
-        :param session_id:
+        :param session_id: Unique identifier of the RUM session associated with the snapshot.
         :type session_id: str, optional
 
-        :param start:
+        :param start: Offset in milliseconds from the start of the session at which the snapshot was captured.
         :type start: int
 
-        :param view_id:
+        :param view_id: Unique identifier of the RUM view associated with the snapshot.
         :type view_id: str, optional
         """
         if session_id is not unset:

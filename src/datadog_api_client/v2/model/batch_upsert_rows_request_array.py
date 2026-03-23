@@ -38,7 +38,7 @@ class BatchUpsertRowsRequestArray(ModelNormal):
         """
         The request body for creating or updating multiple rows into a reference table.
 
-        :param data:
+        :param data: List of row resources to create or update in the reference table.
         :type data: [BatchUpsertRowsRequestData]
         """
         super().__init__(kwargs)

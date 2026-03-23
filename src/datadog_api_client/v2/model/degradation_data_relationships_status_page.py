@@ -34,9 +34,9 @@ class DegradationDataRelationshipsStatusPage(ModelNormal):
 
     def __init__(self_, data: DegradationDataRelationshipsStatusPageData, **kwargs):
         """
+        The status page the degradation belongs to.
 
-
-        :param data:
+        :param data: The data object identifying the status page the degradation belongs to.
         :type data: DegradationDataRelationshipsStatusPageData
         """
         super().__init__(kwargs)

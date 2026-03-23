@@ -30,9 +30,9 @@ class ViewershipHistorySessionArray(ModelNormal):
 
     def __init__(self_, data: List[ViewershipHistorySessionData], **kwargs):
         """
+        A list of RUM replay sessions from a user's viewership history.
 
-
-        :param data:
+        :param data: Array of viewership history session data objects.
         :type data: [ViewershipHistorySessionData]
         """
         super().__init__(kwargs)

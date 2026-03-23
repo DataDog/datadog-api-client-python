@@ -26,7 +26,7 @@ class UnassignSeatsUserRequestDataAttributes(ModelNormal):
 
     def __init__(self_, product_code: str, user_uuids: List[str], **kwargs):
         """
-
+        Attributes specifying the product and users from whom seats will be unassigned.
 
         :param product_code: The product code for which to unassign seats.
         :type product_code: str

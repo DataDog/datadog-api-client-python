@@ -52,15 +52,15 @@ class UpdateConnectionRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes specifying the field modifications to apply to an existing connection.
 
-
-        :param fields_to_add:
+        :param fields_to_add: New fields to add to the connection from the data source.
         :type fields_to_add: [CreateConnectionRequestDataAttributesFieldsItems], optional
 
-        :param fields_to_delete:
+        :param fields_to_delete: Identifiers of existing fields to remove from the connection.
         :type fields_to_delete: [str], optional
 
-        :param fields_to_update:
+        :param fields_to_update: Existing fields with updated metadata to apply to the connection.
         :type fields_to_update: [UpdateConnectionRequestDataAttributesFieldsToUpdateItems], optional
         """
         if fields_to_add is not unset:

@@ -34,9 +34,9 @@ class EntityResponseDataRelationshipsSchema(ModelNormal):
 
     def __init__(self_, data: EntityResponseDataRelationshipsSchemaData, **kwargs):
         """
+        Schema relationship linking an entity to its associated schema resource.
 
-
-        :param data:
+        :param data: Schema relationship data containing the schema resource identifier and type.
         :type data: EntityResponseDataRelationshipsSchemaData
         """
         super().__init__(kwargs)

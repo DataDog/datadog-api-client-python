@@ -26,9 +26,9 @@ class ResolveVulnerableSymbolsRequestDataAttributes(ModelNormal):
 
     def __init__(self_, purls: Union[List[str], UnsetType] = unset, **kwargs):
         """
+        The attributes of a request to resolve vulnerable symbols, containing the list of package PURLs to check.
 
-
-        :param purls:
+        :param purls: The list of Package URLs (PURLs) for which to resolve vulnerable symbols.
         :type purls: [str], optional
         """
         if purls is not unset:

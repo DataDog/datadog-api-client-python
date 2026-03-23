@@ -37,12 +37,12 @@ class ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(ModelNorma
 
     def __init__(self_, col: Union[int, UnsetType] = unset, line: Union[int, UnsetType] = unset, **kwargs):
         """
+        A specific position (line and column) within a source file.
 
-
-        :param col:
+        :param col: The column number of the position within the line.
         :type col: int, optional
 
-        :param line:
+        :param line: The line number of the position within the file.
         :type line: int, optional
         """
         if col is not unset:

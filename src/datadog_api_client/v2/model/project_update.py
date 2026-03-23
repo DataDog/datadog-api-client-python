@@ -38,12 +38,12 @@ class ProjectUpdate(ModelNormal):
         self_, type: ProjectResourceType, attributes: Union[ProjectUpdateAttributes, UnsetType] = unset, **kwargs
     ):
         """
-        Project update
+        Project update.
 
-        :param attributes: Project update attributes
+        :param attributes: Project update attributes.
         :type attributes: ProjectUpdateAttributes, optional
 
-        :param type: Project resource type
+        :param type: Project resource type.
         :type type: ProjectResourceType
         """
         if attributes is not unset:

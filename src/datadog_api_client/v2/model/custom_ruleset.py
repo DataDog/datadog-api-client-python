@@ -36,9 +36,9 @@ class CustomRuleset(ModelNormal):
 
     def __init__(self_, attributes: CustomRulesetAttributes, id: str, type: CustomRulesetDataType, **kwargs):
         """
+        A custom static analysis ruleset containing a set of user-defined rules.
 
-
-        :param attributes:
+        :param attributes: Attributes of a custom ruleset, including its name, description, and rules.
         :type attributes: CustomRulesetAttributes
 
         :param id: Ruleset identifier

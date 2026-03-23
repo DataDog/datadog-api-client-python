@@ -34,9 +34,9 @@ class RevertCustomRuleRevisionRequest(ModelNormal):
 
     def __init__(self_, data: Union[RevertCustomRuleRevisionRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for reverting a custom rule to a previous revision.
 
-
-        :param data:
+        :param data: Data object for a request to revert a custom rule to a previous revision.
         :type data: RevertCustomRuleRevisionRequestData, optional
         """
         if data is not unset:

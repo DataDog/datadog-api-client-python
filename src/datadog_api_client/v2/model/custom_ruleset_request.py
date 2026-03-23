@@ -32,9 +32,9 @@ class CustomRulesetRequest(ModelNormal):
 
     def __init__(self_, data: Union[CustomRulesetRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for creating or updating a custom ruleset.
 
-
-        :param data:
+        :param data: Data object for a custom ruleset create or update request.
         :type data: CustomRulesetRequestData, optional
         """
         if data is not unset:

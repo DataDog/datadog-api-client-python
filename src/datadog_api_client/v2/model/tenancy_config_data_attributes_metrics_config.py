@@ -36,15 +36,15 @@ class TenancyConfigDataAttributesMetricsConfig(ModelNormal):
         **kwargs,
     ):
         """
+        Metrics collection configuration for an OCI tenancy, indicating which compartments and services are included or excluded.
 
-
-        :param compartment_tag_filters:
+        :param compartment_tag_filters: List of compartment tag filters scoping metrics collection to specific compartments.
         :type compartment_tag_filters: [str], optional
 
-        :param enabled:
+        :param enabled: Whether metrics collection is enabled for the tenancy.
         :type enabled: bool, optional
 
-        :param excluded_services:
+        :param excluded_services: List of OCI service names excluded from metrics collection.
         :type excluded_services: [str], optional
         """
         if compartment_tag_filters is not unset:

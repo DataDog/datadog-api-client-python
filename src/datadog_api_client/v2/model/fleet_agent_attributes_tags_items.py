@@ -28,12 +28,12 @@ class FleetAgentAttributesTagsItems(ModelNormal):
 
     def __init__(self_, key: Union[str, UnsetType] = unset, value: Union[str, UnsetType] = unset, **kwargs):
         """
+        A key-value pair representing a tag associated with a Datadog Agent.
 
-
-        :param key:
+        :param key: The tag key.
         :type key: str, optional
 
-        :param value:
+        :param value: The tag value.
         :type value: str, optional
         """
         if key is not unset:

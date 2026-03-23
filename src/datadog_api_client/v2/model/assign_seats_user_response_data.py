@@ -48,9 +48,9 @@ class AssignSeatsUserResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The response data object containing attributes of the seat assignment result.
 
-
-        :param attributes:
+        :param attributes: Attributes of the assign seats response, including the list of users assigned and the product code.
         :type attributes: AssignSeatsUserResponseDataAttributes, optional
 
         :param id: The ID of the assign seats user response.

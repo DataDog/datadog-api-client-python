@@ -47,7 +47,7 @@ class ProductAnalyticsTimeseriesResponse(ModelNormal):
         """
         Response for a timeseries analytics query.
 
-        :param data:
+        :param data: Data object for a timeseries analytics response.
         :type data: ProductAnalyticsTimeseriesResponseData, optional
 
         :param meta: Metadata for a Product Analytics query response.

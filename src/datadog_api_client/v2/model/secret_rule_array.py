@@ -30,9 +30,9 @@ class SecretRuleArray(ModelNormal):
 
     def __init__(self_, data: List[SecretRuleData], **kwargs):
         """
+        A collection of secret detection rules returned by the list endpoint.
 
-
-        :param data:
+        :param data: The list of secret detection rules.
         :type data: [SecretRuleData]
         """
         super().__init__(kwargs)

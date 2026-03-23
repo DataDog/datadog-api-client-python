@@ -30,9 +30,9 @@ class ProjectRelationship(ModelNormal):
 
     def __init__(self_, data: ProjectRelationshipData, **kwargs):
         """
-        Relationship to project
+        Relationship to project.
 
-        :param data: Relationship to project object
+        :param data: Relationship to project object.
         :type data: ProjectRelationshipData
         """
         super().__init__(kwargs)

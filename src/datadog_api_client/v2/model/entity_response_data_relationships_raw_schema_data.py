@@ -36,9 +36,9 @@ class EntityResponseDataRelationshipsRawSchemaData(ModelNormal):
 
     def __init__(self_, id: str, type: EntityResponseDataRelationshipsRawSchemaDataType, **kwargs):
         """
+        Raw schema relationship data containing the raw schema resource identifier and type.
 
-
-        :param id:
+        :param id: Raw schema unique identifier.
         :type id: str
 
         :param type: Raw schema resource type.

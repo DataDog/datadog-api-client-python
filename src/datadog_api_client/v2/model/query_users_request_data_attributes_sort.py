@@ -28,12 +28,12 @@ class QueryUsersRequestDataAttributesSort(ModelNormal):
 
     def __init__(self_, field: Union[str, UnsetType] = unset, order: Union[str, UnsetType] = unset, **kwargs):
         """
+        Sorting configuration specifying the field and direction for ordering user query results.
 
-
-        :param field:
+        :param field: The user attribute field name to sort results by.
         :type field: str, optional
 
-        :param order:
+        :param order: The sort direction, either ascending or descending.
         :type order: str, optional
         """
         if field is not unset:

@@ -36,9 +36,9 @@ class ResolveVulnerableSymbolsResponse(ModelNormal):
 
     def __init__(self_, data: Union[ResolveVulnerableSymbolsResponseData, UnsetType] = unset, **kwargs):
         """
+        The top-level response object returned when resolving vulnerable symbols for a set of packages.
 
-
-        :param data:
+        :param data: The data object in a response for resolving vulnerable symbols, containing the result attributes and response type.
         :type data: ResolveVulnerableSymbolsResponseData, optional
         """
         if data is not unset:

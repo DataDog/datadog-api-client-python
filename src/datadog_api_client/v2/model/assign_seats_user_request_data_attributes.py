@@ -26,7 +26,7 @@ class AssignSeatsUserRequestDataAttributes(ModelNormal):
 
     def __init__(self_, product_code: str, user_uuids: List[str], **kwargs):
         """
-
+        Attributes specifying the product and users to whom seats will be assigned.
 
         :param product_code: The product code for which to assign seats.
         :type product_code: str

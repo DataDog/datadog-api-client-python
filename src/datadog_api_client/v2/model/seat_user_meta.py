@@ -36,7 +36,7 @@ class SeatUserMeta(ModelNormal):
         **kwargs,
     ):
         """
-
+        Pagination metadata for the seat users list response.
 
         :param cursor: The cursor for the seat users.
         :type cursor: str, optional

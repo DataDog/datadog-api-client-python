@@ -40,9 +40,9 @@ class PostmortemTemplateDataResponse(ModelNormal):
         self_, attributes: PostmortemTemplateAttributesResponse, id: str, type: PostmortemTemplateType, **kwargs
     ):
         """
+        Data object for a postmortem template returned in a response.
 
-
-        :param attributes:
+        :param attributes: Attributes of a postmortem template returned in a response.
         :type attributes: PostmortemTemplateAttributesResponse
 
         :param id: The ID of the template

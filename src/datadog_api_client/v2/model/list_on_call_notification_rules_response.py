@@ -44,7 +44,7 @@ class ListOnCallNotificationRulesResponse(ModelNormal):
         """
         Response type for listing notification rules for a user
 
-        :param data:
+        :param data: Array of notification rule data objects.
         :type data: [OnCallNotificationRuleData], optional
 
         :param included:

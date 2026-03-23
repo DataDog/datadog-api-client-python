@@ -32,9 +32,9 @@ class FacetInfoRequest(ModelNormal):
 
     def __init__(self_, data: Union[FacetInfoRequestData, UnsetType] = unset, **kwargs):
         """
+        Request body for retrieving facet value information for a specified attribute with optional filtering.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for the facet info request.
         :type data: FacetInfoRequestData, optional
         """
         if data is not unset:

@@ -28,12 +28,12 @@ class ScaRequestDataAttributesDependenciesItemsReachableSymbolPropertiesItems(Mo
 
     def __init__(self_, name: Union[str, UnsetType] = unset, value: Union[str, UnsetType] = unset, **kwargs):
         """
+        A key-value property describing a reachable symbol within a dependency.
 
-
-        :param name:
+        :param name: The name of the reachable symbol property.
         :type name: str, optional
 
-        :param value:
+        :param value: The value of the reachable symbol property.
         :type value: str, optional
         """
         if name is not unset:

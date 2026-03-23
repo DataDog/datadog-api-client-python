@@ -28,12 +28,12 @@ class BudgetValidationResponseDataAttributes(ModelNormal):
 
     def __init__(self_, errors: Union[List[str], UnsetType] = unset, valid: Union[bool, UnsetType] = unset, **kwargs):
         """
+        The attributes of a budget validation response, including any validation errors and the validity status.
 
-
-        :param errors:
+        :param errors: A list of validation error messages for the budget.
         :type errors: [str], optional
 
-        :param valid:
+        :param valid: Whether the budget configuration is valid.
         :type valid: bool, optional
         """
         if errors is not unset:

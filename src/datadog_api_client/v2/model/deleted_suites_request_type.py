@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class DeletedSuitesRequestType(ModelSimple):
     """
-
+    Type for the bulk delete Synthetic suites request, `delete_suites_request`.
 
     :param value: If omitted defaults to "delete_suites_request". Must be one of ["delete_suites_request"].
     :type value: str

@@ -52,12 +52,12 @@ class QueryEventFilteredUsersRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for querying event-filtered users.
 
-
-        :param attributes:
+        :param attributes: Attributes for filtering users by both user properties and event platform activity.
         :type attributes: QueryEventFilteredUsersRequestDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the query event filtered users request resource.
         :type id: str, optional
 
         :param type: Query event filtered users request resource type.

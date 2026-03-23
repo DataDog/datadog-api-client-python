@@ -32,7 +32,7 @@ class GlobalVariableJsonPatchRequestDataAttributes(ModelNormal):
 
     def __init__(self_, json_patch: Union[List[JsonPatchOperation], UnsetType] = unset, **kwargs):
         """
-
+        Attributes for a JSON Patch request on a Synthetic global variable.
 
         :param json_patch: JSON Patch operations following RFC 6902.
         :type json_patch: [JsonPatchOperation], optional

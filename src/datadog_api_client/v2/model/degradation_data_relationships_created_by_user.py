@@ -34,9 +34,9 @@ class DegradationDataRelationshipsCreatedByUser(ModelNormal):
 
     def __init__(self_, data: DegradationDataRelationshipsCreatedByUserData, **kwargs):
         """
+        The Datadog user who created the degradation.
 
-
-        :param data:
+        :param data: The data object identifying the Datadog user who created the degradation.
         :type data: DegradationDataRelationshipsCreatedByUserData
         """
         super().__init__(kwargs)

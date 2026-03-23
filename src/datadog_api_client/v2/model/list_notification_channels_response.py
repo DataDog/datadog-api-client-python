@@ -34,7 +34,7 @@ class ListNotificationChannelsResponse(ModelNormal):
         """
         Response type for listing notification channels for a user
 
-        :param data:
+        :param data: Array of notification channel data objects.
         :type data: [NotificationChannelData], optional
         """
         if data is not unset:

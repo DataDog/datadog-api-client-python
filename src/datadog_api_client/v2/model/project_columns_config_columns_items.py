@@ -46,15 +46,15 @@ class ProjectColumnsConfigColumnsItems(ModelNormal):
         **kwargs,
     ):
         """
+        Configuration for a single column in a project board view.
 
-
-        :param sort:
+        :param sort: Sort configuration for a project board column.
         :type sort: ProjectColumnsConfigColumnsItemsSort, optional
 
-        :param sort_field:
+        :param sort_field: The field used to sort items in this column.
         :type sort_field: str, optional
 
-        :param type:
+        :param type: The type of column.
         :type type: str, optional
         """
         if sort is not unset:

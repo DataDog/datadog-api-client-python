@@ -52,15 +52,15 @@ class ResolveVulnerableSymbolsResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object in a response for resolving vulnerable symbols, containing the result attributes and response type.
 
-
-        :param attributes:
+        :param attributes: The attributes of a response containing resolved vulnerable symbols, organized by package.
         :type attributes: ResolveVulnerableSymbolsResponseDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier for this response data object.
         :type id: str, optional
 
-        :param type:
+        :param type: The type identifier for responses containing resolved vulnerable symbols.
         :type type: ResolveVulnerableSymbolsResponseDataType
         """
         if attributes is not unset:

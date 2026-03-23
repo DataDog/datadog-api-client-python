@@ -51,9 +51,9 @@ class StatusPagesComponent(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a single component.
 
-
-        :param data:
+        :param data: The data object for a component.
         :type data: StatusPagesComponentData, optional
 
         :param included: The included related resources of a component. Client must explicitly request these resources by name in the ``include`` query parameter.

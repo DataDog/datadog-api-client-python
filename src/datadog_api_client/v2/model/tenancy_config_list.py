@@ -30,9 +30,9 @@ class TenancyConfigList(ModelNormal):
 
     def __init__(self_, data: List[TenancyConfigData], **kwargs):
         """
+        Response containing a list of OCI tenancy integration configurations.
 
-
-        :param data:
+        :param data: List of OCI tenancy integration configuration objects.
         :type data: [TenancyConfigData]
         """
         super().__init__(kwargs)

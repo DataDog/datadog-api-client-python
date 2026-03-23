@@ -26,9 +26,9 @@ class ScaRequestDataAttributesRepository(ModelNormal):
 
     def __init__(self_, url: Union[str, UnsetType] = unset, **kwargs):
         """
+        Information about the source code repository being analyzed.
 
-
-        :param url:
+        :param url: The URL of the repository.
         :type url: str, optional
         """
         if url is not unset:

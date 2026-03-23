@@ -46,15 +46,15 @@ class BudgetWithEntriesDataAttributesEntriesItems(ModelNormal):
         **kwargs,
     ):
         """
+        A single monthly budget entry defining the allocated amount and optional tag filters for a specific month.
 
-
-        :param amount:
+        :param amount: The budgeted amount for this entry.
         :type amount: float, optional
 
-        :param month:
+        :param month: The month this budget entry applies to, in YYYYMM format.
         :type month: int, optional
 
-        :param tag_filters:
+        :param tag_filters: The list of tag filters that scope this budget entry to specific resources.
         :type tag_filters: [BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems], optional
         """
         if amount is not unset:

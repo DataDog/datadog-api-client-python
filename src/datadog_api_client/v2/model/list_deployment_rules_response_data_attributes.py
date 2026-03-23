@@ -36,9 +36,9 @@ class ListDeploymentRulesResponseDataAttributes(ModelNormal):
 
     def __init__(self_, rules: Union[List[DeploymentRuleResponseDataAttributes], UnsetType] = unset, **kwargs):
         """
+        Attributes of the response for listing deployment rules.
 
-
-        :param rules:
+        :param rules: The list of deployment rules.
         :type rules: [DeploymentRuleResponseDataAttributes], optional
         """
         if rules is not unset:

@@ -47,22 +47,22 @@ class ProductAnalyticsUnit(ModelNormal):
         """
         A unit definition for metric values.
 
-        :param family:
+        :param family: The unit family (e.g., time, bytes).
         :type family: str, optional
 
-        :param id:
+        :param id: Numeric identifier for the unit.
         :type id: int, optional
 
-        :param name:
+        :param name: The full name of the unit (e.g., nanosecond).
         :type name: str, optional
 
-        :param plural:
+        :param plural: Plural form of the unit name (e.g., nanoseconds).
         :type plural: str, optional
 
-        :param scale_factor:
+        :param scale_factor: Conversion factor relative to the base unit of the family.
         :type scale_factor: float, optional
 
-        :param short_name:
+        :param short_name: Abbreviated unit name (e.g., ns).
         :type short_name: str, optional
         """
         if family is not unset:

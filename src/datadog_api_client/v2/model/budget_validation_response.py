@@ -32,9 +32,9 @@ class BudgetValidationResponse(ModelNormal):
 
     def __init__(self_, data: Union[BudgetValidationResponseData, UnsetType] = unset, **kwargs):
         """
+        The response object for a budget validation request, containing the validation result data.
 
-
-        :param data:
+        :param data: The data object for a budget validation response, containing the resource type, ID, and validation attributes.
         :type data: BudgetValidationResponseData, optional
         """
         if data is not unset:

@@ -48,9 +48,9 @@ class AssignSeatsUserRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The request data object containing attributes for assigning seats to users.
 
-
-        :param attributes:
+        :param attributes: Attributes specifying the product and users to whom seats will be assigned.
         :type attributes: AssignSeatsUserRequestDataAttributes
 
         :param id: The ID of the assign seats user request.

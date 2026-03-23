@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SuiteSearchResponseType(ModelSimple):
     """
-
+    Type for the Synthetics suites search response, `suites_search`.
 
     :param value: If omitted defaults to "suites_search". Must be one of ["suites_search"].
     :type value: str

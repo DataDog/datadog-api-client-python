@@ -44,12 +44,12 @@ class TenancyProductsData(ModelNormal):
         **kwargs,
     ):
         """
+        A single OCI tenancy product resource object containing the tenancy ID, type, and product attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes of an OCI tenancy product resource, containing the list of available products and their enablement status.
         :type attributes: TenancyProductsDataAttributes, optional
 
-        :param id:
+        :param id: The OCID of the OCI tenancy.
         :type id: str, optional
 
         :param type: OCI tenancy product resource type.

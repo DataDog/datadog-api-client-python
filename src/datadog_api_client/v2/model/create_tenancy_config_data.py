@@ -44,12 +44,12 @@ class CreateTenancyConfigData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object for creating a new OCI tenancy integration configuration, including the tenancy ID, type, and configuration attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes for creating a new OCI tenancy integration configuration, including credentials, region settings, and collection options.
         :type attributes: CreateTenancyConfigDataAttributes, optional
 
-        :param id:
+        :param id: The OCID of the OCI tenancy to configure.
         :type id: str
 
         :param type: OCI tenancy resource type.

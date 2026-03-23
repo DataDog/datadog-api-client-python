@@ -52,13 +52,13 @@ class ProductAnalyticsScalarResponseData(ModelNormal):
         """
         Data object for a scalar response.
 
-        :param attributes:
+        :param attributes: Attributes of a scalar analytics response, containing the result columns.
         :type attributes: ProductAnalyticsScalarResponseAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for this response data object.
         :type id: str, optional
 
-        :param type:
+        :param type: The resource type identifier for a scalar analytics response.
         :type type: ProductAnalyticsScalarResponseType, optional
         """
         if attributes is not unset:

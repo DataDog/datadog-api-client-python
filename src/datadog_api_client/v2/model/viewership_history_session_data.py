@@ -48,12 +48,12 @@ class ViewershipHistorySessionData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object representing a session in the viewership history, including its identifier, type, and attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes of a viewership history session entry, capturing when it was last watched and the associated event data.
         :type attributes: ViewershipHistorySessionDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier of the RUM replay session.
         :type id: str, optional
 
         :param type: Rum replay session resource type.

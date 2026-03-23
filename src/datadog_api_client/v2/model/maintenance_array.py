@@ -51,9 +51,9 @@ class MaintenanceArray(ModelNormal):
         **kwargs,
     ):
         """
+        Response object for a list of maintenances.
 
-
-        :param data:
+        :param data: A list of maintenance data objects.
         :type data: [MaintenanceData]
 
         :param included: The included related resources of a maintenance. Client must explicitly request these resources by name in the ``include`` query parameter.

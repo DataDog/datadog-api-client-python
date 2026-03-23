@@ -30,9 +30,9 @@ class EntityResponseArray(ModelNormal):
 
     def __init__(self_, data: List[PreviewEntityResponseData], **kwargs):
         """
+        Response object containing an array of entity data items.
 
-
-        :param data:
+        :param data: Array of entity response data items.
         :type data: [PreviewEntityResponseData]
         """
         super().__init__(kwargs)

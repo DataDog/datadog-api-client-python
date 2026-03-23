@@ -78,30 +78,30 @@ class SecretRuleDataAttributesMatchValidation(ModelNormal):
         **kwargs,
     ):
         """
+        Configuration for validating whether a detected secret is active by making an HTTP request and inspecting the response.
 
-
-        :param endpoint:
+        :param endpoint: The URL endpoint to call when validating a detected secret.
         :type endpoint: str, optional
 
-        :param hosts:
+        :param hosts: The list of hostnames to include when performing secret match validation.
         :type hosts: [str], optional
 
-        :param http_method:
+        :param http_method: The HTTP method (e.g., GET, POST) to use when making the validation request.
         :type http_method: str, optional
 
-        :param invalid_http_status_code:
+        :param invalid_http_status_code: The HTTP status code ranges that indicate the detected secret is invalid or inactive.
         :type invalid_http_status_code: [SecretRuleDataAttributesMatchValidationInvalidHttpStatusCodeItems], optional
 
-        :param request_headers:
+        :param request_headers: A map of HTTP header names to values to include in the validation request.
         :type request_headers: {str: (str,)}, optional
 
-        :param timeout_seconds:
+        :param timeout_seconds: The maximum number of seconds to wait for a response during validation before timing out.
         :type timeout_seconds: int, optional
 
-        :param type:
+        :param type: The type of match validation to perform (e.g., http).
         :type type: str, optional
 
-        :param valid_http_status_code:
+        :param valid_http_status_code: The HTTP status code ranges that indicate the detected secret is valid and active.
         :type valid_http_status_code: [SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems], optional
         """
         if endpoint is not unset:
