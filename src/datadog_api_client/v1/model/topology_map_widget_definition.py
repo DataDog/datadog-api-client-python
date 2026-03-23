@@ -68,7 +68,7 @@ class TopologyMapWidgetDefinition(ModelNormal):
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
-        :param requests: One or more Topology requests.
+        :param requests: One Topology request.
         :type requests: [TopologyRequest]
 
         :param title: Title of your widget.

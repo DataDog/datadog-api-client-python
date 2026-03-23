@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class SecurityMonitoringCriticalAssetSeverity(ModelSimple):
     """
-    Severity associated with this critical asset. Either an explicit severity can be set, or the severity can be increased or decreased, or the severity can be left unchanged (no-op).
+    Severity associated with this critical asset. Either an explicit severity can be set, or the severity can be increased or decreased.
 
-    :param value: Must be one of ["info", "low", "medium", "high", "critical", "increase", "decrease", "no-op"].
+    :param value: Must be one of ["info", "low", "medium", "high", "critical", "increase", "decrease"].
     :type value: str
     """
 
@@ -28,7 +28,6 @@ class SecurityMonitoringCriticalAssetSeverity(ModelSimple):
         "critical",
         "increase",
         "decrease",
-        "no-op",
     }
     INFO: ClassVar["SecurityMonitoringCriticalAssetSeverity"]
     LOW: ClassVar["SecurityMonitoringCriticalAssetSeverity"]
@@ -37,7 +36,6 @@ class SecurityMonitoringCriticalAssetSeverity(ModelSimple):
     CRITICAL: ClassVar["SecurityMonitoringCriticalAssetSeverity"]
     INCREASE: ClassVar["SecurityMonitoringCriticalAssetSeverity"]
     DECREASE: ClassVar["SecurityMonitoringCriticalAssetSeverity"]
-    NO_OP: ClassVar["SecurityMonitoringCriticalAssetSeverity"]
 
     @cached_property
     def openapi_types(_):
@@ -53,4 +51,3 @@ SecurityMonitoringCriticalAssetSeverity.HIGH = SecurityMonitoringCriticalAssetSe
 SecurityMonitoringCriticalAssetSeverity.CRITICAL = SecurityMonitoringCriticalAssetSeverity("critical")
 SecurityMonitoringCriticalAssetSeverity.INCREASE = SecurityMonitoringCriticalAssetSeverity("increase")
 SecurityMonitoringCriticalAssetSeverity.DECREASE = SecurityMonitoringCriticalAssetSeverity("decrease")
-SecurityMonitoringCriticalAssetSeverity.NO_OP = SecurityMonitoringCriticalAssetSeverity("no-op")
