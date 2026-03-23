@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class TopologyQueryDataSource(ModelSimple):
+class TopologyQueryDataStreamsOrServiceMapDataSource(ModelSimple):
     """
     Name of the data source
 
@@ -24,8 +24,8 @@ class TopologyQueryDataSource(ModelSimple):
         "data_streams",
         "service_map",
     }
-    DATA_STREAMS: ClassVar["TopologyQueryDataSource"]
-    SERVICE_MAP: ClassVar["TopologyQueryDataSource"]
+    DATA_STREAMS: ClassVar["TopologyQueryDataStreamsOrServiceMapDataSource"]
+    SERVICE_MAP: ClassVar["TopologyQueryDataStreamsOrServiceMapDataSource"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,9 @@ class TopologyQueryDataSource(ModelSimple):
         }
 
 
-TopologyQueryDataSource.DATA_STREAMS = TopologyQueryDataSource("data_streams")
-TopologyQueryDataSource.SERVICE_MAP = TopologyQueryDataSource("service_map")
+TopologyQueryDataStreamsOrServiceMapDataSource.DATA_STREAMS = TopologyQueryDataStreamsOrServiceMapDataSource(
+    "data_streams"
+)
+TopologyQueryDataStreamsOrServiceMapDataSource.SERVICE_MAP = TopologyQueryDataStreamsOrServiceMapDataSource(
+    "service_map"
+)

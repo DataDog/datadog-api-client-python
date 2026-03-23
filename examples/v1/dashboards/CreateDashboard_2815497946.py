@@ -1,5 +1,5 @@
 """
-Create a new dashboard with topology_map widget
+Create a new dashboard with topology_map data_streams widget
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -38,12 +38,12 @@ body = Dashboard(
                     TopologyRequest(
                         request_type=TopologyRequestType.TOPOLOGY,
                         query=TopologyQueryDataStreamsOrServiceMap(
-                            data_source=TopologyQueryDataStreamsOrServiceMapDataSource.SERVICE_MAP,
+                            data_source=TopologyQueryDataStreamsOrServiceMapDataSource.DATA_STREAMS,
                             service="",
                             filters=[
-                                "env:none",
-                                "environment:*",
+                                "env:prod",
                             ],
+                            query_string="service:myservice",
                         ),
                     ),
                 ],
