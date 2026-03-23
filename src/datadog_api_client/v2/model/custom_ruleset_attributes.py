@@ -51,7 +51,7 @@ class CustomRulesetAttributes(ModelNormal):
         **kwargs,
     ):
         """
-
+        Attributes of a custom ruleset, including its name, description, and rules.
 
         :param created_at: Creation timestamp
         :type created_at: datetime

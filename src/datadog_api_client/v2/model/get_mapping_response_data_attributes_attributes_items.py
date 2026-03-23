@@ -45,24 +45,24 @@ class GetMappingResponseDataAttributesAttributesItems(ModelNormal):
         **kwargs,
     ):
         """
+        Details of a single entity attribute including its mapping configuration and metadata.
 
-
-        :param attribute:
+        :param attribute: The attribute identifier as used in the entity data model.
         :type attribute: str, optional
 
-        :param description:
+        :param description: Human-readable explanation of what the attribute represents.
         :type description: str, optional
 
-        :param display_name:
+        :param display_name: The human-readable label for the attribute shown in the UI.
         :type display_name: str, optional
 
-        :param groups:
+        :param groups: List of group labels used to categorize the attribute.
         :type groups: [str], optional
 
-        :param is_custom:
+        :param is_custom: Whether this attribute is a custom user-defined attribute rather than a built-in one.
         :type is_custom: bool, optional
 
-        :param type:
+        :param type: The data type of the attribute (for example, string or number).
         :type type: str, optional
         """
         if attribute is not unset:

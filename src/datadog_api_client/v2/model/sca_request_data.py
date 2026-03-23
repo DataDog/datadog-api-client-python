@@ -44,15 +44,15 @@ class ScaRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object in an SCA request, containing the dependency graph attributes and request type.
 
-
-        :param attributes:
+        :param attributes: The attributes of an SCA request, containing dependency graph data, vulnerability information, and repository context.
         :type attributes: ScaRequestDataAttributes, optional
 
-        :param id:
+        :param id: An optional identifier for this SCA request data object.
         :type id: str, optional
 
-        :param type:
+        :param type: The type identifier for SCA dependency analysis requests.
         :type type: ScaRequestDataType
         """
         if attributes is not unset:

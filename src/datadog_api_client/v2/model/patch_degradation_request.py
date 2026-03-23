@@ -32,9 +32,9 @@ class PatchDegradationRequest(ModelNormal):
 
     def __init__(self_, data: Union[PatchDegradationRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for updating a degradation.
 
-
-        :param data:
+        :param data: The data object for updating a degradation.
         :type data: PatchDegradationRequestData, optional
         """
         if data is not unset:

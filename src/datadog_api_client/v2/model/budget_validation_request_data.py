@@ -44,12 +44,12 @@ class BudgetValidationRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object for a budget validation request, containing the resource type, ID, and budget attributes to validate.
 
-
-        :param attributes:
+        :param attributes: The attributes of a budget including all its monthly entries.
         :type attributes: BudgetWithEntriesDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the budget to validate.
         :type id: str, optional
 
         :param type: Budget resource type.

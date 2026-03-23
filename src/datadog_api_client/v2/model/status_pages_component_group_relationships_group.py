@@ -37,7 +37,7 @@ class StatusPagesComponentGroupRelationshipsGroup(ModelNormal):
         """
         The group the component group belongs to.
 
-        :param data:
+        :param data: The data object identifying the parent group of a component group.
         :type data: StatusPagesComponentGroupRelationshipsGroupData, none_type
         """
         super().__init__(kwargs)

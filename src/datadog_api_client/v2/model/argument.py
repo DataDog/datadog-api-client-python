@@ -25,7 +25,7 @@ class Argument(ModelNormal):
 
     def __init__(self_, description: str, name: str, **kwargs):
         """
-
+        A named argument for a custom static analysis rule.
 
         :param description: Base64-encoded argument description
         :type description: str

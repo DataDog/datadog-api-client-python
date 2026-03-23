@@ -32,9 +32,9 @@ class AssignSeatsUserRequest(ModelNormal):
 
     def __init__(self_, data: Union[AssignSeatsUserRequestData, UnsetType] = unset, **kwargs):
         """
+        The request body for assigning seats to users for a product code.
 
-
-        :param data:
+        :param data: The request data object containing attributes for assigning seats to users.
         :type data: AssignSeatsUserRequestData, optional
         """
         if data is not unset:

@@ -34,9 +34,9 @@ class ResolveVulnerableSymbolsRequest(ModelNormal):
 
     def __init__(self_, data: Union[ResolveVulnerableSymbolsRequestData, UnsetType] = unset, **kwargs):
         """
+        The top-level request object for resolving vulnerable symbols in a set of packages.
 
-
-        :param data:
+        :param data: The data object in a request to resolve vulnerable symbols, containing the package PURLs and request type.
         :type data: ResolveVulnerableSymbolsRequestData, optional
         """
         if data is not unset:

@@ -36,9 +36,9 @@ class CustomRuleResponseData(ModelNormal):
 
     def __init__(self_, attributes: CustomRule, id: str, type: CustomRuleDataType, **kwargs):
         """
+        Data object returned in a custom rule response, including its ID, type, and attributes.
 
-
-        :param attributes:
+        :param attributes: A custom static analysis rule within a ruleset.
         :type attributes: CustomRule
 
         :param id: Rule identifier

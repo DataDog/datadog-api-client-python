@@ -32,9 +32,9 @@ class BudgetValidationRequest(ModelNormal):
 
     def __init__(self_, data: Union[BudgetValidationRequestData, UnsetType] = unset, **kwargs):
         """
+        The request object for validating a budget configuration before creating or updating it.
 
-
-        :param data:
+        :param data: The data object for a budget validation request, containing the resource type, ID, and budget attributes to validate.
         :type data: BudgetValidationRequestData, optional
         """
         if data is not unset:

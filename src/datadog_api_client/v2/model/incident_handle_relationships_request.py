@@ -41,12 +41,12 @@ class IncidentHandleRelationshipsRequest(ModelNormal):
         **kwargs,
     ):
         """
+        Relationships to associate with an incident handle in a create or update request.
 
-
-        :param commander_user:
+        :param commander_user: A single relationship object for an incident handle, wrapping the related resource data.
         :type commander_user: IncidentHandleRelationship, optional
 
-        :param incident_type:
+        :param incident_type: A single relationship object for an incident handle, wrapping the related resource data.
         :type incident_type: IncidentHandleRelationship
         """
         if commander_user is not unset:

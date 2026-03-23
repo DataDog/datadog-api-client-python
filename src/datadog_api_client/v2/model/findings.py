@@ -34,7 +34,7 @@ class Findings(ModelNormal):
         """
         A list of security findings.
 
-        :param data:
+        :param data: Array of security finding data objects.
         :type data: [FindingData], optional
         """
         if data is not unset:

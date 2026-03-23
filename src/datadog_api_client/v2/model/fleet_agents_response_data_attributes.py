@@ -32,7 +32,7 @@ class FleetAgentsResponseDataAttributes(ModelNormal):
 
     def __init__(self_, agents: Union[List[FleetAgentAttributes], UnsetType] = unset, **kwargs):
         """
-
+        Attributes of the fleet agents response containing the list of agents.
 
         :param agents: Array of agents matching the query criteria.
         :type agents: [FleetAgentAttributes], optional

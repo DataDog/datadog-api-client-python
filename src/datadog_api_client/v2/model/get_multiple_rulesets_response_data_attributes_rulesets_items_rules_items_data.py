@@ -43,9 +43,9 @@ class GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsData(Model
         **kwargs,
     ):
         """
+        The resource identifier and type for a static analysis rule.
 
-
-        :param id:
+        :param id: The unique identifier of the rule resource.
         :type id: str, optional
 
         :param type: Rules resource type.

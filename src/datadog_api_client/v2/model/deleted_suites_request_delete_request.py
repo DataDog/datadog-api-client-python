@@ -30,9 +30,9 @@ class DeletedSuitesRequestDeleteRequest(ModelNormal):
 
     def __init__(self_, data: DeletedSuitesRequestDelete, **kwargs):
         """
+        Request body for bulk deleting Synthetic test suites.
 
-
-        :param data:
+        :param data: Data object for a bulk delete Synthetic test suites request.
         :type data: DeletedSuitesRequestDelete
         """
         super().__init__(kwargs)

@@ -47,7 +47,7 @@ class Attachment(ModelNormal):
         :param data: Attachment data from a response.
         :type data: AttachmentData, optional
 
-        :param included:
+        :param included: A list of related objects included in the response.
         :type included: [AttachmentIncluded], optional
         """
         if data is not unset:

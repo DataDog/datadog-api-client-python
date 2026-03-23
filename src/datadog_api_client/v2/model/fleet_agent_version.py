@@ -46,7 +46,7 @@ class FleetAgentVersion(ModelNormal):
         """
         Represents an available Datadog Agent version.
 
-        :param attributes:
+        :param attributes: Attributes of an available Datadog Agent version.
         :type attributes: FleetAgentVersionAttributes, optional
 
         :param id: Unique identifier for the Agent version (same as version).

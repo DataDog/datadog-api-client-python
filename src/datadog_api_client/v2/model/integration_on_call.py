@@ -46,15 +46,15 @@ class IntegrationOnCall(ModelNormal):
         **kwargs,
     ):
         """
-        On-Call integration settings
+        On-Call integration settings.
 
-        :param auto_assign_on_call: Whether to auto-assign on-call
+        :param auto_assign_on_call: Whether to auto-assign on-call.
         :type auto_assign_on_call: bool, optional
 
-        :param enabled: Whether On-Call integration is enabled
+        :param enabled: Whether On-Call integration is enabled.
         :type enabled: bool, optional
 
-        :param escalation_queries:
+        :param escalation_queries: List of escalation queries for routing cases to on-call responders.
         :type escalation_queries: [IntegrationOnCallEscalationQueriesItems], optional
         """
         if auto_assign_on_call is not unset:

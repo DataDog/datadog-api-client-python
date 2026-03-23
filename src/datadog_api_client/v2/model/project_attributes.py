@@ -53,24 +53,24 @@ class ProjectAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Project attributes
+        Project attributes.
 
-        :param columns_config: Project columns configuration
+        :param columns_config: Project columns configuration.
         :type columns_config: ProjectColumnsConfig, optional
 
-        :param enabled_custom_case_types: List of enabled custom case type IDs
+        :param enabled_custom_case_types: List of enabled custom case type IDs.
         :type enabled_custom_case_types: [str], optional
 
-        :param key: The project's key
+        :param key: The project's key.
         :type key: str, optional
 
-        :param name: Project's name
+        :param name: Project's name.
         :type name: str, optional
 
-        :param restricted: Whether the project is restricted
+        :param restricted: Whether the project is restricted.
         :type restricted: bool, optional
 
-        :param settings: Project settings
+        :param settings: Project settings.
         :type settings: ProjectSettings, optional
         """
         if columns_config is not unset:

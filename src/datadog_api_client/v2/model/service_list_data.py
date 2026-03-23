@@ -44,12 +44,12 @@ class ServiceListData(ModelNormal):
         **kwargs,
     ):
         """
+        A single data item in the service list response.
 
-
-        :param attributes:
+        :param attributes: Attributes of a service list entry, containing metadata and a list of service names.
         :type attributes: ServiceListDataAttributes, optional
 
-        :param id:
+        :param id: The unique identifier of the service.
         :type id: str, optional
 
         :param type: Services list resource type.

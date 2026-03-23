@@ -43,12 +43,12 @@ class QueryEventFilteredUsersRequestDataAttributesEventQuery(ModelNormal):
         **kwargs,
     ):
         """
+        Event platform query used to filter users based on their event activity within a specified time window.
 
-
-        :param query:
+        :param query: The event platform query expression for filtering users by their event activity.
         :type query: str, optional
 
-        :param time_frame:
+        :param time_frame: The time window defining the start and end of the event query period as Unix timestamps.
         :type time_frame: QueryEventFilteredUsersRequestDataAttributesEventQueryTimeFrame, optional
         """
         if query is not unset:

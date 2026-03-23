@@ -43,9 +43,9 @@ class GetMultipleRulesetsResponseDataAttributesRulesetsItemsData(ModelNormal):
         **kwargs,
     ):
         """
+        The resource identifier and type for a ruleset.
 
-
-        :param id:
+        :param id: The unique identifier of the ruleset resource.
         :type id: str, optional
 
         :param type: Rulesets resource type.

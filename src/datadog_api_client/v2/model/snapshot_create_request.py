@@ -30,9 +30,9 @@ class SnapshotCreateRequest(ModelNormal):
 
     def __init__(self_, data: SnapshotCreateRequestData, **kwargs):
         """
+        Request body for creating a heatmap snapshot.
 
-
-        :param data:
+        :param data: Data object for a heatmap snapshot creation request, containing the resource type and attributes.
         :type data: SnapshotCreateRequestData
         """
         super().__init__(kwargs)

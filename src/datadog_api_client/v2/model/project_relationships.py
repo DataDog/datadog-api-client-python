@@ -41,7 +41,7 @@ class ProjectRelationships(ModelNormal):
         **kwargs,
     ):
         """
-        Project relationships
+        Project relationships.
 
         :param member_team: Relationship between a team and a team link
         :type member_team: RelationshipToTeamLinks, optional

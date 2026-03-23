@@ -30,9 +30,9 @@ class CustomRuleResponse(ModelNormal):
 
     def __init__(self_, data: CustomRuleResponseData, **kwargs):
         """
+        Response containing a single custom rule.
 
-
-        :param data:
+        :param data: Data object returned in a custom rule response, including its ID, type, and attributes.
         :type data: CustomRuleResponseData
         """
         super().__init__(kwargs)

@@ -94,45 +94,45 @@ class TenancyConfigDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes of an OCI tenancy integration configuration, including authentication details, region settings, and collection options.
 
-
-        :param billing_plan_id:
+        :param billing_plan_id: The identifier of the billing plan associated with the OCI tenancy.
         :type billing_plan_id: int, optional
 
-        :param config_version:
+        :param config_version: Version number of the integration the tenancy is integrated with
         :type config_version: int, optional
 
-        :param cost_collection_enabled:
+        :param cost_collection_enabled: Whether cost data collection from OCI is enabled for the tenancy.
         :type cost_collection_enabled: bool, optional
 
-        :param dd_compartment_id:
+        :param dd_compartment_id: The OCID of the OCI compartment used by the Datadog integration stack.
         :type dd_compartment_id: str, optional
 
-        :param dd_stack_id:
+        :param dd_stack_id: The OCID of the OCI Resource Manager stack used by the Datadog integration.
         :type dd_stack_id: str, optional
 
-        :param home_region:
+        :param home_region: The home region of the OCI tenancy (for example, us-ashburn-1).
         :type home_region: str, optional
 
-        :param logs_config:
+        :param logs_config: Log collection configuration for an OCI tenancy, indicating which compartments and services have log collection enabled.
         :type logs_config: TenancyConfigDataAttributesLogsConfig, optional
 
-        :param metrics_config:
+        :param metrics_config: Metrics collection configuration for an OCI tenancy, indicating which compartments and services are included or excluded.
         :type metrics_config: TenancyConfigDataAttributesMetricsConfig, optional
 
-        :param parent_tenancy_name:
+        :param parent_tenancy_name: The name of the parent OCI tenancy, if applicable.
         :type parent_tenancy_name: str, optional
 
-        :param regions_config:
+        :param regions_config: Region configuration for an OCI tenancy, indicating which regions are available, enabled, or disabled for data collection.
         :type regions_config: TenancyConfigDataAttributesRegionsConfig, optional
 
-        :param resource_collection_enabled:
+        :param resource_collection_enabled: Whether resource collection from OCI is enabled for the tenancy.
         :type resource_collection_enabled: bool, optional
 
-        :param tenancy_name:
+        :param tenancy_name: The human-readable name of the OCI tenancy.
         :type tenancy_name: str, optional
 
-        :param user_ocid:
+        :param user_ocid: The OCID of the OCI user used by the Datadog integration for authentication.
         :type user_ocid: str, optional
         """
         if billing_plan_id is not unset:

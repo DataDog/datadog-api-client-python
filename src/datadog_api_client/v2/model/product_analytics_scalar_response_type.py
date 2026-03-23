@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ProductAnalyticsScalarResponseType(ModelSimple):
     """
-
+    The resource type identifier for a scalar analytics response.
 
     :param value: If omitted defaults to "scalar_response". Must be one of ["scalar_response"].
     :type value: str

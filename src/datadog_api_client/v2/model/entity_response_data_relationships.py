@@ -76,21 +76,21 @@ class EntityResponseDataRelationships(ModelNormal):
         **kwargs,
     ):
         """
+        Entity relationships including incidents, oncalls, schemas, and related entities.
 
-
-        :param incidents:
+        :param incidents: Incidents relationship containing a list of incident resources associated with this entity.
         :type incidents: EntityResponseDataRelationshipsIncidents, optional
 
-        :param oncalls:
+        :param oncalls: Oncalls relationship containing a list of oncall resources associated with this entity.
         :type oncalls: EntityResponseDataRelationshipsOncalls, optional
 
-        :param raw_schema:
+        :param raw_schema: Raw schema relationship linking an entity to its raw schema resource.
         :type raw_schema: EntityResponseDataRelationshipsRawSchema, optional
 
-        :param related_entities:
+        :param related_entities: Related entities relationship containing a list of entity references related to this entity.
         :type related_entities: EntityResponseDataRelationshipsRelatedEntities, optional
 
-        :param schema:
+        :param schema: Schema relationship linking an entity to its associated schema resource.
         :type schema: EntityResponseDataRelationshipsSchema, optional
         """
         if incidents is not unset:

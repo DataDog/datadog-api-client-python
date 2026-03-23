@@ -58,18 +58,18 @@ class ViewershipHistorySessionDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes of a viewership history session entry, capturing when it was last watched and the associated event data.
 
-
-        :param event_id:
+        :param event_id: Unique identifier of the RUM event associated with the watched session.
         :type event_id: str, optional
 
-        :param last_watched_at:
+        :param last_watched_at: Timestamp when the session was last watched by the user.
         :type last_watched_at: datetime
 
-        :param session_event:
+        :param session_event: Raw event data associated with the replay session.
         :type session_event: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param track:
+        :param track: Replay track identifier indicating which recording track the session belongs to.
         :type track: str, optional
         """
         if event_id is not unset:

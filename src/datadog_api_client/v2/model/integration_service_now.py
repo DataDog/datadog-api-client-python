@@ -50,21 +50,21 @@ class IntegrationServiceNow(ModelNormal):
         **kwargs,
     ):
         """
-        ServiceNow integration settings
+        ServiceNow integration settings.
 
-        :param assignment_group: Assignment group
+        :param assignment_group: Assignment group.
         :type assignment_group: str, optional
 
-        :param auto_creation:
+        :param auto_creation: Auto-creation settings for ServiceNow incidents from cases.
         :type auto_creation: IntegrationServiceNowAutoCreation, optional
 
-        :param enabled: Whether ServiceNow integration is enabled
+        :param enabled: Whether ServiceNow integration is enabled.
         :type enabled: bool, optional
 
-        :param instance_name: ServiceNow instance name
+        :param instance_name: ServiceNow instance name.
         :type instance_name: str, optional
 
-        :param sync_config:
+        :param sync_config: Synchronization configuration for ServiceNow integration.
         :type sync_config: IntegrationServiceNowSyncConfig, optional
         """
         if assignment_group is not unset:

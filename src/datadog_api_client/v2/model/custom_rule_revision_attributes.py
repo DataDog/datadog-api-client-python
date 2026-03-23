@@ -109,7 +109,7 @@ class CustomRuleRevisionAttributes(ModelNormal):
         **kwargs,
     ):
         """
-
+        Attributes of a custom rule revision, including code, metadata, and test cases.
 
         :param arguments: Rule arguments
         :type arguments: [Argument]

@@ -26,9 +26,9 @@ class ScaRequestDataAttributesVulnerabilitiesItemsAffectsItems(ModelNormal):
 
     def __init__(self_, ref: Union[str, UnsetType] = unset, **kwargs):
         """
+        A reference to a component affected by a vulnerability.
 
-
-        :param ref:
+        :param ref: The BOM reference identifying the affected component.
         :type ref: str, optional
         """
         if ref is not unset:

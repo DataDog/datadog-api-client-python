@@ -86,33 +86,33 @@ class ScaRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        The attributes of an SCA request, containing dependency graph data, vulnerability information, and repository context.
 
-
-        :param commit:
+        :param commit: Metadata about the commit associated with the SCA scan, including author, committer, and branch information.
         :type commit: ScaRequestDataAttributesCommit, optional
 
-        :param dependencies:
+        :param dependencies: The list of dependencies discovered in the repository.
         :type dependencies: [ScaRequestDataAttributesDependenciesItems], optional
 
-        :param env:
+        :param env: The environment context in which the SCA scan was performed (e.g., production, staging).
         :type env: str, optional
 
-        :param files:
+        :param files: The list of dependency manifest files found in the repository.
         :type files: [ScaRequestDataAttributesFilesItems], optional
 
-        :param relations:
+        :param relations: The dependency relations describing the inter-component dependency graph.
         :type relations: [ScaRequestDataAttributesRelationsItems], optional
 
-        :param repository:
+        :param repository: Information about the source code repository being analyzed.
         :type repository: ScaRequestDataAttributesRepository, optional
 
-        :param service:
+        :param service: The name of the service or application being analyzed.
         :type service: str, optional
 
-        :param tags:
+        :param tags: A map of key-value tags providing additional metadata for the SCA scan.
         :type tags: {str: (str,)}, optional
 
-        :param vulnerabilities:
+        :param vulnerabilities: The list of vulnerabilities identified in the dependency graph.
         :type vulnerabilities: [ScaRequestDataAttributesVulnerabilitiesItems], optional
         """
         if commit is not unset:

@@ -46,7 +46,7 @@ class CustomRulesetRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-
+        Attributes for creating or updating a custom ruleset.
 
         :param description: Base64-encoded full description
         :type description: str, optional

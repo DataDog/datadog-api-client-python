@@ -34,9 +34,9 @@ class MaintenanceDataRelationshipsStatusPage(ModelNormal):
 
     def __init__(self_, data: MaintenanceDataRelationshipsStatusPageData, **kwargs):
         """
+        The status page the maintenance belongs to.
 
-
-        :param data:
+        :param data: The data object identifying the status page associated with a maintenance.
         :type data: MaintenanceDataRelationshipsStatusPageData
         """
         super().__init__(kwargs)

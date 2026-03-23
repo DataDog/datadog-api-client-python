@@ -26,9 +26,9 @@ class IntegrationServiceNowAutoCreation(ModelNormal):
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
+        Auto-creation settings for ServiceNow incidents from cases.
 
-
-        :param enabled:
+        :param enabled: Whether automatic ServiceNow incident creation is enabled.
         :type enabled: bool, optional
         """
         if enabled is not unset:

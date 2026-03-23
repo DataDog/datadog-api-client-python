@@ -73,33 +73,33 @@ class EntityResponseDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Entity response attributes containing core entity metadata fields.
 
-
-        :param api_version:
+        :param api_version: The API version of the entity schema.
         :type api_version: str, optional
 
-        :param description:
+        :param description: A short description of the entity.
         :type description: str, optional
 
-        :param display_name:
+        :param display_name: The user-friendly display name of the entity.
         :type display_name: str, optional
 
-        :param kind:
+        :param kind: The kind of the entity (e.g. service, datastore, queue).
         :type kind: str, optional
 
-        :param name:
+        :param name: The unique name of the entity within its kind and namespace.
         :type name: str, optional
 
-        :param namespace:
+        :param namespace: The namespace the entity belongs to.
         :type namespace: str, optional
 
-        :param owner:
+        :param owner: The owner of the entity, usually a team.
         :type owner: str, optional
 
-        :param properties:
+        :param properties: Additional custom properties for the entity.
         :type properties: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param tags:
+        :param tags: A set of custom tags assigned to the entity.
         :type tags: [str], optional
         """
         if api_version is not unset:

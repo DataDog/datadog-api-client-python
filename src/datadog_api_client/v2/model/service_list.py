@@ -32,9 +32,9 @@ class ServiceList(ModelNormal):
 
     def __init__(self_, data: Union[ServiceListData, UnsetType] = unset, **kwargs):
         """
+        The response body for the service list endpoint.
 
-
-        :param data:
+        :param data: A single data item in the service list response.
         :type data: ServiceListData, optional
         """
         if data is not unset:

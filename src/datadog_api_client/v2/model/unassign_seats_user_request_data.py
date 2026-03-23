@@ -48,9 +48,9 @@ class UnassignSeatsUserRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The request data object containing attributes for unassigning seats from users.
 
-
-        :param attributes:
+        :param attributes: Attributes specifying the product and users from whom seats will be unassigned.
         :type attributes: UnassignSeatsUserRequestDataAttributes
 
         :param id: The ID of the unassign seats user request.

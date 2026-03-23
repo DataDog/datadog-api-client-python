@@ -23,7 +23,7 @@ class PostmortemTemplateAttributesRequest(ModelNormal):
 
     def __init__(self_, name: str, **kwargs):
         """
-
+        Attributes for creating or updating a postmortem template.
 
         :param name: The name of the template
         :type name: str

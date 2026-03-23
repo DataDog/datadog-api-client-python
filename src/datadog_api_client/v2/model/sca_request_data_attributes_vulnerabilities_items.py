@@ -46,15 +46,15 @@ class ScaRequestDataAttributesVulnerabilitiesItems(ModelNormal):
         **kwargs,
     ):
         """
+        A vulnerability entry from the Software Bill of Materials (SBOM), describing a known security issue and the components it affects.
 
-
-        :param affects:
+        :param affects: The list of components affected by this vulnerability.
         :type affects: [ScaRequestDataAttributesVulnerabilitiesItemsAffectsItems], optional
 
-        :param bom_ref:
+        :param bom_ref: The unique BOM reference identifier for this vulnerability entry.
         :type bom_ref: str, optional
 
-        :param id:
+        :param id: The vulnerability identifier (e.g., CVE ID or similar).
         :type id: str, optional
         """
         if affects is not unset:

@@ -32,9 +32,9 @@ class GetMappingResponse(ModelNormal):
 
     def __init__(self_, data: Union[GetMappingResponseData, UnsetType] = unset, **kwargs):
         """
+        Response containing the entity attribute mapping configuration including all available attributes and their properties.
 
-
-        :param data:
+        :param data: The data object containing the resource type and attributes for the get mapping response.
         :type data: GetMappingResponseData, optional
         """
         if data is not unset:

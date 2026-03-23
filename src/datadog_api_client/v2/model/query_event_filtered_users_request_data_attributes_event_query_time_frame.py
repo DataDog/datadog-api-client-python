@@ -28,12 +28,12 @@ class QueryEventFilteredUsersRequestDataAttributesEventQueryTimeFrame(ModelNorma
 
     def __init__(self_, end: Union[int, UnsetType] = unset, start: Union[int, UnsetType] = unset, **kwargs):
         """
+        The time window defining the start and end of the event query period as Unix timestamps.
 
-
-        :param end:
+        :param end: End of the time frame as a Unix timestamp in seconds.
         :type end: int, optional
 
-        :param start:
+        :param start: Start of the time frame as a Unix timestamp in seconds.
         :type start: int, optional
         """
         if end is not unset:

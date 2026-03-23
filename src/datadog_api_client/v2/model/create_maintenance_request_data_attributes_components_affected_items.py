@@ -50,7 +50,7 @@ class CreateMaintenanceRequestDataAttributesComponentsAffectedItems(ModelNormal)
         **kwargs,
     ):
         """
-
+        A component affected by a maintenance.
 
         :param id: The ID of the component. Must be a component of type ``component``.
         :type id: UUID

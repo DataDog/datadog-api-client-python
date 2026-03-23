@@ -47,7 +47,7 @@ class CaseCreateRelationships(ModelNormal):
         :param assignee: Relationship to user.
         :type assignee: NullableUserRelationship, none_type, optional
 
-        :param project: Relationship to project
+        :param project: Relationship to project.
         :type project: ProjectRelationship
         """
         if assignee is not unset:

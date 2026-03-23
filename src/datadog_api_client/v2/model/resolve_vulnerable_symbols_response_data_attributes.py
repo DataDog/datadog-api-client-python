@@ -36,9 +36,9 @@ class ResolveVulnerableSymbolsResponseDataAttributes(ModelNormal):
 
     def __init__(self_, results: Union[List[ResolveVulnerableSymbolsResponseResults], UnsetType] = unset, **kwargs):
         """
+        The attributes of a response containing resolved vulnerable symbols, organized by package.
 
-
-        :param results:
+        :param results: The list of resolved vulnerable symbol results, one entry per queried package.
         :type results: [ResolveVulnerableSymbolsResponseResults], optional
         """
         if results is not unset:

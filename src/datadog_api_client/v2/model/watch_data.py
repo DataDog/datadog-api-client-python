@@ -44,12 +44,12 @@ class WatchData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object representing a session watch record, including its identifier, type, and attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes for recording a session watch event, including the application, event reference, and timestamp.
         :type attributes: WatchDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier of the watch record.
         :type id: str, optional
 
         :param type: Rum replay watch resource type.

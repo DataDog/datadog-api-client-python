@@ -44,12 +44,12 @@ class QueryUsersRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object containing the resource type and attributes for querying users.
 
-
-        :param attributes:
+        :param attributes: Attributes for filtering and shaping the user query results.
         :type attributes: QueryUsersRequestDataAttributes, optional
 
-        :param id:
+        :param id: Unique identifier for the query users request resource.
         :type id: str, optional
 
         :param type: Query users request resource type.

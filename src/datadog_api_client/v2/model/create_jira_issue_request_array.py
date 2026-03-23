@@ -32,7 +32,7 @@ class CreateJiraIssueRequestArray(ModelNormal):
         """
         List of requests to create Jira issues for security findings.
 
-        :param data:
+        :param data: Array of Jira issue creation request data objects.
         :type data: [CreateJiraIssueRequestData]
         """
         super().__init__(kwargs)

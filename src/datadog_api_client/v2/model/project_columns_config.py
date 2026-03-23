@@ -32,9 +32,9 @@ class ProjectColumnsConfig(ModelNormal):
 
     def __init__(self_, columns: Union[List[ProjectColumnsConfigColumnsItems], UnsetType] = unset, **kwargs):
         """
-        Project columns configuration
+        Project columns configuration.
 
-        :param columns:
+        :param columns: List of column configurations for the project board view.
         :type columns: [ProjectColumnsConfigColumnsItems], optional
         """
         if columns is not unset:

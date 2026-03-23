@@ -30,7 +30,7 @@ class PostmortemAttachmentRequest(ModelNormal):
 
     def __init__(self_, data: PostmortemAttachmentRequestData, **kwargs):
         """
-
+        Request body for creating a postmortem attachment.
 
         :param data: Postmortem attachment data
         :type data: PostmortemAttachmentRequestData

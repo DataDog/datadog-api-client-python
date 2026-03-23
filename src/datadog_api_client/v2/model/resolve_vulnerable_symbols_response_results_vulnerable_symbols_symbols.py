@@ -36,15 +36,15 @@ class ResolveVulnerableSymbolsResponseResultsVulnerableSymbolsSymbols(ModelNorma
         **kwargs,
     ):
         """
+        A symbol identified as vulnerable within a dependency, including its name, type, and value.
 
-
-        :param name:
+        :param name: The name of the vulnerable symbol.
         :type name: str, optional
 
-        :param type:
+        :param type: The type classification of the vulnerable symbol (e.g., function, class, variable).
         :type type: str, optional
 
-        :param value:
+        :param value: The value or identifier associated with the vulnerable symbol.
         :type value: str, optional
         """
         if name is not unset:

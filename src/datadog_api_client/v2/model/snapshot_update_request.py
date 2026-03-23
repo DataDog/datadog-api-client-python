@@ -30,9 +30,9 @@ class SnapshotUpdateRequest(ModelNormal):
 
     def __init__(self_, data: SnapshotUpdateRequestData, **kwargs):
         """
+        Request body for updating a heatmap snapshot.
 
-
-        :param data:
+        :param data: Data object for a heatmap snapshot update request, containing the resource identifier, type, and attributes.
         :type data: SnapshotUpdateRequestData
         """
         super().__init__(kwargs)

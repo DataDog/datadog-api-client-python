@@ -45,24 +45,24 @@ class CreateConnectionRequestDataAttributesFieldsItems(ModelNormal):
         **kwargs,
     ):
         """
+        Definition of a custom attribute field to import from a data source connection.
 
-
-        :param description:
+        :param description: Human-readable explanation of what the field represents.
         :type description: str, optional
 
-        :param display_name:
+        :param display_name: The human-readable label for the field shown in the UI.
         :type display_name: str, optional
 
-        :param groups:
+        :param groups: List of group labels used to categorize the field.
         :type groups: [str], optional
 
-        :param id:
+        :param id: The unique identifier for the field within the connection.
         :type id: str
 
-        :param source_name:
+        :param source_name: The name of the column or attribute in the source data system that maps to this field.
         :type source_name: str
 
-        :param type:
+        :param type: The data type of the field (for example, string or number).
         :type type: str
         """
         if description is not unset:

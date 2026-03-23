@@ -44,12 +44,12 @@ class UpdateTenancyConfigData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object for updating an existing OCI tenancy integration configuration, including the tenancy ID, type, and updated attributes.
 
-
-        :param attributes:
+        :param attributes: Attributes for updating an existing OCI tenancy integration configuration, including optional credentials, region settings, and collection options.
         :type attributes: UpdateTenancyConfigDataAttributes, optional
 
-        :param id:
+        :param id: The OCID of the OCI tenancy to update.
         :type id: str
 
         :param type: OCI tenancy resource type.

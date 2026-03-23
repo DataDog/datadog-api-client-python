@@ -35,7 +35,7 @@ class StatusPagesComponentDataRelationshipsGroupData(ModelNormal):
 
     def __init__(self_, id: UUID, type: StatusPagesComponentGroupType, **kwargs):
         """
-
+        The data object identifying the group the component belongs to.
 
         :param id: The ID of the group the component belongs to.
         :type id: UUID

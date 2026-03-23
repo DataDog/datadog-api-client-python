@@ -36,9 +36,9 @@ class EntityResponseDataRelationshipsIncidentsDataItems(ModelNormal):
 
     def __init__(self_, id: str, type: EntityResponseDataRelationshipsIncidentsDataItemsType, **kwargs):
         """
+        Incident relationship data item containing the incident resource identifier and type.
 
-
-        :param id:
+        :param id: Incident resource unique identifier.
         :type id: str
 
         :param type: Incident resource type.

@@ -32,9 +32,9 @@ class CreateComponentRequest(ModelNormal):
 
     def __init__(self_, data: Union[CreateComponentRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for creating a component.
 
-
-        :param data:
+        :param data: The data object for creating a component.
         :type data: CreateComponentRequestData, optional
         """
         if data is not unset:

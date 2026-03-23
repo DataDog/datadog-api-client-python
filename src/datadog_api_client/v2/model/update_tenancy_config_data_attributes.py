@@ -79,30 +79,30 @@ class UpdateTenancyConfigDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for updating an existing OCI tenancy integration configuration, including optional credentials, region settings, and collection options.
 
-
-        :param auth_credentials:
+        :param auth_credentials: OCI API signing key credentials used to update the Datadog integration's authentication with the OCI tenancy.
         :type auth_credentials: UpdateTenancyConfigDataAttributesAuthCredentials, optional
 
-        :param cost_collection_enabled:
+        :param cost_collection_enabled: Whether cost data collection from OCI is enabled for the tenancy.
         :type cost_collection_enabled: bool, optional
 
-        :param home_region:
+        :param home_region: The home region of the OCI tenancy (for example, us-ashburn-1).
         :type home_region: str, optional
 
-        :param logs_config:
+        :param logs_config: Log collection configuration for updating an OCI tenancy, controlling which compartments and services have log collection enabled.
         :type logs_config: UpdateTenancyConfigDataAttributesLogsConfig, optional
 
-        :param metrics_config:
+        :param metrics_config: Metrics collection configuration for updating an OCI tenancy, controlling which compartments and services are included or excluded.
         :type metrics_config: UpdateTenancyConfigDataAttributesMetricsConfig, optional
 
-        :param regions_config:
+        :param regions_config: Region configuration for updating an OCI tenancy, specifying which regions are available, enabled, or disabled for data collection.
         :type regions_config: UpdateTenancyConfigDataAttributesRegionsConfig, optional
 
-        :param resource_collection_enabled:
+        :param resource_collection_enabled: Whether resource collection from OCI is enabled for the tenancy.
         :type resource_collection_enabled: bool, optional
 
-        :param user_ocid:
+        :param user_ocid: The OCID of the OCI user used by the Datadog integration for authentication.
         :type user_ocid: str, optional
         """
         if auth_credentials is not unset:

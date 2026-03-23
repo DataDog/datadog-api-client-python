@@ -26,9 +26,9 @@ class IntegrationIncidentSeverityConfig(ModelNormal):
 
     def __init__(self_, priority_mapping: Union[Dict[str, str], UnsetType] = unset, **kwargs):
         """
+        Severity configuration for mapping incident priorities to case priorities.
 
-
-        :param priority_mapping:
+        :param priority_mapping: Mapping of incident severity values to case priority values.
         :type priority_mapping: {str: (str,)}, optional
         """
         if priority_mapping is not unset:

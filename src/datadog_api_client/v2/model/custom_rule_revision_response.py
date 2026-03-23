@@ -30,9 +30,9 @@ class CustomRuleRevisionResponse(ModelNormal):
 
     def __init__(self_, data: CustomRuleRevision, **kwargs):
         """
+        Response containing a single custom rule revision.
 
-
-        :param data:
+        :param data: A specific revision of a custom static analysis rule.
         :type data: CustomRuleRevision
         """
         super().__init__(kwargs)

@@ -44,13 +44,13 @@ class ProductAnalyticsSerie(ModelNormal):
         """
         A series in a timeseries response.
 
-        :param group_tags:
+        :param group_tags: The group-by tag values that identify this series.
         :type group_tags: [str], optional
 
-        :param query_index:
+        :param query_index: The index of the query that produced this series.
         :type query_index: int, optional
 
-        :param unit:
+        :param unit: Unit definitions for the series values.
         :type unit: [ProductAnalyticsUnit], optional
         """
         if group_tags is not unset:

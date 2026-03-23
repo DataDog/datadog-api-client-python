@@ -36,7 +36,7 @@ class StatusPagesComponentGroupRelationshipsStatusPage(ModelNormal):
         """
         The status page the component group belongs to.
 
-        :param data:
+        :param data: The data object identifying the status page the component group belongs to.
         :type data: StatusPagesComponentGroupRelationshipsStatusPageData
         """
         super().__init__(kwargs)

@@ -28,12 +28,12 @@ class ScaRequestDataAttributesFilesItems(ModelNormal):
 
     def __init__(self_, name: Union[str, UnsetType] = unset, purl: Union[str, UnsetType] = unset, **kwargs):
         """
+        A file entry in the repository associated with a dependency manifest.
 
-
-        :param name:
+        :param name: The name or path of the file within the repository.
         :type name: str, optional
 
-        :param purl:
+        :param purl: The Package URL (PURL) associated with the dependency declared in this file.
         :type purl: str, optional
         """
         if name is not unset:

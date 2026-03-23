@@ -52,15 +52,15 @@ class ResolveVulnerableSymbolsRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        The data object in a request to resolve vulnerable symbols, containing the package PURLs and request type.
 
-
-        :param attributes:
+        :param attributes: The attributes of a request to resolve vulnerable symbols, containing the list of package PURLs to check.
         :type attributes: ResolveVulnerableSymbolsRequestDataAttributes, optional
 
-        :param id:
+        :param id: An optional identifier for this request data object.
         :type id: str, optional
 
-        :param type:
+        :param type: The type identifier for requests to resolve vulnerable symbols.
         :type type: ResolveVulnerableSymbolsRequestDataType
         """
         if attributes is not unset:

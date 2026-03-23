@@ -57,24 +57,24 @@ class IntegrationIncident(ModelNormal):
         **kwargs,
     ):
         """
-        Incident integration settings
+        Incident integration settings.
 
-        :param auto_escalation_query: Query for auto-escalation
+        :param auto_escalation_query: Query for auto-escalation.
         :type auto_escalation_query: str, optional
 
-        :param default_incident_commander: Default incident commander
+        :param default_incident_commander: Default incident commander.
         :type default_incident_commander: str, optional
 
-        :param enabled: Whether incident integration is enabled
+        :param enabled: Whether incident integration is enabled.
         :type enabled: bool, optional
 
-        :param field_mappings:
+        :param field_mappings: List of mappings between incident fields and case fields.
         :type field_mappings: [IntegrationIncidentFieldMappingsItems], optional
 
-        :param incident_type: Incident type
+        :param incident_type: Incident type.
         :type incident_type: str, optional
 
-        :param severity_config:
+        :param severity_config: Severity configuration for mapping incident priorities to case priorities.
         :type severity_config: IntegrationIncidentSeverityConfig, optional
         """
         if auto_escalation_query is not unset:

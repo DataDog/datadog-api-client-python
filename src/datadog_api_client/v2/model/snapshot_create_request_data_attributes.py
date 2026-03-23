@@ -54,33 +54,33 @@ class SnapshotCreateRequestDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
+        Attributes for creating a heatmap snapshot, including the view, session, event, and device context.
 
-
-        :param application_id:
+        :param application_id: Unique identifier of the RUM application.
         :type application_id: str
 
-        :param device_type:
+        :param device_type: Device type used when capturing the snapshot (e.g., desktop, mobile, tablet).
         :type device_type: str
 
-        :param event_id:
+        :param event_id: Unique identifier of the RUM event associated with the snapshot.
         :type event_id: str
 
-        :param is_device_type_selected_by_user:
+        :param is_device_type_selected_by_user: Indicates whether the device type was explicitly selected by the user rather than auto-detected.
         :type is_device_type_selected_by_user: bool
 
-        :param session_id:
+        :param session_id: Unique identifier of the RUM session associated with the snapshot.
         :type session_id: str, optional
 
-        :param snapshot_name:
+        :param snapshot_name: Human-readable name for the snapshot.
         :type snapshot_name: str
 
-        :param start:
+        :param start: Offset in milliseconds from the start of the session at which the snapshot was captured.
         :type start: int
 
-        :param view_id:
+        :param view_id: Unique identifier of the RUM view associated with the snapshot.
         :type view_id: str, optional
 
-        :param view_name:
+        :param view_name: URL path or name of the view where the snapshot was captured.
         :type view_name: str
         """
         if session_id is not unset:

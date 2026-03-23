@@ -30,9 +30,9 @@ class WatcherArray(ModelNormal):
 
     def __init__(self_, data: List[WatcherData], **kwargs):
         """
+        A list of users who have watched a RUM replay session.
 
-
-        :param data:
+        :param data: Array of watcher data objects.
         :type data: [WatcherData]
         """
         super().__init__(kwargs)

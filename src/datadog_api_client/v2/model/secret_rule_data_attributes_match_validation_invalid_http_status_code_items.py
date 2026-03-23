@@ -39,12 +39,12 @@ class SecretRuleDataAttributesMatchValidationInvalidHttpStatusCodeItems(ModelNor
 
     def __init__(self_, end: Union[int, UnsetType] = unset, start: Union[int, UnsetType] = unset, **kwargs):
         """
+        An HTTP status code range that indicates an invalid (unsuccessful) secret match during validation.
 
-
-        :param end:
+        :param end: The inclusive upper bound of the HTTP status code range.
         :type end: int, optional
 
-        :param start:
+        :param start: The inclusive lower bound of the HTTP status code range.
         :type start: int, optional
         """
         if end is not unset:

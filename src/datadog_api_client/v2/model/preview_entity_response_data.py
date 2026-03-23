@@ -49,15 +49,15 @@ class PreviewEntityResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        Entity data returned in a preview response, including attributes, relationships, and type.
 
-
-        :param attributes:
+        :param attributes: Entity response attributes containing core entity metadata fields.
         :type attributes: EntityResponseDataAttributes, optional
 
-        :param id:
+        :param id: Entity unique identifier.
         :type id: str, optional
 
-        :param relationships:
+        :param relationships: Entity relationships including incidents, oncalls, schemas, and related entities.
         :type relationships: EntityResponseDataRelationships, optional
 
         :param type: Entity resource type.

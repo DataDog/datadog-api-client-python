@@ -34,12 +34,12 @@ class ProjectCreate(ModelNormal):
 
     def __init__(self_, attributes: ProjectCreateAttributes, type: ProjectResourceType, **kwargs):
         """
-        Project create
+        Project create.
 
-        :param attributes: Project creation attributes
+        :param attributes: Project creation attributes.
         :type attributes: ProjectCreateAttributes
 
-        :param type: Project resource type
+        :param type: Project resource type.
         :type type: ProjectResourceType
         """
         super().__init__(kwargs)

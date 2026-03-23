@@ -43,15 +43,15 @@ class GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsTestsItems
         **kwargs,
     ):
         """
+        A test case associated with a static analysis rule, containing the source code and expected annotation count.
 
-
-        :param annotation_count:
+        :param annotation_count: The expected number of annotations (findings) the rule should produce when run against the test code.
         :type annotation_count: int, optional
 
-        :param code:
+        :param code: The source code snippet used as input for the rule test.
         :type code: str, optional
 
-        :param filename:
+        :param filename: The filename associated with the test code snippet.
         :type filename: str, optional
         """
         if annotation_count is not unset:

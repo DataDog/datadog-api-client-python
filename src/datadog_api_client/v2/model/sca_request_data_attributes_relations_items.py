@@ -28,12 +28,12 @@ class ScaRequestDataAttributesRelationsItems(ModelNormal):
 
     def __init__(self_, depends_on: Union[List[str], UnsetType] = unset, ref: Union[str, UnsetType] = unset, **kwargs):
         """
+        A dependency relation describing which other components a given component depends on.
 
-
-        :param depends_on:
+        :param depends_on: The list of BOM references that this component directly depends on.
         :type depends_on: [str], optional
 
-        :param ref:
+        :param ref: The BOM reference of the component that has dependencies.
         :type ref: str, optional
         """
         if depends_on is not unset:

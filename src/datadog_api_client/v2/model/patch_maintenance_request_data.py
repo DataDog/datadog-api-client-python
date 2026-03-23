@@ -47,7 +47,7 @@ class PatchMaintenanceRequestData(ModelNormal):
         **kwargs,
     ):
         """
-
+        The data object for updating a maintenance.
 
         :param attributes: The supported attributes for updating a maintenance.
         :type attributes: PatchMaintenanceRequestDataAttributes

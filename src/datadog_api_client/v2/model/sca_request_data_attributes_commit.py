@@ -48,27 +48,27 @@ class ScaRequestDataAttributesCommit(ModelNormal):
         **kwargs,
     ):
         """
+        Metadata about the commit associated with the SCA scan, including author, committer, and branch information.
 
-
-        :param author_date:
+        :param author_date: The date when the commit was authored.
         :type author_date: str, optional
 
-        :param author_email:
+        :param author_email: The email address of the commit author.
         :type author_email: str, optional
 
-        :param author_name:
+        :param author_name: The full name of the commit author.
         :type author_name: str, optional
 
-        :param branch:
+        :param branch: The branch name on which the commit was made.
         :type branch: str, optional
 
-        :param committer_email:
+        :param committer_email: The email address of the person who committed the change.
         :type committer_email: str, optional
 
-        :param committer_name:
+        :param committer_name: The full name of the person who committed the change.
         :type committer_name: str, optional
 
-        :param sha:
+        :param sha: The SHA hash uniquely identifying the commit.
         :type sha: str, optional
         """
         if author_date is not unset:

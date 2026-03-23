@@ -28,12 +28,12 @@ class DeletedSuitesRequestDeleteAttributes(ModelNormal):
 
     def __init__(self_, public_ids: List[str], force_delete_dependencies: Union[bool, UnsetType] = unset, **kwargs):
         """
+        Attributes for a bulk delete Synthetic test suites request.
 
-
-        :param force_delete_dependencies:
+        :param force_delete_dependencies: Whether to force deletion of suites that have dependent resources.
         :type force_delete_dependencies: bool, optional
 
-        :param public_ids:
+        :param public_ids: List of public IDs of the Synthetic test suites to delete.
         :type public_ids: [str]
         """
         if force_delete_dependencies is not unset:
