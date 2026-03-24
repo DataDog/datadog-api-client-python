@@ -80813,9 +80813,9 @@ paths:
           appKeyAuth: []
         - AuthZ:
             - user_access_read
-      summary: Get all datasets
+      summary: Get all Data Access Control datasets
       tags:
-        - Datasets
+        - Data Access Controls
       "x-permission":
         operator: OR
         permissions:
@@ -80865,9 +80865,9 @@ paths:
           appKeyAuth: []
         - AuthZ:
             - user_access_manage
-      summary: Create a dataset
+      summary: Create a Data Access Control dataset
       tags:
-        - Datasets
+        - Data Access Controls
       x-codegen-request-body-name: body
       x-permission:
         operator: OR
@@ -80898,9 +80898,9 @@ paths:
           appKeyAuth: []
         - AuthZ:
             - user_access_manage
-      summary: Delete a dataset
+      summary: Delete a Data Access Control dataset
       tags:
-        - Datasets
+        - Data Access Controls
       "x-permission":
         operator: OR
         permissions:
@@ -80933,9 +80933,9 @@ paths:
           appKeyAuth: []
         - AuthZ:
             - user_access_read
-      summary: Get a single dataset by ID
+      summary: Get a Data Access Control dataset by ID
       tags:
-        - Datasets
+        - Data Access Controls
       "x-permission":
         operator: OPEN
         permissions: []
@@ -80975,9 +80975,9 @@ paths:
           appKeyAuth: []
         - AuthZ:
             - user_access_manage
-      summary: Edit a dataset
+      summary: Edit a Data Access Control dataset
       tags:
-        - Datasets
+        - Data Access Controls
       x-codegen-request-body-name: body
       "x-permission":
         operator: OR
@@ -110116,13 +110116,16 @@ tags:
       organization.
     name: Dashboard Lists
   - description: |-
-      The Data Deletion API allows the user to target and delete data from the allowed products. It's currently enabled for Logs and RUM and depends on `logs_delete_data` and `rum_delete_data` permissions respectively.
-    name: Data Deletion
-  - description: |-
-      Data Access Controls in Datadog is a feature that allows administrators and access managers to regulate
+      Manage [Data Access Controls](https://docs.datadoghq.com/account_management/rbac/data_access/)
+      programmatically using Datasets.
+
+      Data Access Controls in Datadog allows administrators and access managers to regulate
       access to sensitive data. By defining Restricted Datasets, you can ensure that only specific teams or roles can
       view certain types of telemetry (for example, logs, traces, metrics, and RUM data).
-    name: Datasets
+    name: Data Access Controls
+  - description: |-
+      The Data Deletion API allows the user to target and delete data from the allowed products. It's currently enabled for Logs and RUM and depends on `logs_delete_data` and `rum_delete_data` permissions respectively.
+    name: Data Deletion
   - description: |-
       Manage Deployment Gates using this API to reduce the likelihood and impact of incidents caused by deployments. See the [Deployment Gates documentation](https://docs.datadoghq.com/deployment_gates/) for more information.
     name: Deployment Gates
