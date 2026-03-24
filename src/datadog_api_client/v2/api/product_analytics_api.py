@@ -15,10 +15,14 @@ from datadog_api_client.v2.model.product_analytics_timeseries_response import Pr
 
 class ProductAnalyticsApi:
     """
+    . role:: raw-html-m2r(raw)
+       :format: html
+
     Send server-side events to Product Analytics. Server-Side Events Ingestion allows you to collect custom events
     from any server-side source, and retains events for 15 months. Server-side events are helpful for understanding
     causes of a funnel drop-off which are external to the client-side (for example, payment processing error).
-    See the `Product Analytics page <https://docs.datadoghq.com/product_analytics/>`_ for more information.
+    Sending server-side events may impact billing. Review the :raw-html-m2r:`<a href="https://www.datadoghq.com/pricing/">pricing page</a>`
+    and talk to your Customer Success Manager for more information.
     """
 
     def __init__(self, api_client=None):
