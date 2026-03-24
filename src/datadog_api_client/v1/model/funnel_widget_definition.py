@@ -39,6 +39,7 @@ class FunnelWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.funnel_widget_definition_type import FunnelWidgetDefinitionType
 
         return {
+            "description": (str,),
             "requests": ([FunnelWidgetRequest],),
             "time": (WidgetTime,),
             "title": (str,),
@@ -48,6 +49,7 @@ class FunnelWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "requests": "requests",
         "time": "time",
         "title": "title",
@@ -60,6 +62,7 @@ class FunnelWidgetDefinition(ModelNormal):
         self_,
         requests: List[FunnelWidgetRequest],
         type: FunnelWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -68,6 +71,9 @@ class FunnelWidgetDefinition(ModelNormal):
     ):
         """
         The funnel visualization displays a funnel of user sessions that maps a sequence of view navigation and user interaction in your application.
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param requests: Request payload used to query items.
         :type requests: [FunnelWidgetRequest]
@@ -87,6 +93,8 @@ class FunnelWidgetDefinition(ModelNormal):
         :param type: Type of funnel widget.
         :type type: FunnelWidgetDefinitionType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:

@@ -42,6 +42,7 @@ class ChangeWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "requests": ([ChangeWidgetRequest],),
             "time": (WidgetTime,),
             "title": (str,),
@@ -52,6 +53,7 @@ class ChangeWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "requests": "requests",
         "time": "time",
         "title": "title",
@@ -65,6 +67,7 @@ class ChangeWidgetDefinition(ModelNormal):
         requests: List[ChangeWidgetRequest],
         type: ChangeWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -76,6 +79,9 @@ class ChangeWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param requests: Array of one request object to display in the widget.
 
@@ -100,6 +106,8 @@ class ChangeWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:

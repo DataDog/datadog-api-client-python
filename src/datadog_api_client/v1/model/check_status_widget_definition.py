@@ -33,6 +33,7 @@ class CheckStatusWidgetDefinition(ModelNormal):
 
         return {
             "check": (str,),
+            "description": (str,),
             "group": (str,),
             "group_by": ([str],),
             "grouping": (WidgetGrouping,),
@@ -46,6 +47,7 @@ class CheckStatusWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "check": "check",
+        "description": "description",
         "group": "group",
         "group_by": "group_by",
         "grouping": "grouping",
@@ -62,6 +64,7 @@ class CheckStatusWidgetDefinition(ModelNormal):
         check: str,
         grouping: WidgetGrouping,
         type: CheckStatusWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         group: Union[str, UnsetType] = unset,
         group_by: Union[List[str], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -76,6 +79,9 @@ class CheckStatusWidgetDefinition(ModelNormal):
 
         :param check: Name of the check to use in the widget.
         :type check: str
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param group: Group reporting a single check.
         :type group: str, optional
@@ -104,6 +110,8 @@ class CheckStatusWidgetDefinition(ModelNormal):
         :param type: Type of the check status widget.
         :type type: CheckStatusWidgetDefinitionType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if group is not unset:
             kwargs["group"] = group
         if group_by is not unset:

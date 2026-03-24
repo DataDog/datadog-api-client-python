@@ -46,6 +46,7 @@ class QueryValueWidgetDefinition(ModelNormal):
             "autoscale": (bool,),
             "custom_links": ([WidgetCustomLink],),
             "custom_unit": (str,),
+            "description": (str,),
             "precision": (int,),
             "requests": ([QueryValueWidgetRequest],),
             "text_align": (WidgetTextAlign,),
@@ -61,6 +62,7 @@ class QueryValueWidgetDefinition(ModelNormal):
         "autoscale": "autoscale",
         "custom_links": "custom_links",
         "custom_unit": "custom_unit",
+        "description": "description",
         "precision": "precision",
         "requests": "requests",
         "text_align": "text_align",
@@ -79,6 +81,7 @@ class QueryValueWidgetDefinition(ModelNormal):
         autoscale: Union[bool, UnsetType] = unset,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
         custom_unit: Union[str, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         precision: Union[int, UnsetType] = unset,
         text_align: Union[WidgetTextAlign, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
@@ -99,6 +102,9 @@ class QueryValueWidgetDefinition(ModelNormal):
 
         :param custom_unit: Display a unit of your choice on the widget.
         :type custom_unit: str, optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param precision: Number of decimals to show. If not defined, the widget uses the raw value.
         :type precision: int, optional
@@ -133,6 +139,8 @@ class QueryValueWidgetDefinition(ModelNormal):
             kwargs["custom_links"] = custom_links
         if custom_unit is not unset:
             kwargs["custom_unit"] = custom_unit
+        if description is not unset:
+            kwargs["description"] = description
         if precision is not unset:
             kwargs["precision"] = precision
         if text_align is not unset:

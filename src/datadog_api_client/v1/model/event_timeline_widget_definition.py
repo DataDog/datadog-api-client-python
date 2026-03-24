@@ -30,6 +30,7 @@ class EventTimelineWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.event_timeline_widget_definition_type import EventTimelineWidgetDefinitionType
 
         return {
+            "description": (str,),
             "query": (str,),
             "tags_execution": (str,),
             "time": (WidgetTime,),
@@ -40,6 +41,7 @@ class EventTimelineWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "query": "query",
         "tags_execution": "tags_execution",
         "time": "time",
@@ -53,6 +55,7 @@ class EventTimelineWidgetDefinition(ModelNormal):
         self_,
         query: str,
         type: EventTimelineWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         tags_execution: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -62,6 +65,9 @@ class EventTimelineWidgetDefinition(ModelNormal):
     ):
         """
         The event timeline is a widget version of the timeline that appears at the top of the Event Stream view. Only available on FREE layout dashboards.
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param query: Query to filter the event timeline with.
         :type query: str
@@ -84,6 +90,8 @@ class EventTimelineWidgetDefinition(ModelNormal):
         :param type: Type of the event timeline widget.
         :type type: EventTimelineWidgetDefinitionType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if tags_execution is not unset:
             kwargs["tags_execution"] = tags_execution
         if time is not unset:

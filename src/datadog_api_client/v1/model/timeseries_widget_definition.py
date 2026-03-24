@@ -51,6 +51,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "events": ([WidgetEvent],),
             "legend_columns": ([TimeseriesWidgetLegendColumn],),
             "legend_layout": (TimeseriesWidgetLegendLayout,),
@@ -69,6 +70,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "events": "events",
         "legend_columns": "legend_columns",
         "legend_layout": "legend_layout",
@@ -90,6 +92,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
         requests: List[TimeseriesWidgetRequest],
         type: TimeseriesWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         events: Union[List[WidgetEvent], UnsetType] = unset,
         legend_columns: Union[List[TimeseriesWidgetLegendColumn], UnsetType] = unset,
         legend_layout: Union[TimeseriesWidgetLegendLayout, UnsetType] = unset,
@@ -109,6 +112,9 @@ class TimeseriesWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param events: List of widget events. Deprecated - Use ``overlay`` request type instead. **Deprecated**.
         :type events: [WidgetEvent], optional
@@ -154,6 +160,8 @@ class TimeseriesWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if events is not unset:
             kwargs["events"] = events
         if legend_columns is not unset:

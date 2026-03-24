@@ -47,6 +47,7 @@ class TreeMapWidgetDefinition(ModelNormal):
         return {
             "color_by": (TreeMapColorBy,),
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "group_by": (TreeMapGroupBy,),
             "requests": ([TreeMapWidgetRequest],),
             "size_by": (TreeMapSizeBy,),
@@ -58,6 +59,7 @@ class TreeMapWidgetDefinition(ModelNormal):
     attribute_map = {
         "color_by": "color_by",
         "custom_links": "custom_links",
+        "description": "description",
         "group_by": "group_by",
         "requests": "requests",
         "size_by": "size_by",
@@ -72,6 +74,7 @@ class TreeMapWidgetDefinition(ModelNormal):
         type: TreeMapWidgetDefinitionType,
         color_by: Union[TreeMapColorBy, UnsetType] = unset,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         group_by: Union[TreeMapGroupBy, UnsetType] = unset,
         size_by: Union[TreeMapSizeBy, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
@@ -86,6 +89,9 @@ class TreeMapWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param group_by: (deprecated) The attribute formerly used to group elements in the widget. **Deprecated**.
         :type group_by: TreeMapGroupBy, optional
@@ -109,6 +115,8 @@ class TreeMapWidgetDefinition(ModelNormal):
             kwargs["color_by"] = color_by
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if group_by is not unset:
             kwargs["group_by"] = group_by
         if size_by is not unset:

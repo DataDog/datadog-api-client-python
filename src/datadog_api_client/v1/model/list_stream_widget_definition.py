@@ -39,6 +39,7 @@ class ListStreamWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.list_stream_widget_definition_type import ListStreamWidgetDefinitionType
 
         return {
+            "description": (str,),
             "legend_size": (str,),
             "requests": ([ListStreamWidgetRequest],),
             "show_legend": (bool,),
@@ -50,6 +51,7 @@ class ListStreamWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "legend_size": "legend_size",
         "requests": "requests",
         "show_legend": "show_legend",
@@ -64,6 +66,7 @@ class ListStreamWidgetDefinition(ModelNormal):
         self_,
         requests: List[ListStreamWidgetRequest],
         type: ListStreamWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         legend_size: Union[str, UnsetType] = unset,
         show_legend: Union[bool, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
@@ -75,6 +78,9 @@ class ListStreamWidgetDefinition(ModelNormal):
         """
         The list stream visualization displays a table of recent events in your application that
         match a search criteria using user-defined columns.
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param legend_size: Available legend sizes for a widget. Should be one of "0", "2", "4", "8", "16", or "auto".
         :type legend_size: str, optional
@@ -100,6 +106,8 @@ class ListStreamWidgetDefinition(ModelNormal):
         :param type: Type of the list stream widget.
         :type type: ListStreamWidgetDefinitionType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if legend_size is not unset:
             kwargs["legend_size"] = legend_size
         if show_legend is not unset:

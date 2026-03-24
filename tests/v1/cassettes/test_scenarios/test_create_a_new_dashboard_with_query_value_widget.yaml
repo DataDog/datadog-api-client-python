@@ -1,6 +1,7 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_query_value_widget-1731699170","widgets":[{"definition":{"autoscale":true,"precision":2,"requests":[{"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_query_value_widget-1774292382","widgets":[{"definition":{"autoscale":true,"description":"Example
+      widget description","precision":2,"requests":[{"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,9 +11,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"jks-c6t-r8e","title":"Test-Create_a_new_dashboard_with_query_value_widget-1731699170","description":"","author_handle":"frog@datadoghq.com","author_name":null,"layout_type":"free","url":"/dashboard/jks-c6t-r8e/test-createanewdashboardwithqueryvaluewidget-1731699170","is_read_only":false,"template_variables":[],"widgets":[{"definition":{"autoscale":true,"precision":2,"requests":[{"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":7789696284248060}],"notify_list":[],"created_at":"2024-11-15T19:32:51.196390+00:00","modified_at":"2024-11-15T19:32:51.196390+00:00","restricted_roles":[]}
-
-        '
+      string: '{"id":"uqx-8vk-iqr","title":"Test-Create_a_new_dashboard_with_query_value_widget-1774292382","description":"","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
+        Account","layout_type":"free","url":"/dashboard/uqx-8vk-iqr/test-createanewdashboardwithqueryvaluewidget-1774292382","template_variables":[],"widgets":[{"definition":{"autoscale":true,"description":"Example
+        widget description","precision":2,"requests":[{"queries":[{"aggregator":"avg","data_source":"metrics","name":"query1","query":"avg:system.cpu.user{*}"}],"response_format":"scalar"}],"time":{},"title":"","title_align":"left","title_size":"16","type":"query_value"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":4377270537334340}],"notify_list":[],"created_at":"2026-03-23T18:59:42.225807+00:00","modified_at":"2026-03-23T18:59:42.225807+00:00","restricted_roles":[]}'
     headers:
       content-type:
       - application/json
@@ -25,12 +26,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/jks-c6t-r8e
+    uri: https://api.datadoghq.com/api/v1/dashboard/uqx-8vk-iqr
   response:
     body:
-      string: '{"deleted_dashboard_id":"jks-c6t-r8e"}
-
-        '
+      string: '{"deleted_dashboard_id":"uqx-8vk-iqr"}'
     headers:
       content-type:
       - application/json

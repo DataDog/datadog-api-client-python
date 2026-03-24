@@ -33,6 +33,7 @@ class AlertGraphWidgetDefinition(ModelNormal):
 
         return {
             "alert_id": (str,),
+            "description": (str,),
             "time": (WidgetTime,),
             "title": (str,),
             "title_align": (WidgetTextAlign,),
@@ -43,6 +44,7 @@ class AlertGraphWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "alert_id": "alert_id",
+        "description": "description",
         "time": "time",
         "title": "title",
         "title_align": "title_align",
@@ -56,6 +58,7 @@ class AlertGraphWidgetDefinition(ModelNormal):
         alert_id: str,
         type: AlertGraphWidgetDefinitionType,
         viz_type: WidgetVizType,
+        description: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -67,6 +70,9 @@ class AlertGraphWidgetDefinition(ModelNormal):
 
         :param alert_id: ID of the alert to use in the widget.
         :type alert_id: str
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param time: Time setting for the widget.
         :type time: WidgetTime, optional
@@ -86,6 +92,8 @@ class AlertGraphWidgetDefinition(ModelNormal):
         :param viz_type: Whether to display the Alert Graph as a timeseries or a top list.
         :type viz_type: WidgetVizType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:

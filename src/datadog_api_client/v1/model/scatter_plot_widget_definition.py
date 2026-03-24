@@ -40,6 +40,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
         return {
             "color_by_groups": ([str],),
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "requests": (ScatterPlotWidgetDefinitionRequests,),
             "time": (WidgetTime,),
             "title": (str,),
@@ -53,6 +54,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
     attribute_map = {
         "color_by_groups": "color_by_groups",
         "custom_links": "custom_links",
+        "description": "description",
         "requests": "requests",
         "time": "time",
         "title": "title",
@@ -69,6 +71,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
         type: ScatterPlotWidgetDefinitionType,
         color_by_groups: Union[List[str], UnsetType] = unset,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -85,6 +88,9 @@ class ScatterPlotWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param requests: Widget definition.
         :type requests: ScatterPlotWidgetDefinitionRequests
@@ -114,6 +120,8 @@ class ScatterPlotWidgetDefinition(ModelNormal):
             kwargs["color_by_groups"] = color_by_groups
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:

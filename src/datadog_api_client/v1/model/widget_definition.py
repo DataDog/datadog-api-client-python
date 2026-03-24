@@ -18,6 +18,9 @@ class WidgetDefinition(ModelComposed):
         :param alert_id: ID of the alert to use in the widget.
         :type alert_id: str
 
+        :param description: The description of the widget.
+        :type description: str, optional
+
         :param time: Time setting for the widget.
         :type time: WidgetTime, optional
 

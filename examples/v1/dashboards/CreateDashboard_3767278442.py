@@ -1,5 +1,5 @@
 """
-Create a new dashboard with query_value widget
+Create a new dashboard with a query_value widget containing a description
 """
 
 from datadog_api_client import ApiClient, Configuration

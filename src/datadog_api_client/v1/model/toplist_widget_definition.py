@@ -37,6 +37,7 @@ class ToplistWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "requests": ([ToplistWidgetRequest],),
             "style": (ToplistWidgetStyle,),
             "time": (WidgetTime,),
@@ -48,6 +49,7 @@ class ToplistWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "requests": "requests",
         "style": "style",
         "time": "time",
@@ -62,6 +64,7 @@ class ToplistWidgetDefinition(ModelNormal):
         requests: List[ToplistWidgetRequest],
         type: ToplistWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         style: Union[ToplistWidgetStyle, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -74,6 +77,9 @@ class ToplistWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param requests: List of top list widget requests.
         :type requests: [ToplistWidgetRequest]
@@ -98,6 +104,8 @@ class ToplistWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if style is not unset:
             kwargs["style"] = style
         if time is not unset:

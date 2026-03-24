@@ -197,6 +197,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].query" is equal to "sum:my.cool.count.metric{*}"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with a query_value widget containing a description
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/query_value_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "query_value"
+    And the response "widgets[0].definition.description" is equal to "Example widget description"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with a timeseries widget and an overlay request
     Given new "CreateDashboard" request
     And body with value {"layout_type": "ordered", "title": "{{ unique }}", "widgets": [{"definition": {"type": "timeseries", "requests": [{"on_right_yaxis": false, "queries": [{"data_source": "metrics", "name": "mymetric", "query": "avg:system.cpu.user{*}"}], "response_format": "timeseries", "display_type": "line"}, {"response_format": "timeseries", "queries": [{"data_source": "metrics", "name": "mymetricoverlay", "query": "avg:system.cpu.user{*}"}], "style": {"palette": "purple", "line_type": "solid", "line_width": "normal"}, "display_type": "overlay"}]}}]}
@@ -1006,6 +1015,7 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit_scale.unit_name" is equal to "apdex"
     And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit.type" is equal to "canonical_unit"
     And the response "widgets[0].definition.requests[0].formulas[0].number_format.unit.unit_name" is equal to "fraction"
+    And the response "widgets[0].definition.description" is equal to "Example widget description"
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with timeseries widget without order_by for backward compatibility
