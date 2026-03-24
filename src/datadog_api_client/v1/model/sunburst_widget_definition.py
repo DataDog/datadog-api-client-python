@@ -45,6 +45,7 @@ class SunburstWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "hide_total": (bool,),
             "legend": (SunburstWidgetLegend,),
             "requests": ([SunburstWidgetRequest],),
@@ -57,6 +58,7 @@ class SunburstWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "hide_total": "hide_total",
         "legend": "legend",
         "requests": "requests",
@@ -72,6 +74,7 @@ class SunburstWidgetDefinition(ModelNormal):
         requests: List[SunburstWidgetRequest],
         type: SunburstWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         hide_total: Union[bool, UnsetType] = unset,
         legend: Union[
             SunburstWidgetLegend, SunburstWidgetLegendTable, SunburstWidgetLegendInlineAutomatic, UnsetType
@@ -87,6 +90,9 @@ class SunburstWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param hide_total: Show the total value in this widget.
         :type hide_total: bool, optional
@@ -114,6 +120,8 @@ class SunburstWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if hide_total is not unset:
             kwargs["hide_total"] = hide_total
         if legend is not unset:

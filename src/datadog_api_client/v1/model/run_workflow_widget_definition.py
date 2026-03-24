@@ -35,6 +35,7 @@ class RunWorkflowWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "inputs": ([RunWorkflowWidgetInput],),
             "time": (WidgetTime,),
             "title": (str,),
@@ -46,6 +47,7 @@ class RunWorkflowWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "inputs": "inputs",
         "time": "time",
         "title": "title",
@@ -60,6 +62,7 @@ class RunWorkflowWidgetDefinition(ModelNormal):
         type: RunWorkflowWidgetDefinitionType,
         workflow_id: str,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         inputs: Union[List[RunWorkflowWidgetInput], UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -72,6 +75,9 @@ class RunWorkflowWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param inputs: Array of workflow inputs to map to dashboard template variables.
         :type inputs: [RunWorkflowWidgetInput], optional
@@ -96,6 +102,8 @@ class RunWorkflowWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if inputs is not unset:
             kwargs["inputs"] = inputs
         if time is not unset:

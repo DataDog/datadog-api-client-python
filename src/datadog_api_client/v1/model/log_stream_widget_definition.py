@@ -35,6 +35,7 @@ class LogStreamWidgetDefinition(ModelNormal):
 
         return {
             "columns": ([str],),
+            "description": (str,),
             "indexes": ([str],),
             "logset": (str,),
             "message_display": (WidgetMessageDisplay,),
@@ -51,6 +52,7 @@ class LogStreamWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "columns": "columns",
+        "description": "description",
         "indexes": "indexes",
         "logset": "logset",
         "message_display": "message_display",
@@ -69,6 +71,7 @@ class LogStreamWidgetDefinition(ModelNormal):
         self_,
         type: LogStreamWidgetDefinitionType,
         columns: Union[List[str], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         logset: Union[str, UnsetType] = unset,
         message_display: Union[WidgetMessageDisplay, UnsetType] = unset,
@@ -87,6 +90,9 @@ class LogStreamWidgetDefinition(ModelNormal):
 
         :param columns: Which columns to display on the widget.
         :type columns: [str], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param indexes: An array of index names to query in the stream. Use [] to query all indexes at once.
         :type indexes: [str], optional
@@ -126,6 +132,8 @@ class LogStreamWidgetDefinition(ModelNormal):
         """
         if columns is not unset:
             kwargs["columns"] = columns
+        if description is not unset:
+            kwargs["description"] = description
         if indexes is not unset:
             kwargs["indexes"] = indexes
         if logset is not unset:

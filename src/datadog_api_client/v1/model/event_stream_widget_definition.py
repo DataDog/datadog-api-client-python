@@ -32,6 +32,7 @@ class EventStreamWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.event_stream_widget_definition_type import EventStreamWidgetDefinitionType
 
         return {
+            "description": (str,),
             "event_size": (WidgetEventSize,),
             "query": (str,),
             "tags_execution": (str,),
@@ -43,6 +44,7 @@ class EventStreamWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "event_size": "event_size",
         "query": "query",
         "tags_execution": "tags_execution",
@@ -57,6 +59,7 @@ class EventStreamWidgetDefinition(ModelNormal):
         self_,
         query: str,
         type: EventStreamWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         event_size: Union[WidgetEventSize, UnsetType] = unset,
         tags_execution: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
@@ -68,6 +71,9 @@ class EventStreamWidgetDefinition(ModelNormal):
         """
         The event stream is a widget version of the stream of events
         on the Event Stream view. Only available on FREE layout dashboards.
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param event_size: Size to use to display an event.
         :type event_size: WidgetEventSize, optional
@@ -93,6 +99,8 @@ class EventStreamWidgetDefinition(ModelNormal):
         :param type: Type of the event stream widget.
         :type type: EventStreamWidgetDefinitionType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if event_size is not unset:
             kwargs["event_size"] = event_size
         if tags_execution is not unset:

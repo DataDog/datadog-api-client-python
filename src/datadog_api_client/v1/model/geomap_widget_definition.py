@@ -46,6 +46,7 @@ class GeomapWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "requests": ([GeomapWidgetRequest],),
             "style": (GeomapWidgetDefinitionStyle,),
             "time": (WidgetTime,),
@@ -58,6 +59,7 @@ class GeomapWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "requests": "requests",
         "style": "style",
         "time": "time",
@@ -75,6 +77,7 @@ class GeomapWidgetDefinition(ModelNormal):
         type: GeomapWidgetDefinitionType,
         view: GeomapWidgetDefinitionView,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -86,6 +89,9 @@ class GeomapWidgetDefinition(ModelNormal):
 
         :param custom_links: A list of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param requests: Array of request objects to display in the widget. May include an optional request for the region layer and/or an optional request for the points layer. Region layer requests must contain a ``group-by`` tag whose value is a country ISO code.
             See the `Request JSON schema documentation <https://docs.datadoghq.com/dashboards/graphing_json/request_json>`_
@@ -115,6 +121,8 @@ class GeomapWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:

@@ -50,6 +50,7 @@ class HeatMapWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "events": ([WidgetEvent],),
             "legend_size": (str,),
             "markers": ([WidgetMarker],),
@@ -66,6 +67,7 @@ class HeatMapWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "events": "events",
         "legend_size": "legend_size",
         "markers": "markers",
@@ -85,6 +87,7 @@ class HeatMapWidgetDefinition(ModelNormal):
         requests: List[HeatMapWidgetRequest],
         type: HeatMapWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         events: Union[List[WidgetEvent], UnsetType] = unset,
         legend_size: Union[str, UnsetType] = unset,
         markers: Union[List[WidgetMarker], UnsetType] = unset,
@@ -102,6 +105,9 @@ class HeatMapWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param events: List of widget events. Deprecated - Use ``overlay`` request type instead. **Deprecated**.
         :type events: [WidgetEvent], optional
@@ -141,6 +147,8 @@ class HeatMapWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if events is not unset:
             kwargs["events"] = events
         if legend_size is not unset:

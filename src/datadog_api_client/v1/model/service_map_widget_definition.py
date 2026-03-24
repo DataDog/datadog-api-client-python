@@ -34,6 +34,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "filters": ([str],),
             "service": (str,),
             "title": (str,),
@@ -44,6 +45,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "filters": "filters",
         "service": "service",
         "title": "title",
@@ -58,6 +60,7 @@ class ServiceMapWidgetDefinition(ModelNormal):
         service: str,
         type: ServiceMapWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
@@ -68,6 +71,9 @@ class ServiceMapWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param filters: Your environment and primary tag (or * if enabled for your account).
         :type filters: [str]
@@ -89,6 +95,8 @@ class ServiceMapWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if title is not unset:
             kwargs["title"] = title
         if title_align is not unset:

@@ -26,6 +26,7 @@ class AlertValueWidgetDefinition(ModelNormal):
 
         return {
             "alert_id": (str,),
+            "description": (str,),
             "precision": (int,),
             "text_align": (WidgetTextAlign,),
             "title": (str,),
@@ -37,6 +38,7 @@ class AlertValueWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "alert_id": "alert_id",
+        "description": "description",
         "precision": "precision",
         "text_align": "text_align",
         "title": "title",
@@ -50,6 +52,7 @@ class AlertValueWidgetDefinition(ModelNormal):
         self_,
         alert_id: str,
         type: AlertValueWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         precision: Union[int, UnsetType] = unset,
         text_align: Union[WidgetTextAlign, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -63,6 +66,9 @@ class AlertValueWidgetDefinition(ModelNormal):
 
         :param alert_id: ID of the alert to use in the widget.
         :type alert_id: str
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param precision: Number of decimal to show. If not defined, will use the raw value.
         :type precision: int, optional
@@ -85,6 +91,8 @@ class AlertValueWidgetDefinition(ModelNormal):
         :param unit: Unit to display with the value.
         :type unit: str, optional
         """
+        if description is not unset:
+            kwargs["description"] = description
         if precision is not unset:
             kwargs["precision"] = precision
         if text_align is not unset:

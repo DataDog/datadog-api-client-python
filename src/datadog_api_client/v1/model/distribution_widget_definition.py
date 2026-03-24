@@ -48,6 +48,7 @@ class DistributionWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "legend_size": (str,),
             "markers": ([WidgetMarker],),
             "requests": ([DistributionWidgetRequest],),
@@ -63,6 +64,7 @@ class DistributionWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "legend_size": "legend_size",
         "markers": "markers",
         "requests": "requests",
@@ -81,6 +83,7 @@ class DistributionWidgetDefinition(ModelNormal):
         requests: List[DistributionWidgetRequest],
         type: DistributionWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         legend_size: Union[str, UnsetType] = unset,
         markers: Union[List[WidgetMarker], UnsetType] = unset,
         show_legend: Union[bool, UnsetType] = unset,
@@ -99,6 +102,9 @@ class DistributionWidgetDefinition(ModelNormal):
 
         :param custom_links: A list of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar. **Deprecated**.
         :type legend_size: str, optional
@@ -138,6 +144,8 @@ class DistributionWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if legend_size is not unset:
             kwargs["legend_size"] = legend_size
         if markers is not unset:

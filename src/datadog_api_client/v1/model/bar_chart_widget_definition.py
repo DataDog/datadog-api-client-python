@@ -44,6 +44,7 @@ class BarChartWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "requests": ([BarChartWidgetRequest],),
             "style": (BarChartWidgetStyle,),
             "time": (WidgetTime,),
@@ -55,6 +56,7 @@ class BarChartWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "requests": "requests",
         "style": "style",
         "time": "time",
@@ -69,6 +71,7 @@ class BarChartWidgetDefinition(ModelNormal):
         requests: List[BarChartWidgetRequest],
         type: BarChartWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         style: Union[BarChartWidgetStyle, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -81,6 +84,9 @@ class BarChartWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param requests: List of bar chart widget requests.
         :type requests: [BarChartWidgetRequest]
@@ -105,6 +111,8 @@ class BarChartWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if style is not unset:
             kwargs["style"] = style
         if time is not unset:

@@ -34,6 +34,7 @@ class HostMapWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "group": ([str],),
             "no_group_hosts": (bool,),
             "no_metric_hosts": (bool,),
@@ -50,6 +51,7 @@ class HostMapWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "group": "group",
         "no_group_hosts": "no_group_hosts",
         "no_metric_hosts": "no_metric_hosts",
@@ -69,6 +71,7 @@ class HostMapWidgetDefinition(ModelNormal):
         requests: HostMapWidgetDefinitionRequests,
         type: HostMapWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         group: Union[List[str], UnsetType] = unset,
         no_group_hosts: Union[bool, UnsetType] = unset,
         no_metric_hosts: Union[bool, UnsetType] = unset,
@@ -86,6 +89,9 @@ class HostMapWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param group: List of tag prefixes to group by.
         :type group: [str], optional
@@ -125,6 +131,8 @@ class HostMapWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if group is not unset:
             kwargs["group"] = group
         if no_group_hosts is not unset:

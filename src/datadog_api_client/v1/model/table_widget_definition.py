@@ -37,6 +37,7 @@ class TableWidgetDefinition(ModelNormal):
 
         return {
             "custom_links": ([WidgetCustomLink],),
+            "description": (str,),
             "has_search_bar": (TableWidgetHasSearchBar,),
             "requests": ([TableWidgetRequest],),
             "time": (WidgetTime,),
@@ -48,6 +49,7 @@ class TableWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "custom_links": "custom_links",
+        "description": "description",
         "has_search_bar": "has_search_bar",
         "requests": "requests",
         "time": "time",
@@ -62,6 +64,7 @@ class TableWidgetDefinition(ModelNormal):
         requests: List[TableWidgetRequest],
         type: TableWidgetDefinitionType,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         has_search_bar: Union[TableWidgetHasSearchBar, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -74,6 +77,9 @@ class TableWidgetDefinition(ModelNormal):
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param has_search_bar: Controls the display of the search bar.
         :type has_search_bar: TableWidgetHasSearchBar, optional
@@ -98,6 +104,8 @@ class TableWidgetDefinition(ModelNormal):
         """
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
+        if description is not unset:
+            kwargs["description"] = description
         if has_search_bar is not unset:
             kwargs["has_search_bar"] = has_search_bar
         if time is not unset:

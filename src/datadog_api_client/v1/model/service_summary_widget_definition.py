@@ -36,6 +36,7 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         )
 
         return {
+            "description": (str,),
             "display_format": (WidgetServiceSummaryDisplayFormat,),
             "env": (str,),
             "service": (str,),
@@ -55,6 +56,7 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "display_format": "display_format",
         "env": "env",
         "service": "service",
@@ -79,6 +81,7 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         service: str,
         span_name: str,
         type: ServiceSummaryWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         display_format: Union[WidgetServiceSummaryDisplayFormat, UnsetType] = unset,
         show_breakdown: Union[bool, UnsetType] = unset,
         show_distribution: Union[bool, UnsetType] = unset,
@@ -95,6 +98,9 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
     ):
         """
         The service summary displays the graphs of a chosen service in your screenboard. Only available on FREE layout dashboards.
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param display_format: Number of columns to display.
         :type display_format: WidgetServiceSummaryDisplayFormat, optional
@@ -144,6 +150,8 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         :param type: Type of the service summary widget.
         :type type: ServiceSummaryWidgetDefinitionType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if display_format is not unset:
             kwargs["display_format"] = display_format
         if show_breakdown is not unset:

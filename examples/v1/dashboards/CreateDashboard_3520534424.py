@@ -36,6 +36,7 @@ body = Dashboard(
                 title="",
                 title_size="16",
                 title_align=WidgetTextAlign.LEFT,
+                description="Example widget description",
                 show_legend=True,
                 legend_layout=TimeseriesWidgetLegendLayout.AUTO,
                 time=WidgetLegacyLiveSpan(),

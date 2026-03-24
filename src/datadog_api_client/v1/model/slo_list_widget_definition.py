@@ -34,6 +34,7 @@ class SLOListWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.slo_list_widget_definition_type import SLOListWidgetDefinitionType
 
         return {
+            "description": (str,),
             "requests": ([SLOListWidgetRequest],),
             "title": (str,),
             "title_align": (WidgetTextAlign,),
@@ -42,6 +43,7 @@ class SLOListWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "requests": "requests",
         "title": "title",
         "title_align": "title_align",
@@ -53,6 +55,7 @@ class SLOListWidgetDefinition(ModelNormal):
         self_,
         requests: List[SLOListWidgetRequest],
         type: SLOListWidgetDefinitionType,
+        description: Union[str, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
@@ -60,6 +63,9 @@ class SLOListWidgetDefinition(ModelNormal):
     ):
         """
         Use the SLO List widget to track your SLOs (Service Level Objectives) on dashboards.
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param requests: Array of one request object to display in the widget.
         :type requests: [SLOListWidgetRequest]
@@ -76,6 +82,8 @@ class SLOListWidgetDefinition(ModelNormal):
         :param type: Type of the SLO List widget.
         :type type: SLOListWidgetDefinitionType
         """
+        if description is not unset:
+            kwargs["description"] = description
         if title is not unset:
             kwargs["title"] = title
         if title_align is not unset:

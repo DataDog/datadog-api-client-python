@@ -37,6 +37,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         return {
             "color_preference": (WidgetColorPreference,),
             "count": (int,),
+            "description": (str,),
             "display_format": (WidgetMonitorSummaryDisplayFormat,),
             "hide_zero_counts": (bool,),
             "query": (str,),
@@ -54,6 +55,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
     attribute_map = {
         "color_preference": "color_preference",
         "count": "count",
+        "description": "description",
         "display_format": "display_format",
         "hide_zero_counts": "hide_zero_counts",
         "query": "query",
@@ -74,6 +76,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         type: MonitorSummaryWidgetDefinitionType,
         color_preference: Union[WidgetColorPreference, UnsetType] = unset,
         count: Union[int, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         display_format: Union[WidgetMonitorSummaryDisplayFormat, UnsetType] = unset,
         hide_zero_counts: Union[bool, UnsetType] = unset,
         show_last_triggered: Union[bool, UnsetType] = unset,
@@ -94,6 +97,9 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
 
         :param count: The number of monitors to display. **Deprecated**.
         :type count: int, optional
+
+        :param description: The description of the widget.
+        :type description: str, optional
 
         :param display_format: What to display on the widget.
         :type display_format: WidgetMonitorSummaryDisplayFormat, optional
@@ -135,6 +141,8 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
             kwargs["color_preference"] = color_preference
         if count is not unset:
             kwargs["count"] = count
+        if description is not unset:
+            kwargs["description"] = description
         if display_format is not unset:
             kwargs["display_format"] = display_format
         if hide_zero_counts is not unset:

@@ -18,6 +18,9 @@ class SplitGraphSourceWidgetDefinition(ModelComposed):
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
 
+        :param description: The description of the widget.
+        :type description: str, optional
+
         :param requests: List of bar chart widget requests.
         :type requests: [BarChartWidgetRequest]
 
