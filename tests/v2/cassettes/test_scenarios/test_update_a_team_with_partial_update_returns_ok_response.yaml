@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-1aa8ea88c040ca48","name":"test-name-1aa8ea88c040ca48"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"5f6e649c-340c-46e7-96bc-bc5ececc7839","type":"team","attributes":{"avatar":null,"banner":15,"created_at":"2026-03-25T11:58:34.181069+00:00","description":null,"handle":"test-handle-1aa8ea88c040ca48","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2026-03-25T11:58:34.181069+00:00","name":"test-name-1aa8ea88c040ca48","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/5f6e649c-340c-46e7-96bc-bc5ececc7839/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/5f6e649c-340c-46e7-96bc-bc5ececc7839/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-1aa8ea88c040ca48","name":"test-name-1aa8ea88c040ca48
+      updated"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/team/5f6e649c-340c-46e7-96bc-bc5ececc7839
+  response:
+    body:
+      string: '{"data":{"type":"team","id":"5f6e649c-340c-46e7-96bc-bc5ececc7839","attributes":{"name":"test-name-1aa8ea88c040ca48
+        updated","handle":"test-handle-1aa8ea88c040ca48","summary":null,"description":null,"avatar":null,"banner":15,"visible_modules":null,"hidden_modules":null,"created_at":"2026-03-25T11:58:34.181069+00:00","modified_at":"2026-03-25T11:58:34.727617+00:00","user_count":0,"link_count":0,"is_managed":false},"relationships":{"team_links":{"links":{"related":"/api/v2/team/5f6e649c-340c-46e7-96bc-bc5ececc7839/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/5f6e649c-340c-46e7-96bc-bc5ececc7839/permission-settings"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/5f6e649c-340c-46e7-96bc-bc5ececc7839
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
