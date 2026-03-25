@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_sankey_widget_and_product_analytics_data_source-1767367626","widgets":[{"definition":{"requests":[{"query":{"data_source":"product_analytics","mode":"source","query_string":"@type:session"},"request_type":"sankey"}],"title":"","title_align":"left","title_size":"16","type":"sankey"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"y6u-yab-bdi","title":"Test-Create_a_new_dashboard_with_sankey_widget_and_product_analytics_data_source-1767367626","description":"","author_handle":"sophie.cao@datadoghq.com","author_name":"Sophie
+        Cao","layout_type":"free","url":"/dashboard/y6u-yab-bdi/test-createanewdashboardwithsankeywidgetandproductanalyticsdatasource-1767367626","template_variables":[],"widgets":[{"definition":{"requests":[{"query":{"data_source":"product_analytics","mode":"source","query_string":"@type:session"},"request_type":"sankey"}],"title":"","title_align":"left","title_size":"16","type":"sankey"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":7919851856522238}],"notify_list":[],"created_at":"2026-01-02T15:27:06.177915+00:00","modified_at":"2026-01-02T15:27:06.177915+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/y6u-yab-bdi
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"y6u-yab-bdi"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
