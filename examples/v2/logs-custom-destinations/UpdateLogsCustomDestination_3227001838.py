@@ -1,0 +1,47 @@
+"""
+Update a Splunk custom destination's destination preserves the sourcetype returns "OK" response
+"""
+
+from os import environ
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDestinationsApi
+from datadog_api_client.v2.model.custom_destination_forward_destination_splunk import (
+    CustomDestinationForwardDestinationSplunk,
+)
+from datadog_api_client.v2.model.custom_destination_forward_destination_splunk_type import (
+    CustomDestinationForwardDestinationSplunkType,
+)
+from datadog_api_client.v2.model.custom_destination_type import CustomDestinationType
+from datadog_api_client.v2.model.custom_destination_update_request import CustomDestinationUpdateRequest
+from datadog_api_client.v2.model.custom_destination_update_request_attributes import (
+    CustomDestinationUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.custom_destination_update_request_definition import (
+    CustomDestinationUpdateRequestDefinition,
+)
+
+# there is a valid "custom_destination_splunk_with_sourcetype" in the system
+CUSTOM_DESTINATION_SPLUNK_WITH_SOURCETYPE_DATA_ID = environ["CUSTOM_DESTINATION_SPLUNK_WITH_SOURCETYPE_DATA_ID"]
+
+body = CustomDestinationUpdateRequest(
+    data=CustomDestinationUpdateRequestDefinition(
+        attributes=CustomDestinationUpdateRequestAttributes(
+            forwarder_destination=CustomDestinationForwardDestinationSplunk(
+                type=CustomDestinationForwardDestinationSplunkType.SPLUNK_HEC,
+                endpoint="https://updated-example.com",
+                access_token="my-access-token",
+            ),
+        ),
+        type=CustomDestinationType.CUSTOM_DESTINATION,
+        id=CUSTOM_DESTINATION_SPLUNK_WITH_SOURCETYPE_DATA_ID,
+    ),
+)
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = LogsCustomDestinationsApi(api_client)
+    response = api_instance.update_logs_custom_destination(
+        custom_destination_id=CUSTOM_DESTINATION_SPLUNK_WITH_SOURCETYPE_DATA_ID, body=body
+    )
+
+    print(response)

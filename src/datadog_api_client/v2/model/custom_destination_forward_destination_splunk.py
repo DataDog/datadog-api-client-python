@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -27,17 +30,24 @@ class CustomDestinationForwardDestinationSplunk(ModelNormal):
         return {
             "access_token": (str,),
             "endpoint": (str,),
+            "sourcetype": (str, none_type),
             "type": (CustomDestinationForwardDestinationSplunkType,),
         }
 
     attribute_map = {
         "access_token": "access_token",
         "endpoint": "endpoint",
+        "sourcetype": "sourcetype",
         "type": "type",
     }
 
     def __init__(
-        self_, access_token: str, endpoint: str, type: CustomDestinationForwardDestinationSplunkType, **kwargs
+        self_,
+        access_token: str,
+        endpoint: str,
+        type: CustomDestinationForwardDestinationSplunkType,
+        sourcetype: Union[str, none_type, UnsetType] = unset,
+        **kwargs,
     ):
         """
         The Splunk HTTP Event Collector (HEC) destination.
@@ -49,9 +59,18 @@ class CustomDestinationForwardDestinationSplunk(ModelNormal):
             Must have HTTPS scheme and forwarding back to Datadog is not allowed.
         :type endpoint: str
 
+        :param sourcetype: The Splunk sourcetype for the events sent to this Splunk destination.
+
+            If absent, the default sourcetype ``_json`` is used. If set to ``null`` , the ``sourcetype``
+            field is omitted from the Splunk HEC payload entirely. Otherwise, the provided string
+            value is used as the sourcetype.
+        :type sourcetype: str, none_type, optional
+
         :param type: Type of the Splunk HTTP Event Collector (HEC) destination.
         :type type: CustomDestinationForwardDestinationSplunkType
         """
+        if sourcetype is not unset:
+            kwargs["sourcetype"] = sourcetype
         super().__init__(kwargs)
 
         self_.access_token = access_token

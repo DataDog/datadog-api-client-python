@@ -93,12 +93,72 @@ Feature: Logs Custom Destinations
     And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
     And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://example.com"
     And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination" does not have field "sourcetype"
     And the response "data.attributes.enabled" is false
     And the response "data.attributes.forward_tags" is false
     And the response "data.attributes.forward_tags_restriction_list" has length 2
     And the response "data.attributes.forward_tags_restriction_list" array contains value "datacenter"
     And the response "data.attributes.forward_tags_restriction_list" array contains value "host"
     And the response "data.attributes.forward_tags_restriction_list_type" is equal to "ALLOW_LIST"
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Create a Splunk custom destination with a null sourcetype returns "OK" response
+    Given new "CreateLogsCustomDestination" request
+    And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forwarder_destination": {"access_token": "my-access-token", "endpoint": "https://example.com", "type": "splunk_hec", "sourcetype": null}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data" has field "id"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination.sourcetype" is equal to null
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Create a Splunk custom destination with a sourcetype returns "OK" response
+    Given new "CreateLogsCustomDestination" request
+    And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forwarder_destination": {"access_token": "my-access-token", "endpoint": "https://example.com", "type": "splunk_hec", "sourcetype": "my-sourcetype"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data" has field "id"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination.sourcetype" is equal to "my-sourcetype"
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Create a Splunk custom destination with an empty string sourcetype returns "OK" response
+    Given new "CreateLogsCustomDestination" request
+    And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forwarder_destination": {"access_token": "my-access-token", "endpoint": "https://example.com", "type": "splunk_hec", "sourcetype": ""}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data" has field "id"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination.sourcetype" is equal to ""
+
+  @skip-java @skip-python @skip-rust @skip-typescript @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Create a Splunk custom destination with an invalid sourcetype returns "Bad Request" response
+    Given new "CreateLogsCustomDestination" request
+    And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forwarder_destination": {"access_token": "my-access-token", "endpoint": "https://example.com", "type": "splunk_hec", "sourcetype": 123}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Create a Splunk custom destination without a sourcetype returns "OK" response
+    Given new "CreateLogsCustomDestination" request
+    And body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forwarder_destination": {"access_token": "my-access-token", "endpoint": "https://example.com", "type": "splunk_hec"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data" has field "id"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination" does not have field "sourcetype"
 
   @skip-java @skip-python @skip-rust @skip-typescript @team:DataDog/logs-backend @team:DataDog/logs-forwarding
   Scenario: Create a custom destination returns "Bad Request" response
@@ -218,6 +278,80 @@ Feature: Logs Custom Destinations
     And the response "data" has item with field "attributes.enabled" with value false
     And the response "data" has item with field "attributes.forward_tags" with value false
     And the response "data" has item with field "attributes.forward_tags_restriction_list_type" with value "{{ custom_destination.data.attributes.forward_tags_restriction_list_type }}"
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Update a Splunk custom destination with a null sourcetype returns "OK" response
+    Given new "UpdateLogsCustomDestination" request
+    And there is a valid "custom_destination_splunk_with_sourcetype" in the system
+    And request contains "custom_destination_id" parameter from "custom_destination_splunk_with_sourcetype.data.id"
+    And body with value {"data": {"attributes": {"forwarder_destination": {"type": "splunk_hec", "endpoint": "https://example.com", "access_token": "my-access-token", "sourcetype": null}}, "type": "custom_destination", "id": "{{ custom_destination_splunk_with_sourcetype.data.id }}"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data.id" is equal to "{{ custom_destination_splunk_with_sourcetype.data.id }}"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination.sourcetype" is equal to null
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Update a Splunk custom destination with a sourcetype returns "OK" response
+    Given new "UpdateLogsCustomDestination" request
+    And there is a valid "custom_destination_splunk" in the system
+    And request contains "custom_destination_id" parameter from "custom_destination_splunk.data.id"
+    And body with value {"data": {"attributes": {"forwarder_destination": {"type": "splunk_hec", "endpoint": "https://example.com", "access_token": "my-access-token", "sourcetype": "new-sourcetype"}}, "type": "custom_destination", "id": "{{ custom_destination_splunk.data.id }}"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data.id" is equal to "{{ custom_destination_splunk.data.id }}"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination.sourcetype" is equal to "new-sourcetype"
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Update a Splunk custom destination's attributes preserves the absent sourcetype returns "OK" response
+    Given new "UpdateLogsCustomDestination" request
+    And there is a valid "custom_destination_splunk" in the system
+    And request contains "custom_destination_id" parameter from "custom_destination_splunk.data.id"
+    And body with value {"data": {"attributes": {"name": "Nginx logs (Updated)"}, "type": "custom_destination", "id": "{{ custom_destination_splunk.data.id }}"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data.id" is equal to "{{ custom_destination_splunk.data.id }}"
+    And the response "data.attributes.name" is equal to "Nginx logs (Updated)"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination" does not have field "sourcetype"
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Update a Splunk custom destination's destination preserves the null sourcetype returns "OK" response
+    Given new "UpdateLogsCustomDestination" request
+    And there is a valid "custom_destination_splunk_with_null_sourcetype" in the system
+    And request contains "custom_destination_id" parameter from "custom_destination_splunk_with_null_sourcetype.data.id"
+    And body with value {"data": {"attributes": {"forwarder_destination": {"type": "splunk_hec", "endpoint": "https://updated-example.com", "access_token": "my-access-token"}}, "type": "custom_destination", "id": "{{ custom_destination_splunk_with_null_sourcetype.data.id }}"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data.id" is equal to "{{ custom_destination_splunk_with_null_sourcetype.data.id }}"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://updated-example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination.sourcetype" is equal to null
+
+  @team:DataDog/logs-backend @team:DataDog/logs-forwarding
+  Scenario: Update a Splunk custom destination's destination preserves the sourcetype returns "OK" response
+    Given new "UpdateLogsCustomDestination" request
+    And there is a valid "custom_destination_splunk_with_sourcetype" in the system
+    And request contains "custom_destination_id" parameter from "custom_destination_splunk_with_sourcetype.data.id"
+    And body with value {"data": {"attributes": {"forwarder_destination": {"type": "splunk_hec", "endpoint": "https://updated-example.com", "access_token": "my-access-token"}}, "type": "custom_destination", "id": "{{ custom_destination_splunk_with_sourcetype.data.id }}"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "custom_destination"
+    And the response "data.id" is equal to "{{ custom_destination_splunk_with_sourcetype.data.id }}"
+    And the response "data.attributes.forwarder_destination.type" is equal to "splunk_hec"
+    And the response "data.attributes.forwarder_destination.endpoint" is equal to "https://updated-example.com"
+    And the response "data.attributes.forwarder_destination" does not have field "access_token"
+    And the response "data.attributes.forwarder_destination.sourcetype" is equal to "my-sourcetype"
 
   @team:DataDog/logs-backend @team:DataDog/logs-forwarding
   Scenario: Update a custom destination returns "Bad Request" response
