@@ -805,15 +805,15 @@ class MetricsApi:
         :type filter_include_percentiles: bool, optional
         :param filter_queried: Only return metrics that have been queried (true) or not queried (false) in the look back window. Set the window with ``filter[queried][window][seconds]`` ; if omitted, a default window is used.
         :type filter_queried: bool, optional
-        :param filter_queried_window_seconds: Only return metrics that have been queried or not queried in the specified window. Dependent on being sent with ``filter[queried]``.
+        :param filter_queried_window_seconds: Only return metrics that have been queried or not queried in the specified window. Dependent on being sent with ``filter[queried]``. The default value is 2,592,000 seconds (30 days), the maximum value is 15,552,000 seconds (180 days), and the minimum value is 1 second.
         :type filter_queried_window_seconds: int, optional
         :param filter_tags: Only return metrics that were submitted with tags matching this expression. You can use AND, OR, IN, and wildcards (for example, service:web*).
         :type filter_tags: str, optional
         :param filter_related_assets: Only return metrics that are used in at least one dashboard, monitor, notebook, or SLO.
         :type filter_related_assets: bool, optional
-        :param window_seconds: Only return metrics that have been actively reporting in the specified window.
+        :param window_seconds: Only return metrics that have been actively reporting in the specified window. The default value is 3600 seconds (1 hour), the maximum value is 2,592,000 seconds (30 days), and the minimum value is 1 second.
         :type window_seconds: int, optional
-        :param page_size: Maximum number of results per page. Use with ``page[cursor]`` for pagination.
+        :param page_size: Maximum number of results per page. Use with ``page[cursor]`` for pagination. The default value is 10000, the maximum value is 10000, and the minimum value is 1.
         :type page_size: int, optional
         :param page_cursor: Cursor for pagination. Use ``page[size]`` to opt-in to pagination and get the first page; for subsequent pages, use the value from ``meta.pagination.next_cursor`` in the response. Pagination is complete when ``next_cursor`` is null.
         :type page_cursor: str, optional
@@ -884,15 +884,15 @@ class MetricsApi:
         :type filter_include_percentiles: bool, optional
         :param filter_queried: Only return metrics that have been queried (true) or not queried (false) in the look back window. Set the window with ``filter[queried][window][seconds]`` ; if omitted, a default window is used.
         :type filter_queried: bool, optional
-        :param filter_queried_window_seconds: Only return metrics that have been queried or not queried in the specified window. Dependent on being sent with ``filter[queried]``.
+        :param filter_queried_window_seconds: Only return metrics that have been queried or not queried in the specified window. Dependent on being sent with ``filter[queried]``. The default value is 2,592,000 seconds (30 days), the maximum value is 15,552,000 seconds (180 days), and the minimum value is 1 second.
         :type filter_queried_window_seconds: int, optional
         :param filter_tags: Only return metrics that were submitted with tags matching this expression. You can use AND, OR, IN, and wildcards (for example, service:web*).
         :type filter_tags: str, optional
         :param filter_related_assets: Only return metrics that are used in at least one dashboard, monitor, notebook, or SLO.
         :type filter_related_assets: bool, optional
-        :param window_seconds: Only return metrics that have been actively reporting in the specified window.
+        :param window_seconds: Only return metrics that have been actively reporting in the specified window. The default value is 3600 seconds (1 hour), the maximum value is 2,592,000 seconds (30 days), and the minimum value is 1 second.
         :type window_seconds: int, optional
-        :param page_size: Maximum number of results per page. Use with ``page[cursor]`` for pagination.
+        :param page_size: Maximum number of results per page. Use with ``page[cursor]`` for pagination. The default value is 10000, the maximum value is 10000, and the minimum value is 1.
         :type page_size: int, optional
         :param page_cursor: Cursor for pagination. Use ``page[size]`` to opt-in to pagination and get the first page; for subsequent pages, use the value from ``meta.pagination.next_cursor`` in the response. Pagination is complete when ``next_cursor`` is null.
         :type page_cursor: str, optional
