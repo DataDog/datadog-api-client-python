@@ -573,12 +573,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @skip @team:DataDog/aaa-omg
+  @team:DataDog/aaa-omg
   Scenario: Remove a user from a team returns "No Content" response
     Given new "DeleteTeamMembership" request
     And there is a valid "dd_team" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
     And request contains "team_id" parameter from "dd_team.data.id"
-    And request contains "user_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "user.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
@@ -607,11 +609,13 @@ Feature: Teams
     And the response "data.attributes.label" is equal to "New Label"
     And the response "data.attributes.url" is equal to "https://example.com"
 
-  @generated @skip @team:DataDog/aaa-omg
+  @skip @team:DataDog/aaa-omg
   Scenario: Update a team returns "API error response." response
     Given new "UpdateTeam" request
-    And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"avatar": "\ud83e\udd51", "banner": null, "handle": "example-team", "hidden_modules": [], "name": "Example Team", "visible_modules": []}, "relationships": {"team_links": {"data": [{"id": "f9bb8444-af7f-11ec-ac2c-da7ad0900001", "type": "team_links"}], "links": {"related": "/api/v2/team/c75a4a8e-20c7-11ee-a3a5-da7ad0900002/links"}}}, "type": "team"}}
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And body with value {"data": {"attributes": {"handle": "{{dd_team_2.data.attributes.handle}}", "name": "{{dd_team.data.attributes.name}}"}, "type": "team"}}
     When the request is sent
     Then the response status is 409 API error response.
 
@@ -630,6 +634,17 @@ Feature: Teams
     And the response "data.attributes.banner" is equal to 7
     And the response "data.attributes.hidden_modules" is equal to ["m3"]
     And the response "data.attributes.visible_modules" is equal to ["m1", "m2"]
+
+  @team:DataDog/aaa-omg
+  Scenario: Update a team with partial update returns "OK" response
+    Given new "UpdateTeam" request
+    And there is a valid "dd_team" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And body with value {"data": {"attributes": {"handle": "{{dd_team.data.attributes.handle}}", "name": "{{dd_team.data.attributes.name}} updated"}, "type": "team"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "{{dd_team.data.attributes.name}} updated"
+    And the response "data.attributes.handle" is equal to "{{dd_team.data.attributes.handle}}"
 
   @team:DataDog/aaa-omg
   Scenario: Update a user's membership attributes on a team returns "API error response." response

@@ -351,10 +351,11 @@ class ApiClient:
         check_type: Optional[bool] = None,
     ):
         if "page_param" in pagination:
+            page_start = pagination.get("page_start", 0)
             set_attribute_from_path(
                 pagination["kwargs"],
                 pagination["page_param"],
-                0,
+                page_start,
                 pagination["endpoint"].params_map,
             )
         params = pagination["endpoint"].gather_params(pagination["kwargs"])
@@ -393,10 +394,11 @@ class ApiClient:
                 pagination["endpoint"].params_map,
             )
         elif "page_param" in pagination:
+            page_start = pagination.get("page_start", 0)
             set_attribute_from_path(
                 pagination["kwargs"],
                 pagination["page_param"],
-                get_attribute_from_path(pagination["kwargs"], pagination["page_param"], 0) + 1,
+                get_attribute_from_path(pagination["kwargs"], pagination["page_param"], page_start) + 1,
                 pagination["endpoint"].params_map,
             )
         else:

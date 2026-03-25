@@ -268,6 +268,7 @@ class ServiceDefinitionApi:
             "limit_value": local_page_size,
             "results_path": "data",
             "page_param": "page_number",
+            "page_start": 0,
             "endpoint": endpoint,
             "kwargs": kwargs,
         }
