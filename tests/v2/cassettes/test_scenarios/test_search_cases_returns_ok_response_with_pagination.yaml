@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cases?page%5Bsize%5D=2&page%5Bnumber%5D=1&filter=status%3Aclosed
+  response:
+    body:
+      string: '{"data":[{"id":"cd4abeaa-0a5b-4b83-b99c-5b6d1f912938","type":"case","attributes":{"attributes":{"service":["synthetics-browser"]},"closed_at":"2026-01-24T00:47:45.477244496Z","comment_count":0,"created_at":"2025-11-12T00:42:59.178125Z","created_by_author":{"type":"USER","content":{"ID":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account","email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","active":true}},"creation_source":"ERROR_TRACKING","custom_attributes":{},"description":"","insights":[{"type":"ERROR_TRACKING","ref":"/error-tracking?issueId=a5bb2896-a4d0-11f0-bd76-da7ad0900002","resource_id":"a5bb2896-a4d0-11f0-bd76-da7ad0900002"}],"internal_id":"cd4abeaa-0a5b-4b83-b99c-5b6d1f912938","key":"ET-3","merge_status":"NOT_MERGED","modified_at":"2026-02-05T03:58:14.876711989Z","priority":"NOT_DEFINED","public_id":"89979","status":"CLOSED","status_group":"SG_CLOSED","status_name":"Closed","title":"require-trusted-types-for:
+        csp_violation: ''trusted-types-sink'' blocked by ''require-trusted-types-for''
+        directive","type":"ERROR_TRACKING_ISSUE","type_id":"00000000-0000-0000-0000-000000000005"},"relationships":{"assignee":{"data":{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user"}},"created_by":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user"}},"project":{"data":{"id":"384521ba-dc5f-481f-942d-15bd48428029","type":"project"}}}},{"id":"7afc10c8-4096-4af1-9ccf-ec0df3a2f63b","type":"case","attributes":{"attributes":{"service":["synthetics-browser"]},"comment_count":0,"created_at":"2025-09-02T13:56:48.031226Z","created_by_author":{"type":"USER","content":{"ID":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"frog","email":"frog@datadoghq.com","handle":"frog@datadoghq.com","active":true}},"creation_source":"ERROR_TRACKING","custom_attributes":{},"description":"","insights":[{"type":"ERROR_TRACKING","ref":"/error-tracking?issueId=d3ab59c6-84ee-11f0-87bb-da7ad0900002","resource_id":"d3ab59c6-84ee-11f0-87bb-da7ad0900002"}],"internal_id":"7afc10c8-4096-4af1-9ccf-ec0df3a2f63b","key":"ET-2","merge_status":"NOT_MERGED","modified_at":"2026-03-25T09:56:47.052997427Z","priority":"NOT_DEFINED","public_id":"79361","status":"CLOSED","status_group":"SG_CLOSED","status_name":"Closed","title":"Error:
+        Expected unhandled error","type":"ERROR_TRACKING_ISSUE","type_id":"00000000-0000-0000-0000-000000000005"},"relationships":{"assignee":{"data":{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user"}},"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"384521ba-dc5f-481f-942d-15bd48428029","type":"project"}}}}],"meta":{"total_cases":3,"page":{"current":1,"size":2,"total":2}},"included":[{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user","attributes":{"active":false,"email":"","handle":"","name":""}},{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"user","attributes":{"active":true,"email":"team-intg-tools-libs-spam@datadoghq.com","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"}},{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/cases?page%5Bsize%5D=2&page%5Bnumber%5D=2&filter=status%3Aclosed
+  response:
+    body:
+      string: '{"data":[{"id":"f1b32a47-621d-4c57-9642-045aeb83891e","type":"case","attributes":{"attributes":{"service":["synthetics-browser"]},"closed_at":"2025-08-21T17:21:13.882830862Z","comment_count":0,"created_at":"2025-08-21T17:20:22.807979Z","created_by_author":{"type":"USER","content":{"ID":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"frog","email":"frog@datadoghq.com","handle":"frog@datadoghq.com","active":true}},"creation_source":"ERROR_TRACKING","custom_attributes":{},"description":"","insights":[{"type":"ERROR_TRACKING","ref":"/error-tracking?issueId=5f8ebd5c-6dd9-11f0-8a28-da7ad0900002","resource_id":"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002"}],"internal_id":"f1b32a47-621d-4c57-9642-045aeb83891e","key":"ET-1","merge_status":"NOT_MERGED","modified_at":"2025-08-21T17:21:13.882830862Z","priority":"NOT_DEFINED","public_id":"77795","status":"CLOSED","status_group":"SG_CLOSED","status_name":"Closed","title":"Error:
+        HTTP error","type":"ERROR_TRACKING_ISSUE","type_id":"00000000-0000-0000-0000-000000000005"},"relationships":{"assignee":{"data":{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user"}},"created_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user"}},"project":{"data":{"id":"384521ba-dc5f-481f-942d-15bd48428029","type":"project"}}}}],"meta":{"total_cases":3,"page":{"current":2,"size":1,"total":2}},"included":[{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"user","attributes":{"active":true,"email":"frog@datadoghq.com","handle":"frog@datadoghq.com","name":"frog"}},{"id":"87cb11a0-278c-440a-99fe-701223c80296","type":"user","attributes":{"active":false,"email":"","handle":"","name":""}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

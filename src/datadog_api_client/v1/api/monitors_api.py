@@ -822,6 +822,7 @@ class MonitorsApi:
         pagination = {
             "limit_value": local_page_size,
             "page_param": "page",
+            "page_start": 0,
             "endpoint": endpoint,
             "kwargs": kwargs,
         }

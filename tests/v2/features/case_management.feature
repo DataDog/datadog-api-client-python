@@ -508,11 +508,14 @@ Feature: Case Management
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/case-management @with-pagination
+  @replay-only @skip-validation @team:DataDog/case-management @with-pagination
   Scenario: Search cases returns "OK" response with pagination
     Given new "SearchCases" request
+    And request contains "page[size]" parameter with value 2
+    And request contains "filter" parameter with value "status:closed"
     When the request with pagination is sent
     Then the response status is 200 OK
+    And the response has 3 items
 
   @team:DataDog/case-management
   Scenario: Unarchive case returns "Bad Request" response

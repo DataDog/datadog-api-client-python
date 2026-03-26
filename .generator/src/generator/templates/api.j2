@@ -219,6 +219,7 @@ class {{ classname }}:
             {%- endif %}
             {%- if pagination.pageParam %}
             "page_param": "{{ pagination.pageParam|attribute_path }}",
+            "page_start": {{ pagination.pageStart|default(0) }},
             {%- endif %}
             "endpoint": endpoint,
             "kwargs": kwargs,
