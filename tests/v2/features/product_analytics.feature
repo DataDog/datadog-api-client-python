@@ -4,8 +4,10 @@ Feature: Product Analytics
   allows you to collect custom events from any server-side source, and
   retains events for 15 months. Server-side events are helpful for
   understanding causes of a funnel drop-off which are external to the
-  client-side (for example, payment processing error). See the [Product
-  Analytics page](https://docs.datadoghq.com/product_analytics/) for more
+  client-side (for example, payment processing error).  **Note**: Sending
+  server-side events impacts billing. Review the [pricing
+  page](https://www.datadoghq.com/pricing/?product=product-
+  analytics#products) and contact your Customer Success Manager for more
   information.
 
   Background:

@@ -18,7 +18,9 @@ class ProductAnalyticsApi:
     Send server-side events to Product Analytics. Server-Side Events Ingestion allows you to collect custom events
     from any server-side source, and retains events for 15 months. Server-side events are helpful for understanding
     causes of a funnel drop-off which are external to the client-side (for example, payment processing error).
-    See the `Product Analytics page <https://docs.datadoghq.com/product_analytics/>`_ for more information.
+
+    **Note** : Sending server-side events impacts billing. Review the `pricing page <https://www.datadoghq.com/pricing/?product=product-analytics#products>`_
+    and contact your Customer Success Manager for more information.
     """
 
     def __init__(self, api_client=None):
