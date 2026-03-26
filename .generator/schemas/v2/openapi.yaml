@@ -87463,9 +87463,6 @@ paths:
       summary: List ServiceNow assignment groups
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/integration/servicenow/business_services/{instance_id}:
     get:
       description: |-
@@ -87504,9 +87501,6 @@ paths:
       summary: List ServiceNow business services
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/integration/servicenow/handles:
     get:
       description: |-
@@ -87524,9 +87518,6 @@ paths:
       summary: List ServiceNow templates
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     post:
       description: |-
         Create a new ServiceNow template.
@@ -87555,9 +87546,6 @@ paths:
       summary: Create ServiceNow template
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/integration/servicenow/handles/{template_id}:
     delete:
       description: |-
@@ -87592,9 +87580,6 @@ paths:
       summary: Delete ServiceNow template
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     get:
       description: |-
         Get a ServiceNow template by ID.
@@ -87632,9 +87617,6 @@ paths:
       summary: Get ServiceNow template
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     put:
       description: |-
         Update a ServiceNow template by ID.
@@ -87678,9 +87660,6 @@ paths:
       summary: Update ServiceNow template
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/integration/servicenow/instances:
     get:
       description: |-
@@ -87704,9 +87683,6 @@ paths:
       summary: List ServiceNow instances
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/integration/servicenow/users/{instance_id}:
     get:
       description: |-
@@ -87745,9 +87721,6 @@ paths:
       summary: List ServiceNow users
       tags:
         - ServiceNow Integration
-      x-unstable: |-
-        **Note**: This endpoint is in public beta and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/integrations:
     get:
       operationId: ListIntegrations
