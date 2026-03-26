@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringStandardDataSource(ModelSimple):
     """
-    Source of events, either logs, audit trail, or Datadog events.
+    Source of events, either logs, audit trail, or Datadog events. `app_sec_spans` is deprecated in favor of `spans`.
 
     :param value: If omitted defaults to "logs". Must be one of ["logs", "audit", "app_sec_spans", "spans", "security_runtime", "network", "events"].
     :type value: str
