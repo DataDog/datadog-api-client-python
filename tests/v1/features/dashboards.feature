@@ -330,6 +330,20 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].queries[0].operation_name" is equal to "cassandra.query"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with apm metrics widget
+    Given new "CreateDashboard" request
+    And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "query_table", "requests": [ { "response_format": "scalar", "queries": [ { "stat": "hits", "name": "query1", "service": "web-store", "data_source": "apm_metrics", "query_filter": "env:prod", "group_by": ["resource_name"] } ] } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.requests[0].queries[0].stat" is equal to "hits"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by[0]" is equal to "resource_name"
+    And the response "widgets[0].definition.requests[0].queries[0].name" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].queries[0].service" is equal to "web-store"
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "apm_metrics"
+    And the response "widgets[0].definition.requests[0].queries[0].query_filter" is equal to "env:prod"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with apm resource stats widget
     Given new "CreateDashboard" request
     And body with value { "title": "{{ unique }}", "widgets": [{"definition": { "title": "", "title_size": "16", "title_align": "left", "type": "query_table", "requests": [ { "response_format": "scalar", "queries": [ { "primary_tag_value": "edge-eu1.prod.dog", "stat": "hits", "name": "query1", "service": "cassandra", "data_source": "apm_resource_stats", "env": "ci", "primary_tag_name": "datacenter", "operation_name": "cassandra.query", "group_by": ["resource_name"] } ] } ] }, "layout": { "x": 0, "y": 0, "width": 4, "height": 4 } } ], "layout_type": "ordered" }
