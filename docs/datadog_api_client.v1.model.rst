@@ -7270,6 +7270,41 @@ datadog\_api\_client.v1.model.widget\_viz\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.wildcard\_widget\_definition module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.wildcard_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.wildcard\_widget\_definition\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.wildcard_widget_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.wildcard\_widget\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.wildcard_widget_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.wildcard\_widget\_specification module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.wildcard_widget_specification
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.wildcard\_widget\_specification\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.wildcard_widget_specification_type
+   :members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

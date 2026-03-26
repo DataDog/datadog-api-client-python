@@ -346,6 +346,9 @@ class WidgetDefinition(ModelComposed):
 
         :param size_by: (deprecated) The attribute formerly used to determine size in the widget.
         :type size_by: TreeMapSizeBy, optional
+
+        :param specification: Vega or Vega-Lite specification for custom visualization rendering. See https://vega.github.io/vega-lite/ for the full grammar reference.
+        :type specification: WildcardWidgetSpecification
         """
         super().__init__(kwargs)
 
@@ -394,6 +397,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
         from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
         from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
+        from datadog_api_client.v1.model.wildcard_widget_definition import WildcardWidgetDefinition
 
         return {
             "oneOf": [
@@ -433,5 +437,6 @@ class WidgetDefinition(ModelComposed):
                 ToplistWidgetDefinition,
                 TopologyMapWidgetDefinition,
                 TreeMapWidgetDefinition,
+                WildcardWidgetDefinition,
             ],
         }
