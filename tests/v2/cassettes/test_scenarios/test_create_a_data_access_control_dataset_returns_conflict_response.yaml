@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Security Audit Dataset","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"metrics"}]},"type":"dataset"}}'
+    body: '{"data":{"attributes":{"name":"Security Audit DAC","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"logs"}]},"type":"dataset"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/datasets
   response:
     body:
-      string: '{"data":{"type":"dataset","id":"7cbada94-7d01-4e73-8c74-ea70fb3b3088","attributes":{"name":"Security
-        Audit Dataset","product_filters":[{"product":"metrics","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"]}}}
+      string: '{"data":{"type":"dataset","id":"fc61b4b4-d05a-4cba-b109-0d123141056e","attributes":{"name":"Security
+        Audit DAC","product_filters":[{"product":"logs","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"]}}}
 
         '
     headers:
@@ -21,7 +21,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"data":{"attributes":{"name":"Security Audit Dataset","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"metrics"}]},"type":"dataset"}}'
+    body: '{"data":{"attributes":{"name":"Security Audit DAC","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"logs"}]},"type":"dataset"}}'
     headers:
       accept:
       - application/json
@@ -32,7 +32,7 @@ interactions:
   response:
     body:
       string: '{"errors":["Invalid request: [DatasetNameConflict] dataset with name
-        \"Security Audit Dataset\" already exists"]}
+        \"Security Audit DAC\" already exists"]}
 
         '
     headers:
@@ -47,7 +47,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/datasets/7cbada94-7d01-4e73-8c74-ea70fb3b3088
+    uri: https://api.datadoghq.com/api/v2/datasets/fc61b4b4-d05a-4cba-b109-0d123141056e
   response:
     body:
       string: ''

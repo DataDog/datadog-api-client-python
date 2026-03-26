@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"name":"Security Audit Dataset","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"metrics"}]},"type":"dataset"}}'
+    body: '{"data":{"attributes":{"name":"Security Audit DAC","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"logs"}]},"type":"dataset"}}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/datasets
   response:
     body:
-      string: '{"data":{"type":"dataset","id":"60ee6562-48f5-455f-bdb4-fd3f5f899978","attributes":{"name":"Security
-        Audit Dataset","product_filters":[{"product":"metrics","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"]}}}
+      string: '{"data":{"type":"dataset","id":"d7eacc0a-68a8-4511-8a9e-81c275a3cfc4","attributes":{"name":"Security
+        Audit DAC","product_filters":[{"product":"logs","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"]}}}
 
         '
     headers:
@@ -26,7 +26,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/datasets/60ee6562-48f5-455f-bdb4-fd3f5f899978
+    uri: https://api.datadoghq.com/api/v2/datasets/d7eacc0a-68a8-4511-8a9e-81c275a3cfc4
   response:
     body:
       string: ''
@@ -42,10 +42,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/datasets/60ee6562-48f5-455f-bdb4-fd3f5f899978
+    uri: https://api.datadoghq.com/api/v2/datasets/d7eacc0a-68a8-4511-8a9e-81c275a3cfc4
   response:
     body:
-      string: '{"errors":["Invalid request: [DatasetNotFound] dataset \"60ee6562-48f5-455f-bdb4-fd3f5f899978\"
+      string: '{"errors":["Invalid request: [DatasetNotFound] dataset \"d7eacc0a-68a8-4511-8a9e-81c275a3cfc4\"
         not found"]}
 
         '
