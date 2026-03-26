@@ -879,6 +879,34 @@ datadog\_api\_client.v1.model.formula\_and\_function\_apm\_dependency\_stats\_qu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.formula\_and\_function\_apm\_metric\_stat\_name module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_apm_metric_stat_name
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.formula\_and\_function\_apm\_metrics\_data\_source module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_apm_metrics_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.formula\_and\_function\_apm\_metrics\_query\_definition module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_apm_metrics_query_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.formula\_and\_function\_apm\_metrics\_span\_kind module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_apm_metrics_span_kind
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.formula\_and\_function\_apm\_resource\_stat\_name module
 --------------------------------------------------------------------------------------
 
