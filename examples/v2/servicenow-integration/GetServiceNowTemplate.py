@@ -7,7 +7,6 @@ from datadog_api_client.v2.api.service_now_integration_api import ServiceNowInte
 from uuid import UUID
 
 configuration = Configuration()
-configuration.unstable_operations["get_service_now_template"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceNowIntegrationApi(api_client)
     response = api_instance.get_service_now_template(

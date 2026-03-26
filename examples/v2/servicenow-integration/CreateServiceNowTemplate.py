@@ -31,7 +31,6 @@ body = ServiceNowTemplateCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_service_now_template"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceNowIntegrationApi(api_client)
     response = api_instance.create_service_now_template(body=body)

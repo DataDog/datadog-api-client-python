@@ -31,7 +31,6 @@ body = ServiceNowTemplateUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_service_now_template"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceNowIntegrationApi(api_client)
     response = api_instance.update_service_now_template(
