@@ -5864,6 +5864,12 @@
       "type": "idempotent"
     }
   },
+  "GetSyntheticsFastTestResult": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateSyntheticsNetworkTest": {
     "tag": "Synthetics",
     "undo": {

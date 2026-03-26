@@ -29292,6 +29292,90 @@ datadog\_api\_client.v2.model.sync\_property\_with\_mapping module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_assertion\_result module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_assertion_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result\_detail module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result\_device module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result_device
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result\_failure module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result_failure
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result\_location module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result_location
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_result\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_result_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_step\_result module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_step_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_sub\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_sub_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_fast\_test\_traceroute\_hop module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_fast_test_traceroute_hop
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.synthetics\_global\_variable module
 -----------------------------------------------------------------
 

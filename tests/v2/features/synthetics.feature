@@ -120,6 +120,20 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a fast test result returns "API error response." response
+    Given new "GetSyntheticsFastTestResult" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a fast test result returns "OK" response
+    Given new "GetSyntheticsFastTestResult" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
   Scenario: Get a suite returns "API error response." response
     Given new "GetSyntheticsSuite" request
     And request contains "public_id" parameter from "REPLACE.ME"

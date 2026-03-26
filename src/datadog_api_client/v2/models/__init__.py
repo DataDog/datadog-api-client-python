@@ -5983,6 +5983,18 @@ from datadog_api_client.v2.model.suppression_version_history import SuppressionV
 from datadog_api_client.v2.model.suppression_versions import SuppressionVersions
 from datadog_api_client.v2.model.sync_property import SyncProperty
 from datadog_api_client.v2.model.sync_property_with_mapping import SyncPropertyWithMapping
+from datadog_api_client.v2.model.synthetics_fast_test_assertion_result import SyntheticsFastTestAssertionResult
+from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
+from datadog_api_client.v2.model.synthetics_fast_test_result_attributes import SyntheticsFastTestResultAttributes
+from datadog_api_client.v2.model.synthetics_fast_test_result_data import SyntheticsFastTestResultData
+from datadog_api_client.v2.model.synthetics_fast_test_result_detail import SyntheticsFastTestResultDetail
+from datadog_api_client.v2.model.synthetics_fast_test_result_device import SyntheticsFastTestResultDevice
+from datadog_api_client.v2.model.synthetics_fast_test_result_failure import SyntheticsFastTestResultFailure
+from datadog_api_client.v2.model.synthetics_fast_test_result_location import SyntheticsFastTestResultLocation
+from datadog_api_client.v2.model.synthetics_fast_test_result_type import SyntheticsFastTestResultType
+from datadog_api_client.v2.model.synthetics_fast_test_step_result import SyntheticsFastTestStepResult
+from datadog_api_client.v2.model.synthetics_fast_test_sub_type import SyntheticsFastTestSubType
+from datadog_api_client.v2.model.synthetics_fast_test_traceroute_hop import SyntheticsFastTestTracerouteHop
 from datadog_api_client.v2.model.synthetics_global_variable import SyntheticsGlobalVariable
 from datadog_api_client.v2.model.synthetics_global_variable_attributes import SyntheticsGlobalVariableAttributes
 from datadog_api_client.v2.model.synthetics_global_variable_options import SyntheticsGlobalVariableOptions
@@ -10820,6 +10832,18 @@ __all__ = [
     "SuppressionVersions",
     "SyncProperty",
     "SyncPropertyWithMapping",
+    "SyntheticsFastTestAssertionResult",
+    "SyntheticsFastTestResult",
+    "SyntheticsFastTestResultAttributes",
+    "SyntheticsFastTestResultData",
+    "SyntheticsFastTestResultDetail",
+    "SyntheticsFastTestResultDevice",
+    "SyntheticsFastTestResultFailure",
+    "SyntheticsFastTestResultLocation",
+    "SyntheticsFastTestResultType",
+    "SyntheticsFastTestStepResult",
+    "SyntheticsFastTestSubType",
+    "SyntheticsFastTestTracerouteHop",
     "SyntheticsGlobalVariable",
     "SyntheticsGlobalVariableAttributes",
     "SyntheticsGlobalVariableOptions",
