@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.deleted_suites_request_delete_request import De
 from datadog_api_client.v2.model.synthetics_suite_search_response import SyntheticsSuiteSearchResponse
 from datadog_api_client.v2.model.deleted_tests_response import DeletedTestsResponse
 from datadog_api_client.v2.model.deleted_tests_request_delete_request import DeletedTestsRequestDeleteRequest
+from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
 from datadog_api_client.v2.model.synthetics_network_test_response import SyntheticsNetworkTestResponse
 from datadog_api_client.v2.model.synthetics_network_test_edit_request import SyntheticsNetworkTestEditRequest
 from datadog_api_client.v2.model.global_variable_response import GlobalVariableResponse
@@ -159,6 +160,29 @@ class SyntheticsApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_synthetics_fast_test_result_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsFastTestResult,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/fast/{id}",
+                "operation_id": "get_synthetics_fast_test_result",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -412,6 +436,21 @@ class SyntheticsApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_on_demand_concurrency_cap_endpoint.call_with_http_info(**kwargs)
+
+    def get_synthetics_fast_test_result(
+        self,
+        id: str,
+    ) -> SyntheticsFastTestResult:
+        """Get a fast test result.
+
+        :param id: The UUID of the fast test to retrieve the result for.
+        :type id: str
+        :rtype: SyntheticsFastTestResult
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._get_synthetics_fast_test_result_endpoint.call_with_http_info(**kwargs)
 
     def get_synthetics_network_test(
         self,
