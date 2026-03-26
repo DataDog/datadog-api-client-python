@@ -145,6 +145,8 @@ class LogsApi:
         consider use of the Datadog archive capabilities instead of the log list API.
         See `Datadog Logs Archive documentation <https://docs.datadoghq.com/logs/archives>`_.
 
+        **Note** : This endpoint is enabled by default for logs customers. To disable it, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+
         :param body: Logs filter
         :type body: LogsListRequest
         :rtype: LogsListResponse
