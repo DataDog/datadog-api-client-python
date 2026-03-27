@@ -31,6 +31,7 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         return {
             "address_key": (str,),
             "id": (str,),
+            "store_hec_token": (bool,),
             "tls": (ObservabilityPipelineTls,),
             "type": (ObservabilityPipelineSplunkHecSourceType,),
         }
@@ -38,6 +39,7 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
     attribute_map = {
         "address_key": "address_key",
         "id": "id",
+        "store_hec_token": "store_hec_token",
         "tls": "tls",
         "type": "type",
     }
@@ -47,6 +49,7 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         id: str,
         type: ObservabilityPipelineSplunkHecSourceType,
         address_key: Union[str, UnsetType] = unset,
+        store_hec_token: Union[bool, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -61,6 +64,10 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
+        :param store_hec_token: If ``true`` , the HEC token is stored in the event's metadata and made available to the Enrichment Table
+            processor and the ``splunk_hec`` destination for routing or enrichment based on the token. Defaults to ``false``.
+        :type store_hec_token: bool, optional
+
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
         :type tls: ObservabilityPipelineTls, optional
 
@@ -69,6 +76,8 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         """
         if address_key is not unset:
             kwargs["address_key"] = address_key
+        if store_hec_token is not unset:
+            kwargs["store_hec_token"] = store_hec_token
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)
