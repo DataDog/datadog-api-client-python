@@ -21,6 +21,7 @@ body = LogsIndex(
         LogsExclusion(
             filter=LogsExclusionFilter(
                 query="*",
+                sample_attribute="@ci.job_id",
                 sample_rate=1.0,
             ),
             name="payment",
