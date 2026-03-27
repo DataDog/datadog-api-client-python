@@ -6444,6 +6444,27 @@ datadog\_api\_client.v2.model.create\_open\_api\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_or\_update\_widget\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_or_update_widget_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_or\_update\_widget\_request\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_or_update_widget_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_or\_update\_widget\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_or_update_widget_request_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_page\_request module
 ----------------------------------------------------------
 
@@ -29257,6 +29278,34 @@ datadog\_api\_client.v2.model.suite\_create\_edit\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.suite\_json\_patch\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suite_json_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suite\_json\_patch\_request\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suite_json_patch_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suite\_json\_patch\_request\_data\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suite_json_patch_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suite\_json\_patch\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suite_json_patch_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.suite\_search\_response\_type module
 ------------------------------------------------------------------
 
@@ -29289,6 +29338,62 @@ datadog\_api\_client.v2.model.sync\_property\_with\_mapping module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.sync_property_with_mapping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_parent\_test\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_parent_test_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_parent\_test\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_parent_test_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_parent\_test\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_parent_test_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_parent\_tests\_response module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_parent_tests_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_subtest\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_subtest_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_subtest\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_subtest_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_subtest\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_subtest_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_api\_multistep\_subtests\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_api_multistep_subtests_response
    :members:
    :show-inheritance:
 
@@ -29705,10 +29810,136 @@ datadog\_api\_client.v2.model.synthetics\_test\_options\_scheduling\_timeframe m
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.synthetics\_test\_parent\_suite\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_parent_suite_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_parent\_suite\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_parent_suite_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_parent\_suite\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_parent_suite_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_parent\_suites\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_parent_suites_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.synthetics\_test\_pause\_status module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.synthetics_test_pause_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_action\_metadata module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_action_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_author module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_author
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_change\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_change_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_change\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_change_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_change\_metadata\_item module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_change_metadata_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_change\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_change_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_diff\_patch\_diff module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_diff_patch_diff
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_diff\_patches module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_diff_patches
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_history\_meta module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_history_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_history\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_history_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_version\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_version_type
    :members:
    :show-inheritance:
 
@@ -32617,10 +32848,101 @@ datadog\_api\_client.v2.model.weekday module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.widget\_attributes module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_data module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_definition module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_experience\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_experience_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_included\_user module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_included_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_included\_user\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_included_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_list\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_list_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.widget\_live\_span module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.widget_live_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_relationship\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_relationship\_item module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_relationship_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_relationships module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_response module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_search\_meta module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_search_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_type module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_type
    :members:
    :show-inheritance:
 

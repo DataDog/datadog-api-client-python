@@ -5809,6 +5809,18 @@
       "type": "idempotent"
     }
   },
+  "GetApiMultistepSubtests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetApiMultistepSubtestParents": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetOnDemandConcurrencyCap": {
     "tag": "Synthetics",
     "undo": {
@@ -5858,6 +5870,12 @@
       "type": "idempotent"
     }
   },
+  "PatchTestSuite": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteSyntheticsTests": {
     "tag": "Synthetics",
     "undo": {
@@ -5893,6 +5911,24 @@
     "tag": "Synthetics",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetTestParentSuites": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSyntheticsTestVersions": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSyntheticsTestVersion": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
     }
   },
   "PatchGlobalVariable": {
@@ -6352,6 +6388,47 @@
   },
   "GetUserMemberships": {
     "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchWidgets": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWidget": {
+    "tag": "Widgets",
+    "undo": {
+      "operationId": "DeleteWidget",
+      "parameters": [
+        {
+          "name": "experience_type",
+          "source": "experience_type"
+        },
+        {
+          "name": "uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWidget": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWidget": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWidget": {
+    "tag": "Widgets",
     "undo": {
       "type": "safe"
     }
