@@ -1636,6 +1636,8 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
         return None
 
     # Fast path: use type discriminator when all oneOf classes have a unique 'type' value.
+    # Pure optimisation — on any failure falls through to the full O(N) scan below so
+    # behaviour is identical to the original; never short-circuits to UnparsedObject here.
     if model_arg is None and model_kwargs:
         disc_map = _build_discriminator_map(cls)
         if disc_map is not None:
@@ -1651,7 +1653,6 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         oneof_instance = oneof_class(**model_kwargs, **constant_kwargs)
                     if not oneof_instance._unparsed:
                         return oneof_instance
-                return UnparsedObject(**model_kwargs)
 
     oneof_instances = []
     # Iterate over each oneOf schema and determine if the input data
