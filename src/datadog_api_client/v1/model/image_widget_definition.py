@@ -68,7 +68,7 @@ class ImageWidgetDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        The image widget allows you to embed an image on your dashboard. An image can be a PNG, JPG, or animated GIF. Only available on FREE layout dashboards.
+        The image widget allows you to embed an image on your dashboard. An image can be a PNG, JPG, or animated GIF.
 
         :param has_background: Whether to display a background or not.
         :type has_background: bool, optional

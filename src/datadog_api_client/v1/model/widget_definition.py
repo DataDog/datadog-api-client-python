@@ -96,6 +96,9 @@ class WidgetDefinition(ModelComposed):
         :param tags_execution: The execution method for multi-value filters. Can be either and or or.
         :type tags_execution: str, optional
 
+        :param background_color: Background color of the widget. Supported values are `white`, `blue`, `purple`, `pink`, `orange`, `yellow`, `green`, `gray`, `vivid_blue`, `vivid_purple`, `vivid_pink`, `vivid_orange`, `vivid_yellow`, `vivid_green`, and `transparent`.
+        :type background_color: str, optional
+
         :param color: Color of the text.
         :type color: str, optional
 
@@ -107,9 +110,6 @@ class WidgetDefinition(ModelComposed):
 
         :param view: The view of the world that the map should render.
         :type view: GeomapWidgetDefinitionView
-
-        :param background_color: Background color of the group title.
-        :type background_color: str, optional
 
         :param banner_img: URL of image to display as a banner for the group.
         :type banner_img: str, optional
