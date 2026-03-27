@@ -1,0 +1,68 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"test-handle-fa25cb1eef560458","name":"test-name-fa25cb1eef560458"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"id":"d7ee1319-6ac0-45c6-8700-079e58eac9f9","type":"team","attributes":{"avatar":null,"banner":1,"created_at":"2026-03-27T09:09:59.338935+00:00","description":null,"handle":"test-handle-fa25cb1eef560458","hidden_modules":null,"is_managed":false,"link_count":0,"modified_at":"2026-03-27T09:09:59.338935+00:00","name":"test-name-fa25cb1eef560458","summary":null,"user_count":0,"visible_modules":null},"relationships":{"team_links":{"data":[],"links":{"related":"/api/v2/team/d7ee1319-6ac0-45c6-8700-079e58eac9f9/links"}},"user_team_permissions":{"data":null,"links":{"related":"/api/v2/team/d7ee1319-6ac0-45c6-8700-079e58eac9f9/permission-settings"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":[{"attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"d7ee1319-6ac0-45c6-8700-079e58eac9f9","type":"team"}}},"type":"team_connection"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team/connections
+  response:
+    body:
+      string: '{"data":[{"id":"bb57db2e-29bc-11f1-bcee-da7ad0900002","type":"team_connection","attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"d7ee1319-6ac0-45c6-8700-079e58eac9f9","type":"team"}}}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/team/connections?filter%5Bsources%5D=github&page%5Bsize%5D=10
+  response:
+    body:
+      string: '{"data":[{"id":"52a55816-291e-11f1-be93-da7ad0900002","type":"team_connection","attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"0a81a948-5ee2-4790-b855-8817a21ccf1e","type":"team"}}}},{"id":"52df3810-291e-11f1-b8ea-da7ad0900002","type":"team_connection","attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"a9d786f4-447a-4a3b-9505-882df3f1d7e4","type":"team"}}}},{"id":"53407c2e-291e-11f1-af9c-da7ad0900002","type":"team_connection","attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"48f1089c-a1ee-4039-8b9d-59a512010d89","type":"team"}}}},{"id":"53722ae4-291e-11f1-be97-da7ad0900002","type":"team_connection","attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"27c3acd0-4eeb-459c-9dbf-2f61263c8387","type":"team"}}}},{"id":"4f642338-28f8-11f1-8cc3-da7ad0900002","type":"team_connection","attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"52b98022-50b0-42b5-8d59-f8f8a809027e","type":"team"}}}},{"id":"bb57db2e-29bc-11f1-bcee-da7ad0900002","type":"team_connection","attributes":{"managed_by":"datadog","source":"github"},"relationships":{"connected_team":{"data":{"id":"@MyGitHubAccount/my-team-name","type":"github_team"}},"team":{"data":{"id":"d7ee1319-6ac0-45c6-8700-079e58eac9f9","type":"team"}}}}],"meta":{"page":{"type":"number_size","number":0,"size":10,"total":6,"first_number":0,"prev_number":null,"next_number":null,"last_number":0}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/d7ee1319-6ac0-45c6-8700-079e58eac9f9
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":[{"id":"","type":"team_connection"}]}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/connections
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"attribute
+        \"id\" one or more team connection ids are not present"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

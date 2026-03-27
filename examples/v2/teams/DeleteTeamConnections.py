@@ -2,16 +2,20 @@
 Delete team connections returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.model.team_connection_delete_request import TeamConnectionDeleteRequest
 from datadog_api_client.v2.model.team_connection_delete_request_data_item import TeamConnectionDeleteRequestDataItem
 from datadog_api_client.v2.model.team_connection_type import TeamConnectionType
 
+# there is a valid "team_connection" in the system
+TEAM_CONNECTION_ID = environ["TEAM_CONNECTION_ID"]
+
 body = TeamConnectionDeleteRequest(
     data=[
         TeamConnectionDeleteRequestDataItem(
-            id="12345678-1234-5678-9abc-123456789012",
+            id=TEAM_CONNECTION_ID,
             type=TeamConnectionType.TEAM_CONNECTION,
         ),
     ],

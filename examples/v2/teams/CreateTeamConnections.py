@@ -47,7 +47,6 @@ body = TeamConnectionCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_team_connections"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     response = api_instance.create_team_connections(body=body)

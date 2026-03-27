@@ -1388,7 +1388,13 @@
     "operationId": "AddTeamHierarchyLink"
   },
   {
-    "source": "data.data[0]",
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": [{\n    \"type\": \"team_connection\",\n    \"attributes\": {\n      \"source\": \"github\",\n      \"managed_by\": \"datadog\"\n    },\n    \"relationships\": {\n      \"team\": {\n        \"data\": {\n          \"id\": \"{{ dd_team.data.id }}\",\n          \"type\": \"team\"\n        }\n      },\n      \"connected_team\": {\n        \"data\": {\n          \"id\": \"@MyGitHubAccount/my-team-name\",\n          \"type\": \"github_team\"\n        }\n      }\n    }\n  }]\n}"
+      }
+    ],
+    "source": "data[0]",
     "step": "there is a valid \"team_connection\" in the system",
     "key": "team_connection",
     "tag": "Teams",
