@@ -700,6 +700,11 @@ from datadog_api_client.v2.model.csm_agents_metadata import CSMAgentsMetadata
 from datadog_api_client.v2.model.csm_agents_type import CSMAgentsType
 from datadog_api_client.v2.model.cvss import CVSS
 from datadog_api_client.v2.model.calculated_field import CalculatedField
+from datadog_api_client.v2.model.campaign_response import CampaignResponse
+from datadog_api_client.v2.model.campaign_response_attributes import CampaignResponseAttributes
+from datadog_api_client.v2.model.campaign_response_data import CampaignResponseData
+from datadog_api_client.v2.model.campaign_status import CampaignStatus
+from datadog_api_client.v2.model.campaign_type import CampaignType
 from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
 from datadog_api_client.v2.model.case import Case
 from datadog_api_client.v2.model.case3rd_party_ticket_status import Case3rdPartyTicketStatus
@@ -1133,6 +1138,9 @@ from datadog_api_client.v2.model.create_attachment_request_data_attributes impor
 from datadog_api_client.v2.model.create_attachment_request_data_attributes_attachment import (
     CreateAttachmentRequestDataAttributesAttachment,
 )
+from datadog_api_client.v2.model.create_campaign_request import CreateCampaignRequest
+from datadog_api_client.v2.model.create_campaign_request_attributes import CreateCampaignRequestAttributes
+from datadog_api_client.v2.model.create_campaign_request_data import CreateCampaignRequestData
 from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequestArray
 from datadog_api_client.v2.model.create_case_request_data import CreateCaseRequestData
 from datadog_api_client.v2.model.create_case_request_data_attributes import CreateCaseRequestDataAttributes
@@ -1235,6 +1243,9 @@ from datadog_api_client.v2.model.create_on_call_notification_rule_request_data i
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
+from datadog_api_client.v2.model.create_or_update_widget_request import CreateOrUpdateWidgetRequest
+from datadog_api_client.v2.model.create_or_update_widget_request_attributes import CreateOrUpdateWidgetRequestAttributes
+from datadog_api_client.v2.model.create_or_update_widget_request_data import CreateOrUpdateWidgetRequestData
 from datadog_api_client.v2.model.create_page_request import CreatePageRequest
 from datadog_api_client.v2.model.create_page_request_data import CreatePageRequestData
 from datadog_api_client.v2.model.create_page_request_data_attributes import CreatePageRequestDataAttributes
@@ -3039,6 +3050,7 @@ from datadog_api_client.v2.model.list_apps_response_data_items_relationships imp
 from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 from datadog_api_client.v2.model.list_apps_response_meta_page import ListAppsResponseMetaPage
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
+from datadog_api_client.v2.model.list_campaigns_response import ListCampaignsResponse
 from datadog_api_client.v2.model.list_connections_response import ListConnectionsResponse
 from datadog_api_client.v2.model.list_connections_response_data import ListConnectionsResponseData
 from datadog_api_client.v2.model.list_connections_response_data_attributes import ListConnectionsResponseDataAttributes
@@ -3080,6 +3092,7 @@ from datadog_api_client.v2.model.list_relation_catalog_response_links import Lis
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
+from datadog_api_client.v2.model.list_scorecards_response import ListScorecardsResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
@@ -4403,6 +4416,7 @@ from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.page_urgency import PageUrgency
+from datadog_api_client.v2.model.paginated_response_meta import PaginatedResponseMeta
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.pagination_meta import PaginationMeta
 from datadog_api_client.v2.model.pagination_meta_page import PaginationMetaPage
@@ -4926,6 +4940,7 @@ from datadog_api_client.v2.model.routing_rule_relationships_policy_data_type imp
 )
 from datadog_api_client.v2.model.routing_rule_type import RoutingRuleType
 from datadog_api_client.v2.model.rule_attributes import RuleAttributes
+from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
 from datadog_api_client.v2.model.rule_outcome_relationships import RuleOutcomeRelationships
 from datadog_api_client.v2.model.rule_severity import RuleSeverity
 from datadog_api_client.v2.model.rule_type import RuleType
@@ -5141,6 +5156,9 @@ from datadog_api_client.v2.model.schedule_update_request_data_type import Schedu
 from datadog_api_client.v2.model.schedule_user import ScheduleUser
 from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAttributes
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
+from datadog_api_client.v2.model.scorecard_list_response_attributes import ScorecardListResponseAttributes
+from datadog_api_client.v2.model.scorecard_list_response_data import ScorecardListResponseData
+from datadog_api_client.v2.model.scorecard_list_type import ScorecardListType
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
 from datadog_api_client.v2.model.seat_assignments_data_type import SeatAssignmentsDataType
@@ -6381,6 +6399,9 @@ from datadog_api_client.v2.model.update_apps_datastore_request_data import Updat
 from datadog_api_client.v2.model.update_apps_datastore_request_data_attributes import (
     UpdateAppsDatastoreRequestDataAttributes,
 )
+from datadog_api_client.v2.model.update_campaign_request import UpdateCampaignRequest
+from datadog_api_client.v2.model.update_campaign_request_attributes import UpdateCampaignRequestAttributes
+from datadog_api_client.v2.model.update_campaign_request_data import UpdateCampaignRequestData
 from datadog_api_client.v2.model.update_connection_request import UpdateConnectionRequest
 from datadog_api_client.v2.model.update_connection_request_data import UpdateConnectionRequestData
 from datadog_api_client.v2.model.update_connection_request_data_attributes import UpdateConnectionRequestDataAttributes
@@ -6604,7 +6625,20 @@ from datadog_api_client.v2.model.watcher_data import WatcherData
 from datadog_api_client.v2.model.watcher_data_attributes import WatcherDataAttributes
 from datadog_api_client.v2.model.watcher_data_type import WatcherDataType
 from datadog_api_client.v2.model.weekday import Weekday
+from datadog_api_client.v2.model.widget_attributes import WidgetAttributes
+from datadog_api_client.v2.model.widget_data import WidgetData
+from datadog_api_client.v2.model.widget_definition import WidgetDefinition
+from datadog_api_client.v2.model.widget_experience_type import WidgetExperienceType
+from datadog_api_client.v2.model.widget_included_user import WidgetIncludedUser
+from datadog_api_client.v2.model.widget_included_user_attributes import WidgetIncludedUserAttributes
+from datadog_api_client.v2.model.widget_list_response import WidgetListResponse
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v2.model.widget_relationship_data import WidgetRelationshipData
+from datadog_api_client.v2.model.widget_relationship_item import WidgetRelationshipItem
+from datadog_api_client.v2.model.widget_relationships import WidgetRelationships
+from datadog_api_client.v2.model.widget_response import WidgetResponse
+from datadog_api_client.v2.model.widget_search_meta import WidgetSearchMeta
+from datadog_api_client.v2.model.widget_type import WidgetType
 from datadog_api_client.v2.model.workflow_data import WorkflowData
 from datadog_api_client.v2.model.workflow_data_attributes import WorkflowDataAttributes
 from datadog_api_client.v2.model.workflow_data_relationships import WorkflowDataRelationships
@@ -7163,6 +7197,11 @@ __all__ = [
     "CSMAgentsType",
     "CVSS",
     "CalculatedField",
+    "CampaignResponse",
+    "CampaignResponseAttributes",
+    "CampaignResponseData",
+    "CampaignStatus",
+    "CampaignType",
     "CancelDataDeletionResponseBody",
     "Case",
     "Case3rdPartyTicketStatus",
@@ -7498,6 +7537,9 @@ __all__ = [
     "CreateAttachmentRequestData",
     "CreateAttachmentRequestDataAttributes",
     "CreateAttachmentRequestDataAttributesAttachment",
+    "CreateCampaignRequest",
+    "CreateCampaignRequestAttributes",
+    "CreateCampaignRequestData",
     "CreateCaseRequestArray",
     "CreateCaseRequestData",
     "CreateCaseRequestDataAttributes",
@@ -7562,6 +7604,9 @@ __all__ = [
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
+    "CreateOrUpdateWidgetRequest",
+    "CreateOrUpdateWidgetRequestAttributes",
+    "CreateOrUpdateWidgetRequestData",
     "CreatePageRequest",
     "CreatePageRequestData",
     "CreatePageRequestDataAttributes",
@@ -8934,6 +8979,7 @@ __all__ = [
     "ListAppsResponseMeta",
     "ListAppsResponseMetaPage",
     "ListAssetsSBOMsResponse",
+    "ListCampaignsResponse",
     "ListConnectionsResponse",
     "ListConnectionsResponseData",
     "ListConnectionsResponseDataAttributes",
@@ -8969,6 +9015,7 @@ __all__ = [
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
+    "ListScorecardsResponse",
     "ListSecurityFindingsResponse",
     "ListTagsResponse",
     "ListTagsResponseData",
@@ -9694,6 +9741,7 @@ __all__ = [
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
     "PageUrgency",
+    "PaginatedResponseMeta",
     "Pagination",
     "PaginationMeta",
     "PaginationMetaPage",
@@ -10113,6 +10161,7 @@ __all__ = [
     "RoutingRuleRelationshipsPolicyDataType",
     "RoutingRuleType",
     "RuleAttributes",
+    "RuleAttributesRequest",
     "RuleOutcomeRelationships",
     "RuleSeverity",
     "RuleType",
@@ -10282,6 +10331,9 @@ __all__ = [
     "ScheduleUser",
     "ScheduleUserAttributes",
     "ScheduleUserType",
+    "ScorecardListResponseAttributes",
+    "ScorecardListResponseData",
+    "ScorecardListType",
     "ScorecardType",
     "SearchIssuesIncludeQueryParameterItem",
     "SeatAssignmentsDataType",
@@ -11126,6 +11178,9 @@ __all__ = [
     "UpdateAppsDatastoreRequest",
     "UpdateAppsDatastoreRequestData",
     "UpdateAppsDatastoreRequestDataAttributes",
+    "UpdateCampaignRequest",
+    "UpdateCampaignRequestAttributes",
+    "UpdateCampaignRequestData",
     "UpdateConnectionRequest",
     "UpdateConnectionRequestData",
     "UpdateConnectionRequestDataAttributes",
@@ -11307,7 +11362,20 @@ __all__ = [
     "WatcherDataAttributes",
     "WatcherDataType",
     "Weekday",
+    "WidgetAttributes",
+    "WidgetData",
+    "WidgetDefinition",
+    "WidgetExperienceType",
+    "WidgetIncludedUser",
+    "WidgetIncludedUserAttributes",
+    "WidgetListResponse",
     "WidgetLiveSpan",
+    "WidgetRelationshipData",
+    "WidgetRelationshipItem",
+    "WidgetRelationships",
+    "WidgetResponse",
+    "WidgetSearchMeta",
+    "WidgetType",
     "WorkflowData",
     "WorkflowDataAttributes",
     "WorkflowDataRelationships",
