@@ -134,6 +134,22 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a specific version of a test returns "API error response." response
+    Given new "GetSyntheticsTestVersion" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "version_number" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a specific version of a test returns "OK" response
+    Given new "GetSyntheticsTestVersion" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And request contains "version_number" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
   Scenario: Get a suite returns "API error response." response
     Given new "GetSyntheticsSuite" request
     And request contains "public_id" parameter from "REPLACE.ME"
@@ -147,9 +163,58 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get available subtests for a multistep test returns "OK" response
+    Given new "GetApiMultistepSubtests" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get parent suites for a test returns "API error response." response
+    Given new "GetTestParentSuites" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get parent suites for a test returns "OK" response
+    Given new "GetTestParentSuites" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get parent tests for a subtest returns "API error response." response
+    Given new "GetApiMultistepSubtestParents" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get parent tests for a subtest returns "OK" response
+    Given new "GetApiMultistepSubtestParents" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/synthetics-managing
   Scenario: Get the on-demand concurrency cap returns "OK" response
     Given new "GetOnDemandConcurrencyCap" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get version history of a test returns "API error response." response
+    Given new "ListSyntheticsTestVersions" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get version history of a test returns "OK" response
+    Given new "ListSyntheticsTestVersions" request
+    And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -174,6 +239,22 @@ Feature: Synthetics
     Given new "PatchGlobalVariable" request
     And request contains "variable_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"json_patch": [{"op": "add", "path": "/name"}]}, "type": "global_variables_json_patch"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Patch a test suite returns "API error response." response
+    Given new "PatchTestSuite" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"json_patch": [{"op": "add", "path": "/name"}]}, "type": "suites_json_patch"}}
+    When the request is sent
+    Then the response status is 400 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Patch a test suite returns "OK" response
+    Given new "PatchTestSuite" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"json_patch": [{"op": "add", "path": "/name"}]}, "type": "suites_json_patch"}}
     When the request is sent
     Then the response status is 200 OK
 

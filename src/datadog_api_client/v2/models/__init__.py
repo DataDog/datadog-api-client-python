@@ -1235,6 +1235,9 @@ from datadog_api_client.v2.model.create_on_call_notification_rule_request_data i
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
+from datadog_api_client.v2.model.create_or_update_widget_request import CreateOrUpdateWidgetRequest
+from datadog_api_client.v2.model.create_or_update_widget_request_attributes import CreateOrUpdateWidgetRequestAttributes
+from datadog_api_client.v2.model.create_or_update_widget_request_data import CreateOrUpdateWidgetRequestData
 from datadog_api_client.v2.model.create_page_request import CreatePageRequest
 from datadog_api_client.v2.model.create_page_request_data import CreatePageRequestData
 from datadog_api_client.v2.model.create_page_request_data_attributes import CreatePageRequestDataAttributes
@@ -5978,11 +5981,31 @@ from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
 from datadog_api_client.v2.model.suite_create_edit import SuiteCreateEdit
 from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEditRequest
+from datadog_api_client.v2.model.suite_json_patch_request import SuiteJsonPatchRequest
+from datadog_api_client.v2.model.suite_json_patch_request_data import SuiteJsonPatchRequestData
+from datadog_api_client.v2.model.suite_json_patch_request_data_attributes import SuiteJsonPatchRequestDataAttributes
+from datadog_api_client.v2.model.suite_json_patch_type import SuiteJsonPatchType
 from datadog_api_client.v2.model.suite_search_response_type import SuiteSearchResponseType
 from datadog_api_client.v2.model.suppression_version_history import SuppressionVersionHistory
 from datadog_api_client.v2.model.suppression_versions import SuppressionVersions
 from datadog_api_client.v2.model.sync_property import SyncProperty
 from datadog_api_client.v2.model.sync_property_with_mapping import SyncPropertyWithMapping
+from datadog_api_client.v2.model.synthetics_api_multistep_parent_test_attributes import (
+    SyntheticsApiMultistepParentTestAttributes,
+)
+from datadog_api_client.v2.model.synthetics_api_multistep_parent_test_data import SyntheticsApiMultistepParentTestData
+from datadog_api_client.v2.model.synthetics_api_multistep_parent_test_type import SyntheticsApiMultistepParentTestType
+from datadog_api_client.v2.model.synthetics_api_multistep_parent_tests_response import (
+    SyntheticsApiMultistepParentTestsResponse,
+)
+from datadog_api_client.v2.model.synthetics_api_multistep_subtest_attributes import (
+    SyntheticsApiMultistepSubtestAttributes,
+)
+from datadog_api_client.v2.model.synthetics_api_multistep_subtest_data import SyntheticsApiMultistepSubtestData
+from datadog_api_client.v2.model.synthetics_api_multistep_subtest_type import SyntheticsApiMultistepSubtestType
+from datadog_api_client.v2.model.synthetics_api_multistep_subtests_response import (
+    SyntheticsApiMultistepSubtestsResponse,
+)
 from datadog_api_client.v2.model.synthetics_fast_test_assertion_result import SyntheticsFastTestAssertionResult
 from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
 from datadog_api_client.v2.model.synthetics_fast_test_result_attributes import SyntheticsFastTestResultAttributes
@@ -6064,7 +6087,27 @@ from datadog_api_client.v2.model.synthetics_test_options_scheduling import Synth
 from datadog_api_client.v2.model.synthetics_test_options_scheduling_timeframe import (
     SyntheticsTestOptionsSchedulingTimeframe,
 )
+from datadog_api_client.v2.model.synthetics_test_parent_suite_attributes import SyntheticsTestParentSuiteAttributes
+from datadog_api_client.v2.model.synthetics_test_parent_suite_data import SyntheticsTestParentSuiteData
+from datadog_api_client.v2.model.synthetics_test_parent_suite_type import SyntheticsTestParentSuiteType
+from datadog_api_client.v2.model.synthetics_test_parent_suites_response import SyntheticsTestParentSuitesResponse
 from datadog_api_client.v2.model.synthetics_test_pause_status import SyntheticsTestPauseStatus
+from datadog_api_client.v2.model.synthetics_test_version_action_metadata import SyntheticsTestVersionActionMetadata
+from datadog_api_client.v2.model.synthetics_test_version_attributes import SyntheticsTestVersionAttributes
+from datadog_api_client.v2.model.synthetics_test_version_author import SyntheticsTestVersionAuthor
+from datadog_api_client.v2.model.synthetics_test_version_change_attributes import SyntheticsTestVersionChangeAttributes
+from datadog_api_client.v2.model.synthetics_test_version_change_data import SyntheticsTestVersionChangeData
+from datadog_api_client.v2.model.synthetics_test_version_change_metadata_item import (
+    SyntheticsTestVersionChangeMetadataItem,
+)
+from datadog_api_client.v2.model.synthetics_test_version_change_type import SyntheticsTestVersionChangeType
+from datadog_api_client.v2.model.synthetics_test_version_data import SyntheticsTestVersionData
+from datadog_api_client.v2.model.synthetics_test_version_diff_patch_diff import SyntheticsTestVersionDiffPatchDiff
+from datadog_api_client.v2.model.synthetics_test_version_diff_patches import SyntheticsTestVersionDiffPatches
+from datadog_api_client.v2.model.synthetics_test_version_history_meta import SyntheticsTestVersionHistoryMeta
+from datadog_api_client.v2.model.synthetics_test_version_history_response import SyntheticsTestVersionHistoryResponse
+from datadog_api_client.v2.model.synthetics_test_version_response import SyntheticsTestVersionResponse
+from datadog_api_client.v2.model.synthetics_test_version_type import SyntheticsTestVersionType
 from datadog_api_client.v2.model.synthetics_variable_parser import SyntheticsVariableParser
 from datadog_api_client.v2.model.table_result_v2 import TableResultV2
 from datadog_api_client.v2.model.table_result_v2_array import TableResultV2Array
@@ -6604,7 +6647,20 @@ from datadog_api_client.v2.model.watcher_data import WatcherData
 from datadog_api_client.v2.model.watcher_data_attributes import WatcherDataAttributes
 from datadog_api_client.v2.model.watcher_data_type import WatcherDataType
 from datadog_api_client.v2.model.weekday import Weekday
+from datadog_api_client.v2.model.widget_attributes import WidgetAttributes
+from datadog_api_client.v2.model.widget_data import WidgetData
+from datadog_api_client.v2.model.widget_definition import WidgetDefinition
+from datadog_api_client.v2.model.widget_experience_type import WidgetExperienceType
+from datadog_api_client.v2.model.widget_included_user import WidgetIncludedUser
+from datadog_api_client.v2.model.widget_included_user_attributes import WidgetIncludedUserAttributes
+from datadog_api_client.v2.model.widget_list_response import WidgetListResponse
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v2.model.widget_relationship_data import WidgetRelationshipData
+from datadog_api_client.v2.model.widget_relationship_item import WidgetRelationshipItem
+from datadog_api_client.v2.model.widget_relationships import WidgetRelationships
+from datadog_api_client.v2.model.widget_response import WidgetResponse
+from datadog_api_client.v2.model.widget_search_meta import WidgetSearchMeta
+from datadog_api_client.v2.model.widget_type import WidgetType
 from datadog_api_client.v2.model.workflow_data import WorkflowData
 from datadog_api_client.v2.model.workflow_data_attributes import WorkflowDataAttributes
 from datadog_api_client.v2.model.workflow_data_relationships import WorkflowDataRelationships
@@ -7562,6 +7618,9 @@ __all__ = [
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
+    "CreateOrUpdateWidgetRequest",
+    "CreateOrUpdateWidgetRequestAttributes",
+    "CreateOrUpdateWidgetRequestData",
     "CreatePageRequest",
     "CreatePageRequestData",
     "CreatePageRequestDataAttributes",
@@ -10827,11 +10886,23 @@ __all__ = [
     "StepDisplayBounds",
     "SuiteCreateEdit",
     "SuiteCreateEditRequest",
+    "SuiteJsonPatchRequest",
+    "SuiteJsonPatchRequestData",
+    "SuiteJsonPatchRequestDataAttributes",
+    "SuiteJsonPatchType",
     "SuiteSearchResponseType",
     "SuppressionVersionHistory",
     "SuppressionVersions",
     "SyncProperty",
     "SyncPropertyWithMapping",
+    "SyntheticsApiMultistepParentTestAttributes",
+    "SyntheticsApiMultistepParentTestData",
+    "SyntheticsApiMultistepParentTestType",
+    "SyntheticsApiMultistepParentTestsResponse",
+    "SyntheticsApiMultistepSubtestAttributes",
+    "SyntheticsApiMultistepSubtestData",
+    "SyntheticsApiMultistepSubtestType",
+    "SyntheticsApiMultistepSubtestsResponse",
     "SyntheticsFastTestAssertionResult",
     "SyntheticsFastTestResult",
     "SyntheticsFastTestResultAttributes",
@@ -10891,7 +10962,25 @@ __all__ = [
     "SyntheticsTestOptionsRetry",
     "SyntheticsTestOptionsScheduling",
     "SyntheticsTestOptionsSchedulingTimeframe",
+    "SyntheticsTestParentSuiteAttributes",
+    "SyntheticsTestParentSuiteData",
+    "SyntheticsTestParentSuiteType",
+    "SyntheticsTestParentSuitesResponse",
     "SyntheticsTestPauseStatus",
+    "SyntheticsTestVersionActionMetadata",
+    "SyntheticsTestVersionAttributes",
+    "SyntheticsTestVersionAuthor",
+    "SyntheticsTestVersionChangeAttributes",
+    "SyntheticsTestVersionChangeData",
+    "SyntheticsTestVersionChangeMetadataItem",
+    "SyntheticsTestVersionChangeType",
+    "SyntheticsTestVersionData",
+    "SyntheticsTestVersionDiffPatchDiff",
+    "SyntheticsTestVersionDiffPatches",
+    "SyntheticsTestVersionHistoryMeta",
+    "SyntheticsTestVersionHistoryResponse",
+    "SyntheticsTestVersionResponse",
+    "SyntheticsTestVersionType",
     "SyntheticsVariableParser",
     "TableResultV2",
     "TableResultV2Array",
@@ -11307,7 +11396,20 @@ __all__ = [
     "WatcherDataAttributes",
     "WatcherDataType",
     "Weekday",
+    "WidgetAttributes",
+    "WidgetData",
+    "WidgetDefinition",
+    "WidgetExperienceType",
+    "WidgetIncludedUser",
+    "WidgetIncludedUserAttributes",
+    "WidgetListResponse",
     "WidgetLiveSpan",
+    "WidgetRelationshipData",
+    "WidgetRelationshipItem",
+    "WidgetRelationships",
+    "WidgetResponse",
+    "WidgetSearchMeta",
+    "WidgetType",
     "WorkflowData",
     "WorkflowDataAttributes",
     "WorkflowDataRelationships",

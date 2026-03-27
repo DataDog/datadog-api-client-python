@@ -11,6 +11,12 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.synthetics_api_multistep_subtests_response import (
+    SyntheticsApiMultistepSubtestsResponse,
+)
+from datadog_api_client.v2.model.synthetics_api_multistep_parent_tests_response import (
+    SyntheticsApiMultistepParentTestsResponse,
+)
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.synthetics_suite_response import SyntheticsSuiteResponse
@@ -18,11 +24,15 @@ from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEdi
 from datadog_api_client.v2.model.deleted_suites_response import DeletedSuitesResponse
 from datadog_api_client.v2.model.deleted_suites_request_delete_request import DeletedSuitesRequestDeleteRequest
 from datadog_api_client.v2.model.synthetics_suite_search_response import SyntheticsSuiteSearchResponse
+from datadog_api_client.v2.model.suite_json_patch_request import SuiteJsonPatchRequest
 from datadog_api_client.v2.model.deleted_tests_response import DeletedTestsResponse
 from datadog_api_client.v2.model.deleted_tests_request_delete_request import DeletedTestsRequestDeleteRequest
 from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
 from datadog_api_client.v2.model.synthetics_network_test_response import SyntheticsNetworkTestResponse
 from datadog_api_client.v2.model.synthetics_network_test_edit_request import SyntheticsNetworkTestEditRequest
+from datadog_api_client.v2.model.synthetics_test_parent_suites_response import SyntheticsTestParentSuitesResponse
+from datadog_api_client.v2.model.synthetics_test_version_history_response import SyntheticsTestVersionHistoryResponse
+from datadog_api_client.v2.model.synthetics_test_version_response import SyntheticsTestVersionResponse
 from datadog_api_client.v2.model.global_variable_response import GlobalVariableResponse
 from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
 
@@ -150,6 +160,52 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._get_api_multistep_subtest_parents_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsApiMultistepParentTestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/api-multistep/subtests/{public_id}/parents",
+                "operation_id": "get_api_multistep_subtest_parents",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_api_multistep_subtests_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsApiMultistepSubtestsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/api-multistep/subtests/{public_id}",
+                "operation_id": "get_api_multistep_subtests",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_on_demand_concurrency_cap_endpoint = _Endpoint(
             settings={
                 "response_type": (OnDemandConcurrencyCapResponse,),
@@ -235,6 +291,104 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._get_synthetics_test_version_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsTestVersionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/version_history/{version_number}",
+                "operation_id": "get_synthetics_test_version",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "version_number": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "version_number",
+                    "location": "path",
+                },
+                "include_change_metadata": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_change_metadata",
+                    "location": "query",
+                },
+                "only_check_existence": {
+                    "openapi_types": (bool,),
+                    "attribute": "only_check_existence",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_test_parent_suites_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsTestParentSuitesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/parent-suites",
+                "operation_id": "get_test_parent_suites",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_synthetics_test_versions_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsTestVersionHistoryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/version_history",
+                "operation_id": "list_synthetics_test_versions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "last_version_number": {
+                    "openapi_types": (int,),
+                    "attribute": "last_version_number",
+                    "location": "query",
+                },
+                "limit": {
+                    "validation": {
+                        "inclusive_maximum": 50,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._patch_global_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (GlobalVariableResponse,),
@@ -254,6 +408,32 @@ class SyntheticsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (GlobalVariableJsonPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._patch_test_suite_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsSuiteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/suites/{public_id}/jsonpatch",
+                "operation_id": "patch_test_suite",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SuiteJsonPatchRequest,),
                     "location": "body",
                 },
             },
@@ -425,6 +605,42 @@ class SyntheticsApi:
 
         return self._edit_synthetics_suite_endpoint.call_with_http_info(**kwargs)
 
+    def get_api_multistep_subtest_parents(
+        self,
+        public_id: str,
+    ) -> SyntheticsApiMultistepParentTestsResponse:
+        """Get parent tests for a subtest.
+
+        Get the list of API multistep tests that include a given subtest,
+        along with their monitor status.
+
+        :param public_id: The public ID of the subtest.
+        :type public_id: str
+        :rtype: SyntheticsApiMultistepParentTestsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        return self._get_api_multistep_subtest_parents_endpoint.call_with_http_info(**kwargs)
+
+    def get_api_multistep_subtests(
+        self,
+        public_id: str,
+    ) -> SyntheticsApiMultistepSubtestsResponse:
+        """Get available subtests for a multistep test.
+
+        Get the list of API tests that can be added as subtests to a given API multistep test.
+        The current test is excluded from the list since a test cannot be a subtest of itself.
+
+        :param public_id: The public ID of the API multistep test.
+        :type public_id: str
+        :rtype: SyntheticsApiMultistepSubtestsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        return self._get_api_multistep_subtests_endpoint.call_with_http_info(**kwargs)
+
     def get_on_demand_concurrency_cap(
         self,
     ) -> OnDemandConcurrencyCapResponse:
@@ -482,6 +698,89 @@ class SyntheticsApi:
 
         return self._get_synthetics_suite_endpoint.call_with_http_info(**kwargs)
 
+    def get_synthetics_test_version(
+        self,
+        public_id: str,
+        version_number: int,
+        *,
+        include_change_metadata: Union[bool, UnsetType] = unset,
+        only_check_existence: Union[bool, UnsetType] = unset,
+    ) -> SyntheticsTestVersionResponse:
+        """Get a specific version of a test.
+
+        Get a specific version of a Synthetic test by its version number.
+
+        :param public_id: The public ID of the Synthetic test.
+        :type public_id: str
+        :param version_number: The version number to retrieve.
+        :type version_number: int
+        :param include_change_metadata: If ``true`` , include change metadata in the response.
+        :type include_change_metadata: bool, optional
+        :param only_check_existence: If ``true`` , only check whether the version exists without returning its full payload.
+            Returns an empty object if the version exists, or 404 if not.
+        :type only_check_existence: bool, optional
+        :rtype: SyntheticsTestVersionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["version_number"] = version_number
+
+        if include_change_metadata is not unset:
+            kwargs["include_change_metadata"] = include_change_metadata
+
+        if only_check_existence is not unset:
+            kwargs["only_check_existence"] = only_check_existence
+
+        return self._get_synthetics_test_version_endpoint.call_with_http_info(**kwargs)
+
+    def get_test_parent_suites(
+        self,
+        public_id: str,
+    ) -> SyntheticsTestParentSuitesResponse:
+        """Get parent suites for a test.
+
+        Get the list of parent suites and their status for a given Synthetic test.
+
+        :param public_id: The public ID of the Synthetic test.
+        :type public_id: str
+        :rtype: SyntheticsTestParentSuitesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        return self._get_test_parent_suites_endpoint.call_with_http_info(**kwargs)
+
+    def list_synthetics_test_versions(
+        self,
+        public_id: str,
+        *,
+        last_version_number: Union[int, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+    ) -> SyntheticsTestVersionHistoryResponse:
+        """Get version history of a test.
+
+        Get the paginated version history for a Synthetic test.
+
+        :param public_id: The public ID of the Synthetic test.
+        :type public_id: str
+        :param last_version_number: The version number of the last item from the previous page. Omit to get the first page.
+        :type last_version_number: int, optional
+        :param limit: Maximum number of version records to return per page.
+        :type limit: int, optional
+        :rtype: SyntheticsTestVersionHistoryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        if last_version_number is not unset:
+            kwargs["last_version_number"] = last_version_number
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        return self._list_synthetics_test_versions_endpoint.call_with_http_info(**kwargs)
+
     def patch_global_variable(
         self,
         variable_id: str,
@@ -511,6 +810,35 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._patch_global_variable_endpoint.call_with_http_info(**kwargs)
+
+    def patch_test_suite(
+        self,
+        public_id: str,
+        body: SuiteJsonPatchRequest,
+    ) -> SyntheticsSuiteResponse:
+        """Patch a test suite.
+
+        Patch a Synthetic test suite using JSON Patch (RFC 6902).
+        Use partial updates to modify only specific fields of a test suite.
+
+        Common operations include:
+
+        * Replace field values: ``{"op": "replace", "path": "/name", "value": "new_name"}``
+        * Add/update tags: ``{"op": "add", "path": "/tags/-", "value": "new_tag"}``
+        * Remove fields: ``{"op": "remove", "path": "/message"}``
+
+        :param public_id: The public ID of the Synthetic test suite to patch.
+        :type public_id: str
+        :param body: JSON Patch document with operations to apply.
+        :type body: SuiteJsonPatchRequest
+        :rtype: SyntheticsSuiteResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._patch_test_suite_endpoint.call_with_http_info(**kwargs)
 
     def search_suites(
         self,
