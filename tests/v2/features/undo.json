@@ -6356,6 +6356,47 @@
       "type": "safe"
     }
   },
+  "SearchWidgets": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateWidget": {
+    "tag": "Widgets",
+    "undo": {
+      "operationId": "DeleteWidget",
+      "parameters": [
+        {
+          "name": "experience_type",
+          "source": "experience_type"
+        },
+        {
+          "name": "uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteWidget": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetWidget": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWidget": {
+    "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateWorkflow": {
     "tag": "Workflow Automation",
     "undo": {

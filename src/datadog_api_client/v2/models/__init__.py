@@ -1235,6 +1235,9 @@ from datadog_api_client.v2.model.create_on_call_notification_rule_request_data i
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
+from datadog_api_client.v2.model.create_or_update_widget_request import CreateOrUpdateWidgetRequest
+from datadog_api_client.v2.model.create_or_update_widget_request_attributes import CreateOrUpdateWidgetRequestAttributes
+from datadog_api_client.v2.model.create_or_update_widget_request_data import CreateOrUpdateWidgetRequestData
 from datadog_api_client.v2.model.create_page_request import CreatePageRequest
 from datadog_api_client.v2.model.create_page_request_data import CreatePageRequestData
 from datadog_api_client.v2.model.create_page_request_data_attributes import CreatePageRequestDataAttributes
@@ -6604,7 +6607,20 @@ from datadog_api_client.v2.model.watcher_data import WatcherData
 from datadog_api_client.v2.model.watcher_data_attributes import WatcherDataAttributes
 from datadog_api_client.v2.model.watcher_data_type import WatcherDataType
 from datadog_api_client.v2.model.weekday import Weekday
+from datadog_api_client.v2.model.widget_attributes import WidgetAttributes
+from datadog_api_client.v2.model.widget_data import WidgetData
+from datadog_api_client.v2.model.widget_definition import WidgetDefinition
+from datadog_api_client.v2.model.widget_experience_type import WidgetExperienceType
+from datadog_api_client.v2.model.widget_included_user import WidgetIncludedUser
+from datadog_api_client.v2.model.widget_included_user_attributes import WidgetIncludedUserAttributes
+from datadog_api_client.v2.model.widget_list_response import WidgetListResponse
 from datadog_api_client.v2.model.widget_live_span import WidgetLiveSpan
+from datadog_api_client.v2.model.widget_relationship_data import WidgetRelationshipData
+from datadog_api_client.v2.model.widget_relationship_item import WidgetRelationshipItem
+from datadog_api_client.v2.model.widget_relationships import WidgetRelationships
+from datadog_api_client.v2.model.widget_response import WidgetResponse
+from datadog_api_client.v2.model.widget_search_meta import WidgetSearchMeta
+from datadog_api_client.v2.model.widget_type import WidgetType
 from datadog_api_client.v2.model.workflow_data import WorkflowData
 from datadog_api_client.v2.model.workflow_data_attributes import WorkflowDataAttributes
 from datadog_api_client.v2.model.workflow_data_relationships import WorkflowDataRelationships
@@ -7562,6 +7578,9 @@ __all__ = [
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
+    "CreateOrUpdateWidgetRequest",
+    "CreateOrUpdateWidgetRequestAttributes",
+    "CreateOrUpdateWidgetRequestData",
     "CreatePageRequest",
     "CreatePageRequestData",
     "CreatePageRequestDataAttributes",
@@ -11307,7 +11326,20 @@ __all__ = [
     "WatcherDataAttributes",
     "WatcherDataType",
     "Weekday",
+    "WidgetAttributes",
+    "WidgetData",
+    "WidgetDefinition",
+    "WidgetExperienceType",
+    "WidgetIncludedUser",
+    "WidgetIncludedUserAttributes",
+    "WidgetListResponse",
     "WidgetLiveSpan",
+    "WidgetRelationshipData",
+    "WidgetRelationshipItem",
+    "WidgetRelationships",
+    "WidgetResponse",
+    "WidgetSearchMeta",
+    "WidgetType",
     "WorkflowData",
     "WorkflowDataAttributes",
     "WorkflowDataRelationships",
