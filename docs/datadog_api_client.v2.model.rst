@@ -6444,27 +6444,6 @@ datadog\_api\_client.v2.model.create\_open\_api\_response\_data module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.create\_or\_update\_widget\_request module
-------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_or_update_widget_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_or\_update\_widget\_request\_attributes module
-------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_or_update_widget_request_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_or\_update\_widget\_request\_data module
-------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_or_update_widget_request_data
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.create\_page\_request module
 ----------------------------------------------------------
 
@@ -32638,101 +32617,10 @@ datadog\_api\_client.v2.model.weekday module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.widget\_attributes module
--------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_data module
--------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_definition module
--------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_definition
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_experience\_type module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_experience_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_included\_user module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_included_user
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_included\_user\_attributes module
------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_included_user_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_list\_response module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_list_response
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.widget\_live\_span module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.widget_live_span
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_relationship\_data module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_relationship_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_relationship\_item module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_relationship_item
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_relationships module
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_relationships
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_response module
------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_search\_meta module
----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_search_meta
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.widget\_type module
--------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.widget_type
    :members:
    :show-inheritance:
 
