@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -4628,7 +4629,7 @@ class SecurityMonitoringApi:
         filter_asset_operating_system_name: Union[str, UnsetType] = unset,
         filter_asset_operating_system_version: Union[str, UnsetType] = unset,
     ) -> ListVulnerabilitiesResponse:
-        """List vulnerabilities.
+        """List vulnerabilities. **Deprecated**.
 
         Get a list of vulnerabilities.
 
@@ -4938,6 +4939,7 @@ class SecurityMonitoringApi:
         if filter_asset_operating_system_version is not unset:
             kwargs["filter_asset_operating_system_version"] = filter_asset_operating_system_version
 
+        warnings.warn("list_vulnerabilities is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_vulnerabilities_endpoint.call_with_http_info(**kwargs)
 
     def list_vulnerable_assets(
