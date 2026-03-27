@@ -86,7 +86,7 @@ class LogStreamWidgetDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        The Log Stream displays a log flow matching the defined query. Only available on FREE layout dashboards.
+        The Log Stream displays a log flow matching the defined query.
 
         :param columns: Which columns to display on the widget.
         :type columns: [str], optional

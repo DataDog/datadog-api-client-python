@@ -73,7 +73,7 @@ class TableWidgetDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        The table visualization is available on timeboards and screenboards. It displays columns of metrics grouped by tag key.
+        The table visualization is available on dashboards. It displays columns of metrics grouped by tag key.
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional

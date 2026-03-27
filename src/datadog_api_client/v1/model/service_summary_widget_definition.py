@@ -97,7 +97,7 @@ class ServiceSummaryWidgetDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        The service summary displays the graphs of a chosen service in your screenboard. Only available on FREE layout dashboards.
+        The service summary displays the graphs of a chosen service in your dashboard.
 
         :param description: The description of the widget.
         :type description: str, optional

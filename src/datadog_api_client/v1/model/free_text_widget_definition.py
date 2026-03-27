@@ -25,6 +25,7 @@ class FreeTextWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.free_text_widget_definition_type import FreeTextWidgetDefinitionType
 
         return {
+            "background_color": (str,),
             "color": (str,),
             "font_size": (str,),
             "text": (str,),
@@ -33,6 +34,7 @@ class FreeTextWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "background_color": "background_color",
         "color": "color",
         "font_size": "font_size",
         "text": "text",
@@ -44,13 +46,17 @@ class FreeTextWidgetDefinition(ModelNormal):
         self_,
         text: str,
         type: FreeTextWidgetDefinitionType,
+        background_color: Union[str, UnsetType] = unset,
         color: Union[str, UnsetType] = unset,
         font_size: Union[str, UnsetType] = unset,
         text_align: Union[WidgetTextAlign, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Free text is a widget that allows you to add headings to your screenboard. Commonly used to state the overall purpose of the dashboard. Only available on FREE layout dashboards.
+        Free text is a widget that allows you to add headings to your dashboard. Commonly used to state the overall purpose of the dashboard.
+
+        :param background_color: Background color of the widget. Supported values are ``white`` , ``blue`` , ``purple`` , ``pink`` , ``orange`` , ``yellow`` , ``green`` , ``gray`` , ``vivid_blue`` , ``vivid_purple`` , ``vivid_pink`` , ``vivid_orange`` , ``vivid_yellow`` , ``vivid_green`` , and ``transparent``.
+        :type background_color: str, optional
 
         :param color: Color of the text.
         :type color: str, optional
@@ -67,6 +73,8 @@ class FreeTextWidgetDefinition(ModelNormal):
         :param type: Type of the free text widget.
         :type type: FreeTextWidgetDefinitionType
         """
+        if background_color is not unset:
+            kwargs["background_color"] = background_color
         if color is not unset:
             kwargs["color"] = color
         if font_size is not unset:

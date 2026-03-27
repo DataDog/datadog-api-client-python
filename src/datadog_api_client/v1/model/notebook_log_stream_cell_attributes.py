@@ -51,7 +51,7 @@ class NotebookLogStreamCellAttributes(ModelNormal):
         """
         The attributes of a notebook ``log_stream`` cell.
 
-        :param definition: The Log Stream displays a log flow matching the defined query. Only available on FREE layout dashboards.
+        :param definition: The Log Stream displays a log flow matching the defined query.
         :type definition: LogStreamWidgetDefinition
 
         :param graph_size: The size of the graph.

@@ -90,7 +90,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        The monitor summary widget displays a summary view of all your Datadog monitors, or a subset based on a query. Only available on FREE layout dashboards.
+        The monitor summary widget displays a summary view of all your Datadog monitors, or a subset based on a query.
 
         :param color_preference: Which color to use on the widget.
         :type color_preference: WidgetColorPreference, optional

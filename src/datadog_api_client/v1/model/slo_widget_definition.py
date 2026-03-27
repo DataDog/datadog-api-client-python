@@ -74,7 +74,7 @@ class SLOWidgetDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        Use the SLO and uptime widget to track your SLOs (Service Level Objectives) and uptime on screenboards and timeboards.
+        Use the SLO and uptime widget to track your SLOs (Service Level Objectives) and uptime on dashboards.
 
         :param additional_query_filters: Additional filters applied to the SLO query.
         :type additional_query_filters: str, optional
