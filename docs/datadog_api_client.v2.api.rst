@@ -592,6 +592,13 @@ datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.scorecards\_api module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.scorecards_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.seats\_api module
 ---------------------------------------------
 
@@ -638,13 +645,6 @@ datadog\_api\_client.v2.api.service\_now\_integration\_api module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_now_integration_api
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.api.service\_scorecards\_api module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.service_scorecards_api
    :members:
    :show-inheritance:
 
@@ -722,6 +722,13 @@ datadog\_api\_client.v2.api.users\_api module
 ---------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.users_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.widgets\_api module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.widgets_api
    :members:
    :show-inheritance:
 

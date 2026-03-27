@@ -82,13 +82,13 @@ from datadog_api_client.v2.api.rum_replay_playlists_api import RumReplayPlaylist
 from datadog_api_client.v2.api.rum_replay_sessions_api import RumReplaySessionsApi
 from datadog_api_client.v2.api.rum_replay_viewership_api import RumReplayViewershipApi
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
+from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
 from datadog_api_client.v2.api.seats_api import SeatsApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.api.sensitive_data_scanner_api import SensitiveDataScannerApi
 from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
-from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
 from datadog_api_client.v2.api.service_now_integration_api import ServiceNowIntegrationApi
 from datadog_api_client.v2.api.software_catalog_api import SoftwareCatalogApi
 from datadog_api_client.v2.api.spa_api import SpaApi
@@ -101,6 +101,7 @@ from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.users_api import UsersApi
+from datadog_api_client.v2.api.widgets_api import WidgetsApi
 from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomationApi
 
 
@@ -189,13 +190,13 @@ __all__ = [
     "RumReplaySessionsApi",
     "RumReplayViewershipApi",
     "RumRetentionFiltersApi",
+    "ScorecardsApi",
     "SeatsApi",
     "SecurityMonitoringApi",
     "SensitiveDataScannerApi",
     "ServiceAccountsApi",
     "ServiceDefinitionApi",
     "ServiceLevelObjectivesApi",
-    "ServiceScorecardsApi",
     "ServiceNowIntegrationApi",
     "SoftwareCatalogApi",
     "SpaApi",
@@ -208,5 +209,6 @@ __all__ = [
     "TestOptimizationApi",
     "UsageMeteringApi",
     "UsersApi",
+    "WidgetsApi",
     "WorkflowAutomationApi",
 ]
