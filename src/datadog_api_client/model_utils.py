@@ -38,8 +38,6 @@ def _make_hashable(obj):
         return tuple(sorted((_make_hashable(k), _make_hashable(v)) for k, v in obj.items()))
     elif isinstance(obj, set):
         return tuple(sorted(_make_hashable(item) for item in obj))
-    elif hasattr(obj, "__name__"):  # Classes and functions
-        return obj.__name__
     else:
         try:
             hash(obj)
@@ -180,7 +178,6 @@ class OpenApiModel:
                 self._spec_property_naming,
                 self._check_type,
                 configuration=self._configuration,
-                request_cache=None,  # No cache available in model __setattr__
             )
             if isinstance(value, list):
                 for x in value:
@@ -987,7 +984,10 @@ def get_possible_classes(cls, from_server_context):
     return possible_classes
 
 
-def get_required_type_classes(required_types_mixed, spec_property_naming, request_cache=None):
+_type_classes_cache: dict = {}
+
+
+def get_required_type_classes(required_types_mixed, spec_property_naming):
     """Converts the tuple required_types into a tuple and a dict described below.
 
     :param required_types_mixed: Will contain either classes or instance of
@@ -1007,18 +1007,11 @@ def get_required_type_classes(required_types_mixed, spec_property_naming, reques
 
     :rtype: tuple
     """
-    # PERFORMANCE: Cache expensive type class computation within request
-    if request_cache is not None:
-        cache_key = ("get_required_type_classes", _make_hashable(required_types_mixed), spec_property_naming)
-        if cache_key in request_cache:
-            return request_cache[cache_key]
-    else:
-        cache_key = None
-
-    result = _get_required_type_classes_impl(required_types_mixed, spec_property_naming)
-
-    if cache_key and request_cache is not None:
-        request_cache[cache_key] = result
+    cache_key = (_make_hashable(required_types_mixed), spec_property_naming)
+    result = _type_classes_cache.get(cache_key)
+    if result is None:
+        result = _get_required_type_classes_impl(required_types_mixed, spec_property_naming)
+        _type_classes_cache[cache_key] = result
     return result
 
 
@@ -1223,7 +1216,6 @@ def attempt_convert_item(
     key_type=False,
     must_convert=False,
     check_type=True,
-    request_cache=None,
 ):
     """
     :param input_value: The data to convert.
@@ -1322,13 +1314,7 @@ def is_valid_type(input_class_simple, valid_classes):
 
 
 def validate_and_convert_types(
-    input_value,
-    required_types_mixed,
-    path_to_item,
-    spec_property_naming,
-    check_type,
-    configuration=None,
-    request_cache=None,
+    input_value, required_types_mixed, path_to_item, spec_property_naming, check_type, configuration=None
 ):
     """Raises a TypeError is there is a problem, otherwise returns value.
 
@@ -1350,40 +1336,19 @@ def validate_and_convert_types(
     :param configuration:: The configuration class to use when converting
         file_type items.
     :type configuration: Configuration
-    :param request_cache: Optional cache dict for storing validation results
-        within a single request to avoid redundant validations.
-    :type request_cache: dict
 
     :return: The correctly typed value.
 
     :raise: ApiTypeError
     """
-    # Per-request caching: Cache validation results within a single request
-    cache_key = None
-    if request_cache is not None:
-        try:
-            input_hash = _make_hashable(input_value)
-            cache_key = (
-                input_hash,
-                _make_hashable(required_types_mixed),
-                tuple(path_to_item),
-                spec_property_naming,
-                check_type,
-            )
-            if cache_key in request_cache:
-                return request_cache[cache_key]
-        except (TypeError, AttributeError):
-            # If we can't create a cache key, proceed without caching
-            cache_key = None
-
-    results = get_required_type_classes(required_types_mixed, spec_property_naming, request_cache)
+    results = get_required_type_classes(required_types_mixed, spec_property_naming)
     valid_classes, child_req_types_by_current_type = results
 
     input_class_simple = get_simple_class(input_value)
     valid_type = is_valid_type(input_class_simple, valid_classes)
     if not valid_type:
         # if input_value is not valid_type try to convert it
-        result = attempt_convert_item(
+        return attempt_convert_item(
             input_value,
             valid_classes,
             path_to_item,
@@ -1391,11 +1356,7 @@ def validate_and_convert_types(
             spec_property_naming,
             must_convert=True,
             check_type=check_type,
-            request_cache=request_cache,
         )
-        if cache_key and request_cache is not None:
-            request_cache[cache_key] = result
-        return result
 
     # input_value's type is in valid_classes
     if len(valid_classes) > 1 and configuration:
@@ -1404,30 +1365,22 @@ def validate_and_convert_types(
             valid_classes, input_value, spec_property_naming, must_convert=False
         )
         if valid_classes_coercible:
-            result = attempt_convert_item(
+            return attempt_convert_item(
                 input_value,
                 valid_classes_coercible,
                 path_to_item,
                 configuration,
                 spec_property_naming,
                 check_type=check_type,
-                request_cache=request_cache,
             )
-            if cache_key and request_cache is not None:
-                request_cache[cache_key] = result
-            return result
 
     if child_req_types_by_current_type == {}:
         # all types are of the required types and there are no more inner
         # variables left to look at
-        if cache_key and request_cache is not None:
-            request_cache[cache_key] = input_value
         return input_value
     inner_required_types = child_req_types_by_current_type.get(type(input_value))
     if inner_required_types is None:
         # for this type, there are not more inner variables left to look at
-        if cache_key and request_cache is not None:
-            request_cache[cache_key] = input_value
         return input_value
     if isinstance(input_value, list):
         if input_value == []:
@@ -1445,7 +1398,6 @@ def validate_and_convert_types(
                         spec_property_naming,
                         check_type,
                         configuration=configuration,
-                        request_cache=request_cache,
                     )
                 )
             except TypeError:
@@ -1453,14 +1405,10 @@ def validate_and_convert_types(
             finally:
                 # Restore path state
                 path_to_item.pop()
-        if cache_key and request_cache is not None:
-            request_cache[cache_key] = result
         return result
     elif isinstance(input_value, dict):
         if input_value == {}:
             # allow an empty dict
-            if cache_key and request_cache is not None:
-                request_cache[cache_key] = input_value
             return input_value
         result = {}
         for inner_key, inner_val in input_value.items():
@@ -1475,16 +1423,11 @@ def validate_and_convert_types(
                     spec_property_naming,
                     check_type,
                     configuration=configuration,
-                    request_cache=request_cache,
                 )
             finally:
                 # Restore path state
                 path_to_item.pop()
-        if cache_key and request_cache is not None:
-            request_cache[cache_key] = result
         return result
-    if cache_key and request_cache is not None:
-        request_cache[cache_key] = input_value
     return input_value
 
 
@@ -1613,6 +1556,58 @@ def get_valid_classes_phrase(input_classes):
     return "is one of [{0}]".format(", ".join(all_class_names))
 
 
+_discriminator_map_cache: dict = {}
+
+
+def _build_discriminator_map(cls):
+    """
+    Build a map from type-discriminator string to oneOf class for a ModelComposed
+    class, using the 'type' field's ModelSimple allowed_values. Returns None if
+    the oneOf list doesn't uniformly use a type discriminator.
+    Result is cached per class.
+    """
+    cached = _discriminator_map_cache.get(cls, unset)
+    if cached is not unset:
+        return cached
+
+    disc_map = {}
+    try:
+        for oneof_class in cls._composed_schemas.get("oneOf", ()):
+            if oneof_class is none_type or isinstance(oneof_class, list):
+                continue
+            ot = getattr(oneof_class, "openapi_types", None)
+            if ot is None:
+                disc_map = None
+                break
+            type_types = ot.get("type")
+            if type_types is None:
+                disc_map = None
+                break
+            matched = False
+            for type_cls in type_types:
+                if isinstance(type_cls, type) and issubclass(type_cls, ModelSimple) and type_cls.allowed_values:
+                    conflicted = False
+                    for val in type_cls.allowed_values:
+                        if val in disc_map and disc_map[val] is not oneof_class:
+                            disc_map = None
+                            conflicted = True
+                            break
+                        disc_map[val] = oneof_class
+                    if conflicted:
+                        break
+                    matched = True
+                    break
+            if not matched:
+                disc_map = None
+                break
+    except Exception:
+        disc_map = None
+
+    result = disc_map if disc_map else None
+    _discriminator_map_cache[cls] = result
+    return result
+
+
 def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
     """
     Find the oneOf schema that matches the input data (e.g. payload).
@@ -1639,6 +1634,25 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
     """
     if len(cls._composed_schemas["oneOf"]) == 0:
         return None
+
+    # Fast path: use type discriminator when all oneOf classes have a unique 'type' value.
+    # Pure optimisation — on any failure falls through to the full O(N) scan below so
+    # behaviour is identical to the original; never short-circuits to UnparsedObject here.
+    if model_arg is None and model_kwargs:
+        disc_map = _build_discriminator_map(cls)
+        if disc_map is not None:
+            type_val = model_kwargs.get("type")
+            if type_val is not None and type_val in disc_map:
+                oneof_class = disc_map[type_val]
+                with suppress(Exception):
+                    if constant_kwargs.get("_spec_property_naming"):
+                        oneof_instance = oneof_class(
+                            **change_keys_js_to_python(model_kwargs, oneof_class), **constant_kwargs
+                        )
+                    else:
+                        oneof_instance = oneof_class(**model_kwargs, **constant_kwargs)
+                    if not oneof_instance._unparsed:
+                        return oneof_instance
 
     oneof_instances = []
     # Iterate over each oneOf schema and determine if the input data
@@ -1722,7 +1736,6 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                         constant_kwargs.get("_spec_property_naming", False),
                         constant_kwargs.get("_check_type", True),
                         configuration=constant_kwargs.get("_configuration"),
-                        request_cache=None,  # No cache available in this context
                     )
                     oneof_instances.append(oneof_instance)
     if len(oneof_instances) != 1:
@@ -1739,9 +1752,21 @@ def get_discarded_args(self, composed_instances, model_args):
     # arguments passed to self were already converted to python names
     # before __init__ was called
     for instance in composed_instances:
-        all_keys = set(model_to_dict(instance, serialize=False).keys())
-        js_keys = model_to_dict(instance).keys()
-        all_keys.update(js_keys)
+        # Collect Python and spec key names without recursing into values.
+        # model_to_dict would serialize the full sub-tree just to get keys.
+        model_instances = [instance]
+        model = instance
+        while model._composed_schemas:
+            model_instances.extend(model._composed_instances)
+            model = model.get_oneof_instance()
+
+        all_keys = set()
+        for model_inst in model_instances:
+            attr_map = getattr(model_inst, "attribute_map", {})
+            for attr in model_inst._data_store:
+                all_keys.add(attr)
+                all_keys.add(attr_map.get(attr, attr))
+
         discarded_keys = model_arg_keys - all_keys
         discarded_args.update(discarded_keys)
     return discarded_args
