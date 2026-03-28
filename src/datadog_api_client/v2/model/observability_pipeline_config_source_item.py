@@ -91,6 +91,10 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param framing: Framing method configuration for the socket source.
         :type framing: ObservabilityPipelineSocketSourceFraming
 
+        :param store_hec_token: If `true`, the HEC token is stored in the event's metadata and made available to the Enrichment Table
+            processor and the `splunk_hec` destination for routing or enrichment based on the token. Defaults to `false`.
+        :type store_hec_token: bool, optional
+
         :param grpc_address_key: Environment variable name containing the gRPC server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
         :type grpc_address_key: str, optional
 

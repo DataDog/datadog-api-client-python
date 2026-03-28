@@ -45830,6 +45830,13 @@ components:
           description: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the `input` to downstream components).
           example: splunk-hec-source
           type: string
+        store_hec_token:
+          default: false
+          description: |-
+            If `true`, the HEC token is stored in the event's metadata and made available to the Enrichment Table
+            processor and the `splunk_hec` destination for routing or enrichment based on the token. Defaults to `false`.
+          example: true
+          type: boolean
         tls:
           $ref: "#/components/schemas/ObservabilityPipelineTls"
         type:
