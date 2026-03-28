@@ -1471,13 +1471,13 @@
     }
   },
   "GetAllDatasets": {
-    "tag": "Datasets",
+    "tag": "Data Access Controls",
     "undo": {
       "type": "safe"
     }
   },
   "CreateDataset": {
-    "tag": "Datasets",
+    "tag": "Data Access Controls",
     "undo": {
       "operationId": "DeleteDataset",
       "parameters": [
@@ -1490,19 +1490,19 @@
     }
   },
   "DeleteDataset": {
-    "tag": "Datasets",
+    "tag": "Data Access Controls",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetDataset": {
-    "tag": "Datasets",
+    "tag": "Data Access Controls",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateDataset": {
-    "tag": "Datasets",
+    "tag": "Data Access Controls",
     "undo": {
       "type": "idempotent"
     }
