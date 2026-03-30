@@ -91,6 +91,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "incident_management_monthly_active_users_usage": (float,),
             "indexed_spans_percentage": (float,),
             "indexed_spans_usage": (float,),
+            "infra_host_basic_percentage": (float,),
+            "infra_host_basic_usage": (float,),
             "infra_host_percentage": (float,),
             "infra_host_usage": (float,),
             "ingested_logs_bytes_percentage": (float,),
@@ -256,6 +258,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "incident_management_monthly_active_users_usage": "incident_management_monthly_active_users_usage",
         "indexed_spans_percentage": "indexed_spans_percentage",
         "indexed_spans_usage": "indexed_spans_usage",
+        "infra_host_basic_percentage": "infra_host_basic_percentage",
+        "infra_host_basic_usage": "infra_host_basic_usage",
         "infra_host_percentage": "infra_host_percentage",
         "infra_host_usage": "infra_host_usage",
         "ingested_logs_bytes_percentage": "ingested_logs_bytes_percentage",
@@ -422,6 +426,8 @@ class MonthlyUsageAttributionValues(ModelNormal):
         incident_management_monthly_active_users_usage: Union[float, UnsetType] = unset,
         indexed_spans_percentage: Union[float, UnsetType] = unset,
         indexed_spans_usage: Union[float, UnsetType] = unset,
+        infra_host_basic_percentage: Union[float, UnsetType] = unset,
+        infra_host_basic_usage: Union[float, UnsetType] = unset,
         infra_host_percentage: Union[float, UnsetType] = unset,
         infra_host_usage: Union[float, UnsetType] = unset,
         ingested_logs_bytes_percentage: Union[float, UnsetType] = unset,
@@ -736,6 +742,12 @@ class MonthlyUsageAttributionValues(ModelNormal):
 
         :param indexed_spans_usage: The total APM Indexed Spans usage by tag(s).
         :type indexed_spans_usage: float, optional
+
+        :param infra_host_basic_percentage: The percentage of infrastructure host Basic usage by tag(s).
+        :type infra_host_basic_percentage: float, optional
+
+        :param infra_host_basic_usage: The infrastructure host Basic usage by tag(s).
+        :type infra_host_basic_usage: float, optional
 
         :param infra_host_percentage: The percentage of infrastructure host usage by tag(s).
         :type infra_host_percentage: float, optional
@@ -1151,6 +1163,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["indexed_spans_percentage"] = indexed_spans_percentage
         if indexed_spans_usage is not unset:
             kwargs["indexed_spans_usage"] = indexed_spans_usage
+        if infra_host_basic_percentage is not unset:
+            kwargs["infra_host_basic_percentage"] = infra_host_basic_percentage
+        if infra_host_basic_usage is not unset:
+            kwargs["infra_host_basic_usage"] = infra_host_basic_usage
         if infra_host_percentage is not unset:
             kwargs["infra_host_percentage"] = infra_host_percentage
         if infra_host_usage is not unset:
