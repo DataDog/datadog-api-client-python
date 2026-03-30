@@ -13,9 +13,12 @@ from datadog_api_client.v2.model.dataset_create_request import DatasetCreateRequ
 from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
 
 
-class DatasetsApi:
+class DataAccessControlsApi:
     """
-    Data Access Controls in Datadog is a feature that allows administrators and access managers to regulate
+    Manage `Data Access Controls <https://docs.datadoghq.com/account_management/rbac/data_access/>`_
+    programmatically using Datasets.
+
+    Data Access Controls in Datadog allows administrators and access managers to regulate
     access to sensitive data. By defining Restricted Datasets, you can ensure that only specific teams or roles can
     view certain types of telemetry (for example, logs, traces, metrics, and RUM data).
     """
@@ -137,7 +140,7 @@ class DatasetsApi:
         self,
         body: DatasetCreateRequest,
     ) -> DatasetResponseSingle:
-        """Create a dataset.
+        """Create a Data Access Control dataset.
 
         Create a dataset with the configurations in the request.
 
@@ -154,7 +157,7 @@ class DatasetsApi:
         self,
         dataset_id: str,
     ) -> None:
-        """Delete a dataset.
+        """Delete a Data Access Control dataset.
 
         Deletes the dataset associated with the ID.
 
@@ -170,7 +173,7 @@ class DatasetsApi:
     def get_all_datasets(
         self,
     ) -> DatasetResponseMulti:
-        """Get all datasets.
+        """Get all Data Access Control datasets.
 
         Get all datasets that have been configured for an organization.
 
@@ -183,7 +186,7 @@ class DatasetsApi:
         self,
         dataset_id: str,
     ) -> DatasetResponseSingle:
-        """Get a single dataset by ID.
+        """Get a Data Access Control dataset by ID.
 
         Retrieves the dataset associated with the ID.
 
@@ -201,7 +204,7 @@ class DatasetsApi:
         dataset_id: str,
         body: DatasetUpdateRequest,
     ) -> DatasetResponseSingle:
-        """Edit a dataset.
+        """Edit a Data Access Control dataset.
 
         Edits the dataset associated with the ID.
 

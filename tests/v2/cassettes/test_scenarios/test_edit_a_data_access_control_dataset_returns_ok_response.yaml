@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Security Audit DAC","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"logs"}]},"type":"dataset"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/datasets
+  response:
+    body:
+      string: '{"data":{"type":"dataset","id":"be869093-c62b-4ed1-87e8-7fb047e65f3d","attributes":{"name":"Security
+        Audit DAC","product_filters":[{"product":"logs","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"]}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"name":"Security Audit DAC","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:1234"],"product":"logs"}]},"type":"dataset"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/datasets/be869093-c62b-4ed1-87e8-7fb047e65f3d
+  response:
+    body:
+      string: '{"data":{"type":"dataset","id":"be869093-c62b-4ed1-87e8-7fb047e65f3d","attributes":{"name":"Security
+        Audit DAC","product_filters":[{"product":"logs","filters":["@application.id:1234"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"]}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/datasets/be869093-c62b-4ed1-87e8-7fb047e65f3d
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1

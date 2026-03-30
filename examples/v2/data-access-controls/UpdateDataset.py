@@ -1,10 +1,10 @@
 """
-Edit a dataset returns "OK" response
+Edit a Data Access Control dataset returns "OK" response
 """
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.datasets_api import DatasetsApi
+from datadog_api_client.v2.api.data_access_controls_api import DataAccessControlsApi
 from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
 from datadog_api_client.v2.model.dataset_request import DatasetRequest
 from datadog_api_client.v2.model.dataset_type import DatasetType
@@ -17,7 +17,7 @@ DATASET_DATA_ID = environ["DATASET_DATA_ID"]
 body = DatasetUpdateRequest(
     data=DatasetRequest(
         attributes=DatasetAttributesRequest(
-            name="Security Audit Dataset",
+            name="Security Audit DAC",
             principals=[
                 "role:94172442-be03-11e9-a77a-3b7612558ac1",
             ],
@@ -26,7 +26,7 @@ body = DatasetUpdateRequest(
                     filters=[
                         "@application.id:1234",
                     ],
-                    product="metrics",
+                    product="logs",
                 ),
             ],
         ),
@@ -35,9 +35,8 @@ body = DatasetUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_dataset"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = DatasetsApi(api_client)
+    api_instance = DataAccessControlsApi(api_client)
     response = api_instance.update_dataset(dataset_id=DATASET_DATA_ID, body=body)
 
     print(response)

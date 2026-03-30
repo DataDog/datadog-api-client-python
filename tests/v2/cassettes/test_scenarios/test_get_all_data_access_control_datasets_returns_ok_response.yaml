@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Security Audit DAC","principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"product_filters":[{"filters":["@application.id:ABCD"],"product":"logs"}]},"type":"dataset"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/datasets
+  response:
+    body:
+      string: '{"data":{"type":"dataset","id":"2e6e3a20-1ada-4a78-b583-d08fe4e3e8ea","attributes":{"name":"Security
+        Audit DAC","product_filters":[{"product":"logs","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"]}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/datasets
+  response:
+    body:
+      string: '{"data":[{"type":"dataset","id":"98648aa9-bf46-45b5-af42-b8466a42108c","attributes":{"name":"HR
+        Dataset","product_filters":[{"product":"rum","filters":["@application.id:123"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"created_by":"5fc21484-7314-11f0-86cc-a2f12af268bf","created_at":"2025-08-27T15:05:18.148596Z"}},{"type":"dataset","id":"2e6e3a20-1ada-4a78-b583-d08fe4e3e8ea","attributes":{"name":"Security
+        Audit DAC","product_filters":[{"product":"logs","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"created_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2026-03-26T21:30:12.944938Z"}},{"type":"dataset","id":"9559049b-bcbc-420d-9f33-38c426cf1541","attributes":{"name":"Security
+        Audit Dataset","product_filters":[{"product":"metrics","filters":["@application.id:ABCD"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1"],"created_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2025-07-31T17:26:56.804551Z"}},{"type":"dataset","id":"ce9d9376-61bd-437f-93cc-43b5f754c92d","attributes":{"name":"tf-test-Update-1773232609-updated","product_filters":[{"product":"apm","filters":["service:test"]},{"product":"rum","filters":["@application.id:ce9843b0-7a45-453c-a831-55dd15f85141"]}],"principals":["role:94172442-be03-11e9-a77a-3b7612558ac1","team:4ca6f4c0-88e4-4d42-b7bd-dea73da5c59e"],"created_by":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","created_at":"2026-03-11T12:36:50.541349Z"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/datasets/2e6e3a20-1ada-4a78-b583-d08fe4e3e8ea
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 204
+      message: No Content
+version: 1
