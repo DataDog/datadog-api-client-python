@@ -30,6 +30,20 @@ from datadog_api_client.v2.model.deleted_tests_request_delete_request import Del
 from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
 from datadog_api_client.v2.model.synthetics_network_test_response import SyntheticsNetworkTestResponse
 from datadog_api_client.v2.model.synthetics_network_test_edit_request import SyntheticsNetworkTestEditRequest
+from datadog_api_client.v2.model.synthetics_test_file_download_response import SyntheticsTestFileDownloadResponse
+from datadog_api_client.v2.model.synthetics_test_file_download_request import SyntheticsTestFileDownloadRequest
+from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_response import (
+    SyntheticsTestFileMultipartPresignedUrlsResponse,
+)
+from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_request import (
+    SyntheticsTestFileMultipartPresignedUrlsRequest,
+)
+from datadog_api_client.v2.model.synthetics_test_file_abort_multipart_upload_request import (
+    SyntheticsTestFileAbortMultipartUploadRequest,
+)
+from datadog_api_client.v2.model.synthetics_test_file_complete_multipart_upload_request import (
+    SyntheticsTestFileCompleteMultipartUploadRequest,
+)
 from datadog_api_client.v2.model.synthetics_test_parent_suites_response import SyntheticsTestParentSuitesResponse
 from datadog_api_client.v2.model.synthetics_test_version_history_response import SyntheticsTestVersionHistoryResponse
 from datadog_api_client.v2.model.synthetics_test_version_response import SyntheticsTestVersionResponse
@@ -53,6 +67,58 @@ class SyntheticsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._abort_test_file_multipart_upload_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/files/multipart-upload-abort",
+                "operation_id": "abort_test_file_multipart_upload",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsTestFileAbortMultipartUploadRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._complete_test_file_multipart_upload_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/files/multipart-upload-complete",
+                "operation_id": "complete_test_file_multipart_upload",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsTestFileCompleteMultipartUploadRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_synthetics_network_test_endpoint = _Endpoint(
             settings={
@@ -330,6 +396,58 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._get_test_file_download_url_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsTestFileDownloadResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/files/download",
+                "operation_id": "get_test_file_download_url",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsTestFileDownloadRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_test_file_multipart_presigned_urls_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsTestFileMultipartPresignedUrlsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/files/multipart-presigned-urls",
+                "operation_id": "get_test_file_multipart_presigned_urls",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "public_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "public_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsTestFileMultipartPresignedUrlsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._get_test_parent_suites_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTestParentSuitesResponse,),
@@ -528,6 +646,50 @@ class SyntheticsApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def abort_test_file_multipart_upload(
+        self,
+        public_id: str,
+        body: SyntheticsTestFileAbortMultipartUploadRequest,
+    ) -> None:
+        """Abort a multipart upload of a test file.
+
+        Abort an in-progress multipart file upload for a Synthetic test. This cancels the upload
+        and releases any storage used by already-uploaded parts.
+
+        :param public_id: The public ID of the Synthetic test.
+        :type public_id: str
+        :type body: SyntheticsTestFileAbortMultipartUploadRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._abort_test_file_multipart_upload_endpoint.call_with_http_info(**kwargs)
+
+    def complete_test_file_multipart_upload(
+        self,
+        public_id: str,
+        body: SyntheticsTestFileCompleteMultipartUploadRequest,
+    ) -> None:
+        """Complete a multipart upload of a test file.
+
+        Complete a multipart file upload for a Synthetic test. Call this endpoint after all parts
+        have been uploaded using the presigned URLs obtained from the multipart presigned URLs endpoint.
+
+        :param public_id: The public ID of the Synthetic test.
+        :type public_id: str
+        :type body: SyntheticsTestFileCompleteMultipartUploadRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._complete_test_file_multipart_upload_endpoint.call_with_http_info(**kwargs)
 
     def create_synthetics_network_test(
         self,
@@ -733,6 +895,50 @@ class SyntheticsApi:
             kwargs["only_check_existence"] = only_check_existence
 
         return self._get_synthetics_test_version_endpoint.call_with_http_info(**kwargs)
+
+    def get_test_file_download_url(
+        self,
+        public_id: str,
+        body: SyntheticsTestFileDownloadRequest,
+    ) -> SyntheticsTestFileDownloadResponse:
+        """Get a presigned URL for downloading a test file.
+
+        Get a presigned URL to download a file attached to a Synthetic test.
+        The returned URL is temporary and expires after a short period.
+
+        :param public_id: The public ID of the Synthetic test.
+        :type public_id: str
+        :type body: SyntheticsTestFileDownloadRequest
+        :rtype: SyntheticsTestFileDownloadResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._get_test_file_download_url_endpoint.call_with_http_info(**kwargs)
+
+    def get_test_file_multipart_presigned_urls(
+        self,
+        public_id: str,
+        body: SyntheticsTestFileMultipartPresignedUrlsRequest,
+    ) -> SyntheticsTestFileMultipartPresignedUrlsResponse:
+        """Get presigned URLs for uploading a test file.
+
+        Get presigned URLs for uploading a file to a Synthetic test using multipart upload.
+        Returns the presigned URLs for each part along with the bucket key that references the file.
+
+        :param public_id: The public ID of the Synthetic test.
+        :type public_id: str
+        :type body: SyntheticsTestFileMultipartPresignedUrlsRequest
+        :rtype: SyntheticsTestFileMultipartPresignedUrlsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["public_id"] = public_id
+
+        kwargs["body"] = body
+
+        return self._get_test_file_multipart_presigned_urls_endpoint.call_with_http_info(**kwargs)
 
     def get_test_parent_suites(
         self,

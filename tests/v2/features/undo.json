@@ -5913,6 +5913,30 @@
       "type": "idempotent"
     }
   },
+  "GetTestFileDownloadUrl": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetTestFileMultipartPresignedUrls": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "AbortTestFileMultipartUpload": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CompleteTestFileMultipartUpload": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetTestParentSuites": {
     "tag": "Synthetics",
     "undo": {
