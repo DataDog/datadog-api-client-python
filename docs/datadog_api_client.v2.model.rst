@@ -26527,6 +26527,69 @@ datadog\_api\_client.v2.model.security\_monitoring\_signal\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_assignee\_update\_attributes module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_assignee\_update\_data module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_assignee\_update\_request module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_state\_update\_data module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_state_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_state\_update\_request module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_state_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_triage\_event module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_event
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_triage\_event\_attributes module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_event_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_triage\_update\_response module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_triage\_update\_result module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_result
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_signals\_list\_response module
 ----------------------------------------------------------------------------------
 
