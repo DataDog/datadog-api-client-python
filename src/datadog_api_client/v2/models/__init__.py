@@ -6077,6 +6077,32 @@ from datadog_api_client.v2.model.synthetics_suite_test_alerting_criticality impo
 )
 from datadog_api_client.v2.model.synthetics_suite_type import SyntheticsSuiteType
 from datadog_api_client.v2.model.synthetics_suite_types import SyntheticsSuiteTypes
+from datadog_api_client.v2.model.synthetics_test_file_abort_multipart_upload_request import (
+    SyntheticsTestFileAbortMultipartUploadRequest,
+)
+from datadog_api_client.v2.model.synthetics_test_file_complete_multipart_upload_part import (
+    SyntheticsTestFileCompleteMultipartUploadPart,
+)
+from datadog_api_client.v2.model.synthetics_test_file_complete_multipart_upload_request import (
+    SyntheticsTestFileCompleteMultipartUploadRequest,
+)
+from datadog_api_client.v2.model.synthetics_test_file_download_request import SyntheticsTestFileDownloadRequest
+from datadog_api_client.v2.model.synthetics_test_file_download_response import SyntheticsTestFileDownloadResponse
+from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_params import (
+    SyntheticsTestFileMultipartPresignedUrlsParams,
+)
+from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_part import (
+    SyntheticsTestFileMultipartPresignedUrlsPart,
+)
+from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_request import (
+    SyntheticsTestFileMultipartPresignedUrlsRequest,
+)
+from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_request_bucket_key_prefix import (
+    SyntheticsTestFileMultipartPresignedUrlsRequestBucketKeyPrefix,
+)
+from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_response import (
+    SyntheticsTestFileMultipartPresignedUrlsResponse,
+)
 from datadog_api_client.v2.model.synthetics_test_options import SyntheticsTestOptions
 from datadog_api_client.v2.model.synthetics_test_options_monitor_options import SyntheticsTestOptionsMonitorOptions
 from datadog_api_client.v2.model.synthetics_test_options_monitor_options_notification_preset_name import (
@@ -10956,6 +10982,16 @@ __all__ = [
     "SyntheticsSuiteTestAlertingCriticality",
     "SyntheticsSuiteType",
     "SyntheticsSuiteTypes",
+    "SyntheticsTestFileAbortMultipartUploadRequest",
+    "SyntheticsTestFileCompleteMultipartUploadPart",
+    "SyntheticsTestFileCompleteMultipartUploadRequest",
+    "SyntheticsTestFileDownloadRequest",
+    "SyntheticsTestFileDownloadResponse",
+    "SyntheticsTestFileMultipartPresignedUrlsParams",
+    "SyntheticsTestFileMultipartPresignedUrlsPart",
+    "SyntheticsTestFileMultipartPresignedUrlsRequest",
+    "SyntheticsTestFileMultipartPresignedUrlsRequestBucketKeyPrefix",
+    "SyntheticsTestFileMultipartPresignedUrlsResponse",
     "SyntheticsTestOptions",
     "SyntheticsTestOptionsMonitorOptions",
     "SyntheticsTestOptionsMonitorOptionsNotificationPresetName",

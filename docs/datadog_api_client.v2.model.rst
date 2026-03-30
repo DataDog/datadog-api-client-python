@@ -29768,6 +29768,76 @@ datadog\_api\_client.v2.model.synthetics\_suite\_types module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.synthetics\_test\_file\_abort\_multipart\_upload\_request module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_abort_multipart_upload_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_complete\_multipart\_upload\_part module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_complete_multipart_upload_part
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_complete\_multipart\_upload\_request module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_complete_multipart_upload_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_download\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_download_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_download\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_download_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_multipart\_presigned\_urls\_params module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_multipart\_presigned\_urls\_part module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_part
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_multipart\_presigned\_urls\_request module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_multipart\_presigned\_urls\_request\_bucket\_key\_prefix module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_request_bucket_key_prefix
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_test\_file\_multipart\_presigned\_urls\_response module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.synthetics\_test\_options module
 --------------------------------------------------------------
 

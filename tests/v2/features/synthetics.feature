@@ -18,6 +18,22 @@ Feature: Synthetics
     And an instance of "Synthetics" API
 
   @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Abort a multipart upload of a test file returns "API error response." response
+    Given new "AbortTestFileMultipartUpload" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"key": "org-123/api-upload-file/abc-def-123/2024-01-01T00:00:00_uuid.json", "uploadId": "upload-id-abc123"}
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Abort a multipart upload of a test file returns "No Content" response
+    Given new "AbortTestFileMultipartUpload" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"key": "org-123/api-upload-file/abc-def-123/2024-01-01T00:00:00_uuid.json", "uploadId": "upload-id-abc123"}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/synthetics-managing
   Scenario: Bulk delete suites returns "API error response." response
     Given new "DeleteSyntheticsSuites" request
     And body with value {"data": {"attributes": {"public_ids": [""]}, "type": "delete_suites_request"}}
@@ -44,6 +60,22 @@ Feature: Synthetics
     And body with value {"data": {"attributes": {"public_ids": [""]}, "type": "delete_tests_request"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Complete a multipart upload of a test file returns "API error response." response
+    Given new "CompleteTestFileMultipartUpload" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"key": "org-123/api-upload-file/abc-def-123/2024-01-01T00:00:00_uuid.json", "parts": [{"ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"", "PartNumber": 1}], "uploadId": "upload-id-abc123"}
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Complete a multipart upload of a test file returns "No Content" response
+    Given new "CompleteTestFileMultipartUpload" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"key": "org-123/api-upload-file/abc-def-123/2024-01-01T00:00:00_uuid.json", "parts": [{"ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"", "PartNumber": 1}], "uploadId": "upload-id-abc123"}
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/synthetics-managing
   Scenario: Create a Network Path test returns "API error response." response
@@ -134,6 +166,22 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a presigned URL for downloading a test file returns "API error response." response
+    Given new "GetTestFileDownloadUrl" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"bucketKey": "api-upload-file/abc-def-123/2024-01-01T00:00:00_uuid.json"}
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get a presigned URL for downloading a test file returns "OK" response
+    Given new "GetTestFileDownloadUrl" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"bucketKey": "api-upload-file/abc-def-123/2024-01-01T00:00:00_uuid.json"}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
   Scenario: Get a specific version of a test returns "API error response." response
     Given new "GetSyntheticsTestVersion" request
     And request contains "public_id" parameter from "REPLACE.ME"
@@ -195,6 +243,22 @@ Feature: Synthetics
   Scenario: Get parent tests for a subtest returns "OK" response
     Given new "GetApiMultistepSubtestParents" request
     And request contains "public_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get presigned URLs for uploading a test file returns "API error response." response
+    Given new "GetTestFileMultipartPresignedUrls" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"bucketKeyPrefix": "api-upload-file", "parts": [{"md5": "1B2M2Y8AsgTpgAmY7PhCfg==", "partNumber": 1}]}
+    When the request is sent
+    Then the response status is 404 API error response.
+
+  @generated @skip @team:DataDog/synthetics-managing
+  Scenario: Get presigned URLs for uploading a test file returns "OK" response
+    Given new "GetTestFileMultipartPresignedUrls" request
+    And request contains "public_id" parameter from "REPLACE.ME"
+    And body with value {"bucketKeyPrefix": "api-upload-file", "parts": [{"md5": "1B2M2Y8AsgTpgAmY7PhCfg==", "partNumber": 1}]}
     When the request is sent
     Then the response status is 200 OK
 
