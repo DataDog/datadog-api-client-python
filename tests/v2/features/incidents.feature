@@ -187,6 +187,30 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident user-defined field returns "Bad Request" response
+    Given operation "CreateIncidentUserDefinedField" enabled
+    And new "CreateIncidentUserDefinedField" request
+    And body with value {"data": {"attributes": {"category": "what_happened", "collected": "active", "default_value": "critical", "display_name": "Root Cause", "name": "root_cause", "ordinal": "1.5", "required": false, "tag_key": "datacenter", "type": 3, "valid_values": [{"description": "A critical severity incident.", "display_name": "Critical", "short_description": "Critical", "value": "critical"}]}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "user_defined_field"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident user-defined field returns "CREATED" response
+    Given operation "CreateIncidentUserDefinedField" enabled
+    And new "CreateIncidentUserDefinedField" request
+    And body with value {"data": {"attributes": {"category": "what_happened", "collected": "active", "default_value": "critical", "display_name": "Root Cause", "name": "root_cause", "ordinal": "1.5", "required": false, "tag_key": "datacenter", "type": 3, "valid_values": [{"description": "A critical severity incident.", "display_name": "Critical", "short_description": "Critical", "value": "critical"}]}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "user_defined_field"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident user-defined field returns "Not Found" response
+    Given operation "CreateIncidentUserDefinedField" enabled
+    And new "CreateIncidentUserDefinedField" request
+    And body with value {"data": {"attributes": {"category": "what_happened", "collected": "active", "default_value": "critical", "display_name": "Root Cause", "name": "root_cause", "ordinal": "1.5", "required": false, "tag_key": "datacenter", "type": 3, "valid_values": [{"description": "A critical severity incident.", "display_name": "Critical", "short_description": "Critical", "value": "critical"}]}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "user_defined_field"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Create global incident handle returns "Bad Request" response
     Given operation "CreateGlobalIncidentHandle" enabled
     And new "CreateGlobalIncidentHandle" request
@@ -483,6 +507,30 @@ Feature: Incidents
     Then the response status is 204 OK
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident user-defined field returns "Bad Request" response
+    Given operation "DeleteIncidentUserDefinedField" enabled
+    And new "DeleteIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident user-defined field returns "No Content" response
+    Given operation "DeleteIncidentUserDefinedField" enabled
+    And new "DeleteIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident user-defined field returns "Not Found" response
+    Given operation "DeleteIncidentUserDefinedField" enabled
+    And new "DeleteIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Delete global incident handle returns "Bad Request" response
     Given operation "DeleteGlobalIncidentHandle" enabled
     And new "DeleteGlobalIncidentHandle" request
@@ -648,6 +696,20 @@ Feature: Incidents
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Get a list of incident user-defined fields returns "Bad Request" response
+    Given operation "ListIncidentUserDefinedFields" enabled
+    And new "ListIncidentUserDefinedFields" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get a list of incident user-defined fields returns "OK" response
+    Given operation "ListIncidentUserDefinedFields" enabled
+    And new "ListIncidentUserDefinedFields" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of incidents returns "Bad Request" response
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
@@ -700,6 +762,22 @@ Feature: Incidents
     Given operation "GetIncidentNotificationRule" enabled
     And new "GetIncidentNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident user-defined field returns "Not Found" response
+    Given operation "GetIncidentUserDefinedField" enabled
+    And new "GetIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident user-defined field returns "OK" response
+    Given operation "GetIncidentUserDefinedField" enabled
+    And new "GetIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1240,6 +1318,33 @@ Feature: Incidents
     And there is a valid "incident_type" in the system
     And request contains "incident_type_id" parameter from "incident_type.data.id"
     And body with value {"data": {"id": "{{incident_type.data.id}}", "attributes": {"name": "{{incident_type.data.attributes.name}}-updated"}, "type": "incident_types"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident user-defined field returns "Bad Request" response
+    Given operation "UpdateIncidentUserDefinedField" enabled
+    And new "UpdateIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"category": "what_happened", "collected": "active", "default_value": "critical", "display_name": "Root Cause", "ordinal": "1.5", "required": false, "valid_values": [{"description": "A critical severity incident.", "display_name": "Critical", "short_description": "Critical", "value": "critical"}]}, "id": "00000000-0000-0000-0000-000000000000", "type": "user_defined_field"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident user-defined field returns "Not Found" response
+    Given operation "UpdateIncidentUserDefinedField" enabled
+    And new "UpdateIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"category": "what_happened", "collected": "active", "default_value": "critical", "display_name": "Root Cause", "ordinal": "1.5", "required": false, "valid_values": [{"description": "A critical severity incident.", "display_name": "Critical", "short_description": "Critical", "value": "critical"}]}, "id": "00000000-0000-0000-0000-000000000000", "type": "user_defined_field"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident user-defined field returns "OK" response
+    Given operation "UpdateIncidentUserDefinedField" enabled
+    And new "UpdateIncidentUserDefinedField" request
+    And request contains "field_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"category": "what_happened", "collected": "active", "default_value": "critical", "display_name": "Root Cause", "ordinal": "1.5", "required": false, "valid_values": [{"description": "A critical severity incident.", "display_name": "Critical", "short_description": "Critical", "value": "critical"}]}, "id": "00000000-0000-0000-0000-000000000000", "type": "user_defined_field"}}
     When the request is sent
     Then the response status is 200 OK
 

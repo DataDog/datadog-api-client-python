@@ -2110,6 +2110,43 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentUserDefinedFields": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentUserDefinedField": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentUserDefinedField",
+      "parameters": [
+        {
+          "name": "field_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentUserDefinedField": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentUserDefinedField": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentUserDefinedField": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ImportIncident": {
     "tag": "Incidents",
     "undo": {
