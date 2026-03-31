@@ -26,12 +26,12 @@ class BatchRowsQueryRequestDataAttributes(ModelNormal):
 
     def __init__(self_, row_ids: List[str], table_id: str, **kwargs):
         """
+        Attributes for a batch rows query request.
 
-
-        :param row_ids:
+        :param row_ids: List of row identifiers to query from the reference table.
         :type row_ids: [str]
 
-        :param table_id:
+        :param table_id: Unique identifier of the reference table to query.
         :type table_id: str
         """
         super().__init__(kwargs)

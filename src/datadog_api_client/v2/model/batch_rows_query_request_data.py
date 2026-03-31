@@ -43,9 +43,9 @@ class BatchRowsQueryRequestData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a batch rows query request.
 
-
-        :param attributes:
+        :param attributes: Attributes for a batch rows query request.
         :type attributes: BatchRowsQueryRequestDataAttributes, optional
 
         :param type: Resource type identifier for batch queries of reference table rows.

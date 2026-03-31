@@ -32,9 +32,9 @@ class BatchRowsQueryRequest(ModelNormal):
 
     def __init__(self_, data: Union[BatchRowsQueryRequestData, UnsetType] = unset, **kwargs):
         """
+        Request object for querying multiple rows from a reference table by their identifiers.
 
-
-        :param data:
+        :param data: Data object for a batch rows query request.
         :type data: BatchRowsQueryRequestData, optional
         """
         if data is not unset:

@@ -34,7 +34,7 @@ class FeatureFlagsPaginationMeta(ModelNormal):
         """
         Pagination metadata for feature flags.
 
-        :param page:
+        :param page: Pagination metadata for feature flags list responses.
         :type page: FeatureFlagsPaginationMetaPage, optional
         """
         if page is not unset:

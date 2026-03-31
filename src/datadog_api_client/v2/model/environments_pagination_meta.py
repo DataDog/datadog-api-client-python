@@ -34,7 +34,7 @@ class EnvironmentsPaginationMeta(ModelNormal):
         """
         Pagination metadata for environments.
 
-        :param page:
+        :param page: Pagination metadata for environments list responses.
         :type page: EnvironmentsPaginationMetaPage, optional
         """
         if page is not unset:
