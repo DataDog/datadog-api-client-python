@@ -48,12 +48,12 @@ class BatchRowsQueryResponseData(ModelNormal):
         **kwargs,
     ):
         """
+        Data object for a batch rows query response.
 
-
-        :param id:
+        :param id: Unique identifier of the batch query.
         :type id: str, optional
 
-        :param relationships:
+        :param relationships: Relationships of the batch rows query response data.
         :type relationships: BatchRowsQueryResponseDataRelationships, optional
 
         :param type: Resource type identifier for batch queries of reference table rows.

@@ -36,9 +36,9 @@ class BatchRowsQueryResponseDataRelationships(ModelNormal):
 
     def __init__(self_, rows: Union[BatchRowsQueryResponseDataRelationshipsRows, UnsetType] = unset, **kwargs):
         """
+        Relationships of the batch rows query response data.
 
-
-        :param rows:
+        :param rows: Relationship data containing the list of matching rows.
         :type rows: BatchRowsQueryResponseDataRelationshipsRows, optional
         """
         if rows is not unset:

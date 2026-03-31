@@ -32,7 +32,7 @@ class BatchRowsQueryResponseDataRelationshipsRows(ModelNormal):
 
     def __init__(self_, data: Union[List[TableRowResourceIdentifier], UnsetType] = unset, **kwargs):
         """
-
+        Relationship data containing the list of matching rows.
 
         :param data:
         :type data: [TableRowResourceIdentifier], optional

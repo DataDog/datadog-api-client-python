@@ -32,9 +32,9 @@ class BatchRowsQueryResponse(ModelNormal):
 
     def __init__(self_, data: Union[BatchRowsQueryResponseData, UnsetType] = unset, **kwargs):
         """
+        Response object for a batch rows query against a reference table.
 
-
-        :param data:
+        :param data: Data object for a batch rows query response.
         :type data: BatchRowsQueryResponseData, optional
         """
         if data is not unset:

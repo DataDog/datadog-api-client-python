@@ -30,7 +30,7 @@ class EnvironmentsPaginationMetaPage(ModelNormal):
         self_, total_count: Union[int, UnsetType] = unset, total_filtered_count: Union[int, UnsetType] = unset, **kwargs
     ):
         """
-
+        Pagination metadata for environments list responses.
 
         :param total_count: Total number of items.
         :type total_count: int, optional
