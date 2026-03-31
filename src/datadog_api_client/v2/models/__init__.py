@@ -5425,6 +5425,33 @@ from datadog_api_client.v2.model.security_monitoring_signal_triage_update_respon
     SecurityMonitoringSignalTriageUpdateResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_type import SecurityMonitoringSignalType
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_attributes import (
+    SecurityMonitoringSignalsBulkAssigneeUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_data import (
+    SecurityMonitoringSignalsBulkAssigneeUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_request import (
+    SecurityMonitoringSignalsBulkAssigneeUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_state_update_data import (
+    SecurityMonitoringSignalsBulkStateUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_state_update_request import (
+    SecurityMonitoringSignalsBulkStateUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_event import (
+    SecurityMonitoringSignalsBulkTriageEvent,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_event_attributes import (
+    SecurityMonitoringSignalsBulkTriageEventAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_response import (
+    SecurityMonitoringSignalsBulkTriageUpdateResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_result import (
+    SecurityMonitoringSignalsBulkTriageUpdateResult,
+)
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_list_response_links import (
     SecurityMonitoringSignalsListResponseLinks,
@@ -10522,6 +10549,15 @@ __all__ = [
     "SecurityMonitoringSignalTriageUpdateData",
     "SecurityMonitoringSignalTriageUpdateResponse",
     "SecurityMonitoringSignalType",
+    "SecurityMonitoringSignalsBulkAssigneeUpdateAttributes",
+    "SecurityMonitoringSignalsBulkAssigneeUpdateData",
+    "SecurityMonitoringSignalsBulkAssigneeUpdateRequest",
+    "SecurityMonitoringSignalsBulkStateUpdateData",
+    "SecurityMonitoringSignalsBulkStateUpdateRequest",
+    "SecurityMonitoringSignalsBulkTriageEvent",
+    "SecurityMonitoringSignalsBulkTriageEventAttributes",
+    "SecurityMonitoringSignalsBulkTriageUpdateResponse",
+    "SecurityMonitoringSignalsBulkTriageUpdateResult",
     "SecurityMonitoringSignalsListResponse",
     "SecurityMonitoringSignalsListResponseLinks",
     "SecurityMonitoringSignalsListResponseMeta",

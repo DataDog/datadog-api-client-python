@@ -121,6 +121,36 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Bulk update triage assignee of security signals returns "Bad Request" response
+    Given operation "BulkEditSecurityMonitoringSignalsAssignee" enabled
+    And new "BulkEditSecurityMonitoringSignalsAssignee" request
+    And body with value {"data": [{"attributes": {}, "id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA", "type": "signal"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Bulk update triage assignee of security signals returns "OK" response
+    Given new "BulkEditSecurityMonitoringSignalsAssignee" request
+    And body with value {"data": [{"attributes": {"assignee": "773b045d-ccf8-4808-bd3b-955ef6a8c940"}, "id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA", "type": "signal"}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Bulk update triage state of security signals returns "Bad Request" response
+    Given operation "BulkEditSecurityMonitoringSignalsState" enabled
+    And new "BulkEditSecurityMonitoringSignalsState" request
+    And body with value {"data": [{"attributes": {}, "id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA", "type": "signal"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-security-platform
+  Scenario: Bulk update triage state of security signals returns "OK" response
+    Given new "BulkEditSecurityMonitoringSignalsState" request
+    And body with value {"data": [{"attributes": {"archive_reason": "none", "state": "open"}, "id": "AAAAAWgN8Xwgr1vKDQAAAABBV2dOOFh3ZzZobm1mWXJFYTR0OA", "type": "signal"}]}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-cloud-security-platform
   Scenario: Cancel a historical job returns "Bad Request" response
     Given operation "CancelThreatHuntingJob" enabled

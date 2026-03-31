@@ -125,6 +125,15 @@ from datadog_api_client.v2.model.get_rule_version_history_response import GetRul
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_response import (
+    SecurityMonitoringSignalsBulkTriageUpdateResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_request import (
+    SecurityMonitoringSignalsBulkAssigneeUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_state_update_request import (
+    SecurityMonitoringSignalsBulkStateUpdateRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 from datadog_api_client.v2.model.security_monitoring_signal_response import SecurityMonitoringSignalResponse
 from datadog_api_client.v2.model.security_monitoring_signal_triage_update_response import (
@@ -221,6 +230,46 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AttachJiraIssueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._bulk_edit_security_monitoring_signals_assignee_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalsBulkTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/bulk/assignee",
+                "operation_id": "bulk_edit_security_monitoring_signals_assignee",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalsBulkAssigneeUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._bulk_edit_security_monitoring_signals_state_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalsBulkTriageUpdateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/bulk/state",
+                "operation_id": "bulk_edit_security_monitoring_signals_state",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringSignalsBulkStateUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -2730,6 +2779,42 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
+
+    def bulk_edit_security_monitoring_signals_assignee(
+        self,
+        body: SecurityMonitoringSignalsBulkAssigneeUpdateRequest,
+    ) -> SecurityMonitoringSignalsBulkTriageUpdateResponse:
+        """Bulk update triage assignee of security signals.
+
+        Change the triage assignees of multiple security signals at once.
+        The maximum number of signals that can be updated in a single request is 199.
+
+        :param body: Attributes describing the signal assignee updates.
+        :type body: SecurityMonitoringSignalsBulkAssigneeUpdateRequest
+        :rtype: SecurityMonitoringSignalsBulkTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._bulk_edit_security_monitoring_signals_assignee_endpoint.call_with_http_info(**kwargs)
+
+    def bulk_edit_security_monitoring_signals_state(
+        self,
+        body: SecurityMonitoringSignalsBulkStateUpdateRequest,
+    ) -> SecurityMonitoringSignalsBulkTriageUpdateResponse:
+        """Bulk update triage state of security signals.
+
+        Change the triage states of multiple security signals at once.
+        The maximum number of signals that can be updated in a single request is 199.
+
+        :param body: Attributes describing the signal state updates.
+        :type body: SecurityMonitoringSignalsBulkStateUpdateRequest
+        :rtype: SecurityMonitoringSignalsBulkTriageUpdateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._bulk_edit_security_monitoring_signals_state_endpoint.call_with_http_info(**kwargs)
 
     def bulk_export_security_monitoring_rules(
         self,
