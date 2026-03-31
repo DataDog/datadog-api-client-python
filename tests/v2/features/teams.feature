@@ -27,21 +27,28 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 Added
 
-  @generated @skip @team:DataDog/aaa-omg
+  @team:DataDog/aaa-omg
   Scenario: Add a user to a team returns "API error response." response
     Given new "CreateTeamMembership" request
-    And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"team": {"data": {"id": "d7e15d9d-d346-43da-81d8-3d9e71d9a5e9", "type": "team"}}, "user": {"data": {"id": "b8626d7e-cedd-11eb-abf5-da7ad0900001", "type": "users"}}}, "type": "team_memberships"}}
+    And there is a valid "dd_team" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"user": {"data": {"id": "{{user.data.id}}", "type": "users"}}}, "type": "team_memberships"}}
     When the request is sent
     Then the response status is 409 API error response.
 
-  @generated @skip @team:DataDog/aaa-omg
+  @team:DataDog/aaa-omg
   Scenario: Add a user to a team returns "Represents a user's association to a team" response
     Given new "CreateTeamMembership" request
-    And request contains "team_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"team": {"data": {"id": "d7e15d9d-d346-43da-81d8-3d9e71d9a5e9", "type": "team"}}, "user": {"data": {"id": "b8626d7e-cedd-11eb-abf5-da7ad0900001", "type": "users"}}}, "type": "team_memberships"}}
+    And there is a valid "dd_team" in the system
+    And there is a valid "user" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And body with value {"data": {"attributes": {"role": "admin"}, "relationships": {"user": {"data": {"id": "{{user.data.id}}", "type": "users"}}}, "type": "team_memberships"}}
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
+    And the response "data.attributes.role" is equal to "admin"
+    And the response "data.relationships.user.data.id" is equal to "{{ user.data.id }}"
 
   @team:DataDog/aaa-omg
   Scenario: Create a team hierarchy link returns "Conflict" response
