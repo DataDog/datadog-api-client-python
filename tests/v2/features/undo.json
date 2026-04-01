@@ -5229,6 +5229,18 @@
       "type": "safe"
     }
   },
+  "BulkEditSecurityMonitoringSignalsAssignee": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "BulkEditSecurityMonitoringSignalsState": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SearchSecurityMonitoringSignals": {
     "tag": "Security Monitoring",
     "undo": {

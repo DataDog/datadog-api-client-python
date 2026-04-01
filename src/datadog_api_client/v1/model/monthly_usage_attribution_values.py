@@ -165,8 +165,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "sca_fargate_usage": (float,),
             "sds_scanned_bytes_percentage": (float,),
             "sds_scanned_bytes_usage": (float,),
-            "serverless_apps_apm_percentage": (float,),
-            "serverless_apps_apm_usage": (float,),
             "serverless_apps_percentage": (float,),
             "serverless_apps_usage": (float,),
             "siem_analyzed_logs_add_on_percentage": (float,),
@@ -332,8 +330,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "sca_fargate_usage": "sca_fargate_usage",
         "sds_scanned_bytes_percentage": "sds_scanned_bytes_percentage",
         "sds_scanned_bytes_usage": "sds_scanned_bytes_usage",
-        "serverless_apps_apm_percentage": "serverless_apps_apm_percentage",
-        "serverless_apps_apm_usage": "serverless_apps_apm_usage",
         "serverless_apps_percentage": "serverless_apps_percentage",
         "serverless_apps_usage": "serverless_apps_usage",
         "siem_analyzed_logs_add_on_percentage": "siem_analyzed_logs_add_on_percentage",
@@ -500,8 +496,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         sca_fargate_usage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_percentage: Union[float, UnsetType] = unset,
         sds_scanned_bytes_usage: Union[float, UnsetType] = unset,
-        serverless_apps_apm_percentage: Union[float, UnsetType] = unset,
-        serverless_apps_apm_usage: Union[float, UnsetType] = unset,
         serverless_apps_percentage: Union[float, UnsetType] = unset,
         serverless_apps_usage: Union[float, UnsetType] = unset,
         siem_analyzed_logs_add_on_percentage: Union[float, UnsetType] = unset,
@@ -965,12 +959,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param sds_scanned_bytes_usage: The total Sensitive Data Scanner usage by tag(s).
         :type sds_scanned_bytes_usage: float, optional
 
-        :param serverless_apps_apm_percentage: The percentage of Serverless Apps APM usage by tag(s).
-        :type serverless_apps_apm_percentage: float, optional
-
-        :param serverless_apps_apm_usage: The total Serverless Apps APM usage by tag(s).
-        :type serverless_apps_apm_usage: float, optional
-
         :param serverless_apps_percentage: The percentage of Serverless Apps usage by tag(s).
         :type serverless_apps_percentage: float, optional
 
@@ -1311,10 +1299,6 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["sds_scanned_bytes_percentage"] = sds_scanned_bytes_percentage
         if sds_scanned_bytes_usage is not unset:
             kwargs["sds_scanned_bytes_usage"] = sds_scanned_bytes_usage
-        if serverless_apps_apm_percentage is not unset:
-            kwargs["serverless_apps_apm_percentage"] = serverless_apps_apm_percentage
-        if serverless_apps_apm_usage is not unset:
-            kwargs["serverless_apps_apm_usage"] = serverless_apps_apm_usage
         if serverless_apps_percentage is not unset:
             kwargs["serverless_apps_percentage"] = serverless_apps_percentage
         if serverless_apps_usage is not unset:
