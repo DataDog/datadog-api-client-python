@@ -14298,10 +14298,136 @@ datadog\_api\_client.v2.model.incident\_user\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_attributes\_create\_request module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_attributes_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_attributes\_response module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_attributes\_update\_request module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_attributes_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_category module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_collected module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_collected
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_create\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_create\_relationships module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_create_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_create\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_field\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_field_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_list\_meta module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_list_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_list\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_metadata module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_relationships module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_response\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_user\_defined\_field\_type module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_user_defined_field_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_update\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_update\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_field\_valid\_value module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_field_valid_value
    :members:
    :show-inheritance:
 

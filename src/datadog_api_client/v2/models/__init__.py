@@ -2746,7 +2746,33 @@ from datadog_api_client.v2.model.incident_update_relationships import IncidentUp
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
 from datadog_api_client.v2.model.incident_user_attributes import IncidentUserAttributes
 from datadog_api_client.v2.model.incident_user_data import IncidentUserData
+from datadog_api_client.v2.model.incident_user_defined_field_attributes_create_request import (
+    IncidentUserDefinedFieldAttributesCreateRequest,
+)
+from datadog_api_client.v2.model.incident_user_defined_field_attributes_response import (
+    IncidentUserDefinedFieldAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_user_defined_field_attributes_update_request import (
+    IncidentUserDefinedFieldAttributesUpdateRequest,
+)
+from datadog_api_client.v2.model.incident_user_defined_field_category import IncidentUserDefinedFieldCategory
+from datadog_api_client.v2.model.incident_user_defined_field_collected import IncidentUserDefinedFieldCollected
+from datadog_api_client.v2.model.incident_user_defined_field_create_data import IncidentUserDefinedFieldCreateData
+from datadog_api_client.v2.model.incident_user_defined_field_create_relationships import (
+    IncidentUserDefinedFieldCreateRelationships,
+)
+from datadog_api_client.v2.model.incident_user_defined_field_create_request import IncidentUserDefinedFieldCreateRequest
+from datadog_api_client.v2.model.incident_user_defined_field_field_type import IncidentUserDefinedFieldFieldType
+from datadog_api_client.v2.model.incident_user_defined_field_list_meta import IncidentUserDefinedFieldListMeta
+from datadog_api_client.v2.model.incident_user_defined_field_list_response import IncidentUserDefinedFieldListResponse
+from datadog_api_client.v2.model.incident_user_defined_field_metadata import IncidentUserDefinedFieldMetadata
+from datadog_api_client.v2.model.incident_user_defined_field_relationships import IncidentUserDefinedFieldRelationships
+from datadog_api_client.v2.model.incident_user_defined_field_response import IncidentUserDefinedFieldResponse
+from datadog_api_client.v2.model.incident_user_defined_field_response_data import IncidentUserDefinedFieldResponseData
 from datadog_api_client.v2.model.incident_user_defined_field_type import IncidentUserDefinedFieldType
+from datadog_api_client.v2.model.incident_user_defined_field_update_data import IncidentUserDefinedFieldUpdateData
+from datadog_api_client.v2.model.incident_user_defined_field_update_request import IncidentUserDefinedFieldUpdateRequest
+from datadog_api_client.v2.model.incident_user_defined_field_valid_value import IncidentUserDefinedFieldValidValue
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.include_type import IncludeType
 from datadog_api_client.v2.model.input_schema import InputSchema
@@ -8802,7 +8828,25 @@ __all__ = [
     "IncidentUpdateRequest",
     "IncidentUserAttributes",
     "IncidentUserData",
+    "IncidentUserDefinedFieldAttributesCreateRequest",
+    "IncidentUserDefinedFieldAttributesResponse",
+    "IncidentUserDefinedFieldAttributesUpdateRequest",
+    "IncidentUserDefinedFieldCategory",
+    "IncidentUserDefinedFieldCollected",
+    "IncidentUserDefinedFieldCreateData",
+    "IncidentUserDefinedFieldCreateRelationships",
+    "IncidentUserDefinedFieldCreateRequest",
+    "IncidentUserDefinedFieldFieldType",
+    "IncidentUserDefinedFieldListMeta",
+    "IncidentUserDefinedFieldListResponse",
+    "IncidentUserDefinedFieldMetadata",
+    "IncidentUserDefinedFieldRelationships",
+    "IncidentUserDefinedFieldResponse",
+    "IncidentUserDefinedFieldResponseData",
     "IncidentUserDefinedFieldType",
+    "IncidentUserDefinedFieldUpdateData",
+    "IncidentUserDefinedFieldUpdateRequest",
+    "IncidentUserDefinedFieldValidValue",
     "IncidentsResponse",
     "IncludeType",
     "InputSchema",

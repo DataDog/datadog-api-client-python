@@ -44,6 +44,10 @@ from datadog_api_client.v2.model.incident_type_list_response import IncidentType
 from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
 from datadog_api_client.v2.model.incident_type_create_request import IncidentTypeCreateRequest
 from datadog_api_client.v2.model.incident_type_patch_request import IncidentTypePatchRequest
+from datadog_api_client.v2.model.incident_user_defined_field_list_response import IncidentUserDefinedFieldListResponse
+from datadog_api_client.v2.model.incident_user_defined_field_response import IncidentUserDefinedFieldResponse
+from datadog_api_client.v2.model.incident_user_defined_field_create_request import IncidentUserDefinedFieldCreateRequest
+from datadog_api_client.v2.model.incident_user_defined_field_update_request import IncidentUserDefinedFieldUpdateRequest
 from datadog_api_client.v2.model.incident_import_response import IncidentImportResponse
 from datadog_api_client.v2.model.incident_import_related_object import IncidentImportRelatedObject
 from datadog_api_client.v2.model.incident_import_request import IncidentImportRequest
@@ -352,6 +356,31 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._create_incident_user_defined_field_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedFieldResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-fields",
+                "operation_id": "create_incident_user_defined_field",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentUserDefinedFieldCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_global_incident_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -609,6 +638,29 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_incident_user_defined_field_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-fields/{field_id}",
+                "operation_id": "delete_incident_user_defined_field",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "field_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "field_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_global_incident_settings_endpoint = _Endpoint(
             settings={
                 "response_type": (GlobalIncidentSettingsResponse,),
@@ -806,6 +858,34 @@ class IncidentsApi:
                     "openapi_types": (str,),
                     "attribute": "incident_type_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_user_defined_field_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedFieldResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-fields/{field_id}",
+                "operation_id": "get_incident_user_defined_field",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "field_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "field_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1081,6 +1161,55 @@ class IncidentsApi:
                 "include_deleted": {
                     "openapi_types": (bool,),
                     "attribute": "include_deleted",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_user_defined_fields_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedFieldListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-fields",
+                "operation_id": "list_incident_user_defined_fields",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "include_deleted": {
+                    "openapi_types": (bool,),
+                    "attribute": "include-deleted",
+                    "location": "query",
+                },
+                "filter_incident_type": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[incident-type]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
                     "location": "query",
                 },
             },
@@ -1425,6 +1554,37 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_user_defined_field_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedFieldResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-fields/{field_id}",
+                "operation_id": "update_incident_user_defined_field",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "field_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "field_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentUserDefinedFieldUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_global_incident_handle(
         self,
         body: IncidentHandleRequest,
@@ -1656,6 +1816,30 @@ class IncidentsApi:
 
         return self._create_incident_type_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_user_defined_field(
+        self,
+        body: IncidentUserDefinedFieldCreateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedFieldResponse:
+        """Create an incident user-defined field.
+
+        Create an incident user-defined field.
+
+        :param body: Incident user-defined field payload.
+        :type body: IncidentUserDefinedFieldCreateRequest
+        :param include: Comma-separated list of related resources to include. Supported values are "last_modified_by_user", "created_by_user", and "incident_type".
+        :type include: str, optional
+        :rtype: IncidentUserDefinedFieldResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
+
     def delete_global_incident_handle(
         self,
     ) -> None:
@@ -1853,6 +2037,23 @@ class IncidentsApi:
 
         return self._delete_incident_type_endpoint.call_with_http_info(**kwargs)
 
+    def delete_incident_user_defined_field(
+        self,
+        field_id: str,
+    ) -> None:
+        """Delete an incident user-defined field.
+
+        Delete an incident user-defined field.
+
+        :param field_id: The ID of the incident user-defined field.
+        :type field_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["field_id"] = field_id
+
+        return self._delete_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
+
     def get_global_incident_settings(
         self,
     ) -> GlobalIncidentSettingsResponse:
@@ -2014,6 +2215,30 @@ class IncidentsApi:
         kwargs["incident_type_id"] = incident_type_id
 
         return self._get_incident_type_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_user_defined_field(
+        self,
+        field_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedFieldResponse:
+        """Get an incident user-defined field.
+
+        Get details of an incident user-defined field.
+
+        :param field_id: The ID of the incident user-defined field.
+        :type field_id: str
+        :param include: Comma-separated list of related resources to include. Supported values are "last_modified_by_user", "created_by_user", and "incident_type".
+        :type include: str, optional
+        :rtype: IncidentUserDefinedFieldResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["field_id"] = field_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
 
     def import_incident(
         self,
@@ -2296,6 +2521,49 @@ class IncidentsApi:
             kwargs["include_deleted"] = include_deleted
 
         return self._list_incident_types_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_user_defined_fields(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        include_deleted: Union[bool, UnsetType] = unset,
+        filter_incident_type: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedFieldListResponse:
+        """Get a list of incident user-defined fields.
+
+        Get a list of all incident user-defined fields.
+
+        :param page_size: The number of results to return per page. Must be between 0 and 1000.
+        :type page_size: int, optional
+        :param page_number: The page number to retrieve, starting at 0.
+        :type page_number: int, optional
+        :param include_deleted: When true, include soft-deleted fields in the response.
+        :type include_deleted: bool, optional
+        :param filter_incident_type: Filter results to fields associated with the given incident type UUID.
+        :type filter_incident_type: str, optional
+        :param include: Comma-separated list of related resources to include. Supported values are "last_modified_by_user", "created_by_user", and "incident_type".
+        :type include: str, optional
+        :rtype: IncidentUserDefinedFieldListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if include_deleted is not unset:
+            kwargs["include_deleted"] = include_deleted
+
+        if filter_incident_type is not unset:
+            kwargs["filter_incident_type"] = filter_incident_type
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_incident_user_defined_fields_endpoint.call_with_http_info(**kwargs)
 
     def search_incidents(
         self,
@@ -2648,3 +2916,32 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_type_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_user_defined_field(
+        self,
+        field_id: str,
+        body: IncidentUserDefinedFieldUpdateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedFieldResponse:
+        """Update an incident user-defined field.
+
+        Update an incident user-defined field.
+
+        :param field_id: The ID of the incident user-defined field.
+        :type field_id: str
+        :param body: Incident user-defined field update payload.
+        :type body: IncidentUserDefinedFieldUpdateRequest
+        :param include: Comma-separated list of related resources to include. Supported values are "last_modified_by_user", "created_by_user", and "incident_type".
+        :type include: str, optional
+        :rtype: IncidentUserDefinedFieldResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["field_id"] = field_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
