@@ -27,14 +27,11 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
-      - name: Set pip cooldown (2 days)
-        run: echo "PIP_UPLOADED_PRIOR_TO=$(date -u -d '2 days ago' +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_ENV
-
       - name: Upgrade Python packaging tools
-        run: pip install --disable-pip-version-check --uploaded-prior-to "$PIP_UPLOADED_PRIOR_TO" --upgrade pip setuptools wheel
+        run: pip install --disable-pip-version-check --upgrade pip setuptools wheel
 
       - name: Install tox
-        run: pip install --uploaded-prior-to "$PIP_UPLOADED_PRIOR_TO" tox
+        run: pip install tox
 
       - name: set SPHINX_VERSION
         run: |

@@ -28,9 +28,6 @@ jobs:
           python-version: "3.11"
           cache: "pip"
 
-      - name: Set pip cooldown (2 days)
-        run: echo "PIP_UPLOADED_PRIOR_TO=$(date -u -d '2 days ago' +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_ENV
-
       - name: Releasing tag ${{ github.event.release.tag_name }}
         run: |
           # Get tag name from event
@@ -41,7 +38,7 @@ jobs:
           fi
 
           # Install pypa/build
-          python -m pip install --uploaded-prior-to "$PIP_UPLOADED_PRIOR_TO" build --user
+          python -m pip install build --user
 
           # Build a binary wheel and a source tarball
           python -m build --sdist --wheel --outdir dist/ .
