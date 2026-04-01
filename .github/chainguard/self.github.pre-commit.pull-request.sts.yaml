@@ -1,0 +1,15 @@
+# Policy for: .github/workflows/reusable-pre-commit.yml in DataDog/datadog-api-client-python
+# Grants contents:write to push pre-commit fixes back to the PR branch.
+# WARNING: contents:write is granted on pull_request events (non-protected ref).
+# This is intentional to allow automated pre-commit fixes on PRs.
+issuer: https://token.actions.githubusercontent.com
+subject: repo:DataDog/datadog-api-client-python:pull_request
+
+claim_pattern:
+  event_name: pull_request
+  job_workflow_ref: DataDog/datadog-api-client-python/\.github/workflows/reusable-pre-commit\.yml@refs/pull/[0-9]+/merge
+  ref: refs/pull/[0-9]+/merge
+  repository: DataDog/datadog-api-client-python
+
+permissions:
+  contents: write

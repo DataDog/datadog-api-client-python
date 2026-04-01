@@ -13,11 +13,6 @@ on:
         required: false
         type: boolean
         default: true
-    secrets:
-      PIPELINE_GITHUB_APP_ID:
-        required: false
-      PIPELINE_GITHUB_APP_PRIVATE_KEY:
-        required: false
 
 env:
   GIT_AUTHOR_EMAIL: "packages@datadoghq.com"
@@ -26,20 +21,23 @@ env:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      - name: Get GitHub App token
-        id: get_token
+      - name: Get dd-octo-sts token
+        id: octo-sts
         if: inputs.enable-commit-changes
-        uses: actions/create-github-app-token@v1
+        uses: DataDog/dd-octo-sts-action@96a25462dbcb10ebf0bfd6e2ccc917d2ab235b9a # v1.0.4
         with:
-          app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-          private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+          scope: DataDog/datadog-api-client-python
+          policy: self.github.pre-commit.pull-request
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           repository: DataDog/datadog-api-client-python
           ref: ${{ inputs.target-branch || github.event.pull_request.head.sha || github.ref }}
-          token: ${{ inputs.enable-commit-changes && steps.get_token.outputs.token || github.token }}
+          token: ${{ inputs.enable-commit-changes && steps.octo-sts.outputs.token || github.token }}
       - uses: actions/setup-python@v4
         with:
           python-version: '3.11'
