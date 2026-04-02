@@ -23,11 +23,6 @@ on:
         required: false
         type: string
         default: '[{"platform": "macos-latest", "python-version": "3.8"}, {"platform": "ubuntu-latest", "python-version": "3.8"}, {"platform": "ubuntu-22.04", "python-version": "3.12"}]'
-    secrets:
-      PIPELINE_GITHUB_APP_ID:
-        required: false
-      PIPELINE_GITHUB_APP_PRIVATE_KEY:
-        required: false
 
 jobs:
   test:

@@ -26,11 +26,11 @@ jobs:
        !contains(github.event.pull_request.head.ref, 'datadog-api-spec/test/')) ||
       github.event_name == 'schedule'
     uses: ./.github/workflows/reusable-pre-commit.yml
+    permissions:
+      id-token: write
+      contents: read
     with:
       enable-commit-changes: true
-    secrets:
-      PIPELINE_GITHUB_APP_ID: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-      PIPELINE_GITHUB_APP_PRIVATE_KEY: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
 
   test:
     if: >
@@ -43,9 +43,6 @@ jobs:
       python-versions: '["3.8", "3.12"]'
       platforms: '["ubuntu-22.04", "ubuntu-latest", "macos-latest"]'
       matrix-exclude: '[{"platform": "macos-latest", "python-version": "3.8"}, {"platform": "ubuntu-latest", "python-version": "3.8"}, {"platform": "ubuntu-22.04", "python-version": "3.12"}]'
-    secrets:
-      PIPELINE_GITHUB_APP_ID: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-      PIPELINE_GITHUB_APP_PRIVATE_KEY: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
 
   examples:
     if: >
@@ -60,23 +57,23 @@ jobs:
 
   report:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     if: always() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/')
     needs:
       - test
       - examples
     steps:
-      - name: Get GitHub App token
-        if: github.event_name == 'pull_request'
-        id: get_token
-        uses: actions/create-github-app-token@v1
+      - name: Get dd-octo-sts token
+        id: octo-sts
+        uses: DataDog/dd-octo-sts-action@96a25462dbcb10ebf0bfd6e2ccc917d2ab235b9a # v1.0.4
         with:
-          app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-          private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
-          repositories: datadog-api-spec
+          scope: DataDog/datadog-api-spec
+          policy: datadog-api-client-python.github.post-status-check.pull-request
       - name: Post status check
         uses: DataDog/github-actions/post-status-check@v2
         with:
-          github-token: ${{ steps.get_token.outputs.token }}
+          github-token: ${{ steps.octo-sts.outputs.token }}
           repo: datadog-api-spec
           status: ${{ (needs.test.result == 'cancelled' || needs.examples.result == 'cancelled') && 'pending' || (needs.test.result == 'success' && needs.examples.result == 'success') && 'success' || 'failure' }}
           context: master/unit
