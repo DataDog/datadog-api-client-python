@@ -5858,6 +5858,18 @@
       "type": "idempotent"
     }
   },
+  "PublishStatusPage": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UnpublishStatusPage": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetApiMultistepSubtests": {
     "tag": "Synthetics",
     "undo": {
