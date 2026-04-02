@@ -533,6 +533,52 @@ class StatusPagesApi:
             api_client=api_client,
         )
 
+        self._publish_status_page_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/publish",
+                "operation_id": "publish_status_page",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._unpublish_status_page_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/unpublish",
+                "operation_id": "unpublish_status_page",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._update_component_endpoint = _Endpoint(
             settings={
                 "response_type": (StatusPagesComponent,),
@@ -794,7 +840,7 @@ class StatusPagesApi:
     ) -> StatusPage:
         """Create status page.
 
-        Creates a new status page.
+        Creates a new status page. **Note** : Publishing a status page on creation via the ``enabled`` property will be deprecated. Use the dedicated `publish <#publish-status-page>`_ status page endpoint after creation instead.
 
         :type body: CreateStatusPageRequest
         :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user.
@@ -1134,6 +1180,40 @@ class StatusPagesApi:
 
         return self._list_status_pages_endpoint.call_with_http_info(**kwargs)
 
+    def publish_status_page(
+        self,
+        page_id: UUID,
+    ) -> None:
+        """Publish status page.
+
+        Publishes a status page. For pages of type ``public`` , makes the status page available on the public internet and requires the ``status_pages_public_page_publish`` permission. For pages of type ``internal`` , makes the status page available under the ``status-pages/$domain_prefix/view`` route within the Datadog organization and requires the ``status_pages_internal_page_publish`` permission. The ``status_pages_settings_write`` permission is temporarily honored as we migrate publishing functionality from the update status page endpoint to the publish status page endpoint.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        return self._publish_status_page_endpoint.call_with_http_info(**kwargs)
+
+    def unpublish_status_page(
+        self,
+        page_id: UUID,
+    ) -> None:
+        """Unpublish status page.
+
+        Unpublishes a status page. For pages of type ``public`` , removes the status page from the public internet and requires the ``status_pages_public_page_publish`` permission. For pages of type ``internal`` , removes the ``status-pages/$domain_prefix/view`` route from the Datadog organization and requires the ``status_pages_internal_page_publish`` permission. The ``status_pages_settings_write`` permission is temporarily honored as we migrate unpublishing functionality from the update status page endpoint to the unpublish status page endpoint.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        return self._unpublish_status_page_endpoint.call_with_http_info(**kwargs)
+
     def update_component(
         self,
         page_id: UUID,
@@ -1255,7 +1335,7 @@ class StatusPagesApi:
     ) -> StatusPage:
         """Update status page.
 
-        Updates an existing status page's attributes.
+        Updates an existing status page's attributes. **Note** : Publishing and unpublishing via the ``enabled`` property will be deprecated on this endpoint. Use the dedicated `publish <#publish-status-page>`_ and `unpublish <#unpublish-status-page>`_ status page endpoints instead.
 
         :param page_id: The ID of the status page.
         :type page_id: UUID

@@ -142,6 +142,14 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/incident-app
+  Scenario: Publish status page returns "No Content" response
+    Given there is a valid "unpublished_status_page" in the system
+    And new "PublishStatusPage" request
+    And request contains "page_id" parameter from "unpublished_status_page.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
   @generated @skip @team:DataDog/incident-app
   Scenario: Schedule maintenance returns "Created" response
     Given new "CreateMaintenance" request
@@ -149,6 +157,14 @@ Feature: Status Pages
     And body with value {"data": {"attributes": {"completed_date": "2026-02-18T19:51:13.332360075Z", "completed_description": "We have completed maintenance on the API to improve performance.", "components_affected": [{"id": "1234abcd-12ab-34cd-56ef-123456abcdef", "status": "operational"}], "in_progress_description": "We are currently performing maintenance on the API to improve performance.", "scheduled_description": "We will be performing maintenance on the API to improve performance.", "start_date": "2026-02-18T19:21:13.332360075Z", "title": "API Maintenance"}, "type": "maintenances"}}
     When the request is sent
     Then the response status is 201 Created
+
+  @team:DataDog/incident-app
+  Scenario: Unpublish status page returns "No Content" response
+    Given there is a valid "status_page" in the system
+    And new "UnpublishStatusPage" request
+    And request contains "page_id" parameter from "status_page.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @team:DataDog/incident-app
   Scenario: Update component returns "OK" response
