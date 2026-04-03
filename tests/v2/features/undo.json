@@ -1841,6 +1841,30 @@
       "type": "idempotent"
     }
   },
+  "PauseExposureSchedule": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ResumeExposureSchedule": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "StartExposureSchedule": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "StopExposureSchedule": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetFeatureFlag": {
     "tag": "Feature Flags",
     "undo": {
@@ -1864,6 +1888,18 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "CreateAllocationsForFeatureFlagInEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAllocationsForFeatureFlagInEnvironment": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "DisableFeatureFlagEnvironment": {

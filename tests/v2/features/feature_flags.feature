@@ -53,6 +53,17 @@ Feature: Feature Flags
     And the response "data.attributes.name" is equal to "Test Feature Flag {{ unique }}"
     And the response "data.attributes.value_type" is equal to "BOOLEAN"
 
+  @team:DataDog/feature-flags
+  Scenario: Create allocation for a flag in an environment returns "Created" response
+    Given there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And new "CreateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "feature_flag.data.id"
+    And request contains "environment_id" parameter from "environment.data.id"
+    And body with value {"data":{"type":"allocations","attributes":{"name":"New targeting rule {{ unique }}","key":"new-targeting-rule-{{ unique_lower }}","targeting_rules":[],"variant_weights":[{"variant_id":"{{ feature_flag.data.attributes.variants[0].id }}","value":100}],"guardrail_metrics":[],"type":"CANARY"}}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @skip @team:DataDog/feature-flags
   Scenario: Create an environment returns "Bad Request" response
     Given new "CreateFeatureFlagsEnvironment" request
@@ -73,6 +84,51 @@ Feature: Feature Flags
     And body with value {"data": {"type": "environments", "attributes": {"name": "Test Environment {{ unique }}", "queries": ["test-{{ unique }}", "env-{{ unique }}"]}}}
     When the request is sent
     Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create targeting rules for a flag env returns "Accepted - Approval required for this change" response
+    Given new "CreateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
+    When the request is sent
+    Then the response status is 202 Accepted - Approval required for this change
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create targeting rules for a flag env returns "Bad Request" response
+    Given new "CreateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create targeting rules for a flag env returns "Conflict" response
+    Given new "CreateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create targeting rules for a flag env returns "Created" response
+    Given new "CreateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create targeting rules for a flag env returns "Not Found" response
+    Given new "CreateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @skip @team:DataDog/feature-flags
   Scenario: Delete an environment returns "No Content" response
@@ -190,6 +246,118 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Pause a progressive rollout returns "Bad Request" response
+    Given new "PauseExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Pause a progressive rollout returns "Conflict" response
+    Given new "PauseExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Pause a progressive rollout returns "Not Found" response
+    Given new "PauseExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Pause a progressive rollout returns "OK" response
+    Given new "PauseExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Resume a progressive rollout returns "Bad Request" response
+    Given new "ResumeExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Resume a progressive rollout returns "Conflict" response
+    Given new "ResumeExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Resume a progressive rollout returns "Not Found" response
+    Given new "ResumeExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Resume a progressive rollout returns "OK" response
+    Given new "ResumeExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Start a progressive rollout returns "Bad Request" response
+    Given new "StartExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Start a progressive rollout returns "Conflict" response
+    Given new "StartExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Start a progressive rollout returns "Not Found" response
+    Given new "StartExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Start a progressive rollout returns "OK" response
+    Given new "StartExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Stop a progressive rollout returns "Bad Request" response
+    Given new "StopExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Stop a progressive rollout returns "Conflict" response
+    Given new "StopExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Stop a progressive rollout returns "Not Found" response
+    Given new "StopExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Stop a progressive rollout returns "OK" response
+    Given new "StopExposureSchedule" request
+    And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/feature-flags
   Scenario: Unarchive a feature flag returns "Bad Request" response
     Given new "UnarchiveFeatureFlag" request
@@ -261,5 +429,61 @@ Feature: Feature Flags
     And new "UpdateFeatureFlagsEnvironment" request
     And request contains "environment_id" parameter from "environment.data.id"
     And body with value {"data": {"type": "environments", "attributes": {"name": "Updated Test Environment {{ unique }}", "queries": ["updated-{{ unique }}", "live-{{ unique }}"]}}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/feature-flags
+  Scenario: Update targeting rules for a flag in an environment returns "OK" response
+    Given there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And new "UpdateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "feature_flag.data.id"
+    And request contains "environment_id" parameter from "environment.data.id"
+    And body with value {"data":[{"type":"allocations","attributes":{"key":"overwrite-allocation-{{ unique_lower }}","name":"New targeting rule {{ unique }}","targeting_rules":[],"variant_weights":[{"variant_id":"{{ feature_flag.data.attributes.variants[0].id }}","value":100}],"exposure_schedule":{"rollout_options":{"strategy":"UNIFORM_INTERVALS","autostart":false,"selection_interval_ms":86400000},"rollout_steps":[{"exposure_ratio":0.05,"interval_ms":null,"is_pause_record":false,"grouped_step_index":0},{"exposure_ratio":0.25,"interval_ms":null,"is_pause_record":false,"grouped_step_index":1},{"exposure_ratio":1,"interval_ms":null,"is_pause_record":false,"grouped_step_index":2}]},"guardrail_metrics":[],"type":"CANARY"}}]}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update targeting rules for a flag returns "Accepted - Approval required for this change" response
+    Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
+    When the request is sent
+    Then the response status is 202 Accepted - Approval required for this change
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update targeting rules for a flag returns "Bad Request" response
+    Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update targeting rules for a flag returns "Conflict" response
+    Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update targeting rules for a flag returns "Not Found" response
+    Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update targeting rules for a flag returns "OK" response
+    Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
     When the request is sent
     Then the response status is 200 OK

@@ -19,7 +19,12 @@ from datadog_api_client.v2.model.list_environments_response import ListEnvironme
 from datadog_api_client.v2.model.environment_response import EnvironmentResponse
 from datadog_api_client.v2.model.create_environment_request import CreateEnvironmentRequest
 from datadog_api_client.v2.model.update_environment_request import UpdateEnvironmentRequest
+from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
 from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
+from datadog_api_client.v2.model.allocation_response import AllocationResponse
+from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
+from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
+from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
 
 
 class FeatureFlagsApi:
@@ -52,6 +57,38 @@ class FeatureFlagsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._create_allocations_for_feature_flag_in_environment_endpoint = _Endpoint(
+            settings={
+                "response_type": (AllocationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/allocations",
+                "operation_id": "create_allocations_for_feature_flag_in_environment",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "environment_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "environment_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateAllocationsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -310,6 +347,98 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._pause_exposure_schedule_endpoint = _Endpoint(
+            settings={
+                "response_type": (AllocationExposureScheduleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/pause",
+                "operation_id": "pause_exposure_schedule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "exposure_schedule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "exposure_schedule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._resume_exposure_schedule_endpoint = _Endpoint(
+            settings={
+                "response_type": (AllocationExposureScheduleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/resume",
+                "operation_id": "resume_exposure_schedule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "exposure_schedule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "exposure_schedule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._start_exposure_schedule_endpoint = _Endpoint(
+            settings={
+                "response_type": (AllocationExposureScheduleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/start",
+                "operation_id": "start_exposure_schedule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "exposure_schedule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "exposure_schedule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._stop_exposure_schedule_endpoint = _Endpoint(
+            settings={
+                "response_type": (AllocationExposureScheduleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/stop",
+                "operation_id": "stop_exposure_schedule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "exposure_schedule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "exposure_schedule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._unarchive_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (FeatureFlagResponse,),
@@ -330,6 +459,38 @@ class FeatureFlagsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._update_allocations_for_feature_flag_in_environment_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListAllocationsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/allocations",
+                "operation_id": "update_allocations_for_feature_flag_in_environment",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "environment_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "environment_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (OverwriteAllocationsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -402,6 +563,32 @@ class FeatureFlagsApi:
         kwargs["feature_flag_id"] = feature_flag_id
 
         return self._archive_feature_flag_endpoint.call_with_http_info(**kwargs)
+
+    def create_allocations_for_feature_flag_in_environment(
+        self,
+        feature_flag_id: UUID,
+        environment_id: UUID,
+        body: CreateAllocationsRequest,
+    ) -> AllocationResponse:
+        """Create targeting rules for a flag env.
+
+        Creates a new targeting rule (allocation) for a specific feature flag in a specific environment.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :param environment_id: The ID of the environment.
+        :type environment_id: UUID
+        :type body: CreateAllocationsRequest
+        :rtype: AllocationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["environment_id"] = environment_id
+
+        kwargs["body"] = body
+
+        return self._create_allocations_for_feature_flag_in_environment_endpoint.call_with_http_info(**kwargs)
 
     def create_feature_flag(
         self,
@@ -607,6 +794,74 @@ class FeatureFlagsApi:
 
         return self._list_feature_flags_environments_endpoint.call_with_http_info(**kwargs)
 
+    def pause_exposure_schedule(
+        self,
+        exposure_schedule_id: UUID,
+    ) -> AllocationExposureScheduleResponse:
+        """Pause a progressive rollout.
+
+        Pauses a progressive rollout while preserving rollout state.
+
+        :param exposure_schedule_id: The ID of the exposure schedule.
+        :type exposure_schedule_id: UUID
+        :rtype: AllocationExposureScheduleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["exposure_schedule_id"] = exposure_schedule_id
+
+        return self._pause_exposure_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def resume_exposure_schedule(
+        self,
+        exposure_schedule_id: UUID,
+    ) -> AllocationExposureScheduleResponse:
+        """Resume a progressive rollout.
+
+        Resumes progression for a previously paused progressive rollout.
+
+        :param exposure_schedule_id: The ID of the exposure schedule.
+        :type exposure_schedule_id: UUID
+        :rtype: AllocationExposureScheduleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["exposure_schedule_id"] = exposure_schedule_id
+
+        return self._resume_exposure_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def start_exposure_schedule(
+        self,
+        exposure_schedule_id: UUID,
+    ) -> AllocationExposureScheduleResponse:
+        """Start a progressive rollout.
+
+        Starts a progressive rollout and begins progression.
+
+        :param exposure_schedule_id: The ID of the exposure schedule.
+        :type exposure_schedule_id: UUID
+        :rtype: AllocationExposureScheduleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["exposure_schedule_id"] = exposure_schedule_id
+
+        return self._start_exposure_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def stop_exposure_schedule(
+        self,
+        exposure_schedule_id: UUID,
+    ) -> AllocationExposureScheduleResponse:
+        """Stop a progressive rollout.
+
+        Stops a progressive rollout and marks it as aborted.
+
+        :param exposure_schedule_id: The ID of the exposure schedule.
+        :type exposure_schedule_id: UUID
+        :rtype: AllocationExposureScheduleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["exposure_schedule_id"] = exposure_schedule_id
+
+        return self._stop_exposure_schedule_endpoint.call_with_http_info(**kwargs)
+
     def unarchive_feature_flag(
         self,
         feature_flag_id: UUID,
@@ -624,6 +879,33 @@ class FeatureFlagsApi:
         kwargs["feature_flag_id"] = feature_flag_id
 
         return self._unarchive_feature_flag_endpoint.call_with_http_info(**kwargs)
+
+    def update_allocations_for_feature_flag_in_environment(
+        self,
+        feature_flag_id: UUID,
+        environment_id: UUID,
+        body: OverwriteAllocationsRequest,
+    ) -> ListAllocationsResponse:
+        """Update targeting rules for a flag.
+
+        Updates targeting rules (allocations) for a specific feature flag in a specific environment.
+        This operation replaces the existing allocation set with the request payload.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :param environment_id: The ID of the environment.
+        :type environment_id: UUID
+        :type body: OverwriteAllocationsRequest
+        :rtype: ListAllocationsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["environment_id"] = environment_id
+
+        kwargs["body"] = body
+
+        return self._update_allocations_for_feature_flag_in_environment_endpoint.call_with_http_info(**kwargs)
 
     def update_feature_flag(
         self,

@@ -57,6 +57,7 @@ class FeatureFlagEnvironment(ModelNormal):
             "default_variant_id": (str, none_type),
             "environment_id": (UUID,),
             "environment_name": (str,),
+            "environment_queries": ([str],),
             "is_production": (bool,),
             "override_allocation_key": (str,),
             "override_variant_id": (str, none_type),
@@ -73,6 +74,7 @@ class FeatureFlagEnvironment(ModelNormal):
         "default_variant_id": "default_variant_id",
         "environment_id": "environment_id",
         "environment_name": "environment_name",
+        "environment_queries": "environment_queries",
         "is_production": "is_production",
         "override_allocation_key": "override_allocation_key",
         "override_variant_id": "override_variant_id",
@@ -91,6 +93,7 @@ class FeatureFlagEnvironment(ModelNormal):
         default_allocation_key: Union[str, UnsetType] = unset,
         default_variant_id: Union[str, none_type, UnsetType] = unset,
         environment_name: Union[str, UnsetType] = unset,
+        environment_queries: Union[List[str], UnsetType] = unset,
         is_production: Union[bool, UnsetType] = unset,
         override_allocation_key: Union[str, UnsetType] = unset,
         override_variant_id: Union[str, none_type, UnsetType] = unset,
@@ -117,6 +120,9 @@ class FeatureFlagEnvironment(ModelNormal):
 
         :param environment_name: The name of the environment.
         :type environment_name: str, optional
+
+        :param environment_queries: Queries that target this environment.
+        :type environment_queries: [str], optional
 
         :param is_production: Indicates whether the environment is production.
         :type is_production: bool, optional
@@ -150,6 +156,8 @@ class FeatureFlagEnvironment(ModelNormal):
             kwargs["default_variant_id"] = default_variant_id
         if environment_name is not unset:
             kwargs["environment_name"] = environment_name
+        if environment_queries is not unset:
+            kwargs["environment_queries"] = environment_queries
         if is_production is not unset:
             kwargs["is_production"] = is_production
         if override_allocation_key is not unset:

@@ -468,6 +468,27 @@
   {
     "parameters": [
       {
+        "name": "feature_flag_id",
+        "source": "feature_flag.data.id"
+      },
+      {
+        "name": "environment_id",
+        "source": "environment.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\"data\":[{\"type\":\"allocations\",\"attributes\":{\"name\":\"Exposure Schedule Allocation {{ unique }}\",\"key\":\"exposure-schedule-allocation-{{ unique_lower }}\",\"type\":\"CANARY\",\"targeting_rules\":[],\"variant_weights\":[{\"variant_id\":\"{{ feature_flag.data.attributes.variants[0].id }}\",\"value\":100}],\"exposure_schedule\":{\"rollout_options\":{\"strategy\":\"UNIFORM_INTERVALS\",\"autostart\":false,\"selection_interval_ms\":86400000},\"rollout_steps\":[{\"exposure_ratio\":0.5,\"interval_ms\":null,\"is_pause_record\":false,\"grouped_step_index\":0},{\"exposure_ratio\":1,\"interval_ms\":null,\"is_pause_record\":false,\"grouped_step_index\":1}]},\"guardrail_metrics\":[]}}]}"
+      }
+    ],
+    "source": "data[0].attributes.exposure_schedule",
+    "step": "there is a valid \"exposure_schedule\" in the system",
+    "key": "exposure_schedule",
+    "tag": "Feature Flags",
+    "operationId": "UpdateAllocationsForFeatureFlagInEnvironment"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
