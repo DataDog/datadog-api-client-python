@@ -44,10 +44,6 @@ on:
         type: boolean
         default: false
     secrets:
-      PIPELINE_GITHUB_APP_ID:
-        required: false
-      PIPELINE_GITHUB_APP_PRIVATE_KEY:
-        required: false
       DD_API_KEY:
         required: true
       DD_CLIENT_API_KEY:
@@ -81,15 +77,17 @@ jobs:
           DD_API_KEY: ${{ secrets.DD_API_KEY }}
           DD_HOSTNAME: "none"
           DD_INSIDE_CI: "true"
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Get GitHub App token
         if: github.event_name == 'pull_request'
         id: get_token
-        uses: actions/create-github-app-token@v1
+        uses: DataDog/dd-octo-sts-action@96a25462dbcb10ebf0bfd6e2ccc917d2ab235b9a # v1.0.4
         with:
-          app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-          private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
-          repositories: ${{ inputs.target-repo || 'datadog-api-spec' }}
+          scope: DataDog/datadog-api-spec
+          policy: datadog-api-client-python.reusable-integration-test.post-status
       - name: Checkout code
         uses: actions/checkout@v3
         with:

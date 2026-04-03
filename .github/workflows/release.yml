@@ -20,13 +20,15 @@ jobs:
     name: Create release
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'release/')
+    permissions:
+      id-token: write
     steps:
       - name: Get GitHub App token
         id: get_token
-        uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 #v1.11.1
+        uses: DataDog/dd-octo-sts-action@96a25462dbcb10ebf0bfd6e2ccc917d2ab235b9a # v1.0.4
         with:
-          app-id: ${{ secrets.PIPELINE_GITHUB_APP_ID }}
-          private-key: ${{ secrets.PIPELINE_GITHUB_APP_PRIVATE_KEY }}
+          scope: DataDog/datadog-api-client-python
+          policy: self.github.release.master
 
       - name: Checkout ${{ github.event.pull_request.base.ref }}
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
