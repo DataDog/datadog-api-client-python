@@ -13,7 +13,7 @@ Feature: CSM Threats
     And a valid "appKeyAuth" key in the system
     And an instance of "CSMThreats" API
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule (US1-FED) returns "Bad Request" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCloudWorkloadSecurityAgentRule" request
@@ -21,7 +21,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule (US1-FED) returns "Conflict" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCloudWorkloadSecurityAgentRule" request
@@ -29,7 +29,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule (US1-FED) returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCloudWorkloadSecurityAgentRule" request
@@ -37,7 +37,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule returns "Bad Request" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
@@ -45,7 +45,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule returns "Conflict" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
@@ -53,7 +53,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
@@ -61,7 +61,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule with set action returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
@@ -69,7 +69,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection agent rule with set action with expression returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "CreateCSMThreatsAgentRule" request
@@ -77,35 +77,35 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection policy returns "Bad Request" response
     Given new "CreateCSMThreatsAgentPolicy" request
     And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "hostTagsLists": [], "name": "test"}, "type": "policy"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection policy returns "Conflict" response
     Given new "CreateCSMThreatsAgentPolicy" request
     And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "name": "my_agent_policy"}, "type": "policy"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Create a Workload Protection policy returns "OK" response
     Given new "CreateCSMThreatsAgentPolicy" request
     And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy_2"}, "type": "policy"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cws-backend
   Scenario: Delete a Workload Protection agent rule (US1-FED) returns "Not Found" response
     Given new "DeleteCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter with value "non-existent-rule-id"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cws-backend
   Scenario: Delete a Workload Protection agent rule (US1-FED) returns "OK" response
     Given there is a valid "agent_rule" in the system
     And new "DeleteCloudWorkloadSecurityAgentRule" request
@@ -113,14 +113,14 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Delete a Workload Protection agent rule returns "Not Found" response
     Given new "DeleteCSMThreatsAgentRule" request
     And request contains "agent_rule_id" parameter with value "non-existent-rule-id"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Delete a Workload Protection agent rule returns "OK" response
     Given there is a valid "policy_rc" in the system
     And there is a valid "agent_rule_rc" in the system
@@ -130,14 +130,14 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Delete a Workload Protection policy returns "Not Found" response
     Given new "DeleteCSMThreatsAgentPolicy" request
     And request contains "policy_id" parameter with value "non-existent-policy-id"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Delete a Workload Protection policy returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "DeleteCSMThreatsAgentPolicy" request
@@ -145,26 +145,26 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Download the Workload Protection policy (US1-FED) returns "OK" response
     Given new "DownloadCloudWorkloadPolicyFile" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Download the Workload Protection policy returns "OK" response
     Given new "DownloadCSMThreatsPolicy" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection agent rule (US1-FED) returns "Not Found" response
     Given new "GetCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter with value "abc-def-ghi"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection agent rule (US1-FED) returns "OK" response
     Given there is a valid "agent_rule" in the system
     And new "GetCloudWorkloadSecurityAgentRule" request
@@ -172,14 +172,14 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection agent rule returns "Not Found" response
     Given new "GetCSMThreatsAgentRule" request
     And request contains "agent_rule_id" parameter with value "abc-def-ghi"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection agent rule returns "OK" response
     Given there is a valid "policy_rc" in the system
     And there is a valid "agent_rule_rc" in the system
@@ -189,14 +189,14 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection policy returns "Not Found" response
     Given new "GetCSMThreatsAgentPolicy" request
     And request contains "policy_id" parameter with value "non-existent-policy-id"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get a Workload Protection policy returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "GetCSMThreatsAgentPolicy" request
@@ -204,25 +204,25 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get all Workload Protection agent rules (US1-FED) returns "OK" response
     Given new "ListCloudWorkloadSecurityAgentRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get all Workload Protection agent rules returns "OK" response
     Given new "ListCSMThreatsAgentRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Get all Workload Protection policies returns "OK" response
     Given new "ListCSMThreatsAgentPolicies" request
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "Bad Request" response
     Given there is a valid "agent_rule" in the system
     And new "UpdateCloudWorkloadSecurityAgentRule" request
@@ -231,7 +231,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "Concurrent Modification" response
     Given there is a valid "agent_rule" in the system
     And new "UpdateCloudWorkloadSecurityAgentRule" request
@@ -240,7 +240,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "Not Found" response
     Given new "UpdateCloudWorkloadSecurityAgentRule" request
     And request contains "agent_rule_id" parameter with value "non-existent-rule-id"
@@ -248,7 +248,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @replay-only @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "OK" response
     Given there is a valid "agent_rule" in the system
     And new "UpdateCloudWorkloadSecurityAgentRule" request
@@ -257,7 +257,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule returns "Bad Request" response
     Given there is a valid "policy_rc" in the system
     And there is a valid "agent_rule_rc" in the system
@@ -267,7 +267,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule returns "Concurrent Modification" response
     Given there is a valid "agent_rule_rc" in the system
     And there is a valid "policy_rc" in the system
@@ -277,7 +277,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule returns "Not Found" response
     Given there is a valid "policy_rc" in the system
     And new "UpdateCSMThreatsAgentRule" request
@@ -286,7 +286,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection agent rule returns "OK" response
     Given there is a valid "policy_rc" in the system
     And there is a valid "agent_rule_rc" in the system
@@ -297,7 +297,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection policy returns "Bad Request" response
     Given there is a valid "policy_rc" in the system
     And new "UpdateCSMThreatsAgentPolicy" request
@@ -306,7 +306,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @skip @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection policy returns "Concurrent Modification" response
     Given there is a valid "policy_rc" in the system
     And new "UpdateCSMThreatsAgentPolicy" request
@@ -315,7 +315,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection policy returns "Not Found" response
     Given new "UpdateCSMThreatsAgentPolicy" request
     And request contains "policy_id" parameter with value "non-existent-policy-id"
@@ -323,7 +323,7 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 404 Bad Request
 
-  @team:DataDog/k9-cloud-security-platform @team:DataDog/k9-cws-backend
+  @team:DataDog/k9-cws-backend
   Scenario: Update a Workload Protection policy returns "OK" response
     Given there is a valid "policy_rc" in the system
     And new "UpdateCSMThreatsAgentPolicy" request
