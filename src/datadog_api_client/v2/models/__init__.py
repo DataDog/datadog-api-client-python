@@ -168,6 +168,18 @@ from datadog_api_client.v2.model.alert_event_custom_attributes_links_items_categ
 )
 from datadog_api_client.v2.model.alert_event_custom_attributes_priority import AlertEventCustomAttributesPriority
 from datadog_api_client.v2.model.alert_event_custom_attributes_status import AlertEventCustomAttributesStatus
+from datadog_api_client.v2.model.allocation import Allocation
+from datadog_api_client.v2.model.allocation_data_request import AllocationDataRequest
+from datadog_api_client.v2.model.allocation_data_response import AllocationDataResponse
+from datadog_api_client.v2.model.allocation_data_type import AllocationDataType
+from datadog_api_client.v2.model.allocation_exposure_guardrail_trigger import AllocationExposureGuardrailTrigger
+from datadog_api_client.v2.model.allocation_exposure_rollout_step import AllocationExposureRolloutStep
+from datadog_api_client.v2.model.allocation_exposure_schedule import AllocationExposureSchedule
+from datadog_api_client.v2.model.allocation_exposure_schedule_data import AllocationExposureScheduleData
+from datadog_api_client.v2.model.allocation_exposure_schedule_data_type import AllocationExposureScheduleDataType
+from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
+from datadog_api_client.v2.model.allocation_response import AllocationResponse
+from datadog_api_client.v2.model.allocation_type import AllocationType
 from datadog_api_client.v2.model.annotation import Annotation
 from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
 from datadog_api_client.v2.model.annotation_display_bounds import AnnotationDisplayBounds
@@ -1007,6 +1019,9 @@ from datadog_api_client.v2.model.component_properties import ComponentProperties
 from datadog_api_client.v2.model.component_properties_is_visible import ComponentPropertiesIsVisible
 from datadog_api_client.v2.model.component_recommendation import ComponentRecommendation
 from datadog_api_client.v2.model.component_type import ComponentType
+from datadog_api_client.v2.model.condition import Condition
+from datadog_api_client.v2.model.condition_operator import ConditionOperator
+from datadog_api_client.v2.model.condition_request import ConditionRequest
 from datadog_api_client.v2.model.config_cat_credentials import ConfigCatCredentials
 from datadog_api_client.v2.model.config_cat_credentials_update import ConfigCatCredentialsUpdate
 from datadog_api_client.v2.model.config_cat_integration import ConfigCatIntegration
@@ -1112,6 +1127,7 @@ from datadog_api_client.v2.model.coverage_summary_type import CoverageSummaryTyp
 from datadog_api_client.v2.model.cpu import Cpu
 from datadog_api_client.v2.model.create_action_connection_request import CreateActionConnectionRequest
 from datadog_api_client.v2.model.create_action_connection_response import CreateActionConnectionResponse
+from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
 from datadog_api_client.v2.model.create_app_request import CreateAppRequest
 from datadog_api_client.v2.model.create_app_request_data import CreateAppRequestData
 from datadog_api_client.v2.model.create_app_request_data_attributes import CreateAppRequestDataAttributes
@@ -2080,6 +2096,8 @@ from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.events_sort_type import EventsSortType
 from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 from datadog_api_client.v2.model.events_warning import EventsWarning
+from datadog_api_client.v2.model.exposure_rollout_step_request import ExposureRolloutStepRequest
+from datadog_api_client.v2.model.exposure_schedule_request import ExposureScheduleRequest
 from datadog_api_client.v2.model.facet_info_request import FacetInfoRequest
 from datadog_api_client.v2.model.facet_info_request_data import FacetInfoRequestData
 from datadog_api_client.v2.model.facet_info_request_data_attributes import FacetInfoRequestDataAttributes
@@ -2457,6 +2475,9 @@ from datadog_api_client.v2.model.grey_noise_integration_type import GreyNoiseInt
 from datadog_api_client.v2.model.grey_noise_integration_update import GreyNoiseIntegrationUpdate
 from datadog_api_client.v2.model.group_scalar_column import GroupScalarColumn
 from datadog_api_client.v2.model.group_tags import GroupTags
+from datadog_api_client.v2.model.guardrail_metric import GuardrailMetric
+from datadog_api_client.v2.model.guardrail_metric_request import GuardrailMetricRequest
+from datadog_api_client.v2.model.guardrail_trigger_action import GuardrailTriggerAction
 from datadog_api_client.v2.model.http_body import HTTPBody
 from datadog_api_client.v2.model.httpcd_gates_bad_request_response import HTTPCDGatesBadRequestResponse
 from datadog_api_client.v2.model.httpcd_gates_not_found_response import HTTPCDGatesNotFoundResponse
@@ -3056,6 +3077,7 @@ from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
 from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
 from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
+from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
 from datadog_api_client.v2.model.list_app_key_registrations_response import ListAppKeyRegistrationsResponse
 from datadog_api_client.v2.model.list_app_key_registrations_response_meta import ListAppKeyRegistrationsResponseMeta
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
@@ -4431,6 +4453,7 @@ from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponse
 from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
+from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
 from datadog_api_client.v2.model.page_urgency import PageUrgency
 from datadog_api_client.v2.model.pagination import Pagination
 from datadog_api_client.v2.model.pagination_meta import PaginationMeta
@@ -4944,6 +4967,9 @@ from datadog_api_client.v2.model.role_update_response_data import RoleUpdateResp
 from datadog_api_client.v2.model.roles_response import RolesResponse
 from datadog_api_client.v2.model.roles_sort import RolesSort
 from datadog_api_client.v2.model.roles_type import RolesType
+from datadog_api_client.v2.model.rollout_options import RolloutOptions
+from datadog_api_client.v2.model.rollout_options_request import RolloutOptionsRequest
+from datadog_api_client.v2.model.rollout_strategy import RolloutStrategy
 from datadog_api_client.v2.model.routing_rule import RoutingRule
 from datadog_api_client.v2.model.routing_rule_action import RoutingRuleAction
 from datadog_api_client.v2.model.routing_rule_attributes import RoutingRuleAttributes
@@ -6221,6 +6247,8 @@ from datadog_api_client.v2.model.table_row_resource_data_attributes import Table
 from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
 from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
+from datadog_api_client.v2.model.targeting_rule import TargetingRule
+from datadog_api_client.v2.model.targeting_rule_request import TargetingRuleRequest
 from datadog_api_client.v2.model.team import Team
 from datadog_api_client.v2.model.team_attributes import TeamAttributes
 from datadog_api_client.v2.model.team_connection import TeamConnection
@@ -6609,6 +6637,7 @@ from datadog_api_client.v2.model.update_tenancy_config_data_type import UpdateTe
 from datadog_api_client.v2.model.update_tenancy_config_request import UpdateTenancyConfigRequest
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
+from datadog_api_client.v2.model.upsert_allocation_request import UpsertAllocationRequest
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
 from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item import (
@@ -6686,6 +6715,8 @@ from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMet
 from datadog_api_client.v2.model.validation_response import ValidationResponse
 from datadog_api_client.v2.model.value_type import ValueType
 from datadog_api_client.v2.model.variant import Variant
+from datadog_api_client.v2.model.variant_weight import VariantWeight
+from datadog_api_client.v2.model.variant_weight_request import VariantWeightRequest
 from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
 from datadog_api_client.v2.model.version_history_update_type import VersionHistoryUpdateType
 from datadog_api_client.v2.model.viewership_history_session_array import ViewershipHistorySessionArray
@@ -6920,6 +6951,18 @@ __all__ = [
     "AlertEventCustomAttributesLinksItemsCategory",
     "AlertEventCustomAttributesPriority",
     "AlertEventCustomAttributesStatus",
+    "Allocation",
+    "AllocationDataRequest",
+    "AllocationDataResponse",
+    "AllocationDataType",
+    "AllocationExposureGuardrailTrigger",
+    "AllocationExposureRolloutStep",
+    "AllocationExposureSchedule",
+    "AllocationExposureScheduleData",
+    "AllocationExposureScheduleDataType",
+    "AllocationExposureScheduleResponse",
+    "AllocationResponse",
+    "AllocationType",
     "Annotation",
     "AnnotationDisplay",
     "AnnotationDisplayBounds",
@@ -7521,6 +7564,9 @@ __all__ = [
     "ComponentPropertiesIsVisible",
     "ComponentRecommendation",
     "ComponentType",
+    "Condition",
+    "ConditionOperator",
+    "ConditionRequest",
     "ConfigCatCredentials",
     "ConfigCatCredentialsUpdate",
     "ConfigCatIntegration",
@@ -7618,6 +7664,7 @@ __all__ = [
     "Cpu",
     "CreateActionConnectionRequest",
     "CreateActionConnectionResponse",
+    "CreateAllocationsRequest",
     "CreateAppRequest",
     "CreateAppRequestData",
     "CreateAppRequestDataAttributes",
@@ -8282,6 +8329,8 @@ __all__ = [
     "EventsSortType",
     "EventsTimeseriesQuery",
     "EventsWarning",
+    "ExposureRolloutStepRequest",
+    "ExposureScheduleRequest",
     "FacetInfoRequest",
     "FacetInfoRequestData",
     "FacetInfoRequestDataAttributes",
@@ -8595,6 +8644,9 @@ __all__ = [
     "GreyNoiseIntegrationUpdate",
     "GroupScalarColumn",
     "GroupTags",
+    "GuardrailMetric",
+    "GuardrailMetricRequest",
+    "GuardrailTriggerAction",
     "HTTPBody",
     "HTTPCDGatesBadRequestResponse",
     "HTTPCDGatesNotFoundResponse",
@@ -9080,6 +9132,7 @@ __all__ = [
     "ListAPIsResponseDataAttributes",
     "ListAPIsResponseMeta",
     "ListAPIsResponseMetaPagination",
+    "ListAllocationsResponse",
     "ListAppKeyRegistrationsResponse",
     "ListAppKeyRegistrationsResponseMeta",
     "ListApplicationKeysResponse",
@@ -9849,6 +9902,7 @@ __all__ = [
     "OutputSchema",
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
+    "OverwriteAllocationsRequest",
     "PageUrgency",
     "Pagination",
     "PaginationMeta",
@@ -10260,6 +10314,9 @@ __all__ = [
     "RolesResponse",
     "RolesSort",
     "RolesType",
+    "RolloutOptions",
+    "RolloutOptionsRequest",
+    "RolloutStrategy",
     "RoutingRule",
     "RoutingRuleAction",
     "RoutingRuleAttributes",
@@ -11117,6 +11174,8 @@ __all__ = [
     "TableRowResourceDataType",
     "TableRowResourceIdentifier",
     "TagsEventAttribute",
+    "TargetingRule",
+    "TargetingRuleRequest",
     "Team",
     "TeamAttributes",
     "TeamConnection",
@@ -11401,6 +11460,7 @@ __all__ = [
     "UpdateTenancyConfigRequest",
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
+    "UpsertAllocationRequest",
     "UpsertCatalogEntityRequest",
     "UpsertCatalogEntityResponse",
     "UpsertCatalogEntityResponseIncludedItem",
@@ -11474,6 +11534,8 @@ __all__ = [
     "ValidationResponse",
     "ValueType",
     "Variant",
+    "VariantWeight",
+    "VariantWeightRequest",
     "VersionHistoryUpdate",
     "VersionHistoryUpdateType",
     "ViewershipHistorySessionArray",

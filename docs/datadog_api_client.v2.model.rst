@@ -298,6 +298,90 @@ datadog\_api\_client.v2.model.alert\_event\_custom\_attributes\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.allocation module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_data\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_data\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_data\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_exposure\_guardrail\_trigger module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_exposure_guardrail_trigger
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_exposure\_rollout\_step module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_exposure_rollout_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_exposure\_schedule module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_exposure_schedule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_exposure\_schedule\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_exposure_schedule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_exposure\_schedule\_data\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_exposure_schedule_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_exposure\_schedule\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_exposure_schedule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.allocation\_type module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.allocation_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.annotation module
 -----------------------------------------------
 
@@ -5212,6 +5296,27 @@ datadog\_api\_client.v2.model.component\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.condition module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.condition\_operator module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.condition_operator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.condition\_request module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.condition_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.config\_cat\_credentials module
 -------------------------------------------------------------
 
@@ -5888,6 +5993,13 @@ datadog\_api\_client.v2.model.create\_action\_connection\_response module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_action_connection_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_allocations\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_allocations_request
    :members:
    :show-inheritance:
 
@@ -10546,6 +10658,20 @@ datadog\_api\_client.v2.model.events\_warning module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.exposure\_rollout\_step\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.exposure_rollout_step_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.exposure\_schedule\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.exposure_schedule_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.facet\_info\_request module
 ---------------------------------------------------------
 
@@ -12727,6 +12853,27 @@ datadog\_api\_client.v2.model.group\_tags module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.group_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.guardrail\_metric module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.guardrail_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.guardrail\_metric\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.guardrail_metric_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.guardrail\_trigger\_action module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.guardrail_trigger_action
    :members:
    :show-inheritance:
 
@@ -15590,6 +15737,13 @@ datadog\_api\_client.v2.model.links module
 ------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_allocations\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_allocations_response
    :members:
    :show-inheritance:
 
@@ -21501,6 +21655,13 @@ datadog\_api\_client.v2.model.output\_schema\_parameters\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.overwrite\_allocations\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.overwrite_allocations_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.page\_urgency module
 --------------------------------------------------
 
@@ -24011,6 +24172,27 @@ datadog\_api\_client.v2.model.roles\_type module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.roles_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rollout\_options module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rollout_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rollout\_options\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rollout_options_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rollout\_strategy module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rollout_strategy
    :members:
    :show-inheritance:
 
@@ -30342,6 +30524,20 @@ datadog\_api\_client.v2.model.tags\_event\_attribute module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.targeting\_rule module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.targeting_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.targeting\_rule\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.targeting_rule_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.team module
 -----------------------------------------
 
@@ -32330,6 +32526,13 @@ datadog\_api\_client.v2.model.update\_workflow\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.upsert\_allocation\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_allocation_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.upsert\_catalog\_entity\_request module
 ---------------------------------------------------------------------
 
@@ -32838,6 +33041,20 @@ datadog\_api\_client.v2.model.variant module
 --------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.variant
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.variant\_weight module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.variant_weight
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.variant\_weight\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.variant_weight_request
    :members:
    :show-inheritance:
 

@@ -41,6 +41,7 @@ class FeatureFlagAttributes(ModelNormal):
             "last_updated_by": (UUID,),
             "name": (str,),
             "require_approval": (bool,),
+            "tags": ([str],),
             "updated_at": (datetime,),
             "value_type": (ValueType,),
             "variants": ([Variant],),
@@ -58,6 +59,7 @@ class FeatureFlagAttributes(ModelNormal):
         "last_updated_by": "last_updated_by",
         "name": "name",
         "require_approval": "require_approval",
+        "tags": "tags",
         "updated_at": "updated_at",
         "value_type": "value_type",
         "variants": "variants",
@@ -78,6 +80,7 @@ class FeatureFlagAttributes(ModelNormal):
         json_schema: Union[str, none_type, UnsetType] = unset,
         last_updated_by: Union[UUID, UnsetType] = unset,
         require_approval: Union[bool, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
@@ -117,6 +120,9 @@ class FeatureFlagAttributes(ModelNormal):
         :param require_approval: Indicates whether this feature flag requires approval for changes.
         :type require_approval: bool, optional
 
+        :param tags: Tags associated with the feature flag.
+        :type tags: [str], optional
+
         :param updated_at: The timestamp when the feature flag was last updated.
         :type updated_at: datetime, optional
 
@@ -142,6 +148,8 @@ class FeatureFlagAttributes(ModelNormal):
             kwargs["last_updated_by"] = last_updated_by
         if require_approval is not unset:
             kwargs["require_approval"] = require_approval
+        if tags is not unset:
+            kwargs["tags"] = tags
         if updated_at is not unset:
             kwargs["updated_at"] = updated_at
         super().__init__(kwargs)

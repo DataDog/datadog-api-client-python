@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test feature flag for BDD scenarios","key":"test-feature-flag-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","name":"Test
+      Feature Flag Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","value_type":"BOOLEAN","variants":[{"key":"variant-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805-1","name":"Variant
+      Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805
+      A","value":"true"},{"key":"variant-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805-2","name":"Variant
+      Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805
+      B","value":"false"}]},"type":"feature-flags"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags
+  response:
+    body:
+      string: '{"data":{"id":"449ff1d1-7a4f-416f-a6ce-be1abd3031c1","type":"feature-flags","attributes":{"archived_at":null,"created_at":"2026-04-01T20:36:46.153578Z","created_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Test
+        feature flag for BDD scenarios","distribution_channel":"ALL","feature_flag_environments":[{"environment_id":"592600c2-8327-424d-960f-608c327ee96d","environment_name":"Test
+        Environment Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774470658","environment_queries":["test-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774470658","env-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774470658"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-9bfe74798563","override_allocation_key":"allocation-override-9bfe74798563","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"809cd83d-51ac-4f60-9ce5-cfad4d662114","environment_name":"Test
+        Environment Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774471346","environment_queries":["test-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774471346","env-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774471346"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-04b9843f6754","override_allocation_key":"allocation-override-04b9843f6754","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"21c84268-9fc7-4b6d-82ea-bb2090469aba","environment_name":"Test
+        Environment Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774472385","environment_queries":["test-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774472385","env-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774472385"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-ac33b80880b1","override_allocation_key":"allocation-override-ac33b80880b1","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"0b94dbaa-9efb-419d-8bd7-ef56f3828986","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773321543","environment_queries":["staging","test"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-1018a5595c76","override_allocation_key":"allocation-override-1018a5595c76","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"afdaa512-6307-4965-bf92-62cc6bea5d00","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773322166","environment_queries":["test-Test-Typescript-Create_an_environment_returns_Created_response-1773322166","env-Test-Typescript-Create_an_environment_returns_Created_response-1773322166"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-9cf98d18b2bc","override_allocation_key":"allocation-override-9cf98d18b2bc","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null}],"key":"test-feature-flag-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","last_updated_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"Test
+        Feature Flag Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","require_approval":false,"tags":[],"updated_at":"2026-04-01T20:36:46.153578Z","value_type":"BOOLEAN","variants":[{"id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","key":"variant-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805-1","name":"Variant
+        Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805
+        A","value":"true","created_at":"2026-04-01T20:36:46.172226Z","updated_at":"2026-04-01T20:36:46.172226Z"},{"id":"b8079ed4-249a-42fb-b9ec-ff95900c37af","key":"variant-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805-2","name":"Variant
+        Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805
+        B","value":"false","created_at":"2026-04-01T20:36:46.181731Z","updated_at":"2026-04-01T20:36:46.181731Z"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"name":"Test Environment Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","queries":["test-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","env-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805"]},"type":"environments"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags/environments
+  response:
+    body:
+      string: '{"data":{"id":"927d4fe0-11f9-4a08-8859-ae044a4e04f0","type":"environments","attributes":{"is_production":false,"name":"Test
+        Environment Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","queries":["test-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","env-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805"],"require_feature_flag_approval":false}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"guardrail_metrics":[],"key":"new-targeting-rule-test-create_allocation_for_a_flag_in_an_environment_returns_created_response-1775075805","name":"New
+      targeting rule Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","targeting_rules":[],"type":"CANARY","variant_weights":[{"value":100,"variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051"}]},"type":"allocations"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags/449ff1d1-7a4f-416f-a6ce-be1abd3031c1/environments/927d4fe0-11f9-4a08-8859-ae044a4e04f0/allocations
+  response:
+    body:
+      string: '{"data":{"id":"adb0e4b9-2c9f-4ce0-bc77-68c11d5e1ba2","type":"allocations","attributes":{"created_at":"2026-04-01T20:36:47.111398323Z","environment_ids":["927d4fe0-11f9-4a08-8859-ae044a4e04f0"],"experiment_id":null,"guardrail_metrics":[],"key":"new-targeting-rule-test-create_allocation_for_a_flag_in_an_environment_returns_created_response-1775075805","name":"New
+        targeting rule Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","order_position":0,"targeting_rules":[],"type":"CANARY","updated_at":"2026-04-01T20:36:47.111398323Z","variant_weights":[{"id":"9c5fccaf-ca32-49dd-8a48-5a47a6204cc4","created_at":"2026-04-01T20:36:47.119918Z","updated_at":"2026-04-01T20:36:47.119918Z","value":100,"variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","variant":{"id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","key":"variant-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805-1","name":"Variant
+        Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805
+        A","value":"true","created_at":"2026-04-01T20:36:46.172226Z","updated_at":"2026-04-01T20:36:46.172226Z"}}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/feature-flags/environments/927d4fe0-11f9-4a08-8859-ae044a4e04f0
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/feature-flags/449ff1d1-7a4f-416f-a6ce-be1abd3031c1/archive
+  response:
+    body:
+      string: '{"data":{"id":"449ff1d1-7a4f-416f-a6ce-be1abd3031c1","type":"feature-flags","attributes":{"archived_at":"2026-04-01T20:36:47.922174Z","created_at":"2026-04-01T20:36:46.153578Z","created_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","description":"Test
+        feature flag for BDD scenarios","distribution_channel":"ALL","feature_flag_environments":[{"environment_id":"592600c2-8327-424d-960f-608c327ee96d","environment_name":"Test
+        Environment Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774470658","environment_queries":["test-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774470658","env-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774470658"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-9bfe74798563","override_allocation_key":"allocation-override-9bfe74798563","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"809cd83d-51ac-4f60-9ce5-cfad4d662114","environment_name":"Test
+        Environment Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774471346","environment_queries":["test-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774471346","env-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774471346"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-04b9843f6754","override_allocation_key":"allocation-override-04b9843f6754","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"21c84268-9fc7-4b6d-82ea-bb2090469aba","environment_name":"Test
+        Environment Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774472385","environment_queries":["test-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774472385","env-Test-Typescript-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1774472385"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-ac33b80880b1","override_allocation_key":"allocation-override-ac33b80880b1","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"0b94dbaa-9efb-419d-8bd7-ef56f3828986","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773321543","environment_queries":["staging","test"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-1018a5595c76","override_allocation_key":"allocation-override-1018a5595c76","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null},{"environment_id":"afdaa512-6307-4965-bf92-62cc6bea5d00","environment_name":"Test
+        Environment Test-Typescript-Create_an_environment_returns_Created_response-1773322166","environment_queries":["test-Test-Typescript-Create_an_environment_returns_Created_response-1773322166","env-Test-Typescript-Create_an_environment_returns_Created_response-1773322166"],"status":"DISABLED","default_variant_id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","override_variant_id":null,"default_allocation_key":"allocation-default-9cf98d18b2bc","override_allocation_key":"allocation-override-9cf98d18b2bc","rules":[],"rollout_percentage":0,"allocations":null,"is_production":false,"require_feature_flag_approval":false,"pending_suggestion_id":null}],"key":"test-feature-flag-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","last_updated_by":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"Test
+        Feature Flag Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805","require_approval":false,"tags":[],"updated_at":"2026-04-01T20:36:47.922174Z","value_type":"BOOLEAN","variants":[{"id":"4fda6911-d77b-4ca7-ba8d-daa41622e051","key":"variant-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805-1","name":"Variant
+        Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805
+        A","value":"true","created_at":"2026-04-01T20:36:46.172226Z","updated_at":"2026-04-01T20:36:46.172226Z"},{"id":"b8079ed4-249a-42fb-b9ec-ff95900c37af","key":"variant-Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805-2","name":"Variant
+        Test-Create_allocation_for_a_flag_in_an_environment_returns_Created_response-1775075805
+        B","value":"false","created_at":"2026-04-01T20:36:46.181731Z","updated_at":"2026-04-01T20:36:46.181731Z"}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
