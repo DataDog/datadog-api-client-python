@@ -52,7 +52,7 @@ class DistributionWidgetHistogramRequestQuery(ModelComposed):
         :type env: str
 
         :param operation_name: Name of operation on service.
-        :type operation_name: str, optional
+        :type operation_name: str
 
         :param primary_tag_name: Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
         :type primary_tag_name: str, optional
