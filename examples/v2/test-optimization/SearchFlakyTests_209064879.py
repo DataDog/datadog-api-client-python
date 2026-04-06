@@ -17,12 +17,12 @@ body = FlakyTestsSearchRequest(
         attributes=FlakyTestsSearchRequestAttributes(
             filter=FlakyTestsSearchFilter(
                 query='flaky_test_state:active @git.repository.id_v2:"github.com/datadog/shopist"',
+                include_history=True,
             ),
             page=FlakyTestsSearchPageOptions(
                 limit=10,
             ),
             sort=FlakyTestsSearchSort.FQN_ASCENDING,
-            include_history=True,
         ),
         type=FlakyTestsSearchRequestDataType.SEARCH_FLAKY_TESTS_REQUEST,
     ),
