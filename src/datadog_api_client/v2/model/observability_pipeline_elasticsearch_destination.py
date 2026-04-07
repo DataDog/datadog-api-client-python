@@ -21,9 +21,13 @@ if TYPE_CHECKING:
         ObservabilityPipelineElasticsearchDestinationAuth,
     )
     from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+    from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_compression import (
+        ObservabilityPipelineElasticsearchDestinationCompression,
+    )
     from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream import (
         ObservabilityPipelineElasticsearchDestinationDataStream,
     )
+    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_type import (
         ObservabilityPipelineElasticsearchDestinationType,
     )
@@ -48,9 +52,13 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
             ObservabilityPipelineElasticsearchDestinationAuth,
         )
         from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+        from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_compression import (
+            ObservabilityPipelineElasticsearchDestinationCompression,
+        )
         from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream import (
             ObservabilityPipelineElasticsearchDestinationDataStream,
         )
+        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
         from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_type import (
             ObservabilityPipelineElasticsearchDestinationType,
         )
@@ -60,10 +68,15 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
             "auth": (ObservabilityPipelineElasticsearchDestinationAuth,),
             "buffer": (ObservabilityPipelineBufferOptions,),
             "bulk_index": (str,),
+            "compression": (ObservabilityPipelineElasticsearchDestinationCompression,),
             "data_stream": (ObservabilityPipelineElasticsearchDestinationDataStream,),
             "endpoint_url_key": (str,),
             "id": (str,),
+            "id_key": (str,),
             "inputs": ([str],),
+            "pipeline": (str,),
+            "request_retry_partial": (bool,),
+            "tls": (ObservabilityPipelineTls,),
             "type": (ObservabilityPipelineElasticsearchDestinationType,),
         }
 
@@ -72,10 +85,15 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
         "auth": "auth",
         "buffer": "buffer",
         "bulk_index": "bulk_index",
+        "compression": "compression",
         "data_stream": "data_stream",
         "endpoint_url_key": "endpoint_url_key",
         "id": "id",
+        "id_key": "id_key",
         "inputs": "inputs",
+        "pipeline": "pipeline",
+        "request_retry_partial": "request_retry_partial",
+        "tls": "tls",
         "type": "type",
     }
 
@@ -94,14 +112,19 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
             UnsetType,
         ] = unset,
         bulk_index: Union[str, UnsetType] = unset,
+        compression: Union[ObservabilityPipelineElasticsearchDestinationCompression, UnsetType] = unset,
         data_stream: Union[ObservabilityPipelineElasticsearchDestinationDataStream, UnsetType] = unset,
         endpoint_url_key: Union[str, UnsetType] = unset,
+        id_key: Union[str, UnsetType] = unset,
+        pipeline: Union[str, UnsetType] = unset,
+        request_retry_partial: Union[bool, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The ``elasticsearch`` destination writes logs to an Elasticsearch cluster.
+        The ``elasticsearch`` destination writes logs or metrics to an Elasticsearch cluster.
 
-        **Supported pipeline types:** logs
+        **Supported pipeline types:** logs, metrics
 
         :param api_version: The Elasticsearch API version to use. Set to ``auto`` to auto-detect.
         :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
@@ -113,8 +136,11 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
 
-        :param bulk_index: The index to write logs to in Elasticsearch.
+        :param bulk_index: The name of the index to write events to in Elasticsearch.
         :type bulk_index: str, optional
+
+        :param compression: Compression configuration for the Elasticsearch destination.
+        :type compression: ObservabilityPipelineElasticsearchDestinationCompression, optional
 
         :param data_stream: Configuration options for writing to Elasticsearch Data Streams instead of a fixed index.
         :type data_stream: ObservabilityPipelineElasticsearchDestinationDataStream, optional
@@ -125,8 +151,20 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
         :param id: The unique identifier for this component.
         :type id: str
 
+        :param id_key: The name of the field used as the document ID in Elasticsearch.
+        :type id_key: str, optional
+
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
+
+        :param pipeline: The name of an Elasticsearch ingest pipeline to apply to events before indexing.
+        :type pipeline: str, optional
+
+        :param request_retry_partial: When ``true`` , retries failed partial bulk requests when some events in a batch fail while others succeed.
+        :type request_retry_partial: bool, optional
+
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
+        :type tls: ObservabilityPipelineTls, optional
 
         :param type: The destination type. The value should always be ``elasticsearch``.
         :type type: ObservabilityPipelineElasticsearchDestinationType
@@ -139,10 +177,20 @@ class ObservabilityPipelineElasticsearchDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if bulk_index is not unset:
             kwargs["bulk_index"] = bulk_index
+        if compression is not unset:
+            kwargs["compression"] = compression
         if data_stream is not unset:
             kwargs["data_stream"] = data_stream
         if endpoint_url_key is not unset:
             kwargs["endpoint_url_key"] = endpoint_url_key
+        if id_key is not unset:
+            kwargs["id_key"] = id_key
+        if pipeline is not unset:
+            kwargs["pipeline"] = pipeline
+        if request_retry_partial is not unset:
+            kwargs["request_retry_partial"] = request_retry_partial
+        if tls is not unset:
+            kwargs["tls"] = tls
         super().__init__(kwargs)
 
         self_.id = id

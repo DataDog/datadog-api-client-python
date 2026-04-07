@@ -15,11 +15,51 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         """
         A destination for the pipeline.
 
+        :param api_version: The Elasticsearch API version to use. Set to `auto` to auto-detect.
+        :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
+
+        :param auth: Authentication settings for the Elasticsearch destination.
+            When `strategy` is `basic`, use `username_key` and `password_key` to reference credentials stored in environment variables or secrets.
+        :type auth: ObservabilityPipelineElasticsearchDestinationAuth, optional
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
+
+        :param bulk_index: The name of the index to write events to in Elasticsearch.
+        :type bulk_index: str, optional
+
+        :param compression: Compression configuration for the Elasticsearch destination.
+        :type compression: ObservabilityPipelineElasticsearchDestinationCompression, optional
+
+        :param data_stream: Configuration options for writing to Elasticsearch Data Streams instead of a fixed index.
+        :type data_stream: ObservabilityPipelineElasticsearchDestinationDataStream, optional
+
+        :param endpoint_url_key: Name of the environment variable or secret that holds the Elasticsearch endpoint URL.
+        :type endpoint_url_key: str, optional
+
+        :param id: The unique identifier for this component.
+        :type id: str
+
+        :param id_key: The name of the field used as the document ID in Elasticsearch.
+        :type id_key: str, optional
+
+        :param inputs: A list of component IDs whose output is used as the `input` for this component.
+        :type inputs: [str]
+
+        :param pipeline: The name of an Elasticsearch ingest pipeline to apply to events before indexing.
+        :type pipeline: str, optional
+
+        :param request_retry_partial: When `true`, retries failed partial bulk requests when some events in a batch fail while others succeed.
+        :type request_retry_partial: bool, optional
+
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
+        :type tls: ObservabilityPipelineTls, optional
+
+        :param type: The destination type. The value should always be `elasticsearch`.
+        :type type: ObservabilityPipelineElasticsearchDestinationType
+
         :param auth_strategy: HTTP authentication strategy.
         :type auth_strategy: ObservabilityPipelineHttpClientDestinationAuthStrategy, optional
-
-        :param compression: Compression configuration for HTTP requests.
-        :type compression: ObservabilityPipelineHttpClientDestinationCompression, optional
 
         :param custom_key: Name of the environment variable or secret that holds a custom header value (used with custom auth strategies).
         :type custom_key: str, optional
@@ -27,39 +67,17 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineHttpClientDestinationEncoding
 
-        :param id: The unique identifier for this component.
-        :type id: str
-
-        :param inputs: A list of component IDs whose output is used as the input for this component.
-        :type inputs: [str]
-
         :param password_key: Name of the environment variable or secret that holds the password (used when `auth_strategy` is `basic`).
         :type password_key: str, optional
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
-
         :param token_key: Name of the environment variable or secret that holds the bearer token (used when `auth_strategy` is `bearer`).
         :type token_key: str, optional
-
-        :param type: The destination type. The value should always be `http_client`.
-        :type type: ObservabilityPipelineHttpClientDestinationType
 
         :param uri_key: Name of the environment variable or secret that holds the HTTP endpoint URI.
         :type uri_key: str, optional
 
         :param username_key: Name of the environment variable or secret that holds the username (used when `auth_strategy` is `basic`).
         :type username_key: str, optional
-
-        :param auth: Authentication settings for the Amazon OpenSearch destination.
-            The `strategy` field determines whether basic or AWS-based authentication is used.
-        :type auth: ObservabilityPipelineAmazonOpenSearchDestinationAuth
-
-        :param buffer: Configuration for buffer settings on destination components.
-        :type buffer: ObservabilityPipelineBufferOptions, optional
-
-        :param bulk_index: The index to write logs to.
-        :type bulk_index: str, optional
 
         :param bucket: S3 bucket name.
         :type bucket: str
@@ -88,17 +106,8 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param container_name: The name of the Azure Blob Storage container to store logs in.
         :type container_name: str
 
-        :param endpoint_url_key: Name of the environment variable or secret that holds the CloudPrem endpoint URL.
-        :type endpoint_url_key: str, optional
-
         :param routes: A list of routing rules that forward matching logs to Datadog using dedicated API keys.
         :type routes: [ObservabilityPipelineDatadogLogsDestinationRoute], optional
-
-        :param api_version: The Elasticsearch API version to use. Set to `auto` to auto-detect.
-        :type api_version: ObservabilityPipelineElasticsearchDestinationApiVersion, optional
-
-        :param data_stream: Configuration options for writing to Elasticsearch Data Streams instead of a fixed index.
-        :type data_stream: ObservabilityPipelineElasticsearchDestinationDataStream, optional
 
         :param customer_id: The Google Chronicle customer ID.
         :type customer_id: str
@@ -217,6 +226,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
+        from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
+            ObservabilityPipelineElasticsearchDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_http_client_destination import (
             ObservabilityPipelineHttpClientDestination,
         )
@@ -241,9 +253,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         )
         from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
             ObservabilityPipelineDatadogLogsDestination,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
-            ObservabilityPipelineElasticsearchDestination,
         )
         from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
             ObservabilityPipelineGoogleChronicleDestination,
@@ -288,6 +297,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         return {
             "oneOf": [
+                ObservabilityPipelineElasticsearchDestination,
                 ObservabilityPipelineHttpClientDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
                 ObservabilityPipelineAmazonS3Destination,
@@ -297,7 +307,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
                 ObservabilityPipelineDatadogLogsDestination,
-                ObservabilityPipelineElasticsearchDestination,
                 ObservabilityPipelineGoogleChronicleDestination,
                 ObservabilityPipelineGoogleCloudStorageDestination,
                 ObservabilityPipelineGooglePubSubDestination,

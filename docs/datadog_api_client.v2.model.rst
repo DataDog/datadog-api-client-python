@@ -19443,6 +19443,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destination\_compression module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destination\_compression\_algorithm module
+----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_compression_algorithm
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destination\_data\_stream module
 ------------------------------------------------------------------------------------------------------
 
