@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -41,7 +42,7 @@ class LogsIndex(ModelNormal):
             "filter": (LogsFilter,),
             "is_rate_limited": (bool,),
             "name": (str,),
-            "num_flex_logs_retention_days": (int,),
+            "num_flex_logs_retention_days": (int, none_type),
             "num_retention_days": (int,),
             "tags": ([str],),
         }
@@ -71,7 +72,7 @@ class LogsIndex(ModelNormal):
         daily_limit_warning_threshold_percentage: Union[float, UnsetType] = unset,
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
         is_rate_limited: Union[bool, UnsetType] = unset,
-        num_flex_logs_retention_days: Union[int, UnsetType] = unset,
+        num_flex_logs_retention_days: Union[int, none_type, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -107,7 +108,7 @@ class LogsIndex(ModelNormal):
             If Standard Tier is enabled on this index, logs are first retained in Standard Tier for the number of days specified through ``num_retention_days`` ,
             and then stored in Flex Tier until the number of days specified in ``num_flex_logs_retention_days`` is reached.
             The available values depend on retention plans specified in your organization's contract/subscriptions.
-        :type num_flex_logs_retention_days: int, optional
+        :type num_flex_logs_retention_days: int, none_type, optional
 
         :param num_retention_days: The number of days logs are stored in Standard Tier before aging into the Flex Tier or being deleted from the index.
             The available values depend on retention plans specified in your organization's contract/subscriptions.

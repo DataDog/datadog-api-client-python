@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -40,7 +41,7 @@ class LogsIndexUpdateRequest(ModelNormal):
             "disable_daily_limit": (bool,),
             "exclusion_filters": ([LogsExclusion],),
             "filter": (LogsFilter,),
-            "num_flex_logs_retention_days": (int,),
+            "num_flex_logs_retention_days": (int, none_type),
             "num_retention_days": (int,),
             "tags": ([str],),
         }
@@ -65,7 +66,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         daily_limit_warning_threshold_percentage: Union[float, UnsetType] = unset,
         disable_daily_limit: Union[bool, UnsetType] = unset,
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
-        num_flex_logs_retention_days: Union[int, UnsetType] = unset,
+        num_flex_logs_retention_days: Union[int, none_type, UnsetType] = unset,
         num_retention_days: Union[int, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -101,7 +102,7 @@ class LogsIndexUpdateRequest(ModelNormal):
             The available values depend on retention plans specified in your organization's contract/subscriptions.
 
             **Note** : Changing this value affects all logs already in this index. It may also affect billing.
-        :type num_flex_logs_retention_days: int, optional
+        :type num_flex_logs_retention_days: int, none_type, optional
 
         :param num_retention_days: The number of days logs are stored in Standard Tier before aging into the Flex Tier or being deleted from the index.
             The available values depend on retention plans specified in your organization's contract/subscriptions.
