@@ -4,7 +4,7 @@ Update Scorecard outcomes asynchronously returns "Accepted" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
+from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
 from datadog_api_client.v2.model.state import State
 from datadog_api_client.v2.model.update_outcomes_async_attributes import UpdateOutcomesAsyncAttributes
 from datadog_api_client.v2.model.update_outcomes_async_request import UpdateOutcomesAsyncRequest
@@ -32,7 +32,6 @@ body = UpdateOutcomesAsyncRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_scorecard_outcomes_async"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = ServiceScorecardsApi(api_client)
-    api_instance.update_scorecard_outcomes_async(body=body)
+    api_instance = ScorecardsApi(api_client)
+    api_instance.update_scorecard_outcomes(body=body)

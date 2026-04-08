@@ -1087,7 +1087,7 @@
     ],
     "step": "there is a valid \"create_scorecard_rule\" in the system",
     "key": "create_scorecard_rule",
-    "tag": "Service Scorecards",
+    "tag": "Scorecards",
     "operationId": "CreateScorecardRule"
   },
   {

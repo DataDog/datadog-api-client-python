@@ -1,0 +1,33 @@
+"""
+Update Scorecard outcomes returns "Accepted" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
+from datadog_api_client.v2.model.state import State
+from datadog_api_client.v2.model.update_outcomes_async_attributes import UpdateOutcomesAsyncAttributes
+from datadog_api_client.v2.model.update_outcomes_async_request import UpdateOutcomesAsyncRequest
+from datadog_api_client.v2.model.update_outcomes_async_request_data import UpdateOutcomesAsyncRequestData
+from datadog_api_client.v2.model.update_outcomes_async_request_item import UpdateOutcomesAsyncRequestItem
+from datadog_api_client.v2.model.update_outcomes_async_type import UpdateOutcomesAsyncType
+
+body = UpdateOutcomesAsyncRequest(
+    data=UpdateOutcomesAsyncRequestData(
+        attributes=UpdateOutcomesAsyncAttributes(
+            results=[
+                UpdateOutcomesAsyncRequestItem(
+                    entity_reference="service:my-service",
+                    remarks='See: <a href="https://app.datadoghq.com/services">Services</a>',
+                    rule_id="q8MQxk8TCqrHnWkx",
+                    state=State.PASS,
+                ),
+            ],
+        ),
+        type=UpdateOutcomesAsyncType.BATCHED_OUTCOME,
+    ),
+)
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = ScorecardsApi(api_client)
+    api_instance.update_scorecard_outcomes(body=body)

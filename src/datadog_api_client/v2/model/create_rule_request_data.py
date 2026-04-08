@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rule_attributes import RuleAttributes
+    from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
     from datadog_api_client.v2.model.rule_type import RuleType
 
 
 class CreateRuleRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rule_attributes import RuleAttributes
+        from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
         from datadog_api_client.v2.model.rule_type import RuleType
 
         return {
-            "attributes": (RuleAttributes,),
+            "attributes": (RuleAttributesRequest,),
             "type": (RuleType,),
         }
 
@@ -35,13 +35,16 @@ class CreateRuleRequestData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: Union[RuleAttributes, UnsetType] = unset, type: Union[RuleType, UnsetType] = unset, **kwargs
+        self_,
+        attributes: Union[RuleAttributesRequest, UnsetType] = unset,
+        type: Union[RuleType, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Scorecard create rule request data.
 
-        :param attributes: Details of a rule.
-        :type attributes: RuleAttributes, optional
+        :param attributes: Attributes for creating or updating a rule. Server-managed fields (created_at, modified_at, custom) are excluded.
+        :type attributes: RuleAttributesRequest, optional
 
         :param type: The JSON:API type for scorecard rules.
         :type type: RuleType, optional

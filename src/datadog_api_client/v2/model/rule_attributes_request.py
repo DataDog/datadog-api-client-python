@@ -8,13 +8,12 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
     unset,
     UnsetType,
 )
 
 
-class RuleAttributes(ModelNormal):
+class RuleAttributesRequest(ModelNormal):
     validations = {
         "level": {
             "inclusive_maximum": 3,
@@ -25,13 +24,9 @@ class RuleAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "category": (str,),
-            "created_at": (datetime,),
-            "custom": (bool,),
             "description": (str,),
             "enabled": (bool,),
             "level": (int,),
-            "modified_at": (datetime,),
             "name": (str,),
             "owner": (str,),
             "scope_query": (str,),
@@ -39,13 +34,9 @@ class RuleAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "category": "category",
-        "created_at": "created_at",
-        "custom": "custom",
         "description": "description",
         "enabled": "enabled",
         "level": "level",
-        "modified_at": "modified_at",
         "name": "name",
         "owner": "owner",
         "scope_query": "scope_query",
@@ -54,13 +45,9 @@ class RuleAttributes(ModelNormal):
 
     def __init__(
         self_,
-        category: Union[str, UnsetType] = unset,
-        created_at: Union[datetime, UnsetType] = unset,
-        custom: Union[bool, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         level: Union[int, UnsetType] = unset,
-        modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         owner: Union[str, UnsetType] = unset,
         scope_query: Union[str, UnsetType] = unset,
@@ -68,16 +55,7 @@ class RuleAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Details of a rule.
-
-        :param category: The scorecard name to which this rule must belong. **Deprecated**.
-        :type category: str, optional
-
-        :param created_at: Creation time of the rule outcome.
-        :type created_at: datetime, optional
-
-        :param custom: Defines if the rule is a custom rule.
-        :type custom: bool, optional
+        Attributes for creating or updating a rule. Server-managed fields (created_at, modified_at, custom) are excluded.
 
         :param description: Explanation of the rule.
         :type description: str, optional
@@ -87,9 +65,6 @@ class RuleAttributes(ModelNormal):
 
         :param level: The maturity level of the rule (1, 2, or 3).
         :type level: int, optional
-
-        :param modified_at: Time of the last rule outcome modification.
-        :type modified_at: datetime, optional
 
         :param name: Name of the rule.
         :type name: str, optional
@@ -103,20 +78,12 @@ class RuleAttributes(ModelNormal):
         :param scorecard_name: The scorecard name to which this rule must belong.
         :type scorecard_name: str, optional
         """
-        if category is not unset:
-            kwargs["category"] = category
-        if created_at is not unset:
-            kwargs["created_at"] = created_at
-        if custom is not unset:
-            kwargs["custom"] = custom
         if description is not unset:
             kwargs["description"] = description
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if level is not unset:
             kwargs["level"] = level
-        if modified_at is not unset:
-            kwargs["modified_at"] = modified_at
         if name is not unset:
             kwargs["name"] = name
         if owner is not unset:

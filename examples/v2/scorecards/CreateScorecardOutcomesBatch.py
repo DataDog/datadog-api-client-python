@@ -4,7 +4,7 @@ Create outcomes batch returns "OK" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.service_scorecards_api import ServiceScorecardsApi
+from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
 from datadog_api_client.v2.model.outcomes_batch_attributes import OutcomesBatchAttributes
 from datadog_api_client.v2.model.outcomes_batch_request import OutcomesBatchRequest
 from datadog_api_client.v2.model.outcomes_batch_request_data import OutcomesBatchRequestData
@@ -34,7 +34,7 @@ body = OutcomesBatchRequest(
 configuration = Configuration()
 configuration.unstable_operations["create_scorecard_outcomes_batch"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = ServiceScorecardsApi(api_client)
+    api_instance = ScorecardsApi(api_client)
     response = api_instance.create_scorecard_outcomes_batch(body=body)
 
     print(response)
