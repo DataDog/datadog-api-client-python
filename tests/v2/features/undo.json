@@ -5374,10 +5374,22 @@
       "type": "idempotent"
     }
   },
+  "GetInvestigationLogQueriesMatchingSignal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "EditSecurityMonitoringSignalState": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetSuggestedActionsMatchingSignal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListScanningGroups": {

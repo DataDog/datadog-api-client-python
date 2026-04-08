@@ -1371,6 +1371,25 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 Notification rule details.
 
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get investigation queries for a signal returns "Not Found" response
+    Given new "GetInvestigationLogQueriesMatchingSignal" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get investigation queries for a signal returns "OK" response
+    Given new "GetInvestigationLogQueriesMatchingSignal" request
+    And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].type" is equal to "investigation_log_queries"
+    And the response "data[0]" has field "id"
+    And the response "data[0].attributes" has field "name"
+    And the response "data[0].attributes" has field "query_filter"
+    And the response "data[0].attributes" has field "url"
+
   @skip-go @skip-java @skip-ruby @team:DataDog/k9-cloud-siem
   Scenario: Get rule version history returns "OK" response
     Given operation "GetRuleVersionHistory" enabled
@@ -1383,6 +1402,29 @@ Feature: Security Monitoring
     And the response "data.type" is equal to "GetRuleVersionHistoryResponse"
     And the response "data.attributes.count" is equal to 1
     And the response "data.attributes.data[1].rule.name" has the same value as "security_rule.name"
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get suggested actions for a signal returns "Not Found" response
+    Given new "GetSuggestedActionsMatchingSignal" request
+    And request contains "signal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get suggested actions for a signal returns "OK" response
+    Given new "GetSuggestedActionsMatchingSignal" request
+    And request contains "signal_id" parameter with value "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data[0].type" is equal to "investigation_log_queries"
+    And the response "data[0]" has field "id"
+    And the response "data[0].attributes" has field "name"
+    And the response "data[0].attributes" has field "query_filter"
+    And the response "data[0].attributes" has field "url"
+    And the response "data[1].type" is equal to "recommended_blog_posts"
+    And the response "data[1]" has field "id"
+    And the response "data[1].attributes" has field "title"
+    And the response "data[1].attributes" has field "url"
 
   @team:DataDog/k9-cloud-siem
   Scenario: Get suppressions affecting a specific rule returns "Not Found" response
