@@ -31,6 +31,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
         :type auth: ObservabilityPipelineAwsAuth, optional
 
+        :param compression: Compression format for objects retrieved from the S3 bucket. Use `auto` to detect compression from the object's Content-Encoding header or file extension.
+        :type compression: ObservabilityPipelineAmazonS3SourceCompression, optional
+
         :param region: AWS region where the S3 bucket resides.
         :type region: str
 
