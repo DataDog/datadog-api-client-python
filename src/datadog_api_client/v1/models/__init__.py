@@ -1068,7 +1068,10 @@ from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
 from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
 from datadog_api_client.v1.model.topology_map_widget_definition_type import TopologyMapWidgetDefinitionType
 from datadog_api_client.v1.model.topology_query import TopologyQuery
-from datadog_api_client.v1.model.topology_query_data_source import TopologyQueryDataSource
+from datadog_api_client.v1.model.topology_query_data_streams_or_service_map import TopologyQueryDataStreamsOrServiceMap
+from datadog_api_client.v1.model.topology_query_data_streams_or_service_map_data_source import (
+    TopologyQueryDataStreamsOrServiceMapDataSource,
+)
 from datadog_api_client.v1.model.topology_request import TopologyRequest
 from datadog_api_client.v1.model.topology_request_type import TopologyRequestType
 from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
@@ -2126,7 +2129,8 @@ __all__ = [
     "TopologyMapWidgetDefinition",
     "TopologyMapWidgetDefinitionType",
     "TopologyQuery",
-    "TopologyQueryDataSource",
+    "TopologyQueryDataStreamsOrServiceMap",
+    "TopologyQueryDataStreamsOrServiceMapDataSource",
     "TopologyRequest",
     "TopologyRequestType",
     "TreeMapColorBy",

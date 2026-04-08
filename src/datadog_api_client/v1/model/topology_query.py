@@ -3,66 +3,47 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.topology_query_data_source import TopologyQueryDataSource
-
-
-class TopologyQuery(ModelNormal):
-    validations = {
-        "filters": {
-            "min_items": 1,
-        },
-    }
-
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v1.model.topology_query_data_source import TopologyQueryDataSource
-
-        return {
-            "data_source": (TopologyQueryDataSource,),
-            "filters": ([str],),
-            "service": (str,),
-        }
-
-    attribute_map = {
-        "data_source": "data_source",
-        "filters": "filters",
-        "service": "service",
-    }
-
-    def __init__(
-        self_,
-        data_source: Union[TopologyQueryDataSource, UnsetType] = unset,
-        filters: Union[List[str], UnsetType] = unset,
-        service: Union[str, UnsetType] = unset,
-        **kwargs,
-    ):
+class TopologyQuery(ModelComposed):
+    def __init__(self, **kwargs):
         """
-        Query to service-based topology data sources like the service map or data streams.
+        A topology data source query.
 
         :param data_source: Name of the data source
-        :type data_source: TopologyQueryDataSource, optional
+        :type data_source: TopologyQueryDataStreamsOrServiceMapDataSource
 
         :param filters: Your environment and primary tag (or * if enabled for your account).
-        :type filters: [str], optional
+        :type filters: [str]
+
+        :param query_string: A search string for filtering services, used in `data_streams` queries only. When set, this replaces the `service` field
+        :type query_string: str, optional
 
         :param service: Name of the service
         :type service: str, optional
         """
-        if data_source is not unset:
-            kwargs["data_source"] = data_source
-        if filters is not unset:
-            kwargs["filters"] = filters
-        if service is not unset:
-            kwargs["service"] = service
         super().__init__(kwargs)
+
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v1.model.topology_query_data_streams_or_service_map import (
+            TopologyQueryDataStreamsOrServiceMap,
+        )
+
+        return {
+            "oneOf": [
+                TopologyQueryDataStreamsOrServiceMap,
+            ],
+        }
