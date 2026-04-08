@@ -208,6 +208,14 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with amazon S3 source compression returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["amazon-s3-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "service:my-service", "type": "filter"}]}], "sources": [{"id": "amazon-s3-source", "type": "amazon_s3", "region": "us-east-1", "compression": "gzip"}]}, "name": "Pipeline with S3 Source Compression"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline with destination secret key returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "sumo-logic-destination", "inputs": ["my-processor-group"], "type": "sumo_logic", "endpoint_url_key": "SUMO_LOGIC_ENDPOINT_URL"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Secret Key"}, "type": "pipelines"}}

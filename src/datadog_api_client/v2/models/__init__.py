@@ -3675,6 +3675,9 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encodi
     ObservabilityPipelineAmazonS3GenericEncodingParquetType,
 )
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import ObservabilityPipelineAmazonS3Source
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source_compression import (
+    ObservabilityPipelineAmazonS3SourceCompression,
+)
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source_type import (
     ObservabilityPipelineAmazonS3SourceType,
 )
@@ -9568,6 +9571,7 @@ __all__ = [
     "ObservabilityPipelineAmazonS3GenericEncodingParquet",
     "ObservabilityPipelineAmazonS3GenericEncodingParquetType",
     "ObservabilityPipelineAmazonS3Source",
+    "ObservabilityPipelineAmazonS3SourceCompression",
     "ObservabilityPipelineAmazonS3SourceType",
     "ObservabilityPipelineAmazonSecurityLakeDestination",
     "ObservabilityPipelineAmazonSecurityLakeDestinationType",

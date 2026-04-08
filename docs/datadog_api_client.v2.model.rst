@@ -19198,6 +19198,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_source module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_source\_compression module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_source_compression
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_source\_type module
 --------------------------------------------------------------------------------------
 
