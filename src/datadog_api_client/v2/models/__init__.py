@@ -5453,6 +5453,9 @@ from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_dat
 from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request import (
     SecurityMonitoringSignalIncidentsUpdateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_signal_investigation_query_template_variables import (
+    SecurityMonitoringSignalInvestigationQueryTemplateVariables,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
 from datadog_api_client.v2.model.security_monitoring_signal_list_request_filter import (
     SecurityMonitoringSignalListRequestFilter,
@@ -5481,6 +5484,18 @@ from datadog_api_client.v2.model.security_monitoring_signal_state_update_data im
 )
 from datadog_api_client.v2.model.security_monitoring_signal_state_update_request import (
     SecurityMonitoringSignalStateUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_suggested_action import (
+    SecurityMonitoringSignalSuggestedAction,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_suggested_action_attributes import (
+    SecurityMonitoringSignalSuggestedActionAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_suggested_action_type import (
+    SecurityMonitoringSignalSuggestedActionType,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_suggested_actions_response import (
+    SecurityMonitoringSignalSuggestedActionsResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_triage_attributes import (
     SecurityMonitoringSignalTriageAttributes,
@@ -10664,6 +10679,7 @@ __all__ = [
     "SecurityMonitoringSignalIncidentsUpdateAttributes",
     "SecurityMonitoringSignalIncidentsUpdateData",
     "SecurityMonitoringSignalIncidentsUpdateRequest",
+    "SecurityMonitoringSignalInvestigationQueryTemplateVariables",
     "SecurityMonitoringSignalListRequest",
     "SecurityMonitoringSignalListRequestFilter",
     "SecurityMonitoringSignalListRequestPage",
@@ -10679,6 +10695,10 @@ __all__ = [
     "SecurityMonitoringSignalStateUpdateAttributes",
     "SecurityMonitoringSignalStateUpdateData",
     "SecurityMonitoringSignalStateUpdateRequest",
+    "SecurityMonitoringSignalSuggestedAction",
+    "SecurityMonitoringSignalSuggestedActionAttributes",
+    "SecurityMonitoringSignalSuggestedActionType",
+    "SecurityMonitoringSignalSuggestedActionsResponse",
     "SecurityMonitoringSignalTriageAttributes",
     "SecurityMonitoringSignalTriageUpdateData",
     "SecurityMonitoringSignalTriageUpdateResponse",

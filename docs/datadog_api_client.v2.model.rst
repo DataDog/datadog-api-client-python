@@ -26807,6 +26807,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_signal\_incidents\_update\_r
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_investigation\_query\_template\_variables module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_investigation_query_template_variables
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_signal\_list\_request module
 --------------------------------------------------------------------------------
 
@@ -26909,6 +26916,34 @@ datadog\_api\_client.v2.model.security\_monitoring\_signal\_state\_update\_reque
 -----------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signal_state_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_suggested\_action module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_suggested_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_suggested\_action\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_suggested_action_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_suggested\_action\_type module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_suggested_action_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_suggested\_actions\_response module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_suggested_actions_response
    :members:
    :show-inheritance:
 

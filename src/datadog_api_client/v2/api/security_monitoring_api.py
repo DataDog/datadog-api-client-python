@@ -145,6 +145,9 @@ from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_requ
 from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request import (
     SecurityMonitoringSignalIncidentsUpdateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_signal_suggested_actions_response import (
+    SecurityMonitoringSignalSuggestedActionsResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_signal_state_update_request import (
     SecurityMonitoringSignalStateUpdateRequest,
 )
@@ -973,6 +976,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_investigation_log_queries_matching_signal_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalSuggestedActionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/investigation_queries",
+                "operation_id": "get_investigation_log_queries_matching_signal",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_resource_evaluation_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (GetResourceEvaluationFiltersResponse,),
@@ -1320,6 +1346,29 @@ class SecurityMonitoringApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_suggested_actions_matching_signal_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringSignalSuggestedActionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/suggested_actions",
+                "operation_id": "get_suggested_actions_matching_signal",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -3398,6 +3447,23 @@ class SecurityMonitoringApi:
 
         return self._get_finding_endpoint.call_with_http_info(**kwargs)
 
+    def get_investigation_log_queries_matching_signal(
+        self,
+        signal_id: str,
+    ) -> SecurityMonitoringSignalSuggestedActionsResponse:
+        """Get investigation queries for a signal.
+
+        Get the list of investigation log queries available for a given security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :rtype: SecurityMonitoringSignalSuggestedActionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        return self._get_investigation_log_queries_matching_signal_endpoint.call_with_http_info(**kwargs)
+
     def get_resource_evaluation_filters(
         self,
         *,
@@ -3693,6 +3759,23 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_signal_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_suggested_actions_matching_signal(
+        self,
+        signal_id: str,
+    ) -> SecurityMonitoringSignalSuggestedActionsResponse:
+        """Get suggested actions for a signal.
+
+        Get the list of suggested actions for a given security signal.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :rtype: SecurityMonitoringSignalSuggestedActionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        return self._get_suggested_actions_matching_signal_endpoint.call_with_http_info(**kwargs)
 
     def get_suppressions_affecting_future_rule(
         self,
