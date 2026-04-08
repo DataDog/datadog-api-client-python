@@ -4775,32 +4775,62 @@
       "type": "idempotent"
     }
   },
-  "ListScorecardOutcomes": {
-    "tag": "Service Scorecards",
+  "ListScorecardCampaigns": {
+    "tag": "Scorecards",
     "undo": {
       "type": "safe"
     }
   },
-  "UpdateScorecardOutcomesAsync": {
-    "tag": "Service Scorecards",
+  "CreateScorecardCampaign": {
+    "tag": "Scorecards",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteScorecardCampaign": {
+    "tag": "Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetScorecardCampaign": {
+    "tag": "Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateScorecardCampaign": {
+    "tag": "Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListScorecardOutcomes": {
+    "tag": "Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateScorecardOutcomes": {
+    "tag": "Scorecards",
     "undo": {
       "type": "idempotent"
     }
   },
   "CreateScorecardOutcomesBatch": {
-    "tag": "Service Scorecards",
+    "tag": "Scorecards",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListScorecardRules": {
-    "tag": "Service Scorecards",
+    "tag": "Scorecards",
     "undo": {
       "type": "safe"
     }
   },
   "CreateScorecardRule": {
-    "tag": "Service Scorecards",
+    "tag": "Scorecards",
     "undo": {
       "operationId": "DeleteScorecardRule",
       "parameters": [
@@ -4813,15 +4843,21 @@
     }
   },
   "DeleteScorecardRule": {
-    "tag": "Service Scorecards",
+    "tag": "Scorecards",
     "undo": {
       "type": "idempotent"
     }
   },
   "UpdateScorecardRule": {
-    "tag": "Service Scorecards",
+    "tag": "Scorecards",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListScorecards": {
+    "tag": "Scorecards",
+    "undo": {
+      "type": "safe"
     }
   },
   "UnassignSeatsUser": {

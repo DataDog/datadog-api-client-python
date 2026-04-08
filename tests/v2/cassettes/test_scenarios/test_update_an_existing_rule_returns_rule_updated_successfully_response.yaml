@@ -22,7 +22,7 @@ interactions:
       message: Created
 - request:
     body: '{"data":{"attributes":{"description":"Updated description via test","enabled":true,"name":"Test-Update_an_existing_rule_returns_Rule_updated_successfully_response-1722307632","scorecard_name":"OpenAPI
-      Spec Test Best Practices"}}}'
+      Spec Test Best Practices"},"type":"rule"}}'
     headers:
       accept:
       - application/json
