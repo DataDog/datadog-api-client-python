@@ -30,10 +30,10 @@ class ProductAnalyticsAudienceAccountSubquery(ModelNormal):
         """
         Product Analytics audience account subquery.
 
-        :param name:
+        :param name: The name of the account subquery.
         :type name: str, optional
 
-        :param query:
+        :param query: The query string for the account subquery.
         :type query: str, optional
         """
         if name is not unset:

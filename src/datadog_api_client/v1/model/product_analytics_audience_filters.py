@@ -66,7 +66,7 @@ class ProductAnalyticsAudienceFilters(ModelNormal):
         :param accounts:
         :type accounts: [ProductAnalyticsAudienceAccountSubquery], optional
 
-        :param filter_condition:
+        :param filter_condition: An optional filter condition applied to the audience subquery.
         :type filter_condition: str, optional
 
         :param segments:

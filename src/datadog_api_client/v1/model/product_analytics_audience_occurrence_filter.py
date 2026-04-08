@@ -28,12 +28,12 @@ class ProductAnalyticsAudienceOccurrenceFilter(ModelNormal):
 
     def __init__(self_, operator: Union[str, UnsetType] = unset, value: Union[str, UnsetType] = unset, **kwargs):
         """
+        Filter applied to occurrence counts when building a Product Analytics audience.
 
-
-        :param operator:
+        :param operator: The comparison operator used for the occurrence filter (for example: ``gt`` , ``lt`` , ``eq`` ).
         :type operator: str, optional
 
-        :param value:
+        :param value: The threshold value to compare occurrence counts against.
         :type value: str, optional
         """
         if operator is not unset:

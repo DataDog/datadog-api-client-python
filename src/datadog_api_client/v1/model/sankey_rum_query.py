@@ -102,7 +102,7 @@ class SankeyRumQuery(ModelNormal):
         :param number_of_steps: Number of steps.
         :type number_of_steps: int, optional
 
-        :param occurrences:
+        :param occurrences: Filter applied to occurrence counts when building a Product Analytics audience.
         :type occurrences: ProductAnalyticsAudienceOccurrenceFilter, optional
 
         :param query_string: Query string.

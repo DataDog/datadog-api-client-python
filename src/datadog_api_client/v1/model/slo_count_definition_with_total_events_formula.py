@@ -55,7 +55,7 @@ class SLOCountDefinitionWithTotalEventsFormula(ModelNormal):
         **kwargs,
     ):
         """
-
+        SLO count definition using a total events formula alongside a good events formula.
 
         :param good_events_formula: A formula that specifies how to combine the results of multiple queries.
         :type good_events_formula: SLOFormula

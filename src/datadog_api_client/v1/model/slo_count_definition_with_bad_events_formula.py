@@ -55,7 +55,7 @@ class SLOCountDefinitionWithBadEventsFormula(ModelNormal):
         **kwargs,
     ):
         """
-
+        SLO count definition using a bad events formula alongside a good events formula.
 
         :param bad_events_formula: A formula that specifies how to combine the results of multiple queries.
         :type bad_events_formula: SLOFormula
