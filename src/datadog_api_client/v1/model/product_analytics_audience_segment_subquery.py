@@ -30,10 +30,10 @@ class ProductAnalyticsAudienceSegmentSubquery(ModelNormal):
         """
         Product Analytics audience segment subquery.
 
-        :param name:
+        :param name: The name of the segment subquery.
         :type name: str, optional
 
-        :param segment_id:
+        :param segment_id: The unique identifier of the segment.
         :type segment_id: str, optional
         """
         if name is not unset:
