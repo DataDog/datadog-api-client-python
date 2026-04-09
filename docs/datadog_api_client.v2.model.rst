@@ -7907,13 +7907,6 @@ datadog\_api\_client.v2.model.dashboard\_list\_add\_items\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.dashboard\_list\_delete\_items\_request module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.dashboard_list_delete_items_request
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.dashboard\_list\_delete\_items\_response module
 -----------------------------------------------------------------------------
 
@@ -7946,6 +7939,13 @@ datadog\_api\_client.v2.model.dashboard\_list\_items module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.dashboard_list_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_list\_remove\_items\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_list_remove_items_request
    :members:
    :show-inheritance:
 

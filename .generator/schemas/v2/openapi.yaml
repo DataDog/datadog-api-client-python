@@ -19766,15 +19766,6 @@ components:
             $ref: "#/components/schemas/DashboardListItemResponse"
           type: array
       type: object
-    DashboardListDeleteItemsRequest:
-      description: Request containing a list of dashboards to delete.
-      properties:
-        dashboards:
-          description: List of dashboards to delete from the dashboard list.
-          items:
-            $ref: "#/components/schemas/DashboardListItemRequest"
-          type: array
-      type: object
     DashboardListDeleteItemsResponse:
       description: Response containing a list of deleted dashboards.
       properties:
@@ -19897,6 +19888,15 @@ components:
           type: integer
       required:
         - dashboards
+      type: object
+    DashboardListRemoveItemsRequest:
+      description: Request containing a list of dashboards to remove.
+      properties:
+        dashboards:
+          description: List of dashboards to delete from the dashboard list.
+          items:
+            $ref: "#/components/schemas/DashboardListItemRequest"
+          type: array
       type: object
     DashboardListUpdateItemsRequest:
       description: Request containing the list of dashboards to update to.
@@ -83591,7 +83591,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/DashboardListDeleteItemsRequest"
+              $ref: "#/components/schemas/DashboardListRemoveItemsRequest"
         description: Dashboards to delete from the dashboard list.
         required: true
       responses:

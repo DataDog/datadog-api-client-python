@@ -4,11 +4,11 @@ Delete items from a dashboard list returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
-from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
 from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
+from datadog_api_client.v2.model.dashboard_list_remove_items_request import DashboardListRemoveItemsRequest
 from datadog_api_client.v2.model.dashboard_type import DashboardType
 
-body = DashboardListDeleteItemsRequest(
+body = DashboardListRemoveItemsRequest(
     dashboards=[
         DashboardListItemRequest(
             id="q5j-nti-fv6",

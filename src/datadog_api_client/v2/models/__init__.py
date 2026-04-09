@@ -1606,12 +1606,12 @@ from datadog_api_client.v2.model.dora_list_failures_request_data import DORAList
 from datadog_api_client.v2.model.dora_list_failures_request_data_type import DORAListFailuresRequestDataType
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
-from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
 from datadog_api_client.v2.model.dashboard_list_delete_items_response import DashboardListDeleteItemsResponse
 from datadog_api_client.v2.model.dashboard_list_item import DashboardListItem
 from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
 from datadog_api_client.v2.model.dashboard_list_item_response import DashboardListItemResponse
 from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
+from datadog_api_client.v2.model.dashboard_list_remove_items_request import DashboardListRemoveItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_request import DashboardListUpdateItemsRequest
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
@@ -8007,12 +8007,12 @@ __all__ = [
     "DORAListFailuresRequestDataType",
     "DashboardListAddItemsRequest",
     "DashboardListAddItemsResponse",
-    "DashboardListDeleteItemsRequest",
     "DashboardListDeleteItemsResponse",
     "DashboardListItem",
     "DashboardListItemRequest",
     "DashboardListItemResponse",
     "DashboardListItems",
+    "DashboardListRemoveItemsRequest",
     "DashboardListUpdateItemsRequest",
     "DashboardListUpdateItemsResponse",
     "DashboardTriggerWrapper",

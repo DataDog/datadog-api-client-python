@@ -8,7 +8,7 @@ from typing import Any, Dict
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.dashboard_list_delete_items_response import DashboardListDeleteItemsResponse
-from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
+from datadog_api_client.v2.model.dashboard_list_remove_items_request import DashboardListRemoveItemsRequest
 from datadog_api_client.v2.model.dashboard_list_items import DashboardListItems
 from datadog_api_client.v2.model.dashboard_list_add_items_response import DashboardListAddItemsResponse
 from datadog_api_client.v2.model.dashboard_list_add_items_request import DashboardListAddItemsRequest
@@ -72,7 +72,7 @@ class DashboardListsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (DashboardListDeleteItemsRequest,),
+                    "openapi_types": (DashboardListRemoveItemsRequest,),
                     "location": "body",
                 },
             },
@@ -154,7 +154,7 @@ class DashboardListsApi:
     def delete_dashboard_list_items(
         self,
         dashboard_list_id: int,
-        body: DashboardListDeleteItemsRequest,
+        body: DashboardListRemoveItemsRequest,
     ) -> DashboardListDeleteItemsResponse:
         """Delete items from a dashboard list.
 
@@ -163,7 +163,7 @@ class DashboardListsApi:
         :param dashboard_list_id: ID of the dashboard list to delete items from.
         :type dashboard_list_id: int
         :param body: Dashboards to delete from the dashboard list.
-        :type body: DashboardListDeleteItemsRequest
+        :type body: DashboardListRemoveItemsRequest
         :rtype: DashboardListDeleteItemsResponse
         """
         kwargs: Dict[str, Any] = {}

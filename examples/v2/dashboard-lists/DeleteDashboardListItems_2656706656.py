@@ -5,8 +5,8 @@ Delete custom timeboard dashboard from an existing dashboard list returns "OK" r
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
-from datadog_api_client.v2.model.dashboard_list_delete_items_request import DashboardListDeleteItemsRequest
 from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
+from datadog_api_client.v2.model.dashboard_list_remove_items_request import DashboardListRemoveItemsRequest
 from datadog_api_client.v2.model.dashboard_type import DashboardType
 
 # there is a valid "dashboard_list" in the system
@@ -15,7 +15,7 @@ DASHBOARD_LIST_ID = environ["DASHBOARD_LIST_ID"]
 # there is a valid "dashboard" in the system
 DASHBOARD_ID = environ["DASHBOARD_ID"]
 
-body = DashboardListDeleteItemsRequest(
+body = DashboardListRemoveItemsRequest(
     dashboards=[
         DashboardListItemRequest(
             id=DASHBOARD_ID,

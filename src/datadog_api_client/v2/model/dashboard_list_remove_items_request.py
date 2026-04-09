@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
 
 
-class DashboardListDeleteItemsRequest(ModelNormal):
+class DashboardListRemoveItemsRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.dashboard_list_item_request import DashboardListItemRequest
@@ -32,7 +32,7 @@ class DashboardListDeleteItemsRequest(ModelNormal):
 
     def __init__(self_, dashboards: Union[List[DashboardListItemRequest], UnsetType] = unset, **kwargs):
         """
-        Request containing a list of dashboards to delete.
+        Request containing a list of dashboards to remove.
 
         :param dashboards: List of dashboards to delete from the dashboard list.
         :type dashboards: [DashboardListItemRequest], optional
