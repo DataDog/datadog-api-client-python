@@ -19534,6 +19534,27 @@ datadog\_api\_client.v2.model.observability\_pipeline\_elasticsearch\_destinatio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_field\_event\_lookup module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_event_lookup
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_field\_secret\_lookup module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_secret_lookup
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_field\_vrl\_lookup module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_vrl_lookup
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_file module
 -------------------------------------------------------------------------------------
 
@@ -19552,6 +19573,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_file\_
 -----------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_encoding_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_enrichment\_table\_file\_key\_item\_field module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_item_field
    :members:
    :show-inheritance:
 
@@ -20812,6 +20840,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_destination\
 ------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_destination\_token\_strategy module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_token_strategy
    :members:
    :show-inheritance:
 

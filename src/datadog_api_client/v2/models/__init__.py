@@ -3804,6 +3804,15 @@ from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destinatio
 from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_type import (
     ObservabilityPipelineElasticsearchDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_event_lookup import (
+    ObservabilityPipelineEnrichmentTableFieldEventLookup,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_secret_lookup import (
+    ObservabilityPipelineEnrichmentTableFieldSecretLookup,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_vrl_lookup import (
+    ObservabilityPipelineEnrichmentTableFieldVrlLookup,
+)
 from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file import (
     ObservabilityPipelineEnrichmentTableFile,
 )
@@ -3812,6 +3821,9 @@ from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_en
 )
 from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_encoding_type import (
     ObservabilityPipelineEnrichmentTableFileEncodingType,
+)
+from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_item_field import (
+    ObservabilityPipelineEnrichmentTableFileKeyItemField,
 )
 from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_items import (
     ObservabilityPipelineEnrichmentTableFileKeyItems,
@@ -4302,6 +4314,9 @@ from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination i
 )
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
     ObservabilityPipelineSplunkHecDestinationEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_token_strategy import (
+    ObservabilityPipelineSplunkHecDestinationTokenStrategy,
 )
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_type import (
     ObservabilityPipelineSplunkHecDestinationType,
@@ -9635,9 +9650,13 @@ __all__ = [
     "ObservabilityPipelineElasticsearchDestinationAuth",
     "ObservabilityPipelineElasticsearchDestinationDataStream",
     "ObservabilityPipelineElasticsearchDestinationType",
+    "ObservabilityPipelineEnrichmentTableFieldEventLookup",
+    "ObservabilityPipelineEnrichmentTableFieldSecretLookup",
+    "ObservabilityPipelineEnrichmentTableFieldVrlLookup",
     "ObservabilityPipelineEnrichmentTableFile",
     "ObservabilityPipelineEnrichmentTableFileEncoding",
     "ObservabilityPipelineEnrichmentTableFileEncodingType",
+    "ObservabilityPipelineEnrichmentTableFileKeyItemField",
     "ObservabilityPipelineEnrichmentTableFileKeyItems",
     "ObservabilityPipelineEnrichmentTableFileKeyItemsComparison",
     "ObservabilityPipelineEnrichmentTableFileSchemaItems",
@@ -9818,6 +9837,7 @@ __all__ = [
     "ObservabilityPipelineSplitArrayProcessorType",
     "ObservabilityPipelineSplunkHecDestination",
     "ObservabilityPipelineSplunkHecDestinationEncoding",
+    "ObservabilityPipelineSplunkHecDestinationTokenStrategy",
     "ObservabilityPipelineSplunkHecDestinationType",
     "ObservabilityPipelineSplunkHecSource",
     "ObservabilityPipelineSplunkHecSourceType",

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,6 +15,18 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_items_comparison import (
         ObservabilityPipelineEnrichmentTableFileKeyItemsComparison,
     )
+    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_item_field import (
+        ObservabilityPipelineEnrichmentTableFileKeyItemField,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_event_lookup import (
+        ObservabilityPipelineEnrichmentTableFieldEventLookup,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_vrl_lookup import (
+        ObservabilityPipelineEnrichmentTableFieldVrlLookup,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_enrichment_table_field_secret_lookup import (
+        ObservabilityPipelineEnrichmentTableFieldSecretLookup,
+    )
 
 
 class ObservabilityPipelineEnrichmentTableFileKeyItems(ModelNormal):
@@ -23,11 +35,14 @@ class ObservabilityPipelineEnrichmentTableFileKeyItems(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_items_comparison import (
             ObservabilityPipelineEnrichmentTableFileKeyItemsComparison,
         )
+        from datadog_api_client.v2.model.observability_pipeline_enrichment_table_file_key_item_field import (
+            ObservabilityPipelineEnrichmentTableFileKeyItemField,
+        )
 
         return {
             "column": (str,),
             "comparison": (ObservabilityPipelineEnrichmentTableFileKeyItemsComparison,),
-            "field": (str,),
+            "field": (ObservabilityPipelineEnrichmentTableFileKeyItemField,),
         }
 
     attribute_map = {
@@ -37,7 +52,17 @@ class ObservabilityPipelineEnrichmentTableFileKeyItems(ModelNormal):
     }
 
     def __init__(
-        self_, column: str, comparison: ObservabilityPipelineEnrichmentTableFileKeyItemsComparison, field: str, **kwargs
+        self_,
+        column: str,
+        comparison: ObservabilityPipelineEnrichmentTableFileKeyItemsComparison,
+        field: Union[
+            ObservabilityPipelineEnrichmentTableFileKeyItemField,
+            str,
+            ObservabilityPipelineEnrichmentTableFieldEventLookup,
+            ObservabilityPipelineEnrichmentTableFieldVrlLookup,
+            ObservabilityPipelineEnrichmentTableFieldSecretLookup,
+        ],
+        **kwargs,
     ):
         """
         Defines how to map log fields to enrichment table columns during lookups.
@@ -48,8 +73,9 @@ class ObservabilityPipelineEnrichmentTableFileKeyItems(ModelNormal):
         :param comparison: Defines how to compare key fields for enrichment table lookups.
         :type comparison: ObservabilityPipelineEnrichmentTableFileKeyItemsComparison
 
-        :param field: The ``items`` ``field``.
-        :type field: str
+        :param field: Specifies the source of the key value used for enrichment table lookups.
+            Can be a plain field path string or an object specifying ``event`` , ``vrl`` , or ``secret``.
+        :type field: ObservabilityPipelineEnrichmentTableFileKeyItemField
         """
         super().__init__(kwargs)
 
