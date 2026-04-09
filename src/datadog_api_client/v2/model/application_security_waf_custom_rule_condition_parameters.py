@@ -20,6 +20,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_options import (
         ApplicationSecurityWafCustomRuleConditionOptions,
     )
+    from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters_type import (
+        ApplicationSecurityWafCustomRuleConditionParametersType,
+    )
 
 
 class ApplicationSecurityWafCustomRuleConditionParameters(ModelNormal):
@@ -31,6 +34,9 @@ class ApplicationSecurityWafCustomRuleConditionParameters(ModelNormal):
         from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_options import (
             ApplicationSecurityWafCustomRuleConditionOptions,
         )
+        from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters_type import (
+            ApplicationSecurityWafCustomRuleConditionParametersType,
+        )
 
         return {
             "data": (str,),
@@ -38,6 +44,7 @@ class ApplicationSecurityWafCustomRuleConditionParameters(ModelNormal):
             "list": ([str],),
             "options": (ApplicationSecurityWafCustomRuleConditionOptions,),
             "regex": (str,),
+            "type": (ApplicationSecurityWafCustomRuleConditionParametersType,),
             "value": (str,),
         }
 
@@ -47,6 +54,7 @@ class ApplicationSecurityWafCustomRuleConditionParameters(ModelNormal):
         "list": "list",
         "options": "options",
         "regex": "regex",
+        "type": "type",
         "value": "value",
     }
 
@@ -57,6 +65,7 @@ class ApplicationSecurityWafCustomRuleConditionParameters(ModelNormal):
         list: Union[List[str], UnsetType] = unset,
         options: Union[ApplicationSecurityWafCustomRuleConditionOptions, UnsetType] = unset,
         regex: Union[str, UnsetType] = unset,
+        type: Union[ApplicationSecurityWafCustomRuleConditionParametersType, UnsetType] = unset,
         value: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -79,6 +88,9 @@ class ApplicationSecurityWafCustomRuleConditionParameters(ModelNormal):
         :param regex: Regex to use with the condition. Only used with match_regex and !match_regex operator.
         :type regex: str, optional
 
+        :param type: The type of the value to compare against. Only used with the equals and !equals operator.
+        :type type: ApplicationSecurityWafCustomRuleConditionParametersType, optional
+
         :param value: Store the captured value in the specified tag name. Only used with the capture_data operator.
         :type value: str, optional
         """
@@ -90,6 +102,8 @@ class ApplicationSecurityWafCustomRuleConditionParameters(ModelNormal):
             kwargs["options"] = options
         if regex is not unset:
             kwargs["regex"] = regex
+        if type is not unset:
+            kwargs["type"] = type
         if value is not unset:
             kwargs["value"] = value
         super().__init__(kwargs)

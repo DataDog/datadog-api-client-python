@@ -31,6 +31,9 @@ from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_
 from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters import (
     ApplicationSecurityWafCustomRuleConditionParameters,
 )
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters_type import (
+    ApplicationSecurityWafCustomRuleConditionParametersType,
+)
 from datadog_api_client.v2.model.application_security_waf_custom_rule_create_attributes import (
     ApplicationSecurityWafCustomRuleCreateAttributes,
 )
@@ -75,6 +78,7 @@ body = ApplicationSecurityWafCustomRuleCreateRequest(
                             min_length=0,
                         ),
                         regex="path.*",
+                        type=ApplicationSecurityWafCustomRuleConditionParametersType.STRING,
                         value="custom_tag",
                     ),
                 ),

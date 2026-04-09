@@ -844,6 +844,13 @@ datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_conditio
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_condition\_parameters\_type module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_create\_attributes module
 -------------------------------------------------------------------------------------------------
 

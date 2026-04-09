@@ -16,7 +16,7 @@ class ApplicationSecurityWafCustomRuleConditionOperator(ModelSimple):
     """
     Operator to use for the WAF Condition.
 
-    :param value: Must be one of ["match_regex", "!match_regex", "phrase_match", "!phrase_match", "is_xss", "is_sqli", "exact_match", "!exact_match", "ip_match", "!ip_match", "capture_data"].
+    :param value: Must be one of ["match_regex", "!match_regex", "phrase_match", "!phrase_match", "is_xss", "is_sqli", "exact_match", "!exact_match", "ip_match", "!ip_match", "capture_data", "exists", "!exists", "equals", "!equals"].
     :type value: str
     """
 
@@ -32,6 +32,10 @@ class ApplicationSecurityWafCustomRuleConditionOperator(ModelSimple):
         "ip_match",
         "!ip_match",
         "capture_data",
+        "exists",
+        "!exists",
+        "equals",
+        "!equals",
     }
     MATCH_REGEX: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
     NOT_MATCH_REGEX: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
@@ -44,6 +48,10 @@ class ApplicationSecurityWafCustomRuleConditionOperator(ModelSimple):
     IP_MATCH: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
     NOT_IP_MATCH: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
     CAPTURE_DATA: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
+    EXISTS: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
+    NOT_EXISTS: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
+    EQUALS: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
+    NOT_EQUALS: ClassVar["ApplicationSecurityWafCustomRuleConditionOperator"]
 
     @cached_property
     def openapi_types(_):
@@ -80,4 +88,12 @@ ApplicationSecurityWafCustomRuleConditionOperator.NOT_IP_MATCH = ApplicationSecu
 )
 ApplicationSecurityWafCustomRuleConditionOperator.CAPTURE_DATA = ApplicationSecurityWafCustomRuleConditionOperator(
     "capture_data"
+)
+ApplicationSecurityWafCustomRuleConditionOperator.EXISTS = ApplicationSecurityWafCustomRuleConditionOperator("exists")
+ApplicationSecurityWafCustomRuleConditionOperator.NOT_EXISTS = ApplicationSecurityWafCustomRuleConditionOperator(
+    "!exists"
+)
+ApplicationSecurityWafCustomRuleConditionOperator.EQUALS = ApplicationSecurityWafCustomRuleConditionOperator("equals")
+ApplicationSecurityWafCustomRuleConditionOperator.NOT_EQUALS = ApplicationSecurityWafCustomRuleConditionOperator(
+    "!equals"
 )

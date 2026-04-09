@@ -16,21 +16,21 @@ Feature: Application Security
   @generated @skip @team:DataDog/asm-backend
   Scenario: Create a WAF custom rule returns "Bad Request" response
     Given new "CreateApplicationSecurityWafCustomRule" request
-    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "value": "custom_tag"}}], "enabled": false, "name": "Block request from a bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
+    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "type": "string", "value": "custom_tag"}}], "enabled": false, "name": "Block request from a bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/asm-backend
   Scenario: Create a WAF custom rule returns "Concurrent Modification" response
     Given new "CreateApplicationSecurityWafCustomRule" request
-    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "value": "custom_tag"}}], "enabled": false, "name": "Block request from a bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
+    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "type": "string", "value": "custom_tag"}}], "enabled": false, "name": "Block request from a bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
   @generated @skip @team:DataDog/asm-backend
   Scenario: Create a WAF custom rule returns "Created" response
     Given new "CreateApplicationSecurityWafCustomRule" request
-    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "value": "custom_tag"}}], "enabled": false, "name": "Block request from a bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
+    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "type": "string", "value": "custom_tag"}}], "enabled": false, "name": "Block request from a bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -153,7 +153,7 @@ Feature: Application Security
   Scenario: Update a WAF Custom Rule returns "Concurrent Modification" response
     Given new "UpdateApplicationSecurityWafCustomRule" request
     And request contains "custom_rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "value": "custom_tag"}}], "enabled": false, "name": "Block request from bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
+    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "type": "string", "value": "custom_tag"}}], "enabled": false, "name": "Block request from bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
@@ -161,7 +161,7 @@ Feature: Application Security
   Scenario: Update a WAF Custom Rule returns "Not Found" response
     Given new "UpdateApplicationSecurityWafCustomRule" request
     And request contains "custom_rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "value": "custom_tag"}}], "enabled": false, "name": "Block request from bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
+    And body with value {"data": {"attributes": {"action": {"action": "block_request", "parameters": {"location": "/blocking", "status_code": 403}}, "blocking": false, "conditions": [{"operator": "match_regex", "parameters": {"data": "blocked_users", "inputs": [{"address": "server.db.statement", "key_path": []}], "list": [], "options": {"case_sensitive": false, "min_length": 0}, "regex": "path.*", "type": "string", "value": "custom_tag"}}], "enabled": false, "name": "Block request from bad useragent", "path_glob": "/api/search/*", "scope": [{"env": "prod", "service": "billing-service"}], "tags": {"category": "business_logic", "type": "users.login.success"}}, "type": "custom_rule"}}
     When the request is sent
     Then the response status is 404 Not Found
 
