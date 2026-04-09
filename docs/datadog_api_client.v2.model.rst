@@ -26198,6 +26198,195 @@ datadog\_api\_client.v2.model.secret\_rule\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.secure\_embed\_create\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_create\_request\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_create\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_create\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_create\_response\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_create_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_create\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_create_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_create\_response\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_create_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_get\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_get_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_get\_response\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_get_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_get\_response\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_get_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_get\_response\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_get_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_global\_time module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_global_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_global\_time\_live\_span module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_global_time_live_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_request\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_selectable\_template\_variable module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_selectable_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_share\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_share_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_status module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_request\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_request\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_response\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_update\_response\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_update_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_viewing\_preferences module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_viewing_preferences
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.secure\_embed\_viewing\_preferences\_theme module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.secure_embed_viewing_preferences_theme
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_entity\_config\_risks module
 --------------------------------------------------------------------
 

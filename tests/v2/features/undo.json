@@ -1470,6 +1470,41 @@
       "type": "safe"
     }
   },
+  "CreateDashboardSecureEmbed": {
+    "tag": "Dashboard Secure Embed",
+    "undo": {
+      "operationId": "DeleteDashboardSecureEmbed",
+      "parameters": [
+        {
+          "name": "dashboard_id",
+          "source": "data.attributes.dashboard_id"
+        },
+        {
+          "name": "token",
+          "source": "data.attributes.token"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDashboardSecureEmbed": {
+    "tag": "Dashboard Secure Embed",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDashboardSecureEmbed": {
+    "tag": "Dashboard Secure Embed",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDashboardSecureEmbed": {
+    "tag": "Dashboard Secure Embed",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetAllDatasets": {
     "tag": "Datasets",
     "undo": {

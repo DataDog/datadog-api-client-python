@@ -59,7 +59,7 @@ class ObservabilityPipelineParseGrokProcessorRule(ModelNormal):
             Each rule must contain a name and a valid Grok pattern.
         :type match_rules: [ObservabilityPipelineParseGrokProcessorRuleMatchRule]
 
-        :param source: The value of the source field in log events to be processed by the Grok rules.
+        :param source: The name of the field in the log event to apply the Grok rules to.
         :type source: str
 
         :param support_rules: A list of Grok helper rules that can be referenced by the parsing rules.
