@@ -1,12 +1,39 @@
 @endpoint(llm-observability) @endpoint(llm-observability-v2)
 Feature: LLM Observability
-  Manage LLM Observability projects, datasets, dataset records, and
-  experiments via the Experiments API.
+  Manage LLM Observability projects, datasets, dataset records, experiments,
+  and annotations.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
     And an instance of "LLMObservability" API
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Add annotation queue interactions returns "Bad Request" response
+    Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
+    And new "CreateLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interactions": [{"content_id": "trace-abc-123", "type": "trace"}]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Add annotation queue interactions returns "Created" response
+    Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
+    And new "CreateLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interactions": [{"content_id": "trace-abc-123", "type": "trace"}]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Add annotation queue interactions returns "Not Found" response
+    Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
+    And new "CreateLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interactions": [{"content_id": "trace-abc-123", "type": "trace"}]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Append records to an LLM Observability dataset returns "Bad Request" response
@@ -47,6 +74,22 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "records"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create an LLM Observability annotation queue returns "Bad Request" response
+    Given operation "CreateLLMObsAnnotationQueue" enabled
+    And new "CreateLLMObsAnnotationQueue" request
+    And body with value {"data": {"attributes": {"description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "queues"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create an LLM Observability annotation queue returns "Created" response
+    Given operation "CreateLLMObsAnnotationQueue" enabled
+    And new "CreateLLMObsAnnotationQueue" request
+    And body with value {"data": {"attributes": {"description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "queues"}}
+    When the request is sent
+    Then the response status is 201 Created
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Create an LLM Observability dataset returns "Bad Request" response
@@ -222,6 +265,87 @@ Feature: LLM Observability
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete an LLM Observability annotation queue returns "No Content" response
+    Given operation "DeleteLLMObsAnnotationQueue" enabled
+    And new "DeleteLLMObsAnnotationQueue" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete an LLM Observability annotation queue returns "Not Found" response
+    Given operation "DeleteLLMObsAnnotationQueue" enabled
+    And new "DeleteLLMObsAnnotationQueue" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete annotation queue interactions returns "Bad Request" response
+    Given operation "DeleteLLMObsAnnotationQueueInteractions" enabled
+    And new "DeleteLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interaction_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete annotation queue interactions returns "No Content" response
+    Given operation "DeleteLLMObsAnnotationQueueInteractions" enabled
+    And new "DeleteLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interaction_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete annotation queue interactions returns "Not Found" response
+    Given operation "DeleteLLMObsAnnotationQueueInteractions" enabled
+    And new "DeleteLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interaction_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get annotated queue interactions returns "Bad Request" response
+    Given operation "GetLLMObsAnnotatedInteractions" enabled
+    And new "GetLLMObsAnnotatedInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get annotated queue interactions returns "Not Found" response
+    Given operation "GetLLMObsAnnotatedInteractions" enabled
+    And new "GetLLMObsAnnotatedInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get annotated queue interactions returns "OK" response
+    Given operation "GetLLMObsAnnotatedInteractions" enabled
+    And new "GetLLMObsAnnotatedInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability annotation queues returns "Bad Request" response
+    Given operation "ListLLMObsAnnotationQueues" enabled
+    And new "ListLLMObsAnnotationQueues" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability annotation queues returns "OK" response
+    Given operation "ListLLMObsAnnotationQueues" enabled
+    And new "ListLLMObsAnnotationQueues" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: List LLM Observability dataset records returns "Bad Request" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
@@ -354,6 +478,33 @@ Feature: LLM Observability
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null}]}, "type": "records"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Update an LLM Observability annotation queue returns "Bad Request" response
+    Given operation "UpdateLLMObsAnnotationQueue" enabled
+    And new "UpdateLLMObsAnnotationQueue" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Update an LLM Observability annotation queue returns "Not Found" response
+    Given operation "UpdateLLMObsAnnotationQueue" enabled
+    And new "UpdateLLMObsAnnotationQueue" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Update an LLM Observability annotation queue returns "OK" response
+    Given operation "UpdateLLMObsAnnotationQueue" enabled
+    And new "UpdateLLMObsAnnotationQueue" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
     When the request is sent
     Then the response status is 200 OK
 

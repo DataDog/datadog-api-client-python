@@ -3,13 +3,27 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     UnsetType,
     unset,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
+from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObsAnnotationQueueResponse
+from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
+from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_response import LLMObsAnnotatedInteractionsResponse
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_response import (
+    LLMObsAnnotationQueueInteractionsResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_request import (
+    LLMObsAnnotationQueueInteractionsRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_request import (
+    LLMObsDeleteAnnotationQueueInteractionsRequest,
 )
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
 from datadog_api_client.v2.model.llm_obs_experiment_response import LLMObsExperimentResponse
@@ -36,13 +50,59 @@ from datadog_api_client.v2.model.llm_obs_delete_dataset_records_request import L
 
 class LLMObservabilityApi:
     """
-    Manage LLM Observability projects, datasets, dataset records, and experiments via the Experiments API.
+    Manage LLM Observability projects, datasets, dataset records, experiments, and annotations.
     """
 
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_llm_obs_annotation_queue_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotationQueueResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues",
+                "operation_id": "create_llm_obs_annotation_queue",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsAnnotationQueueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_llm_obs_annotation_queue_interactions_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotationQueueInteractionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/interactions",
+                "operation_id": "create_llm_obs_annotation_queue_interactions",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsAnnotationQueueInteractionsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_llm_obs_dataset_endpoint = _Endpoint(
             settings={
@@ -168,6 +228,55 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._delete_llm_obs_annotation_queue_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}",
+                "operation_id": "delete_llm_obs_annotation_queue",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_llm_obs_annotation_queue_interactions_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/interactions/delete",
+                "operation_id": "delete_llm_obs_annotation_queue_interactions",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsDeleteAnnotationQueueInteractionsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_llm_obs_dataset_records_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -263,6 +372,57 @@ class LLMObservabilityApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_annotated_interactions_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotatedInteractionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotated-interactions",
+                "operation_id": "get_llm_obs_annotated_interactions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_annotation_queues_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotationQueuesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues",
+                "operation_id": "list_llm_obs_annotation_queues",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "openapi_types": (str,),
+                    "attribute": "projectId",
+                    "location": "query",
+                },
+                "queue_ids": {
+                    "openapi_types": ([str],),
+                    "attribute": "queueIds",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -432,6 +592,32 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._update_llm_obs_annotation_queue_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotationQueueResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}",
+                "operation_id": "update_llm_obs_annotation_queue",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsAnnotationQueueUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_llm_obs_dataset_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetResponse,),
@@ -548,6 +734,47 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+    def create_llm_obs_annotation_queue(
+        self,
+        body: LLMObsAnnotationQueueRequest,
+    ) -> LLMObsAnnotationQueueResponse:
+        """Create an LLM Observability annotation queue.
+
+        Create a new annotation queue. Only ``name`` , ``project_id`` , and ``description`` are accepted.
+        Fields such as ``created_by`` , ``owned_by`` , ``created_at`` , ``modified_by`` , and ``modified_at`` are inferred by the backend.
+
+        :param body: Create annotation queue payload.
+        :type body: LLMObsAnnotationQueueRequest
+        :rtype: LLMObsAnnotationQueueResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_llm_obs_annotation_queue_endpoint.call_with_http_info(**kwargs)
+
+    def create_llm_obs_annotation_queue_interactions(
+        self,
+        queue_id: str,
+        body: LLMObsAnnotationQueueInteractionsRequest,
+    ) -> LLMObsAnnotationQueueInteractionsResponse:
+        """Add annotation queue interactions.
+
+        Add one or more interactions (traces) to an annotation queue.
+        At least one interaction must be provided.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :param body: Add interactions payload.
+        :type body: LLMObsAnnotationQueueInteractionsRequest
+        :rtype: LLMObsAnnotationQueueInteractionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["body"] = body
+
+        return self._create_llm_obs_annotation_queue_interactions_endpoint.call_with_http_info(**kwargs)
+
     def create_llm_obs_dataset(
         self,
         project_id: str,
@@ -653,6 +880,45 @@ class LLMObservabilityApi:
 
         return self._create_llm_obs_project_endpoint.call_with_http_info(**kwargs)
 
+    def delete_llm_obs_annotation_queue(
+        self,
+        queue_id: str,
+    ) -> None:
+        """Delete an LLM Observability annotation queue.
+
+        Delete an annotation queue by its ID.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        return self._delete_llm_obs_annotation_queue_endpoint.call_with_http_info(**kwargs)
+
+    def delete_llm_obs_annotation_queue_interactions(
+        self,
+        queue_id: str,
+        body: LLMObsDeleteAnnotationQueueInteractionsRequest,
+    ) -> None:
+        """Delete annotation queue interactions.
+
+        Delete one or more interactions from an annotation queue.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :param body: Delete interactions payload.
+        :type body: LLMObsDeleteAnnotationQueueInteractionsRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["body"] = body
+
+        return self._delete_llm_obs_annotation_queue_interactions_endpoint.call_with_http_info(**kwargs)
+
     def delete_llm_obs_dataset_records(
         self,
         project_id: str,
@@ -735,6 +1001,49 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._delete_llm_obs_projects_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_annotated_interactions(
+        self,
+        queue_id: str,
+    ) -> LLMObsAnnotatedInteractionsResponse:
+        """Get annotated queue interactions.
+
+        Retrieve all interactions and their annotations for a given annotation queue.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :rtype: LLMObsAnnotatedInteractionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        return self._get_llm_obs_annotated_interactions_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_annotation_queues(
+        self,
+        *,
+        project_id: Union[str, UnsetType] = unset,
+        queue_ids: Union[List[str], UnsetType] = unset,
+    ) -> LLMObsAnnotationQueuesResponse:
+        """List LLM Observability annotation queues.
+
+        List annotation queues. Optionally filter by project ID or queue IDs. These parameters are mutually exclusive.
+        If neither is provided, all queues in the organization are returned.
+
+        :param project_id: Filter annotation queues by project ID. Cannot be used together with ``queueIds``.
+        :type project_id: str, optional
+        :param queue_ids: Filter annotation queues by queue IDs (comma-separated). Cannot be used together with ``projectId``.
+        :type queue_ids: [str], optional
+        :rtype: LLMObsAnnotationQueuesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if project_id is not unset:
+            kwargs["project_id"] = project_id
+
+        if queue_ids is not unset:
+            kwargs["queue_ids"] = queue_ids
+
+        return self._list_llm_obs_annotation_queues_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_dataset_records(
         self,
@@ -898,6 +1207,28 @@ class LLMObservabilityApi:
             kwargs["page_limit"] = page_limit
 
         return self._list_llm_obs_projects_endpoint.call_with_http_info(**kwargs)
+
+    def update_llm_obs_annotation_queue(
+        self,
+        queue_id: str,
+        body: LLMObsAnnotationQueueUpdateRequest,
+    ) -> LLMObsAnnotationQueueResponse:
+        """Update an LLM Observability annotation queue.
+
+        Partially update an annotation queue. Only ``name`` and ``description`` can be updated.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :param body: Update annotation queue payload.
+        :type body: LLMObsAnnotationQueueUpdateRequest
+        :rtype: LLMObsAnnotationQueueResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["body"] = body
+
+        return self._update_llm_obs_annotation_queue_endpoint.call_with_http_info(**kwargs)
 
     def update_llm_obs_dataset(
         self,

@@ -3087,6 +3087,66 @@
       "type": "idempotent"
     }
   },
+  "ListLLMObsAnnotationQueues": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsAnnotationQueue": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "DeleteLLMObsAnnotationQueue",
+      "parameters": [
+        {
+          "name": "queue_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsAnnotationQueue": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateLLMObsAnnotationQueue": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetLLMObsAnnotatedInteractions": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsAnnotationQueueInteractions": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "DeleteLLMObsAnnotationQueueInteractions",
+      "parameters": [
+        {
+          "name": "queue_id",
+          "source": "path.queue_id"
+        },
+        {
+          "name": "body",
+          "template": "{\"data\": {\"type\": \"interactions\", \"attributes\": {\"interaction_ids\": [\"{{ data.attributes.interactions[0].id }}\"]}}}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsAnnotationQueueInteractions": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLLMObsExperiments": {
     "tag": "LLM Observability",
     "undo": {
