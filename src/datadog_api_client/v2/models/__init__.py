@@ -2959,6 +2959,58 @@ from datadog_api_client.v2.model.kind_data import KindData
 from datadog_api_client.v2.model.kind_metadata import KindMetadata
 from datadog_api_client.v2.model.kind_obj import KindObj
 from datadog_api_client.v2.model.kind_response_meta import KindResponseMeta
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_item import LLMObsAnnotatedInteractionItem
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_data_attributes_response import (
+    LLMObsAnnotatedInteractionsDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_data_response import (
+    LLMObsAnnotatedInteractionsDataResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_response import LLMObsAnnotatedInteractionsResponse
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_type import LLMObsAnnotatedInteractionsType
+from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
+from datadog_api_client.v2.model.llm_obs_annotation_queue_data_attributes_request import (
+    LLMObsAnnotationQueueDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_data_attributes_response import (
+    LLMObsAnnotationQueueDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_data_request import LLMObsAnnotationQueueDataRequest
+from datadog_api_client.v2.model.llm_obs_annotation_queue_data_response import LLMObsAnnotationQueueDataResponse
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interaction_item import LLMObsAnnotationQueueInteractionItem
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interaction_response_item import (
+    LLMObsAnnotationQueueInteractionResponseItem,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_data_attributes_request import (
+    LLMObsAnnotationQueueInteractionsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_data_attributes_response import (
+    LLMObsAnnotationQueueInteractionsDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_data_request import (
+    LLMObsAnnotationQueueInteractionsDataRequest,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_data_response import (
+    LLMObsAnnotationQueueInteractionsDataResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_request import (
+    LLMObsAnnotationQueueInteractionsRequest,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_response import (
+    LLMObsAnnotationQueueInteractionsResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_type import LLMObsAnnotationQueueInteractionsType
+from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
+from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObsAnnotationQueueResponse
+from datadog_api_client.v2.model.llm_obs_annotation_queue_type import LLMObsAnnotationQueueType
+from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_attributes_request import (
+    LLMObsAnnotationQueueUpdateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_request import (
+    LLMObsAnnotationQueueUpdateDataRequest,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
+from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_cursor_meta import LLMObsCursorMeta
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_request import LLMObsDatasetDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_response import LLMObsDatasetDataAttributesResponse
@@ -2991,6 +3043,15 @@ from datadog_api_client.v2.model.llm_obs_dataset_update_data_attributes_request 
 from datadog_api_client.v2.model.llm_obs_dataset_update_data_request import LLMObsDatasetUpdateDataRequest
 from datadog_api_client.v2.model.llm_obs_dataset_update_request import LLMObsDatasetUpdateRequest
 from datadog_api_client.v2.model.llm_obs_datasets_response import LLMObsDatasetsResponse
+from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_data_attributes_request import (
+    LLMObsDeleteAnnotationQueueInteractionsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_data_request import (
+    LLMObsDeleteAnnotationQueueInteractionsDataRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_request import (
+    LLMObsDeleteAnnotationQueueInteractionsRequest,
+)
 from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_attributes_request import (
     LLMObsDeleteDatasetRecordsDataAttributesRequest,
 )
@@ -3040,6 +3101,7 @@ from datadog_api_client.v2.model.llm_obs_experiment_update_data_attributes_reque
 from datadog_api_client.v2.model.llm_obs_experiment_update_data_request import LLMObsExperimentUpdateDataRequest
 from datadog_api_client.v2.model.llm_obs_experiment_update_request import LLMObsExperimentUpdateRequest
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
+from datadog_api_client.v2.model.llm_obs_interaction_type import LLMObsInteractionType
 from datadog_api_client.v2.model.llm_obs_metric_assessment import LLMObsMetricAssessment
 from datadog_api_client.v2.model.llm_obs_metric_score_type import LLMObsMetricScoreType
 from datadog_api_client.v2.model.llm_obs_project_data_attributes_request import LLMObsProjectDataAttributesRequest
@@ -9078,6 +9140,32 @@ __all__ = [
     "KindMetadata",
     "KindObj",
     "KindResponseMeta",
+    "LLMObsAnnotatedInteractionItem",
+    "LLMObsAnnotatedInteractionsDataAttributesResponse",
+    "LLMObsAnnotatedInteractionsDataResponse",
+    "LLMObsAnnotatedInteractionsResponse",
+    "LLMObsAnnotatedInteractionsType",
+    "LLMObsAnnotationItem",
+    "LLMObsAnnotationQueueDataAttributesRequest",
+    "LLMObsAnnotationQueueDataAttributesResponse",
+    "LLMObsAnnotationQueueDataRequest",
+    "LLMObsAnnotationQueueDataResponse",
+    "LLMObsAnnotationQueueInteractionItem",
+    "LLMObsAnnotationQueueInteractionResponseItem",
+    "LLMObsAnnotationQueueInteractionsDataAttributesRequest",
+    "LLMObsAnnotationQueueInteractionsDataAttributesResponse",
+    "LLMObsAnnotationQueueInteractionsDataRequest",
+    "LLMObsAnnotationQueueInteractionsDataResponse",
+    "LLMObsAnnotationQueueInteractionsRequest",
+    "LLMObsAnnotationQueueInteractionsResponse",
+    "LLMObsAnnotationQueueInteractionsType",
+    "LLMObsAnnotationQueueRequest",
+    "LLMObsAnnotationQueueResponse",
+    "LLMObsAnnotationQueueType",
+    "LLMObsAnnotationQueueUpdateDataAttributesRequest",
+    "LLMObsAnnotationQueueUpdateDataRequest",
+    "LLMObsAnnotationQueueUpdateRequest",
+    "LLMObsAnnotationQueuesResponse",
     "LLMObsCursorMeta",
     "LLMObsDatasetDataAttributesRequest",
     "LLMObsDatasetDataAttributesResponse",
@@ -9102,6 +9190,9 @@ __all__ = [
     "LLMObsDatasetUpdateDataRequest",
     "LLMObsDatasetUpdateRequest",
     "LLMObsDatasetsResponse",
+    "LLMObsDeleteAnnotationQueueInteractionsDataAttributesRequest",
+    "LLMObsDeleteAnnotationQueueInteractionsDataRequest",
+    "LLMObsDeleteAnnotationQueueInteractionsRequest",
     "LLMObsDeleteDatasetRecordsDataAttributesRequest",
     "LLMObsDeleteDatasetRecordsDataRequest",
     "LLMObsDeleteDatasetRecordsRequest",
@@ -9135,6 +9226,7 @@ __all__ = [
     "LLMObsExperimentUpdateDataRequest",
     "LLMObsExperimentUpdateRequest",
     "LLMObsExperimentsResponse",
+    "LLMObsInteractionType",
     "LLMObsMetricAssessment",
     "LLMObsMetricScoreType",
     "LLMObsProjectDataAttributesRequest",
