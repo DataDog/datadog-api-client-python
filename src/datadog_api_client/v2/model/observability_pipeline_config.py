@@ -26,6 +26,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_config_source_item import (
         ObservabilityPipelineConfigSourceItem,
     )
+    from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
+        ObservabilityPipelineElasticsearchDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_http_client_destination import (
         ObservabilityPipelineHttpClientDestination,
     )
@@ -50,9 +53,6 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
         ObservabilityPipelineDatadogLogsDestination,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination import (
-        ObservabilityPipelineElasticsearchDestination,
     )
     from datadog_api_client.v2.model.observability_pipeline_google_chronicle_destination import (
         ObservabilityPipelineGoogleChronicleDestination,
@@ -172,6 +172,7 @@ class ObservabilityPipelineConfig(ModelNormal):
         destinations: List[
             Union[
                 ObservabilityPipelineConfigDestinationItem,
+                ObservabilityPipelineElasticsearchDestination,
                 ObservabilityPipelineHttpClientDestination,
                 ObservabilityPipelineAmazonOpenSearchDestination,
                 ObservabilityPipelineAmazonS3Destination,
@@ -181,7 +182,6 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
                 ObservabilityPipelineDatadogLogsDestination,
-                ObservabilityPipelineElasticsearchDestination,
                 ObservabilityPipelineGoogleChronicleDestination,
                 ObservabilityPipelineGoogleCloudStorageDestination,
                 ObservabilityPipelineGooglePubSubDestination,

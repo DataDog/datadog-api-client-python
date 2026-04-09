@@ -3860,6 +3860,12 @@ from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destinatio
 from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_auth import (
     ObservabilityPipelineElasticsearchDestinationAuth,
 )
+from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_compression import (
+    ObservabilityPipelineElasticsearchDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_compression_algorithm import (
+    ObservabilityPipelineElasticsearchDestinationCompressionAlgorithm,
+)
 from datadog_api_client.v2.model.observability_pipeline_elasticsearch_destination_data_stream import (
     ObservabilityPipelineElasticsearchDestinationDataStream,
 )
@@ -9725,6 +9731,8 @@ __all__ = [
     "ObservabilityPipelineElasticsearchDestination",
     "ObservabilityPipelineElasticsearchDestinationApiVersion",
     "ObservabilityPipelineElasticsearchDestinationAuth",
+    "ObservabilityPipelineElasticsearchDestinationCompression",
+    "ObservabilityPipelineElasticsearchDestinationCompressionAlgorithm",
     "ObservabilityPipelineElasticsearchDestinationDataStream",
     "ObservabilityPipelineElasticsearchDestinationType",
     "ObservabilityPipelineEnrichmentTableFile",
