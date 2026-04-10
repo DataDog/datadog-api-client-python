@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
         ObservabilityPipelineSplunkHecDestinationEncoding,
     )
+    from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_token_strategy import (
+        ObservabilityPipelineSplunkHecDestinationTokenStrategy,
+    )
     from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_type import (
         ObservabilityPipelineSplunkHecDestinationType,
     )
@@ -39,6 +42,9 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
             ObservabilityPipelineSplunkHecDestinationEncoding,
         )
+        from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_token_strategy import (
+            ObservabilityPipelineSplunkHecDestinationTokenStrategy,
+        )
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_type import (
             ObservabilityPipelineSplunkHecDestinationType,
         )
@@ -54,6 +60,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             "inputs": ([str],),
             "sourcetype": (str,),
             "token_key": (str,),
+            "token_strategy": (ObservabilityPipelineSplunkHecDestinationTokenStrategy,),
             "type": (ObservabilityPipelineSplunkHecDestinationType,),
         }
 
@@ -68,6 +75,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         "inputs": "inputs",
         "sourcetype": "sourcetype",
         "token_key": "token_key",
+        "token_strategy": "token_strategy",
         "type": "type",
     }
 
@@ -90,6 +98,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         indexed_fields: Union[List[str], UnsetType] = unset,
         sourcetype: Union[str, UnsetType] = unset,
         token_key: Union[str, UnsetType] = unset,
+        token_strategy: Union[ObservabilityPipelineSplunkHecDestinationTokenStrategy, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -128,6 +137,9 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         :param token_key: Name of the environment variable or secret that holds the Splunk HEC token.
         :type token_key: str, optional
 
+        :param token_strategy: Controls how the Splunk HEC token is supplied. Use ``custom`` to provide a token with ``token_key`` , or ``from_source`` to forward the token received from an upstream Splunk HEC source.
+        :type token_strategy: ObservabilityPipelineSplunkHecDestinationTokenStrategy, optional
+
         :param type: The destination type. Always ``splunk_hec``.
         :type type: ObservabilityPipelineSplunkHecDestinationType
         """
@@ -147,6 +159,8 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             kwargs["sourcetype"] = sourcetype
         if token_key is not unset:
             kwargs["token_key"] = token_key
+        if token_strategy is not unset:
+            kwargs["token_strategy"] = token_strategy
         super().__init__(kwargs)
 
         self_.id = id

@@ -203,6 +203,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param sourcetype: The Splunk sourcetype to assign to log events.
         :type sourcetype: str, optional
 
+        :param token_strategy: Controls how the Splunk HEC token is supplied. Use `custom` to provide a token with `token_key`, or `from_source` to forward the token received from an upstream Splunk HEC source.
+        :type token_strategy: ObservabilityPipelineSplunkHecDestinationTokenStrategy, optional
+
         :param header_custom_fields: A list of custom headers to include in the request to Sumo Logic.
         :type header_custom_fields: [ObservabilityPipelineSumoLogicDestinationHeaderCustomFieldsItem], optional
 
