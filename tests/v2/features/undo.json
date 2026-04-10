@@ -1036,6 +1036,18 @@
       "type": "safe"
     }
   },
+  "UpdateFlakyTestsManagementPolicies": {
+    "tag": "Test Optimization",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetFlakyTestsManagementPolicies": {
+    "tag": "Test Optimization",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteTestOptimizationServiceSettings": {
     "tag": "Test Optimization",
     "undo": {

@@ -14,6 +14,15 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_response import (
+    TestOptimizationFlakyTestsManagementPoliciesResponse,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request import (
+    TestOptimizationFlakyTestsManagementPoliciesUpdateRequest,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request import (
+    TestOptimizationFlakyTestsManagementPoliciesGetRequest,
+)
 from datadog_api_client.v2.model.test_optimization_delete_service_settings_request import (
     TestOptimizationDeleteServiceSettingsRequest,
 )
@@ -60,6 +69,26 @@ class TestOptimizationApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_flaky_tests_management_policies_endpoint = _Endpoint(
+            settings={
+                "response_type": (TestOptimizationFlakyTestsManagementPoliciesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/ci/test-optimization/settings/policies",
+                "operation_id": "get_flaky_tests_management_policies",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TestOptimizationFlakyTestsManagementPoliciesGetRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -122,6 +151,26 @@ class TestOptimizationApi:
             api_client=api_client,
         )
 
+        self._update_flaky_tests_management_policies_endpoint = _Endpoint(
+            settings={
+                "response_type": (TestOptimizationFlakyTestsManagementPoliciesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/ci/test-optimization/settings/policies",
+                "operation_id": "update_flaky_tests_management_policies",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TestOptimizationFlakyTestsManagementPoliciesUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_test_optimization_service_settings_endpoint = _Endpoint(
             settings={
                 "response_type": (TestOptimizationServiceSettingsResponse,),
@@ -157,6 +206,22 @@ class TestOptimizationApi:
         kwargs["body"] = body
 
         return self._delete_test_optimization_service_settings_endpoint.call_with_http_info(**kwargs)
+
+    def get_flaky_tests_management_policies(
+        self,
+        body: TestOptimizationFlakyTestsManagementPoliciesGetRequest,
+    ) -> TestOptimizationFlakyTestsManagementPoliciesResponse:
+        """Get Flaky Tests Management policies.
+
+        Retrieve Flaky Tests Management repository-level policies for the given repository.
+
+        :type body: TestOptimizationFlakyTestsManagementPoliciesGetRequest
+        :rtype: TestOptimizationFlakyTestsManagementPoliciesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._get_flaky_tests_management_policies_endpoint.call_with_http_info(**kwargs)
 
     def get_test_optimization_service_settings(
         self,
@@ -252,6 +317,23 @@ class TestOptimizationApi:
         kwargs["body"] = body
 
         return self._update_flaky_tests_endpoint.call_with_http_info(**kwargs)
+
+    def update_flaky_tests_management_policies(
+        self,
+        body: TestOptimizationFlakyTestsManagementPoliciesUpdateRequest,
+    ) -> TestOptimizationFlakyTestsManagementPoliciesResponse:
+        """Update Flaky Tests Management policies.
+
+        Partially update Flaky Tests Management repository-level policies for the given repository.
+        Only provided policy blocks are updated; omitted blocks are left unchanged.
+
+        :type body: TestOptimizationFlakyTestsManagementPoliciesUpdateRequest
+        :rtype: TestOptimizationFlakyTestsManagementPoliciesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_flaky_tests_management_policies_endpoint.call_with_http_info(**kwargs)
 
     def update_test_optimization_service_settings(
         self,
