@@ -650,6 +650,24 @@
       "type": "idempotent"
     }
   },
+  "ListInvestigations": {
+    "tag": "Bits AI",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "TriggerInvestigation": {
+    "tag": "Bits AI",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetInvestigation": {
+    "tag": "Bits AI",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SearchCases": {
     "tag": "Case Management",
     "undo": {
@@ -1032,18 +1050,6 @@
   },
   "SearchCIAppPipelineEvents": {
     "tag": "CI Visibility Pipelines",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateFlakyTestsManagementPolicies": {
-    "tag": "Test Optimization",
-    "undo": {
-      "type": "unsafe"
-    }
-  },
-  "GetFlakyTestsManagementPolicies": {
-    "tag": "Test Optimization",
     "undo": {
       "type": "safe"
     }

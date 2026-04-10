@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 from datadog_api_client.v2.api.application_security_api import ApplicationSecurityApi
 from datadog_api_client.v2.api.audit_api import AuditApi
 from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
+from datadog_api_client.v2.api.bits_ai_api import BitsAIApi
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
 from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
 from datadog_api_client.v2.api.csm_agents_api import CSMAgentsApi
@@ -118,6 +119,7 @@ __all__ = [
     "ApplicationSecurityApi",
     "AuditApi",
     "AuthNMappingsApi",
+    "BitsAIApi",
     "CIVisibilityPipelinesApi",
     "CIVisibilityTestsApi",
     "CSMAgentsApi",

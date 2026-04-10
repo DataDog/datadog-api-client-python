@@ -10,30 +10,24 @@ from datadog_api_client.model_utils import (
 )
 
 
-class TestOptimizationFlakyTestsManagementPoliciesGetRequestAttributes(ModelNormal):
-    validations = {
-        "repository_id": {
-            "min_length": 1,
-        },
-    }
-
+class TriggerInvestigationResponseDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "repository_id": (str,),
+            "investigation_id": (str,),
         }
 
     attribute_map = {
-        "repository_id": "repository_id",
+        "investigation_id": "investigation_id",
     }
 
-    def __init__(self_, repository_id: str, **kwargs):
+    def __init__(self_, investigation_id: str, **kwargs):
         """
-        Attributes for requesting Flaky Tests Management policies.
+        Attributes for the trigger investigation response.
 
-        :param repository_id: The repository identifier.
-        :type repository_id: str
+        :param investigation_id: The ID of the investigation that was created.
+        :type investigation_id: str
         """
         super().__init__(kwargs)
 
-        self_.repository_id = repository_id
+        self_.investigation_id = investigation_id
