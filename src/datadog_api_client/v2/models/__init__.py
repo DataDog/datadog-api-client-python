@@ -6555,6 +6555,66 @@ from datadog_api_client.v2.model.test_optimization_delete_service_settings_reque
 from datadog_api_client.v2.model.test_optimization_delete_service_settings_request_data_type import (
     TestOptimizationDeleteServiceSettingsRequestDataType,
 )
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_attempt_to_fix import (
+    TestOptimizationFlakyTestsManagementPoliciesAttemptToFix,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_attributes import (
+    TestOptimizationFlakyTestsManagementPoliciesAttributes,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_auto_disable_rule import (
+    TestOptimizationFlakyTestsManagementPoliciesAutoDisableRule,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_auto_quarantine_rule import (
+    TestOptimizationFlakyTestsManagementPoliciesAutoQuarantineRule,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_branch_rule import (
+    TestOptimizationFlakyTestsManagementPoliciesBranchRule,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_data import (
+    TestOptimizationFlakyTestsManagementPoliciesData,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled import (
+    TestOptimizationFlakyTestsManagementPoliciesDisabled,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled_failure_rate_rule import (
+    TestOptimizationFlakyTestsManagementPoliciesDisabledFailureRateRule,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled_status import (
+    TestOptimizationFlakyTestsManagementPoliciesDisabledStatus,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request import (
+    TestOptimizationFlakyTestsManagementPoliciesGetRequest,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request_attributes import (
+    TestOptimizationFlakyTestsManagementPoliciesGetRequestAttributes,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request_data import (
+    TestOptimizationFlakyTestsManagementPoliciesGetRequestData,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_quarantined import (
+    TestOptimizationFlakyTestsManagementPoliciesQuarantined,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_quarantined_failure_rate_rule import (
+    TestOptimizationFlakyTestsManagementPoliciesQuarantinedFailureRateRule,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_response import (
+    TestOptimizationFlakyTestsManagementPoliciesResponse,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_type import (
+    TestOptimizationFlakyTestsManagementPoliciesType,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request import (
+    TestOptimizationFlakyTestsManagementPoliciesUpdateRequest,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request_attributes import (
+    TestOptimizationFlakyTestsManagementPoliciesUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request_data import (
+    TestOptimizationFlakyTestsManagementPoliciesUpdateRequestData,
+)
+from datadog_api_client.v2.model.test_optimization_get_flaky_tests_management_policies_request_data_type import (
+    TestOptimizationGetFlakyTestsManagementPoliciesRequestDataType,
+)
 from datadog_api_client.v2.model.test_optimization_get_service_settings_request import (
     TestOptimizationGetServiceSettingsRequest,
 )
@@ -6575,6 +6635,9 @@ from datadog_api_client.v2.model.test_optimization_service_settings_response imp
     TestOptimizationServiceSettingsResponse,
 )
 from datadog_api_client.v2.model.test_optimization_service_settings_type import TestOptimizationServiceSettingsType
+from datadog_api_client.v2.model.test_optimization_update_flaky_tests_management_policies_request_data_type import (
+    TestOptimizationUpdateFlakyTestsManagementPoliciesRequestDataType,
+)
 from datadog_api_client.v2.model.test_optimization_update_service_settings_request import (
     TestOptimizationUpdateServiceSettingsRequest,
 )
@@ -11534,6 +11597,26 @@ __all__ = [
     "TestOptimizationDeleteServiceSettingsRequestAttributes",
     "TestOptimizationDeleteServiceSettingsRequestData",
     "TestOptimizationDeleteServiceSettingsRequestDataType",
+    "TestOptimizationFlakyTestsManagementPoliciesAttemptToFix",
+    "TestOptimizationFlakyTestsManagementPoliciesAttributes",
+    "TestOptimizationFlakyTestsManagementPoliciesAutoDisableRule",
+    "TestOptimizationFlakyTestsManagementPoliciesAutoQuarantineRule",
+    "TestOptimizationFlakyTestsManagementPoliciesBranchRule",
+    "TestOptimizationFlakyTestsManagementPoliciesData",
+    "TestOptimizationFlakyTestsManagementPoliciesDisabled",
+    "TestOptimizationFlakyTestsManagementPoliciesDisabledFailureRateRule",
+    "TestOptimizationFlakyTestsManagementPoliciesDisabledStatus",
+    "TestOptimizationFlakyTestsManagementPoliciesGetRequest",
+    "TestOptimizationFlakyTestsManagementPoliciesGetRequestAttributes",
+    "TestOptimizationFlakyTestsManagementPoliciesGetRequestData",
+    "TestOptimizationFlakyTestsManagementPoliciesQuarantined",
+    "TestOptimizationFlakyTestsManagementPoliciesQuarantinedFailureRateRule",
+    "TestOptimizationFlakyTestsManagementPoliciesResponse",
+    "TestOptimizationFlakyTestsManagementPoliciesType",
+    "TestOptimizationFlakyTestsManagementPoliciesUpdateRequest",
+    "TestOptimizationFlakyTestsManagementPoliciesUpdateRequestAttributes",
+    "TestOptimizationFlakyTestsManagementPoliciesUpdateRequestData",
+    "TestOptimizationGetFlakyTestsManagementPoliciesRequestDataType",
     "TestOptimizationGetServiceSettingsRequest",
     "TestOptimizationGetServiceSettingsRequestAttributes",
     "TestOptimizationGetServiceSettingsRequestData",
@@ -11542,6 +11625,7 @@ __all__ = [
     "TestOptimizationServiceSettingsData",
     "TestOptimizationServiceSettingsResponse",
     "TestOptimizationServiceSettingsType",
+    "TestOptimizationUpdateFlakyTestsManagementPoliciesRequestDataType",
     "TestOptimizationUpdateServiceSettingsRequest",
     "TestOptimizationUpdateServiceSettingsRequestAttributes",
     "TestOptimizationUpdateServiceSettingsRequestData",
