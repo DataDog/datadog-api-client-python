@@ -2876,6 +2876,8 @@ components:
           type: string
         group_by:
           description: Array of fields to group results by.
+          example:
+            - "resource_name"
           items:
             description: Field to group results by.
             example: "resource_name"
@@ -2913,6 +2915,8 @@ components:
         - name
         - service
         - stat
+        - operation_name
+        - group_by
       type: object
     FormulaAndFunctionCloudCostDataSource:
       description: Data source for Cloud Cost queries.
