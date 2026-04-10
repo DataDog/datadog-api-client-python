@@ -88,6 +88,13 @@ datadog\_api\_client.v2.api.aws\_logs\_integration\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.bits\_ai\_api module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.bits_ai_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.case\_management\_api module
 --------------------------------------------------------
 

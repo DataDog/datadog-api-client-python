@@ -2351,6 +2351,12 @@ from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.get_interfaces_data import GetInterfacesData
 from datadog_api_client.v2.model.get_interfaces_response import GetInterfacesResponse
+from datadog_api_client.v2.model.get_investigation_response import GetInvestigationResponse
+from datadog_api_client.v2.model.get_investigation_response_data import GetInvestigationResponseData
+from datadog_api_client.v2.model.get_investigation_response_data_attributes import (
+    GetInvestigationResponseDataAttributes,
+)
+from datadog_api_client.v2.model.get_investigation_response_links import GetInvestigationResponseLinks
 from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
 from datadog_api_client.v2.model.get_mapping_response import GetMappingResponse
 from datadog_api_client.v2.model.get_mapping_response_data import GetMappingResponseData
@@ -2843,6 +2849,8 @@ from datadog_api_client.v2.model.integration_service_now_sync_config_priority im
 from datadog_api_client.v2.model.integration_type import IntegrationType
 from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
+from datadog_api_client.v2.model.investigation_conclusion import InvestigationConclusion
+from datadog_api_client.v2.model.investigation_type import InvestigationType
 from datadog_api_client.v2.model.issue import Issue
 from datadog_api_client.v2.model.issue_assignee_relationship import IssueAssigneeRelationship
 from datadog_api_client.v2.model.issue_attributes import IssueAttributes
@@ -3191,6 +3199,14 @@ from datadog_api_client.v2.model.list_findings_response import ListFindingsRespo
 from datadog_api_client.v2.model.list_integrations_response import ListIntegrationsResponse
 from datadog_api_client.v2.model.list_interface_tags_response import ListInterfaceTagsResponse
 from datadog_api_client.v2.model.list_interface_tags_response_data import ListInterfaceTagsResponseData
+from datadog_api_client.v2.model.list_investigations_response import ListInvestigationsResponse
+from datadog_api_client.v2.model.list_investigations_response_data import ListInvestigationsResponseData
+from datadog_api_client.v2.model.list_investigations_response_data_attributes import (
+    ListInvestigationsResponseDataAttributes,
+)
+from datadog_api_client.v2.model.list_investigations_response_links import ListInvestigationsResponseLinks
+from datadog_api_client.v2.model.list_investigations_response_meta import ListInvestigationsResponseMeta
+from datadog_api_client.v2.model.list_investigations_response_meta_page import ListInvestigationsResponseMetaPage
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.list_notification_channels_response import ListNotificationChannelsResponse
 from datadog_api_client.v2.model.list_on_call_notification_rules_response import ListOnCallNotificationRulesResponse
@@ -3521,6 +3537,7 @@ from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_handles_respo
 from datadog_api_client.v2.model.microsoft_teams_workflows_webhook_response_attributes import (
     MicrosoftTeamsWorkflowsWebhookResponseAttributes,
 )
+from datadog_api_client.v2.model.monitor_alert_trigger_attributes import MonitorAlertTriggerAttributes
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
 )
@@ -6538,66 +6555,6 @@ from datadog_api_client.v2.model.test_optimization_delete_service_settings_reque
 from datadog_api_client.v2.model.test_optimization_delete_service_settings_request_data_type import (
     TestOptimizationDeleteServiceSettingsRequestDataType,
 )
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_attempt_to_fix import (
-    TestOptimizationFlakyTestsManagementPoliciesAttemptToFix,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_attributes import (
-    TestOptimizationFlakyTestsManagementPoliciesAttributes,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_auto_disable_rule import (
-    TestOptimizationFlakyTestsManagementPoliciesAutoDisableRule,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_auto_quarantine_rule import (
-    TestOptimizationFlakyTestsManagementPoliciesAutoQuarantineRule,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_branch_rule import (
-    TestOptimizationFlakyTestsManagementPoliciesBranchRule,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_data import (
-    TestOptimizationFlakyTestsManagementPoliciesData,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled import (
-    TestOptimizationFlakyTestsManagementPoliciesDisabled,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled_failure_rate_rule import (
-    TestOptimizationFlakyTestsManagementPoliciesDisabledFailureRateRule,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled_status import (
-    TestOptimizationFlakyTestsManagementPoliciesDisabledStatus,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request import (
-    TestOptimizationFlakyTestsManagementPoliciesGetRequest,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request_attributes import (
-    TestOptimizationFlakyTestsManagementPoliciesGetRequestAttributes,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request_data import (
-    TestOptimizationFlakyTestsManagementPoliciesGetRequestData,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_quarantined import (
-    TestOptimizationFlakyTestsManagementPoliciesQuarantined,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_quarantined_failure_rate_rule import (
-    TestOptimizationFlakyTestsManagementPoliciesQuarantinedFailureRateRule,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_response import (
-    TestOptimizationFlakyTestsManagementPoliciesResponse,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_type import (
-    TestOptimizationFlakyTestsManagementPoliciesType,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request import (
-    TestOptimizationFlakyTestsManagementPoliciesUpdateRequest,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request_attributes import (
-    TestOptimizationFlakyTestsManagementPoliciesUpdateRequestAttributes,
-)
-from datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request_data import (
-    TestOptimizationFlakyTestsManagementPoliciesUpdateRequestData,
-)
-from datadog_api_client.v2.model.test_optimization_get_flaky_tests_management_policies_request_data_type import (
-    TestOptimizationGetFlakyTestsManagementPoliciesRequestDataType,
-)
 from datadog_api_client.v2.model.test_optimization_get_service_settings_request import (
     TestOptimizationGetServiceSettingsRequest,
 )
@@ -6618,9 +6575,6 @@ from datadog_api_client.v2.model.test_optimization_service_settings_response imp
     TestOptimizationServiceSettingsResponse,
 )
 from datadog_api_client.v2.model.test_optimization_service_settings_type import TestOptimizationServiceSettingsType
-from datadog_api_client.v2.model.test_optimization_update_flaky_tests_management_policies_request_data_type import (
-    TestOptimizationUpdateFlakyTestsManagementPoliciesRequestDataType,
-)
 from datadog_api_client.v2.model.test_optimization_update_service_settings_request import (
     TestOptimizationUpdateServiceSettingsRequest,
 )
@@ -6670,8 +6624,22 @@ from datadog_api_client.v2.model.timeseries_response_values import TimeseriesRes
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.token_type import TokenType
 from datadog_api_client.v2.model.trigger import Trigger
+from datadog_api_client.v2.model.trigger_attributes import TriggerAttributes
+from datadog_api_client.v2.model.trigger_investigation_request import TriggerInvestigationRequest
+from datadog_api_client.v2.model.trigger_investigation_request_data import TriggerInvestigationRequestData
+from datadog_api_client.v2.model.trigger_investigation_request_data_attributes import (
+    TriggerInvestigationRequestDataAttributes,
+)
+from datadog_api_client.v2.model.trigger_investigation_request_type import TriggerInvestigationRequestType
+from datadog_api_client.v2.model.trigger_investigation_response import TriggerInvestigationResponse
+from datadog_api_client.v2.model.trigger_investigation_response_data import TriggerInvestigationResponseData
+from datadog_api_client.v2.model.trigger_investigation_response_data_attributes import (
+    TriggerInvestigationResponseDataAttributes,
+)
+from datadog_api_client.v2.model.trigger_investigation_response_type import TriggerInvestigationResponseType
 from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
 from datadog_api_client.v2.model.trigger_source import TriggerSource
+from datadog_api_client.v2.model.trigger_type import TriggerType
 from datadog_api_client.v2.model.uc_config_pair import UCConfigPair
 from datadog_api_client.v2.model.uc_config_pair_data import UCConfigPairData
 from datadog_api_client.v2.model.uc_config_pair_data_attributes import UCConfigPairDataAttributes
@@ -8750,6 +8718,10 @@ __all__ = [
     "GetFindingResponse",
     "GetInterfacesData",
     "GetInterfacesResponse",
+    "GetInvestigationResponse",
+    "GetInvestigationResponseData",
+    "GetInvestigationResponseDataAttributes",
+    "GetInvestigationResponseLinks",
     "GetIssueIncludeQueryParameterItem",
     "GetMappingResponse",
     "GetMappingResponseData",
@@ -9120,6 +9092,8 @@ __all__ = [
     "IntegrationType",
     "InterfaceAttributes",
     "InterfaceAttributesStatus",
+    "InvestigationConclusion",
+    "InvestigationType",
     "Issue",
     "IssueAssigneeRelationship",
     "IssueAttributes",
@@ -9388,6 +9362,12 @@ __all__ = [
     "ListIntegrationsResponse",
     "ListInterfaceTagsResponse",
     "ListInterfaceTagsResponseData",
+    "ListInvestigationsResponse",
+    "ListInvestigationsResponseData",
+    "ListInvestigationsResponseDataAttributes",
+    "ListInvestigationsResponseLinks",
+    "ListInvestigationsResponseMeta",
+    "ListInvestigationsResponseMetaPage",
     "ListKindCatalogResponse",
     "ListNotificationChannelsResponse",
     "ListOnCallNotificationRulesResponse",
@@ -9636,6 +9616,7 @@ __all__ = [
     "MicrosoftTeamsWorkflowsWebhookHandleType",
     "MicrosoftTeamsWorkflowsWebhookHandlesResponse",
     "MicrosoftTeamsWorkflowsWebhookResponseAttributes",
+    "MonitorAlertTriggerAttributes",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",
@@ -11553,26 +11534,6 @@ __all__ = [
     "TestOptimizationDeleteServiceSettingsRequestAttributes",
     "TestOptimizationDeleteServiceSettingsRequestData",
     "TestOptimizationDeleteServiceSettingsRequestDataType",
-    "TestOptimizationFlakyTestsManagementPoliciesAttemptToFix",
-    "TestOptimizationFlakyTestsManagementPoliciesAttributes",
-    "TestOptimizationFlakyTestsManagementPoliciesAutoDisableRule",
-    "TestOptimizationFlakyTestsManagementPoliciesAutoQuarantineRule",
-    "TestOptimizationFlakyTestsManagementPoliciesBranchRule",
-    "TestOptimizationFlakyTestsManagementPoliciesData",
-    "TestOptimizationFlakyTestsManagementPoliciesDisabled",
-    "TestOptimizationFlakyTestsManagementPoliciesDisabledFailureRateRule",
-    "TestOptimizationFlakyTestsManagementPoliciesDisabledStatus",
-    "TestOptimizationFlakyTestsManagementPoliciesGetRequest",
-    "TestOptimizationFlakyTestsManagementPoliciesGetRequestAttributes",
-    "TestOptimizationFlakyTestsManagementPoliciesGetRequestData",
-    "TestOptimizationFlakyTestsManagementPoliciesQuarantined",
-    "TestOptimizationFlakyTestsManagementPoliciesQuarantinedFailureRateRule",
-    "TestOptimizationFlakyTestsManagementPoliciesResponse",
-    "TestOptimizationFlakyTestsManagementPoliciesType",
-    "TestOptimizationFlakyTestsManagementPoliciesUpdateRequest",
-    "TestOptimizationFlakyTestsManagementPoliciesUpdateRequestAttributes",
-    "TestOptimizationFlakyTestsManagementPoliciesUpdateRequestData",
-    "TestOptimizationGetFlakyTestsManagementPoliciesRequestDataType",
     "TestOptimizationGetServiceSettingsRequest",
     "TestOptimizationGetServiceSettingsRequestAttributes",
     "TestOptimizationGetServiceSettingsRequestData",
@@ -11581,7 +11542,6 @@ __all__ = [
     "TestOptimizationServiceSettingsData",
     "TestOptimizationServiceSettingsResponse",
     "TestOptimizationServiceSettingsType",
-    "TestOptimizationUpdateFlakyTestsManagementPoliciesRequestDataType",
     "TestOptimizationUpdateServiceSettingsRequest",
     "TestOptimizationUpdateServiceSettingsRequestAttributes",
     "TestOptimizationUpdateServiceSettingsRequestData",
@@ -11623,8 +11583,18 @@ __all__ = [
     "TimeseriesResponseValuesList",
     "TokenType",
     "Trigger",
+    "TriggerAttributes",
+    "TriggerInvestigationRequest",
+    "TriggerInvestigationRequestData",
+    "TriggerInvestigationRequestDataAttributes",
+    "TriggerInvestigationRequestType",
+    "TriggerInvestigationResponse",
+    "TriggerInvestigationResponseData",
+    "TriggerInvestigationResponseDataAttributes",
+    "TriggerInvestigationResponseType",
     "TriggerRateLimit",
     "TriggerSource",
+    "TriggerType",
     "UCConfigPair",
     "UCConfigPairData",
     "UCConfigPairDataAttributes",
