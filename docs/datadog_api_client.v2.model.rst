@@ -31994,6 +31994,146 @@ datadog\_api\_client.v2.model.test\_optimization\_delete\_service\_settings\_req
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_attempt\_to\_fix module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_attempt_to_fix
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_attributes module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_auto\_disable\_rule module
+----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_auto_disable_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_auto\_quarantine\_rule module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_auto_quarantine_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_branch\_rule module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_branch_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_data module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_disabled module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_disabled\_failure\_rate\_rule module
+--------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled_failure_rate_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_disabled\_status module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_disabled_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_get\_request module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_get\_request\_attributes module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_get\_request\_data module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_get_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_quarantined module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_quarantined
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_quarantined\_failure\_rate\_rule module
+-----------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_quarantined_failure_rate_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_response module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_type module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_update\_request module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_update\_request\_attributes module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_flaky\_tests\_management\_policies\_update\_request\_data module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_flaky_tests_management_policies_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_get\_flaky\_tests\_management\_policies\_request\_data\_type module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_get_flaky_tests_management_policies_request_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.test\_optimization\_get\_service\_settings\_request module
 ----------------------------------------------------------------------------------------
 
@@ -32047,6 +32187,13 @@ datadog\_api\_client.v2.model.test\_optimization\_service\_settings\_type module
 --------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.test_optimization_service_settings_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_optimization\_update\_flaky\_tests\_management\_policies\_request\_data\_type module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_optimization_update_flaky_tests_management_policies_request_data_type
    :members:
    :show-inheritance:
 
