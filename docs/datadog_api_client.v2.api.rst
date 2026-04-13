@@ -494,6 +494,13 @@ datadog\_api\_client.v2.api.org\_connections\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.org\_groups\_api module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.org_groups_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.organizations\_api module
 -----------------------------------------------------
 

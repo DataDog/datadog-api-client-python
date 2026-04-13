@@ -790,6 +790,14 @@ components:
       required: true
       schema:
         type: string
+    MembershipSort:
+      description: >-
+        Field to sort memberships by. Supported values: `name`, `uuid`, `-name`, `-uuid`. Defaults to `uuid`.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: "#/components/schemas/OrgGroupMembershipSortOption"
     MetricID:
       description: The name of the log-based metric.
       in: path
@@ -921,6 +929,148 @@ components:
         example: "f9ec96b0-8c8a-4b0a-9b0a-1b2c3d4e5f6a"
         format: uuid
         type: string
+    OrgGroupId:
+      description: The ID of the org group.
+      in: path
+      name: org_group_id
+      required: true
+      schema:
+        example: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+        format: uuid
+        type: string
+    OrgGroupInclude:
+      description: >-
+        List of related resources to include.
+      explode: false
+      in: query
+      name: include
+      required: false
+      schema:
+        example:
+          - memberships
+        items:
+          $ref: "#/components/schemas/OrgGroupIncludeOption"
+        type: array
+      style: form
+    OrgGroupMembershipFilterOrgGroupId:
+      description: Filter memberships by org group ID. Required when `filter[org_uuid]` is not provided.
+      in: query
+      name: filter[org_group_id]
+      required: false
+      schema:
+        example: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+        format: uuid
+        type: string
+    OrgGroupMembershipFilterOrgUuid:
+      description: Filter memberships by org UUID. Returns a single-item list.
+      in: query
+      name: filter[org_uuid]
+      required: false
+      schema:
+        example: "b2c3d4e5-f6a7-8901-bcde-f01234567890"
+        format: uuid
+        type: string
+    OrgGroupMembershipId:
+      description: The ID of the org group membership.
+      in: path
+      name: org_group_membership_id
+      required: true
+      schema:
+        example: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+        format: uuid
+        type: string
+    OrgGroupPageNumber:
+      description: The page number to return.
+      in: query
+      name: page[number]
+      required: false
+      schema:
+        default: 0
+        example: 0
+        format: int64
+        minimum: 0
+        type: integer
+    OrgGroupPageSize:
+      description: The number of items per page. Maximum is 1000.
+      in: query
+      name: page[size]
+      required: false
+      schema:
+        default: 50
+        example: 50
+        format: int64
+        maximum: 1000
+        minimum: 1
+        type: integer
+    OrgGroupPolicyFilterOrgGroupId:
+      description: Filter policies by org group ID.
+      in: query
+      name: filter[org_group_id]
+      required: true
+      schema:
+        example: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+        format: uuid
+        type: string
+    OrgGroupPolicyFilterPolicyName:
+      description: Filter policies by policy name.
+      in: query
+      name: filter[policy_name]
+      required: false
+      schema:
+        example: monitor_timezone
+        type: string
+    OrgGroupPolicyId:
+      description: The ID of the org group policy.
+      in: path
+      name: org_group_policy_id
+      required: true
+      schema:
+        example: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+        format: uuid
+        type: string
+    OrgGroupPolicyOverrideFilterOrgGroupId:
+      description: Filter policy overrides by org group ID.
+      in: query
+      name: filter[org_group_id]
+      required: true
+      schema:
+        example: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+        format: uuid
+        type: string
+    OrgGroupPolicyOverrideFilterPolicyId:
+      description: Filter policy overrides by policy ID.
+      in: query
+      name: filter[policy_id]
+      required: false
+      schema:
+        example: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+        format: uuid
+        type: string
+    OrgGroupPolicyOverrideId:
+      description: The ID of the org group policy override.
+      in: path
+      name: org_group_policy_override_id
+      required: true
+      schema:
+        example: "9f8e7d6c-5b4a-3210-fedc-ba0987654321"
+        format: uuid
+        type: string
+    OrgGroupSort:
+      description: >-
+        Field to sort org groups by. Supported values: `name`, `uuid`, `-name`, `-uuid`. Defaults to `uuid`.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: "#/components/schemas/OrgGroupSortOption"
+    OverrideSort:
+      description: >-
+        Field to sort overrides by. Supported values: `id`, `org_uuid`, `-id`, `-org_uuid`. Defaults to `id`.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: "#/components/schemas/OrgGroupPolicyOverrideSortOption"
     PageNumber:
       description: Specific page number to return.
       in: query
@@ -959,6 +1109,14 @@ components:
       required: true
       schema:
         type: string
+    PolicySort:
+      description: >-
+        Field to sort policies by. Supported values: `id`, `name`, `-id`, `-name`. Defaults to `id`.
+      in: query
+      name: sort
+      required: false
+      schema:
+        $ref: "#/components/schemas/OrgGroupPolicySortOption"
     ProductName:
       description: Name of the product to be deleted, either `logs` or `rum`.
       in: path
@@ -29750,6 +29908,22 @@ components:
       type: string
       x-enum-varnames:
         - INCIDENTS_GLOBAL_SETTINGS
+    GlobalOrgIdentifier:
+      description: A unique identifier for an organization including its site.
+      properties:
+        org_site:
+          description: The site of the organization.
+          example: "datadoghq.com"
+          type: string
+        org_uuid:
+          description: The UUID of the organization.
+          example: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+          format: uuid
+          type: string
+      required:
+        - org_uuid
+        - org_site
+      type: object
     GlobalVariableData:
       description: Synthetics global variable data. Wrapper around the global variable object.
       properties:
@@ -49168,6 +49342,898 @@ components:
       type: string
       x-enum-varnames:
         - USERS
+    OrgGroupAttributes:
+      description: Attributes of an org group.
+      properties:
+        created_at:
+          description: Timestamp when the org group was created.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        modified_at:
+          description: Timestamp when the org group was last modified.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        name:
+          description: The name of the org group.
+          example: "My Org Group"
+          type: string
+        owner_org_site:
+          description: The site of the organization that owns this org group.
+          example: "datadoghq.com"
+          type: string
+        owner_org_uuid:
+          description: The UUID of the organization that owns this org group.
+          example: "b2c3d4e5-f6a7-8901-bcde-f01234567890"
+          format: uuid
+          type: string
+      required:
+        - name
+        - owner_org_uuid
+        - owner_org_site
+        - created_at
+        - modified_at
+      type: object
+    OrgGroupCreateAttributes:
+      description: Attributes for creating an org group.
+      properties:
+        name:
+          description: The name of the org group.
+          example: "My Org Group"
+          type: string
+      required:
+        - name
+      type: object
+    OrgGroupCreateData:
+      description: Data for creating an org group.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupCreateAttributes"
+        type:
+          $ref: "#/components/schemas/OrgGroupType"
+      required:
+        - type
+        - attributes
+      type: object
+    OrgGroupCreateRequest:
+      description: Request to create an org group.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupCreateData"
+      required:
+        - data
+      type: object
+    OrgGroupData:
+      description: An org group resource.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupAttributes"
+        id:
+          description: The ID of the org group.
+          example: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+          format: uuid
+          type: string
+        relationships:
+          $ref: "#/components/schemas/OrgGroupRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupIncludeOption:
+      description: Allowed include options for org group endpoints.
+      enum:
+        - memberships
+      type: string
+      x-enum-varnames:
+        - MEMBERSHIPS
+    OrgGroupListResponse:
+      description: Response containing a list of org groups.
+      properties:
+        data:
+          description: An array of org groups.
+          items:
+            $ref: "#/components/schemas/OrgGroupData"
+          type: array
+        included:
+          description: Related resources included in the response when requested with the `include` parameter.
+          items:
+            $ref: "#/components/schemas/OrgGroupMembershipData"
+          type: array
+        meta:
+          $ref: "#/components/schemas/OrgGroupPaginationMeta"
+      required:
+        - data
+      type: object
+    OrgGroupMembershipAttributes:
+      description: Attributes of an org group membership.
+      properties:
+        created_at:
+          description: Timestamp when the membership was created.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        modified_at:
+          description: Timestamp when the membership was last modified.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        org_name:
+          description: The name of the member organization.
+          example: "Acme Corp"
+          type: string
+        org_site:
+          description: The site of the member organization.
+          example: "datadoghq.com"
+          type: string
+        org_uuid:
+          description: The UUID of the member organization.
+          example: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+          format: uuid
+          type: string
+      required:
+        - org_name
+        - org_uuid
+        - org_site
+        - created_at
+        - modified_at
+      type: object
+    OrgGroupMembershipBulkUpdateAttributes:
+      description: Attributes for bulk updating org group memberships.
+      properties:
+        orgs:
+          description: List of organizations to move. Maximum 100 per request.
+          items:
+            $ref: "#/components/schemas/GlobalOrgIdentifier"
+          type: array
+      required:
+        - orgs
+      type: object
+    OrgGroupMembershipBulkUpdateData:
+      description: Data for bulk updating org group memberships.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupMembershipBulkUpdateAttributes"
+        relationships:
+          $ref: "#/components/schemas/OrgGroupMembershipBulkUpdateRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupMembershipBulkUpdateType"
+      required:
+        - type
+        - attributes
+        - relationships
+      type: object
+    OrgGroupMembershipBulkUpdateRelationships:
+      description: Relationships for bulk updating memberships.
+      properties:
+        source_org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+        target_org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+      required:
+        - source_org_group
+        - target_org_group
+      type: object
+    OrgGroupMembershipBulkUpdateRequest:
+      description: Request to bulk update org group memberships.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupMembershipBulkUpdateData"
+      required:
+        - data
+      type: object
+    OrgGroupMembershipBulkUpdateType:
+      description: Org group membership bulk update resource type.
+      enum:
+        - org_group_membership_bulk_updates
+      example: org_group_membership_bulk_updates
+      type: string
+      x-enum-varnames:
+        - ORG_GROUP_MEMBERSHIP_BULK_UPDATES
+    OrgGroupMembershipData:
+      description: An org group membership resource.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupMembershipAttributes"
+        id:
+          description: The ID of the org group membership.
+          example: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+          format: uuid
+          type: string
+        relationships:
+          $ref: "#/components/schemas/OrgGroupMembershipRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupMembershipType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupMembershipListResponse:
+      description: Response containing a list of org group memberships.
+      properties:
+        data:
+          description: An array of org group memberships.
+          items:
+            $ref: "#/components/schemas/OrgGroupMembershipData"
+          type: array
+        meta:
+          $ref: "#/components/schemas/OrgGroupPaginationMeta"
+      required:
+        - data
+      type: object
+    OrgGroupMembershipRelationshipData:
+      description: A reference to an org group membership.
+      properties:
+        id:
+          description: The ID of the membership.
+          example: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/OrgGroupMembershipType"
+      required:
+        - id
+        - type
+      type: object
+    OrgGroupMembershipRelationships:
+      description: Relationships of an org group membership.
+      properties:
+        org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+      type: object
+    OrgGroupMembershipResponse:
+      description: Response containing a single org group membership.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupMembershipData"
+      required:
+        - data
+      type: object
+    OrgGroupMembershipSortOption:
+      default: uuid
+      description: Field to sort memberships by.
+      enum:
+        - name
+        - -name
+        - uuid
+        - -uuid
+      example: uuid
+      type: string
+      x-enum-varnames:
+        - NAME
+        - MINUS_NAME
+        - UUID
+        - MINUS_UUID
+    OrgGroupMembershipType:
+      description: Org group memberships resource type.
+      enum:
+        - org_group_memberships
+      example: org_group_memberships
+      type: string
+      x-enum-varnames:
+        - ORG_GROUP_MEMBERSHIPS
+    OrgGroupMembershipUpdateData:
+      description: Data for updating an org group membership.
+      properties:
+        id:
+          description: The ID of the membership.
+          example: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+          format: uuid
+          type: string
+        relationships:
+          $ref: "#/components/schemas/OrgGroupMembershipUpdateRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupMembershipType"
+      required:
+        - id
+        - type
+        - relationships
+      type: object
+    OrgGroupMembershipUpdateRelationships:
+      description: Relationships for updating a membership.
+      properties:
+        org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+      required:
+        - org_group
+      type: object
+    OrgGroupMembershipUpdateRequest:
+      description: Request to update an org group membership.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupMembershipUpdateData"
+      required:
+        - data
+      type: object
+    OrgGroupMembershipsRelationship:
+      description: Relationship to org group memberships.
+      properties:
+        data:
+          description: An array of membership relationship references.
+          items:
+            $ref: "#/components/schemas/OrgGroupMembershipRelationshipData"
+          type: array
+      required:
+        - data
+      type: object
+    OrgGroupPaginationMeta:
+      description: Pagination metadata.
+      properties:
+        page:
+          $ref: "#/components/schemas/OrgGroupPaginationMetaPage"
+      required:
+        - page
+      type: object
+    OrgGroupPaginationMetaPage:
+      description: Page-based pagination details.
+      properties:
+        total_count:
+          description: The total number of items.
+          example: 42
+          format: int64
+          type: integer
+      required:
+        - total_count
+      type: object
+    OrgGroupPolicyAttributes:
+      description: Attributes of an org group policy.
+      properties:
+        content:
+          additionalProperties: {}
+          description: The policy content as key-value pairs.
+          example:
+            value: "UTC"
+          type: object
+        enforced_at:
+          description: Timestamp when the policy was enforced.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        modified_at:
+          description: Timestamp when the policy was last modified.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        policy_name:
+          description: The name of the policy.
+          example: "monitor_timezone"
+          type: string
+      required:
+        - policy_name
+        - enforced_at
+        - modified_at
+      type: object
+    OrgGroupPolicyConfigAttributes:
+      description: Attributes of an org group policy config.
+      properties:
+        allowed_values:
+          description: The allowed values for this config.
+          example: ["UTC", "US/Eastern", "US/Pacific"]
+          items:
+            description: An allowed value for this config.
+            type: string
+          type: array
+        default_value:
+          description: The default value for this config.
+          example: "UTC"
+        description:
+          description: The description of the policy config.
+          example: "The default timezone for monitors."
+          type: string
+        name:
+          description: The name of the policy config.
+          example: "monitor_timezone"
+          type: string
+        value_type:
+          description: The type of the value for this config.
+          example: "string"
+          type: string
+      required:
+        - name
+        - description
+        - value_type
+        - allowed_values
+        - default_value
+      type: object
+    OrgGroupPolicyConfigData:
+      description: An org group policy config resource.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupPolicyConfigAttributes"
+        id:
+          description: The identifier of the policy config (uses the config name).
+          example: "monitor_timezone"
+          type: string
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyConfigType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupPolicyConfigListResponse:
+      description: Response containing a list of org group policy configs.
+      properties:
+        data:
+          description: An array of org group policy configs.
+          items:
+            $ref: "#/components/schemas/OrgGroupPolicyConfigData"
+          type: array
+      required:
+        - data
+      type: object
+    OrgGroupPolicyConfigType:
+      description: Org group policy configs resource type.
+      enum:
+        - org_group_policy_configs
+      example: org_group_policy_configs
+      type: string
+      x-enum-varnames:
+        - ORG_GROUP_POLICY_CONFIGS
+    OrgGroupPolicyCreateAttributes:
+      description: Attributes for creating an org group policy.
+      properties:
+        content:
+          additionalProperties: {}
+          description: The policy content as key-value pairs.
+          example:
+            value: "UTC"
+          type: object
+        policy_name:
+          description: The name of the policy.
+          example: "monitor_timezone"
+          type: string
+      required:
+        - policy_name
+        - content
+      type: object
+    OrgGroupPolicyCreateData:
+      description: Data for creating an org group policy.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupPolicyCreateAttributes"
+        relationships:
+          $ref: "#/components/schemas/OrgGroupPolicyCreateRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyType"
+      required:
+        - type
+        - attributes
+        - relationships
+      type: object
+    OrgGroupPolicyCreateRelationships:
+      description: Relationships for creating a policy.
+      properties:
+        org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+      required:
+        - org_group
+      type: object
+    OrgGroupPolicyCreateRequest:
+      description: Request to create an org group policy.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupPolicyCreateData"
+      required:
+        - data
+      type: object
+    OrgGroupPolicyData:
+      description: An org group policy resource.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupPolicyAttributes"
+        id:
+          description: The ID of the org group policy.
+          example: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+          format: uuid
+          type: string
+        relationships:
+          $ref: "#/components/schemas/OrgGroupPolicyRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupPolicyListResponse:
+      description: Response containing a list of org group policies.
+      properties:
+        data:
+          description: An array of org group policies.
+          items:
+            $ref: "#/components/schemas/OrgGroupPolicyData"
+          type: array
+        meta:
+          $ref: "#/components/schemas/OrgGroupPaginationMeta"
+      required:
+        - data
+      type: object
+    OrgGroupPolicyOverrideAttributes:
+      description: Attributes of an org group policy override.
+      properties:
+        content:
+          additionalProperties: {}
+          description: The override content as key-value pairs.
+          type: object
+        created_at:
+          description: Timestamp when the override was created.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        modified_at:
+          description: Timestamp when the override was last modified.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        org_site:
+          description: The site of the organization that has the override.
+          example: "datadoghq.com"
+          type: string
+        org_uuid:
+          description: The UUID of the organization that has the override.
+          example: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+          format: uuid
+          type: string
+      required:
+        - org_uuid
+        - org_site
+        - created_at
+        - modified_at
+      type: object
+    OrgGroupPolicyOverrideCreateAttributes:
+      description: Attributes for creating a policy override.
+      properties:
+        org_site:
+          description: The site of the organization.
+          example: "datadoghq.com"
+          type: string
+        org_uuid:
+          description: The UUID of the organization to grant the override.
+          example: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+          format: uuid
+          type: string
+      required:
+        - org_uuid
+        - org_site
+      type: object
+    OrgGroupPolicyOverrideCreateData:
+      description: Data for creating an org group policy override.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideCreateAttributes"
+        relationships:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideCreateRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideType"
+      required:
+        - type
+        - attributes
+        - relationships
+      type: object
+    OrgGroupPolicyOverrideCreateRelationships:
+      description: Relationships for creating a policy override.
+      properties:
+        org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+        org_group_policy:
+          $ref: "#/components/schemas/OrgGroupPolicyRelationshipToOne"
+      required:
+        - org_group
+        - org_group_policy
+      type: object
+    OrgGroupPolicyOverrideCreateRequest:
+      description: Request to create an org group policy override.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideCreateData"
+      required:
+        - data
+      type: object
+    OrgGroupPolicyOverrideData:
+      description: An org group policy override resource.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideAttributes"
+        id:
+          description: The ID of the policy override.
+          example: "9f8e7d6c-5b4a-3210-fedc-ba0987654321"
+          format: uuid
+          type: string
+        relationships:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideRelationships"
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupPolicyOverrideListResponse:
+      description: Response containing a list of org group policy overrides.
+      properties:
+        data:
+          description: An array of org group policy overrides.
+          items:
+            $ref: "#/components/schemas/OrgGroupPolicyOverrideData"
+          type: array
+        meta:
+          $ref: "#/components/schemas/OrgGroupPaginationMeta"
+      required:
+        - data
+      type: object
+    OrgGroupPolicyOverrideRelationships:
+      description: Relationships of an org group policy override.
+      properties:
+        org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+        org_group_policy:
+          $ref: "#/components/schemas/OrgGroupPolicyRelationshipToOne"
+      type: object
+    OrgGroupPolicyOverrideResponse:
+      description: Response containing a single org group policy override.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideData"
+      required:
+        - data
+      type: object
+    OrgGroupPolicyOverrideSortOption:
+      default: id
+      description: Field to sort overrides by.
+      enum:
+        - id
+        - -id
+        - org_uuid
+        - -org_uuid
+      example: id
+      type: string
+      x-enum-varnames:
+        - ID
+        - MINUS_ID
+        - ORG_UUID
+        - MINUS_ORG_UUID
+    OrgGroupPolicyOverrideType:
+      description: Org group policy overrides resource type.
+      enum:
+        - org_group_policy_overrides
+      example: org_group_policy_overrides
+      type: string
+      x-enum-varnames:
+        - ORG_GROUP_POLICY_OVERRIDES
+    OrgGroupPolicyOverrideUpdateAttributes:
+      description: Attributes for updating a policy override.
+      properties:
+        org_site:
+          description: The site of the organization.
+          example: "datadoghq.com"
+          type: string
+        org_uuid:
+          description: The UUID of the organization.
+          example: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+          format: uuid
+          type: string
+      required:
+        - org_uuid
+        - org_site
+      type: object
+    OrgGroupPolicyOverrideUpdateData:
+      description: Data for updating a policy override.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideUpdateAttributes"
+        id:
+          description: The ID of the policy override.
+          example: "9f8e7d6c-5b4a-3210-fedc-ba0987654321"
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupPolicyOverrideUpdateRequest:
+      description: Request to update an org group policy override.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupPolicyOverrideUpdateData"
+      required:
+        - data
+      type: object
+    OrgGroupPolicyRelationshipToOne:
+      description: Relationship to a single org group policy.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupPolicyRelationshipToOneData"
+      required:
+        - data
+      type: object
+    OrgGroupPolicyRelationshipToOneData:
+      description: A reference to an org group policy.
+      properties:
+        id:
+          description: The ID of the policy.
+          example: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyType"
+      required:
+        - id
+        - type
+      type: object
+    OrgGroupPolicyRelationships:
+      description: Relationships of an org group policy.
+      properties:
+        org_group:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOne"
+      type: object
+    OrgGroupPolicyResponse:
+      description: Response containing a single org group policy.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupPolicyData"
+      required:
+        - data
+      type: object
+    OrgGroupPolicySortOption:
+      default: id
+      description: Field to sort policies by.
+      enum:
+        - id
+        - -id
+        - name
+        - -name
+      example: id
+      type: string
+      x-enum-varnames:
+        - ID
+        - MINUS_ID
+        - NAME
+        - MINUS_NAME
+    OrgGroupPolicyType:
+      description: Org group policies resource type.
+      enum:
+        - org_group_policies
+      example: org_group_policies
+      type: string
+      x-enum-varnames:
+        - ORG_GROUP_POLICIES
+    OrgGroupPolicyUpdateAttributes:
+      description: Attributes for updating an org group policy.
+      properties:
+        content:
+          additionalProperties: {}
+          description: The policy content as key-value pairs.
+          example:
+            value: "UTC"
+          type: object
+      type: object
+    OrgGroupPolicyUpdateData:
+      description: Data for updating an org group policy.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupPolicyUpdateAttributes"
+        id:
+          description: The ID of the policy.
+          example: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/OrgGroupPolicyType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupPolicyUpdateRequest:
+      description: Request to update an org group policy.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupPolicyUpdateData"
+      required:
+        - data
+      type: object
+    OrgGroupRelationshipToOne:
+      description: Relationship to a single org group.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupRelationshipToOneData"
+      required:
+        - data
+      type: object
+    OrgGroupRelationshipToOneData:
+      description: A reference to an org group.
+      properties:
+        id:
+          description: The ID of the org group.
+          example: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/OrgGroupType"
+      required:
+        - id
+        - type
+      type: object
+    OrgGroupRelationships:
+      description: Relationships of an org group.
+      properties:
+        memberships:
+          $ref: "#/components/schemas/OrgGroupMembershipsRelationship"
+      type: object
+    OrgGroupResponse:
+      description: Response containing a single org group.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupData"
+      required:
+        - data
+      type: object
+    OrgGroupSortOption:
+      default: uuid
+      description: Field to sort org groups by.
+      enum:
+        - name
+        - -name
+        - uuid
+        - -uuid
+      example: name
+      type: string
+      x-enum-varnames:
+        - NAME
+        - MINUS_NAME
+        - UUID
+        - MINUS_UUID
+    OrgGroupType:
+      description: Org groups resource type.
+      enum:
+        - org_groups
+      example: org_groups
+      type: string
+      x-enum-varnames:
+        - ORG_GROUPS
+    OrgGroupUpdateAttributes:
+      description: Attributes for updating an org group.
+      properties:
+        name:
+          description: The name of the org group.
+          example: "Updated Org Group Name"
+          type: string
+      required:
+        - name
+      type: object
+    OrgGroupUpdateData:
+      description: Data for updating an org group.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/OrgGroupUpdateAttributes"
+        id:
+          description: The ID of the org group.
+          example: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/OrgGroupType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    OrgGroupUpdateRequest:
+      description: Request to update an org group.
+      properties:
+        data:
+          $ref: "#/components/schemas/OrgGroupUpdateData"
+      required:
+        - data
+      type: object
     Organization:
       description: Organization object.
       properties:
@@ -100159,6 +101225,1214 @@ paths:
         operator: OR
         permissions:
           - org_connections_write
+  /api/v2/org_group_memberships:
+    get:
+      description: >-
+        List organization group memberships. Filter by org group ID or org UUID. At least one of `filter[org_group_id]` or `filter[org_uuid]` must be provided. When filtering by org UUID, returns a single-item list with the membership for that org.
+      operationId: ListOrgGroupMemberships
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupMembershipFilterOrgGroupId"
+        - $ref: "#/components/parameters/OrgGroupMembershipFilterOrgUuid"
+        - $ref: "#/components/parameters/OrgGroupPageNumber"
+        - $ref: "#/components/parameters/OrgGroupPageSize"
+        - $ref: "#/components/parameters/MembershipSort"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          created_at: "2024-01-15T10:30:00Z"
+                          modified_at: "2024-01-15T10:30:00Z"
+                          org_name: "Acme Corp"
+                          org_site: "datadoghq.com"
+                          org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                        id: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+                        relationships:
+                          org_group:
+                            data:
+                              id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                              type: org_groups
+                        type: org_group_memberships
+                    meta:
+                      page:
+                        total_count: 1
+              schema:
+                $ref: "#/components/schemas/OrgGroupMembershipListResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: List org group memberships
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_group_memberships/bulk:
+    patch:
+      description: >-
+        Move a batch of organizations from one org group to another. This is an atomic operation. Maximum 100 orgs per request.
+      operationId: BulkUpdateOrgGroupMemberships
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      orgs:
+                        - org_site: "datadoghq.com"
+                          org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                    relationships:
+                      source_org_group:
+                        data:
+                          id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                          type: org_groups
+                      target_org_group:
+                        data:
+                          id: "d4e5f6a7-b890-1234-cdef-567890abcdef"
+                          type: org_groups
+                    type: org_group_membership_bulk_updates
+            schema:
+              $ref: "#/components/schemas/OrgGroupMembershipBulkUpdateRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          created_at: "2024-01-15T10:30:00Z"
+                          modified_at: "2024-01-16T14:00:00Z"
+                          org_name: "Acme Corp"
+                          org_site: "datadoghq.com"
+                          org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                        id: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+                        relationships:
+                          org_group:
+                            data:
+                              id: "d4e5f6a7-b890-1234-cdef-567890abcdef"
+                              type: org_groups
+                        type: org_group_memberships
+              schema:
+                $ref: "#/components/schemas/OrgGroupMembershipListResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Bulk update org group memberships
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_group_memberships/{org_group_membership_id}:
+    get:
+      description: Get a specific organization group membership by its ID.
+      operationId: GetOrgGroupMembership
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupMembershipId"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-15T10:30:00Z"
+                        org_name: "Acme Corp"
+                        org_site: "datadoghq.com"
+                        org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                      id: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+                      relationships:
+                        org_group:
+                          data:
+                            id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                            type: org_groups
+                      type: org_group_memberships
+              schema:
+                $ref: "#/components/schemas/OrgGroupMembershipResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Get an org group membership
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    patch:
+      description: Move an organization to a different org group by updating its membership.
+      operationId: UpdateOrgGroupMembership
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupMembershipId"
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    id: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+                    relationships:
+                      org_group:
+                        data:
+                          id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                          type: org_groups
+                    type: org_group_memberships
+            schema:
+              $ref: "#/components/schemas/OrgGroupMembershipUpdateRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-16T14:00:00Z"
+                        org_name: "Acme Corp"
+                        org_site: "datadoghq.com"
+                        org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                      id: "f1e2d3c4-b5a6-7890-1234-567890abcdef"
+                      relationships:
+                        org_group:
+                          data:
+                            id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                            type: org_groups
+                      type: org_group_memberships
+              schema:
+                $ref: "#/components/schemas/OrgGroupMembershipResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Update an org group membership
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_group_policies:
+    get:
+      description: List policies for an organization group. Requires a filter on org group ID.
+      operationId: ListOrgGroupPolicies
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupPolicyFilterOrgGroupId"
+        - $ref: "#/components/parameters/OrgGroupPolicyFilterPolicyName"
+        - $ref: "#/components/parameters/OrgGroupPageNumber"
+        - $ref: "#/components/parameters/OrgGroupPageSize"
+        - $ref: "#/components/parameters/PolicySort"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          content:
+                            value: "UTC"
+                          enforced_at: "2024-01-15T10:30:00Z"
+                          modified_at: "2024-01-15T10:30:00Z"
+                          policy_name: "monitor_timezone"
+                        id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                        relationships:
+                          org_group:
+                            data:
+                              id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                              type: org_groups
+                        type: org_group_policies
+                    meta:
+                      page:
+                        total_count: 1
+              schema:
+                $ref: "#/components/schemas/OrgGroupPolicyListResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: List org group policies
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    post:
+      description: Create a new policy for an organization group.
+      operationId: CreateOrgGroupPolicy
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      content:
+                        value: "UTC"
+                      policy_name: "monitor_timezone"
+                    relationships:
+                      org_group:
+                        data:
+                          id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                          type: org_groups
+                    type: org_group_policies
+            schema:
+              $ref: "#/components/schemas/OrgGroupPolicyCreateRequest"
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        content:
+                          value: "UTC"
+                        enforced_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-15T10:30:00Z"
+                        policy_name: "monitor_timezone"
+                      id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                      relationships:
+                        org_group:
+                          data:
+                            id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                            type: org_groups
+                      type: org_group_policies
+              schema:
+                $ref: "#/components/schemas/OrgGroupPolicyResponse"
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Conflict
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Create an org group policy
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_group_policies/{org_group_policy_id}:
+    delete:
+      description: Delete an organization group policy by its ID.
+      operationId: DeleteOrgGroupPolicy
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupPolicyId"
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Delete an org group policy
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    patch:
+      description: Update the content of an existing organization group policy.
+      operationId: UpdateOrgGroupPolicy
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupPolicyId"
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      content:
+                        value: "US/Eastern"
+                    id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                    type: org_group_policies
+            schema:
+              $ref: "#/components/schemas/OrgGroupPolicyUpdateRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        content:
+                          value: "US/Eastern"
+                        enforced_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-16T14:00:00Z"
+                        policy_name: "monitor_timezone"
+                      id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                      relationships:
+                        org_group:
+                          data:
+                            id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                            type: org_groups
+                      type: org_group_policies
+              schema:
+                $ref: "#/components/schemas/OrgGroupPolicyResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Update an org group policy
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_group_policy_configs:
+    get:
+      description: List all org configs that are eligible to be used as organization group policies.
+      operationId: ListOrgGroupPolicyConfigs
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          allowed_values: ["UTC", "US/Eastern", "US/Pacific"]
+                          default_value: "UTC"
+                          description: "The default timezone for monitors."
+                          name: "monitor_timezone"
+                          value_type: "string"
+                        id: "monitor_timezone"
+                        type: org_group_policy_configs
+              schema:
+                $ref: "#/components/schemas/OrgGroupPolicyConfigListResponse"
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: List org group policy configs
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_group_policy_overrides:
+    get:
+      description: >-
+        List policy overrides for an organization group. Requires a filter on org group ID. Optionally filter by policy ID.
+      operationId: ListOrgGroupPolicyOverrides
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupPolicyOverrideFilterOrgGroupId"
+        - $ref: "#/components/parameters/OrgGroupPolicyOverrideFilterPolicyId"
+        - $ref: "#/components/parameters/OrgGroupPageNumber"
+        - $ref: "#/components/parameters/OrgGroupPageSize"
+        - $ref: "#/components/parameters/OverrideSort"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          created_at: "2024-01-15T10:30:00Z"
+                          modified_at: "2024-01-15T10:30:00Z"
+                          org_site: "datadoghq.com"
+                          org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                        id: "9f8e7d6c-5b4a-3210-fedc-ba0987654321"
+                        relationships:
+                          org_group:
+                            data:
+                              id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                              type: org_groups
+                          org_group_policy:
+                            data:
+                              id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                              type: org_group_policies
+                        type: org_group_policy_overrides
+                    meta:
+                      page:
+                        total_count: 1
+              schema:
+                $ref: "#/components/schemas/OrgGroupPolicyOverrideListResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: List org group policy overrides
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    post:
+      description: Create a new policy override for an organization within an org group.
+      operationId: CreateOrgGroupPolicyOverride
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      org_site: "datadoghq.com"
+                      org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                    relationships:
+                      org_group:
+                        data:
+                          id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                          type: org_groups
+                      org_group_policy:
+                        data:
+                          id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                          type: org_group_policies
+                    type: org_group_policy_overrides
+            schema:
+              $ref: "#/components/schemas/OrgGroupPolicyOverrideCreateRequest"
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-15T10:30:00Z"
+                        org_site: "datadoghq.com"
+                        org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                      id: "9f8e7d6c-5b4a-3210-fedc-ba0987654321"
+                      relationships:
+                        org_group:
+                          data:
+                            id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                            type: org_groups
+                        org_group_policy:
+                          data:
+                            id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                            type: org_group_policies
+                      type: org_group_policy_overrides
+              schema:
+                $ref: "#/components/schemas/OrgGroupPolicyOverrideResponse"
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Conflict
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Create an org group policy override
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_group_policy_overrides/{org_group_policy_override_id}:
+    delete:
+      description: Delete an organization group policy override by its ID.
+      operationId: DeleteOrgGroupPolicyOverride
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupPolicyOverrideId"
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Delete an org group policy override
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    patch:
+      description: Update an existing organization group policy override.
+      operationId: UpdateOrgGroupPolicyOverride
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupPolicyOverrideId"
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      org_site: "datadoghq.com"
+                      org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                    id: "9f8e7d6c-5b4a-3210-fedc-ba0987654321"
+                    type: org_group_policy_overrides
+            schema:
+              $ref: "#/components/schemas/OrgGroupPolicyOverrideUpdateRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-16T14:00:00Z"
+                        org_site: "datadoghq.com"
+                        org_uuid: "c3d4e5f6-a7b8-9012-cdef-012345678901"
+                      id: "9f8e7d6c-5b4a-3210-fedc-ba0987654321"
+                      relationships:
+                        org_group:
+                          data:
+                            id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                            type: org_groups
+                        org_group_policy:
+                          data:
+                            id: "1a2b3c4d-5e6f-7890-abcd-ef0123456789"
+                            type: org_group_policies
+                      type: org_group_policy_overrides
+              schema:
+                $ref: "#/components/schemas/OrgGroupPolicyOverrideResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Update an org group policy override
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_groups:
+    get:
+      description: List all organization groups that the requesting organization has access to.
+      operationId: ListOrgGroups
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupPageNumber"
+        - $ref: "#/components/parameters/OrgGroupPageSize"
+        - $ref: "#/components/parameters/OrgGroupSort"
+        - $ref: "#/components/parameters/OrgGroupInclude"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          created_at: "2024-01-15T10:30:00Z"
+                          modified_at: "2024-01-15T10:30:00Z"
+                          name: "My Org Group"
+                          owner_org_site: "datadoghq.com"
+                          owner_org_uuid: "b2c3d4e5-f6a7-8901-bcde-f01234567890"
+                        id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                        type: org_groups
+                    meta:
+                      page:
+                        total_count: 1
+              schema:
+                $ref: "#/components/schemas/OrgGroupListResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: List org groups
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    post:
+      description: Create a new organization group.
+      operationId: CreateOrgGroup
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      name: "My Org Group"
+                    type: org_groups
+            schema:
+              $ref: "#/components/schemas/OrgGroupCreateRequest"
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-15T10:30:00Z"
+                        name: "My Org Group"
+                        owner_org_site: "datadoghq.com"
+                        owner_org_uuid: "b2c3d4e5-f6a7-8901-bcde-f01234567890"
+                      id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                      type: org_groups
+              schema:
+                $ref: "#/components/schemas/OrgGroupResponse"
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Conflict
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Create an org group
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/org_groups/{org_group_id}:
+    delete:
+      description: Delete an organization group by its ID.
+      operationId: DeleteOrgGroup
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupId"
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Delete an org group
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    get:
+      description: Get a specific organization group by its ID.
+      operationId: GetOrgGroup
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupId"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-15T10:30:00Z"
+                        name: "My Org Group"
+                        owner_org_site: "datadoghq.com"
+                        owner_org_uuid: "b2c3d4e5-f6a7-8901-bcde-f01234567890"
+                      id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                      type: org_groups
+              schema:
+                $ref: "#/components/schemas/OrgGroupResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Get an org group
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    patch:
+      description: Update the name of an existing organization group.
+      operationId: UpdateOrgGroup
+      parameters:
+        - $ref: "#/components/parameters/OrgGroupId"
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      name: "Updated Org Group Name"
+                    id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                    type: org_groups
+            schema:
+              $ref: "#/components/schemas/OrgGroupUpdateRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        modified_at: "2024-01-16T14:00:00Z"
+                        name: "Updated Org Group Name"
+                        owner_org_site: "datadoghq.com"
+                        owner_org_uuid: "b2c3d4e5-f6a7-8901-bcde-f01234567890"
+                      id: "a1b2c3d4-e5f6-7890-abcd-ef0123456789"
+                      type: org_groups
+              schema:
+                $ref: "#/components/schemas/OrgGroupResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Update an org group
+      tags: [Org Groups]
+      "x-permission":
+        operator: OR
+        permissions:
+          - org_group_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/permissions:
     get:
       description: |-
@@ -117638,6 +119912,9 @@ tags:
   - description: |-
       Manage connections between organizations. Org connections allow for controlled sharing of data between different Datadog organizations. See the [Cross-Organization Visibiltiy](https://docs.datadoghq.com/account_management/org_settings/cross_org_visibility/) page for more information.
     name: Org Connections
+  - description: >-
+      Manage organization groups, memberships, policies, policy overrides, and policy configurations.
+    name: Org Groups
   - description: Create, edit, and manage your organizations. Read more about [multi-org accounts](https://docs.datadoghq.com/account_management/multi_organization).
     externalDocs:
       description: Find out more at
