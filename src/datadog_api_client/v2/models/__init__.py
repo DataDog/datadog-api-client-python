@@ -2435,6 +2435,7 @@ from datadog_api_client.v2.model.global_incident_settings_data_response import G
 from datadog_api_client.v2.model.global_incident_settings_request import GlobalIncidentSettingsRequest
 from datadog_api_client.v2.model.global_incident_settings_response import GlobalIncidentSettingsResponse
 from datadog_api_client.v2.model.global_incident_settings_type import GlobalIncidentSettingsType
+from datadog_api_client.v2.model.global_org_identifier import GlobalOrgIdentifier
 from datadog_api_client.v2.model.global_variable_data import GlobalVariableData
 from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
 from datadog_api_client.v2.model.global_variable_json_patch_request_data import GlobalVariableJsonPatchRequestData
@@ -4543,6 +4544,85 @@ from datadog_api_client.v2.model.org_connection_update_request import OrgConnect
 from datadog_api_client.v2.model.org_connection_user_relationship import OrgConnectionUserRelationship
 from datadog_api_client.v2.model.org_connection_user_relationship_data import OrgConnectionUserRelationshipData
 from datadog_api_client.v2.model.org_connection_user_relationship_data_type import OrgConnectionUserRelationshipDataType
+from datadog_api_client.v2.model.org_group_attributes import OrgGroupAttributes
+from datadog_api_client.v2.model.org_group_create_attributes import OrgGroupCreateAttributes
+from datadog_api_client.v2.model.org_group_create_data import OrgGroupCreateData
+from datadog_api_client.v2.model.org_group_create_request import OrgGroupCreateRequest
+from datadog_api_client.v2.model.org_group_data import OrgGroupData
+from datadog_api_client.v2.model.org_group_include_option import OrgGroupIncludeOption
+from datadog_api_client.v2.model.org_group_list_response import OrgGroupListResponse
+from datadog_api_client.v2.model.org_group_membership_attributes import OrgGroupMembershipAttributes
+from datadog_api_client.v2.model.org_group_membership_bulk_update_attributes import (
+    OrgGroupMembershipBulkUpdateAttributes,
+)
+from datadog_api_client.v2.model.org_group_membership_bulk_update_data import OrgGroupMembershipBulkUpdateData
+from datadog_api_client.v2.model.org_group_membership_bulk_update_relationships import (
+    OrgGroupMembershipBulkUpdateRelationships,
+)
+from datadog_api_client.v2.model.org_group_membership_bulk_update_request import OrgGroupMembershipBulkUpdateRequest
+from datadog_api_client.v2.model.org_group_membership_bulk_update_type import OrgGroupMembershipBulkUpdateType
+from datadog_api_client.v2.model.org_group_membership_data import OrgGroupMembershipData
+from datadog_api_client.v2.model.org_group_membership_list_response import OrgGroupMembershipListResponse
+from datadog_api_client.v2.model.org_group_membership_relationship_data import OrgGroupMembershipRelationshipData
+from datadog_api_client.v2.model.org_group_membership_relationships import OrgGroupMembershipRelationships
+from datadog_api_client.v2.model.org_group_membership_response import OrgGroupMembershipResponse
+from datadog_api_client.v2.model.org_group_membership_sort_option import OrgGroupMembershipSortOption
+from datadog_api_client.v2.model.org_group_membership_type import OrgGroupMembershipType
+from datadog_api_client.v2.model.org_group_membership_update_data import OrgGroupMembershipUpdateData
+from datadog_api_client.v2.model.org_group_membership_update_relationships import OrgGroupMembershipUpdateRelationships
+from datadog_api_client.v2.model.org_group_membership_update_request import OrgGroupMembershipUpdateRequest
+from datadog_api_client.v2.model.org_group_memberships_relationship import OrgGroupMembershipsRelationship
+from datadog_api_client.v2.model.org_group_pagination_meta import OrgGroupPaginationMeta
+from datadog_api_client.v2.model.org_group_pagination_meta_page import OrgGroupPaginationMetaPage
+from datadog_api_client.v2.model.org_group_policy_attributes import OrgGroupPolicyAttributes
+from datadog_api_client.v2.model.org_group_policy_config_attributes import OrgGroupPolicyConfigAttributes
+from datadog_api_client.v2.model.org_group_policy_config_data import OrgGroupPolicyConfigData
+from datadog_api_client.v2.model.org_group_policy_config_list_response import OrgGroupPolicyConfigListResponse
+from datadog_api_client.v2.model.org_group_policy_config_type import OrgGroupPolicyConfigType
+from datadog_api_client.v2.model.org_group_policy_create_attributes import OrgGroupPolicyCreateAttributes
+from datadog_api_client.v2.model.org_group_policy_create_data import OrgGroupPolicyCreateData
+from datadog_api_client.v2.model.org_group_policy_create_relationships import OrgGroupPolicyCreateRelationships
+from datadog_api_client.v2.model.org_group_policy_create_request import OrgGroupPolicyCreateRequest
+from datadog_api_client.v2.model.org_group_policy_data import OrgGroupPolicyData
+from datadog_api_client.v2.model.org_group_policy_list_response import OrgGroupPolicyListResponse
+from datadog_api_client.v2.model.org_group_policy_override_attributes import OrgGroupPolicyOverrideAttributes
+from datadog_api_client.v2.model.org_group_policy_override_create_attributes import (
+    OrgGroupPolicyOverrideCreateAttributes,
+)
+from datadog_api_client.v2.model.org_group_policy_override_create_data import OrgGroupPolicyOverrideCreateData
+from datadog_api_client.v2.model.org_group_policy_override_create_relationships import (
+    OrgGroupPolicyOverrideCreateRelationships,
+)
+from datadog_api_client.v2.model.org_group_policy_override_create_request import OrgGroupPolicyOverrideCreateRequest
+from datadog_api_client.v2.model.org_group_policy_override_data import OrgGroupPolicyOverrideData
+from datadog_api_client.v2.model.org_group_policy_override_list_response import OrgGroupPolicyOverrideListResponse
+from datadog_api_client.v2.model.org_group_policy_override_relationships import OrgGroupPolicyOverrideRelationships
+from datadog_api_client.v2.model.org_group_policy_override_response import OrgGroupPolicyOverrideResponse
+from datadog_api_client.v2.model.org_group_policy_override_sort_option import OrgGroupPolicyOverrideSortOption
+from datadog_api_client.v2.model.org_group_policy_override_type import OrgGroupPolicyOverrideType
+from datadog_api_client.v2.model.org_group_policy_override_update_attributes import (
+    OrgGroupPolicyOverrideUpdateAttributes,
+)
+from datadog_api_client.v2.model.org_group_policy_override_update_data import OrgGroupPolicyOverrideUpdateData
+from datadog_api_client.v2.model.org_group_policy_override_update_request import OrgGroupPolicyOverrideUpdateRequest
+from datadog_api_client.v2.model.org_group_policy_relationship_to_one import OrgGroupPolicyRelationshipToOne
+from datadog_api_client.v2.model.org_group_policy_relationship_to_one_data import OrgGroupPolicyRelationshipToOneData
+from datadog_api_client.v2.model.org_group_policy_relationships import OrgGroupPolicyRelationships
+from datadog_api_client.v2.model.org_group_policy_response import OrgGroupPolicyResponse
+from datadog_api_client.v2.model.org_group_policy_sort_option import OrgGroupPolicySortOption
+from datadog_api_client.v2.model.org_group_policy_type import OrgGroupPolicyType
+from datadog_api_client.v2.model.org_group_policy_update_attributes import OrgGroupPolicyUpdateAttributes
+from datadog_api_client.v2.model.org_group_policy_update_data import OrgGroupPolicyUpdateData
+from datadog_api_client.v2.model.org_group_policy_update_request import OrgGroupPolicyUpdateRequest
+from datadog_api_client.v2.model.org_group_relationship_to_one import OrgGroupRelationshipToOne
+from datadog_api_client.v2.model.org_group_relationship_to_one_data import OrgGroupRelationshipToOneData
+from datadog_api_client.v2.model.org_group_relationships import OrgGroupRelationships
+from datadog_api_client.v2.model.org_group_response import OrgGroupResponse
+from datadog_api_client.v2.model.org_group_sort_option import OrgGroupSortOption
+from datadog_api_client.v2.model.org_group_type import OrgGroupType
+from datadog_api_client.v2.model.org_group_update_attributes import OrgGroupUpdateAttributes
+from datadog_api_client.v2.model.org_group_update_data import OrgGroupUpdateData
+from datadog_api_client.v2.model.org_group_update_request import OrgGroupUpdateRequest
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
@@ -8835,6 +8915,7 @@ __all__ = [
     "GlobalIncidentSettingsRequest",
     "GlobalIncidentSettingsResponse",
     "GlobalIncidentSettingsType",
+    "GlobalOrgIdentifier",
     "GlobalVariableData",
     "GlobalVariableJsonPatchRequest",
     "GlobalVariableJsonPatchRequestData",
@@ -10155,6 +10236,75 @@ __all__ = [
     "OrgConnectionUserRelationship",
     "OrgConnectionUserRelationshipData",
     "OrgConnectionUserRelationshipDataType",
+    "OrgGroupAttributes",
+    "OrgGroupCreateAttributes",
+    "OrgGroupCreateData",
+    "OrgGroupCreateRequest",
+    "OrgGroupData",
+    "OrgGroupIncludeOption",
+    "OrgGroupListResponse",
+    "OrgGroupMembershipAttributes",
+    "OrgGroupMembershipBulkUpdateAttributes",
+    "OrgGroupMembershipBulkUpdateData",
+    "OrgGroupMembershipBulkUpdateRelationships",
+    "OrgGroupMembershipBulkUpdateRequest",
+    "OrgGroupMembershipBulkUpdateType",
+    "OrgGroupMembershipData",
+    "OrgGroupMembershipListResponse",
+    "OrgGroupMembershipRelationshipData",
+    "OrgGroupMembershipRelationships",
+    "OrgGroupMembershipResponse",
+    "OrgGroupMembershipSortOption",
+    "OrgGroupMembershipType",
+    "OrgGroupMembershipUpdateData",
+    "OrgGroupMembershipUpdateRelationships",
+    "OrgGroupMembershipUpdateRequest",
+    "OrgGroupMembershipsRelationship",
+    "OrgGroupPaginationMeta",
+    "OrgGroupPaginationMetaPage",
+    "OrgGroupPolicyAttributes",
+    "OrgGroupPolicyConfigAttributes",
+    "OrgGroupPolicyConfigData",
+    "OrgGroupPolicyConfigListResponse",
+    "OrgGroupPolicyConfigType",
+    "OrgGroupPolicyCreateAttributes",
+    "OrgGroupPolicyCreateData",
+    "OrgGroupPolicyCreateRelationships",
+    "OrgGroupPolicyCreateRequest",
+    "OrgGroupPolicyData",
+    "OrgGroupPolicyListResponse",
+    "OrgGroupPolicyOverrideAttributes",
+    "OrgGroupPolicyOverrideCreateAttributes",
+    "OrgGroupPolicyOverrideCreateData",
+    "OrgGroupPolicyOverrideCreateRelationships",
+    "OrgGroupPolicyOverrideCreateRequest",
+    "OrgGroupPolicyOverrideData",
+    "OrgGroupPolicyOverrideListResponse",
+    "OrgGroupPolicyOverrideRelationships",
+    "OrgGroupPolicyOverrideResponse",
+    "OrgGroupPolicyOverrideSortOption",
+    "OrgGroupPolicyOverrideType",
+    "OrgGroupPolicyOverrideUpdateAttributes",
+    "OrgGroupPolicyOverrideUpdateData",
+    "OrgGroupPolicyOverrideUpdateRequest",
+    "OrgGroupPolicyRelationshipToOne",
+    "OrgGroupPolicyRelationshipToOneData",
+    "OrgGroupPolicyRelationships",
+    "OrgGroupPolicyResponse",
+    "OrgGroupPolicySortOption",
+    "OrgGroupPolicyType",
+    "OrgGroupPolicyUpdateAttributes",
+    "OrgGroupPolicyUpdateData",
+    "OrgGroupPolicyUpdateRequest",
+    "OrgGroupRelationshipToOne",
+    "OrgGroupRelationshipToOneData",
+    "OrgGroupRelationships",
+    "OrgGroupResponse",
+    "OrgGroupSortOption",
+    "OrgGroupType",
+    "OrgGroupUpdateAttributes",
+    "OrgGroupUpdateData",
+    "OrgGroupUpdateRequest",
     "Organization",
     "OrganizationAttributes",
     "OrganizationsType",

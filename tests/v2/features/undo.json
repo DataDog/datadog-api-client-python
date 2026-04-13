@@ -4090,6 +4090,132 @@
       "type": "idempotent"
     }
   },
+  "ListOrgGroupMemberships": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "BulkUpdateOrgGroupMemberships": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOrgGroupMembership": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOrgGroupMembership": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListOrgGroupPolicies": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOrgGroupPolicy": {
+    "tag": "Org Groups",
+    "undo": {
+      "operationId": "DeleteOrgGroupPolicy",
+      "parameters": [
+        {
+          "name": "org_group_policy_id",
+          "source": "data.id"
+        }
+      ]
+    }
+  },
+  "DeleteOrgGroupPolicy": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "UpdateOrgGroupPolicy": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListOrgGroupPolicyConfigs": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOrgGroupPolicyOverrides": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOrgGroupPolicyOverride": {
+    "tag": "Org Groups",
+    "undo": {
+      "operationId": "DeleteOrgGroupPolicyOverride",
+      "parameters": [
+        {
+          "name": "org_group_policy_override_id",
+          "source": "data.id"
+        }
+      ]
+    }
+  },
+  "DeleteOrgGroupPolicyOverride": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "UpdateOrgGroupPolicyOverride": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListOrgGroups": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOrgGroup": {
+    "tag": "Org Groups",
+    "undo": {
+      "operationId": "DeleteOrgGroup",
+      "parameters": [
+        {
+          "name": "org_group_id",
+          "source": "data.id"
+        }
+      ]
+    }
+  },
+  "DeleteOrgGroup": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetOrgGroup": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOrgGroup": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListPermissions": {
     "tag": "Roles",
     "undo": {

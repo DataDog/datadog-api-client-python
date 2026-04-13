@@ -12702,6 +12702,13 @@ datadog\_api\_client.v2.model.global\_incident\_settings\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.global\_org\_identifier module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_org_identifier
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.global\_variable\_data module
 -----------------------------------------------------------
 
@@ -21932,6 +21939,489 @@ datadog\_api\_client.v2.model.org\_connection\_user\_relationship\_data\_type mo
 ------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.org_connection_user_relationship_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_attributes module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_create\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_create\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_create\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_data module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_include\_option module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_include_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_list\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_bulk\_update\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_bulk_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_bulk\_update\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_bulk_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_bulk\_update\_relationships module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_bulk_update_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_bulk\_update\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_bulk_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_bulk\_update\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_bulk_update_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_list\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_relationship\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_relationships module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_sort\_option module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_sort_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_update\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_update\_relationships module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_update_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_membership\_update\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_membership_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_memberships\_relationship module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_memberships_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_pagination\_meta module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_pagination_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_pagination\_meta\_page module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_pagination_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_config\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_config\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_config\_list\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_config_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_config\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_create\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_create\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_create\_relationships module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_create_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_create\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_list\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_create\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_create\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_create\_relationships module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_create_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_create\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_list\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_relationships module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_sort\_option module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_sort_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_update\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_update\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_override\_update\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_override_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_relationship\_to\_one module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_relationship_to_one
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_relationship\_to\_one\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_relationship_to_one_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_relationships module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_sort\_option module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_sort_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_update\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_update\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_update\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_relationship\_to\_one module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_relationship_to_one
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_relationship\_to\_one\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_relationship_to_one_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_relationships module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_sort\_option module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_sort_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_type module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_update\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_update\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_update\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_update_request
    :members:
    :show-inheritance:
 
