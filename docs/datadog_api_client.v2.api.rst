@@ -221,6 +221,13 @@ datadog\_api\_client.v2.api.dashboard\_lists\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.dashboard\_secure\_embed\_api module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.dashboard_secure_embed_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.data\_deletion\_api module
 ------------------------------------------------------
 

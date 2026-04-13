@@ -347,6 +347,14 @@ components:
       required: true
       schema:
         type: string
+    DashboardIDPathParameter:
+      description: The ID of the dashboard.
+      example: "abc-def-ghi"
+      in: path
+      name: dashboard_id
+      required: true
+      schema:
+        type: string
     DatasetID:
       description: The ID of a defined dataset.
       example: "0879ce27-29a1-481f-a12e-bc2a48ec9ae1"
@@ -1309,6 +1317,14 @@ components:
         items:
           $ref: "#/components/schemas/SearchIssuesIncludeQueryParameterItem"
         type: array
+    SecureEmbedTokenPathParameter:
+      description: The share token identifying the secure embed.
+      example: "s3cur3t0k3n-abcdef123456"
+      in: path
+      name: token
+      required: true
+      schema:
+        type: string
     SecurityFilterID:
       description: The ID of the security filter.
       in: path
@@ -46610,7 +46626,7 @@ components:
             $ref: "#/components/schemas/ObservabilityPipelineParseGrokProcessorRuleMatchRule"
           type: array
         source:
-          description: The value of the source field in log events to be processed by the Grok rules.
+          description: The name of the field in the log event to apply the Grok rules to.
           example: "message"
           type: string
         support_rules:
@@ -59334,6 +59350,469 @@ components:
       type: string
       x-enum-varnames:
         - SECRET_RULE
+    SecureEmbedCreateRequest:
+      description: Request to create a secure embed shared dashboard.
+      properties:
+        data:
+          $ref: "#/components/schemas/SecureEmbedCreateRequestData"
+      required:
+        - data
+      type: object
+    SecureEmbedCreateRequestAttributes:
+      description: Attributes for creating a secure embed shared dashboard.
+      properties:
+        global_time:
+          $ref: "#/components/schemas/SecureEmbedGlobalTime"
+        global_time_selectable:
+          description: Whether viewers can change the time range.
+          example: true
+          type: boolean
+        selectable_template_vars:
+          description: Template variables viewers can modify.
+          items:
+            $ref: "#/components/schemas/SecureEmbedSelectableTemplateVariable"
+          type: array
+        status:
+          $ref: "#/components/schemas/SecureEmbedStatus"
+        title:
+          description: Display title for the shared dashboard.
+          example: "Q1 Metrics Dashboard"
+          type: string
+        viewing_preferences:
+          $ref: "#/components/schemas/SecureEmbedViewingPreferences"
+      required:
+        - status
+        - title
+        - global_time_selectable
+        - selectable_template_vars
+        - viewing_preferences
+        - global_time
+      type: object
+    SecureEmbedCreateRequestData:
+      description: Data object for creating a secure embed.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SecureEmbedCreateRequestAttributes"
+        type:
+          $ref: "#/components/schemas/SecureEmbedRequestType"
+      required:
+        - type
+        - attributes
+      type: object
+    SecureEmbedCreateResponse:
+      description: Response for creating a secure embed shared dashboard.
+      properties:
+        data:
+          $ref: "#/components/schemas/SecureEmbedCreateResponseData"
+      required:
+        - data
+      type: object
+    SecureEmbedCreateResponseAttributes:
+      description: Attributes of a newly created secure embed shared dashboard.
+      properties:
+        created_at:
+          description: Creation timestamp.
+          example: "2026-03-11T18:30:00.000000"
+          readOnly: true
+          type: string
+        credential:
+          description: >-
+            The secret credential used for HMAC signing. Returned only on creation. Store securely — it cannot be retrieved again.
+          example: "A1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q7r8S9t0U1v2"
+          readOnly: true
+          type: string
+        dashboard_id:
+          description: The source dashboard ID.
+          example: "abc-def-ghi"
+          readOnly: true
+          type: string
+        global_time:
+          $ref: "#/components/schemas/SecureEmbedGlobalTime"
+        global_time_selectable:
+          description: Whether time range is viewer-selectable.
+          example: true
+          type: boolean
+        id:
+          description: Internal share ID.
+          example: "12345"
+          readOnly: true
+          type: string
+        selectable_template_vars:
+          description: Template variables with their configuration.
+          items:
+            $ref: "#/components/schemas/SecureEmbedSelectableTemplateVariable"
+          type: array
+        share_type:
+          $ref: "#/components/schemas/SecureEmbedShareType"
+        status:
+          $ref: "#/components/schemas/SecureEmbedStatus"
+        title:
+          description: Display title.
+          example: "Q1 Metrics Dashboard"
+          type: string
+        token:
+          description: Public share token.
+          example: "s3cur3t0k3n-abcdef123456"
+          readOnly: true
+          type: string
+        url:
+          description: CDN URL for the shared dashboard.
+          example: "https://p.datadoghq.com/sb/secure-embed/s3cur3t0k3n-abcdef123456"
+          readOnly: true
+          type: string
+        viewing_preferences:
+          $ref: "#/components/schemas/SecureEmbedViewingPreferences"
+      type: object
+    SecureEmbedCreateResponseData:
+      description: Data object for a secure embed create response.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SecureEmbedCreateResponseAttributes"
+        id:
+          description: Internal share ID.
+          example: "12345"
+          type: string
+        type:
+          $ref: "#/components/schemas/SecureEmbedCreateResponseType"
+      required:
+        - type
+        - id
+        - attributes
+      type: object
+    SecureEmbedCreateResponseType:
+      description: Resource type for secure embed create responses.
+      enum:
+        - secure_embed_create_response
+      example: "secure_embed_create_response"
+      type: string
+      x-enum-varnames:
+        - SECURE_EMBED_CREATE_RESPONSE
+    SecureEmbedGetResponse:
+      description: Response for getting a secure embed shared dashboard.
+      properties:
+        data:
+          $ref: "#/components/schemas/SecureEmbedGetResponseData"
+      required:
+        - data
+      type: object
+    SecureEmbedGetResponseAttributes:
+      description: Attributes of an existing secure embed shared dashboard.
+      properties:
+        created_at:
+          description: Creation timestamp.
+          example: "2026-03-11T18:30:00.000000"
+          readOnly: true
+          type: string
+        credential_suffix:
+          description: Last 4 characters of the credential. Defaults to `0000` if unavailable.
+          example: "ab3f"
+          readOnly: true
+          type: string
+        dashboard_id:
+          description: The source dashboard ID.
+          example: "abc-def-ghi"
+          readOnly: true
+          type: string
+        global_time:
+          $ref: "#/components/schemas/SecureEmbedGlobalTime"
+        global_time_selectable:
+          description: Whether time range is viewer-selectable.
+          example: true
+          type: boolean
+        id:
+          description: Internal share ID.
+          example: "12345"
+          readOnly: true
+          type: string
+        selectable_template_vars:
+          description: Template variables with their configuration.
+          items:
+            $ref: "#/components/schemas/SecureEmbedSelectableTemplateVariable"
+          type: array
+        share_type:
+          $ref: "#/components/schemas/SecureEmbedShareType"
+        status:
+          $ref: "#/components/schemas/SecureEmbedStatus"
+        title:
+          description: Display title.
+          example: "Q1 Metrics Dashboard"
+          type: string
+        token:
+          description: Public share token.
+          example: "s3cur3t0k3n-abcdef123456"
+          readOnly: true
+          type: string
+        url:
+          description: CDN URL for the shared dashboard.
+          example: "https://p.datadoghq.com/sb/secure-embed/s3cur3t0k3n-abcdef123456"
+          readOnly: true
+          type: string
+        viewing_preferences:
+          $ref: "#/components/schemas/SecureEmbedViewingPreferences"
+      type: object
+    SecureEmbedGetResponseData:
+      description: Data object for a secure embed get response.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SecureEmbedGetResponseAttributes"
+        id:
+          description: Internal share ID.
+          example: "12345"
+          type: string
+        type:
+          $ref: "#/components/schemas/SecureEmbedGetResponseType"
+      required:
+        - type
+        - id
+        - attributes
+      type: object
+    SecureEmbedGetResponseType:
+      description: Resource type for secure embed get responses.
+      enum:
+        - secure_embed_get_response
+      example: "secure_embed_get_response"
+      type: string
+      x-enum-varnames:
+        - SECURE_EMBED_GET_RESPONSE
+    SecureEmbedGlobalTime:
+      description: Default time range configuration for the secure embed.
+      properties:
+        live_span:
+          $ref: "#/components/schemas/SecureEmbedGlobalTimeLiveSpan"
+      type: object
+    SecureEmbedGlobalTimeLiveSpan:
+      description: Dashboard global time live_span selection.
+      enum:
+        - 15m
+        - 1h
+        - 4h
+        - 1d
+        - 2d
+        - 1w
+        - 1mo
+        - 3mo
+      example: "1h"
+      type: string
+      x-enum-varnames:
+        - PAST_FIFTEEN_MINUTES
+        - PAST_ONE_HOUR
+        - PAST_FOUR_HOURS
+        - PAST_ONE_DAY
+        - PAST_TWO_DAYS
+        - PAST_ONE_WEEK
+        - PAST_ONE_MONTH
+        - PAST_THREE_MONTHS
+    SecureEmbedRequestType:
+      description: Resource type for secure embed create requests.
+      enum:
+        - secure_embed_request
+      example: "secure_embed_request"
+      type: string
+      x-enum-varnames:
+        - SECURE_EMBED_REQUEST
+    SecureEmbedSelectableTemplateVariable:
+      description: A template variable that viewers can modify on the secure embed shared dashboard.
+      properties:
+        default_values:
+          description: Default selected values for the variable.
+          example: ["1"]
+          items:
+            description: A default value for the template variable.
+            type: string
+          type: array
+        name:
+          description: Name of the template variable. Usually matches the prefix unless you want a different display name.
+          example: "org_id"
+          type: string
+        prefix:
+          description: Tag prefix for the variable (e.g., `environment`, `service`).
+          example: "org_id"
+          type: string
+        visible_tags:
+          description: Restrict which tag values are visible to the viewer.
+          example: ["1"]
+          items:
+            description: A visible tag value for the template variable.
+            type: string
+          type: array
+      type: object
+    SecureEmbedShareType:
+      description: The type of share. Always `secure_embed`.
+      enum:
+        - secure_embed
+      example: "secure_embed"
+      type: string
+      x-enum-varnames:
+        - SECURE_EMBED
+    SecureEmbedStatus:
+      description: The status of the secure embed share. Active means the shared dashboard is available. Paused means it is not.
+      enum:
+        - active
+        - paused
+      example: "active"
+      type: string
+      x-enum-varnames:
+        - ACTIVE
+        - PAUSED
+    SecureEmbedUpdateRequest:
+      description: Request to update a secure embed shared dashboard.
+      properties:
+        data:
+          $ref: "#/components/schemas/SecureEmbedUpdateRequestData"
+      required:
+        - data
+      type: object
+    SecureEmbedUpdateRequestAttributes:
+      description: Attributes for updating a secure embed shared dashboard. All fields are optional.
+      properties:
+        global_time:
+          $ref: "#/components/schemas/SecureEmbedGlobalTime"
+        global_time_selectable:
+          description: Updated time selectability.
+          example: true
+          type: boolean
+        selectable_template_vars:
+          description: Updated template variables.
+          items:
+            $ref: "#/components/schemas/SecureEmbedSelectableTemplateVariable"
+          type: array
+        status:
+          $ref: "#/components/schemas/SecureEmbedStatus"
+        title:
+          description: Updated title.
+          example: "Q1 Metrics Dashboard (Updated)"
+          type: string
+        viewing_preferences:
+          $ref: "#/components/schemas/SecureEmbedViewingPreferences"
+      type: object
+    SecureEmbedUpdateRequestData:
+      description: Data object for updating a secure embed.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SecureEmbedUpdateRequestAttributes"
+        type:
+          $ref: "#/components/schemas/SecureEmbedUpdateRequestType"
+      required:
+        - type
+        - attributes
+      type: object
+    SecureEmbedUpdateRequestType:
+      description: Resource type for secure embed update requests.
+      enum:
+        - secure_embed_update_request
+      example: "secure_embed_update_request"
+      type: string
+      x-enum-varnames:
+        - SECURE_EMBED_UPDATE_REQUEST
+    SecureEmbedUpdateResponse:
+      description: Response for updating a secure embed shared dashboard.
+      properties:
+        data:
+          $ref: "#/components/schemas/SecureEmbedUpdateResponseData"
+      required:
+        - data
+      type: object
+    SecureEmbedUpdateResponseAttributes:
+      description: Attributes of an updated secure embed shared dashboard.
+      properties:
+        created_at:
+          description: Creation timestamp.
+          example: "2026-03-11T18:30:00.000000"
+          readOnly: true
+          type: string
+        credential_suffix:
+          description: Last 4 characters of the credential. Defaults to `0000` if unavailable.
+          example: "ab3f"
+          readOnly: true
+          type: string
+        dashboard_id:
+          description: The source dashboard ID.
+          example: "abc-def-ghi"
+          readOnly: true
+          type: string
+        global_time:
+          $ref: "#/components/schemas/SecureEmbedGlobalTime"
+        global_time_selectable:
+          description: Whether time range is viewer-selectable.
+          example: true
+          type: boolean
+        id:
+          description: Internal share ID.
+          example: "12345"
+          readOnly: true
+          type: string
+        selectable_template_vars:
+          description: Template variables with their configuration.
+          items:
+            $ref: "#/components/schemas/SecureEmbedSelectableTemplateVariable"
+          type: array
+        share_type:
+          $ref: "#/components/schemas/SecureEmbedShareType"
+        status:
+          $ref: "#/components/schemas/SecureEmbedStatus"
+        title:
+          description: Display title.
+          example: "Q1 Metrics Dashboard (Updated)"
+          type: string
+        token:
+          description: Public share token.
+          example: "s3cur3t0k3n-abcdef123456"
+          readOnly: true
+          type: string
+        url:
+          description: CDN URL for the shared dashboard.
+          example: "https://p.datadoghq.com/sb/secure-embed/s3cur3t0k3n-abcdef123456"
+          readOnly: true
+          type: string
+        viewing_preferences:
+          $ref: "#/components/schemas/SecureEmbedViewingPreferences"
+      type: object
+    SecureEmbedUpdateResponseData:
+      description: Data object for a secure embed update response.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SecureEmbedUpdateResponseAttributes"
+        id:
+          description: Internal share ID.
+          example: "12345"
+          type: string
+        type:
+          $ref: "#/components/schemas/SecureEmbedUpdateResponseType"
+      required:
+        - type
+        - id
+        - attributes
+      type: object
+    SecureEmbedUpdateResponseType:
+      description: Resource type for secure embed update responses.
+      enum:
+        - secure_embed_update_response
+      example: "secure_embed_update_response"
+      type: string
+      x-enum-varnames:
+        - SECURE_EMBED_UPDATE_RESPONSE
+    SecureEmbedViewingPreferences:
+      description: Display settings for the secure embed shared dashboard.
+      properties:
+        high_density:
+          description: Whether widgets are displayed in high density mode.
+          example: false
+          type: boolean
+        theme:
+          $ref: "#/components/schemas/SecureEmbedViewingPreferencesTheme"
+      type: object
+    SecureEmbedViewingPreferencesTheme:
+      description: The theme of the shared dashboard view. `system` follows the viewer's system default.
+      enum:
+        - system
+        - light
+        - dark
+      example: "system"
+      type: string
+      x-enum-varnames:
+        - SYSTEM
+        - LIGHT
+        - DARK
     SecurityEntityConfigRisks:
       description: Configuration risks associated with the entity
       properties:
@@ -86265,6 +86744,218 @@ paths:
       tags:
         - Dashboard Lists
       x-codegen-request-body-name: body
+  /api/v2/dashboard/{dashboard_id}/shared/secure-embed:
+    post:
+      description: >-
+        Create a secure embed share for a dashboard. The response includes a one-time `credential` used for HMAC-SHA256 signing. Store it securely — it cannot be retrieved again.
+      operationId: CreateDashboardSecureEmbed
+      parameters:
+        - $ref: "#/components/parameters/DashboardIDPathParameter"
+      requestBody:
+        content:
+          application/json:
+            examples:
+              json-request-body:
+                value:
+                  data:
+                    attributes:
+                      global_time:
+                        live_span: "1h"
+                      global_time_selectable: true
+                      selectable_template_vars:
+                        - default_values: ["1"]
+                          name: "org_id"
+                          prefix: "org_id"
+                          visible_tags: ["1"]
+                      status: active
+                      title: "Q1 Metrics Dashboard"
+                      viewing_preferences:
+                        high_density: false
+                        theme: "system"
+                    type: secure_embed_request
+            schema:
+              $ref: "#/components/schemas/SecureEmbedCreateRequest"
+        description: Secure embed creation request body.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecureEmbedCreateResponse"
+          description: OK
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Dashboard Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Conflict — max 1000 share URLs per dashboard exceeded
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - dashboards_embed_share
+      summary: Create a secure embed for a dashboard
+      tags:
+        - Dashboard Secure Embed
+      x-codegen-request-body-name: body
+      "x-permission":
+        operator: OR
+        permissions:
+          - dashboards_embed_share
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/dashboard/{dashboard_id}/shared/secure-embed/{token}:
+    delete:
+      description: >-
+        Delete a secure embed share for a dashboard.
+      operationId: DeleteDashboardSecureEmbed
+      parameters:
+        - $ref: "#/components/parameters/DashboardIDPathParameter"
+        - $ref: "#/components/parameters/SecureEmbedTokenPathParameter"
+      responses:
+        "204":
+          description: No Content
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - dashboards_embed_share
+      summary: Delete a secure embed for a dashboard
+      tags:
+        - Dashboard Secure Embed
+      "x-permission":
+        operator: OR
+        permissions:
+          - dashboards_embed_share
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    get:
+      description: >-
+        Retrieve an existing secure embed configuration for a dashboard.
+      operationId: GetDashboardSecureEmbed
+      parameters:
+        - $ref: "#/components/parameters/DashboardIDPathParameter"
+        - $ref: "#/components/parameters/SecureEmbedTokenPathParameter"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecureEmbedGetResponse"
+          description: OK
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - dashboards_read
+      summary: Get a secure embed for a dashboard
+      tags:
+        - Dashboard Secure Embed
+      "x-permission":
+        operator: OR
+        permissions:
+          - dashboards_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    patch:
+      description: >-
+        Partially update a secure embed configuration. All fields are optional (PATCH semantics).
+      operationId: UpdateDashboardSecureEmbed
+      parameters:
+        - $ref: "#/components/parameters/DashboardIDPathParameter"
+        - $ref: "#/components/parameters/SecureEmbedTokenPathParameter"
+      requestBody:
+        content:
+          application/json:
+            examples:
+              json-request-body:
+                value:
+                  data:
+                    attributes:
+                      status: active
+                      title: "Q1 Metrics Dashboard (Updated)"
+                    type: secure_embed_update_request
+            schema:
+              $ref: "#/components/schemas/SecureEmbedUpdateRequest"
+        description: Secure embed update request body.
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SecureEmbedUpdateResponse"
+          description: OK
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - dashboards_embed_share
+      summary: Update a secure embed for a dashboard
+      tags:
+        - Dashboard Secure Embed
+      x-codegen-request-body-name: body
+      "x-permission":
+        operator: OR
+        permissions:
+          - dashboards_embed_share
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/datasets:
     get:
       description: Get all datasets that have been configured for an organization.
@@ -119694,6 +120385,11 @@ tags:
       organize, find, and share all of your dashboards with your team and
       organization.
     name: Dashboard Lists
+  - description: >-
+      Manage securely embedded Datadog dashboards. Secure embeds use HMAC-SHA256 signed sessions for authentication, enabling customers to embed dashboards in their own applications with server-side auth control. Unlike public dashboards (open URL) or invite dashboards (email-based access), secure embeds provide programmatic access control.
+
+      **Requirements:** - Org setting: SharedDashboards > Embed sharing must be enabled. - AuthN: Datadog API key and application key. - Read operations require `dashboards_read` permission. - Write operations require `dashboards_embed_share` permission.
+    name: Dashboard Secure Embed
   - description: |-
       The Data Deletion API allows the user to target and delete data from the allowed products. It's currently enabled for Logs and RUM and depends on `logs_delete_data` and `rum_delete_data` permissions respectively.
     name: Data Deletion

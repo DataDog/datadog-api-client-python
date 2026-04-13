@@ -5415,6 +5415,33 @@ from datadog_api_client.v2.model.secret_rule_data_attributes_match_validation_va
     SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems,
 )
 from datadog_api_client.v2.model.secret_rule_data_type import SecretRuleDataType
+from datadog_api_client.v2.model.secure_embed_create_request import SecureEmbedCreateRequest
+from datadog_api_client.v2.model.secure_embed_create_request_attributes import SecureEmbedCreateRequestAttributes
+from datadog_api_client.v2.model.secure_embed_create_request_data import SecureEmbedCreateRequestData
+from datadog_api_client.v2.model.secure_embed_create_response import SecureEmbedCreateResponse
+from datadog_api_client.v2.model.secure_embed_create_response_attributes import SecureEmbedCreateResponseAttributes
+from datadog_api_client.v2.model.secure_embed_create_response_data import SecureEmbedCreateResponseData
+from datadog_api_client.v2.model.secure_embed_create_response_type import SecureEmbedCreateResponseType
+from datadog_api_client.v2.model.secure_embed_get_response import SecureEmbedGetResponse
+from datadog_api_client.v2.model.secure_embed_get_response_attributes import SecureEmbedGetResponseAttributes
+from datadog_api_client.v2.model.secure_embed_get_response_data import SecureEmbedGetResponseData
+from datadog_api_client.v2.model.secure_embed_get_response_type import SecureEmbedGetResponseType
+from datadog_api_client.v2.model.secure_embed_global_time import SecureEmbedGlobalTime
+from datadog_api_client.v2.model.secure_embed_global_time_live_span import SecureEmbedGlobalTimeLiveSpan
+from datadog_api_client.v2.model.secure_embed_request_type import SecureEmbedRequestType
+from datadog_api_client.v2.model.secure_embed_selectable_template_variable import SecureEmbedSelectableTemplateVariable
+from datadog_api_client.v2.model.secure_embed_share_type import SecureEmbedShareType
+from datadog_api_client.v2.model.secure_embed_status import SecureEmbedStatus
+from datadog_api_client.v2.model.secure_embed_update_request import SecureEmbedUpdateRequest
+from datadog_api_client.v2.model.secure_embed_update_request_attributes import SecureEmbedUpdateRequestAttributes
+from datadog_api_client.v2.model.secure_embed_update_request_data import SecureEmbedUpdateRequestData
+from datadog_api_client.v2.model.secure_embed_update_request_type import SecureEmbedUpdateRequestType
+from datadog_api_client.v2.model.secure_embed_update_response import SecureEmbedUpdateResponse
+from datadog_api_client.v2.model.secure_embed_update_response_attributes import SecureEmbedUpdateResponseAttributes
+from datadog_api_client.v2.model.secure_embed_update_response_data import SecureEmbedUpdateResponseData
+from datadog_api_client.v2.model.secure_embed_update_response_type import SecureEmbedUpdateResponseType
+from datadog_api_client.v2.model.secure_embed_viewing_preferences import SecureEmbedViewingPreferences
+from datadog_api_client.v2.model.secure_embed_viewing_preferences_theme import SecureEmbedViewingPreferencesTheme
 from datadog_api_client.v2.model.security_entity_config_risks import SecurityEntityConfigRisks
 from datadog_api_client.v2.model.security_entity_metadata import SecurityEntityMetadata
 from datadog_api_client.v2.model.security_entity_risk_score import SecurityEntityRiskScore
@@ -10939,6 +10966,33 @@ __all__ = [
     "SecretRuleDataAttributesMatchValidationInvalidHttpStatusCodeItems",
     "SecretRuleDataAttributesMatchValidationValidHttpStatusCodeItems",
     "SecretRuleDataType",
+    "SecureEmbedCreateRequest",
+    "SecureEmbedCreateRequestAttributes",
+    "SecureEmbedCreateRequestData",
+    "SecureEmbedCreateResponse",
+    "SecureEmbedCreateResponseAttributes",
+    "SecureEmbedCreateResponseData",
+    "SecureEmbedCreateResponseType",
+    "SecureEmbedGetResponse",
+    "SecureEmbedGetResponseAttributes",
+    "SecureEmbedGetResponseData",
+    "SecureEmbedGetResponseType",
+    "SecureEmbedGlobalTime",
+    "SecureEmbedGlobalTimeLiveSpan",
+    "SecureEmbedRequestType",
+    "SecureEmbedSelectableTemplateVariable",
+    "SecureEmbedShareType",
+    "SecureEmbedStatus",
+    "SecureEmbedUpdateRequest",
+    "SecureEmbedUpdateRequestAttributes",
+    "SecureEmbedUpdateRequestData",
+    "SecureEmbedUpdateRequestType",
+    "SecureEmbedUpdateResponse",
+    "SecureEmbedUpdateResponseAttributes",
+    "SecureEmbedUpdateResponseData",
+    "SecureEmbedUpdateResponseType",
+    "SecureEmbedViewingPreferences",
+    "SecureEmbedViewingPreferencesTheme",
     "SecurityEntityConfigRisks",
     "SecurityEntityMetadata",
     "SecurityEntityRiskScore",
