@@ -87,7 +87,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         :param custom_query_extension: Query extension to append to the logs query.
         :type custom_query_extension: str, optional
 
-        :param data_source: Source of events, either logs, audit trail, security signals, or Datadog events. ``app_sec_spans`` is deprecated in favor of ``spans``.
+        :param data_source: Source of events, either logs, audit trail, or Datadog events. ``app_sec_spans`` is deprecated in favor of ``spans``.
         :type data_source: SecurityMonitoringStandardDataSource, optional
 
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
