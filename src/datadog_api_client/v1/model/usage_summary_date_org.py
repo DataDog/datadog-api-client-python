@@ -40,8 +40,22 @@ class UsageSummaryDateOrg(ModelNormal):
             "browser_rum_lite_session_count_sum": (int,),
             "browser_rum_replay_session_count_sum": (int,),
             "browser_rum_units_sum": (int,),
+            "ccm_anthropic_spend_last": (int,),
+            "ccm_aws_spend_last": (int,),
+            "ccm_azure_spend_last": (int,),
+            "ccm_confluent_spend_last": (int,),
+            "ccm_databricks_spend_last": (int,),
+            "ccm_elastic_spend_last": (int,),
+            "ccm_fastly_spend_last": (int,),
+            "ccm_gcp_spend_last": (int,),
+            "ccm_github_spend_last": (int,),
+            "ccm_mongodb_spend_last": (int,),
+            "ccm_oci_spend_last": (int,),
+            "ccm_openai_spend_last": (int,),
+            "ccm_snowflake_spend_last": (int,),
             "ccm_spend_monitored_ent_last": (int,),
             "ccm_spend_monitored_pro_last": (int,),
+            "ccm_twilio_spend_last": (int,),
             "ci_pipeline_indexed_spans_sum": (int,),
             "ci_test_indexed_spans_sum": (int,),
             "ci_visibility_itr_committers_hwm": (int,),
@@ -265,8 +279,22 @@ class UsageSummaryDateOrg(ModelNormal):
         "browser_rum_lite_session_count_sum": "browser_rum_lite_session_count_sum",
         "browser_rum_replay_session_count_sum": "browser_rum_replay_session_count_sum",
         "browser_rum_units_sum": "browser_rum_units_sum",
+        "ccm_anthropic_spend_last": "ccm_anthropic_spend_last",
+        "ccm_aws_spend_last": "ccm_aws_spend_last",
+        "ccm_azure_spend_last": "ccm_azure_spend_last",
+        "ccm_confluent_spend_last": "ccm_confluent_spend_last",
+        "ccm_databricks_spend_last": "ccm_databricks_spend_last",
+        "ccm_elastic_spend_last": "ccm_elastic_spend_last",
+        "ccm_fastly_spend_last": "ccm_fastly_spend_last",
+        "ccm_gcp_spend_last": "ccm_gcp_spend_last",
+        "ccm_github_spend_last": "ccm_github_spend_last",
+        "ccm_mongodb_spend_last": "ccm_mongodb_spend_last",
+        "ccm_oci_spend_last": "ccm_oci_spend_last",
+        "ccm_openai_spend_last": "ccm_openai_spend_last",
+        "ccm_snowflake_spend_last": "ccm_snowflake_spend_last",
         "ccm_spend_monitored_ent_last": "ccm_spend_monitored_ent_last",
         "ccm_spend_monitored_pro_last": "ccm_spend_monitored_pro_last",
+        "ccm_twilio_spend_last": "ccm_twilio_spend_last",
         "ci_pipeline_indexed_spans_sum": "ci_pipeline_indexed_spans_sum",
         "ci_test_indexed_spans_sum": "ci_test_indexed_spans_sum",
         "ci_visibility_itr_committers_hwm": "ci_visibility_itr_committers_hwm",
@@ -491,8 +519,22 @@ class UsageSummaryDateOrg(ModelNormal):
         browser_rum_lite_session_count_sum: Union[int, UnsetType] = unset,
         browser_rum_replay_session_count_sum: Union[int, UnsetType] = unset,
         browser_rum_units_sum: Union[int, UnsetType] = unset,
+        ccm_anthropic_spend_last: Union[int, UnsetType] = unset,
+        ccm_aws_spend_last: Union[int, UnsetType] = unset,
+        ccm_azure_spend_last: Union[int, UnsetType] = unset,
+        ccm_confluent_spend_last: Union[int, UnsetType] = unset,
+        ccm_databricks_spend_last: Union[int, UnsetType] = unset,
+        ccm_elastic_spend_last: Union[int, UnsetType] = unset,
+        ccm_fastly_spend_last: Union[int, UnsetType] = unset,
+        ccm_gcp_spend_last: Union[int, UnsetType] = unset,
+        ccm_github_spend_last: Union[int, UnsetType] = unset,
+        ccm_mongodb_spend_last: Union[int, UnsetType] = unset,
+        ccm_oci_spend_last: Union[int, UnsetType] = unset,
+        ccm_openai_spend_last: Union[int, UnsetType] = unset,
+        ccm_snowflake_spend_last: Union[int, UnsetType] = unset,
         ccm_spend_monitored_ent_last: Union[int, UnsetType] = unset,
         ccm_spend_monitored_pro_last: Union[int, UnsetType] = unset,
+        ccm_twilio_spend_last: Union[int, UnsetType] = unset,
         ci_pipeline_indexed_spans_sum: Union[int, UnsetType] = unset,
         ci_test_indexed_spans_sum: Union[int, UnsetType] = unset,
         ci_visibility_itr_committers_hwm: Union[int, UnsetType] = unset,
@@ -764,11 +806,53 @@ class UsageSummaryDateOrg(ModelNormal):
         :param browser_rum_units_sum: Shows the sum of all browser RUM units over all hours in the current date for the given org (To be deprecated on October 1st, 2024). **Deprecated**.
         :type browser_rum_units_sum: int, optional
 
+        :param ccm_anthropic_spend_last: Shows the last value of Anthropic cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_anthropic_spend_last: int, optional
+
+        :param ccm_aws_spend_last: Shows the last value of AWS cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_aws_spend_last: int, optional
+
+        :param ccm_azure_spend_last: Shows the last value of Azure cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_azure_spend_last: int, optional
+
+        :param ccm_confluent_spend_last: Shows the last value of Confluent cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_confluent_spend_last: int, optional
+
+        :param ccm_databricks_spend_last: Shows the last value of Databricks cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_databricks_spend_last: int, optional
+
+        :param ccm_elastic_spend_last: Shows the last value of Elastic cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_elastic_spend_last: int, optional
+
+        :param ccm_fastly_spend_last: Shows the last value of Fastly cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_fastly_spend_last: int, optional
+
+        :param ccm_gcp_spend_last: Shows the last value of GCP cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_gcp_spend_last: int, optional
+
+        :param ccm_github_spend_last: Shows the last value of GitHub cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_github_spend_last: int, optional
+
+        :param ccm_mongodb_spend_last: Shows the last value of MongoDB cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_mongodb_spend_last: int, optional
+
+        :param ccm_oci_spend_last: Shows the last value of OCI cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_oci_spend_last: int, optional
+
+        :param ccm_openai_spend_last: Shows the last value of OpenAI cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_openai_spend_last: int, optional
+
+        :param ccm_snowflake_spend_last: Shows the last value of Snowflake cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_snowflake_spend_last: int, optional
+
         :param ccm_spend_monitored_ent_last: Shows the last value of the amount of cloud spend monitored for Enterprise over all hours in the current date for the given org.
         :type ccm_spend_monitored_ent_last: int, optional
 
         :param ccm_spend_monitored_pro_last: Shows the last value of the amount of cloud spend monitored for Pro over all hours in the current date for the given org.
         :type ccm_spend_monitored_pro_last: int, optional
+
+        :param ccm_twilio_spend_last: Shows the last value of Twilio cloud spend monitored over all hours in the current date for the given org.
+        :type ccm_twilio_spend_last: int, optional
 
         :param ci_pipeline_indexed_spans_sum: Shows the sum of all CI pipeline indexed spans over all hours in the current date for the given org.
         :type ci_pipeline_indexed_spans_sum: int, optional
@@ -1407,10 +1491,38 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["browser_rum_replay_session_count_sum"] = browser_rum_replay_session_count_sum
         if browser_rum_units_sum is not unset:
             kwargs["browser_rum_units_sum"] = browser_rum_units_sum
+        if ccm_anthropic_spend_last is not unset:
+            kwargs["ccm_anthropic_spend_last"] = ccm_anthropic_spend_last
+        if ccm_aws_spend_last is not unset:
+            kwargs["ccm_aws_spend_last"] = ccm_aws_spend_last
+        if ccm_azure_spend_last is not unset:
+            kwargs["ccm_azure_spend_last"] = ccm_azure_spend_last
+        if ccm_confluent_spend_last is not unset:
+            kwargs["ccm_confluent_spend_last"] = ccm_confluent_spend_last
+        if ccm_databricks_spend_last is not unset:
+            kwargs["ccm_databricks_spend_last"] = ccm_databricks_spend_last
+        if ccm_elastic_spend_last is not unset:
+            kwargs["ccm_elastic_spend_last"] = ccm_elastic_spend_last
+        if ccm_fastly_spend_last is not unset:
+            kwargs["ccm_fastly_spend_last"] = ccm_fastly_spend_last
+        if ccm_gcp_spend_last is not unset:
+            kwargs["ccm_gcp_spend_last"] = ccm_gcp_spend_last
+        if ccm_github_spend_last is not unset:
+            kwargs["ccm_github_spend_last"] = ccm_github_spend_last
+        if ccm_mongodb_spend_last is not unset:
+            kwargs["ccm_mongodb_spend_last"] = ccm_mongodb_spend_last
+        if ccm_oci_spend_last is not unset:
+            kwargs["ccm_oci_spend_last"] = ccm_oci_spend_last
+        if ccm_openai_spend_last is not unset:
+            kwargs["ccm_openai_spend_last"] = ccm_openai_spend_last
+        if ccm_snowflake_spend_last is not unset:
+            kwargs["ccm_snowflake_spend_last"] = ccm_snowflake_spend_last
         if ccm_spend_monitored_ent_last is not unset:
             kwargs["ccm_spend_monitored_ent_last"] = ccm_spend_monitored_ent_last
         if ccm_spend_monitored_pro_last is not unset:
             kwargs["ccm_spend_monitored_pro_last"] = ccm_spend_monitored_pro_last
+        if ccm_twilio_spend_last is not unset:
+            kwargs["ccm_twilio_spend_last"] = ccm_twilio_spend_last
         if ci_pipeline_indexed_spans_sum is not unset:
             kwargs["ci_pipeline_indexed_spans_sum"] = ci_pipeline_indexed_spans_sum
         if ci_test_indexed_spans_sum is not unset:
