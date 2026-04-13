@@ -1,0 +1,59 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"forward_tags":false,"forwarder_destination":{"access_token":"my-access-token","endpoint":"https://example.com","type":"splunk_hec"},"name":"Test-Update_a_Splunk_custom_destination_s_attributes_preserves_the_absent_sourcetype_returns_OK_response-1774455835","query":"source:nginx"},"type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations
+  response:
+    body:
+      string: '{"data":{"id":"9ac57fd5-857f-4082-badc-463ecd1e990d","attributes":{"name":"Test-Update_a_Splunk_custom_destination_s_attributes_preserves_the_absent_sourcetype_returns_OK_response-1774455835","query":"source:nginx","enabled":false,"forwarder_destination":{"endpoint":"https://example.com","type":"splunk_hec"},"forward_tags_restriction_list_type":"ALLOW_LIST","forward_tags_restriction_list":[],"forward_tags":false},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"name":"Nginx logs (Updated)"},"id":"9ac57fd5-857f-4082-badc-463ecd1e990d","type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations/9ac57fd5-857f-4082-badc-463ecd1e990d
+  response:
+    body:
+      string: '{"data":{"id":"9ac57fd5-857f-4082-badc-463ecd1e990d","attributes":{"name":"Nginx
+        logs (Updated)","query":"source:nginx","enabled":false,"forwarder_destination":{"endpoint":"https://example.com","type":"splunk_hec"},"forward_tags_restriction_list_type":"ALLOW_LIST","forward_tags_restriction_list":[],"forward_tags":false},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations/9ac57fd5-857f-4082-badc-463ecd1e990d
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
