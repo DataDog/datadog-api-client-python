@@ -2276,6 +2276,8 @@ from datadog_api_client.v2.model.full_application_key import FullApplicationKey
 from datadog_api_client.v2.model.full_application_key_attributes import FullApplicationKeyAttributes
 from datadog_api_client.v2.model.full_custom_framework_data import FullCustomFrameworkData
 from datadog_api_client.v2.model.full_custom_framework_data_attributes import FullCustomFrameworkDataAttributes
+from datadog_api_client.v2.model.full_personal_access_token import FullPersonalAccessToken
+from datadog_api_client.v2.model.full_personal_access_token_attributes import FullPersonalAccessTokenAttributes
 from datadog_api_client.v2.model.gcp_credentials import GCPCredentials
 from datadog_api_client.v2.model.gcp_credentials_update import GCPCredentialsUpdate
 from datadog_api_client.v2.model.gcp_integration import GCPIntegration
@@ -3214,6 +3216,7 @@ from datadog_api_client.v2.model.list_investigations_response_meta_page import L
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.list_notification_channels_response import ListNotificationChannelsResponse
 from datadog_api_client.v2.model.list_on_call_notification_rules_response import ListOnCallNotificationRulesResponse
+from datadog_api_client.v2.model.list_personal_access_tokens_response import ListPersonalAccessTokensResponse
 from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
 from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
@@ -4735,6 +4738,21 @@ from datadog_api_client.v2.model.permission import Permission
 from datadog_api_client.v2.model.permission_attributes import PermissionAttributes
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 from datadog_api_client.v2.model.permissions_type import PermissionsType
+from datadog_api_client.v2.model.personal_access_token import PersonalAccessToken
+from datadog_api_client.v2.model.personal_access_token_attributes import PersonalAccessTokenAttributes
+from datadog_api_client.v2.model.personal_access_token_create_attributes import PersonalAccessTokenCreateAttributes
+from datadog_api_client.v2.model.personal_access_token_create_data import PersonalAccessTokenCreateData
+from datadog_api_client.v2.model.personal_access_token_create_request import PersonalAccessTokenCreateRequest
+from datadog_api_client.v2.model.personal_access_token_create_response import PersonalAccessTokenCreateResponse
+from datadog_api_client.v2.model.personal_access_token_relationships import PersonalAccessTokenRelationships
+from datadog_api_client.v2.model.personal_access_token_response import PersonalAccessTokenResponse
+from datadog_api_client.v2.model.personal_access_token_response_meta import PersonalAccessTokenResponseMeta
+from datadog_api_client.v2.model.personal_access_token_response_meta_page import PersonalAccessTokenResponseMetaPage
+from datadog_api_client.v2.model.personal_access_token_update_attributes import PersonalAccessTokenUpdateAttributes
+from datadog_api_client.v2.model.personal_access_token_update_data import PersonalAccessTokenUpdateData
+from datadog_api_client.v2.model.personal_access_token_update_request import PersonalAccessTokenUpdateRequest
+from datadog_api_client.v2.model.personal_access_tokens_sort import PersonalAccessTokensSort
+from datadog_api_client.v2.model.personal_access_tokens_type import PersonalAccessTokensType
 from datadog_api_client.v2.model.playlist import Playlist
 from datadog_api_client.v2.model.playlist_array import PlaylistArray
 from datadog_api_client.v2.model.playlist_data import PlaylistData
@@ -5919,6 +5937,13 @@ from datadog_api_client.v2.model.sensitive_data_scanner_suppressions import Sens
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type import (
     SensitiveDataScannerTextReplacementType,
+)
+from datadog_api_client.v2.model.service_account_access_token_create_attributes import (
+    ServiceAccountAccessTokenCreateAttributes,
+)
+from datadog_api_client.v2.model.service_account_access_token_create_data import ServiceAccountAccessTokenCreateData
+from datadog_api_client.v2.model.service_account_access_token_create_request import (
+    ServiceAccountAccessTokenCreateRequest,
 )
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
@@ -8820,6 +8845,8 @@ __all__ = [
     "FullApplicationKeyAttributes",
     "FullCustomFrameworkData",
     "FullCustomFrameworkDataAttributes",
+    "FullPersonalAccessToken",
+    "FullPersonalAccessTokenAttributes",
     "GCPCredentials",
     "GCPCredentialsUpdate",
     "GCPIntegration",
@@ -9546,6 +9573,7 @@ __all__ = [
     "ListKindCatalogResponse",
     "ListNotificationChannelsResponse",
     "ListOnCallNotificationRulesResponse",
+    "ListPersonalAccessTokensResponse",
     "ListPipelinesResponse",
     "ListPipelinesResponseMeta",
     "ListPowerpacksResponse",
@@ -10413,6 +10441,21 @@ __all__ = [
     "PermissionAttributes",
     "PermissionsResponse",
     "PermissionsType",
+    "PersonalAccessToken",
+    "PersonalAccessTokenAttributes",
+    "PersonalAccessTokenCreateAttributes",
+    "PersonalAccessTokenCreateData",
+    "PersonalAccessTokenCreateRequest",
+    "PersonalAccessTokenCreateResponse",
+    "PersonalAccessTokenRelationships",
+    "PersonalAccessTokenResponse",
+    "PersonalAccessTokenResponseMeta",
+    "PersonalAccessTokenResponseMetaPage",
+    "PersonalAccessTokenUpdateAttributes",
+    "PersonalAccessTokenUpdateData",
+    "PersonalAccessTokenUpdateRequest",
+    "PersonalAccessTokensSort",
+    "PersonalAccessTokensType",
     "Playlist",
     "PlaylistArray",
     "PlaylistData",
@@ -11248,6 +11291,9 @@ __all__ = [
     "SensitiveDataScannerSuppressions",
     "SensitiveDataScannerTextReplacement",
     "SensitiveDataScannerTextReplacementType",
+    "ServiceAccountAccessTokenCreateAttributes",
+    "ServiceAccountAccessTokenCreateData",
+    "ServiceAccountAccessTokenCreateRequest",
     "ServiceAccountCreateAttributes",
     "ServiceAccountCreateData",
     "ServiceAccountCreateRequest",

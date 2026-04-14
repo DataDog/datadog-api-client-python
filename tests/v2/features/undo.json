@@ -4257,6 +4257,43 @@
       "type": "safe"
     }
   },
+  "ListPersonalAccessTokens": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreatePersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "operationId": "RevokePersonalAccessToken",
+      "parameters": [
+        {
+          "name": "pat_uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RevokePersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetPersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePersonalAccessToken": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListFindings": {
     "tag": "Security Monitoring",
     "undo": {
@@ -5737,6 +5774,47 @@
       ],
       "tag": "Users",
       "type": "unsafe"
+    }
+  },
+  "ListServiceAccountAccessTokens": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateServiceAccountAccessToken": {
+    "tag": "Service Accounts",
+    "undo": {
+      "operationId": "RevokeServiceAccountAccessToken",
+      "parameters": [
+        {
+          "name": "service_account_id",
+          "source": "data.relationships.owned_by.data.id"
+        },
+        {
+          "name": "pat_uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RevokeServiceAccountAccessToken": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetServiceAccountAccessToken": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateServiceAccountAccessToken": {
+    "tag": "Service Accounts",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListServiceAccountApplicationKeys": {
