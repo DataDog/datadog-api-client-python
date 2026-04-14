@@ -697,6 +697,10 @@ class SyntheticsApi:
     ) -> SyntheticsNetworkTestResponse:
         """Create a Network Path test.
 
+        Create a Network Path test.
+
+        **Note** : This endpoint is not available for the Government (US1-FED) site.
+
         :type body: SyntheticsNetworkTestEditRequest
         :rtype: SyntheticsNetworkTestResponse
         """
@@ -835,6 +839,10 @@ class SyntheticsApi:
         public_id: str,
     ) -> SyntheticsNetworkTestResponse:
         """Get a Network Path test.
+
+        Get a Network Path test.
+
+        **Note** : This endpoint is not available for the Government (US1-FED) site.
 
         :param public_id: The public ID of the Network Path test to get details from.
         :type public_id: str
@@ -1112,6 +1120,10 @@ class SyntheticsApi:
         body: SyntheticsNetworkTestEditRequest,
     ) -> SyntheticsNetworkTestResponse:
         """Edit a Network Path test.
+
+        Edit a Network Path test.
+
+        **Note** : This endpoint is not available for the Government (US1-FED) site.
 
         :param public_id: The public ID of the Network Path test to edit.
         :type public_id: str
