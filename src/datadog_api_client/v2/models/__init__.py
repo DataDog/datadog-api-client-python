@@ -249,6 +249,9 @@ from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_
 from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters import (
     ApplicationSecurityWafCustomRuleConditionParameters,
 )
+from datadog_api_client.v2.model.application_security_waf_custom_rule_condition_parameters_type import (
+    ApplicationSecurityWafCustomRuleConditionParametersType,
+)
 from datadog_api_client.v2.model.application_security_waf_custom_rule_create_attributes import (
     ApplicationSecurityWafCustomRuleCreateAttributes,
 )
@@ -7332,6 +7335,7 @@ __all__ = [
     "ApplicationSecurityWafCustomRuleConditionOperator",
     "ApplicationSecurityWafCustomRuleConditionOptions",
     "ApplicationSecurityWafCustomRuleConditionParameters",
+    "ApplicationSecurityWafCustomRuleConditionParametersType",
     "ApplicationSecurityWafCustomRuleCreateAttributes",
     "ApplicationSecurityWafCustomRuleCreateData",
     "ApplicationSecurityWafCustomRuleCreateRequest",
