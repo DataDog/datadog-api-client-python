@@ -17796,6 +17796,18 @@ components:
     CustomCostListResponseMeta:
       description: Meta for the response from the List Custom Costs endpoints.
       properties:
+        count_by_status:
+          additionalProperties:
+            format: int64
+            type: integer
+          description: Number of Custom Costs files per status.
+          type: object
+        providers:
+          description: List of available providers.
+          items:
+            description: A provider name.
+            type: string
+          type: array
         total_filtered_count:
           description: Number of Custom Costs files returned by the List Custom Costs endpoint
           format: int64
@@ -85747,6 +85759,18 @@ paths:
           name: filter[status]
           schema:
             type: string
+        - description: Filter files by name with case-insensitive substring matching.
+          in: query
+          name: filter[name]
+          schema:
+            type: string
+        - description: Filter by provider.
+          in: query
+          name: filter[provider]
+          schema:
+            items:
+              type: string
+            type: array
         - description: Sort key with optional descending prefix
           in: query
           name: sort

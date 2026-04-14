@@ -584,6 +584,17 @@ class CloudCostManagementApi:
                     "attribute": "filter[status]",
                     "location": "query",
                 },
+                "filter_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[name]",
+                    "location": "query",
+                },
+                "filter_provider": {
+                    "openapi_types": ([str],),
+                    "attribute": "filter[provider]",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
                 "sort": {
                     "openapi_types": (str,),
                     "attribute": "sort",
@@ -1277,6 +1288,8 @@ class CloudCostManagementApi:
         page_number: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         filter_status: Union[str, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
+        filter_provider: Union[List[str], UnsetType] = unset,
         sort: Union[str, UnsetType] = unset,
     ) -> CustomCostsFileListResponse:
         """List Custom Costs files.
@@ -1289,6 +1302,10 @@ class CloudCostManagementApi:
         :type page_size: int, optional
         :param filter_status: Filter by file status
         :type filter_status: str, optional
+        :param filter_name: Filter files by name with case-insensitive substring matching.
+        :type filter_name: str, optional
+        :param filter_provider: Filter by provider.
+        :type filter_provider: [str], optional
         :param sort: Sort key with optional descending prefix
         :type sort: str, optional
         :rtype: CustomCostsFileListResponse
@@ -1302,6 +1319,12 @@ class CloudCostManagementApi:
 
         if filter_status is not unset:
             kwargs["filter_status"] = filter_status
+
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
+
+        if filter_provider is not unset:
+            kwargs["filter_provider"] = filter_provider
 
         if sort is not unset:
             kwargs["sort"] = sort
