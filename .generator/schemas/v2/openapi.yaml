@@ -114455,6 +114455,11 @@ paths:
           schema:
             default: 50
             type: integer
+        - description: Filter status pages by exact domain prefix match. Returns at most one result.
+          in: query
+          name: filter[domain_prefix]
+          schema:
+            type: string
         - description: "Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user."
           in: query
           name: include
