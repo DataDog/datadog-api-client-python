@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -26,15 +29,23 @@ class CustomDestinationResponseForwardDestinationSplunk(ModelNormal):
 
         return {
             "endpoint": (str,),
+            "sourcetype": (str, none_type),
             "type": (CustomDestinationResponseForwardDestinationSplunkType,),
         }
 
     attribute_map = {
         "endpoint": "endpoint",
+        "sourcetype": "sourcetype",
         "type": "type",
     }
 
-    def __init__(self_, endpoint: str, type: CustomDestinationResponseForwardDestinationSplunkType, **kwargs):
+    def __init__(
+        self_,
+        endpoint: str,
+        type: CustomDestinationResponseForwardDestinationSplunkType,
+        sourcetype: Union[str, none_type, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The Splunk HTTP Event Collector (HEC) destination.
 
@@ -42,9 +53,18 @@ class CustomDestinationResponseForwardDestinationSplunk(ModelNormal):
             Must have HTTPS scheme and forwarding back to Datadog is not allowed.
         :type endpoint: str
 
+        :param sourcetype: The Splunk sourcetype for the events sent to this Splunk destination.
+
+            If absent, the default sourcetype ``_json`` is used. If set to null, the ``sourcetype``
+            field is omitted from the Splunk HEC payload entirely. Otherwise, the provided string
+            value is used as the sourcetype.
+        :type sourcetype: str, none_type, optional
+
         :param type: Type of the Splunk HTTP Event Collector (HEC) destination.
         :type type: CustomDestinationResponseForwardDestinationSplunkType
         """
+        if sourcetype is not unset:
+            kwargs["sourcetype"] = sourcetype
         super().__init__(kwargs)
 
         self_.endpoint = endpoint

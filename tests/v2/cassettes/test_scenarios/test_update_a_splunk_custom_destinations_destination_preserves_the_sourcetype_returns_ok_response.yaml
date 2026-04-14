@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":false,"forward_tags":false,"forwarder_destination":{"access_token":"my-access-token","endpoint":"https://example.com","sourcetype":"my-sourcetype","type":"splunk_hec"},"name":"Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_sourcetype_returns_OK_response-1774455840","query":"source:nginx"},"type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations
+  response:
+    body:
+      string: '{"data":{"id":"fa416048-c8e1-4b5a-a3e1-b6c2538d5903","attributes":{"name":"Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_sourcetype_returns_OK_response-1774455840","query":"source:nginx","enabled":false,"forwarder_destination":{"endpoint":"https://example.com","type":"splunk_hec","sourcetype":"my-sourcetype"},"forward_tags_restriction_list_type":"ALLOW_LIST","forward_tags_restriction_list":[],"forward_tags":false},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"forwarder_destination":{"access_token":"my-access-token","endpoint":"https://updated-example.com","type":"splunk_hec"}},"id":"fa416048-c8e1-4b5a-a3e1-b6c2538d5903","type":"custom_destination"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations/fa416048-c8e1-4b5a-a3e1-b6c2538d5903
+  response:
+    body:
+      string: '{"data":{"id":"fa416048-c8e1-4b5a-a3e1-b6c2538d5903","attributes":{"name":"Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_sourcetype_returns_OK_response-1774455840","query":"source:nginx","enabled":false,"forwarder_destination":{"endpoint":"https://updated-example.com","type":"splunk_hec","sourcetype":"my-sourcetype"},"forward_tags_restriction_list_type":"ALLOW_LIST","forward_tags_restriction_list":[],"forward_tags":false},"type":"custom_destination"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/logs/config/custom-destinations/fa416048-c8e1-4b5a-a3e1-b6c2538d5903
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1

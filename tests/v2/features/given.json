@@ -762,6 +762,42 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"source:nginx\",\n      \"enabled\": false,\n      \"forwarder_destination\": {\n        \"type\": \"splunk_hec\",\n        \"endpoint\": \"https://example.com\",\n        \"access_token\": \"my-access-token\"\n      },\n      \"forward_tags\": false\n    },\n    \"type\": \"custom_destination\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"custom_destination_splunk\" in the system",
+    "key": "custom_destination_splunk",
+    "tag": "Logs Custom Destinations",
+    "operationId": "CreateLogsCustomDestination"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"source:nginx\",\n      \"enabled\": false,\n      \"forwarder_destination\": {\n        \"type\": \"splunk_hec\",\n        \"endpoint\": \"https://example.com\",\n        \"access_token\": \"my-access-token\",\n        \"sourcetype\": null\n      },\n      \"forward_tags\": false\n    },\n    \"type\": \"custom_destination\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"custom_destination_splunk_with_null_sourcetype\" in the system",
+    "key": "custom_destination_splunk_with_null_sourcetype",
+    "tag": "Logs Custom Destinations",
+    "operationId": "CreateLogsCustomDestination"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"source:nginx\",\n      \"enabled\": false,\n      \"forwarder_destination\": {\n        \"type\": \"splunk_hec\",\n        \"endpoint\": \"https://example.com\",\n        \"access_token\": \"my-access-token\",\n        \"sourcetype\": \"my-sourcetype\"\n      },\n      \"forward_tags\": false\n    },\n    \"type\": \"custom_destination\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"custom_destination_splunk_with_sourcetype\" in the system",
+    "key": "custom_destination_splunk_with_sourcetype",
+    "tag": "Logs Custom Destinations",
+    "operationId": "CreateLogsCustomDestination"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"id\": \"{{ unique }}\",\n    \"attributes\": {\n      \"filter\": {\n        \"query\": \"source:{{ unique }}\"\n      },\n      \"compute\": {\n        \"aggregation_type\": \"count\"\n      }\n    },\n    \"type\": \"logs_metrics\"\n  }\n}"
       }
     ],
