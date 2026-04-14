@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"expires_at":"2027-04-08T16:45:51.557Z","name":"Test-Revoke_a_personal_access_token_returns_No_Content_response-1775666751","scopes":["dashboards_read"]},"type":"personal_access_tokens"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/personal_access_tokens
+  response:
+    body:
+      string: '{"data":{"id":"6bebbb55-0f75-4444-bec1-52de5987290f","type":"personal_access_tokens","attributes":{"created_at":"2026-04-08T16:45:51.638215611Z","expires_at":"2027-04-08T16:45:51.557Z","key":"xxxxx_xxxxxxxxxxxxxxxxxxXxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","name":"Test-Revoke_a_personal_access_token_returns_No_Content_response-1775666751","public_portion":"3HduL45lLrtTDsrdaAXE6B","scopes":["dashboards_read"]},"relationships":{"owned_by":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/personal_access_tokens/6bebbb55-0f75-4444-bec1-52de5987290f
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/personal_access_tokens/6bebbb55-0f75-4444-bec1-52de5987290f
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

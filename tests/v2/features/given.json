@@ -990,6 +990,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"scopes\": [\"dashboards_read\"],\n      \"expires_at\": \"{{ timeISO('now+365d') }}\"\n    },\n    \"type\": \"personal_access_tokens\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"personal_access_token\" in the system",
+    "key": "personal_access_token",
+    "tag": "Key Management",
+    "operationId": "CreatePersonalAccessToken"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n    \"data\": {\n        \"attributes\": {\n            \"description\": \"Sample powerpack\",\n            \"group_widget\": {\n                \"definition\": {\n                    \"layout_type\": \"ordered\",\n                    \"show_title\": true,\n                    \"title\": \"Sample Powerpack\",\n                    \"type\": \"group\",\n                    \"widgets\": [\n                        {\n                            \"definition\": {\n                                \"content\": \"test\",\n                                \"type\": \"note\"\n                            }\n                        }\n                    ]\n                },\n                \"layout\": {\n                    \"height\": 3,\n                    \"width\": 12,\n                    \"x\": 0,\n                    \"y\": 0\n                },\n                \"live_span\": \"1h\"\n            },\n            \"name\": \"{{ unique }}\",\n            \"tags\": [\n                \"tag:sample\"\n            ],\n            \"template_variables\": [\n                {\n                    \"defaults\": [\n                        \"*\"\n                    ],\n                    \"name\": \"sample\"\n                }\n            ]\n        },\n        \"type\": \"powerpack\"\n    }\n}"
       }
     ],
@@ -1299,6 +1311,22 @@
     "key": "service_account_user",
     "tag": "Service Accounts",
     "operationId": "CreateServiceAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "service_account_id",
+        "value": "\"{{ service_account_user.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"scopes\": [\"dashboards_read\"]\n    },\n    \"type\": \"personal_access_tokens\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"service_account_access_token\" for \"service_account_user\"",
+    "key": "service_account_access_token",
+    "tag": "Service Accounts",
+    "operationId": "CreateServiceAccountAccessToken"
   },
   {
     "parameters": [

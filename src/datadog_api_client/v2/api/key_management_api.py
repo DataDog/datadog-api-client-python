@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -21,6 +21,12 @@ from datadog_api_client.v2.model.application_keys_sort import ApplicationKeysSor
 from datadog_api_client.v2.model.application_key_response import ApplicationKeyResponse
 from datadog_api_client.v2.model.application_key_update_request import ApplicationKeyUpdateRequest
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
+from datadog_api_client.v2.model.list_personal_access_tokens_response import ListPersonalAccessTokensResponse
+from datadog_api_client.v2.model.personal_access_tokens_sort import PersonalAccessTokensSort
+from datadog_api_client.v2.model.personal_access_token_create_response import PersonalAccessTokenCreateResponse
+from datadog_api_client.v2.model.personal_access_token_create_request import PersonalAccessTokenCreateRequest
+from datadog_api_client.v2.model.personal_access_token_response import PersonalAccessTokenResponse
+from datadog_api_client.v2.model.personal_access_token_update_request import PersonalAccessTokenUpdateRequest
 
 
 class KeyManagementApi:
@@ -72,6 +78,26 @@ class KeyManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (ApplicationKeyCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_personal_access_token_endpoint = _Endpoint(
+            settings={
+                "response_type": (PersonalAccessTokenCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/personal_access_tokens",
+                "operation_id": "create_personal_access_token",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (PersonalAccessTokenCreateRequest,),
                     "location": "body",
                 },
             },
@@ -218,6 +244,29 @@ class KeyManagementApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "app_key_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_personal_access_token_endpoint = _Endpoint(
+            settings={
+                "response_type": (PersonalAccessTokenResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/personal_access_tokens/{pat_uuid}",
+                "operation_id": "get_personal_access_token",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "pat_uuid": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "pat_uuid",
                     "location": "path",
                 },
             },
@@ -403,6 +452,72 @@ class KeyManagementApi:
             api_client=api_client,
         )
 
+        self._list_personal_access_tokens_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListPersonalAccessTokensResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/personal_access_tokens",
+                "operation_id": "list_personal_access_tokens",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (PersonalAccessTokensSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "filter_owner_uuid": {
+                    "openapi_types": ([str],),
+                    "attribute": "filter[owner_uuid]",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._revoke_personal_access_token_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/personal_access_tokens/{pat_uuid}",
+                "operation_id": "revoke_personal_access_token",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "pat_uuid": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "pat_uuid",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._update_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (APIKeyResponse,),
@@ -481,6 +596,32 @@ class KeyManagementApi:
             api_client=api_client,
         )
 
+        self._update_personal_access_token_endpoint = _Endpoint(
+            settings={
+                "response_type": (PersonalAccessTokenResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/personal_access_tokens/{pat_uuid}",
+                "operation_id": "update_personal_access_token",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "pat_uuid": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "pat_uuid",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PersonalAccessTokenUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_api_key(
         self,
         body: APIKeyCreateRequest,
@@ -512,6 +653,22 @@ class KeyManagementApi:
         kwargs["body"] = body
 
         return self._create_current_user_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def create_personal_access_token(
+        self,
+        body: PersonalAccessTokenCreateRequest,
+    ) -> PersonalAccessTokenCreateResponse:
+        """Create a personal access token.
+
+        Create a personal access token for the current user.
+
+        :type body: PersonalAccessTokenCreateRequest
+        :rtype: PersonalAccessTokenCreateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_personal_access_token_endpoint.call_with_http_info(**kwargs)
 
     def delete_api_key(
         self,
@@ -629,6 +786,23 @@ class KeyManagementApi:
         kwargs["app_key_id"] = app_key_id
 
         return self._get_current_user_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def get_personal_access_token(
+        self,
+        pat_uuid: str,
+    ) -> PersonalAccessTokenResponse:
+        """Get a personal access token.
+
+        Get a specific personal access token by its UUID.
+
+        :param pat_uuid: The UUID of the personal access token.
+        :type pat_uuid: str
+        :rtype: PersonalAccessTokenResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["pat_uuid"] = pat_uuid
+
+        return self._get_personal_access_token_endpoint.call_with_http_info(**kwargs)
 
     def list_api_keys(
         self,
@@ -825,6 +999,68 @@ class KeyManagementApi:
 
         return self._list_current_user_application_keys_endpoint.call_with_http_info(**kwargs)
 
+    def list_personal_access_tokens(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[PersonalAccessTokensSort, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        filter_owner_uuid: Union[List[str], UnsetType] = unset,
+    ) -> ListPersonalAccessTokensResponse:
+        """Get all personal access tokens.
+
+        List all personal access tokens for the organization.
+
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param sort: Personal access token attribute used to sort results. Sort order is ascending
+            by default. In order to specify a descending sort, prefix the
+            attribute with a minus sign.
+        :type sort: PersonalAccessTokensSort, optional
+        :param filter: Filter personal access tokens by the specified string.
+        :type filter: str, optional
+        :param filter_owner_uuid: Filter personal access tokens by the owner's UUID. Supports multiple values.
+        :type filter_owner_uuid: [str], optional
+        :rtype: ListPersonalAccessTokensResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if filter_owner_uuid is not unset:
+            kwargs["filter_owner_uuid"] = filter_owner_uuid
+
+        return self._list_personal_access_tokens_endpoint.call_with_http_info(**kwargs)
+
+    def revoke_personal_access_token(
+        self,
+        pat_uuid: str,
+    ) -> None:
+        """Revoke a personal access token.
+
+        Revoke a specific personal access token.
+
+        :param pat_uuid: The UUID of the personal access token.
+        :type pat_uuid: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["pat_uuid"] = pat_uuid
+
+        return self._revoke_personal_access_token_endpoint.call_with_http_info(**kwargs)
+
     def update_api_key(
         self,
         api_key_id: str,
@@ -888,3 +1124,24 @@ class KeyManagementApi:
         kwargs["body"] = body
 
         return self._update_current_user_application_key_endpoint.call_with_http_info(**kwargs)
+
+    def update_personal_access_token(
+        self,
+        pat_uuid: str,
+        body: PersonalAccessTokenUpdateRequest,
+    ) -> PersonalAccessTokenResponse:
+        """Update a personal access token.
+
+        Update a specific personal access token.
+
+        :param pat_uuid: The UUID of the personal access token.
+        :type pat_uuid: str
+        :type body: PersonalAccessTokenUpdateRequest
+        :rtype: PersonalAccessTokenResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["pat_uuid"] = pat_uuid
+
+        kwargs["body"] = body
+
+        return self._update_personal_access_token_endpoint.call_with_http_info(**kwargs)
