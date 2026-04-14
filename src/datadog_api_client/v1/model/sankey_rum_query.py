@@ -105,7 +105,7 @@ class SankeyRumQuery(ModelNormal):
         :param occurrences: Filter applied to occurrence counts when building a Product Analytics audience.
         :type occurrences: ProductAnalyticsAudienceOccurrenceFilter, optional
 
-        :param query_string: Query string.
+        :param query_string: RUM event search query used to filter views or actions.
         :type query_string: str
 
         :param source: Source.

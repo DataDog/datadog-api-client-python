@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.funnel_grouped_display import FunnelGroupedDisplay
     from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest
     from datadog_api_client.v1.model.widget_time import WidgetTime
     from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
@@ -26,13 +27,13 @@ if TYPE_CHECKING:
 class FunnelWidgetDefinition(ModelNormal):
     validations = {
         "requests": {
-            "max_items": 1,
             "min_items": 1,
         },
     }
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.funnel_grouped_display import FunnelGroupedDisplay
         from datadog_api_client.v1.model.funnel_widget_request import FunnelWidgetRequest
         from datadog_api_client.v1.model.widget_time import WidgetTime
         from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
@@ -40,6 +41,7 @@ class FunnelWidgetDefinition(ModelNormal):
 
         return {
             "description": (str,),
+            "grouped_display": (FunnelGroupedDisplay,),
             "requests": ([FunnelWidgetRequest],),
             "time": (WidgetTime,),
             "title": (str,),
@@ -50,6 +52,7 @@ class FunnelWidgetDefinition(ModelNormal):
 
     attribute_map = {
         "description": "description",
+        "grouped_display": "grouped_display",
         "requests": "requests",
         "time": "time",
         "title": "title",
@@ -63,6 +66,7 @@ class FunnelWidgetDefinition(ModelNormal):
         requests: List[FunnelWidgetRequest],
         type: FunnelWidgetDefinitionType,
         description: Union[str, UnsetType] = unset,
+        grouped_display: Union[FunnelGroupedDisplay, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -74,6 +78,9 @@ class FunnelWidgetDefinition(ModelNormal):
 
         :param description: The description of the widget.
         :type description: str, optional
+
+        :param grouped_display: Display mode for grouped funnel results.
+        :type grouped_display: FunnelGroupedDisplay, optional
 
         :param requests: Request payload used to query items.
         :type requests: [FunnelWidgetRequest]
@@ -95,6 +102,8 @@ class FunnelWidgetDefinition(ModelNormal):
         """
         if description is not unset:
             kwargs["description"] = description
+        if grouped_display is not unset:
+            kwargs["grouped_display"] = grouped_display
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:
