@@ -6,6 +6,7 @@ from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
+from datadog_api_client.v1.model.formula_and_function_events_data_source import FormulaAndFunctionEventsDataSource
 from datadog_api_client.v1.model.formula_and_function_metric_aggregation import FormulaAndFunctionMetricAggregation
 from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
 from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
@@ -15,8 +16,15 @@ from datadog_api_client.v1.model.formula_and_function_response_format import For
 from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
 from datadog_api_client.v1.model.scatter_plot_widget_definition_requests import ScatterPlotWidgetDefinitionRequests
 from datadog_api_client.v1.model.scatter_plot_widget_definition_type import ScatterPlotWidgetDefinitionType
+from datadog_api_client.v1.model.scatterplot_data_projection_dimension import ScatterplotDataProjectionDimension
+from datadog_api_client.v1.model.scatterplot_data_projection_projection import ScatterplotDataProjectionProjection
+from datadog_api_client.v1.model.scatterplot_data_projection_projection_type import (
+    ScatterplotDataProjectionProjectionType,
+)
+from datadog_api_client.v1.model.scatterplot_data_projection_query import ScatterplotDataProjectionQuery
 from datadog_api_client.v1.model.scatterplot_dimension import ScatterplotDimension
 from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
+from datadog_api_client.v1.model.scatterplot_table_request_type import ScatterplotTableRequestType
 from datadog_api_client.v1.model.scatterplot_widget_formula import ScatterplotWidgetFormula
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_axis import WidgetAxis
@@ -85,6 +93,55 @@ body = Dashboard(
                     max="auto",
                 ),
                 color_by_groups=[],
+            ),
+        ),
+        Widget(
+            layout=WidgetLayout(
+                x=48,
+                y=0,
+                width=47,
+                height=15,
+            ),
+            definition=ScatterPlotWidgetDefinition(
+                title="Data Projection Scatterplot",
+                title_size="16",
+                title_align=WidgetTextAlign.LEFT,
+                type=ScatterPlotWidgetDefinitionType.SCATTERPLOT,
+                requests=ScatterPlotWidgetDefinitionRequests(
+                    table=ScatterplotTableRequest(
+                        request_type=ScatterplotTableRequestType.DATA_PROJECTION,
+                        query=ScatterplotDataProjectionQuery(
+                            query_string="@service:web-store",
+                            data_source=FormulaAndFunctionEventsDataSource.SPANS,
+                        ),
+                        projection=ScatterplotDataProjectionProjection(
+                            type=ScatterplotDataProjectionProjectionType.SCATTERPLOT,
+                            dimensions=[
+                                ScatterplotDataProjectionDimension(
+                                    column="duration",
+                                    dimension=ScatterplotDimension.X,
+                                ),
+                                ScatterplotDataProjectionDimension(
+                                    column="@resource_name",
+                                    dimension=ScatterplotDimension.Y,
+                                ),
+                            ],
+                        ),
+                        limit=200,
+                    ),
+                ),
+                xaxis=WidgetAxis(
+                    scale="linear",
+                    include_zero=True,
+                    min="auto",
+                    max="auto",
+                ),
+                yaxis=WidgetAxis(
+                    scale="linear",
+                    include_zero=True,
+                    min="auto",
+                    max="auto",
+                ),
             ),
         ),
     ],

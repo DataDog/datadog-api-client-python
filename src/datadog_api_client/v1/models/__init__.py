@@ -706,8 +706,16 @@ from datadog_api_client.v1.model.scatter_plot_request import ScatterPlotRequest
 from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
 from datadog_api_client.v1.model.scatter_plot_widget_definition_requests import ScatterPlotWidgetDefinitionRequests
 from datadog_api_client.v1.model.scatter_plot_widget_definition_type import ScatterPlotWidgetDefinitionType
+from datadog_api_client.v1.model.scatterplot_data_projection_dimension import ScatterplotDataProjectionDimension
+from datadog_api_client.v1.model.scatterplot_data_projection_projection import ScatterplotDataProjectionProjection
+from datadog_api_client.v1.model.scatterplot_data_projection_projection_type import (
+    ScatterplotDataProjectionProjectionType,
+)
+from datadog_api_client.v1.model.scatterplot_data_projection_query import ScatterplotDataProjectionQuery
+from datadog_api_client.v1.model.scatterplot_data_projection_query_storage import ScatterplotDataProjectionQueryStorage
 from datadog_api_client.v1.model.scatterplot_dimension import ScatterplotDimension
 from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
+from datadog_api_client.v1.model.scatterplot_table_request_type import ScatterplotTableRequestType
 from datadog_api_client.v1.model.scatterplot_widget_aggregator import ScatterplotWidgetAggregator
 from datadog_api_client.v1.model.scatterplot_widget_formula import ScatterplotWidgetFormula
 from datadog_api_client.v1.model.search_slo_query import SearchSLOQuery
@@ -1834,8 +1842,14 @@ __all__ = [
     "ScatterPlotWidgetDefinition",
     "ScatterPlotWidgetDefinitionRequests",
     "ScatterPlotWidgetDefinitionType",
+    "ScatterplotDataProjectionDimension",
+    "ScatterplotDataProjectionProjection",
+    "ScatterplotDataProjectionProjectionType",
+    "ScatterplotDataProjectionQuery",
+    "ScatterplotDataProjectionQueryStorage",
     "ScatterplotDimension",
     "ScatterplotTableRequest",
+    "ScatterplotTableRequestType",
     "ScatterplotWidgetAggregator",
     "ScatterplotWidgetFormula",
     "SearchSLOQuery",
