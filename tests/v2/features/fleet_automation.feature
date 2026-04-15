@@ -233,6 +233,48 @@ Feature: Fleet Automation
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all fleet clusters returns "Bad Request" response
+    Given operation "ListFleetClusters" enabled
+    And new "ListFleetClusters" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all fleet clusters returns "Not Found" response
+    Given operation "ListFleetClusters" enabled
+    And new "ListFleetClusters" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all fleet clusters returns "OK" response
+    Given operation "ListFleetClusters" enabled
+    And new "ListFleetClusters" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all fleet tracers returns "Bad Request" response
+    Given operation "ListFleetTracers" enabled
+    And new "ListFleetTracers" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all fleet tracers returns "Not Found" response
+    Given operation "ListFleetTracers" enabled
+    And new "ListFleetTracers" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List all fleet tracers returns "OK" response
+    Given operation "ListFleetTracers" enabled
+    And new "ListFleetTracers" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/fleet-automation
   Scenario: List all schedules returns "Bad Request" response
     Given operation "ListFleetSchedules" enabled
     And new "ListFleetSchedules" request
@@ -243,6 +285,54 @@ Feature: Fleet Automation
   Scenario: List all schedules returns "OK" response
     Given operation "ListFleetSchedules" enabled
     And new "ListFleetSchedules" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List instrumented pods for a cluster returns "Bad Request" response
+    Given operation "ListFleetInstrumentedPods" enabled
+    And new "ListFleetInstrumentedPods" request
+    And request contains "cluster_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List instrumented pods for a cluster returns "Not Found" response
+    Given operation "ListFleetInstrumentedPods" enabled
+    And new "ListFleetInstrumentedPods" request
+    And request contains "cluster_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List instrumented pods for a cluster returns "OK" response
+    Given operation "ListFleetInstrumentedPods" enabled
+    And new "ListFleetInstrumentedPods" request
+    And request contains "cluster_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List tracers for a specific agent returns "Bad Request" response
+    Given operation "ListFleetAgentTracers" enabled
+    And new "ListFleetAgentTracers" request
+    And request contains "agent_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List tracers for a specific agent returns "Not Found" response
+    Given operation "ListFleetAgentTracers" enabled
+    And new "ListFleetAgentTracers" request
+    And request contains "agent_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: List tracers for a specific agent returns "OK" response
+    Given operation "ListFleetAgentTracers" enabled
+    And new "ListFleetAgentTracers" request
+    And request contains "agent_key" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

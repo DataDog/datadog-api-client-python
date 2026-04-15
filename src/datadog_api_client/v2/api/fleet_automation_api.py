@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.fleet_agent_versions_response import FleetAgentVersionsResponse
 from datadog_api_client.v2.model.fleet_agents_response import FleetAgentsResponse
 from datadog_api_client.v2.model.fleet_agent_info_response import FleetAgentInfoResponse
+from datadog_api_client.v2.model.fleet_tracers_response import FleetTracersResponse
+from datadog_api_client.v2.model.fleet_clusters_response import FleetClustersResponse
+from datadog_api_client.v2.model.fleet_instrumented_pods_response import FleetInstrumentedPodsResponse
 from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
 from datadog_api_client.v2.model.fleet_deployment_response import FleetDeploymentResponse
 from datadog_api_client.v2.model.fleet_deployment_configure_create_request import FleetDeploymentConfigureCreateRequest
@@ -291,6 +294,56 @@ class FleetAutomationApi:
             api_client=api_client,
         )
 
+        self._list_fleet_agent_tracers_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetTracersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/fleet/agents/{agent_key}/tracers",
+                "operation_id": "list_fleet_agent_tracers",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "agent_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "agent_key",
+                    "location": "path",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_number",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_size",
+                    "location": "query",
+                },
+                "sort_attribute": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_attribute",
+                    "location": "query",
+                },
+                "sort_descending": {
+                    "openapi_types": (bool,),
+                    "attribute": "sort_descending",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_fleet_agent_versions_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetAgentVersionsResponse,),
@@ -301,6 +354,60 @@ class FleetAutomationApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_fleet_clusters_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetClustersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/fleet/clusters",
+                "operation_id": "list_fleet_clusters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_number",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_size",
+                    "location": "query",
+                },
+                "sort_attribute": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_attribute",
+                    "location": "query",
+                },
+                "sort_descending": {
+                    "openapi_types": (bool,),
+                    "attribute": "sort_descending",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "tags": {
+                    "openapi_types": (str,),
+                    "attribute": "tags",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -337,6 +444,29 @@ class FleetAutomationApi:
             api_client=api_client,
         )
 
+        self._list_fleet_instrumented_pods_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetInstrumentedPodsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/fleet/clusters/{cluster_name}/instrumented_pods",
+                "operation_id": "list_fleet_instrumented_pods",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "cluster_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "cluster_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_fleet_schedules_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetSchedulesResponse,),
@@ -347,6 +477,55 @@ class FleetAutomationApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_fleet_tracers_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetTracersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/fleet/tracers",
+                "operation_id": "list_fleet_tracers",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_number",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page_size",
+                    "location": "query",
+                },
+                "sort_attribute": {
+                    "openapi_types": (str,),
+                    "attribute": "sort_attribute",
+                    "location": "query",
+                },
+                "sort_descending": {
+                    "openapi_types": (bool,),
+                    "attribute": "sort_descending",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -685,6 +864,51 @@ class FleetAutomationApi:
 
         return self._list_fleet_agents_endpoint.call_with_http_info(**kwargs)
 
+    def list_fleet_agent_tracers(
+        self,
+        agent_key: str,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        sort_attribute: Union[str, UnsetType] = unset,
+        sort_descending: Union[bool, UnsetType] = unset,
+    ) -> FleetTracersResponse:
+        """List tracers for a specific agent.
+
+        Retrieve a paginated list of tracers for a specific agent.
+
+        This endpoint returns tracers associated with a given agent key, identified by the
+        agent's hostname. Use this to discover telemetry-derived service names for a particular host.
+
+        :param agent_key: The unique identifier (agent key) for the Datadog Agent.
+        :type agent_key: str
+        :param page_number: Page number for pagination (starts at 0).
+        :type page_number: int, optional
+        :param page_size: Number of results per page (must be greater than 0 and less than or equal to 100).
+        :type page_size: int, optional
+        :param sort_attribute: Attribute to sort by.
+        :type sort_attribute: str, optional
+        :param sort_descending: Sort order (true for descending, false for ascending).
+        :type sort_descending: bool, optional
+        :rtype: FleetTracersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["agent_key"] = agent_key
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if sort_attribute is not unset:
+            kwargs["sort_attribute"] = sort_attribute
+
+        if sort_descending is not unset:
+            kwargs["sort_descending"] = sort_descending
+
+        return self._list_fleet_agent_tracers_endpoint.call_with_http_info(**kwargs)
+
     def list_fleet_agent_versions(
         self,
     ) -> FleetAgentVersionsResponse:
@@ -700,6 +924,59 @@ class FleetAutomationApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_fleet_agent_versions_endpoint.call_with_http_info(**kwargs)
+
+    def list_fleet_clusters(
+        self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        sort_attribute: Union[str, UnsetType] = unset,
+        sort_descending: Union[bool, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        tags: Union[str, UnsetType] = unset,
+    ) -> FleetClustersResponse:
+        """List all fleet clusters.
+
+        Retrieve a paginated list of Kubernetes clusters in the fleet.
+
+        This endpoint returns clusters with metadata including node counts, agent versions,
+        enabled products, and associated services. Use the ``page_number`` and ``page_size``
+        query parameters to paginate through results.
+
+        :param page_number: Page number for pagination (starts at 0).
+        :type page_number: int, optional
+        :param page_size: Number of results per page (must be greater than 0 and less than or equal to 100).
+        :type page_size: int, optional
+        :param sort_attribute: Attribute to sort by.
+        :type sort_attribute: str, optional
+        :param sort_descending: Sort order (true for descending, false for ascending).
+        :type sort_descending: bool, optional
+        :param filter: Filter string for narrowing down cluster results.
+        :type filter: str, optional
+        :param tags: Comma-separated list of tags to filter clusters.
+        :type tags: str, optional
+        :rtype: FleetClustersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if sort_attribute is not unset:
+            kwargs["sort_attribute"] = sort_attribute
+
+        if sort_descending is not unset:
+            kwargs["sort_descending"] = sort_descending
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        return self._list_fleet_clusters_endpoint.call_with_http_info(**kwargs)
 
     def list_fleet_deployments(
         self,
@@ -727,6 +1004,28 @@ class FleetAutomationApi:
 
         return self._list_fleet_deployments_endpoint.call_with_http_info(**kwargs)
 
+    def list_fleet_instrumented_pods(
+        self,
+        cluster_name: str,
+    ) -> FleetInstrumentedPodsResponse:
+        """List instrumented pods for a cluster.
+
+        Retrieve the list of pods targeted for Single Step Instrumentation (SSI) injection
+        in a specific Kubernetes cluster.
+
+        This endpoint returns pod groups organized by owner reference (deployment, statefulset, etc.)
+        with their injection annotations and applied targets. Use the clusters list endpoint
+        to discover available cluster names.
+
+        :param cluster_name: The name of the Kubernetes cluster.
+        :type cluster_name: str
+        :rtype: FleetInstrumentedPodsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["cluster_name"] = cluster_name
+
+        return self._list_fleet_instrumented_pods_endpoint.call_with_http_info(**kwargs)
+
     def list_fleet_schedules(
         self,
     ) -> FleetSchedulesResponse:
@@ -742,6 +1041,54 @@ class FleetAutomationApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_fleet_schedules_endpoint.call_with_http_info(**kwargs)
+
+    def list_fleet_tracers(
+        self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        sort_attribute: Union[str, UnsetType] = unset,
+        sort_descending: Union[bool, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+    ) -> FleetTracersResponse:
+        """List all fleet tracers.
+
+        Retrieve a paginated list of all fleet tracers.
+
+        This endpoint returns telemetry-derived service names from the SDK telemetry pipeline.
+        These names may differ from span-derived names in APM and are useful for querying
+        service library configurations.
+        Use the ``page_number`` and ``page_size`` query parameters to paginate through results.
+
+        :param page_number: Page number for pagination (starts at 0).
+        :type page_number: int, optional
+        :param page_size: Number of results per page (must be greater than 0 and less than or equal to 100).
+        :type page_size: int, optional
+        :param sort_attribute: Attribute to sort by.
+        :type sort_attribute: str, optional
+        :param sort_descending: Sort order (true for descending, false for ascending).
+        :type sort_descending: bool, optional
+        :param filter: Filter string for narrowing down tracer results.
+        :type filter: str, optional
+        :rtype: FleetTracersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if sort_attribute is not unset:
+            kwargs["sort_attribute"] = sort_attribute
+
+        if sort_descending is not unset:
+            kwargs["sort_descending"] = sort_descending
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        return self._list_fleet_tracers_endpoint.call_with_http_info(**kwargs)
 
     def trigger_fleet_schedule(
         self,
