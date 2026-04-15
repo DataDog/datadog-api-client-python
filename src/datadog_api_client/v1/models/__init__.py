@@ -54,6 +54,8 @@ from datadog_api_client.v1.model.bar_chart_widget_scaling import BarChartWidgetS
 from datadog_api_client.v1.model.bar_chart_widget_stacked import BarChartWidgetStacked
 from datadog_api_client.v1.model.bar_chart_widget_stacked_type import BarChartWidgetStackedType
 from datadog_api_client.v1.model.bar_chart_widget_style import BarChartWidgetStyle
+from datadog_api_client.v1.model.calendar_interval import CalendarInterval
+from datadog_api_client.v1.model.calendar_interval_type import CalendarIntervalType
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
 from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
 from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
@@ -65,6 +67,8 @@ from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDe
 from datadog_api_client.v1.model.check_can_delete_slo_response_data import CheckCanDeleteSLOResponseData
 from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
+from datadog_api_client.v1.model.cohort_widget_definition_type import CohortWidgetDefinitionType
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.dashboard import Dashboard
@@ -187,16 +191,35 @@ from datadog_api_client.v1.model.formula_and_function_process_query_data_source 
 from datadog_api_client.v1.model.formula_and_function_process_query_definition import (
     FormulaAndFunctionProcessQueryDefinition,
 )
+from datadog_api_client.v1.model.formula_and_function_product_analytics_extended_data_source import (
+    FormulaAndFunctionProductAnalyticsExtendedDataSource,
+)
+from datadog_api_client.v1.model.formula_and_function_product_analytics_extended_query_definition import (
+    FormulaAndFunctionProductAnalyticsExtendedQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_product_analytics_extended_query_definition_indexes_items import (
+    FormulaAndFunctionProductAnalyticsExtendedQueryDefinitionIndexesItems,
+)
 from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
 from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+from datadog_api_client.v1.model.formula_and_function_retention_query_definition import (
+    FormulaAndFunctionRetentionQueryDefinition,
+)
 from datadog_api_client.v1.model.formula_and_function_slo_data_source import FormulaAndFunctionSLODataSource
 from datadog_api_client.v1.model.formula_and_function_slo_group_mode import FormulaAndFunctionSLOGroupMode
 from datadog_api_client.v1.model.formula_and_function_slo_measure import FormulaAndFunctionSLOMeasure
 from datadog_api_client.v1.model.formula_and_function_slo_query_definition import FormulaAndFunctionSLOQueryDefinition
 from datadog_api_client.v1.model.formula_and_function_slo_query_type import FormulaAndFunctionSLOQueryType
+from datadog_api_client.v1.model.formula_and_function_user_journey_query_definition import (
+    FormulaAndFunctionUserJourneyQueryDefinition,
+)
 from datadog_api_client.v1.model.formula_type import FormulaType
 from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
 from datadog_api_client.v1.model.free_text_widget_definition_type import FreeTextWidgetDefinitionType
+from datadog_api_client.v1.model.funnel_comparison_custom_timeframe import FunnelComparisonCustomTimeframe
+from datadog_api_client.v1.model.funnel_comparison_duration import FunnelComparisonDuration
+from datadog_api_client.v1.model.funnel_comparison_duration_type import FunnelComparisonDurationType
+from datadog_api_client.v1.model.funnel_grouped_display import FunnelGroupedDisplay
 from datadog_api_client.v1.model.funnel_query import FunnelQuery
 from datadog_api_client.v1.model.funnel_request_type import FunnelRequestType
 from datadog_api_client.v1.model.funnel_source import FunnelSource
@@ -608,6 +631,25 @@ from datadog_api_client.v1.model.product_analytics_audience_segment_subquery imp
     ProductAnalyticsAudienceSegmentSubquery,
 )
 from datadog_api_client.v1.model.product_analytics_audience_user_subquery import ProductAnalyticsAudienceUserSubquery
+from datadog_api_client.v1.model.product_analytics_base_query import ProductAnalyticsBaseQuery
+from datadog_api_client.v1.model.product_analytics_event_data_source import ProductAnalyticsEventDataSource
+from datadog_api_client.v1.model.product_analytics_event_query_search import ProductAnalyticsEventQuerySearch
+from datadog_api_client.v1.model.product_analytics_extended_compute import ProductAnalyticsExtendedCompute
+from datadog_api_client.v1.model.product_analytics_extended_group_by import ProductAnalyticsExtendedGroupBy
+from datadog_api_client.v1.model.product_analytics_funnel_compute import ProductAnalyticsFunnelCompute
+from datadog_api_client.v1.model.product_analytics_funnel_compute_aggregation import (
+    ProductAnalyticsFunnelComputeAggregation,
+)
+from datadog_api_client.v1.model.product_analytics_funnel_compute_metric import ProductAnalyticsFunnelComputeMetric
+from datadog_api_client.v1.model.product_analytics_funnel_data_source import ProductAnalyticsFunnelDataSource
+from datadog_api_client.v1.model.product_analytics_funnel_group_by import ProductAnalyticsFunnelGroupBy
+from datadog_api_client.v1.model.product_analytics_funnel_group_by_sort import ProductAnalyticsFunnelGroupBySort
+from datadog_api_client.v1.model.product_analytics_funnel_query import ProductAnalyticsFunnelQuery
+from datadog_api_client.v1.model.product_analytics_funnel_request import ProductAnalyticsFunnelRequest
+from datadog_api_client.v1.model.product_analytics_funnel_request_type import ProductAnalyticsFunnelRequestType
+from datadog_api_client.v1.model.product_analytics_funnel_widget_definition import (
+    ProductAnalyticsFunnelWidgetDefinition,
+)
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
 from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
@@ -615,6 +657,37 @@ from datadog_api_client.v1.model.query_value_widget_request import QueryValueWid
 from datadog_api_client.v1.model.reference_table_logs_lookup_processor import ReferenceTableLogsLookupProcessor
 from datadog_api_client.v1.model.resource_provider_config import ResourceProviderConfig
 from datadog_api_client.v1.model.response_meta_attributes import ResponseMetaAttributes
+from datadog_api_client.v1.model.retention_cohort_criteria import RetentionCohortCriteria
+from datadog_api_client.v1.model.retention_cohort_criteria_time_interval import RetentionCohortCriteriaTimeInterval
+from datadog_api_client.v1.model.retention_cohort_criteria_time_interval_type import (
+    RetentionCohortCriteriaTimeIntervalType,
+)
+from datadog_api_client.v1.model.retention_compute import RetentionCompute
+from datadog_api_client.v1.model.retention_compute_metric import RetentionComputeMetric
+from datadog_api_client.v1.model.retention_curve_request_type import RetentionCurveRequestType
+from datadog_api_client.v1.model.retention_curve_style import RetentionCurveStyle
+from datadog_api_client.v1.model.retention_curve_widget_definition import RetentionCurveWidgetDefinition
+from datadog_api_client.v1.model.retention_curve_widget_definition_type import RetentionCurveWidgetDefinitionType
+from datadog_api_client.v1.model.retention_curve_widget_request import RetentionCurveWidgetRequest
+from datadog_api_client.v1.model.retention_data_source import RetentionDataSource
+from datadog_api_client.v1.model.retention_entity import RetentionEntity
+from datadog_api_client.v1.model.retention_filters import RetentionFilters
+from datadog_api_client.v1.model.retention_grid_request import RetentionGridRequest
+from datadog_api_client.v1.model.retention_grid_request_type import RetentionGridRequestType
+from datadog_api_client.v1.model.retention_group_by import RetentionGroupBy
+from datadog_api_client.v1.model.retention_group_by_sort import RetentionGroupBySort
+from datadog_api_client.v1.model.retention_group_by_target import RetentionGroupByTarget
+from datadog_api_client.v1.model.retention_query import RetentionQuery
+from datadog_api_client.v1.model.retention_return_condition import RetentionReturnCondition
+from datadog_api_client.v1.model.retention_return_criteria import RetentionReturnCriteria
+from datadog_api_client.v1.model.retention_return_criteria_time_interval import RetentionReturnCriteriaTimeInterval
+from datadog_api_client.v1.model.retention_return_criteria_time_interval_type import (
+    RetentionReturnCriteriaTimeIntervalType,
+)
+from datadog_api_client.v1.model.retention_return_criteria_time_interval_unit import (
+    RetentionReturnCriteriaTimeIntervalUnit,
+)
+from datadog_api_client.v1.model.retention_search import RetentionSearch
 from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
 from datadog_api_client.v1.model.run_workflow_widget_definition_type import RunWorkflowWidgetDefinitionType
 from datadog_api_client.v1.model.run_workflow_widget_input import RunWorkflowWidgetInput
@@ -1167,6 +1240,14 @@ from datadog_api_client.v1.model.usage_top_avg_metrics_pagination import UsageTo
 from datadog_api_client.v1.model.usage_top_avg_metrics_response import UsageTopAvgMetricsResponse
 from datadog_api_client.v1.model.user import User
 from datadog_api_client.v1.model.user_disable_response import UserDisableResponse
+from datadog_api_client.v1.model.user_journey_formula_compute import UserJourneyFormulaCompute
+from datadog_api_client.v1.model.user_journey_formula_compute_metric import UserJourneyFormulaComputeMetric
+from datadog_api_client.v1.model.user_journey_formula_group_by import UserJourneyFormulaGroupBy
+from datadog_api_client.v1.model.user_journey_join_keys import UserJourneyJoinKeys
+from datadog_api_client.v1.model.user_journey_search import UserJourneySearch
+from datadog_api_client.v1.model.user_journey_search_filters import UserJourneySearchFilters
+from datadog_api_client.v1.model.user_journey_search_graph_filter import UserJourneySearchGraphFilter
+from datadog_api_client.v1.model.user_journey_search_target import UserJourneySearchTarget
 from datadog_api_client.v1.model.user_list_response import UserListResponse
 from datadog_api_client.v1.model.user_response import UserResponse
 from datadog_api_client.v1.model.viewing_preferences import ViewingPreferences
@@ -1310,6 +1391,8 @@ __all__ = [
     "BarChartWidgetStacked",
     "BarChartWidgetStackedType",
     "BarChartWidgetStyle",
+    "CalendarInterval",
+    "CalendarIntervalType",
     "CancelDowntimesByScopeRequest",
     "CanceledDowntimesIds",
     "ChangeWidgetDefinition",
@@ -1321,6 +1404,8 @@ __all__ = [
     "CheckCanDeleteSLOResponseData",
     "CheckStatusWidgetDefinition",
     "CheckStatusWidgetDefinitionType",
+    "CohortWidgetDefinition",
+    "CohortWidgetDefinitionType",
     "ContentEncoding",
     "Creator",
     "Dashboard",
@@ -1403,16 +1488,25 @@ __all__ = [
     "FormulaAndFunctionMetricSemanticMode",
     "FormulaAndFunctionProcessQueryDataSource",
     "FormulaAndFunctionProcessQueryDefinition",
+    "FormulaAndFunctionProductAnalyticsExtendedDataSource",
+    "FormulaAndFunctionProductAnalyticsExtendedQueryDefinition",
+    "FormulaAndFunctionProductAnalyticsExtendedQueryDefinitionIndexesItems",
     "FormulaAndFunctionQueryDefinition",
     "FormulaAndFunctionResponseFormat",
+    "FormulaAndFunctionRetentionQueryDefinition",
     "FormulaAndFunctionSLODataSource",
     "FormulaAndFunctionSLOGroupMode",
     "FormulaAndFunctionSLOMeasure",
     "FormulaAndFunctionSLOQueryDefinition",
     "FormulaAndFunctionSLOQueryType",
+    "FormulaAndFunctionUserJourneyQueryDefinition",
     "FormulaType",
     "FreeTextWidgetDefinition",
     "FreeTextWidgetDefinitionType",
+    "FunnelComparisonCustomTimeframe",
+    "FunnelComparisonDuration",
+    "FunnelComparisonDurationType",
+    "FunnelGroupedDisplay",
     "FunnelQuery",
     "FunnelRequestType",
     "FunnelSource",
@@ -1742,6 +1836,21 @@ __all__ = [
     "ProductAnalyticsAudienceOccurrenceFilter",
     "ProductAnalyticsAudienceSegmentSubquery",
     "ProductAnalyticsAudienceUserSubquery",
+    "ProductAnalyticsBaseQuery",
+    "ProductAnalyticsEventDataSource",
+    "ProductAnalyticsEventQuerySearch",
+    "ProductAnalyticsExtendedCompute",
+    "ProductAnalyticsExtendedGroupBy",
+    "ProductAnalyticsFunnelCompute",
+    "ProductAnalyticsFunnelComputeAggregation",
+    "ProductAnalyticsFunnelComputeMetric",
+    "ProductAnalyticsFunnelDataSource",
+    "ProductAnalyticsFunnelGroupBy",
+    "ProductAnalyticsFunnelGroupBySort",
+    "ProductAnalyticsFunnelQuery",
+    "ProductAnalyticsFunnelRequest",
+    "ProductAnalyticsFunnelRequestType",
+    "ProductAnalyticsFunnelWidgetDefinition",
     "QuerySortOrder",
     "QueryValueWidgetDefinition",
     "QueryValueWidgetDefinitionType",
@@ -1749,6 +1858,31 @@ __all__ = [
     "ReferenceTableLogsLookupProcessor",
     "ResourceProviderConfig",
     "ResponseMetaAttributes",
+    "RetentionCohortCriteria",
+    "RetentionCohortCriteriaTimeInterval",
+    "RetentionCohortCriteriaTimeIntervalType",
+    "RetentionCompute",
+    "RetentionComputeMetric",
+    "RetentionCurveRequestType",
+    "RetentionCurveStyle",
+    "RetentionCurveWidgetDefinition",
+    "RetentionCurveWidgetDefinitionType",
+    "RetentionCurveWidgetRequest",
+    "RetentionDataSource",
+    "RetentionEntity",
+    "RetentionFilters",
+    "RetentionGridRequest",
+    "RetentionGridRequestType",
+    "RetentionGroupBy",
+    "RetentionGroupBySort",
+    "RetentionGroupByTarget",
+    "RetentionQuery",
+    "RetentionReturnCondition",
+    "RetentionReturnCriteria",
+    "RetentionReturnCriteriaTimeInterval",
+    "RetentionReturnCriteriaTimeIntervalType",
+    "RetentionReturnCriteriaTimeIntervalUnit",
+    "RetentionSearch",
     "RunWorkflowWidgetDefinition",
     "RunWorkflowWidgetDefinitionType",
     "RunWorkflowWidgetInput",
@@ -2221,6 +2355,14 @@ __all__ = [
     "UsageTopAvgMetricsResponse",
     "User",
     "UserDisableResponse",
+    "UserJourneyFormulaCompute",
+    "UserJourneyFormulaComputeMetric",
+    "UserJourneyFormulaGroupBy",
+    "UserJourneyJoinKeys",
+    "UserJourneySearch",
+    "UserJourneySearchFilters",
+    "UserJourneySearchGraphFilter",
+    "UserJourneySearchTarget",
     "UserListResponse",
     "UserResponse",
     "ViewingPreferences",

@@ -396,6 +396,20 @@ datadog\_api\_client.v1.model.bar\_chart\_widget\_style module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.calendar\_interval module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.calendar_interval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.calendar\_interval\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.calendar_interval_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.cancel\_downtimes\_by\_scope\_request module
 --------------------------------------------------------------------------
 
@@ -470,6 +484,20 @@ datadog\_api\_client.v1.model.check\_status\_widget\_definition\_type module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.check_status_widget_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.cohort\_widget\_definition module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.cohort_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.cohort\_widget\_definition\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.cohort_widget_definition_type
    :members:
    :show-inheritance:
 
@@ -1047,6 +1075,27 @@ datadog\_api\_client.v1.model.formula\_and\_function\_process\_query\_definition
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.formula\_and\_function\_product\_analytics\_extended\_data\_source module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_product_analytics_extended_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.formula\_and\_function\_product\_analytics\_extended\_query\_definition module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_product_analytics_extended_query_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.formula\_and\_function\_product\_analytics\_extended\_query\_definition\_indexes\_items module
+----------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_product_analytics_extended_query_definition_indexes_items
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.formula\_and\_function\_query\_definition module
 ------------------------------------------------------------------------------
 
@@ -1058,6 +1107,13 @@ datadog\_api\_client.v1.model.formula\_and\_function\_response\_format module
 -----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.formula_and_function_response_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.formula\_and\_function\_retention\_query\_definition module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_retention_query_definition
    :members:
    :show-inheritance:
 
@@ -1096,6 +1152,13 @@ datadog\_api\_client.v1.model.formula\_and\_function\_slo\_query\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.formula\_and\_function\_user\_journey\_query\_definition module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.formula_and_function_user_journey_query_definition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.formula\_type module
 --------------------------------------------------
 
@@ -1114,6 +1177,34 @@ datadog\_api\_client.v1.model.free\_text\_widget\_definition\_type module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.free_text_widget_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.funnel\_comparison\_custom\_timeframe module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.funnel_comparison_custom_timeframe
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.funnel\_comparison\_duration module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.funnel_comparison_duration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.funnel\_comparison\_duration\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.funnel_comparison_duration_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.funnel\_grouped\_display module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.funnel_grouped_display
    :members:
    :show-inheritance:
 
@@ -3420,6 +3511,111 @@ datadog\_api\_client.v1.model.product\_analytics\_audience\_user\_subquery modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.product\_analytics\_base\_query module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_base_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_event\_data\_source module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_event_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_event\_query\_search module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_event_query_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_extended\_compute module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_extended_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_extended\_group\_by module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_extended_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_compute module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_compute\_aggregation module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_compute_aggregation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_compute\_metric module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_compute_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_data\_source module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_group\_by module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_group\_by\_sort module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_group_by_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_query module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_request\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.product\_analytics\_funnel\_widget\_definition module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.product_analytics_funnel_widget_definition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.query\_sort\_order module
 -------------------------------------------------------
 
@@ -3466,6 +3662,181 @@ datadog\_api\_client.v1.model.response\_meta\_attributes module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.response_meta_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_cohort\_criteria module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_cohort_criteria
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_cohort\_criteria\_time\_interval module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_cohort_criteria_time_interval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_cohort\_criteria\_time\_interval\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_cohort_criteria_time_interval_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_compute module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_compute\_metric module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_compute_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_curve\_request\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_curve_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_curve\_style module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_curve_style
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_curve\_widget\_definition module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_curve_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_curve\_widget\_definition\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_curve_widget_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_curve\_widget\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_curve_widget_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_data\_source module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_entity module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_entity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_filters module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_grid\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_grid_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_grid\_request\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_grid_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_group\_by module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_group\_by\_sort module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_group_by_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_group\_by\_target module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_group_by_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_query module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_return\_condition module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_return_condition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_return\_criteria module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_return_criteria
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_return\_criteria\_time\_interval module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_return_criteria_time_interval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_return\_criteria\_time\_interval\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_return_criteria_time_interval_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_return\_criteria\_time\_interval\_unit module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_return_criteria_time_interval_unit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.retention\_search module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.retention_search
    :members:
    :show-inheritance:
 
@@ -6763,6 +7134,62 @@ datadog\_api\_client.v1.model.user\_disable\_response module
 ------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.user_disable_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_formula\_compute module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_formula_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_formula\_compute\_metric module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_formula_compute_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_formula\_group\_by module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_formula_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_join\_keys module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_join_keys
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_search module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_search\_filters module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_search_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_search\_graph\_filter module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_search_graph_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.user\_journey\_search\_target module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.user_journey_search_target
    :members:
    :show-inheritance:
 

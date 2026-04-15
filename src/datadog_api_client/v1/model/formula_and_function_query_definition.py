@@ -119,6 +119,9 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
 
         :param slo_query_type: Name of the query for use in formulas.
         :type slo_query_type: FormulaAndFunctionSLOQueryType, optional
+
+        :param audience_filters: Product Analytics/RUM audience filters.
+        :type audience_filters: ProductAnalyticsAudienceFilters, optional
         """
         super().__init__(kwargs)
 
@@ -155,6 +158,15 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition import (
             FormulaAndFunctionCloudCostQueryDefinition,
         )
+        from datadog_api_client.v1.model.formula_and_function_product_analytics_extended_query_definition import (
+            FormulaAndFunctionProductAnalyticsExtendedQueryDefinition,
+        )
+        from datadog_api_client.v1.model.formula_and_function_user_journey_query_definition import (
+            FormulaAndFunctionUserJourneyQueryDefinition,
+        )
+        from datadog_api_client.v1.model.formula_and_function_retention_query_definition import (
+            FormulaAndFunctionRetentionQueryDefinition,
+        )
 
         return {
             "oneOf": [
@@ -166,5 +178,8 @@ class FormulaAndFunctionQueryDefinition(ModelComposed):
                 FormulaAndFunctionApmMetricsQueryDefinition,
                 FormulaAndFunctionSLOQueryDefinition,
                 FormulaAndFunctionCloudCostQueryDefinition,
+                FormulaAndFunctionProductAnalyticsExtendedQueryDefinition,
+                FormulaAndFunctionUserJourneyQueryDefinition,
+                FormulaAndFunctionRetentionQueryDefinition,
             ],
         }

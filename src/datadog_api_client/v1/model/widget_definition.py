@@ -108,6 +108,9 @@ class WidgetDefinition(ModelComposed):
         :param text: Text to display.
         :type text: str
 
+        :param grouped_display: Display mode for grouped funnel results.
+        :type grouped_display: FunnelGroupedDisplay, optional
+
         :param view: The view of the world that the map should render.
         :type view: GeomapWidgetDefinitionView
 
@@ -366,11 +369,15 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
         from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
         from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
+        from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
         from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
         from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
         from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
         from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
         from datadog_api_client.v1.model.funnel_widget_definition import FunnelWidgetDefinition
+        from datadog_api_client.v1.model.product_analytics_funnel_widget_definition import (
+            ProductAnalyticsFunnelWidgetDefinition,
+        )
         from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
         from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
         from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
@@ -383,6 +390,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
         from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
+        from datadog_api_client.v1.model.retention_curve_widget_definition import RetentionCurveWidgetDefinition
         from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
         from datadog_api_client.v1.model.slo_list_widget_definition import SLOListWidgetDefinition
         from datadog_api_client.v1.model.slo_widget_definition import SLOWidgetDefinition
@@ -406,11 +414,13 @@ class WidgetDefinition(ModelComposed):
                 BarChartWidgetDefinition,
                 ChangeWidgetDefinition,
                 CheckStatusWidgetDefinition,
+                CohortWidgetDefinition,
                 DistributionWidgetDefinition,
                 EventStreamWidgetDefinition,
                 EventTimelineWidgetDefinition,
                 FreeTextWidgetDefinition,
                 FunnelWidgetDefinition,
+                ProductAnalyticsFunnelWidgetDefinition,
                 GeomapWidgetDefinition,
                 GroupWidgetDefinition,
                 HeatMapWidgetDefinition,
@@ -423,6 +433,7 @@ class WidgetDefinition(ModelComposed):
                 NoteWidgetDefinition,
                 PowerpackWidgetDefinition,
                 QueryValueWidgetDefinition,
+                RetentionCurveWidgetDefinition,
                 RunWorkflowWidgetDefinition,
                 SLOListWidgetDefinition,
                 SLOWidgetDefinition,

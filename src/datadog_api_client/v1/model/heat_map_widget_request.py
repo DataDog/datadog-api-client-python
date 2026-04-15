@@ -49,6 +49,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.formula_and_function_cloud_cost_query_definition import (
         FormulaAndFunctionCloudCostQueryDefinition,
     )
+    from datadog_api_client.v1.model.formula_and_function_product_analytics_extended_query_definition import (
+        FormulaAndFunctionProductAnalyticsExtendedQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_user_journey_query_definition import (
+        FormulaAndFunctionUserJourneyQueryDefinition,
+    )
+    from datadog_api_client.v1.model.formula_and_function_retention_query_definition import (
+        FormulaAndFunctionRetentionQueryDefinition,
+    )
 
 
 class HeatMapWidgetRequest(ModelNormal):
@@ -124,6 +133,9 @@ class HeatMapWidgetRequest(ModelNormal):
                     FormulaAndFunctionApmMetricsQueryDefinition,
                     FormulaAndFunctionSLOQueryDefinition,
                     FormulaAndFunctionCloudCostQueryDefinition,
+                    FormulaAndFunctionProductAnalyticsExtendedQueryDefinition,
+                    FormulaAndFunctionUserJourneyQueryDefinition,
+                    FormulaAndFunctionRetentionQueryDefinition,
                 ]
             ],
             UnsetType,
