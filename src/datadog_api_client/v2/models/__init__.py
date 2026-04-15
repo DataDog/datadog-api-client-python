@@ -2186,6 +2186,9 @@ from datadog_api_client.v2.model.flaky_test import FlakyTest
 from datadog_api_client.v2.model.flaky_test_attributes import FlakyTestAttributes
 from datadog_api_client.v2.model.flaky_test_attributes_flaky_state import FlakyTestAttributesFlakyState
 from datadog_api_client.v2.model.flaky_test_history import FlakyTestHistory
+from datadog_api_client.v2.model.flaky_test_history_policy_id import FlakyTestHistoryPolicyId
+from datadog_api_client.v2.model.flaky_test_history_policy_meta import FlakyTestHistoryPolicyMeta
+from datadog_api_client.v2.model.flaky_test_history_policy_meta_config import FlakyTestHistoryPolicyMetaConfig
 from datadog_api_client.v2.model.flaky_test_pipeline_stats import FlakyTestPipelineStats
 from datadog_api_client.v2.model.flaky_test_run_metadata import FlakyTestRunMetadata
 from datadog_api_client.v2.model.flaky_test_stats import FlakyTestStats
@@ -8759,6 +8762,9 @@ __all__ = [
     "FlakyTestAttributes",
     "FlakyTestAttributesFlakyState",
     "FlakyTestHistory",
+    "FlakyTestHistoryPolicyId",
+    "FlakyTestHistoryPolicyMeta",
+    "FlakyTestHistoryPolicyMetaConfig",
     "FlakyTestPipelineStats",
     "FlakyTestRunMetadata",
     "FlakyTestStats",

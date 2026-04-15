@@ -11232,6 +11232,27 @@ datadog\_api\_client.v2.model.flaky\_test\_history module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.flaky\_test\_history\_policy\_id module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_history_policy_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_history\_policy\_meta module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_history_policy_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flaky\_test\_history\_policy\_meta\_config module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_history_policy_meta_config
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.flaky\_test\_pipeline\_stats module
 -----------------------------------------------------------------
 
