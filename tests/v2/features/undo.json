@@ -17,6 +17,24 @@
       "type": "safe"
     }
   },
+  "ListFleetAgentTracers": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListFleetClusters": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListFleetInstrumentedPods": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListFleetDeployments": {
     "tag": "Fleet Automation",
     "undo": {
@@ -109,6 +127,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ListFleetTracers": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListDatastores": {
