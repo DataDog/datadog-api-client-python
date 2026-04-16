@@ -591,6 +591,13 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 201 Successfully created the notification rule.
 
+  @team:DataDog/cloud-security-posture-management
+  Scenario: Create a new vulnerability-based notification rule with sast and secret rule types returns "Successfully created the notification rule." response
+    Given new "CreateVulnerabilityNotificationRule" request
+    And body with value {"data": {"attributes": {"enabled": true, "name": "{{ unique }}", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["sast_vulnerability", "secret_vulnerability"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the notification rule.
+
   @team:DataDog/k9-cloud-siem
   Scenario: Create a scheduled detection rule returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
