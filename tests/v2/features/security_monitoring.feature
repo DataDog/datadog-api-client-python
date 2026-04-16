@@ -1299,6 +1299,30 @@ Feature: Security Monitoring
     And the response "data[0].attributes.name" is equal to "suppression2 {{ unique_hash }}"
 
   @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get an indicator of compromise returns "Bad Request" response
+    Given operation "GetIndicatorOfCompromise" enabled
+    And new "GetIndicatorOfCompromise" request
+    And request contains "indicator" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: Get an indicator of compromise returns "Not Found" response
+    Given operation "GetIndicatorOfCompromise" enabled
+    And new "GetIndicatorOfCompromise" request
+    And request contains "indicator" parameter with value "this-indicator-does-not-exist.invalid"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: Get an indicator of compromise returns "OK" response
+    Given operation "GetIndicatorOfCompromise" enabled
+    And new "GetIndicatorOfCompromise" request
+    And request contains "indicator" parameter with value "masscan/1.3 (https://github.com/robertdavidgraham/masscan)"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Get content pack states returns "Not Found" response
     Given operation "GetContentPacksStates" enabled
     And new "GetContentPacksStates" request
@@ -1570,6 +1594,22 @@ Feature: Security Monitoring
     And new "ListThreatHuntingJobs" request
     And there is a valid "threat_hunting_job" in the system
     And request contains "filter[query]" parameter with value "id:{{threat_hunting_job.data.id}}"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: List indicators of compromise returns "Bad Request" response
+    Given operation "ListIndicatorsOfCompromise" enabled
+    And new "ListIndicatorsOfCompromise" request
+    And request contains "query" parameter with value "invalid:::query"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: List indicators of compromise returns "OK" response
+    Given operation "ListIndicatorsOfCompromise" enabled
+    And new "ListIndicatorsOfCompromise" request
+    And request contains "limit" parameter with value 1
     When the request is sent
     Then the response status is 200 OK
 

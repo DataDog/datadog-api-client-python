@@ -56,6 +56,8 @@ from datadog_api_client.v2.model.get_sbom_response import GetSBOMResponse
 from datadog_api_client.v2.model.sbom_format import SBOMFormat
 from datadog_api_client.v2.model.scanned_assets_metadata import ScannedAssetsMetadata
 from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
+from datadog_api_client.v2.model.io_c_explorer_list_response import IoCExplorerListResponse
+from datadog_api_client.v2.model.get_io_c_indicator_response import GetIoCIndicatorResponse
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
@@ -976,6 +978,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_indicator_of_compromise_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetIoCIndicatorResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/siem/ioc-explorer/indicator",
+                "operation_id": "get_indicator_of_compromise",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "indicator": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "indicator",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_investigation_log_queries_matching_signal_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalSuggestedActionsResponse,),
@@ -1664,6 +1689,54 @@ class SecurityMonitoringApi:
                 "detailed_findings": {
                     "openapi_types": (bool,),
                     "attribute": "detailed_findings",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_indicators_of_compromise_endpoint = _Endpoint(
+            settings={
+                "response_type": (IoCExplorerListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/siem/ioc-explorer",
+                "operation_id": "list_indicators_of_compromise",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "limit": {
+                    "validation": {
+                        "inclusive_maximum": 2147483647,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "offset": {
+                    "validation": {
+                        "inclusive_maximum": 2147483647,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "offset",
+                    "location": "query",
+                },
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
+                "sort_column": {
+                    "openapi_types": (str,),
+                    "attribute": "sort[column]",
+                    "location": "query",
+                },
+                "sort_order": {
+                    "openapi_types": (str,),
+                    "attribute": "sort[order]",
                     "location": "query",
                 },
             },
@@ -3447,6 +3520,23 @@ class SecurityMonitoringApi:
 
         return self._get_finding_endpoint.call_with_http_info(**kwargs)
 
+    def get_indicator_of_compromise(
+        self,
+        indicator: str,
+    ) -> GetIoCIndicatorResponse:
+        """Get an indicator of compromise.
+
+        Get detailed information about a specific indicator of compromise (IoC).
+
+        :param indicator: The indicator value to look up (for example, an IP address or domain).
+        :type indicator: str
+        :rtype: GetIoCIndicatorResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["indicator"] = indicator
+
+        return self._get_indicator_of_compromise_endpoint.call_with_http_info(**kwargs)
+
     def get_investigation_log_queries_matching_signal(
         self,
         signal_id: str,
@@ -4226,6 +4316,49 @@ class SecurityMonitoringApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_indicators_of_compromise(
+        self,
+        *,
+        limit: Union[int, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
+        sort_column: Union[str, UnsetType] = unset,
+        sort_order: Union[str, UnsetType] = unset,
+    ) -> IoCExplorerListResponse:
+        """List indicators of compromise.
+
+        Get a list of indicators of compromise (IoCs) matching the specified filters.
+
+        :param limit: Number of results per page.
+        :type limit: int, optional
+        :param offset: Pagination offset.
+        :type offset: int, optional
+        :param query: Search/filter query (supports field:value syntax).
+        :type query: str, optional
+        :param sort_column: Sort column: score, first_seen_ts_epoch, last_seen_ts_epoch, indicator, indicator_type, signal_count, log_count, category, as_type.
+        :type sort_column: str, optional
+        :param sort_order: Sort order: asc or desc.
+        :type sort_order: str, optional
+        :rtype: IoCExplorerListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        if query is not unset:
+            kwargs["query"] = query
+
+        if sort_column is not unset:
+            kwargs["sort_column"] = sort_column
+
+        if sort_order is not unset:
+            kwargs["sort_order"] = sort_order
+
+        return self._list_indicators_of_compromise_endpoint.call_with_http_info(**kwargs)
 
     def list_multiple_rulesets(
         self,

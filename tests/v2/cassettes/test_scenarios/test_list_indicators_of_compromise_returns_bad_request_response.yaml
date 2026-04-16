@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/siem/ioc-explorer?query=invalid%3A%3A%3Aquery
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"invalid query: invalid
+        query: syntax error: no viable alternative at input ''invalid::'' at line
+        1 and char position 8"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

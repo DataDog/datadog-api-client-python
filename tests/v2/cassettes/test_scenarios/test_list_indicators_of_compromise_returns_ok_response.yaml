@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/siem/ioc-explorer?limit=1
+  response:
+    body:
+      string: '{"data":{"id":"a4e3b616-e180-4b47-a379-43da9c5b300e","type":"ioc_explorer_response","attributes":{"data":[{"id":"43.228.157.121","indicator":"43.228.157.121","indicator_type":"IP
+        Address","score":8,"as_type":"hosting","malicious_sources":[{"name":"threatfox"}],"suspicious_sources":[{"name":"tor"},{"name":"SPUR"}],"benign_sources":null,"categories":["malware","tor","hosting_proxy"],"tags":[],"signal_matches":0,"log_matches":14,"signal_tier":0,"max_trust_score":"RAISE_SCORE","m_sources":"RAISE_SCORE","m_persistence":"NO_EFFECT","m_signal":"NO_EFFECT","m_as_type":"NO_EFFECT","as_geo":{"city":"Frankfurt
+        am Main","country_code":"DE","country_name":"Germany"}}],"metadata":{"count":25091},"paging":{"offset":1}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
