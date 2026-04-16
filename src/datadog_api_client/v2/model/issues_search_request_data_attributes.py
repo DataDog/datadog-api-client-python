@@ -3,13 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -26,6 +27,15 @@ if TYPE_CHECKING:
 
 
 class IssuesSearchRequestDataAttributes(ModelNormal):
+    validations = {
+        "assignee_ids": {
+            "max_items": 50,
+        },
+        "team_ids": {
+            "max_items": 50,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.issues_search_request_data_attributes_order_by import (
@@ -39,19 +49,23 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         )
 
         return {
+            "assignee_ids": ([UUID],),
             "_from": (int,),
             "order_by": (IssuesSearchRequestDataAttributesOrderBy,),
             "persona": (IssuesSearchRequestDataAttributesPersona,),
             "query": (str,),
+            "team_ids": ([UUID],),
             "to": (int,),
             "track": (IssuesSearchRequestDataAttributesTrack,),
         }
 
     attribute_map = {
+        "assignee_ids": "assignee_ids",
         "_from": "from",
         "order_by": "order_by",
         "persona": "persona",
         "query": "query",
+        "team_ids": "team_ids",
         "to": "to",
         "track": "track",
     }
@@ -61,13 +75,18 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         _from: int,
         query: str,
         to: int,
+        assignee_ids: Union[List[UUID], UnsetType] = unset,
         order_by: Union[IssuesSearchRequestDataAttributesOrderBy, UnsetType] = unset,
         persona: Union[IssuesSearchRequestDataAttributesPersona, UnsetType] = unset,
+        team_ids: Union[List[UUID], UnsetType] = unset,
         track: Union[IssuesSearchRequestDataAttributesTrack, UnsetType] = unset,
         **kwargs,
     ):
         """
         Object describing a search issue request.
+
+        :param assignee_ids: Filter issues by assignee IDs. Multiple values are combined with OR logic.
+        :type assignee_ids: [UUID], optional
 
         :param _from: Start date (inclusive) of the query in milliseconds since the Unix epoch.
         :type _from: int
@@ -81,16 +100,23 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         :param query: Search query following the event search syntax.
         :type query: str
 
+        :param team_ids: Filter issues by team IDs. Multiple values are combined with OR logic.
+        :type team_ids: [UUID], optional
+
         :param to: End date (exclusive) of the query in milliseconds since the Unix epoch.
         :type to: int
 
         :param track: Track of the events to query. Either track(s) or persona(s) must be specified.
         :type track: IssuesSearchRequestDataAttributesTrack, optional
         """
+        if assignee_ids is not unset:
+            kwargs["assignee_ids"] = assignee_ids
         if order_by is not unset:
             kwargs["order_by"] = order_by
         if persona is not unset:
             kwargs["persona"] = persona
+        if team_ids is not unset:
+            kwargs["team_ids"] = team_ids
         if track is not unset:
             kwargs["track"] = track
         super().__init__(kwargs)
