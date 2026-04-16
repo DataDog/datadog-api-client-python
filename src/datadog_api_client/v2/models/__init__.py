@@ -2383,6 +2383,9 @@ from datadog_api_client.v2.model.get_investigation_response_data_attributes impo
     GetInvestigationResponseDataAttributes,
 )
 from datadog_api_client.v2.model.get_investigation_response_links import GetInvestigationResponseLinks
+from datadog_api_client.v2.model.get_io_c_indicator_response import GetIoCIndicatorResponse
+from datadog_api_client.v2.model.get_io_c_indicator_response_attributes import GetIoCIndicatorResponseAttributes
+from datadog_api_client.v2.model.get_io_c_indicator_response_data import GetIoCIndicatorResponseData
 from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
 from datadog_api_client.v2.model.get_mapping_response import GetMappingResponse
 from datadog_api_client.v2.model.get_mapping_response_data import GetMappingResponseData
@@ -2878,6 +2881,17 @@ from datadog_api_client.v2.model.interface_attributes import InterfaceAttributes
 from datadog_api_client.v2.model.interface_attributes_status import InterfaceAttributesStatus
 from datadog_api_client.v2.model.investigation_conclusion import InvestigationConclusion
 from datadog_api_client.v2.model.investigation_type import InvestigationType
+from datadog_api_client.v2.model.io_c_explorer_list_response import IoCExplorerListResponse
+from datadog_api_client.v2.model.io_c_explorer_list_response_attributes import IoCExplorerListResponseAttributes
+from datadog_api_client.v2.model.io_c_explorer_list_response_data import IoCExplorerListResponseData
+from datadog_api_client.v2.model.io_c_explorer_list_response_metadata import IoCExplorerListResponseMetadata
+from datadog_api_client.v2.model.io_c_explorer_list_response_paging import IoCExplorerListResponsePaging
+from datadog_api_client.v2.model.io_c_geo_location import IoCGeoLocation
+from datadog_api_client.v2.model.io_c_indicator import IoCIndicator
+from datadog_api_client.v2.model.io_c_indicator_detailed import IoCIndicatorDetailed
+from datadog_api_client.v2.model.io_c_score_effect import IoCScoreEffect
+from datadog_api_client.v2.model.io_c_signal_severity_count import IoCSignalSeverityCount
+from datadog_api_client.v2.model.io_c_source import IoCSource
 from datadog_api_client.v2.model.issue import Issue
 from datadog_api_client.v2.model.issue_assignee_relationship import IssueAssigneeRelationship
 from datadog_api_client.v2.model.issue_attributes import IssueAttributes
@@ -8963,6 +8977,9 @@ __all__ = [
     "GetInvestigationResponseData",
     "GetInvestigationResponseDataAttributes",
     "GetInvestigationResponseLinks",
+    "GetIoCIndicatorResponse",
+    "GetIoCIndicatorResponseAttributes",
+    "GetIoCIndicatorResponseData",
     "GetIssueIncludeQueryParameterItem",
     "GetMappingResponse",
     "GetMappingResponseData",
@@ -9336,6 +9353,17 @@ __all__ = [
     "InterfaceAttributesStatus",
     "InvestigationConclusion",
     "InvestigationType",
+    "IoCExplorerListResponse",
+    "IoCExplorerListResponseAttributes",
+    "IoCExplorerListResponseData",
+    "IoCExplorerListResponseMetadata",
+    "IoCExplorerListResponsePaging",
+    "IoCGeoLocation",
+    "IoCIndicator",
+    "IoCIndicatorDetailed",
+    "IoCScoreEffect",
+    "IoCSignalSeverityCount",
+    "IoCSource",
     "Issue",
     "IssueAssigneeRelationship",
     "IssueAttributes",

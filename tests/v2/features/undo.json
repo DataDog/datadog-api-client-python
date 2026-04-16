@@ -5283,6 +5283,18 @@
       "type": "safe"
     }
   },
+  "ListIndicatorsOfCompromise": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetIndicatorOfCompromise": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSignalNotificationRules": {
     "tag": "Security Monitoring",
     "undo": {

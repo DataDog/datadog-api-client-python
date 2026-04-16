@@ -12506,6 +12506,27 @@ datadog\_api\_client.v2.model.get\_investigation\_response\_links module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.get\_io\_c\_indicator\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_io_c_indicator_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_io\_c\_indicator\_response\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_io_c_indicator_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_io\_c\_indicator\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_io_c_indicator_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.get\_issue\_include\_query\_parameter\_item module
 --------------------------------------------------------------------------------
 
@@ -15051,6 +15072,83 @@ datadog\_api\_client.v2.model.investigation\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.investigation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_explorer\_list\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_explorer_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_explorer\_list\_response\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_explorer_list_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_explorer\_list\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_explorer_list_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_explorer\_list\_response\_metadata module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_explorer_list_response_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_explorer\_list\_response\_paging module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_explorer_list_response_paging
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_geo\_location module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_geo_location
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_indicator module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_indicator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_indicator\_detailed module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_indicator_detailed
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_score\_effect module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_score_effect
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_signal\_severity\_count module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_signal_severity_count
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_source module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_source
    :members:
    :show-inheritance:
 

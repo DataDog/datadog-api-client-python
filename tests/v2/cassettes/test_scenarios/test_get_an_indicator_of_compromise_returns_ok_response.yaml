@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/siem/ioc-explorer/indicator?indicator=masscan%2F1.3%20%28https%3A%2F%2Fgithub.com%2Frobertdavidgraham%2Fmasscan%29
+  response:
+    body:
+      string: '{"data":{"id":"65a31893-cc59-4125-9424-44f7ba083e53","type":"get_indicator_response","attributes":{"data":{"id":"masscan/1.3
+        (https://github.com/robertdavidgraham/masscan)","indicator":"masscan/1.3 (https://github.com/robertdavidgraham/masscan)","indicator_type":"User
+        Agent","score":4,"as_type":"hosting","malicious_sources":null,"suspicious_sources":[{"name":"Datadog
+        Threat Research"}],"benign_sources":null,"categories":["scanner"],"tags":[],"signal_matches":0,"log_matches":45,"first_seen":"2025-01-08T23:24:45Z","last_seen":"2026-04-10T14:36:20Z","signal_tier":0,"max_trust_score":"RAISE_SCORE","m_sources":"NO_EFFECT","m_persistence":"RAISE_SCORE","m_signal":"NO_EFFECT","m_as_type":"NO_EFFECT","log_sources":[],"services":[],"signal_severity":[],"users":{},"critical_assets":[],"hosts":[],"as_number":"","as_organization":"","as_cidr_block":""}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
