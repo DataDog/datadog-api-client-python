@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"formulas":[{"formula":"a","limit":{"count":10,"order":"desc"}}],"from":1776290803000,"interval":5000,"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","indexes":["*"],"name":"a","search":{"query":"*"}}],"to":1776294403000},"type":"timeseries_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/query/timeseries
+  response:
+    body:
+      string: '{"data":{"id":"0","type":"timeseries_response","attributes":{"series":[{"group_tags":[],"query_index":0,"unit":null}],"times":[1776290870000,1776291170000,1776291175000,1776291470000,1776291770000,1776292070000,1776292370000,1776292670000,1776292970000,1776293270000,1776293570000,1776293870000,1776294170000],"values":[[28,30,2,28,30,27,26,26,27,30,28,26,30]]}}}
+
+        '
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

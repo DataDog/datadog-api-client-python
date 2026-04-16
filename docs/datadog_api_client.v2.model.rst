@@ -606,6 +606,76 @@ datadog\_api\_client.v2.model.api\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.apm\_dependency\_stat\_name module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_dependency_stat_name
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_dependency\_stats\_data\_source module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_dependency_stats_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_dependency\_stats\_query module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_dependency_stats_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_metrics\_data\_source module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_metrics_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_metrics\_query module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_metrics_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_metrics\_span\_kind module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_metrics_span_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_metrics\_stat module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_metrics_stat
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_resource\_stat\_name module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_resource_stat_name
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_resource\_stats\_data\_source module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_resource_stats_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_resource\_stats\_query module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_resource_stats_query
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.apm\_retention\_filter\_type module
 -----------------------------------------------------------------
 
@@ -5674,6 +5744,13 @@ datadog\_api\_client.v2.model.container\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.container\_data\_source module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_data_source
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.container\_group module
 -----------------------------------------------------
 
@@ -5860,6 +5937,20 @@ datadog\_api\_client.v2.model.container\_meta\_page\_type module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.container_meta_page_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.container\_scalar\_query module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_scalar_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.container\_timeseries\_query module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.container_timeseries_query
    :members:
    :show-inheritance:
 
@@ -23510,6 +23601,20 @@ datadog\_api\_client.v2.model.preview\_entity\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.process\_data\_source module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.process_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.process\_scalar\_query module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.process_scalar_query
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.process\_summaries\_meta module
 -------------------------------------------------------------
 
@@ -23549,6 +23654,13 @@ datadog\_api\_client.v2.model.process\_summary\_type module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.process_summary_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.process\_timeseries\_query module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.process_timeseries_query
    :members:
    :show-inheritance:
 
@@ -29936,6 +30048,20 @@ datadog\_api\_client.v2.model.slack\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.slo\_data\_source module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slo\_query module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slo_query
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.slo\_report\_create\_request module
 -----------------------------------------------------------------
 
@@ -30031,6 +30157,27 @@ datadog\_api\_client.v2.model.slo\_status\_type module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.slo_status_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slos\_group\_mode module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slos_group_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slos\_measure module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slos_measure
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slos\_query\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slos_query_type
    :members:
    :show-inheritance:
 

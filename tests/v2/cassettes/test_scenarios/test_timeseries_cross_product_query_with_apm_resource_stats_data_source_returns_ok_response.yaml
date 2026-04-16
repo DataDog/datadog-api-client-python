@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"formulas":[{"formula":"a","limit":{"count":10,"order":"desc"}}],"from":1775658332000,"interval":5000,"queries":[{"data_source":"apm_resource_stats","env":"staging","group_by":["resource_name"],"name":"a","operation_name":"cassandra.query","primary_tag_name":"datacenter","primary_tag_value":"*","service":"azure-bill-import","stat":"hits"}],"to":1775661932000},"type":"timeseries_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/query/timeseries
+  response:
+    body:
+      string: '{"data":{"id":"0","type":"timeseries_response","attributes":{"series":[],"times":[],"values":[]}}}
+
+        '
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
