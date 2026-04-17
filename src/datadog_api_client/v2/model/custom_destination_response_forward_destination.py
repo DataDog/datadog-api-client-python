@@ -27,9 +27,10 @@ class CustomDestinationResponseForwardDestination(ModelComposed):
 
         :param sourcetype: The Splunk sourcetype for the events sent to this Splunk destination.
 
-            If absent, the default sourcetype `_json` is used. If set to null, the `sourcetype`
-            field is omitted from the Splunk HEC payload entirely. Otherwise, the provided string
-            value is used as the sourcetype.
+            If the field is absent from the request and no sourcetype has been previously set on this destination, the default sourcetype `_json` is used.
+            On update, if the field is absent from the request but a sourcetype was previously set, the previous value is kept.
+            If set to `null`, the sourcetype field is omitted from the forwarded event entirely.
+            Otherwise, the provided string value is used as the sourcetype.
         :type sourcetype: str, none_type, optional
 
         :param index_name: Name of the Elasticsearch index (must follow [Elasticsearch's criteria](https://www.elastic.co/guide/en/elasticsearch/reference/8.11/indices-create-index.html#indices-create-api-path-params)).
