@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test-Export_security_monitoring_resources_to_Terraform_returns_OK_response-1775811378","enabled":true,"name":"suppression
+      281e64d265076a2a","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
+  response:
+    body:
+      string: '{"data":{"id":"vgr-gcw-s7m","type":"suppressions","attributes":{"creation_date":1775811378970,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"data_exclusion_query":"","description":"Test-Export_security_monitoring_resources_to_Terraform_returns_OK_response-1775811378","editable":true,"enabled":true,"name":"suppression
+        281e64d265076a2a","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1775811378970,"updater":{"handle":"frog@datadoghq.com","name":"frog"},"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"resource_ids":["vgr-gcw-s7m"]},"type":"bulk_export_resources"}}'
+    headers:
+      accept:
+      - application/zip, application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/terraform/suppressions/bulk
+  response:
+    body:
+      string: UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAAaAAAAc3VwcHJlc3Npb25fdmdyLWdjdy1zN20udGZsjj1PMzEQhPv7FSvXr6U4L8lFka6koqBJh5Dl2JvD0p33srsORIj/jo4PEVCmfuaZYRSqHBFMChoS9V4wVs569iOVrMS59F7qNDGKZCoGzKln28dnK+1o4LUBSCiR86SZCnymA7NDUXv7MhHrVef3snglv0PmcCAePaNWLuLv72ZioiJoXduuNs79bzemAcAS9gMm+EkHyhUbgBJGhF/pwFych+XG4fomLderRbsOyzD7uA7ojxX5fFn6+LaNA9WkHPIwkxemr0IHBstpqyg6Axp6+bv/cMX1D4xifCr5WHG7c84t7J6roj0QRzSPzVvzHgAA//9QSwcIw6lzsPYAAACZAQAAUEsBAhQAFAAIAAgAAAAAAMOpc7D2AAAAmQEAABoAAAAAAAAAAAAAAAAAAAAAAHN1cHByZXNzaW9uX3Znci1nY3ctczdtLnRmUEsFBgAAAAABAAEASAAAAD4BAAAAAA==
+    headers:
+      content-type:
+      - application/zip
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/vgr-gcw-s7m
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -5869,6 +5869,34 @@ from datadog_api_client.v2.model.security_monitoring_suppressions_page_meta impo
     SecurityMonitoringSuppressionsPageMeta,
 )
 from datadog_api_client.v2.model.security_monitoring_suppressions_response import SecurityMonitoringSuppressionsResponse
+from datadog_api_client.v2.model.security_monitoring_terraform_bulk_export_attributes import (
+    SecurityMonitoringTerraformBulkExportAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_bulk_export_data import (
+    SecurityMonitoringTerraformBulkExportData,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_bulk_export_request import (
+    SecurityMonitoringTerraformBulkExportRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_convert_attributes import (
+    SecurityMonitoringTerraformConvertAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_convert_data import (
+    SecurityMonitoringTerraformConvertData,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_convert_request import (
+    SecurityMonitoringTerraformConvertRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_export_attributes import (
+    SecurityMonitoringTerraformExportAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_export_data import SecurityMonitoringTerraformExportData
+from datadog_api_client.v2.model.security_monitoring_terraform_export_response import (
+    SecurityMonitoringTerraformExportResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_resource_type import (
+    SecurityMonitoringTerraformResourceType,
+)
 from datadog_api_client.v2.model.security_monitoring_third_party_root_query import SecurityMonitoringThirdPartyRootQuery
 from datadog_api_client.v2.model.security_monitoring_third_party_rule_case import SecurityMonitoringThirdPartyRuleCase
 from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
@@ -11324,6 +11352,16 @@ __all__ = [
     "SecurityMonitoringSuppressionsMeta",
     "SecurityMonitoringSuppressionsPageMeta",
     "SecurityMonitoringSuppressionsResponse",
+    "SecurityMonitoringTerraformBulkExportAttributes",
+    "SecurityMonitoringTerraformBulkExportData",
+    "SecurityMonitoringTerraformBulkExportRequest",
+    "SecurityMonitoringTerraformConvertAttributes",
+    "SecurityMonitoringTerraformConvertData",
+    "SecurityMonitoringTerraformConvertRequest",
+    "SecurityMonitoringTerraformExportAttributes",
+    "SecurityMonitoringTerraformExportData",
+    "SecurityMonitoringTerraformExportResponse",
+    "SecurityMonitoringTerraformResourceType",
     "SecurityMonitoringThirdPartyRootQuery",
     "SecurityMonitoringThirdPartyRuleCase",
     "SecurityMonitoringThirdPartyRuleCaseCreate",

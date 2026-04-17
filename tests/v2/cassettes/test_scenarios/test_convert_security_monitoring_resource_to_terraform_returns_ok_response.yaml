@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"resource_json":{"enabled":true,"name":"Example-Security-Monitoring","rule_query":"source:cloudtrail","suppression_query":"env:test"}},"id":"abc-123","type":"convert_resource"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/terraform/suppressions/convert
+  response:
+    body:
+      string: '{"data":{"id":"datadog_security_monitoring_suppression|abc-123","type":"format_resource","attributes":{"output":"resource
+        \"datadog_security_monitoring_suppression\" \"abc-123\" {\n  enabled           =
+        true\n  name              = \"Example-Security-Monitoring\"\n  rule_query        =
+        \"source:cloudtrail\"\n  suppression_query = \"env:test\"\n}\n","resource_id":"abc-123","type_name":"datadog_security_monitoring_suppression"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

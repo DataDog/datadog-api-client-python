@@ -153,6 +153,18 @@ from datadog_api_client.v2.model.security_monitoring_signal_suggested_actions_re
 from datadog_api_client.v2.model.security_monitoring_signal_state_update_request import (
     SecurityMonitoringSignalStateUpdateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_terraform_resource_type import (
+    SecurityMonitoringTerraformResourceType,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_bulk_export_request import (
+    SecurityMonitoringTerraformBulkExportRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_export_response import (
+    SecurityMonitoringTerraformExportResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_terraform_convert_request import (
+    SecurityMonitoringTerraformConvertRequest,
+)
 from datadog_api_client.v2.model.list_threat_hunting_jobs_response import ListThreatHuntingJobsResponse
 from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.run_threat_hunting_job_request import RunThreatHuntingJobRequest
@@ -302,6 +314,32 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._bulk_export_security_monitoring_terraform_resources_endpoint = _Endpoint(
+            settings={
+                "response_type": (file_type,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/terraform/{resource_type}/bulk",
+                "operation_id": "bulk_export_security_monitoring_terraform_resources",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "resource_type": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringTerraformResourceType,),
+                    "attribute": "resource_type",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringTerraformBulkExportRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/zip", "application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._cancel_threat_hunting_job_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -381,6 +419,32 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (SecurityMonitoringRuleConvertPayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._convert_security_monitoring_terraform_resource_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringTerraformExportResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/terraform/{resource_type}/convert",
+                "operation_id": "convert_security_monitoring_terraform_resource",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "resource_type": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringTerraformResourceType,),
+                    "attribute": "resource_type",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringTerraformConvertRequest,),
                     "location": "body",
                 },
             },
@@ -876,6 +940,35 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._export_security_monitoring_terraform_resource_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringTerraformExportResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/terraform/{resource_type}/{resource_id}",
+                "operation_id": "export_security_monitoring_terraform_resource",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "resource_type": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringTerraformResourceType,),
+                    "attribute": "resource_type",
+                    "location": "path",
+                },
+                "resource_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "resource_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -2956,6 +3049,31 @@ class SecurityMonitoringApi:
 
         return self._bulk_export_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
+    def bulk_export_security_monitoring_terraform_resources(
+        self,
+        resource_type: SecurityMonitoringTerraformResourceType,
+        body: SecurityMonitoringTerraformBulkExportRequest,
+    ) -> file_type:
+        """Export security monitoring resources to Terraform.
+
+        Export multiple security monitoring resources to Terraform, packaged as a zip archive.
+        The ``resource_type`` path parameter specifies the type of resources to export
+        and must be one of ``suppressions`` or ``critical_assets``.
+        A maximum of 1000 resources can be exported in a single request.
+
+        :param resource_type: The type of security monitoring resource to export.
+        :type resource_type: SecurityMonitoringTerraformResourceType
+        :param body: The resource IDs to export.
+        :type body: SecurityMonitoringTerraformBulkExportRequest
+        :rtype: file_type
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["resource_type"] = resource_type
+
+        kwargs["body"] = body
+
+        return self._bulk_export_security_monitoring_terraform_resources_endpoint.call_with_http_info(**kwargs)
+
     def cancel_threat_hunting_job(
         self,
         job_id: str,
@@ -3039,6 +3157,30 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._convert_security_monitoring_rule_from_json_to_terraform_endpoint.call_with_http_info(**kwargs)
+
+    def convert_security_monitoring_terraform_resource(
+        self,
+        resource_type: SecurityMonitoringTerraformResourceType,
+        body: SecurityMonitoringTerraformConvertRequest,
+    ) -> SecurityMonitoringTerraformExportResponse:
+        """Convert security monitoring resource to Terraform.
+
+        Convert a security monitoring resource that doesn't (yet) exist from JSON to Terraform.
+        The ``resource_type`` path parameter specifies the type of resource to convert
+        and must be one of ``suppressions`` or ``critical_assets``.
+
+        :param resource_type: The type of security monitoring resource to export.
+        :type resource_type: SecurityMonitoringTerraformResourceType
+        :param body: The resource JSON to convert.
+        :type body: SecurityMonitoringTerraformConvertRequest
+        :rtype: SecurityMonitoringTerraformExportResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["resource_type"] = resource_type
+
+        kwargs["body"] = body
+
+        return self._convert_security_monitoring_terraform_resource_endpoint.call_with_http_info(**kwargs)
 
     def create_cases(
         self,
@@ -3442,6 +3584,30 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
+
+    def export_security_monitoring_terraform_resource(
+        self,
+        resource_type: SecurityMonitoringTerraformResourceType,
+        resource_id: str,
+    ) -> SecurityMonitoringTerraformExportResponse:
+        """Export security monitoring resource to Terraform.
+
+        Export a security monitoring resource to a Terraform configuration.
+        The ``resource_type`` path parameter specifies the type of resource to export
+        and must be one of ``suppressions`` or ``critical_assets``.
+
+        :param resource_type: The type of security monitoring resource to export.
+        :type resource_type: SecurityMonitoringTerraformResourceType
+        :param resource_id: The ID of the security monitoring resource to export.
+        :type resource_id: str
+        :rtype: SecurityMonitoringTerraformExportResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["resource_type"] = resource_type
+
+        kwargs["resource_id"] = resource_id
+
+        return self._export_security_monitoring_terraform_resource_endpoint.call_with_http_info(**kwargs)
 
     def get_content_packs_states(
         self,

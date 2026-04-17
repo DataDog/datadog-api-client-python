@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Test-Export_security_monitoring_resource_to_Terraform_returns_OK_response-1775811377","enabled":true,"name":"suppression
+      934620bff161fb60","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["technique:T1110-brute-force","source:cloudtrail"]},"type":"suppressions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions
+  response:
+    body:
+      string: '{"data":{"id":"urh-ldl-f7e","type":"suppressions","attributes":{"creation_date":1775811377666,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"data_exclusion_query":"","description":"Test-Export_security_monitoring_resource_to_Terraform_returns_OK_response-1775811377","editable":true,"enabled":true,"name":"suppression
+        934620bff161fb60","rule_query":"source:cloudtrail","suppression_query":"env:test","tags":["source:cloudtrail","technique:T1110-brute-force"],"update_date":1775811377666,"updater":{"handle":"frog@datadoghq.com","name":"frog"},"version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/terraform/suppressions/urh-ldl-f7e
+  response:
+    body:
+      string: '{"data":{"id":"datadog_security_monitoring_suppression|urh-ldl-f7e","type":"format_resource","attributes":{"output":"resource
+        \"datadog_security_monitoring_suppression\" \"urh-ldl-f7e\" {\n  description       =
+        \"Test-Export_security_monitoring_resource_to_Terraform_returns_OK_response-1775811377\"\n  enabled           =
+        true\n  name              = \"suppression 934620bff161fb60\"\n  rule_query        =
+        \"source:cloudtrail\"\n  suppression_query = \"env:test\"\n  tags              =
+        [\"source:cloudtrail\", \"technique:T1110-brute-force\"]\n}\n","resource_id":"urh-ldl-f7e","type_name":"datadog_security_monitoring_suppression"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/suppressions/urh-ldl-f7e
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
