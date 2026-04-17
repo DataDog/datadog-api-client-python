@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"formulas":[{"formula":"a","limit":{"count":10,"order":"desc"}}],"from":1775658331000,"queries":[{"data_source":"apm_metrics","group_by":["resource_name"],"name":"a","query_filter":"env:prod","service":"web-store","stat":"hits"}],"to":1775661931000},"type":"scalar_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/query/scalar
+  response:
+    body:
+      string: '{"data":{"id":"0","type":"scalar_response","attributes":{"columns":[{"name":"a","values":[],"type":"number","meta":{"unit":null}}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

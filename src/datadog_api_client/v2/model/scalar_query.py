@@ -38,6 +38,78 @@ class ScalarQuery(ModelComposed):
 
         :param search: Configuration of the search/filter for an events query.
         :type search: EventsSearch, optional
+
+        :param env: The environment to query.
+        :type env: str
+
+        :param operation_name: The APM operation name.
+        :type operation_name: str, optional
+
+        :param primary_tag_name: Name of the second primary tag used within APM. Required when `primary_tag_value` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
+        :type primary_tag_name: str, optional
+
+        :param primary_tag_value: Value of the second primary tag by which to filter APM data. `primary_tag_name` must also be specified.
+        :type primary_tag_value: str, optional
+
+        :param resource_name: The resource name to filter by.
+        :type resource_name: str, optional
+
+        :param service: The service name to filter by.
+        :type service: str
+
+        :param stat: The APM resource statistic to query.
+        :type stat: ApmResourceStatName
+
+        :param operation_mode: Optional operation mode to aggregate across operation names.
+        :type operation_mode: str, optional
+
+        :param peer_tags: Tags to query for a specific downstream entity (peer.service, peer.db_instance, peer.s3, peer.s3.bucket, etc.).
+        :type peer_tags: [str], optional
+
+        :param query_filter: Additional filters for the query using metrics query syntax (for example, env, primary_tag).
+        :type query_filter: str, optional
+
+        :param resource_hash: The resource hash for exact matching.
+        :type resource_hash: str, optional
+
+        :param span_kind: Describes the relationship between the span, its parents, and its children in a trace.
+        :type span_kind: ApmMetricsSpanKind, optional
+
+        :param is_upstream: Determines whether stats for upstream or downstream dependencies should be queried.
+        :type is_upstream: bool, optional
+
+        :param additional_query_filters: Additional filters applied to the SLO query.
+        :type additional_query_filters: str, optional
+
+        :param group_mode: How SLO results are grouped in the response.
+        :type group_mode: SlosGroupMode, optional
+
+        :param measure: The SLO measurement to retrieve.
+        :type measure: SlosMeasure
+
+        :param slo_id: The unique identifier of the SLO to query.
+        :type slo_id: str
+
+        :param slo_query_type: The type of SLO definition being queried.
+        :type slo_query_type: SlosQueryType, optional
+
+        :param is_normalized_cpu: Whether CPU metrics should be normalized by core count.
+        :type is_normalized_cpu: bool, optional
+
+        :param limit: Maximum number of results to return.
+        :type limit: int, optional
+
+        :param metric: The process metric to query.
+        :type metric: str
+
+        :param sort: Direction of sort.
+        :type sort: QuerySortOrder, optional
+
+        :param tag_filters: Tag filters to narrow down processes.
+        :type tag_filters: [str], optional
+
+        :param text_filter: A full-text search filter to match process names or commands.
+        :type text_filter: str, optional
         """
         super().__init__(kwargs)
 
@@ -52,10 +124,22 @@ class ScalarQuery(ModelComposed):
         # loading
         from datadog_api_client.v2.model.metrics_scalar_query import MetricsScalarQuery
         from datadog_api_client.v2.model.events_scalar_query import EventsScalarQuery
+        from datadog_api_client.v2.model.apm_resource_stats_query import ApmResourceStatsQuery
+        from datadog_api_client.v2.model.apm_metrics_query import ApmMetricsQuery
+        from datadog_api_client.v2.model.apm_dependency_stats_query import ApmDependencyStatsQuery
+        from datadog_api_client.v2.model.slo_query import SloQuery
+        from datadog_api_client.v2.model.process_scalar_query import ProcessScalarQuery
+        from datadog_api_client.v2.model.container_scalar_query import ContainerScalarQuery
 
         return {
             "oneOf": [
                 MetricsScalarQuery,
                 EventsScalarQuery,
+                ApmResourceStatsQuery,
+                ApmMetricsQuery,
+                ApmDependencyStatsQuery,
+                SloQuery,
+                ProcessScalarQuery,
+                ContainerScalarQuery,
             ],
         }

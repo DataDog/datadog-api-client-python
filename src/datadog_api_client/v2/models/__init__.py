@@ -195,6 +195,16 @@ from datadog_api_client.v2.model.anthropic_integration_update import AnthropicIn
 from datadog_api_client.v2.model.any_value import AnyValue
 from datadog_api_client.v2.model.any_value_item import AnyValueItem
 from datadog_api_client.v2.model.any_value_object import AnyValueObject
+from datadog_api_client.v2.model.apm_dependency_stat_name import ApmDependencyStatName
+from datadog_api_client.v2.model.apm_dependency_stats_data_source import ApmDependencyStatsDataSource
+from datadog_api_client.v2.model.apm_dependency_stats_query import ApmDependencyStatsQuery
+from datadog_api_client.v2.model.apm_metrics_data_source import ApmMetricsDataSource
+from datadog_api_client.v2.model.apm_metrics_query import ApmMetricsQuery
+from datadog_api_client.v2.model.apm_metrics_span_kind import ApmMetricsSpanKind
+from datadog_api_client.v2.model.apm_metrics_stat import ApmMetricsStat
+from datadog_api_client.v2.model.apm_resource_stat_name import ApmResourceStatName
+from datadog_api_client.v2.model.apm_resource_stats_data_source import ApmResourceStatsDataSource
+from datadog_api_client.v2.model.apm_resource_stats_query import ApmResourceStatsQuery
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
 from datadog_api_client.v2.model.app_builder_event import AppBuilderEvent
 from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventName
@@ -1081,6 +1091,7 @@ from datadog_api_client.v2.model.connections_page_pagination import ConnectionsP
 from datadog_api_client.v2.model.connections_response_meta import ConnectionsResponseMeta
 from datadog_api_client.v2.model.container import Container
 from datadog_api_client.v2.model.container_attributes import ContainerAttributes
+from datadog_api_client.v2.model.container_data_source import ContainerDataSource
 from datadog_api_client.v2.model.container_group import ContainerGroup
 from datadog_api_client.v2.model.container_group_attributes import ContainerGroupAttributes
 from datadog_api_client.v2.model.container_group_relationships import ContainerGroupRelationships
@@ -1110,6 +1121,8 @@ from datadog_api_client.v2.model.container_item import ContainerItem
 from datadog_api_client.v2.model.container_meta import ContainerMeta
 from datadog_api_client.v2.model.container_meta_page import ContainerMetaPage
 from datadog_api_client.v2.model.container_meta_page_type import ContainerMetaPageType
+from datadog_api_client.v2.model.container_scalar_query import ContainerScalarQuery
+from datadog_api_client.v2.model.container_timeseries_query import ContainerTimeseriesQuery
 from datadog_api_client.v2.model.container_type import ContainerType
 from datadog_api_client.v2.model.containers_response import ContainersResponse
 from datadog_api_client.v2.model.containers_response_links import ContainersResponseLinks
@@ -4828,12 +4841,15 @@ from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTem
 from datadog_api_client.v2.model.powerpacks_response_meta import PowerpacksResponseMeta
 from datadog_api_client.v2.model.powerpacks_response_meta_pagination import PowerpacksResponseMetaPagination
 from datadog_api_client.v2.model.preview_entity_response_data import PreviewEntityResponseData
+from datadog_api_client.v2.model.process_data_source import ProcessDataSource
+from datadog_api_client.v2.model.process_scalar_query import ProcessScalarQuery
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
 from datadog_api_client.v2.model.process_summaries_meta_page import ProcessSummariesMetaPage
 from datadog_api_client.v2.model.process_summaries_response import ProcessSummariesResponse
 from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
+from datadog_api_client.v2.model.process_timeseries_query import ProcessTimeseriesQuery
 from datadog_api_client.v2.model.product_analytics_analytics_query import ProductAnalyticsAnalyticsQuery
 from datadog_api_client.v2.model.product_analytics_analytics_request import ProductAnalyticsAnalyticsRequest
 from datadog_api_client.v2.model.product_analytics_analytics_request_attributes import (
@@ -6131,6 +6147,8 @@ from datadog_api_client.v2.model.single_aggregated_dns_response_data_type import
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
+from datadog_api_client.v2.model.slo_data_source import SloDataSource
+from datadog_api_client.v2.model.slo_query import SloQuery
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
 from datadog_api_client.v2.model.slo_report_create_request_attributes import SloReportCreateRequestAttributes
 from datadog_api_client.v2.model.slo_report_create_request_data import SloReportCreateRequestData
@@ -6138,6 +6156,9 @@ from datadog_api_client.v2.model.slo_status_data import SloStatusData
 from datadog_api_client.v2.model.slo_status_data_attributes import SloStatusDataAttributes
 from datadog_api_client.v2.model.slo_status_response import SloStatusResponse
 from datadog_api_client.v2.model.slo_status_type import SloStatusType
+from datadog_api_client.v2.model.slos_group_mode import SlosGroupMode
+from datadog_api_client.v2.model.slos_measure import SlosMeasure
+from datadog_api_client.v2.model.slos_query_type import SlosQueryType
 from datadog_api_client.v2.model.snapshot import Snapshot
 from datadog_api_client.v2.model.snapshot_array import SnapshotArray
 from datadog_api_client.v2.model.snapshot_create_request import SnapshotCreateRequest
@@ -7361,6 +7382,16 @@ __all__ = [
     "AnyValue",
     "AnyValueItem",
     "AnyValueObject",
+    "ApmDependencyStatName",
+    "ApmDependencyStatsDataSource",
+    "ApmDependencyStatsQuery",
+    "ApmMetricsDataSource",
+    "ApmMetricsQuery",
+    "ApmMetricsSpanKind",
+    "ApmMetricsStat",
+    "ApmResourceStatName",
+    "ApmResourceStatsDataSource",
+    "ApmResourceStatsQuery",
     "ApmRetentionFilterType",
     "AppBuilderEvent",
     "AppBuilderEventName",
@@ -8001,6 +8032,7 @@ __all__ = [
     "ConnectionsResponseMeta",
     "Container",
     "ContainerAttributes",
+    "ContainerDataSource",
     "ContainerGroup",
     "ContainerGroupAttributes",
     "ContainerGroupRelationships",
@@ -8028,6 +8060,8 @@ __all__ = [
     "ContainerMeta",
     "ContainerMetaPage",
     "ContainerMetaPageType",
+    "ContainerScalarQuery",
+    "ContainerTimeseriesQuery",
     "ContainerType",
     "ContainersResponse",
     "ContainersResponseLinks",
@@ -10564,12 +10598,15 @@ __all__ = [
     "PowerpacksResponseMeta",
     "PowerpacksResponseMetaPagination",
     "PreviewEntityResponseData",
+    "ProcessDataSource",
+    "ProcessScalarQuery",
     "ProcessSummariesMeta",
     "ProcessSummariesMetaPage",
     "ProcessSummariesResponse",
     "ProcessSummary",
     "ProcessSummaryAttributes",
     "ProcessSummaryType",
+    "ProcessTimeseriesQuery",
     "ProductAnalyticsAnalyticsQuery",
     "ProductAnalyticsAnalyticsRequest",
     "ProductAnalyticsAnalyticsRequestAttributes",
@@ -11493,6 +11530,8 @@ __all__ = [
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",
+    "SloDataSource",
+    "SloQuery",
     "SloReportCreateRequest",
     "SloReportCreateRequestAttributes",
     "SloReportCreateRequestData",
@@ -11500,6 +11539,9 @@ __all__ = [
     "SloStatusDataAttributes",
     "SloStatusResponse",
     "SloStatusType",
+    "SlosGroupMode",
+    "SlosMeasure",
+    "SlosQueryType",
     "Snapshot",
     "SnapshotArray",
     "SnapshotCreateRequest",

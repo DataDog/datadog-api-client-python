@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"formulas":[{"formula":"a","limit":{"count":10,"order":"desc"}}],"from":1775658332000,"queries":[{"additional_query_filters":"*","data_source":"slo","group_mode":"overall","measure":"slo_status","name":"a","slo_id":"12345678910","slo_query_type":"metric"}],"to":1775661932000},"type":"scalar_request"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/query/scalar
+  response:
+    body:
+      string: '{"data":{"id":"0","type":"scalar_response","attributes":{"columns":[{"name":"a","values":[],"type":"number","meta":{"unit":[{"family":"percentage","name":"percent","plural":"percent","scale_factor":1.0,"short_name":"%","id":17},null]}}]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

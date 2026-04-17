@@ -36,7 +36,7 @@ class MetricsTimeseriesQuery(ModelNormal):
 
     def __init__(self_, data_source: MetricsDataSource, query: str, name: Union[str, UnsetType] = unset, **kwargs):
         """
-        An individual timeseries metrics query.
+        A query against Datadog custom metrics or Cloud Cost data sources.
 
         :param data_source: A data source that is powered by the Metrics platform.
         :type data_source: MetricsDataSource

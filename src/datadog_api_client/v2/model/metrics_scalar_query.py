@@ -47,7 +47,7 @@ class MetricsScalarQuery(ModelNormal):
         **kwargs,
     ):
         """
-        An individual scalar metrics query.
+        A query against Datadog custom metrics or Cloud Cost data sources.
 
         :param aggregator: The type of aggregation that can be performed on metrics-based queries.
         :type aggregator: MetricsAggregator

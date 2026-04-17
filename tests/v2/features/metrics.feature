@@ -344,6 +344,177 @@ Feature: Metrics
     And the response "data.type" is equal to "scalar_response"
     And the response "data.attributes.columns[0].name" is equal to "a"
 
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with apm_dependency_stats data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "apm_dependency_stats", "name": "a", "env": "ci", "service": "cassandra", "stat": "avg_duration", "operation_name": "cassandra.query", "resource_name": "DELETE FROM monitor_history.monitor_state_change_history WHERE org_id = ? AND monitor_id IN ? AND group = ?", "primary_tag_name": "datacenter", "primary_tag_value": "edge-eu1.prod.dog"}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with apm_metrics data source and span_kind returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "apm_metrics", "name": "a", "stat": "hits", "service": "web-store", "query_filter": "env:prod", "span_kind": "server", "group_by": ["resource_name"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with apm_metrics data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "apm_metrics", "name": "a", "stat": "hits", "service": "web-store", "query_filter": "env:prod", "group_by": ["resource_name"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with apm_resource_stats data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "apm_resource_stats", "name": "a", "env": "staging", "service": "azure-bill-import", "stat": "hits", "operation_name": "cassandra.query", "group_by": ["resource_name"], "primary_tag_name": "datacenter", "primary_tag_value": "*"}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with audit data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "audit", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with ci_pipelines data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "ci_pipelines", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with ci_tests data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "ci_tests", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with container data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "container", "name": "a", "metric": "process.stat.container.cpu.system_pct", "aggregator": "avg", "tag_filters": [], "limit": 10, "sort": "desc"}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with events data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "events", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with logs data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "logs", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with network data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "network", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with on_call_events data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "on_call_events", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with process data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "process", "name": "a", "metric": "process.stat.cpu.total_pct", "aggregator": "avg", "text_filter": "", "tag_filters": [], "limit": 10, "sort": "desc", "is_normalized_cpu": false}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with product_analytics data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "product_analytics", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with profiles data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "profiles", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with rum data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "rum", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with security_signals data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "security_signals", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with slo data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "slo", "name": "a", "slo_id": "12345678910", "measure": "slo_status", "slo_query_type": "metric", "group_mode": "overall", "additional_query_filters": "*"}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with spans data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "spans", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
   @generated @skip @team:DataDog/metrics-intake
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request
@@ -411,6 +582,177 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:datadog.estimated_usage.metrics.custom{*}", "name": "a"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with apm_dependency_stats data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "apm_dependency_stats", "name": "a", "env": "ci", "service": "cassandra", "stat": "avg_duration", "operation_name": "cassandra.query", "resource_name": "DELETE FROM monitor_history.monitor_state_change_history WHERE org_id = ? AND monitor_id IN ? AND group = ?", "primary_tag_name": "datacenter", "primary_tag_value": "edge-eu1.prod.dog"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with apm_metrics data source and span_kind returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "apm_metrics", "name": "a", "stat": "hits", "service": "web-store", "query_filter": "env:prod", "span_kind": "server", "group_by": ["resource_name"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with apm_metrics data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "apm_metrics", "name": "a", "stat": "hits", "service": "web-store", "query_filter": "env:prod", "group_by": ["resource_name"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with apm_resource_stats data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "apm_resource_stats", "name": "a", "env": "staging", "service": "azure-bill-import", "stat": "hits", "operation_name": "cassandra.query", "group_by": ["resource_name"], "primary_tag_name": "datacenter", "primary_tag_value": "*"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with audit data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "audit", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with ci_pipelines data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "ci_pipelines", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with ci_tests data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "ci_tests", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with container data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "container", "name": "a", "metric": "process.stat.container.cpu.system_pct", "tag_filters": [], "limit": 10, "sort": "desc"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with events data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "events", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with logs data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "logs", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with network data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "network", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with on_call_events data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "on_call_events", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with process data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "process", "name": "a", "metric": "process.stat.cpu.total_pct", "text_filter": "", "tag_filters": [], "limit": 10, "sort": "desc", "is_normalized_cpu": false}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with product_analytics data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "product_analytics", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with profiles data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "profiles", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with rum data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "rum", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with security_signals data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "security_signals", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with slo data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "slo", "name": "a", "slo_id": "12345678910", "measure": "slo_status", "slo_query_type": "metric", "group_mode": "overall", "additional_query_filters": "*"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with spans data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "spans", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
