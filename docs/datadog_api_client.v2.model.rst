@@ -28732,6 +28732,76 @@ datadog\_api\_client.v2.model.security\_monitoring\_suppressions\_response modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_bulk\_export\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_bulk_export_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_bulk\_export\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_bulk_export_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_bulk\_export\_request module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_bulk_export_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_convert\_attributes module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_convert_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_convert\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_convert_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_convert\_request module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_convert_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_export\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_export_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_export\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_export_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_export\_response module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_export_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_terraform\_resource\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_terraform_resource_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_third\_party\_root\_query module
 ------------------------------------------------------------------------------------
 

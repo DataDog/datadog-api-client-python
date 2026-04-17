@@ -326,6 +326,26 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "terraformContent" is equal to "resource \"datadog_security_monitoring_rule\" \"_{{ unique_hash }}\" {\n\tname = \"_{{ unique_hash }}\"\n\tenabled = true\n\tquery {\n\t\tquery = \"@test:true\"\n\t\tgroup_by_fields = []\n\t\thas_optional_group_by_fields = false\n\t\tdistinct_fields = []\n\t\taggregation = \"count\"\n\t\tname = \"\"\n\t\tdata_source = \"logs\"\n\t}\n\toptions {\n\t\tkeep_alive = 3600\n\t\tmax_signal_duration = 86400\n\t\tdetection_method = \"threshold\"\n\t\tevaluation_window = 900\n\t}\n\tcase {\n\t\tname = \"\"\n\t\tstatus = \"info\"\n\t\tnotifications = []\n\t\tcondition = \"a > 0\"\n\t}\n\tmessage = \"Test rule\"\n\ttags = []\n\thas_extended_title = false\n\ttype = \"log_detection\"\n}\n"
 
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Convert security monitoring resource to Terraform returns "Bad Request" response
+    Given operation "ConvertSecurityMonitoringTerraformResource" enabled
+    And new "ConvertSecurityMonitoringTerraformResource" request
+    And request contains "resource_type" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resource_json": {"enabled": true, "name": "Custom suppression", "rule_query": "type:log_detection source:cloudtrail", "suppression_query": "env:staging status:low"}}, "id": "abc-123", "type": "convert_resource"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:DataDog/k9-cloud-siem
+  Scenario: Convert security monitoring resource to Terraform returns "OK" response
+    Given operation "ConvertSecurityMonitoringTerraformResource" enabled
+    And new "ConvertSecurityMonitoringTerraformResource" request
+    And request contains "resource_type" parameter with value "suppressions"
+    And body with value {"data": {"type": "convert_resource", "id": "abc-123", "attributes": {"resource_json": {"enabled": true, "name": "Example-Security-Monitoring", "rule_query": "source:cloudtrail", "suppression_query": "env:test"}}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.type_name" is equal to "datadog_security_monitoring_suppression"
+    And the response "data.attributes.resource_id" is equal to "abc-123"
+
   @team:DataDog/k9-investigation
   Scenario: Create Jira issue for security finding returns "Created" response
     Given new "CreateJiraIssues" request
@@ -934,6 +954,55 @@ Feature: Security Monitoring
     And body with value {"data": {"relationships": {"findings": {"data": [{"id": "wrong-finding-id", "type": "findings"}]}}, "type": "cases"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Export security monitoring resource to Terraform returns "Not Found" response
+    Given operation "ExportSecurityMonitoringTerraformResource" enabled
+    And new "ExportSecurityMonitoringTerraformResource" request
+    And request contains "resource_type" parameter from "REPLACE.ME"
+    And request contains "resource_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/k9-cloud-siem
+  Scenario: Export security monitoring resource to Terraform returns "OK" response
+    Given operation "ExportSecurityMonitoringTerraformResource" enabled
+    And there is a valid "suppression" in the system
+    And new "ExportSecurityMonitoringTerraformResource" request
+    And request contains "resource_type" parameter with value "suppressions"
+    And request contains "resource_id" parameter from "suppression.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.type_name" is equal to "datadog_security_monitoring_suppression"
+    And the response "data.attributes.resource_id" has the same value as "suppression.data.id"
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Export security monitoring resources to Terraform returns "Bad Request" response
+    Given operation "BulkExportSecurityMonitoringTerraformResources" enabled
+    And new "BulkExportSecurityMonitoringTerraformResources" request
+    And request contains "resource_type" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resource_ids": [""]}, "type": "bulk_export_resources"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Export security monitoring resources to Terraform returns "Not Found" response
+    Given operation "BulkExportSecurityMonitoringTerraformResources" enabled
+    And new "BulkExportSecurityMonitoringTerraformResources" request
+    And request contains "resource_type" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resource_ids": [""]}, "type": "bulk_export_resources"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:DataDog/k9-cloud-siem
+  Scenario: Export security monitoring resources to Terraform returns "OK" response
+    Given operation "BulkExportSecurityMonitoringTerraformResources" enabled
+    And there is a valid "suppression" in the system
+    And new "BulkExportSecurityMonitoringTerraformResources" request
+    And request contains "resource_type" parameter with value "suppressions"
+    And body with value {"data": {"attributes": {"resource_ids": ["{{ suppression.data.id }}"]}, "type": "bulk_export_resources"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response

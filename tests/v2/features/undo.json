@@ -5716,6 +5716,24 @@
       "type": "safe"
     }
   },
+  "BulkExportSecurityMonitoringTerraformResources": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ConvertSecurityMonitoringTerraformResource": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ExportSecurityMonitoringTerraformResource": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListScanningGroups": {
     "tag": "Sensitive Data Scanner",
     "undo": {
