@@ -9,7 +9,7 @@ interactions:
       content-type:
       - application/json
     method: POST
-    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs
+    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
   response:
     body:
       string: '{"data":{"id":"c3564eed-ff70-43e1-ab6f-593de95bd21f","type":"historicalDetectionsJob"}}'
@@ -25,7 +25,7 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/siem-threat-hunting/jobs?filter%5Bquery%5D=id%3Ac3564eed-ff70-43e1-ab6f-593de95bd21f
+    uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs?filter%5Bquery%5D=id%3Ac3564eed-ff70-43e1-ab6f-593de95bd21f
   response:
     body:
       string: '{"data":[{"id":"c3564eed-ff70-43e1-ab6f-593de95bd21f","type":"historicalDetectionsJob","attributes":{"createdAt":"2025-11-11

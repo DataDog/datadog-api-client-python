@@ -2565,6 +2565,13 @@ from datadog_api_client.v2.model.hamr_org_connection_request import HamrOrgConne
 from datadog_api_client.v2.model.hamr_org_connection_response import HamrOrgConnectionResponse
 from datadog_api_client.v2.model.hamr_org_connection_status import HamrOrgConnectionStatus
 from datadog_api_client.v2.model.hamr_org_connection_type import HamrOrgConnectionType
+from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
+from datadog_api_client.v2.model.historical_job_list_meta import HistoricalJobListMeta
+from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
+from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
+from datadog_api_client.v2.model.historical_job_response import HistoricalJobResponse
+from datadog_api_client.v2.model.historical_job_response_attributes import HistoricalJobResponseAttributes
+from datadog_api_client.v2.model.historical_job_response_data import HistoricalJobResponseData
 from datadog_api_client.v2.model.hourly_usage import HourlyUsage
 from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
 from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
@@ -3250,6 +3257,7 @@ from datadog_api_client.v2.model.list_feature_flags_response import ListFeatureF
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.list_historical_jobs_response import ListHistoricalJobsResponse
 from datadog_api_client.v2.model.list_integrations_response import ListIntegrationsResponse
 from datadog_api_client.v2.model.list_interface_tags_response import ListInterfaceTagsResponse
 from datadog_api_client.v2.model.list_interface_tags_response_data import ListInterfaceTagsResponseData
@@ -3280,7 +3288,6 @@ from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data_attributes import ListTagsResponseDataAttributes
 from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
-from datadog_api_client.v2.model.list_threat_hunting_jobs_response import ListThreatHuntingJobsResponse
 from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.log import Log
@@ -5329,10 +5336,10 @@ from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
 from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
-from datadog_api_client.v2.model.run_threat_hunting_job_request import RunThreatHuntingJobRequest
-from datadog_api_client.v2.model.run_threat_hunting_job_request_attributes import RunThreatHuntingJobRequestAttributes
-from datadog_api_client.v2.model.run_threat_hunting_job_request_data import RunThreatHuntingJobRequestData
-from datadog_api_client.v2.model.run_threat_hunting_job_request_data_type import RunThreatHuntingJobRequestDataType
+from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
+from datadog_api_client.v2.model.run_historical_job_request_attributes import RunHistoricalJobRequestAttributes
+from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
+from datadog_api_client.v2.model.run_historical_job_request_data_type import RunHistoricalJobRequestDataType
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
@@ -6869,13 +6876,6 @@ from datadog_api_client.v2.model.test_optimization_update_service_settings_reque
 from datadog_api_client.v2.model.test_optimization_update_service_settings_request_data_type import (
     TestOptimizationUpdateServiceSettingsRequestDataType,
 )
-from datadog_api_client.v2.model.threat_hunting_job_data_type import ThreatHuntingJobDataType
-from datadog_api_client.v2.model.threat_hunting_job_list_meta import ThreatHuntingJobListMeta
-from datadog_api_client.v2.model.threat_hunting_job_options import ThreatHuntingJobOptions
-from datadog_api_client.v2.model.threat_hunting_job_query import ThreatHuntingJobQuery
-from datadog_api_client.v2.model.threat_hunting_job_response import ThreatHuntingJobResponse
-from datadog_api_client.v2.model.threat_hunting_job_response_attributes import ThreatHuntingJobResponseAttributes
-from datadog_api_client.v2.model.threat_hunting_job_response_data import ThreatHuntingJobResponseData
 from datadog_api_client.v2.model.time_restriction import TimeRestriction
 from datadog_api_client.v2.model.time_restrictions import TimeRestrictions
 from datadog_api_client.v2.model.timeline_cell import TimelineCell
@@ -9160,6 +9160,13 @@ __all__ = [
     "HamrOrgConnectionResponse",
     "HamrOrgConnectionStatus",
     "HamrOrgConnectionType",
+    "HistoricalJobDataType",
+    "HistoricalJobListMeta",
+    "HistoricalJobOptions",
+    "HistoricalJobQuery",
+    "HistoricalJobResponse",
+    "HistoricalJobResponseAttributes",
+    "HistoricalJobResponseData",
     "HourlyUsage",
     "HourlyUsageAttributes",
     "HourlyUsageMeasurement",
@@ -9691,6 +9698,7 @@ __all__ = [
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
+    "ListHistoricalJobsResponse",
     "ListIntegrationsResponse",
     "ListInterfaceTagsResponse",
     "ListInterfaceTagsResponseData",
@@ -9719,7 +9727,6 @@ __all__ = [
     "ListTagsResponseDataAttributes",
     "ListTeamsInclude",
     "ListTeamsSort",
-    "ListThreatHuntingJobsResponse",
     "ListVulnerabilitiesResponse",
     "ListVulnerableAssetsResponse",
     "Log",
@@ -11028,10 +11035,10 @@ __all__ = [
     "RumRetentionFiltersOrderRequest",
     "RumRetentionFiltersOrderResponse",
     "RumRetentionFiltersResponse",
-    "RunThreatHuntingJobRequest",
-    "RunThreatHuntingJobRequestAttributes",
-    "RunThreatHuntingJobRequestData",
-    "RunThreatHuntingJobRequestDataType",
+    "RunHistoricalJobRequest",
+    "RunHistoricalJobRequestAttributes",
+    "RunHistoricalJobRequestData",
+    "RunHistoricalJobRequestDataType",
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
@@ -12032,13 +12039,6 @@ __all__ = [
     "TestOptimizationUpdateServiceSettingsRequestAttributes",
     "TestOptimizationUpdateServiceSettingsRequestData",
     "TestOptimizationUpdateServiceSettingsRequestDataType",
-    "ThreatHuntingJobDataType",
-    "ThreatHuntingJobListMeta",
-    "ThreatHuntingJobOptions",
-    "ThreatHuntingJobQuery",
-    "ThreatHuntingJobResponse",
-    "ThreatHuntingJobResponseAttributes",
-    "ThreatHuntingJobResponseData",
     "TimeRestriction",
     "TimeRestrictions",
     "TimelineCell",
