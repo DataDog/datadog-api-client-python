@@ -14,17 +14,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.threat_hunting_job_data_type import ThreatHuntingJobDataType
+    from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
 
 
 class JobCreateResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.threat_hunting_job_data_type import ThreatHuntingJobDataType
+        from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
 
         return {
             "id": (str,),
-            "type": (ThreatHuntingJobDataType,),
+            "type": (HistoricalJobDataType,),
         }
 
     attribute_map = {
@@ -33,7 +33,7 @@ class JobCreateResponseData(ModelNormal):
     }
 
     def __init__(
-        self_, id: Union[str, UnsetType] = unset, type: Union[ThreatHuntingJobDataType, UnsetType] = unset, **kwargs
+        self_, id: Union[str, UnsetType] = unset, type: Union[HistoricalJobDataType, UnsetType] = unset, **kwargs
     ):
         """
         The definition of ``JobCreateResponseData`` object.
@@ -42,7 +42,7 @@ class JobCreateResponseData(ModelNormal):
         :type id: str, optional
 
         :param type: Type of payload.
-        :type type: ThreatHuntingJobDataType, optional
+        :type type: HistoricalJobDataType, optional
         """
         if id is not unset:
             kwargs["id"] = id

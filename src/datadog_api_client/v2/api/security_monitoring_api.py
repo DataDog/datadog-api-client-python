@@ -165,11 +165,11 @@ from datadog_api_client.v2.model.security_monitoring_terraform_export_response i
 from datadog_api_client.v2.model.security_monitoring_terraform_convert_request import (
     SecurityMonitoringTerraformConvertRequest,
 )
-from datadog_api_client.v2.model.list_threat_hunting_jobs_response import ListThreatHuntingJobsResponse
+from datadog_api_client.v2.model.list_historical_jobs_response import ListHistoricalJobsResponse
 from datadog_api_client.v2.model.job_create_response import JobCreateResponse
-from datadog_api_client.v2.model.run_threat_hunting_job_request import RunThreatHuntingJobRequest
+from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
-from datadog_api_client.v2.model.threat_hunting_job_response import ThreatHuntingJobResponse
+from datadog_api_client.v2.model.historical_job_response import HistoricalJobResponse
 from datadog_api_client.v2.model.get_multiple_rulesets_response import GetMultipleRulesetsResponse
 from datadog_api_client.v2.model.get_multiple_rulesets_request import GetMultipleRulesetsRequest
 from datadog_api_client.v2.model.secret_rule_array import SecretRuleArray
@@ -340,12 +340,12 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-        self._cancel_threat_hunting_job_endpoint = _Endpoint(
+        self._cancel_historical_job_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/jobs/{job_id}/cancel",
-                "operation_id": "cancel_threat_hunting_job",
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs/{job_id}/cancel",
+                "operation_id": "cancel_historical_job",
                 "http_method": "PATCH",
                 "version": "v2",
             },
@@ -390,7 +390,7 @@ class SecurityMonitoringApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/jobs/signal_convert",
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs/signal_convert",
                 "operation_id": "convert_job_result_to_signal",
                 "http_method": "POST",
                 "version": "v2",
@@ -684,6 +684,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._delete_historical_job_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs/{job_id}",
+                "operation_id": "delete_historical_job",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "job_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "job_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -790,29 +813,6 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
-            },
-            api_client=api_client,
-        )
-
-        self._delete_threat_hunting_job_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/jobs/{job_id}",
-                "operation_id": "delete_threat_hunting_job",
-                "http_method": "DELETE",
-                "version": "v2",
-            },
-            params_map={
-                "job_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "job_id",
                     "location": "path",
                 },
             },
@@ -1071,6 +1071,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_historical_job_endpoint = _Endpoint(
+            settings={
+                "response_type": (HistoricalJobResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs/{job_id}",
+                "operation_id": "get_historical_job",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "job_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "job_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_indicator_of_compromise_endpoint = _Endpoint(
             settings={
                 "response_type": (GetIoCIndicatorResponse,),
@@ -1287,7 +1310,7 @@ class SecurityMonitoringApi:
             settings={
                 "response_type": (SecurityMonitoringSignalResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/histsignals/{histsignal_id}",
+                "endpoint_path": "/api/v2/siem-historical-detections/histsignals/{histsignal_id}",
                 "operation_id": "get_security_monitoring_histsignal",
                 "http_method": "GET",
                 "version": "v2",
@@ -1310,7 +1333,7 @@ class SecurityMonitoringApi:
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/jobs/{job_id}/histsignals",
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs/{job_id}/histsignals",
                 "operation_id": "get_security_monitoring_histsignals_by_job_id",
                 "http_method": "GET",
                 "version": "v2",
@@ -1569,29 +1592,6 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-        self._get_threat_hunting_job_endpoint = _Endpoint(
-            settings={
-                "response_type": (ThreatHuntingJobResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/jobs/{job_id}",
-                "operation_id": "get_threat_hunting_job",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "job_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "job_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
         self._get_vulnerability_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
@@ -1782,6 +1782,43 @@ class SecurityMonitoringApi:
                 "detailed_findings": {
                     "openapi_types": (bool,),
                     "attribute": "detailed_findings",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_historical_jobs_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListHistoricalJobsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs",
+                "operation_id": "list_historical_jobs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
                     "location": "query",
                 },
             },
@@ -1986,7 +2023,7 @@ class SecurityMonitoringApi:
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/histsignals",
+                "endpoint_path": "/api/v2/siem-historical-detections/histsignals",
                 "operation_id": "list_security_monitoring_histsignals",
                 "http_method": "GET",
                 "version": "v2",
@@ -2147,43 +2184,6 @@ class SecurityMonitoringApi:
                 "page_number": {
                     "openapi_types": (int,),
                     "attribute": "page[number]",
-                    "location": "query",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._list_threat_hunting_jobs_endpoint = _Endpoint(
-            settings={
-                "response_type": (ListThreatHuntingJobsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/jobs",
-                "operation_id": "list_threat_hunting_jobs",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "page_size": {
-                    "openapi_types": (int,),
-                    "attribute": "page[size]",
-                    "location": "query",
-                },
-                "page_number": {
-                    "openapi_types": (int,),
-                    "attribute": "page[number]",
-                    "location": "query",
-                },
-                "sort": {
-                    "openapi_types": (str,),
-                    "attribute": "sort",
-                    "location": "query",
-                },
-                "filter_query": {
-                    "openapi_types": (str,),
-                    "attribute": "filter[query]",
                     "location": "query",
                 },
             },
@@ -2617,19 +2617,19 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-        self._run_threat_hunting_job_endpoint = _Endpoint(
+        self._run_historical_job_endpoint = _Endpoint(
             settings={
                 "response_type": (JobCreateResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/jobs",
-                "operation_id": "run_threat_hunting_job",
+                "endpoint_path": "/api/v2/siem-historical-detections/jobs",
+                "operation_id": "run_historical_job",
                 "http_method": "POST",
                 "version": "v2",
             },
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (RunThreatHuntingJobRequest,),
+                    "openapi_types": (RunHistoricalJobRequest,),
                     "location": "body",
                 },
             },
@@ -2661,7 +2661,7 @@ class SecurityMonitoringApi:
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/siem-threat-hunting/histsignals/search",
+                "endpoint_path": "/api/v2/siem-historical-detections/histsignals/search",
                 "operation_id": "search_security_monitoring_histsignals",
                 "http_method": "GET",
                 "version": "v2",
@@ -3074,13 +3074,13 @@ class SecurityMonitoringApi:
 
         return self._bulk_export_security_monitoring_terraform_resources_endpoint.call_with_http_info(**kwargs)
 
-    def cancel_threat_hunting_job(
+    def cancel_historical_job(
         self,
         job_id: str,
     ) -> None:
-        """Cancel a threat hunting job.
+        """Cancel a historical job.
 
-        Cancel a threat hunting job.
+        Cancel a historical job.
 
         :param job_id: The ID of the job.
         :type job_id: str
@@ -3089,7 +3089,7 @@ class SecurityMonitoringApi:
         kwargs: Dict[str, Any] = {}
         kwargs["job_id"] = job_id
 
-        return self._cancel_threat_hunting_job_endpoint.call_with_http_info(**kwargs)
+        return self._cancel_historical_job_endpoint.call_with_http_info(**kwargs)
 
     def convert_existing_security_monitoring_rule(
         self,
@@ -3383,6 +3383,23 @@ class SecurityMonitoringApi:
 
         return self._delete_custom_framework_endpoint.call_with_http_info(**kwargs)
 
+    def delete_historical_job(
+        self,
+        job_id: str,
+    ) -> None:
+        """Delete an existing job.
+
+        Delete an existing job.
+
+        :param job_id: The ID of the job.
+        :type job_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["job_id"] = job_id
+
+        return self._delete_historical_job_endpoint.call_with_http_info(**kwargs)
+
     def delete_security_filter(
         self,
         security_filter_id: str,
@@ -3467,23 +3484,6 @@ class SecurityMonitoringApi:
         kwargs["id"] = id
 
         return self._delete_signal_notification_rule_endpoint.call_with_http_info(**kwargs)
-
-    def delete_threat_hunting_job(
-        self,
-        job_id: str,
-    ) -> None:
-        """Delete an existing job.
-
-        Delete an existing job.
-
-        :param job_id: The ID of the job.
-        :type job_id: str
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["job_id"] = job_id
-
-        return self._delete_threat_hunting_job_endpoint.call_with_http_info(**kwargs)
 
     def delete_vulnerability_notification_rule(
         self,
@@ -3686,6 +3686,23 @@ class SecurityMonitoringApi:
 
         return self._get_finding_endpoint.call_with_http_info(**kwargs)
 
+    def get_historical_job(
+        self,
+        job_id: str,
+    ) -> HistoricalJobResponse:
+        """Get a job's details.
+
+        Get a job's details.
+
+        :param job_id: The ID of the job.
+        :type job_id: str
+        :rtype: HistoricalJobResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["job_id"] = job_id
+
+        return self._get_historical_job_endpoint.call_with_http_info(**kwargs)
+
     def get_indicator_of_compromise(
         self,
         indicator: str,
@@ -3873,7 +3890,7 @@ class SecurityMonitoringApi:
 
         Get a hist signal's details.
 
-        :param histsignal_id: The ID of the threat hunting signal.
+        :param histsignal_id: The ID of the historical signal.
         :type histsignal_id: str
         :rtype: SecurityMonitoringSignalResponse
         """
@@ -4100,23 +4117,6 @@ class SecurityMonitoringApi:
             kwargs["page_number"] = page_number
 
         return self._get_suppression_version_history_endpoint.call_with_http_info(**kwargs)
-
-    def get_threat_hunting_job(
-        self,
-        job_id: str,
-    ) -> ThreatHuntingJobResponse:
-        """Get a job's details.
-
-        Get a job's details.
-
-        :param job_id: The ID of the job.
-        :type job_id: str
-        :rtype: ThreatHuntingJobResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["job_id"] = job_id
-
-        return self._get_threat_hunting_job_endpoint.call_with_http_info(**kwargs)
 
     def get_vulnerability_notification_rule(
         self,
@@ -4482,6 +4482,43 @@ class SecurityMonitoringApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_historical_jobs(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+    ) -> ListHistoricalJobsResponse:
+        """List historical jobs.
+
+        List historical jobs.
+
+        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param sort: The order of the jobs in results.
+        :type sort: str, optional
+        :param filter_query: Query used to filter items from the fetched list.
+        :type filter_query: str, optional
+        :rtype: ListHistoricalJobsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        return self._list_historical_jobs_endpoint.call_with_http_info(**kwargs)
 
     def list_indicators_of_compromise(
         self,
@@ -5011,43 +5048,6 @@ class SecurityMonitoringApi:
             kwargs["page_number"] = page_number
 
         return self._list_security_monitoring_suppressions_endpoint.call_with_http_info(**kwargs)
-
-    def list_threat_hunting_jobs(
-        self,
-        *,
-        page_size: Union[int, UnsetType] = unset,
-        page_number: Union[int, UnsetType] = unset,
-        sort: Union[str, UnsetType] = unset,
-        filter_query: Union[str, UnsetType] = unset,
-    ) -> ListThreatHuntingJobsResponse:
-        """List threat hunting jobs.
-
-        List threat hunting jobs.
-
-        :param page_size: Size for a given page. The maximum allowed value is 100.
-        :type page_size: int, optional
-        :param page_number: Specific page number to return.
-        :type page_number: int, optional
-        :param sort: The order of the jobs in results.
-        :type sort: str, optional
-        :param filter_query: Query used to filter items from the fetched list.
-        :type filter_query: str, optional
-        :rtype: ListThreatHuntingJobsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        if page_size is not unset:
-            kwargs["page_size"] = page_size
-
-        if page_number is not unset:
-            kwargs["page_number"] = page_number
-
-        if sort is not unset:
-            kwargs["sort"] = sort
-
-        if filter_query is not unset:
-            kwargs["filter_query"] = filter_query
-
-        return self._list_threat_hunting_jobs_endpoint.call_with_http_info(**kwargs)
 
     def list_vulnerabilities(
         self,
@@ -5605,21 +5605,21 @@ class SecurityMonitoringApi:
 
         return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
 
-    def run_threat_hunting_job(
+    def run_historical_job(
         self,
-        body: RunThreatHuntingJobRequest,
+        body: RunHistoricalJobRequest,
     ) -> JobCreateResponse:
-        """Run a threat hunting job.
+        """Run a historical job.
 
-        Run a threat hunting job.
+        Run a historical job.
 
-        :type body: RunThreatHuntingJobRequest
+        :type body: RunHistoricalJobRequest
         :rtype: JobCreateResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        return self._run_threat_hunting_job_endpoint.call_with_http_info(**kwargs)
+        return self._run_historical_job_endpoint.call_with_http_info(**kwargs)
 
     def search_security_findings(
         self,

@@ -16,8 +16,8 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.calculated_field import CalculatedField
     from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-    from datadog_api_client.v2.model.threat_hunting_job_options import ThreatHuntingJobOptions
-    from datadog_api_client.v2.model.threat_hunting_job_query import ThreatHuntingJobQuery
+    from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
+    from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
     from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
     from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
         SecurityMonitoringThirdPartyRuleCaseCreate,
@@ -29,8 +29,8 @@ class JobDefinition(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.calculated_field import CalculatedField
         from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
-        from datadog_api_client.v2.model.threat_hunting_job_options import ThreatHuntingJobOptions
-        from datadog_api_client.v2.model.threat_hunting_job_query import ThreatHuntingJobQuery
+        from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
+        from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
         from datadog_api_client.v2.model.security_monitoring_reference_table import SecurityMonitoringReferenceTable
         from datadog_api_client.v2.model.security_monitoring_third_party_rule_case_create import (
             SecurityMonitoringThirdPartyRuleCaseCreate,
@@ -44,8 +44,8 @@ class JobDefinition(ModelNormal):
             "index": (str,),
             "message": (str,),
             "name": (str,),
-            "options": (ThreatHuntingJobOptions,),
-            "queries": ([ThreatHuntingJobQuery],),
+            "options": (HistoricalJobOptions,),
+            "queries": ([HistoricalJobQuery],),
             "reference_tables": ([SecurityMonitoringReferenceTable],),
             "tags": ([str],),
             "third_party_cases": ([SecurityMonitoringThirdPartyRuleCaseCreate],),
@@ -77,11 +77,11 @@ class JobDefinition(ModelNormal):
         index: str,
         message: str,
         name: str,
-        queries: List[ThreatHuntingJobQuery],
+        queries: List[HistoricalJobQuery],
         to: int,
         calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
         group_signals_by: Union[List[str], UnsetType] = unset,
-        options: Union[ThreatHuntingJobOptions, UnsetType] = unset,
+        options: Union[HistoricalJobOptions, UnsetType] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCaseCreate], UnsetType] = unset,
@@ -89,7 +89,7 @@ class JobDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        Definition of a threat hunting job.
+        Definition of a historical job.
 
         :param calculated_fields: Calculated fields.
         :type calculated_fields: [CalculatedField], optional
@@ -113,10 +113,10 @@ class JobDefinition(ModelNormal):
         :type name: str
 
         :param options: Job options.
-        :type options: ThreatHuntingJobOptions, optional
+        :type options: HistoricalJobOptions, optional
 
         :param queries: Queries for selecting logs analyzed by the job.
-        :type queries: [ThreatHuntingJobQuery]
+        :type queries: [HistoricalJobQuery]
 
         :param reference_tables: Reference tables used in the queries.
         :type reference_tables: [SecurityMonitoringReferenceTable], optional

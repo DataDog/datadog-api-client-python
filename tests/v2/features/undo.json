@@ -5998,13 +5998,13 @@
       "type": "safe"
     }
   },
-  "ListThreatHuntingJobs": {
+  "ListHistoricalJobs": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }
   },
-  "RunThreatHuntingJob": {
+  "RunHistoricalJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
@@ -6016,19 +6016,19 @@
       "type": "idempotent"
     }
   },
-  "DeleteThreatHuntingJob": {
+  "DeleteHistoricalJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
     }
   },
-  "GetThreatHuntingJob": {
+  "GetHistoricalJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
     }
   },
-  "CancelThreatHuntingJob": {
+  "CancelHistoricalJob": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
