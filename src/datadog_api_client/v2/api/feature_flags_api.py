@@ -20,11 +20,14 @@ from datadog_api_client.v2.model.environment_response import EnvironmentResponse
 from datadog_api_client.v2.model.create_environment_request import CreateEnvironmentRequest
 from datadog_api_client.v2.model.update_environment_request import UpdateEnvironmentRequest
 from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
+from datadog_api_client.v2.model.flag_suggestion_response import FlagSuggestionResponse
+from datadog_api_client.v2.model.review_flag_suggestion_request import ReviewFlagSuggestionRequest
 from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
 from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
 from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
+from datadog_api_client.v2.model.create_flag_suggestion_request import CreateFlagSuggestionRequest
 
 
 class FeatureFlagsApi:
@@ -36,6 +39,32 @@ class FeatureFlagsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._approve_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}/approve",
+                "operation_id": "approve_flag_suggestion",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ReviewFlagSuggestionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._archive_feature_flag_endpoint = _Endpoint(
             settings={
@@ -132,6 +161,32 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._create_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/suggestions",
+                "operation_id": "create_flag_suggestion",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateFlagSuggestionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_feature_flags_environment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -146,6 +201,29 @@ class FeatureFlagsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "environment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}",
+                "operation_id": "delete_flag_suggestion",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
                     "location": "path",
                 },
             },
@@ -250,6 +328,29 @@ class FeatureFlagsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "environment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}",
+                "operation_id": "get_flag_suggestion",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
                     "location": "path",
                 },
             },
@@ -367,6 +468,32 @@ class FeatureFlagsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._reject_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}/reject",
+                "operation_id": "reject_flag_suggestion",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ReviewFlagSuggestionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -546,6 +673,28 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+    def approve_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+        body: ReviewFlagSuggestionRequest,
+    ) -> FlagSuggestionResponse:
+        """Approve a flag suggestion.
+
+        Approve a pending flag change suggestion. The change is applied immediately
+        upon approval. A user cannot approve their own suggestion.
+
+        :param suggestion_id: The ID of the flag suggestion.
+        :type suggestion_id: UUID
+        :type body: ReviewFlagSuggestionRequest
+        :rtype: FlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        kwargs["body"] = body
+
+        return self._approve_flag_suggestion_endpoint.call_with_http_info(**kwargs)
+
     def archive_feature_flag(
         self,
         feature_flag_id: UUID,
@@ -622,6 +771,29 @@ class FeatureFlagsApi:
 
         return self._create_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
 
+    def create_flag_suggestion(
+        self,
+        feature_flag_id: UUID,
+        body: CreateFlagSuggestionRequest,
+    ) -> FlagSuggestionResponse:
+        """Create a flag suggestion.
+
+        Create a change suggestion for a feature flag. Suggestions require approval
+        before the change is applied. The request must include at least one
+        notification_rule_targets handle to receive approval or rejection notifications.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :type body: CreateFlagSuggestionRequest
+        :rtype: FlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["body"] = body
+
+        return self._create_flag_suggestion_endpoint.call_with_http_info(**kwargs)
+
     def delete_feature_flags_environment(
         self,
         environment_id: UUID,
@@ -638,6 +810,23 @@ class FeatureFlagsApi:
         kwargs["environment_id"] = environment_id
 
         return self._delete_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
+
+    def delete_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+    ) -> None:
+        """Delete a flag suggestion.
+
+        Delete a pending flag change suggestion. Approved suggestions cannot be deleted.
+
+        :param suggestion_id: The ID of the flag suggestion.
+        :type suggestion_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        return self._delete_flag_suggestion_endpoint.call_with_http_info(**kwargs)
 
     def disable_feature_flag_environment(
         self,
@@ -717,6 +906,23 @@ class FeatureFlagsApi:
         kwargs["environment_id"] = environment_id
 
         return self._get_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
+
+    def get_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+    ) -> FlagSuggestionResponse:
+        """Get a flag suggestion.
+
+        Get a flag change suggestion by ID.
+
+        :param suggestion_id: The ID of the flag suggestion.
+        :type suggestion_id: UUID
+        :rtype: FlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        return self._get_flag_suggestion_endpoint.call_with_http_info(**kwargs)
 
     def list_feature_flags(
         self,
@@ -810,6 +1016,27 @@ class FeatureFlagsApi:
         kwargs["exposure_schedule_id"] = exposure_schedule_id
 
         return self._pause_exposure_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def reject_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+        body: ReviewFlagSuggestionRequest,
+    ) -> FlagSuggestionResponse:
+        """Reject a flag suggestion.
+
+        Reject a pending flag change suggestion. The suggested change is not applied.
+
+        :param suggestion_id: The ID of the flag suggestion.
+        :type suggestion_id: UUID
+        :type body: ReviewFlagSuggestionRequest
+        :rtype: FlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        kwargs["body"] = body
+
+        return self._reject_flag_suggestion_endpoint.call_with_http_info(**kwargs)
 
     def resume_exposure_schedule(
         self,

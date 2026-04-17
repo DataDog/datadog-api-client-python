@@ -1954,6 +1954,30 @@
       "type": "idempotent"
     }
   },
+  "DeleteFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ApproveFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RejectFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetFeatureFlag": {
     "tag": "Feature Flags",
     "undo": {
@@ -2001,6 +2025,19 @@
     "tag": "Feature Flags",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "CreateFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "operationId": "DeleteFlagSuggestion",
+      "parameters": [
+        {
+          "name": "suggestion_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "UnarchiveFeatureFlag": {
