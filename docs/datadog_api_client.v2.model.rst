@@ -16909,6 +16909,167 @@ datadog\_api\_client.v2.model.llm\_obs\_cursor\_meta module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_assessment\_criteria module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_assessment_criteria
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_bedrock\_options module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_bedrock_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_eval\_scope module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_eval_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_inference\_params module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_inference_params
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_integration\_provider module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_integration_provider
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_llm\_judge\_config module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_llm_judge_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_llm\_provider module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_llm_provider
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_parsing\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_parsing_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_prompt\_content module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_content
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_prompt\_content\_value module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_content_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_prompt\_message module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_message
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_prompt\_tool\_call module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_tool_call
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_prompt\_tool\_result module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_tool_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_target module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_update\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_update\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_update\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_user module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_vertex\_ai\_options module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_custom_eval_config_vertex_ai_options
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_dataset\_data\_attributes\_request module
 ---------------------------------------------------------------------------------
 

@@ -135,6 +135,31 @@
       "type": "safe"
     }
   },
+  "DeleteLLMObsCustomEvalConfig": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "UpdateLLMObsCustomEvalConfig",
+      "parameters": [
+        {
+          "name": "eval_name",
+          "source": "path"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetLLMObsCustomEvalConfig": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLLMObsCustomEvalConfig": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDatastores": {
     "tag": "Actions Datastores",
     "undo": {
