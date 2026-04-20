@@ -41,7 +41,7 @@ body = CreateTenancyConfigRequest(
                 enabled=True,
                 enabled_services=[
                     "service_1",
-                    "service_1",
+                    "service_2",
                 ],
             ),
             metrics_config=CreateTenancyConfigDataAttributesMetricsConfig(
@@ -52,7 +52,7 @@ body = CreateTenancyConfigRequest(
                 enabled=True,
                 excluded_services=[
                     "service_1",
-                    "service_1",
+                    "service_2",
                 ],
             ),
             regions_config=CreateTenancyConfigDataAttributesRegionsConfig(

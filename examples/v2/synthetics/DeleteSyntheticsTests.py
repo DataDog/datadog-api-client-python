@@ -13,7 +13,7 @@ body = DeletedTestsRequestDeleteRequest(
     data=DeletedTestsRequestDelete(
         attributes=DeletedTestsRequestDeleteAttributes(
             public_ids=[
-                "",
+                "abc-def-123",
             ],
         ),
         type=DeletedTestsRequestType.DELETE_TESTS_REQUEST,
