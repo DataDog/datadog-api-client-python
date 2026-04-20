@@ -79,22 +79,23 @@ class SecurityMonitoringContentPackStateAttributes(ModelNormal):
         :param cloud_siem_index_incorrect: Whether the cloud SIEM index configuration is incorrect (only applies to certain pricing models)
         :type cloud_siem_index_incorrect: bool
 
-        :param cp_activation: The activation status of a content pack
+        :param cp_activation: The activation status of a content pack.
         :type cp_activation: SecurityMonitoringContentPackActivation
 
-        :param filters_configured_for_logs: Whether filters (Security Filters or Index Query depending on the pricing model) are configured for logs
+        :param filters_configured_for_logs: Whether filters (Security Filters or Index Query depending on the pricing model) are
+            present and correctly configured to route logs into Cloud SIEM.
         :type filters_configured_for_logs: bool
 
-        :param integration_installed_status: The installation status of the related integration
+        :param integration_installed_status: The installation status of the related integration.
         :type integration_installed_status: SecurityMonitoringContentPackIntegrationStatus, optional
 
-        :param logs_last_collected: Timestamp bucket indicating when logs were last collected
+        :param logs_last_collected: Timestamp bucket indicating when logs were last collected.
         :type logs_last_collected: SecurityMonitoringContentPackTimestampBucket
 
-        :param logs_seen_from_any_index: Whether logs have been seen from any index
+        :param logs_seen_from_any_index: Whether logs for this content pack have been seen in any Datadog index within the last 72 hours.
         :type logs_seen_from_any_index: bool
 
-        :param state: The current status of a content pack
+        :param state: The current operational status of a content pack.
         :type state: SecurityMonitoringContentPackStatus
         """
         if integration_installed_status is not unset:

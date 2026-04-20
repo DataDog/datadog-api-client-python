@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringContentPackTimestampBucket(ModelSimple):
     """
-    Timestamp bucket indicating when logs were last collected
+    Timestamp bucket indicating when logs were last collected.
 
     :param value: Must be one of ["not_seen", "within_24_hours", "within_24_to_72_hours", "over_72h_to_30d", "over_30d"].
     :type value: str
