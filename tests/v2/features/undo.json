@@ -411,6 +411,12 @@
       "type": "safe"
     }
   },
+  "AnonymizeUsers": {
+    "tag": "Users",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAPIKeys": {
     "tag": "Key Management",
     "undo": {

@@ -8,6 +8,22 @@ Feature: Users
     And an instance of "Users" API
 
   @generated @skip @team:DataDog/org-management
+  Scenario: Anonymize users returns "Bad Request" response
+    Given operation "AnonymizeUsers" enabled
+    And new "AnonymizeUsers" request
+    And body with value {"data": {"attributes": {"user_ids": ["00000000-0000-0000-0000-000000000000"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "anonymize_users_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Anonymize users returns "OK" response
+    Given operation "AnonymizeUsers" enabled
+    And new "AnonymizeUsers" request
+    And body with value {"data": {"attributes": {"user_ids": ["00000000-0000-0000-0000-000000000000"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "anonymize_users_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
   Scenario: Create a user returns "Bad Request" response
     Given new "CreateUser" request
     And body with value {"data": {"attributes": {"email": "jane.doe@example.com"}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
