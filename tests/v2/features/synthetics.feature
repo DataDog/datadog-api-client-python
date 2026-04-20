@@ -50,14 +50,14 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Bulk delete tests returns "API error response." response
     Given new "DeleteSyntheticsTests" request
-    And body with value {"data": {"attributes": {"public_ids": [""]}, "type": "delete_tests_request"}}
+    And body with value {"data": {"attributes": {"public_ids": ["abc-def-123"]}, "type": "delete_tests_request"}}
     When the request is sent
     Then the response status is 404 API error response.
 
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Bulk delete tests returns "OK" response
     Given new "DeleteSyntheticsTests" request
-    And body with value {"data": {"attributes": {"public_ids": [""]}, "type": "delete_tests_request"}}
+    And body with value {"data": {"attributes": {"public_ids": ["abc-def-123"]}, "type": "delete_tests_request"}}
     When the request is sent
     Then the response status is 200 OK
 
