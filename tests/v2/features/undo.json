@@ -5699,6 +5699,12 @@
       "type": "idempotent"
     }
   },
+  "BulkEditSecurityMonitoringSignals": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SearchSecurityMonitoringSignals": {
     "tag": "Security Monitoring",
     "undo": {
@@ -5739,6 +5745,12 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "EditSecurityMonitoringSignal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "BulkExportSecurityMonitoringTerraformResources": {

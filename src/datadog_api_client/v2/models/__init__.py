@@ -5833,6 +5833,11 @@ from datadog_api_client.v2.model.security_monitoring_signal_triage_update_respon
     SecurityMonitoringSignalTriageUpdateResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_type import SecurityMonitoringSignalType
+from datadog_api_client.v2.model.security_monitoring_signal_update_attributes import (
+    SecurityMonitoringSignalUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_signal_update_data import SecurityMonitoringSignalUpdateData
+from datadog_api_client.v2.model.security_monitoring_signal_update_request import SecurityMonitoringSignalUpdateRequest
 from datadog_api_client.v2.model.security_monitoring_signals_bulk_assignee_update_attributes import (
     SecurityMonitoringSignalsBulkAssigneeUpdateAttributes,
 )
@@ -5859,6 +5864,12 @@ from datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_
 )
 from datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_result import (
     SecurityMonitoringSignalsBulkTriageUpdateResult,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_update_data import (
+    SecurityMonitoringSignalsBulkUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_signals_bulk_update_request import (
+    SecurityMonitoringSignalsBulkUpdateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_list_response_links import (
@@ -11385,6 +11396,9 @@ __all__ = [
     "SecurityMonitoringSignalTriageUpdateData",
     "SecurityMonitoringSignalTriageUpdateResponse",
     "SecurityMonitoringSignalType",
+    "SecurityMonitoringSignalUpdateAttributes",
+    "SecurityMonitoringSignalUpdateData",
+    "SecurityMonitoringSignalUpdateRequest",
     "SecurityMonitoringSignalsBulkAssigneeUpdateAttributes",
     "SecurityMonitoringSignalsBulkAssigneeUpdateData",
     "SecurityMonitoringSignalsBulkAssigneeUpdateRequest",
@@ -11394,6 +11408,8 @@ __all__ = [
     "SecurityMonitoringSignalsBulkTriageEventAttributes",
     "SecurityMonitoringSignalsBulkTriageUpdateResponse",
     "SecurityMonitoringSignalsBulkTriageUpdateResult",
+    "SecurityMonitoringSignalsBulkUpdateData",
+    "SecurityMonitoringSignalsBulkUpdateRequest",
     "SecurityMonitoringSignalsListResponse",
     "SecurityMonitoringSignalsListResponseLinks",
     "SecurityMonitoringSignalsListResponseMeta",
