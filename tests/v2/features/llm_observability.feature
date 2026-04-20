@@ -176,6 +176,42 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a custom evaluator configuration returns "Bad Request" response
+    Given operation "UpdateLLMObsCustomEvalConfig" enabled
+    And new "UpdateLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"category": "Custom", "eval_name": "my-custom-evaluator", "llm_judge_config": {"assessment_criteria": {"max_threshold": 1.0, "min_threshold": 0.7, "pass_values": ["pass", "yes"], "pass_when": true}, "inference_params": {"frequency_penalty": 0.0, "max_tokens": 1024, "presence_penalty": 0.0, "temperature": 0.7, "top_k": 50, "top_p": 1.0}, "last_used_library_prompt_template_name": "sentiment-analysis-v1", "modified_library_prompt_template": false, "output_schema": null, "parsing_type": "structured_output", "prompt_template": [{"content": "Rate the quality of the following response:", "contents": [{"type": "text", "value": {"text": "What is the sentiment of this review?", "tool_call": {"arguments": "{\"location\": \"San Francisco\"}", "id": "call_abc123", "name": "get_weather", "type": "function"}, "tool_call_result": {"name": "get_weather", "result": "sunny, 72F", "tool_id": "call_abc123", "type": "function"}}}], "role": "user"}]}, "llm_provider": {"bedrock": {"region": "us-east-1"}, "integration_account_id": "my-account-id", "integration_provider": "openai", "model_name": "gpt-4o", "vertex_ai": {"location": "us-central1", "project": "my-gcp-project"}}, "target": {"application_name": "my-llm-app", "enabled": true, "eval_scope": "span", "filter": "@service:my-service", "root_spans_only": true, "sampling_percentage": 50.0}}, "id": "my-custom-evaluator", "type": "evaluator_config"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a custom evaluator configuration returns "Not Found" response
+    Given operation "UpdateLLMObsCustomEvalConfig" enabled
+    And new "UpdateLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"category": "Custom", "eval_name": "my-custom-evaluator", "llm_judge_config": {"assessment_criteria": {"max_threshold": 1.0, "min_threshold": 0.7, "pass_values": ["pass", "yes"], "pass_when": true}, "inference_params": {"frequency_penalty": 0.0, "max_tokens": 1024, "presence_penalty": 0.0, "temperature": 0.7, "top_k": 50, "top_p": 1.0}, "last_used_library_prompt_template_name": "sentiment-analysis-v1", "modified_library_prompt_template": false, "output_schema": null, "parsing_type": "structured_output", "prompt_template": [{"content": "Rate the quality of the following response:", "contents": [{"type": "text", "value": {"text": "What is the sentiment of this review?", "tool_call": {"arguments": "{\"location\": \"San Francisco\"}", "id": "call_abc123", "name": "get_weather", "type": "function"}, "tool_call_result": {"name": "get_weather", "result": "sunny, 72F", "tool_id": "call_abc123", "type": "function"}}}], "role": "user"}]}, "llm_provider": {"bedrock": {"region": "us-east-1"}, "integration_account_id": "my-account-id", "integration_provider": "openai", "model_name": "gpt-4o", "vertex_ai": {"location": "us-central1", "project": "my-gcp-project"}}, "target": {"application_name": "my-llm-app", "enabled": true, "eval_scope": "span", "filter": "@service:my-service", "root_spans_only": true, "sampling_percentage": 50.0}}, "id": "my-custom-evaluator", "type": "evaluator_config"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a custom evaluator configuration returns "OK" response
+    Given operation "UpdateLLMObsCustomEvalConfig" enabled
+    And new "UpdateLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"category": "Custom", "eval_name": "my-custom-evaluator", "llm_judge_config": {"assessment_criteria": {"max_threshold": 1.0, "min_threshold": 0.7, "pass_values": ["pass", "yes"], "pass_when": true}, "inference_params": {"frequency_penalty": 0.0, "max_tokens": 1024, "presence_penalty": 0.0, "temperature": 0.7, "top_k": 50, "top_p": 1.0}, "last_used_library_prompt_template_name": "sentiment-analysis-v1", "modified_library_prompt_template": false, "output_schema": null, "parsing_type": "structured_output", "prompt_template": [{"content": "Rate the quality of the following response:", "contents": [{"type": "text", "value": {"text": "What is the sentiment of this review?", "tool_call": {"arguments": "{\"location\": \"San Francisco\"}", "id": "call_abc123", "name": "get_weather", "type": "function"}, "tool_call_result": {"name": "get_weather", "result": "sunny, 72F", "tool_id": "call_abc123", "type": "function"}}}], "role": "user"}]}, "llm_provider": {"bedrock": {"region": "us-east-1"}, "integration_account_id": "my-account-id", "integration_provider": "openai", "model_name": "gpt-4o", "vertex_ai": {"location": "us-central1", "project": "my-gcp-project"}}, "target": {"application_name": "my-llm-app", "enabled": true, "eval_scope": "span", "filter": "@service:my-service", "root_spans_only": true, "sampling_percentage": 50.0}}, "id": "my-custom-evaluator", "type": "evaluator_config"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a custom evaluator configuration returns "Unprocessable Entity" response
+    Given operation "UpdateLLMObsCustomEvalConfig" enabled
+    And new "UpdateLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"category": "Custom", "eval_name": "my-custom-evaluator", "llm_judge_config": {"assessment_criteria": {"max_threshold": 1.0, "min_threshold": 0.7, "pass_values": ["pass", "yes"], "pass_when": true}, "inference_params": {"frequency_penalty": 0.0, "max_tokens": 1024, "presence_penalty": 0.0, "temperature": 0.7, "top_k": 50, "top_p": 1.0}, "last_used_library_prompt_template_name": "sentiment-analysis-v1", "modified_library_prompt_template": false, "output_schema": null, "parsing_type": "structured_output", "prompt_template": [{"content": "Rate the quality of the following response:", "contents": [{"type": "text", "value": {"text": "What is the sentiment of this review?", "tool_call": {"arguments": "{\"location\": \"San Francisco\"}", "id": "call_abc123", "name": "get_weather", "type": "function"}, "tool_call_result": {"name": "get_weather", "result": "sunny, 72F", "tool_id": "call_abc123", "type": "function"}}}], "role": "user"}]}, "llm_provider": {"bedrock": {"region": "us-east-1"}, "integration_account_id": "my-account-id", "integration_provider": "openai", "model_name": "gpt-4o", "vertex_ai": {"location": "us-central1", "project": "my-gcp-project"}}, "target": {"application_name": "my-llm-app", "enabled": true, "eval_scope": "span", "filter": "@service:my-service", "root_spans_only": true, "sampling_percentage": 50.0}}, "id": "my-custom-evaluator", "type": "evaluator_config"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Delete LLM Observability dataset records returns "Bad Request" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request
@@ -265,6 +301,30 @@ Feature: LLM Observability
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete a custom evaluator configuration returns "Bad Request" response
+    Given operation "DeleteLLMObsCustomEvalConfig" enabled
+    And new "DeleteLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete a custom evaluator configuration returns "No Content" response
+    Given operation "DeleteLLMObsCustomEvalConfig" enabled
+    And new "DeleteLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete a custom evaluator configuration returns "Not Found" response
+    Given operation "DeleteLLMObsCustomEvalConfig" enabled
+    And new "DeleteLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Delete an LLM Observability annotation queue returns "No Content" response
     Given operation "DeleteLLMObsAnnotationQueue" enabled
     And new "DeleteLLMObsAnnotationQueue" request
@@ -306,6 +366,30 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"interaction_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "interactions"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get a custom evaluator configuration returns "Bad Request" response
+    Given operation "GetLLMObsCustomEvalConfig" enabled
+    And new "GetLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get a custom evaluator configuration returns "Not Found" response
+    Given operation "GetLLMObsCustomEvalConfig" enabled
+    And new "GetLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get a custom evaluator configuration returns "OK" response
+    Given operation "GetLLMObsCustomEvalConfig" enabled
+    And new "GetLLMObsCustomEvalConfig" request
+    And request contains "eval_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Get annotated queue interactions returns "Bad Request" response

@@ -11,6 +11,8 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_response import LLMObsCustomEvalConfigResponse
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_request import LLMObsCustomEvalConfigUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObsAnnotationQueueResponse
 from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
@@ -277,6 +279,29 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._delete_llm_obs_custom_eval_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom/{eval_name}",
+                "operation_id": "delete_llm_obs_custom_eval_config",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "eval_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "eval_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_llm_obs_dataset_records_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -389,6 +414,29 @@ class LLMObservabilityApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "queue_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_custom_eval_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsCustomEvalConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom/{eval_name}",
+                "operation_id": "get_llm_obs_custom_eval_config",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "eval_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "eval_name",
                     "location": "path",
                 },
             },
@@ -615,6 +663,32 @@ class LLMObservabilityApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_llm_obs_custom_eval_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom/{eval_name}",
+                "operation_id": "update_llm_obs_custom_eval_config",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "eval_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "eval_name",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsCustomEvalConfigUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -919,6 +993,23 @@ class LLMObservabilityApi:
 
         return self._delete_llm_obs_annotation_queue_interactions_endpoint.call_with_http_info(**kwargs)
 
+    def delete_llm_obs_custom_eval_config(
+        self,
+        eval_name: str,
+    ) -> None:
+        """Delete a custom evaluator configuration.
+
+        Delete a custom LLM Observability evaluator configuration by its name.
+
+        :param eval_name: The name of the custom LLM Observability evaluator configuration.
+        :type eval_name: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["eval_name"] = eval_name
+
+        return self._delete_llm_obs_custom_eval_config_endpoint.call_with_http_info(**kwargs)
+
     def delete_llm_obs_dataset_records(
         self,
         project_id: str,
@@ -1018,6 +1109,23 @@ class LLMObservabilityApi:
         kwargs["queue_id"] = queue_id
 
         return self._get_llm_obs_annotated_interactions_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_custom_eval_config(
+        self,
+        eval_name: str,
+    ) -> LLMObsCustomEvalConfigResponse:
+        """Get a custom evaluator configuration.
+
+        Retrieve a custom LLM Observability evaluator configuration by its name.
+
+        :param eval_name: The name of the custom LLM Observability evaluator configuration.
+        :type eval_name: str
+        :rtype: LLMObsCustomEvalConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["eval_name"] = eval_name
+
+        return self._get_llm_obs_custom_eval_config_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_annotation_queues(
         self,
@@ -1229,6 +1337,28 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._update_llm_obs_annotation_queue_endpoint.call_with_http_info(**kwargs)
+
+    def update_llm_obs_custom_eval_config(
+        self,
+        eval_name: str,
+        body: LLMObsCustomEvalConfigUpdateRequest,
+    ) -> None:
+        """Create or update a custom evaluator configuration.
+
+        Create or update a custom LLM Observability evaluator configuration by its name.
+
+        :param eval_name: The name of the custom LLM Observability evaluator configuration.
+        :type eval_name: str
+        :param body: Custom evaluator configuration payload.
+        :type body: LLMObsCustomEvalConfigUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["eval_name"] = eval_name
+
+        kwargs["body"] = body
+
+        return self._update_llm_obs_custom_eval_config_endpoint.call_with_http_info(**kwargs)
 
     def update_llm_obs_dataset(
         self,

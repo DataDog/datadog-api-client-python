@@ -3081,6 +3081,43 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_request im
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_cursor_meta import LLMObsCursorMeta
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_assessment_criteria import (
+    LLMObsCustomEvalConfigAssessmentCriteria,
+)
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_attributes import LLMObsCustomEvalConfigAttributes
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_bedrock_options import LLMObsCustomEvalConfigBedrockOptions
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_data import LLMObsCustomEvalConfigData
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_eval_scope import LLMObsCustomEvalConfigEvalScope
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_inference_params import (
+    LLMObsCustomEvalConfigInferenceParams,
+)
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_integration_provider import (
+    LLMObsCustomEvalConfigIntegrationProvider,
+)
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_llm_judge_config import LLMObsCustomEvalConfigLLMJudgeConfig
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_llm_provider import LLMObsCustomEvalConfigLLMProvider
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_parsing_type import LLMObsCustomEvalConfigParsingType
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_content import LLMObsCustomEvalConfigPromptContent
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_content_value import (
+    LLMObsCustomEvalConfigPromptContentValue,
+)
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_message import LLMObsCustomEvalConfigPromptMessage
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_tool_call import LLMObsCustomEvalConfigPromptToolCall
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_prompt_tool_result import (
+    LLMObsCustomEvalConfigPromptToolResult,
+)
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_response import LLMObsCustomEvalConfigResponse
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_target import LLMObsCustomEvalConfigTarget
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_type import LLMObsCustomEvalConfigType
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_attributes import (
+    LLMObsCustomEvalConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_data import LLMObsCustomEvalConfigUpdateData
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_request import LLMObsCustomEvalConfigUpdateRequest
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_user import LLMObsCustomEvalConfigUser
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_vertex_ai_options import (
+    LLMObsCustomEvalConfigVertexAIOptions,
+)
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_request import LLMObsDatasetDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_response import LLMObsDatasetDataAttributesResponse
 from datadog_api_client.v2.model.llm_obs_dataset_data_request import LLMObsDatasetDataRequest
@@ -9564,6 +9601,29 @@ __all__ = [
     "LLMObsAnnotationQueueUpdateRequest",
     "LLMObsAnnotationQueuesResponse",
     "LLMObsCursorMeta",
+    "LLMObsCustomEvalConfigAssessmentCriteria",
+    "LLMObsCustomEvalConfigAttributes",
+    "LLMObsCustomEvalConfigBedrockOptions",
+    "LLMObsCustomEvalConfigData",
+    "LLMObsCustomEvalConfigEvalScope",
+    "LLMObsCustomEvalConfigInferenceParams",
+    "LLMObsCustomEvalConfigIntegrationProvider",
+    "LLMObsCustomEvalConfigLLMJudgeConfig",
+    "LLMObsCustomEvalConfigLLMProvider",
+    "LLMObsCustomEvalConfigParsingType",
+    "LLMObsCustomEvalConfigPromptContent",
+    "LLMObsCustomEvalConfigPromptContentValue",
+    "LLMObsCustomEvalConfigPromptMessage",
+    "LLMObsCustomEvalConfigPromptToolCall",
+    "LLMObsCustomEvalConfigPromptToolResult",
+    "LLMObsCustomEvalConfigResponse",
+    "LLMObsCustomEvalConfigTarget",
+    "LLMObsCustomEvalConfigType",
+    "LLMObsCustomEvalConfigUpdateAttributes",
+    "LLMObsCustomEvalConfigUpdateData",
+    "LLMObsCustomEvalConfigUpdateRequest",
+    "LLMObsCustomEvalConfigUser",
+    "LLMObsCustomEvalConfigVertexAIOptions",
     "LLMObsDatasetDataAttributesRequest",
     "LLMObsDatasetDataAttributesResponse",
     "LLMObsDatasetDataRequest",
