@@ -28697,6 +28697,27 @@ datadog\_api\_client.v2.model.security\_monitoring\_signal\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_update\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_update\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signal\_update\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signal_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_assignee\_update\_attributes module
 ------------------------------------------------------------------------------------------------------
 
@@ -28757,6 +28778,20 @@ datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_triage\_updat
 ------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_triage_update_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_update\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_signals\_bulk\_update\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_signals_bulk_update_request
    :members:
    :show-inheritance:
 
