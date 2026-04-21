@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringContentPackStatus(ModelSimple):
     """
-    The current operational status of a content pack.
+    The current status of a content pack
 
     :param value: Must be one of ["install", "activate", "initializing", "active", "warning", "broken"].
     :type value: str

@@ -16,16 +16,18 @@ class LLMObsInteractionType(ModelSimple):
     """
     Type of interaction in an annotation queue.
 
-    :param value: Must be one of ["trace", "experiment_trace"].
+    :param value: Must be one of ["trace", "experiment_trace", "session"].
     :type value: str
     """
 
     allowed_values = {
         "trace",
         "experiment_trace",
+        "session",
     }
     TRACE: ClassVar["LLMObsInteractionType"]
     EXPERIMENT_TRACE: ClassVar["LLMObsInteractionType"]
+    SESSION: ClassVar["LLMObsInteractionType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class LLMObsInteractionType(ModelSimple):
 
 LLMObsInteractionType.TRACE = LLMObsInteractionType("trace")
 LLMObsInteractionType.EXPERIMENT_TRACE = LLMObsInteractionType("experiment_trace")
+LLMObsInteractionType.SESSION = LLMObsInteractionType("session")

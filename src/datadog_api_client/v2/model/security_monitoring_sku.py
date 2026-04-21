@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringSKU(ModelSimple):
     """
-    The Cloud SIEM pricing model (SKU) for the organization.
+    The SIEM pricing model (SKU) for the organization
 
     :param value: Must be one of ["per_gb_analyzed", "per_event_in_siem_index_2023", "add_on_2024"].
     :type value: str
