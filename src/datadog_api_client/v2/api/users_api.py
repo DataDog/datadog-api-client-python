@@ -14,6 +14,8 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.anonymize_users_response import AnonymizeUsersResponse
+from datadog_api_client.v2.model.anonymize_users_request import AnonymizeUsersRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
@@ -35,6 +37,26 @@ class UsersApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._anonymize_users_endpoint = _Endpoint(
+            settings={
+                "response_type": (AnonymizeUsersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/anonymize_users",
+                "operation_id": "anonymize_users",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AnonymizeUsersRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_user_endpoint = _Endpoint(
             settings={
@@ -263,6 +285,23 @@ class UsersApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def anonymize_users(
+        self,
+        body: AnonymizeUsersRequest,
+    ) -> AnonymizeUsersResponse:
+        """Anonymize users.
+
+        Anonymize a list of users, removing their personal data. This operation is irreversible.
+        Requires the ``user_access_manage`` permission.
+
+        :type body: AnonymizeUsersRequest
+        :rtype: AnonymizeUsersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._anonymize_users_endpoint.call_with_http_info(**kwargs)
 
     def create_user(
         self,

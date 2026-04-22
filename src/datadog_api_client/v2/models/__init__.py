@@ -184,6 +184,15 @@ from datadog_api_client.v2.model.annotation import Annotation
 from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
 from datadog_api_client.v2.model.annotation_display_bounds import AnnotationDisplayBounds
 from datadog_api_client.v2.model.annotation_markdown_text_annotation import AnnotationMarkdownTextAnnotation
+from datadog_api_client.v2.model.anonymize_user_error import AnonymizeUserError
+from datadog_api_client.v2.model.anonymize_users_request import AnonymizeUsersRequest
+from datadog_api_client.v2.model.anonymize_users_request_attributes import AnonymizeUsersRequestAttributes
+from datadog_api_client.v2.model.anonymize_users_request_data import AnonymizeUsersRequestData
+from datadog_api_client.v2.model.anonymize_users_request_type import AnonymizeUsersRequestType
+from datadog_api_client.v2.model.anonymize_users_response import AnonymizeUsersResponse
+from datadog_api_client.v2.model.anonymize_users_response_attributes import AnonymizeUsersResponseAttributes
+from datadog_api_client.v2.model.anonymize_users_response_data import AnonymizeUsersResponseData
+from datadog_api_client.v2.model.anonymize_users_response_type import AnonymizeUsersResponseType
 from datadog_api_client.v2.model.anthropic_api_key import AnthropicAPIKey
 from datadog_api_client.v2.model.anthropic_api_key_type import AnthropicAPIKeyType
 from datadog_api_client.v2.model.anthropic_api_key_update import AnthropicAPIKeyUpdate
@@ -7449,6 +7458,15 @@ __all__ = [
     "AnnotationDisplay",
     "AnnotationDisplayBounds",
     "AnnotationMarkdownTextAnnotation",
+    "AnonymizeUserError",
+    "AnonymizeUsersRequest",
+    "AnonymizeUsersRequestAttributes",
+    "AnonymizeUsersRequestData",
+    "AnonymizeUsersRequestType",
+    "AnonymizeUsersResponse",
+    "AnonymizeUsersResponseAttributes",
+    "AnonymizeUsersResponseData",
+    "AnonymizeUsersResponseType",
     "AnthropicAPIKey",
     "AnthropicAPIKeyType",
     "AnthropicAPIKeyUpdate",

@@ -410,6 +410,69 @@ datadog\_api\_client.v2.model.annotation\_markdown\_text\_annotation module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.anonymize\_user\_error module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_user_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_request\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_request\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_request\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_response\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.anonymize\_users\_response\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.anonymize_users_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.anthropic\_api\_key module
 --------------------------------------------------------
 
