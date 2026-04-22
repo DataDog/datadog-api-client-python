@@ -472,6 +472,8 @@ class Configuration:
                 "v2.delete_org_group_policy_override": False,
                 "v2.get_org_group": False,
                 "v2.get_org_group_membership": False,
+                "v2.get_org_group_policy": False,
+                "v2.get_org_group_policy_override": False,
                 "v2.list_org_group_memberships": False,
                 "v2.list_org_group_policies": False,
                 "v2.list_org_group_policy_configs": False,

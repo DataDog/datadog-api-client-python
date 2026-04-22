@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringContentPackIntegrationStatus(ModelSimple):
     """
-    The installation status of the related integration
+    The installation status of the related integration.
 
     :param value: Must be one of ["installed", "available", "partially_installed", "detected", "error"].
     :type value: str

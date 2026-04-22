@@ -4682,6 +4682,7 @@ from datadog_api_client.v2.model.org_group_policy_create_data import OrgGroupPol
 from datadog_api_client.v2.model.org_group_policy_create_relationships import OrgGroupPolicyCreateRelationships
 from datadog_api_client.v2.model.org_group_policy_create_request import OrgGroupPolicyCreateRequest
 from datadog_api_client.v2.model.org_group_policy_data import OrgGroupPolicyData
+from datadog_api_client.v2.model.org_group_policy_enforcement_tier import OrgGroupPolicyEnforcementTier
 from datadog_api_client.v2.model.org_group_policy_list_response import OrgGroupPolicyListResponse
 from datadog_api_client.v2.model.org_group_policy_override_attributes import OrgGroupPolicyOverrideAttributes
 from datadog_api_client.v2.model.org_group_policy_override_create_attributes import (
@@ -4703,6 +4704,7 @@ from datadog_api_client.v2.model.org_group_policy_override_update_attributes imp
 )
 from datadog_api_client.v2.model.org_group_policy_override_update_data import OrgGroupPolicyOverrideUpdateData
 from datadog_api_client.v2.model.org_group_policy_override_update_request import OrgGroupPolicyOverrideUpdateRequest
+from datadog_api_client.v2.model.org_group_policy_policy_type import OrgGroupPolicyPolicyType
 from datadog_api_client.v2.model.org_group_policy_relationship_to_one import OrgGroupPolicyRelationshipToOne
 from datadog_api_client.v2.model.org_group_policy_relationship_to_one_data import OrgGroupPolicyRelationshipToOneData
 from datadog_api_client.v2.model.org_group_policy_relationships import OrgGroupPolicyRelationships
@@ -10539,6 +10541,7 @@ __all__ = [
     "OrgGroupPolicyCreateRelationships",
     "OrgGroupPolicyCreateRequest",
     "OrgGroupPolicyData",
+    "OrgGroupPolicyEnforcementTier",
     "OrgGroupPolicyListResponse",
     "OrgGroupPolicyOverrideAttributes",
     "OrgGroupPolicyOverrideCreateAttributes",
@@ -10554,6 +10557,7 @@ __all__ = [
     "OrgGroupPolicyOverrideUpdateAttributes",
     "OrgGroupPolicyOverrideUpdateData",
     "OrgGroupPolicyOverrideUpdateRequest",
+    "OrgGroupPolicyPolicyType",
     "OrgGroupPolicyRelationshipToOne",
     "OrgGroupPolicyRelationshipToOneData",
     "OrgGroupPolicyRelationships",
