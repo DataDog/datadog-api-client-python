@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringContentPackActivation(ModelSimple):
     """
-    The activation status of a content pack.
+    The activation status of a content pack
 
     :param value: Must be one of ["never_activated", "activated", "deactivated"].
     :type value: str

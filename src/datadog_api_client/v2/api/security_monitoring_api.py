@@ -192,7 +192,7 @@ class SecurityMonitoringApi:
         self._activate_content_pack_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/content_packs/{content_pack_id}/activate",
                 "operation_id": "activate_content_pack",
                 "http_method": "PUT",
@@ -659,7 +659,7 @@ class SecurityMonitoringApi:
         self._deactivate_content_pack_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/content_packs/{content_pack_id}/deactivate",
                 "operation_id": "deactivate_content_pack",
                 "http_method": "PUT",
@@ -1025,7 +1025,7 @@ class SecurityMonitoringApi:
         self._get_content_packs_states_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringContentPackStatesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security_monitoring/content_packs/states",
                 "operation_id": "get_content_packs_states",
                 "http_method": "GET",
@@ -2993,11 +2993,11 @@ class SecurityMonitoringApi:
     ) -> None:
         """Activate content pack.
 
-        Activate a Cloud SIEM content pack. This operation configures the necessary
+        Activate a security monitoring content pack. This operation configures the necessary
         log filters or security filters depending on the pricing model and updates the content
         pack activation state.
 
-        :param content_pack_id: The ID of the content pack to activate (for example, ``aws-cloudtrail`` ).
+        :param content_pack_id: The ID of the content pack to activate.
         :type content_pack_id: str
         :rtype: None
         """
@@ -3417,10 +3417,10 @@ class SecurityMonitoringApi:
     ) -> None:
         """Deactivate content pack.
 
-        Deactivate a Cloud SIEM content pack. This operation removes the content pack's
+        Deactivate a security monitoring content pack. This operation removes the content pack's
         configuration from log filters or security filters and updates the content pack activation state.
 
-        :param content_pack_id: The ID of the content pack to deactivate (for example, ``aws-cloudtrail`` ).
+        :param content_pack_id: The ID of the content pack to deactivate.
         :type content_pack_id: str
         :rtype: None
         """
@@ -3704,8 +3704,9 @@ class SecurityMonitoringApi:
     ) -> SecurityMonitoringContentPackStatesResponse:
         """Get content pack states.
 
-        Get the activation state, integration status, and log collection status
-        for all Cloud SIEM content packs.
+        Get the activation and configuration states for all security monitoring content packs.
+        This endpoint returns status information about each content pack including activation state,
+        integration status, and log collection status.
 
         :rtype: SecurityMonitoringContentPackStatesResponse
         """
