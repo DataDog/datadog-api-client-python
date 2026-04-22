@@ -31,6 +31,7 @@ class UserAttributes(ModelNormal):
             "service_account": (bool,),
             "status": (str,),
             "title": (str, none_type),
+            "uuid": (str,),
             "verified": (bool,),
         }
 
@@ -47,11 +48,13 @@ class UserAttributes(ModelNormal):
         "service_account": "service_account",
         "status": "status",
         "title": "title",
+        "uuid": "uuid",
         "verified": "verified",
     }
     read_only_vars = {
         "last_login_time",
         "mfa_enabled",
+        "uuid",
     }
 
     def __init__(
@@ -68,6 +71,7 @@ class UserAttributes(ModelNormal):
         service_account: Union[bool, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         title: Union[str, none_type, UnsetType] = unset,
+        uuid: Union[str, UnsetType] = unset,
         verified: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -110,6 +114,9 @@ class UserAttributes(ModelNormal):
         :param title: Title of the user.
         :type title: str, none_type, optional
 
+        :param uuid: UUID of the user.
+        :type uuid: str, optional
+
         :param verified: Whether the user is verified.
         :type verified: bool, optional
         """
@@ -137,6 +144,8 @@ class UserAttributes(ModelNormal):
             kwargs["status"] = status
         if title is not unset:
             kwargs["title"] = title
+        if uuid is not unset:
+            kwargs["uuid"] = uuid
         if verified is not unset:
             kwargs["verified"] = verified
         super().__init__(kwargs)

@@ -144,7 +144,7 @@ class ServiceAccountsApi:
             settings={
                 "response_type": (PersonalAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{pat_uuid}",
+                "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{pat_id}",
                 "operation_id": "get_service_account_access_token",
                 "http_method": "GET",
                 "version": "v2",
@@ -156,10 +156,10 @@ class ServiceAccountsApi:
                     "attribute": "service_account_id",
                     "location": "path",
                 },
-                "pat_uuid": {
+                "pat_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_uuid",
+                    "attribute": "pat_id",
                     "location": "path",
                 },
             },
@@ -298,7 +298,7 @@ class ServiceAccountsApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{pat_uuid}",
+                "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{pat_id}",
                 "operation_id": "revoke_service_account_access_token",
                 "http_method": "DELETE",
                 "version": "v2",
@@ -310,10 +310,10 @@ class ServiceAccountsApi:
                     "attribute": "service_account_id",
                     "location": "path",
                 },
-                "pat_uuid": {
+                "pat_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_uuid",
+                    "attribute": "pat_id",
                     "location": "path",
                 },
             },
@@ -327,7 +327,7 @@ class ServiceAccountsApi:
             settings={
                 "response_type": (PersonalAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{pat_uuid}",
+                "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{pat_id}",
                 "operation_id": "update_service_account_access_token",
                 "http_method": "PATCH",
                 "version": "v2",
@@ -339,10 +339,10 @@ class ServiceAccountsApi:
                     "attribute": "service_account_id",
                     "location": "path",
                 },
-                "pat_uuid": {
+                "pat_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_uuid",
+                    "attribute": "pat_id",
                     "location": "path",
                 },
                 "body": {
@@ -470,7 +470,7 @@ class ServiceAccountsApi:
     def get_service_account_access_token(
         self,
         service_account_id: str,
-        pat_uuid: str,
+        pat_id: str,
     ) -> PersonalAccessTokenResponse:
         """Get an access token for a service account.
 
@@ -478,14 +478,14 @@ class ServiceAccountsApi:
 
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-        :param pat_uuid: The UUID of the personal access token.
-        :type pat_uuid: str
+        :param pat_id: The ID of the personal access token.
+        :type pat_id: str
         :rtype: PersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["service_account_id"] = service_account_id
 
-        kwargs["pat_uuid"] = pat_uuid
+        kwargs["pat_id"] = pat_id
 
         return self._get_service_account_access_token_endpoint.call_with_http_info(**kwargs)
 
@@ -614,7 +614,7 @@ class ServiceAccountsApi:
     def revoke_service_account_access_token(
         self,
         service_account_id: str,
-        pat_uuid: str,
+        pat_id: str,
     ) -> None:
         """Revoke an access token for a service account.
 
@@ -622,21 +622,21 @@ class ServiceAccountsApi:
 
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-        :param pat_uuid: The UUID of the personal access token.
-        :type pat_uuid: str
+        :param pat_id: The ID of the personal access token.
+        :type pat_id: str
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
         kwargs["service_account_id"] = service_account_id
 
-        kwargs["pat_uuid"] = pat_uuid
+        kwargs["pat_id"] = pat_id
 
         return self._revoke_service_account_access_token_endpoint.call_with_http_info(**kwargs)
 
     def update_service_account_access_token(
         self,
         service_account_id: str,
-        pat_uuid: str,
+        pat_id: str,
         body: PersonalAccessTokenUpdateRequest,
     ) -> PersonalAccessTokenResponse:
         """Update an access token for a service account.
@@ -645,15 +645,15 @@ class ServiceAccountsApi:
 
         :param service_account_id: The ID of the service account.
         :type service_account_id: str
-        :param pat_uuid: The UUID of the personal access token.
-        :type pat_uuid: str
+        :param pat_id: The ID of the personal access token.
+        :type pat_id: str
         :type body: PersonalAccessTokenUpdateRequest
         :rtype: PersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["service_account_id"] = service_account_id
 
-        kwargs["pat_uuid"] = pat_uuid
+        kwargs["pat_id"] = pat_id
 
         kwargs["body"] = body
 
