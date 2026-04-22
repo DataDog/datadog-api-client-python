@@ -15,7 +15,7 @@ from uuid import UUID
 body = OrgGroupPolicyOverrideUpdateRequest(
     data=OrgGroupPolicyOverrideUpdateData(
         attributes=OrgGroupPolicyOverrideUpdateAttributes(
-            org_site="us1",
+            org_site="datadoghq.com",
             org_uuid=UUID("c3d4e5f6-a7b8-9012-cdef-012345678901"),
         ),
         id=UUID("9f8e7d6c-5b4a-3210-fedc-ba0987654321"),

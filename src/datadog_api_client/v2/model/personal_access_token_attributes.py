@@ -19,6 +19,7 @@ class PersonalAccessTokenAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "alias": (str,),
             "created_at": (datetime,),
             "expires_at": (datetime, none_type),
             "last_used_at": (datetime, none_type),
@@ -29,6 +30,7 @@ class PersonalAccessTokenAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "alias": "alias",
         "created_at": "created_at",
         "expires_at": "expires_at",
         "last_used_at": "last_used_at",
@@ -38,6 +40,7 @@ class PersonalAccessTokenAttributes(ModelNormal):
         "scopes": "scopes",
     }
     read_only_vars = {
+        "alias",
         "created_at",
         "expires_at",
         "last_used_at",
@@ -47,6 +50,7 @@ class PersonalAccessTokenAttributes(ModelNormal):
 
     def __init__(
         self_,
+        alias: Union[str, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         expires_at: Union[datetime, none_type, UnsetType] = unset,
         last_used_at: Union[datetime, none_type, UnsetType] = unset,
@@ -58,6 +62,9 @@ class PersonalAccessTokenAttributes(ModelNormal):
     ):
         """
         Attributes of a personal access token.
+
+        :param alias: The alias (short identifier) of the personal access token.
+        :type alias: str, optional
 
         :param created_at: Creation date of the personal access token.
         :type created_at: datetime, optional
@@ -80,6 +87,8 @@ class PersonalAccessTokenAttributes(ModelNormal):
         :param scopes: Array of scopes granted to the personal access token.
         :type scopes: [str], optional
         """
+        if alias is not unset:
+            kwargs["alias"] = alias
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if expires_at is not unset:

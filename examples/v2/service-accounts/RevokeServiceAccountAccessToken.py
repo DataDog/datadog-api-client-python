@@ -17,5 +17,5 @@ with ApiClient(configuration) as api_client:
     api_instance = ServiceAccountsApi(api_client)
     api_instance.revoke_service_account_access_token(
         service_account_id=SERVICE_ACCOUNT_USER_DATA_ID,
-        pat_id=SERVICE_ACCOUNT_ACCESS_TOKEN_DATA_ID,
+        pat_uuid=SERVICE_ACCOUNT_ACCESS_TOKEN_DATA_ID,
     )
