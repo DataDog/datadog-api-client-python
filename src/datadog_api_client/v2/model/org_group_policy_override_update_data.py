@@ -45,7 +45,7 @@ class OrgGroupPolicyOverrideUpdateData(ModelNormal):
         """
         Data for updating a policy override.
 
-        :param attributes: Attributes for updating a policy override.
+        :param attributes: Attributes for updating a policy override. The ``org_uuid`` and ``org_site`` fields must match the existing override and cannot be changed.
         :type attributes: OrgGroupPolicyOverrideUpdateAttributes
 
         :param id: The ID of the policy override.

@@ -12,7 +12,7 @@ Feature: Org Groups
   Scenario: Bulk update org group memberships returns "Bad Request" response
     Given operation "BulkUpdateOrgGroupMemberships" enabled
     And new "BulkUpdateOrgGroupMemberships" request
-    And body with value {"data": {"attributes": {"orgs": [{"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"source_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "target_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_membership_bulk_updates"}}
+    And body with value {"data": {"attributes": {"orgs": [{"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"source_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "target_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_membership_bulk_updates"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -20,7 +20,7 @@ Feature: Org Groups
   Scenario: Bulk update org group memberships returns "Not Found" response
     Given operation "BulkUpdateOrgGroupMemberships" enabled
     And new "BulkUpdateOrgGroupMemberships" request
-    And body with value {"data": {"attributes": {"orgs": [{"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"source_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "target_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_membership_bulk_updates"}}
+    And body with value {"data": {"attributes": {"orgs": [{"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"source_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "target_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_membership_bulk_updates"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -28,7 +28,7 @@ Feature: Org Groups
   Scenario: Bulk update org group memberships returns "OK" response
     Given operation "BulkUpdateOrgGroupMemberships" enabled
     And new "BulkUpdateOrgGroupMemberships" request
-    And body with value {"data": {"attributes": {"orgs": [{"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"source_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "target_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_membership_bulk_updates"}}
+    And body with value {"data": {"attributes": {"orgs": [{"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"source_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "target_org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_membership_bulk_updates"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -36,7 +36,7 @@ Feature: Org Groups
   Scenario: Create an org group policy override returns "Bad Request" response
     Given operation "CreateOrgGroupPolicyOverride" enabled
     And new "CreateOrgGroupPolicyOverride" request
-    And body with value {"data": {"attributes": {"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "org_group_policy": {"data": {"id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}}, "type": "org_group_policy_overrides"}}
+    And body with value {"data": {"attributes": {"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "org_group_policy": {"data": {"id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}}, "type": "org_group_policy_overrides"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -44,7 +44,7 @@ Feature: Org Groups
   Scenario: Create an org group policy override returns "Conflict" response
     Given operation "CreateOrgGroupPolicyOverride" enabled
     And new "CreateOrgGroupPolicyOverride" request
-    And body with value {"data": {"attributes": {"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "org_group_policy": {"data": {"id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}}, "type": "org_group_policy_overrides"}}
+    And body with value {"data": {"attributes": {"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "org_group_policy": {"data": {"id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}}, "type": "org_group_policy_overrides"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -52,7 +52,7 @@ Feature: Org Groups
   Scenario: Create an org group policy override returns "Created" response
     Given operation "CreateOrgGroupPolicyOverride" enabled
     And new "CreateOrgGroupPolicyOverride" request
-    And body with value {"data": {"attributes": {"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "org_group_policy": {"data": {"id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}}, "type": "org_group_policy_overrides"}}
+    And body with value {"data": {"attributes": {"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}, "org_group_policy": {"data": {"id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}}, "type": "org_group_policy_overrides"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -60,7 +60,7 @@ Feature: Org Groups
   Scenario: Create an org group policy returns "Bad Request" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "policy_name": "monitor_timezone"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -68,7 +68,7 @@ Feature: Org Groups
   Scenario: Create an org group policy returns "Conflict" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "policy_name": "monitor_timezone"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -76,7 +76,7 @@ Feature: Org Groups
   Scenario: Create an org group policy returns "Created" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "policy_name": "monitor_timezone"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -197,6 +197,54 @@ Feature: Org Groups
     Given operation "GetOrgGroupMembership" enabled
     And new "GetOrgGroupMembership" request
     And request contains "org_group_membership_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Get an org group policy override returns "Bad Request" response
+    Given operation "GetOrgGroupPolicyOverride" enabled
+    And new "GetOrgGroupPolicyOverride" request
+    And request contains "org_group_policy_override_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Get an org group policy override returns "Not Found" response
+    Given operation "GetOrgGroupPolicyOverride" enabled
+    And new "GetOrgGroupPolicyOverride" request
+    And request contains "org_group_policy_override_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Get an org group policy override returns "OK" response
+    Given operation "GetOrgGroupPolicyOverride" enabled
+    And new "GetOrgGroupPolicyOverride" request
+    And request contains "org_group_policy_override_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Get an org group policy returns "Bad Request" response
+    Given operation "GetOrgGroupPolicy" enabled
+    And new "GetOrgGroupPolicy" request
+    And request contains "org_group_policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Get an org group policy returns "Not Found" response
+    Given operation "GetOrgGroupPolicy" enabled
+    And new "GetOrgGroupPolicy" request
+    And request contains "org_group_policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Get an org group policy returns "OK" response
+    Given operation "GetOrgGroupPolicy" enabled
+    And new "GetOrgGroupPolicy" request
+    And request contains "org_group_policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -323,7 +371,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicyOverride" enabled
     And new "UpdateOrgGroupPolicyOverride" request
     And request contains "org_group_policy_override_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "id": "9f8e7d6c-5b4a-3210-fedc-ba0987654321", "type": "org_group_policy_overrides"}}
+    And body with value {"data": {"attributes": {"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "id": "9f8e7d6c-5b4a-3210-fedc-ba0987654321", "type": "org_group_policy_overrides"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -332,7 +380,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicyOverride" enabled
     And new "UpdateOrgGroupPolicyOverride" request
     And request contains "org_group_policy_override_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "id": "9f8e7d6c-5b4a-3210-fedc-ba0987654321", "type": "org_group_policy_overrides"}}
+    And body with value {"data": {"attributes": {"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "id": "9f8e7d6c-5b4a-3210-fedc-ba0987654321", "type": "org_group_policy_overrides"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -341,7 +389,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicyOverride" enabled
     And new "UpdateOrgGroupPolicyOverride" request
     And request contains "org_group_policy_override_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"org_site": "datadoghq.com", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "id": "9f8e7d6c-5b4a-3210-fedc-ba0987654321", "type": "org_group_policy_overrides"}}
+    And body with value {"data": {"attributes": {"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}, "id": "9f8e7d6c-5b4a-3210-fedc-ba0987654321", "type": "org_group_policy_overrides"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -350,7 +398,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -359,7 +407,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -368,7 +416,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 200 OK
 

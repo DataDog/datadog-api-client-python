@@ -37,7 +37,7 @@ class SecurityMonitoringContentPackStateMeta(ModelNormal):
         :param cloud_siem_index_incorrect: Whether the cloud SIEM index configuration is incorrect at the organization level
         :type cloud_siem_index_incorrect: bool
 
-        :param sku: The SIEM pricing model (SKU) for the organization
+        :param sku: The Cloud SIEM pricing model (SKU) for the organization.
         :type sku: SecurityMonitoringSKU
         """
         super().__init__(kwargs)
