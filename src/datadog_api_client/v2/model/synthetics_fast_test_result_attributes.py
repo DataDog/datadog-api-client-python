@@ -14,26 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.synthetics_fast_test_result_device import SyntheticsFastTestResultDevice
-    from datadog_api_client.v2.model.synthetics_fast_test_result_location import SyntheticsFastTestResultLocation
+    from datadog_api_client.v2.model.synthetics_test_result_device import SyntheticsTestResultDevice
+    from datadog_api_client.v2.model.synthetics_test_result_location import SyntheticsTestResultLocation
     from datadog_api_client.v2.model.synthetics_fast_test_result_detail import SyntheticsFastTestResultDetail
     from datadog_api_client.v2.model.synthetics_fast_test_sub_type import SyntheticsFastTestSubType
+    from datadog_api_client.v2.model.synthetics_fast_test_type import SyntheticsFastTestType
 
 
 class SyntheticsFastTestResultAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.synthetics_fast_test_result_device import SyntheticsFastTestResultDevice
-        from datadog_api_client.v2.model.synthetics_fast_test_result_location import SyntheticsFastTestResultLocation
+        from datadog_api_client.v2.model.synthetics_test_result_device import SyntheticsTestResultDevice
+        from datadog_api_client.v2.model.synthetics_test_result_location import SyntheticsTestResultLocation
         from datadog_api_client.v2.model.synthetics_fast_test_result_detail import SyntheticsFastTestResultDetail
         from datadog_api_client.v2.model.synthetics_fast_test_sub_type import SyntheticsFastTestSubType
+        from datadog_api_client.v2.model.synthetics_fast_test_type import SyntheticsFastTestType
 
         return {
-            "device": (SyntheticsFastTestResultDevice,),
-            "location": (SyntheticsFastTestResultLocation,),
+            "device": (SyntheticsTestResultDevice,),
+            "location": (SyntheticsTestResultLocation,),
             "result": (SyntheticsFastTestResultDetail,),
             "test_sub_type": (SyntheticsFastTestSubType,),
-            "test_type": (str,),
+            "test_type": (SyntheticsFastTestType,),
             "test_version": (int,),
         }
 
@@ -48,22 +50,22 @@ class SyntheticsFastTestResultAttributes(ModelNormal):
 
     def __init__(
         self_,
-        device: Union[SyntheticsFastTestResultDevice, UnsetType] = unset,
-        location: Union[SyntheticsFastTestResultLocation, UnsetType] = unset,
+        device: Union[SyntheticsTestResultDevice, UnsetType] = unset,
+        location: Union[SyntheticsTestResultLocation, UnsetType] = unset,
         result: Union[SyntheticsFastTestResultDetail, UnsetType] = unset,
         test_sub_type: Union[SyntheticsFastTestSubType, UnsetType] = unset,
-        test_type: Union[str, UnsetType] = unset,
+        test_type: Union[SyntheticsFastTestType, UnsetType] = unset,
         test_version: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes of the fast test result.
 
-        :param device: Device information for browser-based fast tests.
-        :type device: SyntheticsFastTestResultDevice, optional
+        :param device: Device information for the test result (browser and mobile tests).
+        :type device: SyntheticsTestResultDevice, optional
 
-        :param location: Location from which the fast test was executed.
-        :type location: SyntheticsFastTestResultLocation, optional
+        :param location: Location information for a Synthetic test result.
+        :type location: SyntheticsTestResultLocation, optional
 
         :param result: Detailed result data for the fast test run. The exact shape of nested fields
             ( ``request`` , ``response`` , ``assertions`` , etc.) depends on the test subtype.
@@ -72,8 +74,8 @@ class SyntheticsFastTestResultAttributes(ModelNormal):
         :param test_sub_type: Subtype of the Synthetic test that produced this result.
         :type test_sub_type: SyntheticsFastTestSubType, optional
 
-        :param test_type: The type of the Synthetic test that produced this result (for example, ``api`` or ``browser`` ).
-        :type test_type: str, optional
+        :param test_type: Type of the Synthetic fast test that produced this result.
+        :type test_type: SyntheticsFastTestType, optional
 
         :param test_version: Version of the test at the time the fast test was triggered.
         :type test_version: int, optional
