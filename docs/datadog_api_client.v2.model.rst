@@ -6626,6 +6626,27 @@ datadog\_api\_client.v2.model.create\_feature\_flag\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_flag\_suggestion\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_flag_suggestion_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_flag\_suggestion\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_flag_suggestion_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_flag\_suggestion\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_flag_suggestion_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_incident\_notification\_rule\_request module
 ----------------------------------------------------------------------------------
 
@@ -11355,6 +11376,62 @@ datadog\_api\_client.v2.model.findings module
 ---------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.findings
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion\_action module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion\_data\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion\_event\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion_event_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion\_property module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion_property
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flag\_suggestion\_status module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flag_suggestion_status
    :members:
    :show-inheritance:
 
@@ -25673,6 +25750,27 @@ datadog\_api\_client.v2.model.revert\_custom\_rule\_revision\_request\_data\_att
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.review\_flag\_suggestion\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.review_flag_suggestion_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.review\_flag\_suggestion\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.review_flag_suggestion_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.review\_flag\_suggestion\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.review_flag_suggestion_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.role module
 -----------------------------------------
 
@@ -31718,6 +31816,13 @@ datadog\_api\_client.v2.model.step\_display\_bounds module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.step_display_bounds
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.suggestion\_metadata module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.suggestion_metadata
    :members:
    :show-inheritance:
 

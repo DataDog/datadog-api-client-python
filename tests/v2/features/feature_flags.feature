@@ -7,6 +7,30 @@ Feature: Feature Flags
     And a valid "appKeyAuth" key in the system
     And an instance of "FeatureFlags" API
 
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Approve a flag suggestion returns "Bad Request" response
+    Given new "ApproveFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Looks good, approved!"}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Approve a flag suggestion returns "Not Found" response
+    Given new "ApproveFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Looks good, approved!"}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Approve a flag suggestion returns "OK" response
+    Given new "ApproveFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Looks good, approved!"}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/feature-flags
   Scenario: Archive a feature flag returns "Bad Request" response
     Given new "ArchiveFeatureFlag" request
@@ -52,6 +76,38 @@ Feature: Feature Flags
     And the response "data.attributes.key" is equal to "test-feature-flag-{{ unique }}"
     And the response "data.attributes.name" is equal to "Test Feature Flag {{ unique }}"
     And the response "data.attributes.value_type" is equal to "BOOLEAN"
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create a flag suggestion returns "Bad Request" response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "archived", "comment": "Archive this deprecated flag", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["user@example.com"], "property": "FLAG", "suggestion": "ENABLED", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440005"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create a flag suggestion returns "Conflict" response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "archived", "comment": "Archive this deprecated flag", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["user@example.com"], "property": "FLAG", "suggestion": "ENABLED", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440005"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create a flag suggestion returns "Created" response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "archived", "comment": "Archive this deprecated flag", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["user@example.com"], "property": "FLAG", "suggestion": "ENABLED", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440005"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Create a flag suggestion returns "Not Found" response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "archived", "comment": "Archive this deprecated flag", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["user@example.com"], "property": "FLAG", "suggestion": "ENABLED", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440005"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @team:DataDog/feature-flags
   Scenario: Create allocation for a flag in an environment returns "Created" response
@@ -127,6 +183,27 @@ Feature: Feature Flags
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "environment_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Delete a flag suggestion returns "Bad Request" response
+    Given new "DeleteFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Delete a flag suggestion returns "No Content" response
+    Given new "DeleteFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Delete a flag suggestion returns "Not Found" response
+    Given new "DeleteFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -219,6 +296,27 @@ Feature: Feature Flags
     And the response "data.attributes.name" has the same value as "feature_flag.data.attributes.name"
     And the response "data.attributes.value_type" has the same value as "feature_flag.data.attributes.value_type"
 
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Get a flag suggestion returns "Bad Request" response
+    Given new "GetFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Get a flag suggestion returns "Not Found" response
+    Given new "GetFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Get a flag suggestion returns "OK" response
+    Given new "GetFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/feature-flags
   Scenario: Get an environment returns "Not Found" response
     Given new "GetFeatureFlagsEnvironment" request
@@ -271,6 +369,30 @@ Feature: Feature Flags
   Scenario: Pause a progressive rollout returns "OK" response
     Given new "PauseExposureSchedule" request
     And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Reject a flag suggestion returns "Bad Request" response
+    Given new "RejectFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Looks good, approved!"}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Reject a flag suggestion returns "Not Found" response
+    Given new "RejectFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Looks good, approved!"}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Reject a flag suggestion returns "OK" response
+    Given new "RejectFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Looks good, approved!"}, "type": "flag-suggestion-events"}}
     When the request is sent
     Then the response status is 200 OK
 

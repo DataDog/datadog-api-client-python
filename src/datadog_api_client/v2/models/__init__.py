@@ -1251,6 +1251,9 @@ from datadog_api_client.v2.model.create_feature_flag_attributes import CreateFea
 from datadog_api_client.v2.model.create_feature_flag_data import CreateFeatureFlagData
 from datadog_api_client.v2.model.create_feature_flag_data_type import CreateFeatureFlagDataType
 from datadog_api_client.v2.model.create_feature_flag_request import CreateFeatureFlagRequest
+from datadog_api_client.v2.model.create_flag_suggestion_attributes import CreateFlagSuggestionAttributes
+from datadog_api_client.v2.model.create_flag_suggestion_data import CreateFlagSuggestionData
+from datadog_api_client.v2.model.create_flag_suggestion_request import CreateFlagSuggestionRequest
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
@@ -2204,6 +2207,14 @@ from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
 from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 from datadog_api_client.v2.model.findings import Findings
+from datadog_api_client.v2.model.flag_suggestion import FlagSuggestion
+from datadog_api_client.v2.model.flag_suggestion_action import FlagSuggestionAction
+from datadog_api_client.v2.model.flag_suggestion_attributes import FlagSuggestionAttributes
+from datadog_api_client.v2.model.flag_suggestion_data_type import FlagSuggestionDataType
+from datadog_api_client.v2.model.flag_suggestion_event_data_type import FlagSuggestionEventDataType
+from datadog_api_client.v2.model.flag_suggestion_property import FlagSuggestionProperty
+from datadog_api_client.v2.model.flag_suggestion_response import FlagSuggestionResponse
+from datadog_api_client.v2.model.flag_suggestion_status import FlagSuggestionStatus
 from datadog_api_client.v2.model.flaky_test import FlakyTest
 from datadog_api_client.v2.model.flaky_test_attributes import FlakyTestAttributes
 from datadog_api_client.v2.model.flaky_test_attributes_flaky_state import FlakyTestAttributesFlakyState
@@ -5261,6 +5272,9 @@ from datadog_api_client.v2.model.revert_custom_rule_revision_request_data import
 from datadog_api_client.v2.model.revert_custom_rule_revision_request_data_attributes import (
     RevertCustomRuleRevisionRequestDataAttributes,
 )
+from datadog_api_client.v2.model.review_flag_suggestion_attributes import ReviewFlagSuggestionAttributes
+from datadog_api_client.v2.model.review_flag_suggestion_data import ReviewFlagSuggestionData
+from datadog_api_client.v2.model.review_flag_suggestion_request import ReviewFlagSuggestionRequest
 from datadog_api_client.v2.model.role import Role
 from datadog_api_client.v2.model.role_attributes import RoleAttributes
 from datadog_api_client.v2.model.role_clone import RoleClone
@@ -6474,6 +6488,7 @@ from datadog_api_client.v2.model.status_pages_user_type import StatusPagesUserTy
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
+from datadog_api_client.v2.model.suggestion_metadata import SuggestionMetadata
 from datadog_api_client.v2.model.suite_create_edit import SuiteCreateEdit
 from datadog_api_client.v2.model.suite_create_edit_request import SuiteCreateEditRequest
 from datadog_api_client.v2.model.suite_json_patch_request import SuiteJsonPatchRequest
@@ -8243,6 +8258,9 @@ __all__ = [
     "CreateFeatureFlagData",
     "CreateFeatureFlagDataType",
     "CreateFeatureFlagRequest",
+    "CreateFlagSuggestionAttributes",
+    "CreateFlagSuggestionData",
+    "CreateFlagSuggestionRequest",
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateJiraIssueRequestArray",
@@ -8918,6 +8936,14 @@ __all__ = [
     "FindingType",
     "FindingVulnerabilityType",
     "Findings",
+    "FlagSuggestion",
+    "FlagSuggestionAction",
+    "FlagSuggestionAttributes",
+    "FlagSuggestionDataType",
+    "FlagSuggestionEventDataType",
+    "FlagSuggestionProperty",
+    "FlagSuggestionResponse",
+    "FlagSuggestionStatus",
     "FlakyTest",
     "FlakyTestAttributes",
     "FlakyTestAttributesFlakyState",
@@ -11017,6 +11043,9 @@ __all__ = [
     "RevertCustomRuleRevisionRequest",
     "RevertCustomRuleRevisionRequestData",
     "RevertCustomRuleRevisionRequestDataAttributes",
+    "ReviewFlagSuggestionAttributes",
+    "ReviewFlagSuggestionData",
+    "ReviewFlagSuggestionRequest",
     "Role",
     "RoleAttributes",
     "RoleClone",
@@ -11834,6 +11863,7 @@ __all__ = [
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
+    "SuggestionMetadata",
     "SuiteCreateEdit",
     "SuiteCreateEditRequest",
     "SuiteJsonPatchRequest",
