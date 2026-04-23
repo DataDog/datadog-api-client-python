@@ -13,7 +13,7 @@ configuration = Configuration()
 with ApiClient(configuration) as api_client:
     api_instance = KeyManagementApi(api_client)
     response = api_instance.get_personal_access_token(
-        pat_uuid=PERSONAL_ACCESS_TOKEN_DATA_ID,
+        pat_id=PERSONAL_ACCESS_TOKEN_DATA_ID,
     )
 
     print(response)
