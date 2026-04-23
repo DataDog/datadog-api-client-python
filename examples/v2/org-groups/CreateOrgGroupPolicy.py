@@ -8,8 +8,6 @@ from datadog_api_client.v2.model.org_group_policy_create_attributes import OrgGr
 from datadog_api_client.v2.model.org_group_policy_create_data import OrgGroupPolicyCreateData
 from datadog_api_client.v2.model.org_group_policy_create_relationships import OrgGroupPolicyCreateRelationships
 from datadog_api_client.v2.model.org_group_policy_create_request import OrgGroupPolicyCreateRequest
-from datadog_api_client.v2.model.org_group_policy_enforcement_tier import OrgGroupPolicyEnforcementTier
-from datadog_api_client.v2.model.org_group_policy_policy_type import OrgGroupPolicyPolicyType
 from datadog_api_client.v2.model.org_group_policy_type import OrgGroupPolicyType
 from datadog_api_client.v2.model.org_group_relationship_to_one import OrgGroupRelationshipToOne
 from datadog_api_client.v2.model.org_group_relationship_to_one_data import OrgGroupRelationshipToOneData
@@ -20,9 +18,7 @@ body = OrgGroupPolicyCreateRequest(
     data=OrgGroupPolicyCreateData(
         attributes=OrgGroupPolicyCreateAttributes(
             content=dict([("value", "UTC")]),
-            enforcement_tier=OrgGroupPolicyEnforcementTier.DEFAULT,
             policy_name="monitor_timezone",
-            policy_type=OrgGroupPolicyPolicyType.ORG_CONFIG,
         ),
         relationships=OrgGroupPolicyCreateRelationships(
             org_group=OrgGroupRelationshipToOne(

@@ -257,16 +257,16 @@ class KeyManagementApi:
             settings={
                 "response_type": (PersonalAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/personal_access_tokens/{pat_id}",
+                "endpoint_path": "/api/v2/personal_access_tokens/{pat_uuid}",
                 "operation_id": "get_personal_access_token",
                 "http_method": "GET",
                 "version": "v2",
             },
             params_map={
-                "pat_id": {
+                "pat_uuid": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_id",
+                    "attribute": "pat_uuid",
                     "location": "path",
                 },
             },
@@ -499,16 +499,16 @@ class KeyManagementApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/personal_access_tokens/{pat_id}",
+                "endpoint_path": "/api/v2/personal_access_tokens/{pat_uuid}",
                 "operation_id": "revoke_personal_access_token",
                 "http_method": "DELETE",
                 "version": "v2",
             },
             params_map={
-                "pat_id": {
+                "pat_uuid": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_id",
+                    "attribute": "pat_uuid",
                     "location": "path",
                 },
             },
@@ -600,16 +600,16 @@ class KeyManagementApi:
             settings={
                 "response_type": (PersonalAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/personal_access_tokens/{pat_id}",
+                "endpoint_path": "/api/v2/personal_access_tokens/{pat_uuid}",
                 "operation_id": "update_personal_access_token",
                 "http_method": "PATCH",
                 "version": "v2",
             },
             params_map={
-                "pat_id": {
+                "pat_uuid": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_id",
+                    "attribute": "pat_uuid",
                     "location": "path",
                 },
                 "body": {
@@ -789,18 +789,18 @@ class KeyManagementApi:
 
     def get_personal_access_token(
         self,
-        pat_id: str,
+        pat_uuid: str,
     ) -> PersonalAccessTokenResponse:
         """Get a personal access token.
 
         Get a specific personal access token by its UUID.
 
-        :param pat_id: The ID of the personal access token.
-        :type pat_id: str
+        :param pat_uuid: The UUID of the personal access token.
+        :type pat_uuid: str
         :rtype: PersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["pat_id"] = pat_id
+        kwargs["pat_uuid"] = pat_uuid
 
         return self._get_personal_access_token_endpoint.call_with_http_info(**kwargs)
 
@@ -1046,18 +1046,18 @@ class KeyManagementApi:
 
     def revoke_personal_access_token(
         self,
-        pat_id: str,
+        pat_uuid: str,
     ) -> None:
         """Revoke a personal access token.
 
         Revoke a specific personal access token.
 
-        :param pat_id: The ID of the personal access token.
-        :type pat_id: str
+        :param pat_uuid: The UUID of the personal access token.
+        :type pat_uuid: str
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["pat_id"] = pat_id
+        kwargs["pat_uuid"] = pat_uuid
 
         return self._revoke_personal_access_token_endpoint.call_with_http_info(**kwargs)
 
@@ -1127,20 +1127,20 @@ class KeyManagementApi:
 
     def update_personal_access_token(
         self,
-        pat_id: str,
+        pat_uuid: str,
         body: PersonalAccessTokenUpdateRequest,
     ) -> PersonalAccessTokenResponse:
         """Update a personal access token.
 
         Update a specific personal access token.
 
-        :param pat_id: The ID of the personal access token.
-        :type pat_id: str
+        :param pat_uuid: The UUID of the personal access token.
+        :type pat_uuid: str
         :type body: PersonalAccessTokenUpdateRequest
         :rtype: PersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["pat_id"] = pat_id
+        kwargs["pat_uuid"] = pat_uuid
 
         kwargs["body"] = body
 

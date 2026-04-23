@@ -221,7 +221,7 @@ Feature: Key Management
   @generated @skip @team:DataDog/credentials-management
   Scenario: Get a personal access token returns "Not Found" response
     Given new "GetPersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -229,7 +229,7 @@ Feature: Key Management
   Scenario: Get a personal access token returns "OK" response
     Given there is a valid "personal_access_token" in the system
     And new "GetPersonalAccessToken" request
-    And request contains "pat_id" parameter from "personal_access_token.data.id"
+    And request contains "pat_uuid" parameter from "personal_access_token.data.id"
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "personal_access_tokens"
@@ -355,21 +355,21 @@ Feature: Key Management
   Scenario: Revoke a personal access token returns "No Content" response
     Given there is a valid "personal_access_token" in the system
     And new "RevokePersonalAccessToken" request
-    And request contains "pat_id" parameter from "personal_access_token.data.id"
+    And request contains "pat_uuid" parameter from "personal_access_token.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/credentials-management
   Scenario: Revoke a personal access token returns "Not Found" response
     Given new "RevokePersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/credentials-management
   Scenario: Update a personal access token returns "Bad Request" response
     Given new "UpdatePersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "Updated Personal Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "personal_access_tokens"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -377,7 +377,7 @@ Feature: Key Management
   @generated @skip @team:DataDog/credentials-management
   Scenario: Update a personal access token returns "Not Found" response
     Given new "UpdatePersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "pat_uuid" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "Updated Personal Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "personal_access_tokens"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -386,7 +386,7 @@ Feature: Key Management
   Scenario: Update a personal access token returns "OK" response
     Given there is a valid "personal_access_token" in the system
     And new "UpdatePersonalAccessToken" request
-    And request contains "pat_id" parameter from "personal_access_token.data.id"
+    And request contains "pat_uuid" parameter from "personal_access_token.data.id"
     And body with value {"data": {"type": "personal_access_tokens", "id": "{{ personal_access_token.data.id }}", "attributes": {"name": "{{ unique }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
