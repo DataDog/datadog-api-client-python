@@ -58,6 +58,7 @@ class EventsApi:
                                     "ap2.datadoghq.com",
                                     "datadoghq.eu",
                                     "ddog-gov.com",
+                                    "us2.ddog-gov.com",
                                 ],
                             },
                             "subdomain": {
