@@ -26513,6 +26513,7 @@ paths:
                 - ap2.datadoghq.com
                 - datadoghq.eu
                 - ddog-gov.com
+                - us2.ddog-gov.com
             subdomain:
               default: ip-ranges
               description: The subdomain where the API is deployed.
@@ -39887,6 +39888,7 @@ paths:
                 - ap2.datadoghq.com
                 - datadoghq.eu
                 - ddog-gov.com
+                - us2.ddog-gov.com
             subdomain:
               default: http-intake.logs
               description: The subdomain where the API is deployed.
@@ -39927,6 +39929,7 @@ servers:
           - ap2.datadoghq.com
           - datadoghq.eu
           - ddog-gov.com
+          - us2.ddog-gov.com
       subdomain:
         default: api
         description: The subdomain where the API is deployed.
