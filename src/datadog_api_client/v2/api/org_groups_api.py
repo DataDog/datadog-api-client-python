@@ -241,6 +241,52 @@ class OrgGroupsApi:
             api_client=api_client,
         )
 
+        self._get_org_group_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (OrgGroupPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/org_group_policies/{org_group_policy_id}",
+                "operation_id": "get_org_group_policy",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "org_group_policy_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "org_group_policy_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_org_group_policy_override_endpoint = _Endpoint(
+            settings={
+                "response_type": (OrgGroupPolicyOverrideResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/org_group_policy_overrides/{org_group_policy_override_id}",
+                "operation_id": "get_org_group_policy_override",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "org_group_policy_override_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "org_group_policy_override_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_org_group_memberships_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgGroupMembershipListResponse,),
@@ -704,6 +750,40 @@ class OrgGroupsApi:
 
         return self._get_org_group_membership_endpoint.call_with_http_info(**kwargs)
 
+    def get_org_group_policy(
+        self,
+        org_group_policy_id: UUID,
+    ) -> OrgGroupPolicyResponse:
+        """Get an org group policy.
+
+        Get a specific organization group policy by its ID.
+
+        :param org_group_policy_id: The ID of the org group policy.
+        :type org_group_policy_id: UUID
+        :rtype: OrgGroupPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["org_group_policy_id"] = org_group_policy_id
+
+        return self._get_org_group_policy_endpoint.call_with_http_info(**kwargs)
+
+    def get_org_group_policy_override(
+        self,
+        org_group_policy_override_id: UUID,
+    ) -> OrgGroupPolicyOverrideResponse:
+        """Get an org group policy override.
+
+        Get a specific organization group policy override by its ID.
+
+        :param org_group_policy_override_id: The ID of the org group policy override.
+        :type org_group_policy_override_id: UUID
+        :rtype: OrgGroupPolicyOverrideResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["org_group_policy_override_id"] = org_group_policy_override_id
+
+        return self._get_org_group_policy_override_endpoint.call_with_http_info(**kwargs)
+
     def list_org_group_memberships(
         self,
         *,
@@ -929,7 +1009,7 @@ class OrgGroupsApi:
     ) -> OrgGroupPolicyResponse:
         """Update an org group policy.
 
-        Update the content of an existing organization group policy.
+        Update an existing organization group policy.
 
         :param org_group_policy_id: The ID of the org group policy.
         :type org_group_policy_id: UUID

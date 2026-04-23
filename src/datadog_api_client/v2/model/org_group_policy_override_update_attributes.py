@@ -26,7 +26,7 @@ class OrgGroupPolicyOverrideUpdateAttributes(ModelNormal):
 
     def __init__(self_, org_site: str, org_uuid: UUID, **kwargs):
         """
-        Attributes for updating a policy override.
+        Attributes for updating a policy override. The ``org_uuid`` and ``org_site`` fields must match the existing override and cannot be changed.
 
         :param org_site: The site of the organization.
         :type org_site: str

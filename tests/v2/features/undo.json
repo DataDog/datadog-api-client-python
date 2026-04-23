@@ -4228,6 +4228,12 @@
       "type": "unsafe"
     }
   },
+  "GetOrgGroupPolicy": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateOrgGroupPolicy": {
     "tag": "Org Groups",
     "undo": {
@@ -4262,6 +4268,12 @@
     "tag": "Org Groups",
     "undo": {
       "type": "unsafe"
+    }
+  },
+  "GetOrgGroupPolicyOverride": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateOrgGroupPolicyOverride": {
