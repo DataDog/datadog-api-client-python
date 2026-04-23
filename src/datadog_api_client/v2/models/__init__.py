@@ -2179,9 +2179,11 @@ from datadog_api_client.v2.model.fastly_services_response import FastlyServicesR
 from datadog_api_client.v2.model.feature_flag import FeatureFlag
 from datadog_api_client.v2.model.feature_flag_attributes import FeatureFlagAttributes
 from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
+from datadog_api_client.v2.model.feature_flag_environment_list_item import FeatureFlagEnvironmentListItem
+from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
+from datadog_api_client.v2.model.feature_flag_list_item_attributes import FeatureFlagListItemAttributes
 from datadog_api_client.v2.model.feature_flag_response import FeatureFlagResponse
 from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
-from datadog_api_client.v2.model.feature_flag_targeting_rule import FeatureFlagTargetingRule
 from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 from datadog_api_client.v2.model.feature_flags_pagination_meta_page import FeatureFlagsPaginationMetaPage
 from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
@@ -8893,9 +8895,11 @@ __all__ = [
     "FeatureFlag",
     "FeatureFlagAttributes",
     "FeatureFlagEnvironment",
+    "FeatureFlagEnvironmentListItem",
+    "FeatureFlagListItem",
+    "FeatureFlagListItemAttributes",
     "FeatureFlagResponse",
     "FeatureFlagStatus",
-    "FeatureFlagTargetingRule",
     "FeatureFlagsPaginationMeta",
     "FeatureFlagsPaginationMetaPage",
     "FiltersPerProduct",
