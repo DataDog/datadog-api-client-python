@@ -18,46 +18,81 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.synthetics_test_result_assertion_result import SyntheticsTestResultAssertionResult
-    from datadog_api_client.v2.model.synthetics_test_result_certificate import SyntheticsTestResultCertificate
-    from datadog_api_client.v2.model.synthetics_test_result_failure import SyntheticsTestResultFailure
-    from datadog_api_client.v2.model.synthetics_test_result_request_info import SyntheticsTestResultRequestInfo
-    from datadog_api_client.v2.model.synthetics_test_result_response_info import SyntheticsTestResultResponseInfo
-    from datadog_api_client.v2.model.synthetics_test_result_run_type import SyntheticsTestResultRunType
-    from datadog_api_client.v2.model.synthetics_test_result_step import SyntheticsTestResultStep
-    from datadog_api_client.v2.model.synthetics_test_result_traceroute_hop import SyntheticsTestResultTracerouteHop
+    from datadog_api_client.v2.model.synthetics_fast_test_assertion_result import SyntheticsFastTestAssertionResult
+    from datadog_api_client.v2.model.synthetics_fast_test_result_failure import SyntheticsFastTestResultFailure
+    from datadog_api_client.v2.model.synthetics_fast_test_step_result import SyntheticsFastTestStepResult
+    from datadog_api_client.v2.model.synthetics_fast_test_traceroute_hop import SyntheticsFastTestTracerouteHop
 
 
 class SyntheticsFastTestResultDetail(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.synthetics_test_result_assertion_result import (
-            SyntheticsTestResultAssertionResult,
-        )
-        from datadog_api_client.v2.model.synthetics_test_result_certificate import SyntheticsTestResultCertificate
-        from datadog_api_client.v2.model.synthetics_test_result_failure import SyntheticsTestResultFailure
-        from datadog_api_client.v2.model.synthetics_test_result_request_info import SyntheticsTestResultRequestInfo
-        from datadog_api_client.v2.model.synthetics_test_result_response_info import SyntheticsTestResultResponseInfo
-        from datadog_api_client.v2.model.synthetics_test_result_run_type import SyntheticsTestResultRunType
-        from datadog_api_client.v2.model.synthetics_test_result_step import SyntheticsTestResultStep
-        from datadog_api_client.v2.model.synthetics_test_result_traceroute_hop import SyntheticsTestResultTracerouteHop
+        from datadog_api_client.v2.model.synthetics_fast_test_assertion_result import SyntheticsFastTestAssertionResult
+        from datadog_api_client.v2.model.synthetics_fast_test_result_failure import SyntheticsFastTestResultFailure
+        from datadog_api_client.v2.model.synthetics_fast_test_step_result import SyntheticsFastTestStepResult
+        from datadog_api_client.v2.model.synthetics_fast_test_traceroute_hop import SyntheticsFastTestTracerouteHop
 
         return {
-            "assertions": ([SyntheticsTestResultAssertionResult],),
+            "assertions": ([SyntheticsFastTestAssertionResult],),
             "call_type": (str,),
-            "cert": (SyntheticsTestResultCertificate,),
+            "cert": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+            ),
             "duration": (float,),
-            "failure": (SyntheticsTestResultFailure,),
+            "failure": (SyntheticsFastTestResultFailure,),
             "finished_at": (int,),
             "id": (str,),
             "is_fast_retry": (bool,),
-            "request": (SyntheticsTestResultRequestInfo,),
+            "request": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+            ),
             "resolved_ip": (str,),
-            "response": (SyntheticsTestResultResponseInfo,),
-            "run_type": (SyntheticsTestResultRunType,),
+            "response": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+            ),
+            "run_type": (str,),
             "started_at": (int,),
             "status": (str,),
-            "steps": ([SyntheticsTestResultStep],),
+            "steps": ([SyntheticsFastTestStepResult],),
             "timings": (
                 {
                     str: (
@@ -74,7 +109,7 @@ class SyntheticsFastTestResultDetail(ModelNormal):
                     )
                 },
             ),
-            "traceroute": ([SyntheticsTestResultTracerouteHop],),
+            "traceroute": ([SyntheticsFastTestTracerouteHop],),
             "triggered_at": (int,),
             "tunnel": (bool,),
         }
@@ -103,23 +138,23 @@ class SyntheticsFastTestResultDetail(ModelNormal):
 
     def __init__(
         self_,
-        assertions: Union[List[SyntheticsTestResultAssertionResult], UnsetType] = unset,
+        assertions: Union[List[SyntheticsFastTestAssertionResult], UnsetType] = unset,
         call_type: Union[str, UnsetType] = unset,
-        cert: Union[SyntheticsTestResultCertificate, UnsetType] = unset,
+        cert: Union[Dict[str, Any], UnsetType] = unset,
         duration: Union[float, UnsetType] = unset,
-        failure: Union[SyntheticsTestResultFailure, UnsetType] = unset,
+        failure: Union[SyntheticsFastTestResultFailure, UnsetType] = unset,
         finished_at: Union[int, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         is_fast_retry: Union[bool, UnsetType] = unset,
-        request: Union[SyntheticsTestResultRequestInfo, UnsetType] = unset,
+        request: Union[Dict[str, Any], UnsetType] = unset,
         resolved_ip: Union[str, UnsetType] = unset,
-        response: Union[SyntheticsTestResultResponseInfo, UnsetType] = unset,
-        run_type: Union[SyntheticsTestResultRunType, UnsetType] = unset,
+        response: Union[Dict[str, Any], UnsetType] = unset,
+        run_type: Union[str, UnsetType] = unset,
         started_at: Union[int, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
-        steps: Union[List[SyntheticsTestResultStep], UnsetType] = unset,
+        steps: Union[List[SyntheticsFastTestStepResult], UnsetType] = unset,
         timings: Union[Dict[str, Any], UnsetType] = unset,
-        traceroute: Union[List[SyntheticsTestResultTracerouteHop], UnsetType] = unset,
+        traceroute: Union[List[SyntheticsFastTestTracerouteHop], UnsetType] = unset,
         triggered_at: Union[int, UnsetType] = unset,
         tunnel: Union[bool, UnsetType] = unset,
         **kwargs,
@@ -129,19 +164,19 @@ class SyntheticsFastTestResultDetail(ModelNormal):
         ( ``request`` , ``response`` , ``assertions`` , etc.) depends on the test subtype.
 
         :param assertions: Results of each assertion evaluated during the test.
-        :type assertions: [SyntheticsTestResultAssertionResult], optional
+        :type assertions: [SyntheticsFastTestAssertionResult], optional
 
         :param call_type: gRPC call type (for example, ``unary`` , ``healthCheck`` , or ``reflection`` ).
         :type call_type: str, optional
 
-        :param cert: SSL/TLS certificate information returned from an SSL test.
-        :type cert: SyntheticsTestResultCertificate, optional
+        :param cert: TLS certificate details, present for SSL tests.
+        :type cert: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param duration: Total duration of the test in milliseconds.
         :type duration: float, optional
 
-        :param failure: Details about the failure of a Synthetic test.
-        :type failure: SyntheticsTestResultFailure, optional
+        :param failure: Failure details if the fast test did not pass.
+        :type failure: SyntheticsFastTestResultFailure, optional
 
         :param finished_at: Unix timestamp (ms) of when the test finished.
         :type finished_at: int, optional
@@ -152,17 +187,17 @@ class SyntheticsFastTestResultDetail(ModelNormal):
         :param is_fast_retry: Whether this result is from an automatic fast retry.
         :type is_fast_retry: bool, optional
 
-        :param request: Details of the outgoing request made during the test execution.
-        :type request: SyntheticsTestResultRequestInfo, optional
+        :param request: Details of the outgoing request made during the test.
+        :type request: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param resolved_ip: IP address resolved for the target host.
         :type resolved_ip: str, optional
 
-        :param response: Details of the response received during the test execution.
-        :type response: SyntheticsTestResultResponseInfo, optional
+        :param response: Details of the response received during the test.
+        :type response: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param run_type: The type of run for a Synthetic test result.
-        :type run_type: SyntheticsTestResultRunType, optional
+        :param run_type: Run type indicating how this test was triggered (for example, ``fast`` ).
+        :type run_type: str, optional
 
         :param started_at: Unix timestamp (ms) of when the test started.
         :type started_at: int, optional
@@ -171,13 +206,13 @@ class SyntheticsFastTestResultDetail(ModelNormal):
         :type status: str, optional
 
         :param steps: Step results for multistep API tests.
-        :type steps: [SyntheticsTestResultStep], optional
+        :type steps: [SyntheticsFastTestStepResult], optional
 
         :param timings: Timing breakdown of the test request phases (for example, DNS, TCP, TLS, first byte).
         :type timings: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param traceroute: Traceroute hop results, present for ICMP and TCP tests.
-        :type traceroute: [SyntheticsTestResultTracerouteHop], optional
+        :type traceroute: [SyntheticsFastTestTracerouteHop], optional
 
         :param triggered_at: Unix timestamp (ms) of when the test was triggered.
         :type triggered_at: int, optional

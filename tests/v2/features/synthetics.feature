@@ -152,36 +152,6 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a browser test result returns "API error response." response
-    Given new "GetSyntheticsBrowserTestResult" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And request contains "result_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 API error response.
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a browser test result returns "OK" response
-    Given new "GetSyntheticsBrowserTestResult" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And request contains "result_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a browser test's latest results returns "API error response." response
-    Given new "ListSyntheticsBrowserTestLatestResults" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 API error response.
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a browser test's latest results returns "OK" response
-    Given new "ListSyntheticsBrowserTestLatestResults" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Get a fast test result returns "API error response." response
     Given new "GetSyntheticsFastTestResult" request
     And request contains "id" parameter from "REPLACE.ME"
@@ -237,36 +207,6 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Get a suite returns "OK" response
     Given new "GetSyntheticsSuite" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a test result returns "API error response." response
-    Given new "GetSyntheticsTestResult" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And request contains "result_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 API error response.
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a test result returns "OK" response
-    Given new "GetSyntheticsTestResult" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    And request contains "result_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a test's latest results returns "API error response." response
-    Given new "ListSyntheticsTestLatestResults" request
-    And request contains "public_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 API error response.
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Get a test's latest results returns "OK" response
-    Given new "ListSyntheticsTestLatestResults" request
     And request contains "public_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
@@ -379,20 +319,6 @@ Feature: Synthetics
     Given new "PatchTestSuite" request
     And request contains "public_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"json_patch": [{"op": "add", "path": "/name"}]}, "type": "suites_json_patch"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Poll for test results returns "API error response." response
-    Given new "PollSyntheticsTestResults" request
-    And request contains "result_ids" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 API error response.
-
-  @generated @skip @team:DataDog/synthetics-orchestrating-managing
-  Scenario: Poll for test results returns "OK" response
-    Given new "PollSyntheticsTestResults" request
-    And request contains "result_ids" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
