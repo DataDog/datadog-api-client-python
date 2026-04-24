@@ -24,7 +24,7 @@ body = OrgGroupMembershipBulkUpdateRequest(
         attributes=OrgGroupMembershipBulkUpdateAttributes(
             orgs=[
                 GlobalOrgIdentifier(
-                    org_site="datadoghq.com",
+                    org_site="us1",
                     org_uuid=UUID("c3d4e5f6-a7b8-9012-cdef-012345678901"),
                 ),
             ],

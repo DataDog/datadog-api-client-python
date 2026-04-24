@@ -22817,6 +22817,13 @@ datadog\_api\_client.v2.model.org\_group\_policy\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.org\_group\_policy\_enforcement\_tier module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_enforcement_tier
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.org\_group\_policy\_list\_response module
 -----------------------------------------------------------------------
 
@@ -22919,6 +22926,13 @@ datadog\_api\_client.v2.model.org\_group\_policy\_override\_update\_request modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.org_group_policy_override_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_policy\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_policy_type
    :members:
    :show-inheritance:
 
