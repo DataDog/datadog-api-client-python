@@ -3,14 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    unset,
-    UnsetType,
 )
 
 
@@ -49,50 +47,45 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        completed_date: datetime,
+        completed_description: str,
         components_affected: List[CreateMaintenanceRequestDataAttributesComponentsAffectedItems],
+        in_progress_description: str,
+        scheduled_description: str,
+        start_date: datetime,
         title: str,
-        completed_date: Union[datetime, UnsetType] = unset,
-        completed_description: Union[str, UnsetType] = unset,
-        in_progress_description: Union[str, UnsetType] = unset,
-        scheduled_description: Union[str, UnsetType] = unset,
-        start_date: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
         """
         The supported attributes for creating a maintenance.
 
         :param completed_date: Timestamp of when the maintenance was completed.
-        :type completed_date: datetime, optional
+        :type completed_date: datetime
 
         :param completed_description: The description shown when the maintenance is completed.
-        :type completed_description: str, optional
+        :type completed_description: str
 
         :param components_affected: The components affected by the maintenance.
         :type components_affected: [CreateMaintenanceRequestDataAttributesComponentsAffectedItems]
 
         :param in_progress_description: The description shown while the maintenance is in progress.
-        :type in_progress_description: str, optional
+        :type in_progress_description: str
 
         :param scheduled_description: The description shown when the maintenance is scheduled.
-        :type scheduled_description: str, optional
+        :type scheduled_description: str
 
         :param start_date: Timestamp of when the maintenance is scheduled to start.
-        :type start_date: datetime, optional
+        :type start_date: datetime
 
         :param title: The title of the maintenance.
         :type title: str
         """
-        if completed_date is not unset:
-            kwargs["completed_date"] = completed_date
-        if completed_description is not unset:
-            kwargs["completed_description"] = completed_description
-        if in_progress_description is not unset:
-            kwargs["in_progress_description"] = in_progress_description
-        if scheduled_description is not unset:
-            kwargs["scheduled_description"] = scheduled_description
-        if start_date is not unset:
-            kwargs["start_date"] = start_date
         super().__init__(kwargs)
 
+        self_.completed_date = completed_date
+        self_.completed_description = completed_description
         self_.components_affected = components_affected
+        self_.in_progress_description = in_progress_description
+        self_.scheduled_description = scheduled_description
+        self_.start_date = start_date
         self_.title = title
