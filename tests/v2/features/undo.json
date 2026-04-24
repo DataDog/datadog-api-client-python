@@ -6459,6 +6459,18 @@
       "type": "idempotent"
     }
   },
+  "ListSyntheticsBrowserTestLatestResults": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSyntheticsBrowserTestResult": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteSyntheticsTests": {
     "tag": "Synthetics",
     "undo": {
@@ -6496,6 +6508,12 @@
       "type": "idempotent"
     }
   },
+  "PollSyntheticsTestResults": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetTestFileDownloadUrl": {
     "tag": "Synthetics",
     "undo": {
@@ -6521,6 +6539,18 @@
     }
   },
   "GetTestParentSuites": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSyntheticsTestLatestResults": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSyntheticsTestResult": {
     "tag": "Synthetics",
     "undo": {
       "type": "safe"
