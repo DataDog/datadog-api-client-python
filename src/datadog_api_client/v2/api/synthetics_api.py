@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -25,16 +25,11 @@ from datadog_api_client.v2.model.deleted_suites_response import DeletedSuitesRes
 from datadog_api_client.v2.model.deleted_suites_request_delete_request import DeletedSuitesRequestDeleteRequest
 from datadog_api_client.v2.model.synthetics_suite_search_response import SyntheticsSuiteSearchResponse
 from datadog_api_client.v2.model.suite_json_patch_request import SuiteJsonPatchRequest
-from datadog_api_client.v2.model.synthetics_test_latest_results_response import SyntheticsTestLatestResultsResponse
-from datadog_api_client.v2.model.synthetics_test_result_status import SyntheticsTestResultStatus
-from datadog_api_client.v2.model.synthetics_test_result_run_type import SyntheticsTestResultRunType
-from datadog_api_client.v2.model.synthetics_test_result_response import SyntheticsTestResultResponse
 from datadog_api_client.v2.model.deleted_tests_response import DeletedTestsResponse
 from datadog_api_client.v2.model.deleted_tests_request_delete_request import DeletedTestsRequestDeleteRequest
 from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
 from datadog_api_client.v2.model.synthetics_network_test_response import SyntheticsNetworkTestResponse
 from datadog_api_client.v2.model.synthetics_network_test_edit_request import SyntheticsNetworkTestEditRequest
-from datadog_api_client.v2.model.synthetics_poll_test_results_response import SyntheticsPollTestResultsResponse
 from datadog_api_client.v2.model.synthetics_test_file_download_response import SyntheticsTestFileDownloadResponse
 from datadog_api_client.v2.model.synthetics_test_file_download_request import SyntheticsTestFileDownloadRequest
 from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_response import (
@@ -293,45 +288,6 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
-        self._get_synthetics_browser_test_result_endpoint = _Endpoint(
-            settings={
-                "response_type": (SyntheticsTestResultResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/synthetics/tests/browser/{public_id}/results/{result_id}",
-                "operation_id": "get_synthetics_browser_test_result",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "public_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "public_id",
-                    "location": "path",
-                },
-                "result_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "result_id",
-                    "location": "path",
-                },
-                "event_id": {
-                    "openapi_types": (str,),
-                    "attribute": "event_id",
-                    "location": "query",
-                },
-                "timestamp": {
-                    "openapi_types": (int,),
-                    "attribute": "timestamp",
-                    "location": "query",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
         self._get_synthetics_fast_test_result_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsFastTestResult,),
@@ -393,45 +349,6 @@ class SyntheticsApi:
                     "openapi_types": (str,),
                     "attribute": "public_id",
                     "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_synthetics_test_result_endpoint = _Endpoint(
-            settings={
-                "response_type": (SyntheticsTestResultResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/results/{result_id}",
-                "operation_id": "get_synthetics_test_result",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "public_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "public_id",
-                    "location": "path",
-                },
-                "result_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "result_id",
-                    "location": "path",
-                },
-                "event_id": {
-                    "openapi_types": (str,),
-                    "attribute": "event_id",
-                    "location": "query",
-                },
-                "timestamp": {
-                    "openapi_types": (int,),
-                    "attribute": "timestamp",
-                    "location": "query",
                 },
             },
             headers_map={
@@ -554,116 +471,6 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
-        self._list_synthetics_browser_test_latest_results_endpoint = _Endpoint(
-            settings={
-                "response_type": (SyntheticsTestLatestResultsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/synthetics/tests/browser/{public_id}/results",
-                "operation_id": "list_synthetics_browser_test_latest_results",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "public_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "public_id",
-                    "location": "path",
-                },
-                "from_ts": {
-                    "openapi_types": (int,),
-                    "attribute": "from_ts",
-                    "location": "query",
-                },
-                "to_ts": {
-                    "openapi_types": (int,),
-                    "attribute": "to_ts",
-                    "location": "query",
-                },
-                "status": {
-                    "openapi_types": (SyntheticsTestResultStatus,),
-                    "attribute": "status",
-                    "location": "query",
-                },
-                "run_type": {
-                    "openapi_types": (SyntheticsTestResultRunType,),
-                    "attribute": "runType",
-                    "location": "query",
-                },
-                "probe_dc": {
-                    "openapi_types": ([str],),
-                    "attribute": "probe_dc",
-                    "location": "query",
-                    "collection_format": "multi",
-                },
-                "device_id": {
-                    "openapi_types": ([str],),
-                    "attribute": "device_id",
-                    "location": "query",
-                    "collection_format": "multi",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._list_synthetics_test_latest_results_endpoint = _Endpoint(
-            settings={
-                "response_type": (SyntheticsTestLatestResultsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/synthetics/tests/{public_id}/results",
-                "operation_id": "list_synthetics_test_latest_results",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "public_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "public_id",
-                    "location": "path",
-                },
-                "from_ts": {
-                    "openapi_types": (int,),
-                    "attribute": "from_ts",
-                    "location": "query",
-                },
-                "to_ts": {
-                    "openapi_types": (int,),
-                    "attribute": "to_ts",
-                    "location": "query",
-                },
-                "status": {
-                    "openapi_types": (SyntheticsTestResultStatus,),
-                    "attribute": "status",
-                    "location": "query",
-                },
-                "run_type": {
-                    "openapi_types": (SyntheticsTestResultRunType,),
-                    "attribute": "runType",
-                    "location": "query",
-                },
-                "probe_dc": {
-                    "openapi_types": ([str],),
-                    "attribute": "probe_dc",
-                    "location": "query",
-                    "collection_format": "multi",
-                },
-                "device_id": {
-                    "openapi_types": ([str],),
-                    "attribute": "device_id",
-                    "location": "query",
-                    "collection_format": "multi",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
         self._list_synthetics_test_versions_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTestVersionHistoryResponse,),
@@ -749,29 +556,6 @@ class SyntheticsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._poll_synthetics_test_results_endpoint = _Endpoint(
-            settings={
-                "response_type": (SyntheticsPollTestResultsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/synthetics/tests/poll_results",
-                "operation_id": "poll_synthetics_test_results",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "result_ids": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "result_ids",
-                    "location": "query",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
             api_client=api_client,
         )
 
@@ -1031,41 +815,6 @@ class SyntheticsApi:
         kwargs: Dict[str, Any] = {}
         return self._get_on_demand_concurrency_cap_endpoint.call_with_http_info(**kwargs)
 
-    def get_synthetics_browser_test_result(
-        self,
-        public_id: str,
-        result_id: str,
-        *,
-        event_id: Union[str, UnsetType] = unset,
-        timestamp: Union[int, UnsetType] = unset,
-    ) -> SyntheticsTestResultResponse:
-        """Get a browser test result.
-
-        Get a specific full result from a given Synthetic browser test.
-
-        :param public_id: The public ID of the Synthetic browser test to which the target result belongs.
-        :type public_id: str
-        :param result_id: The ID of the result to get.
-        :type result_id: str
-        :param event_id: The event ID used to look up the result in the event store.
-        :type event_id: str, optional
-        :param timestamp: Timestamp in seconds to look up the result.
-        :type timestamp: int, optional
-        :rtype: SyntheticsTestResultResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["public_id"] = public_id
-
-        kwargs["result_id"] = result_id
-
-        if event_id is not unset:
-            kwargs["event_id"] = event_id
-
-        if timestamp is not unset:
-            kwargs["timestamp"] = timestamp
-
-        return self._get_synthetics_browser_test_result_endpoint.call_with_http_info(**kwargs)
-
     def get_synthetics_fast_test_result(
         self,
         id: str,
@@ -1110,41 +859,6 @@ class SyntheticsApi:
         kwargs["public_id"] = public_id
 
         return self._get_synthetics_suite_endpoint.call_with_http_info(**kwargs)
-
-    def get_synthetics_test_result(
-        self,
-        public_id: str,
-        result_id: str,
-        *,
-        event_id: Union[str, UnsetType] = unset,
-        timestamp: Union[int, UnsetType] = unset,
-    ) -> SyntheticsTestResultResponse:
-        """Get a test result.
-
-        Get a specific full result from a given Synthetic test.
-
-        :param public_id: The public ID of the Synthetic test to which the target result belongs.
-        :type public_id: str
-        :param result_id: The ID of the result to get.
-        :type result_id: str
-        :param event_id: The event ID used to look up the result in the event store.
-        :type event_id: str, optional
-        :param timestamp: Timestamp in seconds to look up the result.
-        :type timestamp: int, optional
-        :rtype: SyntheticsTestResultResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["public_id"] = public_id
-
-        kwargs["result_id"] = result_id
-
-        if event_id is not unset:
-            kwargs["event_id"] = event_id
-
-        if timestamp is not unset:
-            kwargs["timestamp"] = timestamp
-
-        return self._get_synthetics_test_result_endpoint.call_with_http_info(**kwargs)
 
     def get_synthetics_test_version(
         self,
@@ -1243,114 +957,6 @@ class SyntheticsApi:
 
         return self._get_test_parent_suites_endpoint.call_with_http_info(**kwargs)
 
-    def list_synthetics_browser_test_latest_results(
-        self,
-        public_id: str,
-        *,
-        from_ts: Union[int, UnsetType] = unset,
-        to_ts: Union[int, UnsetType] = unset,
-        status: Union[SyntheticsTestResultStatus, UnsetType] = unset,
-        run_type: Union[SyntheticsTestResultRunType, UnsetType] = unset,
-        probe_dc: Union[List[str], UnsetType] = unset,
-        device_id: Union[List[str], UnsetType] = unset,
-    ) -> SyntheticsTestLatestResultsResponse:
-        """Get a browser test's latest results.
-
-        Get the latest result summaries for a given Synthetic browser test.
-
-        :param public_id: The public ID of the Synthetic browser test for which to search results.
-        :type public_id: str
-        :param from_ts: Timestamp in milliseconds from which to start querying results.
-        :type from_ts: int, optional
-        :param to_ts: Timestamp in milliseconds up to which to query results.
-        :type to_ts: int, optional
-        :param status: Filter results by status.
-        :type status: SyntheticsTestResultStatus, optional
-        :param run_type: Filter results by run type.
-        :type run_type: SyntheticsTestResultRunType, optional
-        :param probe_dc: Locations for which to query results.
-        :type probe_dc: [str], optional
-        :param device_id: Device IDs for which to query results.
-        :type device_id: [str], optional
-        :rtype: SyntheticsTestLatestResultsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["public_id"] = public_id
-
-        if from_ts is not unset:
-            kwargs["from_ts"] = from_ts
-
-        if to_ts is not unset:
-            kwargs["to_ts"] = to_ts
-
-        if status is not unset:
-            kwargs["status"] = status
-
-        if run_type is not unset:
-            kwargs["run_type"] = run_type
-
-        if probe_dc is not unset:
-            kwargs["probe_dc"] = probe_dc
-
-        if device_id is not unset:
-            kwargs["device_id"] = device_id
-
-        return self._list_synthetics_browser_test_latest_results_endpoint.call_with_http_info(**kwargs)
-
-    def list_synthetics_test_latest_results(
-        self,
-        public_id: str,
-        *,
-        from_ts: Union[int, UnsetType] = unset,
-        to_ts: Union[int, UnsetType] = unset,
-        status: Union[SyntheticsTestResultStatus, UnsetType] = unset,
-        run_type: Union[SyntheticsTestResultRunType, UnsetType] = unset,
-        probe_dc: Union[List[str], UnsetType] = unset,
-        device_id: Union[List[str], UnsetType] = unset,
-    ) -> SyntheticsTestLatestResultsResponse:
-        """Get a test's latest results.
-
-        Get the latest result summaries for a given Synthetic test.
-
-        :param public_id: The public ID of the Synthetic test for which to search results.
-        :type public_id: str
-        :param from_ts: Timestamp in milliseconds from which to start querying results.
-        :type from_ts: int, optional
-        :param to_ts: Timestamp in milliseconds up to which to query results.
-        :type to_ts: int, optional
-        :param status: Filter results by status.
-        :type status: SyntheticsTestResultStatus, optional
-        :param run_type: Filter results by run type.
-        :type run_type: SyntheticsTestResultRunType, optional
-        :param probe_dc: Locations for which to query results.
-        :type probe_dc: [str], optional
-        :param device_id: Device IDs for which to query results.
-        :type device_id: [str], optional
-        :rtype: SyntheticsTestLatestResultsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["public_id"] = public_id
-
-        if from_ts is not unset:
-            kwargs["from_ts"] = from_ts
-
-        if to_ts is not unset:
-            kwargs["to_ts"] = to_ts
-
-        if status is not unset:
-            kwargs["status"] = status
-
-        if run_type is not unset:
-            kwargs["run_type"] = run_type
-
-        if probe_dc is not unset:
-            kwargs["probe_dc"] = probe_dc
-
-        if device_id is not unset:
-            kwargs["device_id"] = device_id
-
-        return self._list_synthetics_test_latest_results_endpoint.call_with_http_info(**kwargs)
-
     def list_synthetics_test_versions(
         self,
         public_id: str,
@@ -1439,24 +1045,6 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._patch_test_suite_endpoint.call_with_http_info(**kwargs)
-
-    def poll_synthetics_test_results(
-        self,
-        result_ids: str,
-    ) -> SyntheticsPollTestResultsResponse:
-        """Poll for test results.
-
-        Poll for test results given a list of result IDs. This is typically used after
-        triggering tests with CI/CD to retrieve results once they are available.
-
-        :param result_ids: A JSON-encoded array of result IDs to poll for.
-        :type result_ids: str
-        :rtype: SyntheticsPollTestResultsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["result_ids"] = result_ids
-
-        return self._poll_synthetics_test_results_endpoint.call_with_http_info(**kwargs)
 
     def search_suites(
         self,
