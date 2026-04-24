@@ -277,7 +277,7 @@ def format_data_with_schema(
     imports = imports or defaultdict(set)
     nullable = schema.get("nullable", False)
 
-    if schema.get("type") not in {"string", "integer", "boolean"} or schema.get("enum"):
+    if schema.get("type") not in {"string", "integer", "boolean", "number"} or schema.get("enum"):
         name, imports = get_name_and_imports(schema, version, imports)
     if schema.get("oneOf"):
         name = None

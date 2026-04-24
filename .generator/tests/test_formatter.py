@@ -91,3 +91,33 @@ class TestFormatDataWithSchemaDictWithSpecialChars:
         assert result.endswith(")")
         assert "normal_key='value1'" in result
         assert "another_key='value2'" in result
+
+
+class SchemaWithReference(dict):
+    """Dict subclass that carries a __reference__ attribute, mimicking a JsonRef proxy."""
+    def __init__(self, data, ref_name):
+        super().__init__(data)
+        self.__reference__ = {"$ref": f"#/components/schemas/{ref_name}"}
+
+
+class TestFormatDataWithSchemaNamedNumberType:
+    def test_named_number_type_returns_raw_float(self):
+        schema = SchemaWithReference({"type": "number", "format": "double"}, "RumRetentionFilterSampleRate")
+        result, imports = format_data_with_schema(50.0, schema, version="v2")
+        assert result == "50.0"
+        assert "RumRetentionFilterSampleRate" not in result
+        assert all("rum_retention_filter_sample_rate" not in k for k in imports)
+
+    def test_named_integer_type_still_works(self):
+        schema = SchemaWithReference({"type": "integer", "format": "int64"}, "SomeNamedInteger")
+        result, imports = format_data_with_schema(42, schema, version="v2")
+        assert result == "42"
+        assert "SomeNamedInteger" not in result
+
+    def test_named_number_enum_still_uses_constructor(self):
+        schema = SchemaWithReference(
+            {"type": "number", "enum": [0.5, 1.0], "x-enum-varnames": ["HALF", "ONE"]},
+            "SomeNumberEnum",
+        )
+        result, imports = format_data_with_schema(0.5, schema, version="v2")
+        assert result == "SomeNumberEnum.HALF"
