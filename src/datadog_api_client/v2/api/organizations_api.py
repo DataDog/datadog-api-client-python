@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
 from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
 from datadog_api_client.v2.model.org_config_write_request import OrgConfigWriteRequest
@@ -60,6 +61,28 @@ class OrganizationsApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_orgs_endpoint = _Endpoint(
+            settings={
+                "response_type": (ManagedOrgsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/org",
+                "operation_id": "list_orgs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[name]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -140,6 +163,25 @@ class OrganizationsApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_org_configs_endpoint.call_with_http_info(**kwargs)
+
+    def list_orgs(
+        self,
+        *,
+        filter_name: Union[str, UnsetType] = unset,
+    ) -> ManagedOrgsResponse:
+        """List your managed organizations.
+
+        Returns the current organization and its managed organizations in JSON:API format.
+
+        :param filter_name: Filter managed organizations by name.
+        :type filter_name: str, optional
+        :rtype: ManagedOrgsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
+
+        return self._list_orgs_endpoint.call_with_http_info(**kwargs)
 
     def update_org_config(
         self,

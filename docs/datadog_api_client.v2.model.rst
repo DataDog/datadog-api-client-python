@@ -18316,6 +18316,48 @@ datadog\_api\_client.v2.model.maintenance\_data\_relationships\_status\_page\_da
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.managed\_orgs\_data module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.managed_orgs_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.managed\_orgs\_relationship\_to\_org module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.managed_orgs_relationship_to_org
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.managed\_orgs\_relationship\_to\_orgs module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.managed_orgs_relationship_to_orgs
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.managed\_orgs\_relationships module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.managed_orgs_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.managed\_orgs\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.managed_orgs_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.managed\_orgs\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.managed_orgs_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.member\_team module
 -------------------------------------------------
 
@@ -22355,6 +22397,13 @@ datadog\_api\_client.v2.model.order\_direction module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.org\_attributes module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.org\_config\_get\_response module
 ---------------------------------------------------------------
 
@@ -22562,6 +22611,13 @@ datadog\_api\_client.v2.model.org\_connection\_user\_relationship\_data\_type mo
 ------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.org_connection_user_relationship_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_data module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_data
    :members:
    :show-inheritance:
 
@@ -23059,6 +23115,20 @@ datadog\_api\_client.v2.model.org\_group\_update\_request module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.org_group_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_relationship\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_resource\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_resource_type
    :members:
    :show-inheritance:
 

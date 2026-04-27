@@ -41,6 +41,12 @@ Feature: Organizations
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/org-management
+  Scenario: List your managed organizations returns "OK" response
+    Given new "ListOrgs" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/org-management
   Scenario: Update a specific Org Config returns "Bad Request" response
     Given new "UpdateOrgConfig" request

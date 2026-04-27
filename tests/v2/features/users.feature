@@ -42,6 +42,20 @@ Feature: Users
     And the response "data.attributes.service_account" is false
 
   @generated @skip @team:DataDog/org-management
+  Scenario: Delete a pending user's invitations returns "Not found" response
+    Given new "DeleteUserInvitations" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Delete a pending user's invitations returns "OK" response
+    Given new "DeleteUserInvitations" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
   Scenario: Disable a user returns "Not found" response
     Given new "DisableUser" request
     And request contains "user_id" parameter from "REPLACE.ME"

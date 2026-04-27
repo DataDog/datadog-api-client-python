@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     get_attribute_from_path,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.anonymize_users_response import AnonymizeUsersResponse
 from datadog_api_client.v2.model.anonymize_users_request import AnonymizeUsersRequest
@@ -75,6 +76,29 @@ class UsersApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_user_invitations_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/users/{user_id}/invitations",
+                "operation_id": "delete_user_invitations",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -318,6 +342,24 @@ class UsersApi:
         kwargs["body"] = body
 
         return self._create_user_endpoint.call_with_http_info(**kwargs)
+
+    def delete_user_invitations(
+        self,
+        user_id: UUID,
+    ) -> None:
+        """Delete a pending user's invitations.
+
+        Cancel all pending invitations for a specified user.
+        Requires the ``user_access_invite`` permission.
+
+        :param user_id: The UUID of the user whose pending invitations should be canceled.
+        :type user_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        return self._delete_user_invitations_endpoint.call_with_http_info(**kwargs)
 
     def disable_user(
         self,
