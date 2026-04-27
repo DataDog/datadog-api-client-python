@@ -4131,6 +4131,12 @@
       "type": "safe"
     }
   },
+  "ListOrgs": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {
@@ -7009,6 +7015,12 @@
     "tag": "Users",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "DeleteUserInvitations": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListUserOrganizations": {

@@ -3453,6 +3453,12 @@ from datadog_api_client.v2.model.maintenance_data_relationships_status_page impo
 from datadog_api_client.v2.model.maintenance_data_relationships_status_page_data import (
     MaintenanceDataRelationshipsStatusPageData,
 )
+from datadog_api_client.v2.model.managed_orgs_data import ManagedOrgsData
+from datadog_api_client.v2.model.managed_orgs_relationship_to_org import ManagedOrgsRelationshipToOrg
+from datadog_api_client.v2.model.managed_orgs_relationship_to_orgs import ManagedOrgsRelationshipToOrgs
+from datadog_api_client.v2.model.managed_orgs_relationships import ManagedOrgsRelationships
+from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
+from datadog_api_client.v2.model.managed_orgs_type import ManagedOrgsType
 from datadog_api_client.v2.model.member_team import MemberTeam
 from datadog_api_client.v2.model.member_team_type import MemberTeamType
 from datadog_api_client.v2.model.metadata import Metadata
@@ -4621,6 +4627,7 @@ from datadog_api_client.v2.model.opsgenie_service_update_data import OpsgenieSer
 from datadog_api_client.v2.model.opsgenie_service_update_request import OpsgenieServiceUpdateRequest
 from datadog_api_client.v2.model.opsgenie_services_response import OpsgenieServicesResponse
 from datadog_api_client.v2.model.order_direction import OrderDirection
+from datadog_api_client.v2.model.org_attributes import OrgAttributes
 from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
 from datadog_api_client.v2.model.org_config_read import OrgConfigRead
@@ -4651,6 +4658,7 @@ from datadog_api_client.v2.model.org_connection_update_request import OrgConnect
 from datadog_api_client.v2.model.org_connection_user_relationship import OrgConnectionUserRelationship
 from datadog_api_client.v2.model.org_connection_user_relationship_data import OrgConnectionUserRelationshipData
 from datadog_api_client.v2.model.org_connection_user_relationship_data_type import OrgConnectionUserRelationshipDataType
+from datadog_api_client.v2.model.org_data import OrgData
 from datadog_api_client.v2.model.org_group_attributes import OrgGroupAttributes
 from datadog_api_client.v2.model.org_group_create_attributes import OrgGroupCreateAttributes
 from datadog_api_client.v2.model.org_group_create_data import OrgGroupCreateData
@@ -4732,6 +4740,8 @@ from datadog_api_client.v2.model.org_group_type import OrgGroupType
 from datadog_api_client.v2.model.org_group_update_attributes import OrgGroupUpdateAttributes
 from datadog_api_client.v2.model.org_group_update_data import OrgGroupUpdateData
 from datadog_api_client.v2.model.org_group_update_request import OrgGroupUpdateRequest
+from datadog_api_client.v2.model.org_relationship_data import OrgRelationshipData
+from datadog_api_client.v2.model.org_resource_type import OrgResourceType
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
@@ -10006,6 +10016,12 @@ __all__ = [
     "MaintenanceDataRelationshipsLastModifiedByUserData",
     "MaintenanceDataRelationshipsStatusPage",
     "MaintenanceDataRelationshipsStatusPageData",
+    "ManagedOrgsData",
+    "ManagedOrgsRelationshipToOrg",
+    "ManagedOrgsRelationshipToOrgs",
+    "ManagedOrgsRelationships",
+    "ManagedOrgsResponse",
+    "ManagedOrgsType",
     "MemberTeam",
     "MemberTeamType",
     "Metadata",
@@ -10582,6 +10598,7 @@ __all__ = [
     "OpsgenieServiceUpdateRequest",
     "OpsgenieServicesResponse",
     "OrderDirection",
+    "OrgAttributes",
     "OrgConfigGetResponse",
     "OrgConfigListResponse",
     "OrgConfigRead",
@@ -10612,6 +10629,7 @@ __all__ = [
     "OrgConnectionUserRelationship",
     "OrgConnectionUserRelationshipData",
     "OrgConnectionUserRelationshipDataType",
+    "OrgData",
     "OrgGroupAttributes",
     "OrgGroupCreateAttributes",
     "OrgGroupCreateData",
@@ -10683,6 +10701,8 @@ __all__ = [
     "OrgGroupUpdateAttributes",
     "OrgGroupUpdateData",
     "OrgGroupUpdateRequest",
+    "OrgRelationshipData",
+    "OrgResourceType",
     "Organization",
     "OrganizationAttributes",
     "OrganizationsType",
