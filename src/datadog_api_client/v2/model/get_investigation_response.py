@@ -34,7 +34,7 @@ class GetInvestigationResponse(ModelNormal):
 
     def __init__(self_, data: GetInvestigationResponseData, links: GetInvestigationResponseLinks, **kwargs):
         """
-        Response for a single Bits AI investigation.
+        Response for a single Bits AI SRE investigation.
 
         :param data: Data for the get investigation response.
         :type data: GetInvestigationResponseData
