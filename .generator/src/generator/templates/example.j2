@@ -14,7 +14,7 @@
 from {{ package }} import {{ values|sort|join(', ') }}
 {%- endfor %}
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.{{ version }}.api.{{ context.api_instance.name|safe_snake_case }}_api import {{ context.api_instance.name }}Api
+from datadog_api_client.{{ version }}.api.{{ context.api_instance.raw_tag|safe_snake_case }}_api import {{ context.api_instance.name }}Api
 {%- for package in imports|sort %}
 from {{ package }} import {{ imports[package]|sort|join(', ') }}
 {%- endfor %}
