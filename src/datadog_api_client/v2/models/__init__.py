@@ -6503,6 +6503,29 @@ from datadog_api_client.v2.model.synthetics_api_multistep_subtest_type import Sy
 from datadog_api_client.v2.model.synthetics_api_multistep_subtests_response import (
     SyntheticsApiMultistepSubtestsResponse,
 )
+from datadog_api_client.v2.model.synthetics_downtime_data import SyntheticsDowntimeData
+from datadog_api_client.v2.model.synthetics_downtime_data_attributes_request import (
+    SyntheticsDowntimeDataAttributesRequest,
+)
+from datadog_api_client.v2.model.synthetics_downtime_data_attributes_response import (
+    SyntheticsDowntimeDataAttributesResponse,
+)
+from datadog_api_client.v2.model.synthetics_downtime_data_request import SyntheticsDowntimeDataRequest
+from datadog_api_client.v2.model.synthetics_downtime_frequency import SyntheticsDowntimeFrequency
+from datadog_api_client.v2.model.synthetics_downtime_request import SyntheticsDowntimeRequest
+from datadog_api_client.v2.model.synthetics_downtime_resource_type import SyntheticsDowntimeResourceType
+from datadog_api_client.v2.model.synthetics_downtime_response import SyntheticsDowntimeResponse
+from datadog_api_client.v2.model.synthetics_downtime_time_slot_date import SyntheticsDowntimeTimeSlotDate
+from datadog_api_client.v2.model.synthetics_downtime_time_slot_recurrence_request import (
+    SyntheticsDowntimeTimeSlotRecurrenceRequest,
+)
+from datadog_api_client.v2.model.synthetics_downtime_time_slot_recurrence_response import (
+    SyntheticsDowntimeTimeSlotRecurrenceResponse,
+)
+from datadog_api_client.v2.model.synthetics_downtime_time_slot_request import SyntheticsDowntimeTimeSlotRequest
+from datadog_api_client.v2.model.synthetics_downtime_time_slot_response import SyntheticsDowntimeTimeSlotResponse
+from datadog_api_client.v2.model.synthetics_downtime_weekday import SyntheticsDowntimeWeekday
+from datadog_api_client.v2.model.synthetics_downtimes_response import SyntheticsDowntimesResponse
 from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
 from datadog_api_client.v2.model.synthetics_fast_test_result_attributes import SyntheticsFastTestResultAttributes
 from datadog_api_client.v2.model.synthetics_fast_test_result_data import SyntheticsFastTestResultData
@@ -11946,6 +11969,21 @@ __all__ = [
     "SyntheticsApiMultistepSubtestData",
     "SyntheticsApiMultistepSubtestType",
     "SyntheticsApiMultistepSubtestsResponse",
+    "SyntheticsDowntimeData",
+    "SyntheticsDowntimeDataAttributesRequest",
+    "SyntheticsDowntimeDataAttributesResponse",
+    "SyntheticsDowntimeDataRequest",
+    "SyntheticsDowntimeFrequency",
+    "SyntheticsDowntimeRequest",
+    "SyntheticsDowntimeResourceType",
+    "SyntheticsDowntimeResponse",
+    "SyntheticsDowntimeTimeSlotDate",
+    "SyntheticsDowntimeTimeSlotRecurrenceRequest",
+    "SyntheticsDowntimeTimeSlotRecurrenceResponse",
+    "SyntheticsDowntimeTimeSlotRequest",
+    "SyntheticsDowntimeTimeSlotResponse",
+    "SyntheticsDowntimeWeekday",
+    "SyntheticsDowntimesResponse",
     "SyntheticsFastTestResult",
     "SyntheticsFastTestResultAttributes",
     "SyntheticsFastTestResultData",

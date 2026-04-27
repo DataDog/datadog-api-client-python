@@ -31868,6 +31868,111 @@ datadog\_api\_client.v2.model.synthetics\_api\_multistep\_subtests\_response mod
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.synthetics\_downtime\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_data\_attributes\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_data\_attributes\_response module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_data\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_frequency module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_frequency
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_resource\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_time\_slot\_date module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_time_slot_date
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_time\_slot\_recurrence\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_time_slot_recurrence_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_time\_slot\_recurrence\_response module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_time_slot_recurrence_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_time\_slot\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_time_slot_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_time\_slot\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_time_slot_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtime\_weekday module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_weekday
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.synthetics\_downtimes\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtimes_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.synthetics\_fast\_test\_result module
 -------------------------------------------------------------------
 
