@@ -6410,6 +6410,69 @@
       "type": "safe"
     }
   },
+  "ListSyntheticsDowntimes": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSyntheticsDowntime": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "DeleteSyntheticsDowntime",
+      "parameters": [
+        {
+          "name": "downtime_id",
+          "origin": "path",
+          "source": "downtime_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSyntheticsDowntime": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSyntheticsDowntime": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSyntheticsDowntime": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "RemoveTestFromSyntheticsDowntime": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AddTestToSyntheticsDowntime": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "RemoveTestFromSyntheticsDowntime",
+      "parameters": [
+        {
+          "name": "downtime_id",
+          "origin": "path",
+          "source": "downtime_id"
+        },
+        {
+          "name": "test_id",
+          "origin": "path",
+          "source": "test_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "GetOnDemandConcurrencyCap": {
     "tag": "Synthetics",
     "undo": {

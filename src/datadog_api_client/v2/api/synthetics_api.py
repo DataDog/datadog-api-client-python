@@ -17,6 +17,9 @@ from datadog_api_client.v2.model.synthetics_api_multistep_subtests_response impo
 from datadog_api_client.v2.model.synthetics_api_multistep_parent_tests_response import (
     SyntheticsApiMultistepParentTestsResponse,
 )
+from datadog_api_client.v2.model.synthetics_downtimes_response import SyntheticsDowntimesResponse
+from datadog_api_client.v2.model.synthetics_downtime_response import SyntheticsDowntimeResponse
+from datadog_api_client.v2.model.synthetics_downtime_request import SyntheticsDowntimeRequest
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnDemandConcurrencyCapAttributes
 from datadog_api_client.v2.model.synthetics_suite_response import SyntheticsSuiteResponse
@@ -99,6 +102,35 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._add_test_to_synthetics_downtime_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsDowntimeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}/tests/{test_id}",
+                "operation_id": "add_test_to_synthetics_downtime",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "downtime_id",
+                    "location": "path",
+                },
+                "test_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "test_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._complete_test_file_multipart_upload_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -122,6 +154,26 @@ class SyntheticsApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_synthetics_downtime_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsDowntimeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/downtimes",
+                "operation_id": "create_synthetics_downtime",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsDowntimeRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -162,6 +214,29 @@ class SyntheticsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_synthetics_downtime_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}",
+                "operation_id": "delete_synthetics_downtime",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "downtime_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -324,6 +399,29 @@ class SyntheticsApi:
                     "openapi_types": (int,),
                     "attribute": "timestamp",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_synthetics_downtime_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsDowntimeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}",
+                "operation_id": "get_synthetics_downtime",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "downtime_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -609,6 +707,33 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._list_synthetics_downtimes_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsDowntimesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/downtimes",
+                "operation_id": "list_synthetics_downtimes",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_test_ids": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[test_ids]",
+                    "location": "query",
+                },
+                "filter_active": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[active]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_synthetics_test_latest_results_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsTestLatestResultsResponse,),
@@ -775,6 +900,35 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._remove_test_from_synthetics_downtime_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsDowntimeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}/tests/{test_id}",
+                "operation_id": "remove_test_from_synthetics_downtime",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "downtime_id",
+                    "location": "path",
+                },
+                "test_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "test_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._search_suites_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsSuiteSearchResponse,),
@@ -837,6 +991,32 @@ class SyntheticsApi:
             api_client=api_client,
         )
 
+        self._update_synthetics_downtime_endpoint = _Endpoint(
+            settings={
+                "response_type": (SyntheticsDowntimeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}",
+                "operation_id": "update_synthetics_downtime",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "downtime_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "downtime_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SyntheticsDowntimeRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_synthetics_network_test_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsNetworkTestResponse,),
@@ -885,6 +1065,28 @@ class SyntheticsApi:
 
         return self._abort_test_file_multipart_upload_endpoint.call_with_http_info(**kwargs)
 
+    def add_test_to_synthetics_downtime(
+        self,
+        downtime_id: str,
+        test_id: str,
+    ) -> SyntheticsDowntimeResponse:
+        """Add a test to a Synthetics downtime.
+
+        Associate a Synthetics test with a downtime.
+
+        :param downtime_id: The ID of the downtime.
+        :type downtime_id: str
+        :param test_id: The public ID of the Synthetics test to associate with the downtime.
+        :type test_id: str
+        :rtype: SyntheticsDowntimeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["downtime_id"] = downtime_id
+
+        kwargs["test_id"] = test_id
+
+        return self._add_test_to_synthetics_downtime_endpoint.call_with_http_info(**kwargs)
+
     def complete_test_file_multipart_upload(
         self,
         public_id: str,
@@ -906,6 +1108,22 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._complete_test_file_multipart_upload_endpoint.call_with_http_info(**kwargs)
+
+    def create_synthetics_downtime(
+        self,
+        body: SyntheticsDowntimeRequest,
+    ) -> SyntheticsDowntimeResponse:
+        """Create a Synthetics downtime.
+
+        Create a new Synthetics downtime.
+
+        :type body: SyntheticsDowntimeRequest
+        :rtype: SyntheticsDowntimeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_synthetics_downtime_endpoint.call_with_http_info(**kwargs)
 
     def create_synthetics_network_test(
         self,
@@ -934,6 +1152,23 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._create_synthetics_suite_endpoint.call_with_http_info(**kwargs)
+
+    def delete_synthetics_downtime(
+        self,
+        downtime_id: str,
+    ) -> None:
+        """Delete a Synthetics downtime.
+
+        Delete a Synthetics downtime by its ID.
+
+        :param downtime_id: The ID of the downtime to delete.
+        :type downtime_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["downtime_id"] = downtime_id
+
+        return self._delete_synthetics_downtime_endpoint.call_with_http_info(**kwargs)
 
     def delete_synthetics_suites(
         self,
@@ -1065,6 +1300,23 @@ class SyntheticsApi:
             kwargs["timestamp"] = timestamp
 
         return self._get_synthetics_browser_test_result_endpoint.call_with_http_info(**kwargs)
+
+    def get_synthetics_downtime(
+        self,
+        downtime_id: str,
+    ) -> SyntheticsDowntimeResponse:
+        """Get a Synthetics downtime.
+
+        Get a Synthetics downtime by its ID.
+
+        :param downtime_id: The ID of the downtime to retrieve.
+        :type downtime_id: str
+        :rtype: SyntheticsDowntimeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["downtime_id"] = downtime_id
+
+        return self._get_synthetics_downtime_endpoint.call_with_http_info(**kwargs)
 
     def get_synthetics_fast_test_result(
         self,
@@ -1297,6 +1549,31 @@ class SyntheticsApi:
 
         return self._list_synthetics_browser_test_latest_results_endpoint.call_with_http_info(**kwargs)
 
+    def list_synthetics_downtimes(
+        self,
+        *,
+        filter_test_ids: Union[str, UnsetType] = unset,
+        filter_active: Union[str, UnsetType] = unset,
+    ) -> SyntheticsDowntimesResponse:
+        """List Synthetics downtimes.
+
+        Get a list of all Synthetics downtimes for your organization.
+
+        :param filter_test_ids: Comma-separated list of Synthetics test public IDs to filter downtimes by.
+        :type filter_test_ids: str, optional
+        :param filter_active: If set to ``true`` , return only downtimes that are currently active.
+        :type filter_active: str, optional
+        :rtype: SyntheticsDowntimesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_test_ids is not unset:
+            kwargs["filter_test_ids"] = filter_test_ids
+
+        if filter_active is not unset:
+            kwargs["filter_active"] = filter_active
+
+        return self._list_synthetics_downtimes_endpoint.call_with_http_info(**kwargs)
+
     def list_synthetics_test_latest_results(
         self,
         public_id: str,
@@ -1458,6 +1735,28 @@ class SyntheticsApi:
 
         return self._poll_synthetics_test_results_endpoint.call_with_http_info(**kwargs)
 
+    def remove_test_from_synthetics_downtime(
+        self,
+        downtime_id: str,
+        test_id: str,
+    ) -> SyntheticsDowntimeResponse:
+        """Remove a test from a Synthetics downtime.
+
+        Disassociate a Synthetics test from a downtime.
+
+        :param downtime_id: The ID of the downtime.
+        :type downtime_id: str
+        :param test_id: The public ID of the Synthetics test to disassociate from the downtime.
+        :type test_id: str
+        :rtype: SyntheticsDowntimeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["downtime_id"] = downtime_id
+
+        kwargs["test_id"] = test_id
+
+        return self._remove_test_from_synthetics_downtime_endpoint.call_with_http_info(**kwargs)
+
     def search_suites(
         self,
         *,
@@ -1517,6 +1816,27 @@ class SyntheticsApi:
         kwargs["body"] = body
 
         return self._set_on_demand_concurrency_cap_endpoint.call_with_http_info(**kwargs)
+
+    def update_synthetics_downtime(
+        self,
+        downtime_id: str,
+        body: SyntheticsDowntimeRequest,
+    ) -> SyntheticsDowntimeResponse:
+        """Update a Synthetics downtime.
+
+        Update a Synthetics downtime by its ID.
+
+        :param downtime_id: The ID of the downtime to update.
+        :type downtime_id: str
+        :type body: SyntheticsDowntimeRequest
+        :rtype: SyntheticsDowntimeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["downtime_id"] = downtime_id
+
+        kwargs["body"] = body
+
+        return self._update_synthetics_downtime_endpoint.call_with_http_info(**kwargs)
 
     def update_synthetics_network_test(
         self,

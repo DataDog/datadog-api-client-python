@@ -34,6 +34,30 @@ Feature: Synthetics
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Add a test to a Synthetics downtime returns "Bad Request" response
+    Given new "AddTestToSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And request contains "test_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Add a test to a Synthetics downtime returns "Not Found" response
+    Given new "AddTestToSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And request contains "test_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Add a test to a Synthetics downtime returns "OK" response
+    Given new "AddTestToSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And request contains "test_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Bulk delete suites returns "API error response." response
     Given new "DeleteSyntheticsSuites" request
     And body with value {"data": {"attributes": {"public_ids": [""]}, "type": "delete_suites_request"}}
@@ -92,6 +116,20 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Create a Synthetics downtime returns "Bad Request" response
+    Given new "CreateSyntheticsDowntime" request
+    And body with value {"data": {"attributes": {"isEnabled": true, "name": "Weekly maintenance", "testIds": ["abc-def-123"], "timeSlots": [{"duration": 3600, "start": {"day": 15, "hour": 10, "minute": 30, "month": 1, "year": 2024}, "timezone": "Europe/Paris"}]}, "type": "downtime"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Create a Synthetics downtime returns "Created" response
+    Given new "CreateSyntheticsDowntime" request
+    And body with value {"data": {"attributes": {"isEnabled": true, "name": "Weekly maintenance", "testIds": ["abc-def-123"], "timeSlots": [{"duration": 3600, "start": {"day": 15, "hour": 10, "minute": 30, "month": 1, "year": 2024}, "timezone": "Europe/Paris"}]}, "type": "downtime"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Create a test suite returns "API error response." response
     Given new "CreateSyntheticsSuite" request
     And body with value {"data": {"attributes": {"message": "Notification message", "name": "Example suite name", "options": {}, "tags": ["env:production"], "tests": [{"alerting_criticality": "critical", "public_id": ""}], "type": "suite"}, "type": "suites"}}
@@ -104,6 +142,27 @@ Feature: Synthetics
     And body with value {"data": {"attributes": {"message": "Notification message", "name": "Example suite name", "options": {}, "tags": ["env:production"], "tests": [], "type": "suite"}, "type": "suites"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Delete a Synthetics downtime returns "Bad Request" response
+    Given new "DeleteSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Delete a Synthetics downtime returns "No Content" response
+    Given new "DeleteSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Delete a Synthetics downtime returns "Not Found" response
+    Given new "DeleteSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Edit a Network Path test returns "API error response." response
@@ -148,6 +207,27 @@ Feature: Synthetics
   Scenario: Get a Network Path test returns "OK" response
     Given new "GetSyntheticsNetworkTest" request
     And request contains "public_id" parameter with value "c7a-uwa-wn2"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Get a Synthetics downtime returns "Bad Request" response
+    Given new "GetSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Get a Synthetics downtime returns "Not Found" response
+    Given new "GetSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Get a Synthetics downtime returns "OK" response
+    Given new "GetSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -343,6 +423,18 @@ Feature: Synthetics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: List Synthetics downtimes returns "Bad Request" response
+    Given new "ListSyntheticsDowntimes" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: List Synthetics downtimes returns "OK" response
+    Given new "ListSyntheticsDowntimes" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Patch a global variable returns "Bad Request" response
     Given new "PatchGlobalVariable" request
     And request contains "variable_id" parameter from "REPLACE.ME"
@@ -396,6 +488,30 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Remove a test from a Synthetics downtime returns "Bad Request" response
+    Given new "RemoveTestFromSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And request contains "test_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Remove a test from a Synthetics downtime returns "Not Found" response
+    Given new "RemoveTestFromSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And request contains "test_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Remove a test from a Synthetics downtime returns "OK" response
+    Given new "RemoveTestFromSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And request contains "test_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/synthetics-orchestrating-managing
   Scenario: Save new value for on-demand concurrency cap returns "OK" response
     Given new "SetOnDemandConcurrencyCap" request
@@ -419,5 +535,29 @@ Feature: Synthetics
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Search test suites returns "OK" response
     Given new "SearchSuites" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Update a Synthetics downtime returns "Bad Request" response
+    Given new "UpdateSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"isEnabled": true, "name": "Weekly maintenance", "testIds": ["abc-def-123"], "timeSlots": [{"duration": 3600, "start": {"day": 15, "hour": 10, "minute": 30, "month": 1, "year": 2024}, "timezone": "Europe/Paris"}]}, "type": "downtime"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Update a Synthetics downtime returns "Not Found" response
+    Given new "UpdateSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"isEnabled": true, "name": "Weekly maintenance", "testIds": ["abc-def-123"], "timeSlots": [{"duration": 3600, "start": {"day": 15, "hour": 10, "minute": 30, "month": 1, "year": 2024}, "timezone": "Europe/Paris"}]}, "type": "downtime"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Update a Synthetics downtime returns "OK" response
+    Given new "UpdateSyntheticsDowntime" request
+    And request contains "downtime_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"isEnabled": true, "name": "Weekly maintenance", "testIds": ["abc-def-123"], "timeSlots": [{"duration": 3600, "start": {"day": 15, "hour": 10, "minute": 30, "month": 1, "year": 2024}, "timezone": "Europe/Paris"}]}, "type": "downtime"}}
     When the request is sent
     Then the response status is 200 OK
