@@ -153,6 +153,7 @@ class UsageSummaryDate(ModelNormal):
             "infra_host_basic_infra_basic_vsphere_top99p": (int,),
             "infra_host_basic_top99p": (int,),
             "infra_host_top99p": (int,),
+            "infra_storage_mgmt_objects_count_avg": (int,),
             "ingested_events_bytes_sum": (int,),
             "iot_device_sum": (int,),
             "iot_device_top99p": (int,),
@@ -392,6 +393,7 @@ class UsageSummaryDate(ModelNormal):
         "infra_host_basic_infra_basic_vsphere_top99p": "infra_host_basic_infra_basic_vsphere_top99p",
         "infra_host_basic_top99p": "infra_host_basic_top99p",
         "infra_host_top99p": "infra_host_top99p",
+        "infra_storage_mgmt_objects_count_avg": "infra_storage_mgmt_objects_count_avg",
         "ingested_events_bytes_sum": "ingested_events_bytes_sum",
         "iot_device_sum": "iot_device_sum",
         "iot_device_top99p": "iot_device_top99p",
@@ -632,6 +634,7 @@ class UsageSummaryDate(ModelNormal):
         infra_host_basic_infra_basic_vsphere_top99p: Union[int, UnsetType] = unset,
         infra_host_basic_top99p: Union[int, UnsetType] = unset,
         infra_host_top99p: Union[int, UnsetType] = unset,
+        infra_storage_mgmt_objects_count_avg: Union[int, UnsetType] = unset,
         ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         iot_device_sum: Union[int, UnsetType] = unset,
         iot_device_top99p: Union[int, UnsetType] = unset,
@@ -1130,6 +1133,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param infra_host_top99p: Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for all organizations.
         :type infra_host_top99p: int, optional
+
+        :param infra_storage_mgmt_objects_count_avg: Shows the average number of storage management objects over all hours in the current date for all organizations.
+        :type infra_storage_mgmt_objects_count_avg: int, optional
 
         :param ingested_events_bytes_sum: Shows the sum of all log bytes ingested over all hours in the current date for all organizations.
         :type ingested_events_bytes_sum: int, optional
@@ -1722,6 +1728,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["infra_host_basic_top99p"] = infra_host_basic_top99p
         if infra_host_top99p is not unset:
             kwargs["infra_host_top99p"] = infra_host_top99p
+        if infra_storage_mgmt_objects_count_avg is not unset:
+            kwargs["infra_storage_mgmt_objects_count_avg"] = infra_storage_mgmt_objects_count_avg
         if ingested_events_bytes_sum is not unset:
             kwargs["ingested_events_bytes_sum"] = ingested_events_bytes_sum
         if iot_device_sum is not unset:

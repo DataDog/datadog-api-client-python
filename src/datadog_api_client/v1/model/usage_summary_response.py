@@ -158,6 +158,7 @@ class UsageSummaryResponse(ModelNormal):
             "infra_host_basic_infra_basic_vsphere_top99p_sum": (int,),
             "infra_host_basic_top99p_sum": (int,),
             "infra_host_top99p_sum": (int,),
+            "infra_storage_mgmt_objects_count_avg_sum": (int,),
             "ingested_events_bytes_agg_sum": (int,),
             "iot_device_agg_sum": (int,),
             "iot_device_top99p_sum": (int,),
@@ -408,6 +409,7 @@ class UsageSummaryResponse(ModelNormal):
         "infra_host_basic_infra_basic_vsphere_top99p_sum": "infra_host_basic_infra_basic_vsphere_top99p_sum",
         "infra_host_basic_top99p_sum": "infra_host_basic_top99p_sum",
         "infra_host_top99p_sum": "infra_host_top99p_sum",
+        "infra_storage_mgmt_objects_count_avg_sum": "infra_storage_mgmt_objects_count_avg_sum",
         "ingested_events_bytes_agg_sum": "ingested_events_bytes_agg_sum",
         "iot_device_agg_sum": "iot_device_agg_sum",
         "iot_device_top99p_sum": "iot_device_top99p_sum",
@@ -659,6 +661,7 @@ class UsageSummaryResponse(ModelNormal):
         infra_host_basic_infra_basic_vsphere_top99p_sum: Union[int, UnsetType] = unset,
         infra_host_basic_top99p_sum: Union[int, UnsetType] = unset,
         infra_host_top99p_sum: Union[int, UnsetType] = unset,
+        infra_storage_mgmt_objects_count_avg_sum: Union[int, UnsetType] = unset,
         ingested_events_bytes_agg_sum: Union[int, UnsetType] = unset,
         iot_device_agg_sum: Union[int, UnsetType] = unset,
         iot_device_top99p_sum: Union[int, UnsetType] = unset,
@@ -1174,6 +1177,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param infra_host_top99p_sum: Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current month for all organizations.
         :type infra_host_top99p_sum: int, optional
+
+        :param infra_storage_mgmt_objects_count_avg_sum: Shows the average number of storage management objects over all hours in the current month for all organizations.
+        :type infra_storage_mgmt_objects_count_avg_sum: int, optional
 
         :param ingested_events_bytes_agg_sum: Shows the sum of all log bytes ingested over all hours in the current month for all organizations.
         :type ingested_events_bytes_agg_sum: int, optional
@@ -1802,6 +1808,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["infra_host_basic_top99p_sum"] = infra_host_basic_top99p_sum
         if infra_host_top99p_sum is not unset:
             kwargs["infra_host_top99p_sum"] = infra_host_top99p_sum
+        if infra_storage_mgmt_objects_count_avg_sum is not unset:
+            kwargs["infra_storage_mgmt_objects_count_avg_sum"] = infra_storage_mgmt_objects_count_avg_sum
         if ingested_events_bytes_agg_sum is not unset:
             kwargs["ingested_events_bytes_agg_sum"] = ingested_events_bytes_agg_sum
         if iot_device_agg_sum is not unset:
