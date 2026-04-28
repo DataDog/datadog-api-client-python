@@ -105,6 +105,9 @@ class UsageSummaryDateOrg(ModelNormal):
             "eph_infra_host_alibaba_sum": (int,),
             "eph_infra_host_aws_sum": (int,),
             "eph_infra_host_azure_sum": (int,),
+            "eph_infra_host_basic_infra_basic_agent_sum": (int,),
+            "eph_infra_host_basic_infra_basic_vsphere_sum": (int,),
+            "eph_infra_host_basic_sum": (int,),
             "eph_infra_host_ent_sum": (int,),
             "eph_infra_host_gcp_sum": (int,),
             "eph_infra_host_heroku_sum": (int,),
@@ -143,6 +146,9 @@ class UsageSummaryDateOrg(ModelNormal):
             "incident_management_seats_hwm": (int,),
             "indexed_events_count_sum": (int,),
             "infra_edge_monitoring_devices_top99p": (int,),
+            "infra_host_basic_infra_basic_agent_top99p": (int,),
+            "infra_host_basic_infra_basic_vsphere_top99p": (int,),
+            "infra_host_basic_top99p": (int,),
             "infra_host_top99p": (int,),
             "ingested_events_bytes_sum": (int,),
             "iot_device_agg_sum": (int,),
@@ -344,6 +350,9 @@ class UsageSummaryDateOrg(ModelNormal):
         "eph_infra_host_alibaba_sum": "eph_infra_host_alibaba_sum",
         "eph_infra_host_aws_sum": "eph_infra_host_aws_sum",
         "eph_infra_host_azure_sum": "eph_infra_host_azure_sum",
+        "eph_infra_host_basic_infra_basic_agent_sum": "eph_infra_host_basic_infra_basic_agent_sum",
+        "eph_infra_host_basic_infra_basic_vsphere_sum": "eph_infra_host_basic_infra_basic_vsphere_sum",
+        "eph_infra_host_basic_sum": "eph_infra_host_basic_sum",
         "eph_infra_host_ent_sum": "eph_infra_host_ent_sum",
         "eph_infra_host_gcp_sum": "eph_infra_host_gcp_sum",
         "eph_infra_host_heroku_sum": "eph_infra_host_heroku_sum",
@@ -382,6 +391,9 @@ class UsageSummaryDateOrg(ModelNormal):
         "incident_management_seats_hwm": "incident_management_seats_hwm",
         "indexed_events_count_sum": "indexed_events_count_sum",
         "infra_edge_monitoring_devices_top99p": "infra_edge_monitoring_devices_top99p",
+        "infra_host_basic_infra_basic_agent_top99p": "infra_host_basic_infra_basic_agent_top99p",
+        "infra_host_basic_infra_basic_vsphere_top99p": "infra_host_basic_infra_basic_vsphere_top99p",
+        "infra_host_basic_top99p": "infra_host_basic_top99p",
         "infra_host_top99p": "infra_host_top99p",
         "ingested_events_bytes_sum": "ingested_events_bytes_sum",
         "iot_device_agg_sum": "iot_device_agg_sum",
@@ -584,6 +596,9 @@ class UsageSummaryDateOrg(ModelNormal):
         eph_infra_host_alibaba_sum: Union[int, UnsetType] = unset,
         eph_infra_host_aws_sum: Union[int, UnsetType] = unset,
         eph_infra_host_azure_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_basic_infra_basic_agent_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_basic_infra_basic_vsphere_sum: Union[int, UnsetType] = unset,
+        eph_infra_host_basic_sum: Union[int, UnsetType] = unset,
         eph_infra_host_ent_sum: Union[int, UnsetType] = unset,
         eph_infra_host_gcp_sum: Union[int, UnsetType] = unset,
         eph_infra_host_heroku_sum: Union[int, UnsetType] = unset,
@@ -622,6 +637,9 @@ class UsageSummaryDateOrg(ModelNormal):
         incident_management_seats_hwm: Union[int, UnsetType] = unset,
         indexed_events_count_sum: Union[int, UnsetType] = unset,
         infra_edge_monitoring_devices_top99p: Union[int, UnsetType] = unset,
+        infra_host_basic_infra_basic_agent_top99p: Union[int, UnsetType] = unset,
+        infra_host_basic_infra_basic_vsphere_top99p: Union[int, UnsetType] = unset,
+        infra_host_basic_top99p: Union[int, UnsetType] = unset,
         infra_host_top99p: Union[int, UnsetType] = unset,
         ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         iot_device_agg_sum: Union[int, UnsetType] = unset,
@@ -1001,6 +1019,15 @@ class UsageSummaryDateOrg(ModelNormal):
         :param eph_infra_host_azure_sum: Shows the sum of all ephemeral infrastructure hosts on Azure over all hours in the current date for the given org.
         :type eph_infra_host_azure_sum: int, optional
 
+        :param eph_infra_host_basic_infra_basic_agent_sum: Shows the sum of all ephemeral infrastructure hosts for Basic tier with the Datadog Agent over all hours in the current date for the given org.
+        :type eph_infra_host_basic_infra_basic_agent_sum: int, optional
+
+        :param eph_infra_host_basic_infra_basic_vsphere_sum: Shows the sum of all ephemeral infrastructure hosts for Basic tier on vSphere over all hours in the current date for the given org.
+        :type eph_infra_host_basic_infra_basic_vsphere_sum: int, optional
+
+        :param eph_infra_host_basic_sum: Shows the sum of all ephemeral infrastructure hosts for Basic tier over all hours in the current date for the given org.
+        :type eph_infra_host_basic_sum: int, optional
+
         :param eph_infra_host_ent_sum: Shows the sum of all ephemeral infrastructure hosts for Enterprise over all hours in the current date for the given org.
         :type eph_infra_host_ent_sum: int, optional
 
@@ -1114,6 +1141,15 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param infra_edge_monitoring_devices_top99p: Shows the 99th percentile of all Edge Devices Monitoring devices over all hours in the current date for the given org.
         :type infra_edge_monitoring_devices_top99p: int, optional
+
+        :param infra_host_basic_infra_basic_agent_top99p: Shows the 99th percentile of all distinct infrastructure hosts for Basic tier with the Datadog Agent over all hours in the current date for the given org.
+        :type infra_host_basic_infra_basic_agent_top99p: int, optional
+
+        :param infra_host_basic_infra_basic_vsphere_top99p: Shows the 99th percentile of all distinct infrastructure hosts for Basic tier on vSphere over all hours in the current date for the given org.
+        :type infra_host_basic_infra_basic_vsphere_top99p: int, optional
+
+        :param infra_host_basic_top99p: Shows the 99th percentile of all distinct infrastructure hosts for Basic tier over all hours in the current date for the given org.
+        :type infra_host_basic_top99p: int, optional
 
         :param infra_host_top99p: Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for the given org.
         :type infra_host_top99p: int, optional
@@ -1623,6 +1659,12 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["eph_infra_host_aws_sum"] = eph_infra_host_aws_sum
         if eph_infra_host_azure_sum is not unset:
             kwargs["eph_infra_host_azure_sum"] = eph_infra_host_azure_sum
+        if eph_infra_host_basic_infra_basic_agent_sum is not unset:
+            kwargs["eph_infra_host_basic_infra_basic_agent_sum"] = eph_infra_host_basic_infra_basic_agent_sum
+        if eph_infra_host_basic_infra_basic_vsphere_sum is not unset:
+            kwargs["eph_infra_host_basic_infra_basic_vsphere_sum"] = eph_infra_host_basic_infra_basic_vsphere_sum
+        if eph_infra_host_basic_sum is not unset:
+            kwargs["eph_infra_host_basic_sum"] = eph_infra_host_basic_sum
         if eph_infra_host_ent_sum is not unset:
             kwargs["eph_infra_host_ent_sum"] = eph_infra_host_ent_sum
         if eph_infra_host_gcp_sum is not unset:
@@ -1709,6 +1751,12 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["indexed_events_count_sum"] = indexed_events_count_sum
         if infra_edge_monitoring_devices_top99p is not unset:
             kwargs["infra_edge_monitoring_devices_top99p"] = infra_edge_monitoring_devices_top99p
+        if infra_host_basic_infra_basic_agent_top99p is not unset:
+            kwargs["infra_host_basic_infra_basic_agent_top99p"] = infra_host_basic_infra_basic_agent_top99p
+        if infra_host_basic_infra_basic_vsphere_top99p is not unset:
+            kwargs["infra_host_basic_infra_basic_vsphere_top99p"] = infra_host_basic_infra_basic_vsphere_top99p
+        if infra_host_basic_top99p is not unset:
+            kwargs["infra_host_basic_top99p"] = infra_host_basic_top99p
         if infra_host_top99p is not unset:
             kwargs["infra_host_top99p"] = infra_host_top99p
         if ingested_events_bytes_sum is not unset:
