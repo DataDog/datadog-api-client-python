@@ -48,6 +48,8 @@ from datadog_api_client.v2.model.finding_case_response import FindingCaseRespons
 from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
 from datadog_api_client.v2.model.attach_jira_issue_request import AttachJiraIssueRequest
 from datadog_api_client.v2.model.create_jira_issue_request_array import CreateJiraIssueRequestArray
+from datadog_api_client.v2.model.mute_findings_response import MuteFindingsResponse
+from datadog_api_client.v2.model.mute_findings_request import MuteFindingsRequest
 from datadog_api_client.v2.model.security_findings_search_request import SecurityFindingsSearchRequest
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
@@ -2608,6 +2610,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (BulkMuteFindingsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._mute_security_findings_endpoint = _Endpoint(
+            settings={
+                "response_type": (MuteFindingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/mute",
+                "operation_id": "mute_security_findings",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (MuteFindingsRequest,),
                     "location": "body",
                 },
             },
@@ -5651,6 +5673,26 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._mute_findings_endpoint.call_with_http_info(**kwargs)
+
+    def mute_security_findings(
+        self,
+        body: MuteFindingsRequest,
+    ) -> MuteFindingsResponse:
+        """Mute or unmute security findings.
+
+        Mute or unmute security findings.
+        You can mute or unmute up to 100 security findings per request. The request body must include ``is_muted`` and ``reason`` attributes. The allowed reasons depend on whether the finding is being muted or unmuted:
+
+        * To mute a finding: ``PENDING_FIX`` , ``FALSE_POSITIVE`` , ``OTHER`` , ``NO_FIX`` , ``DUPLICATE`` , ``RISK_ACCEPTED``.
+        * To unmute a finding: ``NO_PENDING_FIX`` , ``HUMAN_ERROR`` , ``NO_LONGER_ACCEPTED_RISK`` , ``OTHER``.
+
+        :type body: MuteFindingsRequest
+        :rtype: MuteFindingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._mute_security_findings_endpoint.call_with_http_info(**kwargs)
 
     def patch_signal_notification_rule(
         self,

@@ -3741,6 +3741,15 @@ from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
+from datadog_api_client.v2.model.mute_data_type import MuteDataType
+from datadog_api_client.v2.model.mute_findings_mute_attributes import MuteFindingsMuteAttributes
+from datadog_api_client.v2.model.mute_findings_reason import MuteFindingsReason
+from datadog_api_client.v2.model.mute_findings_request import MuteFindingsRequest
+from datadog_api_client.v2.model.mute_findings_request_data import MuteFindingsRequestData
+from datadog_api_client.v2.model.mute_findings_request_data_attributes import MuteFindingsRequestDataAttributes
+from datadog_api_client.v2.model.mute_findings_request_data_relationships import MuteFindingsRequestDataRelationships
+from datadog_api_client.v2.model.mute_findings_response import MuteFindingsResponse
+from datadog_api_client.v2.model.mute_findings_response_data import MuteFindingsResponseData
 from datadog_api_client.v2.model.notebook_create_data import NotebookCreateData
 from datadog_api_client.v2.model.notebook_create_request import NotebookCreateRequest
 from datadog_api_client.v2.model.notebook_resource_type import NotebookResourceType
@@ -10214,6 +10223,15 @@ __all__ = [
     "MonthlyCostAttributionMeta",
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
+    "MuteDataType",
+    "MuteFindingsMuteAttributes",
+    "MuteFindingsReason",
+    "MuteFindingsRequest",
+    "MuteFindingsRequestData",
+    "MuteFindingsRequestDataAttributes",
+    "MuteFindingsRequestDataRelationships",
+    "MuteFindingsResponse",
+    "MuteFindingsResponseData",
     "NotebookCreateData",
     "NotebookCreateRequest",
     "NotebookResourceType",

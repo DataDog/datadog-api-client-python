@@ -350,6 +350,7 @@ class Configuration:
                 "v2.list_vulnerabilities": False,
                 "v2.list_vulnerable_assets": False,
                 "v2.mute_findings": False,
+                "v2.mute_security_findings": False,
                 "v2.run_historical_job": False,
                 "v2.search_security_monitoring_histsignals": False,
                 "v2.get_code_coverage_branch_summary": False,
