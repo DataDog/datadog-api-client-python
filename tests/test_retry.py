@@ -1,10 +1,42 @@
 from unittest import mock
 import pytest
 import vcr
+from urllib3._collections import HTTPHeaderDict
 
 from datadog_api_client.api_client import ApiClient
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.rest import ClientRetry
 from datadog_api_client.v2.api import logs_api
+
+
+class _FakeResponse:
+    def __init__(self, headers):
+        self.headers = HTTPHeaderDict()
+        for name, value in headers:
+            self.headers.add(name, value)
+
+
+def test_get_retry_after_single_header():
+    retry = ClientRetry(total=5, backoff_factor=2)
+    response = _FakeResponse([("X-Ratelimit-Reset", "7")])
+    assert retry.get_retry_after(response) == 7
+
+
+def test_get_retry_after_missing_header():
+    retry = ClientRetry(total=5, backoff_factor=2)
+    response = _FakeResponse([])
+    assert retry.get_retry_after(response) is None
+
+
+def test_get_retry_after_duplicate_header():
+    """The server sometimes returns X-Ratelimit-Reset twice; HTTPHeaderDict.get() would
+    then concatenate the values (e.g. "7, 7"), which parse_retry_after cannot handle."""
+    retry = ClientRetry(total=5, backoff_factor=2)
+    response = _FakeResponse([
+        ("X-Ratelimit-Reset", "7"),
+        ("X-Ratelimit-Reset", "7"),
+    ])
+    assert retry.get_retry_after(response) == 7
 
 
 @mock.patch("time.sleep", return_value=None)

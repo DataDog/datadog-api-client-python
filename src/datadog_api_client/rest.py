@@ -36,11 +36,14 @@ class ClientRetry(urllib3.util.Retry):
         This method overrides the default "Retry-after" header and uses dd's X-Ratelimit-Reset header
         and gets the value of X-Ratelimit-Reset in seconds.
         """
-        retry_after = response.headers.get("X-Ratelimit-Reset")
-
-        if retry_after is None:
+        # The server may return the X-Ratelimit-Reset header more than once. urllib3's
+        # HTTPHeaderDict.get() concatenates repeated headers with ", " (per RFC 9110 §5.3),
+        # which yields values like "7, 7" that parse_retry_after cannot parse. Use
+        # getlist() to pick a single occurrence instead.
+        values = response.headers.getlist("X-Ratelimit-Reset")
+        if not values:
             return None
-        return self.parse_retry_after(retry_after)
+        return self.parse_retry_after(values[0])
 
     def is_retry(self, method, status_code, has_retry_after=False):
         if method not in self.DEFAULT_ALLOWED_METHODS:
