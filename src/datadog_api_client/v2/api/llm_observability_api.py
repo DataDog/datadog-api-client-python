@@ -27,6 +27,12 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_request i
 from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_request import (
     LLMObsDeleteAnnotationQueueInteractionsRequest,
 )
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_response import (
+    LLMObsAnnotationQueueLabelSchemaResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_request import (
+    LLMObsAnnotationQueueLabelSchemaUpdateRequest,
+)
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
 from datadog_api_client.v2.model.llm_obs_experiment_response import LLMObsExperimentResponse
 from datadog_api_client.v2.model.llm_obs_experiment_request import LLMObsExperimentRequest
@@ -423,6 +429,29 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._get_llm_obs_annotation_queue_label_schema_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotationQueueLabelSchemaResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/label-schema",
+                "operation_id": "get_llm_obs_annotation_queue_label_schema",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_llm_obs_custom_eval_config_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsCustomEvalConfigResponse,),
@@ -666,6 +695,32 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._update_llm_obs_annotation_queue_label_schema_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotationQueueLabelSchemaResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/label-schema",
+                "operation_id": "update_llm_obs_annotation_queue_label_schema",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsAnnotationQueueLabelSchemaUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_llm_obs_custom_eval_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -814,8 +869,10 @@ class LLMObservabilityApi:
     ) -> LLMObsAnnotationQueueResponse:
         """Create an LLM Observability annotation queue.
 
-        Create a new annotation queue. Only ``name`` , ``project_id`` , and ``description`` are accepted.
-        Fields such as ``created_by`` , ``owned_by`` , ``created_at`` , ``modified_by`` , and ``modified_at`` are inferred by the backend.
+        Create an annotation queue. The ``name`` and ``project_id`` fields are required.
+        An optional ``annotation_schema`` can be provided to define the labels for the queue.
+        Fields such as ``created_by`` , ``owned_by`` , ``created_at`` , ``modified_by`` ,
+        and ``modified_at`` are inferred by the backend.
 
         :param body: Create annotation queue payload.
         :type body: LLMObsAnnotationQueueRequest
@@ -1110,6 +1167,23 @@ class LLMObservabilityApi:
 
         return self._get_llm_obs_annotated_interactions_endpoint.call_with_http_info(**kwargs)
 
+    def get_llm_obs_annotation_queue_label_schema(
+        self,
+        queue_id: str,
+    ) -> LLMObsAnnotationQueueLabelSchemaResponse:
+        """Get annotation queue label schema.
+
+        Retrieve the label schema for a given annotation queue.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :rtype: LLMObsAnnotationQueueLabelSchemaResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        return self._get_llm_obs_annotation_queue_label_schema_endpoint.call_with_http_info(**kwargs)
+
     def get_llm_obs_custom_eval_config(
         self,
         eval_name: str,
@@ -1323,7 +1397,7 @@ class LLMObservabilityApi:
     ) -> LLMObsAnnotationQueueResponse:
         """Update an LLM Observability annotation queue.
 
-        Partially update an annotation queue. Only ``name`` and ``description`` can be updated.
+        Partially update an annotation queue. The ``name`` , ``description`` , and ``annotation_schema`` fields can be updated.
 
         :param queue_id: The ID of the LLM Observability annotation queue.
         :type queue_id: str
@@ -1337,6 +1411,31 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._update_llm_obs_annotation_queue_endpoint.call_with_http_info(**kwargs)
+
+    def update_llm_obs_annotation_queue_label_schema(
+        self,
+        queue_id: str,
+        body: LLMObsAnnotationQueueLabelSchemaUpdateRequest,
+    ) -> LLMObsAnnotationQueueLabelSchemaResponse:
+        """Update annotation queue label schema.
+
+        Create or replace the label schema for a given annotation queue.
+        The label schema defines the labels annotators can apply to interactions in the queue.
+        Label names must be unique within the queue and match the pattern ``^[a-zA-Z0-9_-]+$``.
+        Each label must have a valid type: score, categorical, boolean, or text.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :param body: Update label schema payload.
+        :type body: LLMObsAnnotationQueueLabelSchemaUpdateRequest
+        :rtype: LLMObsAnnotationQueueLabelSchemaResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["body"] = body
+
+        return self._update_llm_obs_annotation_queue_label_schema_endpoint.call_with_http_info(**kwargs)
 
     def update_llm_obs_custom_eval_config(
         self,

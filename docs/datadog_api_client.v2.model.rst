@@ -16916,6 +16916,48 @@ datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_interactions\_type mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_label\_schema\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_label\_schema\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_label\_schema\_response module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_label\_schema\_update\_attributes module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_label\_schema\_update\_data module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_label\_schema\_update\_request module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_annotation\_queue\_request module
 -------------------------------------------------------------------------
 
@@ -16962,6 +17004,13 @@ datadog\_api\_client.v2.model.llm\_obs\_annotation\_queues\_response module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_annotation_queues_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_schema module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_schema
    :members:
    :show-inheritance:
 
@@ -17550,6 +17599,20 @@ datadog\_api\_client.v2.model.llm\_obs\_interaction\_type module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_interaction_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_label\_schema module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_label_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_label\_schema\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_label_schema_type
    :members:
    :show-inheritance:
 

@@ -12,10 +12,35 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_request im
     LLMObsAnnotationQueueUpdateDataRequest,
 )
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
+from datadog_api_client.v2.model.llm_obs_annotation_schema import LLMObsAnnotationSchema
+from datadog_api_client.v2.model.llm_obs_label_schema import LLMObsLabelSchema
+from datadog_api_client.v2.model.llm_obs_label_schema_type import LLMObsLabelSchemaType
 
 body = LLMObsAnnotationQueueUpdateRequest(
     data=LLMObsAnnotationQueueUpdateDataRequest(
         attributes=LLMObsAnnotationQueueUpdateDataAttributesRequest(
+            annotation_schema=LLMObsAnnotationSchema(
+                label_schemas=[
+                    LLMObsLabelSchema(
+                        description="Rating of the response quality.",
+                        has_assessment=False,
+                        has_reasoning=False,
+                        id="ab12cd34",
+                        is_assessment=False,
+                        is_integer=False,
+                        is_required=True,
+                        max=5.0,
+                        min=0.0,
+                        name="quality",
+                        type=LLMObsLabelSchemaType.SCORE,
+                        values=[
+                            "good",
+                            "bad",
+                            "neutral",
+                        ],
+                    ),
+                ],
+            ),
             description="Updated description",
             name="Updated queue name",
         ),
