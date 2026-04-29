@@ -3963,6 +3963,15 @@ from datadog_api_client.v2.model.observability_pipeline_custom_processor_type im
 )
 from datadog_api_client.v2.model.observability_pipeline_data import ObservabilityPipelineData
 from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
+from datadog_api_client.v2.model.observability_pipeline_databricks_zerobus_destination import (
+    ObservabilityPipelineDatabricksZerobusDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_databricks_zerobus_destination_auth import (
+    ObservabilityPipelineDatabricksZerobusDestinationAuth,
+)
+from datadog_api_client.v2.model.observability_pipeline_databricks_zerobus_destination_type import (
+    ObservabilityPipelineDatabricksZerobusDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
     ObservabilityPipelineDatadogAgentSource,
 )
@@ -10375,6 +10384,9 @@ __all__ = [
     "ObservabilityPipelineCustomProcessorType",
     "ObservabilityPipelineData",
     "ObservabilityPipelineDataAttributes",
+    "ObservabilityPipelineDatabricksZerobusDestination",
+    "ObservabilityPipelineDatabricksZerobusDestinationAuth",
+    "ObservabilityPipelineDatabricksZerobusDestinationType",
     "ObservabilityPipelineDatadogAgentSource",
     "ObservabilityPipelineDatadogAgentSourceType",
     "ObservabilityPipelineDatadogLogsDestination",

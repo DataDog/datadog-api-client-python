@@ -217,6 +217,15 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param header_source_name: Optional override for the source name header.
         :type header_source_name: str, optional
+
+        :param ingestion_endpoint: Your Databricks Zerobus ingestion endpoint. This is the endpoint used to stream data directly into your Databricks Lakehouse.
+        :type ingestion_endpoint: str
+
+        :param table_name: The fully qualified name of your target Databricks table. Make sure this table already exists in your Databricks workspace before deploying.
+        :type table_name: str
+
+        :param unity_catalog_endpoint: Your Databricks workspace URL. This is used to communicate with the Unity Catalog API.
+        :type unity_catalog_endpoint: str
         """
         super().__init__(kwargs)
 
@@ -294,6 +303,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_syslog_ng_destination import (
             ObservabilityPipelineSyslogNgDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_databricks_zerobus_destination import (
+            ObservabilityPipelineDatabricksZerobusDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination import (
             ObservabilityPipelineDatadogMetricsDestination,
         )
@@ -323,6 +335,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineSplunkHecDestination,
                 ObservabilityPipelineSumoLogicDestination,
                 ObservabilityPipelineSyslogNgDestination,
+                ObservabilityPipelineDatabricksZerobusDestination,
                 ObservabilityPipelineDatadogMetricsDestination,
             ],
         }

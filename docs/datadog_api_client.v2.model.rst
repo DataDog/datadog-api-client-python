@@ -20486,6 +20486,27 @@ datadog\_api\_client.v2.model.observability\_pipeline\_data\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_databricks\_zerobus\_destination module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_databricks_zerobus_destination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_databricks\_zerobus\_destination\_auth module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_databricks_zerobus_destination_auth
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_databricks\_zerobus\_destination\_type module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_databricks_zerobus_destination_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_datadog\_agent\_source module
 ------------------------------------------------------------------------------------
 
