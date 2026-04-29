@@ -29,7 +29,6 @@ body = TestOptimizationDeleteServiceSettingsRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["delete_test_optimization_service_settings"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)
     api_instance.delete_test_optimization_service_settings(body=body)

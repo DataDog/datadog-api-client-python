@@ -29,7 +29,6 @@ body = TestOptimizationGetServiceSettingsRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["get_test_optimization_service_settings"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)
     response = api_instance.get_test_optimization_service_settings(body=body)
