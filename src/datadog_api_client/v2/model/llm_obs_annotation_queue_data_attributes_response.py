@@ -3,18 +3,28 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.llm_obs_annotation_schema import LLMObsAnnotationSchema
 
 
 class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.llm_obs_annotation_schema import LLMObsAnnotationSchema
+
         return {
+            "annotation_schema": (LLMObsAnnotationSchema,),
             "created_at": (datetime,),
             "created_by": (str,),
             "description": (str,),
@@ -26,6 +36,7 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
         }
 
     attribute_map = {
+        "annotation_schema": "annotation_schema",
         "created_at": "created_at",
         "created_by": "created_by",
         "description": "description",
@@ -46,10 +57,14 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
         name: str,
         owned_by: str,
         project_id: str,
+        annotation_schema: Union[LLMObsAnnotationSchema, UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes of an LLM Observability annotation queue.
+
+        :param annotation_schema: Schema defining the labels for an annotation queue.
+        :type annotation_schema: LLMObsAnnotationSchema, optional
 
         :param created_at: Timestamp when the queue was created.
         :type created_at: datetime
@@ -75,6 +90,8 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
         :param project_id: Identifier of the project this queue belongs to.
         :type project_id: str
         """
+        if annotation_schema is not unset:
+            kwargs["annotation_schema"] = annotation_schema
         super().__init__(kwargs)
 
         self_.created_at = created_at

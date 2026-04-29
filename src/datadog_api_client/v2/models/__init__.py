@@ -3078,6 +3078,22 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_response 
     LLMObsAnnotationQueueInteractionsResponse,
 )
 from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_type import LLMObsAnnotationQueueInteractionsType
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_attributes import (
+    LLMObsAnnotationQueueLabelSchemaAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_data import LLMObsAnnotationQueueLabelSchemaData
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_response import (
+    LLMObsAnnotationQueueLabelSchemaResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_attributes import (
+    LLMObsAnnotationQueueLabelSchemaUpdateAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_data import (
+    LLMObsAnnotationQueueLabelSchemaUpdateData,
+)
+from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_request import (
+    LLMObsAnnotationQueueLabelSchemaUpdateRequest,
+)
 from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObsAnnotationQueueResponse
 from datadog_api_client.v2.model.llm_obs_annotation_queue_type import LLMObsAnnotationQueueType
@@ -3089,6 +3105,7 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_request im
 )
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
+from datadog_api_client.v2.model.llm_obs_annotation_schema import LLMObsAnnotationSchema
 from datadog_api_client.v2.model.llm_obs_cursor_meta import LLMObsCursorMeta
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_assessment_criteria import (
     LLMObsCustomEvalConfigAssessmentCriteria,
@@ -3217,6 +3234,8 @@ from datadog_api_client.v2.model.llm_obs_experiment_update_data_request import L
 from datadog_api_client.v2.model.llm_obs_experiment_update_request import LLMObsExperimentUpdateRequest
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
 from datadog_api_client.v2.model.llm_obs_interaction_type import LLMObsInteractionType
+from datadog_api_client.v2.model.llm_obs_label_schema import LLMObsLabelSchema
+from datadog_api_client.v2.model.llm_obs_label_schema_type import LLMObsLabelSchemaType
 from datadog_api_client.v2.model.llm_obs_metric_assessment import LLMObsMetricAssessment
 from datadog_api_client.v2.model.llm_obs_metric_score_type import LLMObsMetricScoreType
 from datadog_api_client.v2.model.llm_obs_project_data_attributes_request import LLMObsProjectDataAttributesRequest
@@ -9755,6 +9774,12 @@ __all__ = [
     "LLMObsAnnotationQueueInteractionsRequest",
     "LLMObsAnnotationQueueInteractionsResponse",
     "LLMObsAnnotationQueueInteractionsType",
+    "LLMObsAnnotationQueueLabelSchemaAttributes",
+    "LLMObsAnnotationQueueLabelSchemaData",
+    "LLMObsAnnotationQueueLabelSchemaResponse",
+    "LLMObsAnnotationQueueLabelSchemaUpdateAttributes",
+    "LLMObsAnnotationQueueLabelSchemaUpdateData",
+    "LLMObsAnnotationQueueLabelSchemaUpdateRequest",
     "LLMObsAnnotationQueueRequest",
     "LLMObsAnnotationQueueResponse",
     "LLMObsAnnotationQueueType",
@@ -9762,6 +9787,7 @@ __all__ = [
     "LLMObsAnnotationQueueUpdateDataRequest",
     "LLMObsAnnotationQueueUpdateRequest",
     "LLMObsAnnotationQueuesResponse",
+    "LLMObsAnnotationSchema",
     "LLMObsCursorMeta",
     "LLMObsCustomEvalConfigAssessmentCriteria",
     "LLMObsCustomEvalConfigAttributes",
@@ -9846,6 +9872,8 @@ __all__ = [
     "LLMObsExperimentUpdateRequest",
     "LLMObsExperimentsResponse",
     "LLMObsInteractionType",
+    "LLMObsLabelSchema",
+    "LLMObsLabelSchemaType",
     "LLMObsMetricAssessment",
     "LLMObsMetricScoreType",
     "LLMObsProjectDataAttributesRequest",

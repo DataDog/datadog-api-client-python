@@ -3267,6 +3267,18 @@
       "type": "idempotent"
     }
   },
+  "GetLLMObsAnnotationQueueLabelSchema": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLLMObsAnnotationQueueLabelSchema": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLLMObsExperiments": {
     "tag": "LLM Observability",
     "undo": {
