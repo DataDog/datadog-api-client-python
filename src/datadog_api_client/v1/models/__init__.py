@@ -94,6 +94,8 @@ from datadog_api_client.v1.model.dashboard_template_variable import DashboardTem
 from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
 from datadog_api_client.v1.model.dashboard_template_variable_preset_value import DashboardTemplateVariablePresetValue
 from datadog_api_client.v1.model.dashboard_type import DashboardType
+from datadog_api_client.v1.model.data_projection_query import DataProjectionQuery
+from datadog_api_client.v1.model.data_projection_request_type import DataProjectionRequestType
 from datadog_api_client.v1.model.delete_shared_dashboard_response import DeleteSharedDashboardResponse
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.distribution_point import DistributionPoint
@@ -615,6 +617,15 @@ from datadog_api_client.v1.model.pager_duty_service_key import PagerDutyServiceK
 from datadog_api_client.v1.model.pager_duty_service_name import PagerDutyServiceName
 from datadog_api_client.v1.model.pagination import Pagination
 from datadog_api_client.v1.model.point import Point
+from datadog_api_client.v1.model.point_plot_dimension import PointPlotDimension
+from datadog_api_client.v1.model.point_plot_projection import PointPlotProjection
+from datadog_api_client.v1.model.point_plot_projection_dimension import PointPlotProjectionDimension
+from datadog_api_client.v1.model.point_plot_projection_type import PointPlotProjectionType
+from datadog_api_client.v1.model.point_plot_widget_definition import PointPlotWidgetDefinition
+from datadog_api_client.v1.model.point_plot_widget_definition_type import PointPlotWidgetDefinitionType
+from datadog_api_client.v1.model.point_plot_widget_legend import PointPlotWidgetLegend
+from datadog_api_client.v1.model.point_plot_widget_legend_type import PointPlotWidgetLegendType
+from datadog_api_client.v1.model.point_plot_widget_request import PointPlotWidgetRequest
 from datadog_api_client.v1.model.powerpack_template_variable_contents import PowerpackTemplateVariableContents
 from datadog_api_client.v1.model.powerpack_template_variables import PowerpackTemplateVariables
 from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
@@ -1431,6 +1442,8 @@ __all__ = [
     "DashboardTemplateVariablePreset",
     "DashboardTemplateVariablePresetValue",
     "DashboardType",
+    "DataProjectionQuery",
+    "DataProjectionRequestType",
     "DeleteSharedDashboardResponse",
     "DeletedMonitor",
     "DistributionPoint",
@@ -1826,6 +1839,15 @@ __all__ = [
     "PagerDutyServiceName",
     "Pagination",
     "Point",
+    "PointPlotDimension",
+    "PointPlotProjection",
+    "PointPlotProjectionDimension",
+    "PointPlotProjectionType",
+    "PointPlotWidgetDefinition",
+    "PointPlotWidgetDefinitionType",
+    "PointPlotWidgetLegend",
+    "PointPlotWidgetLegendType",
+    "PointPlotWidgetRequest",
     "PowerpackTemplateVariableContents",
     "PowerpackTemplateVariables",
     "PowerpackWidgetDefinition",

@@ -676,6 +676,20 @@ datadog\_api\_client.v1.model.dashboard\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.data\_projection\_query module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.data_projection_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.data\_projection\_request\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.data_projection_request_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.delete\_shared\_dashboard\_response module
 ------------------------------------------------------------------------
 
@@ -3438,6 +3452,69 @@ datadog\_api\_client.v1.model.point module
 ------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.point
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_dimension module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_dimension
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_projection module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_projection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_projection\_dimension module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_projection_dimension
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_projection\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_projection_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_widget\_definition module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_widget\_definition\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_widget_definition_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_widget\_legend module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_widget_legend
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_widget\_legend\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_widget_legend_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.point\_plot\_widget\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.point_plot_widget_request
    :members:
    :show-inheritance:
 

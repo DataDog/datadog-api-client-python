@@ -740,6 +740,18 @@ Feature: Dashboards
     And the response "widgets[0].definition.content" is equal to "# Example Note"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with point_plot widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/point_plot_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "point_plot"
+    And the response "widgets[0].definition.requests[0].request_type" is equal to "data_projection"
+    And the response "widgets[0].definition.requests[0].projection.type" is equal to "point_plot"
+    And the response "widgets[0].definition.requests[0].projection.dimensions[0].dimension" is equal to "group"
+    And the response "widgets[0].definition.requests[0].projection.dimensions[1].dimension" is equal to "y"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with powerpack widget
     Given new "CreateDashboard" request
     And there is a valid "powerpack" in the system
