@@ -30,7 +30,6 @@ body = FlakyTestsSearchRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["search_flaky_tests"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)
     items = api_instance.search_flaky_tests_with_pagination(body=body)

@@ -103,7 +103,6 @@ body = TestOptimizationFlakyTestsManagementPoliciesUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_flaky_tests_management_policies"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)
     response = api_instance.update_flaky_tests_management_policies(body=body)
