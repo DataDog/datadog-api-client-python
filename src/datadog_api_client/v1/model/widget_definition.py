@@ -236,6 +236,9 @@ class WidgetDefinition(ModelComposed):
         :param template_variables: Powerpack template variables.
         :type template_variables: PowerpackTemplateVariables, optional
 
+        :param legend: Legend configuration for the point plot widget.
+        :type legend: PointPlotWidgetLegend, optional
+
         :param autoscale: Whether to use auto-scaling or not.
         :type autoscale: bool, optional
 
@@ -329,9 +332,6 @@ class WidgetDefinition(ModelComposed):
         :param hide_total: Show the total value in this widget.
         :type hide_total: bool, optional
 
-        :param legend: Configuration of the legend.
-        :type legend: SunburstWidgetLegend, optional
-
         :param has_search_bar: Controls the display of the search bar.
         :type has_search_bar: TableWidgetHasSearchBar, optional
 
@@ -389,6 +389,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
         from datadog_api_client.v1.model.note_widget_definition import NoteWidgetDefinition
         from datadog_api_client.v1.model.powerpack_widget_definition import PowerpackWidgetDefinition
+        from datadog_api_client.v1.model.point_plot_widget_definition import PointPlotWidgetDefinition
         from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
         from datadog_api_client.v1.model.retention_curve_widget_definition import RetentionCurveWidgetDefinition
         from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
@@ -432,6 +433,7 @@ class WidgetDefinition(ModelComposed):
                 MonitorSummaryWidgetDefinition,
                 NoteWidgetDefinition,
                 PowerpackWidgetDefinition,
+                PointPlotWidgetDefinition,
                 QueryValueWidgetDefinition,
                 RetentionCurveWidgetDefinition,
                 RunWorkflowWidgetDefinition,
