@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"cross_product_sampling":{"trace_sample_rate":25}},"id":"Test-Update_a_permanent_retention_filter_returns_Bad_Request_response-1777482272","type":"invalid_type"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/permanent_retention_filters/Test-Update_a_permanent_retention_filter_returns_Bad_Request_response-1777482272
+  response:
+    body:
+      string: '{"errors":[{"status":"400","title":"Bad Request","detail":"got type
+        \"invalid_type\" expected one of \"permanent_retention_filters\""}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
