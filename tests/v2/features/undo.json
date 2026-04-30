@@ -4940,6 +4940,24 @@
       "type": "unsafe"
     }
   },
+  "ListPermanentRetentionFilters": {
+    "tag": "Rum Retention Filters Permanent",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetPermanentRetentionFilter": {
+    "tag": "Rum Retention Filters Permanent",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdatePermanentRetentionFilter": {
+    "tag": "Rum Retention Filters Permanent",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "OrderRetentionFilters": {
     "tag": "Rum Retention Filters",
     "undo": {

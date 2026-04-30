@@ -5416,6 +5416,28 @@ from datadog_api_client.v2.model.rum_metric_update_compute import RumMetricUpdat
 from datadog_api_client.v2.model.rum_metric_update_data import RumMetricUpdateData
 from datadog_api_client.v2.model.rum_metric_update_request import RumMetricUpdateRequest
 from datadog_api_client.v2.model.rum_metrics_response import RumMetricsResponse
+from datadog_api_client.v2.model.rum_permanent_cross_product_sampling import RumPermanentCrossProductSampling
+from datadog_api_client.v2.model.rum_permanent_cross_product_sampling_editability import (
+    RumPermanentCrossProductSamplingEditability,
+)
+from datadog_api_client.v2.model.rum_permanent_cross_product_sampling_update import (
+    RumPermanentCrossProductSamplingUpdate,
+)
+from datadog_api_client.v2.model.rum_permanent_retention_filter_attributes import RumPermanentRetentionFilterAttributes
+from datadog_api_client.v2.model.rum_permanent_retention_filter_data import RumPermanentRetentionFilterData
+from datadog_api_client.v2.model.rum_permanent_retention_filter_event_type import RumPermanentRetentionFilterEventType
+from datadog_api_client.v2.model.rum_permanent_retention_filter_meta import RumPermanentRetentionFilterMeta
+from datadog_api_client.v2.model.rum_permanent_retention_filter_meta_source import RumPermanentRetentionFilterMetaSource
+from datadog_api_client.v2.model.rum_permanent_retention_filter_response import RumPermanentRetentionFilterResponse
+from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RumPermanentRetentionFilterType
+from datadog_api_client.v2.model.rum_permanent_retention_filter_update_attributes import (
+    RumPermanentRetentionFilterUpdateAttributes,
+)
+from datadog_api_client.v2.model.rum_permanent_retention_filter_update_data import RumPermanentRetentionFilterUpdateData
+from datadog_api_client.v2.model.rum_permanent_retention_filter_update_request import (
+    RumPermanentRetentionFilterUpdateRequest,
+)
+from datadog_api_client.v2.model.rum_permanent_retention_filters_response import RumPermanentRetentionFiltersResponse
 from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
 from datadog_api_client.v2.model.rum_retention_filter_create_attributes import RumRetentionFilterCreateAttributes
 from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
@@ -11303,6 +11325,20 @@ __all__ = [
     "RumMetricUpdateData",
     "RumMetricUpdateRequest",
     "RumMetricsResponse",
+    "RumPermanentCrossProductSampling",
+    "RumPermanentCrossProductSamplingEditability",
+    "RumPermanentCrossProductSamplingUpdate",
+    "RumPermanentRetentionFilterAttributes",
+    "RumPermanentRetentionFilterData",
+    "RumPermanentRetentionFilterEventType",
+    "RumPermanentRetentionFilterMeta",
+    "RumPermanentRetentionFilterMetaSource",
+    "RumPermanentRetentionFilterResponse",
+    "RumPermanentRetentionFilterType",
+    "RumPermanentRetentionFilterUpdateAttributes",
+    "RumPermanentRetentionFilterUpdateData",
+    "RumPermanentRetentionFilterUpdateRequest",
+    "RumPermanentRetentionFiltersResponse",
     "RumRetentionFilterAttributes",
     "RumRetentionFilterCreateAttributes",
     "RumRetentionFilterCreateData",

@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/permanent_retention_filters/default_synthetics
+  response:
+    body:
+      string: '{"data":{"id":"default_synthetics","type":"permanent_retention_filters","attributes":{"name":"Default
+        Synthetics","event_type":"session","query":"@type:browser","sample_rate":100,"enabled":true,"cross_product_sampling":{"trace_sample_rate":100},"cross_product_sampling_editability":{"trace_sample_rate":true}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
