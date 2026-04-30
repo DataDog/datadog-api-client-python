@@ -138,6 +138,7 @@ class UsageSummaryResponse(ModelNormal):
             "fargate_container_profiler_profiling_fargate_eks_avg_sum": (int,),
             "fargate_tasks_count_avg_sum": (int,),
             "fargate_tasks_count_hwm_sum": (int,),
+            "feature_flags_config_requests_agg_sum": (int,),
             "flex_logs_compute_large_avg_sum": (int,),
             "flex_logs_compute_medium_avg_sum": (int,),
             "flex_logs_compute_small_avg_sum": (int,),
@@ -388,6 +389,7 @@ class UsageSummaryResponse(ModelNormal):
         "fargate_container_profiler_profiling_fargate_eks_avg_sum": "fargate_container_profiler_profiling_fargate_eks_avg_sum",
         "fargate_tasks_count_avg_sum": "fargate_tasks_count_avg_sum",
         "fargate_tasks_count_hwm_sum": "fargate_tasks_count_hwm_sum",
+        "feature_flags_config_requests_agg_sum": "feature_flags_config_requests_agg_sum",
         "flex_logs_compute_large_avg_sum": "flex_logs_compute_large_avg_sum",
         "flex_logs_compute_medium_avg_sum": "flex_logs_compute_medium_avg_sum",
         "flex_logs_compute_small_avg_sum": "flex_logs_compute_small_avg_sum",
@@ -639,6 +641,7 @@ class UsageSummaryResponse(ModelNormal):
         fargate_container_profiler_profiling_fargate_eks_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_avg_sum: Union[int, UnsetType] = unset,
         fargate_tasks_count_hwm_sum: Union[int, UnsetType] = unset,
+        feature_flags_config_requests_agg_sum: Union[int, UnsetType] = unset,
         flex_logs_compute_large_avg_sum: Union[int, UnsetType] = unset,
         flex_logs_compute_medium_avg_sum: Union[int, UnsetType] = unset,
         flex_logs_compute_small_avg_sum: Union[int, UnsetType] = unset,
@@ -1114,6 +1117,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param fargate_tasks_count_hwm_sum: Shows the sum of the high-water marks of all Fargate tasks over all hours in the current month for all organizations.
         :type fargate_tasks_count_hwm_sum: int, optional
+
+        :param feature_flags_config_requests_agg_sum: Shows the sum of all Feature Flags Client-Side SDK config requests over all hours in the current month for all organizations.
+        :type feature_flags_config_requests_agg_sum: int, optional
 
         :param flex_logs_compute_large_avg_sum: Shows the average number of Flex Logs Compute Large Instances over all hours in the current months for all organizations.
         :type flex_logs_compute_large_avg_sum: int, optional
@@ -1758,6 +1764,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["fargate_tasks_count_avg_sum"] = fargate_tasks_count_avg_sum
         if fargate_tasks_count_hwm_sum is not unset:
             kwargs["fargate_tasks_count_hwm_sum"] = fargate_tasks_count_hwm_sum
+        if feature_flags_config_requests_agg_sum is not unset:
+            kwargs["feature_flags_config_requests_agg_sum"] = feature_flags_config_requests_agg_sum
         if flex_logs_compute_large_avg_sum is not unset:
             kwargs["flex_logs_compute_large_avg_sum"] = flex_logs_compute_large_avg_sum
         if flex_logs_compute_medium_avg_sum is not unset:
