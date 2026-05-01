@@ -17833,6 +17833,13 @@ datadog\_api\_client.v2.model.logs\_archive\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.logs\_archive\_attributes\_compression\_method module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_attributes_compression_method
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.logs\_archive\_create\_request module
 -------------------------------------------------------------------
 

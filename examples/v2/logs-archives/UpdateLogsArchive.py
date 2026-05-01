@@ -4,6 +4,9 @@ Update an archive returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
+from datadog_api_client.v2.model.logs_archive_attributes_compression_method import (
+    LogsArchiveAttributesCompressionMethod,
+)
 from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
 from datadog_api_client.v2.model.logs_archive_create_request_attributes import LogsArchiveCreateRequestAttributes
 from datadog_api_client.v2.model.logs_archive_create_request_definition import LogsArchiveCreateRequestDefinition
@@ -14,6 +17,7 @@ from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchi
 body = LogsArchiveCreateRequest(
     data=LogsArchiveCreateRequestDefinition(
         attributes=LogsArchiveCreateRequestAttributes(
+            compression_method=LogsArchiveAttributesCompressionMethod.GZIP,
             destination=LogsArchiveDestinationAzure(
                 container="container-name",
                 integration=LogsArchiveIntegrationAzure(

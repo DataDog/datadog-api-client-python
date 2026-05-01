@@ -3374,6 +3374,9 @@ from datadog_api_client.v2.model.logs_aggregate_sort_type import LogsAggregateSo
 from datadog_api_client.v2.model.logs_aggregation_function import LogsAggregationFunction
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_attributes import LogsArchiveAttributes
+from datadog_api_client.v2.model.logs_archive_attributes_compression_method import (
+    LogsArchiveAttributesCompressionMethod,
+)
 from datadog_api_client.v2.model.logs_archive_create_request import LogsArchiveCreateRequest
 from datadog_api_client.v2.model.logs_archive_create_request_attributes import LogsArchiveCreateRequestAttributes
 from datadog_api_client.v2.model.logs_archive_create_request_definition import LogsArchiveCreateRequestDefinition
@@ -10005,6 +10008,7 @@ __all__ = [
     "LogsAggregationFunction",
     "LogsArchive",
     "LogsArchiveAttributes",
+    "LogsArchiveAttributesCompressionMethod",
     "LogsArchiveCreateRequest",
     "LogsArchiveCreateRequestAttributes",
     "LogsArchiveCreateRequestDefinition",
