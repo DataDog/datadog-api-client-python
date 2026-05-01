@@ -3,10 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
+    unset,
+    UnsetType,
 )
 
 
@@ -14,20 +18,80 @@ class OrgGroupPaginationMetaPage(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "total_count": (int,),
+            "first_number": (int,),
+            "last_number": (int, none_type),
+            "next_number": (int, none_type),
+            "number": (int,),
+            "prev_number": (int, none_type),
+            "size": (int,),
+            "total": (int,),
+            "type": (str,),
         }
 
     attribute_map = {
-        "total_count": "total_count",
+        "first_number": "first_number",
+        "last_number": "last_number",
+        "next_number": "next_number",
+        "number": "number",
+        "prev_number": "prev_number",
+        "size": "size",
+        "total": "total",
+        "type": "type",
     }
 
-    def __init__(self_, total_count: int, **kwargs):
+    def __init__(
+        self_,
+        first_number: Union[int, UnsetType] = unset,
+        last_number: Union[int, none_type, UnsetType] = unset,
+        next_number: Union[int, none_type, UnsetType] = unset,
+        number: Union[int, UnsetType] = unset,
+        prev_number: Union[int, none_type, UnsetType] = unset,
+        size: Union[int, UnsetType] = unset,
+        total: Union[int, UnsetType] = unset,
+        type: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
-        Page-based pagination details.
+        Page-based pagination details for org group list responses.
 
-        :param total_count: The total number of items.
-        :type total_count: int
+        :param first_number: First page number.
+        :type first_number: int, optional
+
+        :param last_number: Last page number.
+        :type last_number: int, none_type, optional
+
+        :param next_number: Next page number.
+        :type next_number: int, none_type, optional
+
+        :param number: Page number.
+        :type number: int, optional
+
+        :param prev_number: Previous page number.
+        :type prev_number: int, none_type, optional
+
+        :param size: Page size.
+        :type size: int, optional
+
+        :param total: Total number of results.
+        :type total: int, optional
+
+        :param type: Pagination type.
+        :type type: str, optional
         """
+        if first_number is not unset:
+            kwargs["first_number"] = first_number
+        if last_number is not unset:
+            kwargs["last_number"] = last_number
+        if next_number is not unset:
+            kwargs["next_number"] = next_number
+        if number is not unset:
+            kwargs["number"] = number
+        if prev_number is not unset:
+            kwargs["prev_number"] = prev_number
+        if size is not unset:
+            kwargs["size"] = size
+        if total is not unset:
+            kwargs["total"] = total
+        if type is not unset:
+            kwargs["type"] = type
         super().__init__(kwargs)
-
-        self_.total_count = total_count

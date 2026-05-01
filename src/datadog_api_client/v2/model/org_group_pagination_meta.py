@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -28,13 +30,13 @@ class OrgGroupPaginationMeta(ModelNormal):
         "page": "page",
     }
 
-    def __init__(self_, page: OrgGroupPaginationMetaPage, **kwargs):
+    def __init__(self_, page: Union[OrgGroupPaginationMetaPage, UnsetType] = unset, **kwargs):
         """
-        Pagination metadata.
+        Pagination metadata for org group list responses.
 
-        :param page: Page-based pagination details.
-        :type page: OrgGroupPaginationMetaPage
+        :param page: Page-based pagination details for org group list responses.
+        :type page: OrgGroupPaginationMetaPage, optional
         """
+        if page is not unset:
+            kwargs["page"] = page
         super().__init__(kwargs)
-
-        self_.page = page
