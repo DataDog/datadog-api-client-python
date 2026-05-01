@@ -151,6 +151,13 @@ datadog\_api\_client.v2.api.cloud\_cost\_management\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.cloud\_inventory\_sync\_configs\_api module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.cloud_inventory_sync_configs_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.cloud\_network\_monitoring\_api module
 ------------------------------------------------------------------
 

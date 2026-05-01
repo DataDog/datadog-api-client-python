@@ -4981,6 +4981,69 @@ datadog\_api\_client.v2.model.cloud\_configuration\_rule\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cloud\_inventory\_cloud\_provider\_id module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_cloud_provider_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_cloud\_provider\_request\_type module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_cloud_provider_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_sync\_config\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_sync_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_sync\_config\_aws\_request\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_sync_config_aws_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_sync\_config\_azure\_request\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_sync_config_azure_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_sync\_config\_gcp\_request\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_sync_config_gcp_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_sync\_config\_resource\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_sync_config_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_sync\_config\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_sync_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cloud\_inventory\_sync\_config\_response\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cloud_inventory_sync_config_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cloud\_workload\_security\_agent\_policies\_list\_response module
 -----------------------------------------------------------------------------------------------
 
@@ -35715,6 +35778,27 @@ datadog\_api\_client.v2.model.upsert\_catalog\_kind\_response module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.upsert_catalog_kind_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_cloud\_inventory\_sync\_config\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_cloud\_inventory\_sync\_config\_request\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_cloud\_inventory\_sync\_config\_request\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_data
    :members:
    :show-inheritance:
 

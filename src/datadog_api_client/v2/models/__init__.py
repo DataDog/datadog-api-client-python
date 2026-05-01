@@ -917,6 +917,23 @@ from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import 
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
 from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
+from datadog_api_client.v2.model.cloud_inventory_cloud_provider_id import CloudInventoryCloudProviderId
+from datadog_api_client.v2.model.cloud_inventory_cloud_provider_request_type import (
+    CloudInventoryCloudProviderRequestType,
+)
+from datadog_api_client.v2.model.cloud_inventory_sync_config_aws_request_attributes import (
+    CloudInventorySyncConfigAWSRequestAttributes,
+)
+from datadog_api_client.v2.model.cloud_inventory_sync_config_attributes import CloudInventorySyncConfigAttributes
+from datadog_api_client.v2.model.cloud_inventory_sync_config_azure_request_attributes import (
+    CloudInventorySyncConfigAzureRequestAttributes,
+)
+from datadog_api_client.v2.model.cloud_inventory_sync_config_gcp_request_attributes import (
+    CloudInventorySyncConfigGCPRequestAttributes,
+)
+from datadog_api_client.v2.model.cloud_inventory_sync_config_resource_type import CloudInventorySyncConfigResourceType
+from datadog_api_client.v2.model.cloud_inventory_sync_config_response import CloudInventorySyncConfigResponse
+from datadog_api_client.v2.model.cloud_inventory_sync_config_response_data import CloudInventorySyncConfigResponseData
 from datadog_api_client.v2.model.cloud_workload_security_agent_policies_list_response import (
     CloudWorkloadSecurityAgentPoliciesListResponse,
 )
@@ -7295,6 +7312,13 @@ from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item im
 )
 from datadog_api_client.v2.model.upsert_catalog_kind_request import UpsertCatalogKindRequest
 from datadog_api_client.v2.model.upsert_catalog_kind_response import UpsertCatalogKindResponse
+from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request import UpsertCloudInventorySyncConfigRequest
+from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_attributes import (
+    UpsertCloudInventorySyncConfigRequestAttributes,
+)
+from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_data import (
+    UpsertCloudInventorySyncConfigRequestData,
+)
 from datadog_api_client.v2.model.urgency import Urgency
 from datadog_api_client.v2.model.url_param import UrlParam
 from datadog_api_client.v2.model.url_param_update import UrlParamUpdate
@@ -8168,6 +8192,15 @@ __all__ = [
     "CloudConfigurationRuleOptions",
     "CloudConfigurationRulePayload",
     "CloudConfigurationRuleType",
+    "CloudInventoryCloudProviderId",
+    "CloudInventoryCloudProviderRequestType",
+    "CloudInventorySyncConfigAWSRequestAttributes",
+    "CloudInventorySyncConfigAttributes",
+    "CloudInventorySyncConfigAzureRequestAttributes",
+    "CloudInventorySyncConfigGCPRequestAttributes",
+    "CloudInventorySyncConfigResourceType",
+    "CloudInventorySyncConfigResponse",
+    "CloudInventorySyncConfigResponseData",
     "CloudWorkloadSecurityAgentPoliciesListResponse",
     "CloudWorkloadSecurityAgentPolicyAttributes",
     "CloudWorkloadSecurityAgentPolicyCreateAttributes",
@@ -12566,6 +12599,9 @@ __all__ = [
     "UpsertCatalogEntityResponseIncludedItem",
     "UpsertCatalogKindRequest",
     "UpsertCatalogKindResponse",
+    "UpsertCloudInventorySyncConfigRequest",
+    "UpsertCloudInventorySyncConfigRequestAttributes",
+    "UpsertCloudInventorySyncConfigRequestData",
     "Urgency",
     "UrlParam",
     "UrlParamUpdate",
