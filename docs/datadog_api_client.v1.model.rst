@@ -6472,10 +6472,17 @@ datadog\_api\_client.v1.model.topology\_query module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_query\_data\_source module
-------------------------------------------------------------------
+datadog\_api\_client.v1.model.topology\_query\_data\_streams\_or\_service\_map module
+-------------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v1.model.topology_query_data_source
+.. automodule:: datadog_api_client.v1.model.topology_query_data_streams_or_service_map
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.topology\_query\_data\_streams\_or\_service\_map\_data\_source module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_query_data_streams_or_service_map_data_source
    :members:
    :show-inheritance:
 

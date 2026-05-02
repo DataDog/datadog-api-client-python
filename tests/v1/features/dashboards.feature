@@ -1090,6 +1090,19 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with topology_map data_streams widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/topology_map_widget_data_streams.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "topology_map"
+    And the response "widgets[0].definition.requests[0].request_type" is equal to "topology"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "data_streams"
+    And the response "widgets[0].definition.requests[0].query.service" is equal to ""
+    And the response "widgets[0].definition.requests[0].query.filters" is equal to ["env:prod"]
+    And the response "widgets[0].definition.requests[0].query.query_string" is equal to "service:myservice"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with topology_map widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/topology_map_widget.json"
