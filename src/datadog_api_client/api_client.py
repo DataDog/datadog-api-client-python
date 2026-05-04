@@ -361,7 +361,7 @@ class ApiClient:
             for item in results:
                 yield item
             if "cursor_param" in pagination:
-                if len(results) == 0:
+                if len(results) == 0 or not get_attribute_from_path(response, pagination["cursor_path"], default=""):
                     break
             elif len(results) < pagination["limit_value"]:
                 break
@@ -667,7 +667,7 @@ class AsyncApiClient(ApiClient):
             for item in results:
                 yield item
             if "cursor_param" in pagination:
-                if len(results) == 0:
+                if len(results) == 0 or not get_attribute_from_path(response, pagination["cursor_path"], default=""):
                     break
             elif len(results) < pagination["limit_value"]:
                 break
