@@ -27,6 +27,12 @@ class WildcardWidgetRequest(ModelComposed):
         :param response_format: Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
         :type response_format: FormulaAndFunctionResponseFormat, optional
 
+        :param sort: The controls for sorting the widget.
+        :type sort: WidgetSortBy, optional
+
+        :param style: Define request widget style.
+        :type style: WidgetRequestStyle, optional
+
         :param apm_query: The log query.
         :type apm_query: LogQueryDefinition, optional
 
@@ -62,9 +68,6 @@ class WildcardWidgetRequest(ModelComposed):
 
         :param security_query: The log query.
         :type security_query: LogQueryDefinition, optional
-
-        :param style: Define request widget style for timeseries widgets.
-        :type style: TimeseriesRequestStyle, optional
 
         :param columns: Widget columns.
         :type columns: [ListStreamColumn]
