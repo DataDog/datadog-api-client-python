@@ -845,7 +845,7 @@ class StatusPagesApi:
     ) -> StatusPage:
         """Create status page.
 
-        Creates a new status page. **Note** : Publishing a status page on creation via the ``enabled`` property will be deprecated. Use the dedicated `publish <#publish-status-page>`_ status page endpoint after creation instead.
+        Creates a new status page in an unpublished state. Use the dedicated `publish <#publish-status-page>`_ status page endpoint to publish the page after creation.
 
         :type body: CreateStatusPageRequest
         :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user.

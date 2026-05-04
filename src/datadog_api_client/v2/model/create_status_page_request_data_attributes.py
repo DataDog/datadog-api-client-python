@@ -43,7 +43,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
             "components": ([CreateStatusPageRequestDataAttributesComponentsItems],),
             "domain_prefix": (str,),
             "email_header_image": (str,),
-            "enabled": (bool,),
             "favicon": (str,),
             "name": (str,),
             "subscriptions_enabled": (bool,),
@@ -56,7 +55,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         "components": "components",
         "domain_prefix": "domain_prefix",
         "email_header_image": "email_header_image",
-        "enabled": "enabled",
         "favicon": "favicon",
         "name": "name",
         "subscriptions_enabled": "subscriptions_enabled",
@@ -67,7 +65,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
     def __init__(
         self_,
         domain_prefix: str,
-        enabled: bool,
         name: str,
         type: CreateStatusPageRequestDataAttributesType,
         visualization_type: CreateStatusPageRequestDataAttributesVisualizationType,
@@ -92,9 +89,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
 
         :param email_header_image: Base64-encoded image data included in email notifications sent to status page subscribers.
         :type email_header_image: str, optional
-
-        :param enabled: Whether the status page is enabled.
-        :type enabled: bool
 
         :param favicon: Base64-encoded image data displayed in the browser tab.
         :type favicon: str, optional
@@ -124,7 +118,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         super().__init__(kwargs)
 
         self_.domain_prefix = domain_prefix
-        self_.enabled = enabled
         self_.name = name
         self_.type = type
         self_.visualization_type = visualization_type
