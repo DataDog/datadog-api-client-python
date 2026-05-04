@@ -17,6 +17,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
     from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
     from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+    from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
+    from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
     from datadog_api_client.v1.model.formula_and_function_metric_query_definition import (
         FormulaAndFunctionMetricQueryDefinition,
     )
@@ -58,12 +60,16 @@ class TreeMapWidgetRequest(ModelNormal):
         from datadog_api_client.v1.model.widget_formula import WidgetFormula
         from datadog_api_client.v1.model.formula_and_function_query_definition import FormulaAndFunctionQueryDefinition
         from datadog_api_client.v1.model.formula_and_function_response_format import FormulaAndFunctionResponseFormat
+        from datadog_api_client.v1.model.widget_sort_by import WidgetSortBy
+        from datadog_api_client.v1.model.widget_request_style import WidgetRequestStyle
 
         return {
             "formulas": ([WidgetFormula],),
             "q": (str,),
             "queries": ([FormulaAndFunctionQueryDefinition],),
             "response_format": (FormulaAndFunctionResponseFormat,),
+            "sort": (WidgetSortBy,),
+            "style": (WidgetRequestStyle,),
         }
 
     attribute_map = {
@@ -71,6 +77,8 @@ class TreeMapWidgetRequest(ModelNormal):
         "q": "q",
         "queries": "queries",
         "response_format": "response_format",
+        "sort": "sort",
+        "style": "style",
     }
 
     def __init__(
@@ -97,6 +105,8 @@ class TreeMapWidgetRequest(ModelNormal):
             UnsetType,
         ] = unset,
         response_format: Union[FormulaAndFunctionResponseFormat, UnsetType] = unset,
+        sort: Union[WidgetSortBy, UnsetType] = unset,
+        style: Union[WidgetRequestStyle, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -113,6 +123,12 @@ class TreeMapWidgetRequest(ModelNormal):
 
         :param response_format: Timeseries, scalar, or event list response. Event list response formats are supported by Geomap widgets.
         :type response_format: FormulaAndFunctionResponseFormat, optional
+
+        :param sort: The controls for sorting the widget.
+        :type sort: WidgetSortBy, optional
+
+        :param style: Define request widget style.
+        :type style: WidgetRequestStyle, optional
         """
         if formulas is not unset:
             kwargs["formulas"] = formulas
@@ -122,4 +138,8 @@ class TreeMapWidgetRequest(ModelNormal):
             kwargs["queries"] = queries
         if response_format is not unset:
             kwargs["response_format"] = response_format
+        if sort is not unset:
+            kwargs["sort"] = sort
+        if style is not unset:
+            kwargs["style"] = style
         super().__init__(kwargs)

@@ -15786,6 +15786,8 @@ components:
           $ref: "#/components/schemas/LogQueryDefinition"
           deprecated: true
           description: Deprecated - Use `queries` and `formulas` instead.
+        sort:
+          $ref: "#/components/schemas/WidgetSortBy"
         style:
           $ref: "#/components/schemas/WidgetStyle"
       type: object
@@ -20475,6 +20477,10 @@ components:
           type: array
         response_format:
           $ref: "#/components/schemas/FormulaAndFunctionResponseFormat"
+        sort:
+          $ref: "#/components/schemas/WidgetSortBy"
+        style:
+          $ref: "#/components/schemas/WidgetRequestStyle"
       type: object
     UsageAnalyzedLogsHour:
       description: The number of analyzed logs for each hour for a given organization.
