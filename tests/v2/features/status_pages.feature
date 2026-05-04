@@ -43,7 +43,7 @@ Feature: Status Pages
   @team:DataDog/incident-app
   Scenario: Create status page returns "Created" response
     Given new "CreateStatusPage" request
-    And body with value {"data": {"attributes": {"name": "A Status Page", "domain_prefix": "{{ unique_hash }}", "components":[{"name": "Login", "type": "component", "position": 0},{"name": "Settings", "type": "component", "position": 1}], "enabled": true, "type": "internal", "visualization_type": "bars_and_uptime_percentage"}, "type": "status_pages"}}
+    And body with value {"data": {"attributes": {"name": "A Status Page", "domain_prefix": "{{ unique_hash }}", "components":[{"name": "Login", "type": "component", "position": 0},{"name": "Settings", "type": "component", "position": 1}], "type": "internal", "visualization_type": "bars_and_uptime_percentage"}, "type": "status_pages"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -144,9 +144,9 @@ Feature: Status Pages
 
   @team:DataDog/incident-app
   Scenario: Publish status page returns "No Content" response
-    Given there is a valid "unpublished_status_page" in the system
+    Given there is a valid "status_page" in the system
     And new "PublishStatusPage" request
-    And request contains "page_id" parameter from "unpublished_status_page.data.id"
+    And request contains "page_id" parameter from "status_page.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
@@ -158,11 +158,10 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/incident-app
+  @generated @skip @team:DataDog/incident-app
   Scenario: Unpublish status page returns "No Content" response
-    Given there is a valid "status_page" in the system
-    And new "UnpublishStatusPage" request
-    And request contains "page_id" parameter from "status_page.data.id"
+    Given new "UnpublishStatusPage" request
+    And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 

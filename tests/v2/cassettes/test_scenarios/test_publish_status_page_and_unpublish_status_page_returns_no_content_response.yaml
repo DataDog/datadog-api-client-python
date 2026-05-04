@@ -1,0 +1,64 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"8c705f16084fb6d8","name":"A
+      Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"3035849d-5ba8-43d0-ae43-0d8eeed454b2","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"5bc4d558-9cf9-4177-b2aa-61f02f71b044","name":"Application","type":"group","position":0,"components":[{"id":"14965185-e48d-4b9d-b7e6-998ddacb541d","name":"Login","type":"component","status":"operational","position":0},{"id":"be6c223e-df96-4148-be7a-096c981154b0","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-04-24T13:55:46.635741Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"8c705f16084fb6d8","email_header_image":null,"enabled":false,"favicon":null,"modified_at":"2026-04-24T13:55:46.635741Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/3035849d-5ba8-43d0-ae43-0d8eeed454b2/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/3035849d-5ba8-43d0-ae43-0d8eeed454b2/publish
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/3035849d-5ba8-43d0-ae43-0d8eeed454b2/unpublish
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/3035849d-5ba8-43d0-ae43-0d8eeed454b2
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

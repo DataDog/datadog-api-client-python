@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"8638252c458ce646","enabled":true,"name":"A
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"3b36f267327309ee","name":"A
       Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
     headers:
       accept:
@@ -11,8 +11,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/statuspages
   response:
     body:
-      string: '{"data":{"id":"cfc5826b-b383-4f29-b4cf-1702a7a18ab0","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"e0b66ea8-a7cb-4072-8d2f-94037452b531","name":"Application","type":"group","position":0,"components":[{"id":"f4e1e6aa-6f77-439a-a68e-6309dac82ae3","name":"Login","type":"component","status":"operational","position":0},{"id":"53d81c0b-b2fb-4261-ba23-f83d6d7e30ef","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-03-31T18:44:09.324827Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"8638252c458ce646","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-03-31T18:44:09.324827Z","name":"A
-        Status Page","page_url":"https://frog.datadoghq.com/status-pages/cfc5826b-b383-4f29-b4cf-1702a7a18ab0/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
+      string: '{"data":{"id":"a1c209d5-9b2b-4548-afa9-9c197cbefa25","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"1ac1fc71-36ab-4cfa-aad6-8865dc7c3e7d","name":"Application","type":"group","position":0,"components":[{"id":"9b47d850-6e7f-4d82-a620-3552e5063135","name":"Login","type":"component","status":"operational","position":0},{"id":"218dc9c0-e253-4df9-b94d-50d07bb79305","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-04-24T13:48:36.401179Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"3b36f267327309ee","email_header_image":null,"enabled":false,"favicon":null,"modified_at":"2026-04-24T13:48:36.401179Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/a1c209d5-9b2b-4548-afa9-9c197cbefa25/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}},"last_modified_by_user":{"data":{"id":"3ad549bf-eba0-11e9-a77a-0705486660d0","type":"users"}}}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,7 +25,21 @@ interactions:
       accept:
       - '*/*'
     method: POST
-    uri: https://api.datadoghq.com/api/v2/statuspages/cfc5826b-b383-4f29-b4cf-1702a7a18ab0/unpublish
+    uri: https://api.datadoghq.com/api/v2/statuspages/a1c209d5-9b2b-4548-afa9-9c197cbefa25/publish
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/a1c209d5-9b2b-4548-afa9-9c197cbefa25/unpublish
   response:
     body:
       string: ''
@@ -39,7 +53,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/statuspages/cfc5826b-b383-4f29-b4cf-1702a7a18ab0
+    uri: https://api.datadoghq.com/api/v2/statuspages/a1c209d5-9b2b-4548-afa9-9c197cbefa25
   response:
     body:
       string: ''

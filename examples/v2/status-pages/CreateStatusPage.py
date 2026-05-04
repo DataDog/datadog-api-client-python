@@ -38,7 +38,6 @@ body = CreateStatusPageRequest(
                     position=1,
                 ),
             ],
-            enabled=True,
             type=CreateStatusPageRequestDataAttributesType.INTERNAL,
             visualization_type=CreateStatusPageRequestDataAttributesVisualizationType.BARS_AND_UPTIME_PERCENTAGE,
         ),
