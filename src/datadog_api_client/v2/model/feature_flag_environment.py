@@ -18,21 +18,12 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.feature_flag_targeting_rule import FeatureFlagTargetingRule
     from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
 
 
 class FeatureFlagEnvironment(ModelNormal):
-    validations = {
-        "rollout_percentage": {
-            "inclusive_maximum": 100,
-            "inclusive_minimum": 0,
-        },
-    }
-
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.feature_flag_targeting_rule import FeatureFlagTargetingRule
         from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
 
         return {
@@ -63,8 +54,6 @@ class FeatureFlagEnvironment(ModelNormal):
             "override_variant_id": (str, none_type),
             "pending_suggestion_id": (str, none_type),
             "require_feature_flag_approval": (bool,),
-            "rollout_percentage": (int,),
-            "rules": ([FeatureFlagTargetingRule],),
             "status": (FeatureFlagStatus,),
         }
 
@@ -80,8 +69,6 @@ class FeatureFlagEnvironment(ModelNormal):
         "override_variant_id": "override_variant_id",
         "pending_suggestion_id": "pending_suggestion_id",
         "require_feature_flag_approval": "require_feature_flag_approval",
-        "rollout_percentage": "rollout_percentage",
-        "rules": "rules",
         "status": "status",
     }
 
@@ -99,8 +86,6 @@ class FeatureFlagEnvironment(ModelNormal):
         override_variant_id: Union[str, none_type, UnsetType] = unset,
         pending_suggestion_id: Union[str, none_type, UnsetType] = unset,
         require_feature_flag_approval: Union[bool, UnsetType] = unset,
-        rollout_percentage: Union[int, UnsetType] = unset,
-        rules: Union[List[FeatureFlagTargetingRule], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -139,12 +124,6 @@ class FeatureFlagEnvironment(ModelNormal):
         :param require_feature_flag_approval: Indicates whether feature flag changes require approval in this environment.
         :type require_feature_flag_approval: bool, optional
 
-        :param rollout_percentage: Rollout percentage for this environment.
-        :type rollout_percentage: int, optional
-
-        :param rules: Environment targeting rules for this feature flag.
-        :type rules: [FeatureFlagTargetingRule], optional
-
         :param status: The status of a feature flag in an environment.
         :type status: FeatureFlagStatus
         """
@@ -168,10 +147,6 @@ class FeatureFlagEnvironment(ModelNormal):
             kwargs["pending_suggestion_id"] = pending_suggestion_id
         if require_feature_flag_approval is not unset:
             kwargs["require_feature_flag_approval"] = require_feature_flag_approval
-        if rollout_percentage is not unset:
-            kwargs["rollout_percentage"] = rollout_percentage
-        if rules is not unset:
-            kwargs["rules"] = rules
         super().__init__(kwargs)
 
         self_.environment_id = environment_id
