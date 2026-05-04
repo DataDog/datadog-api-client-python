@@ -1235,6 +1235,12 @@
       "type": "idempotent"
     }
   },
+  "UpsertSyncConfig": {
+    "tag": "Cloud Inventory Sync Configs",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetCodeCoverageBranchSummary": {
     "tag": "Code Coverage",
     "undo": {
