@@ -22180,6 +22180,34 @@ datadog\_api\_client.v2.model.observability\_pipeline\_tls module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.oci\_config module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.oci_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.oci\_config\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.oci_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.oci\_config\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.oci_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.oci\_configs\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.oci_configs_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.okta\_account module
 --------------------------------------------------
 

@@ -3818,6 +3818,10 @@ from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRe
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
+from datadog_api_client.v2.model.oci_config import OCIConfig
+from datadog_api_client.v2.model.oci_config_attributes import OCIConfigAttributes
+from datadog_api_client.v2.model.oci_config_type import OCIConfigType
+from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
 from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
     ObservabilityPipelineAddEnvVarsProcessor,
@@ -10357,6 +10361,10 @@ __all__ = [
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
     "NullableUserRelationshipData",
+    "OCIConfig",
+    "OCIConfigAttributes",
+    "OCIConfigType",
+    "OCIConfigsResponse",
     "ObservabilityPipeline",
     "ObservabilityPipelineAddEnvVarsProcessor",
     "ObservabilityPipelineAddEnvVarsProcessorType",

@@ -313,6 +313,12 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data[0].attributes.configs[0].export_name" is equal to "test_export_name"
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management OCI configs returns "OK" response
+    Given new "ListCostOCIConfigs" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List Custom Costs Files returns "OK" response
     Given new "ListCustomCostsFiles" request
