@@ -357,9 +357,13 @@ class ApiClient:
                 host=host,
                 collection_formats=params["collection_format"],
             )
-            for item in get_attribute_from_path(response, pagination.get("results_path")):
+            results = get_attribute_from_path(response, pagination.get("results_path"))
+            for item in results:
                 yield item
-            if len(get_attribute_from_path(response, pagination.get("results_path"))) < pagination["limit_value"]:
+            if "cursor_param" in pagination:
+                if len(results) == 0:
+                    break
+            elif len(results) < pagination["limit_value"]:
                 break
 
             params = self._update_paginated_params(pagination, response)
@@ -659,9 +663,13 @@ class AsyncApiClient(ApiClient):
                 host=host,
                 collection_formats=params["collection_format"],
             )
-            for item in get_attribute_from_path(response, pagination.get("results_path")):
+            results = get_attribute_from_path(response, pagination.get("results_path"))
+            for item in results:
                 yield item
-            if len(get_attribute_from_path(response, pagination.get("results_path"))) < pagination["limit_value"]:
+            if "cursor_param" in pagination:
+                if len(results) == 0:
+                    break
+            elif len(results) < pagination["limit_value"]:
                 break
 
             params = self._update_paginated_params(pagination, response)
