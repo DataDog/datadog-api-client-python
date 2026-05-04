@@ -4745,6 +4745,7 @@ from datadog_api_client.v2.model.org_group_membership_update_data import OrgGrou
 from datadog_api_client.v2.model.org_group_membership_update_relationships import OrgGroupMembershipUpdateRelationships
 from datadog_api_client.v2.model.org_group_membership_update_request import OrgGroupMembershipUpdateRequest
 from datadog_api_client.v2.model.org_group_memberships_relationship import OrgGroupMembershipsRelationship
+from datadog_api_client.v2.model.org_group_pagination_links import OrgGroupPaginationLinks
 from datadog_api_client.v2.model.org_group_pagination_meta import OrgGroupPaginationMeta
 from datadog_api_client.v2.model.org_group_pagination_meta_page import OrgGroupPaginationMetaPage
 from datadog_api_client.v2.model.org_group_policy_attributes import OrgGroupPolicyAttributes
@@ -10776,6 +10777,7 @@ __all__ = [
     "OrgGroupMembershipUpdateRelationships",
     "OrgGroupMembershipUpdateRequest",
     "OrgGroupMembershipsRelationship",
+    "OrgGroupPaginationLinks",
     "OrgGroupPaginationMeta",
     "OrgGroupPaginationMetaPage",
     "OrgGroupPolicyAttributes",

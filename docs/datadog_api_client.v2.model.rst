@@ -23027,6 +23027,13 @@ datadog\_api\_client.v2.model.org\_group\_memberships\_relationship module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.org\_group\_pagination\_links module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_pagination_links
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.org\_group\_pagination\_meta module
 -----------------------------------------------------------------
 

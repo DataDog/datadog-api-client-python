@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.org_group_data import OrgGroupData
     from datadog_api_client.v2.model.org_group_membership_data import OrgGroupMembershipData
+    from datadog_api_client.v2.model.org_group_pagination_links import OrgGroupPaginationLinks
     from datadog_api_client.v2.model.org_group_pagination_meta import OrgGroupPaginationMeta
 
 
@@ -24,17 +25,20 @@ class OrgGroupListResponse(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.org_group_data import OrgGroupData
         from datadog_api_client.v2.model.org_group_membership_data import OrgGroupMembershipData
+        from datadog_api_client.v2.model.org_group_pagination_links import OrgGroupPaginationLinks
         from datadog_api_client.v2.model.org_group_pagination_meta import OrgGroupPaginationMeta
 
         return {
             "data": ([OrgGroupData],),
             "included": ([OrgGroupMembershipData],),
+            "links": (OrgGroupPaginationLinks,),
             "meta": (OrgGroupPaginationMeta,),
         }
 
     attribute_map = {
         "data": "data",
         "included": "included",
+        "links": "links",
         "meta": "meta",
     }
 
@@ -42,6 +46,7 @@ class OrgGroupListResponse(ModelNormal):
         self_,
         data: List[OrgGroupData],
         included: Union[List[OrgGroupMembershipData], UnsetType] = unset,
+        links: Union[OrgGroupPaginationLinks, UnsetType] = unset,
         meta: Union[OrgGroupPaginationMeta, UnsetType] = unset,
         **kwargs,
     ):
@@ -54,11 +59,16 @@ class OrgGroupListResponse(ModelNormal):
         :param included: Related resources included in the response when requested with the ``include`` parameter.
         :type included: [OrgGroupMembershipData], optional
 
-        :param meta: Pagination metadata.
+        :param links: Pagination links for navigating between pages of an org group list response.
+        :type links: OrgGroupPaginationLinks, optional
+
+        :param meta: Pagination metadata for org group list responses.
         :type meta: OrgGroupPaginationMeta, optional
         """
         if included is not unset:
             kwargs["included"] = included
+        if links is not unset:
+            kwargs["links"] = links
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)
