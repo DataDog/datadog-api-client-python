@@ -38,6 +38,7 @@ from datadog_api_client.v2.model.gcp_usage_cost_config_response import GCPUsageC
 from datadog_api_client.v2.model.gcp_usage_cost_config_post_request import GCPUsageCostConfigPostRequest
 from datadog_api_client.v2.model.gcp_uc_config_response import GcpUcConfigResponse
 from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPUsageCostConfigPatchRequest
+from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
 from datadog_api_client.v2.model.ruleset_resp_array import RulesetRespArray
 from datadog_api_client.v2.model.ruleset_resp import RulesetResp
 from datadog_api_client.v2.model.create_ruleset_request import CreateRulesetRequest
@@ -533,6 +534,22 @@ class CloudCostManagementApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/gcp_uc_config",
                 "operation_id": "list_cost_gcp_usage_cost_configs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_oci_configs_endpoint = _Endpoint(
+            settings={
+                "response_type": (OCIConfigsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/oci_config",
+                "operation_id": "list_cost_oci_configs",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -1269,6 +1286,18 @@ class CloudCostManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_cost_gcp_usage_cost_configs_endpoint.call_with_http_info(**kwargs)
+
+    def list_cost_oci_configs(
+        self,
+    ) -> OCIConfigsResponse:
+        """List Cloud Cost Management OCI configs.
+
+        List the OCI configs.
+
+        :rtype: OCIConfigsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_cost_oci_configs_endpoint.call_with_http_info(**kwargs)
 
     def list_custom_allocation_rules(
         self,
