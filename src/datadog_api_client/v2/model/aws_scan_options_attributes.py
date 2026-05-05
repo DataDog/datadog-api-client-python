@@ -17,6 +17,7 @@ class AwsScanOptionsAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "compliance_host": (bool,),
             "_lambda": (bool,),
             "sensitive_data": (bool,),
             "vuln_containers_os": (bool,),
@@ -24,6 +25,7 @@ class AwsScanOptionsAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "compliance_host": "compliance_host",
         "_lambda": "lambda",
         "sensitive_data": "sensitive_data",
         "vuln_containers_os": "vuln_containers_os",
@@ -32,6 +34,7 @@ class AwsScanOptionsAttributes(ModelNormal):
 
     def __init__(
         self_,
+        compliance_host: Union[bool, UnsetType] = unset,
         _lambda: Union[bool, UnsetType] = unset,
         sensitive_data: Union[bool, UnsetType] = unset,
         vuln_containers_os: Union[bool, UnsetType] = unset,
@@ -40,6 +43,9 @@ class AwsScanOptionsAttributes(ModelNormal):
     ):
         """
         Attributes for the AWS scan options.
+
+        :param compliance_host: Indicates whether host compliance scanning is enabled.
+        :type compliance_host: bool, optional
 
         :param _lambda: Indicates if scanning of Lambda functions is enabled.
         :type _lambda: bool, optional
@@ -53,6 +59,8 @@ class AwsScanOptionsAttributes(ModelNormal):
         :param vuln_host_os: Indicates if scanning for vulnerabilities in hosts is enabled.
         :type vuln_host_os: bool, optional
         """
+        if compliance_host is not unset:
+            kwargs["compliance_host"] = compliance_host
         if _lambda is not unset:
             kwargs["_lambda"] = _lambda
         if sensitive_data is not unset:

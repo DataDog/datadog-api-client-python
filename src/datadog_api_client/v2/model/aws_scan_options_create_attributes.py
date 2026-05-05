@@ -14,6 +14,7 @@ class AwsScanOptionsCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "compliance_host": (bool,),
             "_lambda": (bool,),
             "sensitive_data": (bool,),
             "vuln_containers_os": (bool,),
@@ -21,15 +22,27 @@ class AwsScanOptionsCreateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "compliance_host": "compliance_host",
         "_lambda": "lambda",
         "sensitive_data": "sensitive_data",
         "vuln_containers_os": "vuln_containers_os",
         "vuln_host_os": "vuln_host_os",
     }
 
-    def __init__(self_, _lambda: bool, sensitive_data: bool, vuln_containers_os: bool, vuln_host_os: bool, **kwargs):
+    def __init__(
+        self_,
+        compliance_host: bool,
+        _lambda: bool,
+        sensitive_data: bool,
+        vuln_containers_os: bool,
+        vuln_host_os: bool,
+        **kwargs,
+    ):
         """
         Attributes for the AWS scan options to create.
+
+        :param compliance_host: Indicates whether host compliance scanning is enabled.
+        :type compliance_host: bool
 
         :param _lambda: Indicates if scanning of Lambda functions is enabled.
         :type _lambda: bool
@@ -45,6 +58,7 @@ class AwsScanOptionsCreateAttributes(ModelNormal):
         """
         super().__init__(kwargs)
 
+        self_.compliance_host = compliance_host
         self_._lambda = _lambda
         self_.sensitive_data = sensitive_data
         self_.vuln_containers_os = vuln_containers_os

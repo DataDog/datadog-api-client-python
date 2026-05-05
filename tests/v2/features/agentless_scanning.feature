@@ -31,21 +31,21 @@ Feature: Agentless Scanning
   @skip @team:DataDog/k9-agentless
   Scenario: Create AWS scan options returns "Agentless scan options enabled successfully." response
     Given new "CreateAwsScanOptions" request
-    And body with value {"data": {"id": "000000000003", "type": "aws_scan_options", "attributes": {"lambda": true, "sensitive_data": false, "vuln_containers_os": true, "vuln_host_os": true}}}
+    And body with value {"data": {"id": "000000000003", "type": "aws_scan_options", "attributes": {"compliance_host": true, "lambda": true, "sensitive_data": false, "vuln_containers_os": true, "vuln_host_os": true}}}
     When the request is sent
     Then the response status is 201 Created
 
   @team:DataDog/k9-agentless
   Scenario: Create AWS scan options returns "Bad Request" response
     Given new "CreateAwsScanOptions" request
-    And body with value {"data": {"id": "123", "type": "aws_scan_options", "attributes": {"lambda": true, "sensitive_data": false, "vuln_containers_os": true, "vuln_host_os": true}}}
+    And body with value {"data": {"id": "123", "type": "aws_scan_options", "attributes": {"compliance_host": true, "lambda": true, "sensitive_data": false, "vuln_containers_os": true, "vuln_host_os": true}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @team:DataDog/k9-agentless
   Scenario: Create AWS scan options returns "Conflict" response
     Given new "CreateAwsScanOptions" request
-    And body with value {"data":{"type":"aws_scan_options","id":"000000000002","attributes":{"vuln_host_os":true,"vuln_containers_os":true,"sensitive_data":false,"lambda":false}}}
+    And body with value {"data":{"type":"aws_scan_options","id":"000000000002","attributes":{"compliance_host":true,"vuln_host_os":true,"vuln_containers_os":true,"sensitive_data":false,"lambda":false}}}
     When the request is sent
     Then the response status is 409 Conflict
 
