@@ -36278,6 +36278,34 @@ datadog\_api\_client.v2.model.v2\_event\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.validate\_v2\_attributes module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.validate_v2_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.validate\_v2\_data module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.validate_v2_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.validate\_v2\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.validate_v2_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.validate\_v2\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.validate_v2_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.validation\_error module
 ------------------------------------------------------
 

@@ -295,6 +295,7 @@ class Configuration:
                 "v2.update_llm_obs_experiment": False,
                 "v2.update_llm_obs_project": False,
                 "v2.anonymize_users": False,
+                "v2.validate_v2": False,
                 "v2.create_open_api": False,
                 "v2.delete_open_api": False,
                 "v2.get_open_api": False,

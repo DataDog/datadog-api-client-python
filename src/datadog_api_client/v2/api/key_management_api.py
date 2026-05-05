@@ -27,6 +27,7 @@ from datadog_api_client.v2.model.personal_access_token_create_response import Pe
 from datadog_api_client.v2.model.personal_access_token_create_request import PersonalAccessTokenCreateRequest
 from datadog_api_client.v2.model.personal_access_token_response import PersonalAccessTokenResponse
 from datadog_api_client.v2.model.personal_access_token_update_request import PersonalAccessTokenUpdateRequest
+from datadog_api_client.v2.model.validate_v2_response import ValidateV2Response
 
 
 class KeyManagementApi:
@@ -622,6 +623,22 @@ class KeyManagementApi:
             api_client=api_client,
         )
 
+        self._validate_v2_endpoint = _Endpoint(
+            settings={
+                "response_type": (ValidateV2Response,),
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v2/validate",
+                "operation_id": "validate_v2",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
     def create_api_key(
         self,
         body: APIKeyCreateRequest,
@@ -1145,3 +1162,15 @@ class KeyManagementApi:
         kwargs["body"] = body
 
         return self._update_personal_access_token_endpoint.call_with_http_info(**kwargs)
+
+    def validate_v2(
+        self,
+    ) -> ValidateV2Response:
+        """Validate API key.
+
+        Check if the API key is valid. Returns the organization UUID, API key ID, and associated scopes.
+
+        :rtype: ValidateV2Response
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._validate_v2_endpoint.call_with_http_info(**kwargs)
