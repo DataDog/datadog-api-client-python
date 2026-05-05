@@ -5753,6 +5753,19 @@ from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_opti
 from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options_learning_duration import (
     SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_attributes import (
+    SecurityMonitoringRuleBulkDeleteAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_data import SecurityMonitoringRuleBulkDeleteData
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_payload import (
+    SecurityMonitoringRuleBulkDeletePayload,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_request_data_type import (
+    SecurityMonitoringRuleBulkDeleteRequestDataType,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response import (
+    SecurityMonitoringRuleBulkDeleteResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_attributes import (
     SecurityMonitoringRuleBulkExportAttributes,
 )
@@ -11571,6 +11584,11 @@ __all__ = [
     "SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration",
     "SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance",
     "SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration",
+    "SecurityMonitoringRuleBulkDeleteAttributes",
+    "SecurityMonitoringRuleBulkDeleteData",
+    "SecurityMonitoringRuleBulkDeletePayload",
+    "SecurityMonitoringRuleBulkDeleteRequestDataType",
+    "SecurityMonitoringRuleBulkDeleteResponse",
     "SecurityMonitoringRuleBulkExportAttributes",
     "SecurityMonitoringRuleBulkExportData",
     "SecurityMonitoringRuleBulkExportDataType",
