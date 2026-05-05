@@ -14,6 +14,7 @@ body = AwsScanOptionsCreateRequest(
         id="000000000003",
         type=AwsScanOptionsType.AWS_SCAN_OPTIONS,
         attributes=AwsScanOptionsCreateAttributes(
+            compliance_host=True,
             _lambda=True,
             sensitive_data=False,
             vuln_containers_os=True,
