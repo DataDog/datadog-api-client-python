@@ -99,6 +99,27 @@ Feature: Security Monitoring
     And the response "data.attributes.insights" has item with field "resource_id" with value "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y="
     And the response "data.attributes.insights" has item with field "resource_id" with value "MmUzMzZkODQ2YTI3NDU0OTk4NDk3NzhkOTY5YjU2Zjh-YWJjZGI1ODI4OTYzNWM3ZmUwZTBlOWRkYTRiMGUyOGQ="
 
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Bulk delete security monitoring rules returns "Bad Request" response
+    Given new "BulkDeleteSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "type": "bulk_delete_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Bulk delete security monitoring rules returns "Not Found" response
+    Given new "BulkDeleteSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "type": "bulk_delete_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Bulk delete security monitoring rules returns "OK" response
+    Given new "BulkDeleteSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "type": "bulk_delete_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/k9-cloud-siem
   Scenario: Bulk export security monitoring rules returns "Bad Request" response
     Given new "BulkExportSecurityMonitoringRules" request
