@@ -7134,6 +7134,12 @@
       "type": "safe"
     }
   },
+  "ValidateV2": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SearchWidgets": {
     "tag": "Widgets",
     "undo": {
