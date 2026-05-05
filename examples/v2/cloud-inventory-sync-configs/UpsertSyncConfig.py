@@ -1,5 +1,5 @@
 """
-Create or update a sync configuration returns "OK" response
+Enable Storage Management for a bucket returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

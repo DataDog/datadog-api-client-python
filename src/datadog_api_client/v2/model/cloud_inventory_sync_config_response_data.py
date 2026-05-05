@@ -48,15 +48,15 @@ class CloudInventorySyncConfigResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        JSON:API data object for a sync configuration.
+        Storage Management configuration data.
 
-        :param attributes: Attributes for a cloud inventory sync configuration. Values beyond ``id`` may be omitted immediately after upsert.
+        :param attributes: Attributes for a Storage Management configuration. Fields other than ``id`` may be empty in the response immediately after a create or update; subsequent reads return the full configuration.
         :type attributes: CloudInventorySyncConfigAttributes
 
-        :param id: Unique identifier for the recurring sync configuration.
+        :param id: Unique identifier for this Storage Management configuration.
         :type id: str
 
-        :param type: JSON:API type for sync configuration resources.
+        :param type: Always ``sync_configs``.
         :type type: CloudInventorySyncConfigResourceType
         """
         super().__init__(kwargs)

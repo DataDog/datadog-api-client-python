@@ -13,7 +13,7 @@ from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request impo
 
 class CloudInventorySyncConfigsApi:
     """
-    Configure cloud inventory file synchronization from your cloud storage to Datadog.
+    Enable Storage Management for S3 buckets, GCS buckets, and Azure containers. Each configuration registers the destination that holds inventory reports for the storage being monitored.
     """
 
     def __init__(self, api_client=None):
@@ -45,10 +45,9 @@ class CloudInventorySyncConfigsApi:
         self,
         body: UpsertCloudInventorySyncConfigRequest,
     ) -> CloudInventorySyncConfigResponse:
-        """Create or update a sync configuration.
+        """Enable Storage Management for a bucket.
 
-        Create or update a cloud inventory sync configuration. Specify the cloud provider in ``data.id``
-        and provider-specific settings under ``data.attributes``. This endpoint uses an upsert model.
+        Enable Storage Management for an S3 bucket, GCS bucket, or Azure container by registering the destination that holds its inventory reports. Set ``data.id`` to the cloud provider ( ``aws`` , ``gcp`` , or ``azure`` ) and provide the matching settings under data.attributes. Calling this endpoint with the same provider replaces the existing configuration.
 
         :type body: UpsertCloudInventorySyncConfigRequest
         :rtype: CloudInventorySyncConfigResponse
