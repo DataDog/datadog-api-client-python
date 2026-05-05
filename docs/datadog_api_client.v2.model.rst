@@ -1369,6 +1369,34 @@ datadog\_api\_client.v2.model.arbitrary\_rule\_response\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.arbitrary\_rule\_status\_response\_array module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_status_response_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_status\_response\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_status_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_status\_response\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_status_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.arbitrary\_rule\_status\_response\_data\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.arbitrary_rule_status_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.argument module
 ---------------------------------------------
 
@@ -26461,6 +26489,34 @@ datadog\_api\_client.v2.model.ruleset\_resp\_data\_type module
 --------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ruleset_resp_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_status\_resp\_array module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_status_resp_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_status\_resp\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_status_resp_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_status\_resp\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_status_resp_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ruleset\_status\_resp\_data\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ruleset_status_resp_data_type
    :members:
    :show-inheritance:
 

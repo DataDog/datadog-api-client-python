@@ -358,12 +358,24 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data[0].attributes.rule_name" is equal to "example-arbitrary-cost-rule"
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List custom allocation rules status returns "OK" response
+    Given new "ListCustomAllocationRulesStatus" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List tag pipeline rulesets returns "OK" response
     Given new "ListTagPipelinesRulesets" request
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.name" is equal to "New Ruleset"
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List tag pipeline rulesets status returns "OK" response
+    Given new "ListTagPipelinesRulesetsStatus" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Reorder custom allocation rules returns "Successfully reordered rules" response
