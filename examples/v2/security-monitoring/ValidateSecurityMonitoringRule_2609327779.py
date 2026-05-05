@@ -15,12 +15,6 @@ from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration im
     SecurityMonitoringRuleMaxSignalDuration,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import SecurityMonitoringRuleNewValueOptions
-from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_forget_after import (
-    SecurityMonitoringRuleNewValueOptionsForgetAfter,
-)
-from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_duration import (
-    SecurityMonitoringRuleNewValueOptionsLearningDuration,
-)
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
     SecurityMonitoringRuleNewValueOptionsLearningMethod,
 )
@@ -55,9 +49,9 @@ body = SecurityMonitoringStandardRulePayload(
         max_signal_duration=SecurityMonitoringRuleMaxSignalDuration.TEN_MINUTES,
         detection_method=SecurityMonitoringRuleDetectionMethod.NEW_VALUE,
         new_value_options=SecurityMonitoringRuleNewValueOptions(
-            forget_after=SecurityMonitoringRuleNewValueOptionsForgetAfter.ONE_WEEK,
+            forget_after=7,
             instantaneous_baseline=True,
-            learning_duration=SecurityMonitoringRuleNewValueOptionsLearningDuration.ONE_DAY,
+            learning_duration=1,
             learning_threshold=SecurityMonitoringRuleNewValueOptionsLearningThreshold.ZERO_OCCURRENCES,
             learning_method=SecurityMonitoringRuleNewValueOptionsLearningMethod.DURATION,
         ),
