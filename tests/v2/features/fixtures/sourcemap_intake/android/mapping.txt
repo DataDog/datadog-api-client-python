@@ -1,0 +1,18 @@
+# ProGuard/R8 mapping file
+# Generated for testing purposes
+
+com.example.app.MainActivity -> a.a.a:
+    void onCreate(android.os.Bundle) -> a
+    void onResume() -> b
+    void onPause() -> c
+
+com.example.app.utils.NetworkHelper -> a.a.b:
+    java.lang.String baseUrl -> a
+    void sendRequest(java.lang.String) -> a
+    void handleResponse(java.lang.String) -> b
+
+com.example.app.models.User -> a.a.c:
+    java.lang.String name -> a
+    java.lang.String email -> b
+    int getId() -> a
+    void setId(int) -> a

@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "file": "main.jsbundle",
+  "sources": ["App.js", "components/Button.js"],
+  "sourcesContent": [
+    "import React from 'react';\nexport default function App() {\n  return <View />;\n}\n",
+    "import React from 'react';\nexport function Button({ onPress }) {\n  return <TouchableOpacity onPress={onPress} />;\n}\n"
+  ],
+  "names": ["React", "App", "View", "Button", "onPress", "TouchableOpacity"],
+  "mappings": "AAAA,OAAOA,KAAK,MAAM,QAClB,eAAe,SAASC,MACxB,OAAOC"
+}
