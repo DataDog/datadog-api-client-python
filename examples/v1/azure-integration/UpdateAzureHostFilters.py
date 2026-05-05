@@ -30,6 +30,7 @@ body = AzureAccount(
             namespace="Microsoft.Compute",
         ),
     ],
+    secretless_auth_enabled=True,
     tenant_name="testc44-1234-5678-9101-cc00736ftest",
     usage_metrics_enabled=True,
 )

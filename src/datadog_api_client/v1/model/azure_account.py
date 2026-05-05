@@ -38,6 +38,7 @@ class AzureAccount(ModelNormal):
             "new_tenant_name": (str,),
             "resource_collection_enabled": (bool,),
             "resource_provider_configs": ([ResourceProviderConfig],),
+            "secretless_auth_enabled": (bool,),
             "tenant_name": (str,),
             "usage_metrics_enabled": (bool,),
         }
@@ -58,6 +59,7 @@ class AzureAccount(ModelNormal):
         "new_tenant_name": "new_tenant_name",
         "resource_collection_enabled": "resource_collection_enabled",
         "resource_provider_configs": "resource_provider_configs",
+        "secretless_auth_enabled": "secretless_auth_enabled",
         "tenant_name": "tenant_name",
         "usage_metrics_enabled": "usage_metrics_enabled",
     }
@@ -79,6 +81,7 @@ class AzureAccount(ModelNormal):
         new_tenant_name: Union[str, UnsetType] = unset,
         resource_collection_enabled: Union[bool, UnsetType] = unset,
         resource_provider_configs: Union[List[ResourceProviderConfig], UnsetType] = unset,
+        secretless_auth_enabled: Union[bool, UnsetType] = unset,
         tenant_name: Union[str, UnsetType] = unset,
         usage_metrics_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
@@ -135,6 +138,9 @@ class AzureAccount(ModelNormal):
         :param resource_provider_configs: Configuration settings applied to resources from the specified Azure resource providers.
         :type resource_provider_configs: [ResourceProviderConfig], optional
 
+        :param secretless_auth_enabled: (Preview) When enabled, Datadog authenticates with this app registration using federated workload identity credentials instead of a client secret.
+        :type secretless_auth_enabled: bool, optional
+
         :param tenant_name: Your Azure Active Directory ID.
         :type tenant_name: str, optional
 
@@ -171,6 +177,8 @@ class AzureAccount(ModelNormal):
             kwargs["resource_collection_enabled"] = resource_collection_enabled
         if resource_provider_configs is not unset:
             kwargs["resource_provider_configs"] = resource_provider_configs
+        if secretless_auth_enabled is not unset:
+            kwargs["secretless_auth_enabled"] = secretless_auth_enabled
         if tenant_name is not unset:
             kwargs["tenant_name"] = tenant_name
         if usage_metrics_enabled is not unset:
