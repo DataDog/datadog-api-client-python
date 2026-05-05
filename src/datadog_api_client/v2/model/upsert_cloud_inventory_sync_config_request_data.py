@@ -52,15 +52,15 @@ class UpsertCloudInventorySyncConfigRequestData(ModelNormal):
         **kwargs,
     ):
         """
-        JSON:API data envelope for an upsert sync configuration request.
+        Storage Management configuration data for the create or update request.
 
-        :param attributes: Provider-specific configuration. Include the object that matches ``data.id`` ( ``aws`` , ``gcp`` , or ``azure`` ).
+        :param attributes: Settings for the cloud provider specified in ``data.id``. Include only the matching provider object ( ``aws`` , ``gcp`` , or ``azure`` ).
         :type attributes: UpsertCloudInventorySyncConfigRequestAttributes
 
         :param id: Cloud provider for this sync configuration ( ``aws`` , ``gcp`` , or ``azure`` ). For requests, must match the provider block supplied under ``attributes``.
         :type id: CloudInventoryCloudProviderId
 
-        :param type: JSON:API type for upsert sync configuration requests.
+        :param type: Always ``cloud_provider``.
         :type type: CloudInventoryCloudProviderRequestType
         """
         super().__init__(kwargs)

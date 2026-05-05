@@ -78,7 +78,7 @@ class CloudInventorySyncConfigAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for a cloud inventory sync configuration. Values beyond ``id`` may be omitted immediately after upsert.
+        Attributes for a Storage Management configuration. Fields other than ``id`` may be empty in the response immediately after a create or update; subsequent reads return the full configuration.
 
         :param aws_account_id: AWS account ID for the inventory bucket.
         :type aws_account_id: str
@@ -119,7 +119,7 @@ class CloudInventorySyncConfigAttributes(ModelNormal):
         :param gcp_service_account_email: Service account email for bucket access.
         :type gcp_service_account_email: str
 
-        :param prefix: Object key prefix or ``/`` when the entire bucket is synced.
+        :param prefix: Object key prefix where inventory reports are written. Returns ``/`` when reports are written at the bucket root.
         :type prefix: str
         """
         super().__init__(kwargs)
