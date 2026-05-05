@@ -79,7 +79,7 @@ Feature: LLM Observability
   Scenario: Create an LLM Observability annotation queue returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002"}, "type": "queues"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -87,7 +87,7 @@ Feature: LLM Observability
   Scenario: Create an LLM Observability annotation queue returns "Created" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002"}, "type": "queues"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -586,7 +586,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -595,7 +595,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -604,7 +604,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -697,7 +697,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueueLabelSchema" enabled
     And new "UpdateLLMObsAnnotationQueueLabelSchema" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}}, "type": "queues"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -706,7 +706,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueueLabelSchema" enabled
     And new "UpdateLLMObsAnnotationQueueLabelSchema" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}}, "type": "queues"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -715,6 +715,6 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueueLabelSchema" enabled
     And new "UpdateLLMObsAnnotationQueueLabelSchema" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "ab12cd34", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}}, "type": "queues"}}
     When the request is sent
     Then the response status is 200 OK
