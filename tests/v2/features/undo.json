@@ -1283,6 +1283,12 @@
       "type": "idempotent"
     }
   },
+  "ListCustomAllocationRulesStatus": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteCustomAllocationRule": {
     "tag": "Cloud Cost Management",
     "undo": {
@@ -6689,6 +6695,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListTagPipelinesRulesetsStatus": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "ValidateQuery": {

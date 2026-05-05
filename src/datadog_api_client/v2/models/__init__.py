@@ -408,6 +408,12 @@ from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strateg
     ArbitraryRuleResponseDataAttributesStrategyEvaluateGroupedByFiltersItems,
 )
 from datadog_api_client.v2.model.arbitrary_rule_response_data_type import ArbitraryRuleResponseDataType
+from datadog_api_client.v2.model.arbitrary_rule_status_response_array import ArbitraryRuleStatusResponseArray
+from datadog_api_client.v2.model.arbitrary_rule_status_response_data import ArbitraryRuleStatusResponseData
+from datadog_api_client.v2.model.arbitrary_rule_status_response_data_attributes import (
+    ArbitraryRuleStatusResponseDataAttributes,
+)
+from datadog_api_client.v2.model.arbitrary_rule_status_response_data_type import ArbitraryRuleStatusResponseDataType
 from datadog_api_client.v2.model.argument import Argument
 from datadog_api_client.v2.model.asana_access_token import AsanaAccessToken
 from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
@@ -5412,6 +5418,10 @@ from datadog_api_client.v2.model.ruleset_resp_data_attributes_rules_items_refere
     RulesetRespDataAttributesRulesItemsReferenceTableFieldPairsItems,
 )
 from datadog_api_client.v2.model.ruleset_resp_data_type import RulesetRespDataType
+from datadog_api_client.v2.model.ruleset_status_resp_array import RulesetStatusRespArray
+from datadog_api_client.v2.model.ruleset_status_resp_data import RulesetStatusRespData
+from datadog_api_client.v2.model.ruleset_status_resp_data_attributes import RulesetStatusRespDataAttributes
+from datadog_api_client.v2.model.ruleset_status_resp_data_type import RulesetStatusRespDataType
 from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
 from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
 from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
@@ -7766,6 +7776,10 @@ __all__ = [
     "ArbitraryRuleResponseDataAttributesStrategyBasedOnCostsItems",
     "ArbitraryRuleResponseDataAttributesStrategyEvaluateGroupedByFiltersItems",
     "ArbitraryRuleResponseDataType",
+    "ArbitraryRuleStatusResponseArray",
+    "ArbitraryRuleStatusResponseData",
+    "ArbitraryRuleStatusResponseDataAttributes",
+    "ArbitraryRuleStatusResponseDataType",
     "Argument",
     "AsanaAccessToken",
     "AsanaAccessTokenType",
@@ -11320,6 +11334,10 @@ __all__ = [
     "RulesetRespDataAttributesRulesItemsReferenceTable",
     "RulesetRespDataAttributesRulesItemsReferenceTableFieldPairsItems",
     "RulesetRespDataType",
+    "RulesetStatusRespArray",
+    "RulesetStatusRespData",
+    "RulesetStatusRespDataAttributes",
+    "RulesetStatusRespDataType",
     "RumCrossProductSampling",
     "RumCrossProductSamplingCreate",
     "RumCrossProductSamplingUpdate",

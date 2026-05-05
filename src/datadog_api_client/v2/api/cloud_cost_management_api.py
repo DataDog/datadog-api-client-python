@@ -15,6 +15,7 @@ from datadog_api_client.v2.model.arbitrary_rule_response_array import ArbitraryR
 from datadog_api_client.v2.model.arbitrary_rule_response import ArbitraryRuleResponse
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request import ArbitraryCostUpsertRequest
 from datadog_api_client.v2.model.reorder_rule_resource_array import ReorderRuleResourceArray
+from datadog_api_client.v2.model.arbitrary_rule_status_response_array import ArbitraryRuleStatusResponseArray
 from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
 from datadog_api_client.v2.model.aws_cur_config_response import AwsCurConfigResponse
 from datadog_api_client.v2.model.aws_cur_config_post_request import AwsCURConfigPostRequest
@@ -43,6 +44,7 @@ from datadog_api_client.v2.model.ruleset_resp_array import RulesetRespArray
 from datadog_api_client.v2.model.ruleset_resp import RulesetResp
 from datadog_api_client.v2.model.create_ruleset_request import CreateRulesetRequest
 from datadog_api_client.v2.model.reorder_ruleset_resource_array import ReorderRulesetResourceArray
+from datadog_api_client.v2.model.ruleset_status_resp_array import RulesetStatusRespArray
 from datadog_api_client.v2.model.rules_validate_query_response import RulesValidateQueryResponse
 from datadog_api_client.v2.model.rules_validate_query_request import RulesValidateQueryRequest
 from datadog_api_client.v2.model.update_ruleset_request import UpdateRulesetRequest
@@ -576,6 +578,22 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._list_custom_allocation_rules_status_endpoint = _Endpoint(
+            settings={
+                "response_type": (ArbitraryRuleStatusResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/arbitrary_rule/status",
+                "operation_id": "list_custom_allocation_rules_status",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_custom_costs_files_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomCostsFileListResponse,),
@@ -630,6 +648,22 @@ class CloudCostManagementApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment",
                 "operation_id": "list_tag_pipelines_rulesets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_tag_pipelines_rulesets_status_endpoint = _Endpoint(
+            settings={
+                "response_type": (RulesetStatusRespArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/tags/enrichment/status",
+                "operation_id": "list_tag_pipelines_rulesets_status",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -1311,6 +1345,18 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._list_custom_allocation_rules_endpoint.call_with_http_info(**kwargs)
 
+    def list_custom_allocation_rules_status(
+        self,
+    ) -> ArbitraryRuleStatusResponseArray:
+        """List custom allocation rules status.
+
+        List the processing status of all custom allocation rules. Returns only the ID and processing status for each rule.
+
+        :rtype: ArbitraryRuleStatusResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_custom_allocation_rules_status_endpoint.call_with_http_info(**kwargs)
+
     def list_custom_costs_files(
         self,
         *,
@@ -1371,6 +1417,18 @@ class CloudCostManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_tag_pipelines_rulesets_endpoint.call_with_http_info(**kwargs)
+
+    def list_tag_pipelines_rulesets_status(
+        self,
+    ) -> RulesetStatusRespArray:
+        """List tag pipeline rulesets status.
+
+        List the processing status of all tag pipeline rulesets. Returns only the ID and processing status for each ruleset.
+
+        :rtype: RulesetStatusRespArray
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_tag_pipelines_rulesets_status_endpoint.call_with_http_info(**kwargs)
 
     def reorder_custom_allocation_rules(
         self,
