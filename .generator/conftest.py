@@ -352,9 +352,9 @@ def undo_operations():
 @given(parsers.parse('an instance of "{name}" API'))
 def api(context, api_version, specs, name):
     """Return an API instance."""
-    assert name in {tag["name"].replace(" ", "") for tag in specs[api_version]["tags"]}
+    raw_tag = next(t["name"] for t in specs[api_version]["tags"] if t["name"].replace(" ", "") == name)
     sanitized_name = name.replace("-", "")
-    context["api_instance"] = {"name": sanitized_name}
+    context["api_instance"] = {"name": sanitized_name, "raw_tag": raw_tag}
 
 
 @given(parsers.parse('operation "{name}" enabled'))
