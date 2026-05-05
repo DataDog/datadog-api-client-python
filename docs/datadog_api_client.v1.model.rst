@@ -3994,6 +3994,41 @@ datadog\_api\_client.v1.model.scatter\_plot\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.scatterplot\_data\_projection\_dimension module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.scatterplot_data_projection_dimension
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.scatterplot\_data\_projection\_projection module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.scatterplot_data_projection_projection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.scatterplot\_data\_projection\_projection\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.scatterplot_data_projection_projection_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.scatterplot\_data\_projection\_query module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.scatterplot_data_projection_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.scatterplot\_data\_projection\_query\_storage module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.scatterplot_data_projection_query_storage
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.scatterplot\_dimension module
 -----------------------------------------------------------
 
@@ -4005,6 +4040,13 @@ datadog\_api\_client.v1.model.scatterplot\_table\_request module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.scatterplot_table_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.scatterplot\_table\_request\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.scatterplot_table_request_type
    :members:
    :show-inheritance:
 

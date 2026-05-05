@@ -859,6 +859,13 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "scatterplot"
+    And the response "widgets[1].definition.type" is equal to "scatterplot"
+    And the response "widgets[1].definition.requests.table.request_type" is equal to "data_projection"
+    And the response "widgets[1].definition.requests.table.query.data_source" is equal to "spans"
+    And the response "widgets[1].definition.requests.table.query.query_string" is equal to "@service:web-store"
+    And the response "widgets[1].definition.requests.table.projection.type" is equal to "scatterplot"
+    And the response "widgets[1].definition.requests.table.projection.dimensions" has length 2
+    And the response "widgets[1].definition.requests.table.limit" is equal to 200
 
   @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with servicemap widget
