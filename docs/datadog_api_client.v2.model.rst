@@ -6815,27 +6815,6 @@ datadog\_api\_client.v2.model.create\_on\_call\_notification\_rule\_request\_dat
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.create\_open\_api\_response module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_open_api_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_open\_api\_response\_attributes module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_open_api_response_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.create\_open\_api\_response\_data module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.create_open_api_response_data
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.create\_or\_update\_widget\_request module
 ------------------------------------------------------------------------
 
@@ -16370,41 +16349,6 @@ datadog\_api\_client.v2.model.list\_allocations\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.list\_apis\_response module
----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_apis_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.list\_apis\_response\_data module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_apis_response_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.list\_apis\_response\_data\_attributes module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_apis_response_data_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.list\_apis\_response\_meta module
----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_apis_response_meta
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.list\_apis\_response\_meta\_pagination module
----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.list_apis_response_meta_pagination
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.list\_app\_key\_registrations\_response module
 ----------------------------------------------------------------------------
 
@@ -22527,20 +22471,6 @@ datadog\_api\_client.v2.model.open\_aiapi\_key\_update module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.open_aiapi_key_update
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.open\_api\_endpoint module
---------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.open_api_endpoint
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.open\_api\_file module
-----------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.open_api_file
    :members:
    :show-inheritance:
 
@@ -35526,27 +35456,6 @@ datadog\_api\_client.v2.model.update\_on\_call\_notification\_rule\_request\_dat
 ----------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_on_call_notification_rule_request_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.update\_open\_api\_response module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.update_open_api_response
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.update\_open\_api\_response\_attributes module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.update_open_api_response_attributes
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.update\_open\_api\_response\_data module
-----------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.update_open_api_response_data
    :members:
    :show-inheritance:
 
