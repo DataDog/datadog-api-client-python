@@ -1298,9 +1298,6 @@ from datadog_api_client.v2.model.create_on_call_notification_rule_request import
 from datadog_api_client.v2.model.create_on_call_notification_rule_request_data import (
     CreateOnCallNotificationRuleRequestData,
 )
-from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
-from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
-from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
 from datadog_api_client.v2.model.create_or_update_widget_request import CreateOrUpdateWidgetRequest
 from datadog_api_client.v2.model.create_or_update_widget_request_attributes import CreateOrUpdateWidgetRequestAttributes
 from datadog_api_client.v2.model.create_or_update_widget_request_data import CreateOrUpdateWidgetRequestData
@@ -3293,11 +3290,6 @@ from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttribute
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
 from datadog_api_client.v2.model.library import Library
 from datadog_api_client.v2.model.links import Links
-from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
-from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
-from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
-from datadog_api_client.v2.model.list_apis_response_meta import ListAPIsResponseMeta
-from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListAPIsResponseMetaPagination
 from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
 from datadog_api_client.v2.model.list_app_key_registrations_response import ListAppKeyRegistrationsResponse
 from datadog_api_client.v2.model.list_app_key_registrations_response_meta import ListAppKeyRegistrationsResponseMeta
@@ -4670,8 +4662,6 @@ from datadog_api_client.v2.model.open_ai_credentials_update import OpenAICredent
 from datadog_api_client.v2.model.open_ai_integration import OpenAIIntegration
 from datadog_api_client.v2.model.open_ai_integration_type import OpenAIIntegrationType
 from datadog_api_client.v2.model.open_ai_integration_update import OpenAIIntegrationUpdate
-from datadog_api_client.v2.model.open_api_endpoint import OpenAPIEndpoint
-from datadog_api_client.v2.model.open_api_file import OpenAPIFile
 from datadog_api_client.v2.model.opsgenie_service_create_attributes import OpsgenieServiceCreateAttributes
 from datadog_api_client.v2.model.opsgenie_service_create_data import OpsgenieServiceCreateData
 from datadog_api_client.v2.model.opsgenie_service_create_request import OpsgenieServiceCreateRequest
@@ -7248,9 +7238,6 @@ from datadog_api_client.v2.model.update_on_call_notification_rule_request_attrib
 from datadog_api_client.v2.model.update_on_call_notification_rule_request_data import (
     UpdateOnCallNotificationRuleRequestData,
 )
-from datadog_api_client.v2.model.update_open_api_response import UpdateOpenAPIResponse
-from datadog_api_client.v2.model.update_open_api_response_attributes import UpdateOpenAPIResponseAttributes
-from datadog_api_client.v2.model.update_open_api_response_data import UpdateOpenAPIResponseData
 from datadog_api_client.v2.model.update_outcomes_async_attributes import UpdateOutcomesAsyncAttributes
 from datadog_api_client.v2.model.update_outcomes_async_request import UpdateOutcomesAsyncRequest
 from datadog_api_client.v2.model.update_outcomes_async_request_data import UpdateOutcomesAsyncRequestData
@@ -8460,9 +8447,6 @@ __all__ = [
     "CreateNotificationRuleParametersDataAttributes",
     "CreateOnCallNotificationRuleRequest",
     "CreateOnCallNotificationRuleRequestData",
-    "CreateOpenAPIResponse",
-    "CreateOpenAPIResponseAttributes",
-    "CreateOpenAPIResponseData",
     "CreateOrUpdateWidgetRequest",
     "CreateOrUpdateWidgetRequestAttributes",
     "CreateOrUpdateWidgetRequestData",
@@ -9957,11 +9941,6 @@ __all__ = [
     "LeakedKeyType",
     "Library",
     "Links",
-    "ListAPIsResponse",
-    "ListAPIsResponseData",
-    "ListAPIsResponseDataAttributes",
-    "ListAPIsResponseMeta",
-    "ListAPIsResponseMetaPagination",
     "ListAllocationsResponse",
     "ListAppKeyRegistrationsResponse",
     "ListAppKeyRegistrationsResponseMeta",
@@ -10706,8 +10685,6 @@ __all__ = [
     "OpenAIIntegration",
     "OpenAIIntegrationType",
     "OpenAIIntegrationUpdate",
-    "OpenAPIEndpoint",
-    "OpenAPIFile",
     "OpsgenieServiceCreateAttributes",
     "OpsgenieServiceCreateData",
     "OpsgenieServiceCreateRequest",
@@ -12568,9 +12545,6 @@ __all__ = [
     "UpdateOnCallNotificationRuleRequest",
     "UpdateOnCallNotificationRuleRequestAttributes",
     "UpdateOnCallNotificationRuleRequestData",
-    "UpdateOpenAPIResponse",
-    "UpdateOpenAPIResponseAttributes",
-    "UpdateOpenAPIResponseData",
     "UpdateOutcomesAsyncAttributes",
     "UpdateOutcomesAsyncRequest",
     "UpdateOutcomesAsyncRequestData",
