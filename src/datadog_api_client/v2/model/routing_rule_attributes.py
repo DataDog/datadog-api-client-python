@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.urgency import Urgency
     from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
     from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
+    from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
 
 
 class RoutingRuleAttributes(ModelNormal):
@@ -45,7 +46,12 @@ class RoutingRuleAttributes(ModelNormal):
     def __init__(
         self_,
         actions: Union[
-            List[Union[RoutingRuleAction, SendSlackMessageAction, SendTeamsMessageAction]], UnsetType
+            List[
+                Union[
+                    RoutingRuleAction, SendSlackMessageAction, SendTeamsMessageAction, TriggerWorkflowAutomationAction
+                ]
+            ],
+            UnsetType,
         ] = unset,
         query: Union[str, UnsetType] = unset,
         time_restriction: Union[TimeRestrictions, UnsetType] = unset,

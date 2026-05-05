@@ -227,12 +227,7 @@ class WidgetsApi:
 
         :param experience_type: The experience type for the widget.
         :type experience_type: WidgetExperienceType
-        :param body: Widget request body. The ``definition`` object's required fields vary
-            by ``widget.definition.type`` : every type requires ``requests`` , and
-            some types require additional fields (e.g. ``cloud_cost_summary``
-            requires ``graph_options`` , ``geomap`` requires ``style`` and ``view`` ).
-            The example below shows a complete ``cloud_cost_summary`` payload
-            for the ``ccm_reports`` experience type.
+        :param body: Widget request body.
         :type body: CreateOrUpdateWidgetRequest
         :rtype: WidgetResponse
         """
@@ -368,9 +363,7 @@ class WidgetsApi:
         :type experience_type: WidgetExperienceType
         :param uuid: The UUID of the widget.
         :type uuid: UUID
-        :param body: Widget request body. The ``definition`` object's required fields vary
-            by ``widget.definition.type`` ; see ``CreateWidget`` above for a complete
-            worked payload. Update is a full replacement of the widget definition.
+        :param body: Widget request body.
         :type body: CreateOrUpdateWidgetRequest
         :rtype: WidgetResponse
         """

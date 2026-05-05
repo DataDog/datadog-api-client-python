@@ -29,6 +29,9 @@ class RoutingRuleAction(ModelComposed):
 
         :param tenant: The tenant ID.
         :type tenant: str
+
+        :param handle: The handle of the Workflow Automation to trigger.
+        :type handle: str
         """
         super().__init__(kwargs)
 
@@ -43,10 +46,12 @@ class RoutingRuleAction(ModelComposed):
         # loading
         from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
         from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
+        from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
 
         return {
             "oneOf": [
                 SendSlackMessageAction,
                 SendTeamsMessageAction,
+                TriggerWorkflowAutomationAction,
             ],
         }

@@ -35116,6 +35116,20 @@ datadog\_api\_client.v2.model.trigger\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.trigger\_workflow\_automation\_action module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.trigger_workflow_automation_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.trigger\_workflow\_automation\_action\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.trigger_workflow_automation_action_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.uc\_config\_pair module
 -----------------------------------------------------
 
