@@ -7175,6 +7175,8 @@ from datadog_api_client.v2.model.trigger_investigation_response_type import Trig
 from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
 from datadog_api_client.v2.model.trigger_source import TriggerSource
 from datadog_api_client.v2.model.trigger_type import TriggerType
+from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
+from datadog_api_client.v2.model.trigger_workflow_automation_action_type import TriggerWorkflowAutomationActionType
 from datadog_api_client.v2.model.uc_config_pair import UCConfigPair
 from datadog_api_client.v2.model.uc_config_pair_data import UCConfigPairData
 from datadog_api_client.v2.model.uc_config_pair_data_attributes import UCConfigPairDataAttributes
@@ -12522,6 +12524,8 @@ __all__ = [
     "TriggerRateLimit",
     "TriggerSource",
     "TriggerType",
+    "TriggerWorkflowAutomationAction",
+    "TriggerWorkflowAutomationActionType",
     "UCConfigPair",
     "UCConfigPairData",
     "UCConfigPairDataAttributes",
