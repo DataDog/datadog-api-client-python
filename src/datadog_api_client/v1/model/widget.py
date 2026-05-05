@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
     from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
     from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
+    from datadog_api_client.v1.model.cloudcraft_widget_definition import CloudcraftWidgetDefinition
     from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
     from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
     from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
@@ -87,6 +88,7 @@ class Widget(ModelNormal):
             BarChartWidgetDefinition,
             ChangeWidgetDefinition,
             CheckStatusWidgetDefinition,
+            CloudcraftWidgetDefinition,
             CohortWidgetDefinition,
             DistributionWidgetDefinition,
             EventStreamWidgetDefinition,
