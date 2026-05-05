@@ -113,6 +113,12 @@ from datadog_api_client.v2.model.security_monitoring_content_pack_states_respons
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response import (
+    SecurityMonitoringRuleBulkDeleteResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_payload import (
+    SecurityMonitoringRuleBulkDeletePayload,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_payload import (
     SecurityMonitoringRuleBulkExportPayload,
 )
@@ -253,6 +259,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AttachJiraIssueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._bulk_delete_security_monitoring_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleBulkDeleteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/bulk_delete",
+                "operation_id": "bulk_delete_security_monitoring_rules",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleBulkDeletePayload,),
                     "location": "body",
                 },
             },
@@ -3066,6 +3092,22 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
+
+    def bulk_delete_security_monitoring_rules(
+        self,
+        body: SecurityMonitoringRuleBulkDeletePayload,
+    ) -> SecurityMonitoringRuleBulkDeleteResponse:
+        """Bulk delete security monitoring rules.
+
+        Delete multiple security monitoring rules in a single request. Default rules cannot be deleted.
+
+        :type body: SecurityMonitoringRuleBulkDeletePayload
+        :rtype: SecurityMonitoringRuleBulkDeleteResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._bulk_delete_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
     def bulk_edit_security_monitoring_signals(
         self,
