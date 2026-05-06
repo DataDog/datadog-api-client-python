@@ -15,6 +15,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.logs_archive_attributes_compression_method import (
+        LogsArchiveAttributesCompressionMethod,
+    )
     from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
     from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
     from datadog_api_client.v2.model.logs_archive_destination_azure import LogsArchiveDestinationAzure
@@ -25,10 +28,14 @@ if TYPE_CHECKING:
 class LogsArchiveAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.logs_archive_attributes_compression_method import (
+            LogsArchiveAttributesCompressionMethod,
+        )
         from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
         from datadog_api_client.v2.model.logs_archive_state import LogsArchiveState
 
         return {
+            "compression_method": (LogsArchiveAttributesCompressionMethod,),
             "destination": (LogsArchiveDestination,),
             "include_tags": (bool,),
             "name": (str,),
@@ -39,6 +46,7 @@ class LogsArchiveAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "compression_method": "compression_method",
         "destination": "destination",
         "include_tags": "include_tags",
         "name": "name",
@@ -58,6 +66,7 @@ class LogsArchiveAttributes(ModelNormal):
         ],
         name: str,
         query: str,
+        compression_method: Union[LogsArchiveAttributesCompressionMethod, UnsetType] = unset,
         include_tags: Union[bool, UnsetType] = unset,
         rehydration_max_scan_size_in_gb: Union[int, none_type, UnsetType] = unset,
         rehydration_tags: Union[List[str], UnsetType] = unset,
@@ -66,6 +75,9 @@ class LogsArchiveAttributes(ModelNormal):
     ):
         """
         The attributes associated with the archive.
+
+        :param compression_method: The type of compression for the archive.
+        :type compression_method: LogsArchiveAttributesCompressionMethod, optional
 
         :param destination: An archive's destination.
         :type destination: LogsArchiveDestination, none_type
@@ -89,6 +101,8 @@ class LogsArchiveAttributes(ModelNormal):
         :param state: The state of the archive.
         :type state: LogsArchiveState, optional
         """
+        if compression_method is not unset:
+            kwargs["compression_method"] = compression_method
         if include_tags is not unset:
             kwargs["include_tags"] = include_tags
         if rehydration_max_scan_size_in_gb is not unset:
