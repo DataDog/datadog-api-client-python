@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SankeyRumQueryMode(ModelSimple):
     """
-    Sankey mode for RUM queries.
+    Sankey mode for Product Analytics or RUM queries.
 
     :param value: If omitted defaults to "source". Must be one of ["source", "target"].
     :type value: str

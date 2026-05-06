@@ -82,12 +82,12 @@ class SankeyRumQuery(ModelNormal):
         **kwargs,
     ):
         """
-        Sankey widget with RUM data source query.
+        Query configuration for Product Analytics or RUM Sankey widget.
 
         :param audience_filters: Product Analytics/RUM audience filters.
         :type audience_filters: ProductAnalyticsAudienceFilters, optional
 
-        :param data_source: Sankey widget with RUM data source.
+        :param data_source: Product Analytics or RUM data source type.
         :type data_source: SankeyRumDataSource
 
         :param entries_per_step: Entries per step.
@@ -96,7 +96,7 @@ class SankeyRumQuery(ModelNormal):
         :param join_keys: Join keys.
         :type join_keys: SankeyJoinKeys, optional
 
-        :param mode: Sankey mode for RUM queries.
+        :param mode: Sankey mode for Product Analytics or RUM queries.
         :type mode: SankeyRumQueryMode
 
         :param number_of_steps: Number of steps.
