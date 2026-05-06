@@ -1889,7 +1889,7 @@ Feature: Security Monitoring
   Scenario: Mute or unmute security findings returns "Accepted" response
     Given operation "MuteSecurityFindings" enabled
     And new "MuteSecurityFindings" request
-    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "93bfeb70-af47-424d-908a-948d3f08e37f", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 202 Accepted
 
@@ -1897,7 +1897,7 @@ Feature: Security Monitoring
   Scenario: Mute or unmute security findings returns "Bad Request" response
     Given operation "MuteSecurityFindings" enabled
     And new "MuteSecurityFindings" request
-    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "93bfeb70-af47-424d-908a-948d3f08e37f", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1905,7 +1905,7 @@ Feature: Security Monitoring
   Scenario: Mute or unmute security findings returns "Not Found" response
     Given operation "MuteSecurityFindings" enabled
     And new "MuteSecurityFindings" request
-    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "93bfeb70-af47-424d-908a-948d3f08e37f", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1913,7 +1913,7 @@ Feature: Security Monitoring
   Scenario: Mute or unmute security findings returns "Unprocessable Entity" response
     Given operation "MuteSecurityFindings" enabled
     And new "MuteSecurityFindings" request
-    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "93bfeb70-af47-424d-908a-948d3f08e37f", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
+    And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
