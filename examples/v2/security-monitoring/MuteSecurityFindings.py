@@ -25,7 +25,7 @@ body = MuteFindingsRequest(
                 reason=MuteFindingsReason.PENDING_FIX,
             ),
         ),
-        id="93bfeb70-af47-424d-908a-948d3f08e37f",
+        id="00000000-0000-0000-0000-000000000001",
         relationships=MuteFindingsRequestDataRelationships(
             findings=Findings(
                 data=[

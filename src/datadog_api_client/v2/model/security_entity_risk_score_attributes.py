@@ -41,8 +41,8 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
             "first_detected": (int,),
             "last_activity_title": (str,),
             "last_detected": (int,),
-            "risk_score": (float,),
-            "risk_score_evolution": (float,),
+            "risk_score": (int,),
+            "risk_score_evolution": (int,),
             "severity": (SecurityEntityRiskScoreAttributesSeverity,),
             "signals_detected": (int,),
         }
@@ -74,8 +74,8 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
         first_detected: int,
         last_activity_title: str,
         last_detected: int,
-        risk_score: float,
-        risk_score_evolution: float,
+        risk_score: int,
+        risk_score_evolution: int,
         severity: SecurityEntityRiskScoreAttributesSeverity,
         signals_detected: int,
         entity_name: Union[str, UnsetType] = unset,
@@ -116,10 +116,10 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
         :type last_detected: int
 
         :param risk_score: Current risk score for the entity
-        :type risk_score: float
+        :type risk_score: int
 
         :param risk_score_evolution: Change in risk score compared to previous period
-        :type risk_score_evolution: float
+        :type risk_score_evolution: int
 
         :param severity: Severity level based on risk score
         :type severity: SecurityEntityRiskScoreAttributesSeverity
