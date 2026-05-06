@@ -1,0 +1,76 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"components":[{"components":[{"name":"Login","position":0,"type":"component"},{"name":"Settings","position":1,"type":"component"}],"name":"Application","type":"group"}],"domain_prefix":"2aea4cad6466d9b2","name":"A
+      Status Page","type":"internal","visualization_type":"bars_and_uptime_percentage"},"type":"status_pages"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages
+  response:
+    body:
+      string: '{"data":{"id":"a8c9f5bc-864f-4984-8420-736468d76baf","type":"status_pages","attributes":{"company_logo":null,"components":[{"id":"5f67ec78-bc7f-4930-91ae-b29b64e4440e","name":"Application","type":"group","position":0,"components":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","name":"Login","type":"component","status":"operational","position":0},{"id":"6eba0779-8989-43e2-994d-56d244a4ffac","name":"Settings","type":"component","status":"operational","position":1}]}],"created_at":"2026-05-04T14:30:15.791383Z","custom_domain":null,"custom_domain_enabled":false,"domain_prefix":"2aea4cad6466d9b2","email_header_image":null,"enabled":true,"favicon":null,"modified_at":"2026-05-04T14:30:15.791383Z","name":"A
+        Status Page","page_url":"https://frog.datadoghq.com/status-pages/a8c9f5bc-864f-4984-8420-736468d76baf/view","subscriptions_enabled":false,"type":"internal","visualization_type":"bars_and_uptime_percentage"},"relationships":{"created_by_user":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"users"}},"last_modified_by_user":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"users"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"title":"Past API Outage","updates":[{"components_affected":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","status":"degraded"}],"description":"We
+      detected elevated error rates in the API.","started_at":"2026-05-04T13:30:13.862Z","status":"investigating"},{"components_affected":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","status":"degraded"}],"description":"Root
+      cause identified as a misconfigured deployment.","started_at":"2026-05-04T14:00:13.862Z","status":"identified"},{"components_affected":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","status":"operational"}],"description":"The
+      issue has been resolved and API is operating normally.","started_at":"2026-05-04T14:30:13.862Z","status":"resolved"}]},"type":"degradations"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/statuspages/a8c9f5bc-864f-4984-8420-736468d76baf/degradations/backfill
+  response:
+    body:
+      string: '{"data":{"id":"6d4e1a6f-df56-4178-88c3-f950b9da3f95","type":"degradations","attributes":{"components_affected":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","name":"Login","status":"operational"}],"created_at":"2026-05-04T13:30:13.862Z","description":"The
+        issue has been resolved and API is operating normally.","modified_at":"2026-05-04T14:30:16.509023Z","status":"resolved","title":"Past
+        API Outage","updates":[{"id":"7acc1fa8-556f-4fa8-978a-58f5c19bcc6d","created_at":"2026-05-04T14:30:16.509023Z","modified_at":"2026-05-04T14:30:16.509023Z","started_at":"2026-05-04T13:30:13.862Z","status":"investigating","description":"We
+        detected elevated error rates in the API.","components_affected":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","name":"Login","status":"degraded"}]},{"id":"e927896e-cd9e-4c1a-bf41-427ce44e8372","created_at":"2026-05-04T14:30:16.509023Z","modified_at":"2026-05-04T14:30:16.509023Z","started_at":"2026-05-04T14:00:13.862Z","status":"identified","description":"Root
+        cause identified as a misconfigured deployment.","components_affected":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","name":"Login","status":"degraded"}]},{"id":"82326cfc-b8f7-4276-bde4-d023d5958541","created_at":"2026-05-04T14:30:16.509023Z","modified_at":"2026-05-04T14:30:16.509023Z","started_at":"2026-05-04T14:30:13.862Z","status":"resolved","description":"The
+        issue has been resolved and API is operating normally.","components_affected":[{"id":"b2e9cb5e-57d3-4c32-9ed2-f2883441ca75","name":"Login","status":"operational"}]}]},"relationships":{"created_by_user":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"users"}},"last_modified_by_user":{"data":{"id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","type":"users"}},"status_page":{"data":{"id":"a8c9f5bc-864f-4984-8420-736468d76baf","type":"status_pages"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/a8c9f5bc-864f-4984-8420-736468d76baf/degradations/6d4e1a6f-df56-4178-88c3-f950b9da3f95
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/statuspages/a8c9f5bc-864f-4984-8420-736468d76baf
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

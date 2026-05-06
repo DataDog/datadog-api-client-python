@@ -6386,6 +6386,23 @@
       "type": "unsafe"
     }
   },
+  "CreateBackfilledDegradation": {
+    "tag": "Status Pages",
+    "undo": {
+      "operationId": "DeleteDegradation",
+      "parameters": [
+        {
+          "name": "page_id",
+          "source": "data.relationships.status_page.data.id"
+        },
+        {
+          "name": "degradation_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "DeleteDegradation": {
     "tag": "Status Pages",
     "undo": {
@@ -6405,6 +6422,12 @@
     }
   },
   "CreateMaintenance": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateBackfilledMaintenance": {
     "tag": "Status Pages",
     "undo": {
       "type": "safe"

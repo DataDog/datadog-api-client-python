@@ -24,9 +24,11 @@ from datadog_api_client.v2.model.create_component_request import CreateComponent
 from datadog_api_client.v2.model.patch_component_request import PatchComponentRequest
 from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.create_degradation_request import CreateDegradationRequest
+from datadog_api_client.v2.model.create_backfilled_degradation_request import CreateBackfilledDegradationRequest
 from datadog_api_client.v2.model.patch_degradation_request import PatchDegradationRequest
 from datadog_api_client.v2.model.maintenance import Maintenance
 from datadog_api_client.v2.model.create_maintenance_request import CreateMaintenanceRequest
+from datadog_api_client.v2.model.create_backfilled_maintenance_request import CreateBackfilledMaintenanceRequest
 from datadog_api_client.v2.model.patch_maintenance_request import PatchMaintenanceRequest
 
 
@@ -39,6 +41,68 @@ class StatusPagesApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_backfilled_degradation_endpoint = _Endpoint(
+            settings={
+                "response_type": (Degradation,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradations/backfill",
+                "operation_id": "create_backfilled_degradation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateBackfilledDegradationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_backfilled_maintenance_endpoint = _Endpoint(
+            settings={
+                "response_type": (Maintenance,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenances/backfill",
+                "operation_id": "create_backfilled_maintenance",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateBackfilledMaintenanceRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_component_endpoint = _Endpoint(
             settings={
@@ -740,6 +804,62 @@ class StatusPagesApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def create_backfilled_degradation(
+        self,
+        page_id: UUID,
+        body: CreateBackfilledDegradationRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> Degradation:
+        """Create backfilled degradation.
+
+        Creates a backfilled degradation with predefined updates.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :type body: CreateBackfilledDegradationRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: Degradation
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["page_id"] = page_id
+
+        kwargs["body"] = body
+
+        return self._create_backfilled_degradation_endpoint.call_with_http_info(**kwargs)
+
+    def create_backfilled_maintenance(
+        self,
+        page_id: UUID,
+        body: CreateBackfilledMaintenanceRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> Maintenance:
+        """Create backfilled maintenance.
+
+        Creates a backfilled maintenance with predefined updates.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :type body: CreateBackfilledMaintenanceRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: Maintenance
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["page_id"] = page_id
+
+        kwargs["body"] = body
+
+        return self._create_backfilled_maintenance_endpoint.call_with_http_info(**kwargs)
 
     def create_component(
         self,
