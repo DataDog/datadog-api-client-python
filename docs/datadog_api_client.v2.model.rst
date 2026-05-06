@@ -6367,6 +6367,69 @@ datadog\_api\_client.v2.model.create\_attachment\_request\_data\_attributes\_att
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_backfilled\_degradation\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_degradation_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_degradation\_request\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_degradation_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_degradation\_request\_data\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_degradation_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_degradation\_request\_data\_attributes\_updates\_items module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_degradation_request_data_attributes_updates_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_maintenance\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_maintenance_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_maintenance\_request\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_maintenance_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_maintenance\_request\_data\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_maintenance_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_maintenance\_request\_data\_attributes\_updates\_items module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_maintenance_request_data_attributes_updates_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_backfilled\_maintenance\_request\_data\_attributes\_updates\_items\_status module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_backfilled_maintenance_request_data_attributes_updates_items_status
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_campaign\_request module
 --------------------------------------------------------------
 
@@ -6584,6 +6647,20 @@ datadog\_api\_client.v2.model.create\_degradation\_request\_data\_attributes\_st
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_degradation\_request\_data\_attributes\_updates\_items module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_degradation_request_data_attributes_updates_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_degradation\_request\_data\_attributes\_updates\_items\_components\_affected\_items module
+--------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_degradation_request_data_attributes_updates_items_components_affected_items
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_deployment\_gate\_params module
 ---------------------------------------------------------------------
 
@@ -6756,6 +6833,27 @@ datadog\_api\_client.v2.model.create\_maintenance\_request\_data\_attributes\_co
 ----------------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_maintenance_request_data_attributes_components_affected_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_maintenance\_request\_data\_attributes\_updates\_items module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_maintenance\_request\_data\_attributes\_updates\_items\_components\_affected\_items module
+--------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items_components_affected_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_maintenance\_request\_data\_attributes\_updates\_items\_status module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items_status
    :members:
    :show-inheritance:
 
