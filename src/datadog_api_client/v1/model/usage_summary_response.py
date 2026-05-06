@@ -238,12 +238,14 @@ class UsageSummaryResponse(ModelNormal):
             "serverless_apps_apm_apm_fargate_ecs_tasks_avg_sum": (int,),
             "serverless_apps_apm_apm_gcp_cloudfunction_instances_avg_sum": (int,),
             "serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum": (int,),
+            "serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum": (int,),
             "serverless_apps_apm_avg_sum": (int,),
             "serverless_apps_apm_excl_fargate_apm_azure_appservice_instances_avg_sum": (int,),
             "serverless_apps_apm_excl_fargate_apm_azure_azurefunction_instances_avg_sum": (int,),
             "serverless_apps_apm_excl_fargate_apm_azure_containerapp_instances_avg_sum": (int,),
             "serverless_apps_apm_excl_fargate_apm_gcp_cloudfunction_instances_avg_sum": (int,),
             "serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum": (int,),
+            "serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum": (int,),
             "serverless_apps_apm_excl_fargate_avg_sum": (int,),
             "serverless_apps_azure_container_app_instances_avg_sum": (int,),
             "serverless_apps_azure_count_avg_sum": (int,),
@@ -257,9 +259,11 @@ class UsageSummaryResponse(ModelNormal):
             "serverless_apps_excl_fargate_azure_web_app_instances_avg_sum": (int,),
             "serverless_apps_excl_fargate_google_cloud_functions_instances_avg_sum": (int,),
             "serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum": (int,),
+            "serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum": (int,),
             "serverless_apps_google_cloud_functions_instances_avg_sum": (int,),
             "serverless_apps_google_cloud_run_instances_avg_sum": (int,),
             "serverless_apps_google_count_avg_sum": (int,),
+            "serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum": (int,),
             "serverless_apps_total_count_avg_sum": (int,),
             "siem_analyzed_logs_add_on_count_agg_sum": (int,),
             "start_date": (datetime,),
@@ -489,12 +493,14 @@ class UsageSummaryResponse(ModelNormal):
         "serverless_apps_apm_apm_fargate_ecs_tasks_avg_sum": "serverless_apps_apm_apm_fargate_ecs_tasks_avg_sum",
         "serverless_apps_apm_apm_gcp_cloudfunction_instances_avg_sum": "serverless_apps_apm_apm_gcp_cloudfunction_instances_avg_sum",
         "serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum": "serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum",
+        "serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum": "serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum",
         "serverless_apps_apm_avg_sum": "serverless_apps_apm_avg_sum",
         "serverless_apps_apm_excl_fargate_apm_azure_appservice_instances_avg_sum": "serverless_apps_apm_excl_fargate_apm_azure_appservice_instances_avg_sum",
         "serverless_apps_apm_excl_fargate_apm_azure_azurefunction_instances_avg_sum": "serverless_apps_apm_excl_fargate_apm_azure_azurefunction_instances_avg_sum",
         "serverless_apps_apm_excl_fargate_apm_azure_containerapp_instances_avg_sum": "serverless_apps_apm_excl_fargate_apm_azure_containerapp_instances_avg_sum",
         "serverless_apps_apm_excl_fargate_apm_gcp_cloudfunction_instances_avg_sum": "serverless_apps_apm_excl_fargate_apm_gcp_cloudfunction_instances_avg_sum",
         "serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum": "serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum",
+        "serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum": "serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum",
         "serverless_apps_apm_excl_fargate_avg_sum": "serverless_apps_apm_excl_fargate_avg_sum",
         "serverless_apps_azure_container_app_instances_avg_sum": "serverless_apps_azure_container_app_instances_avg_sum",
         "serverless_apps_azure_count_avg_sum": "serverless_apps_azure_count_avg_sum",
@@ -508,9 +514,11 @@ class UsageSummaryResponse(ModelNormal):
         "serverless_apps_excl_fargate_azure_web_app_instances_avg_sum": "serverless_apps_excl_fargate_azure_web_app_instances_avg_sum",
         "serverless_apps_excl_fargate_google_cloud_functions_instances_avg_sum": "serverless_apps_excl_fargate_google_cloud_functions_instances_avg_sum",
         "serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum": "serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum",
+        "serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum": "serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum",
         "serverless_apps_google_cloud_functions_instances_avg_sum": "serverless_apps_google_cloud_functions_instances_avg_sum",
         "serverless_apps_google_cloud_run_instances_avg_sum": "serverless_apps_google_cloud_run_instances_avg_sum",
         "serverless_apps_google_count_avg_sum": "serverless_apps_google_count_avg_sum",
+        "serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum": "serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum",
         "serverless_apps_total_count_avg_sum": "serverless_apps_total_count_avg_sum",
         "siem_analyzed_logs_add_on_count_agg_sum": "siem_analyzed_logs_add_on_count_agg_sum",
         "start_date": "start_date",
@@ -741,12 +749,14 @@ class UsageSummaryResponse(ModelNormal):
         serverless_apps_apm_apm_fargate_ecs_tasks_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_apm_gcp_cloudfunction_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum: Union[int, UnsetType] = unset,
+        serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_excl_fargate_apm_azure_appservice_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_excl_fargate_apm_azure_azurefunction_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_excl_fargate_apm_azure_containerapp_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_excl_fargate_apm_gcp_cloudfunction_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum: Union[int, UnsetType] = unset,
+        serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_apm_excl_fargate_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_azure_container_app_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_azure_count_avg_sum: Union[int, UnsetType] = unset,
@@ -760,9 +770,11 @@ class UsageSummaryResponse(ModelNormal):
         serverless_apps_excl_fargate_azure_web_app_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_excl_fargate_google_cloud_functions_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum: Union[int, UnsetType] = unset,
+        serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_google_cloud_functions_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_google_cloud_run_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_google_count_avg_sum: Union[int, UnsetType] = unset,
+        serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_total_count_avg_sum: Union[int, UnsetType] = unset,
         siem_analyzed_logs_add_on_count_agg_sum: Union[int, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
@@ -1418,6 +1430,9 @@ class UsageSummaryResponse(ModelNormal):
         :param serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum: Sum of the average number of Serverless Apps with Application Performance Monitoring for Google Cloud Platform Cloud Run instances in the current month for all organizations.
         :type serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum: int, optional
 
+        :param serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum: Sum of the average number of Serverless Apps with Application Performance Monitoring for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
+        :type serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum: int, optional
+
         :param serverless_apps_apm_avg_sum: Sum of the average number of Serverless Apps with Application Performance Monitoring in the current month for all organizations.
         :type serverless_apps_apm_avg_sum: int, optional
 
@@ -1435,6 +1450,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum: Sum of the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Cloud Platform Cloud Run instances in the current month for all organizations.
         :type serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum: int, optional
+
+        :param serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum: Sum of the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
+        :type serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum: int, optional
 
         :param serverless_apps_apm_excl_fargate_avg_sum: Sum of the average number of Serverless Apps with Application Performance Monitoring excluding Fargate in the current month for all organizations.
         :type serverless_apps_apm_excl_fargate_avg_sum: int, optional
@@ -1475,6 +1493,9 @@ class UsageSummaryResponse(ModelNormal):
         :param serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum: Sum of the average number of Serverless Apps excluding Fargate for Google Cloud Platform Cloud Run instances in the current month for all organizations.
         :type serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum: int, optional
 
+        :param serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum: Sum of the average number of Serverless Apps excluding Fargate for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
+        :type serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum: int, optional
+
         :param serverless_apps_google_cloud_functions_instances_avg_sum: Sum of the average number of Serverless Apps for Google Cloud Platform Cloud Functions instances in the current month for all organizations.
         :type serverless_apps_google_cloud_functions_instances_avg_sum: int, optional
 
@@ -1483,6 +1504,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param serverless_apps_google_count_avg_sum: Sum of the average number of Serverless Apps for Google Cloud in the current month for all organizations.
         :type serverless_apps_google_count_avg_sum: int, optional
+
+        :param serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum: Sum of the average number of Serverless Apps for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
+        :type serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum: int, optional
 
         :param serverless_apps_total_count_avg_sum: Sum of the average number of Serverless Apps for Azure and Google Cloud in the current month for all organizations.
         :type serverless_apps_total_count_avg_sum: int, optional
@@ -1990,6 +2014,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs[
                 "serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum"
             ] = serverless_apps_apm_apm_gcp_cloudrun_instances_avg_sum
+        if serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum is not unset:
+            kwargs[
+                "serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum"
+            ] = serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum
         if serverless_apps_apm_avg_sum is not unset:
             kwargs["serverless_apps_apm_avg_sum"] = serverless_apps_apm_avg_sum
         if serverless_apps_apm_excl_fargate_apm_azure_appservice_instances_avg_sum is not unset:
@@ -2012,6 +2040,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs[
                 "serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum"
             ] = serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum
+        if serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum is not unset:
+            kwargs[
+                "serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum"
+            ] = serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum
         if serverless_apps_apm_excl_fargate_avg_sum is not unset:
             kwargs["serverless_apps_apm_excl_fargate_avg_sum"] = serverless_apps_apm_excl_fargate_avg_sum
         if serverless_apps_azure_container_app_instances_avg_sum is not unset:
@@ -2052,6 +2084,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs[
                 "serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum"
             ] = serverless_apps_excl_fargate_google_cloud_run_instances_avg_sum
+        if serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum is not unset:
+            kwargs[
+                "serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum"
+            ] = serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum
         if serverless_apps_google_cloud_functions_instances_avg_sum is not unset:
             kwargs[
                 "serverless_apps_google_cloud_functions_instances_avg_sum"
@@ -2062,6 +2098,10 @@ class UsageSummaryResponse(ModelNormal):
             ] = serverless_apps_google_cloud_run_instances_avg_sum
         if serverless_apps_google_count_avg_sum is not unset:
             kwargs["serverless_apps_google_count_avg_sum"] = serverless_apps_google_count_avg_sum
+        if serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum is not unset:
+            kwargs[
+                "serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum"
+            ] = serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum
         if serverless_apps_total_count_avg_sum is not unset:
             kwargs["serverless_apps_total_count_avg_sum"] = serverless_apps_total_count_avg_sum
         if siem_analyzed_logs_add_on_count_agg_sum is not unset:

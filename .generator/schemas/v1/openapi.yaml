@@ -22743,6 +22743,10 @@ components:
           description: Shows the average number of Serverless Apps with Application Performance Monitoring for Google Cloud Platform Cloud Run instances for the current date for all organizations.
           format: int64
           type: integer
+        serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps with Application Performance Monitoring for Google Kubernetes Engine Autopilot pods for the current date for all organizations.
+          format: int64
+          type: integer
         serverless_apps_apm_avg:
           description: Shows the average number of Serverless Apps with Application Performance Monitoring for the current date for all organizations.
           format: int64
@@ -22765,6 +22769,10 @@ components:
           type: integer
         serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg:
           description: Shows the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Cloud Platform Cloud Run instances for the current date for all organizations.
+          format: int64
+          type: integer
+        serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Kubernetes Engine Autopilot pods for the current date for all organizations.
           format: int64
           type: integer
         serverless_apps_apm_excl_fargate_avg:
@@ -22819,6 +22827,10 @@ components:
           description: Shows the average number of Serverless Apps excluding Fargate for Google Cloud Platform Cloud Run instances for the current date for all organizations.
           format: int64
           type: integer
+        serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps excluding Fargate for Google Kubernetes Engine Autopilot pods for the current date for all organizations.
+          format: int64
+          type: integer
         serverless_apps_google_cloud_functions_instances_avg:
           description: Shows the average number of Serverless Apps for Google Cloud Platform Cloud Functions instances for the current date for all organizations.
           format: int64
@@ -22829,6 +22841,10 @@ components:
           type: integer
         serverless_apps_google_count_avg:
           description: Shows the average number of Serverless Apps for Google Cloud for the given date and given org.
+          format: int64
+          type: integer
+        serverless_apps_infra_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps for Google Kubernetes Engine Autopilot pods for the current date for all organizations.
           format: int64
           type: integer
         serverless_apps_total_count_avg:
@@ -23728,6 +23744,10 @@ components:
           description: Shows the average number of Serverless Apps with Application Performance Monitoring for Google Cloud Platform Cloud Run instances for the given date and given org.
           format: int64
           type: integer
+        serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps with Application Performance Monitoring for Google Kubernetes Engine Autopilot pods for the given date and given org.
+          format: int64
+          type: integer
         serverless_apps_apm_avg:
           description: Shows the average number of Serverless Apps with Application Performance Monitoring for the given date and given org.
           format: int64
@@ -23750,6 +23770,10 @@ components:
           type: integer
         serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg:
           description: Shows the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Cloud Platform Cloud Run instances for the given date and given org.
+          format: int64
+          type: integer
+        serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Kubernetes Engine Autopilot pods for the given date and given org.
           format: int64
           type: integer
         serverless_apps_apm_excl_fargate_avg:
@@ -23804,6 +23828,10 @@ components:
           description: Shows the average number of Serverless Apps excluding Fargate for Google Cloud Platform Cloud Run instances for the given date and given org.
           format: int64
           type: integer
+        serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps excluding Fargate for Google Kubernetes Engine Autopilot pods for the given date and given org.
+          format: int64
+          type: integer
         serverless_apps_google_cloud_functions_instances_avg:
           description: Shows the average number of Serverless Apps for Google Cloud Platform Cloud Functions instances for the given date and given org.
           format: int64
@@ -23814,6 +23842,10 @@ components:
           type: integer
         serverless_apps_google_count_avg:
           description: Shows the average number of Serverless Apps for Google Cloud for the given date and given org.
+          format: int64
+          type: integer
+        serverless_apps_infra_gcp_gke_autopilot_pods_avg:
+          description: Shows the average number of Serverless Apps for Google Kubernetes Engine Autopilot pods for the given date and given org.
           format: int64
           type: integer
         serverless_apps_total_count_avg:
@@ -24731,6 +24763,10 @@ components:
           description: Sum of the average number of Serverless Apps with Application Performance Monitoring for Google Cloud Platform Cloud Run instances in the current month for all organizations.
           format: int64
           type: integer
+        serverless_apps_apm_apm_gcp_gke_autopilot_pods_avg_sum:
+          description: Sum of the average number of Serverless Apps with Application Performance Monitoring for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
+          format: int64
+          type: integer
         serverless_apps_apm_avg_sum:
           description: Sum of the average number of Serverless Apps with Application Performance Monitoring in the current month for all organizations.
           format: int64
@@ -24753,6 +24789,10 @@ components:
           type: integer
         serverless_apps_apm_excl_fargate_apm_gcp_cloudrun_instances_avg_sum:
           description: Sum of the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Cloud Platform Cloud Run instances in the current month for all organizations.
+          format: int64
+          type: integer
+        serverless_apps_apm_excl_fargate_apm_gcp_gke_autopilot_pods_avg_sum:
+          description: Sum of the average number of Serverless Apps with Application Performance Monitoring excluding Fargate for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
           format: int64
           type: integer
         serverless_apps_apm_excl_fargate_avg_sum:
@@ -24807,6 +24847,10 @@ components:
           description: Sum of the average number of Serverless Apps excluding Fargate for Google Cloud Platform Cloud Run instances in the current month for all organizations.
           format: int64
           type: integer
+        serverless_apps_excl_fargate_infra_gcp_gke_autopilot_pods_avg_sum:
+          description: Sum of the average number of Serverless Apps excluding Fargate for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
+          format: int64
+          type: integer
         serverless_apps_google_cloud_functions_instances_avg_sum:
           description: Sum of the average number of Serverless Apps for Google Cloud Platform Cloud Functions instances in the current month for all organizations.
           format: int64
@@ -24817,6 +24861,10 @@ components:
           type: integer
         serverless_apps_google_count_avg_sum:
           description: Sum of the average number of Serverless Apps for Google Cloud in the current month for all organizations.
+          format: int64
+          type: integer
+        serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum:
+          description: Sum of the average number of Serverless Apps for Google Kubernetes Engine Autopilot pods in the current month for all organizations.
           format: int64
           type: integer
         serverless_apps_total_count_avg_sum:
