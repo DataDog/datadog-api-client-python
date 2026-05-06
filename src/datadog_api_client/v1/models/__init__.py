@@ -67,6 +67,11 @@ from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDe
 from datadog_api_client.v1.model.check_can_delete_slo_response_data import CheckCanDeleteSLOResponseData
 from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+from datadog_api_client.v1.model.cloudcraft_widget_definition import CloudcraftWidgetDefinition
+from datadog_api_client.v1.model.cloudcraft_widget_definition_overlay import CloudcraftWidgetDefinitionOverlay
+from datadog_api_client.v1.model.cloudcraft_widget_definition_projection import CloudcraftWidgetDefinitionProjection
+from datadog_api_client.v1.model.cloudcraft_widget_definition_provider import CloudcraftWidgetDefinitionProvider
+from datadog_api_client.v1.model.cloudcraft_widget_definition_type import CloudcraftWidgetDefinitionType
 from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
 from datadog_api_client.v1.model.cohort_widget_definition_type import CohortWidgetDefinitionType
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
@@ -1404,6 +1409,11 @@ __all__ = [
     "CheckCanDeleteSLOResponseData",
     "CheckStatusWidgetDefinition",
     "CheckStatusWidgetDefinitionType",
+    "CloudcraftWidgetDefinition",
+    "CloudcraftWidgetDefinitionOverlay",
+    "CloudcraftWidgetDefinitionProjection",
+    "CloudcraftWidgetDefinitionProvider",
+    "CloudcraftWidgetDefinitionType",
     "CohortWidgetDefinition",
     "CohortWidgetDefinitionType",
     "ContentEncoding",

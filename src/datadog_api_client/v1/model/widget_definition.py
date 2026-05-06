@@ -72,6 +72,27 @@ class WidgetDefinition(ModelComposed):
         :param tags: List of tags used to filter the groups reporting a cluster check.
         :type tags: [str], optional
 
+        :param highlighted: Search query that visually highlights matching resources in the diagram.
+        :type highlighted: str
+
+        :param overlay: Overlay applied on top of the Cloudcraft topology.
+        :type overlay: CloudcraftWidgetDefinitionOverlay
+
+        :param overlay_filter: Filter applied to the selected overlay.
+        :type overlay_filter: str
+
+        :param projection: Projection used to render the Cloudcraft topology.
+        :type projection: CloudcraftWidgetDefinitionProjection
+
+        :param provider: Cloud provider for the Cloudcraft widget.
+        :type provider: CloudcraftWidgetDefinitionProvider
+
+        :param query_string: Query string used to filter the cloud resources displayed in the widget.
+        :type query_string: str
+
+        :param show_empty_groups: Whether to show empty outline groups in the diagram.
+        :type show_empty_groups: bool
+
         :param legend_size: (Deprecated) The widget legend was replaced by a tooltip and sidebar.
         :type legend_size: str, optional
 
@@ -369,6 +390,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
         from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
         from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
+        from datadog_api_client.v1.model.cloudcraft_widget_definition import CloudcraftWidgetDefinition
         from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
         from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
         from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
@@ -414,6 +436,7 @@ class WidgetDefinition(ModelComposed):
                 BarChartWidgetDefinition,
                 ChangeWidgetDefinition,
                 CheckStatusWidgetDefinition,
+                CloudcraftWidgetDefinition,
                 CohortWidgetDefinition,
                 DistributionWidgetDefinition,
                 EventStreamWidgetDefinition,

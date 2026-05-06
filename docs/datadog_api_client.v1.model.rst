@@ -487,6 +487,41 @@ datadog\_api\_client.v1.model.check\_status\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.cloudcraft\_widget\_definition module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.cloudcraft_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.cloudcraft\_widget\_definition\_overlay module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.cloudcraft_widget_definition_overlay
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.cloudcraft\_widget\_definition\_projection module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.cloudcraft_widget_definition_projection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.cloudcraft\_widget\_definition\_provider module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.cloudcraft_widget_definition_provider
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.cloudcraft\_widget\_definition\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.cloudcraft_widget_definition_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.cohort\_widget\_definition module
 ---------------------------------------------------------------
 
