@@ -39,7 +39,7 @@ class CloudInventorySyncConfigAWSRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        AWS settings for the customer bucket that stores inventory reports.
+        AWS settings for the S3 bucket Storage Management reads inventory reports from.
 
         :param aws_account_id: AWS account ID that owns the inventory bucket.
         :type aws_account_id: str
@@ -50,7 +50,7 @@ class CloudInventorySyncConfigAWSRequestAttributes(ModelNormal):
         :param destination_bucket_region: AWS Region of the inventory bucket.
         :type destination_bucket_region: str
 
-        :param destination_prefix: Optional object key prefix for inventory files. Use ``/`` or omit for the entire bucket.
+        :param destination_prefix: Object key prefix where inventory reports are written. Omit or set to ``/`` when reports are written at the bucket root.
         :type destination_prefix: str, optional
         """
         if destination_prefix is not unset:

@@ -36,7 +36,7 @@ class UpsertCloudInventorySyncConfigRequest(ModelNormal):
         """
         Request body for creating or updating a cloud inventory sync configuration.
 
-        :param data: JSON:API data envelope for an upsert sync configuration request.
+        :param data: Storage Management configuration data for the create or update request.
         :type data: UpsertCloudInventorySyncConfigRequestData
         """
         super().__init__(kwargs)
