@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class SankeyRumDataSource(ModelSimple):
     """
-    Sankey widget with RUM data source.
+    Product Analytics or RUM data source type.
 
-    :param value: If omitted defaults to "rum". Must be one of ["rum", "product_analytics"].
+    :param value: If omitted defaults to "product_analytics". Must be one of ["rum", "product_analytics"].
     :type value: str
     """
 

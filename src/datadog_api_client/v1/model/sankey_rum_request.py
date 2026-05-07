@@ -38,9 +38,9 @@ class SankeyRumRequest(ModelNormal):
 
     def __init__(self_, query: SankeyRumQuery, request_type: SankeyWidgetDefinitionType, **kwargs):
         """
-        Sankey widget with RUM data source.
+        Sankey widget request for Product Analytics or RUM data source.
 
-        :param query: Sankey widget with RUM data source query.
+        :param query: Query configuration for Product Analytics or RUM Sankey widget.
         :type query: SankeyRumQuery
 
         :param request_type: Type of the Sankey widget.

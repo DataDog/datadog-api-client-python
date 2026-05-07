@@ -15,7 +15,7 @@ class SankeyWidgetRequest(ModelComposed):
         """
         Request definition for Sankey widget.
 
-        :param query: Sankey widget with RUM data source query.
+        :param query: Query configuration for Product Analytics or RUM Sankey widget.
         :type query: SankeyRumQuery
 
         :param request_type: Type of the Sankey widget.
