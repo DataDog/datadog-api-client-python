@@ -45,7 +45,7 @@ class LLMObsAnnotatedInteractionItem(ModelNormal):
         :param annotations: List of annotations for this interaction.
         :type annotations: [LLMObsAnnotationItem]
 
-        :param content_id: Identifier of the content for this interaction.
+        :param content_id: Identifier of the content (trace ID or session ID) for this interaction.
         :type content_id: str
 
         :param id: Unique identifier of the interaction.

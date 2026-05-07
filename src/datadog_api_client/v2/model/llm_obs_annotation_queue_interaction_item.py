@@ -34,7 +34,7 @@ class LLMObsAnnotationQueueInteractionItem(ModelNormal):
         """
         A single interaction to add to an annotation queue.
 
-        :param content_id: Identifier of the content (such as trace ID) for this interaction.
+        :param content_id: Identifier of the content (trace ID or session ID) for this interaction.
         :type content_id: str
 
         :param type: Type of interaction in an annotation queue.
