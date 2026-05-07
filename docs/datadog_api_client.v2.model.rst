@@ -6143,6 +6143,34 @@ datadog\_api\_client.v2.model.cost\_aggregation\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_ai\_preferred\_tags\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_ai_preferred_tags_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_ai\_preferred\_tags\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_ai_preferred_tags_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_ai\_preferred\_tags\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_ai_preferred_tags_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_ai\_preferred\_tags\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_ai_preferred_tags_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_attribution\_aggregates\_body module
 ------------------------------------------------------------------------
 
@@ -6189,6 +6217,62 @@ datadog\_api\_client.v2.model.cost\_by\_org\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cost_by_org_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_setting\_data module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_setting_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_setting\_data\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_setting_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_setting\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_setting_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_setting\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_setting_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_pipeline\_active\_key\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_pipeline_active_key_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_pipeline\_active\_key\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_pipeline_active_key_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_pipeline\_active\_key\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_pipeline_active_key_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_pipeline\_active\_key\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_pipeline_active_key_type
    :members:
    :show-inheritance:
 
@@ -7393,6 +7477,34 @@ datadog\_api\_client.v2.model.csm\_serverless\_coverage\_analysis\_response modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.csm_serverless_coverage_analysis_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_allocation\_rule\_status\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_allocation_rule_status_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_allocation\_rule\_status\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_allocation_rule_status_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_allocation\_rule\_status\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_allocation_rule_status_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_allocation\_rule\_status\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_allocation_rule_status_type
    :members:
    :show-inheritance:
 
@@ -33601,6 +33713,34 @@ datadog\_api\_client.v2.model.table\_row\_resource\_identifier module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.table_row_resource_identifier
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_pipelines\_ruleset\_status\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_pipelines_ruleset_status_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_pipelines\_ruleset\_status\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_pipelines_ruleset_status_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_pipelines\_ruleset\_status\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_pipelines_ruleset_status_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_pipelines\_ruleset\_status\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_pipelines_ruleset_status_type
    :members:
    :show-inheritance:
 
