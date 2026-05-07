@@ -1157,6 +1157,10 @@ from datadog_api_client.v2.model.convert_job_results_to_signals_attributes impor
 from datadog_api_client.v2.model.convert_job_results_to_signals_data import ConvertJobResultsToSignalsData
 from datadog_api_client.v2.model.convert_job_results_to_signals_data_type import ConvertJobResultsToSignalsDataType
 from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
+from datadog_api_client.v2.model.cost_ai_preferred_tags_attributes import CostAIPreferredTagsAttributes
+from datadog_api_client.v2.model.cost_ai_preferred_tags_data import CostAIPreferredTagsData
+from datadog_api_client.v2.model.cost_ai_preferred_tags_response import CostAIPreferredTagsResponse
+from datadog_api_client.v2.model.cost_ai_preferred_tags_type import CostAIPreferredTagsType
 from datadog_api_client.v2.model.cost_aggregation_type import CostAggregationType
 from datadog_api_client.v2.model.cost_attribution_aggregates_body import CostAttributionAggregatesBody
 from datadog_api_client.v2.model.cost_attribution_tag_names import CostAttributionTagNames
@@ -1165,6 +1169,14 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.cost_setting_data import CostSettingData
+from datadog_api_client.v2.model.cost_setting_data_attributes import CostSettingDataAttributes
+from datadog_api_client.v2.model.cost_setting_response import CostSettingResponse
+from datadog_api_client.v2.model.cost_setting_type import CostSettingType
+from datadog_api_client.v2.model.cost_tag_pipeline_active_key_attributes import CostTagPipelineActiveKeyAttributes
+from datadog_api_client.v2.model.cost_tag_pipeline_active_key_data import CostTagPipelineActiveKeyData
+from datadog_api_client.v2.model.cost_tag_pipeline_active_key_response import CostTagPipelineActiveKeyResponse
+from datadog_api_client.v2.model.cost_tag_pipeline_active_key_type import CostTagPipelineActiveKeyType
 from datadog_api_client.v2.model.coverage_summary_attributes import CoverageSummaryAttributes
 from datadog_api_client.v2.model.coverage_summary_codeowner_stats import CoverageSummaryCodeownerStats
 from datadog_api_client.v2.model.coverage_summary_data import CoverageSummaryData
@@ -1435,6 +1447,10 @@ from datadog_api_client.v2.model.csm_serverless_coverage_analysis_attributes imp
 )
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_data import CsmServerlessCoverageAnalysisData
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_response import CsmServerlessCoverageAnalysisResponse
+from datadog_api_client.v2.model.custom_allocation_rule_status_attributes import CustomAllocationRuleStatusAttributes
+from datadog_api_client.v2.model.custom_allocation_rule_status_data import CustomAllocationRuleStatusData
+from datadog_api_client.v2.model.custom_allocation_rule_status_response import CustomAllocationRuleStatusResponse
+from datadog_api_client.v2.model.custom_allocation_rule_status_type import CustomAllocationRuleStatusType
 from datadog_api_client.v2.model.custom_attribute_config import CustomAttributeConfig
 from datadog_api_client.v2.model.custom_attribute_config_attributes_create import CustomAttributeConfigAttributesCreate
 from datadog_api_client.v2.model.custom_attribute_config_create import CustomAttributeConfigCreate
@@ -6855,6 +6871,10 @@ from datadog_api_client.v2.model.table_row_resource_data import TableRowResource
 from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
 from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
 from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
+from datadog_api_client.v2.model.tag_pipelines_ruleset_status_attributes import TagPipelinesRulesetStatusAttributes
+from datadog_api_client.v2.model.tag_pipelines_ruleset_status_data import TagPipelinesRulesetStatusData
+from datadog_api_client.v2.model.tag_pipelines_ruleset_status_response import TagPipelinesRulesetStatusResponse
+from datadog_api_client.v2.model.tag_pipelines_ruleset_status_type import TagPipelinesRulesetStatusType
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.targeting_rule import TargetingRule
 from datadog_api_client.v2.model.targeting_rule_request import TargetingRuleRequest
@@ -8375,6 +8395,10 @@ __all__ = [
     "ConvertJobResultsToSignalsData",
     "ConvertJobResultsToSignalsDataType",
     "ConvertJobResultsToSignalsRequest",
+    "CostAIPreferredTagsAttributes",
+    "CostAIPreferredTagsData",
+    "CostAIPreferredTagsResponse",
+    "CostAIPreferredTagsType",
     "CostAggregationType",
     "CostAttributionAggregatesBody",
     "CostAttributionTagNames",
@@ -8383,6 +8407,14 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CostSettingData",
+    "CostSettingDataAttributes",
+    "CostSettingResponse",
+    "CostSettingType",
+    "CostTagPipelineActiveKeyAttributes",
+    "CostTagPipelineActiveKeyData",
+    "CostTagPipelineActiveKeyResponse",
+    "CostTagPipelineActiveKeyType",
     "CoverageSummaryAttributes",
     "CoverageSummaryCodeownerStats",
     "CoverageSummaryData",
@@ -8553,6 +8585,10 @@ __all__ = [
     "CsmServerlessCoverageAnalysisAttributes",
     "CsmServerlessCoverageAnalysisData",
     "CsmServerlessCoverageAnalysisResponse",
+    "CustomAllocationRuleStatusAttributes",
+    "CustomAllocationRuleStatusData",
+    "CustomAllocationRuleStatusResponse",
+    "CustomAllocationRuleStatusType",
     "CustomAttributeConfig",
     "CustomAttributeConfigAttributesCreate",
     "CustomAttributeConfigCreate",
@@ -12305,6 +12341,10 @@ __all__ = [
     "TableRowResourceDataAttributes",
     "TableRowResourceDataType",
     "TableRowResourceIdentifier",
+    "TagPipelinesRulesetStatusAttributes",
+    "TagPipelinesRulesetStatusData",
+    "TagPipelinesRulesetStatusResponse",
+    "TagPipelinesRulesetStatusType",
     "TagsEventAttribute",
     "TargetingRule",
     "TargetingRuleRequest",

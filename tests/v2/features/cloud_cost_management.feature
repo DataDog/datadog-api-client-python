@@ -292,10 +292,41 @@ Feature: Cloud Cost Management
     And the response "data.attributes.configs[0].dataset_type" is equal to "amortized"
     And the response "data.attributes.configs[1].dataset_type" is equal to "actual"
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get cost setting returns "Bad Request" response
+    Given operation "GetCostSetting" enabled
+    And new "GetCostSetting" request
+    And request contains "setting_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get cost setting returns "Not Found" response
+    Given operation "GetCostSetting" enabled
+    And new "GetCostSetting" request
+    And request contains "setting_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get cost setting returns "OK" response
+    Given operation "GetCostSetting" enabled
+    And new "GetCostSetting" request
+    And request contains "setting_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Get custom allocation rule returns "OK" response
     Given new "GetCustomAllocationRule" request
     And request contains "rule_id" parameter with value 683
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get preferred cost allocation tags returns "OK" response
+    Given operation "GetCostAIPreferredTags" enabled
+    And new "GetCostAIPreferredTags" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -345,9 +376,23 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List active tag pipeline keys returns "OK" response
+    Given operation "ListCostTagPipelineActiveKeys" enabled
+    And new "ListCostTagPipelineActiveKeys" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/cloud-cost-management
   Scenario: List budgets returns "OK" response
     Given new "ListBudgets" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List custom allocation rule statuses returns "OK" response
+    Given operation "ListCustomAllocationRulesStatus" enabled
+    And new "ListCustomAllocationRulesStatus" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -357,6 +402,13 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.rule_name" is equal to "example-arbitrary-cost-rule"
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List tag pipeline ruleset statuses returns "OK" response
+    Given operation "ListTagPipelinesRulesetsStatus" enabled
+    And new "ListTagPipelinesRulesetsStatus" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List tag pipeline rulesets returns "OK" response

@@ -1265,6 +1265,18 @@
       "type": "safe"
     }
   },
+  "GetCostAIPreferredTags": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCostTagPipelineActiveKeys": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCustomAllocationRules": {
     "tag": "Cloud Cost Management",
     "undo": {
@@ -1281,6 +1293,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListCustomAllocationRulesStatus": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "DeleteCustomAllocationRule": {
@@ -1459,6 +1477,12 @@
     }
   },
   "ListCostOCIConfigs": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCostSetting": {
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "safe"
@@ -6695,6 +6719,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListTagPipelinesRulesetsStatus": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "ValidateQuery": {

@@ -11,10 +11,13 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.cost_ai_preferred_tags_response import CostAIPreferredTagsResponse
+from datadog_api_client.v2.model.cost_tag_pipeline_active_key_response import CostTagPipelineActiveKeyResponse
 from datadog_api_client.v2.model.arbitrary_rule_response_array import ArbitraryRuleResponseArray
 from datadog_api_client.v2.model.arbitrary_rule_response import ArbitraryRuleResponse
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request import ArbitraryCostUpsertRequest
 from datadog_api_client.v2.model.reorder_rule_resource_array import ReorderRuleResourceArray
+from datadog_api_client.v2.model.custom_allocation_rule_status_response import CustomAllocationRuleStatusResponse
 from datadog_api_client.v2.model.aws_cur_configs_response import AwsCURConfigsResponse
 from datadog_api_client.v2.model.aws_cur_config_response import AwsCurConfigResponse
 from datadog_api_client.v2.model.aws_cur_config_post_request import AwsCURConfigPostRequest
@@ -39,10 +42,12 @@ from datadog_api_client.v2.model.gcp_usage_cost_config_post_request import GCPUs
 from datadog_api_client.v2.model.gcp_uc_config_response import GcpUcConfigResponse
 from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPUsageCostConfigPatchRequest
 from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
+from datadog_api_client.v2.model.cost_setting_response import CostSettingResponse
 from datadog_api_client.v2.model.ruleset_resp_array import RulesetRespArray
 from datadog_api_client.v2.model.ruleset_resp import RulesetResp
 from datadog_api_client.v2.model.create_ruleset_request import CreateRulesetRequest
 from datadog_api_client.v2.model.reorder_ruleset_resource_array import ReorderRulesetResourceArray
+from datadog_api_client.v2.model.tag_pipelines_ruleset_status_response import TagPipelinesRulesetStatusResponse
 from datadog_api_client.v2.model.rules_validate_query_response import RulesValidateQueryResponse
 from datadog_api_client.v2.model.rules_validate_query_request import RulesValidateQueryRequest
 from datadog_api_client.v2.model.update_ruleset_request import UpdateRulesetRequest
@@ -342,6 +347,22 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_cost_ai_preferred_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostAIPreferredTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/ai/preferred_tags",
+                "operation_id": "get_cost_ai_preferred_tags",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCurConfigResponse,),
@@ -402,6 +423,29 @@ class CloudCostManagementApi:
                     "required": True,
                     "openapi_types": (int,),
                     "attribute": "cloud_account_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_cost_setting_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostSettingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/settings/{setting_type}",
+                "operation_id": "get_cost_setting",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "setting_type": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "setting_type",
                     "location": "path",
                 },
             },
@@ -560,12 +604,44 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._list_cost_tag_pipeline_active_keys_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostTagPipelineActiveKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/ai/tag_pipelines/active_keys",
+                "operation_id": "list_cost_tag_pipeline_active_keys",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_custom_allocation_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (ArbitraryRuleResponseArray,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/arbitrary_rule",
                 "operation_id": "list_custom_allocation_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_custom_allocation_rules_status_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomAllocationRuleStatusResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/arbitrary_rule/status",
+                "operation_id": "list_custom_allocation_rules_status",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -630,6 +706,22 @@ class CloudCostManagementApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/tags/enrichment",
                 "operation_id": "list_tag_pipelines_rulesets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_tag_pipelines_rulesets_status_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagPipelinesRulesetStatusResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/tags/enrichment/status",
+                "operation_id": "list_tag_pipelines_rulesets_status",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -1137,6 +1229,18 @@ class CloudCostManagementApi:
 
         return self._get_budget_endpoint.call_with_http_info(**kwargs)
 
+    def get_cost_ai_preferred_tags(
+        self,
+    ) -> CostAIPreferredTagsResponse:
+        """Get preferred cost allocation tags.
+
+        Get the preferred cost allocation tags for AI agent use. Returns a simplified response with contextual messaging based on configuration status.
+
+        :rtype: CostAIPreferredTagsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_cost_ai_preferred_tags_endpoint.call_with_http_info(**kwargs)
+
     def get_cost_awscur_config(
         self,
         cloud_account_id: int,
@@ -1187,6 +1291,23 @@ class CloudCostManagementApi:
         kwargs["cloud_account_id"] = cloud_account_id
 
         return self._get_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
+
+    def get_cost_setting(
+        self,
+        setting_type: str,
+    ) -> CostSettingResponse:
+        """Get cost setting.
+
+        Get a specific cost management setting by type.
+
+        :param setting_type: The type of cost setting.
+        :type setting_type: str
+        :rtype: CostSettingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["setting_type"] = setting_type
+
+        return self._get_cost_setting_endpoint.call_with_http_info(**kwargs)
 
     def get_custom_allocation_rule(
         self,
@@ -1299,6 +1420,18 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._list_cost_oci_configs_endpoint.call_with_http_info(**kwargs)
 
+    def list_cost_tag_pipeline_active_keys(
+        self,
+    ) -> CostTagPipelineActiveKeyResponse:
+        """List active tag pipeline keys.
+
+        List the tag keys that are actively set by tag pipeline rules, sorted by rule count in descending order.
+
+        :rtype: CostTagPipelineActiveKeyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_cost_tag_pipeline_active_keys_endpoint.call_with_http_info(**kwargs)
+
     def list_custom_allocation_rules(
         self,
     ) -> ArbitraryRuleResponseArray:
@@ -1310,6 +1443,18 @@ class CloudCostManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_custom_allocation_rules_endpoint.call_with_http_info(**kwargs)
+
+    def list_custom_allocation_rules_status(
+        self,
+    ) -> CustomAllocationRuleStatusResponse:
+        """List custom allocation rule statuses.
+
+        List the processing status of all custom allocation rules.
+
+        :rtype: CustomAllocationRuleStatusResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_custom_allocation_rules_status_endpoint.call_with_http_info(**kwargs)
 
     def list_custom_costs_files(
         self,
@@ -1371,6 +1516,18 @@ class CloudCostManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_tag_pipelines_rulesets_endpoint.call_with_http_info(**kwargs)
+
+    def list_tag_pipelines_rulesets_status(
+        self,
+    ) -> TagPipelinesRulesetStatusResponse:
+        """List tag pipeline ruleset statuses.
+
+        List the processing status of all tag pipeline rulesets.
+
+        :rtype: TagPipelinesRulesetStatusResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_tag_pipelines_rulesets_status_endpoint.call_with_http_info(**kwargs)
 
     def reorder_custom_allocation_rules(
         self,
