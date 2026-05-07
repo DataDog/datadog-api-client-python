@@ -41,7 +41,7 @@ class LLMObsAnnotationQueueInteractionResponseItem(ModelNormal):
         :param already_existed: Whether this interaction already existed in the queue.
         :type already_existed: bool
 
-        :param content_id: Identifier of the content for this interaction.
+        :param content_id: Identifier of the content (trace ID or session ID) for this interaction.
         :type content_id: str
 
         :param id: Unique identifier of the interaction.
