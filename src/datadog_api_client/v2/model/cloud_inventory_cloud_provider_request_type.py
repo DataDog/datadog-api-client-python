@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CloudInventoryCloudProviderRequestType(ModelSimple):
     """
-    JSON:API type for upsert sync configuration requests.
+    Always `cloud_provider`.
 
     :param value: If omitted defaults to "cloud_provider". Must be one of ["cloud_provider"].
     :type value: str

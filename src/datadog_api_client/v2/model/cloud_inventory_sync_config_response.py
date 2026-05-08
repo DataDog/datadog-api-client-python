@@ -34,9 +34,9 @@ class CloudInventorySyncConfigResponse(ModelNormal):
 
     def __init__(self_, data: CloudInventorySyncConfigResponseData, **kwargs):
         """
-        Response containing the upserted sync configuration. Additional read-only fields appear on list and get.
+        Storage Management configuration returned after a create or update. Additional read-only fields appear on list and get responses.
 
-        :param data: JSON:API data object for a sync configuration.
+        :param data: Storage Management configuration data.
         :type data: CloudInventorySyncConfigResponseData
         """
         super().__init__(kwargs)

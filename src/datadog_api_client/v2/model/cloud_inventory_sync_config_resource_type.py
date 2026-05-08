@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CloudInventorySyncConfigResourceType(ModelSimple):
     """
-    JSON:API type for sync configuration resources.
+    Always `sync_configs`.
 
     :param value: If omitted defaults to "sync_configs". Must be one of ["sync_configs"].
     :type value: str

@@ -1,9 +1,9 @@
 """
-Create or update a sync configuration returns "OK" response
+Enable Storage Management for a bucket returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.cloud_inventory_sync_configs_api import CloudInventorySyncConfigsApi
+from datadog_api_client.v2.api.storage_management_api import StorageManagementApi
 from datadog_api_client.v2.model.cloud_inventory_cloud_provider_id import CloudInventoryCloudProviderId
 from datadog_api_client.v2.model.cloud_inventory_cloud_provider_request_type import (
     CloudInventoryCloudProviderRequestType,
@@ -55,9 +55,8 @@ body = UpsertCloudInventorySyncConfigRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["upsert_sync_config"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = CloudInventorySyncConfigsApi(api_client)
+    api_instance = StorageManagementApi(api_client)
     response = api_instance.upsert_sync_config(body=body)
 
     print(response)
