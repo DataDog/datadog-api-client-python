@@ -19,12 +19,19 @@ if TYPE_CHECKING:
 
 
 class ProcessTimeseriesQuery(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.process_data_source import ProcessDataSource
         from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 
         return {
+            "cross_org_uuids": ([str],),
             "data_source": (ProcessDataSource,),
             "is_normalized_cpu": (bool,),
             "limit": (int,),
@@ -36,6 +43,7 @@ class ProcessTimeseriesQuery(ModelNormal):
         }
 
     attribute_map = {
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "is_normalized_cpu": "is_normalized_cpu",
         "limit": "limit",
@@ -51,6 +59,7 @@ class ProcessTimeseriesQuery(ModelNormal):
         data_source: ProcessDataSource,
         metric: str,
         name: str,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         is_normalized_cpu: Union[bool, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         sort: Union[QuerySortOrder, UnsetType] = unset,
@@ -60,6 +69,9 @@ class ProcessTimeseriesQuery(ModelNormal):
     ):
         """
         A query for host-level process metrics such as CPU and memory usage.
+
+        :param cross_org_uuids: Organization UUIDs to query when using `cross-organization visibility </account_management/org_settings/cross_org_visibility/>`_. Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: A data source for process-level infrastructure metrics.
         :type data_source: ProcessDataSource
@@ -85,6 +97,8 @@ class ProcessTimeseriesQuery(ModelNormal):
         :param text_filter: A full-text search filter to match process names or commands.
         :type text_filter: str, optional
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if is_normalized_cpu is not unset:
             kwargs["is_normalized_cpu"] = is_normalized_cpu
         if limit is not unset:

@@ -20,6 +20,12 @@ if TYPE_CHECKING:
 
 
 class ProcessScalarQuery(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.metrics_aggregator import MetricsAggregator
@@ -28,6 +34,7 @@ class ProcessScalarQuery(ModelNormal):
 
         return {
             "aggregator": (MetricsAggregator,),
+            "cross_org_uuids": ([str],),
             "data_source": (ProcessDataSource,),
             "is_normalized_cpu": (bool,),
             "limit": (int,),
@@ -40,6 +47,7 @@ class ProcessScalarQuery(ModelNormal):
 
     attribute_map = {
         "aggregator": "aggregator",
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "is_normalized_cpu": "is_normalized_cpu",
         "limit": "limit",
@@ -56,6 +64,7 @@ class ProcessScalarQuery(ModelNormal):
         metric: str,
         name: str,
         aggregator: Union[MetricsAggregator, UnsetType] = unset,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         is_normalized_cpu: Union[bool, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         sort: Union[QuerySortOrder, UnsetType] = unset,
@@ -68,6 +77,9 @@ class ProcessScalarQuery(ModelNormal):
 
         :param aggregator: The type of aggregation that can be performed on metrics-based queries.
         :type aggregator: MetricsAggregator, optional
+
+        :param cross_org_uuids: Organization UUIDs to query when using `cross-organization visibility </account_management/org_settings/cross_org_visibility/>`_. Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: A data source for process-level infrastructure metrics.
         :type data_source: ProcessDataSource
@@ -95,6 +107,8 @@ class ProcessScalarQuery(ModelNormal):
         """
         if aggregator is not unset:
             kwargs["aggregator"] = aggregator
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if is_normalized_cpu is not unset:
             kwargs["is_normalized_cpu"] = is_normalized_cpu
         if limit is not unset:

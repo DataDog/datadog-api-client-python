@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -18,25 +18,43 @@ if TYPE_CHECKING:
 
 
 class MetricsTimeseriesQuery(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.metrics_data_source import MetricsDataSource
 
         return {
+            "cross_org_uuids": ([str],),
             "data_source": (MetricsDataSource,),
             "name": (str,),
             "query": (str,),
         }
 
     attribute_map = {
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "name": "name",
         "query": "query",
     }
 
-    def __init__(self_, data_source: MetricsDataSource, query: str, name: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        data_source: MetricsDataSource,
+        query: str,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         A query against Datadog custom metrics or Cloud Cost data sources.
+
+        :param cross_org_uuids: Organization UUIDs to query when using `cross-organization visibility </account_management/org_settings/cross_org_visibility/>`_. Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: A data source that is powered by the Metrics platform.
         :type data_source: MetricsDataSource
@@ -47,6 +65,8 @@ class MetricsTimeseriesQuery(ModelNormal):
         :param query: A classic metrics query string.
         :type query: str
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)

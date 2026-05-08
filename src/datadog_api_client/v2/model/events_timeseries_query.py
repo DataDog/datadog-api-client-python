@@ -21,6 +21,12 @@ if TYPE_CHECKING:
 
 
 class EventsTimeseriesQuery(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.events_compute import EventsCompute
@@ -30,6 +36,7 @@ class EventsTimeseriesQuery(ModelNormal):
 
         return {
             "compute": (EventsCompute,),
+            "cross_org_uuids": ([str],),
             "data_source": (EventsDataSource,),
             "group_by": (EventsQueryGroupBys,),
             "indexes": ([str],),
@@ -39,6 +46,7 @@ class EventsTimeseriesQuery(ModelNormal):
 
     attribute_map = {
         "compute": "compute",
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "group_by": "group_by",
         "indexes": "indexes",
@@ -50,6 +58,7 @@ class EventsTimeseriesQuery(ModelNormal):
         self_,
         compute: EventsCompute,
         data_source: EventsDataSource,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         group_by: Union[EventsQueryGroupBys, UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -61,6 +70,9 @@ class EventsTimeseriesQuery(ModelNormal):
 
         :param compute: The instructions for what to compute for this query.
         :type compute: EventsCompute
+
+        :param cross_org_uuids: Organization UUIDs to query when using `cross-organization visibility </account_management/org_settings/cross_org_visibility/>`_. Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: A data source that is powered by the Events Platform.
         :type data_source: EventsDataSource
@@ -77,6 +89,8 @@ class EventsTimeseriesQuery(ModelNormal):
         :param search: Configuration of the search/filter for an events query.
         :type search: EventsSearch, optional
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if group_by is not unset:
             kwargs["group_by"] = group_by
         if indexes is not unset:

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -19,12 +19,19 @@ if TYPE_CHECKING:
 
 
 class ApmDependencyStatsQuery(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.apm_dependency_stats_data_source import ApmDependencyStatsDataSource
         from datadog_api_client.v2.model.apm_dependency_stat_name import ApmDependencyStatName
 
         return {
+            "cross_org_uuids": ([str],),
             "data_source": (ApmDependencyStatsDataSource,),
             "env": (str,),
             "is_upstream": (bool,),
@@ -38,6 +45,7 @@ class ApmDependencyStatsQuery(ModelNormal):
         }
 
     attribute_map = {
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "env": "env",
         "is_upstream": "is_upstream",
@@ -59,6 +67,7 @@ class ApmDependencyStatsQuery(ModelNormal):
         resource_name: str,
         service: str,
         stat: ApmDependencyStatName,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         is_upstream: Union[bool, UnsetType] = unset,
         primary_tag_name: Union[str, UnsetType] = unset,
         primary_tag_value: Union[str, UnsetType] = unset,
@@ -66,6 +75,9 @@ class ApmDependencyStatsQuery(ModelNormal):
     ):
         """
         A query for APM dependency statistics between services, such as call latency and error rates.
+
+        :param cross_org_uuids: Organization UUIDs to query when using `cross-organization visibility </account_management/org_settings/cross_org_visibility/>`_. Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: A data source for APM dependency statistics queries.
         :type data_source: ApmDependencyStatsDataSource
@@ -97,6 +109,8 @@ class ApmDependencyStatsQuery(ModelNormal):
         :param stat: The APM dependency statistic to query.
         :type stat: ApmDependencyStatName
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if is_upstream is not unset:
             kwargs["is_upstream"] = is_upstream
         if primary_tag_name is not unset:

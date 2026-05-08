@@ -19,12 +19,19 @@ if TYPE_CHECKING:
 
 
 class ApmResourceStatsQuery(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.apm_resource_stats_data_source import ApmResourceStatsDataSource
         from datadog_api_client.v2.model.apm_resource_stat_name import ApmResourceStatName
 
         return {
+            "cross_org_uuids": ([str],),
             "data_source": (ApmResourceStatsDataSource,),
             "env": (str,),
             "group_by": ([str],),
@@ -38,6 +45,7 @@ class ApmResourceStatsQuery(ModelNormal):
         }
 
     attribute_map = {
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "env": "env",
         "group_by": "group_by",
@@ -57,6 +65,7 @@ class ApmResourceStatsQuery(ModelNormal):
         name: str,
         service: str,
         stat: ApmResourceStatName,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         group_by: Union[List[str], UnsetType] = unset,
         operation_name: Union[str, UnsetType] = unset,
         primary_tag_name: Union[str, UnsetType] = unset,
@@ -66,6 +75,9 @@ class ApmResourceStatsQuery(ModelNormal):
     ):
         """
         A query for APM resource statistics such as latency, error rate, and hit count, grouped by resource name.
+
+        :param cross_org_uuids: Organization UUIDs to query when using `cross-organization visibility </account_management/org_settings/cross_org_visibility/>`_. Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: A data source for APM resource statistics queries.
         :type data_source: ApmResourceStatsDataSource
@@ -97,6 +109,8 @@ class ApmResourceStatsQuery(ModelNormal):
         :param stat: The APM resource statistic to query.
         :type stat: ApmResourceStatName
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if group_by is not unset:
             kwargs["group_by"] = group_by
         if operation_name is not unset:

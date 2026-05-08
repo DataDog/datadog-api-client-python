@@ -18,6 +18,9 @@ class ScalarQuery(ModelComposed):
         :param aggregator: The type of aggregation that can be performed on metrics-based queries.
         :type aggregator: MetricsAggregator
 
+        :param cross_org_uuids: Organization UUIDs to query when using [cross-organization visibility](/account_management/org_settings/cross_org_visibility/). Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
+
         :param data_source: A data source that is powered by the Metrics platform.
         :type data_source: MetricsDataSource
 
