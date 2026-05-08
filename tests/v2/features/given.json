@@ -1537,18 +1537,6 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"teams\"\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"team\" in the system",
-    "key": "team",
-    "tag": "Incident Teams",
-    "operationId": "CreateIncidentTeam"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
         "value": "{\n  \"data\": [\n    {\n      \"relationships\": {\"user\": {\"data\": {\n        \"id\": \"{{ user.data.id }}\",\n        \"type\": \"{{ user.data.type }}\"\n      }}},\n      \"type\": \"user_invitations\"\n    }\n  ]\n}"
       }
     ],

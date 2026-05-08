@@ -2799,19 +2799,6 @@ from datadog_api_client.v2.model.incident_service_update_data import IncidentSer
 from datadog_api_client.v2.model.incident_service_update_request import IncidentServiceUpdateRequest
 from datadog_api_client.v2.model.incident_services_response import IncidentServicesResponse
 from datadog_api_client.v2.model.incident_severity import IncidentSeverity
-from datadog_api_client.v2.model.incident_team_create_attributes import IncidentTeamCreateAttributes
-from datadog_api_client.v2.model.incident_team_create_data import IncidentTeamCreateData
-from datadog_api_client.v2.model.incident_team_create_request import IncidentTeamCreateRequest
-from datadog_api_client.v2.model.incident_team_included_items import IncidentTeamIncludedItems
-from datadog_api_client.v2.model.incident_team_relationships import IncidentTeamRelationships
-from datadog_api_client.v2.model.incident_team_response import IncidentTeamResponse
-from datadog_api_client.v2.model.incident_team_response_attributes import IncidentTeamResponseAttributes
-from datadog_api_client.v2.model.incident_team_response_data import IncidentTeamResponseData
-from datadog_api_client.v2.model.incident_team_type import IncidentTeamType
-from datadog_api_client.v2.model.incident_team_update_attributes import IncidentTeamUpdateAttributes
-from datadog_api_client.v2.model.incident_team_update_data import IncidentTeamUpdateData
-from datadog_api_client.v2.model.incident_team_update_request import IncidentTeamUpdateRequest
-from datadog_api_client.v2.model.incident_teams_response import IncidentTeamsResponse
 from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
 from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
     IncidentTimelineCellMarkdownContentType,
@@ -9608,19 +9595,6 @@ __all__ = [
     "IncidentServiceUpdateRequest",
     "IncidentServicesResponse",
     "IncidentSeverity",
-    "IncidentTeamCreateAttributes",
-    "IncidentTeamCreateData",
-    "IncidentTeamCreateRequest",
-    "IncidentTeamIncludedItems",
-    "IncidentTeamRelationships",
-    "IncidentTeamResponse",
-    "IncidentTeamResponseAttributes",
-    "IncidentTeamResponseData",
-    "IncidentTeamType",
-    "IncidentTeamUpdateAttributes",
-    "IncidentTeamUpdateData",
-    "IncidentTeamUpdateRequest",
-    "IncidentTeamsResponse",
     "IncidentTimelineCellCreateAttributes",
     "IncidentTimelineCellMarkdownContentType",
     "IncidentTimelineCellMarkdownCreateAttributes",

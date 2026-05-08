@@ -347,13 +347,6 @@ datadog\_api\_client.v2.api.incident\_services\_api module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.incident\_teams\_api module
--------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.incident_teams_api
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.api.incidents\_api module
 -------------------------------------------------
 
