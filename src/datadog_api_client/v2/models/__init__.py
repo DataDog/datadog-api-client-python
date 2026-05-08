@@ -5243,6 +5243,32 @@ from datadog_api_client.v2.model.reorder_rule_resource_data_type import ReorderR
 from datadog_api_client.v2.model.reorder_ruleset_resource_array import ReorderRulesetResourceArray
 from datadog_api_client.v2.model.reorder_ruleset_resource_data import ReorderRulesetResourceData
 from datadog_api_client.v2.model.reorder_ruleset_resource_data_type import ReorderRulesetResourceDataType
+from datadog_api_client.v2.model.replay_analysis_affected_session import ReplayAnalysisAffectedSession
+from datadog_api_client.v2.model.replay_analysis_issue_data import ReplayAnalysisIssueData
+from datadog_api_client.v2.model.replay_analysis_issue_data_attributes import ReplayAnalysisIssueDataAttributes
+from datadog_api_client.v2.model.replay_analysis_issue_data_type import ReplayAnalysisIssueDataType
+from datadog_api_client.v2.model.replay_analysis_issue_meta import ReplayAnalysisIssueMeta
+from datadog_api_client.v2.model.replay_analysis_issue_response import ReplayAnalysisIssueResponse
+from datadog_api_client.v2.model.replay_analysis_issue_session_data import ReplayAnalysisIssueSessionData
+from datadog_api_client.v2.model.replay_analysis_issue_session_data_attributes import (
+    ReplayAnalysisIssueSessionDataAttributes,
+)
+from datadog_api_client.v2.model.replay_analysis_issue_session_data_type import ReplayAnalysisIssueSessionDataType
+from datadog_api_client.v2.model.replay_analysis_issue_sessions_response import ReplayAnalysisIssueSessionsResponse
+from datadog_api_client.v2.model.replay_analysis_issues_response import ReplayAnalysisIssuesResponse
+from datadog_api_client.v2.model.replay_analysis_llm_details import ReplayAnalysisLLMDetails
+from datadog_api_client.v2.model.replay_analysis_page_meta import ReplayAnalysisPageMeta
+from datadog_api_client.v2.model.replay_analysis_representative_session import ReplayAnalysisRepresentativeSession
+from datadog_api_client.v2.model.replay_analysis_screenshot import ReplayAnalysisScreenshot
+from datadog_api_client.v2.model.replay_analysis_signal import ReplayAnalysisSignal
+from datadog_api_client.v2.model.replay_summary_chapter import ReplaySummaryChapter
+from datadog_api_client.v2.model.replay_summary_data_attributes_response import ReplaySummaryDataAttributesResponse
+from datadog_api_client.v2.model.replay_summary_data_request import ReplaySummaryDataRequest
+from datadog_api_client.v2.model.replay_summary_data_response import ReplaySummaryDataResponse
+from datadog_api_client.v2.model.replay_summary_request import ReplaySummaryRequest
+from datadog_api_client.v2.model.replay_summary_request_type import ReplaySummaryRequestType
+from datadog_api_client.v2.model.replay_summary_response import ReplaySummaryResponse
+from datadog_api_client.v2.model.replay_summary_response_type import ReplaySummaryResponseType
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data import ResolveVulnerableSymbolsRequestData
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data_attributes import (
@@ -11195,6 +11221,30 @@ __all__ = [
     "ReorderRulesetResourceArray",
     "ReorderRulesetResourceData",
     "ReorderRulesetResourceDataType",
+    "ReplayAnalysisAffectedSession",
+    "ReplayAnalysisIssueData",
+    "ReplayAnalysisIssueDataAttributes",
+    "ReplayAnalysisIssueDataType",
+    "ReplayAnalysisIssueMeta",
+    "ReplayAnalysisIssueResponse",
+    "ReplayAnalysisIssueSessionData",
+    "ReplayAnalysisIssueSessionDataAttributes",
+    "ReplayAnalysisIssueSessionDataType",
+    "ReplayAnalysisIssueSessionsResponse",
+    "ReplayAnalysisIssuesResponse",
+    "ReplayAnalysisLLMDetails",
+    "ReplayAnalysisPageMeta",
+    "ReplayAnalysisRepresentativeSession",
+    "ReplayAnalysisScreenshot",
+    "ReplayAnalysisSignal",
+    "ReplaySummaryChapter",
+    "ReplaySummaryDataAttributesResponse",
+    "ReplaySummaryDataRequest",
+    "ReplaySummaryDataResponse",
+    "ReplaySummaryRequest",
+    "ReplaySummaryRequestType",
+    "ReplaySummaryResponse",
+    "ReplaySummaryResponseType",
     "ResolveVulnerableSymbolsRequest",
     "ResolveVulnerableSymbolsRequestData",
     "ResolveVulnerableSymbolsRequestDataAttributes",

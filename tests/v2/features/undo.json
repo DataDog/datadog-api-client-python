@@ -4792,6 +4792,24 @@
       "type": "idempotent"
     }
   },
+  "ListReplayAnalysisIssues": {
+    "tag": "Rum Replay Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetReplayAnalysisIssue": {
+    "tag": "Rum Replay Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListReplayAnalysisIssueSessions": {
+    "tag": "Rum Replay Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListReplayHeatmapSnapshots": {
     "tag": "Rum Replay Heatmaps",
     "undo": {
@@ -4819,6 +4837,12 @@
   },
   "UpdateReplayHeatmapSnapshot": {
     "tag": "Rum Replay Heatmaps",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GenerateReplaySummary": {
+    "tag": "Rum Replay",
     "undo": {
       "type": "idempotent"
     }
