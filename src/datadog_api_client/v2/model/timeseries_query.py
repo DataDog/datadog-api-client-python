@@ -15,6 +15,9 @@ class TimeseriesQuery(ModelComposed):
         """
         An individual timeseries query to one of the basic Datadog data sources.
 
+        :param cross_org_uuids: Organization UUIDs to query when using [cross-organization visibility](/account_management/org_settings/cross_org_visibility/). Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
+
         :param data_source: A data source that is powered by the Metrics platform.
         :type data_source: MetricsDataSource
 

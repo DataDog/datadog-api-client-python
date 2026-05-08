@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -19,6 +19,12 @@ if TYPE_CHECKING:
 
 
 class MetricsScalarQuery(ModelNormal):
+    validations = {
+        "cross_org_uuids": {
+            "max_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.metrics_aggregator import MetricsAggregator
@@ -26,6 +32,7 @@ class MetricsScalarQuery(ModelNormal):
 
         return {
             "aggregator": (MetricsAggregator,),
+            "cross_org_uuids": ([str],),
             "data_source": (MetricsDataSource,),
             "name": (str,),
             "query": (str,),
@@ -33,6 +40,7 @@ class MetricsScalarQuery(ModelNormal):
 
     attribute_map = {
         "aggregator": "aggregator",
+        "cross_org_uuids": "cross_org_uuids",
         "data_source": "data_source",
         "name": "name",
         "query": "query",
@@ -43,6 +51,7 @@ class MetricsScalarQuery(ModelNormal):
         aggregator: MetricsAggregator,
         data_source: MetricsDataSource,
         query: str,
+        cross_org_uuids: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,6 +60,9 @@ class MetricsScalarQuery(ModelNormal):
 
         :param aggregator: The type of aggregation that can be performed on metrics-based queries.
         :type aggregator: MetricsAggregator
+
+        :param cross_org_uuids: Organization UUIDs to query when using `cross-organization visibility </account_management/org_settings/cross_org_visibility/>`_. Limited to one organization UUID.
+        :type cross_org_uuids: [str], optional
 
         :param data_source: A data source that is powered by the Metrics platform.
         :type data_source: MetricsDataSource
@@ -61,6 +73,8 @@ class MetricsScalarQuery(ModelNormal):
         :param query: A classic metrics query string.
         :type query: str
         """
+        if cross_org_uuids is not unset:
+            kwargs["cross_org_uuids"] = cross_org_uuids
         if name is not unset:
             kwargs["name"] = name
         super().__init__(kwargs)
