@@ -1687,6 +1687,19 @@ from datadog_api_client.v2.model.dataset_request import DatasetRequest
 from datadog_api_client.v2.model.dataset_response import DatasetResponse
 from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMulti
 from datadog_api_client.v2.model.dataset_response_single import DatasetResponseSingle
+from datadog_api_client.v2.model.dataset_restriction_ownership_mode import DatasetRestrictionOwnershipMode
+from datadog_api_client.v2.model.dataset_restriction_principal import DatasetRestrictionPrincipal
+from datadog_api_client.v2.model.dataset_restriction_response import DatasetRestrictionResponse
+from datadog_api_client.v2.model.dataset_restriction_response_attributes import DatasetRestrictionResponseAttributes
+from datadog_api_client.v2.model.dataset_restriction_response_data import DatasetRestrictionResponseData
+from datadog_api_client.v2.model.dataset_restriction_restriction_mode import DatasetRestrictionRestrictionMode
+from datadog_api_client.v2.model.dataset_restriction_update_request import DatasetRestrictionUpdateRequest
+from datadog_api_client.v2.model.dataset_restriction_update_request_attributes import (
+    DatasetRestrictionUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.dataset_restriction_update_request_data import DatasetRestrictionUpdateRequestData
+from datadog_api_client.v2.model.dataset_restrictions_list_response import DatasetRestrictionsListResponse
+from datadog_api_client.v2.model.dataset_restrictions_type import DatasetRestrictionsType
 from datadog_api_client.v2.model.dataset_type import DatasetType
 from datadog_api_client.v2.model.dataset_update_request import DatasetUpdateRequest
 from datadog_api_client.v2.model.datastore import Datastore
@@ -8746,6 +8759,17 @@ __all__ = [
     "DatasetResponse",
     "DatasetResponseMulti",
     "DatasetResponseSingle",
+    "DatasetRestrictionOwnershipMode",
+    "DatasetRestrictionPrincipal",
+    "DatasetRestrictionResponse",
+    "DatasetRestrictionResponseAttributes",
+    "DatasetRestrictionResponseData",
+    "DatasetRestrictionRestrictionMode",
+    "DatasetRestrictionUpdateRequest",
+    "DatasetRestrictionUpdateRequestAttributes",
+    "DatasetRestrictionUpdateRequestData",
+    "DatasetRestrictionsListResponse",
+    "DatasetRestrictionsType",
     "DatasetType",
     "DatasetUpdateRequest",
     "Datastore",

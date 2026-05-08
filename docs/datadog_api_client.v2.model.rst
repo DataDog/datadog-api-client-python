@@ -8404,6 +8404,83 @@ datadog\_api\_client.v2.model.dataset\_response\_single module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dataset\_restriction\_ownership\_mode module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_ownership_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_principal module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_principal
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_response\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_response\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_restriction\_mode module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_restriction_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_update\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_update\_request\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restriction\_update\_request\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restriction_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restrictions\_list\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restrictions_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_restrictions\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_restrictions_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dataset\_type module
 --------------------------------------------------
 

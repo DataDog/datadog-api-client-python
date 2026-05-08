@@ -1602,6 +1602,19 @@
       "type": "idempotent"
     }
   },
+  "ListDatasetRestrictions": {
+    "tag": "Dataset Restrictions",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDatasetRestriction": {
+    "tag": "Dataset Restrictions",
+    "undo": {
+      "operationId": "UpdateDatasetRestriction",
+      "type": "idempotent"
+    }
+  },
   "GetAllDatasets": {
     "tag": "Datasets",
     "undo": {

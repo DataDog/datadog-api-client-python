@@ -354,6 +354,8 @@ class Configuration:
                 "v2.delete_dashboard_secure_embed": False,
                 "v2.get_dashboard_secure_embed": False,
                 "v2.update_dashboard_secure_embed": False,
+                "v2.list_dataset_restrictions": False,
+                "v2.update_dataset_restriction": False,
                 "v2.create_dataset": False,
                 "v2.delete_dataset": False,
                 "v2.get_all_datasets": False,

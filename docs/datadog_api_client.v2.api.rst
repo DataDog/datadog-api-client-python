@@ -235,6 +235,13 @@ datadog\_api\_client.v2.api.data\_deletion\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.dataset\_restrictions\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.dataset_restrictions_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.datasets\_api module
 ------------------------------------------------
 
