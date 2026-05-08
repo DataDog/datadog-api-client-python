@@ -592,6 +592,20 @@ datadog\_api\_client.v2.api.rum\_metrics\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.rum\_replay\_analysis\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_replay_analysis_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.rum\_replay\_api module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_replay_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.rum\_replay\_heatmaps\_api module
 -------------------------------------------------------------
 
