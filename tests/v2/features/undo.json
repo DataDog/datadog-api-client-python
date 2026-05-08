@@ -6964,43 +6964,6 @@
       "type": "idempotent"
     }
   },
-  "ListIncidentTeams": {
-    "tag": "Incident Teams",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateIncidentTeam": {
-    "tag": "Incident Teams",
-    "undo": {
-      "operationId": "DeleteIncidentTeam",
-      "parameters": [
-        {
-          "name": "team_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteIncidentTeam": {
-    "tag": "Incident Teams",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetIncidentTeam": {
-    "tag": "Incident Teams",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateIncidentTeam": {
-    "tag": "Incident Teams",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "UpdateFlakyTests": {
     "tag": "Test Optimization",
     "undo": {
