@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.issues_search_request_data_attributes_persona import (
         IssuesSearchRequestDataAttributesPersona,
     )
+    from datadog_api_client.v2.model.issue_state import IssueState
     from datadog_api_client.v2.model.issues_search_request_data_attributes_track import (
         IssuesSearchRequestDataAttributesTrack,
     )
@@ -30,6 +31,9 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
     validations = {
         "assignee_ids": {
             "max_items": 50,
+        },
+        "states": {
+            "max_items": 20,
         },
         "team_ids": {
             "max_items": 50,
@@ -44,6 +48,7 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.issues_search_request_data_attributes_persona import (
             IssuesSearchRequestDataAttributesPersona,
         )
+        from datadog_api_client.v2.model.issue_state import IssueState
         from datadog_api_client.v2.model.issues_search_request_data_attributes_track import (
             IssuesSearchRequestDataAttributesTrack,
         )
@@ -54,6 +59,7 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
             "order_by": (IssuesSearchRequestDataAttributesOrderBy,),
             "persona": (IssuesSearchRequestDataAttributesPersona,),
             "query": (str,),
+            "states": ([IssueState],),
             "team_ids": ([UUID],),
             "to": (int,),
             "track": (IssuesSearchRequestDataAttributesTrack,),
@@ -65,6 +71,7 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         "order_by": "order_by",
         "persona": "persona",
         "query": "query",
+        "states": "states",
         "team_ids": "team_ids",
         "to": "to",
         "track": "track",
@@ -78,6 +85,7 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         assignee_ids: Union[List[UUID], UnsetType] = unset,
         order_by: Union[IssuesSearchRequestDataAttributesOrderBy, UnsetType] = unset,
         persona: Union[IssuesSearchRequestDataAttributesPersona, UnsetType] = unset,
+        states: Union[List[IssueState], UnsetType] = unset,
         team_ids: Union[List[UUID], UnsetType] = unset,
         track: Union[IssuesSearchRequestDataAttributesTrack, UnsetType] = unset,
         **kwargs,
@@ -100,6 +108,9 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         :param query: Search query following the event search syntax.
         :type query: str
 
+        :param states: Filter issues by state. Multiple values are combined with OR logic.
+        :type states: [IssueState], optional
+
         :param team_ids: Filter issues by team IDs. Multiple values are combined with OR logic.
         :type team_ids: [UUID], optional
 
@@ -115,6 +126,8 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
             kwargs["order_by"] = order_by
         if persona is not unset:
             kwargs["persona"] = persona
+        if states is not unset:
+            kwargs["states"] = states
         if team_ids is not unset:
             kwargs["team_ids"] = team_ids
         if track is not unset:
