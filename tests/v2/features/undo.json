@@ -1506,6 +1506,19 @@
       "type": "safe"
     }
   },
+  "GetCurrentUser": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCurrentUser": {
+    "tag": "Users",
+    "undo": {
+      "operationId": "GetCurrentUser",
+      "type": "idempotent"
+    }
+  },
   "ListCurrentUserApplicationKeys": {
     "tag": "Key Management",
     "undo": {

@@ -17,15 +17,15 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.anonymize_users_response import AnonymizeUsersResponse
 from datadog_api_client.v2.model.anonymize_users_request import AnonymizeUsersRequest
+from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.user_invitation_response import UserInvitationResponse
 from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.user import User
-from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
-from datadog_api_client.v2.model.user_update_request import UserUpdateRequest
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
 
 
@@ -121,6 +121,22 @@ class UsersApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_current_user_endpoint = _Endpoint(
+            settings={
+                "response_type": (UserResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/current_user",
+                "operation_id": "get_current_user",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -284,6 +300,26 @@ class UsersApi:
             api_client=api_client,
         )
 
+        self._update_current_user_endpoint = _Endpoint(
+            settings={
+                "response_type": (UserResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/current_user",
+                "operation_id": "update_current_user",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (UserUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
@@ -378,6 +414,22 @@ class UsersApi:
         kwargs["user_id"] = user_id
 
         return self._disable_user_endpoint.call_with_http_info(**kwargs)
+
+    def get_current_user(
+        self,
+    ) -> UserResponse:
+        """Get current user.
+
+        Get the user associated with the current authentication context.
+        The response includes the user's profile attributes (name, email, handle,
+        status, MFA state), along with related resources: the user's organization,
+        assigned roles with their granted permissions, and team-scoped roles.
+        No additional permissions are required beyond valid authentication.
+
+        :rtype: UserResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_current_user_endpoint.call_with_http_info(**kwargs)
 
     def get_invitation(
         self,
@@ -586,6 +638,26 @@ class UsersApi:
         kwargs["body"] = body
 
         return self._send_invitations_endpoint.call_with_http_info(**kwargs)
+
+    def update_current_user(
+        self,
+        body: UserUpdateRequest,
+    ) -> UserResponse:
+        """Update current user.
+
+        Edit the profile of the currently authenticated user. Updatable fields
+        include ``name`` , ``title`` , ``email`` , and ``disabled`` status. The ``id`` field
+        in the request body must match the authenticated user's UUID; a mismatch
+        returns a 422 error. Email address changes are recorded in the audit trail.
+        Requires the ``user_self_profile_write`` permission.
+
+        :type body: UserUpdateRequest
+        :rtype: UserResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_current_user_endpoint.call_with_http_info(**kwargs)
 
     def update_user(
         self,
