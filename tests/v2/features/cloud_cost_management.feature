@@ -351,12 +351,24 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List custom allocation rule statuses returns "OK" response
+    Given new "ListCustomAllocationRulesStatus" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List custom allocation rules returns "OK" response
     Given new "ListCustomAllocationRules" request
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.rule_name" is equal to "example-arbitrary-cost-rule"
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List tag pipeline ruleset statuses returns "OK" response
+    Given new "ListTagPipelinesRulesetsStatus" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List tag pipeline rulesets returns "OK" response
