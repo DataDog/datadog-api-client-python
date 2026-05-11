@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.feature_flag import FeatureFlag
+    from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
     from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 
 
 class ListFeatureFlagsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.feature_flag import FeatureFlag
+        from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
         from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 
         return {
-            "data": ([FeatureFlag],),
+            "data": ([FeatureFlagListItem],),
             "meta": (FeatureFlagsPaginationMeta,),
         }
 
@@ -34,12 +34,14 @@ class ListFeatureFlagsResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(self_, data: List[FeatureFlag], meta: Union[FeatureFlagsPaginationMeta, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, data: List[FeatureFlagListItem], meta: Union[FeatureFlagsPaginationMeta, UnsetType] = unset, **kwargs
+    ):
         """
         Response containing a list of feature flags.
 
         :param data: List of feature flags.
-        :type data: [FeatureFlag]
+        :type data: [FeatureFlagListItem]
 
         :param meta: Pagination metadata for feature flags.
         :type meta: FeatureFlagsPaginationMeta, optional

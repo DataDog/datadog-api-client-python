@@ -243,6 +243,7 @@ Feature: Feature Flags
   @team:DataDog/feature-flags
   Scenario: List feature flags returns "OK" response
     Given new "ListFeatureFlags" request
+    And request contains "limit" parameter with value 10
     When the request is sent
     Then the response status is 200 OK
 

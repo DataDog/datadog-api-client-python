@@ -11246,6 +11246,27 @@ datadog\_api\_client.v2.model.feature\_flag\_environment module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.feature\_flag\_environment\_list\_item module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_environment_list_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag\_list\_item module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_list_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.feature\_flag\_list\_item\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.feature_flag_list_item_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.feature\_flag\_response module
 ------------------------------------------------------------
 
@@ -11257,13 +11278,6 @@ datadog\_api\_client.v2.model.feature\_flag\_status module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.feature_flag_status
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.feature\_flag\_targeting\_rule module
--------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.feature_flag_targeting_rule
    :members:
    :show-inheritance:
 
