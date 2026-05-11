@@ -7447,6 +7447,29 @@ from datadog_api_client.v2.model.watcher_array import WatcherArray
 from datadog_api_client.v2.model.watcher_data import WatcherData
 from datadog_api_client.v2.model.watcher_data_attributes import WatcherDataAttributes
 from datadog_api_client.v2.model.watcher_data_type import WatcherDataType
+from datadog_api_client.v2.model.web_integration_account_create_request import WebIntegrationAccountCreateRequest
+from datadog_api_client.v2.model.web_integration_account_create_request_attributes import (
+    WebIntegrationAccountCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.web_integration_account_create_request_data import (
+    WebIntegrationAccountCreateRequestData,
+)
+from datadog_api_client.v2.model.web_integration_account_response import WebIntegrationAccountResponse
+from datadog_api_client.v2.model.web_integration_account_response_attributes import (
+    WebIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.web_integration_account_response_data import WebIntegrationAccountResponseData
+from datadog_api_client.v2.model.web_integration_account_secrets import WebIntegrationAccountSecrets
+from datadog_api_client.v2.model.web_integration_account_settings import WebIntegrationAccountSettings
+from datadog_api_client.v2.model.web_integration_account_type import WebIntegrationAccountType
+from datadog_api_client.v2.model.web_integration_account_update_request import WebIntegrationAccountUpdateRequest
+from datadog_api_client.v2.model.web_integration_account_update_request_attributes import (
+    WebIntegrationAccountUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.web_integration_account_update_request_data import (
+    WebIntegrationAccountUpdateRequestData,
+)
+from datadog_api_client.v2.model.web_integration_accounts_response import WebIntegrationAccountsResponse
 from datadog_api_client.v2.model.weekday import Weekday
 from datadog_api_client.v2.model.widget_attributes import WidgetAttributes
 from datadog_api_client.v2.model.widget_data import WidgetData
@@ -12737,6 +12760,19 @@ __all__ = [
     "WatcherData",
     "WatcherDataAttributes",
     "WatcherDataType",
+    "WebIntegrationAccountCreateRequest",
+    "WebIntegrationAccountCreateRequestAttributes",
+    "WebIntegrationAccountCreateRequestData",
+    "WebIntegrationAccountResponse",
+    "WebIntegrationAccountResponseAttributes",
+    "WebIntegrationAccountResponseData",
+    "WebIntegrationAccountSecrets",
+    "WebIntegrationAccountSettings",
+    "WebIntegrationAccountType",
+    "WebIntegrationAccountUpdateRequest",
+    "WebIntegrationAccountUpdateRequestAttributes",
+    "WebIntegrationAccountUpdateRequestData",
+    "WebIntegrationAccountsResponse",
     "Weekday",
     "WidgetAttributes",
     "WidgetData",

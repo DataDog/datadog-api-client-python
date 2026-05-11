@@ -520,6 +520,11 @@ class Configuration:
                 "v2.add_member_team": False,
                 "v2.list_member_teams": False,
                 "v2.remove_member_team": False,
+                "v2.create_web_integration_account": False,
+                "v2.delete_web_integration_account": False,
+                "v2.get_web_integration_account": False,
+                "v2.list_web_integration_accounts": False,
+                "v2.update_web_integration_account": False,
             }
         )
 
