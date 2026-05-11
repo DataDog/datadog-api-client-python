@@ -7142,19 +7142,6 @@ from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResp
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.token_type import TokenType
-from datadog_api_client.v2.model.transport_webhook_log import TransportWebhookLog
-from datadog_api_client.v2.model.transport_webhook_log_attributes import TransportWebhookLogAttributes
-from datadog_api_client.v2.model.transport_webhook_log_email import TransportWebhookLogEmail
-from datadog_api_client.v2.model.transport_webhook_log_ip_attribute import TransportWebhookLogIpAttribute
-from datadog_api_client.v2.model.transport_webhook_log_message import TransportWebhookLogMessage
-from datadog_api_client.v2.model.transport_webhook_log_message_auth import TransportWebhookLogMessageAuth
-from datadog_api_client.v2.model.transport_webhook_log_message_custom_args import TransportWebhookLogMessageCustomArgs
-from datadog_api_client.v2.model.transport_webhook_log_message_id import TransportWebhookLogMessageId
-from datadog_api_client.v2.model.transport_webhook_log_message_response import TransportWebhookLogMessageResponse
-from datadog_api_client.v2.model.transport_webhook_log_message_timestamp import TransportWebhookLogMessageTimestamp
-from datadog_api_client.v2.model.transport_webhook_log_network import TransportWebhookLogNetwork
-from datadog_api_client.v2.model.transport_webhook_log_network_ip import TransportWebhookLogNetworkIp
-from datadog_api_client.v2.model.transport_webhook_log_org_metadata import TransportWebhookLogOrgMetadata
 from datadog_api_client.v2.model.trigger import Trigger
 from datadog_api_client.v2.model.trigger_attributes import TriggerAttributes
 from datadog_api_client.v2.model.trigger_investigation_request import TriggerInvestigationRequest
@@ -12517,19 +12504,6 @@ __all__ = [
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
     "TokenType",
-    "TransportWebhookLog",
-    "TransportWebhookLogAttributes",
-    "TransportWebhookLogEmail",
-    "TransportWebhookLogIpAttribute",
-    "TransportWebhookLogMessage",
-    "TransportWebhookLogMessageAuth",
-    "TransportWebhookLogMessageCustomArgs",
-    "TransportWebhookLogMessageId",
-    "TransportWebhookLogMessageResponse",
-    "TransportWebhookLogMessageTimestamp",
-    "TransportWebhookLogNetwork",
-    "TransportWebhookLogNetworkIp",
-    "TransportWebhookLogOrgMetadata",
     "Trigger",
     "TriggerAttributes",
     "TriggerInvestigationRequest",
