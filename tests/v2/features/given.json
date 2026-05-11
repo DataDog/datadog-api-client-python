@@ -1561,6 +1561,22 @@
   {
     "parameters": [
       {
+        "name": "integration_name",
+        "value": "\"databricks\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"Account\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"settings\": {\n        \"workspace_url\": \"https://example.azuredatabricks.net\"\n      },\n      \"secrets\": {\n        \"client_secret\": \"fake-client-secret\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"web_integration_account\" in the system",
+    "key": "web_integration_account",
+    "tag": "Web Integrations",
+    "operationId": "CreateWebIntegrationAccount"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"workflows\",\n    \"attributes\": {\n        \"name\": \"Cassette Workflow x-given\",\n        \"spec\": {\n            \"triggers\": [\n                {\n                    \"startStepNames\": [\"No_op\"],\n                    \"workflowTrigger\": {}\n                }\n            ],\n            \"steps\": [\n              {\n                \"name\": \"No_op\",\n                \"actionId\": \"com.datadoghq.core.noop\"\n              }\n            ]\n        }\n    }\n  }\n}"
       }
