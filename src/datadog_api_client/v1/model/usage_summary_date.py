@@ -154,6 +154,7 @@ class UsageSummaryDate(ModelNormal):
             "infra_host_basic_infra_basic_vsphere_top99p": (int,),
             "infra_host_basic_top99p": (int,),
             "infra_host_top99p": (int,),
+            "infra_storage_mgmt_objects_avg": (int,),
             "ingested_events_bytes_sum": (int,),
             "iot_device_sum": (int,),
             "iot_device_top99p": (int,),
@@ -255,6 +256,7 @@ class UsageSummaryDate(ModelNormal):
             "serverless_apps_infra_gcp_gke_autopilot_pods_avg": (int,),
             "serverless_apps_total_count_avg": (int,),
             "siem_analyzed_logs_add_on_count_sum": (int,),
+            "storage_management_object_count_avg": (int,),
             "synthetics_browser_check_calls_count_sum": (int,),
             "synthetics_check_calls_count_sum": (int,),
             "synthetics_mobile_test_runs_sum": (int,),
@@ -398,6 +400,7 @@ class UsageSummaryDate(ModelNormal):
         "infra_host_basic_infra_basic_vsphere_top99p": "infra_host_basic_infra_basic_vsphere_top99p",
         "infra_host_basic_top99p": "infra_host_basic_top99p",
         "infra_host_top99p": "infra_host_top99p",
+        "infra_storage_mgmt_objects_avg": "infra_storage_mgmt_objects_avg",
         "ingested_events_bytes_sum": "ingested_events_bytes_sum",
         "iot_device_sum": "iot_device_sum",
         "iot_device_top99p": "iot_device_top99p",
@@ -499,6 +502,7 @@ class UsageSummaryDate(ModelNormal):
         "serverless_apps_infra_gcp_gke_autopilot_pods_avg": "serverless_apps_infra_gcp_gke_autopilot_pods_avg",
         "serverless_apps_total_count_avg": "serverless_apps_total_count_avg",
         "siem_analyzed_logs_add_on_count_sum": "siem_analyzed_logs_add_on_count_sum",
+        "storage_management_object_count_avg": "storage_management_object_count_avg",
         "synthetics_browser_check_calls_count_sum": "synthetics_browser_check_calls_count_sum",
         "synthetics_check_calls_count_sum": "synthetics_check_calls_count_sum",
         "synthetics_mobile_test_runs_sum": "synthetics_mobile_test_runs_sum",
@@ -643,6 +647,7 @@ class UsageSummaryDate(ModelNormal):
         infra_host_basic_infra_basic_vsphere_top99p: Union[int, UnsetType] = unset,
         infra_host_basic_top99p: Union[int, UnsetType] = unset,
         infra_host_top99p: Union[int, UnsetType] = unset,
+        infra_storage_mgmt_objects_avg: Union[int, UnsetType] = unset,
         ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         iot_device_sum: Union[int, UnsetType] = unset,
         iot_device_top99p: Union[int, UnsetType] = unset,
@@ -744,6 +749,7 @@ class UsageSummaryDate(ModelNormal):
         serverless_apps_infra_gcp_gke_autopilot_pods_avg: Union[int, UnsetType] = unset,
         serverless_apps_total_count_avg: Union[int, UnsetType] = unset,
         siem_analyzed_logs_add_on_count_sum: Union[int, UnsetType] = unset,
+        storage_management_object_count_avg: Union[int, UnsetType] = unset,
         synthetics_browser_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_check_calls_count_sum: Union[int, UnsetType] = unset,
         synthetics_mobile_test_runs_sum: Union[int, UnsetType] = unset,
@@ -1149,6 +1155,9 @@ class UsageSummaryDate(ModelNormal):
         :param infra_host_top99p: Shows the 99th percentile of all distinct infrastructure hosts over all hours in the current date for all organizations.
         :type infra_host_top99p: int, optional
 
+        :param infra_storage_mgmt_objects_avg: Shows the average of all storage management objects over all hours in the current date for all organizations.
+        :type infra_storage_mgmt_objects_avg: int, optional
+
         :param ingested_events_bytes_sum: Shows the sum of all log bytes ingested over all hours in the current date for all organizations.
         :type ingested_events_bytes_sum: int, optional
 
@@ -1452,6 +1461,9 @@ class UsageSummaryDate(ModelNormal):
         :param siem_analyzed_logs_add_on_count_sum: Shows the sum of all log events analyzed by Cloud SIEM over all hours in the current date for the given org.
         :type siem_analyzed_logs_add_on_count_sum: int, optional
 
+        :param storage_management_object_count_avg: Shows the average of all storage management objects over all hours in the current date for all organizations.
+        :type storage_management_object_count_avg: int, optional
+
         :param synthetics_browser_check_calls_count_sum: Shows the sum of all Synthetic browser tests over all hours in the current date for all organizations.
         :type synthetics_browser_check_calls_count_sum: int, optional
 
@@ -1754,6 +1766,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["infra_host_basic_top99p"] = infra_host_basic_top99p
         if infra_host_top99p is not unset:
             kwargs["infra_host_top99p"] = infra_host_top99p
+        if infra_storage_mgmt_objects_avg is not unset:
+            kwargs["infra_storage_mgmt_objects_avg"] = infra_storage_mgmt_objects_avg
         if ingested_events_bytes_sum is not unset:
             kwargs["ingested_events_bytes_sum"] = ingested_events_bytes_sum
         if iot_device_sum is not unset:
@@ -2004,6 +2018,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["serverless_apps_total_count_avg"] = serverless_apps_total_count_avg
         if siem_analyzed_logs_add_on_count_sum is not unset:
             kwargs["siem_analyzed_logs_add_on_count_sum"] = siem_analyzed_logs_add_on_count_sum
+        if storage_management_object_count_avg is not unset:
+            kwargs["storage_management_object_count_avg"] = storage_management_object_count_avg
         if synthetics_browser_check_calls_count_sum is not unset:
             kwargs["synthetics_browser_check_calls_count_sum"] = synthetics_browser_check_calls_count_sum
         if synthetics_check_calls_count_sum is not unset:
