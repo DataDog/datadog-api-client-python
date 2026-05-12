@@ -7163,6 +7163,18 @@
       "type": "safe"
     }
   },
+  "Validate": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ValidateAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListWebIntegrationAccounts": {
     "tag": "Web Integrations",
     "undo": {
