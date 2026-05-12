@@ -119,6 +119,12 @@ Feature: Users
     And the response "data" has length 0
 
   @generated @skip @team:DataDog/org-management
+  Scenario: Get current user returns "OK" response
+    Given new "GetCurrentUser" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
   Scenario: Get user details returns "Not found" response
     Given new "GetUser" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -181,7 +187,7 @@ Feature: Users
   Scenario: Update a user returns "Bad Request" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"attributes": {"title": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -219,6 +225,34 @@ Feature: Users
   Scenario: Update a user returns "Unprocessable Entity" response
     Given new "UpdateUser" request
     And request contains "user_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+    And body with value {"data": {"attributes": {"title": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Update current user returns "Bad Request" response
+    Given new "UpdateCurrentUser" request
+    And body with value {"data": {"attributes": {"title": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Update current user returns "Not found" response
+    Given new "UpdateCurrentUser" request
+    And body with value {"data": {"attributes": {"title": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Update current user returns "OK" response
+    Given new "UpdateCurrentUser" request
+    And body with value {"data": {"attributes": {"title": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Update current user returns "Unprocessable Entity" response
+    Given new "UpdateCurrentUser" request
+    And body with value {"data": {"attributes": {"title": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

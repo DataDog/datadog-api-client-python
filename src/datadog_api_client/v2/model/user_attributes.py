@@ -78,46 +78,47 @@ class UserAttributes(ModelNormal):
         """
         Attributes of user object returned by the API.
 
-        :param created_at: Creation time of the user.
+        :param created_at: The ISO 8601 timestamp of when the user account was created.
         :type created_at: datetime, optional
 
-        :param disabled: Whether the user is disabled.
+        :param disabled: Whether the user account is deactivated. Disabled users cannot log in.
         :type disabled: bool, optional
 
-        :param email: Email of the user.
+        :param email: The email address of the user, used for login and notifications.
         :type email: str, optional
 
-        :param handle: Handle of the user.
+        :param handle: The unique handle (username) of the user, typically matching their email prefix.
         :type handle: str, optional
 
-        :param icon: URL of the user's icon.
+        :param icon: URL of the user's profile icon, typically a Gravatar URL derived from the email address.
         :type icon: str, optional
 
-        :param last_login_time: The last time the user logged in.
+        :param last_login_time: The ISO 8601 timestamp of the user's most recent login, or null if the user has never logged in.
         :type last_login_time: datetime, none_type, optional
 
-        :param mfa_enabled: If user has MFA enabled.
+        :param mfa_enabled: Whether multi-factor authentication (MFA) is enabled for the user's account.
         :type mfa_enabled: bool, optional
 
-        :param modified_at: Time that the user was last modified.
+        :param modified_at: The ISO 8601 timestamp of when the user account was last modified.
         :type modified_at: datetime, optional
 
-        :param name: Name of the user.
+        :param name: The full display name of the user as shown in the Datadog UI.
         :type name: str, none_type, optional
 
-        :param service_account: Whether the user is a service account.
+        :param service_account: Whether this is a service account rather than a human user.
+            Service accounts are used for programmatic API access.
         :type service_account: bool, optional
 
-        :param status: Status of the user.
+        :param status: The current status of the user account (for example, ``Active`` , ``Pending`` , or ``Disabled`` ).
         :type status: str, optional
 
-        :param title: Title of the user.
+        :param title: The job title of the user (for example, "Senior Engineer" or "Product Manager").
         :type title: str, none_type, optional
 
-        :param uuid: UUID of the user.
+        :param uuid: The globally unique identifier (UUID) of the user.
         :type uuid: str, optional
 
-        :param verified: Whether the user is verified.
+        :param verified: Whether the user's email address has been verified.
         :type verified: bool, optional
         """
         if created_at is not unset:
