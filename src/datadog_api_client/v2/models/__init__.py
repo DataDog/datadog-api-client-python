@@ -7418,6 +7418,12 @@ from datadog_api_client.v2.model.v2_event import V2Event
 from datadog_api_client.v2.model.v2_event_attributes import V2EventAttributes
 from datadog_api_client.v2.model.v2_event_attributes_attributes import V2EventAttributesAttributes
 from datadog_api_client.v2.model.v2_event_response import V2EventResponse
+from datadog_api_client.v2.model.validate_api_key_response import ValidateAPIKeyResponse
+from datadog_api_client.v2.model.validate_api_key_status import ValidateAPIKeyStatus
+from datadog_api_client.v2.model.validate_v2_attributes import ValidateV2Attributes
+from datadog_api_client.v2.model.validate_v2_data import ValidateV2Data
+from datadog_api_client.v2.model.validate_v2_response import ValidateV2Response
+from datadog_api_client.v2.model.validate_v2_type import ValidateV2Type
 from datadog_api_client.v2.model.validation_error import ValidationError
 from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMeta
 from datadog_api_client.v2.model.validation_response import ValidationResponse
@@ -12748,6 +12754,12 @@ __all__ = [
     "V2EventAttributes",
     "V2EventAttributesAttributes",
     "V2EventResponse",
+    "ValidateAPIKeyResponse",
+    "ValidateAPIKeyStatus",
+    "ValidateV2Attributes",
+    "ValidateV2Data",
+    "ValidateV2Response",
+    "ValidateV2Type",
     "ValidationError",
     "ValidationErrorMeta",
     "ValidationResponse",
