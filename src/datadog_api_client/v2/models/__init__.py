@@ -1171,6 +1171,11 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.cost_tag_description import CostTagDescription
+from datadog_api_client.v2.model.cost_tag_description_attributes import CostTagDescriptionAttributes
+from datadog_api_client.v2.model.cost_tag_description_source import CostTagDescriptionSource
+from datadog_api_client.v2.model.cost_tag_description_type import CostTagDescriptionType
+from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDescriptionsResponse
 from datadog_api_client.v2.model.coverage_summary_attributes import CoverageSummaryAttributes
 from datadog_api_client.v2.model.coverage_summary_codeowner_stats import CoverageSummaryCodeownerStats
 from datadog_api_client.v2.model.coverage_summary_data import CoverageSummaryData
@@ -8422,6 +8427,11 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CostTagDescription",
+    "CostTagDescriptionAttributes",
+    "CostTagDescriptionSource",
+    "CostTagDescriptionType",
+    "CostTagDescriptionsResponse",
     "CoverageSummaryAttributes",
     "CoverageSummaryCodeownerStats",
     "CoverageSummaryData",

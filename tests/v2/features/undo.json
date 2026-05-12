@@ -1470,6 +1470,12 @@
       "type": "safe"
     }
   },
+  "ListCostTagDescriptions": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetActiveBillingDimensions": {
     "tag": "Usage Metering",
     "undo": {
