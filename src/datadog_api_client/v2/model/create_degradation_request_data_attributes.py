@@ -20,6 +20,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
         CreateDegradationRequestDataAttributesStatus,
     )
+    from datadog_api_client.v2.model.create_degradation_request_data_attributes_updates_items import (
+        CreateDegradationRequestDataAttributesUpdatesItems,
+    )
 
 
 class CreateDegradationRequestDataAttributes(ModelNormal):
@@ -31,12 +34,16 @@ class CreateDegradationRequestDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
             CreateDegradationRequestDataAttributesStatus,
         )
+        from datadog_api_client.v2.model.create_degradation_request_data_attributes_updates_items import (
+            CreateDegradationRequestDataAttributesUpdatesItems,
+        )
 
         return {
             "components_affected": ([CreateDegradationRequestDataAttributesComponentsAffectedItems],),
             "description": (str,),
             "status": (CreateDegradationRequestDataAttributesStatus,),
             "title": (str,),
+            "updates": ([CreateDegradationRequestDataAttributesUpdatesItems],),
         }
 
     attribute_map = {
@@ -44,6 +51,7 @@ class CreateDegradationRequestDataAttributes(ModelNormal):
         "description": "description",
         "status": "status",
         "title": "title",
+        "updates": "updates",
     }
 
     def __init__(
@@ -52,6 +60,7 @@ class CreateDegradationRequestDataAttributes(ModelNormal):
         status: CreateDegradationRequestDataAttributesStatus,
         title: str,
         description: Union[str, UnsetType] = unset,
+        updates: Union[List[CreateDegradationRequestDataAttributesUpdatesItems], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -68,9 +77,14 @@ class CreateDegradationRequestDataAttributes(ModelNormal):
 
         :param title: The title of the degradation.
         :type title: str
+
+        :param updates:
+        :type updates: [CreateDegradationRequestDataAttributesUpdatesItems], optional
         """
         if description is not unset:
             kwargs["description"] = description
+        if updates is not unset:
+            kwargs["updates"] = updates
         super().__init__(kwargs)
 
         self_.components_affected = components_affected
