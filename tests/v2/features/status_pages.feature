@@ -11,6 +11,26 @@ Feature: Status Pages
     And an instance of "StatusPages" API
 
   @team:DataDog/incident-app
+  Scenario: Create backfilled degradation returns "Created" response
+    Given there is a valid "status_page" in the system
+    And new "CreateBackfilledDegradation" request
+    And request contains "page_id" parameter from "status_page.data.id"
+    And body with value {"data": {"attributes": {"title": "Past API Outage", "updates": [{"components_affected": [{"id": "{{ status_page.data.attributes.components[0].components[0].id }}", "status": "degraded"}], "description": "We detected elevated error rates in the API.", "started_at": "{{ timeISO('now - 1h') }}", "status": "investigating"}, {"components_affected": [{"id": "{{ status_page.data.attributes.components[0].components[0].id }}", "status": "degraded"}], "description": "Root cause identified as a misconfigured deployment.", "started_at": "{{ timeISO('now - 30m') }}", "status": "identified"}, {"components_affected": [{"id": "{{ status_page.data.attributes.components[0].components[0].id }}", "status": "operational"}], "description": "The issue has been resolved and API is operating normally.", "started_at": "{{ timeISO('now') }}", "status": "resolved"}]}, "type": "degradations"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.title" is equal to "Past API Outage"
+
+  @team:DataDog/incident-app
+  Scenario: Create backfilled maintenance returns "Created" response
+    Given there is a valid "status_page" in the system
+    And new "CreateBackfilledMaintenance" request
+    And request contains "page_id" parameter from "status_page.data.id"
+    And body with value {"data": {"attributes": {"title": "Past Database Maintenance", "updates": [{"components_affected": [{"id": "{{ status_page.data.attributes.components[0].components[0].id }}", "status": "maintenance"}], "description": "Database maintenance is in progress.", "started_at": "{{ timeISO('now - 1h') }}", "status": "in_progress"}, {"components_affected": [{"id": "{{ status_page.data.attributes.components[0].components[0].id }}", "status": "operational"}], "description": "Database maintenance has been completed successfully.", "started_at": "{{ timeISO('now') }}", "status": "completed"}]}, "type": "maintenances"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.title" is equal to "Past Database Maintenance"
+
+  @team:DataDog/incident-app
   Scenario: Create component returns "Created" response
     Given there is a valid "status_page" in the system
     And new "CreateComponent" request
