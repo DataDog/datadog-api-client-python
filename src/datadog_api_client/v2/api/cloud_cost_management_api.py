@@ -40,6 +40,7 @@ from datadog_api_client.v2.model.gcp_usage_cost_config_post_request import GCPUs
 from datadog_api_client.v2.model.gcp_uc_config_response import GcpUcConfigResponse
 from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPUsageCostConfigPatchRequest
 from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
+from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDescriptionsResponse
 from datadog_api_client.v2.model.ruleset_resp_array import RulesetRespArray
 from datadog_api_client.v2.model.ruleset_resp import RulesetResp
 from datadog_api_client.v2.model.create_ruleset_request import CreateRulesetRequest
@@ -556,6 +557,28 @@ class CloudCostManagementApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_tag_descriptions_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostTagDescriptionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tag_descriptions",
+                "operation_id": "list_cost_tag_descriptions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_cloud": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[cloud]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1332,6 +1355,25 @@ class CloudCostManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_cost_oci_configs_endpoint.call_with_http_info(**kwargs)
+
+    def list_cost_tag_descriptions(
+        self,
+        *,
+        filter_cloud: Union[str, UnsetType] = unset,
+    ) -> CostTagDescriptionsResponse:
+        """List Cloud Cost Management tag descriptions.
+
+        List Cloud Cost Management tag key descriptions for the organization. Use ``filter[cloud]`` to scope the result to a single cloud provider; when omitted, both cross-cloud defaults and cloud-specific descriptions are returned.
+
+        :param filter_cloud: Filter descriptions to a specific cloud provider (for example, ``aws`` ). Omit to return descriptions across all clouds.
+        :type filter_cloud: str, optional
+        :rtype: CostTagDescriptionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_cloud is not unset:
+            kwargs["filter_cloud"] = filter_cloud
+
+        return self._list_cost_tag_descriptions_endpoint.call_with_http_info(**kwargs)
 
     def list_custom_allocation_rules(
         self,

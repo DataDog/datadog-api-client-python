@@ -6220,6 +6220,41 @@ datadog\_api\_client.v2.model.cost\_by\_org\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_tag\_description module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_description
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_description\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_description_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_description\_source module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_description_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_description\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_description_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_descriptions\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_descriptions_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.coverage\_summary\_attributes module
 ------------------------------------------------------------------
 

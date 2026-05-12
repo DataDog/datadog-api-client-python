@@ -319,6 +319,12 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tag descriptions returns "OK" response
+    Given new "ListCostTagDescriptions" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List Custom Costs Files returns "OK" response
     Given new "ListCustomCostsFiles" request
