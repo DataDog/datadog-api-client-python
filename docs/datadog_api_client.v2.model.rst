@@ -15740,6 +15740,13 @@ datadog\_api\_client.v2.model.issue\_reference module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.issue\_regression module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_regression
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.issue\_relationships module
 ---------------------------------------------------------
 
