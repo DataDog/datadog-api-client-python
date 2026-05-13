@@ -170,7 +170,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-validation @team:Datadog/incident-app
+  @skip-terraform-config @skip-validation @team:Datadog/incident-app
   Scenario: Create an incident type returns "CREATED" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
@@ -255,7 +255,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Create incident notification rule returns "Created" response
     Given there is a valid "incident_type" in the system
     And operation "CreateIncidentNotificationRule" enabled
@@ -573,7 +573,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Delete incident notification rule returns "No Content" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -591,7 +591,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Delete incident notification template returns "No Content" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_template" in the system
@@ -832,7 +832,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Get incident notification rule returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -860,7 +860,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Get incident notification template returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_template" in the system
@@ -1075,7 +1075,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: List incident notification rules returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -1432,7 +1432,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Update incident notification rule returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -1465,7 +1465,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Update incident notification template returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_template" in the system
