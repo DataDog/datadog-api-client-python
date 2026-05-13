@@ -2989,6 +2989,7 @@ from datadog_api_client.v2.model.issue_included import IssueIncluded
 from datadog_api_client.v2.model.issue_language import IssueLanguage
 from datadog_api_client.v2.model.issue_platform import IssuePlatform
 from datadog_api_client.v2.model.issue_reference import IssueReference
+from datadog_api_client.v2.model.issue_regression import IssueRegression
 from datadog_api_client.v2.model.issue_relationships import IssueRelationships
 from datadog_api_client.v2.model.issue_response import IssueResponse
 from datadog_api_client.v2.model.issue_state import IssueState
@@ -9818,6 +9819,7 @@ __all__ = [
     "IssueLanguage",
     "IssuePlatform",
     "IssueReference",
+    "IssueRegression",
     "IssueRelationships",
     "IssueResponse",
     "IssueState",

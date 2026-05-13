@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.issue_language import IssueLanguage
     from datadog_api_client.v2.model.issue_platform import IssuePlatform
+    from datadog_api_client.v2.model.issue_regression import IssueRegression
     from datadog_api_client.v2.model.issue_state import IssueState
 
 
@@ -24,6 +25,7 @@ class IssueAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.issue_language import IssueLanguage
         from datadog_api_client.v2.model.issue_platform import IssuePlatform
+        from datadog_api_client.v2.model.issue_regression import IssueRegression
         from datadog_api_client.v2.model.issue_state import IssueState
 
         return {
@@ -38,6 +40,7 @@ class IssueAttributes(ModelNormal):
             "last_seen": (int,),
             "last_seen_version": (str,),
             "platform": (IssuePlatform,),
+            "regression": (IssueRegression,),
             "service": (str,),
             "state": (IssueState,),
         }
@@ -54,6 +57,7 @@ class IssueAttributes(ModelNormal):
         "last_seen": "last_seen",
         "last_seen_version": "last_seen_version",
         "platform": "platform",
+        "regression": "regression",
         "service": "service",
         "state": "state",
     }
@@ -71,6 +75,7 @@ class IssueAttributes(ModelNormal):
         last_seen: Union[int, UnsetType] = unset,
         last_seen_version: Union[str, UnsetType] = unset,
         platform: Union[IssuePlatform, UnsetType] = unset,
+        regression: Union[IssueRegression, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
         state: Union[IssueState, UnsetType] = unset,
         **kwargs,
@@ -111,6 +116,9 @@ class IssueAttributes(ModelNormal):
         :param platform: Platform associated with the issue.
         :type platform: IssuePlatform, optional
 
+        :param regression: Regression information for an issue that was previously resolved and then reopened.
+        :type regression: IssueRegression, optional
+
         :param service: Service name.
         :type service: str, optional
 
@@ -139,6 +147,8 @@ class IssueAttributes(ModelNormal):
             kwargs["last_seen_version"] = last_seen_version
         if platform is not unset:
             kwargs["platform"] = platform
+        if regression is not unset:
+            kwargs["regression"] = regression
         if service is not unset:
             kwargs["service"] = service
         if state is not unset:
