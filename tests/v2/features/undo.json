@@ -1265,6 +1265,18 @@
       "type": "safe"
     }
   },
+  "ListCostAnomalies": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCostAnomaly": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCustomAllocationRules": {
     "tag": "Cloud Cost Management",
     "undo": {

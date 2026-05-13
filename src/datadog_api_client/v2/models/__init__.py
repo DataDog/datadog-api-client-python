@@ -1164,6 +1164,16 @@ from datadog_api_client.v2.model.convert_job_results_to_signals_data import Conv
 from datadog_api_client.v2.model.convert_job_results_to_signals_data_type import ConvertJobResultsToSignalsDataType
 from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
 from datadog_api_client.v2.model.cost_aggregation_type import CostAggregationType
+from datadog_api_client.v2.model.cost_anomalies_response import CostAnomaliesResponse
+from datadog_api_client.v2.model.cost_anomalies_response_data import CostAnomaliesResponseData
+from datadog_api_client.v2.model.cost_anomalies_response_data_attributes import CostAnomaliesResponseDataAttributes
+from datadog_api_client.v2.model.cost_anomalies_response_data_type import CostAnomaliesResponseDataType
+from datadog_api_client.v2.model.cost_anomaly import CostAnomaly
+from datadog_api_client.v2.model.cost_anomaly_correlated_tags import CostAnomalyCorrelatedTags
+from datadog_api_client.v2.model.cost_anomaly_dimensions import CostAnomalyDimensions
+from datadog_api_client.v2.model.cost_anomaly_dismissal import CostAnomalyDismissal
+from datadog_api_client.v2.model.cost_anomaly_response import CostAnomalyResponse
+from datadog_api_client.v2.model.cost_anomaly_response_data import CostAnomalyResponseData
 from datadog_api_client.v2.model.cost_attribution_aggregates_body import CostAttributionAggregatesBody
 from datadog_api_client.v2.model.cost_attribution_tag_names import CostAttributionTagNames
 from datadog_api_client.v2.model.cost_attribution_type import CostAttributionType
@@ -8461,6 +8471,16 @@ __all__ = [
     "ConvertJobResultsToSignalsDataType",
     "ConvertJobResultsToSignalsRequest",
     "CostAggregationType",
+    "CostAnomaliesResponse",
+    "CostAnomaliesResponseData",
+    "CostAnomaliesResponseDataAttributes",
+    "CostAnomaliesResponseDataType",
+    "CostAnomaly",
+    "CostAnomalyCorrelatedTags",
+    "CostAnomalyDimensions",
+    "CostAnomalyDismissal",
+    "CostAnomalyResponse",
+    "CostAnomalyResponseData",
     "CostAttributionAggregatesBody",
     "CostAttributionTagNames",
     "CostAttributionType",

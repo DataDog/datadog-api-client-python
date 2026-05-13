@@ -292,6 +292,30 @@ Feature: Cloud Cost Management
     And the response "data.attributes.configs[0].dataset_type" is equal to "amortized"
     And the response "data.attributes.configs[1].dataset_type" is equal to "actual"
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get cost anomaly returns "Bad Request" response
+    Given operation "GetCostAnomaly" enabled
+    And new "GetCostAnomaly" request
+    And request contains "anomaly_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get cost anomaly returns "Not Found" response
+    Given operation "GetCostAnomaly" enabled
+    And new "GetCostAnomaly" request
+    And request contains "anomaly_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get cost anomaly returns "OK" response
+    Given operation "GetCostAnomaly" enabled
+    And new "GetCostAnomaly" request
+    And request contains "anomaly_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Get custom allocation rule returns "OK" response
     Given new "GetCustomAllocationRule" request
@@ -354,6 +378,20 @@ Feature: Cloud Cost Management
   @team:DataDog/cloud-cost-management
   Scenario: List budgets returns "OK" response
     Given new "ListBudgets" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List cost anomalies returns "Bad Request" response
+    Given operation "ListCostAnomalies" enabled
+    And new "ListCostAnomalies" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List cost anomalies returns "OK" response
+    Given operation "ListCostAnomalies" enabled
+    And new "ListCostAnomalies" request
     When the request is sent
     Then the response status is 200 OK
 
