@@ -11,6 +11,8 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.cost_anomalies_response import CostAnomaliesResponse
+from datadog_api_client.v2.model.cost_anomaly_response import CostAnomalyResponse
 from datadog_api_client.v2.model.arbitrary_rule_response_array import ArbitraryRuleResponseArray
 from datadog_api_client.v2.model.arbitrary_rule_response import ArbitraryRuleResponse
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request import ArbitraryCostUpsertRequest
@@ -345,6 +347,29 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_cost_anomaly_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostAnomalyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/anomalies/{anomaly_id}",
+                "operation_id": "get_cost_anomaly",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "anomaly_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "anomaly_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCurConfigResponse,),
@@ -493,6 +518,79 @@ class CloudCostManagementApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_anomalies_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostAnomaliesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/anomalies",
+                "operation_id": "list_cost_anomalies",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "start": {
+                    "openapi_types": (int,),
+                    "attribute": "start",
+                    "location": "query",
+                },
+                "end": {
+                    "openapi_types": (int,),
+                    "attribute": "end",
+                    "location": "query",
+                },
+                "filter": {
+                    "openapi_types": (str,),
+                    "attribute": "filter",
+                    "location": "query",
+                },
+                "min_anomalous_threshold": {
+                    "openapi_types": (str,),
+                    "attribute": "min_anomalous_threshold",
+                    "location": "query",
+                },
+                "min_cost_threshold": {
+                    "openapi_types": (str,),
+                    "attribute": "min_cost_threshold",
+                    "location": "query",
+                },
+                "dismissal_cause": {
+                    "openapi_types": (str,),
+                    "attribute": "dismissal_cause",
+                    "location": "query",
+                },
+                "order_by": {
+                    "openapi_types": (str,),
+                    "attribute": "order_by",
+                    "location": "query",
+                },
+                "order": {
+                    "openapi_types": (str,),
+                    "attribute": "order",
+                    "location": "query",
+                },
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "offset": {
+                    "openapi_types": (int,),
+                    "attribute": "offset",
+                    "location": "query",
+                },
+                "provider_ids": {
+                    "openapi_types": ([str],),
+                    "attribute": "provider_ids",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1194,6 +1292,23 @@ class CloudCostManagementApi:
 
         return self._get_budget_endpoint.call_with_http_info(**kwargs)
 
+    def get_cost_anomaly(
+        self,
+        anomaly_id: str,
+    ) -> CostAnomalyResponse:
+        """Get cost anomaly.
+
+        Get a detected Cloud Cost Management anomaly by UUID.
+
+        :param anomaly_id: The UUID of the cost anomaly.
+        :type anomaly_id: str
+        :rtype: CostAnomalyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["anomaly_id"] = anomaly_id
+
+        return self._get_cost_anomaly_endpoint.call_with_http_info(**kwargs)
+
     def get_cost_awscur_config(
         self,
         cloud_account_id: int,
@@ -1307,6 +1422,85 @@ class CloudCostManagementApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_budgets_endpoint.call_with_http_info(**kwargs)
+
+    def list_cost_anomalies(
+        self,
+        *,
+        start: Union[int, UnsetType] = unset,
+        end: Union[int, UnsetType] = unset,
+        filter: Union[str, UnsetType] = unset,
+        min_anomalous_threshold: Union[str, UnsetType] = unset,
+        min_cost_threshold: Union[str, UnsetType] = unset,
+        dismissal_cause: Union[str, UnsetType] = unset,
+        order_by: Union[str, UnsetType] = unset,
+        order: Union[str, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+        provider_ids: Union[List[str], UnsetType] = unset,
+    ) -> CostAnomaliesResponse:
+        """List cost anomalies.
+
+        List detected Cloud Cost Management anomalies for the organization.
+
+        :param start: Start time as Unix milliseconds. Defaults to the start of the latest stable seven-day window.
+        :type start: int, optional
+        :param end: End time as Unix milliseconds. Defaults to the end of the latest stable seven-day window.
+        :type end: int, optional
+        :param filter: Optional JSON object mapping cost tag keys to allowed values, for example ``{"team":["payments"],"env":["prod"]}``. Filters match anomaly dimensions or correlated tags.
+        :type filter: str, optional
+        :param min_anomalous_threshold: Minimum absolute anomalous cost change to include. Numeric value; defaults to ``1``.
+        :type min_anomalous_threshold: str, optional
+        :param min_cost_threshold: Minimum absolute actual cost to include. Numeric value; defaults to ``0``.
+        :type min_cost_threshold: str, optional
+        :param dismissal_cause: Filter by resolution state. Use ``none`` for unresolved anomalies, ``all`` or ``*`` for resolved anomalies, or a comma-separated list of causes.
+        :type dismissal_cause: str, optional
+        :param order_by: Sort field. One of ``start_date`` , ``end_date`` , ``duration`` , ``max_cost`` , ``anomalous_cost`` , or ``dismissal_date``. Defaults to ``anomalous_cost``.
+        :type order_by: str, optional
+        :param order: Sort direction. One of ``asc`` or ``desc``. Defaults to ``desc``.
+        :type order: str, optional
+        :param limit: Maximum number of anomalies to return. Defaults to ``200``.
+        :type limit: int, optional
+        :param offset: Pagination offset. Defaults to ``0``.
+        :type offset: int, optional
+        :param provider_ids: Optional repeated cloud or SaaS provider filters, such as ``aws`` , ``gcp`` , ``azure`` , ``Oracle`` , ``datadog`` , ``OpenAI`` , or ``Anthropic``.
+        :type provider_ids: [str], optional
+        :rtype: CostAnomaliesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if start is not unset:
+            kwargs["start"] = start
+
+        if end is not unset:
+            kwargs["end"] = end
+
+        if filter is not unset:
+            kwargs["filter"] = filter
+
+        if min_anomalous_threshold is not unset:
+            kwargs["min_anomalous_threshold"] = min_anomalous_threshold
+
+        if min_cost_threshold is not unset:
+            kwargs["min_cost_threshold"] = min_cost_threshold
+
+        if dismissal_cause is not unset:
+            kwargs["dismissal_cause"] = dismissal_cause
+
+        if order_by is not unset:
+            kwargs["order_by"] = order_by
+
+        if order is not unset:
+            kwargs["order"] = order
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        if provider_ids is not unset:
+            kwargs["provider_ids"] = provider_ids
+
+        return self._list_cost_anomalies_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_awscur_configs(
         self,

@@ -6171,6 +6171,76 @@ datadog\_api\_client.v2.model.cost\_aggregation\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_anomalies\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomalies_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomalies\_response\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomalies_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomalies\_response\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomalies_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomalies\_response\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomalies_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomaly module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomaly
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomaly\_correlated\_tags module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomaly_correlated_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomaly\_dimensions module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomaly_dimensions
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomaly\_dismissal module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomaly_dismissal
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomaly\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomaly_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_anomaly\_response\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_anomaly_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_attribution\_aggregates\_body module
 ------------------------------------------------------------------------
 

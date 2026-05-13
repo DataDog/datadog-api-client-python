@@ -351,6 +351,8 @@ class Configuration:
                 "v2.search_security_monitoring_histsignals": False,
                 "v2.get_code_coverage_branch_summary": False,
                 "v2.get_code_coverage_commit_summary": False,
+                "v2.get_cost_anomaly": False,
+                "v2.list_cost_anomalies": False,
                 "v2.create_dashboard_secure_embed": False,
                 "v2.delete_dashboard_secure_embed": False,
                 "v2.get_dashboard_secure_embed": False,
