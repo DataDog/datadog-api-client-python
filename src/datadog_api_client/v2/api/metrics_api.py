@@ -469,6 +469,11 @@ class MetricsApi:
                     "attribute": "metric_name",
                     "location": "path",
                 },
+                "window_seconds": {
+                    "openapi_types": (int,),
+                    "attribute": "window[seconds]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -1012,19 +1017,27 @@ class MetricsApi:
     def list_volumes_by_metric_name(
         self,
         metric_name: str,
+        *,
+        window_seconds: Union[int, UnsetType] = unset,
     ) -> MetricVolumesResponse:
         """List distinct metric volumes by metric name.
 
-        View distinct metrics volumes for the given metric name.
+        View hourly average metric volumes for the given metric name over the look back period.
 
         Custom metrics generated in-app from other products will return ``null`` for ingested volumes.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
+        :param window_seconds: The number of seconds of look back (from now).
+            Default value is 3,600 (1 hour), maximum value is 2,592,000 (1 month).
+        :type window_seconds: int, optional
         :rtype: MetricVolumesResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["metric_name"] = metric_name
+
+        if window_seconds is not unset:
+            kwargs["window_seconds"] = window_seconds
 
         return self._list_volumes_by_metric_name_endpoint.call_with_http_info(**kwargs)
 
