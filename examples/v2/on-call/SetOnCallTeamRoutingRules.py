@@ -5,8 +5,8 @@ Set On-Call team routing rules returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
-from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
-from datadog_api_client.v2.model.send_slack_message_action_type import SendSlackMessageActionType
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action_type import RoutingRuleEscalationPolicyActionType
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
 from datadog_api_client.v2.model.team_routing_rules_request_data import TeamRoutingRulesRequestData
 from datadog_api_client.v2.model.team_routing_rules_request_data_attributes import TeamRoutingRulesRequestDataAttributes
@@ -29,10 +29,11 @@ body = TeamRoutingRulesRequest(
             rules=[
                 TeamRoutingRulesRequestRule(
                     actions=[
-                        SendSlackMessageAction(
-                            channel="channel",
-                            type=SendSlackMessageActionType.SEND_SLACK_MESSAGE,
-                            workspace="workspace",
+                        RoutingRuleEscalationPolicyAction(
+                            type=RoutingRuleEscalationPolicyActionType.ESCALATION_POLICY,
+                            policy_id=ESCALATION_POLICY_DATA_ID,
+                            urgency=Urgency.LOW,
+                            ack_timeout_minutes=30,
                         ),
                     ],
                     query="tags.service:test",
