@@ -82,7 +82,7 @@ class FormulaAndFunctionApmResourceStatsQueryDefinition(ModelNormal):
         **kwargs,
     ):
         """
-        APM resource stats query using formulas and functions.
+        APM resource stats query using formulas and functions. Deprecated - Use ``apm_metrics`` query type instead.
 
         :param cross_org_uuids: The source organization UUID for cross organization queries. Feature in Private Beta.
         :type cross_org_uuids: [str], optional
